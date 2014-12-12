@@ -1,0 +1,22 @@
+// *
+// * Page Header 
+// *
+
+$module-name: 'page-header';
+
+// ------------------------------------------------------------
+// Default Styles
+// ------------------------------------------------------------
+
+.#{$module-name} {
+	width: 100%;
+	height: $page-header-height;
+
+	&__content{
+		display: block;
+		width: 728px;
+		height: 90px;
+		margin: auto;
+		overflow: hidden;
+	}
+}

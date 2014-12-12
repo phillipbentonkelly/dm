@@ -1,0 +1,129 @@
+$module-name: 'related-articles';
+
+.#{$module-name} {
+	font-family: OpenSans Regular;
+	font-size: 13px;
+	color: #000;
+	
+	&__section-header {
+		color: #333;
+		font-family: Oswald Regular;
+		font-weight: 500;
+		font-size: 26px;
+	}
+
+	&__item {
+		width: 100%;
+		min-height: 50px;
+		padding: 14px 0 2.5% 0;
+		border-bottom: 1px solid #e5e5e5;
+		position: relative;
+		overflow: hidden;
+		clear: both;
+		
+		.thumb {
+			display: block;
+			float: left;
+			margin-right: 1%;
+		}
+
+		h2.title {
+			line-height: 16px;
+			font-family: OpenSans Bold;
+			font-size: 16px;
+			padding: 0 0 0 0;
+			margin: 0 0 4px 0;
+		}
+
+		p.description {
+			font-family: OpenSans Regular;
+			font-size: 13px;
+			margin-bottom: 6px;
+		}
+
+		div.date {
+			float: left;
+			max-width: /*240px*/35%;
+			font-family: OpenSans Italic;
+			font-size: 12px;
+		}
+
+		.additional-info {
+			width: 78%;
+			min-height: 10px;
+			overflow: hidden;
+			position: absolute;
+			bottom: 4.7%;
+			right: 0;
+		}
+
+		.tags {
+			float: right;
+			max-width: /*360px*/65%;
+			min-height: 10px;
+			overflow: hidden;
+
+			.tag {
+				display: block;
+				float: left;
+				font-size: 12px;
+				font-family: Oswald Bold;
+				text-transform: uppercase;
+				line-height: 18px;
+				padding: 0px 0px 0 5px;
+				margin: 0 6px 0 0;
+				color: #fff;
+				margin-bottom: 5px;
+
+				.arrow {
+					display: block;
+					float: right;
+					width: 0;
+					height: 0;
+					border-top: 8px solid transparent;
+					border-bottom: 8px solid transparent;
+					border-right: 8px solid white;
+					margin-left: 6px;
+				}
+			}
+
+			.location { background-color: #82b5e6; }
+			.class { background-color: #00a651; }
+			.event { background-color: #ff6c6c; }
+		}
+	}
+
+	a.viewMore{
+		display: block;
+		text-align: center;
+		text-transform: capitalize;
+		font-family: OpenSans Regular;
+		font-weight: 400;
+		font-size: 18px;
+		color: #000;
+		line-height: 1em;
+		padding: 0.5em 0 0.5em 0;
+		text-decoration: none;
+		background: #e5e5e5;
+		margin-top: 20px;
+
+		img {
+			margin-left: 4px;
+		}
+	}
+
+	.dfp-ad__row {
+		display: block;
+		clear: both;
+		min-height: 1px;
+		overflow: hidden;
+
+		&__main-link {
+			display: block;
+			float: left;
+		}
+			&__main-link:nth-child(odd) {
+				margin-right: 30px;
+			}
+	}
+}

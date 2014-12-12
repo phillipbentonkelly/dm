@@ -1,0 +1,153 @@
+module.exports = function(grunt) {
+	// require it at the top and pass in the grunt instance
+    require('time-grunt')(grunt);
+    
+	// Project configuration.
+	grunt.initConfig({
+		pkg: grunt.file.readJSON('package.json'),
+		watch: {
+			sass: {
+				// We watch and compile sass files as normal but don't live reload here
+				files: ['styles/**/*.scss'],
+				tasks: ['sass']
+			}, copy_css_resources: {
+				files: ['styles/resources/**'],
+				tasks: ['copy:css_resources']
+			}, copy_css_components: {
+				files: ['styles/css/**'],
+				tasks: ['copy:css_components']
+			}, copy_images: {
+				files: ['images/**'],
+				tasks: ['copy:images']
+			}, copy_js: {
+				files: ['js/assets/**'],
+				tasks: ['copy:js']
+			}, copy_fonts: {
+				files: ['fonts/**'],
+				tasks: ['copy:fonts']
+			}
+		},
+		sass: {
+			dist: {
+				options: {
+					style: 'expanded',
+					sourcemap: false,
+					trace: false,
+					lineNumbers: true,
+					noCache: true, 
+				},
+				files: [{
+					expand: true,
+					cwd: 'styles/sass',
+					src: ['**/*.scss'],
+					dest: 'styles/css',
+					ext: '.css'
+				}]
+			}
+		},
+		csslint: {
+			lax: {
+				options: {
+					import: 2,
+					csslintrc: '.csslintrc'
+				},
+				src: 'styles/css/*.css'
+			}
+		},
+		jshint:{
+			gruntFs: {
+				src: 'Gruntfile.js',
+				options: {
+					globals: {
+						jQuery: true,
+						console: true,
+						module: true,
+						document: true
+					}, 
+					force: true,
+					reporter: require('jshint-stylish')
+				}
+			},
+			assets: {
+				src: 'js/assets/*.js',
+				options: {
+					globals: {
+						jQuery: true,
+						console: true,
+						module: true,
+						document: true
+					}, 
+					force: true,
+					reporter: require('jshint-stylish')
+				}
+			}
+		},
+		cssmin: {
+			my_target: {
+				files: [{
+					expand: true,
+					cwd: 'styles/css',
+					src: ['styles/css/*.css'],
+					dest: 'styles/css/',
+					ext: '.min.css'
+				}]
+			}
+		},
+		copy: {
+			css_resources: {
+				expand: true,
+				src: 'styles/resources/**',
+				dest: 'dist/',
+				filter: 'isFile'
+			},
+			css_components: {
+				expand: true,
+				src: 'styles/css/**',
+				dest: 'dist/',
+				filter: 'isFile'
+			},
+			js: {
+				expand: true,
+				src: 'js/**',
+				dest: 'dist/',
+				filter: 'isFile'
+			},
+			fonts: {
+				expand: true,
+				src: 'fonts/**',
+				dest: 'dist/',
+				filter: 'isFile'
+			},
+			images: {
+				expand: true,
+				src: 'images/**',
+				dest: 'dist/',
+				filter: 'isFile'
+			}
+		}
+	});
+
+	// Load the plugin that provides the "watch" task.
+	grunt.loadNpmTasks('grunt-contrib-watch');
+
+	// Load the plugin that provides the "sass" task.
+	grunt.loadNpmTasks('grunt-contrib-sass');
+
+	// Load the plugin that provides the "csslint" task.
+	grunt.loadNpmTasks('grunt-contrib-csslint');
+
+	// Load the plugin that provides the "csslint" task.
+	grunt.loadNpmTasks('grunt-contrib-cssmin');
+
+	// Load the plugin that provides the "jshint" task.
+	grunt.loadNpmTasks('grunt-contrib-jshint');
+
+	// Load the plugin that provides the "concat" task.
+	grunt.loadNpmTasks('grunt-contrib-concat');
+
+	// Load the plugin that provides the "copy" task.
+	grunt.loadNpmTasks('grunt-contrib-copy');
+
+	// Default task(s).
+	grunt.registerTask('default', ['sass', 'csslint', 'cssmin', 'jshint'/*, 'concat', 'uglify'*/, 'copy']);
+};

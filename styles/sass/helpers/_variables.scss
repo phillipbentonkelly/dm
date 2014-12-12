@@ -1,0 +1,38 @@
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// Main Breakpoints
+// * Other breakpoints maybe be used to adjust wonky elements
+// * These are just defaults for tablet and desktop
+// * Mobile is considered anything under tablet
+// * May be useful when conversing with product?
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+$tablet-breakpoint: 768px;
+$desktop-breakpoint: 960px;
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// Element Dimensions
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+$site-max-width: 1044px;
+$left-col-width: 630px;
+$right-col-width: 300px;
+$right-col-right-gutter: 30px;
+
+$page-masthead: 100px;
+$page-header-height: 100px;
+$page-header-height-mobile: 55px;
+$page-nav-height: 60px;
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// Font Weights
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+$fw-regular: 400;
+$fw-medium: 500;
+$fw-bold: 700; 
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// Paths
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+$basePath: '../../';
+$img-path: '#{$basePath}images/';
+$fonts-path: '#{$basePath}fonts/';
+
+
