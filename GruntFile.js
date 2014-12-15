@@ -25,7 +25,10 @@ module.exports = function(grunt) {
 			}, copy_fonts: {
 				files: ['fonts/**'],
 				tasks: ['copy:fonts']
-			}
+			}/*,
+			options: {
+				livereload: true
+			}*/
 		},
 		sass: {
 			dist: {
@@ -124,6 +127,21 @@ module.exports = function(grunt) {
 				dest: 'dist/',
 				filter: 'isFile'
 			}
+		},
+		notify_hooks: {
+		    options: {
+				enabled: true,
+				max_js_hint_notifications: 5,
+				title: 'BCOM - DM (Real Estate) Notifications',
+				success: true,
+				duration: 3
+		    },
+		    sass: {
+		    	options: {
+		    		title: "Watch Notifications",
+		    		message: "His 'WATCH' has ended!"
+		    	}
+		    }
 		}
 	});
 
@@ -148,6 +166,12 @@ module.exports = function(grunt) {
 	// Load the plugin that provides the "copy" task.
 	grunt.loadNpmTasks('grunt-contrib-copy');
 
+	// Load the plugin that provides the "notify" task.
+	grunt.loadNpmTasks('grunt-notify');
+
 	// Default task(s).
-	grunt.registerTask('default', ['sass', 'csslint', 'cssmin', 'jshint'/*, 'concat', 'uglify'*/, 'copy']);
+	grunt.registerTask('server', ['watch', 'sass', 'csslint', 'cssmin', 'jshint'/*, 'concat', 'uglify', 'notify:server'*/, 'copy', 'notify_hooks']);
+
+	// This is required if you use any options.
+	grunt.task.run('notify_hooks');
 };
