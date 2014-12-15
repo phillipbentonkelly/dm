@@ -49,7 +49,7 @@ module.exports = function(grunt) {
 			lax: {
 				options: {
 					import: 2,
-					csslintrc: '.csslintrc'
+					csslintrc: '.csslintrc' // Setting what errors to lint and which will terminate operations
 				},
 				src: 'styles/css/*.css'
 			}
