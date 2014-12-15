@@ -126,3 +126,32 @@
   color: #1a93b0;
   font-size: 150%;
 }
+/* line 144, ../sass/contact-form-premium.scss */
+.contact__company-wrapper {
+  padding: 10px 25px 20px 15px;
+}
+/* line 148, ../sass/contact-form-premium.scss */
+.contact__company-name {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 80%;
+  font-weight: 600;
+}
+/* line 154, ../sass/contact-form-premium.scss */
+.contact__company-message {
+  font-weight: 200;
+}
+/* line 158, ../sass/contact-form-premium.scss */
+.contact__company-img {
+  float: left;
+  height: 60px;
+  width: 90px;
+}
+/* line 164, ../sass/contact-form-premium.scss */
+.contact__company-info {
+  margin-left: 110px;
+  margin-bottom: 15px;
+}
+/* line 169, ../sass/contact-form-premium.scss */
+.contact__company-name {
+  margin: 0;
+}
