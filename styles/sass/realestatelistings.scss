@@ -235,6 +235,11 @@ a, img{
 					font-size: 90%;
 					line-height: 1.25em;
 				}
+				&__address:before, &__address:after {
+					-moz-box-sizing: content-box;
+					-webkit-box-sizing: content-box;
+					box-sizing: content-box;
+				}
 
 				&__bedrooms {
 					width: 49%;
