@@ -50,10 +50,13 @@
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 @import 'partials/page/modules/listingsmap';
 @import 'partials/page/modules/relatedarticles';
+@import 'partials/page/modules/full-screen-carousel';
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 // Content Styles
 // * Dependencies: bdc-base
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 @import 'partials/page-content/modules/content-footer';
+@import 'partials/page-content/modules/dfp-ads__new-homes';
+@import 'partials/page-content/modules/adplaceholer__right-column';
 

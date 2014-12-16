@@ -1,34 +1,29 @@
 // *
-// * Page Header 
+// * DFP Ads - New Homes
 // *
 
-$module-name: 'page-header';
+$module-name: 'adplaceholer__right-column';
+$default-adplaceholder-height: 320px;
 
 // ------------------------------------------------------------
 // Default Styles
 // ------------------------------------------------------------
 
 .#{$module-name} {
-	width: 100%;
-	height: (($page-header-height/2)+($page-header-height/3));
-
-	&__content{
-		display: block;
-		max-width: 728px;
-		height: 90px;
-		margin: auto;
-		overflow: hidden;
-	}
+	width: ($right-col-width - 2);
+	height: ($default-adplaceholder-height - 2);
+	border: 1px solid #ccc;
+	margin-bottom: 30px;
 }
 
 @include media-query(desktop) {
 	.#{$module-name} {
-		height: $page-header-height;
+		width: ($right-col-width - 2);
 	}
 }
 
 @include media-query(tablet) {
 	.#{$module-name} {
-		height: $page-header-height;
+		
 	}
 }
