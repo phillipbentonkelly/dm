@@ -77,6 +77,7 @@ $module-name: 'listing';
 		margin-top: 0;
 		width: 50%;
 		padding-right: 10px;
+		box-sizing: border-box;
 
 		li {
 			font-family: OpenSans;
@@ -108,6 +109,7 @@ $module-name: 'listing';
 	&__details-expand {
 		padding: 10px;
 		display: inline-block;
+		box-sizing: border-box;
 		width: 100%;
 		margin-bottom: 5px;
 		background: rgba(170,170,170,0.3);
@@ -182,6 +184,7 @@ $module-name: 'listing';
 			width: 50%;
 			padding-right: 20px;
 			float: left;
+			box-sizing: border-box;
 		}
 
 		&__summary--right {
@@ -192,12 +195,14 @@ $module-name: 'listing';
 			text-align: center;
 			background-color: rgba(10,10,10,0.1);
 			box-sizing: border-box;
+			margin-bottom: 15px;
 		}
 
 		&__detail {
 			width: 80%;
 			float: left;
 			border-right: 1px solid white;
+			box-sizing: border-box;
 
 			p {
 				border-right: 1px solid white;
@@ -221,6 +226,7 @@ $module-name: 'listing';
 			width: 100%;
 
 			p {
+				box-sizing: border-box;
 				width: 33.3%;
 				padding: 7px 0;
 				float: left;
@@ -239,6 +245,7 @@ $module-name: 'listing';
 			width: 100%;
 
 			p {
+				box-sizing: border-box;
 				width: 50%;
 				padding: 7px 0;
 				float: left;
@@ -248,6 +255,7 @@ $module-name: 'listing';
 		}
 
 		&__price {
+			box-sizing: border-box;
 			width: 100%;
 			float: left;
 			font-size: 115%;
@@ -266,6 +274,7 @@ $module-name: 'listing';
 		}
 
 		&__detail-share-icons {
+			box-sizing: border-box;
 			padding: 9px;
 			height: 32px;
 			border-bottom: 1px solid white;
@@ -275,7 +284,6 @@ $module-name: 'listing';
 			display: block;
 			max-width: /*360px*/65%;
 			min-height: 10px;
-			
 			overflow: hidden;
 
 			.tag {
@@ -310,6 +318,7 @@ $module-name: 'listing';
 
 		&__facts--left, &__facts--right, &__features--left, &__features--right {
 			width: 33.3%;
+			box-sizing: border-box;
 		}
 
 		&__facts, &__features {
@@ -319,6 +328,8 @@ $module-name: 'listing';
 	  &__external-links { 
 			float: left;
 			width: 33.3%;
+			box-sizing: border-box;
+			clear: none;
 
 			li {
 				padding-bottom: 10px;
@@ -330,6 +341,7 @@ $module-name: 'listing';
 			padding: 10px;
 			margin-bottom: 10px;
 			display: inline-block;
+			box-sizing: border-box;
 			width: 100%;
 			text-align: center;
 
