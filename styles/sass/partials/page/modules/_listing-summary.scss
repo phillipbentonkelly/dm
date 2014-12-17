@@ -170,11 +170,14 @@ $module-name: 'listing';
 			font-size: 85%;
 			color: #1a93b0;
 
-			a:not(:first-child):before {
+			a:before {
 				content: " \B7 ";
 				color: black;
 			}
-
+			a:first-child:before {
+				content: "";
+			}
+			
 			a {
 				color: #1a93b0;
 			}
