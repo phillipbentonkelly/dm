@@ -1,0 +1,9 @@
+$module-name: 'page-blog';
+
+.#{$module-name} {
+	width: 100%;
+	background-color: #e5e5e5;
+	clear: both;
+	min-height: 100px;
+	overflow: hidden;
+}

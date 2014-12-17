@@ -381,9 +381,8 @@ textarea {
   clear: both;
   padding-bottom: 20px;
   position: relative;
-  /*background-color: yellow;*/
 }
-/* line 14, ../sass/partials/page/_page-layout.scss */
+/* line 13, ../sass/partials/page/_page-layout.scss */
 .page-layout__left-col {
   float: left;
   width: 60%;
@@ -391,7 +390,7 @@ textarea {
   padding-top: 20px;
   margin-right: 10%;
 }
-/* line 22, ../sass/partials/page/_page-layout.scss */
+/* line 21, ../sass/partials/page/_page-layout.scss */
 .page-layout__right-col {
   float: left;
   width: 30%;
@@ -400,26 +399,35 @@ textarea {
 }
 
 @media (min-width: 960px) {
-  /* line 31, ../sass/partials/page/_page-layout.scss */
+  /* line 30, ../sass/partials/page/_page-layout.scss */
   .page-layout {
     width: 960px;
   }
-  /* line 34, ../sass/partials/page/_page-layout.scss */
+  /* line 33, ../sass/partials/page/_page-layout.scss */
   .page-layout__left-col {
     width: 630px;
     margin-right: 30px;
   }
-  /* line 39, ../sass/partials/page/_page-layout.scss */
+  /* line 38, ../sass/partials/page/_page-layout.scss */
   .page-layout__right-col {
     width: 300px;
   }
 }
 @media (min-width: 768px) {
-  /* line 46, ../sass/partials/page/_page-layout.scss */
+  /* line 45, ../sass/partials/page/_page-layout.scss */
   .page-layout {
     width: 960px;
   }
 }
+/* line 3, ../sass/partials/page/_page-blog.scss */
+.page-blog {
+  width: 100%;
+  background-color: #e5e5e5;
+  clear: both;
+  min-height: 100px;
+  overflow: hidden;
+}
+
 /* line 11, ../sass/partials/page/_page-footer.scss */
 .page-footer {
   border-top: 1px solid #1a93b0;
@@ -1021,6 +1029,184 @@ textarea {
   bottom: 0px;
 }
 
+/* line 11, ../sass/partials/page-content/modules/_dfp-ads__new-homes.scss */
+.dfp-ads__new-homes {
+  width: 300px;
+  height: 127px;
+  background-image: url(../../images/ads/dfp/dfp-mock-ads__home__mobile.jpg);
+  background-position: top left;
+  background-repeat: no-repeat;
+  margin-bottom: 30px;
+}
+
+@media (min-width: 960px) {
+  /* line 21, ../sass/partials/page-content/modules/_dfp-ads__new-homes.scss */
+  .dfp-ads__new-homes {
+    width: 630px;
+    height: 320px;
+    background-image: url(../../images/ads/dfp/dfp-mock-ads__home__desktop.jpg);
+  }
+}
+@media (min-width: 768px) {
+  /* line 29, ../sass/partials/page-content/modules/_dfp-ads__new-homes.scss */
+  .dfp-ads__new-homes {
+    width: 100%;
+    height: 320px;
+    background-image: url(../../images/ads/dfp/dfp-mock-ads__home__desktop.jpg);
+  }
+}
+/* line 12, ../sass/partials/page-content/modules/_adplaceholer__right-column.scss */
+.adplaceholer__right-column {
+  width: 298px;
+  height: 318px;
+  border: 1px solid #ccc;
+  margin-bottom: 30px;
+}
+
+@media (min-width: 960px) {
+  /* line 20, ../sass/partials/page-content/modules/_adplaceholer__right-column.scss */
+  .adplaceholer__right-column {
+    width: 298px;
+  }
+}
+/* line 3, ../sass/partials/page-content/modules/_real-estate-blog.scss */
+.real-estate-blog {
+  width: 100%;
+  min-height: 325px;
+  margin: auto;
+}
+/* line 8, ../sass/partials/page-content/modules/_real-estate-blog.scss */
+.real-estate-blog h1 {
+  text-align: center;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 500;
+  font-size: 1.5em;
+  margin: 0 0 1.5% 0;
+}
+/* line 16, ../sass/partials/page-content/modules/_real-estate-blog.scss */
+.real-estate-blog .adSlots {
+  display: block;
+  min-height: 250px;
+  overflow: hidden;
+  clear: both;
+}
+/* line 22, ../sass/partials/page-content/modules/_real-estate-blog.scss */
+.real-estate-blog .adSlots .adSlot {
+  float: left;
+  display: block;
+  width: 300px;
+  height: 250px;
+  margin-left: 30px;
+  position: relative;
+  /*border: 1px solid #ccc;*/
+  margin-bottom: 30px;
+}
+/* line 33, ../sass/partials/page-content/modules/_real-estate-blog.scss */
+.real-estate-blog .adSlots .adSlot .iconOverlay {
+  position: absolute;
+  z-index: 1;
+}
+/* line 37, ../sass/partials/page-content/modules/_real-estate-blog.scss */
+.real-estate-blog .adSlots .adSlot .topSpacing {
+  top: 3%;
+}
+/* line 40, ../sass/partials/page-content/modules/_real-estate-blog.scss */
+.real-estate-blog .adSlots .adSlot .leftSpacing {
+  left: 6%;
+}
+/* line 44, ../sass/partials/page-content/modules/_real-estate-blog.scss */
+.real-estate-blog .adSlots .adSlot .detailsWrapper {
+  width: 300px;
+  clear: both;
+  min-height: 10%;
+  overflow: hidden;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+}
+/* line 54, ../sass/partials/page-content/modules/_real-estate-blog.scss */
+.real-estate-blog .adSlots .adSlot .detailsWrapper .detailsArrow {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 25px 20px 25px;
+  border-color: rgba(0, 0, 0, 0.6) transparent;
+  float: right;
+}
+/* line 63, ../sass/partials/page-content/modules/_real-estate-blog.scss */
+.real-estate-blog .adSlots .adSlot .detailsWrapper .detailsOverlay {
+  width: 93%;
+  min-height: 20%;
+  padding: 4% 5% 3% 3%;
+  color: #fff;
+  font-size: 0.7em;
+  letter-spacing: 1px;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 300;
+  background-color: rgba(0, 0, 0, 0.6);
+  clear: both;
+}
+/* line 75, ../sass/partials/page-content/modules/_real-estate-blog.scss */
+.real-estate-blog .adSlots .adSlot .detailsWrapper .detailsOverlay h1 {
+  font-size: 120%;
+  text-align: left;
+  padding: 0 0 0.5em 0;
+  margin: 0 0 0 0;
+  line-height: 100%;
+  clear: both;
+  min-height: 10px;
+  overflow: hidden;
+}
+/* line 85, ../sass/partials/page-content/modules/_real-estate-blog.scss */
+.real-estate-blog .adSlots .adSlot .detailsWrapper .detailsOverlay h1 .priceSpan {
+  float: right;
+}
+/* line 89, ../sass/partials/page-content/modules/_real-estate-blog.scss */
+.real-estate-blog .adSlots .adSlot .detailsWrapper .detailsOverlay p {
+  display: none;
+  line-height: 1.5em;
+  padding: 0 0 0.5em 0;
+  margin: 0 0 0 0;
+}
+/* line 98, ../sass/partials/page-content/modules/_real-estate-blog.scss */
+.real-estate-blog .adSlots .adSlot:hover .detailsWrapper .detailsOverlay p {
+  display: block;
+}
+/* line 104, ../sass/partials/page-content/modules/_real-estate-blog.scss */
+.real-estate-blog .adSlots a.adSlot:first-child {
+  margin-left: 0;
+}
+/* line 109, ../sass/partials/page-content/modules/_real-estate-blog.scss */
+.real-estate-blog a.viewMore {
+  display: block;
+  text-align: center;
+  text-transform: capitalize;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  color: #000;
+  line-height: 1em;
+  padding: 0.5em 0 0.5em 0;
+  text-decoration: none;
+  background: #e5e5e5;
+}
+/* line 121, ../sass/partials/page-content/modules/_real-estate-blog.scss */
+.real-estate-blog a.viewMore img {
+  margin-left: 4px;
+}
+
+@media (min-width: 960px) {
+  /* line 128, ../sass/partials/page-content/modules/_real-estate-blog.scss */
+  .real-estate-blog {
+    width: 960px;
+  }
+}
+@media (min-width: 768px) {
+  /* line 136, ../sass/partials/page-content/modules/_real-estate-blog.scss */
+  .real-estate-blog {
+    width: 960px;
+  }
+}
 /* line 5, ../sass/partials/page-content/modules/_content-footer.scss */
 .content-footer {
   width: 84.375%;
@@ -1075,47 +1261,6 @@ textarea {
 .content-footer__copyright-block {
   text-align: center;
   font-size: 11px;
-}
-
-/* line 11, ../sass/partials/page-content/modules/_dfp-ads__new-homes.scss */
-.dfp-ads__new-homes {
-  width: 300px;
-  height: 127px;
-  background-image: url(../../images/ads/dfp/dfp-mock-ads__home__mobile.jpg);
-  background-position: top left;
-  background-repeat: no-repeat;
-  margin-bottom: 30px;
-}
-
-@media (min-width: 960px) {
-  /* line 21, ../sass/partials/page-content/modules/_dfp-ads__new-homes.scss */
-  .dfp-ads__new-homes {
-    width: 630px;
-    height: 320px;
-    background-image: url(../../images/ads/dfp/dfp-mock-ads__home__desktop.jpg);
-  }
-}
-@media (min-width: 768px) {
-  /* line 29, ../sass/partials/page-content/modules/_dfp-ads__new-homes.scss */
-  .dfp-ads__new-homes {
-    width: 100%;
-    height: 320px;
-    background-image: url(../../images/ads/dfp/dfp-mock-ads__home__desktop.jpg);
-  }
-}
-/* line 12, ../sass/partials/page-content/modules/_adplaceholer__right-column.scss */
-.adplaceholer__right-column {
-  width: 298px;
-  height: 318px;
-  border: 1px solid #ccc;
-  margin-bottom: 30px;
-}
-
-@media (min-width: 960px) {
-  /* line 20, ../sass/partials/page-content/modules/_adplaceholer__right-column.scss */
-  .adplaceholer__right-column {
-    width: 298px;
-  }
 }
 
 /*# sourceMappingURL=dm-screen.css.map */
