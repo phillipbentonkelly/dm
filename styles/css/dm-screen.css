@@ -80,7 +80,7 @@ abbr, address, cite, code,
 del, dfn, em, img, ins, kbd, q, samp,
 small, strong, sub, sup, var,
 b, i,
-dl, dt, dd, ol, ul, li,
+dl, dt, dd, ol,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, figcaption, figure,
@@ -101,23 +101,18 @@ footer, header, hgroup, menu, nav, section {
 }
 
 /* line 31, ../sass/partials/_reset.scss */
-ol, ul {
-  list-style: none;
-}
-
-/* line 34, ../sass/partials/_reset.scss */
 blockquote, q {
   quotes: none;
 }
 
-/* line 37, ../sass/partials/_reset.scss */
+/* line 34, ../sass/partials/_reset.scss */
 blockquote:before, blockquote:after,
 q:before, q:after {
   content: '';
   content: none;
 }
 
-/* line 42, ../sass/partials/_reset.scss */
+/* line 39, ../sass/partials/_reset.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
@@ -234,9 +229,9 @@ textarea {
 
 /* line 62, ../sass/partials/_element-defaults.scss */
 *, *:before, *:after {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
 }
 
 @media screen and (min-width: 768px) {
@@ -254,17 +249,29 @@ textarea {
 /* line 11, ../sass/partials/page/_page-header.scss */
 .page-header {
   width: 100%;
-  height: 100px;
+  height: 83.33333px;
 }
 /* line 15, ../sass/partials/page/_page-header.scss */
 .page-header__content {
   display: block;
-  width: 728px;
+  max-width: 728px;
   height: 90px;
   margin: auto;
   overflow: hidden;
 }
 
+@media (min-width: 960px) {
+  /* line 25, ../sass/partials/page/_page-header.scss */
+  .page-header {
+    height: 100px;
+  }
+}
+@media (min-width: 768px) {
+  /* line 31, ../sass/partials/page/_page-header.scss */
+  .page-header {
+    height: 100px;
+  }
+}
 /* line 11, ../sass/partials/page/_page-nav.scss */
 .page-nav {
   width: 100%;
@@ -361,28 +368,60 @@ textarea {
   border-radius: 3px;
 }
 
-/* line 3, ../sass/partials/page/_page-layout.scss */
+/* line 4, ../sass/partials/page/_page-layout.scss */
 .page-layout {
-  width: 960px;
+  width: 100%;
   min-height: 100px;
   margin: auto;
   overflow: hidden;
   clear: both;
-  /*background-color: yellow;*/
+  padding-bottom: 20px;
+  position: relative;
 }
-/* line 11, ../sass/partials/page/_page-layout.scss */
+/* line 13, ../sass/partials/page/_page-layout.scss */
 .page-layout__left-col {
   float: left;
-  width: 630px;
+  width: 60%;
   height: 100%;
   padding-top: 20px;
-  margin-right: 30px;
+  margin-right: 10%;
 }
-/* line 19, ../sass/partials/page/_page-layout.scss */
+/* line 21, ../sass/partials/page/_page-layout.scss */
 .page-layout__right-col {
   float: left;
-  width: 300px;
+  width: 30%;
   height: 100%;
+  padding-top: 20px;
+}
+
+@media (min-width: 960px) {
+  /* line 30, ../sass/partials/page/_page-layout.scss */
+  .page-layout {
+    width: 960px;
+  }
+  /* line 33, ../sass/partials/page/_page-layout.scss */
+  .page-layout__left-col {
+    width: 630px;
+    margin-right: 30px;
+  }
+  /* line 38, ../sass/partials/page/_page-layout.scss */
+  .page-layout__right-col {
+    width: 300px;
+  }
+}
+@media (min-width: 768px) {
+  /* line 45, ../sass/partials/page/_page-layout.scss */
+  .page-layout {
+    width: 960px;
+  }
+}
+/* line 3, ../sass/partials/page/_page-blog.scss */
+.page-blog {
+  width: 100%;
+  background-color: #e5e5e5;
+  clear: both;
+  min-height: 100px;
+  overflow: hidden;
 }
 
 /* line 11, ../sass/partials/page/_page-footer.scss */
@@ -757,6 +796,1050 @@ textarea {
   margin-right: 30px;
 }
 
+/* line 11, ../sass/partials/page/modules/_full-screen-carousel.scss */
+.full-screen-carousel {
+  clear: both;
+  min-height: 10px;
+  margin-bottom: 30px;
+  overflow: hidden;
+}
+/* line 17, ../sass/partials/page/modules/_full-screen-carousel.scss */
+.full-screen-carousel a, .full-screen-carousel img {
+  outline: none;
+  border: 0;
+}
+/* line 22, ../sass/partials/page/modules/_full-screen-carousel.scss */
+.full-screen-carousel .carousel-searchField-wrapper {
+  width: 100%;
+  padding: 8px 0 8px 0;
+  position: absolute;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.3);
+}
+/* line 29, ../sass/partials/page/modules/_full-screen-carousel.scss */
+.full-screen-carousel .carousel-searchField {
+  max-width: 760px;
+  height: 54px;
+  margin: auto;
+}
+/* line 35, ../sass/partials/page/modules/_full-screen-carousel.scss */
+.full-screen-carousel .search_real-estate-field {
+  display: block;
+  float: left;
+  width: 660px;
+  height: 52px;
+  border: 0px;
+  padding-left: 20px;
+  font-size: 68%;
+  font-weight: normal;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+}
+/* line 48, ../sass/partials/page/modules/_full-screen-carousel.scss */
+.full-screen-carousel .search-real-estateBtn {
+  display: block;
+  float: left;
+  width: 68px;
+  height: 54px;
+  margin-left: 10px;
+  border: 0px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  background: url("../images/icons/magGlass_bg_blk.gif") center center no-repeat #000;
+}
+/* line 61, ../sass/partials/page/modules/_full-screen-carousel.scss */
+.full-screen-carousel #carousel-wrap, .full-screen-carousel .slide {
+  max-height: 580px;
+}
+/* line 64, ../sass/partials/page/modules/_full-screen-carousel.scss */
+.full-screen-carousel #carousel-wrap .slide .detailsArrow {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 25px 20px 25px;
+  border-color: rgba(0, 0, 0, 0.5) transparent;
+  position: absolute;
+  bottom: 91px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* line 78, ../sass/partials/page/modules/_full-screen-carousel.scss */
+.full-screen-carousel #carousel-wrap {
+  overflow: hidden;
+  position: relative;
+}
+/* line 82, ../sass/partials/page/modules/_full-screen-carousel.scss */
+.full-screen-carousel .carousel_wrapper {
+  display: block;
+  text-align: start;
+  float: none;
+  position: relative;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+  z-index: auto;
+  /*width: 1113px;
+  background-color: yellow;*/
+  width: 100%;
+  height: 637px;
+  margin: 0px;
+  overflow: hidden;
+}
+/* line 99, ../sass/partials/page/modules/_full-screen-carousel.scss */
+.full-screen-carousel #carousel {
+  /*width: 9033px;*/
+  width: 100%;
+  height: 637px;
+  float: none;
+  text-align: left;
+  margin: 0px;
+  position: absolute;
+  right: auto;
+  top: 0px;
+  bottom: auto;
+  z-index: auto;
+}
+/* line 112, ../sass/partials/page/modules/_full-screen-carousel.scss */
+.full-screen-carousel #carousel figure {
+  position: relative;
+}
+/* line 115, ../sass/partials/page/modules/_full-screen-carousel.scss */
+.full-screen-carousel .slide {
+  float: left;
+  text-align: center;
+  margin: 0 4px 0 0;
+}
+/* line 120, ../sass/partials/page/modules/_full-screen-carousel.scss */
+.full-screen-carousel .slide > a {
+  display: block;
+  clear: both;
+  min-height: 10px;
+  overflow: hidden;
+}
+/* line 126, ../sass/partials/page/modules/_full-screen-carousel.scss */
+.full-screen-carousel .slide a img {
+  max-width: 986px;
+  max-height: 580px;
+  border: 0;
+}
+/* line 132, ../sass/partials/page/modules/_full-screen-carousel.scss */
+.full-screen-carousel .carousel-nav {
+  display: block;
+  max-height: 580px;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.4);
+  display: block;
+  padding-bottom: 67px;
+  width: 20vw;
+  top: 0;
+  left: 0;
+  position: absolute;
+  -webkit-transition: background-color 0.2s ease-out, color 0.2s ease-out;
+  -moz-transition: background-color 0.2s ease-out, color 0.2s ease-out;
+  -o-transition: background-color 0.2s ease-out, color 0.2s ease-out;
+  transition: background-color 0.2s ease-out, color 0.2s ease-out;
+  text-align: right;
+}
+/* line 149, ../sass/partials/page/modules/_full-screen-carousel.scss */
+.full-screen-carousel .carousel-nav:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+/* line 152, ../sass/partials/page/modules/_full-screen-carousel.scss */
+.full-screen-carousel .carousel-nav.next {
+  left: auto;
+  right: 0;
+  text-align: left;
+}
+/* line 158, ../sass/partials/page/modules/_full-screen-carousel.scss */
+.full-screen-carousel .useMobileLayout .carousel-nav {
+  display: none;
+}
+/* line 161, ../sass/partials/page/modules/_full-screen-carousel.scss */
+.full-screen-carousel .useMobileLayout .slide a img {
+  float: left;
+  width: 88%;
+}
+/* line 166, ../sass/partials/page/modules/_full-screen-carousel.scss */
+.full-screen-carousel .carousel-fullwidth_slide-details {
+  width: 100%;
+  height: 91px;
+  clear: both;
+  color: #fff;
+  overflow: hidden;
+  line-height: 12px;
+  font-family: sans-serif;
+  font-weight: normal;
+  background: rgba(0, 0, 0, 0.5);
+  padding-top: 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+/* line 181, ../sass/partials/page/modules/_full-screen-carousel.scss */
+.full-screen-carousel .carousel-fullwidth_slide-detail-icon {
+  float: left;
+  width: 15%;
+  height: 77px;
+  padding-top: 10px;
+  text-align: left;
+}
+/* line 188, ../sass/partials/page/modules/_full-screen-carousel.scss */
+.full-screen-carousel .carousel-fullwidth_slide-detail-content {
+  float: left;
+  width: 85%;
+  height: 87px;
+  text-align: left;
+}
+/* line 194, ../sass/partials/page/modules/_full-screen-carousel.scss */
+.full-screen-carousel .carousel-fullwidth_slide-detail-content .listing-data {
+  float: left;
+  width: 70%;
+  height: 100%;
+  font-size: 0.7em;
+}
+/* line 200, ../sass/partials/page/modules/_full-screen-carousel.scss */
+.full-screen-carousel .carousel-fullwidth_slide-detail-content p:nth-child(1) {
+  font-size: 1.7em;
+  line-height: 1.5em;
+  margin: 4.7% 0 0 0;
+}
+/* line 205, ../sass/partials/page/modules/_full-screen-carousel.scss */
+.full-screen-carousel .carousel-fullwidth_slide-detail-content .providerIcon {
+  width: 23%;
+  height: 100%;
+  padding-right: 7%;
+  float: right;
+}
+/* line 211, ../sass/partials/page/modules/_full-screen-carousel.scss */
+.full-screen-carousel .carousel-fullwidth_slide-detail-content .providerIcon img {
+  margin-top: 5%;
+}
+/* line 216, ../sass/partials/page/modules/_full-screen-carousel.scss */
+.full-screen-carousel .chevron::before {
+  color: #fff;
+  border-style: solid;
+  border-width: 0.20em 0.20em 0 0;
+  content: '';
+  display: inline-block;
+  height: 1em;
+  left: 0.15em;
+  position: relative;
+  top: 0.4em;
+  transform: rotate(-45deg);
+  vertical-align: top;
+  width: 1em;
+  font-family: arial, sans-serif;
+  font-size: 15px;
+}
+/* line 234, ../sass/partials/page/modules/_full-screen-carousel.scss */
+.full-screen-carousel .chevron.right:before {
+  left: 0;
+  transform: rotate(45deg);
+}
+/* line 239, ../sass/partials/page/modules/_full-screen-carousel.scss */
+.full-screen-carousel .chevron.bottom:before {
+  top: 0;
+  transform: rotate(135deg);
+}
+/* line 244, ../sass/partials/page/modules/_full-screen-carousel.scss */
+.full-screen-carousel .chevron.left:before {
+  left: 0.25em;
+  transform: rotate(-135deg);
+}
+/* line 248, ../sass/partials/page/modules/_full-screen-carousel.scss */
+.full-screen-carousel #carousel-wrap .chevron::before {
+  top: 48%;
+  cursor: pointer;
+}
+/* line 254, ../sass/partials/page/modules/_full-screen-carousel.scss */
+.full-screen-carousel .carouselRightNavFade {
+  display: none;
+}
+/* line 259, ../sass/partials/page/modules/_full-screen-carousel.scss */
+.full-screen-carousel .useMobileLayout .carouselRightNavFade {
+  display: block;
+  width: 15px;
+  height: 100%;
+  /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMCIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+  background: -moz-linear-gradient(right, white 0%, rgba(255, 255, 255, 0) 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, right top, right top, color-stop(0%, white), color-stop(100%, rgba(255, 255, 255, 0)));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(right, white 0%, rgba(255, 255, 255, 0) 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(right, white 0%, rgba(255, 255, 255, 0) 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(right, white 0%, rgba(255, 255, 255, 0) 100%);
+  /* IE10+ */
+  background: linear-gradient(to left, white 0%, rgba(255, 255, 255, 0) 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=1 );
+  /* IE6-8 */
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+/* line 278, ../sass/partials/page/modules/_full-screen-carousel.scss */
+.full-screen-carousel .useMobileLayout .carousel-fullwidth_slide-detail-content {
+  width: 97%;
+  padding-left: 3%;
+}
+/* line 283, ../sass/partials/page/modules/_full-screen-carousel.scss */
+.full-screen-carousel .useMobileLayout .carousel-fullwidth_slide-detail-content p {
+  display: none;
+}
+/* line 286, ../sass/partials/page/modules/_full-screen-carousel.scss */
+.full-screen-carousel .useMobileLayout .carousel-fullwidth_slide-detail-content p:nth-child(1) {
+  display: block;
+}
+/* line 289, ../sass/partials/page/modules/_full-screen-carousel.scss */
+.full-screen-carousel .useMobileLayout .carousel-fullwidth_slide-details {
+  overflow: initial;
+}
+/* line 292, ../sass/partials/page/modules/_full-screen-carousel.scss */
+.full-screen-carousel .useMobileLayout .carousel-fullwidth_slide-detail-icon {
+  position: absolute;
+  bottom: 25%;
+  z-index: 1;
+}
+/* line 298, ../sass/partials/page/modules/_full-screen-carousel.scss */
+.full-screen-carousel #carousel-wrap.useMobileLayout .slide .detailsArrow {
+  border-color: rgba(0, 0, 0, 0.8) transparent;
+  bottom: 60px;
+}
+/* line 303, ../sass/partials/page/modules/_full-screen-carousel.scss */
+.full-screen-carousel .useMobileLayout .carousel-fullwidth_slide-details {
+  border-color: rgba(0, 0, 0, 0.8) transparent;
+  height: 60px;
+  bottom: 0px;
+}
+
+/* line 11, ../sass/partials/page/modules/_contact-form-premium.scss */
+.page-layout__right-col {
+  display: none;
+}
+
+/* line 15, ../sass/partials/page/modules/_contact-form-premium.scss */
+.page-layout, .page-layout__left-col {
+  width: 100%;
+}
+
+@media (min-width: 960px) {
+  /* line 40, ../sass/partials/page/modules/_contact-form-premium.scss */
+  .page-layout {
+    width: 960px;
+  }
+
+  /* line 44, ../sass/partials/page/modules/_contact-form-premium.scss */
+  .page-layout__left-col {
+    width: 630px;
+  }
+
+  /* line 48, ../sass/partials/page/modules/_contact-form-premium.scss */
+  .page-layout__right-col {
+    display: block;
+  }
+
+  /* line 53, ../sass/partials/page/modules/_contact-form-premium.scss */
+  .contact__container {
+    position: relative;
+    width: 100%;
+  }
+  /* line 58, ../sass/partials/page/modules/_contact-form-premium.scss */
+  .contact__header {
+    background: #1a93b0;
+    text-align: center;
+    margin-bottom: 3px;
+  }
+  /* line 63, ../sass/partials/page/modules/_contact-form-premium.scss */
+  .contact__header p {
+    margin: 0;
+    padding: 3px;
+    font-size: 160%;
+    font-family: 'Oswald', sans-serif;
+    color: white;
+    letter-spacing: 1px;
+  }
+  /* line 73, ../sass/partials/page/modules/_contact-form-premium.scss */
+  .contact__wrapper {
+    background: #DCEFEF;
+    padding: 20px 25px 20px 20px;
+    margin-bottom: 10px;
+  }
+  /* line 79, ../sass/partials/page/modules/_contact-form-premium.scss */
+  .contact__agent-info {
+    margin-left: 80px;
+  }
+  /* line 82, ../sass/partials/page/modules/_contact-form-premium.scss */
+  .contact__agent-info a:link, .contact__agent-info a:visited, .contact__agent-info a:active {
+    color: #1a93b0;
+    text-decoration: none;
+  }
+  /* line 86, ../sass/partials/page/modules/_contact-form-premium.scss */
+  .contact__agent-info a:hover {
+    text-decoration: underline;
+  }
+  /* line 91, ../sass/partials/page/modules/_contact-form-premium.scss */
+  .contact__agent-links {
+    margin-bottom: 5px;
+    font-family: 'Roboto Condensed', sans-serif;
+  }
+  /* line 95, ../sass/partials/page/modules/_contact-form-premium.scss */
+  .contact__agent-links a {
+    display: block;
+    font-size: 90%;
+    line-height: 125%;
+  }
+  /* line 102, ../sass/partials/page/modules/_contact-form-premium.scss */
+  .contact__agent-name {
+    margin: 0;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 100%;
+    font-weight: 600;
+    margin-bottom: 5px;
+  }
+  /* line 110, ../sass/partials/page/modules/_contact-form-premium.scss */
+  .contact__agent-img {
+    float: left;
+    height: 75px;
+    width: 60px;
+    margin-bottom: 10px;
+  }
+  /* line 118, ../sass/partials/page/modules/_contact-form-premium.scss */
+  .contact__agent-address p {
+    margin: 0;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 75%;
+    letter-spacing: 0.5px;
+  }
+  /* line 126, ../sass/partials/page/modules/_contact-form-premium.scss */
+  .contact__form {
+    padding-bottom: 70px;
+  }
+  /* line 129, ../sass/partials/page/modules/_contact-form-premium.scss */
+  .contact__form input, .contact__form textarea {
+    display: inline-block;
+    font-size: 85%;
+    font-weight: 100;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #A0A0A0;
+    box-sizing: border-box;
+  }
+  /* line 141, ../sass/partials/page/modules/_contact-form-premium.scss */
+  .contact__form textarea {
+    height: 85px;
+    margin-bottom: 15px;
+  }
+  /* line 146, ../sass/partials/page/modules/_contact-form-premium.scss */
+  .contact__form button {
+    padding: 5px 15px;
+    background: black;
+    color: white;
+    border: none;
+    border-radius: 2px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    font-size: 105%;
+    float: right;
+  }
+  /* line 159, ../sass/partials/page/modules/_contact-form-premium.scss */
+  .contact__required-marker {
+    margin-right: -15px;
+    margin-top: 15px;
+    font-family: 'Roboto Condensed', sans-serif;
+    color: #1a93b0;
+    font-size: 100%;
+    float: right;
+  }
+  /* line 168, ../sass/partials/page/modules/_contact-form-premium.scss */
+  .contact__form-required {
+    margin: 0;
+    margin-bottom: 3px;
+    text-align: right;
+    color: #A0A0A0;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 75%;
+    font-weight: 200;
+  }
+  /* line 177, ../sass/partials/page/modules/_contact-form-premium.scss */
+  .contact__form-required span {
+    color: #1a93b0;
+    font-size: 150%;
+  }
+  /* line 183, ../sass/partials/page/modules/_contact-form-premium.scss */
+  .contact__company {
+    margin: 50px 0 60px 0;
+  }
+  /* line 187, ../sass/partials/page/modules/_contact-form-premium.scss */
+  .contact__company-wrapper {
+    padding: 10px 25px 20px 15px;
+  }
+  /* line 191, ../sass/partials/page/modules/_contact-form-premium.scss */
+  .contact__company-name {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 80%;
+    font-weight: 600;
+  }
+  /* line 197, ../sass/partials/page/modules/_contact-form-premium.scss */
+  .contact__company-note {
+    font-size: 70%;
+    font-weight: 200;
+  }
+  /* line 202, ../sass/partials/page/modules/_contact-form-premium.scss */
+  .contact__company-message {
+    font-weight: 200;
+  }
+  /* line 206, ../sass/partials/page/modules/_contact-form-premium.scss */
+  .contact__company-img {
+    float: left;
+    height: 60px;
+    width: 90px;
+  }
+  /* line 212, ../sass/partials/page/modules/_contact-form-premium.scss */
+  .contact__company-info {
+    margin-left: 110px;
+    margin-bottom: 15px;
+  }
+  /* line 217, ../sass/partials/page/modules/_contact-form-premium.scss */
+  .contact__company-name {
+    margin: 0;
+  }
+}
+/* line 13, ../sass/partials/page/modules/_listing-summary.scss */
+.listing__breadcrumbs {
+  display: none;
+}
+/* line 17, ../sass/partials/page/modules/_listing-summary.scss */
+.listing__tags {
+  display: none;
+}
+/* line 21, ../sass/partials/page/modules/_listing-summary.scss */
+.listing__summary--left {
+  width: 75%;
+  padding-right: 10px;
+}
+/* line 26, ../sass/partials/page/modules/_listing-summary.scss */
+.listing__summary--right {
+  display: none;
+}
+/* line 30, ../sass/partials/page/modules/_listing-summary.scss */
+.listing__summary {
+  width: 100%;
+  display: inline-block;
+}
+/* line 35, ../sass/partials/page/modules/_listing-summary.scss */
+.listing__address {
+  font-family: OpenSans;
+  color: #000000;
+  font-size: 18px;
+  font-weight: 600;
+}
+/* line 42, ../sass/partials/page/modules/_listing-summary.scss */
+.listing__writeup-content {
+  width: 100%;
+  clear: both;
+  font-family: OpenSans;
+  font-weight: 400;
+  font-size: 13px;
+  margin-bottom: 15px;
+}
+/* line 51, ../sass/partials/page/modules/_listing-summary.scss */
+.listing__writeup-more {
+  float: right;
+  font-family: OpenSans;
+  font-size: 11px;
+  font-weight: 600;
+}
+/* line 57, ../sass/partials/page/modules/_listing-summary.scss */
+.listing__writeup-more img {
+  margin-left: 10px;
+  vertical-align: middle;
+}
+/* line 63, ../sass/partials/page/modules/_listing-summary.scss */
+.listing__facts, .listing__features {
+  clear: both;
+  margin-bottom: 10px;
+}
+/* line 67, ../sass/partials/page/modules/_listing-summary.scss */
+.listing__facts h2, .listing__features h2 {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 10px;
+}
+/* line 75, ../sass/partials/page/modules/_listing-summary.scss */
+.listing__facts--left, .listing__facts--right, .listing__features--left, .listing__features--right {
+  float: left;
+  margin-top: 0;
+  width: 50%;
+  padding-right: 10px;
+  box-sizing: border-box;
+}
+/* line 82, ../sass/partials/page/modules/_listing-summary.scss */
+.listing__facts--left li, .listing__facts--right li, .listing__features--left li, .listing__features--right li {
+  font-family: OpenSans;
+  font-size: 12px;
+  padding-bottom: 10px;
+}
+/* line 89, ../sass/partials/page/modules/_listing-summary.scss */
+.listing__external-links {
+  margin-bottom: 0;
+  clear: both;
+}
+/* line 93, ../sass/partials/page/modules/_listing-summary.scss */
+.listing__external-links li {
+  font-family: OpenSans;
+  font-size: 12px;
+  font-weight: 700;
+  padding-bottom: 5px;
+}
+/* line 100, ../sass/partials/page/modules/_listing-summary.scss */
+.listing__external-links a:link, .listing__external-links a:visited, .listing__external-links a:active {
+  color: #1a93b0;
+  text-decoration: none;
+}
+/* line 104, ../sass/partials/page/modules/_listing-summary.scss */
+.listing__external-links a:hover {
+  text-decoration: underline;
+}
+/* line 109, ../sass/partials/page/modules/_listing-summary.scss */
+.listing__details-expand {
+  padding: 10px;
+  display: inline-block;
+  box-sizing: border-box;
+  width: 100%;
+  margin-bottom: 5px;
+  background: rgba(170, 170, 170, 0.3);
+}
+/* line 117, ../sass/partials/page/modules/_listing-summary.scss */
+.listing__details-expand h3 {
+  text-align: center;
+  font-family: OpenSans;
+  font-size: 18px;
+  font-weight: 400;
+}
+/* line 124, ../sass/partials/page/modules/_listing-summary.scss */
+.listing__details-expand img {
+  vertical-align: middle;
+  margin-left: 10px;
+}
+/* line 129, ../sass/partials/page/modules/_listing-summary.scss */
+.listing__details-expand a:link, .listing__details-expand a:visited, .listing__details-expand a:active {
+  color: black;
+  text-decoration: none;
+}
+/* line 135, ../sass/partials/page/modules/_listing-summary.scss */
+.listing__contact-agent {
+  display: none;
+}
+
+/* line 140, ../sass/partials/page/modules/_listing-summary.scss */
+.mobile-ad {
+  display: block;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  /* line 154, ../sass/partials/page/modules/_listing-summary.scss */
+  .listing__facts, .listing__features {
+    font-size: 85%;
+  }
+}
+@media (min-width: 960px) {
+  /* line 167, ../sass/partials/page/modules/_listing-summary.scss */
+  .listing__breadcrumbs {
+    display: block;
+    margin-bottom: 20px;
+    font-size: 85%;
+    color: #1a93b0;
+  }
+  /* line 173, ../sass/partials/page/modules/_listing-summary.scss */
+  .listing__breadcrumbs a:not(:first-child):before {
+    content: " \B7 ";
+    color: black;
+  }
+  /* line 178, ../sass/partials/page/modules/_listing-summary.scss */
+  .listing__breadcrumbs a {
+    color: #1a93b0;
+  }
+  /* line 183, ../sass/partials/page/modules/_listing-summary.scss */
+  .listing__summary--left {
+    width: 50%;
+    padding-right: 20px;
+    float: left;
+    box-sizing: border-box;
+  }
+  /* line 190, ../sass/partials/page/modules/_listing-summary.scss */
+  .listing__summary--right {
+    display: block;
+    width: 50%;
+    float: right;
+    border-radius: 3px;
+    text-align: center;
+    background-color: rgba(10, 10, 10, 0.1);
+    box-sizing: border-box;
+    margin-bottom: 15px;
+  }
+  /* line 201, ../sass/partials/page/modules/_listing-summary.scss */
+  .listing__detail {
+    width: 80%;
+    float: left;
+    border-right: 1px solid white;
+    box-sizing: border-box;
+  }
+  /* line 207, ../sass/partials/page/modules/_listing-summary.scss */
+  .listing__detail p {
+    border-right: 1px solid white;
+    border-bottom: 1px solid white;
+  }
+  /* line 213, ../sass/partials/page/modules/_listing-summary.scss */
+  .listing__detail-share {
+    float: left;
+    width: 20%;
+    height: 100%;
+  }
+  /* line 219, ../sass/partials/page/modules/_listing-summary.scss */
+  .listing__detail--row1 {
+    display: block;
+    width: 100%;
+  }
+  /* line 224, ../sass/partials/page/modules/_listing-summary.scss */
+  .listing__detail--row2 {
+    display: block;
+    width: 100%;
+  }
+  /* line 228, ../sass/partials/page/modules/_listing-summary.scss */
+  .listing__detail--row2 p {
+    box-sizing: border-box;
+    width: 33.3%;
+    padding: 7px 0;
+    float: left;
+    font-size: 90%;
+  }
+  /* line 238, ../sass/partials/page/modules/_listing-summary.scss */
+  .listing__detail--row1 p:last-child, .listing__detail--row2 p:last-child, .listing__detail--row3 p:last-child {
+    border-right: none;
+  }
+  /* line 243, ../sass/partials/page/modules/_listing-summary.scss */
+  .listing__detail--row3 {
+    display: block;
+    width: 100%;
+  }
+  /* line 247, ../sass/partials/page/modules/_listing-summary.scss */
+  .listing__detail--row3 p {
+    box-sizing: border-box;
+    width: 50%;
+    padding: 7px 0;
+    float: left;
+    font-size: 90%;
+    border-bottom: none;
+  }
+  /* line 257, ../sass/partials/page/modules/_listing-summary.scss */
+  .listing__price {
+    box-sizing: border-box;
+    width: 100%;
+    float: left;
+    font-size: 115%;
+    font-weight: 400;
+    padding: 5px;
+  }
+  /* line 266, ../sass/partials/page/modules/_listing-summary.scss */
+  .listing__share {
+    width: 20%;
+    float: left;
+  }
+  /* line 271, ../sass/partials/page/modules/_listing-summary.scss */
+  .listing__detail-share--row1 {
+    display: block;
+    width: 100%;
+  }
+  /* line 276, ../sass/partials/page/modules/_listing-summary.scss */
+  .listing__detail-share-icons {
+    box-sizing: border-box;
+    padding: 9px;
+    height: 32px;
+    border-bottom: 1px solid white;
+  }
+  /* line 283, ../sass/partials/page/modules/_listing-summary.scss */
+  .listing__tags {
+    display: block;
+    max-width: 65%;
+    min-height: 10px;
+    overflow: hidden;
+  }
+  /* line 289, ../sass/partials/page/modules/_listing-summary.scss */
+  .listing__tags .tag {
+    display: block;
+    float: left;
+    font-size: 12px;
+    font-family: Oswald Bold;
+    text-transform: uppercase;
+    line-height: 18px;
+    padding: 0px 0px 0 5px;
+    margin: 0 6px 0 0;
+    color: #fff;
+    margin-bottom: 5px;
+  }
+  /* line 301, ../sass/partials/page/modules/_listing-summary.scss */
+  .listing__tags .tag .arrow {
+    display: block;
+    float: right;
+    width: 0;
+    height: 0;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-right: 8px solid white;
+    margin-left: 6px;
+  }
+  /* line 313, ../sass/partials/page/modules/_listing-summary.scss */
+  .listing__tags .location {
+    background-color: #82b5e6;
+  }
+  /* line 314, ../sass/partials/page/modules/_listing-summary.scss */
+  .listing__tags .class {
+    background-color: #00a651;
+  }
+  /* line 315, ../sass/partials/page/modules/_listing-summary.scss */
+  .listing__tags .event {
+    background-color: #ff6c6c;
+  }
+  /* line 316, ../sass/partials/page/modules/_listing-summary.scss */
+  .listing__tags .featured {
+    background-color: #1a93b0;
+  }
+  /* line 319, ../sass/partials/page/modules/_listing-summary.scss */
+  .listing__facts--left, .listing__facts--right, .listing__features--left, .listing__features--right {
+    width: 33.3%;
+    box-sizing: border-box;
+  }
+  /* line 324, ../sass/partials/page/modules/_listing-summary.scss */
+  .listing__facts, .listing__features {
+    font-size: 100%;
+  }
+  /* line 328, ../sass/partials/page/modules/_listing-summary.scss */
+  .listing__external-links {
+    float: left;
+    width: 33.3%;
+    box-sizing: border-box;
+    clear: none;
+  }
+  /* line 334, ../sass/partials/page/modules/_listing-summary.scss */
+  .listing__external-links li {
+    padding-bottom: 10px;
+  }
+  /* line 339, ../sass/partials/page/modules/_listing-summary.scss */
+  .listing__contact-agent {
+    background: #1a93b0;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: inline-block;
+    box-sizing: border-box;
+    width: 100%;
+    text-align: center;
+  }
+  /* line 348, ../sass/partials/page/modules/_listing-summary.scss */
+  .listing__contact-agent a:link, .listing__contact-agent a:visited, .listing__contact-agent a:active {
+    color: white;
+    text-decoration: none;
+  }
+
+  /* line 355, ../sass/partials/page/modules/_listing-summary.scss */
+  .dfp-ads {
+    display: block;
+  }
+
+  /* line 359, ../sass/partials/page/modules/_listing-summary.scss */
+  .mobile-ad {
+    display: none;
+  }
+}
+/* line 11, ../sass/partials/page-content/modules/_dfp-ads__new-homes.scss */
+.dfp-ads__new-homes {
+  width: 300px;
+  height: 127px;
+  background-image: url(../../images/ads/dfp/dfp-mock-ads__home__mobile.jpg);
+  background-position: top left;
+  background-repeat: no-repeat;
+  margin-bottom: 30px;
+}
+
+@media (min-width: 960px) {
+  /* line 21, ../sass/partials/page-content/modules/_dfp-ads__new-homes.scss */
+  .dfp-ads__new-homes {
+    width: 630px;
+    height: 320px;
+    background-image: url(../../images/ads/dfp/dfp-mock-ads__home__desktop.jpg);
+  }
+}
+@media (min-width: 768px) {
+  /* line 29, ../sass/partials/page-content/modules/_dfp-ads__new-homes.scss */
+  .dfp-ads__new-homes {
+    width: 100%;
+    height: 320px;
+    background-image: url(../../images/ads/dfp/dfp-mock-ads__home__desktop.jpg);
+  }
+}
+/* line 12, ../sass/partials/page-content/modules/_adplaceholer__right-column.scss */
+.adplaceholer__right-column {
+  width: 298px;
+  height: 318px;
+  border: 1px solid #ccc;
+  margin-bottom: 30px;
+}
+
+@media (min-width: 960px) {
+  /* line 20, ../sass/partials/page-content/modules/_adplaceholer__right-column.scss */
+  .adplaceholer__right-column {
+    width: 298px;
+  }
+}
+/* line 3, ../sass/partials/page-content/modules/_real-estate-blog.scss */
+.real-estate-blog {
+  width: 100%;
+  min-height: 325px;
+  margin: auto;
+}
+/* line 8, ../sass/partials/page-content/modules/_real-estate-blog.scss */
+.real-estate-blog h1 {
+  text-align: center;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 500;
+  font-size: 1.5em;
+  margin: 0 0 1.5% 0;
+}
+/* line 16, ../sass/partials/page-content/modules/_real-estate-blog.scss */
+.real-estate-blog .adSlots {
+  display: block;
+  min-height: 250px;
+  overflow: hidden;
+  clear: both;
+}
+/* line 22, ../sass/partials/page-content/modules/_real-estate-blog.scss */
+.real-estate-blog .adSlots .adSlot {
+  float: left;
+  display: block;
+  width: 300px;
+  height: 250px;
+  margin-left: 30px;
+  position: relative;
+  /*border: 1px solid #ccc;*/
+  margin-bottom: 30px;
+}
+/* line 33, ../sass/partials/page-content/modules/_real-estate-blog.scss */
+.real-estate-blog .adSlots .adSlot .iconOverlay {
+  position: absolute;
+  z-index: 1;
+}
+/* line 37, ../sass/partials/page-content/modules/_real-estate-blog.scss */
+.real-estate-blog .adSlots .adSlot .topSpacing {
+  top: 3%;
+}
+/* line 40, ../sass/partials/page-content/modules/_real-estate-blog.scss */
+.real-estate-blog .adSlots .adSlot .leftSpacing {
+  left: 6%;
+}
+/* line 44, ../sass/partials/page-content/modules/_real-estate-blog.scss */
+.real-estate-blog .adSlots .adSlot .detailsWrapper {
+  width: 300px;
+  clear: both;
+  min-height: 10%;
+  overflow: hidden;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+}
+/* line 54, ../sass/partials/page-content/modules/_real-estate-blog.scss */
+.real-estate-blog .adSlots .adSlot .detailsWrapper .detailsArrow {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 25px 20px 25px;
+  border-color: rgba(0, 0, 0, 0.6) transparent;
+  float: right;
+}
+/* line 63, ../sass/partials/page-content/modules/_real-estate-blog.scss */
+.real-estate-blog .adSlots .adSlot .detailsWrapper .detailsOverlay {
+  width: 93%;
+  min-height: 20%;
+  padding: 4% 5% 3% 3%;
+  color: #fff;
+  font-size: 0.7em;
+  letter-spacing: 1px;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 300;
+  background-color: rgba(0, 0, 0, 0.6);
+  clear: both;
+}
+/* line 75, ../sass/partials/page-content/modules/_real-estate-blog.scss */
+.real-estate-blog .adSlots .adSlot .detailsWrapper .detailsOverlay h1 {
+  font-size: 120%;
+  text-align: left;
+  padding: 0 0 0.5em 0;
+  margin: 0 0 0 0;
+  line-height: 100%;
+  clear: both;
+  min-height: 10px;
+  overflow: hidden;
+}
+/* line 85, ../sass/partials/page-content/modules/_real-estate-blog.scss */
+.real-estate-blog .adSlots .adSlot .detailsWrapper .detailsOverlay h1 .priceSpan {
+  float: right;
+}
+/* line 89, ../sass/partials/page-content/modules/_real-estate-blog.scss */
+.real-estate-blog .adSlots .adSlot .detailsWrapper .detailsOverlay p {
+  display: none;
+  line-height: 1.5em;
+  padding: 0 0 0.5em 0;
+  margin: 0 0 0 0;
+}
+/* line 98, ../sass/partials/page-content/modules/_real-estate-blog.scss */
+.real-estate-blog .adSlots .adSlot:hover .detailsWrapper .detailsOverlay p {
+  display: block;
+}
+/* line 104, ../sass/partials/page-content/modules/_real-estate-blog.scss */
+.real-estate-blog .adSlots a.adSlot:first-child {
+  margin-left: 0;
+}
+/* line 109, ../sass/partials/page-content/modules/_real-estate-blog.scss */
+.real-estate-blog a.viewMore {
+  display: block;
+  text-align: center;
+  text-transform: capitalize;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  color: #000;
+  line-height: 1em;
+  padding: 0.5em 0 0.5em 0;
+  text-decoration: none;
+  background: #e5e5e5;
+}
+/* line 121, ../sass/partials/page-content/modules/_real-estate-blog.scss */
+.real-estate-blog a.viewMore img {
+  margin-left: 4px;
+}
+
+@media (min-width: 960px) {
+  /* line 128, ../sass/partials/page-content/modules/_real-estate-blog.scss */
+  .real-estate-blog {
+    width: 960px;
+  }
+}
+@media (min-width: 768px) {
+  /* line 136, ../sass/partials/page-content/modules/_real-estate-blog.scss */
+  .real-estate-blog {
+    width: 960px;
+  }
+}
 /* line 5, ../sass/partials/page-content/modules/_content-footer.scss */
 .content-footer {
   width: 84.375%;
@@ -811,6 +1894,47 @@ textarea {
 .content-footer__copyright-block {
   text-align: center;
   font-size: 11px;
+}
+
+/* line 11, ../sass/partials/page-content/modules/_dfp-ads__new-homes.scss */
+.dfp-ads__new-homes {
+  width: 300px;
+  height: 127px;
+  background-image: url(../../images/ads/dfp/dfp-mock-ads__home__mobile.jpg);
+  background-position: top left;
+  background-repeat: no-repeat;
+  margin-bottom: 30px;
+}
+
+@media (min-width: 960px) {
+  /* line 21, ../sass/partials/page-content/modules/_dfp-ads__new-homes.scss */
+  .dfp-ads__new-homes {
+    width: 630px;
+    height: 320px;
+    background-image: url(../../images/ads/dfp/dfp-mock-ads__home__desktop.jpg);
+  }
+}
+@media (min-width: 768px) {
+  /* line 29, ../sass/partials/page-content/modules/_dfp-ads__new-homes.scss */
+  .dfp-ads__new-homes {
+    width: 100%;
+    height: 320px;
+    background-image: url(../../images/ads/dfp/dfp-mock-ads__home__desktop.jpg);
+  }
+}
+/* line 12, ../sass/partials/page-content/modules/_adplaceholer__right-column.scss */
+.adplaceholer__right-column {
+  width: 298px;
+  height: 318px;
+  border: 1px solid #ccc;
+  margin-bottom: 30px;
+}
+
+@media (min-width: 960px) {
+  /* line 20, ../sass/partials/page-content/modules/_adplaceholer__right-column.scss */
+  .adplaceholer__right-column {
+    width: 298px;
+  }
 }
 
 /*# sourceMappingURL=dm-screen.css.map */

@@ -1,0 +1,221 @@
+// *
+// *  Module Name 
+// *
+
+$module-name: 'contact';
+
+// ------------------------------------------------------------
+// Default Styles
+// ------------------------------------------------------------
+  
+.page-layout__right-col {
+  display: none;
+}
+
+.page-layout, .page-layout__left-col {
+  width: 100%;
+}
+
+.#{$module-name} {
+
+}
+
+// ------------------------------------------------------------
+// Tablet Breakpoint
+// ------------------------------------------------------------
+
+// Tablet Breakpoint
+@include media-query(tablet) {
+  .#{$module-name} {
+    
+  }
+}
+
+// ------------------------------------------------------------
+// Desktop Breakpoint
+// ------------------------------------------------------------
+
+@include media-query(desktop) {
+  
+  .page-layout {
+    width: #{$desktop-breakpoint};
+  }
+
+  .page-layout__left-col {
+    width: #{$left-col-width};
+  }
+
+  .page-layout__right-col {
+    display: block;
+  }
+  .#{$module-name} {
+
+    &__container {
+      position: relative;
+      width: 100%;
+    }
+
+    &__header {
+      background: #1a93b0;
+      text-align: center;
+      margin-bottom: 3px;
+      
+      p {
+        margin: 0;
+        padding: 3px;
+        font-size: 160%;
+        font-family: 'Oswald', sans-serif;
+        color: white;
+        letter-spacing: 1px;
+      }
+    }
+
+    &__wrapper {
+      background: #DCEFEF;
+      padding: 20px 25px 20px 20px;
+      margin-bottom: 10px;
+    }
+
+    &__agent-info {
+
+      margin-left: 80px;
+      a:link, a:visited, a:active {
+        color: #1a93b0;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    }
+
+    &__agent-links {
+      margin-bottom: 5px;
+      font-family: 'Roboto Condensed', sans-serif;
+
+      a {
+        display: block;
+        font-size: 90%;
+        line-height: 125%;
+      }
+    }
+
+    &__agent-name {
+      margin: 0;
+      font-family: 'Roboto Condensed', sans-serif;
+      font-size: 100%;
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+
+    &__agent-img {
+      float: left;
+      height: 75px;
+      width: 60px;
+      margin-bottom: 10px;
+    }
+
+    &__agent-address {
+      p {
+        margin: 0;
+        font-family: 'Roboto Condensed', sans-serif;
+        font-size: 75%;
+        letter-spacing: 0.5px;
+      }
+    }
+
+    &__form {
+      padding-bottom: 70px;
+
+      input, textarea{
+        display: inline-block;
+        font-size: 85%;
+        font-weight: 100;
+        width: 100%;
+        margin-bottom: 10px;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #A0A0A0;
+        box-sizing: border-box;
+      }
+
+      textarea {
+        height: 85px;
+        margin-bottom: 15px;
+      }
+
+      button {
+        padding: 5px 15px;
+        background: black;
+        color: white;
+        border: none;
+        border-radius: 2px;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 300;
+        font-size: 105%;
+        float: right;
+      }
+    }
+
+    &__required-marker {
+      margin-right: -15px;
+      margin-top: 15px;
+      font-family: 'Roboto Condensed', sans-serif;
+      color: #1a93b0;
+      font-size: 100%;
+      float: right;
+    }
+
+    &__form-required {
+      margin: 0;
+      margin-bottom: 3px;
+      text-align: right;
+      color: #A0A0A0;
+      font-family: 'Roboto Condensed', sans-serif;
+      font-size: 75%;
+      font-weight: 200;
+
+      span {
+        color: #1a93b0;
+        font-size: 150%;
+      }
+    }
+
+    &__company {
+      margin: 50px 0 60px 0;
+    }
+
+    &__company-wrapper {
+      padding: 10px 25px 20px 15px;
+    }
+
+    &__company-name {
+      font-family: 'Roboto Condensed', sans-serif;
+      font-size: 80%;
+      font-weight: 600;
+    }
+
+    &__company-note {
+      font-size: 70%;
+      font-weight: 200;
+    }
+
+    &__company-message {
+      font-weight: 200;
+    }
+
+    &__company-img {
+      float: left;
+      height: 60px;
+      width: 90px;
+    }
+
+    &__company-info {
+      margin-left: 110px;
+      margin-bottom: 15px;
+    }
+
+    &__company-name {
+      margin: 0;
+    }
+  }
+}
