@@ -21,6 +21,10 @@ $module-name: 'listing';
 	&__summary--left {
 		width: 75%;
 		padding-right: 10px;
+		
+		h2:nth-child(2) {
+			margin-bottom: 10px;
+		};
 	}
 
 	&__summary--right {
@@ -82,7 +86,7 @@ $module-name: 'listing';
 		li {
 			font-family: OpenSans;
 			font-size: 12px;
-			padding-bottom: 10px;
+			padding-bottom: 5px;
 		}
 	}
 
@@ -294,16 +298,18 @@ $module-name: 'listing';
 
 		&__detail-pindrop {
 			display: inline-block;
+			vertical-align: middle;
 		}
 
 		&__for-sale {
+			font-family: 'Oswald', sans-serif;
 			font-size: 12px;
+			font-weight: 500;
 			display: inline-block;
 		}
 
 		&__tags {
 			display: inline-block;
-			max-width: /*360px*/65%;
 			min-height: 10px;
 			overflow: hidden;
 
