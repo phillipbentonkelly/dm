@@ -1,0 +1,47 @@
+// *
+// *  Module Name 
+// *
+
+$module-name: 'right-rail';
+
+// ------------------------------------------------------------
+// Default Styles
+// ------------------------------------------------------------
+
+.#{$module-name} {
+  // Module Styles
+
+  &__headline{
+    font-family: Oswald;
+    color:  #333333;
+    font-size: 26px; /* Approximation due to font substitution */
+    font-weight: 400;
+    text-align: left;
+    
+    
+  }
+
+  &__subheadline{  
+    font-family: HelveticaNeue;
+    font-size: 12px;
+    padding:  0;
+    margin: 0;
+    border: 0;
+  }
+
+  &__linkList {
+    ul{  
+      color: #1a93b0;
+      font-size:  12px;
+      font-family: HelveticaNeue-Medium;
+      list-style-type: disc;
+      list-style-position: inside;
+      margin: 0px;
+      padding:  0px; 
+    }
+    li{
+    margin-bottom: 5px;
+    } 
+
+  }
+}

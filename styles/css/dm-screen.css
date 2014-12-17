@@ -329,11 +329,12 @@ textarea {
 }
 /* line 64, ../sass/partials/page/_page-nav.scss */
 .page-nav .myAccount {
+  float: right;
   margin: 0 0 0 17px;
   padding: 0 26px 0 0;
   background: url(../../images/icons/icon_account.png) center right no-repeat;
 }
-/* line 70, ../sass/partials/page/_page-nav.scss */
+/* line 71, ../sass/partials/page/_page-nav.scss */
 .page-nav__form {
   display: block;
   float: left;
@@ -341,7 +342,7 @@ textarea {
   height: 31px;
   margin: 14px 0 0 23px;
 }
-/* line 77, ../sass/partials/page/_page-nav.scss */
+/* line 78, ../sass/partials/page/_page-nav.scss */
 .page-nav__form input[type="text"] {
   display: block;
   float: left;
@@ -354,13 +355,13 @@ textarea {
   -moz-border-radius: 4px;
   border-radius: 4px;
 }
-/* line 90, ../sass/partials/page/_page-nav.scss */
+/* line 91, ../sass/partials/page/_page-nav.scss */
 .page-nav__form__submit {
   display: inline-block;
   float: left;
   width: 40px;
   height: 31px;
-  background: url(../../images/icons/icon_search-magnifiying-glass.png) center center no-repeat black;
+  background: url(../../images/icons/icon_search-magnifiying-glass.png) center center no-repeat #000;
   border: 0;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
@@ -428,6 +429,101 @@ textarea {
   border-top: 1px solid #1a93b0;
   background-color: #fff;
   padding-top: 26px;
+}
+
+/* line 11, ../sass/partials/page/_page-search.scss */
+.page-search {
+  width: 100%;
+  height: 60px;
+  background: #e9f4f6;
+}
+/* line 16, ../sass/partials/page/_page-search.scss */
+.page-search__content-wrapper {
+  width: 960px;
+  height: 100%;
+  overflow: hidden;
+  margin: auto;
+}
+/* line 23, ../sass/partials/page/_page-search.scss */
+.page-search__search-form {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+/* line 29, ../sass/partials/page/_page-search.scss */
+.page-search__tokeninput {
+  display: inline-block;
+  border: 0;
+  margin-right: 25px;
+  height: 30px;
+  font-size: 0.75rem;
+}
+/* line 37, ../sass/partials/page/_page-search.scss */
+.page-search__checkbox-container {
+  display: inline-block;
+  width: 120px;
+}
+/* line 41, ../sass/partials/page/_page-search.scss */
+.page-search__checkbox-container label {
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+  padding-left: 25px;
+  margin-right: 15px;
+  margin-bottom: 3px;
+  font-size: 13px;
+}
+/* line 52, ../sass/partials/page/_page-search.scss */
+.page-search__checkbox-container input[type=checkbox] {
+  padding: 0;
+  display: none;
+}
+/* line 57, ../sass/partials/page/_page-search.scss */
+.page-search__checkbox-container label:before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  bottom: 1px;
+  margin-right: 10px;
+  border-radius: 2px;
+  width: 16px;
+  height: 16px;
+  color: #fff;
+}
+/* line 70, ../sass/partials/page/_page-search.scss */
+.page-search__checkbox-container input[type=checkbox]:checked + label:before {
+  content: "\2713";
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+  font-size: 15px;
+  color: #f3f3f3;
+  text-align: center;
+  line-height: 15px;
+}
+/* line 79, ../sass/partials/page/_page-search.scss */
+.page-search__checkbox-container label.for-sale:before {
+  background: #1c93b5;
+}
+/* line 83, ../sass/partials/page/_page-search.scss */
+.page-search__checkbox-container label.for-rent:before {
+  background: #05a851;
+}
+/* line 89, ../sass/partials/page/_page-search.scss */
+.page-search__dropdown {
+  display: inline-block;
+  vertical-align: middle;
+  margin-bottom: 10px;
+}
+/* line 96, ../sass/partials/page/_page-search.scss */
+.page-search__search-button {
+  display: inline-block;
+  border: 0;
+  background: none;
+  color: #000;
+  font-weight: bold;
+  text-transform: uppercase;
+  vertical-align: middle;
+  box-shadow: none;
 }
 
 /* line 11, ../sass/partials/page/_page-footer.scss */
@@ -751,7 +847,7 @@ textarea {
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
   border-radius: 2px;
-  background: url("../images/icons/magGlass_bg_blk.gif") center center no-repeat black;
+  background: url("../images/icons/magGlass_bg_blk.gif") center center no-repeat #000;
 }
 /* line 61, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel #carousel-wrap, .full-screen-carousel .slide {
@@ -1849,3 +1945,5 @@ textarea {
     width: 298px;
   }
 }
+
+/*# sourceMappingURL=dm-screen.css.map */
