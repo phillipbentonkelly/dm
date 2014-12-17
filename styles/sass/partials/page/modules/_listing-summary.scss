@@ -199,7 +199,7 @@ $module-name: 'listing';
 		}
 
 		&__detail {
-			width: 80%;
+			width: 77%;
 			float: left;
 			border-right: 1px solid white;
 			box-sizing: border-box;
@@ -212,7 +212,7 @@ $module-name: 'listing';
 
 		&__detail-share {
 			float: left;
-			width: 20%;
+			width: 23%;
 			height: 100%;
 		}
 
@@ -270,14 +270,23 @@ $module-name: 'listing';
 
 		&__detail-share--row1 {
 			display: block;
+			box-sizing: border-box;
+			border-bottom: 1px solid white;
 			width: 100%;
+			padding: 7px;
+			height: 32px;
+			overflow: hidden;
 		}
 
-		&__detail-share-icons {
+		&__detail-share--row2 {
+			display: block;
 			box-sizing: border-box;
-			padding: 9px;
-			height: 32px;
-			border-bottom: 1px solid white;
+			padding: 6px;
+		}
+
+		&__detail-monthly-cost {
+			font-size: 70%;
+			color: #1a93b0;
 		}
 
 		&__tags {

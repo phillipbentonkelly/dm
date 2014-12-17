@@ -1395,7 +1395,7 @@ textarea {
   }
   /* line 201, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__detail {
-    width: 80%;
+    width: 77%;
     float: left;
     border-right: 1px solid white;
     box-sizing: border-box;
@@ -1408,7 +1408,7 @@ textarea {
   /* line 213, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__detail-share {
     float: left;
-    width: 20%;
+    width: 23%;
     height: 100%;
   }
   /* line 219, ../sass/partials/page/modules/_listing-summary.scss */
@@ -1464,23 +1464,32 @@ textarea {
   /* line 271, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__detail-share--row1 {
     display: block;
-    width: 100%;
-  }
-  /* line 276, ../sass/partials/page/modules/_listing-summary.scss */
-  .listing__detail-share-icons {
     box-sizing: border-box;
-    padding: 9px;
-    height: 32px;
     border-bottom: 1px solid white;
+    width: 100%;
+    padding: 7px;
+    height: 32px;
+    overflow: hidden;
   }
-  /* line 283, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 281, ../sass/partials/page/modules/_listing-summary.scss */
+  .listing__detail-share--row2 {
+    display: block;
+    box-sizing: border-box;
+    padding: 6px;
+  }
+  /* line 287, ../sass/partials/page/modules/_listing-summary.scss */
+  .listing__detail-monthly-cost {
+    font-size: 70%;
+    color: #1a93b0;
+  }
+  /* line 292, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__tags {
     display: block;
     max-width: 65%;
     min-height: 10px;
     overflow: hidden;
   }
-  /* line 289, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 298, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__tags .tag {
     display: block;
     float: left;
@@ -1493,7 +1502,7 @@ textarea {
     color: #fff;
     margin-bottom: 5px;
   }
-  /* line 301, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 310, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__tags .tag .arrow {
     display: block;
     float: right;
@@ -1504,43 +1513,43 @@ textarea {
     border-right: 8px solid white;
     margin-left: 6px;
   }
-  /* line 313, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 322, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__tags .location {
     background-color: #82b5e6;
   }
-  /* line 314, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 323, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__tags .class {
     background-color: #00a651;
   }
-  /* line 315, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 324, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__tags .event {
     background-color: #ff6c6c;
   }
-  /* line 316, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 325, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__tags .featured {
     background-color: #1a93b0;
   }
-  /* line 319, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 328, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__facts--left, .listing__facts--right, .listing__features--left, .listing__features--right {
     width: 33.3%;
     box-sizing: border-box;
   }
-  /* line 324, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 333, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__facts, .listing__features {
     font-size: 100%;
   }
-  /* line 328, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 337, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__external-links {
     float: left;
     width: 33.3%;
     box-sizing: border-box;
     clear: none;
   }
-  /* line 334, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 343, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__external-links li {
     padding-bottom: 10px;
   }
-  /* line 339, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 348, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__contact-agent {
     background: #1a93b0;
     padding: 10px;
@@ -1550,18 +1559,18 @@ textarea {
     width: 100%;
     text-align: center;
   }
-  /* line 348, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 357, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__contact-agent a:link, .listing__contact-agent a:visited, .listing__contact-agent a:active {
     color: white;
     text-decoration: none;
   }
 
-  /* line 355, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 364, ../sass/partials/page/modules/_listing-summary.scss */
   .dfp-ads {
     display: block;
   }
 
-  /* line 359, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 368, ../sass/partials/page/modules/_listing-summary.scss */
   .mobile-ad {
     display: none;
   }
