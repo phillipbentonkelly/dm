@@ -1160,8 +1160,8 @@ textarea {
   /* line 63, ../sass/partials/page/modules/_contact-form-premium.scss */
   .contact__header p {
     margin: 0;
-    padding: 3px;
-    font-size: 160%;
+    padding: 2px;
+    font-size: 26px;
     font-family: 'Oswald', sans-serif;
     color: white;
     letter-spacing: 1px;
@@ -1174,7 +1174,7 @@ textarea {
   }
   /* line 79, ../sass/partials/page/modules/_contact-form-premium.scss */
   .contact__agent-info {
-    margin-left: 80px;
+    margin-left: 70px;
   }
   /* line 82, ../sass/partials/page/modules/_contact-form-premium.scss */
   .contact__agent-info a:link, .contact__agent-info a:visited, .contact__agent-info a:active {
@@ -1187,42 +1187,39 @@ textarea {
   }
   /* line 91, ../sass/partials/page/modules/_contact-form-premium.scss */
   .contact__agent-links {
+    font-family: 'Open Sans';
     margin-bottom: 5px;
-    font-family: 'Roboto Condensed', sans-serif;
   }
-  /* line 95, ../sass/partials/page/modules/_contact-form-premium.scss */
+  /* line 94, ../sass/partials/page/modules/_contact-form-premium.scss */
   .contact__agent-links a {
     display: block;
-    font-size: 90%;
-    line-height: 125%;
+    font-size: 13px;
+    font-weight: 600;
   }
-  /* line 102, ../sass/partials/page/modules/_contact-form-premium.scss */
+  /* line 101, ../sass/partials/page/modules/_contact-form-premium.scss */
   .contact__agent-name {
     margin: 0;
-    font-family: 'Roboto Condensed', sans-serif;
-    font-size: 100%;
+    font-family: 'Open Sans';
     font-weight: 600;
-    margin-bottom: 5px;
   }
-  /* line 110, ../sass/partials/page/modules/_contact-form-premium.scss */
+  /* line 107, ../sass/partials/page/modules/_contact-form-premium.scss */
   .contact__agent-img {
     float: left;
-    height: 75px;
-    width: 60px;
+    height: 65px;
+    width: 50px;
     margin-bottom: 10px;
   }
-  /* line 118, ../sass/partials/page/modules/_contact-form-premium.scss */
+  /* line 115, ../sass/partials/page/modules/_contact-form-premium.scss */
   .contact__agent-address p {
     margin: 0;
-    font-family: 'Roboto Condensed', sans-serif;
-    font-size: 75%;
-    letter-spacing: 0.5px;
+    font-family: 'Open Sans';
+    font-size: 11px;
   }
-  /* line 126, ../sass/partials/page/modules/_contact-form-premium.scss */
+  /* line 122, ../sass/partials/page/modules/_contact-form-premium.scss */
   .contact__form {
     padding-bottom: 70px;
   }
-  /* line 129, ../sass/partials/page/modules/_contact-form-premium.scss */
+  /* line 125, ../sass/partials/page/modules/_contact-form-premium.scss */
   .contact__form input, .contact__form textarea {
     display: inline-block;
     font-size: 85%;
@@ -1234,12 +1231,12 @@ textarea {
     border: 1px solid #A0A0A0;
     box-sizing: border-box;
   }
-  /* line 141, ../sass/partials/page/modules/_contact-form-premium.scss */
+  /* line 137, ../sass/partials/page/modules/_contact-form-premium.scss */
   .contact__form textarea {
     height: 85px;
     margin-bottom: 15px;
   }
-  /* line 146, ../sass/partials/page/modules/_contact-form-premium.scss */
+  /* line 142, ../sass/partials/page/modules/_contact-form-premium.scss */
   .contact__form button {
     padding: 5px 15px;
     background: black;
@@ -1251,65 +1248,65 @@ textarea {
     font-size: 105%;
     float: right;
   }
-  /* line 159, ../sass/partials/page/modules/_contact-form-premium.scss */
+  /* line 155, ../sass/partials/page/modules/_contact-form-premium.scss */
   .contact__required-marker {
     margin-right: -15px;
     margin-top: 15px;
-    font-family: 'Roboto Condensed', sans-serif;
+    font-family: OpenSans;
+    font-size: 12px;
     color: #1a93b0;
-    font-size: 100%;
     float: right;
   }
-  /* line 168, ../sass/partials/page/modules/_contact-form-premium.scss */
+  /* line 164, ../sass/partials/page/modules/_contact-form-premium.scss */
   .contact__form-required {
     margin: 0;
     margin-bottom: 3px;
     text-align: right;
     color: #A0A0A0;
-    font-family: 'Roboto Condensed', sans-serif;
-    font-size: 75%;
+    font-family: OpenSans;
+    font-size: 12px;
     font-weight: 200;
   }
-  /* line 177, ../sass/partials/page/modules/_contact-form-premium.scss */
+  /* line 173, ../sass/partials/page/modules/_contact-form-premium.scss */
   .contact__form-required span {
     color: #1a93b0;
-    font-size: 150%;
+    font-size: 11px;
   }
-  /* line 183, ../sass/partials/page/modules/_contact-form-premium.scss */
+  /* line 179, ../sass/partials/page/modules/_contact-form-premium.scss */
   .contact__company {
     margin: 50px 0 60px 0;
   }
-  /* line 187, ../sass/partials/page/modules/_contact-form-premium.scss */
+  /* line 183, ../sass/partials/page/modules/_contact-form-premium.scss */
   .contact__company-wrapper {
     padding: 10px 25px 20px 15px;
   }
-  /* line 191, ../sass/partials/page/modules/_contact-form-premium.scss */
+  /* line 187, ../sass/partials/page/modules/_contact-form-premium.scss */
   .contact__company-name {
-    font-family: 'Roboto Condensed', sans-serif;
+    font-family: OpenSans;
     font-size: 80%;
     font-weight: 600;
   }
-  /* line 197, ../sass/partials/page/modules/_contact-form-premium.scss */
+  /* line 193, ../sass/partials/page/modules/_contact-form-premium.scss */
   .contact__company-note {
     font-size: 70%;
     font-weight: 200;
   }
-  /* line 202, ../sass/partials/page/modules/_contact-form-premium.scss */
+  /* line 198, ../sass/partials/page/modules/_contact-form-premium.scss */
   .contact__company-message {
     font-weight: 200;
   }
-  /* line 206, ../sass/partials/page/modules/_contact-form-premium.scss */
+  /* line 202, ../sass/partials/page/modules/_contact-form-premium.scss */
   .contact__company-img {
     float: left;
     height: 60px;
     width: 90px;
   }
-  /* line 212, ../sass/partials/page/modules/_contact-form-premium.scss */
+  /* line 208, ../sass/partials/page/modules/_contact-form-premium.scss */
   .contact__company-info {
     margin-left: 110px;
     margin-bottom: 15px;
   }
-  /* line 217, ../sass/partials/page/modules/_contact-form-premium.scss */
+  /* line 213, ../sass/partials/page/modules/_contact-form-premium.scss */
   .contact__company-name {
     margin: 0;
   }

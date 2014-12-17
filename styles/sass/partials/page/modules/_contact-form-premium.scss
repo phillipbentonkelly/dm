@@ -62,8 +62,8 @@ $module-name: 'contact';
       
       p {
         margin: 0;
-        padding: 3px;
-        font-size: 160%;
+        padding: 2px;
+        font-size: 26px;
         font-family: 'Oswald', sans-serif;
         color: white;
         letter-spacing: 1px;
@@ -78,7 +78,7 @@ $module-name: 'contact';
 
     &__agent-info {
 
-      margin-left: 80px;
+      margin-left: 70px;
       a:link, a:visited, a:active {
         color: #1a93b0;
         text-decoration: none;
@@ -89,37 +89,33 @@ $module-name: 'contact';
     }
 
     &__agent-links {
+      font-family: 'Open Sans';
       margin-bottom: 5px;
-      font-family: 'Roboto Condensed', sans-serif;
-
       a {
         display: block;
-        font-size: 90%;
-        line-height: 125%;
+        font-size: 13px;
+        font-weight: 600;
       }
     }
 
     &__agent-name {
       margin: 0;
-      font-family: 'Roboto Condensed', sans-serif;
-      font-size: 100%;
+      font-family: 'Open Sans';
       font-weight: 600;
-      margin-bottom: 5px;
     }
 
     &__agent-img {
       float: left;
-      height: 75px;
-      width: 60px;
+      height: 65px;
+      width: 50px;
       margin-bottom: 10px;
     }
 
     &__agent-address {
       p {
         margin: 0;
-        font-family: 'Roboto Condensed', sans-serif;
-        font-size: 75%;
-        letter-spacing: 0.5px;
+        font-family: 'Open Sans';
+        font-size: 11px;
       }
     }
 
@@ -159,9 +155,9 @@ $module-name: 'contact';
     &__required-marker {
       margin-right: -15px;
       margin-top: 15px;
-      font-family: 'Roboto Condensed', sans-serif;
+      font-family: OpenSans;
+      font-size: 12px;
       color: #1a93b0;
-      font-size: 100%;
       float: right;
     }
 
@@ -170,13 +166,13 @@ $module-name: 'contact';
       margin-bottom: 3px;
       text-align: right;
       color: #A0A0A0;
-      font-family: 'Roboto Condensed', sans-serif;
-      font-size: 75%;
+      font-family: OpenSans;
+      font-size: 12px;
       font-weight: 200;
 
       span {
         color: #1a93b0;
-        font-size: 150%;
+        font-size: 11px;
       }
     }
 
@@ -189,7 +185,7 @@ $module-name: 'contact';
     }
 
     &__company-name {
-      font-family: 'Roboto Condensed', sans-serif;
+      font-family: OpenSans;
       font-size: 80%;
       font-weight: 600;
     }
