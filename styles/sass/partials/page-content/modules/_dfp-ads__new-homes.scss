@@ -1,0 +1,34 @@
+// *
+// * DFP Ads - New Homes
+// *
+
+$module-name: 'dfp-ads__new-homes';
+
+// ------------------------------------------------------------
+// Default Styles
+// ------------------------------------------------------------
+
+.#{$module-name} {
+	width: 300px;
+	height: 127px;
+	background-image: url(#{$img-path}ads/dfp/dfp-mock-ads__home__mobile.jpg);
+	background-position: top left;
+	background-repeat: no-repeat;
+	margin-bottom: 30px;
+}
+
+@include media-query(desktop) {
+	.#{$module-name} {
+		width: $left-col-width;
+		height: 320px;
+		background-image: url(#{$img-path}ads/dfp/dfp-mock-ads__home__desktop.jpg);
+	}
+}
+
+@include media-query(tablet) {
+	.#{$module-name} {
+		width: 100%;
+		height: 320px;
+		background-image: url(#{$img-path}ads/dfp/dfp-mock-ads__home__desktop.jpg);
+	}
+}

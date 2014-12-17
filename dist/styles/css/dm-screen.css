@@ -80,7 +80,7 @@ abbr, address, cite, code,
 del, dfn, em, img, ins, kbd, q, samp,
 small, strong, sub, sup, var,
 b, i,
-dl, dt, dd, ol, ul, li,
+dl, dt, dd, ol, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, figcaption, figure,
@@ -98,11 +98,6 @@ time, mark, audio, video {
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
   display: block;
-}
-
-/* line 31, ../sass/partials/_reset.scss */
-ol, ul {
-  list-style: none;
 }
 
 /* line 34, ../sass/partials/_reset.scss */
@@ -234,9 +229,9 @@ textarea {
 
 /* line 62, ../sass/partials/_element-defaults.scss */
 *, *:before, *:after {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
 }
 
 @media screen and (min-width: 768px) {
@@ -254,17 +249,29 @@ textarea {
 /* line 11, ../sass/partials/page/_page-header.scss */
 .page-header {
   width: 100%;
-  height: 100px;
+  height: 83.33333px;
 }
 /* line 15, ../sass/partials/page/_page-header.scss */
 .page-header__content {
   display: block;
-  width: 728px;
+  max-width: 728px;
   height: 90px;
   margin: auto;
   overflow: hidden;
 }
 
+@media (min-width: 960px) {
+  /* line 25, ../sass/partials/page/_page-header.scss */
+  .page-header {
+    height: 100px;
+  }
+}
+@media (min-width: 768px) {
+  /* line 31, ../sass/partials/page/_page-header.scss */
+  .page-header {
+    height: 100px;
+  }
+}
 /* line 11, ../sass/partials/page/_page-nav.scss */
 .page-nav {
   width: 100%;
@@ -360,30 +367,54 @@ textarea {
   border-radius: 3px;
 }
 
-/* line 3, ../sass/partials/page/_page-layout.scss */
+/* line 4, ../sass/partials/page/_page-layout.scss */
 .page-layout {
-  width: 960px;
+  width: 100%;
   min-height: 100px;
   margin: auto;
   overflow: hidden;
   clear: both;
+  padding-bottom: 20px;
+  position: relative;
   /*background-color: yellow;*/
 }
-/* line 11, ../sass/partials/page/_page-layout.scss */
+/* line 14, ../sass/partials/page/_page-layout.scss */
 .page-layout__left-col {
   float: left;
-  width: 630px;
+  width: 60%;
   height: 100%;
   padding-top: 20px;
-  margin-right: 30px;
+  margin-right: 10%;
 }
-/* line 19, ../sass/partials/page/_page-layout.scss */
+/* line 22, ../sass/partials/page/_page-layout.scss */
 .page-layout__right-col {
   float: left;
-  width: 300px;
+  width: 30%;
   height: 100%;
+  padding-top: 20px;
 }
 
+@media (min-width: 960px) {
+  /* line 31, ../sass/partials/page/_page-layout.scss */
+  .page-layout {
+    width: 960px;
+  }
+  /* line 34, ../sass/partials/page/_page-layout.scss */
+  .page-layout__left-col {
+    width: 630px;
+    margin-right: 30px;
+  }
+  /* line 39, ../sass/partials/page/_page-layout.scss */
+  .page-layout__right-col {
+    width: 300px;
+  }
+}
+@media (min-width: 768px) {
+  /* line 46, ../sass/partials/page/_page-layout.scss */
+  .page-layout {
+    width: 960px;
+  }
+}
 /* line 11, ../sass/partials/page/_page-footer.scss */
 .page-footer {
   border-top: 1px solid #1a93b0;
@@ -661,6 +692,330 @@ textarea {
   margin-right: 30px;
 }
 
+/* line 11, ../sass/partials/page/modules/_full-screen-carousel.scss */
+.full-screen-carousel {
+  clear: both;
+  min-height: 10px;
+  margin-bottom: 30px;
+  overflow: hidden;
+}
+/* line 17, ../sass/partials/page/modules/_full-screen-carousel.scss */
+.full-screen-carousel a, .full-screen-carousel img {
+  outline: none;
+  border: 0;
+}
+/* line 22, ../sass/partials/page/modules/_full-screen-carousel.scss */
+.full-screen-carousel .carousel-searchField-wrapper {
+  width: 100%;
+  padding: 8px 0 8px 0;
+  position: absolute;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.3);
+}
+/* line 29, ../sass/partials/page/modules/_full-screen-carousel.scss */
+.full-screen-carousel .carousel-searchField {
+  max-width: 760px;
+  height: 54px;
+  margin: auto;
+}
+/* line 35, ../sass/partials/page/modules/_full-screen-carousel.scss */
+.full-screen-carousel .search_real-estate-field {
+  display: block;
+  float: left;
+  width: 660px;
+  height: 52px;
+  border: 0px;
+  padding-left: 20px;
+  font-size: 68%;
+  font-weight: normal;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+}
+/* line 48, ../sass/partials/page/modules/_full-screen-carousel.scss */
+.full-screen-carousel .search-real-estateBtn {
+  display: block;
+  float: left;
+  width: 68px;
+  height: 54px;
+  margin-left: 10px;
+  border: 0px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  background: url("../images/icons/magGlass_bg_blk.gif") center center no-repeat black;
+}
+/* line 61, ../sass/partials/page/modules/_full-screen-carousel.scss */
+.full-screen-carousel #carousel-wrap, .full-screen-carousel .slide {
+  max-height: 580px;
+}
+/* line 64, ../sass/partials/page/modules/_full-screen-carousel.scss */
+.full-screen-carousel #carousel-wrap .slide .detailsArrow {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 25px 20px 25px;
+  border-color: rgba(0, 0, 0, 0.5) transparent;
+  position: absolute;
+  bottom: 91px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* line 78, ../sass/partials/page/modules/_full-screen-carousel.scss */
+.full-screen-carousel #carousel-wrap {
+  overflow: hidden;
+  position: relative;
+}
+/* line 82, ../sass/partials/page/modules/_full-screen-carousel.scss */
+.full-screen-carousel .carousel_wrapper {
+  display: block;
+  text-align: start;
+  float: none;
+  position: relative;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+  z-index: auto;
+  /*width: 1113px;
+  background-color: yellow;*/
+  width: 100%;
+  height: 637px;
+  margin: 0px;
+  overflow: hidden;
+}
+/* line 99, ../sass/partials/page/modules/_full-screen-carousel.scss */
+.full-screen-carousel #carousel {
+  /*width: 9033px;*/
+  width: 100%;
+  height: 637px;
+  float: none;
+  text-align: left;
+  margin: 0px;
+  position: absolute;
+  right: auto;
+  top: 0px;
+  bottom: auto;
+  z-index: auto;
+}
+/* line 112, ../sass/partials/page/modules/_full-screen-carousel.scss */
+.full-screen-carousel #carousel figure {
+  position: relative;
+}
+/* line 115, ../sass/partials/page/modules/_full-screen-carousel.scss */
+.full-screen-carousel .slide {
+  float: left;
+  text-align: center;
+  margin: 0 4px 0 0;
+}
+/* line 120, ../sass/partials/page/modules/_full-screen-carousel.scss */
+.full-screen-carousel .slide > a {
+  display: block;
+  clear: both;
+  min-height: 10px;
+  overflow: hidden;
+}
+/* line 126, ../sass/partials/page/modules/_full-screen-carousel.scss */
+.full-screen-carousel .slide a img {
+  max-width: 986px;
+  max-height: 580px;
+  border: 0;
+}
+/* line 132, ../sass/partials/page/modules/_full-screen-carousel.scss */
+.full-screen-carousel .carousel-nav {
+  display: block;
+  max-height: 580px;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.4);
+  display: block;
+  padding-bottom: 67px;
+  width: 20vw;
+  top: 0;
+  left: 0;
+  position: absolute;
+  -webkit-transition: background-color 0.2s ease-out, color 0.2s ease-out;
+  -moz-transition: background-color 0.2s ease-out, color 0.2s ease-out;
+  -o-transition: background-color 0.2s ease-out, color 0.2s ease-out;
+  transition: background-color 0.2s ease-out, color 0.2s ease-out;
+  text-align: right;
+}
+/* line 149, ../sass/partials/page/modules/_full-screen-carousel.scss */
+.full-screen-carousel .carousel-nav:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+/* line 152, ../sass/partials/page/modules/_full-screen-carousel.scss */
+.full-screen-carousel .carousel-nav.next {
+  left: auto;
+  right: 0;
+  text-align: left;
+}
+/* line 158, ../sass/partials/page/modules/_full-screen-carousel.scss */
+.full-screen-carousel .useMobileLayout .carousel-nav {
+  display: none;
+}
+/* line 161, ../sass/partials/page/modules/_full-screen-carousel.scss */
+.full-screen-carousel .useMobileLayout .slide a img {
+  float: left;
+  width: 88%;
+}
+/* line 166, ../sass/partials/page/modules/_full-screen-carousel.scss */
+.full-screen-carousel .carousel-fullwidth_slide-details {
+  width: 100%;
+  height: 91px;
+  clear: both;
+  color: #fff;
+  overflow: hidden;
+  line-height: 12px;
+  font-family: sans-serif;
+  font-weight: normal;
+  background: rgba(0, 0, 0, 0.5);
+  padding-top: 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+/* line 181, ../sass/partials/page/modules/_full-screen-carousel.scss */
+.full-screen-carousel .carousel-fullwidth_slide-detail-icon {
+  float: left;
+  width: 15%;
+  height: 77px;
+  padding-top: 10px;
+  text-align: left;
+}
+/* line 188, ../sass/partials/page/modules/_full-screen-carousel.scss */
+.full-screen-carousel .carousel-fullwidth_slide-detail-content {
+  float: left;
+  width: 85%;
+  height: 87px;
+  text-align: left;
+}
+/* line 194, ../sass/partials/page/modules/_full-screen-carousel.scss */
+.full-screen-carousel .carousel-fullwidth_slide-detail-content .listing-data {
+  float: left;
+  width: 70%;
+  height: 100%;
+  font-size: 0.7em;
+}
+/* line 200, ../sass/partials/page/modules/_full-screen-carousel.scss */
+.full-screen-carousel .carousel-fullwidth_slide-detail-content p:nth-child(1) {
+  font-size: 1.7em;
+  line-height: 1.5em;
+  margin: 4.7% 0 0 0;
+}
+/* line 205, ../sass/partials/page/modules/_full-screen-carousel.scss */
+.full-screen-carousel .carousel-fullwidth_slide-detail-content .providerIcon {
+  width: 23%;
+  height: 100%;
+  padding-right: 7%;
+  float: right;
+}
+/* line 211, ../sass/partials/page/modules/_full-screen-carousel.scss */
+.full-screen-carousel .carousel-fullwidth_slide-detail-content .providerIcon img {
+  margin-top: 5%;
+}
+/* line 216, ../sass/partials/page/modules/_full-screen-carousel.scss */
+.full-screen-carousel .chevron::before {
+  color: #fff;
+  border-style: solid;
+  border-width: 0.20em 0.20em 0 0;
+  content: '';
+  display: inline-block;
+  height: 1em;
+  left: 0.15em;
+  position: relative;
+  top: 0.4em;
+  transform: rotate(-45deg);
+  vertical-align: top;
+  width: 1em;
+  font-family: arial, sans-serif;
+  font-size: 15px;
+}
+/* line 234, ../sass/partials/page/modules/_full-screen-carousel.scss */
+.full-screen-carousel .chevron.right:before {
+  left: 0;
+  transform: rotate(45deg);
+}
+/* line 239, ../sass/partials/page/modules/_full-screen-carousel.scss */
+.full-screen-carousel .chevron.bottom:before {
+  top: 0;
+  transform: rotate(135deg);
+}
+/* line 244, ../sass/partials/page/modules/_full-screen-carousel.scss */
+.full-screen-carousel .chevron.left:before {
+  left: 0.25em;
+  transform: rotate(-135deg);
+}
+/* line 248, ../sass/partials/page/modules/_full-screen-carousel.scss */
+.full-screen-carousel #carousel-wrap .chevron::before {
+  top: 48%;
+  cursor: pointer;
+}
+/* line 254, ../sass/partials/page/modules/_full-screen-carousel.scss */
+.full-screen-carousel .carouselRightNavFade {
+  display: none;
+}
+/* line 259, ../sass/partials/page/modules/_full-screen-carousel.scss */
+.full-screen-carousel .useMobileLayout .carouselRightNavFade {
+  display: block;
+  width: 15px;
+  height: 100%;
+  /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMCIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+  background: -moz-linear-gradient(right, white 0%, rgba(255, 255, 255, 0) 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, right top, right top, color-stop(0%, white), color-stop(100%, rgba(255, 255, 255, 0)));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(right, white 0%, rgba(255, 255, 255, 0) 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(right, white 0%, rgba(255, 255, 255, 0) 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(right, white 0%, rgba(255, 255, 255, 0) 100%);
+  /* IE10+ */
+  background: linear-gradient(to left, white 0%, rgba(255, 255, 255, 0) 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=1 );
+  /* IE6-8 */
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+/* line 278, ../sass/partials/page/modules/_full-screen-carousel.scss */
+.full-screen-carousel .useMobileLayout .carousel-fullwidth_slide-detail-content {
+  width: 97%;
+  padding-left: 3%;
+}
+/* line 283, ../sass/partials/page/modules/_full-screen-carousel.scss */
+.full-screen-carousel .useMobileLayout .carousel-fullwidth_slide-detail-content p {
+  display: none;
+}
+/* line 286, ../sass/partials/page/modules/_full-screen-carousel.scss */
+.full-screen-carousel .useMobileLayout .carousel-fullwidth_slide-detail-content p:nth-child(1) {
+  display: block;
+}
+/* line 289, ../sass/partials/page/modules/_full-screen-carousel.scss */
+.full-screen-carousel .useMobileLayout .carousel-fullwidth_slide-details {
+  overflow: initial;
+}
+/* line 292, ../sass/partials/page/modules/_full-screen-carousel.scss */
+.full-screen-carousel .useMobileLayout .carousel-fullwidth_slide-detail-icon {
+  position: absolute;
+  bottom: 25%;
+  z-index: 1;
+}
+/* line 298, ../sass/partials/page/modules/_full-screen-carousel.scss */
+.full-screen-carousel #carousel-wrap.useMobileLayout .slide .detailsArrow {
+  border-color: rgba(0, 0, 0, 0.8) transparent;
+  bottom: 60px;
+}
+/* line 303, ../sass/partials/page/modules/_full-screen-carousel.scss */
+.full-screen-carousel .useMobileLayout .carousel-fullwidth_slide-details {
+  border-color: rgba(0, 0, 0, 0.8) transparent;
+  height: 60px;
+  bottom: 0px;
+}
+
 /* line 5, ../sass/partials/page-content/modules/_content-footer.scss */
 .content-footer {
   width: 84.375%;
@@ -715,4 +1070,45 @@ textarea {
 .content-footer__copyright-block {
   text-align: center;
   font-size: 11px;
+}
+
+/* line 11, ../sass/partials/page-content/modules/_dfp-ads__new-homes.scss */
+.dfp-ads__new-homes {
+  width: 300px;
+  height: 127px;
+  background-image: url(../../images/ads/dfp/dfp-mock-ads__home__mobile.jpg);
+  background-position: top left;
+  background-repeat: no-repeat;
+  margin-bottom: 30px;
+}
+
+@media (min-width: 960px) {
+  /* line 21, ../sass/partials/page-content/modules/_dfp-ads__new-homes.scss */
+  .dfp-ads__new-homes {
+    width: 630px;
+    height: 320px;
+    background-image: url(../../images/ads/dfp/dfp-mock-ads__home__desktop.jpg);
+  }
+}
+@media (min-width: 768px) {
+  /* line 29, ../sass/partials/page-content/modules/_dfp-ads__new-homes.scss */
+  .dfp-ads__new-homes {
+    width: 100%;
+    height: 320px;
+    background-image: url(../../images/ads/dfp/dfp-mock-ads__home__desktop.jpg);
+  }
+}
+/* line 12, ../sass/partials/page-content/modules/_adplaceholer__right-column.scss */
+.adplaceholer__right-column {
+  width: 298px;
+  height: 318px;
+  border: 1px solid #ccc;
+  margin-bottom: 30px;
+}
+
+@media (min-width: 960px) {
+  /* line 20, ../sass/partials/page-content/modules/_adplaceholer__right-column.scss */
+  .adplaceholer__right-column {
+    width: 298px;
+  }
 }
