@@ -1,0 +1,107 @@
+// *
+// * Page Masthead
+// *
+
+$module-name: 'page-search';
+
+// ------------------------------------------------------------
+// Default Styles
+// ------------------------------------------------------------
+
+.#{$module-name} {
+	width: 100%;
+	height: $page-search;
+	background: $light-cyan;
+
+	&__content-wrapper {
+		width: $desktop-breakpoint;
+		height: 100%;
+		overflow: hidden;
+		margin: auto;
+	}
+
+		&__search-form{
+			display: inline-block;
+			width: 100%;
+			height: 100%;
+		}
+	
+			&__tokeninput{
+				display: inline-block;
+				border: 0;
+				margin-right: 25px;
+				height: 30px;
+				font-size: 0.75rem;
+			}
+
+			&__checkbox-container{
+				display: inline-block;
+				width: 120px;
+
+				label {
+					display: inline-block;
+					cursor: pointer;
+					position: relative;
+					padding-left: 25px;
+					margin-right: 15px;
+					margin-bottom: 3px;
+					font-size: 13px;
+				}
+
+
+				input[type=checkbox] {
+					padding: 0;
+					display: none;
+				}
+
+				label:before {
+					content: "";
+					display: inline-block;
+					position: absolute;
+					left: 0;
+					bottom: 1px;
+					margin-right: 10px;
+					border-radius: 2px;
+					width: 16px;
+					height: 16px;
+					color: #fff;
+				}
+
+				input[type=checkbox]:checked + label:before {
+					content: "\2713";
+					text-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
+					font-size: 15px;
+					color: #f3f3f3;
+					text-align: center;
+				    line-height: 15px;
+				}
+
+				label.for-sale:before{
+					background: #1c93b5;
+				}
+
+				label.for-rent:before{
+					background: #05a851;
+				}
+
+			}
+
+			&__dropdown{
+				display: inline-block;
+				vertical-align: middle;
+				margin-bottom: 10px;
+			}
+
+
+			&__search-button{
+				display: inline-block;
+				border: 0;
+				background: none;
+				color: #000;
+				font-weight: bold;
+				text-transform: uppercase;
+				vertical-align: middle;
+				box-shadow: none;
+			}
+
+}
