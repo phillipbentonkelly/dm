@@ -177,7 +177,7 @@ $module-name: 'listing';
 			a:first-child:before {
 				content: "";
 			}
-			
+
 			a {
 				color: #1a93b0;
 			}
@@ -292,8 +292,17 @@ $module-name: 'listing';
 			color: #1a93b0;
 		}
 
+		&__detail-pindrop {
+			display: inline-block;
+		}
+
+		&__for-sale {
+			font-size: 12px;
+			display: inline-block;
+		}
+
 		&__tags {
-			display: block;
+			display: inline-block;
 			max-width: /*360px*/65%;
 			min-height: 10px;
 			overflow: hidden;
