@@ -21,6 +21,10 @@ $module-name: 'listing';
 	&__summary--left {
 		width: 75%;
 		padding-right: 10px;
+		
+		h2:nth-child(2) {
+			margin-bottom: 10px;
+		};
 	}
 
 	&__summary--right {
@@ -82,7 +86,7 @@ $module-name: 'listing';
 		li {
 			font-family: OpenSans;
 			font-size: 12px;
-			padding-bottom: 10px;
+			padding-bottom: 5px;
 		}
 	}
 
@@ -177,7 +181,7 @@ $module-name: 'listing';
 			a:first-child:before {
 				content: "";
 			}
-			
+
 			a {
 				color: #1a93b0;
 			}
@@ -292,9 +296,20 @@ $module-name: 'listing';
 			color: #1a93b0;
 		}
 
+		&__detail-pindrop {
+			display: inline-block;
+			vertical-align: middle;
+		}
+
+		&__for-sale {
+			font-family: 'Oswald', sans-serif;
+			font-size: 12px;
+			font-weight: 500;
+			display: inline-block;
+		}
+
 		&__tags {
-			display: block;
-			max-width: /*360px*/65%;
+			display: inline-block;
 			min-height: 10px;
 			overflow: hidden;
 

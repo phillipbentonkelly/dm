@@ -17,30 +17,35 @@ $module-name: 'right-rail';
     font-size: 26px; /* Approximation due to font substitution */
     font-weight: 400;
     text-align: left;
+    margin-bottom: 10px;
     
     
   }
 
   &__subheadline{  
-    font-family: HelveticaNeue;
-    font-size: 12px;
-    padding:  0;
-    margin: 0;
-    border: 0;
+      font-family: OpenSans;
+      color:  #000000;
+      font-size: 13px; /* Approximation due to font substitution */
+      font-weight: 700;
+      line-height: 24px; /* Approximation due to font substitution */
+      text-align: left;
   }
 
   &__linkList {
-    ul{  
-      color: #1a93b0;
-      font-size:  12px;
-      font-family: HelveticaNeue-Medium;
+    ul{       
+      font-size:  13px;
+      font-family: OpenSans;
       list-style-type: disc;
       list-style-position: inside;
+      font-weight: 700;
+      line-height: 24px; /* Approximation due to font substitution */
+      text-align: left;
       margin: 0px;
       padding:  0px; 
     }
     li{
     margin-bottom: 5px;
+    color: #1a93b0;
     } 
 
   }

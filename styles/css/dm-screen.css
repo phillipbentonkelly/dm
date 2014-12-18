@@ -1216,21 +1216,21 @@ textarea {
   /* line 63, ../sass/partials/page/modules/_contact-form-premium.scss */
   .contact__header p {
     margin: 0;
-    padding: 3px;
-    font-size: 160%;
+    padding: 2px;
+    font-size: 26px;
     font-family: 'Oswald', sans-serif;
     color: white;
     letter-spacing: 1px;
   }
   /* line 73, ../sass/partials/page/modules/_contact-form-premium.scss */
   .contact__wrapper {
-    background: #DCEFEF;
+    background: #e9f4f6;
     padding: 20px 25px 20px 20px;
     margin-bottom: 10px;
   }
   /* line 79, ../sass/partials/page/modules/_contact-form-premium.scss */
   .contact__agent-info {
-    margin-left: 80px;
+    margin-left: 70px;
   }
   /* line 82, ../sass/partials/page/modules/_contact-form-premium.scss */
   .contact__agent-info a:link, .contact__agent-info a:visited, .contact__agent-info a:active {
@@ -1243,42 +1243,39 @@ textarea {
   }
   /* line 91, ../sass/partials/page/modules/_contact-form-premium.scss */
   .contact__agent-links {
+    font-family: 'Open Sans';
     margin-bottom: 5px;
-    font-family: 'Roboto Condensed', sans-serif;
   }
-  /* line 95, ../sass/partials/page/modules/_contact-form-premium.scss */
+  /* line 94, ../sass/partials/page/modules/_contact-form-premium.scss */
   .contact__agent-links a {
     display: block;
-    font-size: 90%;
-    line-height: 125%;
+    font-size: 13px;
+    font-weight: 600;
   }
-  /* line 102, ../sass/partials/page/modules/_contact-form-premium.scss */
+  /* line 101, ../sass/partials/page/modules/_contact-form-premium.scss */
   .contact__agent-name {
     margin: 0;
-    font-family: 'Roboto Condensed', sans-serif;
-    font-size: 100%;
+    font-family: 'Open Sans';
     font-weight: 600;
-    margin-bottom: 5px;
   }
-  /* line 110, ../sass/partials/page/modules/_contact-form-premium.scss */
+  /* line 107, ../sass/partials/page/modules/_contact-form-premium.scss */
   .contact__agent-img {
     float: left;
-    height: 75px;
-    width: 60px;
+    height: 65px;
+    width: 50px;
     margin-bottom: 10px;
   }
-  /* line 118, ../sass/partials/page/modules/_contact-form-premium.scss */
+  /* line 115, ../sass/partials/page/modules/_contact-form-premium.scss */
   .contact__agent-address p {
     margin: 0;
-    font-family: 'Roboto Condensed', sans-serif;
-    font-size: 75%;
-    letter-spacing: 0.5px;
+    font-family: 'Open Sans';
+    font-size: 11px;
   }
-  /* line 126, ../sass/partials/page/modules/_contact-form-premium.scss */
+  /* line 122, ../sass/partials/page/modules/_contact-form-premium.scss */
   .contact__form {
     padding-bottom: 70px;
   }
-  /* line 129, ../sass/partials/page/modules/_contact-form-premium.scss */
+  /* line 125, ../sass/partials/page/modules/_contact-form-premium.scss */
   .contact__form input, .contact__form textarea {
     display: inline-block;
     font-size: 85%;
@@ -1290,12 +1287,12 @@ textarea {
     border: 1px solid #A0A0A0;
     box-sizing: border-box;
   }
-  /* line 141, ../sass/partials/page/modules/_contact-form-premium.scss */
+  /* line 137, ../sass/partials/page/modules/_contact-form-premium.scss */
   .contact__form textarea {
     height: 85px;
     margin-bottom: 15px;
   }
-  /* line 146, ../sass/partials/page/modules/_contact-form-premium.scss */
+  /* line 142, ../sass/partials/page/modules/_contact-form-premium.scss */
   .contact__form button {
     padding: 5px 15px;
     background: black;
@@ -1307,65 +1304,83 @@ textarea {
     font-size: 105%;
     float: right;
   }
-  /* line 159, ../sass/partials/page/modules/_contact-form-premium.scss */
+  /* line 155, ../sass/partials/page/modules/_contact-form-premium.scss */
+  .contact__wrapper--lower {
+    padding: 20px 10px 60px 20px;
+    background: #e9f4f6;
+  }
+  /* line 160, ../sass/partials/page/modules/_contact-form-premium.scss */
+  .contact__contact-button {
+    padding: 7px;
+    clear: left;
+    color: white;
+    background: #1a93b0;
+    float: right;
+    border-radius: 2px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  /* line 173, ../sass/partials/page/modules/_contact-form-premium.scss */
   .contact__required-marker {
     margin-right: -15px;
     margin-top: 15px;
-    font-family: 'Roboto Condensed', sans-serif;
+    font-family: OpenSans;
+    font-size: 12px;
     color: #1a93b0;
-    font-size: 100%;
     float: right;
   }
-  /* line 168, ../sass/partials/page/modules/_contact-form-premium.scss */
+  /* line 182, ../sass/partials/page/modules/_contact-form-premium.scss */
   .contact__form-required {
     margin: 0;
     margin-bottom: 3px;
     text-align: right;
     color: #A0A0A0;
-    font-family: 'Roboto Condensed', sans-serif;
-    font-size: 75%;
+    font-family: OpenSans;
+    font-size: 12px;
     font-weight: 200;
   }
-  /* line 177, ../sass/partials/page/modules/_contact-form-premium.scss */
+  /* line 191, ../sass/partials/page/modules/_contact-form-premium.scss */
   .contact__form-required span {
     color: #1a93b0;
-    font-size: 150%;
+    font-size: 11px;
   }
-  /* line 183, ../sass/partials/page/modules/_contact-form-premium.scss */
+  /* line 197, ../sass/partials/page/modules/_contact-form-premium.scss */
   .contact__company {
     margin: 50px 0 60px 0;
   }
-  /* line 187, ../sass/partials/page/modules/_contact-form-premium.scss */
+  /* line 201, ../sass/partials/page/modules/_contact-form-premium.scss */
   .contact__company-wrapper {
     padding: 10px 25px 20px 15px;
   }
-  /* line 191, ../sass/partials/page/modules/_contact-form-premium.scss */
+  /* line 205, ../sass/partials/page/modules/_contact-form-premium.scss */
   .contact__company-name {
-    font-family: 'Roboto Condensed', sans-serif;
+    font-family: OpenSans;
     font-size: 80%;
     font-weight: 600;
   }
-  /* line 197, ../sass/partials/page/modules/_contact-form-premium.scss */
+  /* line 211, ../sass/partials/page/modules/_contact-form-premium.scss */
   .contact__company-note {
     font-size: 70%;
     font-weight: 200;
   }
-  /* line 202, ../sass/partials/page/modules/_contact-form-premium.scss */
+  /* line 216, ../sass/partials/page/modules/_contact-form-premium.scss */
   .contact__company-message {
     font-weight: 200;
   }
-  /* line 206, ../sass/partials/page/modules/_contact-form-premium.scss */
+  /* line 220, ../sass/partials/page/modules/_contact-form-premium.scss */
   .contact__company-img {
     float: left;
     height: 60px;
     width: 90px;
   }
-  /* line 212, ../sass/partials/page/modules/_contact-form-premium.scss */
+  /* line 226, ../sass/partials/page/modules/_contact-form-premium.scss */
   .contact__company-info {
     margin-left: 110px;
     margin-bottom: 15px;
   }
-  /* line 217, ../sass/partials/page/modules/_contact-form-premium.scss */
+  /* line 231, ../sass/partials/page/modules/_contact-form-premium.scss */
   .contact__company-name {
     margin: 0;
   }
@@ -1383,23 +1398,27 @@ textarea {
   width: 75%;
   padding-right: 10px;
 }
-/* line 26, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 25, ../sass/partials/page/modules/_listing-summary.scss */
+.listing__summary--left h2:nth-child(2) {
+  margin-bottom: 10px;
+}
+/* line 30, ../sass/partials/page/modules/_listing-summary.scss */
 .listing__summary--right {
   display: none;
 }
-/* line 30, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 34, ../sass/partials/page/modules/_listing-summary.scss */
 .listing__summary {
   width: 100%;
   display: inline-block;
 }
-/* line 35, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 39, ../sass/partials/page/modules/_listing-summary.scss */
 .listing__address {
   font-family: OpenSans;
   color: #000000;
   font-size: 18px;
   font-weight: 600;
 }
-/* line 42, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 46, ../sass/partials/page/modules/_listing-summary.scss */
 .listing__writeup-content {
   width: 100%;
   clear: both;
@@ -1408,31 +1427,31 @@ textarea {
   font-size: 13px;
   margin-bottom: 15px;
 }
-/* line 51, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 55, ../sass/partials/page/modules/_listing-summary.scss */
 .listing__writeup-more {
   float: right;
   font-family: OpenSans;
   font-size: 11px;
   font-weight: 600;
 }
-/* line 57, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 61, ../sass/partials/page/modules/_listing-summary.scss */
 .listing__writeup-more img {
   margin-left: 10px;
   vertical-align: middle;
 }
-/* line 63, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 67, ../sass/partials/page/modules/_listing-summary.scss */
 .listing__facts, .listing__features {
   clear: both;
   margin-bottom: 10px;
 }
-/* line 67, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 71, ../sass/partials/page/modules/_listing-summary.scss */
 .listing__facts h2, .listing__features h2 {
   font-family: 'Oswald', sans-serif;
   font-weight: 400;
   text-align: center;
   margin-bottom: 10px;
 }
-/* line 75, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 79, ../sass/partials/page/modules/_listing-summary.scss */
 .listing__facts--left, .listing__facts--right, .listing__features--left, .listing__features--right {
   float: left;
   margin-top: 0;
@@ -1440,34 +1459,34 @@ textarea {
   padding-right: 10px;
   box-sizing: border-box;
 }
-/* line 82, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 86, ../sass/partials/page/modules/_listing-summary.scss */
 .listing__facts--left li, .listing__facts--right li, .listing__features--left li, .listing__features--right li {
   font-family: OpenSans;
   font-size: 12px;
-  padding-bottom: 10px;
+  padding-bottom: 5px;
 }
-/* line 89, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 93, ../sass/partials/page/modules/_listing-summary.scss */
 .listing__external-links {
   margin-bottom: 0;
   clear: both;
 }
-/* line 93, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 97, ../sass/partials/page/modules/_listing-summary.scss */
 .listing__external-links li {
   font-family: OpenSans;
   font-size: 12px;
   font-weight: 700;
   padding-bottom: 5px;
 }
-/* line 100, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 104, ../sass/partials/page/modules/_listing-summary.scss */
 .listing__external-links a:link, .listing__external-links a:visited, .listing__external-links a:active {
   color: #1a93b0;
   text-decoration: none;
 }
-/* line 104, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 108, ../sass/partials/page/modules/_listing-summary.scss */
 .listing__external-links a:hover {
   text-decoration: underline;
 }
-/* line 109, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 113, ../sass/partials/page/modules/_listing-summary.scss */
 .listing__details-expand {
   padding: 10px;
   display: inline-block;
@@ -1476,69 +1495,69 @@ textarea {
   margin-bottom: 5px;
   background: rgba(170, 170, 170, 0.3);
 }
-/* line 117, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 121, ../sass/partials/page/modules/_listing-summary.scss */
 .listing__details-expand h3 {
   text-align: center;
   font-family: OpenSans;
   font-size: 18px;
   font-weight: 400;
 }
-/* line 124, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 128, ../sass/partials/page/modules/_listing-summary.scss */
 .listing__details-expand img {
   vertical-align: middle;
   margin-left: 10px;
 }
-/* line 129, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 133, ../sass/partials/page/modules/_listing-summary.scss */
 .listing__details-expand a:link, .listing__details-expand a:visited, .listing__details-expand a:active {
   color: black;
   text-decoration: none;
 }
-/* line 135, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 139, ../sass/partials/page/modules/_listing-summary.scss */
 .listing__contact-agent {
   display: none;
 }
 
-/* line 140, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 144, ../sass/partials/page/modules/_listing-summary.scss */
 .mobile-ad {
   display: block;
   text-align: center;
 }
 
 @media (min-width: 768px) {
-  /* line 154, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 158, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__facts, .listing__features {
     font-size: 85%;
   }
 }
 @media (min-width: 960px) {
-  /* line 167, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 171, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__breadcrumbs {
     display: block;
     margin-bottom: 20px;
     font-size: 85%;
     color: #1a93b0;
   }
-  /* line 173, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 177, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__breadcrumbs a:before {
     content: " \B7 ";
     color: black;
   }
-  /* line 177, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 181, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__breadcrumbs a:first-child:before {
     content: "";
   }
-  /* line 181, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 185, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__breadcrumbs a {
     color: #1a93b0;
   }
-  /* line 186, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 190, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__summary--left {
     width: 50%;
     padding-right: 20px;
     float: left;
     box-sizing: border-box;
   }
-  /* line 193, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 197, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__summary--right {
     display: block;
     width: 50%;
@@ -1549,35 +1568,35 @@ textarea {
     box-sizing: border-box;
     margin-bottom: 15px;
   }
-  /* line 204, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 208, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__detail {
     width: 77%;
     float: left;
     border-right: 1px solid white;
     box-sizing: border-box;
   }
-  /* line 210, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 214, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__detail p {
     border-right: 1px solid white;
     border-bottom: 1px solid white;
   }
-  /* line 216, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 220, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__detail-share {
     float: left;
     width: 23%;
     height: 100%;
   }
-  /* line 222, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 226, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__detail--row1 {
     display: block;
     width: 100%;
   }
-  /* line 227, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 231, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__detail--row2 {
     display: block;
     width: 100%;
   }
-  /* line 231, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 235, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__detail--row2 p {
     box-sizing: border-box;
     width: 33.3%;
@@ -1585,16 +1604,16 @@ textarea {
     float: left;
     font-size: 90%;
   }
-  /* line 241, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 245, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__detail--row1 p:last-child, .listing__detail--row2 p:last-child, .listing__detail--row3 p:last-child {
     border-right: none;
   }
-  /* line 246, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 250, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__detail--row3 {
     display: block;
     width: 100%;
   }
-  /* line 250, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 254, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__detail--row3 p {
     box-sizing: border-box;
     width: 50%;
@@ -1603,7 +1622,7 @@ textarea {
     font-size: 90%;
     border-bottom: none;
   }
-  /* line 260, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 264, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__price {
     box-sizing: border-box;
     width: 100%;
@@ -1612,12 +1631,12 @@ textarea {
     font-weight: 400;
     padding: 5px;
   }
-  /* line 269, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 273, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__share {
     width: 20%;
     float: left;
   }
-  /* line 274, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 278, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__detail-share--row1 {
     display: block;
     box-sizing: border-box;
@@ -1627,25 +1646,36 @@ textarea {
     height: 32px;
     overflow: hidden;
   }
-  /* line 284, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 288, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__detail-share--row2 {
     display: block;
     box-sizing: border-box;
     padding: 6px;
   }
-  /* line 290, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 294, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__detail-monthly-cost {
     font-size: 70%;
     color: #1a93b0;
   }
-  /* line 295, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 299, ../sass/partials/page/modules/_listing-summary.scss */
+  .listing__detail-pindrop {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  /* line 304, ../sass/partials/page/modules/_listing-summary.scss */
+  .listing__for-sale {
+    font-family: 'Oswald', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    display: inline-block;
+  }
+  /* line 311, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__tags {
-    display: block;
-    max-width: 65%;
+    display: inline-block;
     min-height: 10px;
     overflow: hidden;
   }
-  /* line 301, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 316, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__tags .tag {
     display: block;
     float: left;
@@ -1658,7 +1688,7 @@ textarea {
     color: #fff;
     margin-bottom: 5px;
   }
-  /* line 313, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 328, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__tags .tag .arrow {
     display: block;
     float: right;
@@ -1669,43 +1699,43 @@ textarea {
     border-right: 8px solid white;
     margin-left: 6px;
   }
-  /* line 325, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 340, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__tags .location {
     background-color: #82b5e6;
   }
-  /* line 326, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 341, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__tags .class {
     background-color: #00a651;
   }
-  /* line 327, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 342, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__tags .event {
     background-color: #ff6c6c;
   }
-  /* line 328, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 343, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__tags .featured {
     background-color: #1a93b0;
   }
-  /* line 331, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 346, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__facts--left, .listing__facts--right, .listing__features--left, .listing__features--right {
     width: 33.3%;
     box-sizing: border-box;
   }
-  /* line 336, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 351, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__facts, .listing__features {
     font-size: 100%;
   }
-  /* line 340, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 355, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__external-links {
     float: left;
     width: 33.3%;
     box-sizing: border-box;
     clear: none;
   }
-  /* line 346, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 361, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__external-links li {
     padding-bottom: 10px;
   }
-  /* line 351, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 366, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__contact-agent {
     background: #1a93b0;
     padding: 10px;
@@ -1715,22 +1745,62 @@ textarea {
     width: 100%;
     text-align: center;
   }
-  /* line 360, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 375, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__contact-agent a:link, .listing__contact-agent a:visited, .listing__contact-agent a:active {
     color: white;
     text-decoration: none;
   }
 
-  /* line 367, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 382, ../sass/partials/page/modules/_listing-summary.scss */
   .dfp-ads {
     display: block;
   }
 
-  /* line 371, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 386, ../sass/partials/page/modules/_listing-summary.scss */
   .mobile-ad {
     display: none;
   }
 }
+/* line 14, ../sass/partials/page/modules/_right-rail-list.scss */
+.right-rail__headline {
+  font-family: Oswald;
+  color: #333333;
+  font-size: 26px;
+  /* Approximation due to font substitution */
+  font-weight: 400;
+  text-align: left;
+  margin-bottom: 10px;
+}
+/* line 25, ../sass/partials/page/modules/_right-rail-list.scss */
+.right-rail__subheadline {
+  font-family: OpenSans;
+  color: #000000;
+  font-size: 13px;
+  /* Approximation due to font substitution */
+  font-weight: 700;
+  line-height: 24px;
+  /* Approximation due to font substitution */
+  text-align: left;
+}
+/* line 35, ../sass/partials/page/modules/_right-rail-list.scss */
+.right-rail__linkList ul {
+  font-size: 13px;
+  font-family: OpenSans;
+  list-style-type: disc;
+  list-style-position: inside;
+  font-weight: 700;
+  line-height: 24px;
+  /* Approximation due to font substitution */
+  text-align: left;
+  margin: 0px;
+  padding: 0px;
+}
+/* line 46, ../sass/partials/page/modules/_right-rail-list.scss */
+.right-rail__linkList li {
+  margin-bottom: 5px;
+  color: #1a93b0;
+}
+
 /* line 11, ../sass/partials/page-content/modules/_dfp-ads__new-homes.scss */
 .dfp-ads__new-homes {
   width: 300px;
