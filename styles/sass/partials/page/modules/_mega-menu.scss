@@ -11,6 +11,9 @@ $module-name: 'mega-menu';
 .#{$module-name} {
 
 }
+.find-home-menu, .neighborhoods-menu {
+  display: none;
+}
 
 // ------------------------------------------------------------
 // Tablet Breakpoint
@@ -21,10 +24,6 @@ $module-name: 'mega-menu';
   .#{$module-name} {
     // Module Styles
 
-    &__container {
-      display: none;
-    }
-
   }
 }
 
@@ -33,21 +32,27 @@ $module-name: 'mega-menu';
 // ------------------------------------------------------------
 
 @include media-query(desktop) {
-  .#{$module-name} {
-    // Module Styles
+  .find-home-menu, .neighborhoods-menu {
+    // display: none;
+  }
 
-    // Some Element Styles
+  .#{$module-name} {
+
     &__container {
-      display: block;
-      height: 320px;
+      position: absolute;
+      right: 0;
+      left: 0;
+      z-index: 10;
+      height: 280px;
       width: #{$desktop-breakpoint};
       margin: 0 auto;
-      padding: 15px;
-      background: rgba(190,190,190, 0.2);
+      padding: 10px;
+      background: rgba(255,255,255,0.9);
+      border: 1px solid lightgrey;
       box-sizing: border-box;
     }
 
-    &__section {
+    &__section--left, &__section--middle, &__section--right {
       width: 33.3%;
       height: 100%;
       float: left;
@@ -55,46 +60,174 @@ $module-name: 'mega-menu';
       box-sizing: border-box;
     }
 
-    &__section:nth-child(2) {
-      border-left: 1px solid lightgrey;
-    }
-
     &__list-items {
       clear: both;
       list-style: none;
+      margin: 0;
       padding: 0;
     }
 
     &__list-item {
-      padding: 10px 10px 10px 0;
+      padding: 5px 0;
+      font-size: 12px;
+
+      a {
+        text-decoration: none;
+        color: black;
+      }
+
+      a:hover {
+        color: #1a93b0;
+      }
+    }
+
+    &__section--left {
+      .mega-menu__list-item {
+        font-family: 'OpenSans Bold';
+      }
     }
 
     &__section--middle {
+
+      border-left: 1px solid lightgrey;
       .mega-menu__list-item {
-        border-bottom: 1px solid lightgrey;
+        padding: 10px 45px 10px 0;
+        border-top: 1px solid lightgrey;
+        font-family: 'OpenSans';
+        font-weight: 600;
       }
 
-      .mega-menu__list-item:last-child {
+      .mega-menu__list-item:first-child {
         border: none;
+        padding-top: 0;
       }
+    }
+
+    &__section--right {
+      padding-bottom: 0;
+      overflow: hidden;
     }
 
     &__search {
       float: left;
-      margin-right: 5px;
+      margin: 0 5px 5px 0;
       padding: 8px;
       border-radius: 5px;
       border: 1px solid lightgrey;
-      width: 210px;
+      width: 220px;
+      font-size: 12px;
     }
 
     &__featured-home {
-      height: 270px;
-      background: lightblue;
+      height: 100%;
+      overflow: hidden;
     }
   }
+    // NEIGHBORHOODS TAB
+  #mega-menu__list-items--left, #mega-menu__list-items--right {
+    width: 50%;
+    float: left;
+    clear: none;
+    box-sizing: border-box;
+  }
+
+  #mega-menu__list-items--left {
+    padding-right: 15px;
+  }
+
   .page-nav__form__submit {
     float: right;
+    padding: 0 0 1px 0;
     border-radius: 5px;
   }
+
+  // .adSlots {
+  //   display: block;
+  //   width: 630px;
+  //   min-height: 250px;
+  //   overflow: hidden;
+  //   clear: both;
+    
+    .adSlot {
+      float: left;
+      display: block;
+      width: 300px;
+      height: 250px;
+      position: relative;
+
+      /*border: 1px solid #ccc;*/
+      margin-bottom: 30px;
+      
+      .iconOverlay {
+        position: absolute;
+        z-index: 1;
+      }
+        .topSpacing {
+          top: 3%;
+        }
+        .leftSpacing {
+          left: 6%;
+        }
+      
+      .detailsWrapper {
+        width: 300px;
+        clear: both;
+        min-height: 10%;
+        overflow: hidden;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 1;
+
+        .detailsArrow{
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-width: 0 25px 20px 25px;
+          border-color: rgba(0, 0, 0, 0.6) transparent;
+          float: right;
+        }
+
+        .detailsOverlay {
+          width: 93%;
+          min-height: 20%;
+          padding: 4% 5% 3% 3%;
+          color: #fff;
+          font-size: 0.7em;
+          letter-spacing: 1px;
+          font-family: 'Oswald', sans-serif;
+          font-weight: 300;
+          background-color: rgba(0, 0, 0, 0.6);
+          clear: both;
+
+          h1 {
+            font-size: 120%;
+            text-align: left;
+            padding: 0 0 0.5em 0;
+            margin: 0 0 0 0;
+            line-height: 100%;
+            clear: both;
+            min-height: 10px;
+            overflow: hidden;
+
+            .priceSpan {
+              float: right;
+            }
+          }
+          p {
+            display: none;
+            line-height: 1.5em;
+            padding: 0 0 0.5em 0;
+            margin: 0 0 0 0;
+          }
+        }
+      }
+    }
+    .adSlot:hover .detailsWrapper .detailsOverlay p {
+      display: block;
+    }
+
+    a.adSlot:nth-child(odd){
+      margin-right: 30px;
+    }
 }
