@@ -1,0 +1,32 @@
+$asset-1-name: 'category-tag';
+
+.#{$asset-1-name} {
+	display: block;
+	float: left;
+	font-size: 12px;
+	font-family: Oswald Bold;
+	text-transform: uppercase;
+	line-height: 18px;
+	padding: 0px 0px 0 5px;
+	margin: 0 6px 0 0;
+	color: #fff;
+	margin-bottom: 5px;
+
+	.arrow {
+		display: block;
+		float: right;
+		width: 0;
+		height: 0;
+		border-top: 8px solid transparent;
+		border-bottom: 8px solid transparent;
+		border-right: 8px solid white;
+		border-right-color: rgba(255, 255, 255, .5);
+		margin-left: 6px;
+	}
+}
+	.#{$asset-1-name}.location { background-color: #82b5e6; }
+	.#{$asset-1-name}.class { background-color: #00a651; }
+	.#{$asset-1-name}.event { background-color: #ff6c6c; }
+	.#{$asset-1-name}.featured { background-color: #1a93b0; }
+	.#{$asset-1-name}.trending { background-color: #6dcbd3; }
+	.#{$asset-1-name}.sponsored { background-color: #666; }
