@@ -1745,6 +1745,74 @@ textarea {
   color: #1a93b0;
 }
 
+@media (min-width: 768px) {
+  /* line 24, ../sass/partials/page/modules/_mega-menu.scss */
+  .mega-menu__container {
+    display: none;
+  }
+}
+@media (min-width: 960px) {
+  /* line 40, ../sass/partials/page/modules/_mega-menu.scss */
+  .mega-menu__container {
+    display: block;
+    height: 320px;
+    width: 960px;
+    margin: 0 auto;
+    padding: 15px;
+    background: rgba(190, 190, 190, 0.2);
+    box-sizing: border-box;
+  }
+  /* line 50, ../sass/partials/page/modules/_mega-menu.scss */
+  .mega-menu__section {
+    width: 33.3%;
+    height: 100%;
+    float: left;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  /* line 58, ../sass/partials/page/modules/_mega-menu.scss */
+  .mega-menu__section:nth-child(2) {
+    border-left: 1px solid lightgrey;
+  }
+  /* line 62, ../sass/partials/page/modules/_mega-menu.scss */
+  .mega-menu__list-items {
+    clear: both;
+    list-style: none;
+    padding: 0;
+  }
+  /* line 68, ../sass/partials/page/modules/_mega-menu.scss */
+  .mega-menu__list-item {
+    padding: 10px 10px 10px 0;
+  }
+  /* line 73, ../sass/partials/page/modules/_mega-menu.scss */
+  .mega-menu__section--middle .mega-menu__list-item {
+    border-bottom: 1px solid lightgrey;
+  }
+  /* line 77, ../sass/partials/page/modules/_mega-menu.scss */
+  .mega-menu__section--middle .mega-menu__list-item:last-child {
+    border: none;
+  }
+  /* line 82, ../sass/partials/page/modules/_mega-menu.scss */
+  .mega-menu__search {
+    float: left;
+    margin-right: 5px;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid lightgrey;
+    width: 210px;
+  }
+  /* line 91, ../sass/partials/page/modules/_mega-menu.scss */
+  .mega-menu__featured-home {
+    height: 270px;
+    background: lightblue;
+  }
+
+  /* line 96, ../sass/partials/page/modules/_mega-menu.scss */
+  .page-nav__form__submit {
+    float: right;
+    border-radius: 5px;
+  }
+}
 /* line 11, ../sass/partials/page-content/modules/_dfp-ads__new-homes.scss */
 .dfp-ads__new-homes {
   width: 300px;
