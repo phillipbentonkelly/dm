@@ -13,19 +13,28 @@
     <link rel="stylesheet" href="styles/css/dm-screen.css" />
     <link rel="stylesheet" href="styles/resources/normalize.css" />
     <link rel="stylesheet" href="styles/css/fullScreenCarousel.css" />
+    <link rel="stylesheet" href="styles/css/realestatelistings.css" />
+
+    <!-- CLEAN UP INTO ONE SCREEN FILE -->
+    <link rel="stylesheet" href="styles/css/plugins/select2/select2.css" />
 
     <!-- SCRIPTS -->
-<!--     // <script src="js/assets/basicMobileDetection.js"></script>
-    // <script src="http://wurfl.io/wurfl.js"></script>
-    // <script src="js/resources/jquery.min.js"></script>
-    // <script src="js/resources/img.srcset.polyfill.js"></script>
-    // <script src="js/assets/bdc.carouselFullWidthSlider.js"></script> -->
+    <script src="js/resources/jquery.min.js"></script>
+    <script src="js/assets/mpListings.js"></script>
+    <script src="js/resources/plugins/select2/select2.js"></script>
    
     <style>
         body {
             padding-bottom: 10%;
         }
     </style>
+
+    <script>
+        $(document).ready(function(){
+            $("#listingDropDown").select2();
+            $('.select2-search').hide();
+        });
+    </script>
     
 </head>
 <body>
@@ -264,7 +273,7 @@
             </a>
 
             <!-- Related Articles -->
-<!--             <div class="related-articles">
+            <div class="related-articles">
                 <h1 class="related-articles__section-header">Related Articles</h1>
 
                 <div class="related-articles__item">
@@ -360,7 +369,7 @@
                 </div>
 
                 <a href="javascript:;" class="viewMore">View More <img src="images/view-more__arrow-down.gif" /></a>
-            </div> -->
+            </div>
             <!-- Related Articles -->
         </div>
 
@@ -413,6 +422,301 @@
             <a href="javascript:;" class="dfp-ads">
                 <img src="images/ads/dfp/dfpAds__300by250__moo.jpg" />
             </a>
+
+            <div class="mplistings">
+                <h4>Property Listings</h4>
+                
+                <select id="listingDropDown">
+                    <option value="All">All</option>
+                    <option value="New">New</option>
+                    <option value="Open Houses">Open Houses</option>
+                    <option value="Luxury">Luxury</option>
+                    <option value="My Listings">My Listings</option>
+                </select>
+                
+                <div class="hScrollWrapper">
+                    <div class="scrollFadeWrapper">
+                        <div class="scrollWrapper">
+                            <div class="listing-container">
+                                
+                                <!-- Property -->
+                                <div class="property template" data-href="{{curr_data.url}}">
+                                    <div class="top-level__details">
+                                        <span class="property__label__for-sale">{{purchase_type}}</span>
+                                        
+                                        <div class="property__bottom-overlay">
+                                            <span class="property__price">{{cur_data.price}}</span>
+                                            <span class="property__time">{{updated_at}}</span>
+                                        </div>
+
+                                        <img class="property__photo" data-src="{{image}}" />
+                                    </div>
+                                    
+                                    <div class="bottom-level__details">
+                                        <div class="property__address">{{location.address}}, {{location.locality}} {{location.region}}</div>
+                                        <div class="property__bed-and-baths row">
+                                            <div class="property__bedrooms col">{{cur_data.beds}} beds</div>
+                                            <div class="property__baths col">{{cur_data.baths}} baths</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Property -->
+                                <div class="property">
+                                    <div class="top-level__details">
+                                        <span class="property__label__for-sale">For Sale</span>
+                                        
+                                        <div class="property__bottom-overlay">
+                                            <span class="property__price">$4,750,000</span>
+                                            <span class="property__time">9:43 AM</span>
+                                        </div>
+
+                                        <img class="property__photo" src="images/listings/ListingPhotos_Group1.jpg" />
+                                    </div>
+                                    
+                                    <div class="bottom-level__details">
+                                        <div class="property__address">353 Beacon Street Boston, MA</div>
+                                        <div class="property__bed-and-baths row">
+                                            <div class="property__bedrooms col">4 beds</div>
+                                            <div class="property__baths col">4.5 baths</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Property -->
+                                <div class="property">
+                                    <div class="top-level__details">
+                                        <span class="property__label__for-sale">For Rent</span>
+                                        
+                                        <div class="property__bottom-overlay">
+                                            <span class="property__price">$649,900</span>
+                                            <span class="property__time">10:45 AM</span>
+                                        </div>
+
+                                        <img class="property__photo" src="images/listings/ListingPhotos_Group2.jpg" />
+                                    </div>
+                                    
+                                    <div class="bottom-level__details">
+                                        <div class="property__address">49 L Street, Boston, MA</div>
+                                        <div class="property__bed-and-baths row">
+                                            <div class="property__bedrooms col">2 beds</div>
+                                            <div class="property__baths col">2 baths</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Property -->
+                                <div class="property">
+                                    <div class="top-level__details">
+                                        <span class="property__label__for-sale">For Sale</span>
+                                        
+                                        <div class="property__bottom-overlay">
+                                            <span class="property__price">$659,000</span>
+                                            <span class="property__time">10:43 AM</span>
+                                        </div>
+
+                                        <img class="property__photo" src="images/listings/ListingPhotos_Group3.jpg" />
+                                    </div>
+                                    
+                                    <div class="bottom-level__details">
+                                        <div class="property__address">251 Health Street Boston, MA</div>
+                                        <div class="property__bed-and-baths row">
+                                            <div class="property__bedrooms col">2 beds</div>
+                                            <div class="property__baths col">2 baths</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Property -->
+                                <div class="property">
+                                    <div class="top-level__details">
+                                        <!--<span class="property__label__for-sale">For Sale</span>
+                                        
+                                        <div class="property__bottom-overlay">
+                                            <span class="property__price">$4,750,000</span>
+                                            <span class="property__time">9:43 AM</span>
+                                        </div>-->
+
+                                        <img class="property__photo" src="images/listings/ListingPhotos_Group4.jpg" />
+                                    </div>
+                                    
+                                    <div class="bottom-level__details">
+                                        <div class="property__address">99 Chesnut Hill Ave Boston, MA</div>
+                                        <div class="property__bed-and-baths row">
+                                            <div class="property__bedrooms col">2 beds</div>
+                                            <div class="property__baths col">2 baths</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Property -->
+                                <div class="property">
+                                    <div class="top-level__details">
+                                        <span class="property__label__for-sale">For Sale</span>
+                                        
+                                        <div class="property__bottom-overlay">
+                                            <span class="property__price">$4,750,000</span>
+                                            <span class="property__time">9:43 AM</span>
+                                        </div>
+
+                                        <img class="property__photo" src="images/listings/ListingPhotos_Group1.jpg" />
+                                    </div>
+                                    
+                                    <div class="bottom-level__details">
+                                        <div class="property__address">353 Beacon Street Boston, MA</div>
+                                        <div class="property__bed-and-baths row">
+                                            <div class="property__bedrooms col">4 beds</div>
+                                            <div class="property__baths col">4.5 baths</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Property -->
+                                <div class="property">
+                                    <div class="top-level__details">
+                                        <span class="property__label__for-sale">For Rent</span>
+                                        
+                                        <div class="property__bottom-overlay">
+                                            <span class="property__price">$649,900</span>
+                                            <span class="property__time">10:45 AM</span>
+                                        </div>
+
+                                        <img class="property__photo" src="images/listings/ListingPhotos_Group2.jpg" />
+                                    </div>
+                                    
+                                    <div class="bottom-level__details">
+                                        <div class="property__address">49 L Street, Boston, MA</div>
+                                        <div class="property__bed-and-baths row">
+                                            <div class="property__bedrooms col">2 beds</div>
+                                            <div class="property__baths col">2 baths</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Property -->
+                                <div class="property">
+                                    <div class="top-level__details">
+                                        <span class="property__label__for-sale">For Sale</span>
+                                        
+                                        <div class="property__bottom-overlay">
+                                            <span class="property__price">$659,000</span>
+                                            <span class="property__time">10:43 AM</span>
+                                        </div>
+
+                                        <img class="property__photo" src="images/listings/ListingPhotos_Group3.jpg" />
+                                    </div>
+                                    
+                                    <div class="bottom-level__details">
+                                        <div class="property__address">251 Health Street Boston, MA</div>
+                                        <div class="property__bed-and-baths row">
+                                            <div class="property__bedrooms col">2 beds</div>
+                                            <div class="property__baths col">2 baths</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Property -->
+                                <div class="property">
+                                    <div class="top-level__details">
+                                        <span class="property__label__for-sale">For Sale</span>
+                                        
+                                        <div class="property__bottom-overlay">
+                                            <span class="property__price">$4,750,000</span>
+                                            <span class="property__time">9:43 AM</span>
+                                        </div>
+
+                                        <img class="property__photo" src="images/listings/ListingPhotos_Group4.jpg" />
+                                    </div>
+                                    
+                                    <div class="bottom-level__details">
+                                        <div class="property__address">99 Chesnut Hill Ave Boston, MA</div>
+                                        <div class="property__bed-and-baths row">
+                                            <div class="property__bedrooms col">2 beds</div>
+                                            <div class="property__baths col">2 baths</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Property -->
+                                <div class="property">
+                                    <div class="top-level__details">
+                                        <span class="property__label__for-sale">For Sale</span>
+                                        
+                                        <div class="property__bottom-overlay">
+                                            <span class="property__price">$4,750,000</span>
+                                            <span class="property__time">9:43 AM</span>
+                                        </div>
+
+                                        <img class="property__photo" src="images/listings/ListingPhotos_Group1.jpg" />
+                                    </div>
+                                    
+                                    <div class="bottom-level__details">
+                                        <div class="property__address">353 Beacon Street Boston, MA</div>
+                                        <div class="property__bed-and-baths row">
+                                            <div class="property__bedrooms col">4 beds</div>
+                                            <div class="property__baths col">4.5 baths</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Property -->
+                                <div class="property">
+                                    <div class="top-level__details">
+                                        <span class="property__label__for-sale">For Rent</span>
+                                        
+                                        <div class="property__bottom-overlay">
+                                            <span class="property__price">$649,900</span>
+                                            <span class="property__time">10:45 AM</span>
+                                        </div>
+
+                                        <img class="property__photo" src="images/listings/ListingPhotos_Group2.jpg" />
+                                    </div>
+                                    
+                                    <div class="bottom-level__details">
+                                        <div class="property__address">49 L Street, Boston, MA</div>
+                                        <div class="property__bed-and-baths row">
+                                            <div class="property__bedrooms col">2 beds</div>
+                                            <div class="property__baths col">2 baths</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Property -->
+                                <div class="property">
+                                    <div class="top-level__details">
+                                        <span class="property__label__for-sale">For Rent</span>
+                                        
+                                        <div class="property__bottom-overlay">
+                                            <span class="property__price">$649,900</span>
+                                            <span class="property__time">10:45 AM</span>
+                                        </div>
+
+                                        <img class="property__photo" src="images/listings/ListingPhotos_Group2.jpg" />
+                                    </div>
+                                    
+                                    <div class="bottom-level__details">
+                                        <div class="property__address">49 L Street, Boston, MA</div>
+                                        <div class="property__bed-and-baths row">
+                                            <div class="property__bedrooms col">2 beds</div>
+                                            <div class="property__baths col">2 baths</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="fade-overlay"></div>
+                    </div>
+                </div>
+
+                <div class="navigation">
+                    <a href="javascript:;" id="leftArrow" title="DOWN">Down</a>
+                    <a href="javascript:;" id="rightArrow" title="UP">Up</a>
+                </div>
+
+                <a href="javascript:;" class="view-all">View All <span class="listingType">New</span> Listings</a>
+            </div>
 
             <div class='contact__container'>
                 <div class='contact__header'>

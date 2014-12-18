@@ -412,3 +412,7 @@ ul#select2-results-1 {
     overflow-y: scroll;
   }
 }
+
+.view-all {
+  margin-bottom: 25px;
+}
