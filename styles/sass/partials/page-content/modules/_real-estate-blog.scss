@@ -4,6 +4,7 @@ $module-name: 'real-estate-blog';
 	width: 100%;
 	min-height: 325px;
 	margin: auto;
+	padding-top: 20px;
 	
 	h1{
 		text-align: center;
@@ -29,6 +30,11 @@ $module-name: 'real-estate-blog';
 
 			/*border: 1px solid #ccc;*/
 			margin-bottom: 30px;
+
+			.category-tag {
+				position: absolute;
+				z-index: 101;
+			}
 			
 			.iconOverlay {
 				position: absolute;
@@ -98,9 +104,7 @@ $module-name: 'real-estate-blog';
 			.adSlot:hover .detailsWrapper .detailsOverlay p {
 				display: block;
 			}
-
-
-
+		
 		a.adSlot:first-child{
 			margin-left: 0;
 		}
@@ -127,8 +131,6 @@ $module-name: 'real-estate-blog';
 @include media-query(desktop) {
 	.#{$module-name} {
 		width: ($left-col-width + $right-col-width + $right-col-right-gutter);
-
-		
 	}
 }
 
