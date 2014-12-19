@@ -42,6 +42,12 @@ if (typeof bdc === 'undefined') { bdc = {}; }
 					module.$slide = $('#carousel-wrap figure');
 					module.$slide.removeClass('active');
 					module.$slide.eq( _engine.current ).addClass('active');
+
+					googletag.cmd.push(function() {
+		                googletag.display("div-id-for-carousel1");
+		                googletag.display("div-id-for-carousel2");
+		                googletag.display("div-id-for-carousel3");
+		            });
 				});
 			});
 		});
@@ -49,9 +55,9 @@ if (typeof bdc === 'undefined') { bdc = {}; }
 
     _engine.autoSlide = function() {
     	if(WURFL.is_mobile !== true){
-    		slideInterval = setInterval( function(){
+    		/*slideInterval = setInterval( function(){
 				_engine.moveCarousel();
-			}, 16000);
+			}, 16000);*/
     	}
 	};
 
@@ -60,7 +66,7 @@ if (typeof bdc === 'undefined') { bdc = {}; }
     	module.$wrapper = $('#carousel-wrap');
     	module.$carousel = $('#carousel');
     	module.$carouselWrapper = $('.carousel_wrapper');
-    	module.$carouselWrapperImg = $('#carousel-wrap img');
+    	module.$carouselWrapperImg = $('#carousel-wrap figure.slide a img[srcset]');
     	module.$slide = $('#carousel-wrap figure');
 		module.$nextSlide = $('.js-slider-next');
 		module.$previousSlide = $('.js-slider-previous');

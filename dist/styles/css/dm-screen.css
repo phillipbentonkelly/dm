@@ -1,4 +1,9 @@
 @font-face {
+  font-family: "OpenSans";
+  src: url("../../fonts/OpenSans-Regular.ttf") format("truetype");
+  font-weight: 400;
+}
+@font-face {
   font-family: "OpenSans Regular";
   src: url("../../fonts/OpenSans-Regular.ttf") format("truetype");
   font-weight: 400;
@@ -979,7 +984,7 @@ textarea {
 }
 /* line 126, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .slide a img {
-  max-width: 986px;
+  max-width: 960px;
   max-height: 580px;
   border: 0;
 }
@@ -2053,7 +2058,7 @@ textarea {
     width: 960px;
   }
 }
-/* line 5, ../sass/partials/page-content/modules/_content-footer.scss */
+/* line 7, ../sass/partials/page-content/modules/_content-footer.scss */
 .content-footer {
   width: 84.375%;
   margin-left: auto;
@@ -2063,47 +2068,47 @@ textarea {
   color: #333;
 }
 @media screen and (min-width: 768px) {
-  /* line 5, ../sass/partials/page-content/modules/_content-footer.scss */
+  /* line 7, ../sass/partials/page-content/modules/_content-footer.scss */
   .content-footer {
     width: 94%;
   }
 }
 @media screen and (min-width: 960px) {
-  /* line 5, ../sass/partials/page-content/modules/_content-footer.scss */
+  /* line 7, ../sass/partials/page-content/modules/_content-footer.scss */
   .content-footer {
     width: 100%;
   }
 }
-/* line 11, ../sass/partials/page-content/modules/_content-footer.scss */
+/* line 13, ../sass/partials/page-content/modules/_content-footer.scss */
 .content-footer a {
   color: #333;
   text-decoration: none;
 }
-/* line 15, ../sass/partials/page-content/modules/_content-footer.scss */
+/* line 17, ../sass/partials/page-content/modules/_content-footer.scss */
 .content-footer a:hover {
   text-decoration: underline;
 }
-/* line 19, ../sass/partials/page-content/modules/_content-footer.scss */
+/* line 21, ../sass/partials/page-content/modules/_content-footer.scss */
 .content-footer__social-icons {
   width: 150px;
   margin: auto;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
-/* line 25, ../sass/partials/page-content/modules/_content-footer.scss */
+/* line 27, ../sass/partials/page-content/modules/_content-footer.scss */
 .content-footer__footer-links {
   text-align: center;
   margin-bottom: 8px;
 }
-/* line 29, ../sass/partials/page-content/modules/_content-footer.scss */
+/* line 31, ../sass/partials/page-content/modules/_content-footer.scss */
 .content-footer__footer-links a {
   display: inline-block;
   padding-left: 25px;
 }
-/* line 33, ../sass/partials/page-content/modules/_content-footer.scss */
+/* line 35, ../sass/partials/page-content/modules/_content-footer.scss */
 .content-footer__footer-links a:first-child {
   padding-left: 0;
 }
-/* line 38, ../sass/partials/page-content/modules/_content-footer.scss */
+/* line 40, ../sass/partials/page-content/modules/_content-footer.scss */
 .content-footer__copyright-block {
   text-align: center;
   font-size: 11px;
