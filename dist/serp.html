@@ -32,16 +32,14 @@
     <script>
         $(document).ready(function(){
 
-           $('.page-search__search-dropdown--main-serp').selectize({
+           $('.page-search__dropdown--narrow').selectize({
                 create: true,
                 sortField: 'text'
             });
 
-           $('.page-search__dropdown').select2();
+           $('.page-search__dropdown--filter').select2();
 
         });
-
-        
     </script>
 
 </head>
@@ -82,13 +80,69 @@
 
                 <div class="page-search__row">
 
-                    <select name="q" class="page-search__search-dropdown page-search__search-dropdown--main-serp" placeholder="Search for real estate listings or articles. ex: 3 bedroom for sale in Brookline under 1,000,000">
-                        <option value="This shit is for real">This shit is for real</option>
+                    <select name="q" class="page-search__dropdown page-search__dropdown--narrow" placeholder="Search for real estate listings or articles. ex: 3 bedroom for sale in Brookline under 1,000,000">
+                        <option>This shit is for real</option>
                     </select>
+
+                    <div class="page-search__fancy-checkbox-container page-search__fancy-checkbox-container--for-sale">
+                            <input type="checkbox" id="forSale" name="for_sale" value="ForSale" checked="checked">
+                            </input>
+                            <label for="forSale" class="for-sale">For Sale</label>
+                        </div>
+
+                        <div class="page-search__fancy-checkbox-container page-search__fancy-checkbox-container--for-rent">
+                            <input type="checkbox" id="forRent" name="for_rent" value="ForRent" checked="checked"></input> 
+                            <label for="forRent" class="for-rent" >For Rent</label>
+                        </div>
+
+                    <select class="page-search__dropdown page-search__dropdown--filter" id="priceRange" name="price_range" placeholder="$300K-$24M">
+                            <option value="$300K-$24M">$300K-$24M</option>
+                        </select>
+
+                        <select class="page-search__dropdown page-search__dropdown--filter" id="beds" name="beds">
+                            <option value="" selected="selected">Beds</option>
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5+">5+</option>
+                        </select>
+
+                        <select class="page-search__dropdown page-search__dropdown--filter" id="baths" name="baths">
+                            <option value="Baths" selected="selected">Baths</option>
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5+">5+</option>
+                        </select>
+
+                        <select class="page-search__dropdown page-search__dropdown--filter" id="homeType" name="home_type">
+                            <option value="HomeType" selected="selected">HomeType</option>
+                            <option value="Single-Family">Single-Family</option>
+                            <option value="Multi-Family">Multi-Family</option>
+                            <option value="Apartment">Apartment</option>
+                            <option value="Co-op/Condo">Co-op/Condo</option>
+                            <option value="Townhome">Townhome</option>
+                            <option value="Manufactured">Manufactured</option>
+                            <option value="Lot/Land">Land/Lot</option>
+                        </select>
+
+                        <select class="page-search__dropdown page-search__dropdown--filter" id="moreOptions" name="more_options">
+                            <option value="More (4)" selected="selected">More (4)</option>
+                        </select>
+
+                        <button class="page-search__button page-search__button--save-search" value="">
+                            <span>Save Search</span>
+                        </button>
 
                     <button class="page-search__button page-search__button--submit" value=""></button>
 
                 </div>
+
+
                 
             </form>
         </div>
@@ -144,7 +198,7 @@
 
             <!-- Related Articles -->
             <div class="related-articles">
-                <h1 class="related-articles__section-header">Related Articles</h1>
+                <h1 class="related-articles__section-header">${town_name} Real Estate</h1>
 
                 <div class="related-articles__item">
                     <img class="thumb" src="images/related-articles/related-articles__thumbs__1.jpg" />

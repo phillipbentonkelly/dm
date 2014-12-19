@@ -44,12 +44,12 @@
         <script src="js/resources/plugins/select2/select2.js"></script>
         <script>
             $(document).ready(function(){
-                $('.page-search__search-dropdown--main').selectize({
+                $('.page-search__dropdown--wide').selectize({
                     create: true,
                     sortField: 'text'
                 });
-                $('.page-search__dropdown').select2();
-                $("#listingDropDown").select2({ dropdownCssClass: 'mplistings-dropdown'});
+                $('.page-search__dropdown--filter').select2();
+                $("#listingDropDown").select2({ dropdownCssClass: 'mplistings-dropdown' });
                 $('.select2-search').hide();
             });
         </script>
@@ -95,7 +95,7 @@
                 <form class="page-search__form">
 
                     <div class="page-search__row page-search__row--top">
-                        <select name="search-box" class="page-search__search-dropdown page-search__search-dropdown--main" placeholder="Search for real estate listings or articles. ex: 3 bedroom for sale in Brookline under 1,000,000">
+                        <select name="search-box" class="page-search__search-dropdown page-search__dropdown--wide" placeholder="Search for real estate listings or articles. ex: 3 bedroom for sale in Brookline under 1,000,000">
                             <option value="This Shit Is For Real">This Shit Is For Real</option>
                         </select>
                         <button class="page-search__button page-search__button--submit" value=""></button>
@@ -114,13 +114,11 @@
                             <label for="forRent" class="for-rent" >For Rent</label>
                         </div>
 
-                        <div class="page-search__search-filter-container">
-                            <input type="text" class="page-search__search-box page-search__search-box--filter" id="minPriceRange" name="min_price_range" placeholder="$300K"></input>
-                            <span>&dash;</span>
-                            <input type="text" class="page-search__search-box page-search__search-box--filter" id="maxPriceRange" name="max_price_range" placeholder="$24M"></input>
-                        </div>
+                        <select class="page-search__dropdown" id="priceRange" name="price_range" placeholder="$300K-$24M">
+                            <option value="$300K-$24M">$300K-$24M</option>
+                        </select>
 
-                        <select class="page-search__dropdown" id="beds" name="beds">
+                        <select class="page-search__dropdown page-search__dropdown--filter" id="beds" name="beds">
                             <option value="" selected="selected">Beds</option>
                             <option value="0">0</option>
                             <option value="1">1</option>
@@ -130,7 +128,7 @@
                             <option value="5+">5+</option>
                         </select>
 
-                        <select class="page-search__dropdown" id="baths" name="baths">
+                        <select class="page-search__dropdown page-search__dropdown--filter" id="baths" name="baths">
                             <option value="Baths" selected="selected">Baths</option>
                             <option value="0">0</option>
                             <option value="1">1</option>
@@ -140,7 +138,7 @@
                             <option value="5+">5+</option>
                         </select>
 
-                        <select class="page-search__dropdown" id="homeType" name="home_type">
+                        <select class="page-search__dropdown page-search__dropdown--filter" id="homeType" name="home_type">
                             <option value="HomeType" selected="selected">HomeType</option>
                             <option value="Single-Family">Single-Family</option>
                             <option value="Multi-Family">Multi-Family</option>
@@ -151,7 +149,7 @@
                             <option value="Lot/Land">Land/Lot</option>
                         </select>
 
-                        <select class="page-search__dropdown" id="moreOptions" name="more_options">
+                        <select class="page-search__dropdown page-search__dropdown--filter" id="moreOptions" name="more_options">
                             <option value="More (4)" selected="selected">More (4)</option>
                         </select>
 

@@ -15,8 +15,12 @@ $module-name: 'page-search';
 		position: absolute;
 		top: 160px;
 		z-index: 500;
-		height: $page-search-home-height;
+		height: 120px;
 		background: rgba(233,244,246,0.7);
+
+		form{
+			width: 800px;
+		}
 	}
 
 	&__serp{
@@ -24,10 +28,14 @@ $module-name: 'page-search';
 		float: left;
 		height: $page-search-serp-height;
 		background: rgb(221, 239, 243);
+
+		form{
+			width: 960px;
+		}
 	}
 
 	&__content-wrapper {
-		width: 1000px;
+		width: 960px;
 		height: 100%;
 		overflow: hidden;
 		margin: auto;
@@ -35,7 +43,6 @@ $module-name: 'page-search';
 
 	&__form{
 		display: block;
-		width: $page-search-form-width;
 		height: 90%;
 		margin: 10px auto;
 
@@ -47,37 +54,10 @@ $module-name: 'page-search';
 
 	}
 
-	&__search-dropdown{
-		display: inline-block;
-		float: left;
-
-		&--main{
-			width: 700px;
-			height: 50px;
-			font-size: 17px;
-			padding: 5px 20px;
-			font-family: 'Times';
-		}
-
-		&--main-serp{
-			width: 250px;
-			height: 50px;
-			font-size: 17px;
-			padding: 5px 20px;
-			font-family: 'Times';
-		}
-
-		&--filter{
-			width: 85px;
-			height: 26px;
-			padding: 5px;
-		}
-
-	}
-
 
 	&__row{
 		@extend .row;
+		overflow: visible;
 
 		&--bottom{
 			margin: 10px 20px;
@@ -90,7 +70,7 @@ $module-name: 'page-search';
 
 		&--submit{
 			float: right;
-			width: 50px;
+			width: 45px;
 			height: 45px;
 			background: url(#{$img-path}icons/icon_search-magnifiying-glass.png) center center no-repeat #000;
 		}
@@ -148,30 +128,43 @@ $module-name: 'page-search';
 		}
 
 		&--for-sale{
-
 			label:before{
 				background: #1c93b5;
 			}
-
 		}
 
 		&--for-rent{
-
 			label:before{
 				background: #05a851;
 			}
 		}
-
 	}
 
 	&__dropdown{
 		display: inline-block;
 		vertical-align: middle;
-	}
 
-	.select2-drop{
-		border: 0;
-		background: #fff;
+		&--wide{
+			width: 700px;
+			height: 50px;
+			font-size: 17px;
+			padding: 5px 20px;
+			font-family: 'Times';
+		}
+
+		&--narrow{
+			width: 242px;
+			height: 32px;
+			font-size: 17px;
+			padding: 5px;
+			font-family: 'Times';
+		}
+
+		&--filter{
+			width: 85px;
+			height: 40px;
+			padding: 5px;
+		}
 	}
 
 }
