@@ -108,7 +108,7 @@ $module-name: 'mega-menu';
       overflow: hidden;
     }
 
-    &__search {
+    &__search-input {
       float: left;
       margin: 0 5px 5px 0;
       padding: 8px;
@@ -118,19 +118,25 @@ $module-name: 'mega-menu';
       font-size: 12px;
     }
 
+    &__search-submit {
+      padding: 0;
+      display: inline-block;
+      float: left;
+      width: 40px;
+      height: 31px;
+      background: url(#{$img-path}icons/icon_search-magnifiying-glass.png) center center no-repeat #000;
+      border: 0;
+      -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+      border-radius: 3px;
+    }
+
     &__featured-home {
       height: 100%;
       overflow: hidden;
     }
   }
 
-    .mega-menu__arrow-up {
-      width: 0; 
-      height: 0;
-      border-left: 20px solid transparent;
-      border-right: 20px solid transparent;
-      border-bottom: 20px solid rgba(255,255,255,0.9);
-    }
     // NEIGHBORHOODS TAB
   #mega-menu__list-items--left, #mega-menu__list-items--right {
     width: 50%;
@@ -239,17 +245,4 @@ $module-name: 'mega-menu';
     a.adSlot:nth-child(odd){
       margin-right: 30px;
     }
-
-  .page-nav__content-wrapper {
-    ul {
-      margin: 0;
-      padding: 0;
-    }
-
-    li {
-      display: inline-block;
-    }
-  }
-
-
 }
