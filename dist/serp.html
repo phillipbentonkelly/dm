@@ -12,6 +12,10 @@
     <!-- STYLING -->
     <link rel="stylesheet" href="styles/css/dm-screen.css" />
 
+    <link rel="stylesheet" href="styles/css/realestatelistings.css" />
+    <link rel="stylesheet" href="styles/css/plugins/selectize/selectize.css" />
+    <link rel="stylesheet" href="styles/css/plugins/select2/select2.css" />
+
     <style>
         body {
             padding-bottom: 10%;
@@ -20,7 +24,26 @@
     
     <!-- SCRIPTS -->
     <script src="js/resources/jquery.min.js"></script>
-    <script src="js/resources/jquery.tokeninput.js"></script>
+
+    <script src="js/resources/plugins/selectize/selectize.js"></script>
+    <script src="js/resources/plugins/select2/select2.js"></script>
+    
+
+    <script>
+        $(document).ready(function(){
+
+           $('.page-search__search-dropdown--main-serp').selectize({
+                create: true,
+                sortField: 'text'
+            });
+
+           $('.page-search__dropdown').select2();
+
+        });
+
+        
+    </script>
+
 </head>
 <body>
     
@@ -53,49 +76,20 @@
     <!-- Page Nav -->
 
     <!-- Page Search -->
-    <div class="page-search">
+    <div class="page-search page-search__serp">
         <div class="page-search__content-wrapper">
-            <form class="page-search__search-form">
+            <form class="page-search__form">
 
-                <input class="page-search__tokeninput" type="search" name="q"></input>
+                <div class="page-search__row">
 
-                <div class="page-search__checkbox-container">
-                    <input type="checkbox" class="page-search__checkbox for-sale" id="for_sale" name="for_sale" value="ForSale" checked="checked">
-                    </input>
-                    <label for="for_sale" class="for-sale">For Sale</label>
-                    <br/>
-                    <input type="checkbox" class="page-search__checkbox for-rent" id="for_rent" name="for_rent" value="ForRent" checked="checked"></input> 
-                    <label for="for_rent" class="for-rent" >For Rent</label>
+                    <select name="q" class="page-search__search-dropdown page-search__search-dropdown--main-serp" placeholder="Search for real estate listings or articles. ex: 3 bedroom for sale in Brookline under 1,000,000">
+                        <option value="This shit is for real">This shit is for real</option>
+                    </select>
+
+                    <button class="page-search__button page-search__button--submit" value=""></button>
+
                 </div>
-
-                <select class="page-search__dropdown" id="price_range" name="price_range">
-                    <option value="$300K-$24M">$300K-$24M</option>
-                </select>
-
-                <select class="page-search__dropdown" id="beds" name="beds">
-                    <option value="Beds">Beds</option>
-                </select>
-
-                <select class="page-search__dropdown" id="baths" name="baths">
-                    <option value="Baths">Baths</option>
-                </select>
-
-                <select class="page-search__dropdown" id="home_type" name="home_type">
-                    <option value="HomeType">HomeType</option>
-                </select>
-
-                <select class="page-search__dropdown" id="more_options" name="more_options">
-                    <option value="More (4)">More (4)</option>
-                </select>
-                    
                 
-
-                <button type="submit" class="page-search__search-button" value="Search">
-                    <span class="bdc-icon bdc-icon--search-small"></span>
-                </button>
-                <button type="submit" class="page-search__search-button" value="Search">
-                    <span class="bdc-icon">Save Search</span>    
-                </button>
             </form>
         </div>
         
