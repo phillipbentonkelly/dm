@@ -2,7 +2,9 @@
 // * Content Footer
 // *
 
-.content-footer {
+$module-name: 'content-footer';
+
+.#{$module-name} {
 	@include constrain;
 	font-family: OpenSans Regular;
 	font-size: 15px;
@@ -19,7 +21,7 @@
 	&__social-icons {
 		width: 150px;
 		margin: auto;
-		margin-bottom: 30px;
+		margin-bottom: 20px;
 	}
 	
 	&__footer-links {

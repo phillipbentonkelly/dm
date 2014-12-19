@@ -4,6 +4,13 @@
 
 $basePath: '../../fonts/';
 
+// OpenSans: This is the same as OpenSans Regular, added it because there a places using it as just OpenSans.
+@font-face {
+  font-family: "OpenSans";
+  src: url("#{$basePath}OpenSans-Regular.ttf") format("truetype");
+  font-weight: 400;
+}
+
 // OpenSans Regular
 @font-face {
   font-family: "OpenSans Regular";
