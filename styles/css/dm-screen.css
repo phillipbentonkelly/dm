@@ -1874,12 +1874,21 @@ textarea {
   .mega-menu__section--middle .mega-menu__list-item:first-child {
     border: none;
     padding-top: 0;
+<<<<<<< HEAD
   }
   /* line 106, ../sass/partials/page/modules/_mega-menu.scss */
   .mega-menu__section--right {
     padding-bottom: 0;
     overflow: hidden;
   }
+=======
+  }
+  /* line 106, ../sass/partials/page/modules/_mega-menu.scss */
+  .mega-menu__section--right {
+    padding-bottom: 0;
+    overflow: hidden;
+  }
+>>>>>>> 7f0b14d9e699e1e2c603bb4b5a79c23e47c08f10
   /* line 111, ../sass/partials/page/modules/_mega-menu.scss */
   .mega-menu__search {
     float: left;
