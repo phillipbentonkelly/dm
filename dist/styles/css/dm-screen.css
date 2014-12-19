@@ -1838,8 +1838,8 @@ textarea {
   }
   /* line 70, ../sass/partials/page/modules/_mega-menu.scss */
   .mega-menu__list-item {
-    padding: 7px 0;
-    font-size: 12px;
+    padding: 5px 0;
+    font-size: 14px;
   }
   /* line 74, ../sass/partials/page/modules/_mega-menu.scss */
   .mega-menu__list-item a {
@@ -1892,6 +1892,15 @@ textarea {
   }
 
   /* line 127, ../sass/partials/page/modules/_mega-menu.scss */
+  .mega-menu__arrow-up {
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 20px solid rgba(255, 255, 255, 0.9);
+  }
+
+  /* line 135, ../sass/partials/page/modules/_mega-menu.scss */
   #mega-menu__list-items--left, #mega-menu__list-items--right {
     width: 50%;
     float: left;
@@ -1899,19 +1908,19 @@ textarea {
     box-sizing: border-box;
   }
 
-  /* line 134, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 142, ../sass/partials/page/modules/_mega-menu.scss */
   #mega-menu__list-items--left {
     padding-right: 15px;
   }
 
-  /* line 138, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 146, ../sass/partials/page/modules/_mega-menu.scss */
   .page-nav__form__submit {
     float: right;
     padding: 0 0 1px 0;
     border-radius: 5px;
   }
 
-  /* line 151, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 159, ../sass/partials/page/modules/_mega-menu.scss */
   .adSlot {
     float: left;
     display: block;
@@ -1921,20 +1930,20 @@ textarea {
     /*border: 1px solid #ccc;*/
     margin-bottom: 30px;
   }
-  /* line 161, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 169, ../sass/partials/page/modules/_mega-menu.scss */
   .adSlot .iconOverlay {
     position: absolute;
     z-index: 1;
   }
-  /* line 165, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 173, ../sass/partials/page/modules/_mega-menu.scss */
   .adSlot .topSpacing {
     top: 3%;
   }
-  /* line 168, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 176, ../sass/partials/page/modules/_mega-menu.scss */
   .adSlot .leftSpacing {
     left: 6%;
   }
-  /* line 172, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 180, ../sass/partials/page/modules/_mega-menu.scss */
   .adSlot .detailsWrapper {
     width: 300px;
     clear: both;
@@ -1945,7 +1954,7 @@ textarea {
     left: 0;
     z-index: 1;
   }
-  /* line 182, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 190, ../sass/partials/page/modules/_mega-menu.scss */
   .adSlot .detailsWrapper .detailsArrow {
     width: 0;
     height: 0;
@@ -1954,7 +1963,7 @@ textarea {
     border-color: rgba(0, 0, 0, 0.6) transparent;
     float: right;
   }
-  /* line 191, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 199, ../sass/partials/page/modules/_mega-menu.scss */
   .adSlot .detailsWrapper .detailsOverlay {
     width: 93%;
     min-height: 20%;
@@ -1967,7 +1976,7 @@ textarea {
     background-color: rgba(0, 0, 0, 0.6);
     clear: both;
   }
-  /* line 203, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 211, ../sass/partials/page/modules/_mega-menu.scss */
   .adSlot .detailsWrapper .detailsOverlay h1 {
     font-size: 120%;
     text-align: left;
@@ -1978,11 +1987,11 @@ textarea {
     min-height: 10px;
     overflow: hidden;
   }
-  /* line 213, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 221, ../sass/partials/page/modules/_mega-menu.scss */
   .adSlot .detailsWrapper .detailsOverlay h1 .priceSpan {
     float: right;
   }
-  /* line 217, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 225, ../sass/partials/page/modules/_mega-menu.scss */
   .adSlot .detailsWrapper .detailsOverlay p {
     display: none;
     line-height: 1.5em;
@@ -1990,14 +1999,24 @@ textarea {
     margin: 0 0 0 0;
   }
 
-  /* line 226, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 235, ../sass/partials/page/modules/_mega-menu.scss */
   .adSlot:hover .detailsWrapper .detailsOverlay p {
     display: block;
   }
 
-  /* line 230, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 239, ../sass/partials/page/modules/_mega-menu.scss */
   a.adSlot:nth-child(odd) {
     margin-right: 30px;
+  }
+
+  /* line 244, ../sass/partials/page/modules/_mega-menu.scss */
+  .page-nav__content-wrapper ul {
+    margin: 0;
+    padding: 0;
+  }
+  /* line 249, ../sass/partials/page/modules/_mega-menu.scss */
+  .page-nav__content-wrapper li {
+    display: inline-block;
   }
 }
 /* line 11, ../sass/partials/page-content/modules/_dfp-ads__new-homes.scss */
