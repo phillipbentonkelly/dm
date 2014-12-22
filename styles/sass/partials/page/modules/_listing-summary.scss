@@ -2,11 +2,41 @@
 // *  Module Name 
 // *
 
+$module-wrapper: 'listings';
 $module-name: 'listing';
 
 // ------------------------------------------------------------
 // Default Styles
 // ------------------------------------------------------------
+
+.#{$module-wrapper}{
+	
+	&__section-header{
+		display:block;
+		float: left;
+		margin: 20px 0;
+		font-family: "OpenSans Semibold";
+		
+
+		h1{
+			display: inline-block;
+			float: left;
+		   font-size: 26px;
+		   font-weight: normal;
+		}
+
+		span{
+			display: inline-block;
+			float: left;
+			margin: 10px;
+			font-size: 16px;
+		}
+	}
+
+	&__pagination-sort{
+		background: #e9f4f6;
+	}
+}
 
 .#{$module-name} {
 

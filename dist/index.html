@@ -46,14 +46,25 @@
         <script src="js/resources/plugins/selectize/selectize.js"></script>
         <script src="js/resources/plugins/select2/select2.js"></script>
         <script>
-            $(document).ready(function(){
-                $('.page-search__dropdown--wide').selectize({
-                    create: true,
-                    sortField: 'text'
-                });
-                $('.page-search__dropdown--filter').select2();
+            $(document).ready(function(){ 
+
+                $('.page-search__dropdown--wide').selectize();               
+                $('.page-search__dropdown--filter, .page-search__dropdown--filter-wide').select2();
                 $("#listingDropDown").select2({ dropdownCssClass: 'mplistings-dropdown' });
                 $('.select2-search').hide();
+
+                $('.page-search__row--bottom').hide();
+
+                $('.page-search__button--search-arrow').bind('click', function(e){
+                    e.preventDefault();
+                    $('.page-search__row--bottom').toggle();
+                    $(this).children('span').toggle();
+                });
+
+                $('#priceRange').bind('click', function(e){
+                    e.preventDefault();
+                });
+
             });
         </script>
         <!-- Real Estate Listings -->
@@ -296,26 +307,32 @@
                 <form class="page-search__form">
 
                     <div class="page-search__row page-search__row--top">
-                        <select name="search-box" class="page-search__search-dropdown page-search__dropdown--wide" placeholder="Search for real estate listings or articles. ex: 3 bedroom for sale in Brookline under 1,000,000">
+                        <select name="search-box" class="page-search__dropdown page-search__dropdown--wide" placeholder="Search for real estate listings or articles. ex: 3 bedroom for sale in Brookline under 1,000,000">
                             <option value="This Shit Is For Real">This Shit Is For Real</option>
                         </select>
+                        <button class="page-search__button page-search__button--search-arrow">
+                            <span class="down-arrow"></span>
+                            <span class="up-arrow" style="display:none;"></span>
+                        </button>
                         <button class="page-search__button page-search__button--submit" value=""></button>
                     </div>
 
-                    <div class="page-search__row page-search__row--bottom">
+                    <div class="page-search__row page-search__row--bottom" >
 
-                        <div class="page-search__fancy-checkbox-container page-search__fancy-checkbox-container--for-sale">
-                            <input type="checkbox" id="forSale" name="for_sale" value="ForSale" checked="checked">
-                            </input>
-                            <label for="forSale" class="for-sale">For Sale</label>
+                        <div class="page-search__radio-container page-search__radio-container--home">
+                            <div class="page-search__fancy-radio-box page-search__fancy-radio-box--for-sale">
+                                <input type="radio" id="forSale" name="buy_or_rent" value="ForSale" checked>
+                                </input>
+                                <label for="forSale" class="for-sale">For Sale</label>
+                            </div>
+
+                            <div class="page-search__fancy-radio-box page-search__fancy-radio-box--for-rent">
+                                <input type="radio" id="forRent" name="buy_or_rent" value="ForRent"></input> 
+                                <label for="forRent" class="for-rent" >For Rent</label>
+                            </div>
                         </div>
 
-                        <div class="page-search__fancy-checkbox-container page-search__fancy-checkbox-container--for-rent">
-                            <input type="checkbox" id="forRent" name="for_rent" value="ForRent" checked="checked"></input> 
-                            <label for="forRent" class="for-rent" >For Rent</label>
-                        </div>
-
-                        <select class="page-search__dropdown" id="priceRange" name="price_range" placeholder="$300K-$24M">
+                        <select class="page-search__dropdown page-search__dropdown--filter-wide" id="priceRange" name="price_range" placeholder="$300K-$24M">
                             <option value="$300K-$24M">$300K-$24M</option>
                         </select>
 
