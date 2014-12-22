@@ -2069,8 +2069,10 @@ textarea {
   width: 630px;
   height: 340px;
   background: #e5e5e5;
+  margin-bottom: 10px;
+  position: relative;
 }
-/* line 20, ../sass/partials/page/modules/_property-detail.scss */
+/* line 23, ../sass/partials/page/modules/_property-detail.scss */
 .property-detail__headline {
   font-family: Oswald;
   color: #333333;
@@ -2079,7 +2081,7 @@ textarea {
   text-align: center;
   padding: 5px;
 }
-/* line 30, ../sass/partials/page/modules/_property-detail.scss */
+/* line 33, ../sass/partials/page/modules/_property-detail.scss */
 .property-detail__sub-headline {
   font-family: OpenSans;
   color: #000000;
@@ -2090,19 +2092,52 @@ textarea {
   /* Approximation due to font substitution */
   text-align: left;
 }
-/* line 38, ../sass/partials/page/modules/_property-detail.scss */
+/* line 41, ../sass/partials/page/modules/_property-detail.scss */
 .property-detail__pic {
   width: 300px;
   height: 250px;
   float: left;
 }
-/* line 44, ../sass/partials/page/modules/_property-detail.scss */
+/* line 47, ../sass/partials/page/modules/_property-detail.scss */
 .property-detail__pic-slot {
   width: 300px;
   height: 250px;
   float: left;
+  position: relative;
 }
-/* line 55, ../sass/partials/page/modules/_property-detail.scss */
+/* line 54, ../sass/partials/page/modules/_property-detail.scss */
+.property-detail__pic-overtext-bar {
+  position: absolute;
+  height: 26%;
+  width: 100%;
+  float: left;
+  bottom: 0px;
+  background: black;
+  opacity: .50;
+  /* Standard: FF gt 1.5, Opera, Safari, CSS3 */
+  filter: alpha(opacity=50);
+  /* IE lt 8 */
+  -ms-filter: "alpha(opacity=50)";
+  /* IE 8 */
+  -khtml-opacity: .50;
+  /* Safari 1.x */
+  -moz-opacity: .50;
+  /* FF lt 1.5, Netscape */
+}
+/* line 70, ../sass/partials/page/modules/_property-detail.scss */
+.property-detail__pic-overtext-text {
+  font-family: Oswald;
+  color: #ffffff;
+  font-size: 1.5em;
+  /* Approximation due to font substitution */
+  font-weight: 400;
+  text-align: center;
+  height: 0.8%;
+  position: relative;
+  margin: 0 auto;
+  padding-top: 10px;
+}
+/* line 88, ../sass/partials/page/modules/_property-detail.scss */
 .property-detail__link-list ul {
   font-size: 13px;
   font-family: OpenSans;
@@ -2115,12 +2150,12 @@ textarea {
   margin: 0px;
   padding: 5px;
 }
-/* line 66, ../sass/partials/page/modules/_property-detail.scss */
+/* line 100, ../sass/partials/page/modules/_property-detail.scss */
 .property-detail__link-list li {
   margin-bottom: 5px;
   color: #1a93b0;
 }
-/* line 72, ../sass/partials/page/modules/_property-detail.scss */
+/* line 105, ../sass/partials/page/modules/_property-detail.scss */
 .property-detail__link-slot {
   width: 300px;
   height: 250px;
