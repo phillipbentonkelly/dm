@@ -39,6 +39,12 @@ $padding-top: 20px;
 			width: $right-col-width;
 		}
 	}
+
+	.page-layout-wrapper {
+		background-image: url(#{$img-path}neighborhoods/Neighborhood__BGImage__Brookline.jpg);
+		background-position: top left;
+		background-repeat: repeat-x;
+	}
 }
 
 @include media-query(tablet) {

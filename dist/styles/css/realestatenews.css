@@ -1,168 +1,91 @@
-/* line 4, ../sass/realestatenews.scss */
-body {
+/*body{
   margin: 0;
   padding: 0;
 }
 
-/* line 9, ../sass/realestatenews.scss */
-a, img {
+a, img{
   outline: none;
   border: 0;
 }
 
-/* line 14, ../sass/realestatenews.scss */
-.realEstateNews {
-  width: 630px;
-  min-height: 250px;
-  /*min-height: 934px;
-  border: 1px solid #ccc;*/
-  overflow: hidden;
-  clear: both;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 400;
-  font-size: 1em;
-}
-/* line 26, ../sass/realestatenews.scss */
-.realEstateNews h1 {
-  text-align: center;
-  font-family: 'Oswald', sans-serif;
-  font-weight: 500;
-  font-size: 1.5em;
-  margin: 0 0 5% 0;
-}
-/* line 34, ../sass/realestatenews.scss */
-.realEstateNews .adSlots {
-  display: block;
-  width: 630px;
-  min-height: 250px;
-  overflow: hidden;
-  clear: both;
-}
-/* line 41, ../sass/realestatenews.scss */
-.realEstateNews .adSlots .adSlot {
-  float: left;
-  display: block;
-  width: 300px;
-  height: 250px;
-  position: relative;
-  /*border: 1px solid #ccc;*/
-  margin-bottom: 30px;
-}
-/* line 51, ../sass/realestatenews.scss */
-.realEstateNews .adSlots .adSlot .iconOverlay {
-  position: absolute;
-  z-index: 1;
-}
-/* line 55, ../sass/realestatenews.scss */
-.realEstateNews .adSlots .adSlot .topSpacing {
-  top: 3%;
-}
-/* line 58, ../sass/realestatenews.scss */
-.realEstateNews .adSlots .adSlot .leftSpacing {
-  left: 6%;
-}
-/* line 62, ../sass/realestatenews.scss */
-.realEstateNews .adSlots .adSlot .detailsWrapper {
-  width: 300px;
-  clear: both;
-  min-height: 10%;
-  overflow: hidden;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  z-index: 1;
-}
-/* line 72, ../sass/realestatenews.scss */
-.realEstateNews .adSlots .adSlot .detailsWrapper .detailsArrow {
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 0 25px 20px 25px;
-  border-color: rgba(0, 0, 0, 0.6) transparent;
-  float: right;
-}
-/* line 81, ../sass/realestatenews.scss */
-.realEstateNews .adSlots .adSlot .detailsWrapper .detailsOverlay {
-  width: 93%;
-  min-height: 20%;
-  padding: 4% 5% 3% 3%;
-  color: #fff;
-  font-size: 0.7em;
-  letter-spacing: 1px;
-  font-family: 'Oswald', sans-serif;
-  font-weight: 300;
-  background-color: rgba(0, 0, 0, 0.6);
-  clear: both;
-}
-/* line 93, ../sass/realestatenews.scss */
-.realEstateNews .adSlots .adSlot .detailsWrapper .detailsOverlay h1 {
-  font-size: 120%;
-  text-align: left;
-  padding: 0 0 0.5em 0;
-  margin: 0 0 0 0;
-  line-height: 100%;
-  clear: both;
-  min-height: 10px;
-  overflow: hidden;
-}
-/* line 103, ../sass/realestatenews.scss */
-.realEstateNews .adSlots .adSlot .detailsWrapper .detailsOverlay h1 .priceSpan {
-  float: right;
-}
-/* line 107, ../sass/realestatenews.scss */
-.realEstateNews .adSlots .adSlot .detailsWrapper .detailsOverlay p {
-  display: none;
-  line-height: 1.5em;
-  padding: 0 0 0.5em 0;
-  margin: 0 0 0 0;
-}
-/* line 116, ../sass/realestatenews.scss */
-.realEstateNews .adSlots .adSlot:hover .detailsWrapper .detailsOverlay p {
-  display: block;
-}
-/* line 122, ../sass/realestatenews.scss */
-.realEstateNews .adSlots a.adSlot:nth-child(odd) {
-  margin-right: 30px;
-}
-/* line 127, ../sass/realestatenews.scss */
-.realEstateNews a.viewMore {
-  display: block;
-  text-align: center;
-  text-transform: capitalize;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 400;
-  color: #000;
-  line-height: 1em;
-  padding: 0.5em 0 0.5em 0;
-  text-decoration: none;
-  background: #e5e5e5;
-}
-/* line 139, ../sass/realestatenews.scss */
-.realEstateNews a.viewMore img {
-  margin-left: 4px;
-}
-/* line 144, ../sass/realestatenews.scss */
-.realEstateNews a.disabledViewMore {
-  opacity: 0.4;
-  cursor: default;
+.realEstateNews{
+	width: 100%;
+	min-height: 250px;
+	overflow: hidden;
+	clear: both;
+	
+	font-family: 'Roboto', sans-serif;
+	font-weight: 400;
+	font-size: 1em;
+
+	h1{
+		text-align: center;
+		font-family: 'Oswald', sans-serif;
+		font-weight: 500;
+		font-size: 1.5em;
+		margin: 0 0 5% 0;
+	}
+	
+	.adSlots {
+		@extend .adSlots;
+
+		.adSlot {
+			margin-right: 0 !Important;
+			margin-left: 0px !Important;
+		}
+
+		.adSlot:nth-child(odd) {
+			margin-right: 30px !Important;
+			margin-left: 0px !Important;
+		}
+	}
+
+	a.viewMore{
+		display: block;
+		text-align: center;
+		text-transform: capitalize;
+		font-family: 'Roboto', sans-serif;
+		font-weight: 400;
+		color: #000;
+		line-height: 1em;
+		padding: 0.5em 0 0.5em 0;
+		text-decoration: none;
+		background: #e5e5e5;
+
+		img {
+			margin-left: 4px;
+		}
+	}
+
+	a.disabledViewMore {
+		opacity: 0.4;
+		cursor: default;
+	}
 }
 
-@media screen and (max-width: 767px) {
-  /* line 152, ../sass/realestatenews.scss */
-  .realEstateNews {
-    width: 300px;
-  }
-  /* line 155, ../sass/realestatenews.scss */
-  .realEstateNews .adSlots {
-    width: 300px;
-  }
-  /* line 158, ../sass/realestatenews.scss */
-  .realEstateNews .adSlots .adSlot {
-    display: block;
-    float: inherit !Important;
-  }
-  /* line 163, ../sass/realestatenews.scss */
-  .realEstateNews .adSlots div:nth-child(odd) {
-    margin-right: 0px;
-  }
+@include media-query(desktop) {
+	.realEstateNews {
+		width: 630px;
+	}
 }
+
+@include media-query(tablet) {
+	.realEstateNews {
+		width: 630px;
+
+		.adSlots {
+			width: 300px;
+
+			.adSlot {
+				display: block;
+				float: inherit !Important;
+			}
+
+			div:nth-child(odd){
+				margin-right: 0px;
+			}
+		}
+	}
+}*/
+
+/*# sourceMappingURL=realestatenews.css.map */

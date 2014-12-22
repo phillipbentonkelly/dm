@@ -10,6 +10,7 @@ if (typeof bdc === 'undefined') { bdc = {}; }
     var _engine = {};
   	var slideInterval = {};
     var carouselNav = { 'prev': {}, 'next': {} };
+    var usingDFP = true;
 
     $(function(){
     	module.init();
@@ -35,22 +36,48 @@ if (typeof bdc === 'undefined') { bdc = {}; }
 			targetSlide = 0; hideDuration = 500; showDuration = 0; appendMethod = 'appendTo';
 		}
 
+		if(usingDFP === true){
+			if((module.$slide.eq( targetSlide ).attr('id') === undefined) === false){
+				//console.log(module.$slide.eq( targetSlide ).attr('id'));
+			}else{
+
+			}
+		}
+
 		module.$slide.eq( targetSlide ).hide(hideDuration).promise().done(function(){
 			this.detach().promise().done(function(){
 				detachedObj = this;
+				/*console.log(this);
+				console.log(this.html());*/
+
 				detachedObj[appendMethod]( module.$carousel ).show(showDuration).promise().done(function(){
 					module.$slide = $('#carousel-wrap figure');
 					module.$slide.removeClass('active');
 					module.$slide.eq( _engine.current ).addClass('active');
-
-					googletag.cmd.push(function() {
-		                googletag.display("div-id-for-carousel1");
-		                googletag.display("div-id-for-carousel2");
-		                googletag.display("div-id-for-carousel3");
-		            });
 				});
 			});
 		});
+
+		/*module.$slide.eq( targetSlide ).hide(hideDuration).promise().done(function(){
+			detachedObj = this.detach();
+
+			detachedObj[appendMethod]( module.$carousel );
+
+			detachedObj[appendMethod]( module.$carousel ).show(showDuration).promise().done(function(){
+				module.$slide = $('#carousel-wrap figure');
+				module.$slide.removeClass('active');
+				module.$slide.eq( _engine.current ).addClass('active');
+			});
+
+			console.log(detachedObj);
+		});
+
+		detachedObj = module.$slide.eq( targetSlide ).detach();
+		detachedObj[appendMethod]( module.$carousel ).promise().done(function(){
+			module.$slide = $('#carousel-wrap figure');
+			module.$slide.removeClass('active');
+			module.$slide.eq( _engine.current ).addClass('active');
+		});*/
 	};
 
     _engine.autoSlide = function() {

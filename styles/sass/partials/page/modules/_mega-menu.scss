@@ -9,7 +9,27 @@ $module-name: 'mega-menu';
 // ------------------------------------------------------------
 
 .#{$module-name} {
+  .adSlots {
+    @extend .adSlots;
 
+    .adSlot:hover .detailsWrapper .detailsOverlay p {
+      display: block;
+    }
+
+    a.adSlot:nth-child(odd){
+      margin-right: 30px;
+    }
+  }
+
+  &__featured-home {
+    position: relative;
+
+    .adSlot {
+      display: block;
+      min-height: 10px;
+      overflow-x: hidden;
+    }
+  }
 }
 .find-home-menu, .neighborhoods-menu {
   display: none;
@@ -119,8 +139,16 @@ $module-name: 'mega-menu';
     }
 
     &__featured-home {
+      display: block;
+      min-height: 1px;
       height: 100%;
       overflow: hidden;
+
+      .adSlot {
+        display: block;
+        min-height: 10px;
+        overflow-x: hidden;
+      }
     }
   }
     // NEIGHBORHOODS TAB
@@ -140,94 +168,4 @@ $module-name: 'mega-menu';
     padding: 0 0 1px 0;
     border-radius: 5px;
   }
-
-  // .adSlots {
-  //   display: block;
-  //   width: 630px;
-  //   min-height: 250px;
-  //   overflow: hidden;
-  //   clear: both;
-    
-    .adSlot {
-      float: left;
-      display: block;
-      width: 300px;
-      height: 250px;
-      position: relative;
-
-      /*border: 1px solid #ccc;*/
-      margin-bottom: 30px;
-      
-      .iconOverlay {
-        position: absolute;
-        z-index: 1;
-      }
-        .topSpacing {
-          top: 3%;
-        }
-        .leftSpacing {
-          left: 6%;
-        }
-      
-      .detailsWrapper {
-        width: 300px;
-        clear: both;
-        min-height: 10%;
-        overflow: hidden;
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        z-index: 1;
-
-        .detailsArrow{
-          width: 0;
-          height: 0;
-          border-style: solid;
-          border-width: 0 25px 20px 25px;
-          border-color: rgba(0, 0, 0, 0.6) transparent;
-          float: right;
-        }
-
-        .detailsOverlay {
-          width: 93%;
-          min-height: 20%;
-          padding: 4% 5% 3% 3%;
-          color: #fff;
-          font-size: 0.7em;
-          letter-spacing: 1px;
-          font-family: 'Oswald', sans-serif;
-          font-weight: 300;
-          background-color: rgba(0, 0, 0, 0.6);
-          clear: both;
-
-          h1 {
-            font-size: 120%;
-            text-align: left;
-            padding: 0 0 0.5em 0;
-            margin: 0 0 0 0;
-            line-height: 100%;
-            clear: both;
-            min-height: 10px;
-            overflow: hidden;
-
-            .priceSpan {
-              float: right;
-            }
-          }
-          p {
-            display: none;
-            line-height: 1.5em;
-            padding: 0 0 0.5em 0;
-            margin: 0 0 0 0;
-          }
-        }
-      }
-    }
-    .adSlot:hover .detailsWrapper .detailsOverlay p {
-      display: block;
-    }
-
-    a.adSlot:nth-child(odd){
-      margin-right: 30px;
-    }
 }
