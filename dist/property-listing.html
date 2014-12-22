@@ -48,47 +48,30 @@
         </div>
     </div>
     <!-- Page Masthead -->
-    
 
-    <!-- Page Nav Original-->
-    <!-- <div class="page-nav">
-        <div class="page-nav__content-wrapper">
-            <a href="javascript:;" class="page-nav__logo">
-                <h1>Addresses</h1>
-
-                <h4>A Boston.com Site</h4>
-            </a>
-
-            <a href="javascript:;" class="js-mega-menu page-nav__nav-item" id='find-home-menu'>Find A Home</a>
-            <a href="javascript:;" class="js-mega-menu page-nav__nav-item" id='neighborhoods-menu'>Neighborhoods</a>
-            <a href="javascript:;" class="page-nav__nav-item">Open Houses</a>
-            <a href="javascript:;" class="page-nav__nav-item">Luxury Living</a>
-
-            <form class="page-nav__form">
-                <input type="text" name="search" class="page-nav__search-box" />
-                <button class="page-nav__form__submit" value=""></button>
-            </form>
-
-            <a href="javascript:;" class="page-nav__nav-item myAccount">My Account</a>
-        </div>
-    </div> -->
-
+    <!-- MAIN NAVBAR -->
     <div class="page-nav">
         <div class="page-nav__content-wrapper">
             <ul>
-                <li><a href="javascript:;" class="page-nav__logo">
+                <li class='page-nav__logo'><a href="javascript:;">
                     <h1>Addresses</h1>
                     <h4>A Boston.com Site</h4>
                 </a></li>
 
-                <li><a href="javascript:;" class="js-mega-menu page-nav__nav-item" id='find-home-menu'>Find A Home</a></li>
-                <li><a href="javascript:;" class="js-mega-menu page-nav__nav-item" id='neighborhoods-menu'>Neighborhoods</a></li>
-                <li><a href="javascript:;" class="page-nav__nav-item">Open Houses</a></li>
-                <li><a href="javascript:;" class="page-nav__nav-item">Luxury Living</a></li>
-                <li><a href="javascript:;" class="page-nav__nav-item myAccount">My Account</a></li>
+                <li id='find-home-menu' class='page-nav__nav-item js-mega-menu'><a href="javascript:;">Find A Home</a><div class='page-nav__arrow-up'></div></li>
+
+                <li id='neighborhoods-menu' class="js-mega-menu page-nav__nav-item"><a href="javascript:;">Neighborhoods</a><div class='page-nav__arrow-up'></div></li>
+
+                <li class='page-nav__nav-item'><a href="javascript:;">Open Houses</a></li>
+
+                <li class='page-nav__nav-item'><a href="javascript:;">Luxury Living</a></li>
+
+                <li class='page-nav__nav-item myAccount'><a href="javascript:;">My Account</a></li>
+
             </ul>
         </div>
     </div>
+    <!-- MAIN NAV BAR -->
 
     <!-- FIND A HOME MEGAMENU -->
     <div class='mega-menu__container find-home-menu'>
@@ -96,8 +79,8 @@
 <!--         <div class='mega-menu__arrow-up'></div> -->
         <div class='mega-menu__section--left'>
 
-            <input class='mega-menu__search' placeholder='search for real estate listings are articles.'/>
-            <button class='page-nav__form__submit'></button>
+            <input class='mega-menu__search-input' placeholder='search for real estate listings are articles.'/>
+            <button class='mega-menu__search-submit'></button>
 
             <ul class='mega-menu__list-items'>
                 <li class='mega-menu__list-item'>

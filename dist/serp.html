@@ -12,6 +12,10 @@
     <!-- STYLING -->
     <link rel="stylesheet" href="styles/css/dm-screen.css" />
 
+    <link rel="stylesheet" href="styles/css/realestatelistings.css" />
+    <link rel="stylesheet" href="styles/css/plugins/selectize/selectize.css" />
+    <link rel="stylesheet" href="styles/css/plugins/select2/select2.css" />
+
     <style>
         body {
             padding-bottom: 10%;
@@ -20,7 +24,24 @@
     
     <!-- SCRIPTS -->
     <script src="js/resources/jquery.min.js"></script>
-    <script src="js/resources/jquery.tokeninput.js"></script>
+
+    <script src="js/resources/plugins/selectize/selectize.js"></script>
+    <script src="js/resources/plugins/select2/select2.js"></script>
+    
+
+    <script>
+        $(document).ready(function(){
+
+           $('.page-search__dropdown--narrow').selectize({
+                create: true,
+                sortField: 'text'
+            });
+
+           $('.page-search__dropdown--filter').select2();
+
+        });
+    </script>
+
 </head>
 <body>
     
@@ -53,49 +74,76 @@
     <!-- Page Nav -->
 
     <!-- Page Search -->
-    <div class="page-search">
+    <div class="page-search page-search__serp">
         <div class="page-search__content-wrapper">
-            <form class="page-search__search-form">
+            <form class="page-search__form">
 
-                <input class="page-search__tokeninput" type="search" name="q"></input>
+                <div class="page-search__row">
 
-                <div class="page-search__checkbox-container">
-                    <input type="checkbox" class="page-search__checkbox for-sale" id="for_sale" name="for_sale" value="ForSale" checked="checked">
-                    </input>
-                    <label for="for_sale" class="for-sale">For Sale</label>
-                    <br/>
-                    <input type="checkbox" class="page-search__checkbox for-rent" id="for_rent" name="for_rent" value="ForRent" checked="checked"></input> 
-                    <label for="for_rent" class="for-rent" >For Rent</label>
+                    <select name="q" class="page-search__dropdown page-search__dropdown--narrow" placeholder="Search for real estate listings or articles. ex: 3 bedroom for sale in Brookline under 1,000,000">
+                        <option>This shit is for real</option>
+                    </select>
+
+                    <div class="page-search__fancy-checkbox-container page-search__fancy-checkbox-container--for-sale">
+                            <input type="checkbox" id="forSale" name="for_sale" value="ForSale" checked="checked">
+                            </input>
+                            <label for="forSale" class="for-sale">For Sale</label>
+                        </div>
+
+                        <div class="page-search__fancy-checkbox-container page-search__fancy-checkbox-container--for-rent">
+                            <input type="checkbox" id="forRent" name="for_rent" value="ForRent" checked="checked"></input> 
+                            <label for="forRent" class="for-rent" >For Rent</label>
+                        </div>
+
+                    <select class="page-search__dropdown page-search__dropdown--filter" id="priceRange" name="price_range" placeholder="$300K-$24M">
+                            <option value="$300K-$24M">$300K-$24M</option>
+                        </select>
+
+                        <select class="page-search__dropdown page-search__dropdown--filter" id="beds" name="beds">
+                            <option value="" selected="selected">Beds</option>
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5+">5+</option>
+                        </select>
+
+                        <select class="page-search__dropdown page-search__dropdown--filter" id="baths" name="baths">
+                            <option value="Baths" selected="selected">Baths</option>
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5+">5+</option>
+                        </select>
+
+                        <select class="page-search__dropdown page-search__dropdown--filter" id="homeType" name="home_type">
+                            <option value="HomeType" selected="selected">HomeType</option>
+                            <option value="Single-Family">Single-Family</option>
+                            <option value="Multi-Family">Multi-Family</option>
+                            <option value="Apartment">Apartment</option>
+                            <option value="Co-op/Condo">Co-op/Condo</option>
+                            <option value="Townhome">Townhome</option>
+                            <option value="Manufactured">Manufactured</option>
+                            <option value="Lot/Land">Land/Lot</option>
+                        </select>
+
+                        <select class="page-search__dropdown page-search__dropdown--filter" id="moreOptions" name="more_options">
+                            <option value="More (4)" selected="selected">More (4)</option>
+                        </select>
+
+                        <button class="page-search__button page-search__button--save-search" value="">
+                            <span>Save Search</span>
+                        </button>
+
+                    <button class="page-search__button page-search__button--submit" value=""></button>
+
                 </div>
 
-                <select class="page-search__dropdown" id="price_range" name="price_range">
-                    <option value="$300K-$24M">$300K-$24M</option>
-                </select>
 
-                <select class="page-search__dropdown" id="beds" name="beds">
-                    <option value="Beds">Beds</option>
-                </select>
-
-                <select class="page-search__dropdown" id="baths" name="baths">
-                    <option value="Baths">Baths</option>
-                </select>
-
-                <select class="page-search__dropdown" id="home_type" name="home_type">
-                    <option value="HomeType">HomeType</option>
-                </select>
-
-                <select class="page-search__dropdown" id="more_options" name="more_options">
-                    <option value="More (4)">More (4)</option>
-                </select>
-                    
                 
-
-                <button type="submit" class="page-search__search-button" value="Search">
-                    <span class="bdc-icon bdc-icon--search-small"></span>
-                </button>
-                <button type="submit" class="page-search__search-button" value="Search">
-                    <span class="bdc-icon">Save Search</span>    
-                </button>
             </form>
         </div>
         
@@ -150,7 +198,7 @@
 
             <!-- Related Articles -->
             <div class="related-articles">
-                <h1 class="related-articles__section-header">Related Articles</h1>
+                <h1 class="related-articles__section-header">${town_name} Real Estate</h1>
 
                 <div class="related-articles__item">
                     <img class="thumb" src="images/related-articles/related-articles__thumbs__1.jpg" />

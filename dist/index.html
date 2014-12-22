@@ -9,17 +9,19 @@
 
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     
+    <link rel=
     <!-- STYLING -->
     <link rel="stylesheet" href="styles/css/dm-screen.css" />
 
-        <!-- Real Estate Listings -->
-        <link rel="stylesheet" href="styles/css/realestatelistings.css" />
-        <link rel="stylesheet" href="styles/css/plugins/select2/select2.css" />
-        <!-- Real Estate Listings -->
+    <!-- Real Estate Listings -->
+    <link rel="stylesheet" href="styles/css/realestatelistings.css" />
+    <link rel="stylesheet" href="styles/css/plugins/selectize/selectize.css" />
+    <link rel="stylesheet" href="styles/css/plugins/select2/select2.css" />
+    <!-- Real Estate Listings -->
 
-        <!-- Real Estate News (300x250) -->
-        <link rel="stylesheet" href="styles/css/realestatenews.css" />
-        <!-- Real Estate News (300x250) -->
+    <!-- Real Estate News (300x250) -->
+    <link rel="stylesheet" href="styles/css/realestatenews.css" />
+    <!-- Real Estate News (300x250) -->
         
     <style>
         body { padding-bottom: 10%; }
@@ -38,10 +40,16 @@
         <!-- Real Estate Listings -->
         <script src="js/assets/mpListings.js"></script>
         <script src="js/assets/listings.data.js"></script>
+        <script src="js/resources/plugins/selectize/selectize.js"></script>
         <script src="js/resources/plugins/select2/select2.js"></script>
         <script>
             $(document).ready(function(){
-                $("#listingDropDown").select2();
+                $('.page-search__dropdown--wide').selectize({
+                    create: true,
+                    sortField: 'text'
+                });
+                $('.page-search__dropdown--filter').select2();
+                $("#listingDropDown").select2({ dropdownCssClass: 'mplistings-dropdown' });
                 $('.select2-search').hide();
             });
         </script>
@@ -76,15 +84,85 @@
                 <a href="javascript:;" class="page-nav__nav-item">Open Houses</a>
                 <a href="javascript:;" class="page-nav__nav-item">Luxury Living</a>
 
-                <form class="page-nav__form">
-                    <input type="text" name="search" class="page-nav__search-box" />
-                    <button class="page-nav__form__submit" value=""></button>
-                </form>
-
                 <a href="javascript:;" class="page-nav__nav-item myAccount">My Account</a>
             </div>
         </div>
         <!-- Page Nav -->
+
+        <!-- Page Search -->
+        <div class="page-search page-search__home">
+            <div class="page-search__content-wrapper">
+                <form class="page-search__form">
+
+                    <div class="page-search__row page-search__row--top">
+                        <select name="search-box" class="page-search__search-dropdown page-search__dropdown--wide" placeholder="Search for real estate listings or articles. ex: 3 bedroom for sale in Brookline under 1,000,000">
+                            <option value="This Shit Is For Real">This Shit Is For Real</option>
+                        </select>
+                        <button class="page-search__button page-search__button--submit" value=""></button>
+                    </div>
+
+                    <div class="page-search__row page-search__row--bottom">
+
+                        <div class="page-search__fancy-checkbox-container page-search__fancy-checkbox-container--for-sale">
+                            <input type="checkbox" id="forSale" name="for_sale" value="ForSale" checked="checked">
+                            </input>
+                            <label for="forSale" class="for-sale">For Sale</label>
+                        </div>
+
+                        <div class="page-search__fancy-checkbox-container page-search__fancy-checkbox-container--for-rent">
+                            <input type="checkbox" id="forRent" name="for_rent" value="ForRent" checked="checked"></input> 
+                            <label for="forRent" class="for-rent" >For Rent</label>
+                        </div>
+
+                        <select class="page-search__dropdown" id="priceRange" name="price_range" placeholder="$300K-$24M">
+                            <option value="$300K-$24M">$300K-$24M</option>
+                        </select>
+
+                        <select class="page-search__dropdown page-search__dropdown--filter" id="beds" name="beds">
+                            <option value="" selected="selected">Beds</option>
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5+">5+</option>
+                        </select>
+
+                        <select class="page-search__dropdown page-search__dropdown--filter" id="baths" name="baths">
+                            <option value="Baths" selected="selected">Baths</option>
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5+">5+</option>
+                        </select>
+
+                        <select class="page-search__dropdown page-search__dropdown--filter" id="homeType" name="home_type">
+                            <option value="HomeType" selected="selected">HomeType</option>
+                            <option value="Single-Family">Single-Family</option>
+                            <option value="Multi-Family">Multi-Family</option>
+                            <option value="Apartment">Apartment</option>
+                            <option value="Co-op/Condo">Co-op/Condo</option>
+                            <option value="Townhome">Townhome</option>
+                            <option value="Manufactured">Manufactured</option>
+                            <option value="Lot/Land">Land/Lot</option>
+                        </select>
+
+                        <select class="page-search__dropdown page-search__dropdown--filter" id="moreOptions" name="more_options">
+                            <option value="More (4)" selected="selected">More (4)</option>
+                        </select>
+
+                        <button class="page-search__button page-search__button--save-search" value="">
+                            <span>Save Search</span>
+                        </button>
+
+                    </div>
+
+                </form>
+            </div>
+        </div>
+        <!-- Page Search -->
         
         <!-- Full Screen Carousel -->
         <div class="full-screen-carousel">
