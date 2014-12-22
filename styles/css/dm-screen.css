@@ -2284,19 +2284,9 @@ textarea {
   width: 100%;
   float: left;
   bottom: 0px;
-  background: black;
-  opacity: .50;
-  /* Standard: FF gt 1.5, Opera, Safari, CSS3 */
-  filter: alpha(opacity=50);
-  /* IE lt 8 */
-  -ms-filter: "alpha(opacity=50)";
-  /* IE 8 */
-  -khtml-opacity: .50;
-  /* Safari 1.x */
-  -moz-opacity: .50;
-  /* FF lt 1.5, Netscape */
+  background: rgba(0, 0, 0, 0.5);
 }
-/* line 70, ../sass/partials/page/modules/_property-detail.scss */
+/* line 71, ../sass/partials/page/modules/_property-detail.scss */
 .property-detail__pic-overtext-text {
   font-family: Oswald;
   color: #ffffff;
@@ -2308,8 +2298,9 @@ textarea {
   position: relative;
   margin: 0 auto;
   padding-top: 10px;
+  color: white;
 }
-/* line 88, ../sass/partials/page/modules/_property-detail.scss */
+/* line 90, ../sass/partials/page/modules/_property-detail.scss */
 .property-detail__link-list ul {
   font-size: 13px;
   font-family: OpenSans;
@@ -2322,12 +2313,16 @@ textarea {
   margin: 0px;
   padding: 5px;
 }
-/* line 100, ../sass/partials/page/modules/_property-detail.scss */
+/* line 102, ../sass/partials/page/modules/_property-detail.scss */
 .property-detail__link-list li {
   margin-bottom: 5px;
+  color: black;
+}
+/* line 106, ../sass/partials/page/modules/_property-detail.scss */
+.property-detail__link-list span {
   color: #1a93b0;
 }
-/* line 105, ../sass/partials/page/modules/_property-detail.scss */
+/* line 110, ../sass/partials/page/modules/_property-detail.scss */
 .property-detail__link-slot {
   width: 300px;
   height: 250px;

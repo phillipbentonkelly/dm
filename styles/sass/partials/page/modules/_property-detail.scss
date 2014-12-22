@@ -60,12 +60,13 @@ $module-name: 'property-detail';
     width: 100%;
     float: left;
     bottom: 0px;
-    background: black;
-    opacity: .50; /* Standard: FF gt 1.5, Opera, Safari, CSS3 */
-    filter: alpha(opacity=50); /* IE lt 8 */
-    -ms-filter: "alpha(opacity=50)"; /* IE 8 */
-    -khtml-opacity: .50; /* Safari 1.x */
-    -moz-opacity: .50; /* FF lt 1.5, Netscape */
+    // background: black;
+    background: rgba(0,0,0,0.5)
+    // opacity: .50; /* Standard: FF gt 1.5, Opera, Safari, CSS3 */
+    // filter: alpha(opacity=50); /* IE lt 8 */
+    // -ms-filter: "alpha(opacity=50)"; /* IE 8 */
+    // -khtml-opacity: .50; /* Safari 1.x */
+    // -moz-opacity: .50; /* FF lt 1.5, Netscape */
   }
   &__pic-overtext-text
   {
@@ -79,6 +80,7 @@ $module-name: 'property-detail';
       position: relative;
       margin: 0 auto;
       padding-top: 10px;
+      color: rgba(255,255,255,100%);
       //float: center;
   }
 
@@ -99,8 +101,11 @@ $module-name: 'property-detail';
     }
     li{
       margin-bottom: 5px;
-      color: #1a93b0;
+      color: black;
       } 
+    span{
+      color:#1a93b0
+      }
   }   
   &__link-slot{
     width: 300px;
