@@ -1,0 +1,80 @@
+// *
+// *  Module Name 
+// *
+
+$module-name: 'property-detail';
+
+// ------------------------------------------------------------
+// Default Styles
+// ------------------------------------------------------------
+
+.#{$module-name} {
+  // Module Styles
+  &__explore-container{
+    width: 630px;
+  	height: 340px;
+  	background: #e5e5e5;
+    //padding: 10px;
+    //border: dotted;
+  }
+  &__headline{
+    font-family: Oswald;
+  	color: #333333;
+  	font-size: 26px;
+  	font-weight: 400;
+  	text-align: center;
+  	//width: 71px;
+  	//height: 28px;
+  	padding: 5px;
+  }
+  &__sub-headline{  
+      font-family: OpenSans;
+      color:  #000000;
+      font-size: 13px; /* Approximation due to font substitution */
+      font-weight: 700;
+      line-height: 24px; /* Approximation due to font substitution */
+      text-align: left;
+  }
+  &__pic{
+    width: 300px;
+  	height: 250px;
+    float: left;
+
+  }
+  &__pic-slot{
+    width: 300px;
+    height: 250px;
+    //border: dotted;
+    float: left;
+  }
+  &__pic-overtext{
+
+  }
+  &__link-list 
+  {
+    ul{       
+      font-size:  13px;
+      font-family: OpenSans;
+      list-style-type: disc;
+      list-style-position: inside;
+      font-weight: 700;
+      line-height: 24px; /* Approximation due to font substitution */
+      align: right;
+      margin: 0px;
+      padding:  5px; 
+    }
+    li{
+    margin-bottom: 5px;
+    color: #1a93b0;
+    } 
+  }
+  
+  &__link-slot{
+    width: 300px;
+    height: 250px;
+    //border: solid;
+    //align: right;
+    float: right;
+  }
+
+}

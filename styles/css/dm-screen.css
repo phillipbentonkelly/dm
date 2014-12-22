@@ -422,7 +422,7 @@ textarea {
   float: left;
   width: 40px;
   height: 31px;
-  background: url(../../images/icons/icon_search-magnifiying-glass.png) center center no-repeat black;
+  background: url(../../images/icons/icon_search-magnifiying-glass.png) center center no-repeat #000;
   border: 0;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
@@ -908,7 +908,7 @@ textarea {
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
   border-radius: 2px;
-  background: url("../images/icons/magGlass_bg_blk.gif") center center no-repeat black;
+  background: url("../images/icons/magGlass_bg_blk.gif") center center no-repeat #000;
 }
 /* line 61, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel #carousel-wrap, .full-screen-carousel .slide {
@@ -2024,6 +2024,69 @@ textarea {
     display: inline-block;
   }
 }
+/* line 13, ../sass/partials/page/modules/_property-detail.scss */
+.property-detail__explore-container {
+  width: 630px;
+  height: 340px;
+  background: #e5e5e5;
+}
+/* line 20, ../sass/partials/page/modules/_property-detail.scss */
+.property-detail__headline {
+  font-family: Oswald;
+  color: #333333;
+  font-size: 26px;
+  font-weight: 400;
+  text-align: center;
+  padding: 5px;
+}
+/* line 30, ../sass/partials/page/modules/_property-detail.scss */
+.property-detail__sub-headline {
+  font-family: OpenSans;
+  color: #000000;
+  font-size: 13px;
+  /* Approximation due to font substitution */
+  font-weight: 700;
+  line-height: 24px;
+  /* Approximation due to font substitution */
+  text-align: left;
+}
+/* line 38, ../sass/partials/page/modules/_property-detail.scss */
+.property-detail__pic {
+  width: 300px;
+  height: 250px;
+  float: left;
+}
+/* line 44, ../sass/partials/page/modules/_property-detail.scss */
+.property-detail__pic-slot {
+  width: 300px;
+  height: 250px;
+  float: left;
+}
+/* line 55, ../sass/partials/page/modules/_property-detail.scss */
+.property-detail__link-list ul {
+  font-size: 13px;
+  font-family: OpenSans;
+  list-style-type: disc;
+  list-style-position: inside;
+  font-weight: 700;
+  line-height: 24px;
+  /* Approximation due to font substitution */
+  align: right;
+  margin: 0px;
+  padding: 5px;
+}
+/* line 66, ../sass/partials/page/modules/_property-detail.scss */
+.property-detail__link-list li {
+  margin-bottom: 5px;
+  color: #1a93b0;
+}
+/* line 72, ../sass/partials/page/modules/_property-detail.scss */
+.property-detail__link-slot {
+  width: 300px;
+  height: 250px;
+  float: right;
+}
+
 /* line 11, ../sass/partials/page-content/modules/_dfp-ads__new-homes.scss */
 .dfp-ads__new-homes {
   width: 300px;
@@ -2304,3 +2367,5 @@ textarea {
     width: 298px;
   }
 }
+
+/*# sourceMappingURL=dm-screen.css.map */
