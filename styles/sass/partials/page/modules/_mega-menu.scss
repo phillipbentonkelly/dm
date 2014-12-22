@@ -9,7 +9,27 @@ $module-name: 'mega-menu';
 // ------------------------------------------------------------
 
 .#{$module-name} {
+  .adSlots {
+    @extend .adSlots;
 
+    .adSlot:hover .detailsWrapper .detailsOverlay p {
+      display: block;
+    }
+
+    a.adSlot:nth-child(odd){
+      margin-right: 30px;
+    }
+  }
+
+  &__featured-home {
+    position: relative;
+
+    .adSlot {
+      display: block;
+      min-height: 10px;
+      overflow-x: hidden;
+    }
+  }
 }
 .find-home-menu, .neighborhoods-menu {
   display: none;
@@ -42,7 +62,7 @@ $module-name: 'mega-menu';
       position: absolute;
       right: 0;
       left: 0;
-      z-index: 10;
+      z-index: 100;
       height: 280px;
       width: #{$desktop-breakpoint};
       margin: 0 auto;
@@ -132,8 +152,16 @@ $module-name: 'mega-menu';
     }
 
     &__featured-home {
+      display: block;
+      min-height: 1px;
       height: 100%;
       overflow: hidden;
+
+      .adSlot {
+        display: block;
+        min-height: 10px;
+        overflow-x: hidden;
+      }
     }
   }
 
@@ -168,8 +196,6 @@ $module-name: 'mega-menu';
       width: 300px;
       height: 250px;
       position: relative;
-
-      /*border: 1px solid #ccc;*/
       margin-bottom: 30px;
       
       .iconOverlay {
@@ -237,7 +263,7 @@ $module-name: 'mega-menu';
         }
       }
     }
-  // }
+
     .adSlot:hover .detailsWrapper .detailsOverlay p {
       display: block;
     }
@@ -246,3 +272,5 @@ $module-name: 'mega-menu';
       margin-right: 30px;
     }
 }
+
+

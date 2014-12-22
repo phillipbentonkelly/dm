@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Category Page</title>
+    <title>Neighborhoods</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -20,6 +20,9 @@
     
     <!-- SCRIPTS -->
     <script src="js/resources/jquery.min.js"></script>
+
+        <!-- Mega-Menu -->
+        <script src="js/assets/mega-menu.js"></script>
 </head>
     <body>
         
@@ -35,183 +38,405 @@
         <!-- Page Nav -->
         <div class="page-nav">
             <div class="page-nav__content-wrapper">
-                <a href="javascript:;" class="page-nav__logo">
-                    <h1>Addresses</h1>
+                <ul>
+                    <li class="page-nav__logo"><a href="javascript:;">
+                        <h1>Addresses</h1>
+                        <h4>A Boston.com Site</h4>
+                    </a></li>
 
-                    <h4>A Boston.com Site</h4>
-                </a>
+                    <li id="find-home-menu" class="page-nav__nav-item js-mega-menu"><a href="javascript:;">Find A Home</a><div class="page-nav__arrow-up"></div></li>
 
-                <a href="javascript:;" class="page-nav__nav-item">Find A Home</a>
-                <a href="javascript:;" class="page-nav__nav-item">Neighborhoods</a>
-                <a href="javascript:;" class="page-nav__nav-item">Open Houses</a>
-                <a href="javascript:;" class="page-nav__nav-item">Luxury Living</a>
+                    <li id="neighborhoods-menu" class="js-mega-menu page-nav__nav-item"><a href="javascript:;">Neighborhoods</a><div class="page-nav__arrow-up"></div></li>
 
-                <form class="page-nav__form">
-                    <input type="text" name="search" class="page-nav__search-box" />
-                    <button class="page-nav__form__submit" value=""></button>
-                </form>
+                    <li class="page-nav__nav-item"><a href="javascript:;">Open Houses</a></li>
 
-                <a href="javascript:;" class="page-nav__nav-item myAccount">My Account</a>
+                    <!--<form class="page-nav__form">
+                        <input type="text" name="search" class="page-nav__search-box" />
+                        <button class="page-nav__form__submit" value=""></button>
+                    </form>-->
+
+                    <li class="page-nav__nav-item"><a href="javascript:;">Luxury Living</a></li>
+
+                    <li class="page-nav__nav-item myAccount"><a href="javascript:;">My Account</a></li>
+
+                </ul>
             </div>
         </div>
         <!-- Page Nav -->
 
 
-        <!-- Page Layout -->
-        <div class="page-layout">
-            <div class="page-layout__left-col">
-                <!-- Listings Map -->
-                <div class="listings-map">
-                    <div class="listings-map__wrapperArrow"></div>
+        <!-- FIND A HOME MEGAMENU -->
+        <div class='mega-menu__container find-home-menu'>
 
-                    <h1 class="listings-map__title">Brookline</h1>
+            <div class='mega-menu__section--left'>
 
-                    <div class="listings-map__navigation">
-                        <a href="javascript:;">Show me<div class="select-arrow"></div></a>
-                        <a href="javascript:;" class="selected">All Properties<div class="select-arrow"></div></a>
-                        <a href="javascript:;">For Sale<div class="select-arrow"></div></a>
-                        <a href="javascript:;">For Rent<div class="select-arrow"></div></a>
-                        <a href="javascript:;">Open Houses<div class="select-arrow"></div></a>
-                    </div>
+                <input class='mega-menu__search' placeholder='search for real estate listings are articles.'/>
+                <button class='page-nav__form__submit'></button>
 
-                    <div class="listings-map__map-wrapper">
-                        <h1>MAP GOES HERE</h1>
-                    </div>
+                <ul class='mega-menu__list-items'>
+                    <li class='mega-menu__list-item'>
+                        <a class='mega-menu__list-link' href='#'>Buying</a>
+                    </li>
 
-                    <a href="javascript:;" class="listings-map__view-all">View All Bookline Listigns ></a>
-                </div>
-                <!-- Listings Map -->
+                    <li class='mega-menu__list-item'>
+                        <a class='mega-menu__list-link' href='#'>Renting</a>
+                    </li>
 
+                    <li class='mega-menu__list-item'>
+                        <a class='mega-menu__list-link' href='#'>New Development</a>
+                    </li>
 
-                <!-- Related Articles -->
-                <div class="related-articles">
-                    <h1 class="related-articles__section-header">Related Articles</h1>
+                    <li class='mega-menu__list-item'>
+                        <a class='mega-menu__list-link' href='#'>Student Living</a>
+                    </li>
 
-                    <div class="related-articles__item">
-                        <img class="thumb" src="images/related-articles/related-articles__thumbs__1.jpg" />
-                        <h2 class="title">Tom and Gisele's Brookline Pad Looks Almost Ready</h2>
-                        <p class="description">The ream home of the most famouse couple in Massachusetts looks like it's close to completion.</p>
-                        
-                        <div class="additional-info">
-                            <div class="date">September 9, 2014</div>
-
-                            <div class="tags">
-                                <div class="tag class">Luxury <span class="arrow"></span></div>
-                                <div class="tag location">Brookline <span class="arrow"></span></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="related-articles__item">
-                        <img class="thumb" src="images/related-articles/related-articles__thumbs__2.jpg" />
-                        <h2 class="title">For Sale: $2.85M Italianate Mansion in JP</h2>
-                        <p class="description">This updated Italianate mansion, once known as The Gilbert House, was originally built in 1854 and has undergone extensive renovations while remaining loyal to the home's orignal design.</p>
-                        
-                        <div class="additional-info">
-                            <div class="date">July 30, 2014</div>
-
-                            <div class="tags">
-                                <div class="tag event">Open House <span class="arrow"></span></div>
-                                <div class="tag class">Luxury <span class="arrow"></span></div>
-                                <div class="tag location">Jaimaca Plain <span class="arrow"></span></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="related-articles__item">
-                        <img class="thumb" src="images/related-articles/related-articles__thumbs__3.jpg" />
-                        <h2 class="title">For Sale: Historic Weston mansion</h2>
-                        <p class="description">The Henderson House in Weston, an English-Tudor style mansion with nearly 17,000 square feet of living space, is being sold for $7,795,000.</p>
-                        
-                        <div class="additional-info">
-                            <div class="date">July 13, 2014</div>
-                        </div>
-                    </div>
-
-                    <div class="related-articles__item">
-                        <img class="thumb" src="images/related-articles/related-articles__thumbs__4.jpg" />
-                        <h2 class="title">New Construction, Chestnut Hill Colonial - $2,400,000</h2>
-                        <p class="description">Walk to Heath School and Train. Gorgeous Tree-lined street, Established Neighborhood. Open Plan main level with Back-lit Coffered Ceillings, Fireplaced Family Room and nicely appointed Cooks Kitchen with Island.</p>
-                        
-                        <div class="additional-info">
-                            <div class="date">July 3, 2014</div>
-
-                            <div class="tags">
-                                <div class="tag event">Open House <span class="arrow"></span></div>
-                                <div class="tag class">Luxury <span class="arrow"></span></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="dfp-ad__row">
-                        <a class="dfp-ad__row__main-link" href="javascript:;"><img src="images/ads/dfp/dfpAds__300by250__marriott.jpg" /></a>
-                        <a class="dfp-ad__row__main-link" href="javascript:;"><img src="images/ads/dfp/dfpAds__300by250__verizon.jpg" /></a>
-                    </div>
-
-                    <div class="related-articles__item">
-                        <img class="thumb" src="images/related-articles/related-articles__thumbs__1.jpg" />
-                        <h2 class="title">Tom and Gisele's Brookline Pad Looks Almost Ready</h2>
-                        <p class="description">The ream home of the most famouse couple in Massachusetts looks like it's close to completion.</p>
-                        
-                        <div class="additional-info">
-                            <div class="date">September 9, 2014</div>
-
-                            <div class="tags">
-                                <div class="tag class">Luxury <span class="arrow"></span></div>
-                                <div class="tag location">Brooline <span class="arrow"></span></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="related-articles__item">
-                        <img class="thumb" src="images/related-articles/related-articles__thumbs__2.jpg" />
-                        <h2 class="title">For Sale: $2.85M Italianate Mansion in JP</h2>
-                        <p class="description">This updated Italianate mansion, once known as The Gilbert House, was originally built in 1854 and has undergone extensive renovations while remaining loyal to the home's orignal design.</p>
-                        
-                        <div class="additional-info">
-                            <div class="date">July 30, 2014</div>
-
-                            <div class="tags">
-                                <div class="tag event">Open House <span class="arrow"></span></div>
-                                <div class="tag class">Luxury <span class="arrow"></span></div>
-                                <div class="tag location">Jaimaca Plain <span class="arrow"></span></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <a href="javascript:;" class="viewMore">View More <img src="images/view-more__arrow-down.gif" /></a>
-                </div>
-                <!-- Related Articles -->
+                    <li class='mega-menu__list-item'>
+                        <a class='mega-menu__list-link' href='#'>Suburban Living</a>
+                    </li>
+                </ul>
             </div>
 
-            <div class="page-layout__right-col">
-                <a href="javascript:;" class="dfp-ads">
-                    <img src="images/ads/dfp/dfpAds__300by250__coldwell-banker.jpg" />
-                </a>
 
-                <a href="javascript:;" class="dfp-ads">
-                    <img src="images/ads/dfp/dfpAds__300by250__moo.jpg" />
-                </a>
-                <!-- Page Right Rail-->
-                <div class="right-rail">
-                  <div class="right-rail__headline">Explore Brookline</div> 
-                    <div class="right-rail__subheadline">RESTARAUNTS IN BROOKLINE</div>
-                        <div class="right-rail__linkList">          
-                           <ul>
-                                <li>Barcelona Wine Bar</li>
-                                <li>The Abby</li>
-                                <li>Knight Moves</li>
-                          </ul>
+            <div class='mega-menu__section--middle'>
+                <ul class='mega-menu__list-items'>
+                    <li class='mega-menu__list-item'>
+                        <a class='mega-menu__list-link' href='#'>Tom and Gisele's Brookline Pad Looks Almost Ready</a>
+                    </li>
+
+                    <li class='mega-menu__list-item'>
+                        <a class='mega-menu__list-link' href='#'>For Sale: $2.85M Italianate Mansion in JP</a>
+                    </li>
+
+                    <li class='mega-menu__list-item'>
+                        <a class='mega-menu__list-link' href='#'>For Sale: Historic Weston Mansion</a>
+                    </li>
+
+                    <li class='mega-menu__list-item'>
+                        <a class='mega-menu__list-link' href='#'>New Construction, Chestnut Hill Colonial - $2,400,000</a>
+                    </li>
+                </ul>
+            </div>
+
+
+            <div class='mega-menu__section--right'>
+                <div class='mega-menu__featured-home'>
+                    <a href="javascript:;" class="adSlot">
+                        <div class="overlays">
+                            <img src="images/icons/luxuryLabel.png" class="iconOverlay topSpacing">
                         </div>
-                    <div class="right-rail__subheadline">THINGS TO DO IN BROOKLINE</div>
-                        <div class="right-rail__linkList">          
-                           <ul>
-                                <li>Coolidge Corner Theater</li>
-                                <li>John F. Kennedy National Historic Site</li>
-                                <li>Larz Anderson Park</li>
-                                <li>Irving's Toy and Card Shop</li>
-                          </ul>
-                        </div>                                        
+
+                        <img src="images/listings/reNews__listings__6.jpg">
+                        
+                        <div class="detailsWrapper">
+                            <div class="detailsArrow"></div>
+
+                            <div class="detailsOverlay">
+                                <h1>14 Chestnut Street Boston, MA <span class="priceSpan">$190,000</span></h1>
+
+                                <p>One of Beacon Hill's most desirable tree-lined streets, this exquisite Triplex has 5,000+ sqf ft. of furnished living space. 4+ Beds/3.5 Baths</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- FIND A HOME MEGAMENU -->
+
+        <!-- NEIGHBORHOODS MEGAMENU -->
+        <div class='mega-menu__container neighborhoods-menu'>
+
+            <div class='mega-menu__section--left'>
+
+                
+                <ul id='mega-menu__list-items--left' class='mega-menu__list-items'>
+                    <li class='mega-menu__list-item'>
+                        <a class='mega-menu__list-link' href='#'>Back Bay</a>
+                    </li>
+
+                    <li class='mega-menu__list-item'>
+                        <a class='mega-menu__list-link' href='#'>Beacon Hill</a>
+                    </li>
+
+                    <li class='mega-menu__list-item'>
+                        <a class='mega-menu__list-link' href='#'>Boston</a>
+                    </li>
+
+                    <li class='mega-menu__list-item'>
+                        <a class='mega-menu__list-link' href='#'>Brookline</a>
+                    </li>
+
+                    <li class='mega-menu__list-item'>
+                        <a class='mega-menu__list-link' href='#'>Cambridge</a>
+                    </li>
+
+                    <li class='mega-menu__list-item'>
+                        <a class='mega-menu__list-link' href='#'>Charlestown</a>
+                    </li>
+
+                    <li class='mega-menu__list-item'>
+                        <a class='mega-menu__list-link' href='#'>Dorchester</a>
+                    </li>
+
+                    <li class='mega-menu__list-item'>
+                        <a class='mega-menu__list-link' href='#'>Newton</a>
+                    </li>
+                </ul>
+
+                <ul id='mega-menu__list-items--right' class='mega-menu__list-items'>
+                    <li class='mega-menu__list-item'>
+                        <a class='mega-menu__list-link' href='#'>Cape Cod/Islands</a>
+                    </li>
+
+                    <li class='mega-menu__list-item'>
+                        <a class='mega-menu__list-link' href='#'>Berkshires</a>
+                    </li>
+
+                    <li class='mega-menu__list-item'>
+                        <a class='mega-menu__list-link' href='#'>Metro West</a>
+                    </li>
+
+                    <li class='mega-menu__list-item'>
+                        <a class='mega-menu__list-link' href='#'>North Shore</a>
+                    </li>
+
+                    <li class='mega-menu__list-item'>
+                        <a class='mega-menu__list-link' href='#'>South Shore</a>
+                    </li>
+
+                    <li class='mega-menu__list-item'>
+                        <a class='mega-menu__list-link' href='#'>South Shore</a>
+                    </li>
+
+                    <li class='mega-menu__list-item'>
+                        <a class='mega-menu__list-link' href='#'>More</a>
+                    </li>
+                </ul>
+            </div>
+
+
+            <div class='mega-menu__section--middle'>
+                <ul class='mega-menu__list-items'>
+                    <li class='mega-menu__list-item'>
+                        <a class='mega-menu__list-link' href='#'>Tom and Gisele's Brookline Pad Looks Almost Ready</a>
+                    </li>
+
+                    <li class='mega-menu__list-item'>
+                        <a class='mega-menu__list-link' href='#'>For Sale: $2.85M Italianate Mansion in JP</a>
+                    </li>
+
+                    <li class='mega-menu__list-item'>
+                        <a class='mega-menu__list-link' href='#'>For Sale: Historic Weston Mansion</a>
+                    </li>
+
+                    <li class='mega-menu__list-item'>
+                        <a class='mega-menu__list-link' href='#'>New Construction, Chestnut Hill Colonial - $2,400,000</a>
+                    </li>
+                </ul>
+            </div>
+
+
+            <div class='mega-menu__section--right'>
+                <div class='mega-menu__featured-home'>
+                    <a href="javascript:;" class="adSlot">
+                        <img src="images/neighborhoods/top-neighborhoods__entry__2.jpg">
+                        
+                        <div class="detailsWrapper">
+                            <div class="detailsArrow"></div>
+
+                            <div class="detailsOverlay">
+                                <h1>14 Chestnut Street Boston, MA <span class="priceSpan">$190,000</span></h1>
+
+                                <p>One of Beacon Hill's most desirable tree-lined streets, this exquisite Triplex has 5,000+ sqf ft. of furnished living space. 4+ Beds/3.5 Baths</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- NEIGHBORHOODS MEGAMENU -->
+
+
+        <!-- Page Layout -->
+        <div class="page-layout-wrapper">
+            <div class="page-layout">
+                <div class="page-layout__left-col">
+                    <!-- Listings Map -->
+                    <div class="listings-map">
+                        <div class="listings-map__wrapperArrow"></div>
+
+                        <h1 class="listings-map__title">Brookline</h1>
+
+                        <div class="listings-map__navigation">
+                            <a href="javascript:;">Show me<div class="select-arrow"></div></a>
+                            <a href="javascript:;" class="selected">All Properties<div class="select-arrow"></div></a>
+                            <a href="javascript:;">For Sale<div class="select-arrow"></div></a>
+                            <a href="javascript:;">For Rent<div class="select-arrow"></div></a>
+                            <a href="javascript:;">Open Houses<div class="select-arrow"></div></a>
+                        </div>
+
+                        <div class="listings-map__map-wrapper">
+                            <h1>MAP GOES HERE</h1>
+                        </div>
+
+                        <a href="javascript:;" class="listings-map__view-all">View All Bookline Listigns ></a>
+                    </div>
+                    <!-- Listings Map -->
+
+
+                    <!-- Related Articles -->
+                    <div class="related-articles">
+                        <h1 class="related-articles__section-header">Related Articles</h1>
+                        
+                        <div class="related-articles__item">
+                            <img class="thumb" src="images/related-articles/related-articles__thumbs__1.jpg" />
+                            
+                            <a href="#">
+                                <h2 class="title">Tom and Gisele's Brookline Pad Looks Almost Ready</h2>
+                            </a>
+
+                            <p class="description">The ream home of the most famouse couple in Massachusetts looks like it's close to completion.</p>
+                            
+                            <div class="additional-info">
+                                <div class="date">September 9, 2014</div>
+
+                                <div class="tags">
+                                    <a href="#"><div class="tag class">Luxury <span class="arrow"></span></div></a>
+                                    <a href="#"><div class="tag location">Brookline <span class="arrow"></span></div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="related-articles__item">
+                            <img class="thumb" src="images/related-articles/related-articles__thumbs__2.jpg" />
+                            
+                            <a href="#">
+                                <h2 class="title">For Sale: $2.85M Italianate Mansion in JP</h2>
+                            </a>
+                            
+                            <p class="description">This updated Italianate mansion, once known as The Gilbert House, was originally built in 1854 and has undergone extensive renovations while remaining loyal to the home's orignal design.</p>
+                            
+                            <div class="additional-info">
+                                <div class="date">July 30, 2014</div>
+
+                                <div class="tags">
+                                    <a href="#"><div class="tag event">Open House <span class="arrow"></span></div></a>
+                                    <a href="#"><div class="tag class">Luxury <span class="arrow"></span></div></a>
+                                    <a href="#"><div class="tag location">Jaimaca Plain <span class="arrow"></span></div></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="related-articles__item">
+                            <img class="thumb" src="images/related-articles/related-articles__thumbs__3.jpg" />
+                            <h2 class="title">For Sale: Historic Weston mansion</h2>
+                            <p class="description">The Henderson House in Weston, an English-Tudor style mansion with nearly 17,000 square feet of living space, is being sold for $7,795,000.</p>
+                            
+                            <div class="additional-info">
+                                <div class="date">July 13, 2014</div>
+                            </div>
+                        </div>
+
+                        <div class="related-articles__item">
+                            <img class="thumb" src="images/related-articles/related-articles__thumbs__4.jpg" />
+                            
+                            <a href="#">
+                                <h2 class="title">New Construction, Chestnut Hill Colonial - $2,400,000</h2>
+                            </a>
+
+                            <p class="description">Walk to Heath School and Train. Gorgeous Tree-lined street, Established Neighborhood. Open Plan main level with Back-lit Coffered Ceillings, Fireplaced Family Room and nicely appointed Cooks Kitchen with Island.</p>
+                            
+                            <div class="additional-info">
+                                <div class="date">July 3, 2014</div>
+
+                                <div class="tags">
+                                    <a href="#"><div class="tag event">Open House <span class="arrow"></span></div></a>
+                                    <a href="#"><div class="tag class">Luxury <span class="arrow"></span></div></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="dfp-ad__row">
+                            <a class="dfp-ad__row__main-link" href="javascript:;"><img src="images/ads/dfp/dfpAds__300by250__marriott.jpg" /></a>
+                            <a class="dfp-ad__row__main-link" href="javascript:;"><img src="images/ads/dfp/dfpAds__300by250__verizon.jpg" /></a>
+                        </div>
+
+                        <div class="related-articles__item">
+                            <img class="thumb" src="images/related-articles/related-articles__thumbs__1.jpg" />
+                            
+                            <a href="#">
+                                <h2 class="title">Tom and Gisele's Brookline Pad Looks Almost Ready</h2>
+                            </a>
+
+                            <p class="description">The ream home of the most famouse couple in Massachusetts looks like it's close to completion.</p>
+                            
+                            <div class="additional-info">
+                                <div class="date">September 9, 2014</div>
+
+                                <div class="tags">
+                                    <a href="#"><div class="tag class">Luxury <span class="arrow"></span></div></a>
+                                    <a href="#"><div class="tag location">Brooline <span class="arrow"></span></div></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="related-articles__item">
+                            <img class="thumb" src="images/related-articles/related-articles__thumbs__2.jpg" />
+                            
+                            <a href="#">
+                                <h2 class="title">For Sale: $2.85M Italianate Mansion in JP</h2>
+                            </a>
+
+                            <p class="description">This updated Italianate mansion, once known as The Gilbert House, was originally built in 1854 and has undergone extensive renovations while remaining loyal to the home's orignal design.</p>
+                            
+                            <div class="additional-info">
+                                <div class="date">July 30, 2014</div>
+
+                                <div class="tags">
+                                    <a href="#"><div class="tag event">Open House <span class="arrow"></span></div></a>
+                                    <a href="#"><div class="tag class">Luxury <span class="arrow"></span></div></a>
+                                    <a href="#"><div class="tag location">Jaimaca Plain <span class="arrow"></span></div></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <a href="javascript:;" class="viewMore">View More <img src="images/view-more__arrow-down.gif" /></a>
+                    </div>
+                    <!-- Related Articles -->
+                </div>
+
+                <div class="page-layout__right-col">
+                    <a href="javascript:;" class="dfp-ads">
+                        <img src="images/ads/dfp/dfpAds__300by250__coldwell-banker.jpg" />
+                    </a>
+
+                    <a href="javascript:;" class="dfp-ads">
+                        <img src="images/ads/dfp/dfpAds__300by250__moo.jpg" />
+                    </a>
+                    
+                    <div class="adplaceholer__right-column"></div>
+
+                    <!-- Page Right Rail-->
+                    <div class="right-rail">
+                      <div class="right-rail__headline">Explore Brookline</div> 
+                        <div class="right-rail__subheadline">RESTARAUNTS IN BROOKLINE</div>
+                            <div class="right-rail__linkList">          
+                               <ul>
+                                    <li>Barcelona Wine Bar</li>
+                                    <li>The Abby</li>
+                                    <li>Knight Moves</li>
+                              </ul>
+                            </div>
+                        <div class="right-rail__subheadline">THINGS TO DO IN BROOKLINE</div>
+                            <div class="right-rail__linkList">          
+                               <ul>
+                                    <li>Coolidge Corner Theater</li>
+                                    <li>John F. Kennedy National Historic Site</li>
+                                    <li>Larz Anderson Park</li>
+                                    <li>Irving's Toy and Card Shop</li>
+                              </ul>
+                            </div>                                        
+                    </div>
                 </div>
             </div>
         </div>

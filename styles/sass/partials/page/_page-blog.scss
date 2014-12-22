@@ -2,8 +2,19 @@ $module-name: 'page-blog';
 
 .#{$module-name} {
 	width: 100%;
-	background-color: #e5e5e5;
 	clear: both;
 	min-height: 100px;
 	overflow: hidden;
+}
+
+@include media-query(desktop) {
+	.#{$module-name} {
+		background-color: #e5e5e5;
+	}
+}
+
+@include media-query(tablet) {
+	.#{$module-name} {
+		
+	}
 }

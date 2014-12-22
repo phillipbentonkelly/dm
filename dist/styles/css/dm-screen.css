@@ -157,6 +157,131 @@ body {
   width: auto;
 }
 
+/* line 160, ../sass/helpers/_mixins-and-extends.scss */
+.overlays .iconOverlay, .adSlots .adSlot .iconOverlay {
+  position: absolute;
+  z-index: 1;
+}
+/* line 164, ../sass/helpers/_mixins-and-extends.scss */
+.overlays .topSpacing, .adSlots .adSlot .topSpacing {
+  top: 3%;
+}
+/* line 167, ../sass/helpers/_mixins-and-extends.scss */
+.overlays .leftSpacing, .adSlots .adSlot .leftSpacing {
+  left: 6%;
+}
+
+/* line 172, ../sass/helpers/_mixins-and-extends.scss */
+.adSlots, .mega-menu .adSlots, .real-estate-blog .adSlots, .real-estate-news .adSlots {
+  margin: auto;
+  display: block;
+  min-height: 250px;
+  overflow: hidden;
+  clear: both;
+}
+/* line 179, ../sass/helpers/_mixins-and-extends.scss */
+.adSlots .adSlot {
+  display: block;
+  width: 300px;
+  height: 250px;
+  margin: 0;
+  margin: auto;
+  position: relative;
+  /*border: 1px solid #ccc;*/
+  margin-bottom: 30px;
+}
+/* line 190, ../sass/helpers/_mixins-and-extends.scss */
+.adSlots .adSlot .category-tag {
+  position: absolute;
+  z-index: 101;
+}
+/* line 197, ../sass/helpers/_mixins-and-extends.scss */
+.adSlots .adSlot .detailsWrapper {
+  width: 300px;
+  clear: both;
+  min-height: 10%;
+  overflow: hidden;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+}
+/* line 207, ../sass/helpers/_mixins-and-extends.scss */
+.adSlots .adSlot .detailsWrapper .detailsArrow {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 25px 20px 25px;
+  border-color: rgba(0, 0, 0, 0.6) transparent;
+  float: right;
+}
+/* line 216, ../sass/helpers/_mixins-and-extends.scss */
+.adSlots .adSlot .detailsWrapper .detailsOverlay {
+  width: 93%;
+  min-height: 20%;
+  padding: 4% 5% 3% 3%;
+  color: #fff;
+  font-size: 0.7em;
+  letter-spacing: 1px;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 300;
+  background-color: rgba(0, 0, 0, 0.6);
+  clear: both;
+}
+/* line 228, ../sass/helpers/_mixins-and-extends.scss */
+.adSlots .adSlot .detailsWrapper .detailsOverlay h1 {
+  font-size: 120%;
+  text-align: left;
+  padding: 0 0 0.5em 0;
+  margin: 0 0 0 0;
+  line-height: 100%;
+  clear: both;
+  min-height: 10px;
+  overflow: hidden;
+}
+/* line 238, ../sass/helpers/_mixins-and-extends.scss */
+.adSlots .adSlot .detailsWrapper .detailsOverlay h1 .priceSpan {
+  float: right;
+}
+/* line 242, ../sass/helpers/_mixins-and-extends.scss */
+.adSlots .adSlot .detailsWrapper .detailsOverlay p {
+  display: none;
+  line-height: 1.5em;
+  padding: 0 0 0.5em 0;
+  margin: 0 0 0 0;
+}
+/* line 251, ../sass/helpers/_mixins-and-extends.scss */
+.adSlots .adSlot:hover .detailsWrapper .detailsOverlay p {
+  display: block;
+}
+
+@media (min-width: 960px) {
+  /* line 260, ../sass/helpers/_mixins-and-extends.scss */
+  .adSlots .adSlot {
+    float: left;
+    margin-right: 0px;
+  }
+  /* line 264, ../sass/helpers/_mixins-and-extends.scss */
+  .adSlots .adSlot:first-child {
+    float: left;
+    margin-right: 30px;
+  }
+  /* line 269, ../sass/helpers/_mixins-and-extends.scss */
+  .adSlots a.adSlot:first-child {
+    margin: 0px;
+  }
+}
+@media (min-width: 768px) {
+  /* line 277, ../sass/helpers/_mixins-and-extends.scss */
+  .adSlots .adSlot {
+    float: left;
+    margin-left: 30px;
+  }
+  /* line 282, ../sass/helpers/_mixins-and-extends.scss */
+  .adSlots a.adSlot:first-child {
+    margin-left: 0;
+  }
+}
 /* line 5, ../sass/partials/_element-defaults.scss */
 html {
   font-size: 85%;
@@ -447,19 +572,31 @@ textarea {
   /* line 30, ../sass/partials/page/_page-layout.scss */
   .page-layout {
     width: 960px;
+    margin: auto;
   }
-  /* line 33, ../sass/partials/page/_page-layout.scss */
+  /* line 34, ../sass/partials/page/_page-layout.scss */
   .page-layout__left-col {
     width: 630px;
     margin-right: 30px;
   }
-  /* line 38, ../sass/partials/page/_page-layout.scss */
+  /* line 39, ../sass/partials/page/_page-layout.scss */
   .page-layout__right-col {
     width: 300px;
   }
+
+  /* line 44, ../sass/partials/page/_page-layout.scss */
+  .page-layout-wrapper {
+    min-width: 1152px;
+    min-height: 700px;
+    overflow: hidden;
+    clear: both;
+    background-image: url(../../images/neighborhoods/Neighborhood__BGImage__Brookline.jpg);
+    background-position: top left;
+    background-repeat: repeat-x;
+  }
 }
 @media (min-width: 768px) {
-  /* line 45, ../sass/partials/page/_page-layout.scss */
+  /* line 56, ../sass/partials/page/_page-layout.scss */
   .page-layout {
     width: 960px;
   }
@@ -467,17 +604,24 @@ textarea {
 /* line 3, ../sass/partials/page/_page-blog.scss */
 .page-blog {
   width: 100%;
-  background-color: #e5e5e5;
   clear: both;
   min-height: 100px;
   overflow: hidden;
 }
 
+@media (min-width: 960px) {
+  /* line 11, ../sass/partials/page/_page-blog.scss */
+  .page-blog {
+    background-color: #e5e5e5;
+  }
+}
 /* line 11, ../sass/partials/page/_page-footer.scss */
 .page-footer {
   border-top: 1px solid #1a93b0;
   background-color: #fff;
   padding-top: 26px;
+  overflow: hidden;
+  clear: both;
 }
 
 /* line 11, ../sass/partials/page/_page-search.scss */
@@ -638,6 +782,8 @@ textarea {
   border-top: 1px solid #1a93b0;
   background-color: #fff;
   padding-top: 26px;
+  overflow: hidden;
+  clear: both;
 }
 
 /* line 3, ../sass/partials/page/modules/_listingsmap.scss */
@@ -645,9 +791,10 @@ textarea {
   width: 630px;
   height: 637px;
   overflow: hidden;
+  margin-bottom: 50px;
   /*border: 1px solid red;*/
 }
-/* line 9, ../sass/partials/page/modules/_listingsmap.scss */
+/* line 10, ../sass/partials/page/modules/_listingsmap.scss */
 .listings-map__wrapperArrow {
   width: 0;
   height: 0;
@@ -660,7 +807,7 @@ textarea {
   bottom: initial;
   margin: auto;
 }
-/* line 22, ../sass/partials/page/modules/_listingsmap.scss */
+/* line 23, ../sass/partials/page/modules/_listingsmap.scss */
 .listings-map__title {
   color: white;
   font-family: Oswald Regular;
@@ -674,7 +821,7 @@ textarea {
   padding: 3px 0 6px 0;
   clear: both;
 }
-/* line 36, ../sass/partials/page/modules/_listingsmap.scss */
+/* line 37, ../sass/partials/page/modules/_listingsmap.scss */
 .listings-map__navigation {
   width: 100%;
   height: 40px;
@@ -684,7 +831,7 @@ textarea {
   overflow: hidden;
   /**/
 }
-/* line 44, ../sass/partials/page/modules/_listingsmap.scss */
+/* line 45, ../sass/partials/page/modules/_listingsmap.scss */
 .listings-map__navigation .select-arrow {
   display: none;
   width: 0;
@@ -701,7 +848,7 @@ textarea {
   margin-left: auto;
   margin-right: auto;
 }
-/* line 61, ../sass/partials/page/modules/_listingsmap.scss */
+/* line 62, ../sass/partials/page/modules/_listingsmap.scss */
 .listings-map__navigation a {
   float: left;
   display: inline-block;
@@ -717,44 +864,44 @@ textarea {
   padding: 0 11px 0 11px;
   position: relative;
 }
-/* line 76, ../sass/partials/page/modules/_listingsmap.scss */
+/* line 77, ../sass/partials/page/modules/_listingsmap.scss */
 .listings-map__navigation a:nth-child(1) {
   background-color: #e5e5e5;
   text-transform: none;
   color: #000;
 }
-/* line 81, ../sass/partials/page/modules/_listingsmap.scss */
+/* line 82, ../sass/partials/page/modules/_listingsmap.scss */
 .listings-map__navigation a:nth-child(2) {
   background-color: #000;
 }
-/* line 84, ../sass/partials/page/modules/_listingsmap.scss */
+/* line 85, ../sass/partials/page/modules/_listingsmap.scss */
 .listings-map__navigation a:nth-child(3) {
   background-color: #1a91b1;
 }
-/* line 87, ../sass/partials/page/modules/_listingsmap.scss */
+/* line 88, ../sass/partials/page/modules/_listingsmap.scss */
 .listings-map__navigation a:nth-child(4) {
   background-color: #01a54f;
 }
-/* line 90, ../sass/partials/page/modules/_listingsmap.scss */
+/* line 91, ../sass/partials/page/modules/_listingsmap.scss */
 .listings-map__navigation a:nth-child(5) {
   background-color: #f96f6d;
 }
-/* line 94, ../sass/partials/page/modules/_listingsmap.scss */
+/* line 95, ../sass/partials/page/modules/_listingsmap.scss */
 .listings-map__navigation a.selected .select-arrow {
   display: block !important;
 }
-/* line 99, ../sass/partials/page/modules/_listingsmap.scss */
+/* line 100, ../sass/partials/page/modules/_listingsmap.scss */
 .listings-map__map-wrapper {
   width: 630px;
   height: 448px;
-  border: 1px solid #e5e5e5;
+  background-color: #fff;
 }
-/* line 104, ../sass/partials/page/modules/_listingsmap.scss */
+/* line 105, ../sass/partials/page/modules/_listingsmap.scss */
 .listings-map__map-wrapper h1 {
   text-align: center;
   vertical-align: middle;
 }
-/* line 110, ../sass/partials/page/modules/_listingsmap.scss */
+/* line 111, ../sass/partials/page/modules/_listingsmap.scss */
 .listings-map__view-all {
   color: #111111;
   display: block;
@@ -763,6 +910,7 @@ textarea {
   line-height: 2.3em;
   text-align: center;
   background-color: #e5e5e5;
+  margin-bottom: 44px;
 }
 
 /* line 3, ../sass/partials/page/modules/_relatedarticles.scss */
@@ -774,11 +922,12 @@ textarea {
 /* line 8, ../sass/partials/page/modules/_relatedarticles.scss */
 .related-articles__section-header {
   color: #333;
+  text-align: center;
   font-family: Oswald Regular;
   font-weight: 500;
   font-size: 26px;
 }
-/* line 15, ../sass/partials/page/modules/_relatedarticles.scss */
+/* line 16, ../sass/partials/page/modules/_relatedarticles.scss */
 .related-articles__item {
   width: 100%;
   min-height: 50px;
@@ -788,34 +937,38 @@ textarea {
   overflow: hidden;
   clear: both;
 }
-/* line 24, ../sass/partials/page/modules/_relatedarticles.scss */
+/* line 25, ../sass/partials/page/modules/_relatedarticles.scss */
 .related-articles__item .thumb {
   display: block;
   float: left;
   margin-right: 1%;
 }
-/* line 30, ../sass/partials/page/modules/_relatedarticles.scss */
-.related-articles__item h2.title {
-  line-height: 16px;
-  font-family: OpenSans Bold;
-  font-size: 16px;
-  padding: 0 0 0 0;
-  margin: 0 0 4px 0;
+/* line 31, ../sass/partials/page/modules/_relatedarticles.scss */
+.related-articles__item a {
+  color: #000;
 }
-/* line 38, ../sass/partials/page/modules/_relatedarticles.scss */
+/* line 35, ../sass/partials/page/modules/_relatedarticles.scss */
+.related-articles__item h2.title {
+  font-size: 16px;
+  font-family: OpenSans Bold;
+  line-height: 16px;
+  margin: 0 0 4px 0;
+  padding: 0 0 0 0;
+}
+/* line 43, ../sass/partials/page/modules/_relatedarticles.scss */
 .related-articles__item p.description {
   font-family: OpenSans Regular;
   font-size: 13px;
   margin-bottom: 6px;
 }
-/* line 44, ../sass/partials/page/modules/_relatedarticles.scss */
+/* line 49, ../sass/partials/page/modules/_relatedarticles.scss */
 .related-articles__item div.date {
   float: left;
   max-width: 35%;
   font-family: OpenSans Italic;
   font-size: 12px;
 }
-/* line 51, ../sass/partials/page/modules/_relatedarticles.scss */
+/* line 56, ../sass/partials/page/modules/_relatedarticles.scss */
 .related-articles__item .additional-info {
   width: 78%;
   min-height: 10px;
@@ -824,14 +977,14 @@ textarea {
   bottom: 4.7%;
   right: 0;
 }
-/* line 60, ../sass/partials/page/modules/_relatedarticles.scss */
+/* line 65, ../sass/partials/page/modules/_relatedarticles.scss */
 .related-articles__item .tags {
   float: right;
   max-width: 65%;
   min-height: 10px;
   overflow: hidden;
 }
-/* line 66, ../sass/partials/page/modules/_relatedarticles.scss */
+/* line 71, ../sass/partials/page/modules/_relatedarticles.scss */
 .related-articles__item .tags .tag {
   display: block;
   float: left;
@@ -844,7 +997,7 @@ textarea {
   color: #fff;
   margin-bottom: 5px;
 }
-/* line 78, ../sass/partials/page/modules/_relatedarticles.scss */
+/* line 83, ../sass/partials/page/modules/_relatedarticles.scss */
 .related-articles__item .tags .tag .arrow {
   display: block;
   float: right;
@@ -855,19 +1008,19 @@ textarea {
   border-right: 8px solid white;
   margin-left: 6px;
 }
-/* line 90, ../sass/partials/page/modules/_relatedarticles.scss */
+/* line 95, ../sass/partials/page/modules/_relatedarticles.scss */
 .related-articles__item .tags .location {
   background-color: #82b5e6;
 }
-/* line 91, ../sass/partials/page/modules/_relatedarticles.scss */
+/* line 96, ../sass/partials/page/modules/_relatedarticles.scss */
 .related-articles__item .tags .class {
   background-color: #00a651;
 }
-/* line 92, ../sass/partials/page/modules/_relatedarticles.scss */
+/* line 97, ../sass/partials/page/modules/_relatedarticles.scss */
 .related-articles__item .tags .event {
   background-color: #ff6c6c;
 }
-/* line 96, ../sass/partials/page/modules/_relatedarticles.scss */
+/* line 101, ../sass/partials/page/modules/_relatedarticles.scss */
 .related-articles a.viewMore {
   display: block;
   text-align: center;
@@ -882,23 +1035,23 @@ textarea {
   background: #e5e5e5;
   margin-top: 20px;
 }
-/* line 110, ../sass/partials/page/modules/_relatedarticles.scss */
+/* line 115, ../sass/partials/page/modules/_relatedarticles.scss */
 .related-articles a.viewMore img {
   margin-left: 4px;
 }
-/* line 115, ../sass/partials/page/modules/_relatedarticles.scss */
+/* line 120, ../sass/partials/page/modules/_relatedarticles.scss */
 .related-articles .dfp-ad__row {
   display: block;
   clear: both;
   min-height: 1px;
   overflow: hidden;
 }
-/* line 121, ../sass/partials/page/modules/_relatedarticles.scss */
+/* line 126, ../sass/partials/page/modules/_relatedarticles.scss */
 .related-articles .dfp-ad__row__main-link {
   display: block;
   float: left;
 }
-/* line 125, ../sass/partials/page/modules/_relatedarticles.scss */
+/* line 130, ../sass/partials/page/modules/_relatedarticles.scss */
 .related-articles .dfp-ad__row__main-link:nth-child(odd) {
   margin-right: 30px;
 }
@@ -1227,32 +1380,25 @@ textarea {
   bottom: 0px;
 }
 
-/* line 11, ../sass/partials/page/modules/_contact-form-premium.scss */
-.page-layout__right-col {
+/*.page-layout__right-col {
   display: none;
 }
 
-/* line 15, ../sass/partials/page/modules/_contact-form-premium.scss */
 .page-layout, .page-layout__left-col {
   width: 100%;
-}
-
+}*/
 @media (min-width: 960px) {
-  /* line 40, ../sass/partials/page/modules/_contact-form-premium.scss */
-  .page-layout {
+  /*.page-layout {
     width: 960px;
   }
 
-  /* line 44, ../sass/partials/page/modules/_contact-form-premium.scss */
   .page-layout__left-col {
     width: 630px;
   }
 
-  /* line 48, ../sass/partials/page/modules/_contact-form-premium.scss */
   .page-layout__right-col {
     display: block;
-  }
-
+  }*/
   /* line 53, ../sass/partials/page/modules/_contact-form-premium.scss */
   .contact__container {
     position: relative;
@@ -1852,18 +1998,37 @@ textarea {
   color: #1a93b0;
 }
 
-/* line 14, ../sass/partials/page/modules/_mega-menu.scss */
+/* line 15, ../sass/partials/page/modules/_mega-menu.scss */
+.mega-menu .adSlots .adSlot:hover .detailsWrapper .detailsOverlay p {
+  display: block;
+}
+/* line 19, ../sass/partials/page/modules/_mega-menu.scss */
+.mega-menu .adSlots a.adSlot:nth-child(odd) {
+  margin-right: 30px;
+}
+/* line 24, ../sass/partials/page/modules/_mega-menu.scss */
+.mega-menu__featured-home {
+  position: relative;
+}
+/* line 27, ../sass/partials/page/modules/_mega-menu.scss */
+.mega-menu__featured-home .adSlot {
+  display: block;
+  min-height: 10px;
+  overflow-x: hidden;
+}
+
+/* line 34, ../sass/partials/page/modules/_mega-menu.scss */
 .find-home-menu, .neighborhoods-menu {
   display: none;
 }
 
 @media (min-width: 960px) {
-  /* line 41, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 61, ../sass/partials/page/modules/_mega-menu.scss */
   .mega-menu__container {
     position: absolute;
     right: 0;
     left: 0;
-    z-index: 10;
+    z-index: 100;
     height: 280px;
     width: 960px;
     margin: 0 auto;
@@ -1872,7 +2037,7 @@ textarea {
     border: 1px solid lightgrey;
     box-sizing: border-box;
   }
-  /* line 55, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 75, ../sass/partials/page/modules/_mega-menu.scss */
   .mega-menu__section--left, .mega-menu__section--middle, .mega-menu__section--right {
     width: 33.3%;
     height: 100%;
@@ -1880,53 +2045,53 @@ textarea {
     padding: 10px;
     box-sizing: border-box;
   }
-  /* line 63, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 83, ../sass/partials/page/modules/_mega-menu.scss */
   .mega-menu__list-items {
     clear: both;
     list-style: none;
     margin: 0;
     padding: 0;
   }
-  /* line 70, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 90, ../sass/partials/page/modules/_mega-menu.scss */
   .mega-menu__list-item {
     padding: 5px 0;
     font-size: 14px;
   }
-  /* line 74, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 94, ../sass/partials/page/modules/_mega-menu.scss */
   .mega-menu__list-item a {
     text-decoration: none;
     color: black;
   }
-  /* line 79, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 99, ../sass/partials/page/modules/_mega-menu.scss */
   .mega-menu__list-item a:hover {
     color: #1a93b0;
   }
-  /* line 85, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 105, ../sass/partials/page/modules/_mega-menu.scss */
   .mega-menu__section--left .mega-menu__list-item {
     font-family: 'OpenSans Bold';
   }
-  /* line 90, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 110, ../sass/partials/page/modules/_mega-menu.scss */
   .mega-menu__section--middle {
     border-left: 1px solid lightgrey;
   }
-  /* line 93, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 113, ../sass/partials/page/modules/_mega-menu.scss */
   .mega-menu__section--middle .mega-menu__list-item {
     padding: 10px 45px 10px 0;
     border-top: 1px solid lightgrey;
     font-family: 'OpenSans';
     font-weight: 600;
   }
-  /* line 100, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 120, ../sass/partials/page/modules/_mega-menu.scss */
   .mega-menu__section--middle .mega-menu__list-item:first-child {
     border: none;
     padding-top: 0;
   }
-  /* line 106, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 126, ../sass/partials/page/modules/_mega-menu.scss */
   .mega-menu__section--right {
     padding-bottom: 0;
     overflow: hidden;
   }
-  /* line 111, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 131, ../sass/partials/page/modules/_mega-menu.scss */
   .mega-menu__search-input {
     float: left;
     margin: 0 5px 5px 0;
@@ -1936,7 +2101,7 @@ textarea {
     width: 220px;
     font-size: 12px;
   }
-  /* line 121, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 141, ../sass/partials/page/modules/_mega-menu.scss */
   .mega-menu__search-submit {
     padding: 0;
     display: inline-block;
@@ -1949,13 +2114,21 @@ textarea {
     -moz-border-radius: 3px;
     border-radius: 3px;
   }
-  /* line 134, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 154, ../sass/partials/page/modules/_mega-menu.scss */
   .mega-menu__featured-home {
+    display: block;
+    min-height: 1px;
     height: 100%;
     overflow: hidden;
   }
+  /* line 160, ../sass/partials/page/modules/_mega-menu.scss */
+  .mega-menu__featured-home .adSlot {
+    display: block;
+    min-height: 10px;
+    overflow-x: hidden;
+  }
 
-  /* line 141, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 169, ../sass/partials/page/modules/_mega-menu.scss */
   #mega-menu__list-items--left, #mega-menu__list-items--right {
     width: 50%;
     float: left;
@@ -1963,42 +2136,41 @@ textarea {
     box-sizing: border-box;
   }
 
-  /* line 148, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 176, ../sass/partials/page/modules/_mega-menu.scss */
   #mega-menu__list-items--left {
     padding-right: 15px;
   }
 
-  /* line 152, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 180, ../sass/partials/page/modules/_mega-menu.scss */
   .page-nav__form__submit {
     float: right;
     padding: 0 0 1px 0;
     border-radius: 5px;
   }
 
-  /* line 165, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 193, ../sass/partials/page/modules/_mega-menu.scss */
   .adSlot {
     float: left;
     display: block;
     width: 300px;
     height: 250px;
     position: relative;
-    /*border: 1px solid #ccc;*/
     margin-bottom: 30px;
   }
-  /* line 175, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 201, ../sass/partials/page/modules/_mega-menu.scss */
   .adSlot .iconOverlay {
     position: absolute;
     z-index: 1;
   }
-  /* line 179, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 205, ../sass/partials/page/modules/_mega-menu.scss */
   .adSlot .topSpacing {
     top: 3%;
   }
-  /* line 182, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 208, ../sass/partials/page/modules/_mega-menu.scss */
   .adSlot .leftSpacing {
     left: 6%;
   }
-  /* line 186, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 212, ../sass/partials/page/modules/_mega-menu.scss */
   .adSlot .detailsWrapper {
     width: 300px;
     clear: both;
@@ -2009,7 +2181,7 @@ textarea {
     left: 0;
     z-index: 1;
   }
-  /* line 196, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 222, ../sass/partials/page/modules/_mega-menu.scss */
   .adSlot .detailsWrapper .detailsArrow {
     width: 0;
     height: 0;
@@ -2018,7 +2190,7 @@ textarea {
     border-color: rgba(0, 0, 0, 0.6) transparent;
     float: right;
   }
-  /* line 205, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 231, ../sass/partials/page/modules/_mega-menu.scss */
   .adSlot .detailsWrapper .detailsOverlay {
     width: 93%;
     min-height: 20%;
@@ -2031,7 +2203,7 @@ textarea {
     background-color: rgba(0, 0, 0, 0.6);
     clear: both;
   }
-  /* line 217, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 243, ../sass/partials/page/modules/_mega-menu.scss */
   .adSlot .detailsWrapper .detailsOverlay h1 {
     font-size: 120%;
     text-align: left;
@@ -2042,11 +2214,11 @@ textarea {
     min-height: 10px;
     overflow: hidden;
   }
-  /* line 227, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 253, ../sass/partials/page/modules/_mega-menu.scss */
   .adSlot .detailsWrapper .detailsOverlay h1 .priceSpan {
     float: right;
   }
-  /* line 231, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 257, ../sass/partials/page/modules/_mega-menu.scss */
   .adSlot .detailsWrapper .detailsOverlay p {
     display: none;
     line-height: 1.5em;
@@ -2054,12 +2226,12 @@ textarea {
     margin: 0 0 0 0;
   }
 
-  /* line 241, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 267, ../sass/partials/page/modules/_mega-menu.scss */
   .adSlot:hover .detailsWrapper .detailsOverlay p {
     display: block;
   }
 
-  /* line 245, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 271, ../sass/partials/page/modules/_mega-menu.scss */
   a.adSlot:nth-child(odd) {
     margin-right: 30px;
   }
@@ -2217,106 +2389,15 @@ textarea {
   font-size: 1.5em;
   margin: 0 0 1.5% 0;
 }
-/* line 17, ../sass/partials/page-content/modules/_real-estate-blog.scss */
-.real-estate-blog .adSlots {
-  display: block;
-  min-height: 250px;
-  overflow: hidden;
-  clear: both;
-}
-/* line 23, ../sass/partials/page-content/modules/_real-estate-blog.scss */
-.real-estate-blog .adSlots .adSlot {
-  float: left;
-  display: block;
-  width: 300px;
-  height: 250px;
-  margin-left: 30px;
-  position: relative;
-  /*border: 1px solid #ccc;*/
-  margin-bottom: 30px;
-}
-/* line 34, ../sass/partials/page-content/modules/_real-estate-blog.scss */
-.real-estate-blog .adSlots .adSlot .category-tag {
-  position: absolute;
-  z-index: 101;
-}
-/* line 39, ../sass/partials/page-content/modules/_real-estate-blog.scss */
-.real-estate-blog .adSlots .adSlot .iconOverlay {
-  position: absolute;
-  z-index: 1;
-}
-/* line 43, ../sass/partials/page-content/modules/_real-estate-blog.scss */
-.real-estate-blog .adSlots .adSlot .topSpacing {
-  top: 3%;
-}
-/* line 46, ../sass/partials/page-content/modules/_real-estate-blog.scss */
-.real-estate-blog .adSlots .adSlot .leftSpacing {
-  left: 6%;
-}
-/* line 50, ../sass/partials/page-content/modules/_real-estate-blog.scss */
-.real-estate-blog .adSlots .adSlot .detailsWrapper {
-  width: 300px;
-  clear: both;
-  min-height: 10%;
-  overflow: hidden;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  z-index: 1;
-}
-/* line 60, ../sass/partials/page-content/modules/_real-estate-blog.scss */
-.real-estate-blog .adSlots .adSlot .detailsWrapper .detailsArrow {
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 0 25px 20px 25px;
-  border-color: rgba(0, 0, 0, 0.6) transparent;
-  float: right;
-}
-/* line 69, ../sass/partials/page-content/modules/_real-estate-blog.scss */
-.real-estate-blog .adSlots .adSlot .detailsWrapper .detailsOverlay {
-  width: 93%;
-  min-height: 20%;
-  padding: 4% 5% 3% 3%;
-  color: #fff;
-  font-size: 0.7em;
-  letter-spacing: 1px;
-  font-family: 'Oswald', sans-serif;
-  font-weight: 300;
-  background-color: rgba(0, 0, 0, 0.6);
-  clear: both;
-}
-/* line 81, ../sass/partials/page-content/modules/_real-estate-blog.scss */
-.real-estate-blog .adSlots .adSlot .detailsWrapper .detailsOverlay h1 {
-  font-size: 120%;
-  text-align: left;
-  padding: 0 0 0.5em 0;
-  margin: 0 0 0 0;
-  line-height: 100%;
-  clear: both;
-  min-height: 10px;
-  overflow: hidden;
-}
-/* line 91, ../sass/partials/page-content/modules/_real-estate-blog.scss */
-.real-estate-blog .adSlots .adSlot .detailsWrapper .detailsOverlay h1 .priceSpan {
-  float: right;
-}
-/* line 95, ../sass/partials/page-content/modules/_real-estate-blog.scss */
-.real-estate-blog .adSlots .adSlot .detailsWrapper .detailsOverlay p {
-  display: none;
-  line-height: 1.5em;
-  padding: 0 0 0.5em 0;
-  margin: 0 0 0 0;
-}
-/* line 104, ../sass/partials/page-content/modules/_real-estate-blog.scss */
+/* line 20, ../sass/partials/page-content/modules/_real-estate-blog.scss */
 .real-estate-blog .adSlots .adSlot:hover .detailsWrapper .detailsOverlay p {
   display: block;
 }
-/* line 108, ../sass/partials/page-content/modules/_real-estate-blog.scss */
-.real-estate-blog .adSlots a.adSlot:first-child {
-  margin-left: 0;
+/* line 24, ../sass/partials/page-content/modules/_real-estate-blog.scss */
+.real-estate-blog .adSlots a.adSlot:nth-child(odd) {
+  margin-right: 0px;
 }
-/* line 113, ../sass/partials/page-content/modules/_real-estate-blog.scss */
+/* line 29, ../sass/partials/page-content/modules/_real-estate-blog.scss */
 .real-estate-blog a.viewMore {
   display: block;
   text-align: center;
@@ -2329,21 +2410,122 @@ textarea {
   text-decoration: none;
   background: #e5e5e5;
 }
-/* line 125, ../sass/partials/page-content/modules/_real-estate-blog.scss */
+/* line 41, ../sass/partials/page-content/modules/_real-estate-blog.scss */
 .real-estate-blog a.viewMore img {
   margin-left: 4px;
 }
 
 @media (min-width: 960px) {
-  /* line 132, ../sass/partials/page-content/modules/_real-estate-blog.scss */
+  /* line 48, ../sass/partials/page-content/modules/_real-estate-blog.scss */
   .real-estate-blog {
     width: 960px;
   }
 }
 @media (min-width: 768px) {
-  /* line 138, ../sass/partials/page-content/modules/_real-estate-blog.scss */
+  /* line 54, ../sass/partials/page-content/modules/_real-estate-blog.scss */
   .real-estate-blog {
     width: 960px;
+  }
+}
+/* line 4, ../sass/partials/page-content/modules/_real-estate-news.scss */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 9, ../sass/partials/page-content/modules/_real-estate-news.scss */
+a, img {
+  outline: none;
+  border: 0;
+}
+
+/* line 14, ../sass/partials/page-content/modules/_real-estate-news.scss */
+.real-estate-news {
+  width: 100%;
+  min-height: 250px;
+  overflow: hidden;
+  clear: both;
+  font-family: OpenSans Regular;
+  font-weight: 400;
+  font-size: 1em;
+}
+/* line 24, ../sass/partials/page-content/modules/_real-estate-news.scss */
+.real-estate-news h1 {
+  text-align: center;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 500;
+  font-size: 1.5em;
+  margin: 0 0 5% 0;
+}
+/* line 35, ../sass/partials/page-content/modules/_real-estate-news.scss */
+.real-estate-news .adSlots .adSlot {
+  margin-right: 0 !Important;
+  margin-left: 0px !Important;
+}
+/* line 40, ../sass/partials/page-content/modules/_real-estate-news.scss */
+.real-estate-news .adSlots .adSlot:nth-child(odd) {
+  margin-right: 0px !Important;
+  margin-left: 0px !Important;
+}
+/* line 46, ../sass/partials/page-content/modules/_real-estate-news.scss */
+.real-estate-news a.viewMore {
+  clear: both;
+  display: block;
+  text-align: center;
+  text-transform: capitalize;
+  font-family: OpenSans Regular;
+  font-weight: 400;
+  color: #000;
+  line-height: 1em;
+  padding: 0.5em 0 0.5em 0;
+  text-decoration: none;
+  background: #e5e5e5;
+}
+/* line 59, ../sass/partials/page-content/modules/_real-estate-news.scss */
+.real-estate-news a.viewMore img {
+  margin-left: 4px;
+}
+/* line 64, ../sass/partials/page-content/modules/_real-estate-news.scss */
+.real-estate-news a.disabledViewMore {
+  opacity: 0.4;
+  cursor: default;
+}
+
+@media (min-width: 960px) {
+  /* line 71, ../sass/partials/page-content/modules/_real-estate-news.scss */
+  .real-estate-news {
+    width: 630px;
+  }
+  /* line 74, ../sass/partials/page-content/modules/_real-estate-news.scss */
+  .real-estate-news .adSlot {
+    margin-right: 30px;
+    margin-left: 0px;
+  }
+  /* line 79, ../sass/partials/page-content/modules/_real-estate-news.scss */
+  .real-estate-news .adSlot:nth-child(odd) {
+    margin-right: 30px;
+    margin-left: 0px;
+  }
+}
+@media (min-width: 768px) {
+  /* line 87, ../sass/partials/page-content/modules/_real-estate-news.scss */
+  .real-estate-news {
+    width: 630px;
+  }
+  /* line 90, ../sass/partials/page-content/modules/_real-estate-news.scss */
+  .real-estate-news .adSlots {
+    float: left;
+    width: 630px;
+  }
+  /* line 94, ../sass/partials/page-content/modules/_real-estate-news.scss */
+  .real-estate-news .adSlots .adSlot {
+    margin-right: 0 !Important;
+    margin-left: 0px !Important;
+  }
+  /* line 99, ../sass/partials/page-content/modules/_real-estate-news.scss */
+  .real-estate-news .adSlots .adSlot:nth-child(odd) {
+    margin-right: 30px !Important;
+    margin-left: 0px !Important;
   }
 }
 /* line 7, ../sass/partials/page-content/modules/_content-footer.scss */

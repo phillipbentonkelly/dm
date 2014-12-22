@@ -18,7 +18,7 @@
         <!-- Real Estate Listings -->
 
         <!-- Real Estate News (300x250) -->
-        <link rel="stylesheet" href="styles/css/realestatenews.css" />
+        <!--<link rel="stylesheet" href="styles/css/realestatenews.css" />-->
         <!-- Real Estate News (300x250) -->
         
     <style>
@@ -162,6 +162,8 @@
             </div>
         </div>
         <!-- Full Screen Carousel -->
+
+        <div id="testDFPUnit">DFPUnit</div>
         
 
         <script type="text/javascript">
@@ -210,6 +212,21 @@
                 googletag.display("div-id-for-carousel2");
                 googletag.display("div-id-for-carousel3");
             });
+
+            setTimeout(function(){
+                
+                console.log($('#div-id-for-carousel1').html());
+                /*console.log($('#div-id-for-carousel1'));
+                console.log($('#div-id-for-carousel1 iframe:first-child'));
+                $('.slide div[id]')
+                $($('.slide div[id]')[0]).contents()
+                $('#div-id-for-carousel1 iframe:first-child')
+                console.log($('#div-id-for-carousel1').find('iframe')[0]);
+                console.log($('#div-id-for-carousel1').find('iframe')[0]).document;*/
+
+                $('#testDFPUnit').html($('#div-id-for-carousel1').html());
+                
+            }, 1000);
         </script>
 
     </body>

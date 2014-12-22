@@ -4,6 +4,7 @@ $module-name: 'listings-map';
 	width: 630px;
 	height: 637px;
 	overflow: hidden;
+	margin-bottom: 50px;
 	/*border: 1px solid red;*/
 
 	&__wrapperArrow{
@@ -99,7 +100,7 @@ $module-name: 'listings-map';
 	&__map-wrapper {
 		width: 630px;
 		height: 448px;
-		border: 1px solid #e5e5e5;
+		background-color: #fff;
 
 		h1 {
 			text-align: center;
@@ -115,5 +116,7 @@ $module-name: 'listings-map';
 		line-height: 2.3em;
 		text-align: center;
 		background-color: #e5e5e5;
+
+		margin-bottom: 44px;
 	}
 }
