@@ -16,6 +16,14 @@ $module-name: 'real-estate-blog';
 
 	.adSlots {
 		@extend .adSlots;
+
+		.adSlot:hover .detailsWrapper .detailsOverlay p {
+			display: block;
+		}
+
+		a.adSlot:nth-child(odd){
+			margin-right: 0px;
+		}
 	}
 
 	a.viewMore{

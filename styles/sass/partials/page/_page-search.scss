@@ -10,98 +10,163 @@ $module-name: 'page-search';
 
 .#{$module-name} {
 	width: 100%;
-	height: $page-search;
-	background: $light-cyan;
+	
+	&__home{
+		position: absolute;
+		top: 160px;
+		z-index: 500;
+		height: 120px;
+		background: rgba(233,244,246,0.7);
+
+		form{
+			width: 800px;
+		}
+	}
+
+	&__serp{
+		display: block;
+		float: left;
+		height: $page-search-serp-height;
+		background: rgb(221, 239, 243);
+
+		form{
+			width: 960px;
+		}
+	}
 
 	&__content-wrapper {
-		width: $desktop-breakpoint;
+		width: 960px;
 		height: 100%;
 		overflow: hidden;
 		margin: auto;
 	}
 
-		&__search-form{
-			display: inline-block;
-			width: 100%;
-			height: 100%;
+	&__form{
+		display: block;
+		height: 90%;
+		margin: 10px auto;
+
+		input[type="text"] {
+			box-sizing: border-box;
+			margin: 0 5px 0 0;
+			border: 0;
 		}
-	
-			&__tokeninput{
-				display: inline-block;
-				border: 0;
-				margin-right: 25px;
-				height: 30px;
-				font-size: 0.75rem;
+
+	}
+
+
+	&__row{
+		@extend .row;
+		overflow: visible;
+
+		&--bottom{
+			margin: 10px 20px;
+		}
+	}
+
+	&__button{
+		display: inline-block;
+		border: 0;
+
+		&--submit{
+			float: right;
+			width: 45px;
+			height: 45px;
+			background: url(#{$img-path}icons/icon_search-magnifiying-glass.png) center center no-repeat #000;
+		}
+
+		&--save-search{
+			float: right;
+			background: none;
+			color: #000;
+			font-weight: bold;
+			text-transform: uppercase;
+			vertical-align: middle;
+			box-shadow: none;
+		}
+	}
+
+
+	&__fancy-checkbox-container{
+		display: inline-block;
+		float: left;
+
+		input[type=checkbox] {
+			display: none;
+			padding: 0;
+		}
+
+		label {
+			display: inline-block;
+			cursor: pointer;
+			position: relative;
+			padding-left: 17px;
+			margin-right: 15px;
+			margin-bottom: 3px;
+			font-size: 11px;
+		}
+
+		label:before {
+			content: "";
+			display: inline-block;
+			position: absolute;
+			left: 0;
+			bottom: 1px;
+			margin-right: 10px;
+			border-radius: 2px;
+			width: 14px;
+			height: 14px;
+			color: #fff;
+		}
+
+		input[type=checkbox]:checked + label:before {
+			content: "\2713";
+			font: 15px sans-serif;
+			color: #f3f3f3;
+			text-align: center;
+		    line-height: 15px;
+		}
+
+		&--for-sale{
+			label:before{
+				background: #1c93b5;
 			}
+		}
 
-			&__checkbox-container{
-				display: inline-block;
-				width: 120px;
-
-				label {
-					display: inline-block;
-					cursor: pointer;
-					position: relative;
-					padding-left: 25px;
-					margin-right: 15px;
-					margin-bottom: 3px;
-					font-size: 13px;
-				}
-
-
-				input[type=checkbox] {
-					padding: 0;
-					display: none;
-				}
-
-				label:before {
-					content: "";
-					display: inline-block;
-					position: absolute;
-					left: 0;
-					bottom: 1px;
-					margin-right: 10px;
-					border-radius: 2px;
-					width: 16px;
-					height: 16px;
-					color: #fff;
-				}
-
-				input[type=checkbox]:checked + label:before {
-					content: "\2713";
-					text-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
-					font-size: 15px;
-					color: #f3f3f3;
-					text-align: center;
-				    line-height: 15px;
-				}
-
-				label.for-sale:before{
-					background: #1c93b5;
-				}
-
-				label.for-rent:before{
-					background: #05a851;
-				}
-
+		&--for-rent{
+			label:before{
+				background: #05a851;
 			}
+		}
+	}
 
-			&__dropdown{
-				display: inline-block;
-				vertical-align: middle;
-				margin-bottom: 10px;
-			}
+	&__dropdown{
+		display: inline-block;
+		vertical-align: middle;
 
+		&--wide{
+			width: 700px;
+			height: 50px;
+			font-size: 17px;
+			padding: 5px 20px;
+			font-family: 'Times';
+		}
 
-			&__search-button{
-				display: inline-block;
-				border: 0;
-				background: none;
-				color: #000;
-				font-weight: bold;
-				text-transform: uppercase;
-				vertical-align: middle;
-				box-shadow: none;
-			}
+		&--narrow{
+			width: 242px;
+			height: 32px;
+			font-size: 17px;
+			padding: 5px;
+			font-family: 'Times';
+		}
+
+		&--filter{
+			width: 85px;
+			height: 40px;
+			padding: 5px;
+		}
+	}
 
 }
+
+			

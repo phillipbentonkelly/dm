@@ -48,38 +48,44 @@
         </div>
     </div>
     <!-- Page Masthead -->
-    
 
-    <!-- Page Nav -->
+    <!-- MAIN NAVBAR -->
     <div class="page-nav">
         <div class="page-nav__content-wrapper">
-            <a href="javascript:;" class="page-nav__logo">
-                <h1>Addresses</h1>
+            <ul>
+                <li class='page-nav__logo'><a href="javascript:;">
+                    <h1>Addresses</h1>
+                    <h4>A Boston.com Site</h4>
+                </a></li>
 
-                <h4>A Boston.com Site</h4>
-            </a>
+                <li id='find-home-menu' class='page-nav__nav-item js-mega-menu'><a href="javascript:;">Find A Home</a><div class='page-nav__arrow-up'></div></li>
 
-            <a href="javascript:;" class="js-mega-menu page-nav__nav-item" id='find-home-menu'>Find A Home</a>
-            <a href="javascript:;" class="js-mega-menu page-nav__nav-item" id='neighborhoods-menu'>Neighborhoods</a>
-            <a href="javascript:;" class="page-nav__nav-item">Open Houses</a>
-            <a href="javascript:;" class="page-nav__nav-item">Luxury Living</a>
+                <li id='neighborhoods-menu' class="js-mega-menu page-nav__nav-item"><a href="javascript:;">Neighborhoods</a><div class='page-nav__arrow-up'></div></li>
 
-            <!--<form class="page-nav__form">
-                <input type="text" name="search" class="page-nav__search-box" />
-                <button class="page-nav__form__submit" value=""></button>
-            </form>-->
+                <li class='page-nav__nav-item'><a href="javascript:;">Open Houses</a></li>
 
-            <a href="javascript:;" class="page-nav__nav-item myAccount">My Account</a>
+                <!--<form class="page-nav__form">
+                    <input type="text" name="search" class="page-nav__search-box" />
+                    <button class="page-nav__form__submit" value=""></button>
+                </form>-->
+
+                <li class='page-nav__nav-item'><a href="javascript:;">Luxury Living</a></li>
+
+                <li class='page-nav__nav-item myAccount'><a href="javascript:;">My Account</a></li>
+
+            </ul>
         </div>
     </div>
+    <!-- MAIN NAV BAR -->
 
     <!-- FIND A HOME MEGAMENU -->
     <div class='mega-menu__container find-home-menu'>
 
+    <!-- <div class='mega-menu__arrow-up'></div> -->
         <div class='mega-menu__section--left'>
 
-            <input class='mega-menu__search' placeholder='search for real estate listings are articles.'/>
-            <button class='page-nav__form__submit'></button>
+            <input class='mega-menu__search-input' placeholder='search for real estate listings are articles.'/>
+            <button class='mega-menu__search-submit'></button>
 
             <ul class='mega-menu__list-items'>
                 <li class='mega-menu__list-item'>
@@ -104,7 +110,6 @@
             </ul>
         </div>
 
-
         <div class='mega-menu__section--middle'>
             <ul class='mega-menu__list-items'>
                 <li class='mega-menu__list-item'>
@@ -124,7 +129,6 @@
                 </li>
             </ul>
         </div>
-
 
         <div class='mega-menu__section--right'>
             <div class='mega-menu__featured-home'>
@@ -151,8 +155,8 @@
     <!-- NEIGHBORHOODS MEGAMENU -->
     <div class='mega-menu__container neighborhoods-menu'>
 
+        <div class='mega-menu__pointer'></div>
         <div class='mega-menu__section--left'>
-
             
             <ul id='mega-menu__list-items--left' class='mega-menu__list-items'>
                 <li class='mega-menu__list-item'>
@@ -219,7 +223,6 @@
             </ul>
         </div>
 
-
         <div class='mega-menu__section--middle'>
             <ul class='mega-menu__list-items'>
                 <li class='mega-menu__list-item'>
@@ -239,7 +242,6 @@
                 </li>
             </ul>
         </div>
-
 
         <div class='mega-menu__section--right'>
             <div class='mega-menu__featured-home'>
@@ -450,10 +452,39 @@
                     <div class='listing__details-expand'>
                         <a href='#'><h3>View More<span><img src='images/view-more__arrow-down.gif'></span></h3></a>
                     </div>
+                    <!-- Start explore -->                    
+                    <div class="property-detail__explore-container"> 
+                        <div class="property-detail__headline">BROOKLINE</div>
+                        <div class="property-detail__pic-slot"><img src='images/neighborhoods/top-neighborhoods__entry__2.jpg'>
+                        </div>
+                                                      
+                        <div class="property-detail__link-slot">
+                                <div class="property-detail__sub-headline">RESTARAUNTS IN BROOKLINE</div>
+                                    <div class="property-detail__link-list">          
+                                       <ul>
+                                            <li>Barcelona Wine Bar</li>
+                                            <li>The Abby</li>
+                                            <li>Knight Moves</li>
+                                      </ul>
+                                    </div>
+                                <div class="property-detail__sub-headline">THINGS TO DO IN BROOKLINE</div>
+                                    <div class="property-detail__link-list">          
+                                       <ul>
+                                            <li>Coolige Corner Theater</li>
+                                            <li>John F. Kennedy National Historic Site</li>
+                                            <li>Larz Anderson Park</li>
+                                            <li>Irving's Toy and Card Shop</li>
+                                      </ul>
+                                </div>  
+                        </div>
+                    </div>
+                    
+                    <!-- End Explore -->
 
                     <div class='listing__contact-agent'>
                         <a href='#'><h3>Contact the Agent</h3></a>
                     </div>
+                    
                 </div>
             </div>
             <!-- Property Info -->
@@ -582,6 +613,8 @@
                 <a href="javascript:;" class="viewMore">View More <img src="images/view-more__arrow-down.gif" /></a>
             </div>
             <!-- Related Articles -->
+
+
         </div>
 
         <div class="page-layout__right-col">
@@ -944,7 +977,7 @@
                         </div>
                     </div>
                     <div class='contact__contact-button'>contact</div>
-                </div>
+                </div>  
             </div>
         </div>
     </div>

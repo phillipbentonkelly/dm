@@ -29,6 +29,7 @@ $padding-top: 20px;
 @include media-query(desktop) {
 	.#{$module-name} {
 		width: ($left-col-width + $right-col-width + $right-col-right-gutter);
+		margin: auto;
 
 		&__left-col {
 			width: $left-col-width;
@@ -41,6 +42,10 @@ $padding-top: 20px;
 	}
 
 	.page-layout-wrapper {
+		min-width: 1152px;
+		min-height: 700px;
+		overflow: hidden;
+		clear: both;
 		background-image: url(#{$img-path}neighborhoods/Neighborhood__BGImage__Brookline.jpg);
 		background-position: top left;
 		background-repeat: repeat-x;

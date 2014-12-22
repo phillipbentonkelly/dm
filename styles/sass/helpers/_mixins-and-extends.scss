@@ -255,19 +255,19 @@
 
 
 
-@include media-query(desktop) {float: left;
+@include media-query(desktop) {
   .adSlots {
     .adSlot {
       float: left;
-      margin: 0px;/**/
+      margin-right: 0px;
     }
     .adSlot:first-child {
       float: left;
-      margin-right: 30px;/**/
+      margin-right: 30px;
     }
 
     a.adSlot:first-child{
-      margin: 0px;/**/
+      margin: 0px;
     }
   }
 }

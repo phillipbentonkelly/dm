@@ -8,13 +8,13 @@ $module-name: 'contact';
 // Default Styles
 // ------------------------------------------------------------
   
-.page-layout__right-col {
+/*.page-layout__right-col {
   display: none;
 }
 
 .page-layout, .page-layout__left-col {
   width: 100%;
-}
+}*/
 
 .#{$module-name} {
 
@@ -36,8 +36,7 @@ $module-name: 'contact';
 // ------------------------------------------------------------
 
 @include media-query(desktop) {
-  
-  .page-layout {
+  /*.page-layout {
     width: #{$desktop-breakpoint};
   }
 
@@ -47,7 +46,8 @@ $module-name: 'contact';
 
   .page-layout__right-col {
     display: block;
-  }
+  }*/
+
   .#{$module-name} {
 
     &__container {

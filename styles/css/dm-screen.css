@@ -256,23 +256,19 @@ body {
 }
 
 @media (min-width: 960px) {
-  float: left;
   /* line 260, ../sass/helpers/_mixins-and-extends.scss */
   .adSlots .adSlot {
     float: left;
-    margin: 0px;
-    /**/
+    margin-right: 0px;
   }
   /* line 264, ../sass/helpers/_mixins-and-extends.scss */
   .adSlots .adSlot:first-child {
     float: left;
     margin-right: 30px;
-    /**/
   }
   /* line 269, ../sass/helpers/_mixins-and-extends.scss */
   .adSlots a.adSlot:first-child {
     margin: 0px;
-    /**/
   }
 }
 @media (min-width: 768px) {
@@ -375,6 +371,13 @@ textarea {
   }
 }
 /* line 3, ../sass/helpers/_common-assets.scss */
+.row, .page-search__row {
+  clear: both;
+  min-height: 10px;
+  overflow: hidden;
+}
+
+/* line 9, ../sass/helpers/_common-assets.scss */
 .category-tag {
   display: block;
   float: left;
@@ -387,7 +390,7 @@ textarea {
   color: #fff;
   margin-bottom: 5px;
 }
-/* line 15, ../sass/helpers/_common-assets.scss */
+/* line 21, ../sass/helpers/_common-assets.scss */
 .category-tag .arrow {
   display: block;
   float: right;
@@ -400,32 +403,32 @@ textarea {
   margin-left: 6px;
 }
 
-/* line 27, ../sass/helpers/_common-assets.scss */
+/* line 33, ../sass/helpers/_common-assets.scss */
 .category-tag.location {
   background-color: #82b5e6;
 }
 
-/* line 28, ../sass/helpers/_common-assets.scss */
+/* line 34, ../sass/helpers/_common-assets.scss */
 .category-tag.class {
   background-color: #00a651;
 }
 
-/* line 29, ../sass/helpers/_common-assets.scss */
+/* line 35, ../sass/helpers/_common-assets.scss */
 .category-tag.event {
   background-color: #ff6c6c;
 }
 
-/* line 30, ../sass/helpers/_common-assets.scss */
+/* line 36, ../sass/helpers/_common-assets.scss */
 .category-tag.featured {
   background-color: #1a93b0;
 }
 
-/* line 31, ../sass/helpers/_common-assets.scss */
+/* line 37, ../sass/helpers/_common-assets.scss */
 .category-tag.trending {
   background-color: #6dcbd3;
 }
 
-/* line 32, ../sass/helpers/_common-assets.scss */
+/* line 38, ../sass/helpers/_common-assets.scss */
 .category-tag.sponsored {
   background-color: #666;
 }
@@ -475,10 +478,14 @@ textarea {
 .page-nav__content-wrapper {
   width: 960px;
   height: 100%;
-  overflow: hidden;
   margin: auto;
 }
-/* line 26, ../sass/partials/page/_page-nav.scss */
+/* line 25, ../sass/partials/page/_page-nav.scss */
+.page-nav__content-wrapper ul {
+  margin: 0;
+  padding: 0;
+}
+/* line 31, ../sass/partials/page/_page-nav.scss */
 .page-nav__logo {
   display: block;
   float: left;
@@ -486,19 +493,19 @@ textarea {
   height: 100%;
   overflow: hidden;
 }
-/* line 33, ../sass/partials/page/_page-nav.scss */
+/* line 38, ../sass/partials/page/_page-nav.scss */
 .page-nav__logo * {
   color: #fff;
   text-transform: uppercase;
 }
-/* line 38, ../sass/partials/page/_page-nav.scss */
+/* line 43, ../sass/partials/page/_page-nav.scss */
 .page-nav__logo h1 {
   font-family: Oswald Regular;
   font-size: 26px;
   padding: 0 0 0 0;
   margin: 0 0 0 0;
 }
-/* line 45, ../sass/partials/page/_page-nav.scss */
+/* line 50, ../sass/partials/page/_page-nav.scss */
 .page-nav__logo h4 {
   text-align: right;
   font-family: Helvetica Neue Bold;
@@ -506,56 +513,33 @@ textarea {
   padding: 0 0 0 0;
   margin: 0 0 0 0;
 }
-/* line 54, ../sass/partials/page/_page-nav.scss */
+/* line 59, ../sass/partials/page/_page-nav.scss */
 .page-nav__nav-item {
-  display: block;
-  float: left;
-  color: #fff;
+  display: inline-block;
   line-height: 60px;
   font-family: OpenSans Bold;
   font-weight: 700;
   font-size: 14px;
   padding-left: 20px;
 }
-/* line 64, ../sass/partials/page/_page-nav.scss */
+/* line 67, ../sass/partials/page/_page-nav.scss */
+.page-nav__nav-item a {
+  color: white;
+}
+/* line 72, ../sass/partials/page/_page-nav.scss */
+.page-nav__arrow-up {
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 20px solid rgba(255, 255, 255, 0.9);
+}
+/* line 80, ../sass/partials/page/_page-nav.scss */
 .page-nav .myAccount {
   float: right;
   margin: 0 0 0 17px;
   padding: 0 26px 0 0;
   background: url(../../images/icons/icon_account.png) center right no-repeat;
-}
-/* line 71, ../sass/partials/page/_page-nav.scss */
-.page-nav__form {
-  display: block;
-  float: left;
-  width: 219px;
-  height: 31px;
-  margin: 14px 0 0 23px;
-}
-/* line 78, ../sass/partials/page/_page-nav.scss */
-.page-nav__form input[type="text"] {
-  display: block;
-  float: left;
-  width: 175px;
-  height: 31px;
-  margin: 0 4px 0 0;
-  padding: 0 0 0 5px;
-  border: 0;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-}
-/* line 91, ../sass/partials/page/_page-nav.scss */
-.page-nav__form__submit {
-  display: inline-block;
-  float: left;
-  width: 40px;
-  height: 31px;
-  background: url(../../images/icons/icon_search-magnifiying-glass.png) center center no-repeat #000;
-  border: 0;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
 }
 
 /* line 4, ../sass/partials/page/_page-layout.scss */
@@ -588,26 +572,31 @@ textarea {
   /* line 30, ../sass/partials/page/_page-layout.scss */
   .page-layout {
     width: 960px;
+    margin: auto;
   }
-  /* line 33, ../sass/partials/page/_page-layout.scss */
+  /* line 34, ../sass/partials/page/_page-layout.scss */
   .page-layout__left-col {
     width: 630px;
     margin-right: 30px;
   }
-  /* line 38, ../sass/partials/page/_page-layout.scss */
+  /* line 39, ../sass/partials/page/_page-layout.scss */
   .page-layout__right-col {
     width: 300px;
   }
 
-  /* line 43, ../sass/partials/page/_page-layout.scss */
+  /* line 44, ../sass/partials/page/_page-layout.scss */
   .page-layout-wrapper {
+    min-width: 1152px;
+    min-height: 700px;
+    overflow: hidden;
+    clear: both;
     background-image: url(../../images/neighborhoods/Neighborhood__BGImage__Brookline.jpg);
     background-position: top left;
     background-repeat: repeat-x;
   }
 }
 @media (min-width: 768px) {
-  /* line 51, ../sass/partials/page/_page-layout.scss */
+  /* line 56, ../sass/partials/page/_page-layout.scss */
   .page-layout {
     width: 960px;
   }
@@ -631,95 +620,79 @@ textarea {
   border-top: 1px solid #1a93b0;
   background-color: #fff;
   padding-top: 26px;
+  overflow: hidden;
+  clear: both;
 }
 
 /* line 11, ../sass/partials/page/_page-search.scss */
 .page-search {
   width: 100%;
-  height: 60px;
-  background: #e9f4f6;
 }
-/* line 16, ../sass/partials/page/_page-search.scss */
+/* line 14, ../sass/partials/page/_page-search.scss */
+.page-search__home {
+  position: absolute;
+  top: 160px;
+  z-index: 500;
+  height: 120px;
+  background: rgba(233, 244, 246, 0.7);
+}
+/* line 21, ../sass/partials/page/_page-search.scss */
+.page-search__home form {
+  width: 800px;
+}
+/* line 26, ../sass/partials/page/_page-search.scss */
+.page-search__serp {
+  display: block;
+  float: left;
+  height: 56px;
+  background: #ddeff3;
+}
+/* line 32, ../sass/partials/page/_page-search.scss */
+.page-search__serp form {
+  width: 960px;
+}
+/* line 37, ../sass/partials/page/_page-search.scss */
 .page-search__content-wrapper {
   width: 960px;
   height: 100%;
   overflow: hidden;
   margin: auto;
 }
-/* line 23, ../sass/partials/page/_page-search.scss */
-.page-search__search-form {
-  display: inline-block;
-  width: 100%;
-  height: 100%;
+/* line 44, ../sass/partials/page/_page-search.scss */
+.page-search__form {
+  display: block;
+  height: 90%;
+  margin: 10px auto;
 }
-/* line 29, ../sass/partials/page/_page-search.scss */
-.page-search__tokeninput {
+/* line 49, ../sass/partials/page/_page-search.scss */
+.page-search__form input[type="text"] {
+  box-sizing: border-box;
+  margin: 0 5px 0 0;
+  border: 0;
+}
+/* line 58, ../sass/partials/page/_page-search.scss */
+.page-search__row {
+  overflow: visible;
+}
+/* line 62, ../sass/partials/page/_page-search.scss */
+.page-search__row--bottom {
+  margin: 10px 20px;
+}
+/* line 67, ../sass/partials/page/_page-search.scss */
+.page-search__button {
   display: inline-block;
   border: 0;
-  margin-right: 25px;
-  height: 30px;
-  font-size: 0.75rem;
 }
-/* line 37, ../sass/partials/page/_page-search.scss */
-.page-search__checkbox-container {
-  display: inline-block;
-  width: 120px;
+/* line 71, ../sass/partials/page/_page-search.scss */
+.page-search__button--submit {
+  float: right;
+  width: 45px;
+  height: 45px;
+  background: url(../../images/icons/icon_search-magnifiying-glass.png) center center no-repeat #000;
 }
-/* line 41, ../sass/partials/page/_page-search.scss */
-.page-search__checkbox-container label {
-  display: inline-block;
-  cursor: pointer;
-  position: relative;
-  padding-left: 25px;
-  margin-right: 15px;
-  margin-bottom: 3px;
-  font-size: 13px;
-}
-/* line 52, ../sass/partials/page/_page-search.scss */
-.page-search__checkbox-container input[type=checkbox] {
-  padding: 0;
-  display: none;
-}
-/* line 57, ../sass/partials/page/_page-search.scss */
-.page-search__checkbox-container label:before {
-  content: "";
-  display: inline-block;
-  position: absolute;
-  left: 0;
-  bottom: 1px;
-  margin-right: 10px;
-  border-radius: 2px;
-  width: 16px;
-  height: 16px;
-  color: #fff;
-}
-/* line 70, ../sass/partials/page/_page-search.scss */
-.page-search__checkbox-container input[type=checkbox]:checked + label:before {
-  content: "\2713";
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
-  font-size: 15px;
-  color: #f3f3f3;
-  text-align: center;
-  line-height: 15px;
-}
-/* line 79, ../sass/partials/page/_page-search.scss */
-.page-search__checkbox-container label.for-sale:before {
-  background: #1c93b5;
-}
-/* line 83, ../sass/partials/page/_page-search.scss */
-.page-search__checkbox-container label.for-rent:before {
-  background: #05a851;
-}
-/* line 89, ../sass/partials/page/_page-search.scss */
-.page-search__dropdown {
-  display: inline-block;
-  vertical-align: middle;
-  margin-bottom: 10px;
-}
-/* line 96, ../sass/partials/page/_page-search.scss */
-.page-search__search-button {
-  display: inline-block;
-  border: 0;
+/* line 78, ../sass/partials/page/_page-search.scss */
+.page-search__button--save-search {
+  float: right;
   background: none;
   color: #000;
   font-weight: bold;
@@ -727,12 +700,90 @@ textarea {
   vertical-align: middle;
   box-shadow: none;
 }
+/* line 90, ../sass/partials/page/_page-search.scss */
+.page-search__fancy-checkbox-container {
+  display: inline-block;
+  float: left;
+}
+/* line 94, ../sass/partials/page/_page-search.scss */
+.page-search__fancy-checkbox-container input[type=checkbox] {
+  display: none;
+  padding: 0;
+}
+/* line 99, ../sass/partials/page/_page-search.scss */
+.page-search__fancy-checkbox-container label {
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+  padding-left: 17px;
+  margin-right: 15px;
+  margin-bottom: 3px;
+  font-size: 11px;
+}
+/* line 109, ../sass/partials/page/_page-search.scss */
+.page-search__fancy-checkbox-container label:before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  bottom: 1px;
+  margin-right: 10px;
+  border-radius: 2px;
+  width: 14px;
+  height: 14px;
+  color: #fff;
+}
+/* line 122, ../sass/partials/page/_page-search.scss */
+.page-search__fancy-checkbox-container input[type=checkbox]:checked + label:before {
+  content: "\2713";
+  font: 15px sans-serif;
+  color: #f3f3f3;
+  text-align: center;
+  line-height: 15px;
+}
+/* line 131, ../sass/partials/page/_page-search.scss */
+.page-search__fancy-checkbox-container--for-sale label:before {
+  background: #1c93b5;
+}
+/* line 137, ../sass/partials/page/_page-search.scss */
+.page-search__fancy-checkbox-container--for-rent label:before {
+  background: #05a851;
+}
+/* line 143, ../sass/partials/page/_page-search.scss */
+.page-search__dropdown {
+  display: inline-block;
+  vertical-align: middle;
+}
+/* line 147, ../sass/partials/page/_page-search.scss */
+.page-search__dropdown--wide {
+  width: 700px;
+  height: 50px;
+  font-size: 17px;
+  padding: 5px 20px;
+  font-family: 'Times';
+}
+/* line 155, ../sass/partials/page/_page-search.scss */
+.page-search__dropdown--narrow {
+  width: 242px;
+  height: 32px;
+  font-size: 17px;
+  padding: 5px;
+  font-family: 'Times';
+}
+/* line 163, ../sass/partials/page/_page-search.scss */
+.page-search__dropdown--filter {
+  width: 85px;
+  height: 40px;
+  padding: 5px;
+}
 
 /* line 11, ../sass/partials/page/_page-footer.scss */
 .page-footer {
   border-top: 1px solid #1a93b0;
   background-color: #fff;
   padding-top: 26px;
+  overflow: hidden;
+  clear: both;
 }
 
 /* line 3, ../sass/partials/page/modules/_listingsmap.scss */
@@ -1329,32 +1380,25 @@ textarea {
   bottom: 0px;
 }
 
-/* line 11, ../sass/partials/page/modules/_contact-form-premium.scss */
-.page-layout__right-col {
+/*.page-layout__right-col {
   display: none;
 }
 
-/* line 15, ../sass/partials/page/modules/_contact-form-premium.scss */
 .page-layout, .page-layout__left-col {
   width: 100%;
-}
-
+}*/
 @media (min-width: 960px) {
-  /* line 40, ../sass/partials/page/modules/_contact-form-premium.scss */
-  .page-layout {
+  /*.page-layout {
     width: 960px;
   }
 
-  /* line 44, ../sass/partials/page/modules/_contact-form-premium.scss */
   .page-layout__left-col {
     width: 630px;
   }
 
-  /* line 48, ../sass/partials/page/modules/_contact-form-premium.scss */
   .page-layout__right-col {
     display: block;
-  }
-
+  }*/
   /* line 53, ../sass/partials/page/modules/_contact-form-premium.scss */
   .contact__container {
     position: relative;
@@ -1984,7 +2028,7 @@ textarea {
     position: absolute;
     right: 0;
     left: 0;
-    z-index: 10;
+    z-index: 100;
     height: 280px;
     width: 960px;
     margin: 0 auto;
@@ -2010,8 +2054,8 @@ textarea {
   }
   /* line 90, ../sass/partials/page/modules/_mega-menu.scss */
   .mega-menu__list-item {
-    padding: 7px 0;
-    font-size: 12px;
+    padding: 5px 0;
+    font-size: 14px;
   }
   /* line 94, ../sass/partials/page/modules/_mega-menu.scss */
   .mega-menu__list-item a {
@@ -2048,7 +2092,7 @@ textarea {
     overflow: hidden;
   }
   /* line 131, ../sass/partials/page/modules/_mega-menu.scss */
-  .mega-menu__search {
+  .mega-menu__search-input {
     float: left;
     margin: 0 5px 5px 0;
     padding: 8px;
@@ -2058,20 +2102,33 @@ textarea {
     font-size: 12px;
   }
   /* line 141, ../sass/partials/page/modules/_mega-menu.scss */
+  .mega-menu__search-submit {
+    padding: 0;
+    display: inline-block;
+    float: left;
+    width: 40px;
+    height: 31px;
+    background: url(../../images/icons/icon_search-magnifiying-glass.png) center center no-repeat #000;
+    border: 0;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+  }
+  /* line 154, ../sass/partials/page/modules/_mega-menu.scss */
   .mega-menu__featured-home {
     display: block;
     min-height: 1px;
     height: 100%;
     overflow: hidden;
   }
-  /* line 147, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 160, ../sass/partials/page/modules/_mega-menu.scss */
   .mega-menu__featured-home .adSlot {
     display: block;
     min-height: 10px;
     overflow-x: hidden;
   }
 
-  /* line 155, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 169, ../sass/partials/page/modules/_mega-menu.scss */
   #mega-menu__list-items--left, #mega-menu__list-items--right {
     width: 50%;
     float: left;
@@ -2079,18 +2136,169 @@ textarea {
     box-sizing: border-box;
   }
 
-  /* line 162, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 176, ../sass/partials/page/modules/_mega-menu.scss */
   #mega-menu__list-items--left {
     padding-right: 15px;
   }
 
-  /* line 166, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 180, ../sass/partials/page/modules/_mega-menu.scss */
   .page-nav__form__submit {
     float: right;
     padding: 0 0 1px 0;
     border-radius: 5px;
   }
+
+  /* line 193, ../sass/partials/page/modules/_mega-menu.scss */
+  .adSlot {
+    float: left;
+    display: block;
+    width: 300px;
+    height: 250px;
+    position: relative;
+    margin-bottom: 30px;
+  }
+  /* line 201, ../sass/partials/page/modules/_mega-menu.scss */
+  .adSlot .iconOverlay {
+    position: absolute;
+    z-index: 1;
+  }
+  /* line 205, ../sass/partials/page/modules/_mega-menu.scss */
+  .adSlot .topSpacing {
+    top: 3%;
+  }
+  /* line 208, ../sass/partials/page/modules/_mega-menu.scss */
+  .adSlot .leftSpacing {
+    left: 6%;
+  }
+  /* line 212, ../sass/partials/page/modules/_mega-menu.scss */
+  .adSlot .detailsWrapper {
+    width: 300px;
+    clear: both;
+    min-height: 10%;
+    overflow: hidden;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+  }
+  /* line 222, ../sass/partials/page/modules/_mega-menu.scss */
+  .adSlot .detailsWrapper .detailsArrow {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 25px 20px 25px;
+    border-color: rgba(0, 0, 0, 0.6) transparent;
+    float: right;
+  }
+  /* line 231, ../sass/partials/page/modules/_mega-menu.scss */
+  .adSlot .detailsWrapper .detailsOverlay {
+    width: 93%;
+    min-height: 20%;
+    padding: 4% 5% 3% 3%;
+    color: #fff;
+    font-size: 0.7em;
+    letter-spacing: 1px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 300;
+    background-color: rgba(0, 0, 0, 0.6);
+    clear: both;
+  }
+  /* line 243, ../sass/partials/page/modules/_mega-menu.scss */
+  .adSlot .detailsWrapper .detailsOverlay h1 {
+    font-size: 120%;
+    text-align: left;
+    padding: 0 0 0.5em 0;
+    margin: 0 0 0 0;
+    line-height: 100%;
+    clear: both;
+    min-height: 10px;
+    overflow: hidden;
+  }
+  /* line 253, ../sass/partials/page/modules/_mega-menu.scss */
+  .adSlot .detailsWrapper .detailsOverlay h1 .priceSpan {
+    float: right;
+  }
+  /* line 257, ../sass/partials/page/modules/_mega-menu.scss */
+  .adSlot .detailsWrapper .detailsOverlay p {
+    display: none;
+    line-height: 1.5em;
+    padding: 0 0 0.5em 0;
+    margin: 0 0 0 0;
+  }
+
+  /* line 267, ../sass/partials/page/modules/_mega-menu.scss */
+  .adSlot:hover .detailsWrapper .detailsOverlay p {
+    display: block;
+  }
+
+  /* line 271, ../sass/partials/page/modules/_mega-menu.scss */
+  a.adSlot:nth-child(odd) {
+    margin-right: 30px;
+  }
 }
+/* line 13, ../sass/partials/page/modules/_property-detail.scss */
+.property-detail__explore-container {
+  width: 630px;
+  height: 340px;
+  background: #e5e5e5;
+}
+/* line 20, ../sass/partials/page/modules/_property-detail.scss */
+.property-detail__headline {
+  font-family: Oswald;
+  color: #333333;
+  font-size: 26px;
+  font-weight: 400;
+  text-align: center;
+  padding: 5px;
+}
+/* line 30, ../sass/partials/page/modules/_property-detail.scss */
+.property-detail__sub-headline {
+  font-family: OpenSans;
+  color: #000000;
+  font-size: 13px;
+  /* Approximation due to font substitution */
+  font-weight: 700;
+  line-height: 24px;
+  /* Approximation due to font substitution */
+  text-align: left;
+}
+/* line 38, ../sass/partials/page/modules/_property-detail.scss */
+.property-detail__pic {
+  width: 300px;
+  height: 250px;
+  float: left;
+}
+/* line 44, ../sass/partials/page/modules/_property-detail.scss */
+.property-detail__pic-slot {
+  width: 300px;
+  height: 250px;
+  float: left;
+}
+/* line 55, ../sass/partials/page/modules/_property-detail.scss */
+.property-detail__link-list ul {
+  font-size: 13px;
+  font-family: OpenSans;
+  list-style-type: disc;
+  list-style-position: inside;
+  font-weight: 700;
+  line-height: 24px;
+  /* Approximation due to font substitution */
+  align: right;
+  margin: 0px;
+  padding: 5px;
+}
+/* line 66, ../sass/partials/page/modules/_property-detail.scss */
+.property-detail__link-list li {
+  margin-bottom: 5px;
+  color: #1a93b0;
+}
+/* line 72, ../sass/partials/page/modules/_property-detail.scss */
+.property-detail__link-slot {
+  width: 300px;
+  height: 250px;
+  float: right;
+}
+
 /* line 11, ../sass/partials/page-content/modules/_dfp-ads__new-homes.scss */
 .dfp-ads__new-homes {
   width: 300px;
@@ -2146,7 +2354,15 @@ textarea {
   font-size: 1.5em;
   margin: 0 0 1.5% 0;
 }
-/* line 21, ../sass/partials/page-content/modules/_real-estate-blog.scss */
+/* line 20, ../sass/partials/page-content/modules/_real-estate-blog.scss */
+.real-estate-blog .adSlots .adSlot:hover .detailsWrapper .detailsOverlay p {
+  display: block;
+}
+/* line 24, ../sass/partials/page-content/modules/_real-estate-blog.scss */
+.real-estate-blog .adSlots a.adSlot:nth-child(odd) {
+  margin-right: 0px;
+}
+/* line 29, ../sass/partials/page-content/modules/_real-estate-blog.scss */
 .real-estate-blog a.viewMore {
   display: block;
   text-align: center;
@@ -2159,19 +2375,19 @@ textarea {
   text-decoration: none;
   background: #e5e5e5;
 }
-/* line 33, ../sass/partials/page-content/modules/_real-estate-blog.scss */
+/* line 41, ../sass/partials/page-content/modules/_real-estate-blog.scss */
 .real-estate-blog a.viewMore img {
   margin-left: 4px;
 }
 
 @media (min-width: 960px) {
-  /* line 40, ../sass/partials/page-content/modules/_real-estate-blog.scss */
+  /* line 48, ../sass/partials/page-content/modules/_real-estate-blog.scss */
   .real-estate-blog {
     width: 960px;
   }
 }
 @media (min-width: 768px) {
-  /* line 46, ../sass/partials/page-content/modules/_real-estate-blog.scss */
+  /* line 54, ../sass/partials/page-content/modules/_real-estate-blog.scss */
   .real-estate-blog {
     width: 960px;
   }
