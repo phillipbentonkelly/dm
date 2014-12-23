@@ -10,11 +10,11 @@
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     
     <!-- STYLING -->
-    <link rel="stylesheet" href="styles/css/dm-screen.css" />
+    <link rel="stylesheet" href="../styles/css/dm-screen.css" />
 
         <!-- Real Estate Listings -->
-        <link rel="stylesheet" href="styles/css/realestatelistings.css" />
-        <link rel="stylesheet" href="styles/css/plugins/select2/select2.css" />
+        <link rel="stylesheet" href="../styles/css/realestatelistings.css" />
+        <link rel="stylesheet" href="../styles/css/plugins/select2/select2.css" />
         <!-- Real Estate Listings -->
 
         <!-- Real Estate News (300x250) -->
@@ -26,19 +26,19 @@
     </style>
     
     <!-- SCRIPTS -->
-    <script src="js/resources/jquery.min.js"></script>
+    <script src="../js/resources/jquery.min.js"></script>
 
         <!-- Carousel Scripts -->
-        <script src="js/assets/basicMobileDetection.js"></script>
+        <script src="../js/assets/basicMobileDetection.js"></script>
         <script src="http://wurfl.io/wurfl.js"></script>
-        <script src="js/resources/img.srcset.polyfill.js"></script>
-        <script src="js/assets/bdc.carouselFullWidthSlider.js"></script>
+        <script src="../js/resources/img.srcset.polyfill.js"></script>
+        <script src="../js/assets/bdc.carouselFullWidthSlider.js"></script>
         <!-- Carousel Scripts -->
 
         <!-- Real Estate Listings -->
         <!--<script src="js/assets/mpListings.js"></script>
         <script src="js/assets/listings.data.js"></script>-->
-        <script src="js/resources/plugins/select2/select2.js"></script>
+        <script src="../js/resources/plugins/select2/select2.js"></script>
         <script>
             $(document).ready(function(){
                 $("#listingDropDown").select2();
@@ -48,7 +48,7 @@
         <!-- Real Estate Listings -->
         
         <!-- Real Estate News (300x250) -->
-        <script src="js/assets/300by250_realestatenews.js"></script>
+        <script src="../js/assets/300by250_realestatenews.js"></script>
         <!-- Real Estate News (300x250) -->
 </head>
     <body>
@@ -56,7 +56,7 @@
         <!-- Page Masthead -->
         <div class="page-masthead">
             <div class="page-header">
-                <a class="page-header__content" href="javascript:;"><img src="images/BannerAd-placeholder.jpg" /></a>
+                <a class="page-header__content" href="javascript:;"><img src="../images/BannerAd-placeholder.jpg" /></a>
             </div>
         </div>
         <!-- Page Masthead -->
@@ -65,23 +65,28 @@
         <!-- Page Nav -->
         <div class="page-nav">
             <div class="page-nav__content-wrapper">
-                <a href="javascript:;" class="page-nav__logo">
-                    <h1>Addresses</h1>
+                <ul>
+                    <li class="page-nav__logo"><a href="javascript:;">
+                        <h1>Addresses</h1>
+                        <h4>A Boston.com Site</h4>
+                    </a></li>
 
-                    <h4>A Boston.com Site</h4>
-                </a>
+                    <li id="find-home-menu" class="page-nav__nav-item js-mega-menu"><a href="javascript:;">Find A Home</a><div class="page-nav__arrow-up"></div></li>
 
-                <a href="javascript:;" class="page-nav__nav-item">Find A Home</a>
-                <a href="javascript:;" class="page-nav__nav-item">Neighborhoods</a>
-                <a href="javascript:;" class="page-nav__nav-item">Open Houses</a>
-                <a href="javascript:;" class="page-nav__nav-item">Luxury Living</a>
+                    <li id="neighborhoods-menu" class="js-mega-menu page-nav__nav-item"><a href="javascript:;">Neighborhoods</a><div class="page-nav__arrow-up"></div></li>
 
-                <form class="page-nav__form">
-                    <input type="text" name="search" class="page-nav__search-box" />
-                    <button class="page-nav__form__submit" value=""></button>
-                </form>
+                    <li class="page-nav__nav-item"><a href="javascript:;">Open Houses</a></li>
 
-                <a href="javascript:;" class="page-nav__nav-item myAccount">My Account</a>
+                    <!--<form class="page-nav__form">
+                        <input type="text" name="search" class="page-nav__search-box" />
+                        <button class="page-nav__form__submit" value=""></button>
+                    </form>-->
+
+                    <li class="page-nav__nav-item"><a href="javascript:;">Luxury Living</a></li>
+
+                    <li class="page-nav__nav-item myAccount"><a href="javascript:;">My Account</a></li>
+
+                </ul>
             </div>
         </div>
         <!-- Page Nav -->
@@ -97,16 +102,16 @@
                         
                         <figure class="slide active">
                             <a href="collections/new-arrivals.html">
-                                <img src="images/responsive/slide1-default.jpg" srcset="images/responsive/slide1-tablet.jpg 618w, images/responsive/slide1-large.jpg 490w, images/responsive/slide1-small_x2.jpg 330w, images/responsive/slide1-small.jpg 320w" alt="New Arrivals" />
+                                <img src="../images/responsive/slide1-default.jpg" srcset="../images/responsive/slide1-tablet.jpg 618w, images/responsive/slide1-large.jpg 490w, images/responsive/slide1-small_x2.jpg 330w, images/responsive/slide1-small.jpg 320w" alt="New Arrivals" />
                                 <div class="detailsArrow"></div>
                                 <div class="carousel-fullwidth_slide-details">
-                                    <div class="carousel-fullwidth_slide-detail-icon"><img src="images/icons/slideDetail-leftCol-sponsored.png" /></div>
+                                    <div class="carousel-fullwidth_slide-detail-icon"><img src="../images/icons/slideDetail-leftCol-sponsored.png" /></div>
                                     <div class="carousel-fullwidth_slide-detail-content">
                                         <div class="listing-data">
                                             <p>The Claredon: 400 Stuart Street, Boston, MA</p>
                                             <p>Back Bay | 1-4 Bedrooms available | $695,000-$2,190,000</p>
                                         </div>
-                                        <div class="providerIcon"><img src="images/icons/realtorCarouselLogo_ColdwellBanker.png" /></div>
+                                        <div class="providerIcon"><img src="../images/icons/realtorCarouselLogo_ColdwellBanker.png" /></div>
                                     </div>
                                 </div>
                             </a>
@@ -116,16 +121,16 @@
 
                         <figure class="slide">
                             <a href="blogs/plate-the-slate/15553989-quarry-to-table.html">
-                                <img src="images/responsive/slide2-default.jpg" srcset="images/responsive/slide2-tablet.jpg 618w, images/responsive/slide2-large.jpg 490w, images/responsive/slide2-small_x2.jpg 330w, images/responsive/slide2-small.jpg 320w" alt="A Trip to the Quarry" />
+                                <img src="../images/responsive/slide2-default.jpg" srcset="../images/responsive/slide2-tablet.jpg 618w, images/responsive/slide2-large.jpg 490w, images/responsive/slide2-small_x2.jpg 330w, images/responsive/slide2-small.jpg 320w" alt="A Trip to the Quarry" />
                                 <div class="detailsArrow"></div>
                                 <div class="carousel-fullwidth_slide-details">
-                                    <div class="carousel-fullwidth_slide-detail-icon"><img src="images/icons/slideDetail-leftCol-luxuryLabel.png" /></div>
+                                    <div class="carousel-fullwidth_slide-detail-icon"><img src="../images/icons/slideDetail-leftCol-luxuryLabel.png" /></div>
                                     <div class="carousel-fullwidth_slide-detail-content">
                                         <div class="listing-data">
                                             <p>The Claredon: 400 Stuart Street, Boston, MA</p>
                                             <p>Back Bay | 1-4 Bedrooms available | $695,000-$2,190,000</p>
                                         </div>
-                                        <div class="providerIcon"><img src="images/icons/realtorCarouselLogo_ColdwellBanker.png" /></div>
+                                        <div class="providerIcon"><img src="../images/icons/realtorCarouselLogo_ColdwellBanker.png" /></div>
                                     </div>
                                 </div>
                             </a>
@@ -136,16 +141,16 @@
                         
                         <figure class="slide">
                             <a href="blogs/from-the-kitchen/15566461-fennel-panna-cotta.html">
-                                <img src="images/responsive/slide3-default.jpg" srcset="images/responsive/slide3-tablet.jpg 618w, images/responsive/slide3-large.jpg 490w, images/responsive/slide3-small_x2.jpg 330w, images/responsive/slide3-small.jpg 320w" alt="Recipe: Fennel Panna Cotta" />
+                                <img src="../images/responsive/slide3-default.jpg" srcset="../images/responsive/slide3-tablet.jpg 618w, images/responsive/slide3-large.jpg 490w, images/responsive/slide3-small_x2.jpg 330w, images/responsive/slide3-small.jpg 320w" alt="Recipe: Fennel Panna Cotta" />
                                 <div class="detailsArrow"></div>
                                 <div class="carousel-fullwidth_slide-details">
-                                    <div class="carousel-fullwidth_slide-detail-icon"><img src="images/icons/slideDetail-leftCol-sponsored.png" /></div>
+                                    <div class="carousel-fullwidth_slide-detail-icon"><img src="../images/icons/slideDetail-leftCol-sponsored.png" /></div>
                                     <div class="carousel-fullwidth_slide-detail-content">
                                         <div class="listing-data">
                                             <p>The Claredon: 400 Stuart Street, Boston, MA</p>
                                             <p>Back Bay | 1-4 Bedrooms available | $695,000-$2,190,000</p>
                                         </div>
-                                        <div class="providerIcon"><img src="images/icons/realtorCarouselLogo_ColdwellBanker.png" /></div>
+                                        <div class="providerIcon"><img src="../images/icons/realtorCarouselLogo_ColdwellBanker.png" /></div>
                                     </div>
                                 </div>
                             </a>
