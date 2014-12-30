@@ -197,7 +197,7 @@ body {
 }
 /* line 197, ../sass/helpers/_mixins-and-extends.scss */
 .adSlots .adSlot .detailsWrapper {
-  width: 300px;
+  width: 100%;
   clear: both;
   min-height: 10%;
   overflow: hidden;
@@ -468,80 +468,380 @@ textarea {
 /* line 11, ../sass/partials/page/_page-nav.scss */
 .page-nav {
   width: 100%;
-  height: 60px;
+  height: 40px;
   background: #1a93b0;
-  overflow: hidden;
   clear: both;
   color: #fff;
+  /*&__mega-menu-responsive-icon:hover > .page-nav__main-nav-links {
+  	display: block;
+  }
+  &__mega-menu-responsive-icon:hover {
+  	background: url(../../images/responsive/mega-menu__responsive-icon__close.png) center center no-repeat;
+  }*/
 }
-/* line 19, ../sass/partials/page/_page-nav.scss */
-.page-nav__content-wrapper {
-  width: 960px;
-  height: 100%;
-  margin: auto;
+/* line 18, ../sass/partials/page/_page-nav.scss */
+.page-nav ul {
+  padding: 0 0 0 0;
+  margin: 0 0 0 0;
 }
-/* line 25, ../sass/partials/page/_page-nav.scss */
-.page-nav__content-wrapper ul {
-  margin: 0;
-  padding: 0;
+/* line 22, ../sass/partials/page/_page-nav.scss */
+.page-nav ul:first-child {
+  width: 100%;
+  min-height: 10px;
+  clear: both;
 }
-/* line 31, ../sass/partials/page/_page-nav.scss */
-.page-nav__logo {
-  display: block;
+/* line 27, ../sass/partials/page/_page-nav.scss */
+.page-nav ul li {
+  margin: 0 0 0 0;
+  list-style: none;
+}
+/* line 32, ../sass/partials/page/_page-nav.scss */
+.page-nav__mega-menu-responsive-icon, .page-nav__search-responsive-icon {
+  display: inline-block;
   float: left;
-  width: 127px;
+  width: 40px;
+  height: 40px;
+  border-right: 2px solid white;
+  background: url(../../images/responsive/mega-menu__responsive-icon__open.png) center center no-repeat;
+}
+/* line 40, ../sass/partials/page/_page-nav.scss */
+.page-nav__search-responsive-icon {
+  float: right;
+  border-right: 0;
+  border-left: 2px solid white;
+  background: url(../../images/responsive/search__responsive-icon__open.png) center center no-repeat;
+}
+/* line 47, ../sass/partials/page/_page-nav.scss */
+.page-nav__logo {
+  display: inline-block;
+  float: left;
+  width: 73%;
   height: 100%;
+  text-align: center;
   overflow: hidden;
 }
-/* line 38, ../sass/partials/page/_page-nav.scss */
+/* line 55, ../sass/partials/page/_page-nav.scss */
 .page-nav__logo * {
   color: #fff;
   text-transform: uppercase;
 }
-/* line 43, ../sass/partials/page/_page-nav.scss */
+/* line 60, ../sass/partials/page/_page-nav.scss */
 .page-nav__logo h1 {
   font-family: Oswald Regular;
-  font-size: 26px;
+  font-size: 1.3em;
   padding: 0 0 0 0;
   margin: 0 0 0 0;
-}
-/* line 50, ../sass/partials/page/_page-nav.scss */
-.page-nav__logo h4 {
-  text-align: right;
-  font-family: Helvetica Neue Bold;
-  font-size: 10px;
-  padding: 0 0 0 0;
-  margin: 0 0 0 0;
-}
-/* line 59, ../sass/partials/page/_page-nav.scss */
-.page-nav__nav-item {
-  display: inline-block;
-  line-height: 60px;
-  font-family: OpenSans Bold;
-  font-weight: 700;
-  font-size: 14px;
-  padding-left: 20px;
 }
 /* line 67, ../sass/partials/page/_page-nav.scss */
+.page-nav__logo h4 {
+  font-family: Helvetica Neue Bold;
+  font-size: 0.8em;
+  padding: 0 0 0 0;
+  margin: 0 0 0 0;
+}
+/* line 75, ../sass/partials/page/_page-nav.scss */
+.page-nav__main-nav-links {
+  display: block;
+  float: left;
+  position: absolute;
+  left: 0px;
+  top: 42px;
+  width: 100%;
+  background-color: #f2f2f2;
+  font-family: OpenSans SemiBold;
+  font-size: 14px;
+  line-height: 41px;
+}
+/* line 88, ../sass/partials/page/_page-nav.scss */
+.page-nav__main-nav-links__responsive-home-link {
+  display: block;
+}
+/* line 93, ../sass/partials/page/_page-nav.scss */
+.page-nav__nav-item {
+  border-top: 1px solid #e5e5e5;
+}
+/* line 96, ../sass/partials/page/_page-nav.scss */
 .page-nav__nav-item a {
-  color: white;
+  display: block;
+  width: 100%;
+  color: #000;
 }
-/* line 72, ../sass/partials/page/_page-nav.scss */
-.page-nav__arrow-up {
-  width: 0;
-  height: 0;
-  border-left: 20px solid transparent;
-  border-right: 20px solid transparent;
-  border-bottom: 20px solid rgba(255, 255, 255, 0.9);
+/* line 102, ../sass/partials/page/_page-nav.scss */
+.page-nav__nav-item__responsive-drop-down-icon {
+  display: block;
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  text-align: center;
+  top: 10px;
+  right: 30px;
+  line-height: 15px;
 }
-/* line 80, ../sass/partials/page/_page-nav.scss */
-.page-nav .myAccount {
-  float: right;
-  margin: 0 0 0 17px;
-  padding: 0 26px 0 0;
-  background: url(../../images/icons/icon_account.png) center right no-repeat;
+/* line 112, ../sass/partials/page/_page-nav.scss */
+.page-nav__nav-item__responsive-drop-down-icon:after {
+  content: "+";
+}
+/* line 116, ../sass/partials/page/_page-nav.scss */
+a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
+  content: "-";
+}
+/* line 120, ../sass/partials/page/_page-nav.scss */
+.page-nav__nav-item .page-nav__arrow-up {
+  display: none;
+}
+/* line 124, ../sass/partials/page/_page-nav.scss */
+.page-nav__nav-item .mega-menu {
+  border-top: 1px solid #e5e5e5;
+  padding: 13px 10px 13px 10px;
+}
+/* line 129, ../sass/partials/page/_page-nav.scss */
+.page-nav__nav-item .mega-menu__container {
+  display: block;
+  line-height: 18px;
+}
+/* line 133, ../sass/partials/page/_page-nav.scss */
+.page-nav__nav-item .mega-menu__container:first-child {
+  display: none;
+}
+/* line 137, ../sass/partials/page/_page-nav.scss */
+.page-nav__nav-item:first-child {
+  color: #000;
+  border-top: 0px;
+  background: #8cc9d7;
+}
+/* line 142, ../sass/partials/page/_page-nav.scss */
+.page-nav__nav-item:hover .mega-menu, .page-nav__nav-item:hover .mega-menu__container {
+  display: block;
+}
+/* line 145, ../sass/partials/page/_page-nav.scss */
+.page-nav__nav-item:hover .page-nav__arrow-up {
+  display: block;
+}
+/* line 149, ../sass/partials/page/_page-nav.scss */
+.page-nav__mega-menu-responsive-icon, .page-nav__search-responsive-icon {
+  display: block;
+  cursor: pointer;
+}
+/* line 160, ../sass/partials/page/_page-nav.scss */
+.page-nav__nav-lv0 {
+  padding: 0 10px 0 10px;
+  position: relative;
 }
 
+@media (min-width: 960px) {
+  /* line 170, ../sass/partials/page/_page-nav.scss */
+  .page-nav {
+    height: 60px;
+  }
+  /* line 173, ../sass/partials/page/_page-nav.scss */
+  .page-nav__content-wrapper {
+    width: 960px;
+    height: 100%;
+    margin: auto;
+  }
+  /* line 179, ../sass/partials/page/_page-nav.scss */
+  .page-nav__main-nav-links {
+    display: inline-block;
+    width: 86.77%;
+    position: relative;
+    background-color: initial;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+  }
+  /* line 189, ../sass/partials/page/_page-nav.scss */
+  .page-nav__main-nav-links li {
+    border-top: 0px;
+  }
+  /* line 193, ../sass/partials/page/_page-nav.scss */
+  .page-nav__nav-item {
+    display: inline-block;
+    line-height: 60px;
+    font-family: OpenSans Bold;
+    font-weight: 700;
+    font-size: 14px;
+    padding-left: 20px !important;
+    position: relative;
+    padding: inherit;
+    border-top: 0;
+  }
+  /* line 205, ../sass/partials/page/_page-nav.scss */
+  .page-nav__nav-item a {
+    color: white;
+  }
+  /* line 209, ../sass/partials/page/_page-nav.scss */
+  .page-nav__nav-item__responsive-drop-down-icon {
+    display: none;
+  }
+  /* line 212, ../sass/partials/page/_page-nav.scss */
+  .page-nav__nav-item__responsive-drop-down-icon:after {
+    content: "";
+  }
+  /* line 216, ../sass/partials/page/_page-nav.scss */
+  .page-nav__nav-item .page-nav__arrow-up {
+    display: none;
+  }
+  /* line 220, ../sass/partials/page/_page-nav.scss */
+  .page-nav__nav-item .mega-menu__container {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0px;
+    line-height: 18px;
+  }
+  /* line 227, ../sass/partials/page/_page-nav.scss */
+  .page-nav__nav-item .mega-menu__container:first-child {
+    display: none;
+  }
+  /* line 231, ../sass/partials/page/_page-nav.scss */
+  .page-nav__nav-item:hover .mega-menu__container {
+    display: block;
+  }
+  /* line 234, ../sass/partials/page/_page-nav.scss */
+  .page-nav__nav-item:hover .page-nav__arrow-up {
+    display: block;
+  }
+  /* line 238, ../sass/partials/page/_page-nav.scss */
+  .page-nav__responsive-home-link {
+    display: none;
+  }
+  /* line 242, ../sass/partials/page/_page-nav.scss */
+  .page-nav__arrow-up {
+    display: block;
+    position: absolute;
+    top: 45px;
+    left: 43%;
+    width: 0;
+    height: 0;
+    border-left: 19px solid transparent;
+    border-right: 19px solid transparent;
+    border-bottom: 15px solid rgba(255, 255, 255, 0.9);
+  }
+  /* line 255, ../sass/partials/page/_page-nav.scss */
+  .page-nav .myAccount {
+    float: right;
+    margin: 0 0 0 0px;
+    padding: 0 26px 0 0;
+    background: url(../../images/icons/icon_account.png) center right no-repeat;
+  }
+  /* line 262, ../sass/partials/page/_page-nav.scss */
+  .page-nav__mega-menu-responsive-icon, .page-nav__search-responsive-icon {
+    display: none;
+  }
+}
+@media (min-width: 768px) {
+  /* line 272, ../sass/partials/page/_page-nav.scss */
+  .page-nav {
+    height: 60px;
+  }
+  /* line 275, ../sass/partials/page/_page-nav.scss */
+  .page-nav__content-wrapper {
+    width: 960px;
+    height: 100%;
+    margin: auto;
+  }
+  /* line 281, ../sass/partials/page/_page-nav.scss */
+  .page-nav__logo {
+    width: 127px;
+    margin: initial;
+  }
+  /* line 285, ../sass/partials/page/_page-nav.scss */
+  .page-nav__logo h1 {
+    font-size: 26px;
+  }
+  /* line 289, ../sass/partials/page/_page-nav.scss */
+  .page-nav__logo h4 {
+    text-align: right;
+    font-size: 10px;
+  }
+  /* line 295, ../sass/partials/page/_page-nav.scss */
+  .page-nav__main-nav-links {
+    display: inline-block;
+    width: 86.77%;
+    position: initial;
+    background-color: initial;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+  }
+  /* line 305, ../sass/partials/page/_page-nav.scss */
+  .page-nav__main-nav-links li {
+    border-top: 0px;
+  }
+  /* line 309, ../sass/partials/page/_page-nav.scss */
+  .page-nav__nav-item {
+    display: inline-block;
+    line-height: 60px;
+    font-family: OpenSans Bold;
+    font-weight: 700;
+    font-size: 14px;
+    padding-left: 20px !important;
+    position: relative;
+  }
+  /* line 318, ../sass/partials/page/_page-nav.scss */
+  .page-nav__nav-item a {
+    color: white;
+  }
+  /* line 322, ../sass/partials/page/_page-nav.scss */
+  .page-nav__nav-item__responsive-drop-down-icon {
+    display: none;
+  }
+  /* line 325, ../sass/partials/page/_page-nav.scss */
+  .page-nav__nav-item__responsive-drop-down-icon:after {
+    content: "";
+  }
+  /* line 329, ../sass/partials/page/_page-nav.scss */
+  .page-nav__nav-item .page-nav__arrow-up {
+    display: none;
+  }
+  /* line 333, ../sass/partials/page/_page-nav.scss */
+  .page-nav__nav-item .mega-menu__container {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0px;
+    line-height: 18px;
+  }
+  /* line 340, ../sass/partials/page/_page-nav.scss */
+  .page-nav__nav-item .mega-menu__container:first-child {
+    display: none;
+  }
+  /* line 344, ../sass/partials/page/_page-nav.scss */
+  .page-nav__nav-item:hover .mega-menu__container {
+    display: block;
+  }
+  /* line 347, ../sass/partials/page/_page-nav.scss */
+  .page-nav__nav-item:hover .page-nav__arrow-up {
+    display: block;
+  }
+  /* line 351, ../sass/partials/page/_page-nav.scss */
+  .page-nav__responsive-home-link {
+    display: none;
+  }
+  /* line 355, ../sass/partials/page/_page-nav.scss */
+  .page-nav__arrow-up {
+    display: block;
+    position: absolute;
+    top: 45px;
+    left: 43%;
+    width: 0;
+    height: 0;
+    border-left: 19px solid transparent;
+    border-right: 19px solid transparent;
+    border-bottom: 15px solid rgba(255, 255, 255, 0.9);
+  }
+  /* line 368, ../sass/partials/page/_page-nav.scss */
+  .page-nav .myAccount {
+    float: right;
+    margin: 0 0 0 0px;
+    padding: 0 26px 0 0;
+    background: url(../../images/icons/icon_account.png) center right no-repeat;
+  }
+  /* line 375, ../sass/partials/page/_page-nav.scss */
+  .page-nav__mega-menu-responsive-icon, .page-nav__search-responsive-icon {
+    display: none;
+  }
+}
 /* line 4, ../sass/partials/page/_page-layout.scss */
 .page-layout {
   width: 100%;
@@ -2132,32 +2432,112 @@ textarea {
   color: #1a93b0;
 }
 
-/* line 15, ../sass/partials/page/modules/_mega-menu.scss */
+/* line 11, ../sass/partials/page/modules/_mega-menu.scss */
+.mega-menu {
+  display: none;
+}
+/* line 17, ../sass/partials/page/modules/_mega-menu.scss */
 .mega-menu .adSlots .adSlot:hover .detailsWrapper .detailsOverlay p {
   display: block;
 }
-/* line 19, ../sass/partials/page/modules/_mega-menu.scss */
+/* line 21, ../sass/partials/page/modules/_mega-menu.scss */
 .mega-menu .adSlots a.adSlot:nth-child(odd) {
   margin-right: 30px;
 }
-/* line 24, ../sass/partials/page/modules/_mega-menu.scss */
+/* line 25, ../sass/partials/page/modules/_mega-menu.scss */
+.mega-menu .adSlots .adSlot {
+  height: auto !important;
+  margin-right: 0px;
+}
+/* line 31, ../sass/partials/page/modules/_mega-menu.scss */
 .mega-menu__featured-home {
   position: relative;
 }
-/* line 27, ../sass/partials/page/modules/_mega-menu.scss */
+/* line 34, ../sass/partials/page/modules/_mega-menu.scss */
 .mega-menu__featured-home .adSlot {
   display: block;
   min-height: 10px;
   overflow-x: hidden;
 }
+/* line 41, ../sass/partials/page/modules/_mega-menu.scss */
+.mega-menu__search-input {
+  float: left;
+  width: 79%;
+  margin: 0 5px 5px 0;
+  padding: 8px;
+  font-size: 12px;
+  border-radius: 5px;
+  border: 1px solid lightgrey;
+}
+/* line 51, ../sass/partials/page/modules/_mega-menu.scss */
+.mega-menu__search-submit {
+  float: left;
+  width: 13.3%;
+  max-width: 40px;
+  height: 31px;
+  margin-top: 2px;
+  padding: 0;
+  display: inline-block;
+  background: url(../../images/icons/icon_search-magnifiying-glass.png) center center no-repeat #000;
+  border: 0;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+/* line 66, ../sass/partials/page/modules/_mega-menu.scss */
+.mega-menu__list-items {
+  clear: both;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+/* line 73, ../sass/partials/page/modules/_mega-menu.scss */
+.mega-menu__section--middle, .mega-menu__section--right {
+  display: none;
+}
+/* line 77, ../sass/partials/page/modules/_mega-menu.scss */
+.mega-menu__section--left .mega-menu__list-items {
+  margin: 1em 0 0 0;
+}
+/* line 80, ../sass/partials/page/modules/_mega-menu.scss */
+.mega-menu__section--left .mega-menu__list-items .mega-menu__list-item {
+  display: inline-block;
+  width: 48%;
+  line-height: 2.3em;
+  border-bottom: 1px solid #e5e5e5;
+}
+/* line 86, ../sass/partials/page/modules/_mega-menu.scss */
+.mega-menu__section--left .mega-menu__list-items .mega-menu__list-item:nth-child(odd) {
+  margin-right: 2%;
+}
+/* line 89, ../sass/partials/page/modules/_mega-menu.scss */
+.mega-menu__section--left .mega-menu__list-items .mega-menu__list-item:nth-child(1) {
+  border-top: 1px solid #e5e5e5;
+}
+/* line 92, ../sass/partials/page/modules/_mega-menu.scss */
+.mega-menu__section--left .mega-menu__list-items .mega-menu__list-item:nth-child(2) {
+  border-top: 1px solid #e5e5e5;
+}
 
-/* line 34, ../sass/partials/page/modules/_mega-menu.scss */
+/* line 96, ../sass/partials/page/modules/_mega-menu.scss */
 .find-home-menu, .neighborhoods-menu {
   display: none;
 }
 
-@media (min-width: 960px) {
-  /* line 61, ../sass/partials/page/modules/_mega-menu.scss */
+@media (min-width: 768px) {
+  /* line 110, ../sass/partials/page/modules/_mega-menu.scss */
+  .mega-menu {
+    /*&__list-item:nth-child(odd) {
+        margin-right: 0;
+    }
+    &__list-item:nth-child(1) {
+        border-top: 0px;
+    }
+    &__list-item:nth-child(2) {
+        border-top: 0px;
+    }*/
+  }
+  /* line 111, ../sass/partials/page/modules/_mega-menu.scss */
   .mega-menu__container {
     position: absolute;
     right: 0;
@@ -2169,100 +2549,116 @@ textarea {
     padding: 10px;
     background: rgba(255, 255, 255, 0.9);
     border: 1px solid lightgrey;
+    border-top: 0px;
     box-sizing: border-box;
   }
-  /* line 75, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 126, ../sass/partials/page/modules/_mega-menu.scss */
+  .mega-menu__search-input {
+    width: 220px;
+  }
+  /* line 130, ../sass/partials/page/modules/_mega-menu.scss */
+  .mega-menu__search-submit {
+    width: 40px;
+  }
+  /* line 134, ../sass/partials/page/modules/_mega-menu.scss */
   .mega-menu__section--left, .mega-menu__section--middle, .mega-menu__section--right {
+    display: block;
     width: 33.3%;
     height: 100%;
     float: left;
     padding: 10px;
     box-sizing: border-box;
   }
-  /* line 83, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 143, ../sass/partials/page/modules/_mega-menu.scss */
   .mega-menu__list-items {
     clear: both;
     list-style: none;
-    margin: 0;
     padding: 0;
+    margin: 0;
+    width: 100%;
+    line-height: inherit;
+    border: 0px;
   }
-  /* line 90, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 154, ../sass/partials/page/modules/_mega-menu.scss */
   .mega-menu__list-item {
     padding: 5px 0;
     font-size: 14px;
+    /*display: block;
+    line-height: inherit;
+    width: 100%;*/
   }
-  /* line 94, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 161, ../sass/partials/page/modules/_mega-menu.scss */
   .mega-menu__list-item a {
     text-decoration: none;
     color: black;
   }
-  /* line 99, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 166, ../sass/partials/page/modules/_mega-menu.scss */
   .mega-menu__list-item a:hover {
     color: #1a93b0;
   }
-  /* line 105, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 181, ../sass/partials/page/modules/_mega-menu.scss */
   .mega-menu__section--left .mega-menu__list-item {
     font-family: 'OpenSans Bold';
   }
-  /* line 110, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 185, ../sass/partials/page/modules/_mega-menu.scss */
+  .mega-menu__section--left .mega-menu__list-items {
+    margin: 0;
+  }
+  /* line 188, ../sass/partials/page/modules/_mega-menu.scss */
+  .mega-menu__section--left .mega-menu__list-items .mega-menu__list-item {
+    display: block;
+    width: 100%;
+    line-height: inherit;
+    border-bottom: 0px;
+  }
+  /* line 194, ../sass/partials/page/modules/_mega-menu.scss */
+  .mega-menu__section--left .mega-menu__list-items .mega-menu__list-item:nth-child(odd) {
+    margin-right: 0;
+  }
+  /* line 197, ../sass/partials/page/modules/_mega-menu.scss */
+  .mega-menu__section--left .mega-menu__list-items .mega-menu__list-item:nth-child(1) {
+    border-top: 0px;
+  }
+  /* line 200, ../sass/partials/page/modules/_mega-menu.scss */
+  .mega-menu__section--left .mega-menu__list-items .mega-menu__list-item:nth-child(2) {
+    border-top: 0px;
+  }
+  /* line 204, ../sass/partials/page/modules/_mega-menu.scss */
   .mega-menu__section--middle {
     border-left: 1px solid lightgrey;
   }
-  /* line 113, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 207, ../sass/partials/page/modules/_mega-menu.scss */
   .mega-menu__section--middle .mega-menu__list-item {
     padding: 10px 45px 10px 0;
     border-top: 1px solid lightgrey;
     font-family: 'OpenSans';
     font-weight: 600;
   }
-  /* line 120, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 214, ../sass/partials/page/modules/_mega-menu.scss */
   .mega-menu__section--middle .mega-menu__list-item:first-child {
     border: none;
     padding-top: 0;
   }
-  /* line 126, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 220, ../sass/partials/page/modules/_mega-menu.scss */
   .mega-menu__section--right {
     padding-bottom: 0;
     overflow: hidden;
   }
-  /* line 131, ../sass/partials/page/modules/_mega-menu.scss */
-  .mega-menu__search-input {
-    float: left;
-    margin: 0 5px 5px 0;
-    padding: 8px;
-    border-radius: 5px;
-    border: 1px solid lightgrey;
-    width: 220px;
-    font-size: 12px;
-  }
-  /* line 141, ../sass/partials/page/modules/_mega-menu.scss */
-  .mega-menu__search-submit {
-    padding: 0;
-    display: inline-block;
-    float: left;
-    width: 40px;
-    height: 31px;
-    background: url(../../images/icons/icon_search-magnifiying-glass.png) center center no-repeat #000;
-    border: 0;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
-  }
-  /* line 154, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 225, ../sass/partials/page/modules/_mega-menu.scss */
   .mega-menu__featured-home {
     display: block;
     min-height: 1px;
     height: 100%;
     overflow: hidden;
   }
-  /* line 160, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 231, ../sass/partials/page/modules/_mega-menu.scss */
   .mega-menu__featured-home .adSlot {
     display: block;
     min-height: 10px;
     overflow-x: hidden;
   }
 
-  /* line 169, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 240, ../sass/partials/page/modules/_mega-menu.scss */
   #mega-menu__list-items--left, #mega-menu__list-items--right {
     width: 50%;
     float: left;
@@ -2270,104 +2666,162 @@ textarea {
     box-sizing: border-box;
   }
 
-  /* line 176, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 247, ../sass/partials/page/modules/_mega-menu.scss */
   #mega-menu__list-items--left {
     padding-right: 15px;
   }
 
-  /* line 180, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 251, ../sass/partials/page/modules/_mega-menu.scss */
   .page-nav__form__submit {
     float: right;
     padding: 0 0 1px 0;
     border-radius: 5px;
   }
 
-  /* line 193, ../sass/partials/page/modules/_mega-menu.scss */
-  .adSlot {
-    float: left;
-    display: block;
-    width: 300px;
-    height: 250px;
-    position: relative;
-    margin-bottom: 30px;
+  /* line 259, ../sass/partials/page/modules/_mega-menu.scss */
+  .neighborhoods-menu {
+    left: -114px !important;
   }
-  /* line 201, ../sass/partials/page/modules/_mega-menu.scss */
-  .adSlot .iconOverlay {
+}
+@media (min-width: 960px) {
+  /* line 274, ../sass/partials/page/modules/_mega-menu.scss */
+  .mega-menu__container {
     position: absolute;
-    z-index: 1;
-  }
-  /* line 205, ../sass/partials/page/modules/_mega-menu.scss */
-  .adSlot .topSpacing {
-    top: 3%;
-  }
-  /* line 208, ../sass/partials/page/modules/_mega-menu.scss */
-  .adSlot .leftSpacing {
-    left: 6%;
-  }
-  /* line 212, ../sass/partials/page/modules/_mega-menu.scss */
-  .adSlot .detailsWrapper {
-    width: 300px;
-    clear: both;
-    min-height: 10%;
-    overflow: hidden;
-    position: absolute;
-    bottom: 0;
+    right: 0;
     left: 0;
-    z-index: 1;
+    z-index: 100;
+    height: 280px;
+    width: 960px;
+    margin: 0 auto;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid lightgrey;
+    border-top: 0px;
+    box-sizing: border-box;
   }
-  /* line 222, ../sass/partials/page/modules/_mega-menu.scss */
-  .adSlot .detailsWrapper .detailsArrow {
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 0 25px 20px 25px;
-    border-color: rgba(0, 0, 0, 0.6) transparent;
-    float: right;
+  /* line 289, ../sass/partials/page/modules/_mega-menu.scss */
+  .mega-menu__search-input {
+    width: 220px;
   }
-  /* line 231, ../sass/partials/page/modules/_mega-menu.scss */
-  .adSlot .detailsWrapper .detailsOverlay {
-    width: 93%;
-    min-height: 20%;
-    padding: 4% 5% 3% 3%;
-    color: #fff;
-    font-size: 0.7em;
-    letter-spacing: 1px;
-    font-family: 'Oswald', sans-serif;
-    font-weight: 300;
-    background-color: rgba(0, 0, 0, 0.6);
+  /* line 293, ../sass/partials/page/modules/_mega-menu.scss */
+  .mega-menu__search-submit {
+    width: 40px;
+  }
+  /* line 297, ../sass/partials/page/modules/_mega-menu.scss */
+  .mega-menu__section--left, .mega-menu__section--middle, .mega-menu__section--right {
+    display: block;
+    width: 33.3%;
+    height: 100%;
+    float: left;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  /* line 306, ../sass/partials/page/modules/_mega-menu.scss */
+  .mega-menu__list-items {
     clear: both;
+    list-style: none;
+    margin: 0;
+    padding: 0;
   }
-  /* line 243, ../sass/partials/page/modules/_mega-menu.scss */
-  .adSlot .detailsWrapper .detailsOverlay h1 {
-    font-size: 120%;
-    text-align: left;
-    padding: 0 0 0.5em 0;
-    margin: 0 0 0 0;
-    line-height: 100%;
-    clear: both;
-    min-height: 10px;
+  /* line 313, ../sass/partials/page/modules/_mega-menu.scss */
+  .mega-menu__list-item {
+    padding: 5px 0;
+    font-size: 14px;
+  }
+  /* line 317, ../sass/partials/page/modules/_mega-menu.scss */
+  .mega-menu__list-item a {
+    text-decoration: none;
+    color: black;
+  }
+  /* line 322, ../sass/partials/page/modules/_mega-menu.scss */
+  .mega-menu__list-item a:hover {
+    color: #1a93b0;
+  }
+  /* line 328, ../sass/partials/page/modules/_mega-menu.scss */
+  .mega-menu__section--left .mega-menu__list-item {
+    font-family: 'OpenSans Bold';
+  }
+  /* line 332, ../sass/partials/page/modules/_mega-menu.scss */
+  .mega-menu__section--left .mega-menu__list-items {
+    margin: 0;
+  }
+  /* line 335, ../sass/partials/page/modules/_mega-menu.scss */
+  .mega-menu__section--left .mega-menu__list-items .mega-menu__list-item {
+    display: block;
+    width: 100%;
+    line-height: inherit;
+    border-bottom: 0px;
+  }
+  /* line 341, ../sass/partials/page/modules/_mega-menu.scss */
+  .mega-menu__section--left .mega-menu__list-items .mega-menu__list-item:nth-child(odd) {
+    margin-right: 0;
+  }
+  /* line 344, ../sass/partials/page/modules/_mega-menu.scss */
+  .mega-menu__section--left .mega-menu__list-items .mega-menu__list-item:nth-child(1) {
+    border-top: 0px;
+  }
+  /* line 347, ../sass/partials/page/modules/_mega-menu.scss */
+  .mega-menu__section--left .mega-menu__list-items .mega-menu__list-item:nth-child(2) {
+    border-top: 0px;
+  }
+  /* line 351, ../sass/partials/page/modules/_mega-menu.scss */
+  .mega-menu__section--middle {
+    border-left: 1px solid lightgrey;
+  }
+  /* line 354, ../sass/partials/page/modules/_mega-menu.scss */
+  .mega-menu__section--middle .mega-menu__list-item {
+    padding: 10px 45px 10px 0;
+    border-top: 1px solid lightgrey;
+    font-family: 'OpenSans';
+    font-weight: 600;
+  }
+  /* line 361, ../sass/partials/page/modules/_mega-menu.scss */
+  .mega-menu__section--middle .mega-menu__list-item:first-child {
+    border: none;
+    padding-top: 0;
+  }
+  /* line 367, ../sass/partials/page/modules/_mega-menu.scss */
+  .mega-menu__section--right {
+    padding-bottom: 0;
     overflow: hidden;
   }
-  /* line 253, ../sass/partials/page/modules/_mega-menu.scss */
-  .adSlot .detailsWrapper .detailsOverlay h1 .priceSpan {
-    float: right;
-  }
-  /* line 257, ../sass/partials/page/modules/_mega-menu.scss */
-  .adSlot .detailsWrapper .detailsOverlay p {
-    display: none;
-    line-height: 1.5em;
-    padding: 0 0 0.5em 0;
-    margin: 0 0 0 0;
-  }
-
-  /* line 267, ../sass/partials/page/modules/_mega-menu.scss */
-  .adSlot:hover .detailsWrapper .detailsOverlay p {
+  /* line 372, ../sass/partials/page/modules/_mega-menu.scss */
+  .mega-menu__featured-home {
     display: block;
+    min-height: 1px;
+    height: 100%;
+    overflow: hidden;
+  }
+  /* line 378, ../sass/partials/page/modules/_mega-menu.scss */
+  .mega-menu__featured-home .adSlot {
+    display: block;
+    min-height: 10px;
+    overflow-x: hidden;
   }
 
-  /* line 271, ../sass/partials/page/modules/_mega-menu.scss */
-  a.adSlot:nth-child(odd) {
-    margin-right: 30px;
+  /* line 387, ../sass/partials/page/modules/_mega-menu.scss */
+  #mega-menu__list-items--left, #mega-menu__list-items--right {
+    width: 50%;
+    float: left;
+    clear: none;
+    box-sizing: border-box;
+  }
+
+  /* line 394, ../sass/partials/page/modules/_mega-menu.scss */
+  #mega-menu__list-items--left {
+    padding-right: 15px;
+  }
+
+  /* line 398, ../sass/partials/page/modules/_mega-menu.scss */
+  .page-nav__form__submit {
+    float: right;
+    padding: 0 0 1px 0;
+    border-radius: 5px;
+  }
+
+  /* line 406, ../sass/partials/page/modules/_mega-menu.scss */
+  .neighborhoods-menu {
+    left: -113px !important;
   }
 }
 /* line 13, ../sass/partials/page/modules/_property-detail.scss */

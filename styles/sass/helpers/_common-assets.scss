@@ -36,3 +36,23 @@ $asset-1-name: 'category-tag';
 	.#{$asset-1-name}.featured { background-color: #1a93b0; }
 	.#{$asset-1-name}.trending { background-color: #6dcbd3; }
 	.#{$asset-1-name}.sponsored { background-color: #666; }
+
+
+// ------------------------------------------------------------
+// Desktop Breakpoint
+// ------------------------------------------------------------
+
+@include media-query(desktop) {
+	.#{$asset-1-name} {
+		
+	}
+}
+// ------------------------------------------------------------
+// Tablet Breakpoint
+// ------------------------------------------------------------
+
+@include media-query(tablet) {
+	.#{$asset-1-name} {
+		
+	}
+}
