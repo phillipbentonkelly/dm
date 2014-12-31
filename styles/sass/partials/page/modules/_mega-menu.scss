@@ -10,6 +10,9 @@ $module-name: 'mega-menu';
 
 .#{$module-name} {
     display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
     
     .adSlots {
         @extend .adSlots;
@@ -40,7 +43,7 @@ $module-name: 'mega-menu';
 
     &__search-input {
         float: left;
-        width: 79%;
+        width: 78%;
         margin: 0 5px 5px 0;
         padding: 8px;
         font-size: 12px;
