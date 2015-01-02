@@ -11,21 +11,24 @@ $module-name: 'related-articles';
 		font-family: Oswald Regular;
 		font-weight: 500;
 		font-size: 26px;
+		clear: both;
 	}
 
 	&__item {
-		width: 100%;
+		width: 50%;
 		min-height: 50px;
-		padding: 14px 0 2.5% 0;
+		height: 200px;
+		float: left;
+		box-sizing: border-box;
+		padding: 10px;
 		border-bottom: 1px solid #e5e5e5;
 		position: relative;
 		overflow: hidden;
-		clear: both;
 		
 		.thumb {
 			display: block;
-			float: left;
 			margin-right: 1%;
+			padding-bottom: 10px;
 		}
 		
 		a {
@@ -33,20 +36,22 @@ $module-name: 'related-articles';
 		}
 		
 		h2.title {
-			font-size: 16px;
+			font-size: 12px;
 			font-family: OpenSans Bold;
 			line-height: 16px;
 			margin: 0 0 4px 0;
-			padding: 0 0 0 0;
+			padding: 0 20px 0 0;
 		}
 
 		p.description {
+			display: none;
 			font-family: OpenSans Regular;
 			font-size: 13px;
 			margin-bottom: 6px;
 		}
 
 		div.date {
+			display: none;
 			float: left;
 			max-width: /*240px*/35%;
 			font-family: OpenSans Italic;
@@ -54,15 +59,16 @@ $module-name: 'related-articles';
 		}
 
 		.additional-info {
-			width: 78%;
 			min-height: 10px;
-			overflow: hidden;
-			position: absolute;
-			bottom: 4.7%;
-			right: 0;
+
+			// overflow: hidden;
+			// position: absolute;
+			// bottom: 4.7%;
+			// right: 0;
 		}
 
 		.tags {
+			display: none;
 			float: right;
 			max-width: /*360px*/65%;
 			min-height: 10px;
@@ -99,6 +105,7 @@ $module-name: 'related-articles';
 	}
 
 	a.viewMore{
+		clear: both;
 		display: block;
 		text-align: center;
 		text-transform: capitalize;
@@ -124,11 +131,39 @@ $module-name: 'related-articles';
 		overflow: hidden;
 
 		&__main-link {
-			display: block;
+			display: none;
 			float: left;
 		}
 			&__main-link:nth-child(odd) {
 				margin-right: 30px;
 			}
+	}
+}
+
+// @include media-query(tablet) {
+
+// 	.#{$module-name} {
+		
+// 	}
+// }
+
+@include media-query(tablet) {
+
+	.#{$module-name} {
+		&__item {
+			width: 100%;
+		}
+
+		p.description, div.date {
+			display: block;
+		}
+
+		.thumb {
+			float: left;
+		}
+
+		.tags { 
+			display: block;
+		}
 	}
 }
