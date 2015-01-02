@@ -2,7 +2,7 @@
 // *  Module Name 
 // *
 
-$module-name: 'property-detail';
+$module-name: 'explore-widget';
 
 // ------------------------------------------------------------
 // Default Styles
@@ -10,108 +10,129 @@ $module-name: 'property-detail';
 
 .#{$module-name} {
   // Module Styles
-  &__explore-container{
-    width: 630px;
-  	height: 340px;
-  	background: #e5e5e5;
-    margin-bottom: 10px;
-    position: relative;
-
-    //padding: 10px;
-    //border: dotted;
+  &__container {
+    width: 300px;
+    max-width: 300px;
+    margin: 0 auto 10px auto;
   }
-  &__headline{
+
+  &__header {
     font-family: Oswald;
-  	color: #333333;
+  	color: black;
   	font-size: 26px;
   	font-weight: 400;
   	text-align: center;
-  	//width: 71px;
-  	//height: 28px;
-  	padding: 5px;
   }
-  &__sub-headline{  
-      font-family: OpenSans;
-      color:  #000000;
-      font-size: 13px; /* Approximation due to font substitution */
-      font-weight: 700;
-      line-height: 24px; /* Approximation due to font substitution */
-      text-align: left;
-  }
-  &__pic{
-    width: 300px;
-  	height: 250px;
-    float: left;
 
+  &__img-wrapper {
+    position: relative;
+    margin: 0 auto;
   }
-  &__pic-slot{
-    width: 300px;
-    height: 250px;
-    //border: dotted;
-    float: left;
+
+  &__pic-slot {
     position: relative;
   }
-  &__pic-overtext-bar
-  {
-    //z-index: 1;
-    //border: solid;
+
+  &__img-overlay{
     position: absolute;
-    height: 26%;
-    width: 100%;
-    float: left;
-    bottom: 0px;
-    // background: black;
-    background: rgba(0,0,0,0.5)
-    // opacity: .50; /* Standard: FF gt 1.5, Opera, Safari, CSS3 */
-    // filter: alpha(opacity=50); /* IE lt 8 */
-    // -ms-filter: "alpha(opacity=50)"; /* IE 8 */
-    // -khtml-opacity: .50; /* Safari 1.x */
-    // -moz-opacity: .50; /* FF lt 1.5, Netscape */
-  }
-  &__pic-overtext-text
-  {
-      font-family: Oswald;
-      color:  #ffffff;
-      font-size: 1.5em; /* Approximation due to font substitution */
-      font-weight: 400;
-      text-align: center;
-      //width: 7.6%;
-      height: 0.8%;
-      position: relative;
-      margin: 0 auto;
-      padding-top: 10px;
-      color: rgba(255,255,255,100%);
-      //float: center;
+    bottom: 3px;
+    width: 280px;
+    margin: 0;
+    padding: 10px;
+    background: rgba(10,10,10,0.5);
+    font-family: Oswald;
+    color:  #ffffff;
+    font-size: 24px;
+    font-weight: 400;
+    text-align: center;
+    color: white;
   }
 
+  &__link-slot {
+    display: none;
+  }
 
-  &__link-list 
-  {
-    ul{       
-      font-size:  13px;
-      font-family: OpenSans;
-      list-style-type: disc;
-      list-style-position: inside;
-      font-weight: 700;
-      line-height: 24px; /* Approximation due to font substitution */
-      align: right;
-      margin: 0px;
-      padding:  5px;
-      //color: black; 
-    }
-    li{
-      margin-bottom: 5px;
-      color: black;
-      } 
-    span{
-      color:#1a93b0
-      }
-  }   
-  &__link-slot{
-    width: 300px;
-    height: 250px;
-    //border: solid;
-    //align: right;
-    float: right;
+}
+
+@include media-query(tablet) {
+
+    .#{$module-name} {
+  
   }
 }
+
+// ------------------------------------------------------------
+// Desktop Breakpoint
+// ------------------------------------------------------------
+
+@include media-query(desktop) {
+
+  .#{$module-name} {
+
+    &__container {
+      display: inline-block;
+      padding-bottom: 20px;
+      width: 100%;
+      max-width: 1000px;
+      background: rgba(170,170,170,0.3);
+    }
+
+    &__img-wrapper {
+      float: left;
+      width: 50%;
+    }
+
+    &__link-slot {
+      display: block;
+    }
+
+    &__sub-headline {
+      text-transform: uppercase;
+    }
+
+    &__link-list ul:nth-child(1) {
+      margin-bottom: 10px;
+    }
+
+    &__link-list {
+      ul {       
+        font-size:  13px;
+        font-family: OpenSans;
+        list-style-type: disc;
+        list-style-position: inside;
+        font-weight: 700;
+        line-height: 24px; /* Approximation due to font substitution */
+        align: right;
+        margin: 0px;
+        padding:  5px;
+        //color: black; 
+      }
+    
+      li {
+        // margin-bottom: 5px;
+        color: black;
+      }
+
+      a {
+        color: #1a93b0;
+        text-decoration: none;
+      }
+    }
+
+    &__link-slot {
+      width: 300px;
+      height: 250px;
+      //border: solid;
+      //align: right;
+      float: right;
+
+      p {
+        font-size: 11px;
+        font-weight: 400;
+      }
+    }
+  }
+}
+
+
+

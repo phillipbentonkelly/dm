@@ -76,7 +76,7 @@ $module-name: 'page-nav';
 		display: block;
 		float: left;
 		position: absolute;
-
+		z-index: 200;
 		left: 0px;
 		top: 42px;
 		width: 100%;
@@ -122,10 +122,12 @@ $module-name: 'page-nav';
 			}
 
 			.mega-menu {
+				// display: none;
 				padding: 13px 10px 13px 10px;
 			}
 
 			.mega-menu__container {
+				display: none;
 				display: block;
 				line-height: 18px;
 			}
@@ -139,7 +141,7 @@ $module-name: 'page-nav';
 				background: #8cc9d7;
 			}
 			&__nav-item:hover .mega-menu, &__nav-item:hover .mega-menu__container {
-				display: block;
+				// display: block;
 			}
 			&__nav-item:hover .page-nav__arrow-up {
 				display: block;
@@ -157,6 +159,7 @@ $module-name: 'page-nav';
 		}*/
 	
 	&__nav-lv0 {
+		// display: none;
 		padding: 0 10px 0 10px;
 		position: relative;
 	}
@@ -168,6 +171,10 @@ $module-name: 'page-nav';
 @include media-query(desktop) {
 	.#{$module-name} {
 		height: $page-nav-desktop-height;
+
+		&__nav-item:hover .mega-menu, &__nav-item:hover .mega-menu__container {
+			display: block;
+		}
 
 		&__content-wrapper {
 			width: $desktop-breakpoint;

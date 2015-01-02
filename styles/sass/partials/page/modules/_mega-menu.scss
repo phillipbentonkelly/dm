@@ -106,9 +106,6 @@ $module-name: 'mega-menu';
 
 // Tablet Breakpoint
 @include media-query(tablet) {
-    .find-home-menu, .neighborhoods-menu {
-        //display: none;
-    }
 
     .#{$module-name} {
         &__container {
@@ -269,9 +266,6 @@ $module-name: 'mega-menu';
 // ------------------------------------------------------------
 
 @include media-query(desktop) {
-    .find-home-menu, .neighborhoods-menu {
-        //display: none;
-    }
 
     .#{$module-name} {
         &__container {
