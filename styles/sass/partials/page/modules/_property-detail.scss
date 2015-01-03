@@ -54,12 +54,12 @@ $module-name: 'explore-widget';
 
 }
 
-@include media-query(tablet) {
+/*@include media-query(tablet) {
 
     .#{$module-name} {
   
   }
-}
+}*/
 
 // ------------------------------------------------------------
 // Desktop Breakpoint
@@ -109,13 +109,16 @@ $module-name: 'explore-widget';
       }
     
       li {
-        // margin-bottom: 5px;
         color: black;
       }
 
       a {
         color: #1a93b0;
         text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
       }
     }
 
