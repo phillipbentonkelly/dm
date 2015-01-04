@@ -88,6 +88,7 @@ $module-name: 'explore-widget';
 
     &__sub-headline {
       text-transform: uppercase;
+      margin-bottom: 5px;
     }
 
     &__link-list ul:nth-child(1) {
@@ -96,7 +97,7 @@ $module-name: 'explore-widget';
 
     &__link-list {
       ul {       
-        font-size:  13px;
+        font-size:  12px;
         font-family: OpenSans;
         list-style-type: disc;
         list-style-position: inside;
@@ -104,8 +105,7 @@ $module-name: 'explore-widget';
         line-height: 24px; /* Approximation due to font substitution */
         align: right;
         margin: 0px;
-        padding:  5px;
-        //color: black; 
+        padding:  0;
       }
     
       li {
@@ -125,13 +125,11 @@ $module-name: 'explore-widget';
     &__link-slot {
       width: 300px;
       height: 250px;
-      //border: solid;
-      //align: right;
       float: right;
 
       p {
-        font-size: 11px;
-        font-weight: 400;
+        font-size: 12px;
+        font-weight: 600;
       }
     }
   }

@@ -67,6 +67,12 @@ $module-name: 'contact';
         font-family: 'Oswald', sans-serif;
         color: white;
         letter-spacing: 1px;
+
+        font-family: Oswald;
+        color:  #ffffff;
+        font-size: 26px; /* Approximation due to font substitution */
+        font-weight: 400;
+
       }
     }
 
@@ -78,7 +84,7 @@ $module-name: 'contact';
 
     &__agent-info {
 
-      margin-left: 70px;
+      margin-left: 60px;
       a:link, a:visited, a:active {
         color: #1a93b0;
         text-decoration: none;
@@ -90,7 +96,7 @@ $module-name: 'contact';
 
     &__agent-links {
       font-family: 'Open Sans';
-      margin-bottom: 5px;
+      margin-bottom: 0px;
       a {
         display: block;
         font-size: 13px;
@@ -106,8 +112,8 @@ $module-name: 'contact';
 
     &__agent-img {
       float: left;
-      height: 65px;
-      width: 50px;
+      height: 60px;
+      width: 45px;
       margin-bottom: 10px;
     }
 
@@ -124,8 +130,11 @@ $module-name: 'contact';
 
       input, textarea{
         display: inline-block;
-        font-size: 85%;
-        font-weight: 100;
+        font-family: OpenSans;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 13px; /* Approximation due to font substitution */
+        font-weight: 400;
+        text-align: left;
         width: 100%;
         margin-bottom: 10px;
         padding: 10px;
@@ -173,10 +182,12 @@ $module-name: 'contact';
     &__required-marker {
       margin-right: -15px;
       margin-top: 15px;
-      font-family: OpenSans;
-      font-size: 12px;
-      color: #1a93b0;
       float: right;
+      font-family: OpenSans;
+      color: #1a93b0;
+      font-size: 13px; /* Approximation due to font substitution */
+      font-weight: 400;
+      text-align: left;
     }
 
     &__form-required {
@@ -189,13 +200,15 @@ $module-name: 'contact';
       font-weight: 200;
 
       span {
-        color: #1a93b0;
-        font-size: 11px;
+      color: #1a93b0;
+      font-size: 13px; /* Approximation due to font substitution */
+      font-weight: 400;
+      text-align: left;
       }
     }
 
     &__company {
-      margin: 50px 0 60px 0;
+      margin: 50px 0 35px 10px;
     }
 
     &__company-wrapper {
@@ -204,13 +217,19 @@ $module-name: 'contact';
 
     &__company-name {
       font-family: OpenSans;
-      font-size: 80%;
+      letter-spacing: 0px;
+      color:  #000000;
+      font-size: 12px; /* Approximation due to font substitution */
       font-weight: 600;
+      line-height: 18px; /* Approximation due to font substitution */
+      text-align: left;
+      width: 200px;
     }
 
     &__company-note {
       font-size: 70%;
       font-weight: 200;
+      margin-top: 3px;
     }
 
     &__company-message {
@@ -224,7 +243,7 @@ $module-name: 'contact';
     }
 
     &__company-info {
-      margin-left: 110px;
+      margin-left: 105px;
       margin-bottom: 15px;
     }
 

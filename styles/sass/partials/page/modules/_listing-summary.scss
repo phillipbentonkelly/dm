@@ -69,28 +69,36 @@ $module-name: 'listing';
 	&__address {
 		font-family: OpenSans;
 		color:  #000000;
-		font-size: 18px;
+		font-size: 24px; /* Approximation due to font substitution */
 		font-weight: 600;
+		line-height: 28px; /* Approximation due to font substitution */
+		text-align: left;
 	}
 
 	&__writeup-content {
 		width: 100%;
 		clear: both;
 		font-family: OpenSans;
+		color:  #000000;
+		font-size: 16px; /* Approximation due to font substitution */
 		font-weight: 400;
-		font-size: 13px;
-		margin-bottom: 15px;
+		line-height: 24px; /* Approximation due to font substitution */
+		text-align: left;
 	}
 
 	&__writeup-more {
 		float: right;
 		font-family: OpenSans;
-		font-size: 11px;
+		color:  #666666;
+		font-size: 11px; /* Approximation due to font substitution */
 		font-weight: 600;
+		text-align: left;
 
 		img {
 			margin-left: 10px;
 			vertical-align: middle;
+			height: 30px;
+			width: 30px;
 		}
 	}
 
@@ -102,7 +110,7 @@ $module-name: 'listing';
 			font-family: 'Oswald', sans-serif;
 			font-weight: #{$fw-regular};
 			text-align: center;
-			margin-bottom: 10px;
+			margin-bottom: 15px;
 		}
 	}
 
@@ -115,7 +123,11 @@ $module-name: 'listing';
 
 		li {
 			font-family: OpenSans;
-			font-size: 12px;
+			color:  #000000;
+			font-size: 13px; /* Approximation due to font substitution */
+			font-weight: 400;
+			line-height: 24px; /* Approximation due to font substitution */
+			text-align: left;
 			padding-bottom: 5px;
 		}
 	}
@@ -161,9 +173,9 @@ $module-name: 'listing';
 		}
 
 		a:link, a:visited, a:active {
-      color: black;
-      text-decoration: none;
-    }
+      		color: black;
+      		text-decoration: none;
+    	}
 	}
 
 	&__contact-agent {
@@ -201,13 +213,13 @@ $module-name: 'listing';
 		&__breadcrumbs {
 			display: block;
 			margin-bottom: 20px;
-			font-size: 85%;
-			color: #1a93b0;
-
-			a:before {
-				content: " \B7 ";
-				color: black;
-			}
+			font-family: OpenSans;
+			color:  black;
+			font-size: 13px; /* Approximation due to font substitution */
+			font-weight: 600;
+			line-height: 18px; /* Approximation due to font substitution */
+			text-align: left;
+	
 			a:first-child:before {
 				content: "";
 			}
@@ -215,6 +227,11 @@ $module-name: 'listing';
 			a {
 				color: #1a93b0;
 			}
+		}
+
+		&__breadcrumbs a:before, &__breadcrumb-address:before {
+			content: " \B7 ";
+			color: black;
 		}
 
 		&__summary--left {
@@ -267,7 +284,11 @@ $module-name: 'listing';
 				width: 33.3%;
 				padding: 7px 0;
 				float: left;
-				font-size: 90%;
+				font-family: OpenSans;
+				color:  #000000;
+				font-size: 13px; /* Approximation due to font substitution */
+				font-weight: 400;
+				text-align: center;
 			}
 		}
 
@@ -286,18 +307,24 @@ $module-name: 'listing';
 				width: 50%;
 				padding: 7px 0;
 				float: left;
-				font-size: 90%;
 				border-bottom: none;
+				font-family: OpenSans;
+				color:  #000000;
+				font-size: 13px; /* Approximation due to font substitution */
+				font-weight: 400;
+				text-align: center;
 			}
 		}
 
 		&__price {
 			box-sizing: border-box;
 			width: 100%;
-			float: left;
-			font-size: 115%;
-			font-weight: 400;
 			padding: 5px;
+			font-family: OpenSans;
+			color:  #000000;
+			font-size: 18px; /* Approximation due to font substitution */
+			font-weight: 600;
+			text-align: center;
 		}
 
 		&__share {
@@ -334,7 +361,7 @@ $module-name: 'listing';
 		&__for-sale {
 			font-family: 'Oswald', sans-serif;
 			font-size: 12px;
-			font-weight: 500;
+			font-weight: 400;
 			display: inline-block;
 		}
 
@@ -376,6 +403,7 @@ $module-name: 'listing';
 		&__facts--left, &__facts--right, &__features--left, &__features--right {
 			width: 33.3%;
 			box-sizing: border-box;
+			margin-bottom: 20px;
 		}
 
 		&__facts, &__features {
@@ -395,17 +423,21 @@ $module-name: 'listing';
 
 	  &__contact-agent {
 			background: #1a93b0;
-			padding: 10px;
-			margin-bottom: 10px;
+			padding: 7px;
+			margin-bottom: 40px;
 			display: inline-block;
 			box-sizing: border-box;
 			width: 100%;
 			text-align: center;
+			font-family: OpenSans;
+			font-size: 16px; /* Approximation due to font substitution */
+			font-weight: 600;
+			text-align: center;
 
 			a:link, a:visited, a:active {
 				color: white;
-	      text-decoration: none;
-	    }
+	      		text-decoration: none;
+	    	}
 		}
   }
 

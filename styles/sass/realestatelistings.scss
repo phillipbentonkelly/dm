@@ -71,10 +71,12 @@ a, img{
 	font-size: 1.5em;
 
 	h4{
-		font-family: 'Oswald', sans-serif;
-		font-size: 90%;
-		font-weight: 300;
 		margin: 0 0 5% 0;
+		font-family: Oswald;
+		color:  #333333;
+		font-size: 26px; /* Approximation due to font substitution */
+		font-weight: 400;
+		text-align: left;
 	}
 
 	.select2-container {
@@ -110,6 +112,11 @@ a, img{
 
 		.select2-choice > .select2-chosen {
 			line-height: 40px;
+			font-family: OpenSans;
+			color:  #ffffff;
+			font-size: 18px; /* Approximation due to font substitution */
+			font-weight: 600;
+			text-align: left;
 		}
 	}
 	
@@ -212,8 +219,8 @@ a, img{
 					
 					text-transform: uppercase;
 					font-family: 'Oswald', sans-serif;
-					font-weight: 500;
-					font-size: 41%;
+					font-weight: 400;
+					font-size: 11px;
 					color: #000;
 
 					position: absolute;
@@ -225,7 +232,7 @@ a, img{
 				&__bottom-overlay {
 					width: 94%;
 					height: 18px;
-					padding: 4px 3% 0 3%;
+					padding: 4px 3%;
 					background-color: rgba(0, 0, 0, 0.5);
 					
 					color: #fff;
@@ -241,10 +248,22 @@ a, img{
 				&__price {
 					font-size: 40%;
 					float: left;
+
+					font-family: OpenSans;
+					color:  #ffffff;
+					font-size: 12px; /* Approximation due to font substitution */
+					font-weight: 700;
+					text-align: right;
 				}
 				&__time {
 					font-size: 40%;
 					float: right;
+
+					font-family: OpenSans;
+					color:  #ffffff;
+					font-size: 10px; /* Approximation due to font substitution */
+					font-weight: 600;
+					text-align: right;
 				}
 
 				.bottom-level__details {
@@ -267,9 +286,13 @@ a, img{
 					min-height: 33px;
 					max-height: 33px;
 					margin-bottom: 1px;
-					font-weight: 500;
-					font-size: 90%;
+					
 					line-height: 1.25em;
+					font-family: OpenSans;
+					color:  #000000;
+					font-size: 11px; /* Approximation due to font substitution */
+					font-weight: 600;
+					text-align: left;
 				}
 				&__address:before, &__address:after {
 					-moz-box-sizing: content-box;
@@ -277,18 +300,26 @@ a, img{
 					box-sizing: content-box;
 				}
 
-				&__bedrooms {
+				&__bedrooms, &__baths {
 					width: 49%;
 					min-height: 33%;
 					padding: 2% 0 3% 0;
+					font-family: OpenSans;
+					color:  #000000;
+					font-size: 11px; /* Approximation due to font substitution */
+					font-weight: 400;
+					line-height: 11.955px; /* Approximation due to font substitution */
 					text-align: center;
+				}
+
+				&__bedrooms {
 					border-right: 1px solid #fff;
 				}
+					
 				&__baths {
 					width: 49%;
 					min-height: 33%;
 					padding: 2% 0 3% 0;
-					text-align: center;
 				}
 			}
 
