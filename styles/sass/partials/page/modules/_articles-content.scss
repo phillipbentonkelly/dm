@@ -15,6 +15,10 @@ $module-name: 'articles-content';
 		overflow: hidden;
 	}
 
+	.social-icons {
+        @extend .social-icons;
+    }
+
 	&__article {
 		font-family: OpenSans Regular;
 		font-size: 16px;
