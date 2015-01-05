@@ -5,6 +5,13 @@ $asset-1-name: 'category-tag';
 	min-height: 10px;
 	overflow: hidden;
 }
+	.col {
+		float: left;
+	}
+	.colRight {
+		float: right;
+	}
+
 
 .#{$asset-1-name} {
 	display: block;

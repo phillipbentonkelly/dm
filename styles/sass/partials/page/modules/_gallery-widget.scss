@@ -1,0 +1,18 @@
+$module-name: 'gallery-widget';
+
+.#{$module-name} {
+	width: 100%;
+	min-height: 464px;
+}
+
+@include media-query(tablet) {
+	.#{$module-name} {
+		
+	}
+}
+
+@include media-query(desktop) {
+	.#{$module-name} {
+
+	}
+}
