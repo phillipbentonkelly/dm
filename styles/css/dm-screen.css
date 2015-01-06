@@ -903,69 +903,78 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
 }
 /* line 4, ../sass/partials/page/_page-layout.scss */
 .page-layout {
-  width: 100%;
+  /*width: 100%;
   min-height: 100px;
   margin: auto;
   overflow: hidden;
   clear: both;
   padding-bottom: 20px;
-  position: relative;
-}
-/* line 13, ../sass/partials/page/_page-layout.scss */
-.page-layout__wrapper {
+  position: relative;*/
+  overflow: hidden;
+  clear: both;
   margin: 0 auto;
   max-width: 960px;
   min-width: 0;
 }
 /* line 19, ../sass/partials/page/_page-layout.scss */
-.page-layout__left-col {
-  width: 100%;
+.page-layout__wrapper {
+  margin: 0 auto;
+  max-width: 960px;
   min-width: 0;
+}
+/* line 25, ../sass/partials/page/_page-layout.scss */
+.page-layout__left-col {
+  max-width: 100%;
+  min-width: 30%;
   height: 100%;
   padding-top: 20px;
   box-sizing: border-box;
+  overflow: hidden;
+  padding-right: 20px;
+  float: left;
 }
-/* line 28, ../sass/partials/page/_page-layout.scss */
+/* line 38, ../sass/partials/page/_page-layout.scss */
 .page-layout__right-col {
   display: none;
 }
 
-/* line 33, ../sass/partials/page/_page-layout.scss */
+/* line 43, ../sass/partials/page/_page-layout.scss */
 .mega-menu {
   display: none;
 }
 
 @media (min-width: 768px) {
-  /* line 38, ../sass/partials/page/_page-layout.scss */
+  /* line 48, ../sass/partials/page/_page-layout.scss */
   .page-layout {
     margin: 0 auto;
   }
-  /* line 41, ../sass/partials/page/_page-layout.scss */
+  /* line 51, ../sass/partials/page/_page-layout.scss */
   .page-layout__wrapper {
     margin: 0 auto;
     min-width: 765px;
   }
-  /* line 46, ../sass/partials/page/_page-layout.scss */
+  /* line 56, ../sass/partials/page/_page-layout.scss */
   .page-layout__right-col {
     display: block;
     float: right;
     width: 300px;
   }
-  /* line 52, ../sass/partials/page/_page-layout.scss */
+  /* line 62, ../sass/partials/page/_page-layout.scss */
   .page-layout__left-col {
-    padding-right: 25px;
+    /*padding-right: 25px;*/
     max-width: 660px;
-    min-width: 460px;
+    min-width: 435px;
+    box-sizing: border-box;
   }
 }
 @media (min-width: 960px) {
-  /* line 61, ../sass/partials/page/_page-layout.scss */
+  /* line 72, ../sass/partials/page/_page-layout.scss */
   .page-layout {
     width: 960px;
     margin: 0 auto;
   }
 
-  /* line 66, ../sass/partials/page/_page-layout.scss */
+  /* line 77, ../sass/partials/page/_page-layout.scss */
   .page-layout-wrapper {
     min-width: 1152px;
     min-height: 700px;
@@ -982,10 +991,11 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
   clear: both;
   min-height: 100px;
   overflow: hidden;
+  margin-top: 20px;
 }
 
 @media (min-width: 960px) {
-  /* line 11, ../sass/partials/page/_page-blog.scss */
+  /* line 12, ../sass/partials/page/_page-blog.scss */
   .page-blog {
     background-color: #e5e5e5;
   }
@@ -1100,7 +1110,7 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
   float: right;
   width: 30px;
   height: 30px;
-  background: url(../../images/icons/icon_search-magnifiying-glass.png) center center no-repeat black;
+  background: url(../../images/icons/icon_search-magnifiying-glass.png) center center no-repeat #000;
 }
 /* line 120, ../sass/partials/page/_page-search.scss */
 .page-search__button--save-search {
@@ -1766,7 +1776,7 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
   border-radius: 2px;
-  background: url("../images/icons/magGlass_bg_blk.gif") center center no-repeat black;
+  background: url("../images/icons/magGlass_bg_blk.gif") center center no-repeat #000;
 }
 /* line 61, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel #carousel-wrap, .full-screen-carousel .slide {
@@ -2799,7 +2809,7 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
   margin-top: 2px;
   padding: 0;
   display: inline-block;
-  background: url(../../images/icons/icon_search-magnifiying-glass.png) center center no-repeat black;
+  background: url(../../images/icons/icon_search-magnifiying-glass.png) center center no-repeat #000;
   border: 0;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
@@ -3665,3 +3675,5 @@ a, img {
     width: 298px;
   }
 }
+
+/*# sourceMappingURL=dm-screen.css.map */

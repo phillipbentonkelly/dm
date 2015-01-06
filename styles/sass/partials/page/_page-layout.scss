@@ -2,13 +2,19 @@ $module-name: 'page-layout';
 $padding-top: 20px;
 
 .#{$module-name} {
-	width: 100%;
+	/*width: 100%;
 	min-height: 100px;
 	margin: auto;
 	overflow: hidden;
 	clear: both;
 	padding-bottom: 20px;
-	position: relative;
+	position: relative;*/
+	overflow: hidden;
+	clear: both;
+
+	margin: 0 auto;
+	max-width: $desktop-breakpoint;
+	min-width: 0;
 
 	&__wrapper {
 		margin: 0 auto;
@@ -17,12 +23,16 @@ $padding-top: 20px;
 	}
 
 	&__left-col {
-		width: 100%;
-		min-width: 0;
+		max-width: 100%;
+		min-width: 30%;
 		height: 100%;
 		padding-top: $padding-top;
-		
 		box-sizing: border-box;
+		overflow: hidden;
+
+		padding-right: 20px;
+
+		float: left;
 	}
 	
 	&__right-col {
@@ -50,9 +60,10 @@ $padding-top: 20px;
 		}
 
 		&__left-col {
-			padding-right: 25px;
+			/*padding-right: 25px;*/
 			max-width: 660px;
-			min-width: 460px;
+			min-width: 435px;
+			box-sizing: border-box;
 		}
 	}
 }

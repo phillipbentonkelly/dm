@@ -75,11 +75,23 @@
                 $('#priceRange').bind('click', function(e){
                     e.preventDefault();
                 });
+
+                if ($(window).width() > 752) {
+	                $('.page-layout__left-col').width($(window).width() - 320);
+	            };
             });
+
+            $(window).resize(function() {
+	            if ($(window).width() > 752) { 
+	                $('.page-layout__left-col').width($(window).width() - 320);
+	            } else {
+	                $('.page-layout__left-col').css('width', '100%');
+	            }
+	        });
         </script>
 
 </head>
-<body class="page--<?php echo $pageType; ?>">
+<body <?php if ($pageType == 'serp') { echo "class='page--$pageType serp'"; } else {  echo "class='page--$pageType'"; } ?>>
 	<!-- Page Masthead -->
     <?php include 'page/page-masthead.php'; ?>
 
@@ -229,7 +241,7 @@
 	
 	<?php if ($pageType == 'home') { ?>
 		<!-- DFP Sidebar Placeholder Ad Content -->
-		<?php include 'ads/real-estate-brokerage__coldwell-banker.php'; ?>
+		<?php include 'page-content/real-estate-blog.php'; ?>
 	<?php } ?>
 
 	<!-- Page Footer -->

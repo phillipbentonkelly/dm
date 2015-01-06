@@ -5,6 +5,7 @@ $module-name: 'page-blog';
 	clear: both;
 	min-height: 100px;
 	overflow: hidden;
+	margin-top: 20px;
 }
 
 @include media-query(desktop) {
