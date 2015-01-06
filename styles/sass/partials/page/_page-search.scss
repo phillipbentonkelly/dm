@@ -8,54 +8,42 @@ $module-name: 'page-search';
 // Default Styles
 // ------------------------------------------------------------
 
+.home .#{$module-name}{
+	position: absolute;
+	z-index: 10;
+	top: 160px;
+	background: rgba(221, 239, 243,0.7);
+}
+
+.serp .#{$module-name}{
+	display: block;
+	float: left;
+	margin: 0 auto;
+	background: rgb(221, 239, 243);
+}
+
 .#{$module-name} {
-	display: none;
 	width: 100%;
-	
-	&__home{
-		position: absolute;
-		top: 160px;
-		z-index: 1;
-		height: auto;
-		background: rgba(233,244,246,0.7);
-		font: 11px sans-serif;
-
-		form{
-			width: 800px;
-		}
-	}
-
-	&__serp{
-		display: block;
-		float: left;
-		height: $page-search-serp-height;
-		background: rgb(221, 239, 243);
-
-		form{
-			width: 960px;
-
-			input[type=search]{
-				margin-left: 15px;
-			}
-		}
-	}
+	height: auto;	
+	font: 11px sans-serif;
 
 	&__content-wrapper {
 		width: 960px;
-		height: 100%;
+		height: auto;
 		margin: auto;
 		position: relative;
 	}
 
 	&__form{
 		display: block;
+		width: 800px;
 		height: 90%;
 		margin: 10px auto;
 
-		input[type="text"] {
+		input[type="text"], input[type=search] {
 			box-sizing: border-box;
 			margin: 0 5px 0 0;
-			border: 0;
+			border: none;
 		}
 
 	}
@@ -65,10 +53,58 @@ $module-name: 'page-search';
 		@extend .row;
 		overflow: visible;
 
-		&--bottom{
+		&--level-two{
 			margin: 0 20px;
+			display: inline-block;
+		}
+
+		&--level-three{
+			/*position: absolute;*/
+			top: 46px;
+			left: 0;
+			z-index: 50;
+			width: 100%;
+			height: auto;
+			padding: 10px 10px 30px 10px;
+			/*background: rgb(221, 239, 243);*/
+			display: inline-block;
+
+			.col{
+				width: 25%;
+			}
+
+			h4{
+				line-height: 30px;
+				font-size: 12px;
+				text-transform: uppercase;
+
+				&:hover{
+					color: #0491aa;
+				}
+			}
+
+
+			ul{
+				list-style-type: none;
+				margin: 5px 0;
+				padding-left: 0;
+
+				li{
+					
+					label{
+						font-size: 11px;
+					}
+				}
+			}
+
+		}
+
+		&--tools{
+			height: 32px;
 		}
 	}
+
+
 
 	&__button{
 		display: inline-block;
@@ -92,11 +128,20 @@ $module-name: 'page-search';
 			margin-top: 10px;
 		}
 
-		&--search-arrow{
+
+		&.select2-panel-open {
+			span.select2-arrow{
+				b{
+					background-position: -18px 1px;
+				}
+			}				
+		}
+
+		&--level-two-toggle{
 			position: absolute;
 			z-index: 600;
 			cursor:pointer;
-			top: 14px;
+			top: 4px;
 			right: 188px;
 			background: #ececec;
 			width: 15px;
@@ -124,57 +169,119 @@ $module-name: 'page-search';
 					margin-top: -4px;
 					border-color: transparent transparent #808080 transparent;
 					border-width: 0 5px 5px 5px;
-				}
-
-				
-			}
-		}
-	}
-
-
-	&__menu-panel{
-		position: absolute;
-		top: 46px;
-		left: 0;
-		z-index: 800;
-		width: 100%;
-		height: auto;
-		padding: 10px 10px 30px 10px;
-		background: rgb(221, 239, 243);
-
-		.col{
-			width: 25%;
-		}
-
-		h4{
-			line-height: 30px;
-			font-size: 12px;
-			text-transform: uppercase;
-		}
-
-		ul{
-			list-style-type: none;
-			margin: 5px 0;
-			padding-left: 0;
-
-			li{
-				
-				label{
-					font-size: 11px;
-				}
+				}				
 			}
 		}
 
 
+		&--level-three-toggle{
+			display: inline-block;
+		    position: relative;
+		    top: 3px;
+		    /* inline-block for ie7 */
+		    zoom: 1;
+		    vertical-align: middle;
+			border: 1px solid #fff;
+			margin: 0;
+			outline: none;
+			width: 70px;
+			height: 19px;
+			background: #fff;			
+		    /* inline-block for ie7 */
+		    zoom: 1;
+		    vertical-align: middle;
+		    cursor: pointer;
+
+		    span.select2-chosen{
+		    	display: block;
+			    float: left;
+		    	margin-right: 40px;
+				display: block;
+				overflow: hidden;
+				white-space: nowrap;
+				text-overflow: ellipsis;
+				float: none;
+				width: 45px;
+				background-color: #fff;
+
+			    -webkit-touch-callout: none;
+			      -webkit-user-select: none;
+			         -moz-user-select: none;
+			          -ms-user-select: none;
+			              user-select: none;			    
+		    }
+
+			span.select2-arrow{
+				display: inline-block;
+			    width: 18px;
+			    height: 100%;
+			    position: absolute;
+			    right: 0;
+			    top: 0;
+
+				b{
+					display: block;
+					display: block;
+					width: 100%;
+					height: 100%;
+					background: url(#{$img-path}icons/select2.png) no-repeat 0 1px;
+				}
+				
+			}
+
+		}
+
+		&--close{
+			display: block;
+			float: right;
+			color: #0491aa;
+			background: rgb(254, 254, 254);
+			padding: 2px 4px;
+			border-radius: 2px;
+			cursor: pointer;
+
+			span{
+				font-size: 24px;
+				background: none;
+				text-align: center;
+			}
+		}
+
 	}
 
-	&__input-numeric{
+
+	&__input{
+		border-radius: 2px;
+		padding: 5px;
+		height: 32px;
+
+		&--numeric{
+			width: 77px;
+		}
+	}
+
+	&__input-text{
+		border-radius: 2px;
 		padding: 5px;
 		width: 77px;
 		height: 32px;
 	}
 
-	&__fancy-radio-box{
+	&__radio-container{
+		display:inline-block;
+		float: left;
+
+		&--home{
+			margin-top: 10px;
+		}
+
+		&--serp{
+			width: 80px;
+			margin-left: 15px;
+		}
+	}
+
+	&__fancy-radio-box {
 		display: inline-block;
 		float: left;
 
@@ -228,33 +335,70 @@ $module-name: 'page-search';
 		}
 	}
 
-	&__radio-container{
-		display:inline-block;
-		float: left;
-
-		&--home{
-			margin-top: 10px;
-		}
-
-		&--serp{
-			width: 90px;
-			margin-left: 15px;
-		}
+	&__list-item{
+		display: block;
+		margin-bottom: 5px;
 	}
 
-	&__search-text{
+	&__fancy-checkbox{
+
+		input[type=checkbox]{
+			display: none;
+		}
+
+		label {
+			display: inline-block;
+			cursor: pointer;
+			position: relative;			
+			margin-right: 10px;
+			margin-bottom: 3px;
+			padding-left: 20px;
+			font-size: 11px;
+		}
+
+		label:before {
+			content: "";
+			display: inline-block;
+			position: absolute;
+			left: 0;
+			bottom: 1px;
+			margin-right: 10px;
+			border: 1px solid #fff;
+			width: 11px;
+			height: 11px;
+			background: #fff;
+			font-family: sans-serif;
+		}
+
+		input[type=checkbox]:checked + label:before{
+			content: "\2713";   
+		    font-size: 15px;  
+		    text-align: center;  
+		    line-height: 15px; 
+		}
+
+	}
+	
+
+	&__search{
 		float: left;
 		display:inline-block;
 		border: none;
-		padding: 10px;
-		width: 210px;
+		padding: 5px;
+		width: 70%;
+
+		&--main{
+			width: 210px;
+			padding: 10px;
+			margin-left: 15px;
+		}
 	}
 
 	&__dropdown{
 		display: inline-block;
 		vertical-align: middle;
 
-		&--wide{
+		&--main, &--wide{
 			width: 680px;
 			height: 40px;
 			font-size: 17px;
