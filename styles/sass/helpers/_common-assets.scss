@@ -5,6 +5,13 @@ $asset-1-name: 'category-tag';
 	min-height: 10px;
 	overflow: hidden;
 }
+	.col {
+		float: left;
+	}
+	.colRight {
+		float: right;
+	}
+
 
 .#{$asset-1-name} {
 	display: block;
@@ -36,6 +43,7 @@ $asset-1-name: 'category-tag';
 	.#{$asset-1-name}.featured { background-color: #1a93b0; }
 	.#{$asset-1-name}.trending { background-color: #6dcbd3; }
 	.#{$asset-1-name}.sponsored { background-color: #666; }
+
 
 
 // ------------------------------------------------------------

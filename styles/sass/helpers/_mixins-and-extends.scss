@@ -253,8 +253,6 @@
     }
 }
 
-
-
 @include media-query(desktop) {
   .adSlots {
     .adSlot {
@@ -282,6 +280,65 @@
     a.adSlot:first-child{
       margin-left: 0;
     }
+  }
+}
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// Social Icons - Articles Page
+// * FOR: Articles Social Icons
+// * WHY: Consistant use of this element
+// * USE: @extend .social-icons
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.social-icons {
+  clear: both;
+  min-width: 200px;
+  min-height: 21px;
+  overflow: hidden;
+  
+  a {
+    display: inline-block;
+    text-indent: -900px;
+    min-width: 9px;
+    height: 21px;
+    margin-right: 10px;
+    background-image: url(#{$img-path}icons/sprites/social-icons.png);
+    background-repeat: no-repeat;
+  }
+
+  &__facebook {
+    width: 9px;
+    background-position: 0px 0px !important;
+  }
+
+  &__twitter {
+    width: 22px;
+    background-position: -20px 0px !important;
+  }
+
+  &__share {
+    width: 23px;
+    background-position: -48px 0px !important;
+  }
+
+  &__email {
+    width: 27px;
+    background-position: -81px 0px !important;
+  }
+
+  &__comments {
+    width: 18px;
+    background-position: -118px 0px !important;
+  }
+
+  &__print {
+    width: 22px;
+    background-position: -147px 0px !important;
+  }
+
+  &__favorite {
+    width: 21px;
+    background-position: -179px 0px !important;
   }
 }
 
