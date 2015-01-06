@@ -35,7 +35,7 @@ $module-name: 'contact';
 // Desktop Breakpoint
 // ------------------------------------------------------------
 
-@include media-query(desktop) {
+@include media-query(tablet) {
   /*.page-layout {
     width: #{$desktop-breakpoint};
   }
@@ -208,7 +208,7 @@ $module-name: 'contact';
     }
 
     &__company {
-      margin: 50px 0 35px 10px;
+      margin: 80px 0 40px 10px;
     }
 
     &__company-wrapper {
@@ -223,7 +223,6 @@ $module-name: 'contact';
       font-weight: 600;
       line-height: 18px; /* Approximation due to font substitution */
       text-align: left;
-      width: 200px;
     }
 
     &__company-note {

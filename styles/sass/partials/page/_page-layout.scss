@@ -10,11 +10,19 @@ $padding-top: 20px;
 	padding-bottom: 20px;
 	position: relative;
 
+	&__wrapper {
+		margin: 0 auto;
+		max-width: $desktop-breakpoint;
+		min-width: 0;
+	}
+
 	&__left-col {
-		float: left;
 		width: 100%;
+		min-width: 0;
 		height: 100%;
 		padding-top: $padding-top;
+		
+		box-sizing: border-box;
 	}
 	
 	&__right-col {
@@ -26,24 +34,33 @@ $padding-top: 20px;
 	display: none;
 }
 
+@include media-query(tablet) {
+	.#{$module-name} {
+		margin: 0 auto;
+
+		&__wrapper {
+			margin: 0 auto;
+			min-width: 765px;
+		}
+
+		&__right-col {
+			display: block;
+			float: right;
+			width: 300px;
+		}
+
+		&__left-col {
+			padding-right: 25px;
+			max-width: 660px;
+			min-width: 460px;
+		}
+	}
+}
+
 @include media-query(desktop) {
 	.#{$module-name} {
 		width: ($left-col-width + $right-col-width + $right-col-right-gutter);
 		margin: 0 auto;
-
-		&__left-col {
-			width: $left-col-width;
-			margin-right: $right-col-right-gutter;
-			margin-right: 20px;
-		}
-		
-		&__right-col {
-			width: $right-col-width;
-			float: left;
-			height: 100%;
-			display: block;
-			padding-top: $padding-top;
-		}
 	}
 
 	.page-layout-wrapper {
@@ -57,8 +74,3 @@ $padding-top: 20px;
 	}
 }
 
-@include media-query(tablet) {
-	.#{$module-name} {
-		margin: 0 auto;
-	}
-}

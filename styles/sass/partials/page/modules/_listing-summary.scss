@@ -109,6 +109,7 @@ $module-name: 'listing';
 		h2 {
 			font-family: 'Oswald', sans-serif;
 			font-weight: #{$fw-regular};
+			color: #333333;
 			text-align: center;
 			margin-bottom: 15px;
 		}
@@ -196,18 +197,23 @@ $module-name: 'listing';
 // Tablet Breakpoint
 @include media-query(tablet) {
   .#{$module-name} {
-
 		&__facts, &__features {
 			font-size: 85%;
 		}
-  }
+
+		// &__summary {
+		// 	box-sizing: border-box;
+		// 	padding: 10px;
+		// }
+
+  	}
 }
 
 // ------------------------------------------------------------
 // Desktop Breakpoint
 // ------------------------------------------------------------
 
-@include media-query(desktop) {
+@include media-query(tablet) {
   .#{$module-name} {
 
 		&__breadcrumbs {
@@ -338,7 +344,7 @@ $module-name: 'listing';
 			border-bottom: 1px solid white;
 			width: 100%;
 			padding: 7px;
-			height: 32px;
+			height: 35px;
 			overflow: hidden;
 		}
 

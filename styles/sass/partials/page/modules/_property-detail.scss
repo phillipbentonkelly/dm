@@ -11,9 +11,10 @@ $module-name: 'explore-widget';
 .#{$module-name} {
   // Module Styles
   &__container {
+    position: relative;
     width: 300px;
     max-width: 300px;
-    margin: 0 auto 10px auto;
+    margin: 0 auto;
   }
 
   &__header {
@@ -46,6 +47,7 @@ $module-name: 'explore-widget';
     font-weight: 400;
     text-align: center;
     color: white;
+    box-sizing: border-box;
   }
 
   &__link-slot {
@@ -65,7 +67,7 @@ $module-name: 'explore-widget';
 // Desktop Breakpoint
 // ------------------------------------------------------------
 
-@include media-query(desktop) {
+@include media-query(tablet) {
 
   .#{$module-name} {
 
@@ -79,11 +81,15 @@ $module-name: 'explore-widget';
 
     &__img-wrapper {
       float: left;
-      width: 50%;
+      width: 300px;
+      min-width: 300px;
+      padding-right: 20px;
+      box-sizing: border-box;
     }
 
     &__link-slot {
       display: block;
+      box-sizing: border-box;
     }
 
     &__sub-headline {
@@ -99,13 +105,13 @@ $module-name: 'explore-widget';
       ul {       
         font-size:  12px;
         font-family: OpenSans;
-        list-style-type: disc;
-        list-style-position: inside;
+        // list-style-type: disc;
+        // list-style-position: inside;
         font-weight: 700;
         line-height: 24px; /* Approximation due to font substitution */
-        align: right;
+        // align: right;
         margin: 0px;
-        padding:  0;
+        padding: 0 0 0 15px;
       }
     
       li {
@@ -123,9 +129,8 @@ $module-name: 'explore-widget';
     }
 
     &__link-slot {
-      width: 300px;
-      height: 250px;
-      float: right;
+      width: 50%;
+      float: left;
 
       p {
         font-size: 12px;
@@ -135,5 +140,35 @@ $module-name: 'explore-widget';
   }
 }
 
+@include media-query(desktop) {
 
+  .#{$module-name} {
+
+    &__container {
+      margin: 0;
+    }
+  }
+}
+
+@media (max-width: 950px) {
+  
+  .#{$module-name} {
+
+    &__img-wrapper {
+      float: center;
+    }
+
+    &__link-slot {
+      width: 100%;
+      position: relative;
+      padding: 15px 20px 0 20px;
+    }
+
+    &__link-list {
+      float: left;
+      display: inline-block;
+      width: 50%;
+    }
+  }
+}
 

@@ -45,34 +45,41 @@
         <script src="js/resources/plugins/selectize/selectize.js"></script>
         <script src="js/resources/plugins/select2/select2.js"></script>
         <script>
-            $(document).ready(function(){ 
+            $(document).ready(function(){
 
-                $('.page-search__dropdown--wide').selectize();               
-                $('.page-search__dropdown--filter, .page-search__dropdown--filter-wide').select2();
-                $("#listingDropDown").select2({ dropdownCssClass: 'mplistings-dropdown' });
-                $('.select2-search').hide();
+                var search = {
+                    main: $('.page-search__dropdown--main'),
+                    filters: $('.page-search__dropdown--filter, .page-search__dropdown--filter-wide'),
+                    keywords: $('#keywords').children('input'),
+                    s2: $('.select2-search')
+                }; 
 
-                $('.page-search__row--bottom').hide();
+                search.main.selectize();               
+                search.filters.select2();
 
-                $('.page-search__button--search-arrow').bind('click', function(e){
-                    e.preventDefault();
-                    $('.page-search__row--bottom').toggle();
-                    $(this).children('span').toggle();
+                search.keywords.selectize({
+                    delimiter: ',',
+                    persist: true,
+                    create: function(input) {
+                        return {
+                            value: input,
+                            text: input
+                        }
+                    }
                 });
 
-                $('#priceRange').bind('click', function(e){
-                    e.preventDefault();
-                });
+                search.s2.hide();
 
             });
         </script>
+        <script src="js/assets/searchPanel.js"></script>
         <!-- Real Estate Listings -->
         
         <!-- Real Estate News (300x250) -->
         <script src="js/assets/300by250_realestatenews.js"></script>
         <!-- Real Estate News (300x250) -->
 </head>
-    <body>
+    <body class="home">
         
         <!-- Page Masthead -->
         <div class="page-masthead">
@@ -315,22 +322,24 @@
         
         
         <!-- Page Search -->
-        <div class="page-search page-search__home">
+        <div class="page-search">
             <div class="page-search__content-wrapper">
                 <form class="page-search__form">
 
-                    <div class="page-search__row page-search__row--top">
-                        <select name="search-box" class="page-search__dropdown page-search__dropdown--wide" placeholder="Search for real estate listings or articles. ex: 3 bedroom for sale in Brookline under 1,000,000">
-                            <option value="This Shit Is For Real">This Shit Is For Real</option>
+                    <div class="page-search__row page-search__row--level-one">
+
+                        <select name="q" class="page-search__dropdown page-search__dropdown--main" placeholder="Search for real estate listings or articles. ex: 3 bedroom for sale in Brookline under 1,000,000">
+                            <option value="Search for real estate listings or articles. ex: 3 bedroom for sale in Brookline under 1,000,000">Search for real estate listings or articles. ex: 3 bedroom for sale in Brookline under 1,000,000</option>
                         </select>
-                        <button class="page-search__button page-search__button--search-arrow">
+                        <button class="page-search__button page-search__button--level-two-toggle">
                             <span class="down-arrow"></span>
                             <span class="up-arrow" style="display:none;"></span>
                         </button>
                         <button class="page-search__button page-search__button--submit" value=""></button>
+
                     </div>
 
-                    <div class="page-search__row page-search__row--bottom" >
+                    <div class="page-search__row page-search__row--level-two">
 
                         <div class="page-search__radio-container page-search__radio-container--home">
                             <div class="page-search__fancy-radio-box page-search__fancy-radio-box--for-sale">
@@ -380,16 +389,133 @@
                             <option value="Lot/Land">Land/Lot</option>
                         </select>
 
-                        <select class="page-search__dropdown page-search__dropdown--filter" id="moreOptions" name="more_options">
-                            <option value="More (4)" selected="selected">More (4)</option>
+                        <button class="page-search__button page-search__button--level-three-toggle" id="moreOptions" name="more_options">
+                            <span class="select2-chosen">More (4)</span>
+                            <span class="select2-arrow" role="presentation">
+                                <b role="presentation"></b>
+                            </span>
                         </select>
 
                         <button class="page-search__button page-search__button--save-search" value="">
                             <span>Save Search</span>
                         </button>
-
                     </div>
 
+                    <div class="page-search__row page-search__row--level-three">
+
+                        <div class="page-search__row page-search__row--tools">
+                            <div class="page-search__button--close">
+                                <span>X</span>
+                            </div>
+                        </div>
+
+                            <div class="col">
+
+                                <section class="filters-list">
+
+                                    <h4>Filter By</h4>
+
+                                    <ul>
+                                        <li class="page-search__list-item">
+                                            <div class="page-search__fancy-checkbox">
+                                                <input type="checkbox" id="openHouses" name="open_houses"></input>
+                                                <label for="openHouses">Open Houses</label>
+                                            </div>
+                                        </li>
+
+                                        <li class="page-search__list-item">
+                                            <div class="page-search__fancy-checkbox">
+                                                <input type="checkbox" id="newListings" name="new_listings"></input>
+                                                <label for="newListings">New Listings</label>
+                                            </div>
+                                        </li>
+
+                                        <li class="page-search__list-item">
+                                            <div class="page-search__fancy-checkbox">
+                                                <input type="checkbox" id="reducedPrice" name="reduced_price"></input>
+                                                <label for="reducedPrice">Reduced Price</label>
+                                            </div>
+                                        </li>
+
+                                        <li class="page-search__list-item">
+                                            <div class="page-search__fancy-checkbox">
+                                                <input type="checkbox" id="newDevelopments" name="new_developments"></input>
+                                                 <label for="newDevelopments">New Developments</label>
+                                            </div>
+                                        </li>
+
+                                        <li class="page-search__list-item">
+                                            <div class="page-search__fancy-checkbox">
+                                                <input type="checkbox" id="sold" name="sold"></input>
+                                                <label for="sold">Sold</label>
+                                            </div>
+                                        </li>
+
+                                        <li class="page-search__list-item">
+                                            <div class="page-search__fancy-checkbox">
+                                                <input type="checkbox" id="forclosures" name="forclosures"></input>
+                                                <label for="forclosures">Forclosures</label>
+                                            </div>
+                                        </li>
+
+                                    </ul>
+
+                                </section>
+
+                            </div>
+
+                        <div class="col">
+                            
+                            <section id="sqFt">
+                                <h4>Square Feet</h4>
+
+                                <input type="text" class="page-search__input page-search__input--numeric" name="sq_ft_min" placeholder="Min"></input>&nbsp;&dash;&nbsp;<input type="text" class="page-search__input page-search__input--numeric" name="sq_ft_max" placeholder="Max"></input>
+
+                            </section>
+
+                            <section id="lotSz">
+                                <h4>Lot Size</h4>
+
+                                <input type="text" class="page-search__input page-search__input--numeric" name="lot_sz_min" placeholder="Min"></input>&nbsp;&dash;&nbsp;<input type="text" class="page-search__input page-search__input--numeric" name="lot_sz_max" placeholder="Max"></input>
+
+                            </section>
+
+                            <section id="yrsBuilt" title="Years Built">
+                                <h4>Years Built</h4>
+
+                                <input type="text" class="page-search__input page-search__input--numeric" name="yrs_built_min" placeholder="Min"></input>&nbsp;&dash;&nbsp;<input type="text" class="page-search__input page-search__input--numeric" name="yrs_built_max" placeholder="Max"></input>
+
+                            </section>
+
+                        </div>
+
+                        <div class="col">
+
+                            <section id="daysOnMkt" title="Days On Market">
+                                <h4>Days On Market</h4>
+
+                                <input type="text" class="page-search__input page-search__input--text" name="days_on_mkt"></input>
+
+                            </section>
+
+                            <section id="keywords" title="Keywords">
+                                <h4>Keywords</h4>
+
+                                <input type="text" class="page-search__input page-search__input--text" name="keywords"></input>
+                            </section>
+
+                        </div>
+
+                        <div class="col">
+
+                            <section id="findByMLS" title="Find by MLS">
+                                <h4>Find by MLS</h4>
+
+                                <input type="text" class="page-search__input page-search__input--text" name="mls_id"></input>
+                            </section>
+
+                        </div>
+                    </div>
                 </form>
             </div>
         </div>
