@@ -200,7 +200,13 @@ $module-name: 'listing';
 		&__facts, &__features {
 			font-size: 85%;
 		}
-  }
+
+		// &__summary {
+		// 	box-sizing: border-box;
+		// 	padding: 10px;
+		// }
+
+  	}
 }
 
 // ------------------------------------------------------------
