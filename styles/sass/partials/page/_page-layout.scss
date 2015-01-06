@@ -13,14 +13,15 @@ $padding-top: 20px;
 	&__wrapper {
 		margin: 0 auto;
 		max-width: $desktop-breakpoint;
+		min-width: 0;
 	}
 
 	&__left-col {
 		width: 100%;
+		min-width: 0;
 		height: 100%;
 		padding-top: $padding-top;
-		max-width: 660px;
-		min-width: 500px;
+		
 		box-sizing: border-box;
 	}
 	
@@ -37,6 +38,11 @@ $padding-top: 20px;
 	.#{$module-name} {
 		margin: 0 auto;
 
+		&__wrapper {
+			margin: 0 auto;
+			min-width: 765px;
+		}
+
 		&__right-col {
 			display: block;
 			float: right;
@@ -45,6 +51,8 @@ $padding-top: 20px;
 
 		&__left-col {
 			padding-right: 25px;
+			max-width: 660px;
+			min-width: 460px;
 		}
 	}
 }

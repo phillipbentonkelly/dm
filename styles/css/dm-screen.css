@@ -920,50 +920,57 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
 .page-layout__wrapper {
   margin: 0 auto;
   max-width: 960px;
+  min-width: 0;
 }
-/* line 18, ../sass/partials/page/_page-layout.scss */
+/* line 19, ../sass/partials/page/_page-layout.scss */
 .page-layout__left-col {
   width: 100%;
+  min-width: 0;
   height: 100%;
   padding-top: 20px;
-  max-width: 660px;
-  min-width: 500px;
   box-sizing: border-box;
 }
-/* line 27, ../sass/partials/page/_page-layout.scss */
+/* line 28, ../sass/partials/page/_page-layout.scss */
 .page-layout__right-col {
   display: none;
 }
 
-/* line 32, ../sass/partials/page/_page-layout.scss */
+/* line 33, ../sass/partials/page/_page-layout.scss */
 .mega-menu {
   display: none;
 }
 
 @media (min-width: 768px) {
-  /* line 37, ../sass/partials/page/_page-layout.scss */
+  /* line 38, ../sass/partials/page/_page-layout.scss */
   .page-layout {
     margin: 0 auto;
   }
-  /* line 40, ../sass/partials/page/_page-layout.scss */
+  /* line 41, ../sass/partials/page/_page-layout.scss */
+  .page-layout__wrapper {
+    margin: 0 auto;
+    min-width: 765px;
+  }
+  /* line 46, ../sass/partials/page/_page-layout.scss */
   .page-layout__right-col {
     display: block;
     float: right;
     width: 300px;
   }
-  /* line 46, ../sass/partials/page/_page-layout.scss */
+  /* line 52, ../sass/partials/page/_page-layout.scss */
   .page-layout__left-col {
     padding-right: 25px;
+    max-width: 660px;
+    min-width: 460px;
   }
 }
 @media (min-width: 960px) {
-  /* line 53, ../sass/partials/page/_page-layout.scss */
+  /* line 61, ../sass/partials/page/_page-layout.scss */
   .page-layout {
     width: 960px;
     margin: 0 auto;
   }
 
-  /* line 58, ../sass/partials/page/_page-layout.scss */
+  /* line 66, ../sass/partials/page/_page-layout.scss */
   .page-layout-wrapper {
     min-width: 1152px;
     min-height: 700px;
@@ -2103,30 +2110,29 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
     line-height: 18px;
     /* Approximation due to font substitution */
     text-align: left;
-    width: 200px;
   }
-  /* line 229, ../sass/partials/page/modules/_contact-form-premium.scss */
+  /* line 228, ../sass/partials/page/modules/_contact-form-premium.scss */
   .contact__company-note {
     font-size: 70%;
     font-weight: 200;
     margin-top: 3px;
   }
-  /* line 235, ../sass/partials/page/modules/_contact-form-premium.scss */
+  /* line 234, ../sass/partials/page/modules/_contact-form-premium.scss */
   .contact__company-message {
     font-weight: 200;
   }
-  /* line 239, ../sass/partials/page/modules/_contact-form-premium.scss */
+  /* line 238, ../sass/partials/page/modules/_contact-form-premium.scss */
   .contact__company-img {
     float: left;
     height: 60px;
     width: 90px;
   }
-  /* line 245, ../sass/partials/page/modules/_contact-form-premium.scss */
+  /* line 244, ../sass/partials/page/modules/_contact-form-premium.scss */
   .contact__company-info {
     margin-left: 105px;
     margin-bottom: 15px;
   }
-  /* line 250, ../sass/partials/page/modules/_contact-form-premium.scss */
+  /* line 249, ../sass/partials/page/modules/_contact-form-premium.scss */
   .contact__company-name {
     margin: 0;
   }
