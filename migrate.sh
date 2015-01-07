@@ -4,6 +4,9 @@ clear
 proceedVar=false
 tempDirName='GH-page-content'
 root=$(pwd)
+localhost='http://localhost/dm/dist/frameset.php?page-type='
+framesetString='frameset.php?page-type='
+pages=("articles" "neighborhood" "serp" "home" "property-listings")
 
 echo "Welcome ... you are currently in: " 
 pwd
@@ -22,13 +25,38 @@ if [[ $proceedVar =~ ^[Yy]$ ]]
 		cd ..
 		mkdir $tempDirName
 		root=$(pwd)
-		
-		cp -a $root/dm/dist/. $root/$tempDirName
+
+		cp -a $root/dm/dist/images/. $root/$tempDirName/images
+		cp -a $root/dm/dist/fonts/. $root/$tempDirName/fonts
+		cp -a $root/dm/dist/js/. $root/$tempDirName/js
+		cp -a $root/dm/dist/styles/. $root/$tempDirName/styles
+
+		sleep 2
+		for i in "${pages[@]}"
+		do
+			echo $localhost$i
+			wget $localhost$i
+			sleep 1
+			mv $framesetString$i $root/$tempDirName/$i.html
+
+			echo "---------------"
+			echo "---------------"
+			echo "---------------"
+		done
 
 		sleep 2
 		cd dm
 		git checkout gh-pages
+		cd ..
 
+		cp -a -f $root/$tempDirName/. $root/dm
+
+		sleep 2
+		git add .
+		git commit -m "Updated GH-Pages with the latest version of this repo that can be used for QA."
+		git push
+
+		echo ""
 		echo $root
 fi
 
