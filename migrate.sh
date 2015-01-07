@@ -3,6 +3,7 @@
 clear
 proceedVar=false
 tempDirName='GH-page-content'
+root=$(pwd)
 
 echo "Welcome ... you are currently in: " 
 pwd
@@ -20,7 +21,14 @@ if [[ $proceedVar =~ ^[Yy]$ ]]
 	then
 		cd ..
 		mkdir $tempDirName
+		root=$(pwd)
+		
+		cp -a $root/dm/dist/. $root/$tempDirName
 
-		pwd
+		sleep 2
+		cd dm
+		git checkout gh-pages
+
+		echo $root
 fi
 
