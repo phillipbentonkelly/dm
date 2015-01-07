@@ -2,25 +2,18 @@ $module-name: 'page-layout';
 $padding-top: 20px;
 
 .#{$module-name} {
-	/*width: 100%;
-	min-height: 100px;
-	margin: auto;
 	overflow: hidden;
 	clear: both;
-	padding-bottom: 20px;
-	position: relative;*/
-	overflow: hidden;
-	clear: both;
-
+	
 	margin: 0 auto;
 	max-width: $desktop-breakpoint;
 	min-width: 0;
 
-	&__wrapper {
-		margin: 0 auto;
-		max-width: $desktop-breakpoint;
-		min-width: 0;
-	}
+	// &__wrapper {
+	// 	margin: 0 auto;
+	// 	max-width: $desktop-breakpoint;
+	// 	min-width: 0;
+	// }
 
 	&__left-col {
 		max-width: 100%;
