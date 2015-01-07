@@ -20,5 +20,7 @@ if [[ $proceedVar =~ ^[Yy]$ ]]
 	then
 		cd ..
 		mkdir $tempDirName
+
+		pwd
 fi
 
