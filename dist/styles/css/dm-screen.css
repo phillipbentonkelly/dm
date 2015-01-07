@@ -903,17 +903,22 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
 }
 /* line 4, ../sass/partials/page/_page-layout.scss */
 .page-layout {
+  overflow: hidden;
+  clear: both;
   margin: 0 auto;
   max-width: 960px;
   min-width: 0;
 }
-/* line 22, ../sass/partials/page/_page-layout.scss */
+/* line 18, ../sass/partials/page/_page-layout.scss */
 .page-layout__left-col {
-  width: 100%;
-  min-width: 0;
+  max-width: 100%;
+  min-width: 30%;
   height: 100%;
   padding-top: 20px;
   box-sizing: border-box;
+  overflow: hidden;
+  padding-right: 20px;
+  float: left;
 }
 /* line 31, ../sass/partials/page/_page-layout.scss */
 .page-layout__right-col {
@@ -943,19 +948,20 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
   }
   /* line 55, ../sass/partials/page/_page-layout.scss */
   .page-layout__left-col {
-    padding-right: 25px;
+    /*padding-right: 25px;*/
     max-width: 660px;
-    min-width: 460px;
+    min-width: 435px;
+    box-sizing: border-box;
   }
 }
 @media (min-width: 960px) {
-  /* line 64, ../sass/partials/page/_page-layout.scss */
+  /* line 65, ../sass/partials/page/_page-layout.scss */
   .page-layout {
     width: 960px;
     margin: 0 auto;
   }
 
-  /* line 69, ../sass/partials/page/_page-layout.scss */
+  /* line 70, ../sass/partials/page/_page-layout.scss */
   .page-layout-wrapper {
     min-width: 1152px;
     min-height: 700px;
@@ -972,10 +978,11 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
   clear: both;
   min-height: 100px;
   overflow: hidden;
+  margin-top: 20px;
 }
 
 @media (min-width: 960px) {
-  /* line 11, ../sass/partials/page/_page-blog.scss */
+  /* line 12, ../sass/partials/page/_page-blog.scss */
   .page-blog {
     background-color: #e5e5e5;
   }
