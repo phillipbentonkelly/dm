@@ -52,9 +52,13 @@ if [[ $proceedVar =~ ^[Yy]$ ]]
 		cp -a -f $root/$tempDirName/. $root/dm
 
 		sleep 2
+		cd dm
 		git add .
 		git commit -m "Updated GH-Pages with the latest version of this repo that can be used for QA."
 		git push
+
+		sleep 2
+		git checkout master
 
 		echo ""
 		echo $root
