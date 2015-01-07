@@ -74,6 +74,7 @@ $module-name: 'explore-widget';
     &__container {
       display: inline-block;
       padding-bottom: 20px;
+      margin: 0 0 20px 0;
       width: 100%;
       max-width: 1000px;
       background: rgba(170,170,170,0.3);
@@ -144,9 +145,6 @@ $module-name: 'explore-widget';
 
   .#{$module-name} {
 
-    &__container {
-      margin: 0;
-    }
   }
 }
 
