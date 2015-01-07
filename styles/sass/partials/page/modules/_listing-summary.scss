@@ -50,17 +50,16 @@ $module-name: 'listing';
 		position: fixed;
 		bottom: 0;
 		z-index: 10;
-		background: red;
 		box-sizing: border-box;
 		font-family: "OpenSans Semibold";
 		font-weight: 600;
 		font-size: 12px;
 
 		.button {
-			width: 50%;
+			width: 33.33%;
 			float: left;
 			background: lightblue;
-			background: #1a93b0;
+			background: #2e1460;
 			color: white;
 			text-align: center;
 			text-transform: uppercase;
@@ -72,7 +71,7 @@ $module-name: 'listing';
 			background: black;
 		}
 
-		.left-button {
+		.left-button, .middle-button, .right-button{
 			border-right: 2px solid white;
 			padding: 0 5px;
 			
@@ -83,28 +82,11 @@ $module-name: 'listing';
 			}
 
 			p {
-				margin-top: 10px;
+				margin-top: 12px;
 			}
 
 			img, p {
 				display: inline-block;
-			}
-		}
-
-		.right-button {
-			padding: 5px;
-
-			img {
-				display: inline-block; 
-			}
-
-			p {
-				line-height: 1;
-				letter-spacing: 1;
-			}
-
-			.title-block {
-				display: inline-block; 
 			}
 		}
 	}
@@ -219,7 +201,7 @@ $module-name: 'listing';
 		}
 
 		a:link, a:visited, a:active {
-	      color: #1a93b0;
+	      color: #2e1460;
 	      text-decoration: none;
 	    }
 	    a:hover {
@@ -258,6 +240,71 @@ $module-name: 'listing';
 	}
 }
 
+.serp__mobile-button-dock {
+	width: 100%;
+	position: relative;
+	position: fixed;
+	bottom: 0;
+	z-index: 10;
+	background: red;
+	box-sizing: border-box;
+	font-family: "OpenSans Semibold";
+	font-weight: 600;
+	font-size: 12px;
+
+	.button {
+		width: 50%;
+		float: left;
+		background: lightblue;
+		background: #2e1460;
+		color: white;
+		text-align: center;
+		text-transform: uppercase;
+		height: 40px;
+		box-sizing: border-box;
+	}
+
+	.button:active {
+		background: black;
+	}
+
+	.left-button {
+		border-right: 2px solid white;
+		padding: 0 5px;
+		
+		img {
+			margin-right: 5px;
+			height: 25px;
+			vertical-align: middle;
+		}
+
+		p {
+			margin-top: 10px;
+		}
+
+		img, p {
+			display: inline-block;
+		}
+	}
+
+	.right-button {
+		padding: 5px;
+
+		img {
+			display: inline-block; 
+		}
+
+		p {
+			line-height: 1;
+			letter-spacing: 1;
+		}
+
+		.title-block {
+			display: inline-block; 
+		}
+	}
+}
+
 .mobile-ad {
 	display: block;
 	text-align: center;
@@ -279,28 +326,43 @@ $module-name: 'listing';
 	width: 100%;
 }
 
+#simplemodal-overlay {
+	background: rgba(10,10,10,0.8);
+}
+
 .save-search-modal {
 	display: none;
-	background: white;
 	width: 100%;
-	height: 350px;
-	padding: 20px;
 	margin: 0 5%;
 	text-align: center;
-	border: 1px solid black;
+
+	.close-modal-btn {
+		float: right;
+	}
 
 	.close-modal {
-		float: right;
-		height: 15px;
-		width: 15px;
+		height: 20px;
+		width: 20px;
+		padding: 0 10px;
 	}
 
 	.header {
-		margin: 15px 0 10px 0;
-		clear: both;
-		font-family: OpenSans;
-		font-size: 18px;
-		font-weight: 600;
+		margin-bottom: 10px;
+		background: #2e1460;
+      	text-align: center;
+      	margin-bottom: 3px;
+
+      	letter-spacing: 1px;
+		font-family: Oswald;
+		color: #ffffff;
+		font-size: 26px;
+		font-weight: 400
+	}
+
+	.content {
+		background: #dacef1;
+		padding: 20px;
+		height: 300px;
 	}
 
 	.info {
@@ -381,7 +443,7 @@ $module-name: 'listing';
 			}
 
 			a {
-				color: #1a93b0;
+				color: #2e1460;
 			}
 		}
 
@@ -578,7 +640,7 @@ $module-name: 'listing';
 	  }
 
 	  &__contact-agent {
-			background: #1a93b0;
+			background: #2e1460;
 			padding: 7px;
 			margin-bottom: 40px;
 			display: inline-block;

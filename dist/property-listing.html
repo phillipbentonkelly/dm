@@ -42,11 +42,22 @@
                 $('.page-layout__left-col').width($(window).width() - 320);
             };
 
-            $('.left-button').click(function() {
+            $('#mobile-save-btn').click(function() {
                 $('.save-search-modal').modal();
             });
 
-            $('.close-modal').click(function() {
+            $('#mobile-contact-btn').click(function() {
+                var closeModal = $("<a style='position:absolute;right:10px;top:10px;' href='javascript:;'><img class='close-modal' src='images/listings/x-icon.jpg' style='height:20px;width:20px;'></a>");
+                $('.contact__header').append(closeModal);
+
+                $('.contact-agent-modal').modal();
+            });
+
+            $('#mobile-share-btn').click(function() {
+                $('.share-modal').modal();
+            });
+
+            $(document).on('click', '.close-modal', function() {
                 $.modal.close();
             });
         });
@@ -89,7 +100,7 @@
                 </div>
 
                 <!-- Contact the Agent -->
-                <div class='contact__container'>
+                <div class='contact__container contact-agent-modal'>
                     <div class='contact__header'>
                         <p>Contact the Agent</p>
                     </div>
@@ -491,11 +502,15 @@
 
                     <!-- MODAL: SAVE SEARCH -->
                     <div class='save-search-modal'>
-                        <a href='javascript:;'><img class='close-modal' src='images/listings/x-icon.jpg'></a>
-                        <p class='header'>Save Search</p>
-                        <p class='info'>Save a search and get instant notifications about new listings and status changes on homes that match your search criteria</p>
-                        <input placeholder='Search Nickname'/>
-                        <button>Save</button>
+                        <div class='header'>
+                            <a class='close-modal-btn' href='javascript:;'><img class='close-modal' src='images/listings/x-icon.jpg'></a>
+                            <p>Save Search</p>
+                        </div>
+                        <div class='content'>
+                            <p class='info'>Save a search and get instant notifications about new listings and status changes on homes that match your search criteria</p>
+                            <input placeholder='Search Nickname'/>
+                            <button>Save</button>
+                        </div>
                     </div>
                     <!-- /MODAL: SAVE SEARCH -->
 
@@ -568,14 +583,16 @@
                         </div>
                     </div>
 
-                    <div class='listing__mobile-button-dock'>
+
+                    <!-- SERP MOBILE BUTTON DOCK -->
+                    <!-- <div class='serp__mobile-button-dock'>
                     
-                        <a href='javascript:;'><div class='button left-button'>
+                        <a href='javascript:;'><div id='mobile-save-btn' class='button left-button'>
                             <img src='images/listings/heart-icon-white.png'>
                             <p>Save</p>
                         </div></a>
 
-                        <a href='javascript:;'><div class='button right-button'>
+                        <a href='javascript:;'><div id='mobile-articles-btn' class='button right-button'>
                             <img class='articles-icon' src='images/listings/articles-icon.png'>
                             <div class='title-block'>
                                 <p>Related</p>
@@ -583,6 +600,32 @@
                             </div>
                         </div></a>
 
+                    </div> -->
+                    <!-- /SERP MOBILE BUTTON DOCK -->
+
+
+                    <div class='listing__mobile-button-dock'>
+                    
+                        <a href='javascript:;'>
+                            <div id='mobile-save-btn' class='button left-button'>
+                                <img src='images/listings/heart-icon-white.png'>
+                                <p>Save</p>
+                            </div>
+                        </a>
+
+                        <a href='javascript:;'>
+                            <div id='mobile-share-btn' class='button middle-button'>
+                                <img src='images/listings/share-icon-white.png'>
+                                <p>Share</p>
+                            </div>
+                        </a>
+
+                        <a href='javascript:;'>
+                            <div id='mobile-contact-btn' class='button right-button'>
+                                <img class='contact-icon-white' src='images/listings/contact-icon-white.png'>
+                                <p>Contact</p>
+                            </div>
+                        </a>
                     </div>
                 </div>
 
