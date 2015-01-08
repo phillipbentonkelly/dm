@@ -7,16 +7,22 @@ $module-name: 'articles-content';
 	h1 {
 		font-family: OpenSans Semibold;
 		font-size: 28px;
+		margin-bottom: 10px;
+		padding-left: 1px;
 	}
 
 	.tags {
 		display: block;
 		min-height: 1px;
 		overflow: hidden;
+
+		margin-bottom: 10px;
 	}
 
 	.social-icons {
         @extend .social-icons;
+
+        margin-bottom: 20px;
     }
 
 	&__article {

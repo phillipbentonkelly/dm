@@ -501,10 +501,31 @@ textarea {
   width: 50%;
   float: left;
   padding: 3% 3% 3% 3%;
-  margin-right: 3%;
+  margin: 0 3% 20px 0;
   background: #d4e8ef;
+  position: relative;
+  border: 1px solid #d4e8ef;
 }
-/* line 60, ../sass/helpers/_common-assets.scss */
+/* line 62, ../sass/helpers/_common-assets.scss */
+.quotebox__square:after, .quotebox__square:before {
+  top: 100%;
+  left: 30%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+/* line 73, ../sass/helpers/_common-assets.scss */
+.quotebox__square:after {
+  border-color: rgba(212, 233, 240, 0);
+  border-top-color: #d4e8ef;
+  border-width: 21px;
+  border-left-width: 1px;
+  margin-left: -65px;
+}
+/* line 81, ../sass/helpers/_common-assets.scss */
 .quotebox__worthy {
   content: 'quoteworthy';
   display: block;
@@ -513,7 +534,7 @@ textarea {
   left: 0;
   top: 1%;
 }
-/* line 69, ../sass/helpers/_common-assets.scss */
+/* line 90, ../sass/helpers/_common-assets.scss */
 .quotebox__rect1 {
   background: #3793b2;
   padding: 2% 3% 2% 3%;
@@ -522,9 +543,29 @@ textarea {
   line-height: 1.7em;
   font-family: OpenSans;
   font-size: 1.1em;
-  margin-bottom: 1em;
+  margin-bottom: 1.5em;
+  position: relative;
 }
-/* line 81, ../sass/helpers/_common-assets.scss */
+/* line 102, ../sass/helpers/_common-assets.scss */
+.quotebox__rect1:after, .quotebox__rect1:before {
+  top: 100%;
+  left: 30%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+/* line 113, ../sass/helpers/_common-assets.scss */
+.quotebox__rect1:after {
+  border-color: rgba(55, 147, 178, 0);
+  border-top-color: #3793b2;
+  border-width: 21px;
+  border-left-width: 1px;
+  margin-left: -140px;
+}
+/* line 121, ../sass/helpers/_common-assets.scss */
 .quotebox__rect2 {
   background: #e5e5e5;
   padding: 3%;
@@ -3594,75 +3635,82 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
 .articles-content h1 {
   font-family: OpenSans Semibold;
   font-size: 28px;
+  margin-bottom: 10px;
+  padding-left: 1px;
 }
-/* line 12, ../sass/partials/page/modules/_articles-content.scss */
+/* line 14, ../sass/partials/page/modules/_articles-content.scss */
 .articles-content .tags {
   display: block;
   min-height: 1px;
   overflow: hidden;
+  margin-bottom: 10px;
 }
 /* line 22, ../sass/partials/page/modules/_articles-content.scss */
+.articles-content .social-icons {
+  margin-bottom: 20px;
+}
+/* line 28, ../sass/partials/page/modules/_articles-content.scss */
 .articles-content__article {
   font-family: OpenSans Regular;
   font-size: 16px;
   line-height: 24px;
   margin-bottom: 30px;
 }
-/* line 28, ../sass/partials/page/modules/_articles-content.scss */
+/* line 34, ../sass/partials/page/modules/_articles-content.scss */
 .articles-content__article p {
   padding-bottom: 20px;
 }
-/* line 32, ../sass/partials/page/modules/_articles-content.scss */
+/* line 38, ../sass/partials/page/modules/_articles-content.scss */
 .articles-content__article__author-link-row {
   margin-bottom: 30px;
 }
-/* line 36, ../sass/partials/page/modules/_articles-content.scss */
+/* line 42, ../sass/partials/page/modules/_articles-content.scss */
 .articles-content__article__by-line {
   width: 69%;
   padding-top: 3px;
   font-family: OpenSans Regular;
   font-size: 12px;
 }
-/* line 42, ../sass/partials/page/modules/_articles-content.scss */
+/* line 48, ../sass/partials/page/modules/_articles-content.scss */
 .articles-content__article__by-line img.author {
   float: left;
   margin: 8px 6px 0 0;
 }
-/* line 47, ../sass/partials/page/modules/_articles-content.scss */
+/* line 53, ../sass/partials/page/modules/_articles-content.scss */
 .articles-content__article__by-line h1 {
   margin: 0px 0 2px 0;
   font-family: OpenSans;
   font-size: 13px;
 }
-/* line 53, ../sass/partials/page/modules/_articles-content.scss */
+/* line 59, ../sass/partials/page/modules/_articles-content.scss */
 .articles-content__article__by-line p {
   padding-bottom: 0px;
 }
-/* line 57, ../sass/partials/page/modules/_articles-content.scss */
+/* line 63, ../sass/partials/page/modules/_articles-content.scss */
 .articles-content__article__links {
   width: 31%;
   font-family: OpenSans;
   font-size: 13px;
   font-weight: bold;
 }
-/* line 63, ../sass/partials/page/modules/_articles-content.scss */
+/* line 69, ../sass/partials/page/modules/_articles-content.scss */
 .articles-content__article__links ul {
   margin: 0 0 0 17px;
   padding: 0 0 0 0;
 }
-/* line 67, ../sass/partials/page/modules/_articles-content.scss */
+/* line 73, ../sass/partials/page/modules/_articles-content.scss */
 .articles-content__article__links ul li {
   padding-top: 0;
   padding-bottom: 0;
   margin-top: 0;
   margin-bottom: 0;
 }
-/* line 73, ../sass/partials/page/modules/_articles-content.scss */
+/* line 79, ../sass/partials/page/modules/_articles-content.scss */
 .articles-content__article__links ul li a {
   color: #1a93b0;
   text-decoration: none;
 }
-/* line 81, ../sass/partials/page/modules/_articles-content.scss */
+/* line 87, ../sass/partials/page/modules/_articles-content.scss */
 .articles-content__article .date {
   font-size: 13px;
   font-family: OpenSans Italic;
