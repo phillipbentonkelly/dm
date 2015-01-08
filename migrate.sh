@@ -33,10 +33,10 @@ if [[ $proceedVar =~ ^[Yy]$ ]]
 			root=$(pwd)
 			localhost="$yourLocalhost$framesetString"
 
-			cp -a $root/dm/dist/images/. $root/$tempDirName/images
-			cp -a $root/dm/dist/fonts/. $root/$tempDirName/fonts
-			cp -a $root/dm/dist/js/. $root/$tempDirName/js
-			cp -a $root/dm/dist/styles/. $root/$tempDirName/styles
+			cp -a -f $root/dm/dist/images/. $root/$tempDirName/images
+			cp -a -f $root/dm/dist/fonts/. $root/$tempDirName/fonts
+			cp -a -f $root/dm/dist/js/. $root/$tempDirName/js
+			cp -a -f $root/dm/dist/styles/. $root/$tempDirName/styles
 
 			sleep 2
 			for i in "${pages[@]}"
@@ -66,6 +66,7 @@ if [[ $proceedVar =~ ^[Yy]$ ]]
 			cd dm
 			git add .
 			git commit -m "Updated GH-Pages with the latest version of this repo that can be used for QA."
+			git pull
 			git push
 
 			sleep 2
