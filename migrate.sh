@@ -4,7 +4,8 @@ clear
 proceedVar=false
 tempDirName='GH-page-content'
 root=$(pwd)
-localhost='http://localhost/dm/dist/frameset.php?page-type='
+yourLocalhost=''
+localhost=''
 framesetString='frameset.php?page-type='
 pages=("articles" "neighborhood" "serp" "home" "property-listings")
 
@@ -19,48 +20,60 @@ echo "Please make sure you are in the correct directory and that you are on the 
 echo ""
 echo "Would you like to proceed? Y or N | "
 read proceedVar
+echo "Please enter/paste the path to the repo's localhost URL: ex. http://localhost/dm/dist/"
+read yourLocalhost
 
 if [[ $proceedVar =~ ^[Yy]$ ]]
 	then
-		cd ..
-		mkdir $tempDirName
-		root=$(pwd)
 
-		cp -a $root/dm/dist/images/. $root/$tempDirName/images
-		cp -a $root/dm/dist/fonts/. $root/$tempDirName/fonts
-		cp -a $root/dm/dist/js/. $root/$tempDirName/js
-		cp -a $root/dm/dist/styles/. $root/$tempDirName/styles
+		if [[ $yourLocalhost ]]
+		then
+			cd ..
+			mkdir $tempDirName
+			root=$(pwd)
+			localhost="$yourLocalhost$framesetString"
 
-		sleep 2
-		for i in "${pages[@]}"
-		do
-			echo $localhost$i
-			wget $localhost$i
-			sleep 1
-			mv $framesetString$i $root/$tempDirName/$i.html
+			cp -a -f $root/dm/dist/images/. $root/$tempDirName/images
+			cp -a -f $root/dm/dist/fonts/. $root/$tempDirName/fonts
+			cp -a -f $root/dm/dist/js/. $root/$tempDirName/js
+			cp -a -f $root/dm/dist/styles/. $root/$tempDirName/styles
 
-			echo "---------------"
-			echo "---------------"
-			echo "---------------"
-		done
+			sleep 2
+			for i in "${pages[@]}"
+			do
+				echo $localhost$i
+				wget $localhost$i
+				sleep 1
+				mv $framesetString$i $root/$tempDirName/$i.html
 
-		sleep 2
-		cd dm
-		git checkout gh-pages
-		cd ..
+				echo ""
+				echo "---------------------------------------------"
+				echo ""
+			done
 
-		cp -a -f $root/$tempDirName/. $root/dm
+			sleep 2
+			cd dm
+			git checkout gh-pages
+			cd ..
 
-		sleep 2
-		cd dm
-		git add .
-		git commit -m "Updated GH-Pages with the latest version of this repo that can be used for QA."
-		git push
+			cp -a -f $root/$tempDirName/. $root/dm
 
-		sleep 2
-		git checkout master
+			sleep 2
+			echo "Removing temporary folder"
+			rm -r $root/$tempDirName
 
-		echo ""
-		echo $root
+			sleep 2
+			cd dm
+			git add .
+			git commit -m "Updated GH-Pages with the latest version of this repo that can be used for QA."
+			git pull
+			git push
+
+			sleep 2
+			git checkout master
+
+			echo ""
+			echo $root
+		fi
 fi
 

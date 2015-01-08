@@ -12,6 +12,9 @@ $module-name: 'page-nav';
 	width: 100%;
 	height: $page-nav-mobile-height;
 	background: #1a93b0;
+	position: absolute;
+	left: 0px;
+	top: 0px;
 	clear: both;
 	color: #fff;
 
@@ -25,8 +28,8 @@ $module-name: 'page-nav';
 			clear: both;
 		}
 		ul li {
-			margin: 0 0 0 0;
-			list-style: none;
+			/*margin: 0 0 0 0;
+			list-style: none;*/
 		}
 	
 	&__mega-menu-responsive-icon, &__search-responsive-icon {
@@ -45,7 +48,7 @@ $module-name: 'page-nav';
 		}
 
 	&__logo {
-		display: inline-block;
+		display: block;
 		float: left;
 		width: 73%;
 		height: 100%;
@@ -73,7 +76,7 @@ $module-name: 'page-nav';
 	}
 	
 	&__main-nav-links {
-		display: block;
+		display: none;
 		float: left;
 		position: absolute;
 		z-index: 200;
@@ -86,11 +89,13 @@ $module-name: 'page-nav';
 	}
 		&__nav-item {
 			border-top: 1px solid #e5e5e5;
+			margin: 0 0 0 0;
 		    
 		    a {
 				display: block;
-				width: 100%;
+				width: 96%;
 				color: #000;
+				padding: 8px 2% 8px 2%;
 			}
 			
 			&__responsive-drop-down-icon {
@@ -116,8 +121,8 @@ $module-name: 'page-nav';
 			}
 
 			.mega-menu {
-				// display: none;
-				padding: 13px 10px 13px 10px;
+				/*display: none;
+				padding: 13px 10px 13px 10px;*/
 			}
 
 			.mega-menu__container {
@@ -165,6 +170,7 @@ $module-name: 'page-nav';
 @include media-query(desktop) {
 	.#{$module-name} {
 		height: $page-nav-desktop-height;
+		position: initial;
 
 		&__nav-item:hover .mega-menu, &__nav-item:hover .mega-menu__container {
 			display: block;
@@ -203,7 +209,10 @@ $module-name: 'page-nav';
 				border-top: 0;
 				
 				a {
+					display: block;
+					width: 100%;
 					color: white;
+					padding: inherit;
 				}
 				
 				&__responsive-drop-down-icon {
@@ -271,6 +280,7 @@ $module-name: 'page-nav';
 @include media-query(tablet) {
 	.#{$module-name} {
 		height: $page-nav-desktop-height;
+		position: initial;
 
 		&__content-wrapper {
 			width: $desktop-breakpoint;
@@ -316,7 +326,10 @@ $module-name: 'page-nav';
 				position: relative;
 				
 				a {
+					display: block;
+					width: 100%;
 					color: white;
+					padding: inherit;
 				}
 				
 				&__responsive-drop-down-icon {

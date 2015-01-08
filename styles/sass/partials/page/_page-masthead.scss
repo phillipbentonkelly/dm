@@ -11,4 +11,23 @@ $module-name: 'masthead';
 .#{$module-name} {
 	width: 100%;
 	height: $page-masthead;
+	margin-top: 41.5px;
+}
+
+// ------------------------------------------------------------
+// Desktop Breakpoint
+// ------------------------------------------------------------
+@include media-query(desktop) {
+	.#{$module-name} {
+		margin-top: 0px;
+	}
+}
+
+// ------------------------------------------------------------
+// Tablet Breakpoint
+// ------------------------------------------------------------
+@include media-query(tablet) {
+	.#{$module-name} {
+		margin-top: 0px;
+	}
 }
