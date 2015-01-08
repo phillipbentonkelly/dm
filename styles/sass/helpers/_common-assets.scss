@@ -46,6 +46,50 @@ $asset-1-name: 'category-tag';
 
 
 
+$asset-2-name: 'quotebox';
+
+.#{$asset-2-name} {
+	&__square {
+		width: 50%;
+		float: left;
+		padding: 3% 3% 3% 3%;
+		margin-right: 3%;
+		background: #d4e8ef;
+	}
+
+	&__worthy {
+		content: 'quoteworthy';
+		display: block;
+		background: #000;
+		position: absolute;
+		left: 0;
+		top: 1%;
+	}
+
+	&__rect1 {
+		background: #3793b2;
+		padding: 2% 3% 2% 3%;
+		width: 94%;
+		color: #fff;
+		line-height: 1.7em;
+		font-family: OpenSans;
+		font-size: 1.1em;
+
+		margin-bottom: 1em;
+	}
+
+	&__rect2 {
+		background: #e5e5e5;
+		padding: 3%;
+		width: 94%;
+		line-height: 1.7em;
+		font-family: OpenSans;
+		font-size: 1.0em;
+
+		margin-bottom: 1em;
+	}
+}
+
 // ------------------------------------------------------------
 // Desktop Breakpoint
 // ------------------------------------------------------------

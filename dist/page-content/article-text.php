@@ -19,6 +19,12 @@
     
     <div class="date">September 17, 2014 9:36 AM</div>
 
+    <p class="quotebox__square">
+        <label class="quotebox__worthy"></label>
+        "This isn't New York, I don't know if you are going to get that"
+        <div class="by-line">Rich Hornblower, Coldwell Banker's</div>
+    </p>
+
     <p>Behold, it’s the totally baller house of the week: there’s a bar, a theater, an infinity
     pool, iPads. Yes, there are iPads.</p>
 
@@ -27,6 +33,10 @@
     million price tag). The Osterville estate, owned by Edward Breslow, a former
     executive at EMC Corporation, will now be sold at an auction next month. The
     current listed price has no bearing on the auction price.</p>
+
+    <p class="quotebox__rect1">"This isn't New York," said Coldwell Banker's Rich Hornblower, who sells, condos across downtown Boston and beyond. "I don't know if they are going to get that."</p>
+
+    <p class="quotebox__rect2">Still, where some see vacant storefronts and rowdy, game-night bars, developers of the city's newest residential towers looking ahead to a maybe-not-so-distant future where Downtown Crossing and North Station will rival the Back Bay or even Beacon Hill as hot places to live.</p>
 
     <p>This house probably looks even more baller in person. Go do it — open houses are
     every Wednesday to Sunday from 12 p.m. to 5 p.m.</p>

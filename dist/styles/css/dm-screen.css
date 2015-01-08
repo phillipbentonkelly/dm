@@ -496,6 +496,45 @@ textarea {
   background-color: #666;
 }
 
+/* line 52, ../sass/helpers/_common-assets.scss */
+.quotebox__square {
+  width: 50%;
+  float: left;
+  padding: 3% 3% 3% 3%;
+  margin-right: 3%;
+  background: #d4e8ef;
+}
+/* line 60, ../sass/helpers/_common-assets.scss */
+.quotebox__worthy {
+  content: 'quoteworthy';
+  display: block;
+  background: #000;
+  position: absolute;
+  left: 0;
+  top: 1%;
+}
+/* line 69, ../sass/helpers/_common-assets.scss */
+.quotebox__rect1 {
+  background: #3793b2;
+  padding: 2% 3% 2% 3%;
+  width: 94%;
+  color: #fff;
+  line-height: 1.7em;
+  font-family: OpenSans;
+  font-size: 1.1em;
+  margin-bottom: 1em;
+}
+/* line 81, ../sass/helpers/_common-assets.scss */
+.quotebox__rect2 {
+  background: #e5e5e5;
+  padding: 3%;
+  width: 94%;
+  line-height: 1.7em;
+  font-family: OpenSans;
+  font-size: 1.0em;
+  margin-bottom: 1em;
+}
+
 /* line 11, ../sass/partials/page/_page-masthead.scss */
 .masthead {
   width: 100%;

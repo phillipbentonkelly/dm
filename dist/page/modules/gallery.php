@@ -1,5 +1,5 @@
 <!-- Gallery Widget -->
 <div class="gallery-widget">
-    Gallery Widget
+    <img src="images/GalleryPlaceholder.jpg" />
 </div>
 <!-- Gallery Widget -->
