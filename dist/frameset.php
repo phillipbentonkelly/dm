@@ -16,7 +16,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>DM | <?php echo ucwords($pageType) ?></title>
     <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name=viewport content="width=device-width, initial-scale=1">
 
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     
@@ -50,6 +50,7 @@
 		    <!-- Real Estate Listings -->
 	        <script src="js/assets/mpListings.js"></script>
 	        <script src="js/assets/listings.data.js"></script>
+	        <script src="js/assets/popup.js"></script>
 		<?php } ?>
 		
 		<?php if ($pageType == 'articles') { ?>
