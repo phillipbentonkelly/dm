@@ -53,9 +53,30 @@ $asset-2-name: 'quotebox';
 		width: 50%;
 		float: left;
 		padding: 3% 3% 3% 3%;
-		margin-right: 3%;
+		margin: 0 3% 20px 0;
 		background: #d4e8ef;
+
+		position: relative;
+		border: 1px solid #d4e8ef;
 	}
+		&__square:after, &__square:before {
+			top: 100%;
+			left: 30%;
+			border: solid transparent;
+			content: " ";
+			height: 0;
+			width: 0;
+			position: absolute;
+			pointer-events: none;
+		}
+
+		&__square:after {
+			border-color: rgba(212, 233, 240, 0);
+			border-top-color: #d4e8ef;
+			border-width: 21px;
+			border-left-width: 1px;
+			margin-left: -65px;
+		}
 
 	&__worthy {
 		content: 'quoteworthy';
@@ -75,8 +96,27 @@ $asset-2-name: 'quotebox';
 		font-family: OpenSans;
 		font-size: 1.1em;
 
-		margin-bottom: 1em;
+		margin-bottom: 2em;
+		position: relative;
 	}
+		&__rect1:after, &__rect1:before {
+			top: 100%;
+			left: 30%;
+			border: solid transparent;
+			content: " ";
+			height: 0;
+			width: 0;
+			position: absolute;
+			pointer-events: none;
+		}
+
+		&__rect1:after {
+			border-color: rgba(55, 147, 178, 0);
+			border-top-color: #3793b2;
+			border-width: 21px;
+			border-left-width: 1px;
+			margin-left: -140px;
+		}
 
 	&__rect2 {
 		background: #e5e5e5;
