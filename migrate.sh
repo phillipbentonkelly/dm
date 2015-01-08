@@ -64,9 +64,9 @@ if [[ $proceedVar =~ ^[Yy]$ ]]
 
 			sleep 2
 			cd dm
+			git pull
 			git add .
 			git commit -m "Updated GH-Pages with the latest version of this repo that can be used for QA."
-			git pull
 			git push
 
 			sleep 2
