@@ -28,6 +28,11 @@
         <link rel="stylesheet" href="styles/css/plugins/selectize/selectize.css" />
         <link rel="stylesheet" href="styles/css/plugins/select2/select2.css" />
 
+        <?php if ($pageType == 'property-listings') { ?>
+		    <!-- Simple Modal -->
+	        <link rel="stylesheet" href="js/resources/basic/css/basic.css" />
+		<?php } ?>
+
 	<!-- SCRIPTS -->
     <script src="js/resources/jquery.min.js"></script>
     	<script src="js/assets/mega-menu.js"></script>
@@ -50,6 +55,7 @@
 		    <!-- Real Estate Listings -->
 	        <script src="js/assets/mpListings.js"></script>
 	        <script src="js/assets/listings.data.js"></script>
+	        <script src="js/resources/basic/js/jquery.simplemodal.js"></script>
 	        <script src="js/assets/popup.js"></script>
 		<?php } ?>
 		
