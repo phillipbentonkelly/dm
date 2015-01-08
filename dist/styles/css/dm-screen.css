@@ -3604,68 +3604,72 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
   overflow: hidden;
   margin-bottom: 10px;
 }
-/* line 26, ../sass/partials/page/modules/_articles-content.scss */
+/* line 22, ../sass/partials/page/modules/_articles-content.scss */
+.articles-content .social-icons {
+  margin-bottom: 10px;
+}
+/* line 28, ../sass/partials/page/modules/_articles-content.scss */
 .articles-content__article {
   font-family: OpenSans Regular;
   font-size: 16px;
   line-height: 24px;
   margin-bottom: 30px;
 }
-/* line 32, ../sass/partials/page/modules/_articles-content.scss */
+/* line 34, ../sass/partials/page/modules/_articles-content.scss */
 .articles-content__article p {
   padding-bottom: 20px;
 }
-/* line 36, ../sass/partials/page/modules/_articles-content.scss */
+/* line 38, ../sass/partials/page/modules/_articles-content.scss */
 .articles-content__article__author-link-row {
   margin-bottom: 30px;
 }
-/* line 40, ../sass/partials/page/modules/_articles-content.scss */
+/* line 42, ../sass/partials/page/modules/_articles-content.scss */
 .articles-content__article__by-line {
   width: 69%;
   padding-top: 3px;
   font-family: OpenSans Regular;
   font-size: 12px;
 }
-/* line 46, ../sass/partials/page/modules/_articles-content.scss */
+/* line 48, ../sass/partials/page/modules/_articles-content.scss */
 .articles-content__article__by-line img.author {
   float: left;
   margin: 8px 6px 0 0;
 }
-/* line 51, ../sass/partials/page/modules/_articles-content.scss */
+/* line 53, ../sass/partials/page/modules/_articles-content.scss */
 .articles-content__article__by-line h1 {
   margin: 0px 0 2px 0;
   font-family: OpenSans;
   font-size: 13px;
 }
-/* line 57, ../sass/partials/page/modules/_articles-content.scss */
+/* line 59, ../sass/partials/page/modules/_articles-content.scss */
 .articles-content__article__by-line p {
   padding-bottom: 0px;
 }
-/* line 61, ../sass/partials/page/modules/_articles-content.scss */
+/* line 63, ../sass/partials/page/modules/_articles-content.scss */
 .articles-content__article__links {
   width: 31%;
   font-family: OpenSans;
   font-size: 13px;
   font-weight: bold;
 }
-/* line 67, ../sass/partials/page/modules/_articles-content.scss */
+/* line 69, ../sass/partials/page/modules/_articles-content.scss */
 .articles-content__article__links ul {
   margin: 0 0 0 17px;
   padding: 0 0 0 0;
 }
-/* line 71, ../sass/partials/page/modules/_articles-content.scss */
+/* line 73, ../sass/partials/page/modules/_articles-content.scss */
 .articles-content__article__links ul li {
   padding-top: 0;
   padding-bottom: 0;
   margin-top: 0;
   margin-bottom: 0;
 }
-/* line 77, ../sass/partials/page/modules/_articles-content.scss */
+/* line 79, ../sass/partials/page/modules/_articles-content.scss */
 .articles-content__article__links ul li a {
   color: #1a93b0;
   text-decoration: none;
 }
-/* line 85, ../sass/partials/page/modules/_articles-content.scss */
+/* line 87, ../sass/partials/page/modules/_articles-content.scss */
 .articles-content__article .date {
   font-size: 13px;
   font-family: OpenSans Italic;
