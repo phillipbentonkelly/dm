@@ -543,7 +543,7 @@ textarea {
   line-height: 1.7em;
   font-family: OpenSans;
   font-size: 1.1em;
-  margin-bottom: 1.5em;
+  margin-bottom: 2em;
   position: relative;
 }
 /* line 102, ../sass/helpers/_common-assets.scss */
@@ -1205,7 +1205,7 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
   float: right;
   width: 30px;
   height: 30px;
-  background: url(../../images/icons/icon_search-magnifiying-glass.png) center center no-repeat black;
+  background: url(../../images/icons/icon_search-magnifiying-glass.png) center center no-repeat #000;
 }
 /* line 120, ../sass/partials/page/_page-search.scss */
 .page-search__button--save-search {
@@ -1882,7 +1882,7 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
   border-radius: 2px;
-  background: url("../images/icons/magGlass_bg_blk.gif") center center no-repeat black;
+  background: url("../images/icons/magGlass_bg_blk.gif") center center no-repeat #000;
 }
 /* line 61, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel #carousel-wrap, .full-screen-carousel .slide {
@@ -3145,7 +3145,7 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
   margin-top: 2px;
   padding: 0;
   display: inline-block;
-  background: url(../../images/icons/icon_search-magnifiying-glass.png) center center no-repeat black;
+  background: url(../../images/icons/icon_search-magnifiying-glass.png) center center no-repeat #000;
   border: 0;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
@@ -4013,3 +4013,5 @@ a, img {
     width: 298px;
   }
 }
+
+/*# sourceMappingURL=dm-screen.css.map */
