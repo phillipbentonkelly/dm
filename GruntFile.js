@@ -10,6 +10,9 @@ module.exports = function(grunt) {
 				// We watch and compile sass files as normal but don't live reload here
 				files: ['styles/**/*.scss'],
 				tasks: ['sass']
+			}, jshint: {
+				files: ['js/assets/**'],
+				tasks: ['jshint:assets']
 			}, copy_css_resources: {
 				files: ['styles/resources/**'],
 				tasks: ['copy:css_resources']
@@ -67,7 +70,7 @@ module.exports = function(grunt) {
 						module: true,
 						document: true
 					}, 
-					force: true,
+					force: false,
 					reporter: require('jshint-stylish')
 				}
 			},
@@ -138,7 +141,13 @@ module.exports = function(grunt) {
 		    },
 		    sass: {
 		    	options: {
-		    		title: "Watch Notifications",
+		    		title: "Sass Watch Notifications",
+		    		message: "His 'WATCH' has ended!"
+		    	}
+		    },
+		    jshint: {
+		    	options: {
+		    		title: "jshint Watch Notifications",
 		    		message: "His 'WATCH' has ended!"
 		    	}
 		    }

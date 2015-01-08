@@ -30,6 +30,8 @@
 
 	<!-- SCRIPTS -->
     <script src="js/resources/jquery.min.js"></script>
+    	<script src="js/assets/mega-menu.js"></script>
+
 		<?php if ($pageType == 'home') { ?>
 		    <!-- Carousel Scripts -->
 			<script src="js/assets/basicMobileDetection.js"></script>
