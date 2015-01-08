@@ -5,7 +5,7 @@ proceedVar=false
 tempDirName='GH-page-content'
 root=$(pwd)
 yourLocalhost=''
-localhost='http://localhost/dm/dist/frameset.php?page-type='
+localhost=''
 framesetString='frameset.php?page-type='
 pages=("articles" "neighborhood" "serp" "home" "property-listings")
 
@@ -31,6 +31,7 @@ if [[ $proceedVar =~ ^[Yy]$ ]]
 			cd ..
 			mkdir $tempDirName
 			root=$(pwd)
+			localhost="$yourLocalhost$framesetString"
 
 			cp -a $root/dm/dist/images/. $root/$tempDirName/images
 			cp -a $root/dm/dist/fonts/. $root/$tempDirName/fonts
