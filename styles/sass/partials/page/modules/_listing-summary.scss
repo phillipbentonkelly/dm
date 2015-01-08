@@ -95,6 +95,117 @@ $module-name: 'listing';
 		display: none;
 	}
 
+	&__summary--mobile {
+		display: inline-block;
+		width: 100%;
+		border-radius: 3px;
+		text-align: center;
+		background-color: rgba(10,10,10,0.1);
+		box-sizing: border-box;
+		margin-bottom: 15px;
+	}
+
+	&__detail {
+		width: 77%;
+		float: left;
+		border-right: 1px solid white;
+		box-sizing: border-box;
+
+		p {
+			border-right: 1px solid white;
+			border-bottom: 1px solid white;
+		}
+	}
+
+	&__detail-share {
+		float: left;
+		width: 23%;
+		height: 100%;
+	}
+
+	&__detail--row1 {
+		display: block;
+		width: 100%;
+	}
+
+	&__detail--row2 {
+		display: block;
+		width: 100%;
+
+		p {
+			box-sizing: border-box;
+			width: 33.3%;
+			padding: 7px 0;
+			float: left;
+			font-family: OpenSans;
+			color:  #000000;
+			font-size: 13px; /* Approximation due to font substitution */
+			font-weight: 400;
+			text-align: center;
+		}
+	}
+
+	&__detail--row1, &__detail--row2, &__detail--row3 {
+		p:last-child {
+			border-right: none;
+		}
+	}
+
+	&__detail--row3 {
+		display: block;
+		width: 100%;
+
+		p {
+			box-sizing: border-box;
+			width: 50%;
+			padding: 7px 0;
+			float: left;
+			border-bottom: none;
+			font-family: OpenSans;
+			color:  #000000;
+			font-size: 13px; /* Approximation due to font substitution */
+			font-weight: 400;
+			text-align: center;
+		}
+	}
+
+	&__price {
+		box-sizing: border-box;
+		width: 100%;
+		padding: 5px;
+		font-family: OpenSans;
+		color:  #000000;
+		font-size: 18px; /* Approximation due to font substitution */
+		font-weight: 600;
+		text-align: center;
+	}
+
+	&__share {
+		width: 20%;
+		float: left;
+	}
+
+	&__detail-share--row1 {
+		display: block;
+		box-sizing: border-box;
+		border-bottom: 1px solid white;
+		width: 100%;
+		padding: 7px;
+		height: 35px;
+		overflow: hidden;
+	}
+
+	&__detail-share--row2 {
+		display: block;
+		box-sizing: border-box;
+		padding: 6px;
+	}
+
+	&__detail-monthly-cost {
+		font-size: 70%;
+		color: #1a93b0;
+	}
+
 	&__summary--left {
 		width: 75%;
 		padding-right: 10px;
@@ -109,7 +220,7 @@ $module-name: 'listing';
 		display: none;
 	}
 
-	&__summary {
+	&__summary  {
 		width: 100%;
 		display: inline-block;
 	}
@@ -129,6 +240,7 @@ $module-name: 'listing';
 
 	&__address--mobile {
 		display: block;
+		margin-bottom: 15px;
 	}
 
 	&__writeup-content {
@@ -452,6 +564,10 @@ $module-name: 'listing';
 			color: black;
 		}
 
+		&__summary--mobile {
+			display: none;
+		}
+
 		&__summary--left {
 			width: 50%;
 			padding-right: 20px;
@@ -468,107 +584,6 @@ $module-name: 'listing';
 			background-color: rgba(10,10,10,0.1);
 			box-sizing: border-box;
 			margin-bottom: 15px;
-		}
-
-		&__detail {
-			width: 77%;
-			float: left;
-			border-right: 1px solid white;
-			box-sizing: border-box;
-
-			p {
-				border-right: 1px solid white;
-				border-bottom: 1px solid white;
-			}
-		}
-
-		&__detail-share {
-			float: left;
-			width: 23%;
-			height: 100%;
-		}
-
-		&__detail--row1 {
-			display: block;
-			width: 100%;
-		}
-
-		&__detail--row2 {
-			display: block;
-			width: 100%;
-
-			p {
-				box-sizing: border-box;
-				width: 33.3%;
-				padding: 7px 0;
-				float: left;
-				font-family: OpenSans;
-				color:  #000000;
-				font-size: 13px; /* Approximation due to font substitution */
-				font-weight: 400;
-				text-align: center;
-			}
-		}
-
-		&__detail--row1, &__detail--row2, &__detail--row3 {
-			p:last-child {
-				border-right: none;
-			}
-		}
-
-		&__detail--row3 {
-			display: block;
-			width: 100%;
-
-			p {
-				box-sizing: border-box;
-				width: 50%;
-				padding: 7px 0;
-				float: left;
-				border-bottom: none;
-				font-family: OpenSans;
-				color:  #000000;
-				font-size: 13px; /* Approximation due to font substitution */
-				font-weight: 400;
-				text-align: center;
-			}
-		}
-
-		&__price {
-			box-sizing: border-box;
-			width: 100%;
-			padding: 5px;
-			font-family: OpenSans;
-			color:  #000000;
-			font-size: 18px; /* Approximation due to font substitution */
-			font-weight: 600;
-			text-align: center;
-		}
-
-		&__share {
-			width: 20%;
-			float: left;
-		}
-
-		&__detail-share--row1 {
-			display: block;
-			box-sizing: border-box;
-			border-bottom: 1px solid white;
-			width: 100%;
-			padding: 7px;
-			height: 35px;
-			overflow: hidden;
-		}
-
-		&__detail-share--row2 {
-			display: block;
-			box-sizing: border-box;
-			padding: 6px;
-		}
-
-		&__detail-monthly-cost {
-			font-size: 70%;
-			color: #1a93b0;
 		}
 
 		&__detail-pindrop {

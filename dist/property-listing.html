@@ -23,6 +23,7 @@
     <script src="js/resources/jquery.min.js"></script>
     <script src="js/assets/mpListings.js"></script>
     <script src="js/resources/basic/js/jquery.simplemodal.js"></script>
+    <script src="js/assets/popup.js"></script>
 
         <!-- Mega-Menu -->
         <!--<script src="js/assets/mega-menu.js"></script>-->
@@ -41,25 +42,6 @@
             if ($(window).width() > 752) {
                 $('.page-layout__left-col').width($(window).width() - 320);
             };
-
-            $('#mobile-save-btn').click(function() {
-                $('.save-search-modal').modal();
-            });
-
-            $('#mobile-contact-btn').click(function() {
-                var closeModal = $("<a style='position:absolute;right:10px;top:10px;' href='javascript:;'><img class='close-modal' src='images/listings/x-icon.jpg' style='height:20px;width:20px;'></a>");
-                $('.contact__header').append(closeModal);
-
-                $('.contact-agent-modal').modal();
-            });
-
-            $('#mobile-share-btn').click(function() {
-                $('.share-modal').modal();
-            });
-
-            $(document).on('click', '.close-modal', function() {
-                $.modal.close();
-            });
         });
 
         $(window).resize(function() {
@@ -520,8 +502,41 @@
                     </div>
                     <!-- CAROUSEL IMAGE -->
 
-                    <h2 class='listing__address--mobile'>101 Fernwood Rd</h2>
-                    <h2 class='listing__address--mobile'>Brookline, MA 02467</h2>
+                    <div class='listing__summary--mobile-wrapper'>
+
+                        <h2 class='listing__address--mobile'>101 Fernwood Rd Brookline, MA 02467</h2>
+
+                        <div class='listing__summary--mobile'>
+                            <div class='listing__detail'>
+                                <div class='listing__detail--row1'>
+                                    <p class='listing__price'>$18,000,000</p>
+                                </div>
+
+                                <div class='listing__detail--row2'>
+                                    <p class='listing__beds'>5 Beds</p>
+                                    <p class='listing__baths'>6 Baths</p>
+                                    <p class='listing__partials'>3 Partial</p>
+                                </div>
+
+                                <div class='listing__detail--row3'>
+                                    <p class='listing__sqfeet'>10,000 Sq. Ft.</p>
+                                    <p class='listing__type'>Co-op/Condo</p>
+                                </div>
+                            </div>
+
+                            <div class='listing__detail-share'>
+                                <div class='listing__detail-share--row1'>
+                                    <a href='#'><img class='listing__detail-share-icons' src='images/listings/heart-listing-icon.png'></a>
+                                    <a href='#'><img class='listing__detail-share-icons' src='images/listings/share-email-icon.png'></a>
+                                </div>
+
+                                <div class='listing__detail-share--row2'>
+                                    <img class='listing__detail-share-icons' src='images/listings/calculator-icon.png'>
+                                    <p class='listing__detail-monthly-cost'>$88,456/ mo</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
                     <div class='listing__writeup'>
                         <p class='listing__writeup-content'>Secluded single floor residence with a gated drive set on a lush cul-de-sac. Designed by architect Adolfo Perez and built by renowned builder Thoughtforms Corporation to a level of excellence rarely experienced, this custom home features 10+ foot ceilings, six fireplaces, extensive built-ins, custom millwork, plus state-of-the-art systems and technology. The sleek, Poggenpohl kitchen offers a large island and a butler's pantry....</p>
