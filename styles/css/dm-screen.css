@@ -625,7 +625,7 @@ textarea {
 .page-nav {
   width: 100%;
   height: 40px;
-  background: #1a93b0;
+  background: #2e1460;
   position: absolute;
   left: 0px;
   top: 0px;
@@ -947,20 +947,21 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
     width: 100%;
     color: white;
     padding: inherit;
+    text-transform: uppercase;
   }
-  /* line 335, ../sass/partials/page/_page-nav.scss */
+  /* line 336, ../sass/partials/page/_page-nav.scss */
   .page-nav__nav-item__responsive-drop-down-icon {
     display: none;
   }
-  /* line 338, ../sass/partials/page/_page-nav.scss */
+  /* line 339, ../sass/partials/page/_page-nav.scss */
   .page-nav__nav-item__responsive-drop-down-icon:after {
     content: "";
   }
-  /* line 342, ../sass/partials/page/_page-nav.scss */
+  /* line 343, ../sass/partials/page/_page-nav.scss */
   .page-nav__nav-item .page-nav__arrow-up {
     display: none;
   }
-  /* line 346, ../sass/partials/page/_page-nav.scss */
+  /* line 347, ../sass/partials/page/_page-nav.scss */
   .page-nav__nav-item .mega-menu__container {
     display: none;
     position: absolute;
@@ -968,23 +969,23 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
     left: 0px;
     line-height: 18px;
   }
-  /* line 353, ../sass/partials/page/_page-nav.scss */
+  /* line 354, ../sass/partials/page/_page-nav.scss */
   .page-nav__nav-item .mega-menu__container:first-child {
     display: none;
   }
-  /* line 357, ../sass/partials/page/_page-nav.scss */
+  /* line 358, ../sass/partials/page/_page-nav.scss */
   .page-nav__nav-item:hover .mega-menu__container {
     display: block;
   }
-  /* line 360, ../sass/partials/page/_page-nav.scss */
+  /* line 361, ../sass/partials/page/_page-nav.scss */
   .page-nav__nav-item:hover .page-nav__arrow-up {
     display: block;
   }
-  /* line 364, ../sass/partials/page/_page-nav.scss */
+  /* line 365, ../sass/partials/page/_page-nav.scss */
   .page-nav__responsive-home-link {
     display: none;
   }
-  /* line 368, ../sass/partials/page/_page-nav.scss */
+  /* line 369, ../sass/partials/page/_page-nav.scss */
   .page-nav__arrow-up {
     display: block;
     position: absolute;
@@ -996,14 +997,14 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
     border-right: 19px solid transparent;
     border-bottom: 15px solid rgba(255, 255, 255, 0.9);
   }
-  /* line 381, ../sass/partials/page/_page-nav.scss */
+  /* line 382, ../sass/partials/page/_page-nav.scss */
   .page-nav .myAccount {
     float: right;
     margin: 0 0 0 0px;
     padding: 0 26px 0 0;
-    background: url(../../images/icons/icon_account.png) center right no-repeat;
+    background: url(../../images/icons/icons_myAccount.png) center right no-repeat;
   }
-  /* line 388, ../sass/partials/page/_page-nav.scss */
+  /* line 389, ../sass/partials/page/_page-nav.scss */
   .page-nav__mega-menu-responsive-icon, .page-nav__search-responsive-icon {
     display: none;
   }
