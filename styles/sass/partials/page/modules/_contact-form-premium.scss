@@ -35,7 +35,7 @@ $module-name: 'contact';
 // Desktop Breakpoint
 // ------------------------------------------------------------
 
-@include media-query(tablet) {
+// @include media-query() {
   /*.page-layout {
     width: #{$desktop-breakpoint};
   }
@@ -53,31 +53,27 @@ $module-name: 'contact';
     &__container {
       position: relative;
       width: 100%;
+      margin: 0 auto;
     }
 
     &__header {
-      background: #1a93b0;
+      background: #2e1460;
       text-align: center;
       margin-bottom: 3px;
       
       p {
         margin: 0;
         padding: 2px;
+        letter-spacing: 1px;
         font-size: 26px;
         font-family: 'Oswald', sans-serif;
-        color: white;
-        letter-spacing: 1px;
-
-        font-family: Oswald;
-        color:  #ffffff;
-        font-size: 26px; /* Approximation due to font substitution */
         font-weight: 400;
-
+        color:  #ffffff;
       }
     }
 
     &__wrapper {
-      background: #e9f4f6;
+      background: #dacef1;
       padding: 20px 25px 20px 20px;
       margin-bottom: 10px;
     }
@@ -86,7 +82,7 @@ $module-name: 'contact';
 
       margin-left: 60px;
       a:link, a:visited, a:active {
-        color: #1a93b0;
+        color: #2e1460;
         text-decoration: none;
       }
       a:hover {
@@ -95,6 +91,7 @@ $module-name: 'contact';
     }
 
     &__agent-links {
+      color: #2e1460;
       font-family: 'Open Sans';
       margin-bottom: 0px;
       a {
@@ -163,14 +160,14 @@ $module-name: 'contact';
 
     &__wrapper--lower {
       padding: 20px 10px 60px 20px;
-      background: #e9f4f6;
+      background: #dacef1;
     }
 
     &__contact-button {
       padding: 7px;
       clear: left;
       color: white;
-      background: #1a93b0;
+      background: #2e1460;
       float: right;
       border-radius: 2px;
       font-family: 'Open Sans', sans-serif;
@@ -184,7 +181,7 @@ $module-name: 'contact';
       margin-top: 15px;
       float: right;
       font-family: OpenSans;
-      color: #1a93b0;
+      color: #2e1460;
       font-size: 13px; /* Approximation due to font substitution */
       font-weight: 400;
       text-align: left;
@@ -200,7 +197,7 @@ $module-name: 'contact';
       font-weight: 200;
 
       span {
-      color: #1a93b0;
+      color: #2e1460;
       font-size: 13px; /* Approximation due to font substitution */
       font-weight: 400;
       text-align: left;
@@ -250,4 +247,4 @@ $module-name: 'contact';
       margin: 0;
     }
   }
-}
+// }
