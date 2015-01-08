@@ -1205,7 +1205,7 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
   float: right;
   width: 30px;
   height: 30px;
-  background: url(../../images/icons/icon_search-magnifiying-glass.png) center center no-repeat #000;
+  background: url(../../images/icons/icon_search-magnifiying-glass.png) center center no-repeat black;
 }
 /* line 120, ../sass/partials/page/_page-search.scss */
 .page-search__button--save-search {
@@ -1882,7 +1882,7 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
   border-radius: 2px;
-  background: url("../images/icons/magGlass_bg_blk.gif") center center no-repeat #000;
+  background: url("../images/icons/magGlass_bg_blk.gif") center center no-repeat black;
 }
 /* line 61, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel #carousel-wrap, .full-screen-carousel .slide {
@@ -2567,7 +2567,7 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
 /* line 204, ../sass/partials/page/modules/_listing-summary.scss */
 .listing__detail-monthly-cost {
   font-size: 70%;
-  color: #1a93b0;
+  color: #2e1460;
 }
 /* line 209, ../sass/partials/page/modules/_listing-summary.scss */
 .listing__summary--left {
@@ -3002,7 +3002,7 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
   }
   /* line 633, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__tags .featured {
-    background-color: #1a93b0;
+    background-color: #2e1460;
   }
   /* line 636, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__facts--left, .listing__facts--right, .listing__features--left, .listing__features--right {
@@ -3145,7 +3145,7 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
   margin-top: 2px;
   padding: 0;
   display: inline-block;
-  background: url(../../images/icons/icon_search-magnifiying-glass.png) center center no-repeat #000;
+  background: url(../../images/icons/icon_search-magnifiying-glass.png) center center no-repeat black;
   border: 0;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
@@ -4013,5 +4013,3 @@ a, img {
     width: 298px;
   }
 }
-
-/*# sourceMappingURL=dm-screen.css.map */
