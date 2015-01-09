@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Avenir";
-  src: url("../../fonts/Avenir.ttf") format("truetype"), url("../../fonts/Oswald-Stencil.otf") format("opentype");
+  src: url("../../fonts/avenir.ttf") format("truetype"), url("../../fonts/avenir.otf") format("opentype");
   font-weight: 200;
 }
 @font-face {
