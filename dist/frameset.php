@@ -97,8 +97,7 @@
     <!-- Page Nav -->
     <?php include 'page/page-nav.php'; ?>
 
-    <!-- Page Nav -->
-    <?php include 'page/page-search.php'; ?>
+    <!-- Page Search - include 'page/page-search.php'; - -->
 	
 	<?php if ($pageType == 'home') { ?>
 		<!-- Module Content -->
