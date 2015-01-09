@@ -1,4 +1,9 @@
 @font-face {
+  font-family: "Avenir";
+  src: url("../../fonts/Avenir.ttf") format("truetype"), url("../../fonts/Oswald-Stencil.otf") format("opentype");
+  font-weight: 200;
+}
+@font-face {
   font-family: "OpenSans";
   src: url("../../fonts/OpenSans-Regular.ttf") format("truetype");
   font-weight: 400;
@@ -65,17 +70,17 @@
 }
 @font-face {
   font-family: "Oswald Stencil";
-  src: url("../../fonts/Oswald-Stencil.otf") format("truetype");
+  src: url("../../fonts/Oswald-Stencil.otf") format("opentype");
   font-weight: 400;
 }
 @font-face {
   font-family: "Helvetica Neue";
-  src: url("../../fonts/HelveticaNeue.eot?#iefix") format("embedded-opentype"), url("../../fonts/HelveticaNeue.woff") format("woff"), url("../../fonts/HelveticaNeue.ttf") format("opentype");
+  src: url("../../fonts/HelveticaNeue.eot?#iefix") format("embedded-opentype"), url("../../fonts/HelveticaNeue.woff") format("woff"), url("../../fonts/HelveticaNeue.ttf") format("truetype");
   font-weight: 400;
 }
 @font-face {
   font-family: "Helvetica Neue Bold";
-  src: url("../../fonts/HelveticaNeue-Bold.eot?#iefix") format("embedded-opentype"), url("../../fonts/HelveticaNeue-Bold.woff") format("woff"), url("../../fonts/HelveticaNeue-Bold.ttf") format("opentype");
+  src: url("../../fonts/HelveticaNeue-Bold.eot?#iefix") format("embedded-opentype"), url("../../fonts/HelveticaNeue-Bold.woff") format("woff"), url("../../fonts/HelveticaNeue-Bold.ttf") format("truetype");
   font-weight: 700;
 }
 /* line 4, ../sass/partials/_reset.scss */
