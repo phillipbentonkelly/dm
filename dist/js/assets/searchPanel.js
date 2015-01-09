@@ -124,8 +124,7 @@ dm.select2 = {};
 
 
 $(document).ready(function(){
-	if($('.page-search').length){
+	/*if($('.page-search').length){
 		$('.page-search').searchPanel();
-	}
-	
+	}*/
 });
