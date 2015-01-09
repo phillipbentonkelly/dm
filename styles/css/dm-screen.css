@@ -1075,7 +1075,8 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
     min-height: 700px;
     overflow: hidden;
     clear: both;
-    background-image: url(../../images/neighborhoods/Neighborhood__BGImage__Brookline.jpg);
+    /*background-image: url(../../images/neighborhoods/Neighborhood__BGImage__Brookline.jpg);*/
+    background-image: url(../../images/neighborhoods/19040004_source.jpg);
     background-position: top left;
     background-repeat: repeat-x;
   }
