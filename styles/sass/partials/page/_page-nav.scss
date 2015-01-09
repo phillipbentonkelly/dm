@@ -11,7 +11,7 @@ $module-name: 'page-nav';
 .#{$module-name} {
 	width: 100%;
 	height: $page-nav-mobile-height;
-	background: #1a93b0;
+	background: #2e1460;
 	position: absolute;
 	left: 0px;
 	top: 0px;
@@ -330,6 +330,7 @@ $module-name: 'page-nav';
 					width: 100%;
 					color: white;
 					padding: inherit;
+					text-transform: uppercase;
 				}
 				
 				&__responsive-drop-down-icon {
@@ -382,7 +383,7 @@ $module-name: 'page-nav';
 			float: right;
 			margin: 0 0 0 0px;
 			padding: 0 26px 0 0;
-			background: url(#{$img-path}icons/icon_account.png) center right no-repeat;
+			background: url(#{$img-path}icons/icons_myAccount.png) center right no-repeat;
 		}
 
 		&__mega-menu-responsive-icon, &__search-responsive-icon {

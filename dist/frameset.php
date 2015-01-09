@@ -16,7 +16,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>DM | <?php echo ucwords($pageType) ?></title>
     <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name=viewport content="width=device-width, initial-scale=1">
 
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     
@@ -27,6 +27,11 @@
         <link rel="stylesheet" href="styles/css/realestatelistings.css" />
         <link rel="stylesheet" href="styles/css/plugins/selectize/selectize.css" />
         <link rel="stylesheet" href="styles/css/plugins/select2/select2.css" />
+
+        <?php if ($pageType == 'property-listings') { ?>
+		    <!-- Simple Modal -->
+	        <link rel="stylesheet" href="js/resources/basic/css/basic.css" />
+		<?php } ?>
 
 	<!-- SCRIPTS -->
     <script src="js/resources/jquery.min.js"></script>
@@ -50,6 +55,8 @@
 		    <!-- Real Estate Listings -->
 	        <script src="js/assets/mpListings.js"></script>
 	        <script src="js/assets/listings.data.js"></script>
+	        <script src="js/resources/basic/js/jquery.simplemodal.js"></script>
+	        <script src="js/assets/popup.js"></script>
 		<?php } ?>
 		
 		<?php if ($pageType == 'articles') { ?>
