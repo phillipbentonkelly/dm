@@ -278,7 +278,7 @@ $module-name: 'page-search';
 
 		&--level-three-toggle{
 		    position: relative;
-		    top: 3px;
+		    top: 5px;
 		    /* inline-block for ie7 */
 		    zoom: 1;
 		    vertical-align: middle;
@@ -289,7 +289,6 @@ $module-name: 'page-search';
 			height: 19px;
 			background: #fff;			
 		    /* inline-block for ie7 */
-		    zoom: 1;
 		    vertical-align: middle;
 		    cursor: pointer;
 

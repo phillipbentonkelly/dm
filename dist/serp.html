@@ -35,11 +35,9 @@
 
     <script>
         $(document).ready(function(){
-
-                if('#listingDropDown'){
-                    $("#listingDropDown").select2({ dropdownCssClass: 'mplistings-dropdown' });
-                }
-
+            if('#listingDropDown'){
+                $("#listingDropDown").select2({ dropdownCssClass: 'mplistings-dropdown' });
+            }
         });
     </script>
 
@@ -295,6 +293,8 @@
 
                 <select name="q" class="page-search__dropdown page-search__dropdown--main desktop" placeholder="Search for real estate listings or articles. ex: 3 bedroom for sale in Brookline under 1,000,000">
                     <option value="Search for real estate listings or articles. ex: 3 bedroom for sale in Brookline under 1,000,000">Search for real estate listings or articles. ex: 3 bedroom for sale in Brookline under 1,000,000</option>
+                    <option value="Stuff">Stuff</option>
+                    <option value="Things">Things</option>
                 </select>
                 <button class="page-search__button page-search__button--level-two-toggle desktop">           
                         <span class="down-arrow"></span>
@@ -359,7 +359,7 @@
                 <section class="page-search__section" title="Baths">
                     <h4 class="mobile">Baths</h4>
                     <select class="page-search__dropdown page-search__dropdown--filter" id="baths" name="baths">
-                        <option value="Baths" selected="selected">Baths</option>
+                        <option value="" selected="selected">Baths</option>
                         <option value="0">0</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -372,7 +372,7 @@
                 <section class="page-search__section" title="Home Type">
                     <h4 class="mobile">Home Type</h4>
                     <select class="page-search__dropdown page-search__dropdown--filter" id="homeType" name="home_type">
-                        <option value="Home Type" selected="selected">HomeType</option>
+                        <option value="" selected="selected">HomeType</option>
                         <option value="Single-Family">Single-Family</option>
                         <option value="Multi-Family">Multi-Family</option>
                         <option value="Apartment">Apartment</option>
@@ -397,11 +397,11 @@
 
             <div class="page-search__row page-search__row--level-three">
 
-                <div class="page-search__row page-search__row--tools desktop">
-                    <div class="page-search__button--close">
-                        <span>X</span>
-                    </div>
+                
+                <div class="page-search__button--close">
+                    <span>X</span>
                 </div>
+                
 
                     <div class="col">
 
@@ -495,7 +495,7 @@
                         <h4>Days On Market</h4>
 
                         <select class="page-search__dropdown page-search__dropdown--filter-advanced" name="days_on_mkt">
-                            <option value="Any" selected="selected">Any</option>
+                            <option value="" selected="selected">Any</option>
                             <option value="1 day">1 day</option> 
                             <option value="7 days">7 days</option> 
                             <option value="14 days">14 days></option>
