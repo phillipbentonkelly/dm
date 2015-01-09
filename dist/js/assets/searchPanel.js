@@ -27,9 +27,7 @@ dm.select2 = {};
 
 		this.inputs = {
 			$main: $('.page-search__dropdown--main'),
-			$filters: $('.page-search__dropdown--filter, 
-						.page-search__dropdown--filter-wide, 
-						.page-search__dropdown--filter-advanced'),
+			$filters: $('.page-search__dropdown--filter, .page-search__dropdown--filter-wide, .page-search__dropdown--filter-advanced'),
 			$tokenize: $('.page-search__input--tokenize')
 		}
 
@@ -86,7 +84,7 @@ dm.select2 = {};
 						arrow.toggle();
 						self.lvls.$three.hide();
 						self.lvls.$two.hide();
-						self.btns.$lvl3t.removeClass('.select2-panel-open');
+						self.btns.$lvl3t.removeClass('select2-panel-open');
 						self.allOpen = false;
 					}else{
 						arrow.toggle();
@@ -106,7 +104,7 @@ dm.select2 = {};
 			self.btns.$lvl3t.on('click', function(e){
 				e.preventDefault();
 				self.lvls.$three.toggle();
-				self.btns.$lvl3t.removeClass('.select2-panel-open');
+				self.btns.$lvl3t.toggleClass('select2-panel-open');
 				self.allOpen = (self.allOpen == true) ? false : true;
 			});
 
@@ -135,7 +133,7 @@ dm.select2 = {};
 
 
 $(document).ready(function(){
-	/*if($('.page-search').length){
+	if($('.page-search').length){
 		$('.page-search').searchPanel();
-	}*/
+	}
 });
