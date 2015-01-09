@@ -27,9 +27,7 @@ dm.select2 = {};
 
 		this.inputs = {
 			$main: $('.page-search__dropdown--main'),
-			$filters: $('.page-search__dropdown--filter, 
-						.page-search__dropdown--filter-wide, 
-						.page-search__dropdown--filter-advanced'),
+			$filters: $('.page-search__dropdown--filter, .page-search__dropdown--filter-wide, .page-search__dropdown--filter-advanced'),
 			$tokenize: $('.page-search__input--tokenize')
 		}
 
@@ -135,7 +133,7 @@ dm.select2 = {};
 
 
 $(document).ready(function(){
-	/*if($('.page-search').length){
+	if($('.page-search').length){
 		$('.page-search').searchPanel();
-	}*/
+	}
 });
