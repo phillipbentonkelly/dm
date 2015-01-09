@@ -62,6 +62,7 @@
 				});
 			},		
 			update: function (data) {
+				var thisRef = this;
 				base.$element.find('.listing-container')
 					.children()
 					.filter(function () { return !$(this).hasClass('template'); })
@@ -80,8 +81,8 @@
 					
 					try{
 						_content = _content.replace('{{purchase_type}}',_listing.purchase_types[0]);
-						_content = _content.replace('{{cur_data.price}}',_listing.cur_data.price);
-						_content = _content.replace('{{updated_at}}',_listing.updated_at);
+						_content = _content.replace('{{cur_data.price}}', '$' + _listing.cur_data.price);
+						_content = _content.replace('{{updated_at}}', _listing.updated_at );
 						_content = _content.replace('{{image}}',_image.url);
 						_content = _content.replace('{{location.address}}',_listing.location.address);
 						_content = _content.replace('{{location.locality}}',_listing.location.locality);
