@@ -60,24 +60,13 @@
 
 		<script src="js/resources/plugins/selectize/selectize.js"></script>
         <script src="js/resources/plugins/select2/select2.js"></script>
+        <script src="js/assets/searchPanel.js"></script>
         <script>
             $(document).ready(function(){ 
-                $('.page-search__dropdown--wide').selectize();               
-                $('.page-search__dropdown--filter, .page-search__dropdown--filter-wide').select2();
-                $("#listingDropDown").select2({ dropdownCssClass: 'mplistings-dropdown' });
-                $('.select2-search').hide();
 
-                $('.page-search__row--bottom').hide();
-
-                $('.page-search__button--search-arrow').bind('click', function(e){
-                    e.preventDefault();
-                    $('.page-search__row--bottom').toggle();
-                    $(this).children('span').toggle();
-                });
-
-                $('#priceRange').bind('click', function(e){
-                    e.preventDefault();
-                });
+            	if('#listingDropDown'){
+                	$("#listingDropDown").select2({ dropdownCssClass: 'mplistings-dropdown' });
+                }
 
                 if ($(window).width() > 752) {
 	                $('.page-layout__left-col').width($(window).width() - 320);
