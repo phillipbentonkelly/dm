@@ -39,6 +39,9 @@ $module-name: 'gallery-widget';
 				text-transform: uppercase;
 				font-size: 12px;
 			}
+				&__show-caption:after {
+					content: "\25B6";
+				}
 			&__counter {
 				float: right;
 
