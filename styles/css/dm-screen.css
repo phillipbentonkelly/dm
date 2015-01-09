@@ -335,6 +335,42 @@ body {
   background-position: -179px 0px !important;
 }
 
+/* line 354, ../sass/helpers/_mixins-and-extends.scss */
+.chevron::before, .full-screen-carousel .chevron::before {
+  color: #fff;
+  border-style: solid;
+  border-width: 0.20em 0.20em 0 0;
+  content: '';
+  display: inline-block;
+  height: 1em;
+  left: 0.15em;
+  position: relative;
+  top: 0.4em;
+  transform: rotate(-45deg);
+  vertical-align: top;
+  width: 1em;
+  font-family: arial, sans-serif;
+  font-size: 15px;
+}
+
+/* line 372, ../sass/helpers/_mixins-and-extends.scss */
+.chevron.right:before {
+  left: 0;
+  transform: rotate(45deg);
+}
+
+/* line 377, ../sass/helpers/_mixins-and-extends.scss */
+.chevron.bottom:before {
+  top: 0;
+  transform: rotate(135deg);
+}
+
+/* line 382, ../sass/helpers/_mixins-and-extends.scss */
+.chevron.left:before {
+  left: 0.25em;
+  transform: rotate(-135deg);
+}
+
 /* line 5, ../sass/partials/_element-defaults.scss */
 html {
   font-size: 85%;
@@ -2269,48 +2305,16 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
 .full-screen-carousel .carousel-fullwidth_slide-detail-content .providerIcon img {
   margin-top: 5%;
 }
-/* line 216, ../sass/partials/page/modules/_full-screen-carousel.scss */
-.full-screen-carousel .chevron::before {
-  color: #fff;
-  border-style: solid;
-  border-width: 0.20em 0.20em 0 0;
-  content: '';
-  display: inline-block;
-  height: 1em;
-  left: 0.15em;
-  position: relative;
-  top: 0.4em;
-  transform: rotate(-45deg);
-  vertical-align: top;
-  width: 1em;
-  font-family: arial, sans-serif;
-  font-size: 15px;
-}
-/* line 234, ../sass/partials/page/modules/_full-screen-carousel.scss */
-.full-screen-carousel .chevron.right:before {
-  left: 0;
-  transform: rotate(45deg);
-}
-/* line 239, ../sass/partials/page/modules/_full-screen-carousel.scss */
-.full-screen-carousel .chevron.bottom:before {
-  top: 0;
-  transform: rotate(135deg);
-}
-/* line 244, ../sass/partials/page/modules/_full-screen-carousel.scss */
-.full-screen-carousel .chevron.left:before {
-  left: 0.25em;
-  transform: rotate(-135deg);
-}
-/* line 248, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 220, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel #carousel-wrap .chevron::before {
   top: 48%;
   cursor: pointer;
 }
-/* line 254, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 226, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .carouselRightNavFade {
   display: none;
 }
-/* line 259, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 231, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .useMobileLayout .carouselRightNavFade {
   display: block;
   width: 15px;
@@ -2335,35 +2339,35 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
   right: 0;
   top: 0;
 }
-/* line 278, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 250, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .useMobileLayout .carousel-fullwidth_slide-detail-content {
   width: 97%;
   padding-left: 3%;
 }
-/* line 283, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 255, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .useMobileLayout .carousel-fullwidth_slide-detail-content p {
   display: none;
 }
-/* line 286, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 258, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .useMobileLayout .carousel-fullwidth_slide-detail-content p:nth-child(1) {
   display: block;
 }
-/* line 289, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 261, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .useMobileLayout .carousel-fullwidth_slide-details {
   overflow: initial;
 }
-/* line 292, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 264, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .useMobileLayout .carousel-fullwidth_slide-detail-icon {
   position: absolute;
   bottom: 25%;
   z-index: 1;
 }
-/* line 298, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 270, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel #carousel-wrap.useMobileLayout .slide .detailsArrow {
   border-color: rgba(0, 0, 0, 0.8) transparent;
   bottom: 60px;
 }
-/* line 303, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 275, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .useMobileLayout .carousel-fullwidth_slide-details {
   border-color: rgba(0, 0, 0, 0.8) transparent;
   height: 60px;
@@ -3969,22 +3973,26 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
   font-size: 12px;
 }
 /* line 42, ../sass/partials/page/modules/_gallery-widget.scss */
+.gallery-widget__details__info-nav__show-caption:after {
+  content: "\25B6";
+}
+/* line 45, ../sass/partials/page/modules/_gallery-widget.scss */
 .gallery-widget__details__info-nav__counter {
   float: right;
 }
-/* line 54, ../sass/partials/page/modules/_gallery-widget.scss */
+/* line 57, ../sass/partials/page/modules/_gallery-widget.scss */
 .gallery-widget__details__caption {
   display: none;
   clear: both;
   min-height: 10px;
   overflow: hidden;
 }
-/* line 60, ../sass/partials/page/modules/_gallery-widget.scss */
+/* line 63, ../sass/partials/page/modules/_gallery-widget.scss */
 .gallery-widget__details__caption p {
   padding: 0 0 0 0;
   margin: 0 0 10px 0;
 }
-/* line 65, ../sass/partials/page/modules/_gallery-widget.scss */
+/* line 68, ../sass/partials/page/modules/_gallery-widget.scss */
 .gallery-widget__details__caption__photo-credit {
   font-family: OpenSans Italic;
   font-size: 12px;
