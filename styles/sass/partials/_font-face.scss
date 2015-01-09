@@ -7,8 +7,8 @@ $basePath: '../../fonts/';
 // Avenir
 @font-face {
   font-family: "Avenir";
-  src: url("#{$basePath}Avenir.ttf") format("truetype"),
-  url("#{$basePath}Oswald-Stencil.otf") format("opentype");;
+  src: url("#{$basePath}avenir.ttf") format("truetype"),
+  url("#{$basePath}avenir.otf") format("opentype");;
   font-weight: 200;
 }
 
