@@ -29,7 +29,8 @@ if (typeof dm === 'undefined') { dm = {}; }
 
 		this.inputs = {
 			$main: $('.page-search__dropdown--main'),
-			$filters: $('.page-search__dropdown--filter, .page-search__dropdown--filter-wide, .page-search__dropdown--filter-advanced'),
+			$filters: $('.page-search__dropdown--filter, .page-search__dropdown--filter-advanced'),
+			$filterRange: $('.page-search__dropdown--filter-range'), 
 			$tokenize: $('.page-search__input--tokenize')
 		};
 
@@ -37,8 +38,8 @@ if (typeof dm === 'undefined') { dm = {}; }
 			$lvl2t: $('.page-search__button--level-two-toggle'),
 			$lvl3t: $('.page-search__button--level-three-toggle'),
 			$close: $('.page-search__button--close'),
-			$svSearch: $('.page-search__button--save-search'), 
-			$search: $('.page-search__buttons--submit')
+			$svSearch: $('.page-search__button--save'), 
+			$search: $('.page-search__button--submit')
 		};
 
 		this.init();	
@@ -78,52 +79,64 @@ if (typeof dm === 'undefined') { dm = {}; }
 
 			var self = this;
 
-			if( self.device == 'desktop' ){
+			switch( self.device ){
 
-				self.btns.$lvl2t.on('click', function(e){
-					e.preventDefault();
-					var device = $(this).hasClass('mobile') ? 'mobile' : 'desktop';
-					var arrow = $(this).children('span');
+				case 'desktop':
 
-					if(self.allOpen){
-						arrow.toggle();
-						self.lvls.$three.hide();
-						self.lvls.$two.hide();
-						self.btns.$lvl3t.removeClass('.select2-panel-open');
-						self.allOpen = false;
-					}else{
-						arrow.toggle();
-						self.lvls.$two.toggle();
-						self.allOpen = false;
-					}
+					self.btns.$lvl2t.on('click', function(e){
+						e.preventDefault();
+						var arrow = $(this).children('span');
+
+						if(self.allOpen){
+							arrow.toggle();
+							self.lvls.$three.hide();
+							self.lvls.$two.hide();
+							self.btns.$lvl3t.removeClass('.select2-panel-open');
+							self.allOpen = false;
+						}else{
+							arrow.toggle();
+							self.lvls.$two.toggle();
+							self.allOpen = false;
+						}
 					
-				});
+					});
 
-				self.btns.$lvl3t.on('click', function(e){
-					e.preventDefault();
-					self.lvls.$three.toggle();
-					self.btns.$lvl3t.toggleClass('select2-panel-open');
-					self.allOpen = (self.allOpen == true) ? false : true;
-				});
+					self.btns.$lvl3t.on('click', function(e){
+						e.preventDefault();
+						self.lvls.$three.toggle();
+						self.btns.$lvl3t.toggleClass('select2-panel-open');
+						self.allOpen = (self.allOpen == true) ? false : true;
+					});
 
-				self.btns.$close.on('click', function(e){
-					e.preventDefault();
-					self.lvls.$three.hide();
-					self.btns.$lvl3t.removeClass('select2-panel-open');
-					self.allOpen = false;
-				});
+					self.btns.$close.on('click', function(e){
+						e.preventDefault();
+						self.lvls.$three.hide();
+						self.btns.$lvl3t.removeClass('select2-panel-open');
+						self.allOpen = false;
+					});
 
-			}
+					self.btns.$svSearch.on('click', function(e){
+						e.preventDefault();
+						var status = $(this).children('span');
+						status.toggle();
+					});
 
-			if(self.device == 'mobile'){
+					break;
 
-				self.btns.$lvl2t.on('click', function(e){
-					e.preventDefault();
-					var sign = $(this).children('span');
-					var lvls = $.merge(self.lvls.$two, self.lvls.$three);
-					sign.toggle();
-					lvls.toggle();
-				});
+				case 'mobile':
+
+					// for mobile, merge levels 2 and 3
+					var lvl2 = $.merge(self.lvls.$two, self.lvls.$three);
+
+					self.btns.$lvl2t.on('click', function(e){
+						e.preventDefault();
+						var sign = $(this).children('span');
+						sign.toggle();
+						lvl2.toggle();
+					});
+
+					break;
+
 			}
 
 		},
@@ -133,9 +146,7 @@ if (typeof dm === 'undefined') { dm = {}; }
 
 
 	$.fn.searchPanel = function(){
-		//return this.each(function(){
-			return new dm.searchPanel(this);
-		//});
+		return new dm.searchPanel(this);		
 	}
 
 
