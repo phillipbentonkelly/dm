@@ -4,6 +4,15 @@
 
 $basePath: '../../fonts/';
 
+// Avenir
+@font-face {
+  font-family: "Avenir";
+  src: url("#{$basePath}Avenir.ttf") format("truetype"),
+  url("#{$basePath}Oswald-Stencil.otf") format("opentype");;
+  font-weight: 200;
+}
+
+
 // OpenSans: This is the same as OpenSans Regular, added it because there a places using it as just OpenSans.
 @font-face {
   font-family: "OpenSans";
@@ -98,7 +107,7 @@ $basePath: '../../fonts/';
 // Oswald Stencil
 @font-face {
   font-family: "Oswald Stencil";
-  src: url("#{$basePath}Oswald-Stencil.otf") format("truetype");
+  src: url("#{$basePath}Oswald-Stencil.otf") format("opentype");
   font-weight: 400;
 }
 
@@ -107,7 +116,7 @@ $basePath: '../../fonts/';
   font-family: "Helvetica Neue";
   src: url("#{$basePath}HelveticaNeue.eot?#iefix") format("embedded-opentype"),
     url("#{$basePath}HelveticaNeue.woff") format("woff"),
-    url("#{$basePath}HelveticaNeue.ttf") format("opentype");
+    url("#{$basePath}HelveticaNeue.ttf") format("truetype");
   font-weight: 400;
 }
 
@@ -116,7 +125,7 @@ $basePath: '../../fonts/';
   font-family: "Helvetica Neue Bold";
   src: url("#{$basePath}HelveticaNeue-Bold.eot?#iefix") format("embedded-opentype"),
     url("#{$basePath}HelveticaNeue-Bold.woff") format("woff"),
-    url("#{$basePath}HelveticaNeue-Bold.ttf") format("opentype");
+    url("#{$basePath}HelveticaNeue-Bold.ttf") format("truetype");
   font-weight: 700;
 }
 

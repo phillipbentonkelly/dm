@@ -18,9 +18,6 @@
         <link rel="stylesheet" href="styles/css/realestatelistings.css" />
         <link rel="stylesheet" href="styles/css/plugins/selectize/selectize.css" />
         <link rel="stylesheet" href="styles/css/plugins/select2/select2.css" />
-
-        <!-- CLEAN UP INTO ONE SCREEN FILE -->
-        <link rel="stylesheet" href="styles/css/plugins/select2/select2.css" />
    
     <style>
         body {
@@ -41,27 +38,12 @@
         <script src="js/assets/mpListings.js"></script>
         <script src="js/resources/plugins/selectize/selectize.js"></script>
         <script src="js/resources/plugins/select2/select2.js"></script>
+        <script src="js/assets/searchPanel.js"></script>
         <script>
             $(document).ready(function(){
-                /*$("#listingDropDown").select2();
-                $('.select2-search').hide();*/
-
-                $('.page-search__dropdown--wide').selectize();               
-                $('.page-search__dropdown--filter, .page-search__dropdown--filter-wide').select2();
-                $("#listingDropDown").select2({ dropdownCssClass: 'mplistings-dropdown' });
-                $('.select2-search').hide();
-
-                $('.page-search__row--bottom').hide();
-
-                $('.page-search__button--search-arrow').bind('click', function(e){
-                    e.preventDefault();
-                    $('.page-search__row--bottom').toggle();
-                    $(this).children('span').toggle();
-                });
-
-                $('#priceRange').bind('click', function(e){
-                    e.preventDefault();
-                });
+                if('#listingDropDown'){
+                    $("#listingDropDown").select2({ dropdownCssClass: 'mplistings-dropdown' });
+                }
             });
         </script>
         <!-- Real Estate Listings -->
@@ -71,7 +53,7 @@
         <!-- Real Estate News (300x250) -->
     
 </head>
-<body>
+<body class="page-section articles">
     
     <!-- Page Masthead -->
     <div class="masthead">

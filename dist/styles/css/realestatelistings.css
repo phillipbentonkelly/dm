@@ -12,17 +12,17 @@ body {
 .mplistings-dropdown .select2-drop, .mplistings-dropdown #select2-drop {
   color: #fff;
   width: 256px !important;
-  background: #1a93b0 !important;
+  background: #eee !important;
   border-radius: 0px !important;
   border: 0px !important;
 }
 /* line 22, ../sass/realestatelistings.scss */
 .mplistings-dropdown .select2-results .select2-result-label {
-  background: #1a93b0;
+  background: #eee;
   font-family: 'Roboto Condensed', sans-serif;
   font-weight: 200;
   font-size: 17px;
-  color: #fff;
+  color: #2d2d2d;
 }
 /* line 30, ../sass/realestatelistings.scss */
 .mplistings-dropdown .select2-results {
@@ -34,7 +34,7 @@ body {
 }
 /* line 36, ../sass/realestatelistings.scss */
 .mplistings-dropdown .select2-results .select2-result-label:hover {
-  background: #218198;
+  background: #cdcdcd;
 }
 /* line 40, ../sass/realestatelistings.scss */
 .mplistings-dropdown ul#select2-results-1 {
@@ -120,9 +120,9 @@ a, img {
 /* line 113, ../sass/realestatelistings.scss */
 .mplistings .select2-container .select2-choice > .select2-chosen {
   line-height: 40px;
-  font-family: OpenSans;
+  font-family: Avenir;
   color: #ffffff;
-  font-size: 18px;
+  font-size: 20px;
   /* Approximation due to font substitution */
   font-weight: 600;
   text-align: left;
@@ -347,38 +347,37 @@ a, img {
   padding: 3% 0 2.5% 0;
   margin: 10px 0;
   line-height: inherit;
-  background: #2e1460;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 100;
-  font-size: 0.45em;
-  color: #fff;
-  text-transform: uppercase;
+  background: #ece077;
+  font-family: Avenir;
+  font-weight: 600;
+  font-size: 0.6em;
+  color: #2e1460;
   text-decoration: none;
   text-align: center;
 }
 
 @media screen and (max-width: 767px) {
-  /* line 357, ../sass/realestatelistings.scss */
+  /* line 356, ../sass/realestatelistings.scss */
   .mplistings {
     max-width: 300px;
     overflow: hidden;
   }
-  /* line 361, ../sass/realestatelistings.scss */
+  /* line 360, ../sass/realestatelistings.scss */
   .mplistings .navigation {
     display: none;
   }
-  /* line 365, ../sass/realestatelistings.scss */
+  /* line 364, ../sass/realestatelistings.scss */
   .mplistings .hScrollWrapper {
     height: 172px;
     overflow: hidden;
   }
-  /* line 370, ../sass/realestatelistings.scss */
+  /* line 369, ../sass/realestatelistings.scss */
   .mplistings .scrollFadeWrapper {
     display: block;
     position: relative;
     overflow-x: auto;
   }
-  /* line 376, ../sass/realestatelistings.scss */
+  /* line 375, ../sass/realestatelistings.scss */
   .mplistings .fade-overlay {
     display: block;
     width: 15px;
@@ -404,16 +403,16 @@ a, img {
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=1 );
     /* IE6-8 */
   }
-  /* line 397, ../sass/realestatelistings.scss */
+  /* line 396, ../sass/realestatelistings.scss */
   .mplistings .scrollWrapper {
     width: 1680px;
     overflow-x: auto;
   }
-  /* line 401, ../sass/realestatelistings.scss */
+  /* line 400, ../sass/realestatelistings.scss */
   .mplistings .scrollWrapper .listing-container {
     width: 1680px;
   }
-  /* line 404, ../sass/realestatelistings.scss */
+  /* line 403, ../sass/realestatelistings.scss */
   .mplistings .scrollWrapper .listing-container .property {
     float: left;
     display: block;
@@ -421,18 +420,18 @@ a, img {
     height: 168px;
     margin-right: 4px;
   }
-  /* line 411, ../sass/realestatelistings.scss */
+  /* line 410, ../sass/realestatelistings.scss */
   .mplistings .scrollWrapper .listing-container .property img {
     width: 136px;
     height: 106px;
   }
-  /* line 416, ../sass/realestatelistings.scss */
+  /* line 415, ../sass/realestatelistings.scss */
   .mplistings .scrollWrapper .listing-container .property .top-level__details {
     height: 106px;
   }
 }
 @media screen and (min-width: 768px) {
-  /* line 429, ../sass/realestatelistings.scss */
+  /* line 428, ../sass/realestatelistings.scss */
   .mplistings .scrollWrapper {
     height: 771px;
     overflow-x: initial;

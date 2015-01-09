@@ -16,7 +16,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>DM | <?php echo ucwords($pageType) ?></title>
     <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name=viewport content="width=device-width, initial-scale=1">
 
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     
@@ -27,6 +27,11 @@
         <link rel="stylesheet" href="styles/css/realestatelistings.css" />
         <link rel="stylesheet" href="styles/css/plugins/selectize/selectize.css" />
         <link rel="stylesheet" href="styles/css/plugins/select2/select2.css" />
+
+        <?php if ($pageType == 'property-listings') { ?>
+		    <!-- Simple Modal -->
+	        <link rel="stylesheet" href="js/resources/basic/css/basic.css" />
+		<?php } ?>
 
 	<!-- SCRIPTS -->
     <script src="js/resources/jquery.min.js"></script>
@@ -50,6 +55,8 @@
 		    <!-- Real Estate Listings -->
 	        <script src="js/assets/mpListings.js"></script>
 	        <script src="js/assets/listings.data.js"></script>
+	        <script src="js/resources/basic/js/jquery.simplemodal.js"></script>
+	        <script src="js/assets/popup.js"></script>
 		<?php } ?>
 		
 		<?php if ($pageType == 'articles') { ?>
@@ -60,24 +67,13 @@
 
 		<script src="js/resources/plugins/selectize/selectize.js"></script>
         <script src="js/resources/plugins/select2/select2.js"></script>
+        <script src="js/assets/searchPanel.js"></script>
         <script>
             $(document).ready(function(){ 
-                $('.page-search__dropdown--wide').selectize();               
-                $('.page-search__dropdown--filter, .page-search__dropdown--filter-wide').select2();
-                $("#listingDropDown").select2({ dropdownCssClass: 'mplistings-dropdown' });
-                $('.select2-search').hide();
 
-                $('.page-search__row--bottom').hide();
-
-                $('.page-search__button--search-arrow').bind('click', function(e){
-                    e.preventDefault();
-                    $('.page-search__row--bottom').toggle();
-                    $(this).children('span').toggle();
-                });
-
-                $('#priceRange').bind('click', function(e){
-                    e.preventDefault();
-                });
+            	if('#listingDropDown'){
+                	$("#listingDropDown").select2({ dropdownCssClass: 'mplistings-dropdown' });
+                }
 
                 if ($(window).width() > 752) {
 	                $('.page-layout__left-col').width($(window).width() - 320);
@@ -101,8 +97,10 @@
     <!-- Page Nav -->
     <?php include 'page/page-nav.php'; ?>
 
-    <!-- Page Nav -->
-    <?php include 'page/page-search.php'; ?>
+    <?php if ($pageType == 'serp') { ?>
+	    <!-- Page Search -->
+	    <?php include 'page/page-search.php'; ?>
+    <?php } ?>
 	
 	<?php if ($pageType == 'home') { ?>
 		<!-- Module Content -->
