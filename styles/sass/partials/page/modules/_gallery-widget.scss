@@ -11,6 +11,10 @@ $module-name: 'gallery-widget';
 		}
 	}
 
+	.hidden-caption {
+		display: none;
+	}
+
 	&__details {
 		margin-top: 2px;
 		background: #000;
@@ -39,9 +43,9 @@ $module-name: 'gallery-widget';
 				text-transform: uppercase;
 				font-size: 12px;
 			}
-				&__show-caption:after {
+				/*&__show-caption:after {
 					content: "\25B6";
-				}
+				}*/
 			&__counter {
 				float: right;
 
@@ -62,7 +66,7 @@ $module-name: 'gallery-widget';
 
 			p {
 				padding: 0 0 0 0;
-				margin: 0 0 10px 0;
+				margin: 15px 0 10px 0;
 			}
 
 			&__photo-credit {
