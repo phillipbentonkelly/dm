@@ -4033,26 +4033,31 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
 /* line 16, ../sass/partials/page/modules/_gallery-widget.scss */
 .gallery-widget__main-wrapper__scrolling-wrapper .slide {
   display: inline-block;
+  max-width: 630px;
   float: left;
 }
-/* line 27, ../sass/partials/page/modules/_gallery-widget.scss */
+/* line 21, ../sass/partials/page/modules/_gallery-widget.scss */
+.gallery-widget__main-wrapper__scrolling-wrapper .slide img {
+  width: 630px;
+}
+/* line 32, ../sass/partials/page/modules/_gallery-widget.scss */
 .gallery-widget .left.chevron, .gallery-widget .right.chevron {
   position: absolute;
-  top: 40%;
+  top: 200px;
 }
-/* line 31, ../sass/partials/page/modules/_gallery-widget.scss */
+/* line 36, ../sass/partials/page/modules/_gallery-widget.scss */
 .gallery-widget .left.chevron {
   left: 20px;
 }
-/* line 34, ../sass/partials/page/modules/_gallery-widget.scss */
+/* line 39, ../sass/partials/page/modules/_gallery-widget.scss */
 .gallery-widget .right.chevron {
   right: 20px;
 }
-/* line 39, ../sass/partials/page/modules/_gallery-widget.scss */
+/* line 44, ../sass/partials/page/modules/_gallery-widget.scss */
 .gallery-widget .hidden-caption {
   display: none;
 }
-/* line 43, ../sass/partials/page/modules/_gallery-widget.scss */
+/* line 48, ../sass/partials/page/modules/_gallery-widget.scss */
 .gallery-widget__details {
   margin-top: 2px;
   background: #000;
@@ -4065,11 +4070,11 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
   overflow: hidden;
   min-height: 30px;
 }
-/* line 56, ../sass/partials/page/modules/_gallery-widget.scss */
+/* line 61, ../sass/partials/page/modules/_gallery-widget.scss */
 .gallery-widget__details a {
   text-decoration: none;
 }
-/* line 60, ../sass/partials/page/modules/_gallery-widget.scss */
+/* line 65, ../sass/partials/page/modules/_gallery-widget.scss */
 .gallery-widget__details__info-nav {
   clear: both;
   overflow: hidden;
@@ -4078,14 +4083,14 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
   	content: "\25B6";
   }*/
 }
-/* line 65, ../sass/partials/page/modules/_gallery-widget.scss */
+/* line 70, ../sass/partials/page/modules/_gallery-widget.scss */
 .gallery-widget__details__info-nav__show-caption {
   float: left;
   color: #fff;
   text-transform: uppercase;
   font-size: 12px;
 }
-/* line 79, ../sass/partials/page/modules/_gallery-widget.scss */
+/* line 84, ../sass/partials/page/modules/_gallery-widget.scss */
 .gallery-widget__details__info-nav .chevron:before {
   border-width: 0.15em 0.15em 0 0;
   width: 0.4em;
@@ -4093,34 +4098,39 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
   left: 7.6em;
   top: 3px;
 }
-/* line 87, ../sass/partials/page/modules/_gallery-widget.scss */
+/* line 92, ../sass/partials/page/modules/_gallery-widget.scss */
 .gallery-widget__details__info-nav__counter {
   float: right;
 }
-/* line 99, ../sass/partials/page/modules/_gallery-widget.scss */
+/* line 104, ../sass/partials/page/modules/_gallery-widget.scss */
 .gallery-widget__details__caption {
   display: none;
   clear: both;
   min-height: 10px;
   overflow: hidden;
 }
-/* line 105, ../sass/partials/page/modules/_gallery-widget.scss */
+/* line 110, ../sass/partials/page/modules/_gallery-widget.scss */
 .gallery-widget__details__caption p {
   padding: 0 0 0 0;
   margin: 15px 0 10px 0;
 }
-/* line 110, ../sass/partials/page/modules/_gallery-widget.scss */
+/* line 115, ../sass/partials/page/modules/_gallery-widget.scss */
 .gallery-widget__details__caption__photo-credit {
   font-family: OpenSans Italic;
   font-size: 12px;
 }
 
-/* line 5, ../sass/partials/page/modules/property-search-results.scss */
-.search-results__item {
-  height: 300px;
+/* line 3, ../sass/partials/page/modules/property-search-results.scss */
+.search-results {
+  display: inline-block;
   border-bottom: 1px solid grey;
 }
-/* line 10, ../sass/partials/page/modules/property-search-results.scss */
+/* line 8, ../sass/partials/page/modules/property-search-results.scss */
+.search-results__item {
+  max-height: 340px;
+  position: relative;
+}
+/* line 13, ../sass/partials/page/modules/property-search-results.scss */
 .search-results .header {
   width: 100%;
   color: black;
@@ -4128,8 +4138,9 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
   position: relative;
   margin-bottom: 5px;
   box-sizing: border-box;
+  display: inline-block;
 }
-/* line 18, ../sass/partials/page/modules/property-search-results.scss */
+/* line 22, ../sass/partials/page/modules/property-search-results.scss */
 .search-results .header .address {
   font-family: Oswald;
   color: black;
@@ -4138,34 +4149,38 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
   font-weight: 400;
   text-align: left;
   display: inline-block;
+  width: 60%;
+  padding-right: 10px;
+  box-sizing: border-box;
 }
-/* line 28, ../sass/partials/page/modules/property-search-results.scss */
+/* line 35, ../sass/partials/page/modules/property-search-results.scss */
 .search-results .header:hover {
   background: #2e1460;
 }
-/* line 31, ../sass/partials/page/modules/property-search-results.scss */
+/* line 38, ../sass/partials/page/modules/property-search-results.scss */
 .search-results .header:hover p {
   color: white;
 }
-/* line 35, ../sass/partials/page/modules/property-search-results.scss */
+/* line 42, ../sass/partials/page/modules/property-search-results.scss */
 .search-results .header:hover .address {
   text-decoration: underline;
 }
-/* line 39, ../sass/partials/page/modules/property-search-results.scss */
+/* line 46, ../sass/partials/page/modules/property-search-results.scss */
 .search-results .header:hover .share-button--heart {
   background-image: url(../../../../images/listings/heart-icon-white.png);
 }
-/* line 43, ../sass/partials/page/modules/property-search-results.scss */
+/* line 50, ../sass/partials/page/modules/property-search-results.scss */
 .search-results .header:hover .share-button--share {
   background-image: url(../../../../images/listings/share-icon-white.png);
 }
-/* line 48, ../sass/partials/page/modules/property-search-results.scss */
+/* line 55, ../sass/partials/page/modules/property-search-results.scss */
 .search-results .share-buttons {
   display: inline-block;
   float: right;
   padding-top: 5px;
+  width: 40%;
 }
-/* line 53, ../sass/partials/page/modules/property-search-results.scss */
+/* line 61, ../sass/partials/page/modules/property-search-results.scss */
 .search-results .share-buttons .share-button--heart {
   display: inline-block;
   background-image: url(../../../../images/listings/heart-icon-purple.png);
@@ -4175,7 +4190,7 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
   width: 20px;
   vertical-align: middle;
 }
-/* line 64, ../sass/partials/page/modules/property-search-results.scss */
+/* line 72, ../sass/partials/page/modules/property-search-results.scss */
 .search-results .share-buttons .share-button--share {
   display: inline-block;
   background-image: url(../../../../images/listings/share-icon-purple.png);
@@ -4185,31 +4200,40 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
   width: 23px;
   vertical-align: middle;
 }
-/* line 74, ../sass/partials/page/modules/property-search-results.scss */
+/* line 82, ../sass/partials/page/modules/property-search-results.scss */
 .search-results .share-buttons p {
   display: inline-block;
   margin-left: 10px;
   font-family: Open Sans;
   font-size: 11px;
 }
-/* line 82, ../sass/partials/page/modules/property-search-results.scss */
+/* line 90, ../sass/partials/page/modules/property-search-results.scss */
 .search-results .right-col, .search-results .left-col {
-  width: 50%;
   float: left;
-  height: 230px;
   position: relative;
+  overflow: hidden;
+  margin-bottom: 10px;
+  height: 200px;
 }
-/* line 89, ../sass/partials/page/modules/property-search-results.scss */
+/* line 98, ../sass/partials/page/modules/property-search-results.scss */
+.search-results .left-col {
+  width: 60%;
+}
+/* line 102, ../sass/partials/page/modules/property-search-results.scss */
+.search-results .right-col {
+  width: 40%;
+}
+/* line 107, ../sass/partials/page/modules/property-search-results.scss */
 .search-results .left-col {
   padding-right: 10px;
   box-sizing: border-box;
 }
-/* line 93, ../sass/partials/page/modules/property-search-results.scss */
+/* line 111, ../sass/partials/page/modules/property-search-results.scss */
 .search-results .left-col img {
   max-height: 230px;
   width: 100%;
 }
-/* line 98, ../sass/partials/page/modules/property-search-results.scss */
+/* line 116, ../sass/partials/page/modules/property-search-results.scss */
 .search-results .left-col .photo-count {
   position: absolute;
   bottom: 10px;
@@ -4225,85 +4249,106 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
   /* Approximation due to font substitution */
   text-align: left;
 }
-/* line 114, ../sass/partials/page/modules/property-search-results.scss */
+/* line 132, ../sass/partials/page/modules/property-search-results.scss */
 .search-results .property-info {
-  border-radius: 3px;
+  border-radius: 5px;
 }
-/* line 117, ../sass/partials/page/modules/property-search-results.scss */
-.search-results .property-info .row1, .search-results .property-info .row2, .search-results .property-info .row3 {
+/* line 135, ../sass/partials/page/modules/property-search-results.scss */
+.search-results .property-info .row1, .search-results .property-info .row2, .search-results .property-info .row3, .search-results .property-info .row4, .search-results .property-info .row5 {
   width: 100%;
   display: block;
-}
-/* line 121, ../sass/partials/page/modules/property-search-results.scss */
-.search-results .property-info .row1 p, .search-results .property-info .row2 p, .search-results .property-info .row3 p {
-  text-align: center;
-}
-/* line 128, ../sass/partials/page/modules/property-search-results.scss */
-.search-results .property-info .row1 p, .search-results .property-info .row2 p {
-  width: 33.33%;
-  float: left;
-  box-sizing: border-box;
-  background: lightgrey;
-  padding: 10px;
-  font-size: 12px;
-  font-family: Open Sans;
-  border-right: 1px solid white;
-  border-bottom: 1px solid white;
+  overflow: hidden;
 }
 /* line 141, ../sass/partials/page/modules/property-search-results.scss */
-.search-results .property-info .row3 {
+.search-results .property-info .row1 p, .search-results .property-info .row2 p, .search-results .property-info .row3 p, .search-results .property-info .row4 p, .search-results .property-info .row5 p {
+  padding: 5px 15px;
+  text-align: center;
   float: left;
-}
-/* line 144, ../sass/partials/page/modules/property-search-results.scss */
-.search-results .property-info .row3 p {
-  width: 99.6%;
   box-sizing: border-box;
   background: lightgrey;
-  padding: 10px;
-  font-size: 12px;
-  font-family: Open Sans;
-  text-align: left;
+  border-top: 1px solid white;
 }
-/* line 156, ../sass/partials/page/modules/property-search-results.scss */
-.search-results .property-info, .search-results .relator-info {
-  display: inline-block;
-  box-sizing: border-box;
-}
-/* line 161, ../sass/partials/page/modules/property-search-results.scss */
-.search-results .property-info {
-  height: 63%;
-}
-/* line 165, ../sass/partials/page/modules/property-search-results.scss */
-.search-results .relator-info {
-  height: 37%;
-  padding-top: 10px;
-}
-/* line 170, ../sass/partials/page/modules/property-search-results.scss */
-.search-results .relator-info--left, .search-results .relator-info--right {
+/* line 151, ../sass/partials/page/modules/property-search-results.scss */
+.search-results .property-info .row1, .search-results .property-info .row4 {
   text-align: center;
 }
-/* line 174, ../sass/partials/page/modules/property-search-results.scss */
-.search-results .relator-info--left, .search-results .relator-info--right, .search-results .relator-info--middle {
+/* line 154, ../sass/partials/page/modules/property-search-results.scss */
+.search-results .property-info .row1 p, .search-results .property-info .row4 p {
+  float: left;
+  font-size: 12px;
+  font-family: Open Sans;
+  width: 100%;
+}
+/* line 164, ../sass/partials/page/modules/property-search-results.scss */
+.search-results .property-info .row2 p, .search-results .property-info .row3 p {
+  padding-bottom: 1005px;
+  margin-bottom: -1000px;
+  width: 50%;
   float: left;
   box-sizing: border-box;
-  padding: 0 10px;
+  font-size: 12px;
+  font-family: Open Sans;
+  border-top: 1px solid white;
+}
+/* line 175, ../sass/partials/page/modules/property-search-results.scss */
+.search-results .property-info .row2 p:nth-child(1), .search-results .property-info .row3 p:nth-child(1) {
+  border-right: 1px solid white;
 }
 /* line 180, ../sass/partials/page/modules/property-search-results.scss */
-.search-results .relator-info--middle {
-  width: 20%;
+.search-results .property-info .row5 {
+  float: left;
 }
-/* line 184, ../sass/partials/page/modules/property-search-results.scss */
-.search-results .relator-info--left {
-  padding-top: 15px;
-  width: 43%;
+/* line 183, ../sass/partials/page/modules/property-search-results.scss */
+.search-results .property-info .row5 .description {
+  display: none;
 }
 /* line 189, ../sass/partials/page/modules/property-search-results.scss */
-.search-results .relator-info--right {
+.search-results .property-info {
+  display: block;
+  box-sizing: border-box;
+}
+/* line 194, ../sass/partials/page/modules/property-search-results.scss */
+.search-results .realtor-info {
+  max-height: 68px;
+  width: 100%;
+}
+/* line 201, ../sass/partials/page/modules/property-search-results.scss */
+.search-results .realtor-info--right {
+  text-align: center;
+}
+/* line 205, ../sass/partials/page/modules/property-search-results.scss */
+.search-results .realtor-info--left, .search-results .realtor-info--right, .search-results .realtor-info--middle {
+  float: left;
+  box-sizing: border-box;
+}
+/* line 210, ../sass/partials/page/modules/property-search-results.scss */
+.search-results .realtor-info--middle {
+  width: 20%;
+  padding: 0 15px;
+}
+/* line 214, ../sass/partials/page/modules/property-search-results.scss */
+.search-results .realtor-info--middle img {
+  max-width: 50px;
+  max-height: 60px;
+}
+/* line 220, ../sass/partials/page/modules/property-search-results.scss */
+.search-results .realtor-info--left {
+  padding-top: 15px;
+  width: 43%;
+  position: relative;
+}
+/* line 225, ../sass/partials/page/modules/property-search-results.scss */
+.search-results .realtor-info--left .realtor-company {
+  max-height: 100%;
+  max-width: 125px;
+}
+/* line 231, ../sass/partials/page/modules/property-search-results.scss */
+.search-results .realtor-info--right {
   padding-top: 13px;
   width: 37%;
 }
-/* line 193, ../sass/partials/page/modules/property-search-results.scss */
-.search-results .relator-info--right .relator-contact {
+/* line 235, ../sass/partials/page/modules/property-search-results.scss */
+.search-results .realtor-info--right .realtor-contact {
   margin-bottom: 10px;
   padding: 5px;
   background: #2e1460;
@@ -4319,8 +4364,8 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
   /* Approximation due to font substitution */
   text-align: left;
 }
-/* line 209, ../sass/partials/page/modules/property-search-results.scss */
-.search-results .relator-info--right .relator-name {
+/* line 251, ../sass/partials/page/modules/property-search-results.scss */
+.search-results .realtor-info--right .realtor-name {
   font-family: Arial;
   color: #000000;
   font-size: 11.96px;
@@ -4329,6 +4374,19 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
   text-align: center;
 }
 
+@media (max-width: 768px) {
+  /* line 268, ../sass/partials/page/modules/property-search-results.scss */
+  .search-results .row5 .description {
+    display: block;
+    width: 99.6%;
+    box-sizing: border-box;
+    background: lightgrey;
+    padding: 10px;
+    font-size: 12px;
+    font-family: Open Sans;
+    text-align: left;
+  }
+}
 /* line 11, ../sass/partials/page-content/modules/_dfp-ads__new-homes.scss */
 .dfp-ads__new-homes {
   width: 300px;
