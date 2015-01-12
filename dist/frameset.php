@@ -30,7 +30,7 @@
 
         <?php if ($pageType == 'property-listings') { ?>
 		    <!-- Simple Modal -->
-	        <link rel="stylesheet" href="js/resources/basic/css/basic.css" />
+	        <!-- <link rel="stylesheet" href="js/resources/basic/css/basic.css" /> -->
 		<?php } ?>
 
 	<!-- SCRIPTS -->
