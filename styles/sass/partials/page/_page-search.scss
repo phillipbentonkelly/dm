@@ -112,6 +112,10 @@ $module-name: 'page-search';
 
 
 		}
+
+		&--tools{
+			width: 100%;
+		}
 	}
 
 	&__section{
@@ -140,6 +144,7 @@ $module-name: 'page-search';
 
 	&__container{
 		display: block;
+
 		&--radio{
 			float: right;
 		}
@@ -329,7 +334,8 @@ $module-name: 'page-search';
 
 		&--close{
 			display: block;
-			float: right;
+			position: absolute;
+			right: 98px;
 			color: #0491aa;
 			background: rgb(254, 254, 254);
 			padding: 2px 4px;

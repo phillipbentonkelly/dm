@@ -72,7 +72,8 @@ $padding-top: 20px;
 		min-height: 700px;
 		overflow: hidden;
 		clear: both;
-		background-image: url(#{$img-path}neighborhoods/Neighborhood__BGImage__Brookline.jpg);
+		/*background-image: url(#{$img-path}neighborhoods/Neighborhood__BGImage__Brookline.jpg);*/
+		background-image: url(#{$img-path}neighborhoods/19040004_source.jpg);
 		background-position: top left;
 		background-repeat: repeat-x;
 	}
