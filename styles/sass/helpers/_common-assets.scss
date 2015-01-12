@@ -85,7 +85,37 @@ $asset-2-name: 'quotebox';
 		position: absolute;
 		left: 0;
 		top: 1%;
+
 	}
+	&__by-line{
+		//color: green;
+		display: inline-block;
+		width: 69%;
+		padding-top: 3px;
+		font-family: OpenSans Regular;
+		font-size: 12px;
+	}
+
+	&__flag
+	{
+		width: 6.8%;
+		height: 0.5%;		
+		font-family: Oswald;
+		color:  #ffffff;
+		background-color: black;
+		font-size: 11px; /* Approximation due to font substitution */
+		font-weight: 700;
+		text-align: left;
+		//width: 5.8%;
+		//height: 0.4%;
+		position: relative;
+		bottom: 20px;
+		margin-right: 100%;
+		margin-left: -18px;
+		padding-right: 4px;
+		padding-left: 4px;
+	}
+
 
 	&__rect1 {
 		background: #3793b2;
