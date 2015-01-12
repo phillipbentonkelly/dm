@@ -1334,7 +1334,7 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
   height: 44px;
   border-radius: 4px;
   margin: 0 100px 0 0;
-  background: url(../../images/icons/icon_search-magnifiying-glass.png) center center no-repeat #000;
+  background: url(../../images/icons/icon_search-magnifiying-glass.png) center center no-repeat black;
 }
 /* line 212, ../sass/partials/page/_page-search.scss */
 .page-search__button--cancel, .page-search__button--apply {
@@ -2138,7 +2138,7 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
   border-radius: 2px;
-  background: url("../images/icons/magGlass_bg_blk.gif") center center no-repeat #000;
+  background: url("../images/icons/magGlass_bg_blk.gif") center center no-repeat black;
 }
 /* line 61, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel #carousel-wrap, .full-screen-carousel .slide {
@@ -3369,7 +3369,7 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
   margin-top: 2px;
   padding: 0;
   display: inline-block;
-  background: url(../../images/icons/icon_search-magnifiying-glass.png) center center no-repeat #000;
+  background: url(../../images/icons/icon_search-magnifiying-glass.png) center center no-repeat black;
   border: 0;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
@@ -4003,6 +4003,220 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
   font-size: 12px;
 }
 
+/* line 5, ../sass/partials/page/modules/property-search-results.scss */
+.search-results__item {
+  height: 300px;
+  border-bottom: 1px solid grey;
+}
+/* line 10, ../sass/partials/page/modules/property-search-results.scss */
+.search-results .header {
+  width: 100%;
+  color: black;
+  padding: 10px;
+  position: relative;
+  margin-bottom: 5px;
+  box-sizing: border-box;
+}
+/* line 18, ../sass/partials/page/modules/property-search-results.scss */
+.search-results .header .address {
+  font-family: Oswald;
+  color: black;
+  font-size: 17.93px;
+  /* Approximation due to font substitution */
+  font-weight: 400;
+  text-align: left;
+  display: inline-block;
+}
+/* line 28, ../sass/partials/page/modules/property-search-results.scss */
+.search-results .header:hover {
+  background: #2e1460;
+}
+/* line 31, ../sass/partials/page/modules/property-search-results.scss */
+.search-results .header:hover p {
+  color: white;
+}
+/* line 35, ../sass/partials/page/modules/property-search-results.scss */
+.search-results .header:hover .address {
+  text-decoration: underline;
+}
+/* line 39, ../sass/partials/page/modules/property-search-results.scss */
+.search-results .header:hover .share-button--heart {
+  background-image: url(../../../../images/listings/heart-icon-white.png);
+}
+/* line 43, ../sass/partials/page/modules/property-search-results.scss */
+.search-results .header:hover .share-button--share {
+  background-image: url(../../../../images/listings/share-icon-white.png);
+}
+/* line 48, ../sass/partials/page/modules/property-search-results.scss */
+.search-results .share-buttons {
+  display: inline-block;
+  float: right;
+  padding-top: 5px;
+}
+/* line 53, ../sass/partials/page/modules/property-search-results.scss */
+.search-results .share-buttons .share-button--heart {
+  display: inline-block;
+  background-image: url(../../../../images/listings/heart-icon-purple.png);
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+  height: 20px;
+  width: 20px;
+  vertical-align: middle;
+}
+/* line 64, ../sass/partials/page/modules/property-search-results.scss */
+.search-results .share-buttons .share-button--share {
+  display: inline-block;
+  background-image: url(../../../../images/listings/share-icon-purple.png);
+  background-repeat: no-repeat;
+  background-size: 23px 20px;
+  height: 20px;
+  width: 23px;
+  vertical-align: middle;
+}
+/* line 74, ../sass/partials/page/modules/property-search-results.scss */
+.search-results .share-buttons p {
+  display: inline-block;
+  margin-left: 10px;
+  font-family: Open Sans;
+  font-size: 11px;
+}
+/* line 82, ../sass/partials/page/modules/property-search-results.scss */
+.search-results .right-col, .search-results .left-col {
+  width: 50%;
+  float: left;
+  height: 230px;
+  position: relative;
+}
+/* line 89, ../sass/partials/page/modules/property-search-results.scss */
+.search-results .left-col {
+  padding-right: 10px;
+  box-sizing: border-box;
+}
+/* line 93, ../sass/partials/page/modules/property-search-results.scss */
+.search-results .left-col img {
+  max-height: 230px;
+  width: 100%;
+}
+/* line 98, ../sass/partials/page/modules/property-search-results.scss */
+.search-results .left-col .photo-count {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  background: rgba(10, 10, 10, 0.7);
+  padding: 0 10px;
+  font-family: Oswald;
+  color: #ffffff;
+  font-size: 11.96px;
+  /* Approximation due to font substitution */
+  font-weight: 400;
+  line-height: 23.91px;
+  /* Approximation due to font substitution */
+  text-align: left;
+}
+/* line 114, ../sass/partials/page/modules/property-search-results.scss */
+.search-results .property-info {
+  border-radius: 3px;
+}
+/* line 117, ../sass/partials/page/modules/property-search-results.scss */
+.search-results .property-info .row1, .search-results .property-info .row2, .search-results .property-info .row3 {
+  width: 100%;
+  display: block;
+}
+/* line 121, ../sass/partials/page/modules/property-search-results.scss */
+.search-results .property-info .row1 p, .search-results .property-info .row2 p, .search-results .property-info .row3 p {
+  text-align: center;
+}
+/* line 128, ../sass/partials/page/modules/property-search-results.scss */
+.search-results .property-info .row1 p, .search-results .property-info .row2 p {
+  width: 33.33%;
+  float: left;
+  box-sizing: border-box;
+  background: lightgrey;
+  padding: 10px;
+  font-size: 12px;
+  font-family: Open Sans;
+  border-right: 1px solid white;
+  border-bottom: 1px solid white;
+}
+/* line 141, ../sass/partials/page/modules/property-search-results.scss */
+.search-results .property-info .row3 {
+  float: left;
+}
+/* line 144, ../sass/partials/page/modules/property-search-results.scss */
+.search-results .property-info .row3 p {
+  width: 99.6%;
+  box-sizing: border-box;
+  background: lightgrey;
+  padding: 10px;
+  font-size: 12px;
+  font-family: Open Sans;
+  text-align: left;
+}
+/* line 156, ../sass/partials/page/modules/property-search-results.scss */
+.search-results .property-info, .search-results .relator-info {
+  display: inline-block;
+  box-sizing: border-box;
+}
+/* line 161, ../sass/partials/page/modules/property-search-results.scss */
+.search-results .property-info {
+  height: 63%;
+}
+/* line 165, ../sass/partials/page/modules/property-search-results.scss */
+.search-results .relator-info {
+  height: 37%;
+  padding-top: 10px;
+}
+/* line 170, ../sass/partials/page/modules/property-search-results.scss */
+.search-results .relator-info--left, .search-results .relator-info--right {
+  text-align: center;
+}
+/* line 174, ../sass/partials/page/modules/property-search-results.scss */
+.search-results .relator-info--left, .search-results .relator-info--right, .search-results .relator-info--middle {
+  float: left;
+  box-sizing: border-box;
+  padding: 0 10px;
+}
+/* line 180, ../sass/partials/page/modules/property-search-results.scss */
+.search-results .relator-info--middle {
+  width: 20%;
+}
+/* line 184, ../sass/partials/page/modules/property-search-results.scss */
+.search-results .relator-info--left {
+  padding-top: 15px;
+  width: 43%;
+}
+/* line 189, ../sass/partials/page/modules/property-search-results.scss */
+.search-results .relator-info--right {
+  padding-top: 13px;
+  width: 37%;
+}
+/* line 193, ../sass/partials/page/modules/property-search-results.scss */
+.search-results .relator-info--right .relator-contact {
+  margin-bottom: 10px;
+  padding: 5px;
+  background: #2e1460;
+  color: white;
+  border: none;
+  border-radius: 2px;
+  font-family: OpenSans;
+  color: #ffffff;
+  font-size: 12.95px;
+  /* Approximation due to font substitution */
+  font-weight: 700;
+  line-height: 17.933px;
+  /* Approximation due to font substitution */
+  text-align: left;
+}
+/* line 209, ../sass/partials/page/modules/property-search-results.scss */
+.search-results .relator-info--right .relator-name {
+  font-family: Arial;
+  color: #000000;
+  font-size: 11.96px;
+  font-weight: 700;
+  line-height: 16px;
+  text-align: center;
+}
+
 /* line 11, ../sass/partials/page-content/modules/_dfp-ads__new-homes.scss */
 .dfp-ads__new-homes {
   width: 300px;
@@ -4293,5 +4507,3 @@ a, img {
     width: 298px;
   }
 }
-
-/*# sourceMappingURL=dm-screen.css.map */
