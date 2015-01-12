@@ -15,7 +15,12 @@ $module-name: 'gallery-widget';
 
 			.slide {
 				display: inline-block;
+				max-width: 630px;
 				float: left;
+
+				img {
+					width: 630px;
+				}
 			}
 		}
 	}
@@ -26,7 +31,7 @@ $module-name: 'gallery-widget';
 
 	.chevron.left, .chevron.right {
 		position: absolute;
-		top: 40%;
+		top: 200px;
 	}
 	.chevron.left {
 		left: 20px;

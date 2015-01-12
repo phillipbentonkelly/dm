@@ -37,6 +37,7 @@
     <script src="js/resources/jquery.min.js"></script>
     	<script src="js/assets/mega-menu.js"></script>
     	<script src="js/assets/searchPanel.js"></script>
+    	<script src="js/assets/responsive-gallery.js"></script>
 
 		<?php if ($pageType == 'home') { ?>
 		    <!-- Carousel Scripts -->
