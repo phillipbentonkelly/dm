@@ -6,6 +6,7 @@ if (typeof bdc === 'undefined') { bdc = {}; }
 (function( win, $, undefined ) {
 	'use strict';
 
+<<<<<<< HEAD
 	var info = {};
 	var module = {};
 	var _engine = {};
@@ -71,5 +72,7 @@ if (typeof bdc === 'undefined') { bdc = {}; }
     	console.log(info);
     };
 
+=======
+>>>>>>> 21fcc25b3e7b6438f9322dc5450988c40169f712
 
 })(window, jQuery);
