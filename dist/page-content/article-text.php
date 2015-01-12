@@ -4,7 +4,10 @@
             <img class="author" src="images/authors/julie-xie.jpg" />
             <h1>Julie Xie</h1>
             <p>Boston.com staff</p>
-            <a href="javascript:;" class="social-wrapper__twitter">Follow @juliexie</a>
+            <a href="javascript:;" class="social-wrapper__twitter">
+                <img src="http://localhost/GitHub/dm/dist/images/icons/footer-icons__twitter.png"
+                style="width:14px;height:10px"
+                >Follow @juliexie</a>
             <a href="javascript:;" class="social-icons__email">email</a>
         </div>
         <div class="colRight articles-content__article__links">
@@ -20,9 +23,10 @@
     <div class="date">September 17, 2014 9:36 AM</div>
 
     <p class="quotebox__square">
+        <label class="quotebox__flag">QUOTEWORTHY</label>
         <label class="quotebox__worthy"></label>
         "This isn't New York, I don't know if you are going to get that"
-        <div class="by-line">Rich Hornblower, Coldwell Banker's</div>
+        <label class="quotebox__by-line">Rich Hornblower, Coldwell Banker's</label>        
     </p>
 
     <p>Behold, it’s the totally baller house of the week: there’s a bar, a theater, an infinity

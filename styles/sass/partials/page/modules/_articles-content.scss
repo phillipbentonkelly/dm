@@ -1,5 +1,25 @@
 $module-name: 'articles-content';
 
+.social-wrapper__twitter
+	{
+		border: 2px solid rgb(204, 204, 204);
+    	padding: 1px 4px; 
+    	background: rgb(231, 231, 229);
+    	//width: 300px;
+    	border-radius: 3px;
+    	font-family: 'Helvetica Neue';    	
+    	width: 122px;
+		height: 20px;
+		text-decoration: none;
+		//img: url(http://localhost/GitHub/dm/dist/images/icons/footer-icons__twitter.png);
+	}
+.social-icons__email
+	{
+		border: 2px solid;
+		border-radius: 25px;
+		background-color: green;
+
+	}
 .#{$module-name} {
 	width: 100%;
 	min-height: 300px;
@@ -40,6 +60,7 @@ $module-name: 'articles-content';
 		}
 
 		&__by-line {
+			display: inline-block;
 			width: 69%;
 			padding-top: 3px;
 			font-family: OpenSans Regular;
@@ -59,6 +80,7 @@ $module-name: 'articles-content';
 			p {
 				padding-bottom: 0px;
 			}
+			
 		}
 		&__links {
 			width: 31%;
