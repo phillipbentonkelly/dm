@@ -4,12 +4,37 @@ $module-name: 'gallery-widget';
 	width: 100%;
 	max-width: 630px;
 	min-height: 464px;
+	margin-bottom: 40px;
 
 	&__main-wrapper {
-		&__scrolling-wrapper {
+		position: relative;
+		overflow: hidden;
 
+		&__scrolling-wrapper {
+			width: 3150px;
+
+			.slide {
+				display: inline-block;
+				float: left;
+			}
 		}
 	}
+
+	.chevron {
+		@extend .chevron;
+	}
+
+	.chevron.left, .chevron.right {
+		position: absolute;
+		top: 40%;
+	}
+	.chevron.left {
+		left: 20px;
+	}
+	.chevron.right {
+		right: 20px;
+	}
+
 
 	.hidden-caption {
 		display: none;
@@ -46,6 +71,19 @@ $module-name: 'gallery-widget';
 				/*&__show-caption:after {
 					content: "\25B6";
 				}*/
+
+				.chevron {
+					@extend .chevron;
+				}
+
+				.chevron:before {
+					border-width: 0.15em 0.15em 0 0;
+					width: 0.4em;
+					height: 0.4em;
+					left: 7.6em;
+					top: 3px;
+				}
+
 			&__counter {
 				float: right;
 
