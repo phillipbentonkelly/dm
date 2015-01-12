@@ -4,10 +4,12 @@
             <img class="author" src="images/authors/julie-xie.jpg" />
             <h1>Julie Xie</h1>
             <p>Boston.com staff</p>
+
             <a href="javascript:;" class="social-wrapper__twitter">
-                <img src="http://localhost/GitHub/dm/dist/images/icons/footer-icons__twitter.png"
-                style="width:14px;height:10px"
-                >Follow @juliexie</a>
+                <img src="images/icons/icon_twitter-follow.png" />
+                <label>Follow @juliexie</label>
+            </a>
+
             <a href="javascript:;" class="social-icons__email">email</a>
         </div>
         <div class="colRight articles-content__article__links">

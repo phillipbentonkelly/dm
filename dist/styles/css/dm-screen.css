@@ -3877,63 +3877,44 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
   }
 }
 /* line 3, ../sass/partials/page/modules/_articles-content.scss */
-.social-wrapper__twitter {
-  border: 2px solid #cccccc;
-  padding: 1px 4px;
-  background: #e7e7e5;
-  border-radius: 3px;
-  font-family: 'Helvetica Neue';
-  width: 122px;
-  height: 20px;
-  text-decoration: none;
-}
-
-/* line 16, ../sass/partials/page/modules/_articles-content.scss */
-.social-icons__email {
-  border: 2px solid;
-  border-radius: 25px;
-  background-color: green;
-}
-
-/* line 23, ../sass/partials/page/modules/_articles-content.scss */
 .articles-content {
   width: 100%;
   min-height: 300px;
 }
-/* line 27, ../sass/partials/page/modules/_articles-content.scss */
+/* line 7, ../sass/partials/page/modules/_articles-content.scss */
 .articles-content h1 {
   font-family: OpenSans Semibold;
   font-size: 28px;
   margin-bottom: 10px;
   padding-left: 1px;
 }
-/* line 34, ../sass/partials/page/modules/_articles-content.scss */
+/* line 14, ../sass/partials/page/modules/_articles-content.scss */
 .articles-content .tags {
   display: block;
   min-height: 1px;
   overflow: hidden;
   margin-bottom: 10px;
 }
-/* line 42, ../sass/partials/page/modules/_articles-content.scss */
+/* line 22, ../sass/partials/page/modules/_articles-content.scss */
 .articles-content .social-icons {
   margin-bottom: 20px;
 }
-/* line 48, ../sass/partials/page/modules/_articles-content.scss */
+/* line 28, ../sass/partials/page/modules/_articles-content.scss */
 .articles-content__article {
   font-family: OpenSans Regular;
   font-size: 16px;
   line-height: 24px;
   margin-bottom: 30px;
 }
-/* line 54, ../sass/partials/page/modules/_articles-content.scss */
+/* line 34, ../sass/partials/page/modules/_articles-content.scss */
 .articles-content__article p {
   padding-bottom: 20px;
 }
-/* line 58, ../sass/partials/page/modules/_articles-content.scss */
+/* line 38, ../sass/partials/page/modules/_articles-content.scss */
 .articles-content__article__author-link-row {
   margin-bottom: 30px;
 }
-/* line 62, ../sass/partials/page/modules/_articles-content.scss */
+/* line 42, ../sass/partials/page/modules/_articles-content.scss */
 .articles-content__article__by-line {
   display: inline-block;
   width: 69%;
@@ -3941,46 +3922,92 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
   font-family: OpenSans Regular;
   font-size: 12px;
 }
-/* line 69, ../sass/partials/page/modules/_articles-content.scss */
+/* line 49, ../sass/partials/page/modules/_articles-content.scss */
 .articles-content__article__by-line img.author {
   float: left;
   margin: 8px 6px 0 0;
 }
-/* line 74, ../sass/partials/page/modules/_articles-content.scss */
+/* line 54, ../sass/partials/page/modules/_articles-content.scss */
 .articles-content__article__by-line h1 {
   margin: 0px 0 2px 0;
   font-family: OpenSans;
   font-size: 13px;
 }
-/* line 80, ../sass/partials/page/modules/_articles-content.scss */
+/* line 60, ../sass/partials/page/modules/_articles-content.scss */
 .articles-content__article__by-line p {
   padding-bottom: 0px;
 }
-/* line 85, ../sass/partials/page/modules/_articles-content.scss */
+/* line 64, ../sass/partials/page/modules/_articles-content.scss */
+.articles-content__article__by-line a {
+  display: block;
+  float: left;
+}
+/* line 69, ../sass/partials/page/modules/_articles-content.scss */
+.articles-content__article__by-line .social-wrapper__twitter {
+  display: inline-block;
+  height: 18px;
+  overflow: hidden;
+  font-size: 10px;
+  font-weight: bold;
+  color: #32342f;
+  text-decoration: none;
+  background: url(../../images/icons/twitter-follow__background.png) top left repeat-x;
+  border: 1px solid #ccc;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  padding: 0px 5px 0 5px;
+  margin-right: 7px;
+}
+/* line 87, ../sass/partials/page/modules/_articles-content.scss */
+.articles-content__article__by-line .social-wrapper__twitter img {
+  display: inline-block;
+  float: left;
+  margin-top: 2px;
+}
+/* line 93, ../sass/partials/page/modules/_articles-content.scss */
+.articles-content__article__by-line .social-wrapper__twitter label {
+  display: inline-block;
+  line-height: 1.5;
+  float: left;
+  margin: 2px 0 0 5px;
+}
+/* line 101, ../sass/partials/page/modules/_articles-content.scss */
+.articles-content__article__by-line .social-icons__email {
+  display: inline-block;
+  float: left;
+  width: 27px;
+  height: 17px;
+  text-indent: -9000px;
+  overflow: hidden;
+  margin-top: 2px;
+  background: url(../../images/icons/articles-content__author-mailto.png) top left repeat-x;
+}
+/* line 112, ../sass/partials/page/modules/_articles-content.scss */
 .articles-content__article__links {
   width: 31%;
   font-family: OpenSans;
   font-size: 13px;
   font-weight: bold;
 }
-/* line 91, ../sass/partials/page/modules/_articles-content.scss */
+/* line 118, ../sass/partials/page/modules/_articles-content.scss */
 .articles-content__article__links ul {
   margin: 0 0 0 17px;
   padding: 0 0 0 0;
 }
-/* line 95, ../sass/partials/page/modules/_articles-content.scss */
+/* line 122, ../sass/partials/page/modules/_articles-content.scss */
 .articles-content__article__links ul li {
   padding-top: 0;
   padding-bottom: 0;
   margin-top: 0;
   margin-bottom: 0;
 }
-/* line 101, ../sass/partials/page/modules/_articles-content.scss */
+/* line 128, ../sass/partials/page/modules/_articles-content.scss */
 .articles-content__article__links ul li a {
   color: #1a93b0;
   text-decoration: none;
 }
-/* line 109, ../sass/partials/page/modules/_articles-content.scss */
+/* line 136, ../sass/partials/page/modules/_articles-content.scss */
 .articles-content__article .date {
   font-size: 13px;
   font-family: OpenSans Italic;
