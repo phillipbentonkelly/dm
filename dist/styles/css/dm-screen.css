@@ -2467,7 +2467,7 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
 /* line 93, ../sass/partials/page/modules/_contact-form-premium.scss */
 .contact__agent-links {
   color: #2e1460;
-  font-family: 'Open Sans';
+  font-family: 'OpenSans';
   margin-bottom: 0px;
 }
 /* line 97, ../sass/partials/page/modules/_contact-form-premium.scss */
@@ -2479,7 +2479,7 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
 /* line 104, ../sass/partials/page/modules/_contact-form-premium.scss */
 .contact__agent-name {
   margin: 0;
-  font-family: 'Open Sans';
+  font-family: 'OpenSans';
   font-weight: 600;
 }
 /* line 110, ../sass/partials/page/modules/_contact-form-premium.scss */
@@ -2492,7 +2492,7 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
 /* line 118, ../sass/partials/page/modules/_contact-form-premium.scss */
 .contact__agent-address p {
   margin: 0;
-  font-family: 'Open Sans';
+  font-family: 'OpenSans';
   font-size: 11px;
 }
 /* line 125, ../sass/partials/page/modules/_contact-form-premium.scss */
@@ -2527,7 +2527,7 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
   color: white;
   border: none;
   border-radius: 2px;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'OpenSans', sans-serif;
   font-weight: 300;
   font-size: 105%;
   float: right;
@@ -2545,7 +2545,7 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
   background: #2e1460;
   float: right;
   border-radius: 2px;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'OpenSans', sans-serif;
   font-size: 11px;
   font-weight: 700;
   text-transform: uppercase;
@@ -3125,7 +3125,7 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
   border: none;
   border-radius: 3px;
   font-size: 18px;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'OpenSans', sans-serif;
   font-weight: 300;
 }
 
@@ -4214,7 +4214,7 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
 /* line 93, ../sass/partials/page/modules/property-search-results.scss */
 .search-results .share-buttons p {
   display: inline-block;
-  font-family: Open Sans;
+  font-family: OpenSans;
   font-size: 11px;
 }
 /* line 100, ../sass/partials/page/modules/property-search-results.scss */
@@ -4290,7 +4290,7 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
 .search-results .property-info .row1 p, .search-results .property-info .row4 p {
   float: left;
   font-size: 12px;
-  font-family: Open Sans;
+  font-family: OpenSans;
 }
 /* line 176, ../sass/partials/page/modules/property-search-results.scss */
 .search-results .property-info .row2 p, .search-results .property-info .row3 p {
@@ -4300,7 +4300,7 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
   float: left;
   box-sizing: border-box;
   font-size: 12px;
-  font-family: Open Sans;
+  font-family: OpenSans;
   border-top: 1px solid white;
 }
 /* line 187, ../sass/partials/page/modules/property-search-results.scss */

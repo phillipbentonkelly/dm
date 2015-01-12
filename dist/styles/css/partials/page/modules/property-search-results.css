@@ -92,7 +92,7 @@
 /* line 93, ../../../../sass/partials/page/modules/property-search-results.scss */
 .search-results .share-buttons p {
   display: inline-block;
-  font-family: Open Sans;
+  font-family: OpenSans;
   font-size: 11px;
 }
 /* line 100, ../../../../sass/partials/page/modules/property-search-results.scss */
@@ -168,7 +168,7 @@
 .search-results .property-info .row1 p, .search-results .property-info .row4 p {
   float: left;
   font-size: 12px;
-  font-family: Open Sans;
+  font-family: OpenSans;
 }
 /* line 176, ../../../../sass/partials/page/modules/property-search-results.scss */
 .search-results .property-info .row2 p, .search-results .property-info .row3 p {
@@ -178,7 +178,7 @@
   float: left;
   box-sizing: border-box;
   font-size: 12px;
-  font-family: Open Sans;
+  font-family: OpenSans;
   border-top: 1px solid white;
 }
 /* line 187, ../../../../sass/partials/page/modules/property-search-results.scss */
