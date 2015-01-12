@@ -1334,7 +1334,7 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
   height: 44px;
   border-radius: 4px;
   margin: 0 100px 0 0;
-  background: url(../../images/icons/icon_search-magnifiying-glass.png) center center no-repeat black;
+  background: url(../../images/icons/icon_search-magnifiying-glass.png) center center no-repeat #000;
 }
 /* line 212, ../sass/partials/page/_page-search.scss */
 .page-search__button--cancel, .page-search__button--apply {
@@ -2138,7 +2138,7 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
   border-radius: 2px;
-  background: url("../images/icons/magGlass_bg_blk.gif") center center no-repeat black;
+  background: url("../images/icons/magGlass_bg_blk.gif") center center no-repeat #000;
 }
 /* line 61, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel #carousel-wrap, .full-screen-carousel .slide {
@@ -3369,7 +3369,7 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
   margin-top: 2px;
   padding: 0;
   display: inline-block;
-  background: url(../../images/icons/icon_search-magnifiying-glass.png) center center no-repeat black;
+  background: url(../../images/icons/icon_search-magnifiying-glass.png) center center no-repeat #000;
   border: 0;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
@@ -3661,7 +3661,7 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
   }
   /* line 351, ../sass/partials/page/modules/_mega-menu.scss */
   .mega-menu__section--middle .mega-menu__list-item {
-    padding: 10px 45px 10px 0;
+    padding: 5px 45px 5px 0;
     border-top: 1px solid lightgrey;
     font-family: 'OpenSans';
     font-weight: 600;
@@ -4507,3 +4507,5 @@ a, img {
     width: 298px;
   }
 }
+
+/*# sourceMappingURL=dm-screen.css.map */
