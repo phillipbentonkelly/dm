@@ -4043,7 +4043,7 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
 /* line 32, ../sass/partials/page/modules/_gallery-widget.scss */
 .gallery-widget .left.chevron, .gallery-widget .right.chevron {
   position: absolute;
-  top: 40%;
+  top: 200px;
 }
 /* line 36, ../sass/partials/page/modules/_gallery-widget.scss */
 .gallery-widget .left.chevron {
