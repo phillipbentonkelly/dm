@@ -3948,6 +3948,10 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
   min-height: 464px;
 }
 /* line 14, ../sass/partials/page/modules/_gallery-widget.scss */
+.gallery-widget .hidden-caption {
+  display: none;
+}
+/* line 18, ../sass/partials/page/modules/_gallery-widget.scss */
 .gallery-widget__details {
   margin-top: 2px;
   background: #000;
@@ -3960,44 +3964,43 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
   overflow: hidden;
   min-height: 30px;
 }
-/* line 27, ../sass/partials/page/modules/_gallery-widget.scss */
+/* line 31, ../sass/partials/page/modules/_gallery-widget.scss */
 .gallery-widget__details a {
   text-decoration: none;
 }
-/* line 31, ../sass/partials/page/modules/_gallery-widget.scss */
+/* line 35, ../sass/partials/page/modules/_gallery-widget.scss */
 .gallery-widget__details__info-nav {
   clear: both;
   overflow: hidden;
   min-height: 10px;
+  /*&__show-caption:after {
+  	content: "\25B6";
+  }*/
 }
-/* line 36, ../sass/partials/page/modules/_gallery-widget.scss */
+/* line 40, ../sass/partials/page/modules/_gallery-widget.scss */
 .gallery-widget__details__info-nav__show-caption {
   float: left;
   color: #fff;
   text-transform: uppercase;
   font-size: 12px;
 }
-/* line 42, ../sass/partials/page/modules/_gallery-widget.scss */
-.gallery-widget__details__info-nav__show-caption:after {
-  content: "\25B6";
-}
-/* line 45, ../sass/partials/page/modules/_gallery-widget.scss */
+/* line 49, ../sass/partials/page/modules/_gallery-widget.scss */
 .gallery-widget__details__info-nav__counter {
   float: right;
 }
-/* line 57, ../sass/partials/page/modules/_gallery-widget.scss */
+/* line 61, ../sass/partials/page/modules/_gallery-widget.scss */
 .gallery-widget__details__caption {
   display: none;
   clear: both;
   min-height: 10px;
   overflow: hidden;
 }
-/* line 63, ../sass/partials/page/modules/_gallery-widget.scss */
+/* line 67, ../sass/partials/page/modules/_gallery-widget.scss */
 .gallery-widget__details__caption p {
   padding: 0 0 0 0;
-  margin: 0 0 10px 0;
+  margin: 15px 0 10px 0;
 }
-/* line 68, ../sass/partials/page/modules/_gallery-widget.scss */
+/* line 72, ../sass/partials/page/modules/_gallery-widget.scss */
 .gallery-widget__details__caption__photo-credit {
   font-family: OpenSans Italic;
   font-size: 12px;
