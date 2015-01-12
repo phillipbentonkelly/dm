@@ -160,6 +160,9 @@
 
 			<!-- SEARCH PAGE -->
 			<?php if ($pageType == 'serp') { ?>
+				<!-- Search Result -->
+				<?php include 'page-content/modules/property-search-result.php'; ?>
+
 				<!-- Related Articles -->
 				<?php include 'page-content/modules/related-articles.php'; ?>
 			<?php } ?>
@@ -225,7 +228,7 @@
 			<!-- SEARCH PAGE -->
 			<?php if ($pageType == 'serp') { ?>
 				<!-- Contact The Agent Widget -->
-				<?php include 'page-content/modules/contact-the-agent.php'; ?>
+				<?php include 'page-content/modules/search-map.php'; ?>
 
 				<!-- DFP Ad - Experience the Difference -->
 				<?php include 'ads/dfp-ads__experience-the-difference.php'; ?>
