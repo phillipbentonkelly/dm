@@ -71,4 +71,5 @@ if (typeof bdc === 'undefined') { bdc = {}; }
     	console.log(info);
     };
 
+
 })(window, jQuery);
