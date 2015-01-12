@@ -175,19 +175,11 @@
 /* line 180, ../../../../sass/partials/page/modules/property-search-results.scss */
 .search-results .property-info .row5 {
   float: left;
-<<<<<<< HEAD
 }
 /* line 183, ../../../../sass/partials/page/modules/property-search-results.scss */
 .search-results .property-info .row5 .description {
   display: none;
 }
-=======
-}
-/* line 183, ../../../../sass/partials/page/modules/property-search-results.scss */
-.search-results .property-info .row5 .description {
-  display: none;
-}
->>>>>>> 21fcc25b3e7b6438f9322dc5450988c40169f712
 /* line 189, ../../../../sass/partials/page/modules/property-search-results.scss */
 .search-results .property-info {
   display: block;
@@ -211,21 +203,12 @@
 .search-results .realtor-info--middle {
   width: 20%;
   padding: 0 15px;
-<<<<<<< HEAD
 }
 /* line 214, ../../../../sass/partials/page/modules/property-search-results.scss */
 .search-results .realtor-info--middle img {
   max-width: 50px;
   max-height: 60px;
 }
-=======
-}
-/* line 214, ../../../../sass/partials/page/modules/property-search-results.scss */
-.search-results .realtor-info--middle img {
-  max-width: 50px;
-  max-height: 60px;
-}
->>>>>>> 21fcc25b3e7b6438f9322dc5450988c40169f712
 /* line 220, ../../../../sass/partials/page/modules/property-search-results.scss */
 .search-results .realtor-info--left {
   padding-top: 15px;
@@ -282,8 +265,5 @@
     text-align: left;
   }
 }
-<<<<<<< HEAD
 
 /*# sourceMappingURL=property-search-results.css.map */
-=======
->>>>>>> 21fcc25b3e7b6438f9322dc5450988c40169f712
