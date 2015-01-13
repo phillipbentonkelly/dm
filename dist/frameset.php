@@ -66,14 +66,6 @@
         <script src="js/assets/searchPanel.js"></script>
         <script>
             $(document).ready(function(){ 
-<<<<<<< HEAD
-
-            	if('#listingDropDown'){
-                	$("#listingDropDown").select2({ dropdownCssClass: 'mplistings-dropdown' });
-            	}
-
-=======
->>>>>>> FETCH_HEAD
                 if ($(window).width() > 752) {
 	                $('.page-layout__left-col').width($(window).width() - 320);
 	            };
