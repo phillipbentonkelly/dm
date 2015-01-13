@@ -15,7 +15,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>DM | Serp</title>
     <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name=viewport content="width=device-width, initial-scale=1">
 
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     
@@ -31,31 +31,16 @@
     <script src="js/resources/jquery.min.js"></script>
     	<script src="js/assets/mega-menu.js"></script>
     	<script src="js/assets/searchPanel.js"></script>
+    	<script src="js/assets/responsive-gallery.js"></script>
 
 				
 				
 		
 		<script src="js/resources/plugins/selectize/selectize.js"></script>
         <script src="js/resources/plugins/select2/select2.js"></script>
+        <script src="js/assets/searchPanel.js"></script>
         <script>
             $(document).ready(function(){ 
-                $('.page-search__dropdown--wide').selectize();               
-                $('.page-search__dropdown--filter, .page-search__dropdown--filter-wide').select2();
-                $("#listingDropDown").select2({ dropdownCssClass: 'mplistings-dropdown' });
-                $('.select2-search').hide();
-
-                $('.page-search__row--bottom').hide();
-
-                $('.page-search__button--search-arrow').bind('click', function(e){
-                    e.preventDefault();
-                    $('.page-search__row--bottom').toggle();
-                    $(this).children('span').toggle();
-                });
-
-                $('#priceRange').bind('click', function(e){
-                    e.preventDefault();
-                });
-
                 if ($(window).width() > 752) {
 	                $('.page-layout__left-col').width($(window).width() - 320);
 	            };
@@ -71,7 +56,8 @@
         </script>
 
 </head>
-<body class='page--serp serp'>
+<body class='page-section serp'>
+
 	<!-- Page Masthead -->
     <!-- Page Masthead -->
 <div class="masthead">
@@ -310,151 +296,273 @@
     </div>
 </div>
 <!-- Page Nav -->
-    <!-- Page Nav -->
     
-<!-- Page Search -->
-<div class="page-search page-search__serp">
+    <!-- Page Search -->
+    
+        <!-- Page Search -->
+<div class="page-search">
     <div class="page-search__content-wrapper">
         <form class="page-search__form">
-            <div class="page-search__row">
-                <input type="search" name="q" class="page-search__search-text" placeholder="Search for real estate listings or articles. ex: 3 bedroom for sale in Brookline under 1,000,000" />
 
-                <div class="page-search__radio-container page-search__radio-container--serp">
-                    <div class="page-search__fancy-radio-box page-search__fancy-radio-box--for-sale">
-                        <input type="radio" id="forSale" name="buy_or_rent" value="ForSale" checked="checked" />
-                        <label for="forSale" class="for-sale">For Sale</label>
-                    </div>
+            <div class="page-search__row page-search__row--level-one">
 
-                    <div class="page-search__fancy-radio-box page-search__fancy-radio-box--for-rent">
-                        <input type="radio" id="forRent" name="buy_or_rent" value="ForRent" checked="checked" /> 
-                        <label for="forRent" class="for-rent" >For Rent</label>
-                    </div>
-                </div>
-
-                <select class="page-search__dropdown page-search__dropdown--filter-wide" id="priceRange" name="price_range" placeholder="$300K-$24M">
-                    <option value="$300K-$24M">$300K-$24M</option>
+                <select class="page-search__dropdown page-search__dropdown--main" name="q">
+                    <option value="Boston">Boston</option>
+                    <option value="Brookline">Brookline</option>
+                    <option value="Cambridge">Cambridge</option>
+                    <option value="Somerville">Somerville</option>
+                    <option value="Waltham">Waltham</option>
+                    <option value="Braintree">Braintree</option>
+                    <option value="Newton">Newton</option>
                 </select>
-
-                <select class="page-search__dropdown page-search__dropdown--filter" id="beds" name="beds">
-                    <option value="" selected="selected">Beds</option>
-                    <option value="0">0</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5+">5+</option>
-                </select>
-
-                <select class="page-search__dropdown page-search__dropdown--filter" id="baths" name="baths">
-                    <option value="Baths" selected="selected">Baths</option>
-                    <option value="0">0</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5+">5+</option>
-                </select>
-
-                <select class="page-search__dropdown page-search__dropdown--filter" id="homeType" name="home_type">
-                    <option value="HomeType" selected="selected">HomeType</option>
-                    <option value="Single-Family">Single-Family</option>
-                    <option value="Multi-Family">Multi-Family</option>
-                    <option value="Apartment">Apartment</option>
-                    <option value="Co-op/Condo">Co-op/Condo</option>
-                    <option value="Townhome">Townhome</option>
-                    <option value="Manufactured">Manufactured</option>
-                    <option value="Lot/Land">Land/Lot</option>
-                </select>
-
-                <select class="page-search__dropdown page-search__dropdown--filter" id="moreOptions" name="more_options">More (4)
-                </select>
-
-                <button class="page-search__button page-search__button--save-search" value="">
-                    <span>Save Search</span>
+                <button class="page-search__button page-search__button--level-two-toggle desktop">           
+                    <span class="down-arrow"></span>
+                    <span class="up-arrow" style="display:none;"></span>                           
+                </button>
+                <button class="page-search__button page-search__button--level-two-toggle mobile">
+                    <b>Filters</b>
+                    <span class="plus">+</span>
+                    <span class="minus" style="display: none;">-</span>
                 </button>
 
-                <button class="page-search__button page-search__button--submit" value=""></button>
+                <button class="page-search__button page-search__button--apply mobile">
+                    <span>Apply</span>
+                </button>
+
+                <button class="page-search__button page-search__button--cancel mobile">
+                    <span>Cancel</span>
+                </button>
+                
+                <button class="page-search__button page-search__button--submit desktop" value=""></button>
+
             </div>
-            
-                            <div class="page-search__menu-panel" id="moreOptionsPanel">
-                    <div class="page-search__row">
-                        <div class="page-search__button--close"></div>
 
-                        <div class="col">
-                            <section class="filters-list">
-                                <h4>Filter By</h4>
-                                <ul>
-                                    <li><input type="checkbox" id="openHouses" name="open_houses" />
-                                        <label for="openHouses">Open Houses</label>
-                                    </li>
+            <div class="page-search__row page-search__row--level-two">
 
-                                    <li><input type="checkbox" id="newListings" name="new_listings" />
-                                        <label for="newListings">New Listings</label>
-                                    </li>
-
-                                    <li><input type="checkbox" id="reducedPrice" name="reduced_price" />
-                                        <label for="reducedPrice">Reduced Price</label>
-                                    </li>
-
-                                    <li><input type="checkbox" id="newDevelopments" name="new_developments" />
-                                        <label for="newDevelopments">New Developments</label>
-                                    </li>
-
-                                    <li><input type="checkbox" id="sold" name="sold" />
-                                        <label for="sold">Sold</label>
-                                    </li>
-
-                                    <li><input type="checkbox" id="forclosures" name="forclosures" />
-                                        <label for="forclosures">Forclosures</label>
-                                    </li>
-                                </ul>
-                            </section>
+                <section class="page-search__section" title="Type">
+                    <h4 class="mobile">Type</h4>
+                    <div class="page-search__container page-search__container--radio">
+                        <div class="page-search__fancy-radio-box page-search__fancy-radio-box--for-sale">
+                            <input type="radio" id="forSale" name="buy_or_rent" value="ForSale" checked>
+                            </input>
+                            <label for="forSale" class="for-sale">For Sale</label>
                         </div>
 
-                        <div class="col">
-                            <section id="sqFt">
-                                <h4>Square Feet</h4>
-                                <input type="text" class="page-search__input-numeric" name="sq_ft_min" placeholder="Min" />&nbsp;&dash;&nbsp;<input type="text" class="page-search__input-numeric" name="sq_ft_max" placeholder="Max" />
-                            </section>
-
-                            <section id="lotSz">
-                                <h4>Lot Size</h4>
-                                <input type="text" class="page-search__input-numeric" name="lot_sz_min" placeholder="Min" />&nbsp;&dash;&nbsp;<input type="text" class="page-search__input-numeric" name="lot_sz_max" placeholder="Max" />
-                            </section>
-
-                            <section id="yrsBuilt" title="Years Built">
-                                <h4>Years Built</h4>
-                                <input type="text" class="page-search__input-numeric" name="yrs_built_min" placeholder="Min" />&nbsp;&dash;&nbsp;<input type="text" class="page-search__input-numeric" name="yrs_built_max" placeholder="Max" />
-                            </section>
-                        </div>
-
-                        <div class="col">
-                            <section id="daysOnMkt" title="Days On Market">
-                                <h4>Days On Market</h4>
-
-                                <select class="page-search__dropdown" name="days_on_mkt">
-                                    <option></option>
-                                </select>
-                            </section>
-
-                            <section id="keywords" title="Keywords">
-                                <h4>Keywords</h4>
-                                <input type="text" />
-                            </section>
-                        </div>
-
-                        <div class="col">
-                            <section id="findByMLS" title="Find by MLS">
-                                <h4>Find by MLS</h4>
-                                <input type="search" />
-                            </section>
+                        <div class="page-search__fancy-radio-box page-search__fancy-radio-box--for-rent">
+                            <input type="radio" id="forRent" name="buy_or_rent" value="ForRent"></input> 
+                            <label for="forRent" class="for-rent" >For Rent</label>
                         </div>
                     </div>
+                </section>
+
+                <section class="page-search__section" title="Price">
+                    <h4 class="mobile">Price</h4>
+                    <div class="page-search__container page-search__container--range price-range-container">
+                        <input type="text" class="page-search__input page-search__input--numeric" name="price_range_min" placeholder="$300K">
+                        </input>
+                        &mdash;&nbsp;
+                        <input type="text" class="page-search__input page-search__input--numeric" name="price_range_max" placeholder="$24M">
+                        </input>
+                    </div>
+                </section>
+
+                <section class="page-search__section" title="Beds">
+                    <h4 class="mobile">Beds</h4>
+                    <select class="page-search__dropdown page-search__dropdown--filter" name="beds">
+                        <option value="" selected>Beds</option>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5+">5+</option>
+                    </select>
+                </section>
+
+                <section class="page-search__section" title="Baths">
+                    <h4 class="mobile">Baths</h4>
+                    <select class="page-search__dropdown page-search__dropdown--filter" name="baths">
+                        <option value="" selected>Baths</option>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5+">5+</option>
+                    </select>
+                </section>
+
+                <section class="page-search__section" title="Home Type">
+                    <h4 class="mobile">Home Type</h4>
+                    <select class="page-search__dropdown page-search__dropdown--filter" name="home_type">
+                        <option value="" selected="selected">Home Type</option>
+                        <option value="Single-Family">Single-Family</option>
+                        <option value="Multi-Family">Multi-Family</option>
+                        <option value="Apartment">Apartment</option>
+                        <option value="Co-op/Condo">Co-op/Condo</option>
+                        <option value="Townhome">Town Home</option>
+                        <option value="Manufactured">Manufactured</option>
+                        <option value="Lot/Land">Land/Lot</option>
+                    </select>
+                </section>
+
+                <button class="page-search__button page-search__button--level-three-toggle desktop" id="moreOptions" name="more_options">
+                    <span class="select2-chosen">More</span>
+                    <span class="select2-arrow" role="presentation">
+                        <b role="presentation"></b>
+                    </span>
+                </select>
+
+                <button class="page-search__button page-search__button--save desktop" value="saved">
+                    <span class="save-search">Save Search</span>
+                    <span class="saved" style="display:none;">Saved!</span>
+                </button>
+            </div>
+
+            <div class="page-search__row page-search__row--level-three">
+
+                
+                <div class="page-search__button page-search__button--close desktop">
+                    <span>X</span>
                 </div>
-                    </form>
+                
+
+                    <div class="col">
+
+                        <section class="page-search__section" id="subtypes" title="Subtypes">
+
+                            <h4 class="desktop">Filter By</h4>
+                            <h4 class="mobile">Subtype</h4>
+
+                            <ul>
+                                <li class="page-search__list-item">
+                                    <div class="page-search__fancy-checkbox">
+                                        <input type="checkbox" id="openHouses" name="open_houses"></input>
+                                        <label for="openHouses">Open Houses</label>
+                                    </div>
+                                </li>
+
+                                <li class="page-search__list-item">
+                                    <div class="page-search__fancy-checkbox">
+                                        <input type="checkbox" id="newListings" name="new_listings"></input>
+                                        <label for="newListings">New Listings</label>
+                                    </div>
+                                </li>
+
+                                <li class="page-search__list-item">
+                                    <div class="page-search__fancy-checkbox">
+                                        <input type="checkbox" id="reducedPrice" name="reduced_price"></input>
+                                        <label for="reducedPrice">Reduced Price</label>
+                                    </div>
+                                </li>
+
+                                <li class="page-search__list-item">
+                                    <div class="page-search__fancy-checkbox">
+                                        <input type="checkbox" id="newDevelopments" name="new_developments"></input>
+                                         <label for="newDevelopments">New Developments</label>
+                                    </div>
+                                </li>
+
+                                <li class="page-search__list-item">
+                                    <div class="page-search__fancy-checkbox">
+                                        <input type="checkbox" id="sold" name="sold"></input>
+                                        <label for="sold">Sold</label>
+                                    </div>
+                                </li>
+
+                                <li class="page-search__list-item">
+                                    <div class="page-search__fancy-checkbox">
+                                        <input type="checkbox" id="forclosures" name="forclosures"></input>
+                                        <label for="forclosures">Forclosures</label>
+                                    </div>
+                                </li>
+
+                            </ul>
+
+                        </section>
+
+                    </div>
+
+                <div class="col">
+                    
+                    <section class="page-search__section" id="sqFt" title="Square Feet">
+                        <h4>Square Feet</h4>
+
+                        <div class="page-search__container page-search__container--range">
+                            <input type="text" class="page-search__input page-search__input--numeric" name="sq_ft_min" placeholder="Min"></input>
+                                &mdash;&nbsp;
+                            <input type="text" class="page-search__input page-search__input--numeric" name="sq_ft_max" placeholder="Max"></input>
+                        </div>
+
+                    </section>
+
+                    <section class="page-search__section" id="lotSz" title="Lot Size">
+                        <h4>Lot Size</h4>
+                        <div class="page-search__container page-search__container--range">
+                            <input type="text" class="page-search__input page-search__input--numeric" name="lot_sz_min" placeholder="Min"></input>
+                                &mdash;&nbsp;
+                            <input type="text" class="page-search__input page-search__input--numeric" name="lot_sz_max" placeholder="Max"></input>
+                        </div>
+
+                    </section>
+
+                    <section class="page-search__section" id="yrsBuilt" title="Years Built">
+                        <h4>Years Built</h4>
+
+                        <div class="page-search__container page-search__container--range">
+                            <input type="text" class="page-search__input page-search__input--numeric" name="yrs_built_min" placeholder="Min"></input>
+                                &mdash;&nbsp;
+                            <input type="text" class="page-search__input page-search__input--numeric" name="yrs_built_max" placeholder="Max">
+                            </input>
+                        </div>
+
+                    </section>
+
+                </div>
+
+                <div class="col">
+
+                    <section class="page-search__section" id="daysOnMkt" title="Days On Market">
+                        <h4>Days On Market</h4>
+
+                        <select class="page-search__dropdown page-search__dropdown--filter-advanced" name="days_on_mkt">
+                            <option value="" selected="selected">Any</option>
+                            <option value="1 day">1 day</option> 
+                            <option value="7 days">7 days</option> 
+                            <option value="14 days">14 days</option>
+                            <option value="1 month">1 month</option> 
+                            <option value="3 months">3 months</option> 
+                            <option value="6 months">6 month</option> 
+                            <option value="1 year">1 year</option> 
+                            <option value="2 years+">2 years+</option>
+                        </select>
+
+                    </section>
+
+                    <section class="page-search__section page-search__section--tokenize" id="keywords" title="Keywords">
+                        <h4>Keywords</h4>
+                        <span class="helper">(comma separated)</span>
+
+                        <input type="text" class="page-search__input page-search__input--tokenize" name="keywords"></input>
+                    </section>
+
+                </div>
+
+                <div class="col">
+
+                    <section class="page-search__section" id="findByMLS" title="Find by MLS">
+                        <h4>Find by MLS</h4>
+
+                        <input type="text" class="page-search__input page-search__input--text" name="mls_id"></input>
+                    </section>
+
+                </div>
+            </div>
+        </form>
     </div>
 </div>
-<!-- Page Search -->	
+<!-- Page Search -->    
+	
 		
 	
 	
@@ -474,7 +582,241 @@
 						
 
 			<!-- SEARCH PAGE -->
-							<!-- Related Articles -->
+							<!-- Search Result -->
+				<!-- SERP SEARCH RESULTS-->
+<div class='search-results'>
+    <div class='search-results__item'>
+
+        <div class='header'>
+            <a href='javascript:;'><p class='address'>101 Fernwood Road, Brookline, Ma</p></a>
+            <div class='share-buttons'>
+
+                <div class='share-block'>
+                    <p>share</p>
+
+                    <a class='share-link--share' href='javascript:;'>
+                        <div class='share-button--share'></div>
+                    </a>
+                </div>
+
+                <a class='share-link--heart' href='javascript:;'>
+                    <div class='share-button--heart'></div>
+                </a>
+
+            </div>
+        </div>
+
+        <div class='left-col'>
+            <div class='property-images'>
+                <img src='images/neighborhoods/top-neighborhoods__entry__1.jpg'/>
+                <div class='photo-count'>18 Photos</div>
+                <div class='photo-arrows'>
+                    <a href='javascript:;'><img class='photo-arrow-left' src='images/listings/arrow-icon-black.png'/></a>
+                    <a href='javascript:;'><img class='photo-arrow-right' src='images/listings/arrow-icon-black.png'/></a>
+                </div>
+            </div>
+        </div>
+            
+        <div class='right-col'>
+            <div class='property-info'>
+                <div class='row1'>
+                    <p class='price'>$18,000,000</p>
+                    <p class='house-type'>Co-op/Condo</p>
+                </div>
+
+                <div class='row2'>
+                    <p class='sqfeet'>10,000 Sq. Ft.</p>
+                    <p class='beds'>5 Beds</p>
+                </div>
+
+                <div class='row3'>
+                    <p class='baths'>6 Baths</p>
+                    <p class='partials'>3 Partial</p>
+                </div>
+
+                <div class='row4'>
+                    <p class='house-type'>Co-op/Condo</p>
+                    <p class='description'>Secluded single floor residence with gated drive set on a lush cul-de-sac. Designed by architect Adolfo Perez.</p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class='realtor-info'>
+            <div class='realtor-info--left'>
+                <img class='realtor-company' src='http://www.vanguard-realty.com/files/2013/06/innerpage-logo.png'/>
+            </div>
+
+            <div class='realtor-info--middle'>
+                <img class='realtor-img' src='http://newlistingphotos.com/wp-content/uploads/2011/04/Blog.jpg'/>
+            </div>
+
+            <div class='realtor-info--right'>
+                <button class='realtor-contact'>Contact</button>
+                <p class='realtor-name'>Blake Sherwood</p>
+            </div>
+        </div>
+
+    </div>                
+</div>
+<!-- /SERP SEARCH RESULTS -->
+
+<!-- SERP SEARCH RESULTS-->
+<div class='search-results'>
+    <div class='search-results__item'>
+
+        <div class='header'>
+            <a href='javascript:;'><p class='address'>101 Fernwood Road, Brookline, Ma</p></a>
+            <div class='share-buttons'>
+
+                <div class='share-block'>
+                    <p>share</p>
+
+                    <a class='share-link--share' href='javascript:;'>
+                        <div class='share-button--share'></div>
+                    </a>
+                </div>
+
+                <a class='share-link--heart' href='javascript:;'>
+                    <div class='share-button--heart'></div>
+                </a>
+
+            </div>
+        </div>
+
+        <div class='left-col'>
+            <div class='property-images'>
+                <img src='images/neighborhoods/top-neighborhoods__entry__1.jpg'/>
+                <div class='photo-count'>18 Photos</div>
+                <div class='photo-arrows'>
+                    <a href='javascript:;'><img class='photo-arrow-left' src='images/listings/arrow-icon-black.png'/></a>
+                    <a href='javascript:;'><img class='photo-arrow-right' src='images/listings/arrow-icon-black.png'/></a>
+                </div>
+            </div>
+        </div>
+            
+        <div class='right-col'>
+            <div class='property-info'>
+                <div class='row1'>
+                    <p class='price'>$18,000,000</p>
+                    <p class='house-type'>Co-op/Condo</p>
+                </div>
+
+                <div class='row2'>
+                    <p class='sqfeet'>10,000 Sq. Ft.</p>
+                    <p class='beds'>5 Beds</p>
+                </div>
+
+                <div class='row3'>
+                    <p class='baths'>6 Baths</p>
+                    <p class='partials'>3 Partial</p>
+                </div>
+
+                <div class='row4'>
+                    <p class='house-type'>Co-op/Condo</p>
+                    <p class='description'>Secluded single floor residence with gated drive set on a lush cul-de-sac. Designed by architect Adolfo Perez.</p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class='realtor-info'>
+            <div class='realtor-info--left'>
+                <img class='realtor-company' src='http://www.vanguard-realty.com/files/2013/06/innerpage-logo.png'/>
+            </div>
+
+            <div class='realtor-info--middle'>
+                <img class='realtor-img' src='http://newlistingphotos.com/wp-content/uploads/2011/04/Blog.jpg'/>
+            </div>
+
+            <div class='realtor-info--right'>
+                <button class='realtor-contact'>Contact</button>
+                <p class='realtor-name'>Blake Sherwood</p>
+            </div>
+        </div>
+
+    </div>                
+</div>
+<!-- /SERP SEARCH RESULTS -->
+
+<!-- SERP SEARCH RESULTS-->
+<div class='search-results'>
+    <div class='search-results__item'>
+
+        <div class='header'>
+            <a href='javascript:;'><p class='address'>101 Fernwood Road, Brookline, Ma</p></a>
+            <div class='share-buttons'>
+
+                <div class='share-block'>
+                    <p>share</p>
+
+                    <a class='share-link--share' href='javascript:;'>
+                        <div class='share-button--share'></div>
+                    </a>
+                </div>
+
+                <a class='share-link--heart' href='javascript:;'>
+                    <div class='share-button--heart'></div>
+                </a>
+
+            </div>
+        </div>
+
+        <div class='left-col'>
+            <div class='property-images'>
+                <img src='images/neighborhoods/top-neighborhoods__entry__1.jpg'/>
+                <div class='photo-count'>18 Photos</div>
+                <div class='photo-arrows'>
+                    <a href='javascript:;'><img class='photo-arrow-left' src='images/listings/arrow-icon-black.png'/></a>
+                    <a href='javascript:;'><img class='photo-arrow-right' src='images/listings/arrow-icon-black.png'/></a>
+                </div>
+            </div>
+        </div>
+            
+        <div class='right-col'>
+            <div class='property-info'>
+                <div class='row1'>
+                    <p class='price'>$18,000,000</p>
+                    <p class='house-type'>Co-op/Condo</p>
+                </div>
+
+                <div class='row2'>
+                    <p class='sqfeet'>10,000 Sq. Ft.</p>
+                    <p class='beds'>5 Beds</p>
+                </div>
+
+                <div class='row3'>
+                    <p class='baths'>6 Baths</p>
+                    <p class='partials'>3 Partial</p>
+                </div>
+
+                <div class='row4'>
+                    <p class='house-type'>Co-op/Condo</p>
+                    <p class='description'>Secluded single floor residence with gated drive set on a lush cul-de-sac. Designed by architect Adolfo Perez.</p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class='realtor-info'>
+            <div class='realtor-info--left'>
+                <img class='realtor-company' src='http://www.vanguard-realty.com/files/2013/06/innerpage-logo.png'/>
+            </div>
+
+            <div class='realtor-info--middle'>
+                <img class='realtor-img' src='http://newlistingphotos.com/wp-content/uploads/2011/04/Blog.jpg'/>
+            </div>
+
+            <div class='realtor-info--right'>
+                <button class='realtor-contact'>Contact</button>
+                <p class='realtor-name'>Blake Sherwood</p>
+            </div>
+        </div>
+
+    </div>                
+</div>
+<!-- /SERP SEARCH RESULTS -->
+				<!-- Related Articles -->
 				<!-- Related Articles -->
 <div class="related-articles">
     <h1 class="related-articles__section-header">Related Articles</h1>
@@ -616,37 +958,11 @@
 			
 			<!-- SEARCH PAGE -->
 							<!-- Contact The Agent Widget -->
-				<!-- Contact the Agent -->
-<div class='contact__container'>
-    <div class='contact__header'>
-        <p>Contact the Agent</p>
-    </div>
-
-    <div class='contact__wrapper'>
-            <img class='contact__agent-img' src='http://commissionsforeducation.org/wp-content/uploads/2011/01/daniellenewheadcrop.jpg'>
-        <div class='contact__agent-info'>
-            <p class='contact__agent-name'>Deborah M. Gordon</p>
-            <div class='contact__agent-links'>
-                <a class='contact__agent-number' href='#'>View My Contact Number</a>
-                <a class='contact__agent-website' href='#'>Visit My Website</a>
-            </div>
-            <div class='contact__agent-address'>
-                <p>1375 Beacon St</p>
-                <p>Brookline, MA 02446</p>
-            </div>
-        </div>
-        
-        <div class='contact__form'>
-            <p class='contact__form-required'><span>* </span>Required</p>
-            <input class='contact__form-name' placeholder='Name'/><span class='contact__required-marker'>*</span>
-            <input class='contact__form-name' placeholder='Email'/><span class='contact__required-marker'>*</span>
-            <input class='contact__form-name' placeholder='Phone Number'/>
-            <textarea class='contact__form-name' placeholder='Hi Deborah, I found your listing on Boston.com. Please send me more infomation about 101 Fernwood Rd, Brookline, MA. Thank you'></textarea>
-            <button class='contact__form-submit'>Send</button>
-        </div>
-    </div>
+				<div class='map-header' style='text-align:right;margin:20px 0 5px 0;padding:15px;background:lightgrey;'>
+	<p>Redo search on move</p>
 </div>
-<!-- Contact the Agent -->
+
+<div class='map-placeholder' style='height:300px;width:100%;border: 1px solid black;box-sizing:border-box;'></div>
 				<!-- DFP Ad - Experience the Difference -->
 				<a href="javascript:;" class="dfp-ads">
     <img src="images/ads/dfp/dfpAds__300by250__coldwell-banker.jpg" />

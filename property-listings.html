@@ -15,7 +15,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>DM | Property-listings</title>
     <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name=viewport content="width=device-width, initial-scale=1">
 
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     
@@ -31,34 +31,21 @@
     <script src="js/resources/jquery.min.js"></script>
     	<script src="js/assets/mega-menu.js"></script>
     	<script src="js/assets/searchPanel.js"></script>
+    	<script src="js/assets/responsive-gallery.js"></script>
 
 				
 				    <!-- Real Estate Listings -->
 	        <script src="js/assets/mpListings.js"></script>
 	        <script src="js/assets/listings.data.js"></script>
+	        <script src="js/resources/basic/js/jquery.simplemodal.js"></script>
+	        <script src="js/assets/popup.js"></script>
 				
 		
 		<script src="js/resources/plugins/selectize/selectize.js"></script>
         <script src="js/resources/plugins/select2/select2.js"></script>
+        <script src="js/assets/searchPanel.js"></script>
         <script>
             $(document).ready(function(){ 
-                $('.page-search__dropdown--wide').selectize();               
-                $('.page-search__dropdown--filter, .page-search__dropdown--filter-wide').select2();
-                $("#listingDropDown").select2({ dropdownCssClass: 'mplistings-dropdown' });
-                $('.select2-search').hide();
-
-                $('.page-search__row--bottom').hide();
-
-                $('.page-search__button--search-arrow').bind('click', function(e){
-                    e.preventDefault();
-                    $('.page-search__row--bottom').toggle();
-                    $(this).children('span').toggle();
-                });
-
-                $('#priceRange').bind('click', function(e){
-                    e.preventDefault();
-                });
-
                 if ($(window).width() > 752) {
 	                $('.page-layout__left-col').width($(window).width() - 320);
 	            };
@@ -74,7 +61,8 @@
         </script>
 
 </head>
-<body class='page--property-listings'>
+<body class='page-section property-listings'>
+
 	<!-- Page Masthead -->
     <!-- Page Masthead -->
 <div class="masthead">
@@ -313,76 +301,273 @@
     </div>
 </div>
 <!-- Page Nav -->
-    <!-- Page Nav -->
     
-<!-- Page Search -->
-<div class="page-search page-search__serp">
+    <!-- Page Search -->
+    
+        <!-- Page Search -->
+<div class="page-search">
     <div class="page-search__content-wrapper">
         <form class="page-search__form">
-            <div class="page-search__row">
-                <input type="search" name="q" class="page-search__search-text" placeholder="Search for real estate listings or articles. ex: 3 bedroom for sale in Brookline under 1,000,000" />
 
-                <div class="page-search__radio-container page-search__radio-container--serp">
-                    <div class="page-search__fancy-radio-box page-search__fancy-radio-box--for-sale">
-                        <input type="radio" id="forSale" name="buy_or_rent" value="ForSale" checked="checked" />
-                        <label for="forSale" class="for-sale">For Sale</label>
-                    </div>
+            <div class="page-search__row page-search__row--level-one">
 
-                    <div class="page-search__fancy-radio-box page-search__fancy-radio-box--for-rent">
-                        <input type="radio" id="forRent" name="buy_or_rent" value="ForRent" checked="checked" /> 
-                        <label for="forRent" class="for-rent" >For Rent</label>
-                    </div>
-                </div>
-
-                <select class="page-search__dropdown page-search__dropdown--filter-wide" id="priceRange" name="price_range" placeholder="$300K-$24M">
-                    <option value="$300K-$24M">$300K-$24M</option>
+                <select class="page-search__dropdown page-search__dropdown--main" name="q">
+                    <option value="Boston">Boston</option>
+                    <option value="Brookline">Brookline</option>
+                    <option value="Cambridge">Cambridge</option>
+                    <option value="Somerville">Somerville</option>
+                    <option value="Waltham">Waltham</option>
+                    <option value="Braintree">Braintree</option>
+                    <option value="Newton">Newton</option>
                 </select>
-
-                <select class="page-search__dropdown page-search__dropdown--filter" id="beds" name="beds">
-                    <option value="" selected="selected">Beds</option>
-                    <option value="0">0</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5+">5+</option>
-                </select>
-
-                <select class="page-search__dropdown page-search__dropdown--filter" id="baths" name="baths">
-                    <option value="Baths" selected="selected">Baths</option>
-                    <option value="0">0</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5+">5+</option>
-                </select>
-
-                <select class="page-search__dropdown page-search__dropdown--filter" id="homeType" name="home_type">
-                    <option value="HomeType" selected="selected">HomeType</option>
-                    <option value="Single-Family">Single-Family</option>
-                    <option value="Multi-Family">Multi-Family</option>
-                    <option value="Apartment">Apartment</option>
-                    <option value="Co-op/Condo">Co-op/Condo</option>
-                    <option value="Townhome">Townhome</option>
-                    <option value="Manufactured">Manufactured</option>
-                    <option value="Lot/Land">Land/Lot</option>
-                </select>
-
-                <select class="page-search__dropdown page-search__dropdown--filter" id="moreOptions" name="more_options">More (4)
-                </select>
-
-                <button class="page-search__button page-search__button--save-search" value="">
-                    <span>Save Search</span>
+                <button class="page-search__button page-search__button--level-two-toggle desktop">           
+                    <span class="down-arrow"></span>
+                    <span class="up-arrow" style="display:none;"></span>                           
+                </button>
+                <button class="page-search__button page-search__button--level-two-toggle mobile">
+                    <b>Filters</b>
+                    <span class="plus">+</span>
+                    <span class="minus" style="display: none;">-</span>
                 </button>
 
-                <button class="page-search__button page-search__button--submit" value=""></button>
+                <button class="page-search__button page-search__button--apply mobile">
+                    <span>Apply</span>
+                </button>
+
+                <button class="page-search__button page-search__button--cancel mobile">
+                    <span>Cancel</span>
+                </button>
+                
+                <button class="page-search__button page-search__button--submit desktop" value=""></button>
+
             </div>
-            
-                    </form>
+
+            <div class="page-search__row page-search__row--level-two">
+
+                <section class="page-search__section" title="Type">
+                    <h4 class="mobile">Type</h4>
+                    <div class="page-search__container page-search__container--radio">
+                        <div class="page-search__fancy-radio-box page-search__fancy-radio-box--for-sale">
+                            <input type="radio" id="forSale" name="buy_or_rent" value="ForSale" checked>
+                            </input>
+                            <label for="forSale" class="for-sale">For Sale</label>
+                        </div>
+
+                        <div class="page-search__fancy-radio-box page-search__fancy-radio-box--for-rent">
+                            <input type="radio" id="forRent" name="buy_or_rent" value="ForRent"></input> 
+                            <label for="forRent" class="for-rent" >For Rent</label>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="page-search__section" title="Price">
+                    <h4 class="mobile">Price</h4>
+                    <div class="page-search__container page-search__container--range price-range-container">
+                        <input type="text" class="page-search__input page-search__input--numeric" name="price_range_min" placeholder="$300K">
+                        </input>
+                        &mdash;&nbsp;
+                        <input type="text" class="page-search__input page-search__input--numeric" name="price_range_max" placeholder="$24M">
+                        </input>
+                    </div>
+                </section>
+
+                <section class="page-search__section" title="Beds">
+                    <h4 class="mobile">Beds</h4>
+                    <select class="page-search__dropdown page-search__dropdown--filter" name="beds">
+                        <option value="" selected>Beds</option>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5+">5+</option>
+                    </select>
+                </section>
+
+                <section class="page-search__section" title="Baths">
+                    <h4 class="mobile">Baths</h4>
+                    <select class="page-search__dropdown page-search__dropdown--filter" name="baths">
+                        <option value="" selected>Baths</option>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5+">5+</option>
+                    </select>
+                </section>
+
+                <section class="page-search__section" title="Home Type">
+                    <h4 class="mobile">Home Type</h4>
+                    <select class="page-search__dropdown page-search__dropdown--filter" name="home_type">
+                        <option value="" selected="selected">Home Type</option>
+                        <option value="Single-Family">Single-Family</option>
+                        <option value="Multi-Family">Multi-Family</option>
+                        <option value="Apartment">Apartment</option>
+                        <option value="Co-op/Condo">Co-op/Condo</option>
+                        <option value="Townhome">Town Home</option>
+                        <option value="Manufactured">Manufactured</option>
+                        <option value="Lot/Land">Land/Lot</option>
+                    </select>
+                </section>
+
+                <button class="page-search__button page-search__button--level-three-toggle desktop" id="moreOptions" name="more_options">
+                    <span class="select2-chosen">More</span>
+                    <span class="select2-arrow" role="presentation">
+                        <b role="presentation"></b>
+                    </span>
+                </select>
+
+                <button class="page-search__button page-search__button--save desktop" value="saved">
+                    <span class="save-search">Save Search</span>
+                    <span class="saved" style="display:none;">Saved!</span>
+                </button>
+            </div>
+
+            <div class="page-search__row page-search__row--level-three">
+
+                
+                <div class="page-search__button page-search__button--close desktop">
+                    <span>X</span>
+                </div>
+                
+
+                    <div class="col">
+
+                        <section class="page-search__section" id="subtypes" title="Subtypes">
+
+                            <h4 class="desktop">Filter By</h4>
+                            <h4 class="mobile">Subtype</h4>
+
+                            <ul>
+                                <li class="page-search__list-item">
+                                    <div class="page-search__fancy-checkbox">
+                                        <input type="checkbox" id="openHouses" name="open_houses"></input>
+                                        <label for="openHouses">Open Houses</label>
+                                    </div>
+                                </li>
+
+                                <li class="page-search__list-item">
+                                    <div class="page-search__fancy-checkbox">
+                                        <input type="checkbox" id="newListings" name="new_listings"></input>
+                                        <label for="newListings">New Listings</label>
+                                    </div>
+                                </li>
+
+                                <li class="page-search__list-item">
+                                    <div class="page-search__fancy-checkbox">
+                                        <input type="checkbox" id="reducedPrice" name="reduced_price"></input>
+                                        <label for="reducedPrice">Reduced Price</label>
+                                    </div>
+                                </li>
+
+                                <li class="page-search__list-item">
+                                    <div class="page-search__fancy-checkbox">
+                                        <input type="checkbox" id="newDevelopments" name="new_developments"></input>
+                                         <label for="newDevelopments">New Developments</label>
+                                    </div>
+                                </li>
+
+                                <li class="page-search__list-item">
+                                    <div class="page-search__fancy-checkbox">
+                                        <input type="checkbox" id="sold" name="sold"></input>
+                                        <label for="sold">Sold</label>
+                                    </div>
+                                </li>
+
+                                <li class="page-search__list-item">
+                                    <div class="page-search__fancy-checkbox">
+                                        <input type="checkbox" id="forclosures" name="forclosures"></input>
+                                        <label for="forclosures">Forclosures</label>
+                                    </div>
+                                </li>
+
+                            </ul>
+
+                        </section>
+
+                    </div>
+
+                <div class="col">
+                    
+                    <section class="page-search__section" id="sqFt" title="Square Feet">
+                        <h4>Square Feet</h4>
+
+                        <div class="page-search__container page-search__container--range">
+                            <input type="text" class="page-search__input page-search__input--numeric" name="sq_ft_min" placeholder="Min"></input>
+                                &mdash;&nbsp;
+                            <input type="text" class="page-search__input page-search__input--numeric" name="sq_ft_max" placeholder="Max"></input>
+                        </div>
+
+                    </section>
+
+                    <section class="page-search__section" id="lotSz" title="Lot Size">
+                        <h4>Lot Size</h4>
+                        <div class="page-search__container page-search__container--range">
+                            <input type="text" class="page-search__input page-search__input--numeric" name="lot_sz_min" placeholder="Min"></input>
+                                &mdash;&nbsp;
+                            <input type="text" class="page-search__input page-search__input--numeric" name="lot_sz_max" placeholder="Max"></input>
+                        </div>
+
+                    </section>
+
+                    <section class="page-search__section" id="yrsBuilt" title="Years Built">
+                        <h4>Years Built</h4>
+
+                        <div class="page-search__container page-search__container--range">
+                            <input type="text" class="page-search__input page-search__input--numeric" name="yrs_built_min" placeholder="Min"></input>
+                                &mdash;&nbsp;
+                            <input type="text" class="page-search__input page-search__input--numeric" name="yrs_built_max" placeholder="Max">
+                            </input>
+                        </div>
+
+                    </section>
+
+                </div>
+
+                <div class="col">
+
+                    <section class="page-search__section" id="daysOnMkt" title="Days On Market">
+                        <h4>Days On Market</h4>
+
+                        <select class="page-search__dropdown page-search__dropdown--filter-advanced" name="days_on_mkt">
+                            <option value="" selected="selected">Any</option>
+                            <option value="1 day">1 day</option> 
+                            <option value="7 days">7 days</option> 
+                            <option value="14 days">14 days</option>
+                            <option value="1 month">1 month</option> 
+                            <option value="3 months">3 months</option> 
+                            <option value="6 months">6 month</option> 
+                            <option value="1 year">1 year</option> 
+                            <option value="2 years+">2 years+</option>
+                        </select>
+
+                    </section>
+
+                    <section class="page-search__section page-search__section--tokenize" id="keywords" title="Keywords">
+                        <h4>Keywords</h4>
+                        <span class="helper">(comma separated)</span>
+
+                        <input type="text" class="page-search__input page-search__input--tokenize" name="keywords"></input>
+                    </section>
+
+                </div>
+
+                <div class="col">
+
+                    <section class="page-search__section" id="findByMLS" title="Find by MLS">
+                        <h4>Find by MLS</h4>
+
+                        <input type="text" class="page-search__input page-search__input--text" name="mls_id"></input>
+                    </section>
+
+                </div>
+            </div>
+        </form>
     </div>
 </div>
-<!-- Page Search -->	
+<!-- Page Search -->    
+	
 		
 	
 	
@@ -394,195 +579,216 @@
 			
 			<!-- PROPERTY LISTINGS -->
 							<!-- Property Info -->
-				<!-- Property Info -->
-<div class='listing__summary'>
-    <div class='listing__summary--left'>
+				<p class="listing__breadcrumbs">
+    <a href="javascript:;">Brookline </a>
+    <a href="javascript:;"> 02467 </a>
+    <span class="listing__breadcrumb-address"> 101 Fernwood Rd</span>
+</p>
+<div class="listing__summary">
+    <div class="listing__summary--left">
 
-        <h2 class='listing__address'>101 Fernwood Rd</h2>
-        <h2 class='listing__address'>Brookline, MA 02467</h2>
-        <div class='listing__tags'>
+        <h2 class="listing__address">101 Fernwood Rd</h2>
+        <h2 class="listing__address">Brookline, MA 02467</h2>
+        <div class="listing__tags">
             <div class="tag featured">Featured Property<span class="arrow"></span>
             </div>
-            <img class='listing__detail-pindrop' src='images/listings/pindrop-icon.png'>
-            <p class='listing__for-sale'>FOR SALE</p>
+            <img class="listing__detail-pindrop" src="images/listings/pindrop-icon-purple.png">
+            <p class="listing__for-sale">FOR SALE</p>
         </div>
     </div>
 
-    <div class='listing__summary--right'>
+    <div class="listing__summary--right">
 
-        <div class='listing__detail'>
-            <div class='listing__detail--row1'>
-                <p class='listing__price'>$18,000,000</p>
+        <div class="listing__detail">
+            <div class="listing__detail--row1">
+                <p class="listing__price">$18,000,000</p>
             </div>
 
-            <div class='listing__detail--row2'>
-                <p class='listing__beds'>5 Beds</p>
-                <p class='listing__baths'>6 Baths</p>
-                <p class='listing__partials'>3 Partial</p>
+            <div class="listing__detail--row2">
+                <p class="listing__beds">5 Beds</p>
+                <p class="listing__baths">6 Baths</p>
+                <p class="listing__partials">3 Partial</p>
             </div>
 
-            <div class='listing__detail--row3'>
-                <p class='listing__sqfeet'>10,000 Sq. Ft.</p>
-                <p class='listing__type'>Co-op/Condo</p>
+            <div class="listing__detail--row3">
+                <p class="listing__sqfeet">10,000 Sq. Ft.</p>
+                <p class="listing__type">Co-op/Condo</p>
             </div>
         </div>
 
-        <div class='listing__detail-share'>
-            <div class='listing__detail-share--row1'>
-                <a href='#'><img class='listing__detail-share-icons' src='images/listings/heart-listing-icon.png'></a>
-                <a href='#'><img class='listing__detail-share-icons' src='images/listings/share-email-icon.png'></a>
+        <div class="listing__detail-share">
+            <div class="listing__detail-share--row1">
+                <a href="javascript:;"><img class="listing__detail-share-icons" src="images/listings/heart-icon-purple.png"></a>
+                <a href="javascript:;"><img class="listing__detail-share-icons" src="images/listings/share-icon-purple.png"></a>
             </div>
 
-            <div class='listing__detail-share--row2'>
-                <img class='listing__detail-share-icons' src='images/listings/calculator-icon.png'>
-                <p class='listing__detail-monthly-cost'>$88,456/ mo</p>
+            <div class="listing__detail-share--row2">
+                <img class="listing__detail-share-icons" src="images/listings/calculator-icon-purple.jpg">
+                <p class="listing__detail-monthly-cost">$88,456/ mo</p>
             </div>
         </div>
 
     </div>
-    
-    <div class='full-screen-carousel'>
-        <div class="" id="carousel-wrap">
-            <div class="carousel_wrapper">
-                <div id="carousel">
-                    <figure class="slide">
-                        <a href="collections/boards-provisions/products/table-setting-placard.html">
-                            <img src="images/responsive/slide4-default.jpg" srcset="images/responsive/slide4-tablet.jpg 618w, images/responsive/slide4-large.jpg 490w, images/responsive/slide4-small_x2.jpg 330w, images/responsive/slide4-small.jpg 320w" alt="Table Setting Placard" />
-                          
-                            <div class="detailsArrow"></div>
-                            <div class="carousel-fullwidth_slide-details">
-                                <div class="carousel-fullwidth_slide-detail-icon"><img src="images/icons/slideDetail-leftCol-luxuryLabel.png" /></div>
-                                <div class="carousel-fullwidth_slide-detail-content">
-                                    <div class="listing-data">
-                                        <p>The Claredon: 400 Stuart Street, Boston, MA</p>
-                                        <p>Back Bay | 1-4 Bedrooms available | $695,000-$2,190,000</p>
-                                    </div>
 
-                                    <div class="providerIcon"><img src="images/icons/realtorCarouselLogo_ColdwellBanker.png" /></div>
-                                </div>
-                            </div>
-                        </a>
-                    </figure>
+    <!-- MODAL: SAVE SEARCH -->
+    <div class="save-search-modal">
+        <div class="header">
+            <a class="close-modal-btn" href="javascript:;"><img class="close-modal" src="images/listings/x-icon.jpg"></a>
+            <p>Save Search</p>
+        </div>
+        <div class="content">
+            <p class="info">Save a search and get instant notifications about new listings and status changes on homes that match your search criteria</p>
+            <input placeholder="Search Nickname">
+            <button>Save</button>
+        </div>
+    </div>
+    <!-- /MODAL: SAVE SEARCH -->
 
-                    <figure class="slide active">
-                        <a href="collections/new-arrivals.html">
-                            <img src="images/responsive/slide1-default.jpg" srcset="images/responsive/slide1-tablet.jpg 618w, images/responsive/slide1-large.jpg 490w, images/responsive/slide1-small_x2.jpg 330w, images/responsive/slide1-small.jpg 320w" alt="New Arrivals" />
+    <!-- CAROUSEL IMAGE -->
+    <div class="image-carousel-wrapper">
+        <img src="images/listings/Property_Detail_slider.jpg">
+    </div>
+    <!-- CAROUSEL IMAGE -->
 
-                            <div class="detailsArrow"></div>
-                            <div class="carousel-fullwidth_slide-details">
-                                <div class="carousel-fullwidth_slide-detail-icon"><img src="images/icons/slideDetail-leftCol-sponsored.png" /></div>
-                                <div class="carousel-fullwidth_slide-detail-content">
-                                    <div class="listing-data">
-                                        <p>The Claredon: 400 Stuart Street, Boston, MA</p>
-                                        <p>Back Bay | 1-4 Bedrooms available | $695,000-$2,190,000</p>
-                                    </div>
+    <div class="listing__summary--mobile-wrapper">
 
-                                    <div class="providerIcon"><img src="images/icons/realtorCarouselLogo_ColdwellBanker.png" /></div>
-                                </div>
-                            </div>
-                        </a>
-                    </figure>
+        <h2 class="listing__address--mobile">101 Fernwood Rd Brookline, MA 02467</h2>
 
-                    <figure class="slide">
-                        <a href="blogs/plate-the-slate/15553989-quarry-to-table.html">
-                            <img src="images/responsive/slide2-default.jpg" srcset="images/responsive/slide2-tablet.jpg 618w, images/responsive/slide2-large.jpg 490w, images/responsive/slide2-small_x2.jpg 330w, images/responsive/slide2-small.jpg 320w" alt="A Trip to the Quarry" />
+        <div class="listing__summary--mobile">
+            <div class="listing__detail">
+                <div class="listing__detail--row1">
+                    <p class="listing__price">$18,000,000</p>
+                </div>
 
-                            <div class="detailsArrow"></div>
-                            <div class="carousel-fullwidth_slide-details">
-                                <div class="carousel-fullwidth_slide-detail-icon"><img src="images/icons/slideDetail-leftCol-luxuryLabel.png" /></div>
-                                <div class="carousel-fullwidth_slide-detail-content">
-                                    <div class="listing-data">
-                                        <p>The Claredon: 400 Stuart Street, Boston, MA</p>
-                                        <p>Back Bay | 1-4 Bedrooms available | $695,000-$2,190,000</p>
-                                    </div>
+                <div class="listing__detail--row2">
+                    <p class="listing__beds">5 Beds</p>
+                    <p class="listing__baths">6 Baths</p>
+                    <p class="listing__partials">3 Partial</p>
+                </div>
 
-                                    <div class="providerIcon"><img src="images/icons/realtorCarouselLogo_ColdwellBanker.png" /></div>
-                                </div>
-                            </div>
-                        </a>
-                    </figure>
+                <div class="listing__detail--row3">
+                    <p class="listing__sqfeet">10,000 Sq. Ft.</p>
+                    <p class="listing__type">Co-op/Condo</p>
+                </div>
+            </div>
 
-                    <figure class="slide">
-                        <a href="blogs/from-the-kitchen/15566461-fennel-panna-cotta.html">
-                            <img src="images/responsive/slide3-default.jpg" srcset="images/responsive/slide3-tablet.jpg 618w, images/responsive/slide3-large.jpg 490w, images/responsive/slide3-small_x2.jpg 330w, images/responsive/slide3-small.jpg 320w" alt="Recipe: Fennel Panna Cotta" />
+            <div class="listing__detail-share">
+                <div class="listing__detail-share--row1">
+                    <a href="javascript:;"><img class="listing__detail-share-icons" src="images/listings/heart-icon-purple.png"></a>
+                    <a href="javascript:;"><img class="listing__detail-share-icons" src="images/listings/share-icon-purple.png"></a>
+                </div>
 
-                            <div class="detailsArrow"></div>
-                            <div class="carousel-fullwidth_slide-details">
-                                <div class="carousel-fullwidth_slide-detail-icon"><img src="images/icons/slideDetail-leftCol-sponsored.png" /></div>
-                                <div class="carousel-fullwidth_slide-detail-content">
-                                    <div class="listing-data">
-                                        <p>The Claredon: 400 Stuart Street, Boston, MA</p>
-                                        <p>Back Bay | 1-4 Bedrooms available | $695,000-$2,190,000</p>
-                                    </div>
-
-                                    <div class="providerIcon"><img src="images/icons/realtorCarouselLogo_ColdwellBanker.png" /></div>
-                                </div>
-                            </div>
-                        </a>
-                    </figure>
+                <div class="listing__detail-share--row2">
+                    <img class="listing__detail-share-icons" src="images/listings/calculator-icon-purple.jpg">
+                    <p class="listing__detail-monthly-cost">$88,456/ mo</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class='listing__writeup'>
-        <p class='listing__writeup-content'>Secluded single floor residence with a gated drive set on a lush cul-de-sac. Designed by architect Adolfo Perez and built by renowned builder Thoughtforms Corporation to a level of excellence rarely experienced, this custom home features 10+ foot ceilings, six fireplaces, extensive built-ins, custom millwork, plus state-of-the-art systems and technology. The sleek, Poggenpohl kitchen offers a large island and a butler's pantry....</p>
-        <p class='listing__writeup-more'>More<span><a href='#'><img src='images/drop-down__icon.png'></a></span></p>
+    <div class="listing__writeup">
+        <p class="listing__writeup-content">Secluded single floor residence with a gated drive set on a lush cul-de-sac. Designed by architect Adolfo Perez and built by renowned builder Thoughtforms Corporation to a level of excellence rarely experienced, this custom home features 10+ foot ceilings, six fireplaces, extensive built-ins, custom millwork, plus state-of-the-art systems and technology. The sleek, Poggenpohl kitchen offers a large island and a butler's pantry....</p>
+        <p class="listing__writeup-more">More<span><a href="javascript:;"><img src="images/listings/arrow-icon-purple.png"></a></span></p>
     </div>
 
-    <div class='listing__details'>
-        <div class='listing__facts'>
+    <div class="listing__details">
+        <div class="listing__facts">
             <h2>Facts</h2>
-            <ul class='listing__facts--left'>
+            <ul class="listing__facts--left">
                 <li>Lot: 3.72 acres</li>
                 <li>Single Family</li>
                 <li>Built in 2008</li>
                 <li>125 days on Boston.com</li>
             </ul>
 
-            <ul class='listing__facts--right'>
+            <ul class="listing__facts--right">
                 <li>Heating: Other</li>
                 <li>Last sold: Nov 2012 for $1</li>
                 <li>Proce/sqft: $0</li>
                 <li>MLS #: 71697970</li>
             </ul>
 
-            <ul class='listing__external-links'>
-                <li><a href='#'>Coldwell Banker Residential Brokerage</a></li>
-                <li><a href='#'>View Virtual Tour</a></li>
+            <ul class="listing__external-links">
+                <li><a href="javascript:;">Coldwell Banker Residential Brokerage</a></li>
+                <li><a href="javascript:;">View Virtual Tour</a></li>
             </ul>
         </div>
 
-        <div class='listing__features'>
+        <div class="listing__features">
             <h2>Features</h2>
-            <ul class='listing__features--left'>
+            <ul class="listing__features--left">
                 <li>Lot: 3.72 acres</li>
                 <li>Single Family</li>
                 <li>Built in 2008</li>
                 <li>125 days on Boston.com</li>
             </ul>
 
-            <ul class='listing__features--right'>
+            <ul class="listing__features--right">
                 <li>Heating: Other</li>
                 <li>Last sold: Nov 2012 for $1</li>
                 <li>Proce/sqft: $0</li>
                 <li>MLS #: 71697970</li>
             </ul>
 
-            <ul class='listing__external-links'>
-                <li><a href='#'>Coldwell Banker Residential Brokerage</a></li>
-                <li><a href='#'>View Virtual Tour</a></li>
+            <ul class="listing__external-links">
+                <li><a href="javascript:;">Coldwell Banker Residential Brokerage</a></li>
+                <li><a href="javascript:;">View Virtual Tour</a></li>
             </ul>
         </div>
 
-        <div class='listing__details-expand'>
-            <a href='#'><h3>View More<span><img src='images/view-more__arrow-down.gif'></span></h3></a>
+        <div class="listing__details-expand">
+            <a href="javascript"><h3>View More<span><img src="images/view-more__arrow-down.gif"></span></h3></a>
         </div>
 
 
-        <div class='listing__contact-agent'>
-            <a href='#'><h3>Contact the Agent</h3></a>
+        <div class="listing__contact-agent">
+            <a href="javascript:;"><h3>Contact the Agent</h3></a>
         </div>
+    </div>
+
+
+    <!-- SERP MOBILE BUTTON DOCK -->
+    <!-- <div class='serp__mobile-button-dock'>
+    
+        <a href='javascript:;'><div id='mobile-save-btn' class='button left-button'>
+            <img src='images/listings/heart-icon-white.png'>
+            <p>Save</p>
+        </div></a>
+
+        <a href='javascript:;'><div id='mobile-articles-btn' class='button right-button'>
+            <img class='articles-icon' src='images/listings/articles-icon.png'>
+            <div class='title-block'>
+                <p>Related</p>
+                <p>Articles</p>
+            </div>
+        </div></a>
+
+    </div> -->
+    <!-- /SERP MOBILE BUTTON DOCK -->
+
+
+    <div class="listing__mobile-button-dock">
+    
+        <a href="javascript:;">
+            <div id="mobile-save-btn" class="button left-button">
+                <img src="images/listings/heart-icon-white.png">
+                <p>Save</p>
+            </div>
+        </a>
+
+        <a href="javascript:;">
+            <div id="mobile-share-btn" class="button middle-button">
+                <img src="images/listings/share-icon-white.png">
+                <p>Share</p>
+            </div>
+        </a>
+
+        <a href="javascript:;">
+            <div id="mobile-contact-btn" class="button right-button">
+                <img class="contact-icon-white" src="images/listings/contact-icon-white.png">
+                <p>Contact</p>
+            </div>
+        </a>
     </div>
 </div>				
 				<!-- Explore Widget -->
@@ -766,7 +972,7 @@
 </div>
 				<!-- Contact The Agent Widget -->
 				<!-- Contact the Agent -->
-<div class='contact__container'>
+<div class='contact__container contact-agent-modal'>
     <div class='contact__header'>
         <p>Contact the Agent</p>
     </div>
@@ -801,7 +1007,15 @@
     <img src="images/ads/dfp/dfpAds__300by250__coldwell-banker.jpg" />
 </a>
 				<!-- Property Listings Widget -->
-				<!-- Property Listings Widget -->
+				<script>
+    $(document).ready(function(){ 
+        if('#listingDropDown'){
+            $("#listingDropDown").select2({ dropdownCssClass: 'mplistings-dropdown' });
+        }
+    });
+</script>
+
+<!-- Property Listings Widget -->
 <div class="mplistings">
     <h4>Property Listings</h4>
     
