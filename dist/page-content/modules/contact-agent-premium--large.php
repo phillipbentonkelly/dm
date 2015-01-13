@@ -7,6 +7,14 @@
     });
 </script>
 
+<div class='contact__company' style='margin:75px 0 45px 0;'>
+    <img class='contact__company-img' src='http://www.motihomes.com/Customers/5430/assets/images/3785DE71-155D-0078-0BA5D1687C016B53.jpg'>
+    <div class='contact__company-info'>
+        <p class='contact__company-name'>Coldwell Banker Residential Brokerage - <span class='contact__company-city'> Brookline </span></p>
+        <p class='contact__company-note'>(Visit office website)</p>
+    </div>
+</div>
+
 <!-- Contact the Agent -->
 <div class='contact__container contact-agent-modal'>
     <div class='contact__header'>
@@ -18,7 +26,7 @@
         <div class='contact__agent-info'>
             <p class='contact__agent-name'>Deborah M. Gordon</p>
             <div class='contact__agent-links'>
-                <a class='contact__agent-number' href='#'>View My Contact Number</a>
+                <a class='contact__agent-number' href='javascript:;'>View My Contact Number</a>
                 <a class='contact__agent-website' href='#'>Visit My Website</a>
             </div>
             <div class='contact__agent-address'>

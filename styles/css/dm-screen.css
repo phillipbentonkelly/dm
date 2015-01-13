@@ -2635,14 +2635,10 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
   text-align: left;
 }
 /* line 207, ../sass/partials/page/modules/_contact-form-premium.scss */
-.contact__company {
-  margin: 80px 0 40px 10px;
-}
-/* line 211, ../sass/partials/page/modules/_contact-form-premium.scss */
 .contact__company-wrapper {
   padding: 10px 25px 20px 15px;
 }
-/* line 215, ../sass/partials/page/modules/_contact-form-premium.scss */
+/* line 211, ../sass/partials/page/modules/_contact-form-premium.scss */
 .contact__company-name {
   font-family: OpenSans;
   letter-spacing: 0px;
@@ -2654,28 +2650,28 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
   /* Approximation due to font substitution */
   text-align: left;
 }
-/* line 225, ../sass/partials/page/modules/_contact-form-premium.scss */
+/* line 221, ../sass/partials/page/modules/_contact-form-premium.scss */
 .contact__company-note {
   font-size: 70%;
   font-weight: 200;
   margin-top: 3px;
 }
-/* line 231, ../sass/partials/page/modules/_contact-form-premium.scss */
+/* line 227, ../sass/partials/page/modules/_contact-form-premium.scss */
 .contact__company-message {
   font-weight: 200;
 }
-/* line 235, ../sass/partials/page/modules/_contact-form-premium.scss */
+/* line 231, ../sass/partials/page/modules/_contact-form-premium.scss */
 .contact__company-img {
   float: left;
   height: 60px;
   width: 90px;
 }
-/* line 241, ../sass/partials/page/modules/_contact-form-premium.scss */
+/* line 237, ../sass/partials/page/modules/_contact-form-premium.scss */
 .contact__company-info {
   margin-left: 105px;
   margin-bottom: 15px;
 }
-/* line 246, ../sass/partials/page/modules/_contact-form-premium.scss */
+/* line 242, ../sass/partials/page/modules/_contact-form-premium.scss */
 .contact__company-name {
   margin: 0;
 }

@@ -46,7 +46,7 @@
 	        <script src="js/assets/listings.data.js"></script>
 		<?php } ?>
 		
-		<?php if ($pageType == 'property-listings') { ?>
+		<?php if ($pageType == 'property-listings' || $pageType == 'property-listings-premium') { ?>
 		    <!-- Real Estate Listings -->
 	        <script src="js/assets/mpListings.js"></script>
 	        <script src="js/assets/listings.data.js"></script>
@@ -127,7 +127,7 @@
 			
 			
 			<!-- PROPERTY LISTINGS -->
-			<?php if ($pageType == 'property-listings') { ?>
+			<?php if ($pageType == 'property-listings' || $pageType == 'property-listings-premium') { ?>
 				<!-- Property Info -->
 				<?php include 'page-content/property-info.php'; ?>
 				
@@ -182,12 +182,10 @@
 			
 			
 			<!-- PROPERTY LISTINGS -->
-			<?php if ($pageType == 'property-listings') { ?>
-				<!-- DFP Sidebar Placeholder Ad Content -->
-				<?php include 'ads/real-estate-brokerage__coldwell-banker.php'; ?>
+			<?php if ($pageType == 'property-listings-premium') { ?>
 
 				<!-- Contact The Agent Widget -->
-				<?php include 'page-content/modules/contact-the-agent.php'; ?>
+				<?php include 'page-content/modules/contact-agent-premium--large.php'; ?>
 
 				<!-- DFP Ad - Experience the Difference -->
 				<?php include 'ads/dfp-ads__experience-the-difference.php'; ?>
@@ -196,7 +194,23 @@
 				<?php include 'page/modules/property-listings.php'; ?>
 
 				<!-- Contact This Agent Widget -->
-				<?php include 'page-content/modules/contact-this-agent.php'; ?>
+				<?php include 'page-content/modules/contact-agent-premium--small.php'; ?>
+			<?php } ?>
+
+			<?php if ($pageType == 'property-listings') { ?>
+	
+
+				<!-- Contact The Agent Widget -->
+				<?php include 'page-content/modules/contact-agent-basic--large.php'; ?>
+
+				<!-- DFP Ad - Experience the Difference -->
+				<?php include 'ads/dfp-ads__experience-the-difference.php'; ?>
+
+				<!-- Property Listings Widget -->
+				<?php include 'page/modules/property-listings.php'; ?>
+
+				<!-- Contact This Agent Widget -->
+				<?php include 'page-content/modules/contact-agent-basic--small.php'; ?>
 			<?php } ?>
 			
 			
