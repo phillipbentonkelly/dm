@@ -167,7 +167,7 @@ $module-name: 'page-search';
 		display: block;
 
 		&--radio{
-			float: left;
+			float: right;
 		}
 		&--range{
 			float: left;
@@ -530,6 +530,7 @@ $module-name: 'page-search';
 	}
 }
 
+
 .select2-drop{
 	.select2-search{
 		display: none;
@@ -668,8 +669,9 @@ $module-name: 'page-search';
 			display: inline-block;
 			float: left;
 
-			&--radio{				
-				margin-top: 15px;
+			&--radio{
+				float: left;				
+				margin: 15px 0 0 0;
 			}
 
 			&--range{
