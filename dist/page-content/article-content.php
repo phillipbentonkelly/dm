@@ -4,13 +4,13 @@
     
     <div class="tags">
         <a href="javascript:;">
-            <div class="category-tag class">Luxury <span class="arrow"></span></div>
+            <div class="category-tag maroon">Luxury <span class="arrow"></span></div>
         </a>
         <a href="javascript:;">
-            <div class="category-tag event">Open House <span class="arrow"></span></div>
+            <div class="category-tag light-blue">Open House <span class="arrow"></span></div>
         </a>
         <a href="javascript:;">
-            <div class="category-tag location">Cape &amp; Islands <span class="arrow"></span></div>
+            <div class="category-tag orange">Cape &amp; Islands <span class="arrow"></span></div>
         </a>
     </div>
     
