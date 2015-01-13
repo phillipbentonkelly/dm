@@ -72,7 +72,7 @@ a, img{
 
 	h4{
 		margin: 0 0 5% 0;
-		font-family: Oswald;
+		font-family: 'Oswald Regular';
 		color:  #333333;
 		font-size: 26px; /* Approximation due to font substitution */
 		font-weight: 400;
@@ -273,7 +273,7 @@ a, img{
 				.bottom-level__details {
 					color: #000;
 					font-size: 45%;
-					font-family: 'Roboto', sans-serif;
+					font-family: 'OpensSans;
 					font-weight: 400;
 				}
 					.bottom-level__details div{
@@ -292,9 +292,9 @@ a, img{
 					margin-bottom: 1px;
 					
 					line-height: 1.25em;
-					font-family: OpenSans;
+					font-family: 'OpenSans Semibold';
 					color:  #000000;
-					font-size: 11px; /* Approximation due to font substitution */
+					font-size: 11px !important; /* Approximation due to font substitution */
 					font-weight: 600;
 					text-align: left;
 				}
