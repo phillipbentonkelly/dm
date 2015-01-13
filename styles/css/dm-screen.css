@@ -213,6 +213,7 @@ body {
 }
 /* line 207, ../sass/helpers/_mixins-and-extends.scss */
 .adSlots .adSlot .detailsWrapper .detailsArrow {
+  display: none;
   width: 0;
   height: 0;
   border-style: solid;
@@ -220,7 +221,7 @@ body {
   border-color: rgba(0, 0, 0, 0.6) transparent;
   float: right;
 }
-/* line 216, ../sass/helpers/_mixins-and-extends.scss */
+/* line 217, ../sass/helpers/_mixins-and-extends.scss */
 .adSlots .adSlot .detailsWrapper .detailsOverlay {
   width: 93%;
   min-height: 20%;
@@ -233,7 +234,7 @@ body {
   background-color: rgba(0, 0, 0, 0.6);
   clear: both;
 }
-/* line 228, ../sass/helpers/_mixins-and-extends.scss */
+/* line 229, ../sass/helpers/_mixins-and-extends.scss */
 .adSlots .adSlot .detailsWrapper .detailsOverlay h1 {
   font-size: 120%;
   text-align: left;
@@ -244,57 +245,57 @@ body {
   min-height: 10px;
   overflow: hidden;
 }
-/* line 238, ../sass/helpers/_mixins-and-extends.scss */
+/* line 239, ../sass/helpers/_mixins-and-extends.scss */
 .adSlots .adSlot .detailsWrapper .detailsOverlay h1 .priceSpan {
   float: right;
 }
-/* line 242, ../sass/helpers/_mixins-and-extends.scss */
+/* line 243, ../sass/helpers/_mixins-and-extends.scss */
 .adSlots .adSlot .detailsWrapper .detailsOverlay p {
   display: none;
   line-height: 1.5em;
   padding: 0 0 0.5em 0;
   margin: 0 0 0 0;
 }
-/* line 251, ../sass/helpers/_mixins-and-extends.scss */
+/* line 252, ../sass/helpers/_mixins-and-extends.scss */
 .adSlots .adSlot:hover .detailsWrapper .detailsOverlay p {
   display: block;
 }
 
 @media (min-width: 960px) {
-  /* line 258, ../sass/helpers/_mixins-and-extends.scss */
+  /* line 259, ../sass/helpers/_mixins-and-extends.scss */
   .adSlots .adSlot {
     float: left;
     margin-right: 0px;
   }
-  /* line 262, ../sass/helpers/_mixins-and-extends.scss */
+  /* line 263, ../sass/helpers/_mixins-and-extends.scss */
   .adSlots .adSlot:first-child {
     float: left;
     margin-right: 30px;
   }
-  /* line 267, ../sass/helpers/_mixins-and-extends.scss */
+  /* line 268, ../sass/helpers/_mixins-and-extends.scss */
   .adSlots a.adSlot:first-child {
     margin: 0px;
   }
 }
 @media (min-width: 768px) {
-  /* line 275, ../sass/helpers/_mixins-and-extends.scss */
+  /* line 276, ../sass/helpers/_mixins-and-extends.scss */
   .adSlots .adSlot {
     float: left;
     margin-left: 30px;
   }
-  /* line 280, ../sass/helpers/_mixins-and-extends.scss */
+  /* line 281, ../sass/helpers/_mixins-and-extends.scss */
   .adSlots a.adSlot:first-child {
     margin-left: 0;
   }
 }
-/* line 293, ../sass/helpers/_mixins-and-extends.scss */
+/* line 294, ../sass/helpers/_mixins-and-extends.scss */
 .social-icons, .articles-content .social-icons {
   clear: both;
   min-width: 200px;
   min-height: 21px;
   overflow: hidden;
 }
-/* line 299, ../sass/helpers/_mixins-and-extends.scss */
+/* line 300, ../sass/helpers/_mixins-and-extends.scss */
 .social-icons a, .articles-content .social-icons a {
   display: inline-block;
   text-indent: -900px;
@@ -304,43 +305,43 @@ body {
   background-image: url(../../images/icons/sprites/social-icons.png);
   background-repeat: no-repeat;
 }
-/* line 309, ../sass/helpers/_mixins-and-extends.scss */
+/* line 310, ../sass/helpers/_mixins-and-extends.scss */
 .social-icons__facebook {
   width: 9px;
   background-position: 0px 0px !important;
 }
-/* line 314, ../sass/helpers/_mixins-and-extends.scss */
+/* line 315, ../sass/helpers/_mixins-and-extends.scss */
 .social-icons__twitter {
   width: 22px;
   background-position: -20px 0px !important;
 }
-/* line 319, ../sass/helpers/_mixins-and-extends.scss */
+/* line 320, ../sass/helpers/_mixins-and-extends.scss */
 .social-icons__share {
   width: 23px;
   background-position: -48px 0px !important;
 }
-/* line 324, ../sass/helpers/_mixins-and-extends.scss */
+/* line 325, ../sass/helpers/_mixins-and-extends.scss */
 .social-icons__email {
   width: 27px;
   background-position: -81px 0px !important;
 }
-/* line 329, ../sass/helpers/_mixins-and-extends.scss */
+/* line 330, ../sass/helpers/_mixins-and-extends.scss */
 .social-icons__comments {
   width: 18px;
   background-position: -118px 0px !important;
 }
-/* line 334, ../sass/helpers/_mixins-and-extends.scss */
+/* line 335, ../sass/helpers/_mixins-and-extends.scss */
 .social-icons__print {
   width: 22px;
   background-position: -147px 0px !important;
 }
-/* line 339, ../sass/helpers/_mixins-and-extends.scss */
+/* line 340, ../sass/helpers/_mixins-and-extends.scss */
 .social-icons__favorite {
   width: 21px;
   background-position: -179px 0px !important;
 }
 
-/* line 354, ../sass/helpers/_mixins-and-extends.scss */
+/* line 355, ../sass/helpers/_mixins-and-extends.scss */
 .chevron::before, .full-screen-carousel .chevron::before, .gallery-widget .chevron::before, .gallery-widget__details__info-nav .chevron::before {
   color: #fff;
   border-style: solid;
@@ -358,19 +359,19 @@ body {
   font-size: 15px;
 }
 
-/* line 372, ../sass/helpers/_mixins-and-extends.scss */
+/* line 373, ../sass/helpers/_mixins-and-extends.scss */
 .chevron.right:before {
   left: 0;
   transform: rotate(45deg);
 }
 
-/* line 377, ../sass/helpers/_mixins-and-extends.scss */
+/* line 378, ../sass/helpers/_mixins-and-extends.scss */
 .chevron.bottom:before {
   top: 0;
   transform: rotate(135deg);
 }
 
-/* line 382, ../sass/helpers/_mixins-and-extends.scss */
+/* line 383, ../sass/helpers/_mixins-and-extends.scss */
 .chevron.left:before {
   left: 0.25em;
   transform: rotate(-135deg);
@@ -509,7 +510,7 @@ textarea {
 
 /* line 40, ../sass/helpers/_common-assets.scss */
 .category-tag.location {
-  background-color: #82b5e6;
+  background-color: #CE6323;
 }
 
 /* line 41, ../sass/helpers/_common-assets.scss */
@@ -519,7 +520,7 @@ textarea {
 
 /* line 42, ../sass/helpers/_common-assets.scss */
 .category-tag.event {
-  background-color: #ff6c6c;
+  background-color: #77A9CE;
 }
 
 /* line 43, ../sass/helpers/_common-assets.scss */
@@ -534,7 +535,7 @@ textarea {
 
 /* line 45, ../sass/helpers/_common-assets.scss */
 .category-tag.sponsored {
-  background-color: #666;
+  background-color: #A1B3B4;
 }
 
 /* line 52, ../sass/helpers/_common-assets.scss */
@@ -4766,25 +4767,50 @@ a, img {
 }
 /* line 21, ../sass/partials/page-content/modules/_content-footer.scss */
 .content-footer__social-icons {
-  width: 150px;
+  width: 160px;
   margin: auto;
   margin-bottom: 20px;
+  clear: both;
+  min-height: 10px;
+  overflow: hidden;
 }
-/* line 27, ../sass/partials/page-content/modules/_content-footer.scss */
+/* line 29, ../sass/partials/page-content/modules/_content-footer.scss */
+.content-footer__social-icons a.icon {
+  display: inline-block;
+  float: left;
+  width: 35px;
+  height: 31px;
+  text-indent: -900px;
+  background: url(../../images/icons/sprites/sprite_footer-social-icons.png) 0 0 no-repeat;
+  margin-left: 12px;
+}
+/* line 38, ../sass/partials/page-content/modules/_content-footer.scss */
+.content-footer__social-icons a.icon:first-child {
+  margin-left: 0px;
+}
+/* line 41, ../sass/partials/page-content/modules/_content-footer.scss */
+.content-footer__social-icons a.facebook {
+  background-position: -47px 0;
+}
+/* line 44, ../sass/partials/page-content/modules/_content-footer.scss */
+.content-footer__social-icons a.rss {
+  background-position: -99px 0;
+}
+/* line 49, ../sass/partials/page-content/modules/_content-footer.scss */
 .content-footer__footer-links {
   text-align: center;
   margin-bottom: 8px;
 }
-/* line 31, ../sass/partials/page-content/modules/_content-footer.scss */
+/* line 53, ../sass/partials/page-content/modules/_content-footer.scss */
 .content-footer__footer-links a {
   display: inline-block;
   padding-left: 25px;
 }
-/* line 35, ../sass/partials/page-content/modules/_content-footer.scss */
+/* line 57, ../sass/partials/page-content/modules/_content-footer.scss */
 .content-footer__footer-links a:first-child {
   padding-left: 0;
 }
-/* line 40, ../sass/partials/page-content/modules/_content-footer.scss */
+/* line 62, ../sass/partials/page-content/modules/_content-footer.scss */
 .content-footer__copyright-block {
   text-align: center;
   font-size: 11px;
