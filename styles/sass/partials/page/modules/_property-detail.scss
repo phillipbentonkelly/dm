@@ -18,11 +18,12 @@ $module-name: 'explore-widget';
   }
 
   &__header {
-    font-family: Oswald;
+    font-family: 'Oswald Regular';
   	color: black;
   	font-size: 26px;
   	font-weight: 400;
   	text-align: center;
+    margin: 15px 0 20px 0;
   }
 
   &__img-wrapper {
@@ -41,7 +42,7 @@ $module-name: 'explore-widget';
     margin: 0;
     padding: 10px;
     background: rgba(10,10,10,0.5);
-    font-family: Oswald;
+    font-family: 'Oswald Regular';
     color:  #ffffff;
     font-size: 24px;
     font-weight: 400;
