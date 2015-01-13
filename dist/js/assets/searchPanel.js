@@ -8,7 +8,6 @@ dm.select2 = {};
 (function($, window, document, undefined){
 
 	dm.selectize = function(el, opts){
-		console.log(el + " " + opts)
 		$.fn.selectize.apply(el, opts);
 	};
 
@@ -55,6 +54,7 @@ dm.select2 = {};
 		init: function(){
 			this.lvls.$two.hide();
 			this.lvls.$three.hide();
+
 
 			var mainInputParams = {
 				placeholder: "Search for real estate listings or articles. ex: 3 bedroom for sale in Brookline under 1,000,000"
@@ -115,6 +115,7 @@ dm.select2 = {};
 					self.btns.$close.on('click', function(e){
 						e.preventDefault();
 						self.lvls.$three.hide();
+						self.lvls.$two.hide();
 						self.btns.$lvl3t.removeClass('select2-panel-open');
 						self.allOpen = false;
 					});
