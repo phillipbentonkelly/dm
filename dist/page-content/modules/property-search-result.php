@@ -1,5 +1,10 @@
-<!-- SERP SEARCH RESULTS-->
+<!-- SERP SEARCH RESULTS -->
 <div class='search-results'>
+    <div class='search-results__filter-bar'>
+        <p>Showing <span class='low-end'>1</span> to <span class='high-end'>10</span> of <span class='total-results'>147</span></p>
+    </div>
+
+
     <div class='search-results__item'>
 
         <div class='header'>
@@ -72,12 +77,8 @@
             </div>
         </div>
 
-    </div>                
-</div>
-<!-- /SERP SEARCH RESULTS -->
+    </div>
 
-<!-- SERP SEARCH RESULTS-->
-<div class='search-results'>
     <div class='search-results__item'>
 
         <div class='header'>
@@ -150,12 +151,8 @@
             </div>
         </div>
 
-    </div>                
-</div>
-<!-- /SERP SEARCH RESULTS -->
+    </div>
 
-<!-- SERP SEARCH RESULTS-->
-<div class='search-results'>
     <div class='search-results__item'>
 
         <div class='header'>
@@ -228,6 +225,6 @@
             </div>
         </div>
 
-    </div>                
+    </div>
 </div>
 <!-- /SERP SEARCH RESULTS -->
