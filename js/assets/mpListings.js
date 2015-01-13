@@ -14,18 +14,15 @@ var mplistingObj = {};
 
     MPListings.prototype = {
         scrollListings: function( evt ){
-            console.log('')
             if(mpListings.$listingWrapper.width() > 332 === false){
                 var thisObj = $(this);
                 
                 if(thisObj.attr('id') === 'leftArrow'){
-                    alert('you clicked the left arrow');
                     if(mpListings.listingsArrCurrIndex < mpListings.listingsArr.length){
                         mplistingObj.moveScrollArea( mpListings.listingsArr[ mpListings.listingsArrCurrIndex+1 ] );
                         mpListings.listingsArrCurrIndex = mpListings.listingsArrCurrIndex + 1;
                     }
                 }else{
-                    alert('you clicked the left arrow');
                     if(mpListings.listingsArrCurrIndex > 0){
                         mplistingObj.moveScrollArea( mpListings.listingsArr[ mpListings.listingsArrCurrIndex-1 ] );
                         mpListings.listingsArrCurrIndex = mpListings.listingsArrCurrIndex - 1;
@@ -34,7 +31,6 @@ var mplistingObj = {};
             }
         },
         moveScrollArea: function( distance ){
-            debugger;
             mpListings.$listingsContainer.animate({
                 scrollTop: distance
             }, 500).promise().done(function(){
