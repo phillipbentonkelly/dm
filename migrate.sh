@@ -37,6 +37,9 @@ if [[ $proceedVar =~ ^[Yy]$ ]]
 		echo "- Pulled most recent"
 		git status
 
+		git checkout master
+
+		sleep 3
 		if [[ $yourLocalhost ]]
 		then
 			cd ..
