@@ -9,7 +9,6 @@
                     <h4>A Boston.com Site</h4>
                 </a>
             </li>
-
             <li class="page-nav__main-nav-links">
                 <ul>
                     <li class="page-nav__nav-item page-nav__responsive-home-link">
