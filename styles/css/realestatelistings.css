@@ -78,7 +78,7 @@ a, img {
 /* line 73, ../sass/realestatelistings.scss */
 .mplistings h4 {
   margin: 0 0 5% 0;
-  font-family: Oswald;
+  font-family: 'Oswald Regular';
   color: #333333;
   font-size: 26px;
   /* Approximation due to font substitution */
@@ -259,7 +259,7 @@ a, img {
 .mplistings .scrollWrapper .listing-container .property__price {
   font-size: 40%;
   float: left;
-  font-family: OpenSans;
+  font-family: 'OpenSans';
   color: #ffffff;
   font-size: 12px;
   /* Approximation due to font substitution */
@@ -271,7 +271,7 @@ a, img {
   display: none;
   font-size: 40%;
   float: right;
-  font-family: OpenSans;
+  font-family: 'OpenSans';
   color: #ffffff;
   font-size: 10px;
   /* Approximation due to font substitution */
@@ -282,7 +282,7 @@ a, img {
 .mplistings .scrollWrapper .listing-container .property .bottom-level__details {
   color: #000;
   font-size: 45%;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'OpensSans';
   font-weight: 400;
 }
 /* line 279, ../sass/realestatelistings.scss */
@@ -301,9 +301,9 @@ a, img {
   max-height: 33px;
   margin-bottom: 1px;
   line-height: 1.25em;
-  font-family: OpenSans;
+  font-family: 'OpenSans Semibold';
   color: #000000;
-  font-size: 11px;
+  font-size: 11px !important;
   /* Approximation due to font substitution */
   font-weight: 600;
   text-align: left;
@@ -319,7 +319,7 @@ a, img {
   width: 49%;
   min-height: 33%;
   padding: 2% 0 3% 0;
-  font-family: OpenSans;
+  font-family: 'OpenSans';
   color: #000000;
   font-size: 11px;
   /* Approximation due to font substitution */

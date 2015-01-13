@@ -972,7 +972,7 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
   }
   /* line 291, ../sass/partials/page/_page-nav.scss */
   .page-nav__logo {
-    width: 127px;
+    width: 134px;
     margin: initial;
   }
   /* line 295, ../sass/partials/page/_page-nav.scss */
@@ -987,7 +987,7 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
   /* line 305, ../sass/partials/page/_page-nav.scss */
   .page-nav__main-nav-links {
     display: inline-block;
-    width: 86.77%;
+    width: 83%;
     position: initial;
     background-color: initial;
     font-family: inherit;
