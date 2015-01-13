@@ -54,11 +54,9 @@
 
          <script>
         $(document).ready(function(){
-
-                if('#listingDropDown'){
-                    $("#listingDropDown").select2({ dropdownCssClass: 'mplistings-dropdown' });
-                }
-
+            if('#listingDropDown'){
+                $("#listingDropDown").select2({ dropdownCssClass: 'mplistings-dropdown' });
+            }
         });
         </script>
 
@@ -69,7 +67,8 @@
         <!-- Page Masthead -->
         <div class="page-masthead">
             <div class="page-header">
-                <a class="page-header__content" href="javascript:;"><img src="images/BannerAd-placeholder.jpg" /></a>
+                <a class="page-header__content" href="javascript:;">
+                    <img src="images/BannerAd-placeholder.jpg" /></a>
             </div>
         </div>
         <!-- Page Masthead -->
@@ -315,8 +314,13 @@
 
                 <select name="q" class="page-search__dropdown page-search__dropdown--main desktop" placeholder="Search for real estate listings or articles. ex: 3 bedroom for sale in Brookline under 1,000,000">
                     <option value="Search for real estate listings or articles. ex: 3 bedroom for sale in Brookline under 1,000,000">Search for real estate listings or articles. ex: 3 bedroom for sale in Brookline under 1,000,000</option>
-                    <option value="Stuff">Stuff</option>
-                    <option value="Things">Things</option>
+                    <option value="Boston">Boston</option>
+                    <option value="Brookline">Brookline</option>
+                    <option value="Cambridge">Cambridge</option>
+                    <option value="Somerville">Somerville</option>
+                    <option value="Waltham">Waltham</option>
+                    <option value="Braintree">Braintree</option>
+                    <option value="Newton">Newton</option>
                 </select>
                 <button class="page-search__button page-search__button--level-two-toggle desktop">           
                     <span class="down-arrow"></span>
@@ -361,10 +365,10 @@
                 <section class="page-search__section" title="Price">
                     <h4 class="mobile">Price</h4>
                     <div class="page-search__container page-search__container--range price-range-container">
-                        <input type="text" class="page-search__input page-search__input--numeric-short" name="price_range_min" placeholder="$300K">
+                        <input type="text" class="page-search__input page-search__input--numeric" name="price_range_min" placeholder="$300K">
                         </input>
                         &mdash;&nbsp;
-                        <input type="text" class="page-search__input page-search__input--numeric-short" name="price_range_max" placeholder="$24M">
+                        <input type="text" class="page-search__input page-search__input--numeric" name="price_range_max" placeholder="$24M">
                         </input>
                     </div>
                 </section>
@@ -416,9 +420,9 @@
                     </span>
                 </select>
 
-                <button class="page-search__button page-search__button--save desktop" value="">
+                <button class="page-search__button page-search__button--save desktop" value="saved">
                     <span class="save-search">Save Search</span>
-                    <span class="saved">Saved!</span>
+                    <span class="saved" style="display:none;">Saved!</span>
                 </button>
             </div>
 

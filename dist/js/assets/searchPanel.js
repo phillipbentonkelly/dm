@@ -1,13 +1,14 @@
 
 if (typeof dm === 'undefined') { dm = {}; }
 
-	dm.searchPanel = {};
-	dm.selectize = {};
-	dm.select2 = {};
+dm.searchPanel = {};
+dm.selectize = {};
+dm.select2 = {};
 
 (function($, window, document, undefined){
 
 	dm.selectize = function(el, opts){
+		console.log(el + " " + opts)
 		$.fn.selectize.apply(el, opts);
 	};
 
@@ -38,8 +39,8 @@ if (typeof dm === 'undefined') { dm = {}; }
 			$lvl2t: $('.page-search__button--level-two-toggle'),
 			$lvl3t: $('.page-search__button--level-three-toggle'),
 			$close: $('.page-search__button--close'),
-			$svSearch: $('.page-search__button--save'), 
-			$search: $('.page-search__button--submit')
+			$svSearch: $('.page-search__button--save-search'), 
+			$search: $('.page-search__buttons--submit')
 		};
 
 		this.init();	
@@ -52,11 +53,14 @@ if (typeof dm === 'undefined') { dm = {}; }
 		allOpen: false,
 
 		init: function(){
-
 			this.lvls.$two.hide();
 			this.lvls.$three.hide();
 
-            var tokenizeParams = {
+			var mainInputParams = {
+				placeholder: "Search for real estate listings or articles. ex: 3 bedroom for sale in Brookline under 1,000,000"
+			};
+
+			var tokenizeParams = {
             	delimeter: ',',
             	persist: true,
             	create: function(input){
@@ -67,7 +71,7 @@ if (typeof dm === 'undefined') { dm = {}; }
             	}
             };
 
-            this.inputs.$main.selectize({persist: false});
+            this.inputs.$main.selectize(mainInputParams);
             this.inputs.$tokenize.selectize(tokenizeParams);
             this.inputs.$filters.select2();
 
@@ -91,7 +95,7 @@ if (typeof dm === 'undefined') { dm = {}; }
 							arrow.toggle();
 							self.lvls.$three.hide();
 							self.lvls.$two.hide();
-							self.btns.$lvl3t.removeClass('.select2-panel-open');
+							self.btns.$lvl3t.removeClass('select2-panel-open');
 							self.allOpen = false;
 						}else{
 							arrow.toggle();
@@ -115,13 +119,8 @@ if (typeof dm === 'undefined') { dm = {}; }
 						self.allOpen = false;
 					});
 
-					self.btns.$svSearch.on('click', function(e){
-						e.preventDefault();
-						var status = $(this).children('span');
-						status.toggle();
-					});
+				break;
 
-					break;
 
 				case 'mobile':
 
@@ -135,8 +134,8 @@ if (typeof dm === 'undefined') { dm = {}; }
 						lvl2.toggle();
 					});
 
-					break;
-
+				break;
+					
 			}
 
 		},
@@ -146,7 +145,9 @@ if (typeof dm === 'undefined') { dm = {}; }
 
 
 	$.fn.searchPanel = function(){
-		return new dm.searchPanel(this);		
+		return this.each(function(){
+			new dm.searchPanel(this);
+		});
 	}
 
 

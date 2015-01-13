@@ -73,7 +73,7 @@
 
             	if('#listingDropDown'){
                 	$("#listingDropDown").select2({ dropdownCssClass: 'mplistings-dropdown' });
-                }
+            	}
 
                 if ($(window).width() > 752) {
 	                $('.page-layout__left-col').width($(window).width() - 320);
@@ -90,17 +90,18 @@
         </script>
 
 </head>
-<body <?php if ($pageType == 'serp') { echo "class='page--$pageType serp'"; } else {  echo "class='page--$pageType'"; } ?>>
+<body <?php if ($pageType == 'home') { echo 'class="home"'; } else {  echo "class='page-section $pageType'"; } ?>>
+
 	<!-- Page Masthead -->
     <?php include 'page/page-masthead.php'; ?>
 
     <!-- Page Nav -->
     <?php include 'page/page-nav.php'; ?>
 
-    <?php if ($pageType == 'serp') { ?>
-	    <!-- Page Search -->
-	    <?php include 'page/page-search.php'; ?>
-    <?php } ?>
+    
+    <!-- Page Search -->
+    <?php include 'page/page-search.php'; ?>
+    
 	
 	<?php if ($pageType == 'home') { ?>
 		<!-- Module Content -->
