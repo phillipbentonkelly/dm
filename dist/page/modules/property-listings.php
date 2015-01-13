@@ -295,8 +295,8 @@
     </div>
 
     <div class="navigation">
-        <a href="javascript:;" id="leftArrow" title="DOWN">Down</a>
-        <a href="javascript:;" id="rightArrow" title="UP">Up</a>
+        <a href="javascript:;" id="leftArrow" title="DOWN"><img class='up-arrow nav-arrow' src='images/listings/arrow-icon-grey.jpg'></a>
+        <a href="javascript:;" id="rightArrow" title="UP"><img class='down-arrow nav-arrow' src='images/listings/arrow-icon-grey.jpg'></a>
     </div>
 
     <a href="javascript:;" class="view-all">View All <span class="listingType">New</span> Listings</a>
