@@ -295,10 +295,9 @@
     </div>
 
     <div class="navigation">
-        <a href="javascript:;" id="leftArrow" title="DOWN"><img class='up-arrow nav-arrow' src='images/listings/arrow-icon-grey.jpg'></a>
-        <a href="javascript:;" id="rightArrow" title="UP"><img class='down-arrow nav-arrow' src='images/listings/arrow-icon-grey.jpg'></a>
+        <a href="javascript:;" id="left-arrow" title="DOWN"><img class='nav-arrow' src='images/listings/arrow-icon-yellow.png'></a>
+        <a href="javascript:;" class="view-all">View All <span class="listingType">New</span> Listings</a>
+        <a href="javascript:;" id="right-arrow" title="UP"><img class='nav-arrow' src='images/listings/arrow-icon-yellow.png'></a>
     </div>
-
-    <a href="javascript:;" class="view-all">View All <span class="listingType">New</span> Listings</a>
 </div>
 <!-- Property Listings Widget -->
