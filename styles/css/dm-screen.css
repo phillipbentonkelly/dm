@@ -1386,7 +1386,11 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
   width: 40px;
   height: 44px;
   border-radius: 4px;
+<<<<<<< HEAD
   background: url(../../images/icons/icon_search-magnifiying-glass.png) center center no-repeat #000;
+=======
+  background: url(../../images/icons/icon_search-magnifiying-glass.png) center center no-repeat black;
+>>>>>>> 0fecb00ec05e390baee355340c8c11a8e1e40f9d
 }
 /* line 238, ../sass/partials/page/_page-search.scss */
 .page-search__button--cancel, .page-search__button--apply {
@@ -1772,6 +1776,7 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
   }
   /* line 672, ../sass/partials/page/_page-search.scss */
   .page-search__container--radio {
+<<<<<<< HEAD
     float: left;
     margin: 15px 0 0 0;
   }
@@ -1780,6 +1785,15 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
     float: left;
   }
   /* line 682, ../sass/partials/page/_page-search.scss */
+=======
+    margin-top: 15px;
+  }
+  /* line 675, ../sass/partials/page/_page-search.scss */
+  .page-search__container--range {
+    float: left;
+  }
+  /* line 680, ../sass/partials/page/_page-search.scss */
+>>>>>>> 0fecb00ec05e390baee355340c8c11a8e1e40f9d
   .page-search__list-item {
     float: left;
     width: 100%;
@@ -2217,7 +2231,7 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
   border-radius: 2px;
-  background: url("../images/icons/magGlass_bg_blk.gif") center center no-repeat #000;
+  background: url("../images/icons/magGlass_bg_blk.gif") center center no-repeat black;
 }
 /* line 61, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel #carousel-wrap, .full-screen-carousel .slide {
@@ -3448,7 +3462,7 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
   margin-top: 2px;
   padding: 0;
   display: inline-block;
-  background: url(../../images/icons/icon_search-magnifiying-glass.png) center center no-repeat #000;
+  background: url(../../images/icons/icon_search-magnifiying-glass.png) center center no-repeat black;
   border: 0;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
@@ -4805,5 +4819,3 @@ a, img {
     width: 298px;
   }
 }
-
-/*# sourceMappingURL=dm-screen.css.map */
