@@ -115,7 +115,6 @@ dm.select2 = {};
 					self.btns.$close.on('click', function(e){
 						e.preventDefault();
 						self.lvls.$three.hide();
-						self.lvls.$two.hide();
 						self.btns.$lvl3t.removeClass('select2-panel-open');
 						self.allOpen = false;
 					});
