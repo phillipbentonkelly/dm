@@ -1243,11 +1243,19 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
 .page-search__row--level-two .select2-container {
   float: right;
   padding: 5px 0;
+<<<<<<< HEAD
 }
 /* line 81, ../sass/partials/page/_page-search.scss */
 .page-search__row--level-two .select2-container .select2-arrow {
   margin-top: 3px;
 }
+=======
+}
+/* line 81, ../sass/partials/page/_page-search.scss */
+.page-search__row--level-two .select2-container .select2-arrow {
+  margin-top: 3px;
+}
+>>>>>>> a0b95a98e26ee0a9d6290f89f10f5e9e7a4a127f
 /* line 87, ../sass/partials/page/_page-search.scss */
 .page-search__row--level-three {
   display: inline-block;
@@ -1386,7 +1394,11 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
   width: 40px;
   height: 44px;
   border-radius: 4px;
+<<<<<<< HEAD
   background: url(../../images/icons/icon_search-magnifiying-glass.png) center center no-repeat black;
+=======
+  background: url(../../images/icons/icon_search-magnifiying-glass.png) center center no-repeat #000;
+>>>>>>> a0b95a98e26ee0a9d6290f89f10f5e9e7a4a127f
 }
 /* line 238, ../sass/partials/page/_page-search.scss */
 .page-search__button--cancel, .page-search__button--apply {
@@ -1773,11 +1785,19 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
   /* line 671, ../sass/partials/page/_page-search.scss */
   .page-search__container--radio {
     margin-top: 15px;
+<<<<<<< HEAD
   }
   /* line 675, ../sass/partials/page/_page-search.scss */
   .page-search__container--range {
     float: left;
   }
+=======
+  }
+  /* line 675, ../sass/partials/page/_page-search.scss */
+  .page-search__container--range {
+    float: left;
+  }
+>>>>>>> a0b95a98e26ee0a9d6290f89f10f5e9e7a4a127f
   /* line 680, ../sass/partials/page/_page-search.scss */
   .page-search__list-item {
     float: left;
@@ -2216,7 +2236,7 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
   border-radius: 2px;
-  background: url("../images/icons/magGlass_bg_blk.gif") center center no-repeat black;
+  background: url("../images/icons/magGlass_bg_blk.gif") center center no-repeat #000;
 }
 /* line 61, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel #carousel-wrap, .full-screen-carousel .slide {
@@ -3447,7 +3467,7 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
   margin-top: 2px;
   padding: 0;
   display: inline-block;
-  background: url(../../images/icons/icon_search-magnifiying-glass.png) center center no-repeat black;
+  background: url(../../images/icons/icon_search-magnifiying-glass.png) center center no-repeat #000;
   border: 0;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
@@ -4363,12 +4383,21 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
 /* line 192, ../sass/partials/page/modules/property-search-results.scss */
 .search-results .property-info .description {
   display: none;
+<<<<<<< HEAD
 }
 /* line 199, ../sass/partials/page/modules/property-search-results.scss */
 .search-results .row1 .price {
   width: 100%;
   font-weight: 700;
 }
+=======
+}
+/* line 199, ../sass/partials/page/modules/property-search-results.scss */
+.search-results .row1 .price {
+  width: 100%;
+  font-weight: 700;
+}
+>>>>>>> a0b95a98e26ee0a9d6290f89f10f5e9e7a4a127f
 /* line 204, ../sass/partials/page/modules/property-search-results.scss */
 .search-results .row1 .house-type {
   display: none;
@@ -4804,3 +4833,5 @@ a, img {
     width: 298px;
   }
 }
+
+/*# sourceMappingURL=dm-screen.css.map */
