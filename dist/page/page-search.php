@@ -1,6 +1,6 @@
 <?php $pageType = $_GET['page-type']; ?>
 
-        <!-- Page Search -->
+<!-- Page Search -->
 <div class="page-search">
     <div class="page-search__content-wrapper">
         <form class="page-search__form">
@@ -8,6 +8,7 @@
             <div class="page-search__row page-search__row--level-one">
 
                 <select class="page-search__dropdown page-search__dropdown--main" name="q">
+                    <option value="">Search for real estate listings or articles. ex: 3 bedroom for sale in Brookline under 1,000,000</option>
                     <option value="Boston">Boston</option>
                     <option value="Brookline">Brookline</option>
                     <option value="Cambridge">Cambridge</option>

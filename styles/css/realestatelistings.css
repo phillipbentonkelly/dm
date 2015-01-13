@@ -257,7 +257,7 @@ a, img {
 .mplistings .scrollWrapper .listing-container .property__price {
   font-size: 40%;
   float: left;
-  font-family: OpenSans;
+  font-family: 'OpenSans';
   color: #ffffff;
   font-size: 12px;
   /* Approximation due to font substitution */
@@ -269,7 +269,7 @@ a, img {
   display: none;
   font-size: 40%;
   float: right;
-  font-family: OpenSans;
+  font-family: 'OpenSans';
   color: #ffffff;
   font-size: 10px;
   /* Approximation due to font substitution */
@@ -317,7 +317,7 @@ a, img {
   width: 49%;
   min-height: 33%;
   padding: 2% 0 3% 0;
-  font-family: OpenSans;
+  font-family: 'OpenSans';
   color: #000000;
   font-size: 11px;
   /* Approximation due to font substitution */

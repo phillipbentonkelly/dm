@@ -56,7 +56,8 @@ dm.select2 = {};
 			this.lvls.$three.hide();
 
 			var mainInputParams = {
-				placeholder: "Search for real estate listings or articles. ex: 3 bedroom for sale in Brookline under 1,000,000"
+				placeholder: "Search for real estate listings or articles. ex: 3 bedroom for sale in Brookline under 1,000,000",
+				persist: false
 			};
 
 			var tokenizeParams = {

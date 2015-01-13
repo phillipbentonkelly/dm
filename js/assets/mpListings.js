@@ -14,27 +14,15 @@ var mplistingObj = {};
 
     MPListings.prototype = {
         scrollListings: function( evt ){
-<<<<<<< HEAD
-=======
-            console.log('')
->>>>>>> gh-pages
             if(mpListings.$listingWrapper.width() > 332 === false){
                 var thisObj = $(this);
                 
                 if(thisObj.attr('id') === 'leftArrow'){
-<<<<<<< HEAD
-=======
-                    alert('you clicked the left arrow');
->>>>>>> gh-pages
                     if(mpListings.listingsArrCurrIndex < mpListings.listingsArr.length){
                         mplistingObj.moveScrollArea( mpListings.listingsArr[ mpListings.listingsArrCurrIndex+1 ] );
                         mpListings.listingsArrCurrIndex = mpListings.listingsArrCurrIndex + 1;
                     }
                 }else{
-<<<<<<< HEAD
-=======
-                    alert('you clicked the left arrow');
->>>>>>> gh-pages
                     if(mpListings.listingsArrCurrIndex > 0){
                         mplistingObj.moveScrollArea( mpListings.listingsArr[ mpListings.listingsArrCurrIndex-1 ] );
                         mpListings.listingsArrCurrIndex = mpListings.listingsArrCurrIndex - 1;
@@ -43,10 +31,6 @@ var mplistingObj = {};
             }
         },
         moveScrollArea: function( distance ){
-<<<<<<< HEAD
-=======
-            debugger;
->>>>>>> gh-pages
             mpListings.$listingsContainer.animate({
                 scrollTop: distance
             }, 500).promise().done(function(){
