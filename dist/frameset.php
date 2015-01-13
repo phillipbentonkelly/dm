@@ -31,7 +31,6 @@
 	<!-- SCRIPTS -->
     <script src="js/resources/jquery.min.js"></script>
     	<script src="js/assets/mega-menu.js"></script>
-    	<script src="js/assets/searchPanel.js"></script>
     	<script src="js/assets/responsive-gallery.js"></script>
 
 		<?php if ($pageType == 'home') { ?>
@@ -65,7 +64,11 @@
         <script src="js/resources/plugins/select2/select2.js"></script>
         <script src="js/assets/searchPanel.js"></script>
         <script>
-            $(document).ready(function(){ 
+            $(document).ready(function(){
+            	if('#listingDropDown'){
+                    $("#listingDropDown").select2({ dropdownCssClass: 'mplistings-dropdown' });
+                }
+
                 if ($(window).width() > 752) {
 	                $('.page-layout__left-col').width($(window).width() - 320);
 	            };
@@ -79,6 +82,7 @@
 	            }
 	        });
         </script>
+        
 
 </head>
 <body <?php if ($pageType == 'home') { echo 'class="home"'; } else {  echo "class='page-section $pageType'"; } ?>>
