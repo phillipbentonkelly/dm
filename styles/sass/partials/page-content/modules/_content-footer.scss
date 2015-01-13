@@ -19,9 +19,31 @@ $module-name: 'content-footer';
 		}
 	
 	&__social-icons {
-		width: 150px;
+		width: 160px;
 		margin: auto;
 		margin-bottom: 20px;
+		clear: both;
+		min-height: 10px;
+		overflow: hidden;
+
+		a.icon {
+			display: inline-block;
+			float: left;
+			width: 35px;
+			height: 31px;
+			text-indent: -900px;
+			background: url(#{$img-path}icons/sprites/sprite_footer-social-icons.png) 0 0 no-repeat;
+			margin-left: 12px;
+		}
+			a.icon:first-child {
+				margin-left: 0px;
+			}
+			a.facebook {
+				background-position: -47px 0;
+			}
+			a.rss {
+				background-position: -99px 0;
+			}
 	}
 	
 	&__footer-links {
