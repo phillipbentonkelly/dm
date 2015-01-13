@@ -1332,7 +1332,7 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
 /* line 177, ../sass/partials/page/_page-search.scss */
 .page-search__list-item {
   display: block;
-  margin: 0 5px 0 5px;
+  margin: 0 5px 5px 5px;
 }
 /* line 183, ../sass/partials/page/_page-search.scss */
 .page-search__input {
