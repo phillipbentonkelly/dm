@@ -26,8 +26,8 @@
                 <img src='images/neighborhoods/top-neighborhoods__entry__1.jpg'/>
                 <div class='photo-count'>18 Photos</div>
                 <div class='photo-arrows'>
-                    <a href='javascript:;'><img class='photo-arrow-left' src='images/listings/arrow-icon-black.png'/></a>
-                    <a href='javascript:;'><img class='photo-arrow-right' src='images/listings/arrow-icon-black.png'/></a>
+                    <a href='javascript:;'><img class='photo-arrow-left' src='images/listings/arrow-icon-trans-black.png'/></a>
+                    <a href='javascript:;'><img class='photo-arrow-right' src='images/listings/arrow-icon-trans-black.png'/></a>
                 </div>
             </div>
         </div>
@@ -104,8 +104,8 @@
                 <img src='images/neighborhoods/top-neighborhoods__entry__1.jpg'/>
                 <div class='photo-count'>18 Photos</div>
                 <div class='photo-arrows'>
-                    <a href='javascript:;'><img class='photo-arrow-left' src='images/listings/arrow-icon-black.png'/></a>
-                    <a href='javascript:;'><img class='photo-arrow-right' src='images/listings/arrow-icon-black.png'/></a>
+                    <a href='javascript:;'><img class='photo-arrow-left' src='images/listings/arrow-icon-trans-black.png'/></a>
+                    <a href='javascript:;'><img class='photo-arrow-right' src='images/listings/arrow-icon-trans-black.png'/></a>
                 </div>
             </div>
         </div>
@@ -182,8 +182,8 @@
                 <img src='images/neighborhoods/top-neighborhoods__entry__1.jpg'/>
                 <div class='photo-count'>18 Photos</div>
                 <div class='photo-arrows'>
-                    <a href='javascript:;'><img class='photo-arrow-left' src='images/listings/arrow-icon-black.png'/></a>
-                    <a href='javascript:;'><img class='photo-arrow-right' src='images/listings/arrow-icon-black.png'/></a>
+                    <a href='javascript:;'><img class='photo-arrow-left' src='images/listings/arrow-icon-trans-black.png'/></a>
+                    <a href='javascript:;'><img class='photo-arrow-right' src='images/listings/arrow-icon-trans-black.png'/></a>
                 </div>
             </div>
         </div>

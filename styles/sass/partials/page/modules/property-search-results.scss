@@ -302,6 +302,11 @@ $module-name: 'search-results';
         display: inline-block;
         height: 15px;
         width: 15px;
+        box-sizing: border-box;
+      }
+
+      .photo-arrow-right:hover, .photo-arrow-left:hover {
+        border: 1px solid white;
       }
 
       .photo-arrow-right {
