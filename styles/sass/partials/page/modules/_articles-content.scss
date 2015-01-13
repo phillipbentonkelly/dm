@@ -40,6 +40,7 @@ $module-name: 'articles-content';
 		}
 
 		&__by-line {
+			display: inline-block;
 			width: 69%;
 			padding-top: 3px;
 			font-family: OpenSans Regular;
@@ -58,6 +59,54 @@ $module-name: 'articles-content';
 
 			p {
 				padding-bottom: 0px;
+			}
+			
+			a {
+				display: block;
+				float: left;
+			}
+
+			.social-wrapper__twitter {
+				display: inline-block;
+				height: 18px;
+				overflow: hidden;
+				font-size: 10px;
+				font-weight: bold;
+				color: #32342f;
+				text-decoration: none;
+				background: url(#{$img-path}icons/twitter-follow__background.png) top left repeat-x;
+
+				border: 1px solid #ccc;
+				-webkit-border-radius: 3px;
+				-moz-border-radius: 3px;
+				border-radius: 3px;
+
+				padding: 0px 5px 0 5px;
+				margin-right: 7px;
+
+				img {
+					display: inline-block;
+					float: left;
+					margin-top: 2px;
+				}
+
+				label {
+					display: inline-block;
+					line-height: 1.5;
+					float: left;
+					margin: 2px 0 0 5px;
+				}
+			}
+
+			.social-icons__email {
+				display: inline-block;
+				float: left;
+				width: 27px;
+				height: 17px;
+				text-indent: -9000px;
+				overflow: hidden;
+				margin-top: 2px;
+				background: url(#{$img-path}icons/articles-content__author-mailto.png) top left repeat-x;
 			}
 		}
 		&__links {

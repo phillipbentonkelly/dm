@@ -1,3 +1,11 @@
+<script>
+    $(document).ready(function(){ 
+        if('#listingDropDown'){
+            $("#listingDropDown").select2({ dropdownCssClass: 'mplistings-dropdown' });
+        }
+    });
+</script>
+
 <!-- Property Listings Widget -->
 <div class="mplistings">
     <h4>Property Listings</h4>

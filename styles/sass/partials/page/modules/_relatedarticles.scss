@@ -97,6 +97,10 @@ $module-name: 'related-articles';
 		}
 	}
 
+	&__item:nth-child(2), &__item:nth-child(3) {
+		border: none;
+	}
+
 	a.viewMore{
 		clear: both;
 		display: block;
@@ -136,6 +140,10 @@ $module-name: 'related-articles';
 @include media-query(tablet) {
 
 	.#{$module-name} {
+		&__item:nth-child(3) {
+			border-top: 1px solid #e5e5e5;
+		}
+
 		&__item {
 			width: 100%;
 			height: auto;

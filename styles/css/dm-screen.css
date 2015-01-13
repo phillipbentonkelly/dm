@@ -1,4 +1,9 @@
 @font-face {
+  font-family: "Avenir";
+  src: url("../../fonts/avenir.ttf") format("truetype"), url("../../fonts/avenir.otf") format("opentype");
+  font-weight: 200;
+}
+@font-face {
   font-family: "OpenSans";
   src: url("../../fonts/OpenSans-Regular.ttf") format("truetype");
   font-weight: 400;
@@ -65,17 +70,17 @@
 }
 @font-face {
   font-family: "Oswald Stencil";
-  src: url("../../fonts/Oswald-Stencil.otf") format("truetype");
+  src: url("../../fonts/Oswald-Stencil.otf") format("opentype");
   font-weight: 400;
 }
 @font-face {
   font-family: "Helvetica Neue";
-  src: url("../../fonts/HelveticaNeue.eot?#iefix") format("embedded-opentype"), url("../../fonts/HelveticaNeue.woff") format("woff"), url("../../fonts/HelveticaNeue.ttf") format("opentype");
+  src: url("../../fonts/HelveticaNeue.eot?#iefix") format("embedded-opentype"), url("../../fonts/HelveticaNeue.woff") format("woff"), url("../../fonts/HelveticaNeue.ttf") format("truetype");
   font-weight: 400;
 }
 @font-face {
   font-family: "Helvetica Neue Bold";
-  src: url("../../fonts/HelveticaNeue-Bold.eot?#iefix") format("embedded-opentype"), url("../../fonts/HelveticaNeue-Bold.woff") format("woff"), url("../../fonts/HelveticaNeue-Bold.ttf") format("opentype");
+  src: url("../../fonts/HelveticaNeue-Bold.eot?#iefix") format("embedded-opentype"), url("../../fonts/HelveticaNeue-Bold.woff") format("woff"), url("../../fonts/HelveticaNeue-Bold.ttf") format("truetype");
   font-weight: 700;
 }
 /* line 4, ../sass/partials/_reset.scss */
@@ -335,6 +340,42 @@ body {
   background-position: -179px 0px !important;
 }
 
+/* line 354, ../sass/helpers/_mixins-and-extends.scss */
+.chevron::before, .full-screen-carousel .chevron::before, .gallery-widget .chevron::before, .gallery-widget__details__info-nav .chevron::before {
+  color: #fff;
+  border-style: solid;
+  border-width: 0.20em 0.20em 0 0;
+  content: '';
+  display: inline-block;
+  height: 1em;
+  left: 0.15em;
+  position: relative;
+  top: 0.4em;
+  transform: rotate(-45deg);
+  vertical-align: top;
+  width: 1em;
+  font-family: arial, sans-serif;
+  font-size: 15px;
+}
+
+/* line 372, ../sass/helpers/_mixins-and-extends.scss */
+.chevron.right:before {
+  left: 0;
+  transform: rotate(45deg);
+}
+
+/* line 377, ../sass/helpers/_mixins-and-extends.scss */
+.chevron.bottom:before {
+  top: 0;
+  transform: rotate(135deg);
+}
+
+/* line 382, ../sass/helpers/_mixins-and-extends.scss */
+.chevron.left:before {
+  left: 0.25em;
+  transform: rotate(-135deg);
+}
+
 /* line 5, ../sass/partials/_element-defaults.scss */
 html {
   font-size: 85%;
@@ -535,6 +576,32 @@ textarea {
   top: 1%;
 }
 /* line 90, ../sass/helpers/_common-assets.scss */
+.quotebox__by-line {
+  display: inline-block;
+  width: 69%;
+  padding-top: 3px;
+  font-family: OpenSans Regular;
+  font-size: 12px;
+}
+/* line 99, ../sass/helpers/_common-assets.scss */
+.quotebox__flag {
+  width: 6.8%;
+  height: 0.5%;
+  font-family: Oswald;
+  color: #ffffff;
+  background-color: black;
+  font-size: 11px;
+  /* Approximation due to font substitution */
+  font-weight: 700;
+  text-align: left;
+  position: relative;
+  bottom: 20px;
+  margin-right: 100%;
+  margin-left: -18px;
+  padding-right: 4px;
+  padding-left: 4px;
+}
+/* line 120, ../sass/helpers/_common-assets.scss */
 .quotebox__rect1 {
   background: #3793b2;
   padding: 2% 3% 2% 3%;
@@ -546,7 +613,7 @@ textarea {
   margin-bottom: 2em;
   position: relative;
 }
-/* line 102, ../sass/helpers/_common-assets.scss */
+/* line 132, ../sass/helpers/_common-assets.scss */
 .quotebox__rect1:after, .quotebox__rect1:before {
   top: 100%;
   left: 30%;
@@ -557,7 +624,7 @@ textarea {
   position: absolute;
   pointer-events: none;
 }
-/* line 113, ../sass/helpers/_common-assets.scss */
+/* line 143, ../sass/helpers/_common-assets.scss */
 .quotebox__rect1:after {
   border-color: rgba(55, 147, 178, 0);
   border-top-color: #3793b2;
@@ -565,7 +632,7 @@ textarea {
   border-left-width: 1px;
   margin-left: -140px;
 }
-/* line 121, ../sass/helpers/_common-assets.scss */
+/* line 151, ../sass/helpers/_common-assets.scss */
 .quotebox__rect2 {
   background: #e5e5e5;
   padding: 3%;
@@ -2013,6 +2080,10 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
   background-color: #ff6c6c;
 }
 /* line 100, ../sass/partials/page/modules/_relatedarticles.scss */
+.related-articles__item:nth-child(2), .related-articles__item:nth-child(3) {
+  border: none;
+}
+/* line 104, ../sass/partials/page/modules/_relatedarticles.scss */
 .related-articles a.viewMore {
   clear: both;
   display: block;
@@ -2028,64 +2099,68 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
   background: #e5e5e5;
   margin-top: 20px;
 }
-/* line 115, ../sass/partials/page/modules/_relatedarticles.scss */
+/* line 119, ../sass/partials/page/modules/_relatedarticles.scss */
 .related-articles a.viewMore img {
   margin-left: 4px;
 }
-/* line 120, ../sass/partials/page/modules/_relatedarticles.scss */
+/* line 124, ../sass/partials/page/modules/_relatedarticles.scss */
 .related-articles .dfp-ad__row {
   display: block;
   clear: both;
   min-height: 1px;
   overflow: hidden;
 }
-/* line 126, ../sass/partials/page/modules/_relatedarticles.scss */
+/* line 130, ../sass/partials/page/modules/_relatedarticles.scss */
 .related-articles .dfp-ad__row__main-link {
   display: none;
   float: left;
 }
-/* line 130, ../sass/partials/page/modules/_relatedarticles.scss */
+/* line 134, ../sass/partials/page/modules/_relatedarticles.scss */
 .related-articles .dfp-ad__row__main-link:nth-child(odd) {
   margin-right: 30px;
 }
 
 @media (min-width: 768px) {
-  /* line 139, ../sass/partials/page/modules/_relatedarticles.scss */
+  /* line 143, ../sass/partials/page/modules/_relatedarticles.scss */
+  .related-articles__item:nth-child(3) {
+    border-top: 1px solid #e5e5e5;
+  }
+  /* line 147, ../sass/partials/page/modules/_relatedarticles.scss */
   .related-articles__item {
     width: 100%;
     height: auto;
   }
-  /* line 143, ../sass/partials/page/modules/_relatedarticles.scss */
+  /* line 151, ../sass/partials/page/modules/_relatedarticles.scss */
   .related-articles__item p.description, .related-articles__item div.date {
     display: block;
     text-align: left;
   }
-  /* line 148, ../sass/partials/page/modules/_relatedarticles.scss */
+  /* line 156, ../sass/partials/page/modules/_relatedarticles.scss */
   .related-articles__item div.date {
     max-width: 45%;
     float: left;
     font-family: OpenSans Italic;
     font-size: 12px;
   }
-  /* line 156, ../sass/partials/page/modules/_relatedarticles.scss */
+  /* line 164, ../sass/partials/page/modules/_relatedarticles.scss */
   .related-articles__item:nth-child(2) {
     border-top: 0;
   }
-  /* line 160, ../sass/partials/page/modules/_relatedarticles.scss */
+  /* line 168, ../sass/partials/page/modules/_relatedarticles.scss */
   .related-articles .additional-info {
     display: block;
   }
-  /* line 165, ../sass/partials/page/modules/_relatedarticles.scss */
+  /* line 173, ../sass/partials/page/modules/_relatedarticles.scss */
   .related-articles h2.title {
     font-size: 16px;
     /* Approximation due to font substitution */
   }
-  /* line 169, ../sass/partials/page/modules/_relatedarticles.scss */
+  /* line 177, ../sass/partials/page/modules/_relatedarticles.scss */
   .related-articles .thumb {
     float: left;
     margin-right: 10px;
   }
-  /* line 174, ../sass/partials/page/modules/_relatedarticles.scss */
+  /* line 182, ../sass/partials/page/modules/_relatedarticles.scss */
   .related-articles .tags {
     display: block;
   }
@@ -2313,48 +2388,16 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
 .full-screen-carousel .carousel-fullwidth_slide-detail-content .providerIcon img {
   margin-top: 5%;
 }
-/* line 216, ../sass/partials/page/modules/_full-screen-carousel.scss */
-.full-screen-carousel .chevron::before {
-  color: #fff;
-  border-style: solid;
-  border-width: 0.20em 0.20em 0 0;
-  content: '';
-  display: inline-block;
-  height: 1em;
-  left: 0.15em;
-  position: relative;
-  top: 0.4em;
-  transform: rotate(-45deg);
-  vertical-align: top;
-  width: 1em;
-  font-family: arial, sans-serif;
-  font-size: 15px;
-}
-/* line 234, ../sass/partials/page/modules/_full-screen-carousel.scss */
-.full-screen-carousel .chevron.right:before {
-  left: 0;
-  transform: rotate(45deg);
-}
-/* line 239, ../sass/partials/page/modules/_full-screen-carousel.scss */
-.full-screen-carousel .chevron.bottom:before {
-  top: 0;
-  transform: rotate(135deg);
-}
-/* line 244, ../sass/partials/page/modules/_full-screen-carousel.scss */
-.full-screen-carousel .chevron.left:before {
-  left: 0.25em;
-  transform: rotate(-135deg);
-}
-/* line 248, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 220, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel #carousel-wrap .chevron::before {
   top: 48%;
   cursor: pointer;
 }
-/* line 254, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 226, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .carouselRightNavFade {
   display: none;
 }
-/* line 259, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 231, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .useMobileLayout .carouselRightNavFade {
   display: block;
   width: 15px;
@@ -2379,35 +2422,35 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
   right: 0;
   top: 0;
 }
-/* line 278, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 250, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .useMobileLayout .carousel-fullwidth_slide-detail-content {
   width: 97%;
   padding-left: 3%;
 }
-/* line 283, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 255, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .useMobileLayout .carousel-fullwidth_slide-detail-content p {
   display: none;
 }
-/* line 286, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 258, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .useMobileLayout .carousel-fullwidth_slide-detail-content p:nth-child(1) {
   display: block;
 }
-/* line 289, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 261, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .useMobileLayout .carousel-fullwidth_slide-details {
   overflow: initial;
 }
-/* line 292, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 264, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .useMobileLayout .carousel-fullwidth_slide-detail-icon {
   position: absolute;
   bottom: 25%;
   z-index: 1;
 }
-/* line 298, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 270, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel #carousel-wrap.useMobileLayout .slide .detailsArrow {
   border-color: rgba(0, 0, 0, 0.8) transparent;
   bottom: 60px;
 }
-/* line 303, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 275, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .useMobileLayout .carousel-fullwidth_slide-details {
   border-color: rgba(0, 0, 0, 0.8) transparent;
   height: 60px;
@@ -2476,7 +2519,7 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
 /* line 93, ../sass/partials/page/modules/_contact-form-premium.scss */
 .contact__agent-links {
   color: #2e1460;
-  font-family: 'Open Sans';
+  font-family: 'OpenSans';
   margin-bottom: 0px;
 }
 /* line 97, ../sass/partials/page/modules/_contact-form-premium.scss */
@@ -2488,7 +2531,7 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
 /* line 104, ../sass/partials/page/modules/_contact-form-premium.scss */
 .contact__agent-name {
   margin: 0;
-  font-family: 'Open Sans';
+  font-family: 'OpenSans';
   font-weight: 600;
 }
 /* line 110, ../sass/partials/page/modules/_contact-form-premium.scss */
@@ -2501,7 +2544,7 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
 /* line 118, ../sass/partials/page/modules/_contact-form-premium.scss */
 .contact__agent-address p {
   margin: 0;
-  font-family: 'Open Sans';
+  font-family: 'OpenSans';
   font-size: 11px;
 }
 /* line 125, ../sass/partials/page/modules/_contact-form-premium.scss */
@@ -2536,7 +2579,7 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
   color: white;
   border: none;
   border-radius: 2px;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'OpenSans', sans-serif;
   font-weight: 300;
   font-size: 105%;
   float: right;
@@ -2554,7 +2597,7 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
   background: #2e1460;
   float: right;
   border-radius: 2px;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'OpenSans', sans-serif;
   font-size: 11px;
   font-weight: 700;
   text-transform: uppercase;
@@ -3134,7 +3177,7 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
   border: none;
   border-radius: 3px;
   font-size: 18px;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'OpenSans', sans-serif;
   font-weight: 300;
 }
 
@@ -3696,7 +3739,7 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
   }
   /* line 351, ../sass/partials/page/modules/_mega-menu.scss */
   .mega-menu__section--middle .mega-menu__list-item {
-    padding: 10px 45px 10px 0;
+    padding: 5px 45px 5px 0;
     border-top: 1px solid lightgrey;
     font-family: 'OpenSans';
     font-weight: 600;
@@ -3925,51 +3968,98 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
 }
 /* line 42, ../sass/partials/page/modules/_articles-content.scss */
 .articles-content__article__by-line {
+  display: inline-block;
   width: 69%;
   padding-top: 3px;
   font-family: OpenSans Regular;
   font-size: 12px;
 }
-/* line 48, ../sass/partials/page/modules/_articles-content.scss */
+/* line 49, ../sass/partials/page/modules/_articles-content.scss */
 .articles-content__article__by-line img.author {
   float: left;
   margin: 8px 6px 0 0;
 }
-/* line 53, ../sass/partials/page/modules/_articles-content.scss */
+/* line 54, ../sass/partials/page/modules/_articles-content.scss */
 .articles-content__article__by-line h1 {
   margin: 0px 0 2px 0;
   font-family: OpenSans;
   font-size: 13px;
 }
-/* line 59, ../sass/partials/page/modules/_articles-content.scss */
+/* line 60, ../sass/partials/page/modules/_articles-content.scss */
 .articles-content__article__by-line p {
   padding-bottom: 0px;
 }
-/* line 63, ../sass/partials/page/modules/_articles-content.scss */
+/* line 64, ../sass/partials/page/modules/_articles-content.scss */
+.articles-content__article__by-line a {
+  display: block;
+  float: left;
+}
+/* line 69, ../sass/partials/page/modules/_articles-content.scss */
+.articles-content__article__by-line .social-wrapper__twitter {
+  display: inline-block;
+  height: 18px;
+  overflow: hidden;
+  font-size: 10px;
+  font-weight: bold;
+  color: #32342f;
+  text-decoration: none;
+  background: url(../../images/icons/twitter-follow__background.png) top left repeat-x;
+  border: 1px solid #ccc;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  padding: 0px 5px 0 5px;
+  margin-right: 7px;
+}
+/* line 87, ../sass/partials/page/modules/_articles-content.scss */
+.articles-content__article__by-line .social-wrapper__twitter img {
+  display: inline-block;
+  float: left;
+  margin-top: 2px;
+}
+/* line 93, ../sass/partials/page/modules/_articles-content.scss */
+.articles-content__article__by-line .social-wrapper__twitter label {
+  display: inline-block;
+  line-height: 1.5;
+  float: left;
+  margin: 2px 0 0 5px;
+}
+/* line 101, ../sass/partials/page/modules/_articles-content.scss */
+.articles-content__article__by-line .social-icons__email {
+  display: inline-block;
+  float: left;
+  width: 27px;
+  height: 17px;
+  text-indent: -9000px;
+  overflow: hidden;
+  margin-top: 2px;
+  background: url(../../images/icons/articles-content__author-mailto.png) top left repeat-x;
+}
+/* line 112, ../sass/partials/page/modules/_articles-content.scss */
 .articles-content__article__links {
   width: 31%;
   font-family: OpenSans;
   font-size: 13px;
   font-weight: bold;
 }
-/* line 69, ../sass/partials/page/modules/_articles-content.scss */
+/* line 118, ../sass/partials/page/modules/_articles-content.scss */
 .articles-content__article__links ul {
   margin: 0 0 0 17px;
   padding: 0 0 0 0;
 }
-/* line 73, ../sass/partials/page/modules/_articles-content.scss */
+/* line 122, ../sass/partials/page/modules/_articles-content.scss */
 .articles-content__article__links ul li {
   padding-top: 0;
   padding-bottom: 0;
   margin-top: 0;
   margin-bottom: 0;
 }
-/* line 79, ../sass/partials/page/modules/_articles-content.scss */
+/* line 128, ../sass/partials/page/modules/_articles-content.scss */
 .articles-content__article__links ul li a {
   color: #1a93b0;
   text-decoration: none;
 }
-/* line 87, ../sass/partials/page/modules/_articles-content.scss */
+/* line 136, ../sass/partials/page/modules/_articles-content.scss */
 .articles-content__article .date {
   font-size: 13px;
   font-family: OpenSans Italic;
@@ -3979,9 +4069,450 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
 /* line 3, ../sass/partials/page/modules/_gallery-widget.scss */
 .gallery-widget {
   width: 100%;
+  max-width: 630px;
   min-height: 464px;
+  margin-bottom: 40px;
+}
+/* line 9, ../sass/partials/page/modules/_gallery-widget.scss */
+.gallery-widget__main-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+/* line 13, ../sass/partials/page/modules/_gallery-widget.scss */
+.gallery-widget__main-wrapper__scrolling-wrapper {
+  width: 3150px;
+}
+/* line 16, ../sass/partials/page/modules/_gallery-widget.scss */
+.gallery-widget__main-wrapper__scrolling-wrapper .slide {
+  display: inline-block;
+  max-width: 630px;
+  float: left;
+}
+/* line 21, ../sass/partials/page/modules/_gallery-widget.scss */
+.gallery-widget__main-wrapper__scrolling-wrapper .slide img {
+  width: 630px;
+}
+/* line 32, ../sass/partials/page/modules/_gallery-widget.scss */
+.gallery-widget .left.chevron, .gallery-widget .right.chevron {
+  position: absolute;
+  top: 200px;
+}
+/* line 36, ../sass/partials/page/modules/_gallery-widget.scss */
+.gallery-widget .left.chevron {
+  left: 20px;
+}
+/* line 39, ../sass/partials/page/modules/_gallery-widget.scss */
+.gallery-widget .right.chevron {
+  right: 20px;
+}
+/* line 44, ../sass/partials/page/modules/_gallery-widget.scss */
+.gallery-widget .hidden-caption {
+  display: none;
+}
+/* line 48, ../sass/partials/page/modules/_gallery-widget.scss */
+.gallery-widget__details {
+  margin-top: 2px;
+  background: #000;
+  padding: 15px 10px 2px 10px;
+  font-family: OpenSans Semibold;
+  line-height: 18px;
+  font-size: 13px;
+  color: #fff;
+  clear: both;
+  overflow: hidden;
+  min-height: 30px;
+}
+/* line 61, ../sass/partials/page/modules/_gallery-widget.scss */
+.gallery-widget__details a {
+  text-decoration: none;
+}
+/* line 65, ../sass/partials/page/modules/_gallery-widget.scss */
+.gallery-widget__details__info-nav {
+  clear: both;
+  overflow: hidden;
+  min-height: 10px;
+  /*&__show-caption:after {
+  	content: "\25B6";
+  }*/
+}
+/* line 70, ../sass/partials/page/modules/_gallery-widget.scss */
+.gallery-widget__details__info-nav__show-caption {
+  float: left;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+/* line 84, ../sass/partials/page/modules/_gallery-widget.scss */
+.gallery-widget__details__info-nav .chevron:before {
+  border-width: 0.15em 0.15em 0 0;
+  width: 0.4em;
+  height: 0.4em;
+  left: 7.6em;
+  top: 3px;
+}
+/* line 92, ../sass/partials/page/modules/_gallery-widget.scss */
+.gallery-widget__details__info-nav__counter {
+  float: right;
+}
+/* line 104, ../sass/partials/page/modules/_gallery-widget.scss */
+.gallery-widget__details__caption {
+  display: none;
+  clear: both;
+  min-height: 10px;
+  overflow: hidden;
+}
+/* line 110, ../sass/partials/page/modules/_gallery-widget.scss */
+.gallery-widget__details__caption p {
+  padding: 0 0 0 0;
+  margin: 15px 0 10px 0;
+}
+/* line 115, ../sass/partials/page/modules/_gallery-widget.scss */
+.gallery-widget__details__caption__photo-credit {
+  font-family: OpenSans Italic;
+  font-size: 12px;
 }
 
+/* line 3, ../sass/partials/page/modules/property-search-results.scss */
+.search-results {
+  display: inline-block;
+  border-bottom: 1px solid grey;
+  margin-bottom: 15px;
+}
+/* line 9, ../sass/partials/page/modules/property-search-results.scss */
+.search-results__item {
+  max-height: 355px;
+  position: relative;
+}
+/* line 14, ../sass/partials/page/modules/property-search-results.scss */
+.search-results .header {
+  width: 100%;
+  color: black;
+  padding: 10px;
+  position: relative;
+  margin-bottom: 5px;
+  box-sizing: border-box;
+  display: inline-block;
+}
+/* line 23, ../sass/partials/page/modules/property-search-results.scss */
+.search-results .header .address {
+  font-family: Oswald;
+  color: black;
+  font-size: 17.93px;
+  /* Approximation due to font substitution */
+  font-weight: 400;
+  text-align: left;
+  display: inline-block;
+  width: 60%;
+  padding-right: 10px;
+  box-sizing: border-box;
+}
+/* line 36, ../sass/partials/page/modules/property-search-results.scss */
+.search-results .header:hover {
+  background: #2e1460;
+}
+/* line 39, ../sass/partials/page/modules/property-search-results.scss */
+.search-results .header:hover p {
+  color: white;
+}
+/* line 43, ../sass/partials/page/modules/property-search-results.scss */
+.search-results .header:hover .address {
+  text-decoration: underline;
+}
+/* line 47, ../sass/partials/page/modules/property-search-results.scss */
+.search-results .header:hover .share-button--heart {
+  background-image: url(../../images/listings/heart-icon-white.png);
+}
+/* line 51, ../sass/partials/page/modules/property-search-results.scss */
+.search-results .header:hover .share-button--share {
+  background-image: url(../../images/listings/share-icon-white.png);
+}
+/* line 56, ../sass/partials/page/modules/property-search-results.scss */
+.search-results .share-buttons {
+  display: inline-block;
+  float: right;
+  padding-top: 5px;
+  width: 40%;
+}
+/* line 62, ../sass/partials/page/modules/property-search-results.scss */
+.search-results .share-buttons .share-block {
+  margin-left: 15px;
+  display: inline-block;
+  float: right;
+}
+/* line 68, ../sass/partials/page/modules/property-search-results.scss */
+.search-results .share-buttons .share-link--heart {
+  float: right;
+}
+/* line 72, ../sass/partials/page/modules/property-search-results.scss */
+.search-results .share-buttons .share-button--heart {
+  display: inline-block;
+  background-image: url(../../images/listings/heart-icon-purple.png);
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+  height: 20px;
+  width: 20px;
+  vertical-align: middle;
+}
+/* line 83, ../sass/partials/page/modules/property-search-results.scss */
+.search-results .share-buttons .share-button--share {
+  display: inline-block;
+  background-image: url(../../images/listings/share-icon-purple.png);
+  background-repeat: no-repeat;
+  background-size: 23px 20px;
+  height: 20px;
+  width: 23px;
+  vertical-align: middle;
+}
+/* line 93, ../sass/partials/page/modules/property-search-results.scss */
+.search-results .share-buttons p {
+  display: inline-block;
+  font-family: OpenSans;
+  font-size: 11px;
+}
+/* line 100, ../sass/partials/page/modules/property-search-results.scss */
+.search-results .right-col, .search-results .left-col {
+  float: left;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 10px;
+  max-height: 200px;
+}
+/* line 108, ../sass/partials/page/modules/property-search-results.scss */
+.search-results .left-col {
+  width: 60%;
+}
+/* line 112, ../sass/partials/page/modules/property-search-results.scss */
+.search-results .right-col {
+  width: 40%;
+}
+/* line 116, ../sass/partials/page/modules/property-search-results.scss */
+.search-results .left-col {
+  padding-right: 10px;
+  box-sizing: border-box;
+}
+/* line 120, ../sass/partials/page/modules/property-search-results.scss */
+.search-results .left-col img {
+  max-height: 230px;
+  width: 100%;
+}
+/* line 125, ../sass/partials/page/modules/property-search-results.scss */
+.search-results .left-col .photo-count {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  background: rgba(10, 10, 10, 0.7);
+  padding: 0 10px;
+  font-family: Oswald;
+  color: #ffffff;
+  font-size: 11.96px;
+  /* Approximation due to font substitution */
+  font-weight: 400;
+  line-height: 23.91px;
+  /* Approximation due to font substitution */
+  text-align: left;
+}
+/* line 140, ../sass/partials/page/modules/property-search-results.scss */
+.search-results .left-col .photo-arrows {
+  display: none;
+}
+/* line 145, ../sass/partials/page/modules/property-search-results.scss */
+.search-results .property-info {
+  border-radius: 5px;
+}
+/* line 148, ../sass/partials/page/modules/property-search-results.scss */
+.search-results .property-info .row1, .search-results .property-info .row2, .search-results .property-info .row3, .search-results .property-info .row4 {
+  width: 100%;
+  display: block;
+  overflow: hidden;
+}
+/* line 154, ../sass/partials/page/modules/property-search-results.scss */
+.search-results .property-info .row1 p, .search-results .property-info .row2 p, .search-results .property-info .row3 p, .search-results .property-info .row4 p {
+  padding: 5px 15px;
+  text-align: center;
+  float: left;
+  box-sizing: border-box;
+  background: rgba(10, 10, 10, 0.1);
+  border-top: 1px solid white;
+}
+/* line 164, ../sass/partials/page/modules/property-search-results.scss */
+.search-results .property-info .row1, .search-results .property-info .row4 {
+  text-align: center;
+}
+/* line 167, ../sass/partials/page/modules/property-search-results.scss */
+.search-results .property-info .row1 p, .search-results .property-info .row4 p {
+  float: left;
+  font-size: 12px;
+  font-family: OpenSans;
+}
+/* line 176, ../sass/partials/page/modules/property-search-results.scss */
+.search-results .property-info .row2 p, .search-results .property-info .row3 p {
+  padding-bottom: 1005px;
+  margin-bottom: -1000px;
+  width: 50%;
+  float: left;
+  box-sizing: border-box;
+  font-size: 12px;
+  font-family: OpenSans;
+  border-top: 1px solid white;
+}
+/* line 187, ../sass/partials/page/modules/property-search-results.scss */
+.search-results .property-info .row2 p:nth-child(1), .search-results .property-info .row3 p:nth-child(1) {
+  border-right: 1px solid white;
+}
+/* line 192, ../sass/partials/page/modules/property-search-results.scss */
+.search-results .property-info .description {
+  display: none;
+}
+/* line 199, ../sass/partials/page/modules/property-search-results.scss */
+.search-results .row1 .price {
+  width: 100%;
+  font-weight: 700;
+}
+/* line 204, ../sass/partials/page/modules/property-search-results.scss */
+.search-results .row1 .house-type {
+  display: none;
+}
+/* line 211, ../sass/partials/page/modules/property-search-results.scss */
+.search-results .row4 .house-type {
+  display: block;
+  width: 100%;
+}
+/* line 217, ../sass/partials/page/modules/property-search-results.scss */
+.search-results .property-info {
+  display: block;
+  box-sizing: border-box;
+}
+/* line 222, ../sass/partials/page/modules/property-search-results.scss */
+.search-results .realtor-info {
+  max-height: 68px;
+  display: inline-block;
+  width: 100%;
+}
+/* line 229, ../sass/partials/page/modules/property-search-results.scss */
+.search-results .realtor-info--right {
+  text-align: center;
+}
+/* line 233, ../sass/partials/page/modules/property-search-results.scss */
+.search-results .realtor-info--left, .search-results .realtor-info--right, .search-results .realtor-info--middle {
+  float: left;
+  box-sizing: border-box;
+}
+/* line 238, ../sass/partials/page/modules/property-search-results.scss */
+.search-results .realtor-info--middle {
+  width: 20%;
+  padding: 0 15px;
+}
+/* line 242, ../sass/partials/page/modules/property-search-results.scss */
+.search-results .realtor-info--middle img {
+  max-width: 50px;
+  max-height: 60px;
+}
+/* line 248, ../sass/partials/page/modules/property-search-results.scss */
+.search-results .realtor-info--left {
+  padding-top: 15px;
+  width: 43%;
+  position: relative;
+}
+/* line 253, ../sass/partials/page/modules/property-search-results.scss */
+.search-results .realtor-info--left .realtor-company {
+  max-height: 100%;
+  max-width: 125px;
+}
+/* line 259, ../sass/partials/page/modules/property-search-results.scss */
+.search-results .realtor-info--right {
+  padding-top: 13px;
+  width: 37%;
+}
+/* line 263, ../sass/partials/page/modules/property-search-results.scss */
+.search-results .realtor-info--right .realtor-contact {
+  margin-bottom: 10px;
+  padding: 5px;
+  background: #2e1460;
+  color: white;
+  border: none;
+  border-radius: 2px;
+  font-family: OpenSans;
+  color: #ffffff;
+  font-size: 12.95px;
+  /* Approximation due to font substitution */
+  font-weight: 700;
+  line-height: 17.933px;
+  /* Approximation due to font substitution */
+  text-align: left;
+}
+/* line 279, ../sass/partials/page/modules/property-search-results.scss */
+.search-results .realtor-info--right .realtor-name {
+  font-family: Arial;
+  color: #000000;
+  font-size: 11.96px;
+  font-weight: 700;
+  line-height: 16px;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  /* line 294, ../sass/partials/page/modules/property-search-results.scss */
+  .search-results .photo-arrows {
+    display: block !important;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    padding: 0 10px;
+  }
+  /* line 301, ../sass/partials/page/modules/property-search-results.scss */
+  .search-results .photo-arrows .photo-arrow-right, .search-results .photo-arrows .photo-arrow-left {
+    display: inline-block;
+    height: 15px;
+    width: 15px;
+  }
+  /* line 307, ../sass/partials/page/modules/property-search-results.scss */
+  .search-results .photo-arrows .photo-arrow-right {
+    -ms-transform: rotate(180deg);
+    /* IE 9 */
+    -webkit-transform: rotate(180deg);
+    /* Chrome, Safari, Opera */
+    transform: rotate(180deg);
+  }
+  /* line 316, ../sass/partials/page/modules/property-search-results.scss */
+  .search-results .row1 .house-type {
+    display: block;
+    width: 50%;
+  }
+  /* line 321, ../sass/partials/page/modules/property-search-results.scss */
+  .search-results .row1 p {
+    width: 50%;
+    float: right;
+    box-sizing: border-box;
+  }
+  /* line 327, ../sass/partials/page/modules/property-search-results.scss */
+  .search-results .row1 .price {
+    width: 50%;
+    border-right: 1px solid white;
+  }
+  /* line 335, ../sass/partials/page/modules/property-search-results.scss */
+  .search-results .row4 .description {
+    display: block;
+    text-align: left !important;
+  }
+  /* line 340, ../sass/partials/page/modules/property-search-results.scss */
+  .search-results .row4 .house-type {
+    display: none;
+  }
+  /* line 345, ../sass/partials/page/modules/property-search-results.scss */
+  .search-results .left-col {
+    width: 40%;
+  }
+  /* line 349, ../sass/partials/page/modules/property-search-results.scss */
+  .search-results .right-col {
+    width: 60%;
+    height: auto;
+  }
+  /* line 355, ../sass/partials/page/modules/property-search-results.scss */
+  .search-results .realtor-info {
+    float: right;
+    width: 60%;
+  }
+}
 /* line 11, ../sass/partials/page-content/modules/_dfp-ads__new-homes.scss */
 .dfp-ads__new-homes {
   width: 300px;

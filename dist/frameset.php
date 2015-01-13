@@ -28,15 +28,11 @@
         <link rel="stylesheet" href="styles/css/plugins/selectize/selectize.css" />
         <link rel="stylesheet" href="styles/css/plugins/select2/select2.css" />
 
-        <?php if ($pageType == 'property-listings') { ?>
-		    <!-- Simple Modal -->
-	        <link rel="stylesheet" href="js/resources/basic/css/basic.css" />
-		<?php } ?>
-
 	<!-- SCRIPTS -->
     <script src="js/resources/jquery.min.js"></script>
     	<script src="js/assets/mega-menu.js"></script>
     	<script src="js/assets/searchPanel.js"></script>
+    	<script src="js/assets/responsive-gallery.js"></script>
 
 		<?php if ($pageType == 'home') { ?>
 		    <!-- Carousel Scripts -->
@@ -70,11 +66,14 @@
         <script src="js/assets/searchPanel.js"></script>
         <script>
             $(document).ready(function(){ 
+<<<<<<< HEAD
 
             	if('#listingDropDown'){
                 	$("#listingDropDown").select2({ dropdownCssClass: 'mplistings-dropdown' });
             	}
 
+=======
+>>>>>>> FETCH_HEAD
                 if ($(window).width() > 752) {
 	                $('.page-layout__left-col').width($(window).width() - 320);
 	            };
@@ -161,6 +160,9 @@
 
 			<!-- SEARCH PAGE -->
 			<?php if ($pageType == 'serp') { ?>
+				<!-- Search Result -->
+				<?php include 'page-content/modules/property-search-result.php'; ?>
+
 				<!-- Related Articles -->
 				<?php include 'page-content/modules/related-articles.php'; ?>
 			<?php } ?>
@@ -226,7 +228,7 @@
 			<!-- SEARCH PAGE -->
 			<?php if ($pageType == 'serp') { ?>
 				<!-- Contact The Agent Widget -->
-				<?php include 'page-content/modules/contact-the-agent.php'; ?>
+				<?php include 'page-content/modules/search-map.php'; ?>
 
 				<!-- DFP Ad - Experience the Difference -->
 				<?php include 'ads/dfp-ads__experience-the-difference.php'; ?>
