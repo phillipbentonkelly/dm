@@ -30,7 +30,6 @@
 	<!-- SCRIPTS -->
     <script src="js/resources/jquery.min.js"></script>
     	<script src="js/assets/mega-menu.js"></script>
-    	<script src="js/assets/searchPanel.js"></script>
     	<script src="js/assets/responsive-gallery.js"></script>
 
 				
@@ -43,7 +42,11 @@
         <script src="js/resources/plugins/select2/select2.js"></script>
         <script src="js/assets/searchPanel.js"></script>
         <script>
-            $(document).ready(function(){ 
+            $(document).ready(function(){
+            	if('#listingDropDown'){
+                    $("#listingDropDown").select2({ dropdownCssClass: 'mplistings-dropdown' });
+                }
+
                 if ($(window).width() > 752) {
 	                $('.page-layout__left-col').width($(window).width() - 320);
 	            };
@@ -57,6 +60,7 @@
 	            }
 	        });
         </script>
+        
 
 </head>
 <body class='page-section articles'>
@@ -302,7 +306,7 @@
     
     <!-- Page Search -->
     
-        <!-- Page Search -->
+<!-- Page Search -->
 <div class="page-search">
     <div class="page-search__content-wrapper">
         <form class="page-search__form">
@@ -310,6 +314,7 @@
             <div class="page-search__row page-search__row--level-one">
 
                 <select class="page-search__dropdown page-search__dropdown--main" name="q">
+                    <option value="">Search for real estate listings or articles. ex: 3 bedroom for sale in Brookline under 1,000,000</option>
                     <option value="Boston">Boston</option>
                     <option value="Brookline">Brookline</option>
                     <option value="Cambridge">Cambridge</option>
