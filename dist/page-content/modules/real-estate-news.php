@@ -4,7 +4,10 @@
 
     <div class="adSlots">
         <a href="javascript:;" class="adSlot">
-            <img src="images/icons/luxuryLabel.png" class="iconOverlay topSpacing" />
+            <div class="category-tag__container">
+                <div class="category-tag maroon topSpacing">Luxury</div>
+                <div class="category-tag white topSpacing">For Sale</div>
+            </div>
 
             <img src="images/listings/reNews__listings__1.jpg" />
             
@@ -28,7 +31,10 @@
         </a>
 
         <a href="javascript:;" class="adSlot">
-            <img src="images/icons/luxuryLabel.png" class="iconOverlay topSpacing" />
+            <div class="category-tag__container">
+                <div class="category-tag orange topSpacing">East Boston</div>
+                <div class="category-tag white topSpacing">For Sale</div>
+            </div>
 
             <img src="images/listings/reNews__listings__4.jpg" />
             
@@ -44,7 +50,10 @@
         </a>
 
         <a href="javascript:;" class="adSlot">
-            <img src="images/icons/luxuryLabel.png" class="iconOverlay topSpacing" />
+            <div class="category-tag__container">
+                <div class="category-tag light-blue topSpacing">Open House</div>
+                <div class="category-tag white topSpacing">For Sale</div>
+            </div>
 
             <img src="images/listings/reNews__listings__5.jpg" />
             
@@ -60,7 +69,10 @@
         </a>
 
         <a href="javascript:;" class="adSlot">
-            <img src="images/icons/luxuryLabel.png" class="iconOverlay topSpacing" />
+            <div class="category-tag__container">
+                <div class="category-tag gold topSpacing">New Listing</div>
+                <div class="category-tag white topSpacing">For Sale</div>
+            </div>
 
             <img src="images/listings/reNews__listings__6.jpg" />
             

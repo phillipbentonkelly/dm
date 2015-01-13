@@ -486,18 +486,20 @@ textarea {
 .category-tag {
   display: block;
   float: left;
-  font-size: 12px;
-  font-family: Oswald Bold;
+  font-size: 11px;
+  font-family: Avenir;
+  font-weight: bold;
   text-transform: uppercase;
+  letter-spacing: 0;
   line-height: 18px;
-  padding: 0px 0px 0 5px;
+  padding: 5px 10px 3px 8px;
   margin: 0 6px 0 0;
   color: #fff;
   margin-bottom: 5px;
 }
-/* line 28, ../sass/helpers/_common-assets.scss */
+/* line 30, ../sass/helpers/_common-assets.scss */
 .category-tag .arrow {
-  display: block;
+  display: none;
   float: right;
   width: 0;
   height: 0;
@@ -507,38 +509,59 @@ textarea {
   border-right-color: rgba(255, 255, 255, 0.5);
   margin-left: 6px;
 }
-
-/* line 40, ../sass/helpers/_common-assets.scss */
-.category-tag.location {
-  background-color: #CE6323;
-}
-
-/* line 41, ../sass/helpers/_common-assets.scss */
-.category-tag.class {
-  background-color: #00a651;
-}
-
 /* line 42, ../sass/helpers/_common-assets.scss */
-.category-tag.event {
-  background-color: #77A9CE;
+.category-tag__container {
+  display: block;
+  position: absolute;
+  left: 0px;
+  top: 3%;
+}
+/* line 49, ../sass/helpers/_common-assets.scss */
+.category-tag__container .category-tag {
+  margin-bottom: 0px;
+  position: initial !important;
+  display: block;
+  clear: both;
 }
 
-/* line 43, ../sass/helpers/_common-assets.scss */
-.category-tag.featured {
-  background-color: #1a93b0;
-}
-
-/* line 44, ../sass/helpers/_common-assets.scss */
-.category-tag.trending {
-  background-color: #6dcbd3;
-}
-
-/* line 45, ../sass/helpers/_common-assets.scss */
-.category-tag.sponsored {
+/*.category-tag.location { background-color: #CE6323; }
+.category-tag.class { background-color: #00a651; }
+.category-tag.event { background-color: #77A9CE; }
+.category-tag.featured { background-color: #1a93b0; }
+.category-tag.trending { background-color: #6dcbd3; }
+.category-tag.sponsored { background-color: #A1B3B4; }*/
+/* line 64, ../sass/helpers/_common-assets.scss */
+.category-tag.gray {
   background-color: #A1B3B4;
 }
 
-/* line 52, ../sass/helpers/_common-assets.scss */
+/* line 65, ../sass/helpers/_common-assets.scss */
+.category-tag.maroon {
+  background-color: #773659;
+}
+
+/* line 66, ../sass/helpers/_common-assets.scss */
+.category-tag.orange {
+  background-color: #CE6323;
+}
+
+/* line 67, ../sass/helpers/_common-assets.scss */
+.category-tag.light-blue {
+  background-color: #77A9CE;
+}
+
+/* line 68, ../sass/helpers/_common-assets.scss */
+.category-tag.gold {
+  background-color: #B4A455;
+}
+
+/* line 69, ../sass/helpers/_common-assets.scss */
+.category-tag.white {
+  background-color: #fff;
+  color: #333;
+}
+
+/* line 76, ../sass/helpers/_common-assets.scss */
 .quotebox__square {
   width: 50%;
   float: left;
@@ -548,7 +571,7 @@ textarea {
   position: relative;
   border: 1px solid #d4e8ef;
 }
-/* line 62, ../sass/helpers/_common-assets.scss */
+/* line 86, ../sass/helpers/_common-assets.scss */
 .quotebox__square:after, .quotebox__square:before {
   top: 100%;
   left: 30%;
@@ -559,7 +582,7 @@ textarea {
   position: absolute;
   pointer-events: none;
 }
-/* line 73, ../sass/helpers/_common-assets.scss */
+/* line 97, ../sass/helpers/_common-assets.scss */
 .quotebox__square:after {
   border-color: rgba(212, 233, 240, 0);
   border-top-color: #d4e8ef;
@@ -567,7 +590,7 @@ textarea {
   border-left-width: 1px;
   margin-left: -65px;
 }
-/* line 81, ../sass/helpers/_common-assets.scss */
+/* line 105, ../sass/helpers/_common-assets.scss */
 .quotebox__worthy {
   content: 'quoteworthy';
   display: block;
@@ -576,7 +599,7 @@ textarea {
   left: 0;
   top: 1%;
 }
-/* line 90, ../sass/helpers/_common-assets.scss */
+/* line 114, ../sass/helpers/_common-assets.scss */
 .quotebox__by-line {
   display: inline-block;
   width: 69%;
@@ -584,7 +607,7 @@ textarea {
   font-family: OpenSans Regular;
   font-size: 12px;
 }
-/* line 99, ../sass/helpers/_common-assets.scss */
+/* line 123, ../sass/helpers/_common-assets.scss */
 .quotebox__flag {
   width: 6.8%;
   height: 0.5%;
@@ -602,7 +625,7 @@ textarea {
   padding-right: 4px;
   padding-left: 4px;
 }
-/* line 120, ../sass/helpers/_common-assets.scss */
+/* line 144, ../sass/helpers/_common-assets.scss */
 .quotebox__rect1 {
   background: #3793b2;
   padding: 2% 3% 2% 3%;
@@ -614,7 +637,7 @@ textarea {
   margin-bottom: 2em;
   position: relative;
 }
-/* line 132, ../sass/helpers/_common-assets.scss */
+/* line 156, ../sass/helpers/_common-assets.scss */
 .quotebox__rect1:after, .quotebox__rect1:before {
   top: 100%;
   left: 30%;
@@ -625,7 +648,7 @@ textarea {
   position: absolute;
   pointer-events: none;
 }
-/* line 143, ../sass/helpers/_common-assets.scss */
+/* line 167, ../sass/helpers/_common-assets.scss */
 .quotebox__rect1:after {
   border-color: rgba(55, 147, 178, 0);
   border-top-color: #3793b2;
@@ -633,7 +656,7 @@ textarea {
   border-left-width: 1px;
   margin-left: -140px;
 }
-/* line 151, ../sass/helpers/_common-assets.scss */
+/* line 175, ../sass/helpers/_common-assets.scss */
 .quotebox__rect2 {
   background: #e5e5e5;
   padding: 3%;

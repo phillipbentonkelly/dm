@@ -16,17 +16,19 @@ $asset-1-name: 'category-tag';
 .#{$asset-1-name} {
 	display: block;
 	float: left;
-	font-size: 12px;
-	font-family: Oswald Bold;
+	font-size: 11px;
+	font-family: Avenir;
+	font-weight: bold;
 	text-transform: uppercase;
+	letter-spacing: 0;
 	line-height: 18px;
-	padding: 0px 0px 0 5px;
+	padding: 5px 10px 3px 8px;
 	margin: 0 6px 0 0;
 	color: #fff;
 	margin-bottom: 5px;
 
 	.arrow {
-		display: block;
+		display: none;
 		float: right;
 		width: 0;
 		height: 0;
@@ -36,13 +38,35 @@ $asset-1-name: 'category-tag';
 		border-right-color: rgba(255, 255, 255, .5);
 		margin-left: 6px;
 	}
+
+	&__container {
+		display: block;
+		position: absolute;
+
+		left: 0px;
+		top: 3%;
+
+		.#{$asset-1-name} {
+			margin-bottom: 0px;
+			position: initial !important;
+			display: block;
+			clear: both;
+		}
+	}
 }
-	.#{$asset-1-name}.location { background-color: #CE6323; }
+	/*.#{$asset-1-name}.location { background-color: #CE6323; }
 	.#{$asset-1-name}.class { background-color: #00a651; }
 	.#{$asset-1-name}.event { background-color: #77A9CE; }
 	.#{$asset-1-name}.featured { background-color: #1a93b0; }
 	.#{$asset-1-name}.trending { background-color: #6dcbd3; }
-	.#{$asset-1-name}.sponsored { background-color: #A1B3B4; }
+	.#{$asset-1-name}.sponsored { background-color: #A1B3B4; }*/
+
+	.#{$asset-1-name}.gray { background-color: #A1B3B4; } // For Sponsored Flags
+	.#{$asset-1-name}.maroon { background-color: #773659; } // For Categories Flags such as Luxury, Trending, News
+	.#{$asset-1-name}.orange { background-color: #CE6323; } // For Neighborhood Flags like Beacon Hill
+	.#{$asset-1-name}.light-blue { background-color: #77A9CE; } // For Open Houses and Featured Flags
+	.#{$asset-1-name}.gold { background-color: #B4A455; } // For New Listings Flag
+	.#{$asset-1-name}.white { background-color: #fff; color: #333; } // For Sale Flag
 
 
 

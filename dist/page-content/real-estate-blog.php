@@ -6,7 +6,10 @@
         
         <div class="adSlots">
             <a href="javascript:;" class="adSlot">
-                <div class="category-tag trending topSpacing">trending <span class="arrow"></span></div>
+                <div class="category-tag__container">
+                    <div class="category-tag maroon topSpacing">Trending</div>
+                    <div class="category-tag white topSpacing">For Sale</div>
+                </div>
 
                 <img src="images/blogs/re-blog__entry__1.jpg">
                 
@@ -22,7 +25,10 @@
             </a>
 
             <a href="javascript:;" class="adSlot">
-                <div class="category-tag sponsored topSpacing">sponsored <span class="arrow"></span></div>
+                <div class="category-tag__container">
+                    <div class="category-tag gray topSpacing">Sponsored</div>
+                    <div class="category-tag white topSpacing">For Sale</div>
+                </div>
 
                 <img src="images/blogs/re-blog__entry__2.jpg">
                 
@@ -38,7 +44,10 @@
             </a>
 
             <a href="javascript:;" class="adSlot">
-                <div class="category-tag sponsored topSpacing">Sponsored <span class="arrow"></span></div>
+                <div class="category-tag__container">
+                    <div class="category-tag gray topSpacing">Sponsored</div>
+                    <div class="category-tag white topSpacing">For Sale</div>
+                </div>
 
                 <img src="images/blogs/re-blog__entry__3.jpg">
                 
