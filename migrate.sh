@@ -25,7 +25,21 @@ read yourLocalhost
 
 if [[ $proceedVar =~ ^[Yy]$ ]]
 	then
+		git checkout gh-pages
+		echo "- Switched to Pages branch"
 
+		sleep 2
+		git stash
+		echo "- Stashed any local changes"
+
+		sleep 1
+		git pull
+		echo "- Pulled most recent"
+		git status
+
+		git checkout master
+
+		sleep 3
 		if [[ $yourLocalhost ]]
 		then
 			cd ..
