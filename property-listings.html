@@ -967,41 +967,22 @@
 						
 			
 			<!-- PROPERTY LISTINGS -->
-							<!-- DFP Sidebar Placeholder Ad Content -->
-				<div class='contact__company'>
-    <img class='contact__company-img' src='http://www.motihomes.com/Customers/5430/assets/images/3785DE71-155D-0078-0BA5D1687C016B53.jpg'>
-    <div class='contact__company-info'>
-        <p class='contact__company-name'>Coldwell Banker Residential Brokerage - <span class='contact__company-city'> Brookline </span></p>
-        <p class='contact__company-note'>(Visit office website)</p>
-    </div>
-</div>
-				<!-- Contact The Agent Widget -->
-				<script type="text/javascript">
-    $(document).ready(function() {
-        $('.contact__agent-number').on('click', function(e) {
-            e.preventDefault();
-            $(this).text() == 'View My Contact Number' ? $(this).text('(617) 230-6674') : $(this).text('View My Contact Number');
-        })
-    });
-</script>
+			
+				
 
-<!-- Contact the Agent -->
-<div class='contact__container contact-agent-modal'>
+				<!-- Contact The Agent Widget -->
+				<!-- Contact the Agent -->
+<div class='contact__container contact__container-basic contact-agent-modal' style='margin-top:58px;'>
     <div class='contact__header'>
-        <p>Contact the Agent</p>
+        <p>Like this Property?</p>
     </div>
 
     <div class='contact__wrapper'>
-            <img class='contact__agent-img' src='http://commissionsforeducation.org/wp-content/uploads/2011/01/daniellenewheadcrop.jpg'>
-        <div class='contact__agent-info'>
-            <p class='contact__agent-name'>Deborah M. Gordon</p>
-            <div class='contact__agent-links'>
-                <a class='contact__agent-number' href='#'>View My Contact Number</a>
-                <a class='contact__agent-website' href='#'>Visit My Website</a>
-            </div>
-            <div class='contact__agent-address'>
-                <p>1375 Beacon St</p>
-                <p>Brookline, MA 02446</p>
+		<div class='contact__company'>
+            <img class='contact__company-img' src='http://www.motihomes.com/Customers/5430/assets/images/3785DE71-155D-0078-0BA5D1687C016B53.jpg'>
+            <div class='contact__company-info'>
+                <p class='contact__company-name'>Coldwell Banker Residential Brokerage - <span class='contact__company-city'> Brookline </span></p>
+                <p class='contact__company-note'>is happy to assist you</p>
             </div>
         </div>
         
@@ -1010,7 +991,7 @@
             <input class='contact__form-name' placeholder='Name'/><span class='contact__required-marker'>*</span>
             <input class='contact__form-name' placeholder='Email'/><span class='contact__required-marker'>*</span>
             <input class='contact__form-name' placeholder='Phone Number'/>
-            <textarea class='contact__form-name' placeholder='Hi Deborah, I found your listing on Boston.com. Please send me more infomation about 101 Fernwood Rd, Brookline, MA. Thank you'></textarea>
+            <textarea class='contact__form-name' placeholder='Please send me more infomation about 101 Fernwood Rd, Brookline, MA. Thank you'></textarea>
             <button class='contact__form-submit'>Send</button>
         </div>
     </div>
@@ -1325,21 +1306,27 @@
 </div>
 <!-- Property Listings Widget -->
 				<!-- Contact This Agent Widget -->
-				<div class='contact__container'>
+				<script type="text/javascript">
+    $(document).ready(function() {
+        $('.contact__agent-number').on('click', function(e) {
+            e.preventDefault();
+            $(this).text() == 'View My Contact Number' ? $(this).text('(617) 230-6674') : $(this).text('View My Contact Number');
+        })
+    });
+</script>
+
+<div class='contact__container'>
     <div class='contact__header'>
-        <p>Contact the Agent</p>
+        <p>Listing Provided By</p>
     </div>
 
     <div class='contact__wrapper--lower'>
-            <img class='contact__agent-img' src='http://commissionsforeducation.org/wp-content/uploads/2011/01/daniellenewheadcrop.jpg'>
-        <div class='contact__agent-info'>
+        <div class='contact__agent-info' style='margin-left:0px;'>
             <p class='contact__agent-name'>Deborah M. Gordon</p>
             <div class='contact__agent-links'>
-                <a class='contact__agent-number' href='#'>View My Contact Number</a>
-                <a class='contact__agent-website' href='#'>Visit My Website</a>
+                <a class='contact__agent-number' href='javascript:;'>View My Contact Number</a>
             </div>
         </div>
-        <div class='contact__contact-button'>contact</div>
     </div>  
 </div>						
 			
