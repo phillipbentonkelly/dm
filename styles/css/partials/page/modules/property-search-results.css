@@ -1,30 +1,368 @@
-/*
-Sass::SyntaxError: ".search-results .adSlots" failed to @extend ".adSlots".
-The selector ".adSlots" was not found.
-Use "@extend .adSlots !optional" if the extend should be able to fail.
+/* line 3, ../../../../sass/partials/page/modules/property-search-results.scss */
+.search-results {
+  display: inline-block;
+  margin-bottom: 15px;
+}
+/* line 8, ../../../../sass/partials/page/modules/property-search-results.scss */
+.search-results__item {
+  max-height: 355px;
+  position: relative;
+  border-bottom: 1px solid grey;
+  display: inline-block;
+}
+/* line 16, ../../../../sass/partials/page/modules/property-search-results.scss */
+.search-results__filter-bar {
+  display: none;
+}
+/* line 20, ../../../../sass/partials/page/modules/property-search-results.scss */
+.search-results .header {
+  width: 100%;
+  color: black;
+  padding: 10px;
+  position: relative;
+  margin-bottom: 5px;
+  box-sizing: border-box;
+  display: inline-block;
+}
+/* line 29, ../../../../sass/partials/page/modules/property-search-results.scss */
+.search-results .header .address {
+  font-family: 'Oswald Regular';
+  color: black;
+  font-size: 17.93px;
+  /* Approximation due to font substitution */
+  font-weight: 400;
+  text-align: left;
+  display: inline-block;
+  width: 60%;
+  padding-right: 10px;
+  box-sizing: border-box;
+}
+/* line 42, ../../../../sass/partials/page/modules/property-search-results.scss */
+.search-results .header:hover {
+  background: #2e1460;
+}
+/* line 45, ../../../../sass/partials/page/modules/property-search-results.scss */
+.search-results .header:hover p {
+  color: white;
+}
+/* line 49, ../../../../sass/partials/page/modules/property-search-results.scss */
+.search-results .header:hover .address {
+  text-decoration: underline;
+}
+/* line 53, ../../../../sass/partials/page/modules/property-search-results.scss */
+.search-results .header:hover .share-button--heart {
+  background-image: url(../../images/listings/heart-icon-white.png);
+}
+/* line 57, ../../../../sass/partials/page/modules/property-search-results.scss */
+.search-results .header:hover .share-button--share {
+  background-image: url(../../images/listings/share-icon-white.png);
+}
+/* line 62, ../../../../sass/partials/page/modules/property-search-results.scss */
+.search-results .share-buttons {
+  display: inline-block;
+  float: right;
+  padding-top: 5px;
+  width: 40%;
+}
+/* line 68, ../../../../sass/partials/page/modules/property-search-results.scss */
+.search-results .share-buttons .share-block {
+  margin-left: 15px;
+  display: inline-block;
+  float: right;
+}
+/* line 74, ../../../../sass/partials/page/modules/property-search-results.scss */
+.search-results .share-buttons .share-link--heart {
+  float: right;
+}
+/* line 78, ../../../../sass/partials/page/modules/property-search-results.scss */
+.search-results .share-buttons .share-button--heart {
+  display: inline-block;
+  background-image: url(../../images/listings/heart-icon-purple.png);
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+  height: 20px;
+  width: 20px;
+  vertical-align: middle;
+}
+/* line 89, ../../../../sass/partials/page/modules/property-search-results.scss */
+.search-results .share-buttons .share-button--share {
+  display: inline-block;
+  background-image: url(../../images/listings/share-icon-purple.png);
+  background-repeat: no-repeat;
+  background-size: 23px 20px;
+  height: 20px;
+  width: 23px;
+  vertical-align: middle;
+}
+/* line 99, ../../../../sass/partials/page/modules/property-search-results.scss */
+.search-results .share-buttons p {
+  display: inline-block;
+  font-family: OpenSans;
+  font-size: 11px;
+}
+/* line 106, ../../../../sass/partials/page/modules/property-search-results.scss */
+.search-results .right-col, .search-results .left-col {
+  float: left;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 10px;
+  max-height: 200px;
+}
+/* line 114, ../../../../sass/partials/page/modules/property-search-results.scss */
+.search-results .left-col {
+  width: 60%;
+}
+/* line 118, ../../../../sass/partials/page/modules/property-search-results.scss */
+.search-results .right-col {
+  width: 40%;
+}
+/* line 122, ../../../../sass/partials/page/modules/property-search-results.scss */
+.search-results .left-col {
+  padding-right: 10px;
+  box-sizing: border-box;
+}
+/* line 126, ../../../../sass/partials/page/modules/property-search-results.scss */
+.search-results .left-col img {
+  max-height: 230px;
+  width: 100%;
+}
+/* line 131, ../../../../sass/partials/page/modules/property-search-results.scss */
+.search-results .left-col .photo-count {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  background: rgba(10, 10, 10, 0.7);
+  padding: 0 10px;
+  font-family: 'Oswald Regular';
+  color: #ffffff;
+  font-size: 11.96px;
+  /* Approximation due to font substitution */
+  font-weight: 400;
+  line-height: 23.91px;
+  /* Approximation due to font substitution */
+  text-align: left;
+}
+/* line 146, ../../../../sass/partials/page/modules/property-search-results.scss */
+.search-results .left-col .photo-arrows {
+  display: none;
+}
+/* line 151, ../../../../sass/partials/page/modules/property-search-results.scss */
+.search-results .property-info {
+  border-radius: 5px;
+}
+/* line 154, ../../../../sass/partials/page/modules/property-search-results.scss */
+.search-results .property-info .row1, .search-results .property-info .row2, .search-results .property-info .row3, .search-results .property-info .row4 {
+  width: 100%;
+  display: block;
+  overflow: hidden;
+}
+/* line 160, ../../../../sass/partials/page/modules/property-search-results.scss */
+.search-results .property-info .row1 p, .search-results .property-info .row2 p, .search-results .property-info .row3 p, .search-results .property-info .row4 p {
+  padding: 5px 15px;
+  text-align: center;
+  float: left;
+  box-sizing: border-box;
+  background: rgba(10, 10, 10, 0.1);
+  border-top: 1px solid white;
+}
+/* line 170, ../../../../sass/partials/page/modules/property-search-results.scss */
+.search-results .property-info .row1, .search-results .property-info .row4 {
+  text-align: center;
+}
+/* line 173, ../../../../sass/partials/page/modules/property-search-results.scss */
+.search-results .property-info .row1 p, .search-results .property-info .row4 p {
+  float: left;
+  font-size: 12px;
+  font-family: OpenSans;
+}
+/* line 182, ../../../../sass/partials/page/modules/property-search-results.scss */
+.search-results .property-info .row2 p, .search-results .property-info .row3 p {
+  padding-bottom: 1005px;
+  margin-bottom: -1000px;
+  width: 50%;
+  float: left;
+  box-sizing: border-box;
+  font-size: 12px;
+  font-family: OpenSans;
+  border-top: 1px solid white;
+}
+/* line 193, ../../../../sass/partials/page/modules/property-search-results.scss */
+.search-results .property-info .row2 p:nth-child(1), .search-results .property-info .row3 p:nth-child(1) {
+  border-right: 1px solid white;
+}
+/* line 198, ../../../../sass/partials/page/modules/property-search-results.scss */
+.search-results .property-info .description {
+  display: none;
+}
+/* line 205, ../../../../sass/partials/page/modules/property-search-results.scss */
+.search-results .row1 .price {
+  width: 100%;
+  font-weight: 700;
+}
+/* line 210, ../../../../sass/partials/page/modules/property-search-results.scss */
+.search-results .row1 .house-type {
+  display: none;
+}
+/* line 217, ../../../../sass/partials/page/modules/property-search-results.scss */
+.search-results .row4 .house-type {
+  display: block;
+  width: 100%;
+}
+/* line 223, ../../../../sass/partials/page/modules/property-search-results.scss */
+.search-results .property-info {
+  display: block;
+  box-sizing: border-box;
+}
+/* line 228, ../../../../sass/partials/page/modules/property-search-results.scss */
+.search-results .realtor-info {
+  max-height: 68px;
+  display: inline-block;
+  width: 100%;
+}
+/* line 235, ../../../../sass/partials/page/modules/property-search-results.scss */
+.search-results .realtor-info--right {
+  text-align: center;
+}
+/* line 239, ../../../../sass/partials/page/modules/property-search-results.scss */
+.search-results .realtor-info--left, .search-results .realtor-info--right, .search-results .realtor-info--middle {
+  float: left;
+  box-sizing: border-box;
+}
+/* line 244, ../../../../sass/partials/page/modules/property-search-results.scss */
+.search-results .realtor-info--middle {
+  width: 20%;
+  padding: 0 15px;
+}
+/* line 248, ../../../../sass/partials/page/modules/property-search-results.scss */
+.search-results .realtor-info--middle img {
+  max-width: 50px;
+  max-height: 60px;
+}
+/* line 254, ../../../../sass/partials/page/modules/property-search-results.scss */
+.search-results .realtor-info--left {
+  padding-top: 15px;
+  width: 43%;
+  position: relative;
+}
+/* line 259, ../../../../sass/partials/page/modules/property-search-results.scss */
+.search-results .realtor-info--left .realtor-company {
+  max-height: 100%;
+  max-width: 125px;
+}
+/* line 265, ../../../../sass/partials/page/modules/property-search-results.scss */
+.search-results .realtor-info--right {
+  padding-top: 13px;
+  width: 37%;
+}
+/* line 269, ../../../../sass/partials/page/modules/property-search-results.scss */
+.search-results .realtor-info--right .realtor-contact {
+  margin-bottom: 10px;
+  padding: 5px;
+  background: #2e1460;
+  color: white;
+  border: none;
+  border-radius: 2px;
+  font-family: OpenSans;
+  color: #ffffff;
+  font-size: 12.95px;
+  /* Approximation due to font substitution */
+  font-weight: 700;
+  line-height: 17.933px;
+  /* Approximation due to font substitution */
+  text-align: left;
+}
+/* line 285, ../../../../sass/partials/page/modules/property-search-results.scss */
+.search-results .realtor-info--right .realtor-name {
+  font-family: Arial;
+  color: #000000;
+  font-size: 11.96px;
+  font-weight: 700;
+  line-height: 16px;
+  text-align: center;
+}
 
+@media (min-width: 768px) {
+  /* line 300, ../../../../sass/partials/page/modules/property-search-results.scss */
+  .search-results__filter-bar {
+    display: block;
+    width: 100%;
+    padding: 16px;
+    margin-bottom: 5px;
+    box-sizing: border-box;
+    background: #dacef1;
+  }
+  /* line 308, ../../../../sass/partials/page/modules/property-search-results.scss */
+  .search-results__filter-bar p {
+    font-family: 'OpenSans Semibold';
+    font-size: 11px;
+    font-weight: 400;
+  }
+  /* line 315, ../../../../sass/partials/page/modules/property-search-results.scss */
+  .search-results .photo-arrows {
+    display: block !important;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    padding: 0 10px;
+  }
+  /* line 322, ../../../../sass/partials/page/modules/property-search-results.scss */
+  .search-results .photo-arrows .photo-arrow-right, .search-results .photo-arrows .photo-arrow-left {
+    display: inline-block;
+    height: 15px;
+    width: 15px;
+    box-sizing: border-box;
+  }
+  /* line 329, ../../../../sass/partials/page/modules/property-search-results.scss */
+  .search-results .photo-arrows .photo-arrow-right:hover, .search-results .photo-arrows .photo-arrow-left:hover {
+    border: 1px solid white;
+  }
+  /* line 333, ../../../../sass/partials/page/modules/property-search-results.scss */
+  .search-results .photo-arrows .photo-arrow-right {
+    -ms-transform: rotate(180deg);
+    /* IE 9 */
+    -webkit-transform: rotate(180deg);
+    /* Chrome, Safari, Opera */
+    transform: rotate(180deg);
+  }
+  /* line 342, ../../../../sass/partials/page/modules/property-search-results.scss */
+  .search-results .row1 .house-type {
+    display: block;
+    width: 50%;
+  }
+  /* line 347, ../../../../sass/partials/page/modules/property-search-results.scss */
+  .search-results .row1 p {
+    width: 50%;
+    float: right;
+    box-sizing: border-box;
+  }
+  /* line 353, ../../../../sass/partials/page/modules/property-search-results.scss */
+  .search-results .row1 .price {
+    width: 50%;
+    border-right: 1px solid white;
+  }
+  /* line 361, ../../../../sass/partials/page/modules/property-search-results.scss */
+  .search-results .row4 .description {
+    display: block;
+    text-align: left !important;
+  }
+  /* line 366, ../../../../sass/partials/page/modules/property-search-results.scss */
+  .search-results .row4 .house-type {
+    display: none;
+  }
+  /* line 371, ../../../../sass/partials/page/modules/property-search-results.scss */
+  .search-results .left-col {
+    width: 40%;
+  }
+  /* line 375, ../../../../sass/partials/page/modules/property-search-results.scss */
+  .search-results .right-col {
+    width: 60%;
+    height: auto;
+  }
+  /* line 381, ../../../../sass/partials/page/modules/property-search-results.scss */
+  .search-results .realtor-info {
+    float: right;
+    width: 60%;
+  }
+}
 
-Backtrace:
-styles/sass/partials/page/modules/property-search-results.scss:8
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.6/lib/sass/tree/visitors/extend.rb:61:in `block in check_extends_fired!'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.6/lib/sass/util/subset_map.rb:106:in `block in each_value'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.6/lib/sass/util/subset_map.rb:106:in `each'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.6/lib/sass/util/subset_map.rb:106:in `each_value'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.6/lib/sass/tree/visitors/extend.rb:50:in `check_extends_fired!'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.6/lib/sass/tree/visitors/extend.rb:16:in `visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.6/lib/sass/tree/root_node.rb:39:in `css_tree'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.6/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.6/lib/sass/engine.rb:368:in `_render_with_sourcemap'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.6/lib/sass/engine.rb:285:in `render_with_sourcemap'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.6/lib/sass/exec/sass_scss.rb:396:in `run'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.6/lib/sass/exec/sass_scss.rb:62:in `process_result'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.6/lib/sass/exec/base.rb:52:in `parse'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.6/lib/sass/exec/base.rb:19:in `parse!'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.6/bin/sass:13:in `<top (required)>'
-/usr/bin/sass:23:in `load'
-/usr/bin/sass:23:in `<main>'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Sass::SyntaxError: \".search-results .adSlots\" failed to @extend \".adSlots\".\A The selector \".adSlots\" was not found.\A Use \"@extend .adSlots !optional\" if the extend should be able to fail.\A "; }
+/*# sourceMappingURL=property-search-results.css.map */
