@@ -148,6 +148,10 @@ dm.select2 = {};
 					//var all = $.merge(self.lvls.$one, lvl2);
 
 					self.btns.$lvl1t.on('click', function(e){
+						e.preventDefault();
+						var span = $(this).children('span');
+						$(this).toggleClass('close-search');
+
 						if(self.allOpen){
 							self.lvls.$one.hide();
 							lvl2.hide();
