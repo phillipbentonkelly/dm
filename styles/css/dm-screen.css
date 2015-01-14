@@ -494,7 +494,7 @@ textarea {
   line-height: 18px;
   padding: 5px 10px 3px 8px;
   margin: 0 6px 0 0;
-  color: #fff;
+  color: #fff !important;
   margin-bottom: 5px;
 }
 /* line 30, ../sass/helpers/_common-assets.scss */
@@ -558,7 +558,7 @@ textarea {
 /* line 69, ../sass/helpers/_common-assets.scss */
 .category-tag.white {
   background-color: #fff;
-  color: #333;
+  color: #333 !important;
 }
 
 /* line 76, ../sass/helpers/_common-assets.scss */
@@ -2251,6 +2251,7 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
 .full-screen-carousel #carousel-wrap .slide .detailsArrow {
   width: 0;
   height: 0;
+  display: none;
   border-style: solid;
   border-width: 0 25px 20px 25px;
   border-color: rgba(0, 0, 0, 0.5) transparent;
@@ -2261,12 +2262,12 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
   margin-left: auto;
   margin-right: auto;
 }
-/* line 78, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 79, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel #carousel-wrap {
   overflow: hidden;
   position: relative;
 }
-/* line 82, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 83, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .carousel_wrapper {
   display: block;
   text-align: start;
@@ -2284,7 +2285,7 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
   margin: 0px;
   overflow: hidden;
 }
-/* line 99, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 100, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel #carousel {
   /*width: 9033px;*/
   width: 100%;
@@ -2298,30 +2299,30 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
   bottom: auto;
   z-index: auto;
 }
-/* line 112, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 113, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel #carousel figure {
   position: relative;
 }
-/* line 115, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 116, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .slide {
   float: left;
   text-align: center;
   margin: 0 4px 0 0;
 }
-/* line 120, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 121, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .slide > a {
   display: block;
   clear: both;
   min-height: 10px;
   overflow: hidden;
 }
-/* line 126, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 127, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .slide a img {
   max-width: 960px;
   max-height: 580px;
   border: 0;
 }
-/* line 132, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 133, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .carousel-nav {
   display: block;
   max-height: 580px;
@@ -2339,26 +2340,26 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
   transition: background-color 0.2s ease-out, color 0.2s ease-out;
   text-align: right;
 }
-/* line 149, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 150, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .carousel-nav:hover {
   background-color: rgba(255, 255, 255, 0.1);
 }
-/* line 152, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 153, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .carousel-nav.next {
   left: auto;
   right: 0;
   text-align: left;
 }
-/* line 158, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 159, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .useMobileLayout .carousel-nav {
   display: none;
 }
-/* line 161, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 162, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .useMobileLayout .slide a img {
   float: left;
   width: 88%;
 }
-/* line 166, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 167, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .carousel-fullwidth_slide-details {
   width: 100%;
   height: 91px;
@@ -2374,7 +2375,7 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
   bottom: 0;
   left: 0;
 }
-/* line 181, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 182, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .carousel-fullwidth_slide-detail-icon {
   float: left;
   width: 15%;
@@ -2382,47 +2383,47 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
   padding-top: 10px;
   text-align: left;
 }
-/* line 188, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 189, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .carousel-fullwidth_slide-detail-content {
   float: left;
   width: 85%;
   height: 87px;
   text-align: left;
 }
-/* line 194, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 195, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .carousel-fullwidth_slide-detail-content .listing-data {
   float: left;
   width: 70%;
   height: 100%;
   font-size: 0.7em;
 }
-/* line 200, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 201, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .carousel-fullwidth_slide-detail-content p:nth-child(1) {
   font-size: 1.7em;
   line-height: 1.5em;
   margin: 4.7% 0 0 0;
 }
-/* line 205, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 206, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .carousel-fullwidth_slide-detail-content .providerIcon {
   width: 23%;
   height: 100%;
   padding-right: 7%;
   float: right;
 }
-/* line 211, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 212, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .carousel-fullwidth_slide-detail-content .providerIcon img {
   margin-top: 5%;
 }
-/* line 220, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 221, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel #carousel-wrap .chevron::before {
   top: 48%;
   cursor: pointer;
 }
-/* line 226, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 227, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .carouselRightNavFade {
   display: none;
 }
-/* line 231, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 232, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .useMobileLayout .carouselRightNavFade {
   display: block;
   width: 15px;
@@ -2447,35 +2448,35 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
   right: 0;
   top: 0;
 }
-/* line 250, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 251, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .useMobileLayout .carousel-fullwidth_slide-detail-content {
   width: 97%;
   padding-left: 3%;
 }
-/* line 255, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 256, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .useMobileLayout .carousel-fullwidth_slide-detail-content p {
   display: none;
 }
-/* line 258, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 259, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .useMobileLayout .carousel-fullwidth_slide-detail-content p:nth-child(1) {
   display: block;
 }
-/* line 261, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 262, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .useMobileLayout .carousel-fullwidth_slide-details {
   overflow: initial;
 }
-/* line 264, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 265, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .useMobileLayout .carousel-fullwidth_slide-detail-icon {
   position: absolute;
   bottom: 25%;
   z-index: 1;
 }
-/* line 270, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 271, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel #carousel-wrap.useMobileLayout .slide .detailsArrow {
   border-color: rgba(0, 0, 0, 0.8) transparent;
   bottom: 60px;
 }
-/* line 275, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 276, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .useMobileLayout .carousel-fullwidth_slide-details {
   border-color: rgba(0, 0, 0, 0.8) transparent;
   height: 60px;
