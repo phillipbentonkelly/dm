@@ -32,7 +32,8 @@
     	<script src="js/assets/mega-menu.js"></script>
     	<script src="js/assets/responsive-gallery.js"></script>
 
-				
+		
+		
 				    <!-- Real Estate Listings -->
 	        <script src="js/assets/mpListings.js"></script>
 	        <script src="js/assets/listings.data.js"></script>
@@ -83,11 +84,10 @@
             <li class="page-nav__mega-menu-responsive-icon"></li>
             <li class="page-nav__logo">
                 <a href="javascript:;">
-                    <h1>Addresses</h1>
+                    <h1>Real Estate</h1>
                     <h4>A Boston.com Site</h4>
                 </a>
             </li>
-
             <li class="page-nav__main-nav-links">
                 <ul>
                     <li class="page-nav__nav-item page-nav__responsive-home-link">
@@ -161,7 +161,7 @@
                                                     <div class="detailsArrow"></div>
 
                                                     <div class="detailsOverlay">
-                                                        <h1>14 Chestnut Street Boston, MA <span class="priceSpan">$190,000</span></h1>
+                                                        <h1><span class="col">14 Chestnut Street Boston, MA</span> <span class="priceSpan">$190,000</span></h1>
 
                                                         <p>One of Beacon Hill's most desirable tree-lined streets, this exquisite Triplex has 5,000+ sqf ft. of furnished living space. 4+ Beds/3.5 Baths</p>
                                                     </div>
@@ -281,7 +281,7 @@
                                                     <div class="detailsArrow"></div>
 
                                                     <div class="detailsOverlay">
-                                                        <h1>14 Chestnut Street Boston, MA <span class="priceSpan">$190,000</span></h1>
+                                                        <h1><span class="col">14 Chestnut Street Boston, MA</span> <span class="priceSpan">$190,000</span></h1>
 
                                                         <p>One of Beacon Hill's most desirable tree-lined streets, this exquisite Triplex has 5,000+ sqf ft. of furnished living space. 4+ Beds/3.5 Baths</p>
                                                     </div>
@@ -300,7 +300,7 @@
                 </ul>
             </li>
             
-            <li class="page-nav__search-responsive-icon"><a href="javascript:;"></a></li>
+            <li class="page-nav__search-responsive-icon"></li>
         </ul>
     </div>
 </div>
@@ -316,7 +316,7 @@
             <div class="page-search__row page-search__row--level-one">
 
                 <select class="page-search__dropdown page-search__dropdown--main" name="q">
-                    <option></option>
+                    <option value="">Search for real estate listings or articles. ex: 3 bedroom for sale in Brookline under 1,000,000</option>
                     <option value="Boston">Boston</option>
                     <option value="Brookline">Brookline</option>
                     <option value="Cambridge">Cambridge</option>
@@ -368,44 +368,44 @@
                 <section class="page-search__section" title="Price">
                     <h4 class="mobile">Price</h4>
                     <div class="page-search__container page-search__container--range price-range-container">
-                        <input type="text" class="page-search__input page-search__input--numeric" name="price_range_min" placeholder="$ Min">
+                        <input type="text" class="page-search__input page-search__input--numeric" name="price_range_min" placeholder="$300K">
                         </input>
                         &mdash;&nbsp;
-                        <input type="text" class="page-search__input page-search__input--numeric" name="price_range_max" placeholder="$ Max">
+                        <input type="text" class="page-search__input page-search__input--numeric" name="price_range_max" placeholder="$24M">
                         </input>
                     </div>
                 </section>
 
                 <section class="page-search__section" title="Beds">
                     <h4 class="mobile">Beds</h4>
-                    <select class="page-search__dropdown page-search__dropdown--filter" name="beds" data-placeholder="Beds">
-                        <option></option>
-                        <option value="0+">0+</option>
-                        <option value="1+">1+</option>
-                        <option value="2+">2+</option>
-                        <option value="3+">3+</option>
-                        <option value="4+">4+</option>
+                    <select class="page-search__dropdown page-search__dropdown--filter" name="beds">
+                        <option value="" selected>Beds</option>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
                         <option value="5+">5+</option>
                     </select>
                 </section>
 
                 <section class="page-search__section" title="Baths">
                     <h4 class="mobile">Baths</h4>
-                    <select class="page-search__dropdown page-search__dropdown--filter" name="baths" data-placeholder="Baths">
-                        <option></option>
-                        <option value="0+">0+</option>
-                        <option value="1+">1+</option>
-                        <option value="2+">2+</option>
-                        <option value="3+">3+</option>
-                        <option value="4+">4+</option>
+                    <select class="page-search__dropdown page-search__dropdown--filter" name="baths">
+                        <option value="" selected>Baths</option>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
                         <option value="5+">5+</option>
                     </select>
                 </section>
 
                 <section class="page-search__section" title="Home Type">
                     <h4 class="mobile">Home Type</h4>
-                    <select class="page-search__dropdown page-search__dropdown--filter-wide" name="home_type" data-placeholder="Home Type">
-                        <option></option>
+                    <select class="page-search__dropdown page-search__dropdown--filter" name="home_type">
+                        <option value="" selected="selected">Home Type</option>
                         <option value="Single-Family">Single-Family</option>
                         <option value="Multi-Family">Multi-Family</option>
                         <option value="Apartment">Apartment</option>
@@ -437,61 +437,61 @@
                 </div>
                 
 
-                <div class="col">
+                    <div class="col">
 
-                    <section class="page-search__section" id="subtypes" title="Subtypes">
+                        <section class="page-search__section" id="subtypes" title="Subtypes">
 
-                        <h4 class="desktop">Filter By</h4>
-                        <h4 class="mobile">Subtype</h4>
+                            <h4 class="desktop">Filter By</h4>
+                            <h4 class="mobile">Subtype</h4>
 
-                        <ul>
-                            <li class="page-search__list-item">
-                                <div class="page-search__fancy-checkbox">
-                                    <input type="checkbox" id="openHouses" name="open_houses"></input>
-                                    <label for="openHouses">Open Houses</label>
-                                </div>
-                            </li>
+                            <ul>
+                                <li class="page-search__list-item">
+                                    <div class="page-search__fancy-checkbox">
+                                        <input type="checkbox" id="openHouses" name="open_houses"></input>
+                                        <label for="openHouses">Open Houses</label>
+                                    </div>
+                                </li>
 
-                            <li class="page-search__list-item">
-                                <div class="page-search__fancy-checkbox">
-                                    <input type="checkbox" id="newListings" name="new_listings"></input>
-                                    <label for="newListings">New Listings</label>
-                                </div>
-                            </li>
+                                <li class="page-search__list-item">
+                                    <div class="page-search__fancy-checkbox">
+                                        <input type="checkbox" id="newListings" name="new_listings"></input>
+                                        <label for="newListings">New Listings</label>
+                                    </div>
+                                </li>
 
-                            <li class="page-search__list-item">
-                                <div class="page-search__fancy-checkbox">
-                                    <input type="checkbox" id="reducedPrice" name="reduced_price"></input>
-                                    <label for="reducedPrice">Reduced Price</label>
-                                </div>
-                            </li>
+                                <li class="page-search__list-item">
+                                    <div class="page-search__fancy-checkbox">
+                                        <input type="checkbox" id="reducedPrice" name="reduced_price"></input>
+                                        <label for="reducedPrice">Reduced Price</label>
+                                    </div>
+                                </li>
 
-                            <li class="page-search__list-item">
-                                <div class="page-search__fancy-checkbox">
-                                    <input type="checkbox" id="newDevelopments" name="new_developments"></input>
-                                     <label for="newDevelopments">New Developments</label>
-                                </div>
-                            </li>
+                                <li class="page-search__list-item">
+                                    <div class="page-search__fancy-checkbox">
+                                        <input type="checkbox" id="newDevelopments" name="new_developments"></input>
+                                         <label for="newDevelopments">New Developments</label>
+                                    </div>
+                                </li>
 
-                            <li class="page-search__list-item">
-                                <div class="page-search__fancy-checkbox">
-                                    <input type="checkbox" id="sold" name="sold"></input>
-                                    <label for="sold">Sold</label>
-                                </div>
-                            </li>
+                                <li class="page-search__list-item">
+                                    <div class="page-search__fancy-checkbox">
+                                        <input type="checkbox" id="sold" name="sold"></input>
+                                        <label for="sold">Sold</label>
+                                    </div>
+                                </li>
 
-                            <li class="page-search__list-item">
-                                <div class="page-search__fancy-checkbox">
-                                    <input type="checkbox" id="forclosures" name="forclosures"></input>
-                                    <label for="forclosures">Forclosures</label>
-                                </div>
-                            </li>
+                                <li class="page-search__list-item">
+                                    <div class="page-search__fancy-checkbox">
+                                        <input type="checkbox" id="forclosures" name="forclosures"></input>
+                                        <label for="forclosures">Forclosures</label>
+                                    </div>
+                                </li>
 
-                        </ul>
+                            </ul>
 
-                    </section>
+                        </section>
 
-                </div>
+                    </div>
 
                 <div class="col">
                     
@@ -536,7 +536,7 @@
                         <h4>Days On Market</h4>
 
                         <select class="page-search__dropdown page-search__dropdown--filter-advanced" name="days_on_mkt">
-                            <option value="Any">Any</option>
+                            <option value="" selected="selected">Any</option>
                             <option value="1 day">1 day</option> 
                             <option value="7 days">7 days</option> 
                             <option value="14 days">14 days</option>
@@ -552,6 +552,7 @@
                     <section class="page-search__section page-search__section--tokenize" id="keywords" title="Keywords">
                         <h4>Keywords</h4>
                         <span class="helper">(comma separated)</span>
+
                         <input type="text" class="page-search__input page-search__input--tokenize" name="keywords"></input>
                     </section>
 
@@ -571,6 +572,7 @@
     </div>
 </div>
 <!-- Page Search -->    
+	
 	
 		
 	
@@ -827,7 +829,7 @@
 </div>				
 				<!-- Related Articles -->
 				<!-- Related Articles -->
-<div class="related-articles">
+<div class="related-articles related-articles-modal">
     <h1 class="related-articles__section-header">Related Articles</h1>
 
     <div class="related-articles__item">
@@ -843,9 +845,8 @@
             <div class="date">September 9, 2014</div>
 
             <div class="tags">
-                <a href="#"><div class="tag class">Luxury <span class="arrow"></span></div></a>
-                <a href="#"><div class="tag location">Brookline <span class="arrow"></span></div>
-                </a>
+                <a href="javascript:;" class="category-tag maroon">Luxury</a>
+                <a href="javascript:;" class="category-tag orange">Brookline</a>
             </div>
         </div>
     </div>
@@ -863,9 +864,9 @@
             <div class="date">July 30, 2014</div>
 
             <div class="tags">
-                <a href="#"><div class="tag event">Open House <span class="arrow"></span></div></a>
-                <a href="#"><div class="tag class">Luxury <span class="arrow"></span></div></a>
-                <a href="#"><div class="tag location">Jaimaca Plain <span class="arrow"></span></div></a>
+                <a href="javascript:;" class="category-tag light-blue">Open House</a>
+                <a href="javascript:;" class="category-tag maroon">Luxury</a>
+                <a href="javascript:;" class="category-tag orange">Jaimaca Plain</a>
             </div>
         </div>
     </div>
@@ -897,8 +898,8 @@
             <div class="date">July 3, 2014</div>
 
             <div class="tags">
-                <a href="#"><div class="tag event">Open House <span class="arrow"></span></div></a>
-                <a href="#"><div class="tag class">Luxury <span class="arrow"></span></div></a>
+                <a href="javascript:;" class="category-tag light-blue">Open House</a>
+                <a href="javascript:;" class="category-tag maroon">Luxury</a>
             </div>
         </div>
     </div>
@@ -921,8 +922,8 @@
             <div class="date">September 9, 2014</div>
 
             <div class="tags">
-                <a href="#"><div class="tag class">Luxury <span class="arrow"></span></div></a>
-                <a href="#"><div class="tag location">Brooline <span class="arrow"></span></div></a>
+                <a href="javascript:;" class="category-tag maroon">Luxury</a>
+                <a href="javascript:;" class="category-tag orange">Brookline</a>
             </div>
         </div>
     </div>
@@ -940,9 +941,9 @@
             <div class="date">July 30, 2014</div>
 
             <div class="tags">
-                <a href="#"><div class="tag event">Open House <span class="arrow"></span></div></a>
-                <a href="#"><div class="tag class">Luxury <span class="arrow"></span></div></a>
-                <a href="#"><div class="tag location">Jaimaca Plain <span class="arrow"></span></div></a>
+                <a href="javascript:;" class="category-tag light-house">Open House</a>
+                <a href="javascript:;" class="category-tag maroon">Luxury</a>
+                <a href="javascript:;" class="category-tag orange">Jaimaca Plain</a>
             </div>
         </div>
     </div>
@@ -966,32 +967,22 @@
 						
 			
 			<!-- PROPERTY LISTINGS -->
-							<!-- DFP Sidebar Placeholder Ad Content -->
-				<div class='contact__company'>
-    <img class='contact__company-img' src='http://www.motihomes.com/Customers/5430/assets/images/3785DE71-155D-0078-0BA5D1687C016B53.jpg'>
-    <div class='contact__company-info'>
-        <p class='contact__company-name'>Coldwell Banker Residential Brokerage - <span class='contact__company-city'> Brookline </span></p>
-        <p class='contact__company-note'>(Visit office website)</p>
-    </div>
-</div>
+			
+				
+
 				<!-- Contact The Agent Widget -->
 				<!-- Contact the Agent -->
-<div class='contact__container contact-agent-modal'>
+<div class='contact__container contact__container-basic contact-agent-modal' style='margin-top:58px;'>
     <div class='contact__header'>
-        <p>Contact the Agent</p>
+        <p>Like this Property?</p>
     </div>
 
     <div class='contact__wrapper'>
-            <img class='contact__agent-img' src='http://commissionsforeducation.org/wp-content/uploads/2011/01/daniellenewheadcrop.jpg'>
-        <div class='contact__agent-info'>
-            <p class='contact__agent-name'>Deborah M. Gordon</p>
-            <div class='contact__agent-links'>
-                <a class='contact__agent-number' href='#'>View My Contact Number</a>
-                <a class='contact__agent-website' href='#'>Visit My Website</a>
-            </div>
-            <div class='contact__agent-address'>
-                <p>1375 Beacon St</p>
-                <p>Brookline, MA 02446</p>
+		<div class='contact__company'>
+            <img class='contact__company-img' src='http://www.motihomes.com/Customers/5430/assets/images/3785DE71-155D-0078-0BA5D1687C016B53.jpg'>
+            <div class='contact__company-info'>
+                <p class='contact__company-name'>Coldwell Banker Residential Brokerage - <span class='contact__company-city'> Brookline </span></p>
+                <p class='contact__company-note'>is happy to assist you</p>
             </div>
         </div>
         
@@ -1000,7 +991,7 @@
             <input class='contact__form-name' placeholder='Name'/><span class='contact__required-marker'>*</span>
             <input class='contact__form-name' placeholder='Email'/><span class='contact__required-marker'>*</span>
             <input class='contact__form-name' placeholder='Phone Number'/>
-            <textarea class='contact__form-name' placeholder='Hi Deborah, I found your listing on Boston.com. Please send me more infomation about 101 Fernwood Rd, Brookline, MA. Thank you'></textarea>
+            <textarea class='contact__form-name' placeholder='Please send me more infomation about 101 Fernwood Rd, Brookline, MA. Thank you'></textarea>
             <button class='contact__form-submit'>Send</button>
         </div>
     </div>
@@ -1308,29 +1299,34 @@
     </div>
 
     <div class="navigation">
-        <a href="javascript:;" id="leftArrow" title="DOWN"><img class='up-arrow nav-arrow' src='images/listings/arrow-icon-grey.jpg'></a>
-        <a href="javascript:;" id="rightArrow" title="UP"><img class='down-arrow nav-arrow' src='images/listings/arrow-icon-grey.jpg'></a>
+        <a href="javascript:;" id="left-arrow" title="DOWN"><img class='nav-arrow' src='images/listings/arrow-icon-yellow.png'></a>
+        <a href="javascript:;" class="view-all">View All <span class="listingType">New</span> Listings</a>
+        <a href="javascript:;" id="right-arrow" title="UP"><img class='nav-arrow' src='images/listings/arrow-icon-yellow.png'></a>
     </div>
-
-    <a href="javascript:;" class="view-all">View All <span class="listingType">New</span> Listings</a>
 </div>
 <!-- Property Listings Widget -->
 				<!-- Contact This Agent Widget -->
-				<div class='contact__container'>
+				<script type="text/javascript">
+    $(document).ready(function() {
+        $('.contact__agent-number').on('click', function(e) {
+            e.preventDefault();
+            $(this).text() == 'View My Contact Number' ? $(this).text('(617) 230-6674') : $(this).text('View My Contact Number');
+        })
+    });
+</script>
+
+<div class='contact__container'>
     <div class='contact__header'>
-        <p>Contact the Agent</p>
+        <p>Listing Provided By</p>
     </div>
 
     <div class='contact__wrapper--lower'>
-            <img class='contact__agent-img' src='http://commissionsforeducation.org/wp-content/uploads/2011/01/daniellenewheadcrop.jpg'>
-        <div class='contact__agent-info'>
+        <div class='contact__agent-info' style='margin-left:0px;'>
             <p class='contact__agent-name'>Deborah M. Gordon</p>
             <div class='contact__agent-links'>
-                <a class='contact__agent-number' href='#'>View My Contact Number</a>
-                <a class='contact__agent-website' href='#'>Visit My Website</a>
+                <a class='contact__agent-number' href='javascript:;'>View My Contact Number</a>
             </div>
         </div>
-        <div class='contact__contact-button'>contact</div>
     </div>  
 </div>						
 			
@@ -1351,15 +1347,9 @@
 <div class="page-footer">
     <div class="content-footer">
         <div class="content-footer__social-icons">
-            <a href="javascript:;" class="icon twitter">
-                <img src="images/icons/footer-icons__twitter.png" />
-            </a>
-            <a href="javascript:;" class="icon facebook">
-                <img src="images/icons/footer-icons__facebook.png" />
-            </a>
-            <a href="javascript:;" class="icon rss">
-                <img src="images/icons/footer-icons__rss.png" />
-            </a>
+            <a href="javascript:;" class="icon twitter">twitter</a>
+            <a href="javascript:;" class="icon facebook">facebook</a>
+            <a href="javascript:;" class="icon rss">rss</a>
         </div>
 
         <div class="content-footer__footer-links">
