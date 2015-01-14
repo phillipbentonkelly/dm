@@ -56,7 +56,7 @@ dm.select2 = {};
 
 		init: function(){
 
-			//if(this.device === 'mobile') this.lvls.$one.hide();
+			if(this.device === 'mobile') this.lvls.$one.hide();
 				
 			this.lvls.$two.hide();
 			this.lvls.$three.hide();

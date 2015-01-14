@@ -221,7 +221,10 @@
                 </ul>
             </li>
             
-            <li class="page-nav__search-responsive-icon"></li>
+            <li class="page-nav__search-responsive-icon">
+                <a href="javascript;" class="open-search"></a>
+                <a href="javascript;" class="close-search"></a>
+            </li>
         </ul>
     </div>
 </div>
