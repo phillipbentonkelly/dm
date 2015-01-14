@@ -56,7 +56,7 @@ dm.select2 = {};
 
 		init: function(){
 
-			if(this.device === 'mobile') this.lvls.$one.hide();
+			//if(this.device === 'mobile') this.lvls.$one.hide();
 				
 			this.lvls.$two.hide();
 			this.lvls.$three.hide();
@@ -90,7 +90,6 @@ dm.select2 = {};
 
 			var self = this;
 
-			// self.inputs.$filters.on('change', )
 
 			switch(self.device){
 

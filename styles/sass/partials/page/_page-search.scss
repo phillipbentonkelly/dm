@@ -10,7 +10,7 @@ $module-name: 'page-search';
 
 .#{$module-name} {
 	position: absolute;
-	top: 40px;
+	top: initial;
 	left: 0;
 	z-index: 50;
 	width: 100%;
@@ -287,10 +287,10 @@ $module-name: 'page-search';
 		}
 
 		&--level-two-toggle{
-			position: absolute;
+			position: relative;
 			z-index: 600;
-			top: 19px;
-			right: 76px;
+			top: 8px;
+			right: 8px;
 			width: 20px;
 			height: 20px;
 			border-radius: 4px;
@@ -506,7 +506,7 @@ $module-name: 'page-search';
 		&--main{
 			float: left;
 			margin: 0 0 0 10px;
-			width: 260px;
+			width: 66%;
 			height: 20px;
 			font-size: 17px;
 			
@@ -628,14 +628,6 @@ $module-name: 'page-search';
 				height: 44px;
 			}
 
-			&--level-two-toggle{
-				top: 18px;
-				left: initial;
-				right: 170px;
-				width: 28px;
-				height: 32px;
-			}
-
 			&--level-three-toggle{
 				border: 1px solid rgb(0,0,0);
 				height: 34px;
@@ -738,16 +730,20 @@ $module-name: 'page-search';
 				display: block;
 				width: 680px;
 				height: 60px;
+
+				.selectize-input{
+					height: auto;
+				}
 			}
 		}
 
 		&__button{
 			&--level-two-toggle{
-				top: 14px;
-				left:initial;
-				right: 232px;
+				top: 8px;
+				left: initial;
+				right: 15px;
 				width: 28px;
-				height: 28px
+				height: 28px;
 
 			}
 
