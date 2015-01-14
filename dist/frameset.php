@@ -45,7 +45,12 @@
 	        <script src="js/assets/mpListings.js"></script>
 	        <script src="js/assets/listings.data.js"></script>
 		<?php } ?>
-		
+
+		<?php if ($pageType == 'serp') { ?>
+			<script src="js/resources/basic/js/jquery.simplemodal.js"></script>
+	        <script src="js/assets/popup.js"></script>
+		<?php } ?>
+
 		<?php if ($pageType == 'property-listings' || $pageType == 'property-listings-premium') { ?>
 		    <!-- Real Estate Listings -->
 	        <script src="js/assets/mpListings.js"></script>

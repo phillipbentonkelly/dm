@@ -1,5 +1,27 @@
 $module-name: 'search-results';
 
+// display via popup on mobile
+.related-articles-modal {
+    display: none;
+    background: white;
+
+    .related-articles__item {
+        height: 255px;
+        overflow: hidden;
+        padding-bottom: 10px;
+    }
+
+    .description {
+        display: block !important;
+        text-align: left;
+    }
+}
+
+.related-articles-modal#simplemodal-data {
+    width: 100%;
+    margin: 0 auto;
+}
+
 .#{$module-name} {
   display: inline-block;
   margin-bottom: 15px;
@@ -7,6 +29,7 @@ $module-name: 'search-results';
   .serp__mobile-button-dock {
     display: block;
   }
+
 
   &__item {
     max-height: 355px;
@@ -55,6 +78,7 @@ $module-name: 'search-results';
 
     .share-button--heart {
       background-image: url(../../images/listings/heart-icon-white.png);
+      background-size: 22px 20px;
     }
 
     .share-button--share {
@@ -82,9 +106,9 @@ $module-name: 'search-results';
       display: inline-block;
       background-image: url(../../images/listings/heart-icon-purple.png);
       background-repeat: no-repeat;
-      background-size: 20px 20px;
+      background-size: 24px 20px;
       height: 20px;
-      width: 20px;
+      width: 24px;
       vertical-align: middle;
 
     }
@@ -153,6 +177,7 @@ $module-name: 'search-results';
 
   .property-info {
     border-radius: 5px;
+    overflow: hidden;
     
     .row1, .row2, .row3, .row4 {
       width: 100%;
@@ -307,6 +332,11 @@ $module-name: 'search-results';
 }
 
 @media (min-width: 768px) {
+    .related-articles {
+        display: block;
+    }
+
+
   .#{$module-name} {
 
     .serp__mobile-button-dock {

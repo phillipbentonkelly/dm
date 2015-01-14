@@ -1,5 +1,5 @@
 <!-- Related Articles -->
-<div class="related-articles">
+<div class="related-articles related-articles-modal">
     <h1 class="related-articles__section-header">Related Articles</h1>
 
     <div class="related-articles__item">

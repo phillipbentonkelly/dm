@@ -816,6 +816,20 @@
         </div>
     </div>
 
+    <!-- MODAL: SAVE SEARCH -->
+    <div class="save-search-modal">
+        <div class="header">
+            <a class="close-modal-btn" href="javascript:;"><img class="close-modal" src="images/listings/x-icon.jpg"></a>
+            <p>Save Search</p>
+        </div>
+        <div class="content">
+            <p class="info">Save a search and get instant notifications about new listings and status changes on homes that match your search criteria</p>
+            <input placeholder="Search Nickname">
+            <button>Save</button>
+        </div>
+    </div>
+    <!-- /MODAL: SAVE SEARCH -->
+
 
     <!-- SERP MOBILE BUTTON DOCK -->
     <div class='serp__mobile-button-dock'>
@@ -826,7 +840,7 @@
         </div></a>
 
         <a href='javascript:;'><div id='mobile-articles-btn' class='button right-button'>
-            <img class='articles-icon' src='images/listings/articles-icon.png'>
+            <img class='articles-icon' src='images/listings/articles-icon-white.png'>
             <div class='title-block'>
                 <p>Related</p>
                 <p>Articles</p>
