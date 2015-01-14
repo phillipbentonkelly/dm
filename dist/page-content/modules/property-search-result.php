@@ -810,9 +810,9 @@
         <p>Showing <span class='low-end'>1</span> to <span class='high-end'>10</span> of <span class='total-results'>147</span></p>
 
         <div class='results-pag-nav'>
-            <a href='javascript:;'><img class='results-pag-nav-left' src='images/listings/arrow-icon-purple.png'/></a>
+            <a class='results-pag-link-left' href='javascript:;'><img class='results-pag-nav-left' src='images/listings/arrow-icon-purple.png'/></a>
             <p><span class='current-page-num'>1</span> of <span class='total-page-num'>15</span></p>
-            <a href='javascript:;'><img class='results-pag-nav-right' src='images/listings/arrow-icon-purple.png'/></a>
+            <a class='results-pag-link-left' href='javascript:;'><img class='results-pag-nav-right' src='images/listings/arrow-icon-purple.png'/></a>
         </div>
     </div>
 

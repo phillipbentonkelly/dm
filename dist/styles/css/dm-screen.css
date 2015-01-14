@@ -4304,7 +4304,7 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
 /* line 102, ../sass/partials/page/modules/property-search-results.scss */
 .search-results .share-buttons p {
   display: inline-block;
-  font-family: OpenSans;
+  font-family: OpenSans Regular;
   font-size: 11px;
 }
 /* line 109, ../sass/partials/page/modules/property-search-results.scss */
@@ -4380,7 +4380,7 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
 .search-results .property-info .row1 p, .search-results .property-info .row4 p {
   float: left;
   font-size: 12px;
-  font-family: OpenSans;
+  font-family: 'OpenSans Regular';
 }
 /* line 185, ../sass/partials/page/modules/property-search-results.scss */
 .search-results .property-info .row2 p, .search-results .property-info .row3 p {
@@ -4390,7 +4390,7 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
   float: left;
   box-sizing: border-box;
   font-size: 12px;
-  font-family: OpenSans;
+  font-family: 'OpenSans Regular';
   border-top: 1px solid white;
 }
 /* line 196, ../sass/partials/page/modules/property-search-results.scss */
@@ -4469,7 +4469,7 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
   color: white;
   border: none;
   border-radius: 2px;
-  font-family: OpenSans;
+  font-family: 'OpenSans Regular';
   color: #ffffff;
   font-size: 12.95px;
   /* Approximation due to font substitution */
@@ -4565,34 +4565,39 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
   }
   /* line 378, ../sass/partials/page/modules/property-search-results.scss */
   .search-results__filter-bar-bottom .results-pag-nav {
-    position: absolute;
-    top: 10px;
-    right: 12px;
+    float: right;
+    position: relative;
   }
-  /* line 383, ../sass/partials/page/modules/property-search-results.scss */
+  /* line 382, ../sass/partials/page/modules/property-search-results.scss */
   .search-results__filter-bar-bottom .results-pag-nav p {
+    width: 60px;
+    position: absolute;
+    right: 25px;
+    top: 3px;
     font-family: 'OpenSans Regular';
     margin: 0 5px;
   }
-  /* line 388, ../sass/partials/page/modules/property-search-results.scss */
+  /* line 391, ../sass/partials/page/modules/property-search-results.scss */
   .search-results__filter-bar-bottom .results-pag-nav span:first-child {
     padding: 0 10px;
     background: #c8c8c8;
     border-radius: 3px;
   }
-  /* line 395, ../sass/partials/page/modules/property-search-results.scss */
+  /* line 398, ../sass/partials/page/modules/property-search-results.scss */
   .search-results__filter-bar-bottom .results-pag-nav-left {
+    position: absolute;
+    right: 105px;
     height: 20px;
     width: 20px;
     transform: rotate(90deg);
   }
-  /* line 401, ../sass/partials/page/modules/property-search-results.scss */
+  /* line 406, ../sass/partials/page/modules/property-search-results.scss */
   .search-results__filter-bar-bottom .results-pag-nav-right {
     height: 20px;
     width: 20px;
     transform: rotate(270deg);
   }
-  /* line 408, ../sass/partials/page/modules/property-search-results.scss */
+  /* line 413, ../sass/partials/page/modules/property-search-results.scss */
   .search-results .photo-arrows {
     display: block !important;
     position: absolute;
@@ -4600,18 +4605,18 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
     right: 10px;
     padding: 0 10px;
   }
-  /* line 415, ../sass/partials/page/modules/property-search-results.scss */
+  /* line 420, ../sass/partials/page/modules/property-search-results.scss */
   .search-results .photo-arrows .photo-arrow-right, .search-results .photo-arrows .photo-arrow-left {
     display: inline-block;
     height: 15px;
     width: 15px;
     box-sizing: border-box;
   }
-  /* line 422, ../sass/partials/page/modules/property-search-results.scss */
+  /* line 427, ../sass/partials/page/modules/property-search-results.scss */
   .search-results .photo-arrows .photo-arrow-right:hover, .search-results .photo-arrows .photo-arrow-left:hover {
     border: 1px solid white;
   }
-  /* line 426, ../sass/partials/page/modules/property-search-results.scss */
+  /* line 431, ../sass/partials/page/modules/property-search-results.scss */
   .search-results .photo-arrows .photo-arrow-right {
     -ms-transform: rotate(180deg);
     /* IE 9 */
@@ -4619,53 +4624,53 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
     /* Chrome, Safari, Opera */
     transform: rotate(180deg);
   }
-  /* line 435, ../sass/partials/page/modules/property-search-results.scss */
+  /* line 440, ../sass/partials/page/modules/property-search-results.scss */
   .search-results .row1 .house-type {
     display: block;
     width: 50%;
   }
-  /* line 440, ../sass/partials/page/modules/property-search-results.scss */
+  /* line 445, ../sass/partials/page/modules/property-search-results.scss */
   .search-results .row1 p {
     width: 50%;
     float: right;
     box-sizing: border-box;
   }
-  /* line 446, ../sass/partials/page/modules/property-search-results.scss */
+  /* line 451, ../sass/partials/page/modules/property-search-results.scss */
   .search-results .row1 .price {
     width: 50%;
     border-right: 1px solid white;
   }
-  /* line 454, ../sass/partials/page/modules/property-search-results.scss */
+  /* line 459, ../sass/partials/page/modules/property-search-results.scss */
   .search-results .row4 .description {
     display: block;
     text-align: left !important;
   }
-  /* line 459, ../sass/partials/page/modules/property-search-results.scss */
+  /* line 464, ../sass/partials/page/modules/property-search-results.scss */
   .search-results .row4 .house-type {
     display: none;
   }
-  /* line 464, ../sass/partials/page/modules/property-search-results.scss */
+  /* line 469, ../sass/partials/page/modules/property-search-results.scss */
   .search-results .left-col {
     width: 40%;
   }
-  /* line 468, ../sass/partials/page/modules/property-search-results.scss */
+  /* line 473, ../sass/partials/page/modules/property-search-results.scss */
   .search-results .right-col {
     width: 60%;
     height: auto;
   }
-  /* line 474, ../sass/partials/page/modules/property-search-results.scss */
+  /* line 479, ../sass/partials/page/modules/property-search-results.scss */
   .search-results .realtor-info {
     float: right;
     width: 60%;
   }
 }
 @media (min-width: 960px) {
-  /* line 485, ../sass/partials/page/modules/property-search-results.scss */
+  /* line 490, ../sass/partials/page/modules/property-search-results.scss */
   .adSlots .adSlot {
     display: inline-block;
     margin-bottom: 0;
   }
-  /* line 491, ../sass/partials/page/modules/property-search-results.scss */
+  /* line 496, ../sass/partials/page/modules/property-search-results.scss */
   .adSlots .adSlot-right img {
     margin-left: 35px;
   }
