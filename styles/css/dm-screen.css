@@ -236,66 +236,75 @@ body {
 }
 /* line 236, ../sass/helpers/_mixins-and-extends.scss */
 .adSlots .adSlot .detailsWrapper .detailsOverlay h1 {
-  font-size: 120%;
+  font-size: 18px;
+  font-weight: 500;
   text-align: left;
   padding: 0 0 0.5em 0;
   margin: 0 0 0 0;
-  line-height: 100%;
+  line-height: 26px;
   clear: both;
   min-height: 10px;
   overflow: hidden;
 }
-/* line 246, ../sass/helpers/_mixins-and-extends.scss */
+/* line 247, ../sass/helpers/_mixins-and-extends.scss */
+.adSlots .adSlot .detailsWrapper .detailsOverlay h1 span.col {
+  width: 60%;
+}
+/* line 251, ../sass/helpers/_mixins-and-extends.scss */
 .adSlots .adSlot .detailsWrapper .detailsOverlay h1 .priceSpan {
   float: right;
+  width: 40%;
+  text-align: right;
 }
-/* line 250, ../sass/helpers/_mixins-and-extends.scss */
+/* line 257, ../sass/helpers/_mixins-and-extends.scss */
 .adSlots .adSlot .detailsWrapper .detailsOverlay p {
   display: none;
-  line-height: 1.5em;
+  font-family: OpenSans;
+  font-size: 13px;
+  line-height: 18px;
   padding: 0 0 0.5em 0;
   margin: 0 0 0 0;
 }
-/* line 259, ../sass/helpers/_mixins-and-extends.scss */
+/* line 268, ../sass/helpers/_mixins-and-extends.scss */
 .adSlots .adSlot:hover .detailsWrapper .detailsOverlay p {
   display: block;
 }
 
 @media (min-width: 960px) {
-  /* line 266, ../sass/helpers/_mixins-and-extends.scss */
+  /* line 275, ../sass/helpers/_mixins-and-extends.scss */
   .adSlots .adSlot {
     float: left;
     margin-right: 0px;
   }
-  /* line 270, ../sass/helpers/_mixins-and-extends.scss */
+  /* line 279, ../sass/helpers/_mixins-and-extends.scss */
   .adSlots .adSlot:first-child {
     float: left;
     margin-right: 30px;
   }
-  /* line 275, ../sass/helpers/_mixins-and-extends.scss */
+  /* line 284, ../sass/helpers/_mixins-and-extends.scss */
   .adSlots a.adSlot:first-child {
     margin: 0px;
   }
 }
 @media (min-width: 768px) {
-  /* line 283, ../sass/helpers/_mixins-and-extends.scss */
+  /* line 292, ../sass/helpers/_mixins-and-extends.scss */
   .adSlots .adSlot {
     float: left;
     margin-left: 30px;
   }
-  /* line 288, ../sass/helpers/_mixins-and-extends.scss */
+  /* line 297, ../sass/helpers/_mixins-and-extends.scss */
   .adSlots a.adSlot:first-child {
     margin-left: 0;
   }
 }
-/* line 301, ../sass/helpers/_mixins-and-extends.scss */
+/* line 310, ../sass/helpers/_mixins-and-extends.scss */
 .social-icons, .articles-content .social-icons {
   clear: both;
   min-width: 200px;
   min-height: 21px;
   overflow: hidden;
 }
-/* line 307, ../sass/helpers/_mixins-and-extends.scss */
+/* line 316, ../sass/helpers/_mixins-and-extends.scss */
 .social-icons a, .articles-content .social-icons a {
   display: inline-block;
   text-indent: -900px;
@@ -305,43 +314,43 @@ body {
   background-image: url(../../images/icons/sprites/social-icons.png);
   background-repeat: no-repeat;
 }
-/* line 317, ../sass/helpers/_mixins-and-extends.scss */
+/* line 326, ../sass/helpers/_mixins-and-extends.scss */
 .social-icons__facebook {
   width: 9px;
   background-position: 0px 0px !important;
 }
-/* line 322, ../sass/helpers/_mixins-and-extends.scss */
+/* line 331, ../sass/helpers/_mixins-and-extends.scss */
 .social-icons__twitter {
   width: 22px;
   background-position: -20px 0px !important;
 }
-/* line 327, ../sass/helpers/_mixins-and-extends.scss */
+/* line 336, ../sass/helpers/_mixins-and-extends.scss */
 .social-icons__share {
   width: 23px;
   background-position: -48px 0px !important;
 }
-/* line 332, ../sass/helpers/_mixins-and-extends.scss */
+/* line 341, ../sass/helpers/_mixins-and-extends.scss */
 .social-icons__email {
   width: 27px;
   background-position: -81px 0px !important;
 }
-/* line 337, ../sass/helpers/_mixins-and-extends.scss */
+/* line 346, ../sass/helpers/_mixins-and-extends.scss */
 .social-icons__comments {
   width: 18px;
   background-position: -118px 0px !important;
 }
-/* line 342, ../sass/helpers/_mixins-and-extends.scss */
+/* line 351, ../sass/helpers/_mixins-and-extends.scss */
 .social-icons__print {
   width: 22px;
   background-position: -147px 0px !important;
 }
-/* line 347, ../sass/helpers/_mixins-and-extends.scss */
+/* line 356, ../sass/helpers/_mixins-and-extends.scss */
 .social-icons__favorite {
   width: 21px;
   background-position: -179px 0px !important;
 }
 
-/* line 362, ../sass/helpers/_mixins-and-extends.scss */
+/* line 371, ../sass/helpers/_mixins-and-extends.scss */
 .chevron::before, .full-screen-carousel .chevron::before, .gallery-widget .chevron::before, .gallery-widget__details__info-nav .chevron::before {
   color: #fff;
   border-style: solid;
@@ -359,19 +368,19 @@ body {
   font-size: 15px;
 }
 
-/* line 380, ../sass/helpers/_mixins-and-extends.scss */
+/* line 389, ../sass/helpers/_mixins-and-extends.scss */
 .chevron.right:before {
   left: 0;
   transform: rotate(45deg);
 }
 
-/* line 385, ../sass/helpers/_mixins-and-extends.scss */
+/* line 394, ../sass/helpers/_mixins-and-extends.scss */
 .chevron.bottom:before {
   top: 0;
   transform: rotate(135deg);
 }
 
-/* line 390, ../sass/helpers/_mixins-and-extends.scss */
+/* line 399, ../sass/helpers/_mixins-and-extends.scss */
 .chevron.left:before {
   left: 0.25em;
   transform: rotate(-135deg);
