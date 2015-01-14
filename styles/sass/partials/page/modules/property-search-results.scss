@@ -4,6 +4,10 @@ $module-name: 'search-results';
   display: inline-block;
   margin-bottom: 15px;
 
+  .serp__mobile-button-dock {
+    display: block;
+  }
+
   &__item {
     max-height: 355px;
     position: relative;
@@ -97,7 +101,7 @@ $module-name: 'search-results';
 
     p {
       display: inline-block;
-      font-family: OpenSans;
+      font-family: OpenSans Regular;
       font-size: 11px;
     }
   }
@@ -172,7 +176,7 @@ $module-name: 'search-results';
       p {
         float: left;
         font-size: 12px;
-        font-family: OpenSans;
+        font-family: 'OpenSans Regular';
       }
     }
 
@@ -185,7 +189,7 @@ $module-name: 'search-results';
         float: left;
         box-sizing: border-box;
         font-size: 12px;
-        font-family: OpenSans;
+        font-family: 'OpenSans Regular';
         border-top: 1px solid white;
       }
 
@@ -273,7 +277,7 @@ $module-name: 'search-results';
       border: none;
       border-radius: 2px;
 
-      font-family: OpenSans;
+      font-family: 'OpenSans Regular';
       color:  #ffffff;
       font-size: 12.95px; /* Approximation due to font substitution */
       font-weight: 700;
@@ -304,6 +308,11 @@ $module-name: 'search-results';
 
 @media (min-width: 768px) {
   .#{$module-name} {
+
+    .serp__mobile-button-dock {
+        display: none;
+    }
+
 
     .adSlots {
         margin: 10px 0;
@@ -367,11 +376,14 @@ $module-name: 'search-results';
         }
 
         .results-pag-nav {
-            position: absolute;
-            top: 10px;
-            right: 12px;
+            float: right;
+            position: relative;
 
             p {
+                width: 60px;
+                position: absolute;
+                right: 25px;
+                top: 3px;
                 font-family: 'OpenSans Regular';
                 margin: 0 5px;
             }
@@ -384,6 +396,8 @@ $module-name: 'search-results';
         }
 
         .results-pag-nav-left {
+            position: absolute;
+            right: 105px;
             height: 20px;
             width: 20px;
             transform: rotate(90deg);
@@ -470,6 +484,7 @@ $module-name: 'search-results';
 }
 
 @media (min-width: 960px) {
+
     .adSlots {
         
         .adSlot {

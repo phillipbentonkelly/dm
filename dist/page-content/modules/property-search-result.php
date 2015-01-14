@@ -112,7 +112,7 @@
 
         <div class='left-col'>
             <div class='property-images'>
-                <img src='images/neighborhoods/top-neighborhoods__entry__1.jpg'/>
+                <img src='images/neighborhoods/top-neighborhoods__entry__3.jpg'/>
                 <div class='photo-count'>18 Photos</div>
                 <div class='photo-arrows'>
                     <a href='javascript:;'><img class='photo-arrow-left' src='images/listings/arrow-icon-trans-black.png'/></a>
@@ -188,7 +188,7 @@
 
         <div class='left-col'>
             <div class='property-images'>
-                <img src='images/neighborhoods/top-neighborhoods__entry__1.jpg'/>
+                <img src='images/neighborhoods/top-neighborhoods__entry__2.jpg'/>
                 <div class='photo-count'>18 Photos</div>
                 <div class='photo-arrows'>
                     <a href='javascript:;'><img class='photo-arrow-left' src='images/listings/arrow-icon-trans-black.png'/></a>
@@ -810,11 +810,31 @@
         <p>Showing <span class='low-end'>1</span> to <span class='high-end'>10</span> of <span class='total-results'>147</span></p>
 
         <div class='results-pag-nav'>
-            <a href='javascript:;'><img class='results-pag-nav-left' src='images/listings/arrow-icon-purple.png'/></a>
+            <a class='results-pag-link-left' href='javascript:;'><img class='results-pag-nav-left' src='images/listings/arrow-icon-purple.png'/></a>
             <p><span class='current-page-num'>1</span> of <span class='total-page-num'>15</span></p>
-            <a href='javascript:;'><img class='results-pag-nav-right' src='images/listings/arrow-icon-purple.png'/></a>
+            <a class='results-pag-link-left' href='javascript:;'><img class='results-pag-nav-right' src='images/listings/arrow-icon-purple.png'/></a>
         </div>
     </div>
+
+
+    <!-- SERP MOBILE BUTTON DOCK -->
+    <div class='serp__mobile-button-dock'>
+    
+        <a href='javascript:;'><div id='mobile-save-btn' class='button left-button'>
+            <img src='images/listings/heart-icon-white.png'>
+            <p>Save</p>
+        </div></a>
+
+        <a href='javascript:;'><div id='mobile-articles-btn' class='button right-button'>
+            <img class='articles-icon' src='images/listings/articles-icon.png'>
+            <div class='title-block'>
+                <p>Related</p>
+                <p>Articles</p>
+            </div>
+        </div></a>
+
+    </div>
+    <!-- /SERP MOBILE BUTTON DOCK -->
 
 
 </div>
