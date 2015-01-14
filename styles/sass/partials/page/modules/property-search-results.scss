@@ -101,7 +101,7 @@ $module-name: 'search-results';
 
     p {
       display: inline-block;
-      font-family: OpenSans;
+      font-family: OpenSans Regular;
       font-size: 11px;
     }
   }
@@ -176,7 +176,7 @@ $module-name: 'search-results';
       p {
         float: left;
         font-size: 12px;
-        font-family: OpenSans;
+        font-family: 'OpenSans Regular';
       }
     }
 
@@ -189,7 +189,7 @@ $module-name: 'search-results';
         float: left;
         box-sizing: border-box;
         font-size: 12px;
-        font-family: OpenSans;
+        font-family: 'OpenSans Regular';
         border-top: 1px solid white;
       }
 
@@ -277,7 +277,7 @@ $module-name: 'search-results';
       border: none;
       border-radius: 2px;
 
-      font-family: OpenSans;
+      font-family: 'OpenSans Regular';
       color:  #ffffff;
       font-size: 12.95px; /* Approximation due to font substitution */
       font-weight: 700;
