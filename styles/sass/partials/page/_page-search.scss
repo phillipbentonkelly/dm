@@ -92,7 +92,7 @@ $module-name: 'page-search';
 
 		&--level-three{
 			display: inline-block;
-			top: 46px;
+			top: 0px;
 			left: 0;
 			z-index: 50;
 			margin: 0 20px 10px 20px;
@@ -261,8 +261,8 @@ $module-name: 'page-search';
 
 		&--save{
 			position: absolute;
-			top: 82px;
-			right: 110px;
+			top: 10px;
+			right: 55px;
 			outline: none;			
 			background: none;
 			color: #000;
@@ -726,8 +726,10 @@ $module-name: 'page-search';
 		}
 
 		&__dropdown{
+
 			&--main{
 				display: block;
+				margin: 0 0 0 78px;
 				width: 680px;
 				height: 60px;
 
