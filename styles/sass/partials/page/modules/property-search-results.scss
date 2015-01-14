@@ -4,6 +4,10 @@ $module-name: 'search-results';
   display: inline-block;
   margin-bottom: 15px;
 
+  .serp__mobile-button-dock {
+    display: block;
+  }
+
   &__item {
     max-height: 355px;
     position: relative;
@@ -305,6 +309,11 @@ $module-name: 'search-results';
 @media (min-width: 768px) {
   .#{$module-name} {
 
+    .serp__mobile-button-dock {
+        display: none;
+    }
+
+
     .adSlots {
         margin: 10px 0;
         position: relative;
@@ -470,6 +479,7 @@ $module-name: 'search-results';
 }
 
 @media (min-width: 960px) {
+
     .adSlots {
         
         .adSlot {
