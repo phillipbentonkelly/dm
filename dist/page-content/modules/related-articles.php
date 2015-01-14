@@ -15,8 +15,8 @@
             <div class="date">September 9, 2014</div>
 
             <div class="tags">
-                <a href="#"><div class="tag class">Luxury <span class="arrow"></span></div></a>
-                <a href="#"><div class="tag location">Brookline <span class="arrow"></span></div>
+                <div class="category-tag maroon">Luxury</div>
+                <div class="category-tag orange">Brookline</div>
                 </a>
             </div>
         </div>
@@ -35,9 +35,9 @@
             <div class="date">July 30, 2014</div>
 
             <div class="tags">
-                <a href="#"><div class="tag event">Open House <span class="arrow"></span></div></a>
-                <a href="#"><div class="tag class">Luxury <span class="arrow"></span></div></a>
-                <a href="#"><div class="tag location">Jaimaca Plain <span class="arrow"></span></div></a>
+                <div class="category-tag light-blue">Open House</div>
+                <div class="category-tag maroon">Luxury</div>
+                <div class="category-tag orange">Jaimaca Plain</div>
             </div>
         </div>
     </div>
@@ -69,8 +69,8 @@
             <div class="date">July 3, 2014</div>
 
             <div class="tags">
-                <a href="#"><div class="tag event">Open House <span class="arrow"></span></div></a>
-                <a href="#"><div class="tag class">Luxury <span class="arrow"></span></div></a>
+                <div class="category-tag light-blue">Open House</div>
+                <div class="category-tag maroon">Luxury</div>
             </div>
         </div>
     </div>
@@ -93,8 +93,8 @@
             <div class="date">September 9, 2014</div>
 
             <div class="tags">
-                <a href="#"><div class="tag class">Luxury <span class="arrow"></span></div></a>
-                <a href="#"><div class="tag location">Brooline <span class="arrow"></span></div></a>
+                <div class="category-tag maroon">Luxury</div>
+                <div class="category-tag orange">Brookline</div>
             </div>
         </div>
     </div>
@@ -112,9 +112,9 @@
             <div class="date">July 30, 2014</div>
 
             <div class="tags">
-                <a href="#"><div class="tag event">Open House <span class="arrow"></span></div></a>
-                <a href="#"><div class="tag class">Luxury <span class="arrow"></span></div></a>
-                <a href="#"><div class="tag location">Jaimaca Plain <span class="arrow"></span></div></a>
+                <div class="category-tag light-house">Open House</div>
+                <div class="category-tag maroon">Luxury</div>
+                <div class="category-tag orange">Jaimaca Plain</div>
             </div>
         </div>
     </div>
