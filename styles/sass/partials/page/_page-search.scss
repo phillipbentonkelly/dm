@@ -9,10 +9,6 @@ $module-name: 'page-search';
 // ------------------------------------------------------------
 
 .#{$module-name} {
-	position: absolute;
-	top: 40px;
-	left: 0;
-	z-index: 50;
 	width: 100%;
 	min-height: 60px;
 	height: auto;	
@@ -33,6 +29,8 @@ $module-name: 'page-search';
 		margin: auto;
 		width: 100%;
 		height: auto;
+		clear: both;
+		overflow: hidden;
 	}
 
 	&__form{
