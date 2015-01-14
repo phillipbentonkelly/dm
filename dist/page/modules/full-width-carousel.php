@@ -10,7 +10,12 @@
                         <img src="images/responsive/slide4-default.jpg" srcset="images/responsive/slide4-tablet.jpg 618w, images/responsive/slide4-large.jpg 490w, images/responsive/slide4-small_x2.jpg 330w, images/responsive/slide4-small.jpg 320w" alt="Table Setting Placard" />
                         <div class="detailsArrow"></div>
                         <div class="carousel-fullwidth_slide-details">
-                            <div class="carousel-fullwidth_slide-detail-icon"><img src="images/icons/slideDetail-leftCol-luxuryLabel.png" /></div>
+                            <div class="carousel-fullwidth_slide-detail-icon">
+                                <div class="category-tag__container">
+                                    <a href="javascript:;" class="category-tag maroon topSpacing">Luxury</a>
+                                    <a href="javascript:;" class="category-tag white topSpacing">For Sale</a>
+                                </div>
+                            </div>
                             <div class="carousel-fullwidth_slide-detail-content">
                                 <div class="listing-data">
                                     <p>The Claredon: 400 Stuart Street, Boston, MA</p>
@@ -29,7 +34,12 @@
                         <img src="images/responsive/slide1-default.jpg" srcset="images/responsive/slide1-tablet.jpg 618w, images/responsive/slide1-large.jpg 490w, images/responsive/slide1-small_x2.jpg 330w, images/responsive/slide1-small.jpg 320w" alt="New Arrivals" />
                         <div class="detailsArrow"></div>
                         <div class="carousel-fullwidth_slide-details">
-                            <div class="carousel-fullwidth_slide-detail-icon"><img src="images/icons/slideDetail-leftCol-sponsored.png" /></div>
+                            <div class="carousel-fullwidth_slide-detail-icon">
+                                <div class="category-tag__container">
+                                    <a href="javascript:;" class="category-tag maroon topSpacing">Luxury</a>
+                                    <a href="javascript:;" class="category-tag white topSpacing">For Sale</a>
+                                </div>
+                            </div>
                             <div class="carousel-fullwidth_slide-detail-content">
                                 <div class="listing-data">
                                     <p>The Claredon: 400 Stuart Street, Boston, MA</p>
@@ -48,7 +58,12 @@
                         <img src="images/responsive/slide2-default.jpg" srcset="images/responsive/slide2-tablet.jpg 618w, images/responsive/slide2-large.jpg 490w, images/responsive/slide2-small_x2.jpg 330w, images/responsive/slide2-small.jpg 320w" alt="A Trip to the Quarry" />
                         <div class="detailsArrow"></div>
                         <div class="carousel-fullwidth_slide-details">
-                            <div class="carousel-fullwidth_slide-detail-icon"><img src="images/icons/slideDetail-leftCol-luxuryLabel.png" /></div>
+                            <div class="carousel-fullwidth_slide-detail-icon">
+                                <div class="category-tag__container">
+                                    <a href="javascript:;" class="category-tag maroon topSpacing">Luxury</a>
+                                    <a href="javascript:;" class="category-tag white topSpacing">For Sale</a>
+                                </div>
+                            </div>
                             <div class="carousel-fullwidth_slide-detail-content">
                                 <div class="listing-data">
                                     <p>The Claredon: 400 Stuart Street, Boston, MA</p>
@@ -64,7 +79,12 @@
                         <img src="images/responsive/slide3-default.jpg" srcset="images/responsive/slide3-tablet.jpg 618w, images/responsive/slide3-large.jpg 490w, images/responsive/slide3-small_x2.jpg 330w, images/responsive/slide3-small.jpg 320w" alt="Recipe: Fennel Panna Cotta" />
                         <div class="detailsArrow"></div>
                         <div class="carousel-fullwidth_slide-details">
-                            <div class="carousel-fullwidth_slide-detail-icon"><img src="images/icons/slideDetail-leftCol-sponsored.png" /></div>
+                            <div class="carousel-fullwidth_slide-detail-icon">
+                                <div class="category-tag__container">
+                                    <a href="javascript:;" class="category-tag maroon topSpacing">Luxury</a>
+                                    <a href="javascript:;" class="category-tag white topSpacing">For Sale</a>
+                                </div>
+                            </div>
                             <div class="carousel-fullwidth_slide-detail-content">
                                 <div class="listing-data">
                                     <p>The Claredon: 400 Stuart Street, Boston, MA</p>

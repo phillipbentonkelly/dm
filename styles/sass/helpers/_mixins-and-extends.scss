@@ -150,10 +150,10 @@
 }
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-// Ad Slots
-// * FOR: Genereal Ad Slot Styling
+// Extend Overlays
+// * FOR: Genereal Overlay Styling
 // * WHY: Consistant use of this element
-// * USE: @extend .adSlots
+// * USE: @extend .overlays
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 .overlays {
@@ -168,6 +168,13 @@
     left: 6%;
   }
 }
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// Extend Ad Slots
+// * FOR: Genereal Ad Slot Styling
+// * WHY: Consistant use of this element
+// * USE: @extend .adSlots
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 .adSlots {
   margin: auto;
