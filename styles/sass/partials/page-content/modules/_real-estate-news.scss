@@ -16,7 +16,6 @@ a, img{
 	min-height: 250px;
 	overflow: hidden;
 	clear: both;
-	margin-left: 15%;
 	
 	font-family: OpenSans Regular;
 	font-weight: 400;
@@ -36,6 +35,7 @@ a, img{
 		.adSlot {
 			margin-right: 0 !Important;
 			margin-left: 0px !Important;
+			margin-bottom: 20px;
 		}
 
 		.adSlot:nth-child(odd) {
@@ -74,12 +74,12 @@ a, img{
 		margin-left: 0;
 
 		.adSlot {
-			margin-right: 30px;
+			margin-right: 4.7%;
 			margin-left: 0px;
 		}
 
 		.adSlot:nth-child(odd) {
-			margin-right: 30px;
+			margin-right: 4.7%;
 			margin-left: 0px;
 		}
 	}
@@ -100,7 +100,7 @@ a, img{
 			}
 
 			.adSlot:nth-child(odd) {
-				margin-right: 30px !Important;
+				margin-right: 4.7% !Important;
 				margin-left: 0px !Important;
 			}
 		}
