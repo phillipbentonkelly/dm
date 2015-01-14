@@ -236,7 +236,7 @@ body {
 }
 /* line 236, ../sass/helpers/_mixins-and-extends.scss */
 .adSlots .adSlot .detailsWrapper .detailsOverlay h1 {
-  font-size: 18px;
+  font-size: 2em;
   font-weight: 500;
   text-align: left;
   padding: 0 0 0.5em 0;
@@ -276,35 +276,51 @@ body {
     float: left;
     margin-right: 0px;
   }
-  /* line 279, ../sass/helpers/_mixins-and-extends.scss */
+  /* line 281, ../sass/helpers/_mixins-and-extends.scss */
+  .adSlots .adSlot .detailsWrapper .detailsOverlay h1 {
+    font-size: 18px;
+  }
+  /* line 284, ../sass/helpers/_mixins-and-extends.scss */
+  .adSlots .adSlot .detailsWrapper .detailsOverlay h1 .priceSpan {
+    width: 40%;
+  }
+  /* line 291, ../sass/helpers/_mixins-and-extends.scss */
   .adSlots .adSlot:first-child {
     float: left;
     margin-right: 30px;
   }
-  /* line 284, ../sass/helpers/_mixins-and-extends.scss */
+  /* line 296, ../sass/helpers/_mixins-and-extends.scss */
   .adSlots a.adSlot:first-child {
     margin: 0px;
   }
 }
 @media (min-width: 768px) {
-  /* line 292, ../sass/helpers/_mixins-and-extends.scss */
+  /* line 304, ../sass/helpers/_mixins-and-extends.scss */
   .adSlots .adSlot {
     float: left;
     margin-left: 30px;
   }
-  /* line 297, ../sass/helpers/_mixins-and-extends.scss */
+  /* line 310, ../sass/helpers/_mixins-and-extends.scss */
+  .adSlots .adSlot .detailsWrapper .detailsOverlay h1 {
+    font-size: 18px;
+  }
+  /* line 313, ../sass/helpers/_mixins-and-extends.scss */
+  .adSlots .adSlot .detailsWrapper .detailsOverlay h1 .priceSpan {
+    width: 40%;
+  }
+  /* line 321, ../sass/helpers/_mixins-and-extends.scss */
   .adSlots a.adSlot:first-child {
     margin-left: 0;
   }
 }
-/* line 310, ../sass/helpers/_mixins-and-extends.scss */
+/* line 334, ../sass/helpers/_mixins-and-extends.scss */
 .social-icons, .articles-content .social-icons {
   clear: both;
   min-width: 200px;
   min-height: 21px;
   overflow: hidden;
 }
-/* line 316, ../sass/helpers/_mixins-and-extends.scss */
+/* line 340, ../sass/helpers/_mixins-and-extends.scss */
 .social-icons a, .articles-content .social-icons a {
   display: inline-block;
   text-indent: -900px;
@@ -314,43 +330,43 @@ body {
   background-image: url(../../images/icons/sprites/social-icons.png);
   background-repeat: no-repeat;
 }
-/* line 326, ../sass/helpers/_mixins-and-extends.scss */
+/* line 350, ../sass/helpers/_mixins-and-extends.scss */
 .social-icons__facebook {
   width: 9px;
   background-position: 0px 0px !important;
 }
-/* line 331, ../sass/helpers/_mixins-and-extends.scss */
+/* line 355, ../sass/helpers/_mixins-and-extends.scss */
 .social-icons__twitter {
   width: 22px;
   background-position: -20px 0px !important;
 }
-/* line 336, ../sass/helpers/_mixins-and-extends.scss */
+/* line 360, ../sass/helpers/_mixins-and-extends.scss */
 .social-icons__share {
   width: 23px;
   background-position: -48px 0px !important;
 }
-/* line 341, ../sass/helpers/_mixins-and-extends.scss */
+/* line 365, ../sass/helpers/_mixins-and-extends.scss */
 .social-icons__email {
   width: 27px;
   background-position: -81px 0px !important;
 }
-/* line 346, ../sass/helpers/_mixins-and-extends.scss */
+/* line 370, ../sass/helpers/_mixins-and-extends.scss */
 .social-icons__comments {
   width: 18px;
   background-position: -118px 0px !important;
 }
-/* line 351, ../sass/helpers/_mixins-and-extends.scss */
+/* line 375, ../sass/helpers/_mixins-and-extends.scss */
 .social-icons__print {
   width: 22px;
   background-position: -147px 0px !important;
 }
-/* line 356, ../sass/helpers/_mixins-and-extends.scss */
+/* line 380, ../sass/helpers/_mixins-and-extends.scss */
 .social-icons__favorite {
   width: 21px;
   background-position: -179px 0px !important;
 }
 
-/* line 371, ../sass/helpers/_mixins-and-extends.scss */
+/* line 395, ../sass/helpers/_mixins-and-extends.scss */
 .chevron::before, .full-screen-carousel .chevron::before, .gallery-widget .chevron::before, .gallery-widget__details__info-nav .chevron::before {
   color: #fff;
   border-style: solid;
@@ -368,19 +384,19 @@ body {
   font-size: 15px;
 }
 
-/* line 389, ../sass/helpers/_mixins-and-extends.scss */
+/* line 413, ../sass/helpers/_mixins-and-extends.scss */
 .chevron.right:before {
   left: 0;
   transform: rotate(45deg);
 }
 
-/* line 394, ../sass/helpers/_mixins-and-extends.scss */
+/* line 418, ../sass/helpers/_mixins-and-extends.scss */
 .chevron.bottom:before {
   top: 0;
   transform: rotate(135deg);
 }
 
-/* line 399, ../sass/helpers/_mixins-and-extends.scss */
+/* line 423, ../sass/helpers/_mixins-and-extends.scss */
 .chevron.left:before {
   left: 0.25em;
   transform: rotate(-135deg);
@@ -4773,12 +4789,11 @@ a, img {
   min-height: 250px;
   overflow: hidden;
   clear: both;
-  margin-left: 15%;
   font-family: OpenSans Regular;
   font-weight: 400;
   font-size: 1em;
 }
-/* line 25, ../sass/partials/page-content/modules/_real-estate-news.scss */
+/* line 24, ../sass/partials/page-content/modules/_real-estate-news.scss */
 .real-estate-news h1 {
   text-align: center;
   font-family: 'Oswald', sans-serif;
@@ -4786,10 +4801,11 @@ a, img {
   font-size: 1.5em;
   margin: 0 0 5% 0;
 }
-/* line 36, ../sass/partials/page-content/modules/_real-estate-news.scss */
+/* line 35, ../sass/partials/page-content/modules/_real-estate-news.scss */
 .real-estate-news .adSlots .adSlot {
   margin-right: 0 !Important;
   margin-left: 0px !Important;
+  margin-bottom: 20px;
 }
 /* line 41, ../sass/partials/page-content/modules/_real-estate-news.scss */
 .real-estate-news .adSlots .adSlot:nth-child(odd) {
@@ -4828,12 +4844,12 @@ a, img {
   }
   /* line 76, ../sass/partials/page-content/modules/_real-estate-news.scss */
   .real-estate-news .adSlot {
-    margin-right: 30px;
+    margin-right: 4.7%;
     margin-left: 0px;
   }
   /* line 81, ../sass/partials/page-content/modules/_real-estate-news.scss */
   .real-estate-news .adSlot:nth-child(odd) {
-    margin-right: 30px;
+    margin-right: 4.7%;
     margin-left: 0px;
   }
 }
@@ -4855,7 +4871,7 @@ a, img {
   }
   /* line 102, ../sass/partials/page-content/modules/_real-estate-news.scss */
   .real-estate-news .adSlots .adSlot:nth-child(odd) {
-    margin-right: 30px !Important;
+    margin-right: 4.7% !Important;
     margin-left: 0px !Important;
   }
 }
