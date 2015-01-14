@@ -3149,6 +3149,7 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
 
 /* line 432, ../sass/partials/page/modules/_listing-summary.scss */
 #simplemodal-data {
+  margin: 0 auto;
   width: 80%;
 }
 
