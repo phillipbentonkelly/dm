@@ -152,7 +152,7 @@
             </div>
 
             <div class='realtor-info--middle'>
-                <img class='realtor-img' src='http://newlistingphotos.com/wp-content/uploads/2011/04/Blog.jpg'/>
+                <!-- <img class='realtor-img' src='http://newlistingphotos.com/wp-content/uploads/2011/04/Blog.jpg'/> -->
             </div>
 
             <div class='realtor-info--right'>
@@ -216,13 +216,13 @@
 
                 <div class='row4'>
                     <p class='house-type'>Co-op/Condo</p>
-                    <p class='description'>Secluded single floor residence with gated drive set on a lush cul-de-sac. Designed by architect Adolfo Perez.</p>
+                    <p class='description'>Secluded single floor residence with gated drive set on a lush cul-de-sac. Designed by architect Adolfo Perez. Secluded single floor residence with gated drive set on a lush cul-de-sac. Designed by architect Adolfo Perez. Secluded single floor residence with gated drive set on a lush cul-de-sac. Designed by architect Adolfo Perez.</p>
                 </div>
 
             </div>
         </div>
 
-        <div class='realtor-info'>
+        <!-- <div class='realtor-info'>
             <div class='realtor-info--left'>
                 <img class='realtor-company' src='http://www.vanguard-realty.com/files/2013/06/innerpage-logo.png'/>
             </div>
@@ -235,7 +235,7 @@
                 <button class='realtor-contact'>Contact</button>
                 <p class='realtor-name'>Blake Sherwood</p>
             </div>
-        </div>
+        </div> -->
 
     </div>
 
