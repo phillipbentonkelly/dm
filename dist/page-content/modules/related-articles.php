@@ -15,9 +15,8 @@
             <div class="date">September 9, 2014</div>
 
             <div class="tags">
-                <div class="category-tag maroon">Luxury</div>
-                <div class="category-tag orange">Brookline</div>
-                </a>
+                <a href="javascript:;" class="category-tag maroon">Luxury</a>
+                <a href="javascript:;" class="category-tag orange">Brookline</a>
             </div>
         </div>
     </div>
@@ -35,9 +34,9 @@
             <div class="date">July 30, 2014</div>
 
             <div class="tags">
-                <div class="category-tag light-blue">Open House</div>
-                <div class="category-tag maroon">Luxury</div>
-                <div class="category-tag orange">Jaimaca Plain</div>
+                <a href="javascript:;" class="category-tag light-blue">Open House</a>
+                <a href="javascript:;" class="category-tag maroon">Luxury</a>
+                <a href="javascript:;" class="category-tag orange">Jaimaca Plain</a>
             </div>
         </div>
     </div>
@@ -69,8 +68,8 @@
             <div class="date">July 3, 2014</div>
 
             <div class="tags">
-                <div class="category-tag light-blue">Open House</div>
-                <div class="category-tag maroon">Luxury</div>
+                <a href="javascript:;" class="category-tag light-blue">Open House</a>
+                <a href="javascript:;" class="category-tag maroon">Luxury</a>
             </div>
         </div>
     </div>
@@ -93,8 +92,8 @@
             <div class="date">September 9, 2014</div>
 
             <div class="tags">
-                <div class="category-tag maroon">Luxury</div>
-                <div class="category-tag orange">Brookline</div>
+                <a href="javascript:;" class="category-tag maroon">Luxury</a>
+                <a href="javascript:;" class="category-tag orange">Brookline</a>
             </div>
         </div>
     </div>
@@ -112,9 +111,9 @@
             <div class="date">July 30, 2014</div>
 
             <div class="tags">
-                <div class="category-tag light-house">Open House</div>
-                <div class="category-tag maroon">Luxury</div>
-                <div class="category-tag orange">Jaimaca Plain</div>
+                <a href="javascript:;" class="category-tag light-house">Open House</a>
+                <a href="javascript:;" class="category-tag maroon">Luxury</a>
+                <a href="javascript:;" class="category-tag orange">Jaimaca Plain</a>
             </div>
         </div>
     </div>
