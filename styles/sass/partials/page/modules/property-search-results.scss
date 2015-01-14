@@ -4,7 +4,6 @@ $module-name: 'search-results';
   display: inline-block;
   margin-bottom: 15px;
 
-
   &__item {
     max-height: 355px;
     position: relative;
@@ -13,7 +12,7 @@ $module-name: 'search-results';
 
   }
 
-  &__filter-bar {
+  &__filter-bar, &__filter-bar-bottom {
     display: none;
   }
   
@@ -292,12 +291,49 @@ $module-name: 'search-results';
     }
   }
 
+  .adSlot-right {
+    display: none;
+  }
+
+  .adSlot-left {
+    margin: 10px auto;
+  }
+
+
 }
 
 @media (min-width: 768px) {
   .#{$module-name} {
 
-    &__filter-bar {
+    .adSlots {
+        margin: 10px 0;
+        position: relative;
+        
+        .adSlot {
+            width: 100%;
+            box-sizing: border-box;
+            margin-left: auto !important;
+            margin-right: auto !important;
+            width: 300px;
+            float: none;
+        }
+    }
+
+    .adSlot-left, .adSlot-right {
+        min-height: 250px;
+        min-width: 300px;
+    }
+
+    .adSlot-left {
+        margin-bottom: 10px !important;
+    }
+
+    .adSlot-right {
+        display: block;
+    }
+
+    &__filter-bar, &__filter-bar-bottom {
+      position: relative;
       display: block;
       width: 100%;
       padding: 16px;
@@ -310,6 +346,54 @@ $module-name: 'search-results';
         font-size: 11px;
         font-weight: 400;
       }
+
+      .filter-drop {
+        position: absolute;
+        bottom: 5px;
+        top: 5px;
+        right: 5px;
+        background: white;
+        border: none;
+        font-family: 'OpenSans Regular'; 
+      }
+    }
+
+    &__filter-bar-bottom {
+        background: none;
+
+        p {
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .results-pag-nav {
+            position: absolute;
+            top: 10px;
+            right: 12px;
+
+            p {
+                font-family: 'OpenSans Regular';
+                margin: 0 5px;
+            }
+
+            span:first-child {
+                padding: 0 10px;
+                background: rgb(180,180,180);
+                border-radius: 3px;
+            }
+        }
+
+        .results-pag-nav-left {
+            height: 20px;
+            width: 20px;
+            transform: rotate(90deg);
+        }
+
+        .results-pag-nav-right {
+            height: 20px;
+            width: 20px;
+            transform: rotate(270deg);
+        }
     }
 
     .photo-arrows {
@@ -383,4 +467,20 @@ $module-name: 'search-results';
       width: 60%;
     }
   }
+}
+
+@media (min-width: 960px) {
+    .adSlots {
+        
+        .adSlot {
+            display: inline-block;
+            margin-bottom: 0;
+        }
+
+        .adSlot-right {
+            img {
+                margin-left: 35px;
+            }
+        }
+    }
 }

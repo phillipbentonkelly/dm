@@ -245,11 +245,6 @@
 				<!-- Contact The Agent Widget -->
 				<?php include 'page-content/modules/search-map.php'; ?>
 
-				<!-- DFP Ad - Experience the Difference -->
-				<?php include 'ads/dfp-ads__experience-the-difference.php'; ?>
-
-				<!-- DFP Ad - Moo Printing -->
-				<?php include 'ads/dfpAds__300by250__moo.php'; ?>
 			<?php } ?>
 		</div>
 	</div>
