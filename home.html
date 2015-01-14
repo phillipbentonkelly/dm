@@ -88,10 +88,11 @@
             <li class="page-nav__mega-menu-responsive-icon"></li>
             <li class="page-nav__logo">
                 <a href="javascript:;">
-                    <h1>Real Estate</h1>
+                    <h1>Addresses</h1>
                     <h4>A Boston.com Site</h4>
                 </a>
             </li>
+
             <li class="page-nav__main-nav-links">
                 <ul>
                     <li class="page-nav__nav-item page-nav__responsive-home-link">
@@ -165,7 +166,7 @@
                                                     <div class="detailsArrow"></div>
 
                                                     <div class="detailsOverlay">
-                                                        <h1><span class="col">14 Chestnut Street Boston, MA</span> <span class="priceSpan">$190,000</span></h1>
+                                                        <h1>14 Chestnut Street Boston, MA <span class="priceSpan">$190,000</span></h1>
 
                                                         <p>One of Beacon Hill's most desirable tree-lined streets, this exquisite Triplex has 5,000+ sqf ft. of furnished living space. 4+ Beds/3.5 Baths</p>
                                                     </div>
@@ -285,7 +286,7 @@
                                                     <div class="detailsArrow"></div>
 
                                                     <div class="detailsOverlay">
-                                                        <h1><span class="col">14 Chestnut Street Boston, MA</span> <span class="priceSpan">$190,000</span></h1>
+                                                        <h1>14 Chestnut Street Boston, MA <span class="priceSpan">$190,000</span></h1>
 
                                                         <p>One of Beacon Hill's most desirable tree-lined streets, this exquisite Triplex has 5,000+ sqf ft. of furnished living space. 4+ Beds/3.5 Baths</p>
                                                     </div>
@@ -304,7 +305,7 @@
                 </ul>
             </li>
             
-            <li class="page-nav__search-responsive-icon"></li>
+            <li class="page-nav__search-responsive-icon"><a href="javascript:;"></a></li>
         </ul>
     </div>
 </div>
@@ -320,7 +321,7 @@
             <div class="page-search__row page-search__row--level-one">
 
                 <select class="page-search__dropdown page-search__dropdown--main" name="q">
-                    <option value="">Search for real estate listings or articles. ex: 3 bedroom for sale in Brookline under 1,000,000</option>
+                    <option></option>
                     <option value="Boston">Boston</option>
                     <option value="Brookline">Brookline</option>
                     <option value="Cambridge">Cambridge</option>
@@ -372,44 +373,44 @@
                 <section class="page-search__section" title="Price">
                     <h4 class="mobile">Price</h4>
                     <div class="page-search__container page-search__container--range price-range-container">
-                        <input type="text" class="page-search__input page-search__input--numeric" name="price_range_min" placeholder="$300K">
+                        <input type="text" class="page-search__input page-search__input--numeric" name="price_range_min" placeholder="$ Min">
                         </input>
                         &mdash;&nbsp;
-                        <input type="text" class="page-search__input page-search__input--numeric" name="price_range_max" placeholder="$24M">
+                        <input type="text" class="page-search__input page-search__input--numeric" name="price_range_max" placeholder="$ Max">
                         </input>
                     </div>
                 </section>
 
                 <section class="page-search__section" title="Beds">
                     <h4 class="mobile">Beds</h4>
-                    <select class="page-search__dropdown page-search__dropdown--filter" name="beds">
-                        <option value="" selected>Beds</option>
-                        <option value="0">0</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
+                    <select class="page-search__dropdown page-search__dropdown--filter" name="beds" data-placeholder="Beds">
+                        <option></option>
+                        <option value="0+">0+</option>
+                        <option value="1+">1+</option>
+                        <option value="2+">2+</option>
+                        <option value="3+">3+</option>
+                        <option value="4+">4+</option>
                         <option value="5+">5+</option>
                     </select>
                 </section>
 
                 <section class="page-search__section" title="Baths">
                     <h4 class="mobile">Baths</h4>
-                    <select class="page-search__dropdown page-search__dropdown--filter" name="baths">
-                        <option value="" selected>Baths</option>
-                        <option value="0">0</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
+                    <select class="page-search__dropdown page-search__dropdown--filter" name="baths" data-placeholder="Baths">
+                        <option></option>
+                        <option value="0+">0+</option>
+                        <option value="1+">1+</option>
+                        <option value="2+">2+</option>
+                        <option value="3+">3+</option>
+                        <option value="4+">4+</option>
                         <option value="5+">5+</option>
                     </select>
                 </section>
 
                 <section class="page-search__section" title="Home Type">
                     <h4 class="mobile">Home Type</h4>
-                    <select class="page-search__dropdown page-search__dropdown--filter" name="home_type">
-                        <option value="" selected="selected">Home Type</option>
+                    <select class="page-search__dropdown page-search__dropdown--filter-wide" name="home_type" data-placeholder="Home Type">
+                        <option></option>
                         <option value="Single-Family">Single-Family</option>
                         <option value="Multi-Family">Multi-Family</option>
                         <option value="Apartment">Apartment</option>
@@ -441,61 +442,61 @@
                 </div>
                 
 
-                    <div class="col">
+                <div class="col">
 
-                        <section class="page-search__section" id="subtypes" title="Subtypes">
+                    <section class="page-search__section" id="subtypes" title="Subtypes">
 
-                            <h4 class="desktop">Filter By</h4>
-                            <h4 class="mobile">Subtype</h4>
+                        <h4 class="desktop">Filter By</h4>
+                        <h4 class="mobile">Subtype</h4>
 
-                            <ul>
-                                <li class="page-search__list-item">
-                                    <div class="page-search__fancy-checkbox">
-                                        <input type="checkbox" id="openHouses" name="open_houses"></input>
-                                        <label for="openHouses">Open Houses</label>
-                                    </div>
-                                </li>
+                        <ul>
+                            <li class="page-search__list-item">
+                                <div class="page-search__fancy-checkbox">
+                                    <input type="checkbox" id="openHouses" name="open_houses"></input>
+                                    <label for="openHouses">Open Houses</label>
+                                </div>
+                            </li>
 
-                                <li class="page-search__list-item">
-                                    <div class="page-search__fancy-checkbox">
-                                        <input type="checkbox" id="newListings" name="new_listings"></input>
-                                        <label for="newListings">New Listings</label>
-                                    </div>
-                                </li>
+                            <li class="page-search__list-item">
+                                <div class="page-search__fancy-checkbox">
+                                    <input type="checkbox" id="newListings" name="new_listings"></input>
+                                    <label for="newListings">New Listings</label>
+                                </div>
+                            </li>
 
-                                <li class="page-search__list-item">
-                                    <div class="page-search__fancy-checkbox">
-                                        <input type="checkbox" id="reducedPrice" name="reduced_price"></input>
-                                        <label for="reducedPrice">Reduced Price</label>
-                                    </div>
-                                </li>
+                            <li class="page-search__list-item">
+                                <div class="page-search__fancy-checkbox">
+                                    <input type="checkbox" id="reducedPrice" name="reduced_price"></input>
+                                    <label for="reducedPrice">Reduced Price</label>
+                                </div>
+                            </li>
 
-                                <li class="page-search__list-item">
-                                    <div class="page-search__fancy-checkbox">
-                                        <input type="checkbox" id="newDevelopments" name="new_developments"></input>
-                                         <label for="newDevelopments">New Developments</label>
-                                    </div>
-                                </li>
+                            <li class="page-search__list-item">
+                                <div class="page-search__fancy-checkbox">
+                                    <input type="checkbox" id="newDevelopments" name="new_developments"></input>
+                                     <label for="newDevelopments">New Developments</label>
+                                </div>
+                            </li>
 
-                                <li class="page-search__list-item">
-                                    <div class="page-search__fancy-checkbox">
-                                        <input type="checkbox" id="sold" name="sold"></input>
-                                        <label for="sold">Sold</label>
-                                    </div>
-                                </li>
+                            <li class="page-search__list-item">
+                                <div class="page-search__fancy-checkbox">
+                                    <input type="checkbox" id="sold" name="sold"></input>
+                                    <label for="sold">Sold</label>
+                                </div>
+                            </li>
 
-                                <li class="page-search__list-item">
-                                    <div class="page-search__fancy-checkbox">
-                                        <input type="checkbox" id="forclosures" name="forclosures"></input>
-                                        <label for="forclosures">Forclosures</label>
-                                    </div>
-                                </li>
+                            <li class="page-search__list-item">
+                                <div class="page-search__fancy-checkbox">
+                                    <input type="checkbox" id="forclosures" name="forclosures"></input>
+                                    <label for="forclosures">Forclosures</label>
+                                </div>
+                            </li>
 
-                            </ul>
+                        </ul>
 
-                        </section>
+                    </section>
 
-                    </div>
+                </div>
 
                 <div class="col">
                     
@@ -540,7 +541,7 @@
                         <h4>Days On Market</h4>
 
                         <select class="page-search__dropdown page-search__dropdown--filter-advanced" name="days_on_mkt">
-                            <option value="" selected="selected">Any</option>
+                            <option value="Any">Any</option>
                             <option value="1 day">1 day</option> 
                             <option value="7 days">7 days</option> 
                             <option value="14 days">14 days</option>
@@ -556,7 +557,6 @@
                     <section class="page-search__section page-search__section--tokenize" id="keywords" title="Keywords">
                         <h4>Keywords</h4>
                         <span class="helper">(comma separated)</span>
-
                         <input type="text" class="page-search__input page-search__input--tokenize" name="keywords"></input>
                     </section>
 
@@ -590,12 +590,7 @@
                         <img src="images/responsive/slide4-default.jpg" srcset="images/responsive/slide4-tablet.jpg 618w, images/responsive/slide4-large.jpg 490w, images/responsive/slide4-small_x2.jpg 330w, images/responsive/slide4-small.jpg 320w" alt="Table Setting Placard" />
                         <div class="detailsArrow"></div>
                         <div class="carousel-fullwidth_slide-details">
-                            <div class="carousel-fullwidth_slide-detail-icon">
-                                <div class="category-tag__container">
-                                    <a href="javascript:;" class="category-tag maroon topSpacing">Luxury</a>
-                                    <a href="javascript:;" class="category-tag white topSpacing">For Sale</a>
-                                </div>
-                            </div>
+                            <div class="carousel-fullwidth_slide-detail-icon"><img src="images/icons/slideDetail-leftCol-luxuryLabel.png" /></div>
                             <div class="carousel-fullwidth_slide-detail-content">
                                 <div class="listing-data">
                                     <p>The Claredon: 400 Stuart Street, Boston, MA</p>
@@ -614,12 +609,7 @@
                         <img src="images/responsive/slide1-default.jpg" srcset="images/responsive/slide1-tablet.jpg 618w, images/responsive/slide1-large.jpg 490w, images/responsive/slide1-small_x2.jpg 330w, images/responsive/slide1-small.jpg 320w" alt="New Arrivals" />
                         <div class="detailsArrow"></div>
                         <div class="carousel-fullwidth_slide-details">
-                            <div class="carousel-fullwidth_slide-detail-icon">
-                                <div class="category-tag__container">
-                                    <a href="javascript:;" class="category-tag maroon topSpacing">Luxury</a>
-                                    <a href="javascript:;" class="category-tag white topSpacing">For Sale</a>
-                                </div>
-                            </div>
+                            <div class="carousel-fullwidth_slide-detail-icon"><img src="images/icons/slideDetail-leftCol-sponsored.png" /></div>
                             <div class="carousel-fullwidth_slide-detail-content">
                                 <div class="listing-data">
                                     <p>The Claredon: 400 Stuart Street, Boston, MA</p>
@@ -638,12 +628,7 @@
                         <img src="images/responsive/slide2-default.jpg" srcset="images/responsive/slide2-tablet.jpg 618w, images/responsive/slide2-large.jpg 490w, images/responsive/slide2-small_x2.jpg 330w, images/responsive/slide2-small.jpg 320w" alt="A Trip to the Quarry" />
                         <div class="detailsArrow"></div>
                         <div class="carousel-fullwidth_slide-details">
-                            <div class="carousel-fullwidth_slide-detail-icon">
-                                <div class="category-tag__container">
-                                    <a href="javascript:;" class="category-tag maroon topSpacing">Luxury</a>
-                                    <a href="javascript:;" class="category-tag white topSpacing">For Sale</a>
-                                </div>
-                            </div>
+                            <div class="carousel-fullwidth_slide-detail-icon"><img src="images/icons/slideDetail-leftCol-luxuryLabel.png" /></div>
                             <div class="carousel-fullwidth_slide-detail-content">
                                 <div class="listing-data">
                                     <p>The Claredon: 400 Stuart Street, Boston, MA</p>
@@ -659,12 +644,7 @@
                         <img src="images/responsive/slide3-default.jpg" srcset="images/responsive/slide3-tablet.jpg 618w, images/responsive/slide3-large.jpg 490w, images/responsive/slide3-small_x2.jpg 330w, images/responsive/slide3-small.jpg 320w" alt="Recipe: Fennel Panna Cotta" />
                         <div class="detailsArrow"></div>
                         <div class="carousel-fullwidth_slide-details">
-                            <div class="carousel-fullwidth_slide-detail-icon">
-                                <div class="category-tag__container">
-                                    <a href="javascript:;" class="category-tag maroon topSpacing">Luxury</a>
-                                    <a href="javascript:;" class="category-tag white topSpacing">For Sale</a>
-                                </div>
-                            </div>
+                            <div class="carousel-fullwidth_slide-detail-icon"><img src="images/icons/slideDetail-leftCol-sponsored.png" /></div>
                             <div class="carousel-fullwidth_slide-detail-content">
                                 <div class="listing-data">
                                     <p>The Claredon: 400 Stuart Street, Boston, MA</p>
@@ -736,8 +716,7 @@
         googletag.display("div-id-for-carousel2");
         googletag.display("div-id-for-carousel3");
     });
-</script>	
-		
+</script>		
 	
 	
 	<!-- Page Layout -->
@@ -753,10 +732,7 @@
 
     <div class="adSlots">
         <a href="javascript:;" class="adSlot">
-            <div class="category-tag__container">
-                <div class="category-tag maroon topSpacing">Luxury</div>
-                <div class="category-tag white topSpacing">For Sale</div>
-            </div>
+            <img src="images/icons/luxuryLabel.png" class="iconOverlay topSpacing" />
 
             <img src="images/listings/reNews__listings__1.jpg" />
             
@@ -780,10 +756,7 @@
         </a>
 
         <a href="javascript:;" class="adSlot">
-            <div class="category-tag__container">
-                <div class="category-tag orange topSpacing">East Boston</div>
-                <div class="category-tag white topSpacing">For Sale</div>
-            </div>
+            <img src="images/icons/luxuryLabel.png" class="iconOverlay topSpacing" />
 
             <img src="images/listings/reNews__listings__4.jpg" />
             
@@ -799,10 +772,7 @@
         </a>
 
         <a href="javascript:;" class="adSlot">
-            <div class="category-tag__container">
-                <div class="category-tag light-blue topSpacing">Open House</div>
-                <div class="category-tag white topSpacing">For Sale</div>
-            </div>
+            <img src="images/icons/luxuryLabel.png" class="iconOverlay topSpacing" />
 
             <img src="images/listings/reNews__listings__5.jpg" />
             
@@ -818,10 +788,7 @@
         </a>
 
         <a href="javascript:;" class="adSlot">
-            <div class="category-tag__container">
-                <div class="category-tag gold topSpacing">New Listing</div>
-                <div class="category-tag white topSpacing">For Sale</div>
-            </div>
+            <img src="images/icons/luxuryLabel.png" class="iconOverlay topSpacing" />
 
             <img src="images/listings/reNews__listings__6.jpg" />
             
@@ -1159,15 +1126,15 @@
     </div>
 
     <div class="navigation">
-        <a href="javascript:;" id="left-arrow" title="DOWN"><img class='nav-arrow' src='images/listings/arrow-icon-yellow.png'></a>
-        <a href="javascript:;" class="view-all">View All <span class="listingType">New</span> Listings</a>
-        <a href="javascript:;" id="right-arrow" title="UP"><img class='nav-arrow' src='images/listings/arrow-icon-yellow.png'></a>
+        <a href="javascript:;" id="leftArrow" title="DOWN"><img class='up-arrow nav-arrow' src='images/listings/arrow-icon-grey.jpg'></a>
+        <a href="javascript:;" id="rightArrow" title="UP"><img class='down-arrow nav-arrow' src='images/listings/arrow-icon-grey.jpg'></a>
     </div>
+
+    <a href="javascript:;" class="view-all">View All <span class="listingType">New</span> Listings</a>
 </div>
 <!-- Property Listings Widget -->						
 			
 			<!-- PROPERTY LISTINGS -->
-			
 						
 			
 			<!-- NEIGHBORHOOD -->
@@ -1190,10 +1157,7 @@
         
         <div class="adSlots">
             <a href="javascript:;" class="adSlot">
-                <div class="category-tag__container">
-                    <div class="category-tag maroon topSpacing">Trending</div>
-                    <div class="category-tag white topSpacing">For Sale</div>
-                </div>
+                <div class="category-tag trending topSpacing">trending <span class="arrow"></span></div>
 
                 <img src="images/blogs/re-blog__entry__1.jpg">
                 
@@ -1209,10 +1173,7 @@
             </a>
 
             <a href="javascript:;" class="adSlot">
-                <div class="category-tag__container">
-                    <div class="category-tag gray topSpacing">Sponsored</div>
-                    <div class="category-tag white topSpacing">For Sale</div>
-                </div>
+                <div class="category-tag sponsored topSpacing">sponsored <span class="arrow"></span></div>
 
                 <img src="images/blogs/re-blog__entry__2.jpg">
                 
@@ -1220,7 +1181,7 @@
                     <div class="detailsArrow"></div>
 
                     <div class="detailsOverlay">
-                        <h1><span class="col">14 Chestnut Street Boston, MA</span> <span class="priceSpan">$190,000</span></h1>
+                        <h1>14 Chestnut Street Boston, MA <span class="priceSpan">$190,000</span></h1>
 
                         <p>One of Beacon Hill's most desirable tree-lined streets, this exquisite Triplex has 5,000+ sqf ft. of furnished living space. 4+ Beds/3.5 Baths</p>
                     </div>
@@ -1228,10 +1189,7 @@
             </a>
 
             <a href="javascript:;" class="adSlot">
-                <div class="category-tag__container">
-                    <div class="category-tag gray topSpacing">Sponsored</div>
-                    <div class="category-tag white topSpacing">For Sale</div>
-                </div>
+                <div class="category-tag sponsored topSpacing">Sponsored <span class="arrow"></span></div>
 
                 <img src="images/blogs/re-blog__entry__3.jpg">
                 
@@ -1302,9 +1260,15 @@
 <div class="page-footer">
     <div class="content-footer">
         <div class="content-footer__social-icons">
-            <a href="javascript:;" class="icon twitter">twitter</a>
-            <a href="javascript:;" class="icon facebook">facebook</a>
-            <a href="javascript:;" class="icon rss">rss</a>
+            <a href="javascript:;" class="icon twitter">
+                <img src="images/icons/footer-icons__twitter.png" />
+            </a>
+            <a href="javascript:;" class="icon facebook">
+                <img src="images/icons/footer-icons__facebook.png" />
+            </a>
+            <a href="javascript:;" class="icon rss">
+                <img src="images/icons/footer-icons__rss.png" />
+            </a>
         </div>
 
         <div class="content-footer__footer-links">
