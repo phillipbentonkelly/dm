@@ -112,7 +112,7 @@
 
         <div class='left-col'>
             <div class='property-images'>
-                <img src='images/neighborhoods/top-neighborhoods__entry__1.jpg'/>
+                <img src='images/neighborhoods/top-neighborhoods__entry__3.jpg'/>
                 <div class='photo-count'>18 Photos</div>
                 <div class='photo-arrows'>
                     <a href='javascript:;'><img class='photo-arrow-left' src='images/listings/arrow-icon-trans-black.png'/></a>
@@ -188,7 +188,7 @@
 
         <div class='left-col'>
             <div class='property-images'>
-                <img src='images/neighborhoods/top-neighborhoods__entry__1.jpg'/>
+                <img src='images/neighborhoods/top-neighborhoods__entry__2.jpg'/>
                 <div class='photo-count'>18 Photos</div>
                 <div class='photo-arrows'>
                     <a href='javascript:;'><img class='photo-arrow-left' src='images/listings/arrow-icon-trans-black.png'/></a>
