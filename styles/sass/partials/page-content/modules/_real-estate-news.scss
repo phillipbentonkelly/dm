@@ -16,6 +16,7 @@ a, img{
 	min-height: 250px;
 	overflow: hidden;
 	clear: both;
+	margin-left: 15%;
 	
 	font-family: OpenSans Regular;
 	font-weight: 400;
@@ -70,6 +71,7 @@ a, img{
 @include media-query(desktop) {
 	.#{$module-name} {
 		width: 630px;
+		margin-left: 0;
 
 		.adSlot {
 			margin-right: 30px;
@@ -86,6 +88,7 @@ a, img{
 @include media-query(tablet) {
 	.#{$module-name} {
 		width: 630px;
+		margin-left: 0;
 
 		.adSlots {
 			float: left;

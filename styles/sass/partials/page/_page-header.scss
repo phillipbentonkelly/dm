@@ -10,12 +10,12 @@ $module-name: 'page-header';
 
 .#{$module-name} {
 	width: 100%;
-	height: (($page-header-height/2)+($page-header-height/3));
+	/*height: (($page-header-height/2)+($page-header-height/3));*/
 
 	&__content{
 		display: block;
 		max-width: 728px;
-		height: 90px;
+		/*height: 90px;*/
 		margin: auto;
 		overflow: hidden;
 	}

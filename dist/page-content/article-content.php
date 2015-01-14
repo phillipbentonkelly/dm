@@ -3,15 +3,9 @@
     <h1>This iPad House on the Cape Will be Sold At Auction</h1>
     
     <div class="tags">
-        <a href="javascript:;">
-            <div class="category-tag maroon">Luxury</div>
-        </a>
-        <a href="javascript:;">
-            <div class="category-tag light-blue">Open House</div>
-        </a>
-        <a href="javascript:;">
-            <div class="category-tag orange">Cape &amp; Islands</div>
-        </a>
+        <a href="javascript:;" class="category-tag maroon">Luxury</a>
+        <a href="javascript:;" class="category-tag light-blue">Open House</a>
+        <a href="javascript:;" class="category-tag orange">Cape &amp; Islands</a>
     </div>
     
     <!-- Social Icons -->
