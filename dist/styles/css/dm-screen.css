@@ -558,7 +558,7 @@ textarea {
 /* line 69, ../sass/helpers/_common-assets.scss */
 .category-tag.white {
   background-color: #fff;
-  color: #333;
+  color: #333 !important;
 }
 
 /* line 76, ../sass/helpers/_common-assets.scss */

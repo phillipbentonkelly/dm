@@ -66,7 +66,7 @@ $asset-1-name: 'category-tag';
 	.#{$asset-1-name}.orange { background-color: #CE6323; } // For Neighborhood Flags like Beacon Hill
 	.#{$asset-1-name}.light-blue { background-color: #77A9CE; } // For Open Houses and Featured Flags
 	.#{$asset-1-name}.gold { background-color: #B4A455; } // For New Listings Flag
-	.#{$asset-1-name}.white { background-color: #fff; color: #333; } // For Sale Flag
+	.#{$asset-1-name}.white { background-color: #fff; color: #333 !important; } // For Sale Flag
 
 
 
