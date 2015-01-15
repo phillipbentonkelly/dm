@@ -36,6 +36,21 @@
 		
 				
 		
+		<script type="text/javascript">
+		    var googletag = googletag || {};
+		    googletag.cmd = googletag.cmd || [];
+		    
+		    (function() {
+		        var gads = document.createElement("script");
+		        gads.async = true;
+		        gads.type = "text/javascript";
+		        var useSSL = "https:" == document.location.protocol;
+		        gads.src = (useSSL ? "https:" : "http:") + "//www.googletagservices.com/tag/js/gpt.js";
+		        var node =document.getElementsByTagName("script")[0];
+		        node.parentNode.insertBefore(gads, node);
+		    })();
+		</script>
+
 		<script src="js/resources/plugins/selectize/selectize.js"></script>
         <script src="js/resources/plugins/select2/select2.js"></script>
         <script src="js/assets/searchPanel.js"></script>
@@ -67,10 +82,35 @@
     <!-- Page Masthead -->
 <div class="masthead">
     <div class="page-header">
-        <a class="page-header__content" href="javascript:;"><img src="images/BannerAd-placeholder.jpg" /></a>
+        <div id="ad_lead1" class="page-header__content"><!--<img src="images/BannerAd-placeholder.jpg" />--></div>
     </div>
 </div>
 <!-- Page Masthead -->
+
+<script>
+    var networkCode = 61381659;
+    var topLevelAdUnit = "testboston.com";
+    var s1 = "testboston.com";
+    var s2 = "real-estate";
+    var adUnit = topLevelAdUnit + "/" + s2;
+    var slotName = "/" + networkCode + "/" + adUnit;
+    
+    googletag.cmd.push(function() {
+        googletag.defineSlot(slotName, [728,90], "ad_lead1")
+        .addService(googletag.pubads())
+        .setTargeting("pos", "ad_lead1");
+        googletag.pubads().setTargeting("s1",s1);
+        googletag.pubads().setTargeting("s2",s2);      
+        googletag.pubads().enableSingleRequest();
+        googletag.enableServices();
+    });
+</script>
+
+<script type="text/javascript">
+    googletag.cmd.push(function() {
+        googletag.display("ad_lead1");
+    });
+</script>
     <!-- Page Nav -->
     <!-- Page Nav -->
 <div class="page-nav">
@@ -673,8 +713,36 @@
     </div>
 
     <div class="dfp-ad__row">
-        <a class="dfp-ad__row__main-link" href="javascript:;"><img src="images/ads/dfp/dfpAds__300by250__marriott.jpg" /></a>
-        <a class="dfp-ad__row__main-link" href="javascript:;"><img src="images/ads/dfp/dfpAds__300by250__verizon.jpg" /></a>
+        <div id="ad_bigbox2" class="dfp-ad__row__main-link"><!--<img src="images/ads/dfp/dfpAds__300by250__marriott.jpg" />--></div>
+        <div id="ad_bigbox3" class="dfp-ad__row__main-link"><!--<img src="images/ads/dfp/dfpAds__300by250__verizon.jpg" />--></div>
+
+        <script>
+            var networkCode = 61381659;
+            var topLevelAdUnit = "testboston.com";
+            var s1 = "testboston.com";
+            var s2 = "real-estate";
+            var adUnit = topLevelAdUnit + "/" + s2;
+            var slotName = "/" + networkCode + "/" + adUnit;
+            
+            googletag.cmd.push(function() {
+                googletag.defineSlot(slotName, [300,250], "ad_bigbox2")
+                googletag.defineSlot(slotName, [300,250], "ad_bigbox3")
+                .addService(googletag.pubads())
+                .setTargeting("pos", "ad_bigbox2")
+                .setTargeting("pos", "ad_bigbox3");
+                googletag.pubads().setTargeting("s1",s1);
+                googletag.pubads().setTargeting("s2",s2);      
+                googletag.pubads().enableSingleRequest();
+                googletag.enableServices();
+            });
+        </script>
+
+        <script type="text/javascript">
+            googletag.cmd.push(function() {
+                googletag.display("ad_bigbox2");
+                googletag.display("ad_bigbox3");
+            });
+        </script>
     </div>
 
     <div class="related-articles__item">
@@ -742,13 +810,59 @@
 			
 			<!-- CATEGORY DETAILS -->
 							<!-- DFP Ad - Experience the Difference -->
-				<a href="javascript:;" class="dfp-ads">
-    <img src="images/ads/dfp/dfpAds__300by250__coldwell-banker.jpg" />
-</a>
+				<div id="ad_toprightslot" class="dfp-ads"><!--<img src="images/ads/dfp/dfpAds__300by250__coldwell-banker.jpg" />--></div>
+
+<script>
+    var networkCode = 61381659;
+    var topLevelAdUnit = "testboston.com";
+    var s1 = "testboston.com";
+    var s2 = "real-estate";
+    var adUnit = topLevelAdUnit + "/" + s2;
+    var slotName = "/" + networkCode + "/" + adUnit;
+    
+    googletag.cmd.push(function() {
+        googletag.defineSlot(slotName, [300,250], "ad_toprightslot")
+        .addService(googletag.pubads())
+        .setTargeting("pos", "ad_toprightslot");
+        googletag.pubads().setTargeting("s1",s1);
+        googletag.pubads().setTargeting("s2",s2);      
+        googletag.pubads().enableSingleRequest();
+        googletag.enableServices();
+    });
+</script>
+
+<script type="text/javascript">
+    googletag.cmd.push(function() {
+        googletag.display("ad_toprightslot");
+    });
+</script>
 				<!-- DFP Ad - Moo Printing -->
-				<a href="javascript:;" class="dfp-ads">
-    <img src="images/ads/dfp/dfpAds__300by250__moo.jpg" />
-</a>
+				<div id="ad_bigbox1" class="dfp-ads"><!--<img src="images/ads/dfp/dfpAds__300by250__moo.jpg" />--></div>
+
+<script>
+    var networkCode = 61381659;
+    var topLevelAdUnit = "testboston.com";
+    var s1 = "testboston.com";
+    var s2 = "real-estate";
+    var adUnit = topLevelAdUnit + "/" + s2;
+    var slotName = "/" + networkCode + "/" + adUnit;
+    
+    googletag.cmd.push(function() {
+        googletag.defineSlot(slotName, [300,250], "ad_bigbox1")
+        .addService(googletag.pubads())
+        .setTargeting("pos", "ad_bigbox1");
+        googletag.pubads().setTargeting("s1",s1);
+        googletag.pubads().setTargeting("s2",s2);      
+        googletag.pubads().enableSingleRequest();
+        googletag.enableServices();
+    });
+</script>
+
+<script type="text/javascript">
+    googletag.cmd.push(function() {
+        googletag.display("ad_bigbox1");
+    });
+</script>
 				<!-- DFP Sidebar Placeholder Ad Content -->
 				<!-- Sidebar DFP Placeholder Ad -->
 <div class="adplaceholer__right-column"></div>
