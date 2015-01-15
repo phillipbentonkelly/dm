@@ -74,6 +74,24 @@ if [[ $proceedVar =~ ^[Yy]$ ]]
 			git checkout gh-pages
 			cd ..
 
+			echo "Removing the several resources from the gh-pages repo folder (folders and html pages)."
+			sleep 2
+			rm -r $root/dm/images
+			rm -r $root/dm/fonts
+			rm -r $root/dm/js
+			rm -r $root/dm/styles
+			rm -f $root/dm/articles.html
+			rm -f $root/dm/property-listings.html
+			rm -f $root/dm/property-listing.html
+			rm -f $root/dm/serp.html
+			rm -f $root/dm/category.html
+			rm -f $root/dm/category-details.html
+			rm -f $root/dm/index.html
+			rm -f $root/dm/home.html
+			rm -f $root/dm/neighborhood.html
+
+			echo "Copying the content of the temporary folder into the gh-pages repo folder."
+			sleep 3
 			cp -a -f $root/$tempDirName/. $root/dm
 
 			sleep 2
