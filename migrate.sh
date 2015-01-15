@@ -7,7 +7,7 @@ root=$(pwd)
 yourLocalhost=''
 localhost=''
 framesetString='frameset.php?page-type='
-pages=("articles" "neighborhood" "serp" "home" "property-listings")
+pages=("articles" "neighborhood" "serp" "home" "property-listings" "category" "category-details")
 
 echo "Welcome ... you are currently in: " 
 pwd
