@@ -65,6 +65,10 @@ if [[ $proceedVar =~ ^[Yy]$ ]]
 				echo ""
 			done
 
+			cd $tempDirName
+			cp home.html index.html
+			cd ..
+
 			sleep 2
 			cd dm
 			git checkout gh-pages
