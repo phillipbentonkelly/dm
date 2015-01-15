@@ -1,0 +1,27 @@
+// *
+// *  Module Name 
+// *
+
+$module-name: 'multimedia-chip';
+
+.#{$module-name} {
+	display: none;
+	max-width: 630px;
+	min-width: 630px;
+	max-height: 616px;
+	min-height: 616px;
+
+	background-color: orange;
+}
+
+@include media-query(tablet) {
+	.#{$module-name} {
+		display: block;
+	}
+}
+
+@include media-query(desktop) {
+	.#{$module-name} {
+		display: block;
+	}
+}

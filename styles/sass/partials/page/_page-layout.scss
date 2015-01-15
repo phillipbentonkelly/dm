@@ -67,15 +67,21 @@ $padding-top: 20px;
 		margin: 0 auto;
 	}
 
-	.page-layout-wrapper {
-		min-width: 1152px;
-		min-height: 700px;
-		overflow: hidden;
-		clear: both;
-		/*background-image: url(#{$img-path}neighborhoods/Neighborhood__BGImage__Brookline.jpg);*/
+	body.neighborhood, body.category-details {
 		background-image: url(#{$img-path}neighborhoods/19040004_source.jpg);
-		background-position: top left;
+		background-position: center 162px;
 		background-repeat: repeat-x;
+	}
+		body.category-details {
+			background-image: url(#{$img-path}neighborhoods/Category-Details__1152x699.jpg);
+		}
+
+	body.neighborhood .page-nav, body.category-details .page-nav {
+		margin-bottom: 90px;
+	}
+
+	body.neighborhood .page-layout__left-col {
+		padding-top: 0px;
 	}
 }
 
