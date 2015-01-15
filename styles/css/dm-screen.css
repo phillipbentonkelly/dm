@@ -3133,13 +3133,12 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
   position: fixed;
   bottom: 0;
   z-index: 10;
-  background: red;
   box-sizing: border-box;
   font-family: "OpenSans Semibold";
   font-weight: 600;
   font-size: 12px;
 }
-/* line 367, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 366, ../sass/partials/page/modules/_listing-summary.scss */
 .serp__mobile-button-dock .button {
   width: 50%;
   float: left;
@@ -3151,94 +3150,94 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
   height: 40px;
   box-sizing: border-box;
 }
-/* line 379, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 378, ../sass/partials/page/modules/_listing-summary.scss */
 .serp__mobile-button-dock .button:active {
   background: black;
 }
-/* line 383, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 382, ../sass/partials/page/modules/_listing-summary.scss */
 .serp__mobile-button-dock .left-button {
   border-right: 2px solid white;
   padding: 0 5px;
 }
-/* line 387, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 386, ../sass/partials/page/modules/_listing-summary.scss */
 .serp__mobile-button-dock .left-button img {
   margin-right: 5px;
   height: 25px;
   vertical-align: middle;
 }
-/* line 393, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 392, ../sass/partials/page/modules/_listing-summary.scss */
 .serp__mobile-button-dock .left-button p {
   margin-top: 10px;
 }
-/* line 397, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 396, ../sass/partials/page/modules/_listing-summary.scss */
 .serp__mobile-button-dock .left-button img, .serp__mobile-button-dock .left-button p {
   display: inline-block;
 }
-/* line 402, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 401, ../sass/partials/page/modules/_listing-summary.scss */
 .serp__mobile-button-dock .right-button {
   padding: 5px;
 }
-/* line 405, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 404, ../sass/partials/page/modules/_listing-summary.scss */
 .serp__mobile-button-dock .right-button img {
   display: inline-block;
 }
-/* line 409, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 408, ../sass/partials/page/modules/_listing-summary.scss */
 .serp__mobile-button-dock .right-button p {
   line-height: 1;
   letter-spacing: 1;
 }
-/* line 414, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 413, ../sass/partials/page/modules/_listing-summary.scss */
 .serp__mobile-button-dock .right-button .title-block {
   display: inline-block;
 }
 
-/* line 420, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 419, ../sass/partials/page/modules/_listing-summary.scss */
 .mobile-ad {
   display: block;
   text-align: center;
 }
 
-/* line 426, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 425, ../sass/partials/page/modules/_listing-summary.scss */
 .image-carousel-wrapper {
   width: 100%;
   float: right;
   margin-bottom: 20px;
 }
 
-/* line 432, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 431, ../sass/partials/page/modules/_listing-summary.scss */
 #simplemodal-data {
   margin: 0 auto;
   width: 80%;
 }
 
-/* line 437, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 436, ../sass/partials/page/modules/_listing-summary.scss */
 #simplemodal-container {
   width: 100%;
 }
 
-/* line 441, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 440, ../sass/partials/page/modules/_listing-summary.scss */
 #simplemodal-overlay {
   background: rgba(10, 10, 10, 0.8);
 }
 
-/* line 445, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 444, ../sass/partials/page/modules/_listing-summary.scss */
 .save-search-modal {
   display: none;
   width: 100%;
   margin: 0 5%;
   text-align: center;
 }
-/* line 451, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 450, ../sass/partials/page/modules/_listing-summary.scss */
 .save-search-modal .close-modal-btn {
   float: right;
 }
-/* line 455, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 454, ../sass/partials/page/modules/_listing-summary.scss */
 .save-search-modal .close-modal {
   height: 20px;
   width: 20px;
   padding: 0 10px;
 }
-/* line 461, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 460, ../sass/partials/page/modules/_listing-summary.scss */
 .save-search-modal .header {
   margin-bottom: 10px;
   background: #2e1460;
@@ -3250,18 +3249,18 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
   font-size: 26px;
   font-weight: 400;
 }
-/* line 474, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 473, ../sass/partials/page/modules/_listing-summary.scss */
 .save-search-modal .content {
   background: #dacef1;
   padding: 20px;
   height: 300px;
 }
-/* line 480, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 479, ../sass/partials/page/modules/_listing-summary.scss */
 .save-search-modal .info {
   line-height: 1.5;
   margin-bottom: 10px;
 }
-/* line 485, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 484, ../sass/partials/page/modules/_listing-summary.scss */
 .save-search-modal input {
   margin-bottom: 15px;
   width: 100%;
@@ -3271,7 +3270,7 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
   box-sizing: border-box;
   font-family: OpenSans;
 }
-/* line 496, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 495, ../sass/partials/page/modules/_listing-summary.scss */
 .save-search-modal button {
   padding: 5px 15px;
   background: black;
@@ -3284,25 +3283,25 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
 }
 
 @media (min-width: 768px) {
-  /* line 517, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 516, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__mobile-button-dock {
     display: none;
   }
-  /* line 521, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 520, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__address--mobile {
     display: none;
   }
-  /* line 525, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 524, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__facts, .listing__features {
     font-size: 85%;
   }
-  /* line 529, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 528, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__address {
     display: block;
   }
 }
 @media (min-width: 768px) {
-  /* line 543, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 542, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__breadcrumbs {
     display: block;
     margin-bottom: 20px;
@@ -3315,31 +3314,31 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
     /* Approximation due to font substitution */
     text-align: left;
   }
-  /* line 553, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 552, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__breadcrumbs a:first-child:before {
     content: "";
   }
-  /* line 557, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 556, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__breadcrumbs a {
     color: #2e1460;
   }
-  /* line 562, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 561, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__breadcrumbs a:before, .listing__breadcrumb-address:before {
     content: " \B7 ";
     color: black;
   }
-  /* line 567, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 566, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__summary--mobile {
     display: none;
   }
-  /* line 571, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 570, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__summary--left {
     width: 50%;
     padding-right: 20px;
     float: left;
     box-sizing: border-box;
   }
-  /* line 578, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 577, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__summary--right {
     display: block;
     width: 50%;
@@ -3350,25 +3349,25 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
     box-sizing: border-box;
     margin-bottom: 15px;
   }
-  /* line 589, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 588, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__detail-pindrop {
     display: inline-block;
     vertical-align: middle;
   }
-  /* line 594, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 593, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__for-sale {
     font-family: 'Oswald', sans-serif;
     font-size: 12px;
     font-weight: 400;
     display: inline-block;
   }
-  /* line 601, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 600, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__tags {
     display: inline-block;
     min-height: 10px;
     overflow: hidden;
   }
-  /* line 606, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 605, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__tags .tag {
     display: block;
     float: left;
@@ -3381,7 +3380,7 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
     color: #fff;
     margin-bottom: 5px;
   }
-  /* line 618, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 617, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__tags .tag .arrow {
     display: block;
     float: right;
@@ -3392,44 +3391,44 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
     border-right: 8px solid white;
     margin-left: 6px;
   }
-  /* line 630, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 629, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__tags .location {
     background-color: #82b5e6;
   }
-  /* line 631, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 630, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__tags .class {
     background-color: #00a651;
   }
-  /* line 632, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 631, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__tags .event {
     background-color: #ff6c6c;
   }
-  /* line 633, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 632, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__tags .featured {
     background-color: #2e1460;
   }
-  /* line 636, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 635, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__facts--left, .listing__facts--right, .listing__features--left, .listing__features--right {
     width: 33.3%;
     box-sizing: border-box;
     margin-bottom: 20px;
   }
-  /* line 642, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 641, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__facts, .listing__features {
     font-size: 100%;
   }
-  /* line 646, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 645, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__external-links {
     float: left;
     width: 33.3%;
     box-sizing: border-box;
     clear: none;
   }
-  /* line 652, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 651, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__external-links li {
     padding-bottom: 10px;
   }
-  /* line 657, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 656, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__contact-agent {
     background: #2e1460;
     padding: 7px;
@@ -3444,18 +3443,18 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
     font-weight: 600;
     text-align: center;
   }
-  /* line 670, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 669, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__contact-agent a:link, .listing__contact-agent a:visited, .listing__contact-agent a:active {
     color: white;
     text-decoration: none;
   }
 
-  /* line 677, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 676, ../sass/partials/page/modules/_listing-summary.scss */
   .dfp-ads {
     display: block;
   }
 
-  /* line 681, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 680, ../sass/partials/page/modules/_listing-summary.scss */
   .mobile-ad {
     display: none;
   }
@@ -4625,7 +4624,7 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
 @media (min-width: 768px) {
   /* line 362, ../sass/partials/page/modules/property-search-results.scss */
   .related-articles {
-    display: block;
+    display: none;
   }
 
   /* line 369, ../sass/partials/page/modules/property-search-results.scss */

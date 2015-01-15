@@ -347,7 +347,7 @@
 @media (min-width: 768px) {
   /* line 362, ../../../../sass/partials/page/modules/property-search-results.scss */
   .related-articles {
-    display: block;
+    display: none;
   }
 
   /* line 369, ../../../../sass/partials/page/modules/property-search-results.scss */
