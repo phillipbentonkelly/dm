@@ -48,7 +48,7 @@ $module-name: 'search-results';
   }
 
     &__summary {
-        margin: 25px 0;
+      margin: 25px 0;
     }
 
     .search-summary-count {
@@ -59,7 +59,7 @@ $module-name: 'search-results';
       clear: both;
       margin: 0 auto;
       max-width: 960px;
-      padding: 25px 0 10px 0;
+      padding: 0 0 10px 0;
     }
 
     .search-summary-count > .total-results {

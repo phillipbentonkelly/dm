@@ -328,11 +328,6 @@
 			<?php } ?>
 		</div>
 
-		<?php if ($pageType == 'serp') { ?>
-			<!-- Module Content -->
-			<?php include 'page/modules/serp-ad-placeholder.php'; ?>
-		<?php } ?>
-	
 	</div>
 	
 	<?php if ($pageType == 'home') { ?>

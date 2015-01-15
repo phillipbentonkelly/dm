@@ -1,31 +1,47 @@
 <style type="text/css">
-	.tmp-serp-ad-wrap {
-		max-width: 960px;
-		height: 150px;
-		margin: 0 auto;
-		margin-top: 20px;
-	}
+
+    .tmp-serp-ad-wrap {
+        margin: 70px auto 10px auto;
+    }
 
 	.tmp-serp-ad {
-		width: 48%;
-		float: left;
-		height: 100%;
-		border: 1px solid black;
-		margin-top: 60px;
-	}
+        width: 320px;
+        float: none;
+        height: 50px;
+        border: 1px solid black;
+        margin: 10px auto;
+    }
 
-	#ad_spotlight1 {
-		margin-right: 1%; 
-	}
+    @media (min-width: 768px) {
 
-	#ad_spotlight2 {
-		margin-left: 2%; 
-	}
+        .tmp-serp-ad-wrap {
+            width: 100%;
+        }
 
-    @media (max-width: 768px) {
-    	.tmp-serp-ad-wrap {
-			display: none;
-    	}
+        .tmp-serp-ad {
+            width: 460px;
+            margin: 0 auto;
+            height: 184px;
+            border: 1px solid black;
+            margin-bottom: 10px;
+        }
+    }
+
+    @media (min-width: 960px) {
+        .tmp-serp-ad-wrap {
+            width: 960px;
+        }
+
+        .tmp-serp-ad {
+            float: left;
+            border: 1px solid black;
+            width: 48%;
+        }
+
+        #ad_spotlight1 {
+            min-height: 150px;
+            margin-right: 2%;
+        }
     }
 
 </style>

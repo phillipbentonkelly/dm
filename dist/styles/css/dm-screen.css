@@ -1154,7 +1154,7 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
 .page-layout {
   overflow: hidden;
   clear: both;
-  margin: 0 auto;
+  margin: 80px auto 0 auto !important;
   max-width: 960px;
   min-width: 0;
 }
@@ -1210,24 +1210,29 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
     margin: 0 auto;
   }
 
-  /* line 70, ../sass/partials/page/_page-layout.scss */
+  /* line 71, ../sass/partials/page/_page-layout.scss */
+  body.home .page-layout {
+    margin-top: 0;
+  }
+
+  /* line 76, ../sass/partials/page/_page-layout.scss */
   body.neighborhood, body.category-details {
     background-image: url(../../images/neighborhoods/19040004_source.jpg);
     background-position: center 162px;
     background-repeat: repeat-x;
   }
 
-  /* line 75, ../sass/partials/page/_page-layout.scss */
+  /* line 81, ../sass/partials/page/_page-layout.scss */
   body.category-details {
     background-image: url(../../images/neighborhoods/Category-Details__1152x699.jpg);
   }
 
-  /* line 79, ../sass/partials/page/_page-layout.scss */
+  /* line 85, ../sass/partials/page/_page-layout.scss */
   body.neighborhood .page-nav, body.category-details .page-nav {
     margin-bottom: 90px;
   }
 
-  /* line 83, ../sass/partials/page/_page-layout.scss */
+  /* line 89, ../sass/partials/page/_page-layout.scss */
   body.neighborhood .page-layout__left-col {
     padding-top: 0px;
   }
@@ -4335,7 +4340,7 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
   clear: both;
   margin: 0 auto;
   max-width: 960px;
-  padding: 25px 0 10px 0;
+  padding: 0 0 10px 0;
 }
 /* line 65, ../sass/partials/page/modules/property-search-results.scss */
 .search-results .search-summary-count > .total-results {
