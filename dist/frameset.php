@@ -168,9 +168,6 @@
 			<?php if ($pageType == 'serp') { ?>
 				<!-- Search Result -->
 				<?php include 'page-content/modules/property-search-result.php'; ?>
-
-				<!-- Related Articles -->
-				<?php include 'page-content/modules/related-articles.php'; ?>
 			<?php } ?>
 			
         </div>
@@ -250,8 +247,17 @@
 				<!-- Contact The Agent Widget -->
 				<?php include 'page-content/modules/search-map.php'; ?>
 
+				<!-- Related Articles (right rail) Widget -->
+				<?php include 'page-content/modules/related-articles-right-rail.php'; ?>
+
 			<?php } ?>
 		</div>
+
+		<?php if ($pageType == 'serp') { ?>
+			<!-- Module Content -->
+			<?php include 'page/modules/serp-ad-placeholder.php'; ?>
+		<?php } ?>
+	
 	</div>
 	
 	<?php if ($pageType == 'neighborhood') { ?>
