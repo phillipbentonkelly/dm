@@ -1,9 +1,15 @@
 <!-- SERP SEARCH RESULTS -->
 <div class='search-results'>
+
+    <div class='search-results__summary'>
+        <p class='search-summary-count'><span class='search-neighborhood'>Brookline</span> Real Estate<span class='total-results'>147 results.</span></p>
+    </div>
+
     <div class='search-results__filter-bar'>
         <p>Showing <span class='low-end'>1</span> to <span class='high-end'>10</span> of <span class='total-results'>147</span></p>
 
         <select class="filter-drop">
+            <option value="default">Sort by Default</option>
             <option value="best-match">Best Match</option>
             <option value="newest">Newest</option>
             <option value="price-high-low">Price (High-Low)</option>
@@ -188,7 +194,7 @@
 
         <div class='left-col'>
             <div class='property-images'>
-                <img src='images/neighborhoods/top-neighborhoods__entry__2.jpg'/>
+                <img src='images/listings/reNews__listings__6.jpg'/>
                 <div class='photo-count'>18 Photos</div>
                 <div class='photo-arrows'>
                     <a href='javascript:;'><img class='photo-arrow-left' src='images/listings/arrow-icon-trans-black.png'/></a>
@@ -242,11 +248,11 @@
     <!-- AD SLOT -->
         <div class="adSlots">
             <a href="javascript:;" class="adSlot adSlot-left">
-                <img src="images/listings/reNews__listings__6.jpg">
+                <img src="images/neighborhoods/top-neighborhoods__entry__2.jpg">
             </a>
 
             <a href="javascript:;" class="adSlot adSlot-right">
-                <img src="images/listings/reNews__listings__6.jpg">
+                <img src="images/neighborhoods/top-neighborhoods__entry__2.jpg">
             </a>
         </div>
     <!-- /AD SLOT -->
