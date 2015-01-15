@@ -18,6 +18,7 @@
 	        }
 	    });
 	});
+	
 </script>
 
 <div class='sticky-map-wrapper'>
