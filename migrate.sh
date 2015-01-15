@@ -58,7 +58,7 @@ if [[ $proceedVar =~ ^[Yy]$ ]]
 				echo $localhost$i
 				wget $localhost$i
 				sleep 1
-				mv $framesetString$i $root/$tempDirName/$i.html
+				mv -f $framesetString$i $root/$tempDirName/$i.html
 
 				echo ""
 				echo "---------------------------------------------"
