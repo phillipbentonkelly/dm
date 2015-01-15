@@ -66,7 +66,7 @@ if [[ $proceedVar =~ ^[Yy]$ ]]
 			done
 
 			cd $tempDirName
-			cp home.html index.html
+			cp -f home.html index.html
 			cd ..
 
 			sleep 2
