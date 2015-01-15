@@ -65,6 +65,21 @@
 	        <script src="js/assets/listings.data.js"></script>
 		<?php } ?>
 
+		<script type="text/javascript">
+		    var googletag = googletag || {};
+		    googletag.cmd = googletag.cmd || [];
+		    
+		    (function() {
+		        var gads = document.createElement("script");
+		        gads.async = true;
+		        gads.type = "text/javascript";
+		        var useSSL = "https:" == document.location.protocol;
+		        gads.src = (useSSL ? "https:" : "http:") + "//www.googletagservices.com/tag/js/gpt.js";
+		        var node =document.getElementsByTagName("script")[0];
+		        node.parentNode.insertBefore(gads, node);
+		    })();
+		</script>
+
 		<script src="js/resources/plugins/selectize/selectize.js"></script>
         <script src="js/resources/plugins/select2/select2.js"></script>
         <script src="js/assets/searchPanel.js"></script>
@@ -174,6 +189,9 @@
 
 				<!-- Related Articles -->
 				<?php include 'page-content/modules/related-articles.php'; ?>
+
+				<!-- Ad Slots 2 and 3 -->
+				<?php include 'ads/gallery-ads-2-and-3.php'; ?>
 
 				<!-- Discus -->
 				<?php include 'page-content/modules/comments.php'; ?>
@@ -290,6 +308,9 @@
 
 				<!-- Property Listings Widget -->
 				<?php include 'page/modules/property-listings.php'; ?>
+
+				<!-- Long DFP Ad -->
+				<?php include 'ads/ad_bigbox1.php'; ?>
 			<?php } ?>
 			
 			

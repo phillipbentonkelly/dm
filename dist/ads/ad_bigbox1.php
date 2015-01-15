@@ -1,4 +1,5 @@
-<div id="ad_t6" class="dfp-ads__new-homes"></div>
+<div id="ad_bigbox1"></div>
+
 
 <script>
     var networkCode = 61381659;
@@ -9,9 +10,9 @@
     var slotName = "/" + networkCode + "/" + adUnit;
     
     googletag.cmd.push(function() {
-        googletag.defineSlot(slotName, [660,320], "ad_t6")
+        googletag.defineSlot(slotName, [300,250], "ad_bigbox1")
         .addService(googletag.pubads())
-        .setTargeting("pos", "ad_t6");
+        .setTargeting("pos", "ad_bigbox1");
         googletag.pubads().setTargeting("s1",s1);
         googletag.pubads().setTargeting("s2",s2);      
         googletag.pubads().enableSingleRequest();
@@ -21,6 +22,6 @@
 
 <script type="text/javascript">
     googletag.cmd.push(function() {
-        googletag.display("ad_t6");
+        googletag.display("ad_bigbox1");
     });
 </script>
