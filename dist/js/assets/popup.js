@@ -32,6 +32,7 @@ $(document).ready(function() {
         topPadding = 100;
         
     $window.scroll(function() {
+    	if ($window.scrollTop() > 3200) return;
         if ($window.scrollTop() > offset.top) {
             $sidebar.stop().animate({
                 marginTop: $window.scrollTop() - offset.top + topPadding
