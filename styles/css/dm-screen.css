@@ -1963,7 +1963,7 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
   height: 0;
   border-style: solid;
   border-width: 0 20px 20px 20px;
-  border-color: #828282 transparent;
+  border-color: rgba(0, 0, 0, 0.4) transparent;
   top: 0;
   right: 0;
   left: initial;
@@ -1977,7 +1977,7 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
   font-size: 42px;
   font-weight: 400;
   display: block;
-  background: #7f7f7f;
+  background: rgba(0, 0, 0, 0.4);
   text-align: center;
   line-height: 1.4em;
   margin: 0 0 4px 0;
