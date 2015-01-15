@@ -33,7 +33,7 @@
     	<script src="js/assets/mega-menu.js"></script>
     	<script src="js/assets/responsive-gallery.js"></script>
 
-		<?php if ($pageType == 'home') { ?>
+		<?php if ($pageType == 'home' || $pageType == 'category') { ?>
 		    <!-- Carousel Scripts -->
 			<script src="js/assets/basicMobileDetection.js"></script>
 			<script src="http://wurfl.io/wurfl.js"></script>
@@ -103,7 +103,7 @@
     <?php include 'page/page-search.php'; ?>
     
 	
-	<?php if ($pageType == 'home') { ?>
+	<?php if ($pageType == 'home' || $pageType == 'category') { ?>
 		<!-- Module Content -->
 		<?php include 'page/modules/full-width-carousel.php'; ?>
 	<?php } ?>
@@ -111,11 +111,6 @@
 	<?php if ($pageType == 'serp') { ?>
 		<!-- Module Content -->
 		<?php include 'page/modules/serp-ad-placeholder.php'; ?>
-	<?php } ?>
-	
-	
-	<?php if ($pageType == 'neighborhood') { ?>
-	<div class="page-layout-wrapper">
 	<?php } ?>
 
 	<!-- Page Layout -->
@@ -143,6 +138,24 @@
 				<?php include 'page-content/modules/related-articles.php'; ?>
 			<?php } ?>
 			
+			
+			<!-- NEIGHBORHOOD -->
+			<?php if ($pageType == 'category-details') { ?>
+				<!-- Multimedia Chip -->
+				<?php include 'page/modules/multimedia-chip.php'; ?>
+			<?php } ?>
+			
+			<!-- CATEGORY -->
+			<?php if ($pageType == 'category') { ?>
+				<!-- Related Articles -->
+				<?php include 'page-content/modules/related-articles.php'; ?>
+			<?php } ?>
+			
+			<!-- CATEGORY DETAILS -->
+			<?php if ($pageType == 'category-details') { ?>
+				<!-- Related Articles -->
+				<?php include 'page-content/modules/related-articles.php'; ?>
+			<?php } ?>
 			
 			<!-- NEIGHBORHOOD -->
 			<?php if ($pageType == 'neighborhood') { ?>
@@ -219,8 +232,8 @@
 			<?php } ?>
 			
 			
-			<!-- NEIGHBORHOOD -->
-			<?php if ($pageType == 'neighborhood') { ?>
+			<!-- CATEGORY -->
+			<?php if ($pageType == 'category') { ?>
 				<!-- DFP Ad - Experience the Difference -->
 				<?php include 'ads/dfp-ads__experience-the-difference.php'; ?>
 
@@ -232,6 +245,41 @@
 				
 				<!-- Explore Brookline -->
 				<?php include 'page-content/explore-brookline.php'; ?>
+			<?php } ?>
+			
+			
+			<!-- CATEGORY DETAILS -->
+			<?php if ($pageType == 'category-details') { ?>
+				<!-- DFP Ad - Experience the Difference -->
+				<?php include 'ads/dfp-ads__experience-the-difference.php'; ?>
+
+				<!-- DFP Ad - Moo Printing -->
+				<?php include 'ads/dfpAds__300by250__moo.php'; ?>
+
+				<!-- DFP Sidebar Placeholder Ad Content -->
+				<?php include 'ads/adplaceholer__right-column.php'; ?>
+
+				<!-- Property Listings Widget -->
+				<?php include 'page/modules/property-listings.php'; ?>
+				
+				<!-- Explore Brookline -->
+				<?php include 'page-content/explore-brookline.php'; ?>
+			<?php } ?>
+			
+			
+			<!-- NEIGHBORHOOD -->
+			<?php if ($pageType == 'neighborhood') { ?>
+				<!-- DFP Ad - Experience the Difference -->
+				<?php include 'ads/dfp-ads__experience-the-difference.php'; ?>
+
+				<!-- DFP Ad - Moo Printing -->
+				<?php include 'ads/dfpAds__300by250__moo.php'; ?>
+
+				<!-- DFP Sidebar Placeholder Ad Content -->
+				<?php include 'ads/adplaceholer__right-column.php'; ?>
+
+				<!-- Property Listings Widget -->
+				<?php include 'page/modules/property-listings.php'; ?>
 			<?php } ?>
 			
 			
@@ -254,13 +302,14 @@
 		</div>
 	</div>
 	
-	<?php if ($pageType == 'neighborhood') { ?>
-	</div>
-	<?php } ?>
-	
 	<?php if ($pageType == 'home') { ?>
 		<!-- DFP Sidebar Placeholder Ad Content -->
 		<?php include 'page-content/real-estate-blog.php'; ?>
+	<?php } ?>
+
+	<?php if ($pageType == 'category' || $pageType == 'category-details' || $pageType == 'neighborhood') { ?>
+		<!-- Gallery Widget -->
+    	<?php include 'page/modules/gallery.php'; ?>
 	<?php } ?>
 
 	<!-- Page Footer -->

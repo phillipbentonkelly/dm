@@ -1211,15 +1211,25 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
   }
 
   /* line 70, ../sass/partials/page/_page-layout.scss */
-  .page-layout-wrapper {
-    min-width: 1152px;
-    min-height: 700px;
-    overflow: hidden;
-    clear: both;
-    /*background-image: url(../../images/neighborhoods/Neighborhood__BGImage__Brookline.jpg);*/
+  body.neighborhood, body.category-details {
     background-image: url(../../images/neighborhoods/19040004_source.jpg);
-    background-position: top left;
+    background-position: center 162px;
     background-repeat: repeat-x;
+  }
+
+  /* line 75, ../sass/partials/page/_page-layout.scss */
+  body.category-details {
+    background-image: url(../../images/neighborhoods/Category-Details__1152x699.jpg);
+  }
+
+  /* line 79, ../sass/partials/page/_page-layout.scss */
+  body.neighborhood .page-nav, body.category-details .page-nav {
+    margin-bottom: 90px;
+  }
+
+  /* line 83, ../sass/partials/page/_page-layout.scss */
+  body.neighborhood .page-layout__left-col {
+    padding-top: 0px;
   }
 }
 /* line 3, ../sass/partials/page/_page-blog.scss */
@@ -4773,6 +4783,28 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
   /* line 530, ../sass/partials/page/modules/property-search-results.scss */
   .adSlots .adSlot-right img {
     margin-left: 35px;
+  }
+}
+/* line 7, ../sass/partials/page/modules/_multimedia-chip.scss */
+.multimedia-chip {
+  display: none;
+  max-width: 630px;
+  min-width: 630px;
+  max-height: 616px;
+  min-height: 616px;
+  background-color: orange;
+}
+
+@media (min-width: 768px) {
+  /* line 18, ../sass/partials/page/modules/_multimedia-chip.scss */
+  .multimedia-chip {
+    display: block;
+  }
+}
+@media (min-width: 960px) {
+  /* line 24, ../sass/partials/page/modules/_multimedia-chip.scss */
+  .multimedia-chip {
+    display: block;
   }
 }
 /* line 11, ../sass/partials/page-content/modules/_dfp-ads__new-homes.scss */

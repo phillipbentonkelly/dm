@@ -148,10 +148,9 @@ dm.select2 = {};
 					//var all = $.merge(self.lvls.$one, lvl2);
 
 					self.btns.$lvl1t.on('click', function(e){
+						console.log('hello world');
 						e.preventDefault();
 						var span = $(this).children('span');
-						$(this).toggleClass('close-search');
-
 						if(self.allOpen){
 							self.lvls.$one.hide();
 							lvl2.hide();
@@ -161,6 +160,7 @@ dm.select2 = {};
 							self.lvls.$one.toggle();
 							self.allOpen = false;
 						}
+						span.toggle();
 					});
 
 					self.btns.$lvl2t.on('click', function(e){
