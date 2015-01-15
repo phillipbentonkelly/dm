@@ -181,6 +181,9 @@
 			<?php if ($pageType == 'serp') { ?>
 				<!-- Search Result -->
 				<?php include 'page-content/modules/property-search-result.php'; ?>
+
+				<!-- Related Articles -->
+				<?php include 'page-content/modules/related-articles.php'; ?>
 			<?php } ?>
 			
         </div>
