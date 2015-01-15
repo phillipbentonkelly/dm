@@ -7,19 +7,19 @@
 	}
 
 	.tmp-serp-ad {
-		width: 46%;
+		width: 48%;
 		float: left;
 		height: 100%;
 		border: 1px solid black;
-		margin-top: 20px;
+		margin-top: 60px;
 	}
 
 	#tmp-serp-ad-left {
-		margin-right: 3%; 
+		margin-right: 1%; 
 	}
 
 	#tmp-serp-ad-right {
-		margin-left: 3%; 
+		margin-left: 2%; 
 	}
 
     @media (max-width: 768px) {
