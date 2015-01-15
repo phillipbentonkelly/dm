@@ -1,0 +1,861 @@
+    <!doctype html>
+    <html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>SERP</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        
+        <!-- STYLING -->
+        <link rel="stylesheet" href="styles/css/dm-screen.css" />
+
+        <link rel="stylesheet" href="styles/css/realestatelistings.css" />
+        <link rel="stylesheet" href="styles/css/plugins/selectize/selectize.css" />
+        <link rel="stylesheet" href="styles/css/plugins/select2/select2.css" />
+
+        <style>
+            body {
+                padding-bottom: 10%;
+            }
+        </style>
+        
+        <!-- SCRIPTS -->
+        <script src="js/resources/jquery.min.js"></script>
+            <!-- Mega-Menu -->
+            <!--<script src="js/assets/mega-menu.js"></script>-->
+
+            <!-- Select2 Plugins -->
+            <script src="js/resources/plugins/selectize/selectize.js"></script>
+            <script src="js/resources/plugins/select2/select2.js"></script>
+            <script src="js/assets/searchPanel.js"></script>
+        
+
+        <script>
+            $(document).ready(function(){
+                if('#listingDropDown'){
+                    $("#listingDropDown").select2({ dropdownCssClass: 'mplistings-dropdown' });
+                }
+            });
+        </script>
+
+    </head>
+    <body class="page-section serp">
+        
+        <!-- Page Masthead -->
+        <div class="page-masthead">
+            <div class="page-header">
+                <a class="page-header__content" href="javascript:;"><img src="images/BannerAd-placeholder.jpg" /></a>
+            </div>
+        </div>
+        <!-- Page Masthead -->
+        
+        
+        <!-- Page Nav -->
+        <div class="page-nav">
+            <div class="page-nav__content-wrapper">
+                <ul>
+                    <li class="page-nav__mega-menu-responsive-icon"></li>
+                    <li class="page-nav__logo">
+                        <a href="javascript:;">
+                            <h1>Addresses</h1>
+                            <h4>A Boston.com Site</h4>
+                        </a>
+                    </li>
+
+                    <li class="page-nav__main-nav-links">
+                        <ul>
+                            <li class="page-nav__nav-item page-nav__responsive-home-link">
+                                <a href="javascript:;" class="page-nav__nav-lv0">Home</a>
+                            </li>
+                            <li id="find-home-menu" class="page-nav__nav-item">
+                                <a href="javascript:;" class="page-nav__nav-lv0">Find A Home <span class="page-nav__nav-item__responsive-drop-down-icon"></span></a>
+                                <div class="page-nav__arrow-up"></div>
+
+                                <!-- MEGA-MENU: FIND A HOME -->
+                                <div class="mega-menu"><!---->
+                                    <div class="mega-menu__container find-home-menu">
+                                        <div class='mega-menu__section--left'>
+                                            <div class="row">
+                                                <input class='mega-menu__search-input' placeholder='search for real estate listings are articles.'/>
+                                                <button class='mega-menu__search-submit'></button>
+                                            </div>
+
+                                            <ul class='mega-menu__list-items'>
+                                                <li class='mega-menu__list-item'>
+                                                    <a class='mega-menu__list-link' href='#'>Buying</a>
+                                                </li>
+
+                                                <li class='mega-menu__list-item'>
+                                                    <a class='mega-menu__list-link' href='#'>Renting</a>
+                                                </li>
+
+                                                <li class='mega-menu__list-item'>
+                                                    <a class='mega-menu__list-link' href='#'>New Development</a>
+                                                </li>
+
+                                                <li class='mega-menu__list-item'>
+                                                    <a class='mega-menu__list-link' href='#'>Student Living</a>
+                                                </li>
+
+                                                <li class='mega-menu__list-item'>
+                                                    <a class='mega-menu__list-link' href='#'>Suburban Living</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                        <div class='mega-menu__section--middle'>
+                                            <ul class='mega-menu__list-items'>
+                                                <li class='mega-menu__list-item'>
+                                                    <a class='mega-menu__list-link' href='#'>Tom and Gisele's Brookline Pad Looks Almost Ready</a>
+                                                </li>
+
+                                                <li class='mega-menu__list-item'>
+                                                    <a class='mega-menu__list-link' href='#'>For Sale: $2.85M Italianate Mansion in JP</a>
+                                                </li>
+
+                                                <li class='mega-menu__list-item'>
+                                                    <a class='mega-menu__list-link' href='#'>For Sale: Historic Weston Mansion</a>
+                                                </li>
+
+                                                <li class='mega-menu__list-item'>
+                                                    <a class='mega-menu__list-link' href='#'>New Construction, Chestnut Hill Colonial - $2,400,000</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                        <div class='mega-menu__section--right'>
+                                            <div class='mega-menu__featured-home'>
+                                                <div class="adSlots">
+                                                    <a href="javascript:;" class="adSlot">
+                                                        <img src="images/icons/luxuryLabel.png" class="iconOverlay topSpacing">
+
+                                                        <img src="images/listings/reNews__listings__6.jpg">
+                                                        
+                                                        <div class="detailsWrapper">
+                                                            <div class="detailsArrow"></div>
+
+                                                            <div class="detailsOverlay">
+                                                                <h1>14 Chestnut Street Boston, MA <span class="priceSpan">$190,000</span></h1>
+
+                                                                <p>One of Beacon Hill's most desirable tree-lined streets, this exquisite Triplex has 5,000+ sqf ft. of furnished living space. 4+ Beds/3.5 Baths</p>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div><!---->
+                                <!-- MEGA-MENU: FIND A HOME -->
+                            </li>
+
+                            <li id="neighborhoods-menu" class="page-nav__nav-item">
+                                <a href="javascript:;" class="page-nav__nav-lv0">Neighborhoods <span class="page-nav__nav-item__responsive-drop-down-icon"></span></a>
+                                <div class="page-nav__arrow-up"></div>
+
+                                <!-- MEGAMENU: NEIGHBORHOODS -->
+                                <div class="mega-menu"><!---->
+                                    <div class='mega-menu__container neighborhoods-menu'>
+
+                                        <div class='mega-menu__section--left'>
+                                            <ul id='mega-menu__list-items--left' class='mega-menu__list-items'>
+                                                <li class='mega-menu__list-item'>
+                                                    <a class='mega-menu__list-link' href='#'>Back Bay</a>
+                                                </li>
+
+                                                <li class='mega-menu__list-item'>
+                                                    <a class='mega-menu__list-link' href='#'>Beacon Hill</a>
+                                                </li>
+
+                                                <li class='mega-menu__list-item'>
+                                                    <a class='mega-menu__list-link' href='#'>Boston</a>
+                                                </li>
+
+                                                <li class='mega-menu__list-item'>
+                                                    <a class='mega-menu__list-link' href='#'>Brookline</a>
+                                                </li>
+
+                                                <li class='mega-menu__list-item'>
+                                                    <a class='mega-menu__list-link' href='#'>Cambridge</a>
+                                                </li>
+
+                                                <li class='mega-menu__list-item'>
+                                                    <a class='mega-menu__list-link' href='#'>Charlestown</a>
+                                                </li>
+
+                                                <li class='mega-menu__list-item'>
+                                                    <a class='mega-menu__list-link' href='#'>Dorchester</a>
+                                                </li>
+
+                                                <li class='mega-menu__list-item'>
+                                                    <a class='mega-menu__list-link' href='#'>Newton</a>
+                                                </li>
+                                            </ul>
+
+                                            <ul id='mega-menu__list-items--right' class='mega-menu__list-items'>
+                                                <li class='mega-menu__list-item'>
+                                                    <a class='mega-menu__list-link' href='#'>Cape Cod/Islands</a>
+                                                </li>
+
+                                                <li class='mega-menu__list-item'>
+                                                    <a class='mega-menu__list-link' href='#'>Berkshires</a>
+                                                </li>
+
+                                                <li class='mega-menu__list-item'>
+                                                    <a class='mega-menu__list-link' href='#'>Metro West</a>
+                                                </li>
+
+                                                <li class='mega-menu__list-item'>
+                                                    <a class='mega-menu__list-link' href='#'>North Shore</a>
+                                                </li>
+
+                                                <li class='mega-menu__list-item'>
+                                                    <a class='mega-menu__list-link' href='#'>South Shore</a>
+                                                </li>
+
+                                                <li class='mega-menu__list-item'>
+                                                    <a class='mega-menu__list-link' href='#'>South Shore</a>
+                                                </li>
+
+                                                <li class='mega-menu__list-item'>
+                                                    <a class='mega-menu__list-link' href='#'>More</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+
+                                        <div class='mega-menu__section--middle'>
+                                            <ul class='mega-menu__list-items'>
+                                                <li class='mega-menu__list-item'>
+                                                    <a class='mega-menu__list-link' href='#'>Tom and Gisele's Brookline Pad Looks Almost Ready</a>
+                                                </li>
+
+                                                <li class='mega-menu__list-item'>
+                                                    <a class='mega-menu__list-link' href='#'>For Sale: $2.85M Italianate Mansion in JP</a>
+                                                </li>
+
+                                                <li class='mega-menu__list-item'>
+                                                    <a class='mega-menu__list-link' href='#'>For Sale: Historic Weston Mansion</a>
+                                                </li>
+
+                                                <li class='mega-menu__list-item'>
+                                                    <a class='mega-menu__list-link' href='#'>New Construction, Chestnut Hill Colonial - $2,400,000</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+
+                                        <div class='mega-menu__section--right'>
+                                            <div class='mega-menu__featured-home'>
+                                                <div class="adSlots">
+                                                    <a href="javascript:;" class="adSlot">
+                                                        <img src="images/neighborhoods/top-neighborhoods__entry__2.jpg">
+                                                        
+                                                        <div class="detailsWrapper">
+                                                            <div class="detailsArrow"></div>
+
+                                                            <div class="detailsOverlay">
+                                                                <h1>14 Chestnut Street Boston, MA <span class="priceSpan">$190,000</span></h1>
+
+                                                                <p>One of Beacon Hill's most desirable tree-lined streets, this exquisite Triplex has 5,000+ sqf ft. of furnished living space. 4+ Beds/3.5 Baths</p>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div><!---->
+                                <!-- MEGAMENU: NEIGHBORHOODS -->
+                            </li>
+                            <li class="page-nav__nav-item"><a href="javascript:;" class="page-nav__nav-lv0">Open Houses</a></li>
+                            <li class="page-nav__nav-item"><a href="javascript:;" class="page-nav__nav-lv0">Luxury Living</a></li>
+                            <li class="page-nav__nav-item myAccount"><a href="javascript:;" class="page-nav__nav-lv0">My Account <span class="page-nav__nav-item__responsive-drop-down-icon"></span></a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="page-nav__search-responsive-icon"></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Page Nav -->
+        
+    <!-- Page Search -->
+    <div class="page-search">
+        <div class="page-search__content-wrapper">
+            <form class="page-search__form">
+
+                <div class="page-search__row page-search__row--level-one">
+
+                    <select name="q" class="page-search__dropdown page-search__dropdown--main desktop">
+                        <option value="" disabled selected>Search for real estate listings or articles. ex: 3 bedroom for sale in Brookline under 1,000,000</option>
+                        <option value="Stuff">Stuff</option>
+                        <option value="Things">Things</option>
+                    </select>
+                    <button class="page-search__button page-search__button--level-two-toggle desktop">           
+                        <span class="down-arrow"></span>
+                        <span class="up-arrow" style="display:none;"></span>                           
+                    </button>
+                    <button class="page-search__button page-search__button--level-two-toggle mobile">
+                        <b>Filters</b>
+                        <span class="plus">+</span>
+                        <span class="minus" style="display: none;">-</span>
+                    </button>
+
+                    <button class="page-search__button page-search__button--apply mobile">
+                        <span>Apply</span>
+                    </button>
+
+                    <button class="page-search__button page-search__button--cancel mobile">
+                        <span>Cancel</span>
+                    </button>
+                    
+                    <button class="page-search__button page-search__button--submit desktop" value=""></button>
+
+                </div>
+
+                <div class="page-search__row page-search__row--level-two">
+
+                    <section class="page-search__section" title="Type">
+                        <h4 class="mobile">Type</h4>
+                        <div class="page-search__container page-search__container--radio">
+                            <div class="page-search__fancy-radio-box page-search__fancy-radio-box--for-sale">
+                                <input type="radio" id="forSale" name="buy_or_rent" value="ForSale" checked>
+                                </input>
+                                <label for="forSale" class="for-sale">For Sale</label>
+                            </div>
+
+                            <div class="page-search__fancy-radio-box page-search__fancy-radio-box--for-rent">
+                                <input type="radio" id="forRent" name="buy_or_rent" value="ForRent"></input> 
+                                <label for="forRent" class="for-rent" >For Rent</label>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="page-search__section" title="Price">
+                        <h4 class="mobile">Price</h4>
+                        <select class="page-search__dropdown page-search__dropdown--filter-wide" id="price" name="price" placeholder="$300K-$24M">
+                            <option value="$300K-$24M">$300K-$24M</option>
+                        </select>
+                    </section>
+
+                    <section class="page-search__section" title="Beds">
+                        <h4 class="mobile">Beds</h4>
+                        <select class="page-search__dropdown page-search__dropdown--filter" id="beds" name="beds">
+                            <option value="" selected>Beds</option>
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5+">5+</option>
+                        </select>
+                    </section>
+
+                    <section class="page-search__section" title="Baths">
+                        <h4 class="mobile">Baths</h4>
+                        <select class="page-search__dropdown page-search__dropdown--filter" id="baths" name="baths">
+                            <option value="" selected>Baths</option>
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5+">5+</option>
+                        </select>
+                    </section>
+
+                    <section class="page-search__section" title="Home Type">
+                        <h4 class="mobile">Home Type</h4>
+                        <select class="page-search__dropdown page-search__dropdown--filter" id="homeType" name="home_type">
+                            <option value="" selected>Home Type</option>
+                            <option value="Single-Family">Single-Family</option>
+                            <option value="Multi-Family">Multi-Family</option>
+                            <option value="Apartment">Apartment</option>
+                            <option value="Co-op/Condo">Co-op/Condo</option>
+                            <option value="Townhome">Townhome</option>
+                            <option value="Manufactured">Manufactured</option>
+                            <option value="Lot/Land">Land/Lot</option>
+                        </select>
+                    </section>
+
+                    <button class="page-search__button page-search__button--level-three-toggle desktop" id="moreOptions" name="more_options">
+                        <span class="select2-chosen">More</span>
+                        <span class="select2-arrow" role="presentation">
+                            <b role="presentation"></b>
+                        </span>
+                    </select>
+
+                    <button class="page-search__button page-search__button--save desktop" value="">
+                        <span class="save-search">Save Search</span>
+                        <span class="saved">Saved!</span>
+                    </button>
+                </div>
+
+                <div class="page-search__row page-search__row--level-three">
+
+                    
+                    <div class="page-search__button page-search__button--close desktop">
+                        <span>X</span>
+                    </div>
+                    
+
+                        <div class="col">
+
+                            <section class="page-search__section" id="subtypes" title="Subtypes">
+
+                                <h4 class="desktop">Filter By</h4>
+                                <h4 class="mobile">Subtype</h4>
+
+                                <ul>
+                                    <li class="page-search__list-item">
+                                        <div class="page-search__fancy-checkbox">
+                                            <input type="checkbox" id="openHouses" name="open_houses"></input>
+                                            <label for="openHouses">Open Houses</label>
+                                        </div>
+                                    </li>
+
+                                    <li class="page-search__list-item">
+                                        <div class="page-search__fancy-checkbox">
+                                            <input type="checkbox" id="newListings" name="new_listings"></input>
+                                            <label for="newListings">New Listings</label>
+                                        </div>
+                                    </li>
+
+                                    <li class="page-search__list-item">
+                                        <div class="page-search__fancy-checkbox">
+                                            <input type="checkbox" id="reducedPrice" name="reduced_price"></input>
+                                            <label for="reducedPrice">Reduced Price</label>
+                                        </div>
+                                    </li>
+
+                                    <li class="page-search__list-item">
+                                        <div class="page-search__fancy-checkbox">
+                                            <input type="checkbox" id="newDevelopments" name="new_developments"></input>
+                                             <label for="newDevelopments">New Developments</label>
+                                        </div>
+                                    </li>
+
+                                    <li class="page-search__list-item">
+                                        <div class="page-search__fancy-checkbox">
+                                            <input type="checkbox" id="sold" name="sold"></input>
+                                            <label for="sold">Sold</label>
+                                        </div>
+                                    </li>
+
+                                    <li class="page-search__list-item">
+                                        <div class="page-search__fancy-checkbox">
+                                            <input type="checkbox" id="forclosures" name="forclosures"></input>
+                                            <label for="forclosures">Forclosures</label>
+                                        </div>
+                                    </li>
+
+                                </ul>
+
+                            </section>
+
+                        </div>
+
+                    <div class="col">
+                        
+                        <section class="page-search__section" id="sqFt" title="Square Feet">
+                            <h4>Square Feet</h4>
+
+                            <div class="page-search__container page-search__container--range">
+                                <input type="text" class="page-search__input page-search__input--numeric" name="sq_ft_min" placeholder="Min"></input>
+                                    &nbsp;&dash;&nbsp;
+                                <input type="text" class="page-search__input page-search__input--numeric" name="sq_ft_max" placeholder="Max"></input>
+                            </div>
+
+                        </section>
+
+                        <section class="page-search__section" id="lotSz" title="Lot Size">
+                            <h4>Lot Size</h4>
+                            <div class="page-search__container page-search__container--range">
+                                <input type="text" class="page-search__input page-search__input--numeric" name="lot_sz_min" placeholder="Min"></input>
+                                    &nbsp;&dash;&nbsp;
+                                <input type="text" class="page-search__input page-search__input--numeric" name="lot_sz_max" placeholder="Max"></input>
+                            </div>
+
+                        </section>
+
+                        <section class="page-search__section" id="yrsBuilt" title="Years Built">
+                            <h4>Years Built</h4>
+
+                            <div class="page-search__container page-search__container--range">
+                                <input type="text" class="page-search__input page-search__input--numeric" name="yrs_built_min" placeholder="Min"></input>
+                                    &nbsp;&dash;&nbsp;
+                                <input type="text" class="page-search__input page-search__input--numeric" name="yrs_built_max" placeholder="Max">
+                                </input>
+                            </div>
+
+                        </section>
+
+                    </div>
+
+                    <div class="col">
+
+                        <section class="page-search__section" id="daysOnMkt" title="Days On Market">
+                            <h4>Days On Market</h4>
+
+                            <select class="page-search__dropdown page-search__dropdown--filter-advanced" name="days_on_mkt">
+                                <option value="" disabled selected>Any</option>
+                                <option value="1 day">1 day</option> 
+                                <option value="7 days">7 days</option> 
+                                <option value="14 days">14 days</option>
+                                <option value="1 month">1 month</option> 
+                                <option value="3 months">3 months</option> 
+                                <option value="6 months">6 month</option> 
+                                <option value="1 year">1 year</option> 
+                                <option value="2 years+">2 years+</option>
+                            </select>
+
+                        </section>
+
+                        <section class="page-search__section page-search__section--tokenize" id="keywords" title="Keywords">
+                            <h4>Keywords</h4>
+                            <span>(comma separated)</span>
+
+                            <input type="text" class="page-search__input page-search__input--tokenize" name="keywords"></input>
+                        </section>
+
+                    </div>
+
+                    <div class="col">
+
+                        <section class="page-search__section" id="findByMLS" title="Find by MLS">
+                            <h4>Find by MLS</h4>
+
+                            <input type="text" class="page-search__input page-search__input--text" name="mls_id"></input>
+                        </section>
+
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- Page Search -->
+        
+
+        <!-- Page Layout -->
+        <div class="page-layout">
+            <div class="page-layout__left-col">
+                <!-- Property Top Info -->
+                <div class='listing__summary'>
+                    <div class='listing__summary--left'>
+
+                        <p class='listing__address'>101 Fernwood Rd Brookline, MA 02467</p>
+                        <div class='listing__tags'>
+                            <div class="tag featured">Featured Property <span class="arrow"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class='listing__summary--right'>
+
+                        <div class='listing__detail'>
+                            <div class='listing__detail--row1'>
+                                <p class='listing__price'>$18,000,000</p>
+                            </div>
+
+                            <div class='listing__detail--row2'>
+                                <p class='listing__beds'>5 Beds</p>
+                                <p class='listing__baths'>6 Baths</p>
+                                <p class='listing__partials'>3 Partial</p>
+                            </div>
+
+                            <div class='listing__detail--row3'>
+                                <p class='listing__sqfeet'>10,000 Sq. Ft.</p>
+                                <p class='listing__type'>Co-op/Condo</p>
+                            </div>
+                        </div>
+
+                        <div class='listing__detail-share'>
+                            <div class='listing__detail-share--row1'>
+                                <p>hello</p>
+                            </div>
+    <!-- 
+                            <div class='listing__detail-share-row2'>
+                            </div> -->
+                        </div>
+
+                    </div>
+                </div>
+                <!-- Property Top Info -->
+
+                <!-- Related Articles -->
+                <div class="related-articles">
+                    <h1 class="related-articles__section-header">${town_name} Real Estate</h1>
+
+                    <div class="related-articles__item">
+                        <img class="thumb" src="images/related-articles/related-articles__thumbs__1.jpg" />
+                        <h2 class="title">Tom and Gisele's Brookline Pad Looks Almost Ready</h2>
+                        <p class="description">The ream home of the most famouse couple in Massachusetts looks like it's close to completion.</p>
+                        
+                        <div class="additional-info">
+                            <div class="date">September 9, 2014</div>
+
+                            <div class="tags">
+                                <div class="tag class">Luxury <span class="arrow"></span></div>
+                                <div class="tag location">Brookline <span class="arrow"></span></div>
+                            </div>
+</div>
+<!-- Page Search -->
+
+    <!-- Page Layout -->
+    <div class="page-layout">
+        <div class="page-layout__left-col">
+
+            <!-- SERP SEARCH RESULTS-->
+            <div class='search-results'>
+                <div class='search-results__item'>
+
+                    <div class='header'>
+                        <a href='javascript:;'><p class='address'>101 Fernwood Road, Brookline, Ma</p></a>
+                        <div class='share-buttons'>
+                            <a href='javascript:;'><div class='share-button--heart'></div></a>
+                            <p>share<p><a href='javascript:;'><div class='share-button--share'></div></a>
+                        </div>
+                    </div>
+
+                    <div class='left-col'>
+                        <div class='property-images'>
+                            <img src='images/neighborhoods/top-neighborhoods__entry__1.jpg'/>
+                            <!-- <div class='photo-count'>18 Photos</div> -->
+                        </div>
+                    </div>
+                        
+                    <div class='right-col'>
+                        <div class='property-info'>
+                            <div class='row1'>
+                                <p class='price'>$18,000,000</p>
+                            </div>
+
+                            <div class='row2'>
+                                <p class='sqfeet'>10,000 Sq. Ft.</p>
+                                <p class='beds'>5 Beds</p>
+                            </div>
+
+                            <div class='row3'>
+                                <p class='baths'>6 Baths</p>
+                                <p class='partials'>3 Partial</p>
+                            </div>
+
+                            <div class='row4'>
+                                <p class='baths'>Co-op/Condo</p>
+                            </div>
+
+                            <div class='row5'>
+                                <p class='description'>Secluded single floor residence with gated drive set on a lush cul-de-sac. Designed by architect Adolfo Perez.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class='realtor-info'>
+                        <div class='realtor-info--left'>
+                            <img class='realtor-company' src='http://www.vanguard-realty.com/files/2013/06/innerpage-logo.png'/>
+                        </div>
+
+                        <div class='realtor-info--middle'>
+                            <img class='realtor-img' src='http://newlistingphotos.com/wp-content/uploads/2011/04/Blog.jpg'/>
+                        </div>
+
+                        <div class='realtor-info--right'>
+                            <button class='realtor-contact'>Contact</button>
+                            <p class='realtor-name'>Blake Sherwood</p>
+                        </div>
+                    </div>
+
+                </div>                
+            </div>
+            <!-- /SERP SEARCH RESULTS -->
+            
+            <!-- Related Articles -->
+            <div class="related-articles">
+                <h1 class="related-articles__section-header">${town_name} Real Estate</h1>
+
+                <div class="related-articles__item">
+                    <img class="thumb" src="images/related-articles/related-articles__thumbs__1.jpg" />
+                    <h2 class="title">Tom and Gisele's Brookline Pad Looks Almost Ready</h2>
+                    <p class="description">The ream home of the most famouse couple in Massachusetts looks like it's close to completion.</p>
+                    
+                    <div class="additional-info">
+                        <div class="date">September 9, 2014</div>
+
+                        <div class="tags">
+                            <div class="tag class">Luxury <span class="arrow"></span></div>
+                            <div class="tag location">Brookline <span class="arrow"></span></div>
+                        </div>
+                    </div>
+
+                    <div class="related-articles__item">
+                        <img class="thumb" src="images/related-articles/related-articles__thumbs__2.jpg" />
+                        <h2 class="title">For Sale: $2.85M Italianate Mansion in JP</h2>
+                        <p class="description">This updated Italianate mansion, once known as The Gilbert House, was originally built in 1854 and has undergone extensive renovations while remaining loyal to the home's orignal design.</p>
+                        
+                        <div class="additional-info">
+                            <div class="date">July 30, 2014</div>
+
+                            <div class="tags">
+                                <div class="tag event">Open House <span class="arrow"></span></div>
+                                <div class="tag class">Luxury <span class="arrow"></span></div>
+                                <div class="tag location">Jaimaca Plain <span class="arrow"></span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="related-articles__item">
+                        <img class="thumb" src="images/related-articles/related-articles__thumbs__3.jpg" />
+                        <h2 class="title">For Sale: Historic Weston mansion</h2>
+                        <p class="description">The Henderson House in Weston, an English-Tudor style mansion with nearly 17,000 square feet of living space, is being sold for $7,795,000.</p>
+                        
+                        <div class="additional-info">
+                            <div class="date">July 13, 2014</div>
+                        </div>
+                    </div>
+
+                    <div class="related-articles__item">
+                        <img class="thumb" src="images/related-articles/related-articles__thumbs__4.jpg" />
+                        <h2 class="title">New Construction, Chestnut Hill Colonial - $2,400,000</h2>
+                        <p class="description">Walk to Heath School and Train. Gorgeous Tree-lined street, Established Neighborhood. Open Plan main level with Back-lit Coffered Ceillings, Fireplaced Family Room and nicely appointed Cooks Kitchen with Island.</p>
+                        
+                        <div class="additional-info">
+                            <div class="date">July 3, 2014</div>
+
+                            <div class="tags">
+                                <div class="tag event">Open House <span class="arrow"></span></div>
+                                <div class="tag class">Luxury <span class="arrow"></span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dfp-ad__row">
+                        <a class="dfp-ad__row__main-link" href="javascript:;"><img src="images/ads/dfp/dfpAds__300by250__marriott.jpg" /></a>
+                        <a class="dfp-ad__row__main-link" href="javascript:;"><img src="images/ads/dfp/dfpAds__300by250__verizon.jpg" /></a>
+                    </div>
+
+                    <div class="related-articles__item">
+                        <img class="thumb" src="images/related-articles/related-articles__thumbs__1.jpg" />
+                        <h2 class="title">Tom and Gisele's Brookline Pad Looks Almost Ready</h2>
+                        <p class="description">The ream home of the most famouse couple in Massachusetts looks like it's close to completion.</p>
+                        
+                        <div class="additional-info">
+                            <div class="date">September 9, 2014</div>
+
+                            <div class="tags">
+                                <div class="tag class">Luxury <span class="arrow"></span></div>
+                                <div class="tag location">Brooline <span class="arrow"></span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="related-articles__item">
+                        <img class="thumb" src="images/related-articles/related-articles__thumbs__2.jpg" />
+                        <h2 class="title">For Sale: $2.85M Italianate Mansion in JP</h2>
+                        <p class="description">This updated Italianate mansion, once known as The Gilbert House, was originally built in 1854 and has undergone extensive renovations while remaining loyal to the home's orignal design.</p>
+                        
+                        <div class="additional-info">
+                            <div class="date">July 30, 2014</div>
+
+                            <div class="tags">
+                                <div class="tag event">Open House <span class="arrow"></span></div>
+                                <div class="tag class">Luxury <span class="arrow"></span></div>
+                                <div class="tag location">Jaimaca Plain <span class="arrow"></span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="javascript:;" class="viewMore">View More <img src="images/view-more__arrow-down.gif" /></a>
+                </div>
+                <!-- Related Articles -->
+            </div>
+
+            <div class="page-layout__right-col">
+                <div class='contact__company'>
+                    <img class='contact__company-img' src='http://www.motihomes.com/Customers/5430/assets/images/3785DE71-155D-0078-0BA5D1687C016B53.jpg'>
+                    <div class='contact__company-info'>
+                        <p class='contact__company-name'>Coldwell Banker Residential Brokerage - <span class='contact__company-city'> Brookline </span></p>
+                        <p class='contact__company-note'>(Visit office website)</p>
+                    </div>
+                </div>
+
+                <!-- Contact the Agent -->
+                <div class='contact__container'>
+                    <div class='contact__header'>
+                        <p>Contact the Agent</p>
+                    </div>
+
+                    <div class='contact__wrapper'>
+                            <!-- <img class='contact__agent-img' src='http://commissionsforeducation.org/wp-content/uploads/2011/01/daniellenewheadcrop.jpg'> -->
+                        <div class='contact__agent-info'>
+                            <p class='contact__agent-name'>Deborah M. Gordon</p>
+                            <div class='contact__agent-links'>
+                                <a class='contact__agent-number' href='#'>View My Contact Number</a>
+                                <a class='contact__agent-website' href='#'>View My Website</a>
+                            </div>
+                            <div class='contact__agent-address'>
+                                <p>1375 Beacon St</p>
+                                <p>Brookline, MA 02446</p>
+                            </div>
+                        </div>
+                        
+                        <div class='contact__form'>
+                            <p class='contact__form-required'><span>* </span>Required</p>
+                            <input class='contact__form-name' placeholder='Name'/><span class='contact__required-marker'>*</span>
+                            <input class='contact__form-name' placeholder='Email'/><span class='contact__required-marker'>*</span>
+                            <input class='contact__form-name' placeholder='Phone Number'/>
+                            <textarea class='contact__form-name' placeholder='Hi Deborah, I found your listing on Boston.com. Please send me more infomation about 101 Fernwood Rd, Brookline, MA. Thank you'></textarea>
+                            <button class='contact__form-submit'>Send</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Contact the Agent -->
+
+
+                <a href="javascript:;" class="dfp-ads">
+                    <img src="images/ads/dfp/dfpAds__300by250__coldwell-banker.jpg" />
+                </a>
+
+                <a href="javascript:;" class="dfp-ads">
+                    <img src="images/ads/dfp/dfpAds__300by250__moo.jpg" />
+                </a>
+            </div>
+        </div>
+
+        <!-- Page Footer -->
+        <div class="page-footer">
+            <div class="content-footer">
+                <div class="content-footer__social-icons">
+                    <a href="javascript:;" class="icon twitter">
+                        <img src="images/icons/footer-icons__twitter.png" />
+                    </a>
+                    <a href="javascript:;" class="icon facebook">
+                        <img src="images/icons/footer-icons__facebook.png" />
+                    </a>
+                    <a href="javascript:;" class="icon rss">
+                        <img src="images/icons/footer-icons__rss.png" />
+                    </a>
+                </div>
+
+                <div class="content-footer__footer-links">
+                    <a href="javascript:;">Boston.com</a>
+                    <a href="javascript:;">Contact Us</a>
+                    <a href="javascript:;">Advertise Here</a>
+                    <a href="javascript:;">Work Here</a>
+                    <a href="javascript:;">Privacy Policy</a>
+                    <a href="javascript:;">Ad Choices</a>
+                    <a href="javascript:;">Terms of Use</a>
+                    <a href="javascript:;">Real Estate Blogs</a>
+                </div>
+
+                <div class="content-footer__copyright-block">
+                    <strong>Address - A Boston.com Website</strong> &copy;2014 Boston Globe Media Partners, LLC Powered by Company Name Here
+                </div>
+            </div>
+        </div>
+        <!-- Page Footer -->
+    </body>
+    </html>
