@@ -3221,24 +3221,24 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
 }
 
 /* line 444, ../sass/partials/page/modules/_listing-summary.scss */
-.save-search-modal {
+.save-search-modal, .share-modal {
   display: none;
   width: 100%;
   margin: 0 5%;
   text-align: center;
 }
 /* line 450, ../sass/partials/page/modules/_listing-summary.scss */
-.save-search-modal .close-modal-btn {
+.save-search-modal .close-modal-btn, .share-modal .close-modal-btn {
   float: right;
 }
 /* line 454, ../sass/partials/page/modules/_listing-summary.scss */
-.save-search-modal .close-modal {
+.save-search-modal .close-modal, .share-modal .close-modal {
   height: 20px;
   width: 20px;
   padding: 0 10px;
 }
 /* line 460, ../sass/partials/page/modules/_listing-summary.scss */
-.save-search-modal .header {
+.save-search-modal .header, .share-modal .header {
   margin-bottom: 10px;
   background: #2e1460;
   text-align: center;
@@ -3250,18 +3250,18 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
   font-weight: 400;
 }
 /* line 473, ../sass/partials/page/modules/_listing-summary.scss */
-.save-search-modal .content {
+.save-search-modal .content, .share-modal .content {
   background: #dacef1;
   padding: 20px;
   height: 300px;
 }
 /* line 479, ../sass/partials/page/modules/_listing-summary.scss */
-.save-search-modal .info {
+.save-search-modal .info, .share-modal .info {
   line-height: 1.5;
   margin-bottom: 10px;
 }
 /* line 484, ../sass/partials/page/modules/_listing-summary.scss */
-.save-search-modal input {
+.save-search-modal input, .share-modal input {
   margin-bottom: 15px;
   width: 100%;
   padding: 10px;
@@ -3271,7 +3271,7 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
   font-family: OpenSans;
 }
 /* line 495, ../sass/partials/page/modules/_listing-summary.scss */
-.save-search-modal button {
+.save-search-modal button, .share-modal button {
   padding: 5px 15px;
   background: black;
   color: white;
