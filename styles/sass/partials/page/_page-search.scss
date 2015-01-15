@@ -63,12 +63,14 @@ $module-name: 'page-search';
 		&--level-one{
 			display: inline-block;
 			padding: 10px;
+			height: 47px;
 			background: #fff;
 		}
 
 		&--level-two{
 			display: inline-block;			
-			margin: 10px 20px 10px 20px;
+			/*margin: 10px 20px 10px 20px;*/
+			padding: 10px;
 			width: 90%;
 
 			h4{
@@ -229,7 +231,7 @@ $module-name: 'page-search';
 
 		&--submit{
 			float: right;
-			margin: 0 5px 20px 0;
+			margin: 0 10px 20px 0;
 			width: 35px;
 			height: 35px;
 			border-radius: 4px;
@@ -382,7 +384,8 @@ $module-name: 'page-search';
 			position: absolute;
 			right: 37px;
 			color: #2E1460;
-			background: rgb(254, 254, 254);
+			opacity: 1;
+			background: transparent;
 			padding: 2px 4px;
 			border-radius: 2px;
 			cursor: pointer;
@@ -509,13 +512,14 @@ $module-name: 'page-search';
 			margin: 0 0 0 10px;
 			width: 260px;
 			height: 40px;
-			border: 1px solid #EBEBEB;
+			
 			border-radius: 4px;
 			
 			
 			.selectize-input{
-				height: 20px;
 				padding: 10px 15px;
+				height: 20px;
+				border: 1px solid #EBEBEB;
 				line-height: 28px;
 			}
 
@@ -578,12 +582,6 @@ $module-name: 'page-search';
 		z-index: 10;
 		background: rgba(255, 255, 255, 0.85);
 
-		&__row{
-			&--level-one{
-				background: none;
-			}
-		}
-
 		&__form{
 			input[type="text"], input[type=search] {
 				border: none;
@@ -605,10 +603,6 @@ $module-name: 'page-search';
 		background: rgba(255, 255, 255, 0.85);
 
 		&__row{
-			&--level-two{
-				background: none;
-			}
-
 			&--level-three{
 				margin-top: 20px;
 			}
@@ -643,8 +637,6 @@ $module-name: 'page-search';
 		&__button{
 			&--submit{
 				margin: 0 84px 0 0;
-				width: 40px;
-				height: 44px;
 			}
 
 			&--level-three-toggle{
@@ -690,7 +682,9 @@ $module-name: 'page-search';
 		&__row{
 
 			&--level-one{
-				margin: 10px auto 0 auto;
+				padding: 10px;
+				height: 47px;
+				background: none;
 			}
 
 			&--level-two{
@@ -752,6 +746,7 @@ $module-name: 'page-search';
 				margin: 0 0 0 78px;
 				width: 680px;
 				height: 60px;
+				border: none;
 				font-size: 17px;
 
 				.selectize-input{
@@ -761,6 +756,16 @@ $module-name: 'page-search';
 		}
 
 		&__button{
+			&--save{
+				top: 23px;
+			}
+
+			&--submit{
+				margin-right: 52px;
+				width: 44px;
+				height: 44px;
+			}
+
 			&--level-two-toggle{
 				top: 8px;
 				left: initial;
