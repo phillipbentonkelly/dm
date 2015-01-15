@@ -1963,7 +1963,7 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
   height: 0;
   border-style: solid;
   border-width: 0 20px 20px 20px;
-  border-color: #828282 transparent;
+  border-color: rgba(0, 0, 0, 0.4) transparent;
   top: 0;
   right: 0;
   left: initial;
@@ -1977,7 +1977,7 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
   font-size: 42px;
   font-weight: 400;
   display: block;
-  background: #7f7f7f;
+  background: rgba(0, 0, 0, 0.4);
   text-align: center;
   line-height: 1.4em;
   margin: 0 0 4px 0;
@@ -4918,17 +4918,108 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
   min-width: 630px;
   max-height: 616px;
   min-height: 616px;
-  background-color: orange;
+  color: #fff;
+}
+/* line 15, ../sass/partials/page/modules/_multimedia-chip.scss */
+.multimedia-chip a {
+  color: #fff;
+  text-decoration: none;
+}
+/* line 17, ../sass/partials/page/modules/_multimedia-chip.scss */
+.multimedia-chip__header {
+  width: 100%;
+  display: block;
+  text-align: center;
+  text-transform: uppercase;
+  position: relative;
+  background: rgba(0, 0, 0, 0.4);
+  border-bottom: 2px solid white;
+}
+/* line 26, ../sass/partials/page/modules/_multimedia-chip.scss */
+.multimedia-chip__header .category-tag {
+  position: absolute;
+  top: 16%;
+  margin: 0;
+}
+/* line 33, ../sass/partials/page/modules/_multimedia-chip.scss */
+.multimedia-chip__media-wrapper {
+  width: 100%;
+  min-height: 354px;
+  position: relative;
+}
+/* line 38, ../sass/partials/page/modules/_multimedia-chip.scss */
+.multimedia-chip__media-wrapper__short-description {
+  width: 96%;
+  height: 98%;
+  padding: 1% 2%;
+  font-size: 13px;
+  font-family: Oswald;
+  letter-spacing: 1px;
+  clear: both;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.7);
+}
+/* line 49, ../sass/partials/page/modules/_multimedia-chip.scss */
+.multimedia-chip__media-wrapper__short-description p {
+  display: inline-block;
+  float: left;
+  width: 70%;
+  overflow-y: hidden;
+}
+/* line 56, ../sass/partials/page/modules/_multimedia-chip.scss */
+.multimedia-chip__media-wrapper__short-description__share, .multimedia-chip__media-wrapper__short-description__info {
+  float: right;
+  text-indent: -9000px;
+}
+/* line 61, ../sass/partials/page/modules/_multimedia-chip.scss */
+.multimedia-chip__media-wrapper__short-description__share {
+  width: 15px;
+  height: 17px;
+  background: purple;
+}
+/* line 67, ../sass/partials/page/modules/_multimedia-chip.scss */
+.multimedia-chip__media-wrapper__short-description__info {
+  width: 18px;
+  height: 16px;
+  background: violet;
+  margin-left: 1%;
+}
+/* line 76, ../sass/partials/page/modules/_multimedia-chip.scss */
+.multimedia-chip__title-description {
+  line-height: 22px;
+  font-family: OpenSans;
+  font-size: 16px;
+  padding: 16px 24px 16px 24px;
+  background: rgba(0, 0, 0, 0.4);
+}
+/* line 85, ../sass/partials/page/modules/_multimedia-chip.scss */
+.multimedia-chip__title-description h1 {
+  font-family: OpenSans Semibold;
+  font-size: 24px;
+  line-height: 20px;
+  padding: 0;
+  margin: 0 0 10px 0;
+}
+/* line 93, ../sass/partials/page/modules/_multimedia-chip.scss */
+.multimedia-chip__title-description p {
+  margin: 0 0 13px 0;
+  padding: 0;
+}
+/* line 98, ../sass/partials/page/modules/_multimedia-chip.scss */
+.multimedia-chip__title-description__photo-credit {
+  line-height: 30px;
+  font-style: italic;
+  font-size: 13px;
 }
 
 @media (min-width: 768px) {
-  /* line 18, ../sass/partials/page/modules/_multimedia-chip.scss */
+  /* line 107, ../sass/partials/page/modules/_multimedia-chip.scss */
   .multimedia-chip {
     display: block;
   }
 }
 @media (min-width: 960px) {
-  /* line 24, ../sass/partials/page/modules/_multimedia-chip.scss */
+  /* line 113, ../sass/partials/page/modules/_multimedia-chip.scss */
   .multimedia-chip {
     display: block;
   }

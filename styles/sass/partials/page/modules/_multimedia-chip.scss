@@ -10,8 +10,97 @@ $module-name: 'multimedia-chip';
 	min-width: 630px;
 	max-height: 616px;
 	min-height: 616px;
+	color: #fff;
 
-	background-color: orange;
+	a { color: #fff; text-decoration: none; }
+
+	&__header {
+		width: 100%;
+		display: block;
+		text-align: center;
+		text-transform: uppercase;
+		position: relative;
+		background: rgba(0, 0, 0, 0.4);
+		border-bottom: 2px solid white;
+
+		.category-tag {
+			position: absolute;
+			top: 16%;
+			margin: 0;
+		}
+	}
+
+	&__media-wrapper {
+		width: 100%;
+		min-height: 354px;
+		position: relative;
+
+		&__short-description {
+			width: 96%;
+			height: 98%;
+			padding: 1% 2%;
+			font-size: 13px;
+			font-family: Oswald;
+			letter-spacing: 1px;
+			clear: both;
+			overflow: hidden;
+			background: rgba(0, 0, 0, 0.7);
+
+			p {
+				display: inline-block;
+				float: left;
+				width: 70%;
+				overflow-y: hidden;
+			}
+
+			&__share, &__info {
+				float: right;
+				text-indent: -9000px;
+			}
+
+				&__share {
+					width: 15px;
+					height: 17px;
+					background: purple;
+				}
+
+				&__info {
+					width: 18px;
+					height: 16px;
+					background: violet;
+					margin-left: 1%;
+				}
+		}
+	}
+
+	&__title-description {
+		line-height: 22px;
+		font-family: OpenSans;
+		font-size: 16px;
+
+		padding: 16px 24px 16px 24px;
+
+		background: rgba(0, 0, 0, 0.4);
+
+		h1 {
+			font-family: OpenSans Semibold;
+			font-size: 24px;
+			line-height: 20px;
+			padding: 0;
+			margin: 0 0 10px 0;
+		}
+
+		p {
+			margin: 0 0 13px 0;
+			padding: 0;
+		}
+
+		&__photo-credit {
+			line-height: 30px;
+			font-style: italic;
+			font-size: 13px;
+		}
+	}
 }
 
 @include media-query(tablet) {
