@@ -33,7 +33,7 @@
     	<script src="js/assets/mega-menu.js"></script>
     	<script src="js/assets/responsive-gallery.js"></script>
 
-		<?php if ($pageType == 'home') { ?>
+		<?php if ($pageType == 'home' || $pageType == 'category') { ?>
 		    <!-- Carousel Scripts -->
 			<script src="js/assets/basicMobileDetection.js"></script>
 			<script src="http://wurfl.io/wurfl.js"></script>
@@ -45,7 +45,12 @@
 	        <script src="js/assets/mpListings.js"></script>
 	        <script src="js/assets/listings.data.js"></script>
 		<?php } ?>
-		
+
+		<?php if ($pageType == 'serp') { ?>
+			<script src="js/resources/basic/js/jquery.simplemodal.js"></script>
+	        <script src="js/assets/popup.js"></script>
+		<?php } ?>
+
 		<?php if ($pageType == 'property-listings' || $pageType == 'property-listings-premium') { ?>
 		    <!-- Real Estate Listings -->
 	        <script src="js/assets/mpListings.js"></script>
@@ -59,6 +64,21 @@
 	        <script src="js/assets/mpListings.js"></script>
 	        <script src="js/assets/listings.data.js"></script>
 		<?php } ?>
+
+		<script type="text/javascript">
+		    var googletag = googletag || {};
+		    googletag.cmd = googletag.cmd || [];
+		    
+		    (function() {
+		        var gads = document.createElement("script");
+		        gads.async = true;
+		        gads.type = "text/javascript";
+		        var useSSL = "https:" == document.location.protocol;
+		        gads.src = (useSSL ? "https:" : "http:") + "//www.googletagservices.com/tag/js/gpt.js";
+		        var node =document.getElementsByTagName("script")[0];
+		        node.parentNode.insertBefore(gads, node);
+		    })();
+		</script>
 
 		<script src="js/resources/plugins/selectize/selectize.js"></script>
         <script src="js/resources/plugins/select2/select2.js"></script>
@@ -98,7 +118,7 @@
     <?php include 'page/page-search.php'; ?>
     
 	
-	<?php if ($pageType == 'home') { ?>
+	<?php if ($pageType == 'home' || $pageType == 'category') { ?>
 		<!-- Module Content -->
 		<?php include 'page/modules/full-width-carousel.php'; ?>
 	<?php } ?>
@@ -106,11 +126,6 @@
 	<?php if ($pageType == 'serp') { ?>
 		<!-- Module Content -->
 		<?php include 'page/modules/serp-ad-placeholder.php'; ?>
-	<?php } ?>
-	
-	
-	<?php if ($pageType == 'neighborhood') { ?>
-	<div class="page-layout-wrapper">
 	<?php } ?>
 
 	<!-- Page Layout -->
@@ -140,6 +155,24 @@
 			
 			
 			<!-- NEIGHBORHOOD -->
+			<?php if ($pageType == 'category-details') { ?>
+				<!-- Multimedia Chip -->
+				<?php include 'page/modules/multimedia-chip.php'; ?>
+			<?php } ?>
+			
+			<!-- CATEGORY -->
+			<?php if ($pageType == 'category') { ?>
+				<!-- Related Articles -->
+				<?php include 'page-content/modules/related-articles.php'; ?>
+			<?php } ?>
+			
+			<!-- CATEGORY DETAILS -->
+			<?php if ($pageType == 'category-details') { ?>
+				<!-- Related Articles -->
+				<?php include 'page-content/modules/related-articles.php'; ?>
+			<?php } ?>
+			
+			<!-- NEIGHBORHOOD -->
 			<?php if ($pageType == 'neighborhood') { ?>
 				<!-- Property Listings Map -->
 				<?php include 'page/modules/property-listing-map.php'; ?>
@@ -156,6 +189,12 @@
 
 				<!-- Related Articles -->
 				<?php include 'page-content/modules/related-articles.php'; ?>
+
+				<!-- Ad Slots 2 and 3 -->
+				<?php include 'ads/gallery-ads-2-and-3.php'; ?>
+
+				<!-- Discus -->
+				<?php include 'page-content/modules/comments.php'; ?>
 			<?php } ?>
 			
 
@@ -214,8 +253,8 @@
 			<?php } ?>
 			
 			
-			<!-- NEIGHBORHOOD -->
-			<?php if ($pageType == 'neighborhood') { ?>
+			<!-- CATEGORY -->
+			<?php if ($pageType == 'category') { ?>
 				<!-- DFP Ad - Experience the Difference -->
 				<?php include 'ads/dfp-ads__experience-the-difference.php'; ?>
 
@@ -230,6 +269,41 @@
 			<?php } ?>
 			
 			
+			<!-- CATEGORY DETAILS -->
+			<?php if ($pageType == 'category-details') { ?>
+				<!-- DFP Ad - Experience the Difference -->
+				<?php include 'ads/dfp-ads__experience-the-difference.php'; ?>
+
+				<!-- DFP Ad - Moo Printing -->
+				<?php include 'ads/dfpAds__300by250__moo.php'; ?>
+
+				<!-- DFP Sidebar Placeholder Ad Content -->
+				<?php include 'ads/adplaceholer__right-column.php'; ?>
+
+				<!-- Property Listings Widget -->
+				<?php include 'page/modules/property-listings.php'; ?>
+				
+				<!-- Explore Brookline -->
+				<?php include 'page-content/explore-brookline.php'; ?>
+			<?php } ?>
+			
+			
+			<!-- NEIGHBORHOOD -->
+			<?php if ($pageType == 'neighborhood') { ?>
+				<!-- DFP Ad - Experience the Difference -->
+				<?php include 'ads/dfp-ads__experience-the-difference.php'; ?>
+
+				<!-- DFP Ad - Moo Printing -->
+				<?php include 'ads/dfpAds__300by250__moo.php'; ?>
+
+				<!-- DFP Sidebar Placeholder Ad Content -->
+				<?php include 'ads/adplaceholer__right-column.php'; ?>
+
+				<!-- Property Listings Widget -->
+				<?php include 'page/modules/property-listings.php'; ?>
+			<?php } ?>
+			
+			
 			<!-- ARTICLES/GALLERY -->
 			<?php if ($pageType == 'articles') { ?>
 				<!-- DFP Ad - Experience the Difference -->
@@ -237,6 +311,9 @@
 
 				<!-- Property Listings Widget -->
 				<?php include 'page/modules/property-listings.php'; ?>
+
+				<!-- Long DFP Ad -->
+				<?php include 'ads/ad_bigbox1.php'; ?>
 			<?php } ?>
 			
 			
@@ -245,25 +322,46 @@
 				<!-- Contact The Agent Widget -->
 				<?php include 'page-content/modules/search-map.php'; ?>
 
-				<!-- DFP Ad - Experience the Difference -->
-				<?php include 'ads/dfp-ads__experience-the-difference.php'; ?>
+				<!-- Related Articles (right rail) Widget -->
+				<?php include 'page-content/modules/related-articles-right-rail.php'; ?>
 
-				<!-- DFP Ad - Moo Printing -->
-				<?php include 'ads/dfpAds__300by250__moo.php'; ?>
 			<?php } ?>
 		</div>
-	</div>
+
+		<?php if ($pageType == 'serp') { ?>
+			<!-- Module Content -->
+			<?php include 'page/modules/serp-ad-placeholder.php'; ?>
+		<?php } ?>
 	
-	<?php if ($pageType == 'neighborhood') { ?>
 	</div>
-	<?php } ?>
 	
 	<?php if ($pageType == 'home') { ?>
 		<!-- DFP Sidebar Placeholder Ad Content -->
 		<?php include 'page-content/real-estate-blog.php'; ?>
 	<?php } ?>
 
+	<?php if ($pageType == 'category' || $pageType == 'category-details' || $pageType == 'neighborhood') { ?>
+		<!-- Gallery Widget -->
+    	<?php include 'page/modules/gallery.php'; ?>
+	<?php } ?>
+
 	<!-- Page Footer -->
     <?php include 'page/page-footer.php'; ?>
+
+    <!-- ARTICLES: Discus -->
+	<?php if ($pageType == 'articles') { ?>
+		<script type="text/javascript"> 
+			/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */ 
+			var disqus_shortname = 'bcomrealestate'; // required: replace example with your forum shortname 
+
+			/* * * DON'T EDIT BELOW THIS LINE * * */ 
+			(function () { 
+				var s = document.createElement('script'); s.async = true; 
+				s.type = 'text/javascript'; 
+				s.src = '//' + disqus_shortname + '.disqus.com/count.js'; 
+				(document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s); 
+			}()); 
+		</script> 
+	<?php } ?>
 </body>
 </html>

@@ -7,7 +7,7 @@ root=$(pwd)
 yourLocalhost=''
 localhost=''
 framesetString='frameset.php?page-type='
-pages=("articles" "neighborhood" "serp" "home" "property-listings")
+pages=("articles" "neighborhood" "serp" "home" "property-listings" "category" "category-details")
 
 echo "Welcome ... you are currently in: " 
 pwd
@@ -58,18 +58,40 @@ if [[ $proceedVar =~ ^[Yy]$ ]]
 				echo $localhost$i
 				wget $localhost$i
 				sleep 1
-				mv $framesetString$i $root/$tempDirName/$i.html
+				mv -f $framesetString$i $root/$tempDirName/$i.html
 
 				echo ""
 				echo "---------------------------------------------"
 				echo ""
 			done
 
+			cd $tempDirName
+			cp -f home.html index.html
+			cd ..
+
 			sleep 2
 			cd dm
 			git checkout gh-pages
 			cd ..
 
+			echo "Removing the several resources from the gh-pages repo folder (folders and html pages)."
+			sleep 2
+			rm -r $root/dm/images
+			rm -r $root/dm/fonts
+			rm -r $root/dm/js
+			rm -r $root/dm/styles
+			rm -f $root/dm/articles.html
+			rm -f $root/dm/property-listings.html
+			rm -f $root/dm/property-listing.html
+			rm -f $root/dm/serp.html
+			rm -f $root/dm/category.html
+			rm -f $root/dm/category-details.html
+			rm -f $root/dm/index.html
+			rm -f $root/dm/home.html
+			rm -f $root/dm/neighborhood.html
+
+			echo "Copying the content of the temporary folder into the gh-pages repo folder."
+			sleep 3
 			cp -a -f $root/$tempDirName/. $root/dm
 
 			sleep 2

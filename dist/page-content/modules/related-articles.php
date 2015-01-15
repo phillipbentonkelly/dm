@@ -1,5 +1,5 @@
 <!-- Related Articles -->
-<div class="related-articles">
+<div class="related-articles related-articles-modal">
     <h1 class="related-articles__section-header">Related Articles</h1>
 
     <div class="related-articles__item">
@@ -15,9 +15,8 @@
             <div class="date">September 9, 2014</div>
 
             <div class="tags">
-                <div class="category-tag maroon">Luxury</div>
-                <div class="category-tag orange">Brookline</div>
-                </a>
+                <a href="javascript:;" class="category-tag maroon">Luxury</a>
+                <a href="javascript:;" class="category-tag orange">Brookline</a>
             </div>
         </div>
     </div>
@@ -35,9 +34,9 @@
             <div class="date">July 30, 2014</div>
 
             <div class="tags">
-                <div class="category-tag light-blue">Open House</div>
-                <div class="category-tag maroon">Luxury</div>
-                <div class="category-tag orange">Jaimaca Plain</div>
+                <a href="javascript:;" class="category-tag light-blue">Open House</a>
+                <a href="javascript:;" class="category-tag maroon">Luxury</a>
+                <a href="javascript:;" class="category-tag orange">Jaimaca Plain</a>
             </div>
         </div>
     </div>
@@ -69,15 +68,43 @@
             <div class="date">July 3, 2014</div>
 
             <div class="tags">
-                <div class="category-tag light-blue">Open House</div>
-                <div class="category-tag maroon">Luxury</div>
+                <a href="javascript:;" class="category-tag light-blue">Open House</a>
+                <a href="javascript:;" class="category-tag maroon">Luxury</a>
             </div>
         </div>
     </div>
 
     <div class="dfp-ad__row">
-        <a class="dfp-ad__row__main-link" href="javascript:;"><img src="images/ads/dfp/dfpAds__300by250__marriott.jpg" /></a>
-        <a class="dfp-ad__row__main-link" href="javascript:;"><img src="images/ads/dfp/dfpAds__300by250__verizon.jpg" /></a>
+        <div id="ad_bigbox2" class="dfp-ad__row__main-link"><!--<img src="images/ads/dfp/dfpAds__300by250__marriott.jpg" />--></div>
+        <div id="ad_bigbox3" class="dfp-ad__row__main-link"><!--<img src="images/ads/dfp/dfpAds__300by250__verizon.jpg" />--></div>
+
+        <script>
+            var networkCode = 61381659;
+            var topLevelAdUnit = "testboston.com";
+            var s1 = "testboston.com";
+            var s2 = "real-estate";
+            var adUnit = topLevelAdUnit + "/" + s2;
+            var slotName = "/" + networkCode + "/" + adUnit;
+            
+            googletag.cmd.push(function() {
+                googletag.defineSlot(slotName, [300,250], "ad_bigbox2")
+                googletag.defineSlot(slotName, [300,250], "ad_bigbox3")
+                .addService(googletag.pubads())
+                .setTargeting("pos", "ad_bigbox2")
+                .setTargeting("pos", "ad_bigbox3");
+                googletag.pubads().setTargeting("s1",s1);
+                googletag.pubads().setTargeting("s2",s2);      
+                googletag.pubads().enableSingleRequest();
+                googletag.enableServices();
+            });
+        </script>
+
+        <script type="text/javascript">
+            googletag.cmd.push(function() {
+                googletag.display("ad_bigbox2");
+                googletag.display("ad_bigbox3");
+            });
+        </script>
     </div>
 
     <div class="related-articles__item">
@@ -93,8 +120,8 @@
             <div class="date">September 9, 2014</div>
 
             <div class="tags">
-                <div class="category-tag maroon">Luxury</div>
-                <div class="category-tag orange">Brookline</div>
+                <a href="javascript:;" class="category-tag maroon">Luxury</a>
+                <a href="javascript:;" class="category-tag orange">Brookline</a>
             </div>
         </div>
     </div>
@@ -112,9 +139,9 @@
             <div class="date">July 30, 2014</div>
 
             <div class="tags">
-                <div class="category-tag light-house">Open House</div>
-                <div class="category-tag maroon">Luxury</div>
-                <div class="category-tag orange">Jaimaca Plain</div>
+                <a href="javascript:;" class="category-tag light-house">Open House</a>
+                <a href="javascript:;" class="category-tag maroon">Luxury</a>
+                <a href="javascript:;" class="category-tag orange">Jaimaca Plain</a>
             </div>
         </div>
     </div>

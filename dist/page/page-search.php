@@ -8,7 +8,7 @@
             <div class="page-search__row page-search__row--level-one">
 
                 <select class="page-search__dropdown page-search__dropdown--main" name="q">
-                    <option value="">Search for real estate listings or articles. ex: 3 bedroom for sale in Brookline under 1,000,000</option>
+                    <option></option>
                     <option value="Boston">Boston</option>
                     <option value="Brookline">Brookline</option>
                     <option value="Cambridge">Cambridge</option>
@@ -17,25 +17,12 @@
                     <option value="Braintree">Braintree</option>
                     <option value="Newton">Newton</option>
                 </select>
-                <button class="page-search__button page-search__button--level-two-toggle desktop">           
+                <button class="page-search__button page-search__button--level-two-toggle">           
                     <span class="down-arrow"></span>
                     <span class="up-arrow" style="display:none;"></span>                           
                 </button>
-                <button class="page-search__button page-search__button--level-two-toggle mobile">
-                    <b>Filters</b>
-                    <span class="plus">+</span>
-                    <span class="minus" style="display: none;">-</span>
-                </button>
 
-                <button class="page-search__button page-search__button--apply mobile">
-                    <span>Apply</span>
-                </button>
-
-                <button class="page-search__button page-search__button--cancel mobile">
-                    <span>Cancel</span>
-                </button>
-                
-                <button class="page-search__button page-search__button--submit desktop" value=""></button>
+                <button class="page-search__button page-search__button--submit" value=""></button>
 
             </div>
 
@@ -60,44 +47,44 @@
                 <section class="page-search__section" title="Price">
                     <h4 class="mobile">Price</h4>
                     <div class="page-search__container page-search__container--range price-range-container">
-                        <input type="text" class="page-search__input page-search__input--numeric" name="price_range_min" placeholder="$300K">
+                        <input type="text" class="page-search__input page-search__input--numeric" name="price_range_min" placeholder="$ Min">
                         </input>
                         &mdash;&nbsp;
-                        <input type="text" class="page-search__input page-search__input--numeric" name="price_range_max" placeholder="$24M">
+                        <input type="text" class="page-search__input page-search__input--numeric" name="price_range_max" placeholder="$ Max">
                         </input>
                     </div>
                 </section>
 
                 <section class="page-search__section" title="Beds">
                     <h4 class="mobile">Beds</h4>
-                    <select class="page-search__dropdown page-search__dropdown--filter" name="beds">
-                        <option value="" selected>Beds</option>
-                        <option value="0">0</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
+                    <select class="page-search__dropdown page-search__dropdown--filter" name="beds" data-placeholder="Beds">
+                        <option></option>
+                        <option value="0+">0+</option>
+                        <option value="1+">1+</option>
+                        <option value="2+">2+</option>
+                        <option value="3+">3+</option>
+                        <option value="4+">4+</option>
                         <option value="5+">5+</option>
                     </select>
                 </section>
 
                 <section class="page-search__section" title="Baths">
                     <h4 class="mobile">Baths</h4>
-                    <select class="page-search__dropdown page-search__dropdown--filter" name="baths">
-                        <option value="" selected>Baths</option>
-                        <option value="0">0</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
+                    <select class="page-search__dropdown page-search__dropdown--filter" name="baths" data-placeholder="Baths">
+                        <option></option>
+                        <option value="0+">0+</option>
+                        <option value="1+">1+</option>
+                        <option value="2+">2+</option>
+                        <option value="3+">3+</option>
+                        <option value="4+">4+</option>
                         <option value="5+">5+</option>
                     </select>
                 </section>
 
                 <section class="page-search__section" title="Home Type">
                     <h4 class="mobile">Home Type</h4>
-                    <select class="page-search__dropdown page-search__dropdown--filter" name="home_type">
-                        <option value="" selected="selected">Home Type</option>
+                    <select class="page-search__dropdown page-search__dropdown--filter-wide" name="home_type" data-placeholder="Home Type">
+                        <option></option>
                         <option value="Single-Family">Single-Family</option>
                         <option value="Multi-Family">Multi-Family</option>
                         <option value="Apartment">Apartment</option>
@@ -129,61 +116,61 @@
                 </div>
                 
 
-                    <div class="col">
+                <div class="col">
 
-                        <section class="page-search__section" id="subtypes" title="Subtypes">
+                    <section class="page-search__section" id="subtypes" title="Subtypes">
 
-                            <h4 class="desktop">Filter By</h4>
-                            <h4 class="mobile">Subtype</h4>
+                        <h4 class="desktop">Filter By</h4>
+                        <h4 class="mobile">Subtype</h4>
 
-                            <ul>
-                                <li class="page-search__list-item">
-                                    <div class="page-search__fancy-checkbox">
-                                        <input type="checkbox" id="openHouses" name="open_houses"></input>
-                                        <label for="openHouses">Open Houses</label>
-                                    </div>
-                                </li>
+                        <ul>
+                            <li class="page-search__list-item">
+                                <div class="page-search__fancy-checkbox">
+                                    <input type="checkbox" id="openHouses" name="open_houses"></input>
+                                    <label for="openHouses">Open Houses</label>
+                                </div>
+                            </li>
 
-                                <li class="page-search__list-item">
-                                    <div class="page-search__fancy-checkbox">
-                                        <input type="checkbox" id="newListings" name="new_listings"></input>
-                                        <label for="newListings">New Listings</label>
-                                    </div>
-                                </li>
+                            <li class="page-search__list-item">
+                                <div class="page-search__fancy-checkbox">
+                                    <input type="checkbox" id="newListings" name="new_listings"></input>
+                                    <label for="newListings">New Listings</label>
+                                </div>
+                            </li>
 
-                                <li class="page-search__list-item">
-                                    <div class="page-search__fancy-checkbox">
-                                        <input type="checkbox" id="reducedPrice" name="reduced_price"></input>
-                                        <label for="reducedPrice">Reduced Price</label>
-                                    </div>
-                                </li>
+                            <li class="page-search__list-item">
+                                <div class="page-search__fancy-checkbox">
+                                    <input type="checkbox" id="reducedPrice" name="reduced_price"></input>
+                                    <label for="reducedPrice">Reduced Price</label>
+                                </div>
+                            </li>
 
-                                <li class="page-search__list-item">
-                                    <div class="page-search__fancy-checkbox">
-                                        <input type="checkbox" id="newDevelopments" name="new_developments"></input>
-                                         <label for="newDevelopments">New Developments</label>
-                                    </div>
-                                </li>
+                            <li class="page-search__list-item">
+                                <div class="page-search__fancy-checkbox">
+                                    <input type="checkbox" id="newDevelopments" name="new_developments"></input>
+                                     <label for="newDevelopments">New Developments</label>
+                                </div>
+                            </li>
 
-                                <li class="page-search__list-item">
-                                    <div class="page-search__fancy-checkbox">
-                                        <input type="checkbox" id="sold" name="sold"></input>
-                                        <label for="sold">Sold</label>
-                                    </div>
-                                </li>
+                            <li class="page-search__list-item">
+                                <div class="page-search__fancy-checkbox">
+                                    <input type="checkbox" id="sold" name="sold"></input>
+                                    <label for="sold">Sold</label>
+                                </div>
+                            </li>
 
-                                <li class="page-search__list-item">
-                                    <div class="page-search__fancy-checkbox">
-                                        <input type="checkbox" id="forclosures" name="forclosures"></input>
-                                        <label for="forclosures">Forclosures</label>
-                                    </div>
-                                </li>
+                            <li class="page-search__list-item">
+                                <div class="page-search__fancy-checkbox">
+                                    <input type="checkbox" id="forclosures" name="forclosures"></input>
+                                    <label for="forclosures">Forclosures</label>
+                                </div>
+                            </li>
 
-                            </ul>
+                        </ul>
 
-                        </section>
+                    </section>
 
-                    </div>
+                </div>
 
                 <div class="col">
                     
@@ -228,7 +215,7 @@
                         <h4>Days On Market</h4>
 
                         <select class="page-search__dropdown page-search__dropdown--filter-advanced" name="days_on_mkt">
-                            <option value="" selected="selected">Any</option>
+                            <option value="Any">Any</option>
                             <option value="1 day">1 day</option> 
                             <option value="7 days">7 days</option> 
                             <option value="14 days">14 days</option>
@@ -244,7 +231,6 @@
                     <section class="page-search__section page-search__section--tokenize" id="keywords" title="Keywords">
                         <h4>Keywords</h4>
                         <span class="helper">(comma separated)</span>
-
                         <input type="text" class="page-search__input page-search__input--tokenize" name="keywords"></input>
                     </section>
 
@@ -254,7 +240,6 @@
 
                     <section class="page-search__section" id="findByMLS" title="Find by MLS">
                         <h4>Find by MLS</h4>
-
                         <input type="text" class="page-search__input page-search__input--text" name="mls_id"></input>
                     </section>
 

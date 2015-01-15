@@ -22,13 +22,9 @@
             </div>
         </a>
 
-        <a href="javascript:;" class="adSlot">
-            <img src="images/listings/reNews__listings__2.jpg" />
-        </a>
-
-        <a href="javascript:;" class="adSlot">
-            <img src="images/listings/reNews__listings__3.jpg" />
-        </a>
+        
+        <?php include 'ads/real-estate-news.php'; ?>
+        
 
         <a href="javascript:;" class="adSlot">
             <div class="category-tag__container">
@@ -42,7 +38,7 @@
                 <div class="detailsArrow"></div>
 
                 <div class="detailsOverlay">
-                    <h1>14 Chestnut Street Boston, MA <span class="priceSpan">$190,000</span></h1>
+                    <h1><span class="col">14 Chestnut Street Boston, MA</span> <span class="priceSpan">$190,000</span></h1>
 
                     <p>One of Beacon Hill's most desirable tree-lined streets, this exquisite Triplex has 5,000+ sqf ft. of furnished living space. 4+ Beds/3.5 Baths</p>
                 </div>
@@ -80,7 +76,7 @@
                 <div class="detailsArrow"></div>
 
                 <div class="detailsOverlay">
-                    <h1>14 Chestnut Street Boston, MA <span class="priceSpan">$190,000</span></h1>
+                    <h1><span class="col">14 Chestnut Street Boston, MA</span> <span class="priceSpan">$190,000</span></h1>
 
                     <p>One of Beacon Hill's most desirable tree-lined streets, this exquisite Triplex has 5,000+ sqf ft. of furnished living space. 4+ Beds/3.5 Baths</p>
                 </div>

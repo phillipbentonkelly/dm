@@ -10,8 +10,8 @@ $module-name: 'masthead';
 
 .#{$module-name} {
 	width: 100%;
-	height: $page-masthead;
-	margin-top: 41.5px;
+	/*height: $page-masthead;
+	margin-top: 41.5px;*/
 }
 
 // ------------------------------------------------------------
@@ -19,6 +19,7 @@ $module-name: 'masthead';
 // ------------------------------------------------------------
 @include media-query(desktop) {
 	.#{$module-name} {
+		height: $page-masthead;
 		margin-top: 0px;
 	}
 }
@@ -28,6 +29,7 @@ $module-name: 'masthead';
 // ------------------------------------------------------------
 @include media-query(tablet) {
 	.#{$module-name} {
+		height: $page-masthead;
 		margin-top: 0px;
 	}
 }

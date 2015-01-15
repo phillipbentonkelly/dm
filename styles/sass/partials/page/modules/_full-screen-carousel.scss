@@ -64,6 +64,7 @@ $module-name: 'full-screen-carousel';
 	#carousel-wrap .slide .detailsArrow{
 		width: 0;
 		height: 0;
+		display: none;
 		border-style: solid;
 		border-width: 0 25px 20px 25px;
 		border-color: rgba(0, 0, 0, 0.5) transparent;
