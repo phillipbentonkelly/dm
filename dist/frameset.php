@@ -204,7 +204,7 @@
 				<?php include 'page-content/modules/property-search-result.php'; ?>
 
 				<!-- Related Articles -->
-				<?php include 'page-content/modules/related-articles.php'; ?>
+				<?php include 'page-content/modules/related-articles--mobile.php'; ?>
 			<?php } ?>
 			
         </div>
