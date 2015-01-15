@@ -29,16 +29,19 @@ dm.select2 = {};
 
 		this.inputs = {
 			$main: $('.page-search__dropdown--main'),
-			$filters: $('.page-search__dropdown--filter, .page-search__dropdown--filter-advanced'),
+			$allFilters: $('.page-search__dropdown--filter, .page-search__dropdown--filter-wide, .page-search__dropdown--filter-advanced'),
+			$filters1: $('.page-search__dropdown--filter'),
+			$filters2: $('.page-search__dropdown--filter-wide, .page-search__dropdown--filter-advanced'),
 			$filterRange: $('.page-search__dropdown--filter-range'), 
 			$tokenize: $('.page-search__input--tokenize')
 		};
 
 		this.btns = {
+			$lvl1t: $('.page-nav__search-responsive-icon > a'),
 			$lvl2t: $('.page-search__button--level-two-toggle'),
 			$lvl3t: $('.page-search__button--level-three-toggle'),
 			$close: $('.page-search__button--close'),
-			$svSearch: $('.page-search__button--save-search'), 
+			$save: $('.page-search__button--save'), 
 			$search: $('.page-search__buttons--submit')
 		};
 
@@ -47,17 +50,19 @@ dm.select2 = {};
 
 	dm.searchPanel.prototype = {
 
-		self: this,
-
 		allOpen: false,
 
+		saved: false,
+
 		init: function(){
+
+			if(this.device === 'mobile') this.lvls.$one.hide();
+				
 			this.lvls.$two.hide();
 			this.lvls.$three.hide();
 
 			var mainInputParams = {
-				placeholder: "Search for real estate listings or articles. ex: 3 bedroom for sale in Brookline under 1,000,000",
-				persist: false
+				placeholder: "Search for real estate listings or articles. ex: 3 bedroom for sale in Brookline under 1,000,000"
 			};
 
 			var tokenizeParams = {
@@ -73,7 +78,9 @@ dm.select2 = {};
 
             this.inputs.$main.selectize(mainInputParams);
             this.inputs.$tokenize.selectize(tokenizeParams);
-            this.inputs.$filters.select2();
+
+
+			this.inputs.$allFilters.select2();
 
             this.eventHandlers();
 
@@ -83,7 +90,8 @@ dm.select2 = {};
 
 			var self = this;
 
-			switch( self.device ){
+
+			switch(self.device){
 
 				case 'desktop':
 
@@ -119,6 +127,15 @@ dm.select2 = {};
 						self.allOpen = false;
 					});
 
+					self.btns.$save.on('click', function(e){
+						e.preventDefault();
+						var status = $(this).children('span');
+						if(!self.saved){
+							status.toggle();
+							self.saved = false;
+						}
+					});
+
 				break;
 
 
@@ -127,11 +144,31 @@ dm.select2 = {};
 					// for mobile, merge levels 2 and 3
 					var lvl2 = $.merge(self.lvls.$two, self.lvls.$three);
 
+					var lvl2state = self.btns.$lvl2t.children('span');
+					//var all = $.merge(self.lvls.$one, lvl2);
+
+					self.btns.$lvl1t.on('click', function(e){
+						e.preventDefault();
+						var span = $(this).children('span');
+						$(this).toggleClass('close-search');
+
+						if(self.allOpen){
+							self.lvls.$one.hide();
+							lvl2.hide();
+							lvl2state.toggle();
+							self.allOpen = false;
+						}else{
+							self.lvls.$one.toggle();
+							self.allOpen = false;
+						}
+					});
+
 					self.btns.$lvl2t.on('click', function(e){
 						e.preventDefault();
 						var sign = $(this).children('span');
 						sign.toggle();
 						lvl2.toggle();
+						self.allOpen = true;
 					});
 
 				break;
@@ -139,7 +176,6 @@ dm.select2 = {};
 			}
 
 		},
-
 
 	};	
 
