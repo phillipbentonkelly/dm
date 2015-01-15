@@ -1,7 +1,11 @@
 $module-name: 'search-results';
 
 // display via popup on mobile
-.related-articles-modal {
+.related-articles {
+    display: none;
+}
+
+.related-articles-popup {
     display: none;
     background: white;
 

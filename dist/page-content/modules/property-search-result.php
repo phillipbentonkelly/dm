@@ -164,7 +164,7 @@
     </div>
 
 
-<!-- SEARCH RESULT ITEM -->
+    <!-- SEARCH RESULT ITEM -->
     <div class='search-results__item'>
 
         <div class='header'>
@@ -327,7 +327,7 @@
     </div>
 
 
-<!-- SEARCH RESULT ITEM -->
+    <!-- SEARCH RESULT ITEM -->
     <div class='search-results__item'>
 
         <div class='header'>
@@ -403,7 +403,7 @@
     </div>
 
 
-<!-- SEARCH RESULT ITEM -->
+    <!-- SEARCH RESULT ITEM -->
     <div class='search-results__item'>
 
         <div class='header'>
@@ -491,7 +491,7 @@
     <!-- /AD SLOT -->
 
 
-<!-- SEARCH RESULT ITEM -->
+    <!-- SEARCH RESULT ITEM -->
     <div class='search-results__item'>
 
         <div class='header'>
@@ -567,7 +567,7 @@
     </div>
 
 
-<!-- SEARCH RESULT ITEM -->
+    <!-- SEARCH RESULT ITEM -->
     <div class='search-results__item'>
 
         <div class='header'>
@@ -643,7 +643,7 @@
     </div>
 
 
-<!-- SEARCH RESULT ITEM -->
+    <!-- SEARCH RESULT ITEM -->
     <div class='search-results__item'>
 
         <div class='header'>
@@ -731,7 +731,7 @@
     <!-- /AD SLOT -->
 
 
-<!-- SEARCH RESULT ITEM -->
+    <!-- SEARCH RESULT ITEM -->
     <div class='search-results__item'>
 
         <div class='header'>
