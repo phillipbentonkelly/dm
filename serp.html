@@ -586,40 +586,10 @@
 		margin-left: 3%; 
 	}
 
-	.search-result__summary {
-    	margin: 25px 0;
-    }
-
-    .search-summary-count {
-      font-family: 'OpenSans';
-      font-size: 26px;
-      font-weight: 600;
-
-      clear: both;
-      margin: 0 auto;
-      max-width: 960px;
-      padding: 25px 0 10px 0;
-    }
-
-    .search-summary-count > .total-results {
-      margin-left: 10px;
-
-      font-family: 'OpenSans';
-      font-size: 16px;
-      font-weight: 400;
-    }
-
     @media (max-width: 768px) {
     	.tmp-serp-ad-wrap {
 			display: none;
     	}
-
-    	.search-summary-count {
-	      font-family: 'OpenSans';
-	      font-size: 18px;
-	      font-weight: 600;
-	      padding: 0;
-	  	}
     }
 
 </style>
@@ -630,9 +600,6 @@
 	<div id='tmp-serp-ad-right' class='tmp-serp-ad'></div>
 </div>
 
-<div class='search-results__summary'>
-    <p class='search-summary-count'><span class='search-neighborhood'>Brookline</span> Real Estate<span class='total-results'>147 results.</span></p>
-</div>
 	
 	<!-- Page Layout -->
     <div class="page-layout">
@@ -659,10 +626,16 @@
 							<!-- Search Result -->
 				<!-- SERP SEARCH RESULTS -->
 <div class='search-results'>
+
+    <div class='search-results__summary'>
+        <p class='search-summary-count'><span class='search-neighborhood'>Brookline</span> Real Estate<span class='total-results'>147 results.</span></p>
+    </div>
+
     <div class='search-results__filter-bar'>
         <p>Showing <span class='low-end'>1</span> to <span class='high-end'>10</span> of <span class='total-results'>147</span></p>
 
         <select class="filter-drop">
+            <option value="default">Sort by Default</option>
             <option value="best-match">Best Match</option>
             <option value="newest">Newest</option>
             <option value="price-high-low">Price (High-Low)</option>
@@ -847,7 +820,7 @@
 
         <div class='left-col'>
             <div class='property-images'>
-                <img src='images/neighborhoods/top-neighborhoods__entry__2.jpg'/>
+                <img src='images/listings/reNews__listings__6.jpg'/>
                 <div class='photo-count'>18 Photos</div>
                 <div class='photo-arrows'>
                     <a href='javascript:;'><img class='photo-arrow-left' src='images/listings/arrow-icon-trans-black.png'/></a>
@@ -901,11 +874,11 @@
     <!-- AD SLOT -->
         <div class="adSlots">
             <a href="javascript:;" class="adSlot adSlot-left">
-                <img src="images/listings/reNews__listings__6.jpg">
+                <img src="images/neighborhoods/top-neighborhoods__entry__2.jpg">
             </a>
 
             <a href="javascript:;" class="adSlot adSlot-right">
-                <img src="images/listings/reNews__listings__6.jpg">
+                <img src="images/neighborhoods/top-neighborhoods__entry__2.jpg">
             </a>
         </div>
     <!-- /AD SLOT -->
@@ -1512,131 +1485,7 @@
 
 </div>
 <!-- /SERP SEARCH RESULTS -->
-
-				<!-- Related Articles -->
-				<!-- Related Articles -->
-<div class="related-articles related-articles-modal">
-    <h1 class="related-articles__section-header">Related Articles</h1>
-
-    <div class="related-articles__item">
-        <img class="thumb" src="images/related-articles/related-articles__thumbs__1.jpg" />
-        
-        <a href="#">
-            <h2 class="title">Tom and Gisele's Brookline Pad Looks Almost Ready</h2>
-        </a>
-
-        <p class="description">The ream home of the most famouse couple in Massachusetts looks like it's close to completion.</p>
-        
-        <div class="additional-info">
-            <div class="date">September 9, 2014</div>
-
-            <div class="tags">
-                <a href="javascript:;" class="category-tag maroon">Luxury</a>
-                <a href="javascript:;" class="category-tag orange">Brookline</a>
-            </div>
-        </div>
-    </div>
-
-    <div class="related-articles__item">
-        <img class="thumb" src="images/related-articles/related-articles__thumbs__2.jpg" />
-        
-        <a href="#">
-            <h2 class="title">For Sale: $2.85M Italianate Mansion in JP</h2>
-        </a>
-        
-        <p class="description">This updated Italianate mansion, once known as The Gilbert House, was originally built in 1854 and has undergone extensive renovations while remaining loyal to the home's orignal design.</p>
-        
-        <div class="additional-info">
-            <div class="date">July 30, 2014</div>
-
-            <div class="tags">
-                <a href="javascript:;" class="category-tag light-blue">Open House</a>
-                <a href="javascript:;" class="category-tag maroon">Luxury</a>
-                <a href="javascript:;" class="category-tag orange">Jaimaca Plain</a>
-            </div>
-        </div>
-    </div>
-
-    <div class="related-articles__item">
-        <img class="thumb" src="images/related-articles/related-articles__thumbs__3.jpg" />
-
-        <a href='#'>
-            <h2 class="title">For Sale: Historic Weston mansion</h2>
-        </a>
-        
-        <p class="description">The Henderson House in Weston, an English-Tudor style mansion with nearly 17,000 square feet of living space, is being sold for $7,795,000.</p>
-        
-        <div class="additional-info">
-            <div class="date">July 13, 2014</div>
-        </div>
-    </div>
-
-    <div class="related-articles__item">
-        <img class="thumb" src="images/related-articles/related-articles__thumbs__4.jpg" />
-        
-        <a href="#">
-            <h2 class="title">New Construction, Chestnut Hill Colonial - $2,400,000</h2>
-        </a>
-
-        <p class="description">Walk to Heath School and Train. Gorgeous Tree-lined street, Established Neighborhood. Open Plan main level with Back-lit Coffered Ceillings, Fireplaced Family Room and nicely appointed Cooks Kitchen with Island.</p>
-        
-        <div class="additional-info">
-            <div class="date">July 3, 2014</div>
-
-            <div class="tags">
-                <a href="javascript:;" class="category-tag light-blue">Open House</a>
-                <a href="javascript:;" class="category-tag maroon">Luxury</a>
-            </div>
-        </div>
-    </div>
-
-    <div class="dfp-ad__row">
-        <a class="dfp-ad__row__main-link" href="javascript:;"><img src="images/ads/dfp/dfpAds__300by250__marriott.jpg" /></a>
-        <a class="dfp-ad__row__main-link" href="javascript:;"><img src="images/ads/dfp/dfpAds__300by250__verizon.jpg" /></a>
-    </div>
-
-    <div class="related-articles__item">
-        <img class="thumb" src="images/related-articles/related-articles__thumbs__1.jpg" />
-        
-        <a href="#">
-            <h2 class="title">Tom and Gisele's Brookline Pad Looks Almost Ready</h2>
-        </a>
-
-        <p class="description">The ream home of the most famouse couple in Massachusetts looks like it's close to completion.</p>
-        
-        <div class="additional-info">
-            <div class="date">September 9, 2014</div>
-
-            <div class="tags">
-                <a href="javascript:;" class="category-tag maroon">Luxury</a>
-                <a href="javascript:;" class="category-tag orange">Brookline</a>
-            </div>
-        </div>
-    </div>
-
-    <div class="related-articles__item">
-        <img class="thumb" src="images/related-articles/related-articles__thumbs__2.jpg" />
-        
-        <a href="#">
-            <h2 class="title">For Sale: $2.85M Italianate Mansion in JP</h2>
-        </a>
-
-        <p class="description">This updated Italianate mansion, once known as The Gilbert House, was originally built in 1854 and has undergone extensive renovations while remaining loyal to the home's orignal design.</p>
-        
-        <div class="additional-info">
-            <div class="date">July 30, 2014</div>
-
-            <div class="tags">
-                <a href="javascript:;" class="category-tag light-house">Open House</a>
-                <a href="javascript:;" class="category-tag maroon">Luxury</a>
-                <a href="javascript:;" class="category-tag orange">Jaimaca Plain</a>
-            </div>
-        </div>
-    </div>
-
-    <a href="javascript:;" class="viewMore">View More <img src="images/view-more__arrow-down.gif" /></a>
-</div>
-<!-- Related Articles -->						
+						
         </div>
 		<div class="page-layout__right-col">
 			
@@ -1661,12 +1510,107 @@
 			
 			<!-- SEARCH PAGE -->
 							<!-- Contact The Agent Widget -->
-				<div class='map-header' style='text-align:right;margin:20px 0 5px 0;padding:15px;background:lightgrey;'>
+				<div class='map-header' style='text-align:right;margin:95px 0 5px 0;padding:15px;background:lightgrey;'>
 	<p><span><input type='checkbox'/></span>Redo search on move</p>
 </div>
 
 <div class='map-placeholder' style='height:300px;width:100%;border: 1px solid black;box-sizing:border-box;'></div>
+				<!-- Related Articles (right rail) Widget -->
+				<!-- Related Articles -->
+<div class="related-articles-mobile">
+    <h1 class="related-articles__section-header">Related Articles</h1>
+    <div class='related-articles-nav'>
+        <div class='re-widget-left'></div>
+        <div class='re-widget-right'></div>
+    </div>
+
+    <div class="related-articles-mobile__item">
+
+        <div class="additional-info">
+            <img class="thumb" src="images/related-articles/related-articles__thumbs__1.jpg" />
+            
+            <div class="tags">
+                <a href="javascript:;" class="category-tag maroon">Luxury</a>
+                <a href="javascript:;" class="category-tag orange">Brookline</a>
+            </div>
+        </div>
+        
+        <div class='main-info'>
+            <a href="#">
+                <h2 class="title">Tom and Gisele's Brookline Pad Looks Almost Ready</h2>
+            </a>
+
+            <p class="description">The ream home of the most famouse couple in Massachusetts looks like it's close to completion.</p>
+            <div class="date">September 9, 2014</div>
+        </div>
+
+    </div>
+
+    <div class="related-articles-mobile__item">
+        <div class="additional-info">
+            <img class="thumb" src="images/related-articles/related-articles__thumbs__2.jpg" />
+
+            <div class="tags">
+                <a href="javascript:;" class="category-tag light-blue">Open House</a>
+                <a href="javascript:;" class="category-tag maroon">Luxury</a>
+                <a href="javascript:;" class="category-tag orange">Jaimaca Plain</a>
+            </div>
+        </div>
+
+        <div class='main-info'>
+            <a href="#">
+                <h2 class="title">For Sale: $2.85M Italianate Mansion in JP</h2>
+            </a>
+            
+            <p class="description">This updated Italianate mansion, once known as The Gilbert House, was originally built in 1854 and has undergone extensive renovations while remaining loyal to the home's orignal design.</p>
+            <div class="date">July 30, 2014</div>
+        </div>
+    </div>
+
+</div>
+<!-- Related Articles -->
 					</div>
+
+					<!-- Module Content -->
+			<style type="text/css">
+	.tmp-serp-ad-wrap {
+		max-width: 960px;
+		height: 150px;
+		margin: 0 auto;
+		margin-top: 20px;
+	}
+
+	.tmp-serp-ad {
+		width: 46%;
+		float: left;
+		height: 100%;
+		border: 1px solid black;
+		margin-top: 20px;
+	}
+
+	#tmp-serp-ad-left {
+		margin-right: 3%; 
+	}
+
+	#tmp-serp-ad-right {
+		margin-left: 3%; 
+	}
+
+    @media (max-width: 768px) {
+    	.tmp-serp-ad-wrap {
+			display: none;
+    	}
+    }
+
+</style>
+
+<div class='tmp-serp-ad-wrap'>
+	<div id='tmp-serp-ad-left' class='tmp-serp-ad'></div>
+
+	<div id='tmp-serp-ad-right' class='tmp-serp-ad'></div>
+</div>
+
+			
 	</div>
 	
 	
