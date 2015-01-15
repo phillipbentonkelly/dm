@@ -46,8 +46,31 @@ $module-name: 'search-results';
   &__filter-bar, &__filter-bar-bottom {
     display: none;
   }
+
+    &__summary {
+        margin: 25px 0;
+    }
+
+    .search-summary-count {
+      font-family: 'OpenSans Regular';
+      font-size: 26px;
+      font-weight: 600;
+
+      clear: both;
+      margin: 0 auto;
+      max-width: 960px;
+      padding: 25px 0 10px 0;
+    }
+
+    .search-summary-count > .total-results {
+      margin-left: 10px;
+
+      font-family: 'OpenSans Regular';
+      font-size: 16px;
+      font-weight: 400;
+    }
   
-  .header {
+  .header { 
     width: 100%;
     color: black;
     padding: 10px;
@@ -373,6 +396,13 @@ $module-name: 'search-results';
 
     .adSlot-right {
         display: block;
+    }
+
+    .search-summary-count {
+        font-family: 'OpenSans Regular';
+        font-size: 18px;
+        font-weight: 600;
+        padding: 0;
     }
 
     &__filter-bar, &__filter-bar-bottom {
