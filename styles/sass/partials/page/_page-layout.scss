@@ -5,7 +5,7 @@ $padding-top: 20px;
 	overflow: hidden;
 	clear: both;
 	
-	margin: 0 auto;
+	margin: 80px auto 0 auto !important;
 	max-width: $desktop-breakpoint;
 	min-width: 0;
 
@@ -67,6 +67,18 @@ $padding-top: 20px;
 		margin: 0 auto;
 	}
 
+	body.home {
+		.page-layout {
+			margin-top: 0;
+		}		
+	}
+
+	body.serp {
+		.page-layout {
+			margin-top: 10px;
+		}		
+	}	
+
 	body.neighborhood, body.category-details {
 		background-image: url(#{$img-path}neighborhoods/19040004_source.jpg);
 		background-position: center 162px;
@@ -84,4 +96,10 @@ $padding-top: 20px;
 		padding-top: 0px;
 	}
 }
+
+body.serp {
+	.page-layout {
+		margin-top: 10px !important;
+	}		
+}	
 

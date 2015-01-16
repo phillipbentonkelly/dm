@@ -65,6 +65,21 @@
 	        <script src="js/assets/listings.data.js"></script>
 		<?php } ?>
 
+		<script type="text/javascript">
+		    var googletag = googletag || {};
+		    googletag.cmd = googletag.cmd || [];
+		    
+		    (function() {
+		        var gads = document.createElement("script");
+		        gads.async = true;
+		        gads.type = "text/javascript";
+		        var useSSL = "https:" == document.location.protocol;
+		        gads.src = (useSSL ? "https:" : "http:") + "//www.googletagservices.com/tag/js/gpt.js";
+		        var node =document.getElementsByTagName("script")[0];
+		        node.parentNode.insertBefore(gads, node);
+		    })();
+		</script>
+
 		<script src="js/resources/plugins/selectize/selectize.js"></script>
         <script src="js/resources/plugins/select2/select2.js"></script>
         <script src="js/assets/searchPanel.js"></script>
@@ -174,6 +189,12 @@
 
 				<!-- Related Articles -->
 				<?php include 'page-content/modules/related-articles.php'; ?>
+
+				<!-- Ad Slots 2 and 3 -->
+				<?php include 'ads/gallery-ads-2-and-3.php'; ?>
+
+				<!-- Discus -->
+				<?php include 'page-content/modules/comments.php'; ?>
 			<?php } ?>
 			
 
@@ -181,6 +202,9 @@
 			<?php if ($pageType == 'serp') { ?>
 				<!-- Search Result -->
 				<?php include 'page-content/modules/property-search-result.php'; ?>
+
+				<!-- Related Articles -->
+				<?php include 'page-content/modules/related-articles--mobile.php'; ?>
 			<?php } ?>
 			
         </div>
@@ -287,6 +311,9 @@
 
 				<!-- Property Listings Widget -->
 				<?php include 'page/modules/property-listings.php'; ?>
+
+				<!-- Long DFP Ad -->
+				<?php include 'ads/ad_bigbox1.php'; ?>
 			<?php } ?>
 			
 			
@@ -301,11 +328,6 @@
 			<?php } ?>
 		</div>
 
-		<?php if ($pageType == 'serp') { ?>
-			<!-- Module Content -->
-			<?php include 'page/modules/serp-ad-placeholder.php'; ?>
-		<?php } ?>
-	
 	</div>
 	
 	<?php if ($pageType == 'home') { ?>
@@ -320,5 +342,21 @@
 
 	<!-- Page Footer -->
     <?php include 'page/page-footer.php'; ?>
+
+    <!-- ARTICLES: Discus -->
+	<?php if ($pageType == 'articles') { ?>
+		<script type="text/javascript"> 
+			/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */ 
+			var disqus_shortname = 'bcomrealestate'; // required: replace example with your forum shortname 
+
+			/* * * DON'T EDIT BELOW THIS LINE * * */ 
+			(function () { 
+				var s = document.createElement('script'); s.async = true; 
+				s.type = 'text/javascript'; 
+				s.src = '//' + disqus_shortname + '.disqus.com/count.js'; 
+				(document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s); 
+			}()); 
+		</script> 
+	<?php } ?>
 </body>
 </html>

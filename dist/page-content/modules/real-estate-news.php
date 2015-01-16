@@ -22,13 +22,9 @@
             </div>
         </a>
 
-        <a href="javascript:;" class="adSlot">
-            <img src="images/listings/reNews__listings__2.jpg" />
-        </a>
-
-        <a href="javascript:;" class="adSlot">
-            <img src="images/listings/reNews__listings__3.jpg" />
-        </a>
+        
+        <?php include 'ads/real-estate-news.php'; ?>
+        
 
         <a href="javascript:;" class="adSlot">
             <div class="category-tag__container">

@@ -63,6 +63,18 @@
     </div>
     <!-- /MODAL: SAVE SEARCH -->
 
+    <!-- MODAL: SHARE PROPERTY -->
+    <div class="share-modal">
+        <div class="header">
+            <a class="close-modal-btn" href="javascript:;"><img class="close-modal" src="images/listings/x-icon.jpg"></a>
+            <p>Share</p>
+        </div>
+        <div class="content">
+            <p class="info">SHARE COMING SOON</p>
+        </div>
+    </div>
+    <!-- /MODAL: SAVE SEARCH -->
+
     <!-- CAROUSEL IMAGE -->
     <div class="image-carousel-wrapper">
         <img src="images/listings/Property_Detail_slider.jpg">
@@ -165,25 +177,6 @@
         </div>
     </div>
 
-
-    <!-- SERP MOBILE BUTTON DOCK -->
-    <!-- <div class='serp__mobile-button-dock'>
-    
-        <a href='javascript:;'><div id='mobile-save-btn' class='button left-button'>
-            <img src='images/listings/heart-icon-white.png'>
-            <p>Save</p>
-        </div></a>
-
-        <a href='javascript:;'><div id='mobile-articles-btn' class='button right-button'>
-            <img class='articles-icon' src='images/listings/articles-icon.png'>
-            <div class='title-block'>
-                <p>Related</p>
-                <p>Articles</p>
-            </div>
-        </div></a>
-
-    </div> -->
-    <!-- /SERP MOBILE BUTTON DOCK -->
 
 
     <div class="listing__mobile-button-dock">

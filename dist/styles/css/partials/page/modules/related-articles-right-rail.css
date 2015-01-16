@@ -30,7 +30,7 @@
   background-size: 20px 24px;
   height: 24px;
   width: 20px;
-  margin-left: 3px;
+  margin-left: 2px;
 }
 /* line 35, ../../../../sass/partials/page/modules/related-articles-right-rail.scss */
 .related-articles-mobile .related-articles-nav .re-widget-left:active {
@@ -46,27 +46,29 @@
 }
 /* line 48, ../../../../sass/partials/page/modules/related-articles-right-rail.scss */
 .related-articles-mobile__item {
+  position: relative;
   display: inline-block;
   padding: 5px 0;
   width: 100%;
   text-align: left;
   clear: both;
   min-height: 150px;
+  max-height: 250px;
   border-bottom: 1px solid #bebebe;
 }
-/* line 57, ../../../../sass/partials/page/modules/related-articles-right-rail.scss */
+/* line 59, ../../../../sass/partials/page/modules/related-articles-right-rail.scss */
 .related-articles-mobile__item .thumb {
   float: left;
   margin-bottom: 5px;
 }
-/* line 62, ../../../../sass/partials/page/modules/related-articles-right-rail.scss */
+/* line 64, ../../../../sass/partials/page/modules/related-articles-right-rail.scss */
 .related-articles-mobile__item h2.title {
   font-family: 'OpenSans Semibold';
   font-size: 13px !important;
   text-align: left;
   color: black;
 }
-/* line 69, ../../../../sass/partials/page/modules/related-articles-right-rail.scss */
+/* line 71, ../../../../sass/partials/page/modules/related-articles-right-rail.scss */
 .related-articles-mobile__item .description {
   font-family: 'OpenSans Regular';
   font-size: 11px !important;
@@ -74,17 +76,21 @@
   color: black;
   margin-bottom: 10px;
 }
-/* line 77, ../../../../sass/partials/page/modules/related-articles-right-rail.scss */
+/* line 79, ../../../../sass/partials/page/modules/related-articles-right-rail.scss */
 .related-articles-mobile__item .date {
   font-size: 11px;
   font-style: italic;
+  position: absolute;
+  bottom: 5px;
+  left: 135px;
 }
-/* line 82, ../../../../sass/partials/page/modules/related-articles-right-rail.scss */
+/* line 87, ../../../../sass/partials/page/modules/related-articles-right-rail.scss */
 .related-articles-mobile__item .main-info {
   float: left;
   width: 55%;
+  height: 100%;
 }
-/* line 87, ../../../../sass/partials/page/modules/related-articles-right-rail.scss */
+/* line 93, ../../../../sass/partials/page/modules/related-articles-right-rail.scss */
 .related-articles-mobile__item .additional-info {
   float: left;
   width: 45%;

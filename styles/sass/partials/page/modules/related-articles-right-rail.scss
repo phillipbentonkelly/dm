@@ -29,7 +29,7 @@ $module-name: 'related-articles-mobile';
 	    	background-size: 20px 24px;
 	    	height: 24px;
 	      	width: 20px;
-	      	margin-left: 3px;
+	      	margin-left: 2px;
 	    }
 
 	    .re-widget-left:active {
@@ -46,12 +46,14 @@ $module-name: 'related-articles-mobile';
 	}
 	
 	&__item {
+		position: relative;
 		display: inline-block;
 		padding: 5px 0;
 		width: 100%;
 		text-align: left;
 		clear: both;
 		min-height: 150px;
+		max-height: 250px;
 		border-bottom: 1px solid rgb(190, 190, 190);
 
 		.thumb {
@@ -77,11 +79,15 @@ $module-name: 'related-articles-mobile';
 		.date {
 			font-size: 11px;
 			font-style: italic;
+			position: absolute;
+			bottom: 5px;
+			left: 135px;
 		}
 
 		.main-info {
 			float: left;
 			width: 55%;
+			height: 100%;
 		}
 
 		.additional-info {
