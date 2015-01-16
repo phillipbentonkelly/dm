@@ -100,7 +100,8 @@
         });
 
         $(window).resize(function() {
-            if ($(window).width() > 752) { 
+            if ($(window).width() > 752) {
+            	$('.page-layout__right-col').find('.close-modal-wrap').remove();
                 $('.page-layout__left-col').width($(window).width() - 320);
             } else {
                 $('.page-layout__left-col').css('width', '100%');

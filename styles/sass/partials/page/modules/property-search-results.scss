@@ -15,20 +15,52 @@ $module-name: 'search-results';
     background: white;
 
     .related-articles__item--mobile {
-        height: 255px;
+        border-top: 0;
+        border-bottom: 1px solid grey;
+        height: 240px;
         overflow: hidden;
-        padding-bottom: 10px;
-        width: 50%;
-        float: left;
+        margin-bottom: 5px;
     }
 
     .description--mobile {
         display: block !important;
         text-align: left;
+        font-family: OpenSans Regular;
+        font-size: 13px;
+        margin-bottom: 6px;
     }
 
-    .additional-info {
+    h2.title--mobile {
+      font-family: OpenSans Bold;
+      color:  #000000;
+      font-size: 100%; /* Approximation due to font substitution */
+      font-weight: 900;
+      text-align: left;
+      margin: 0 0 4px 0;
+    }
+
+    .additional-info--mobile {
       display: none;
+    }
+
+    .view-more-articles-mobile {
+      clear: both;
+      display: block;
+      text-align: center;
+      text-transform: capitalize;
+      font-family: OpenSans Regular;
+      font-weight: 400;
+      font-size: 18px;
+      color: #000;
+      line-height: 1em;
+      padding: 0.5em 0 0.5em 0;
+      text-decoration: none;
+      background: #e5e5e5;
+      margin: 20px 0 15px 0;
+
+      img {
+        margin-left: 4px;
+      }
     }
 }
 

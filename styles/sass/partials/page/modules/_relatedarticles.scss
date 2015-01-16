@@ -28,11 +28,13 @@ $module-name: 'related-articles';
 		border-top: 1px solid #e5e5e5;
 		position: relative;
 		height: 200px;
+	}
 		
+	&__item {
 		a {
 			color: #000;
 		}
-		
+
 		h2.title {
 			font-family: OpenSans Bold;
 			color:  #000000;
@@ -101,7 +103,7 @@ $module-name: 'related-articles';
 		border: none;
 	}
 
-	a.viewMore{
+	a.viewMore {
 		clear: both;
 		display: block;
 		text-align: center;
