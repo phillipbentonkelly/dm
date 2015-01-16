@@ -20,6 +20,10 @@ $(document).ready(function() {
 	$('#mobile-share-btn').click(function() {
 		$('.share-modal').modal();
 	});
+	
+	$('body').click('.filter-drop', function() {
+		$('.search-filters-modal').modal();
+	});
 
 	$(document).on('click', '.close-modal', function() {
         $.modal.close();
