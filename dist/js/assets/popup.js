@@ -21,7 +21,7 @@ $(document).ready(function() {
 		$('.share-modal').modal();
 	});
 
-	$('.filter-drop').click(function() {
+	$('body').click('.filter-drop', function() {
 		$('.search-filters-modal').modal();
 	});
 
