@@ -30,80 +30,85 @@
 
 	<!-- SCRIPTS -->
     <script src="js/resources/jquery.min.js"></script>
-    	<script src="js/assets/mega-menu.js"></script>
-    	<script src="js/assets/responsive-gallery.js"></script>
+	<script src="js/assets/mega-menu.js"></script>
+	<script src="js/assets/responsive-gallery.js"></script>
 
-		<?php if ($pageType == 'home' || $pageType == 'category') { ?>
-		    <!-- Carousel Scripts -->
-			<script src="js/assets/basicMobileDetection.js"></script>
-			<script src="http://wurfl.io/wurfl.js"></script>
-			<script src="js/resources/img.srcset.polyfill.js"></script>
-			<script src="js/assets/bdc.carouselFullWidthSlider.js"></script>
-			<!-- Carousel Scripts -->
+	<?php if ($pageType == 'home' || $pageType == 'category') { ?>
+	    <!-- Carousel Scripts -->
+		<script src="js/assets/basicMobileDetection.js"></script>
+		<script src="http://wurfl.io/wurfl.js"></script>
+		<script src="js/resources/img.srcset.polyfill.js"></script>
+		<script src="js/assets/bdc.carouselFullWidthSlider.js"></script>
+		<!-- Carousel Scripts -->
 
-			<!-- Real Estate Listings -->
-	        <script src="js/assets/mpListings.js"></script>
-	        <script src="js/assets/listings.data.js"></script>
-		<?php } ?>
+		<!-- Real Estate Listings -->
+        <script src="js/assets/mpListings.js"></script>
+        <script src="js/assets/listings.data.js"></script>
+	<?php } ?>
 
-		<?php if ($pageType == 'serp') { ?>
-			<script src="js/resources/basic/js/jquery.simplemodal.js"></script>
-	        <script src="js/assets/popup.js"></script>
-		<?php } ?>
+	<?php if ($pageType == 'serp') { ?>
+		<script src="js/resources/basic/js/jquery.simplemodal.js"></script>
+        <script src="js/assets/popup.js"></script>
+	<?php } ?>
 
-		<?php if ($pageType == 'property-listings' || $pageType == 'property-listings-premium') { ?>
-		    <!-- Real Estate Listings -->
-	        <script src="js/assets/mpListings.js"></script>
-	        <script src="js/assets/listings.data.js"></script>
-	        <script src="js/resources/basic/js/jquery.simplemodal.js"></script>
-	        <script src="js/assets/popup.js"></script>
-		<?php } ?>
-		
-		<?php if ($pageType == 'articles') { ?>
-		    <!-- Real Estate Listings -->
-	        <script src="js/assets/mpListings.js"></script>
-	        <script src="js/assets/listings.data.js"></script>
-		<?php } ?>
+	<?php if ($pageType == 'property-listings' || $pageType == 'property-listings-premium') { ?>
+	    <!-- Real Estate Listings -->
+        <script src="js/assets/mpListings.js"></script>
+        <script src="js/assets/listings.data.js"></script>
+        <script src="js/resources/basic/js/jquery.simplemodal.js"></script>
+        <script src="js/assets/popup.js"></script>
+	<?php } ?>
+	
+	<?php if ($pageType == 'articles') { ?>
+	    <!-- Real Estate Listings -->
+        <script src="js/assets/mpListings.js"></script>
+        <script src="js/assets/listings.data.js"></script>
+	<?php } ?>
 
-		<script type="text/javascript">
-		    var googletag = googletag || {};
-		    googletag.cmd = googletag.cmd || [];
-		    
-		    (function() {
-		        var gads = document.createElement("script");
-		        gads.async = true;
-		        gads.type = "text/javascript";
-		        var useSSL = "https:" == document.location.protocol;
-		        gads.src = (useSSL ? "https:" : "http:") + "//www.googletagservices.com/tag/js/gpt.js";
-		        var node =document.getElementsByTagName("script")[0];
-		        node.parentNode.insertBefore(gads, node);
-		    })();
-		</script>
+	<script type="text/javascript">
+	    var googletag = googletag || {};
+	    googletag.cmd = googletag.cmd || [];
+	    
+	    (function() {
+	        var gads = document.createElement("script");
+	        gads.async = true;
+	        gads.type = "text/javascript";
+	        var useSSL = "https:" == document.location.protocol;
+	        gads.src = (useSSL ? "https:" : "http:") + "//www.googletagservices.com/tag/js/gpt.js";
+	        var node =document.getElementsByTagName("script")[0];
+	        node.parentNode.insertBefore(gads, node);
+	    })();
+	</script>
 
-		<script src="js/resources/plugins/selectize/selectize.js"></script>
-        <script src="js/resources/plugins/select2/select2.js"></script>
-        <script src="js/assets/searchPanel.js"></script>
-        <script>
-            $(document).ready(function(){
-            	if('#listingDropDown'){
-                    $("#listingDropDown").select2({ dropdownCssClass: 'mplistings-dropdown' });
-                }
+	<script src="js/resources/plugins/selectize/selectize.js"></script>
+    <script src="js/resources/plugins/select2/select2.js"></script>
+    <script src="js/assets/searchPanel.js"></script>
+    <script>
+        $(document).ready(function(){
+        	if('#listingDropDown'){
+                $("#listingDropDown").select2({ dropdownCssClass: 'mplistings-dropdown' });
+            }
 
-                if ($(window).width() > 752) {
-	                $('.page-layout__left-col').width($(window).width() - 320);
-	            };
-            });
+            if ($(window).width() > 752) {
+                $('.page-layout__left-col').width($(window).width() - 320);
+            };
+        });
 
-            $(window).resize(function() {
-	            if ($(window).width() > 752) { 
-	                $('.page-layout__left-col').width($(window).width() - 320);
-	            } else {
-	                $('.page-layout__left-col').css('width', '100%');
-	            }
-	        });
-        </script>
+        $(window).resize(function() {
+            if ($(window).width() > 752) { 
+                $('.page-layout__left-col').width($(window).width() - 320);
+            } else {
+                $('.page-layout__left-col').css('width', '100%');
+            }
+        });
+
+        // REALTOR CONTACT NUMBER
+        $('.contact__agent-number').on('click', function(e) {
+            e.preventDefault();
+            $(this).text() == 'View My Contact Number' ? $(this).text('(617) 230-6674') : $(this).text('View My Contact Number');
+        });
+    </script>
         
-
 </head>
 <body <?php if ($pageType == 'home') { echo 'class="home"'; } else {  echo "class='page-section $pageType'"; } ?>>
 
