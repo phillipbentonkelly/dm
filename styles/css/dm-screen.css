@@ -686,19 +686,20 @@ textarea {
 /* line 11, ../sass/partials/page/_page-masthead.scss */
 .masthead {
   width: 100%;
-  /*height: $page-masthead;
-  margin-top: 41.5px;*/
+  height: 55px;
+  overflow: hidden;
+  /*margin-top: 41.5px;*/
 }
 
 @media (min-width: 960px) {
-  /* line 21, ../sass/partials/page/_page-masthead.scss */
+  /* line 22, ../sass/partials/page/_page-masthead.scss */
   .masthead {
     height: 100px;
     margin-top: 0px;
   }
 }
 @media (min-width: 768px) {
-  /* line 31, ../sass/partials/page/_page-masthead.scss */
+  /* line 32, ../sass/partials/page/_page-masthead.scss */
   .masthead {
     height: 100px;
     margin-top: 0px;
@@ -1162,7 +1163,7 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
 }
 /* line 31, ../sass/partials/page/_page-layout.scss */
 .page-layout__right-col {
-  display: none;
+  display: block;
 }
 
 /* line 36, ../sass/partials/page/_page-layout.scss */
@@ -2304,13 +2305,18 @@ body.serp .page-layout {
   min-height: 10px;
   margin-bottom: 30px;
   overflow: hidden;
+  margin-top: 2%;
 }
-/* line 17, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 19, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel a, .full-screen-carousel img {
   outline: none;
   border: 0;
 }
-/* line 22, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 24, ../sass/partials/page/modules/_full-screen-carousel.scss */
+.full-screen-carousel .category-tag {
+  display: none;
+}
+/* line 28, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .carousel-searchField-wrapper {
   width: 100%;
   padding: 8px 0 8px 0;
@@ -2318,13 +2324,13 @@ body.serp .page-layout {
   z-index: 100;
   background: rgba(255, 255, 255, 0.3);
 }
-/* line 29, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 35, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .carousel-searchField {
   max-width: 760px;
   height: 54px;
   margin: auto;
 }
-/* line 35, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 41, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .search_real-estate-field {
   display: block;
   float: left;
@@ -2338,7 +2344,7 @@ body.serp .page-layout {
   -moz-border-radius: 2px;
   border-radius: 2px;
 }
-/* line 48, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 54, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .search-real-estateBtn {
   display: block;
   float: left;
@@ -2351,11 +2357,11 @@ body.serp .page-layout {
   border-radius: 2px;
   background: url("../images/icons/magGlass_bg_blk.gif") center center no-repeat #000;
 }
-/* line 61, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 67, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel #carousel-wrap, .full-screen-carousel .slide {
   max-height: 580px;
 }
-/* line 64, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 70, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel #carousel-wrap .slide .detailsArrow {
   width: 0;
   height: 0;
@@ -2370,12 +2376,12 @@ body.serp .page-layout {
   margin-left: auto;
   margin-right: auto;
 }
-/* line 79, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 85, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel #carousel-wrap {
   overflow: hidden;
   position: relative;
 }
-/* line 83, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 89, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .carousel_wrapper {
   display: block;
   text-align: start;
@@ -2393,7 +2399,7 @@ body.serp .page-layout {
   margin: 0px;
   overflow: hidden;
 }
-/* line 100, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 106, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel #carousel {
   /*width: 9033px;*/
   width: 100%;
@@ -2407,30 +2413,30 @@ body.serp .page-layout {
   bottom: auto;
   z-index: auto;
 }
-/* line 113, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 119, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel #carousel figure {
   position: relative;
 }
-/* line 116, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 122, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .slide {
   float: left;
   text-align: center;
   margin: 0 4px 0 0;
 }
-/* line 121, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 127, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .slide > a {
   display: block;
   clear: both;
   min-height: 10px;
   overflow: hidden;
 }
-/* line 127, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 133, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .slide a img {
   max-width: 960px;
   max-height: 580px;
   border: 0;
 }
-/* line 133, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 139, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .carousel-nav {
   display: block;
   max-height: 580px;
@@ -2448,26 +2454,26 @@ body.serp .page-layout {
   transition: background-color 0.2s ease-out, color 0.2s ease-out;
   text-align: right;
 }
-/* line 150, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 156, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .carousel-nav:hover {
   background-color: rgba(255, 255, 255, 0.1);
 }
-/* line 153, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 159, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .carousel-nav.next {
   left: auto;
   right: 0;
   text-align: left;
 }
-/* line 159, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 165, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .useMobileLayout .carousel-nav {
   display: none;
 }
-/* line 162, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 168, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .useMobileLayout .slide a img {
   float: left;
   width: 88%;
 }
-/* line 167, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 173, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .carousel-fullwidth_slide-details {
   width: 100%;
   height: 91px;
@@ -2483,7 +2489,7 @@ body.serp .page-layout {
   bottom: 0;
   left: 0;
 }
-/* line 182, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 188, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .carousel-fullwidth_slide-detail-icon {
   float: left;
   width: 15%;
@@ -2491,47 +2497,47 @@ body.serp .page-layout {
   padding-top: 10px;
   text-align: left;
 }
-/* line 189, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 195, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .carousel-fullwidth_slide-detail-content {
   float: left;
   width: 85%;
   height: 87px;
   text-align: left;
 }
-/* line 195, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 201, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .carousel-fullwidth_slide-detail-content .listing-data {
   float: left;
   width: 70%;
   height: 100%;
   font-size: 0.7em;
 }
-/* line 201, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 207, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .carousel-fullwidth_slide-detail-content p:nth-child(1) {
   font-size: 1.7em;
   line-height: 1.5em;
   margin: 4.7% 0 0 0;
 }
-/* line 206, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 212, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .carousel-fullwidth_slide-detail-content .providerIcon {
   width: 23%;
   height: 100%;
   padding-right: 7%;
   float: right;
 }
-/* line 212, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 218, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .carousel-fullwidth_slide-detail-content .providerIcon img {
   margin-top: 5%;
 }
-/* line 221, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 227, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel #carousel-wrap .chevron::before {
   top: 48%;
   cursor: pointer;
 }
-/* line 227, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 233, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .carouselRightNavFade {
   display: none;
 }
-/* line 232, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 238, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .useMobileLayout .carouselRightNavFade {
   display: block;
   width: 15px;
@@ -2556,41 +2562,53 @@ body.serp .page-layout {
   right: 0;
   top: 0;
 }
-/* line 251, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 257, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .useMobileLayout .carousel-fullwidth_slide-detail-content {
   width: 97%;
   padding-left: 3%;
 }
-/* line 256, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 262, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .useMobileLayout .carousel-fullwidth_slide-detail-content p {
   display: none;
 }
-/* line 259, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 265, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .useMobileLayout .carousel-fullwidth_slide-detail-content p:nth-child(1) {
   display: block;
 }
-/* line 262, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 268, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .useMobileLayout .carousel-fullwidth_slide-details {
   overflow: initial;
 }
-/* line 265, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 271, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .useMobileLayout .carousel-fullwidth_slide-detail-icon {
   position: absolute;
   bottom: 25%;
   z-index: 1;
 }
-/* line 271, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 277, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel #carousel-wrap.useMobileLayout .slide .detailsArrow {
   border-color: rgba(0, 0, 0, 0.8) transparent;
   bottom: 60px;
 }
-/* line 276, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 282, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .useMobileLayout .carousel-fullwidth_slide-details {
   border-color: rgba(0, 0, 0, 0.8) transparent;
   height: 60px;
   bottom: 0px;
 }
 
+@media (min-width: 960px) {
+  /* line 293, ../sass/partials/page/modules/_full-screen-carousel.scss */
+  .full-screen-carousel {
+    margin-top: 0;
+  }
+}
+@media (min-width: 768px) {
+  /* line 302, ../sass/partials/page/modules/_full-screen-carousel.scss */
+  .full-screen-carousel {
+    margin-top: 0;
+  }
+}
 /*.page-layout__right-col {
   display: none;
 }
@@ -3531,34 +3549,31 @@ body.serp .page-layout {
 /* line 11, ../sass/partials/page/modules/_mega-menu.scss */
 .mega-menu {
   display: none;
-  position: absolute;
-  left: 0;
-  top: 0;
 }
-/* line 20, ../sass/partials/page/modules/_mega-menu.scss */
+/* line 17, ../sass/partials/page/modules/_mega-menu.scss */
 .mega-menu .adSlots .adSlot:hover .detailsWrapper .detailsOverlay p {
   display: block;
 }
-/* line 24, ../sass/partials/page/modules/_mega-menu.scss */
+/* line 21, ../sass/partials/page/modules/_mega-menu.scss */
 .mega-menu .adSlots a.adSlot:nth-child(odd) {
   margin-right: 30px;
 }
-/* line 28, ../sass/partials/page/modules/_mega-menu.scss */
+/* line 25, ../sass/partials/page/modules/_mega-menu.scss */
 .mega-menu .adSlots .adSlot {
   height: auto !important;
   margin-right: 0px;
 }
-/* line 34, ../sass/partials/page/modules/_mega-menu.scss */
+/* line 31, ../sass/partials/page/modules/_mega-menu.scss */
 .mega-menu__featured-home {
   position: relative;
 }
-/* line 37, ../sass/partials/page/modules/_mega-menu.scss */
+/* line 34, ../sass/partials/page/modules/_mega-menu.scss */
 .mega-menu__featured-home .adSlot {
   display: block;
   min-height: 10px;
   overflow-x: hidden;
 }
-/* line 44, ../sass/partials/page/modules/_mega-menu.scss */
+/* line 41, ../sass/partials/page/modules/_mega-menu.scss */
 .mega-menu__search-input {
   float: left;
   width: 78%;
@@ -3568,7 +3583,7 @@ body.serp .page-layout {
   border-radius: 5px;
   border: 1px solid lightgrey;
 }
-/* line 54, ../sass/partials/page/modules/_mega-menu.scss */
+/* line 51, ../sass/partials/page/modules/_mega-menu.scss */
 .mega-menu__search-submit {
   float: left;
   width: 13.3%;
@@ -3583,49 +3598,52 @@ body.serp .page-layout {
   -moz-border-radius: 3px;
   border-radius: 3px;
 }
-/* line 69, ../sass/partials/page/modules/_mega-menu.scss */
+/* line 66, ../sass/partials/page/modules/_mega-menu.scss */
 .mega-menu__list-items {
   clear: both;
   list-style: none;
   padding: 0;
   margin: 0;
 }
-/* line 76, ../sass/partials/page/modules/_mega-menu.scss */
+/* line 73, ../sass/partials/page/modules/_mega-menu.scss */
 .mega-menu__section--middle, .mega-menu__section--right {
   display: none;
 }
-/* line 80, ../sass/partials/page/modules/_mega-menu.scss */
+/* line 77, ../sass/partials/page/modules/_mega-menu.scss */
 .mega-menu__section--left .mega-menu__list-items {
   margin: 1em 0 0 0;
 }
-/* line 83, ../sass/partials/page/modules/_mega-menu.scss */
+/* line 80, ../sass/partials/page/modules/_mega-menu.scss */
 .mega-menu__section--left .mega-menu__list-items .mega-menu__list-item {
   display: inline-block;
   width: 48%;
   line-height: 2.3em;
   border-bottom: 1px solid #e5e5e5;
 }
-/* line 89, ../sass/partials/page/modules/_mega-menu.scss */
+/* line 86, ../sass/partials/page/modules/_mega-menu.scss */
 .mega-menu__section--left .mega-menu__list-items .mega-menu__list-item:nth-child(odd) {
   margin-right: 2%;
 }
-/* line 92, ../sass/partials/page/modules/_mega-menu.scss */
+/* line 89, ../sass/partials/page/modules/_mega-menu.scss */
 .mega-menu__section--left .mega-menu__list-items .mega-menu__list-item:nth-child(1) {
   border-top: 1px solid #e5e5e5;
 }
-/* line 95, ../sass/partials/page/modules/_mega-menu.scss */
+/* line 92, ../sass/partials/page/modules/_mega-menu.scss */
 .mega-menu__section--left .mega-menu__list-items .mega-menu__list-item:nth-child(2) {
   border-top: 1px solid #e5e5e5;
 }
 
-/* line 99, ../sass/partials/page/modules/_mega-menu.scss */
+/* line 96, ../sass/partials/page/modules/_mega-menu.scss */
 .find-home-menu, .neighborhoods-menu {
   display: none;
 }
 
 @media (min-width: 768px) {
-  /* line 110, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 107, ../sass/partials/page/modules/_mega-menu.scss */
   .mega-menu {
+    position: absolute;
+    left: 0;
+    top: 0;
     /*&__list-item:nth-child(odd) {
         margin-right: 0;
     }
@@ -3636,7 +3654,7 @@ body.serp .page-layout {
         border-top: 0px;
     }*/
   }
-  /* line 111, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 112, ../sass/partials/page/modules/_mega-menu.scss */
   .mega-menu__container {
     position: absolute;
     right: 0;
@@ -3651,15 +3669,15 @@ body.serp .page-layout {
     border-top: 0px;
     box-sizing: border-box;
   }
-  /* line 126, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 127, ../sass/partials/page/modules/_mega-menu.scss */
   .mega-menu__search-input {
     width: 220px;
   }
-  /* line 130, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 131, ../sass/partials/page/modules/_mega-menu.scss */
   .mega-menu__search-submit {
     width: 40px;
   }
-  /* line 134, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 135, ../sass/partials/page/modules/_mega-menu.scss */
   .mega-menu__section--left, .mega-menu__section--middle, .mega-menu__section--right {
     display: block;
     width: 33.3%;
@@ -3668,7 +3686,7 @@ body.serp .page-layout {
     padding: 10px;
     box-sizing: border-box;
   }
-  /* line 143, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 144, ../sass/partials/page/modules/_mega-menu.scss */
   .mega-menu__list-items {
     clear: both;
     list-style: none;
@@ -3678,7 +3696,7 @@ body.serp .page-layout {
     line-height: inherit;
     border: 0px;
   }
-  /* line 154, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 155, ../sass/partials/page/modules/_mega-menu.scss */
   .mega-menu__list-item {
     padding: 5px 0;
     font-size: 14px;
@@ -3686,78 +3704,78 @@ body.serp .page-layout {
     line-height: inherit;
     width: 100%;*/
   }
-  /* line 161, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 162, ../sass/partials/page/modules/_mega-menu.scss */
   .mega-menu__list-item a {
     text-decoration: none;
     color: black;
   }
-  /* line 166, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 167, ../sass/partials/page/modules/_mega-menu.scss */
   .mega-menu__list-item a:hover {
     color: #2e1460;
   }
-  /* line 181, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 182, ../sass/partials/page/modules/_mega-menu.scss */
   .mega-menu__section--left .mega-menu__list-item {
     font-family: 'OpenSans Bold';
   }
-  /* line 185, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 186, ../sass/partials/page/modules/_mega-menu.scss */
   .mega-menu__section--left .mega-menu__list-items {
     margin: 0;
   }
-  /* line 188, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 189, ../sass/partials/page/modules/_mega-menu.scss */
   .mega-menu__section--left .mega-menu__list-items .mega-menu__list-item {
     display: block;
     width: 100%;
     line-height: inherit;
     border-bottom: 0px;
   }
-  /* line 194, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 195, ../sass/partials/page/modules/_mega-menu.scss */
   .mega-menu__section--left .mega-menu__list-items .mega-menu__list-item:nth-child(odd) {
     margin-right: 0;
   }
-  /* line 197, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 198, ../sass/partials/page/modules/_mega-menu.scss */
   .mega-menu__section--left .mega-menu__list-items .mega-menu__list-item:nth-child(1) {
     border-top: 0px;
   }
-  /* line 200, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 201, ../sass/partials/page/modules/_mega-menu.scss */
   .mega-menu__section--left .mega-menu__list-items .mega-menu__list-item:nth-child(2) {
     border-top: 0px;
   }
-  /* line 204, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 205, ../sass/partials/page/modules/_mega-menu.scss */
   .mega-menu__section--middle {
     border-left: 1px solid lightgrey;
   }
-  /* line 207, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 208, ../sass/partials/page/modules/_mega-menu.scss */
   .mega-menu__section--middle .mega-menu__list-item {
     padding: 10px 45px 10px 0;
     border-top: 1px solid lightgrey;
     font-family: 'OpenSans';
     font-weight: 600;
   }
-  /* line 214, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 215, ../sass/partials/page/modules/_mega-menu.scss */
   .mega-menu__section--middle .mega-menu__list-item:first-child {
     border: none;
     padding-top: 0;
   }
-  /* line 220, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 221, ../sass/partials/page/modules/_mega-menu.scss */
   .mega-menu__section--right {
     padding-bottom: 0;
     overflow: hidden;
   }
-  /* line 225, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 226, ../sass/partials/page/modules/_mega-menu.scss */
   .mega-menu__featured-home {
     display: block;
     min-height: 1px;
     height: 100%;
     overflow: hidden;
   }
-  /* line 231, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 232, ../sass/partials/page/modules/_mega-menu.scss */
   .mega-menu__featured-home .adSlot {
     display: block;
     min-height: 10px;
     overflow-x: hidden;
   }
 
-  /* line 240, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 241, ../sass/partials/page/modules/_mega-menu.scss */
   #mega-menu__list-items--left, #mega-menu__list-items--right {
     width: 50%;
     float: left;
@@ -3765,33 +3783,39 @@ body.serp .page-layout {
     box-sizing: border-box;
   }
 
-  /* line 247, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 248, ../sass/partials/page/modules/_mega-menu.scss */
   #mega-menu__list-items--left {
     padding-right: 15px;
   }
 
-  /* line 251, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 252, ../sass/partials/page/modules/_mega-menu.scss */
   .page-nav__form__submit {
     float: right;
     padding: 0 0 1px 0;
     border-radius: 5px;
   }
 
-  /* line 259, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 260, ../sass/partials/page/modules/_mega-menu.scss */
   .neighborhoods-menu {
     left: -114px !important;
   }
 }
 @media (min-width: 960px) {
-  /* line 286, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 271, ../sass/partials/page/modules/_mega-menu.scss */
+  .mega-menu {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  /* line 291, ../sass/partials/page/modules/_mega-menu.scss */
   .mega-menu__search-input {
     width: 220px;
   }
-  /* line 290, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 295, ../sass/partials/page/modules/_mega-menu.scss */
   .mega-menu__search-submit {
     width: 40px;
   }
-  /* line 294, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 299, ../sass/partials/page/modules/_mega-menu.scss */
   .mega-menu__section--left, .mega-menu__section--middle, .mega-menu__section--right {
     display: block;
     width: 33.3%;
@@ -3800,76 +3824,76 @@ body.serp .page-layout {
     padding: 10px;
     box-sizing: border-box;
   }
-  /* line 303, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 308, ../sass/partials/page/modules/_mega-menu.scss */
   .mega-menu__list-items {
     clear: both;
     list-style: none;
     margin: 0;
     padding: 0;
   }
-  /* line 311, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 316, ../sass/partials/page/modules/_mega-menu.scss */
   .mega-menu__section--left .mega-menu__list-item {
     font-family: 'OpenSans Bold';
   }
-  /* line 315, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 320, ../sass/partials/page/modules/_mega-menu.scss */
   .mega-menu__section--left .mega-menu__list-items {
     margin: 0;
   }
-  /* line 318, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 323, ../sass/partials/page/modules/_mega-menu.scss */
   .mega-menu__section--left .mega-menu__list-items .mega-menu__list-item {
     display: block;
     width: 100%;
     line-height: inherit;
     border-bottom: 0px;
   }
-  /* line 324, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 329, ../sass/partials/page/modules/_mega-menu.scss */
   .mega-menu__section--left .mega-menu__list-items .mega-menu__list-item:nth-child(odd) {
     margin-right: 0;
   }
-  /* line 327, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 332, ../sass/partials/page/modules/_mega-menu.scss */
   .mega-menu__section--left .mega-menu__list-items .mega-menu__list-item:nth-child(1) {
     border-top: 0px;
   }
-  /* line 330, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 335, ../sass/partials/page/modules/_mega-menu.scss */
   .mega-menu__section--left .mega-menu__list-items .mega-menu__list-item:nth-child(2) {
     border-top: 0px;
   }
-  /* line 334, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 339, ../sass/partials/page/modules/_mega-menu.scss */
   .mega-menu__section--middle {
     border-left: 1px solid lightgrey;
   }
-  /* line 337, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 342, ../sass/partials/page/modules/_mega-menu.scss */
   .mega-menu__section--middle .mega-menu__list-item {
     padding: 5px 45px 5px 0;
     border-top: 1px solid lightgrey;
     font-family: 'OpenSans';
     font-weight: 600;
   }
-  /* line 344, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 349, ../sass/partials/page/modules/_mega-menu.scss */
   .mega-menu__section--middle .mega-menu__list-item:first-child {
     border: none;
     padding-top: 0;
   }
-  /* line 350, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 355, ../sass/partials/page/modules/_mega-menu.scss */
   .mega-menu__section--right {
     padding-bottom: 0;
     overflow: hidden;
   }
-  /* line 355, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 360, ../sass/partials/page/modules/_mega-menu.scss */
   .mega-menu__featured-home {
     display: block;
     min-height: 1px;
     height: 100%;
     overflow: hidden;
   }
-  /* line 361, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 366, ../sass/partials/page/modules/_mega-menu.scss */
   .mega-menu__featured-home .adSlot {
     display: block;
     min-height: 10px;
     overflow-x: hidden;
   }
 
-  /* line 370, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 375, ../sass/partials/page/modules/_mega-menu.scss */
   #mega-menu__list-items--left, #mega-menu__list-items--right {
     width: 50%;
     float: left;
@@ -3877,19 +3901,19 @@ body.serp .page-layout {
     box-sizing: border-box;
   }
 
-  /* line 377, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 382, ../sass/partials/page/modules/_mega-menu.scss */
   #mega-menu__list-items--left {
     padding-right: 15px;
   }
 
-  /* line 381, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 386, ../sass/partials/page/modules/_mega-menu.scss */
   .page-nav__form__submit {
     float: right;
     padding: 0 0 1px 0;
     border-radius: 5px;
   }
 
-  /* line 389, ../sass/partials/page/modules/_mega-menu.scss */
+  /* line 394, ../sass/partials/page/modules/_mega-menu.scss */
   .neighborhoods-menu {
     left: -113px !important;
   }

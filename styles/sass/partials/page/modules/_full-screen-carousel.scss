@@ -13,10 +13,16 @@ $module-name: 'full-screen-carousel';
 	min-height: 10px;
 	margin-bottom: 30px;
 	overflow: hidden;
+
+	margin-top: 2%;
 	
 	a, img{
 		outline: none;
 		border: 0;
+	}
+
+	.category-tag {
+		display: none;
 	}
 
 	.carousel-searchField-wrapper{
@@ -280,11 +286,20 @@ $module-name: 'full-screen-carousel';
 	}
 }
 // ------------------------------------------------------------
+// Desktop Breakpoint
+// ------------------------------------------------------------
+
+@include media-query(desktop) {
+	.#{$module-name} {
+		margin-top: 0;
+	}
+}
+// ------------------------------------------------------------
 // Tablet Breakpoint
 // ------------------------------------------------------------
 
 @include media-query(tablet) {
 	.#{$module-name} {
-		
+		margin-top: 0;
 	}
 }
