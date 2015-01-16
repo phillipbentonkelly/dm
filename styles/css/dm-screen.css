@@ -1451,7 +1451,7 @@ body.serp .page-layout {
 }
 /* line 206, ../sass/partials/page/_page-search.scss */
 .page-search__input--tokenize {
-  width: 154px;
+  width: 90%;
   min-height: 32px;
   height: auto;
 }
@@ -1913,6 +1913,10 @@ body.serp .page-layout {
     width: 100%;
   }
   /* line 729, ../sass/partials/page/_page-search.scss */
+  .page-search__input--tokenize {
+    width: 154px;
+  }
+  /* line 736, ../sass/partials/page/_page-search.scss */
   .page-search__dropdown--main {
     float: left;
     display: block;
@@ -1923,22 +1927,22 @@ body.serp .page-layout {
     border-radius: none;
     font-size: 17px;
   }
-  /* line 739, ../sass/partials/page/_page-search.scss */
+  /* line 746, ../sass/partials/page/_page-search.scss */
   .page-search__dropdown--main .selectize-input {
     height: auto;
     border: none;
   }
-  /* line 747, ../sass/partials/page/_page-search.scss */
+  /* line 754, ../sass/partials/page/_page-search.scss */
   .page-search__button--save {
     top: 23px;
   }
-  /* line 751, ../sass/partials/page/_page-search.scss */
+  /* line 758, ../sass/partials/page/_page-search.scss */
   .page-search__button--submit {
     margin-right: 52px;
     width: 44px;
     height: 44px;
   }
-  /* line 757, ../sass/partials/page/_page-search.scss */
+  /* line 764, ../sass/partials/page/_page-search.scss */
   .page-search__button--level-two-toggle {
     top: 8px;
     left: initial;
@@ -1946,21 +1950,21 @@ body.serp .page-layout {
     width: 28px;
     height: 28px;
   }
-  /* line 766, ../sass/partials/page/_page-search.scss */
+  /* line 773, ../sass/partials/page/_page-search.scss */
   .page-search__button--level-three-toggle {
     box-sizing: border-box;
     height: 34px;
   }
 }
 @media (min-width: 768px) {
-  /* line 782, ../sass/partials/page/_page-search.scss */
+  /* line 789, ../sass/partials/page/_page-search.scss */
   .page-search {
     display: block;
   }
 }
 /* Target Firefox only */
 @-moz-document url-prefix() {
-  /* line 792, ../sass/partials/page/_page-search.scss */
+  /* line 799, ../sass/partials/page/_page-search.scss */
   .page-search__button--level-two-toggle {
     height: 35px;
   }
