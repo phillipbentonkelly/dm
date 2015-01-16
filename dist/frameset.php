@@ -119,7 +119,6 @@
     <!-- Page Nav -->
     <?php include 'page/page-nav.php'; ?>
 
-    
     <!-- Page Search -->
     <?php include 'page/page-search.php'; ?>
     

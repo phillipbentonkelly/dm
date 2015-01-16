@@ -22,7 +22,7 @@
                     </div>
                     <div class="agent-info">
                         <p class="name">Beverly Winthrop</p>
-                        <p class="contact-number">View Contact Number</p>
+                        <p class="contact__agent-number" href="#">View My Contact Number</p>
                         <a href='javascript:;'>
                             <div class="contact-button">CONTACT</div>
                         </a>
@@ -39,7 +39,7 @@
                     </div>
                     <div class="agent-info">
                         <p class="name">Beverly Winthrop</p>
-                        <p class="contact-number">View Contact Number</p>
+                        <p class="contact__agent-number" href="#">View My Contact Number</p>
                         <a href='javascript:;'>
                             <div class="contact-button">CONTACT</div>
                         </a>
