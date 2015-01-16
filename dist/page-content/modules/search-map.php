@@ -4,7 +4,7 @@
 	    var $sidebar   = $(".sticky-map-wrapper"), 
 	        $window    = $(window),
 	        offset     = $sidebar.offset(),
-	        topPadding = 100;
+	        topPadding = 105;
 
 	    $window.scroll(function() {
 	    	if ($window.scrollTop() > 3200) return;
