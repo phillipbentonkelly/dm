@@ -92,6 +92,11 @@
             if ($(window).width() > 752) {
                 $('.page-layout__left-col').width($(window).width() - 320);
             };
+
+            $('.contact__agent-number').on('click', function(e) {
+            	e.preventDefault();
+            	$(this).text() == 'View My Contact Number' ? $(this).text('(617) 230-6674') : $(this).text('View My Contact Number');
+        	});
         });
 
         $(window).resize(function() {
@@ -102,11 +107,6 @@
             }
         });
 
-        // REALTOR CONTACT NUMBER
-        $('.contact__agent-number').on('click', function(e) {
-            e.preventDefault();
-            $(this).text() == 'View My Contact Number' ? $(this).text('(617) 230-6674') : $(this).text('View My Contact Number');
-        });
     </script>
         
 </head>

@@ -1,11 +1,4 @@
-<script type="text/javascript">
-    $(document).ready(function() {
-        $('.contact__agent-number').on('click', function(e) {
-            e.preventDefault();
-            $(this).text() == 'View My Contact Number' ? $(this).text('(617) 230-6674') : $(this).text('View My Contact Number');
-        })
-    });
-</script>
+
 
 <div class='contact__company' style='margin:75px 0 45px 0;'>
     <img class='contact__company-img' src='http://www.motihomes.com/Customers/5430/assets/images/3785DE71-155D-0078-0BA5D1687C016B53.jpg'>
