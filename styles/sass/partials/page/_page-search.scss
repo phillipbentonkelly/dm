@@ -204,7 +204,7 @@ $module-name: 'page-search';
 		}
 
 		&--tokenize{
-			width: 154px;
+			width: 90%;
 			min-height: 32px;
 			height: auto;
 		}
@@ -722,6 +722,13 @@ $module-name: 'page-search';
 		&__list-item{
 			float: left;
 			width: 100%;
+		}
+
+		&__input{
+
+			&--tokenize{
+				width: 154px;
+			}
 		}
 
 		&__dropdown{

@@ -344,7 +344,7 @@ a, img {
 @media screen and (max-width: 767px) {
   /* line 359, ../sass/realestatelistings.scss */
   .mplistings {
-    max-width: 300px;
+    width: 300px;
     overflow: hidden;
   }
   /* line 363, ../sass/realestatelistings.scss */
