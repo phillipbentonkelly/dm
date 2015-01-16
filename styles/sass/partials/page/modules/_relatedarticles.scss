@@ -20,7 +20,7 @@ $module-name: 'related-articles';
 		clear: both;
 	}
 
-	&__item {
+	&__item, &__item--mobile {
 		width: 50%;
 		float: left;
 		box-sizing: border-box;

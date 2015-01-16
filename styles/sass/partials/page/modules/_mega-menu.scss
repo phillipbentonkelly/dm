@@ -113,7 +113,7 @@ $module-name: 'mega-menu';
             right: 0;
             left: 0;
             z-index: 100;
-            height: 280px;
+            height: auto;
             width: #{$desktop-breakpoint};
             margin: 0 auto;
             padding: 10px;
@@ -164,7 +164,7 @@ $module-name: 'mega-menu';
             }
 
             a:hover {
-                color: #1a93b0;
+                color: #2e1460 ;
             }
         }
             /*&__list-item:nth-child(odd) {
@@ -268,20 +268,20 @@ $module-name: 'mega-menu';
 @include media-query(desktop) {
 
     .#{$module-name} {
-        &__container {
-            position: absolute;
-            right: 0;
-            left: 0;
-            z-index: 100;
-            height: 280px;
-            width: #{$desktop-breakpoint};
-            margin: 0 auto;
-            padding: 10px;
-            background: rgba(255,255,255,0.9);
-            border: 1px solid lightgrey;
-            border-top: 0px;
-            box-sizing: border-box;
-        }
+        // &__container {
+        //     position: absolute;
+        //     right: 0;
+        //     left: 0;
+        //     z-index: 100;
+        //     height: 280px;
+        //     width: #{$desktop-breakpoint};
+        //     margin: 0 auto;
+        //     padding: 10px;
+        //     background: rgba(255,255,255,0.9);
+        //     border: 1px solid lightgrey;
+        //     border-top: 0px;
+        //     box-sizing: border-box;
+        // }
 
         &__search-input {
             width: 220px;
@@ -305,21 +305,6 @@ $module-name: 'mega-menu';
             list-style: none;
             margin: 0;
             padding: 0;
-        }
-
-        &__list-item {
-            padding: 5px 0;
-            font-size: 14px;
-
-            a {
-                text-decoration: none;
-                color: black;
-                text-transform: uppercase;
-            }
-
-            a:hover {
-                color: #1a93b0;
-            }
         }
 
         &__section--left {

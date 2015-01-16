@@ -10,19 +10,25 @@ $module-name: 'search-results';
     }
 }
 
-.related-articles-popup {
+.related-articles-modal {
     display: none;
     background: white;
 
-    .related-articles__item {
+    .related-articles__item--mobile {
         height: 255px;
         overflow: hidden;
         padding-bottom: 10px;
+        width: 50%;
+        float: left;
     }
 
-    .description {
+    .description--mobile {
         display: block !important;
         text-align: left;
+    }
+
+    .additional-info {
+      display: none;
     }
 }
 

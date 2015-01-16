@@ -2,14 +2,14 @@
 <div class="related-articles--mobile related-articles-modal">
     <h1 class="related-articles__section-header">Related Articles</h1>
 
-    <div class="related-articles__item">
+    <div class="related-articles__item--mobile">
         <img class="thumb" src="images/related-articles/related-articles__thumbs__1.jpg" />
         
         <a href="#">
             <h2 class="title">Tom and Gisele's Brookline Pad Looks Almost Ready</h2>
         </a>
 
-        <p class="description">The ream home of the most famouse couple in Massachusetts looks like it's close to completion.</p>
+        <p class="description--mobile--mobile">The ream home of the most famouse couple in Massachusetts looks like it's close to completion.</p>
         
         <div class="additional-info">
             <div class="date">September 9, 2014</div>
@@ -28,7 +28,7 @@
             <h2 class="title">For Sale: $2.85M Italianate Mansion in JP</h2>
         </a>
         
-        <p class="description">This updated Italianate mansion, once known as The Gilbert House, was originally built in 1854 and has undergone extensive renovations while remaining loyal to the home's orignal design.</p>
+        <p class="description--mobile">This updated Italianate mansion, once known as The Gilbert House, was originally built in 1854 and has undergone extensive renovations while remaining loyal to the home's orignal design.</p>
         
         <div class="additional-info">
             <div class="date">July 30, 2014</div>
@@ -48,7 +48,7 @@
             <h2 class="title">For Sale: Historic Weston mansion</h2>
         </a>
         
-        <p class="description">The Henderson House in Weston, an English-Tudor style mansion with nearly 17,000 square feet of living space, is being sold for $7,795,000.</p>
+        <p class="description--mobile">The Henderson House in Weston, an English-Tudor style mansion with nearly 17,000 square feet of living space, is being sold for $7,795,000.</p>
         
         <div class="additional-info">
             <div class="date">July 13, 2014</div>
@@ -62,7 +62,7 @@
             <h2 class="title">New Construction, Chestnut Hill Colonial - $2,400,000</h2>
         </a>
 
-        <p class="description">Walk to Heath School and Train. Gorgeous Tree-lined street, Established Neighborhood. Open Plan main level with Back-lit Coffered Ceillings, Fireplaced Family Room and nicely appointed Cooks Kitchen with Island.</p>
+        <p class="description--mobile">Walk to Heath School and Train. Gorgeous Tree-lined street, Established Neighborhood. Open Plan main level with Back-lit Coffered Ceillings, Fireplaced Family Room and nicely appointed Cooks Kitchen with Island.</p>
         
         <div class="additional-info">
             <div class="date">July 3, 2014</div>
@@ -114,7 +114,7 @@
             <h2 class="title">Tom and Gisele's Brookline Pad Looks Almost Ready</h2>
         </a>
 
-        <p class="description">The ream home of the most famouse couple in Massachusetts looks like it's close to completion.</p>
+        <p class="description--mobile">The ream home of the most famouse couple in Massachusetts looks like it's close to completion.</p>
         
         <div class="additional-info">
             <div class="date">September 9, 2014</div>
@@ -133,7 +133,7 @@
             <h2 class="title">For Sale: $2.85M Italianate Mansion in JP</h2>
         </a>
 
-        <p class="description">This updated Italianate mansion, once known as The Gilbert House, was originally built in 1854 and has undergone extensive renovations while remaining loyal to the home's orignal design.</p>
+        <p class="description--mobile">This updated Italianate mansion, once known as The Gilbert House, was originally built in 1854 and has undergone extensive renovations while remaining loyal to the home's orignal design.</p>
         
         <div class="additional-info">
             <div class="date">July 30, 2014</div>
