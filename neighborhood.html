@@ -29,52 +29,57 @@
 
 	<!-- SCRIPTS -->
     <script src="js/resources/jquery.min.js"></script>
-    	<script src="js/assets/mega-menu.js"></script>
-    	<script src="js/assets/responsive-gallery.js"></script>
+	<script src="js/assets/mega-menu.js"></script>
+	<script src="js/assets/responsive-gallery.js"></script>
 
+	
+	
 		
-		
-				
-		
-		<script type="text/javascript">
-		    var googletag = googletag || {};
-		    googletag.cmd = googletag.cmd || [];
-		    
-		    (function() {
-		        var gads = document.createElement("script");
-		        gads.async = true;
-		        gads.type = "text/javascript";
-		        var useSSL = "https:" == document.location.protocol;
-		        gads.src = (useSSL ? "https:" : "http:") + "//www.googletagservices.com/tag/js/gpt.js";
-		        var node =document.getElementsByTagName("script")[0];
-		        node.parentNode.insertBefore(gads, node);
-		    })();
-		</script>
+	
+	<script type="text/javascript">
+	    var googletag = googletag || {};
+	    googletag.cmd = googletag.cmd || [];
+	    
+	    (function() {
+	        var gads = document.createElement("script");
+	        gads.async = true;
+	        gads.type = "text/javascript";
+	        var useSSL = "https:" == document.location.protocol;
+	        gads.src = (useSSL ? "https:" : "http:") + "//www.googletagservices.com/tag/js/gpt.js";
+	        var node =document.getElementsByTagName("script")[0];
+	        node.parentNode.insertBefore(gads, node);
+	    })();
+	</script>
 
-		<script src="js/resources/plugins/selectize/selectize.js"></script>
-        <script src="js/resources/plugins/select2/select2.js"></script>
-        <script src="js/assets/searchPanel.js"></script>
-        <script>
-            $(document).ready(function(){
-            	if('#listingDropDown'){
-                    $("#listingDropDown").select2({ dropdownCssClass: 'mplistings-dropdown' });
-                }
+	<script src="js/resources/plugins/selectize/selectize.js"></script>
+    <script src="js/resources/plugins/select2/select2.js"></script>
+    <script src="js/assets/searchPanel.js"></script>
+    <script>
+        $(document).ready(function(){
+        	if('#listingDropDown'){
+                $("#listingDropDown").select2({ dropdownCssClass: 'mplistings-dropdown' });
+            }
 
-                if ($(window).width() > 752) {
-	                $('.page-layout__left-col').width($(window).width() - 320);
-	            };
-            });
+            if ($(window).width() > 752) {
+                $('.page-layout__left-col').width($(window).width() - 320);
+            };
 
-            $(window).resize(function() {
-	            if ($(window).width() > 752) { 
-	                $('.page-layout__left-col').width($(window).width() - 320);
-	            } else {
-	                $('.page-layout__left-col').css('width', '100%');
-	            }
-	        });
-        </script>
+            $('.contact__agent-number').on('click', function(e) {
+            	e.preventDefault();
+            	$(this).text() == 'View My Contact Number' ? $(this).text('(617) 230-6674') : $(this).text('View My Contact Number');
+        	});
+        });
+
+        $(window).resize(function() {
+            if ($(window).width() > 752) { 
+                $('.page-layout__left-col').width($(window).width() - 320);
+            } else {
+                $('.page-layout__left-col').css('width', '100%');
+            }
+        });
+
+    </script>
         
-
 </head>
 <body class='page-section neighborhood'>
 
