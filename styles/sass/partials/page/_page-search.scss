@@ -69,7 +69,6 @@ $module-name: 'page-search';
 
 		&--level-two{
 			display: inline-block;			
-			/*margin: 10px 20px 10px 20px;*/
 			padding: 10px;
 			width: 90%;
 
@@ -101,7 +100,7 @@ $module-name: 'page-search';
 			margin: 0 20px 10px 20px;
 			width: 90%;
 			height: auto;
-			
+
 			.col{
 				display: block;
 				float: left;
@@ -146,7 +145,8 @@ $module-name: 'page-search';
 
 		&--tokenize{
 			margin: 0 0 12px 0;
-			height: 70px;
+			height: auto;
+			min-height: 70px;
 		}
 
 		input[type="text"], .select2-container{
@@ -187,19 +187,6 @@ $module-name: 'page-search';
 		border-radius: 2px;
 		height: 32px;
 
-		/*&--main{
-			width: 680px;
-			height: 60px;
-			font-size: 17px;
-			float: left;
-
-			.selectize-input{
-				height: 30px;
-				padding: 10px 15px;
-				line-height: 28px;
-			}
-		}*/
-
 		&--numeric{
 			width: 50px;
 			padding: 5px;
@@ -218,6 +205,8 @@ $module-name: 'page-search';
 
 		&--tokenize{
 			width: 154px;
+			min-height: 32px;
+			height: auto;
 		}
 	}
 
@@ -382,7 +371,7 @@ $module-name: 'page-search';
 		&--close{
 			display: block;
 			position: absolute;
-			right: 37px;
+			right: 0px;
 			color: #2E1460;
 			opacity: 1;
 			background: transparent;
@@ -601,12 +590,6 @@ $module-name: 'page-search';
 		z-index: 10;
 		background: rgba(255, 255, 255, 0.85);
 
-		&__row{
-			&--level-three{
-				margin-top: 20px;
-			}
-		}
-
 		&__section{
 			input[type=text]{
 				border: 1px solid rgb(0,0,0);
@@ -641,6 +624,10 @@ $module-name: 'page-search';
 			&--level-three-toggle{
 				border: 1px solid rgb(0,0,0);
 				height: 34px;
+			}
+
+			&--close{
+				margin-right: 32px;
 			}
 		}
 
@@ -705,7 +692,7 @@ $module-name: 'page-search';
 			}
 
 			&--level-three{
-				margin: 20px 20px 10px 50px;
+				margin: 0px 20px 10px 50px;
 
 				.col{
 					width: 21%;
@@ -746,6 +733,7 @@ $module-name: 'page-search';
 				width: 680px;
 				height: 60px;
 				border: none;
+				border-radius: none;
 				font-size: 17px;
 
 				.selectize-input{
@@ -796,4 +784,14 @@ $module-name: 'page-search';
 	}
 }
 
-			
+
+/* Target Firefox only */
+@-moz-document url-prefix() {
+	.#{$module-name}{
+		&__button{
+			&--level-two-toggle{
+				height: 35px;
+			}
+		}
+	}	
+}			
