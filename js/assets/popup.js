@@ -21,6 +21,10 @@ $(document).ready(function() {
 		$('.share-modal').modal();
 	});
 
+	$('.filter-drop').click(function() {
+		$('.search-filters-modal').modal();
+	});
+
 	$(document).on('click', '.close-modal', function() {
         $.modal.close();
     });
