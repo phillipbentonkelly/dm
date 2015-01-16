@@ -5461,7 +5461,7 @@ a, img {
   text-align: left;
 }
 /* line 81, ../sass/partials/page-content/modules/_catagory-footer.scss */
-.catagory-footer__featured-agent .agent-info p.contact_number {
+.catagory-footer__featured-agent .agent-info p.contact__agent-number {
   font-family: Arial;
   color: #000000;
   font-size: 12px;
