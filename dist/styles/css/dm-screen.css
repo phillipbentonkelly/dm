@@ -1948,12 +1948,15 @@ body.serp .page-layout {
   }
 }
 /* Target Firefox only */
-@-moz-document url-prefix() {
-  /* line 784, ../sass/partials/page/_page-search.scss */
-  .page-search__button--level-two-toggle {
-    height: 35px;
-  }
-}
+/*@-moz-document url-prefix() {
+	.page-search{
+		&__button{
+			&--level-two-toggle{
+				height: 35px;
+			}
+		}
+	}	
+}*/
 /* line 11, ../sass/partials/page/_page-footer.scss */
 .page-footer {
   background-color: #fff;

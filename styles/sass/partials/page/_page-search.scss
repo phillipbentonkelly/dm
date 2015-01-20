@@ -778,7 +778,7 @@ $module-name: 'page-search';
 
 
 /* Target Firefox only */
-@-moz-document url-prefix() {
+/*@-moz-document url-prefix() {
 	.#{$module-name}{
 		&__button{
 			&--level-two-toggle{
@@ -786,4 +786,5 @@ $module-name: 'page-search';
 			}
 		}
 	}	
-}			
+}*/
+
