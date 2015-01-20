@@ -348,6 +348,9 @@
 				<!-- Related Articles (right rail) Widget -->
 				<?php include 'page-content/modules/related-articles-right-rail.php'; ?>
 
+				<!-- Contact The Agent Widget -->
+				<?php include 'page-content/modules/contact-agent-premium--large.php'; ?>
+
 			<?php } ?>
 		</div>
 

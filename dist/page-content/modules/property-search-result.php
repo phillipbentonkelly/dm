@@ -96,7 +96,7 @@
             </div>
 
             <div class='realtor-info--right'>
-                <button id='mobile-contact-btn' class='realtor-contact'>Contact</button>
+                <button id='mobile-contact-btn' class='realtor-contact mobile-contact-btn'>Contact</button>
                 <p class='realtor-name'>Blake Sherwood</p>
             </div>
         </div>
@@ -171,7 +171,7 @@
             </div>
 
             <div class='realtor-info--right'>
-                <button class='realtor-contact'>Contact</button>
+                <button class='realtor-contact mobile-contact-btn'>Contact</button>
                 <p class='realtor-name'>Blake Sherwood</p>
             </div>
         </div>
@@ -247,7 +247,7 @@
             </div>
 
             <div class='realtor-info--right'>
-                <button class='realtor-contact'>Contact</button>
+                <button class='realtor-contact mobile-contact-btn'>Contact</button>
                 <p class='realtor-name'>Blake Sherwood</p>
             </div>
         </div> -->
@@ -334,7 +334,7 @@
             </div>
 
             <div class='realtor-info--right'>
-                <button class='realtor-contact'>Contact</button>
+                <button class='realtor-contact mobile-contact-btn'>Contact</button>
                 <p class='realtor-name'>Blake Sherwood</p>
             </div>
         </div>
@@ -410,7 +410,7 @@
             </div>
 
             <div class='realtor-info--right'>
-                <button class='realtor-contact'>Contact</button>
+                <button class='realtor-contact mobile-contact-btn'>Contact</button>
                 <p class='realtor-name'>Blake Sherwood</p>
             </div>
         </div>
@@ -486,7 +486,7 @@
             </div>
 
             <div class='realtor-info--right'>
-                <button class='realtor-contact'>Contact</button>
+                <button class='realtor-contact mobile-contact-btn'>Contact</button>
                 <p class='realtor-name'>Blake Sherwood</p>
             </div>
         </div>
@@ -574,7 +574,7 @@
             </div>
 
             <div class='realtor-info--right'>
-                <button class='realtor-contact'>Contact</button>
+                <button class='realtor-contact mobile-contact-btn'>Contact</button>
                 <p class='realtor-name'>Blake Sherwood</p>
             </div>
         </div>
@@ -650,7 +650,7 @@
             </div>
 
             <div class='realtor-info--right'>
-                <button class='realtor-contact'>Contact</button>
+                <button class='realtor-contact mobile-contact-btn'>Contact</button>
                 <p class='realtor-name'>Blake Sherwood</p>
             </div>
         </div>
@@ -726,7 +726,7 @@
             </div>
 
             <div class='realtor-info--right'>
-                <button class='realtor-contact'>Contact</button>
+                <button class='realtor-contact mobile-contact-btn'>Contact</button>
                 <p class='realtor-name'>Blake Sherwood</p>
             </div>
         </div>
@@ -814,7 +814,7 @@
             </div>
 
             <div class='realtor-info--right'>
-                <button class='realtor-contact'>Contact</button>
+                <button class='realtor-contact mobile-contact-btn'>Contact</button>
                 <p class='realtor-name'>Blake Sherwood</p>
             </div>
         </div>
