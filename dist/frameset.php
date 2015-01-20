@@ -89,6 +89,10 @@
                 $("#listingDropDown").select2({ dropdownCssClass: 'mplistings-dropdown' });
             }
 
+            if ($ ('body').hasClass('property-listings-premium')) {
+            	$('.listing__contact-agent').hide();
+            }
+
             if ($(window).width() > 752) {
                 $('.page-layout__left-col').width($(window).width() - 320);
             };
@@ -210,6 +214,13 @@
 
 				<!-- Related Articles -->
 				<?php include 'page-content/modules/related-articles--mobile.php'; ?>
+
+				<!-- Contact Agent Popup -->
+				<?php include 'page-content/modules/conatct-agent-premium--large.php'; ?>
+
+				<!-- Search Filter Modal for mobile -->
+				<?php include 'page-content/modules/search-filter-modal.php'; ?>
+
 			<?php } ?>
 			
         </div>
@@ -239,6 +250,10 @@
 
 				<!-- Contact This Agent Widget -->
 				<?php include 'page-content/modules/contact-agent-premium--small.php'; ?>
+
+				<!-- Share Modal for mobile -->
+				<?php include 'page-content/modules/share-modal.php'; ?>
+
 			<?php } ?>
 
 			<?php if ($pageType == 'property-listings') { ?>
@@ -255,6 +270,9 @@
 
 				<!-- Contact This Agent Widget -->
 				<?php include 'page-content/modules/contact-agent-basic--small.php'; ?>
+
+				<!-- Share Modal for mobile -->
+				<?php include 'page-content/modules/share-modal.php'; ?>
 			<?php } ?>
 			
 			
