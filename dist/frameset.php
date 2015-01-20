@@ -346,7 +346,9 @@
 	<?php } ?>
 
 	<!-- Page Footer -->
+	<?php include 'page-content/modules/category-footer.php'; ?>
     <?php include 'page/page-footer.php'; ?>
+
 
     <!-- ARTICLES: Discus -->
 	<?php if ($pageType == 'articles') { ?>
