@@ -89,6 +89,10 @@
                 $("#listingDropDown").select2({ dropdownCssClass: 'mplistings-dropdown' });
             }
 
+            if ($ ('body').hasClass('property-listings-premium')) {
+            	$('.listing__contact-agent').hide();
+            }
+
             if ($(window).width() > 752) {
                 $('.page-layout__left-col').width($(window).width() - 320);
             };
@@ -100,7 +104,8 @@
         });
 
         $(window).resize(function() {
-            if ($(window).width() > 752) { 
+            if ($(window).width() > 752) {
+            	$('.page-layout__right-col').find('.close-modal-wrap').remove();
                 $('.page-layout__left-col').width($(window).width() - 320);
             } else {
                 $('.page-layout__left-col').css('width', '100%');
@@ -118,7 +123,6 @@
     <!-- Page Nav -->
     <?php include 'page/page-nav.php'; ?>
 
-    
     <!-- Page Search -->
     <?php include 'page/page-search.php'; ?>
     
@@ -210,6 +214,13 @@
 
 				<!-- Related Articles -->
 				<?php include 'page-content/modules/related-articles--mobile.php'; ?>
+
+				<!-- Contact Agent Popup -->
+				<?php include 'page-content/modules/conatct-agent-premium--large.php'; ?>
+
+				<!-- Search Filter Modal for mobile -->
+				<?php include 'page-content/modules/search-filter-modal.php'; ?>
+
 			<?php } ?>
 			
         </div>
@@ -239,6 +250,10 @@
 
 				<!-- Contact This Agent Widget -->
 				<?php include 'page-content/modules/contact-agent-premium--small.php'; ?>
+
+				<!-- Share Modal for mobile -->
+				<?php include 'page-content/modules/share-modal.php'; ?>
+
 			<?php } ?>
 
 			<?php if ($pageType == 'property-listings') { ?>
@@ -255,6 +270,9 @@
 
 				<!-- Contact This Agent Widget -->
 				<?php include 'page-content/modules/contact-agent-basic--small.php'; ?>
+
+				<!-- Share Modal for mobile -->
+				<?php include 'page-content/modules/share-modal.php'; ?>
 			<?php } ?>
 			
 			
@@ -330,6 +348,9 @@
 				<!-- Related Articles (right rail) Widget -->
 				<?php include 'page-content/modules/related-articles-right-rail.php'; ?>
 
+				<!-- Contact The Agent Widget -->
+				<?php include 'page-content/modules/contact-agent-premium--large.php'; ?>
+
 			<?php } ?>
 		</div>
 
@@ -349,6 +370,11 @@
 	<?php include 'page-content/modules/category-footer.php'; ?>
     <?php include 'page/page-footer.php'; ?>
 
+<<<<<<< HEAD
+=======
+    <!-- Search Modal -->
+    <?php include 'page-content/modules/search-modal.php'; ?>
+>>>>>>> af7d83cdb71a0af85312e843a1574d943bf0b200
 
     <!-- ARTICLES: Discus -->
 	<?php if ($pageType == 'articles') { ?>

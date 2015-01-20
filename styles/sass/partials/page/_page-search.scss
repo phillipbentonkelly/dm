@@ -69,14 +69,12 @@ $module-name: 'page-search';
 
 		&--level-two{
 			display: inline-block;			
-			/*margin: 10px 20px 10px 20px;*/
 			padding: 10px;
 			width: 90%;
 
 			h4{
 				display: inline-block;
 				width: 120px;
-
 			}
 
 			input[type=text]{
@@ -101,7 +99,7 @@ $module-name: 'page-search';
 			margin: 0 20px 10px 20px;
 			width: 90%;
 			height: auto;
-			
+
 			.col{
 				display: block;
 				float: left;
@@ -146,7 +144,8 @@ $module-name: 'page-search';
 
 		&--tokenize{
 			margin: 0 0 12px 0;
-			height: 70px;
+			height: auto;
+			min-height: 70px;
 		}
 
 		input[type="text"], .select2-container{
@@ -187,19 +186,6 @@ $module-name: 'page-search';
 		border-radius: 2px;
 		height: 32px;
 
-		/*&--main{
-			width: 680px;
-			height: 60px;
-			font-size: 17px;
-			float: left;
-
-			.selectize-input{
-				height: 30px;
-				padding: 10px 15px;
-				line-height: 28px;
-			}
-		}*/
-
 		&--numeric{
 			width: 50px;
 			padding: 5px;
@@ -217,7 +203,9 @@ $module-name: 'page-search';
 		}
 
 		&--tokenize{
-			width: 154px;
+			width: 90%;
+			min-height: 32px;
+			height: auto;
 		}
 	}
 
@@ -236,30 +224,6 @@ $module-name: 'page-search';
 			height: 35px;
 			border-radius: 4px;
 			background: url(#{$img-path}icons/icon_search-magnifiying-glass.png) center center no-repeat #000;
-		}
-
-		&--cancel, &--apply{
-			float: right;
-			width: 70px;
-			height: 30px;
-			span{
-				text-transform:uppercase;
-				font-size: 14px;
-				font-weight: bold;
-			}
-		}
-
-		&--cancel{
-			background: transparent;
-			color: rgb(117, 124, 125);
-		}
-
-		&--apply{
-			margin: 0 10px 0 0;
-			border-radius: 2px;
-			background: rgb(56, 0, 99);
-			color: rgb(255, 255, 255);
-			
 		}
 
 		&--save{
@@ -356,10 +320,10 @@ $module-name: 'page-search';
 				background-color: #fff;
 
 			    -webkit-touch-callout: none;
-			      -webkit-user-select: none;
-			         -moz-user-select: none;
-			          -ms-user-select: none;
-			              user-select: none;			    
+			    -webkit-user-select: none;
+			    -moz-user-select: none;
+			    -ms-user-select: none;
+			    user-select: none;			    
 		    }
 
 			span.select2-arrow{
@@ -382,7 +346,7 @@ $module-name: 'page-search';
 		&--close{
 			display: block;
 			position: absolute;
-			right: 37px;
+			right: 0px;
 			color: #2E1460;
 			opacity: 1;
 			background: transparent;
@@ -549,13 +513,13 @@ $module-name: 'page-search';
 			padding: 5px;
 		}
 
-		&--filter-wide{
+		&--filter-hometype{
 			width: 112px;
 			height: 30px;
 			padding: 5px;
 		}
 
-		&--filter-advanced{
+		&--filter-dom{
 			width: 170px;
 			height: 45px;
 			margin: 5px;
@@ -601,12 +565,6 @@ $module-name: 'page-search';
 		z-index: 10;
 		background: rgba(255, 255, 255, 0.85);
 
-		&__row{
-			&--level-three{
-				margin-top: 20px;
-			}
-		}
-
 		&__section{
 			input[type=text]{
 				border: 1px solid rgb(0,0,0);
@@ -641,6 +599,22 @@ $module-name: 'page-search';
 			&--level-three-toggle{
 				border: 1px solid rgb(0,0,0);
 				height: 34px;
+
+				span.select2-chosen{
+					color: rgb(153, 153, 153);
+				}
+
+
+			}
+
+			&.select2-panel-open{
+				span.select2-chosen{
+					color: rgb(0, 0, 0);
+				}
+			}
+
+			&--close{
+				margin-right: 32px;
 			}
 		}
 
@@ -705,7 +679,7 @@ $module-name: 'page-search';
 			}
 
 			&--level-three{
-				margin: 20px 20px 10px 50px;
+				margin: 0px 20px 10px 50px;
 
 				.col{
 					width: 21%;
@@ -737,6 +711,12 @@ $module-name: 'page-search';
 			width: 100%;
 		}
 
+		&__input{
+			&--tokenize{
+				width: 154px;
+			}
+		}
+
 		&__dropdown{
 
 			&--main{
@@ -746,6 +726,7 @@ $module-name: 'page-search';
 				width: 680px;
 				height: 60px;
 				border: none;
+				border-radius: none;
 				font-size: 17px;
 
 				.selectize-input{
@@ -772,7 +753,6 @@ $module-name: 'page-search';
 				right: 15px;
 				width: 28px;
 				height: 28px;
-
 			}
 
 			&--level-three-toggle{
@@ -796,4 +776,14 @@ $module-name: 'page-search';
 	}
 }
 
-			
+
+/* Target Firefox only */
+@-moz-document url-prefix() {
+	.#{$module-name}{
+		&__button{
+			&--level-two-toggle{
+				height: 35px;
+			}
+		}
+	}	
+}			

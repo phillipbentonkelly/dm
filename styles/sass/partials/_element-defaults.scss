@@ -17,7 +17,7 @@ body {
 }
 
 a {
-  @include link-states(color(blue), color(blue, dark), color(blue, x-dark));
+  // @include link-states(color(blue), color(blue, dark), color(blue, x-dark));
   text-decoration: none;
   transition-property: background-color, color;
   transition-duration: 0.2s;

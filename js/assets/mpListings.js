@@ -14,7 +14,7 @@ var mplistingObj = {};
 
     MPListings.prototype = {
         scrollListings: function( evt ){
-            if(mpListings.$listingWrapper.width() > 332 === false){
+            if(mpListings.$listingWrapper.width() <= 334){
                 var thisObj = $(this);
                 
                 if(thisObj.attr('id') === 'leftArrow'){
@@ -59,16 +59,34 @@ var mplistingObj = {};
             mpListings.$listingWrapper = $('.mplistings .scrollWrapper');
             mpListings.$listingsContainer = $('.listing-container');
             mpListings.$listings = $('.listing-container .property');
+            mpListings.$propAddress = $('.listing-container .property .property__address');
             mpListings.$down = $('#leftArrow');
             mpListings.$up = $('#rightArrow');
 
             this.listingsEventHandlers();
+        },
+        updatePropertyAddressHeight: function() {
+            var tallestProperty = 0;
+            var reProperties = $('.mplistings .property .property__address');
+            
+            for(var i = 0; i < reProperties.length; i++){
+                 var currPropHeight = $(reProperties[i]).height();
+                 if(currPropHeight > tallestProperty){
+                      tallestProperty = currPropHeight;
+                 }
+            }
+            reProperties.height(tallestProperty);
         },
         listingsEventHandlers: function(){
             mpListings.$up.on('click', this.scrollListings);
             mpListings.$down.on('click', this.scrollListings);
         },
         updateDisplayParams: function(){
+            var thisRef = this;
+            setTimeout(function(){
+                thisRef.updatePropertyAddressHeight();
+            }, 500);
+            
             mpListings.$listings = $('.listing-container .property');
             mpListings.$scrollScale = mpListings.$listings.eq(0).height();
 

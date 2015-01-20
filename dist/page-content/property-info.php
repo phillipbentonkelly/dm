@@ -37,8 +37,8 @@
 
         <div class="listing__detail-share">
             <div class="listing__detail-share--row1">
-                <a href="javascript:;"><img class="listing__detail-share-icons" src="images/listings/heart-icon-purple.png"></a>
-                <a href="javascript:;"><img class="listing__detail-share-icons" src="images/listings/share-icon-purple.png"></a>
+                <a class='save-modal-btn' href="javascript:;"><img class="listing__detail-share-icons" src="images/listings/heart-icon-purple.png"></a>
+                <a class='share-modal-btn' href="javascript:;"><img class="listing__detail-share-icons" src="images/listings/share-icon-purple.png"></a>
             </div>
 
             <div class="listing__detail-share--row2">
@@ -48,32 +48,6 @@
         </div>
 
     </div>
-
-    <!-- MODAL: SAVE SEARCH -->
-    <div class="save-search-modal">
-        <div class="header">
-            <a class="close-modal-btn" href="javascript:;"><img class="close-modal" src="images/listings/x-icon.jpg"></a>
-            <p>Save Search</p>
-        </div>
-        <div class="content">
-            <p class="info">Save a search and get instant notifications about new listings and status changes on homes that match your search criteria</p>
-            <input placeholder="Search Nickname">
-            <button>Save</button>
-        </div>
-    </div>
-    <!-- /MODAL: SAVE SEARCH -->
-
-    <!-- MODAL: SHARE PROPERTY -->
-    <div class="share-modal">
-        <div class="header">
-            <a class="close-modal-btn" href="javascript:;"><img class="close-modal" src="images/listings/x-icon.jpg"></a>
-            <p>Share</p>
-        </div>
-        <div class="content">
-            <p class="info">SHARE COMING SOON</p>
-        </div>
-    </div>
-    <!-- /MODAL: SAVE SEARCH -->
 
     <!-- CAROUSEL IMAGE -->
     <div class="image-carousel-wrapper">
@@ -196,7 +170,7 @@
         </a>
 
         <a href="javascript:;">
-            <div id="mobile-contact-btn" class="button right-button">
+            <div class="mobile-contact-btn button right-button">
                 <img class="contact-icon-white" src="images/listings/contact-icon-white.png">
                 <p>Contact</p>
             </div>

@@ -2,13 +2,13 @@
 <div class='search-results'>
 
     <div class='search-results__summary'>
-        <p class='search-summary-count'><span class='search-neighborhood'>Brookline</span> Real Estate<span class='total-results'>147 results.</span></p>
+        <p class='search-summary-header'><span class='search-neighborhood'>Brookline</span> Real Estate<span class='total-results'>147 results.</span></p>
     </div>
 
     <div class='search-results__filter-bar'>
-        <p>Showing <span class='low-end'>1</span> to <span class='high-end'>10</span> of <span class='total-results'>147</span></p>
+        <p class='search-results__summary-count'>Showing <span class='low-end'>1</span> to <span class='high-end'>10</span> of <span class='total-results'>147</span></p>
 
-        <select class="filter-drop">
+        <select class="sort-drop">
             <option value="default">Sort by Default</option>
             <option value="best-match">Best Match</option>
             <option value="newest">Newest</option>
@@ -17,6 +17,15 @@
             <option value="bedrooms">Most Bedrooms</option>
             <option value="sqfeet">Largest Square Feet</option>
         </select>
+
+        <div class='filter-drop'>
+            <p>Filter by</p>
+        </div>
+
+        <a href='javascript:;'><div class='serp-map-button'><span><img class='serp-map-icon' src='images/listings/pindrop-icon-purple.png'/></span>Map</div></a>
+    </div>
+    <div class='serp-map--mobile'>
+        <img class='serp-map--mobile-image' style='max-height:350px;width:100%;overflow:hidden;box-sizing:border-box;display:none;' src='http://www.codeproject.com/KB/web-image/Google_map/sampleMap.JPG'/>
     </div>
 
     <!-- SEARCH RESULT ITEM -->
@@ -87,7 +96,7 @@
             </div>
 
             <div class='realtor-info--right'>
-                <button class='realtor-contact'>Contact</button>
+                <button class='realtor-contact mobile-contact-btn'>Contact</button>
                 <p class='realtor-name'>Blake Sherwood</p>
             </div>
         </div>
@@ -162,7 +171,7 @@
             </div>
 
             <div class='realtor-info--right'>
-                <button class='realtor-contact'>Contact</button>
+                <button class='realtor-contact mobile-contact-btn'>Contact</button>
                 <p class='realtor-name'>Blake Sherwood</p>
             </div>
         </div>
@@ -238,7 +247,7 @@
             </div>
 
             <div class='realtor-info--right'>
-                <button class='realtor-contact'>Contact</button>
+                <button class='realtor-contact mobile-contact-btn'>Contact</button>
                 <p class='realtor-name'>Blake Sherwood</p>
             </div>
         </div> -->
@@ -325,7 +334,7 @@
             </div>
 
             <div class='realtor-info--right'>
-                <button class='realtor-contact'>Contact</button>
+                <button class='realtor-contact mobile-contact-btn'>Contact</button>
                 <p class='realtor-name'>Blake Sherwood</p>
             </div>
         </div>
@@ -401,7 +410,7 @@
             </div>
 
             <div class='realtor-info--right'>
-                <button class='realtor-contact'>Contact</button>
+                <button class='realtor-contact mobile-contact-btn'>Contact</button>
                 <p class='realtor-name'>Blake Sherwood</p>
             </div>
         </div>
@@ -477,7 +486,7 @@
             </div>
 
             <div class='realtor-info--right'>
-                <button class='realtor-contact'>Contact</button>
+                <button class='realtor-contact mobile-contact-btn'>Contact</button>
                 <p class='realtor-name'>Blake Sherwood</p>
             </div>
         </div>
@@ -565,7 +574,7 @@
             </div>
 
             <div class='realtor-info--right'>
-                <button class='realtor-contact'>Contact</button>
+                <button class='realtor-contact mobile-contact-btn'>Contact</button>
                 <p class='realtor-name'>Blake Sherwood</p>
             </div>
         </div>
@@ -641,7 +650,7 @@
             </div>
 
             <div class='realtor-info--right'>
-                <button class='realtor-contact'>Contact</button>
+                <button class='realtor-contact mobile-contact-btn'>Contact</button>
                 <p class='realtor-name'>Blake Sherwood</p>
             </div>
         </div>
@@ -717,7 +726,7 @@
             </div>
 
             <div class='realtor-info--right'>
-                <button class='realtor-contact'>Contact</button>
+                <button class='realtor-contact mobile-contact-btn'>Contact</button>
                 <p class='realtor-name'>Blake Sherwood</p>
             </div>
         </div>
@@ -805,7 +814,7 @@
             </div>
 
             <div class='realtor-info--right'>
-                <button class='realtor-contact'>Contact</button>
+                <button class='realtor-contact mobile-contact-btn'>Contact</button>
                 <p class='realtor-name'>Blake Sherwood</p>
             </div>
         </div>
@@ -822,19 +831,11 @@
         </div>
     </div>
 
-    <!-- MODAL: SAVE SEARCH -->
-    <div class="save-search-modal">
-        <div class="header">
-            <a class="close-modal-btn" href="javascript:;"><img class="close-modal" src="images/listings/x-icon.jpg"></a>
-            <p>Save Search</p>
-        </div>
-        <div class="content">
-            <p class="info">Save a search and get instant notifications about new listings and status changes on homes that match your search criteria</p>
-            <input placeholder="Search Nickname">
-            <button>Save</button>
-        </div>
-    </div>
-    <!-- /MODAL: SAVE SEARCH -->
+    <script type="text/javascript">
+        $('.filter-option').on('click', function() {
+            $(this).toggleClass('selected');
+        })
+    </script>
 
 
     <!-- SERP MOBILE BUTTON DOCK -->
@@ -856,6 +857,17 @@
     </div>
     <!-- /SERP MOBILE BUTTON DOCK -->
 
-
 </div>
 <!-- /SERP SEARCH RESULTS -->
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('.serp-map-button').click(function() {
+            $('.serp-map--mobile-image').slideToggle(200);
+        });
+    }); 
+</script>
+
+
+
+

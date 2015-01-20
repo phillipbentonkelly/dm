@@ -40,7 +40,7 @@ if (typeof bdc === 'undefined') { bdc = {}; }
 
 		_engine.current = module.$slides.length > 2? 1 : 0;
 
-		console.log("module.$slides count: " + module.$slides.length);
+		//console.log("module.$slides count: " + module.$slides.length);
 
 		// Set up Event Handlers
 		module.eventHandlers();
@@ -59,7 +59,7 @@ if (typeof bdc === 'undefined') { bdc = {}; }
     };
 
     _engine.toggleCaptions = function(e) {
-    	console.log("Show Captions");
+    	//console.log("Show Captions");
     	module.$caption.toggle();
     };
 
@@ -68,7 +68,7 @@ if (typeof bdc === 'undefined') { bdc = {}; }
     	info.defaultWidth = module.$slideDefaultImg.width();
     	info.defaultHeight = module.$slideDefaultImg.height();
 
-    	console.log(info);
+    	//console.log(info);
     };
 
 

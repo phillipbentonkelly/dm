@@ -12,6 +12,6 @@
                 <a class='contact__agent-website' href='#'>Visit My Website</a>
             </div>
         </div>
-        <div class='contact__contact-button'>contact</div>
+        <div class='contact__contact-button mobile-contact-btn'>contact</div>
     </div>  
 </div>
