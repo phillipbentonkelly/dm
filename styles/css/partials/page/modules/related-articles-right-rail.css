@@ -97,4 +97,11 @@
   width: 45%;
 }
 
+@media (min-width: 768px) {
+  /* line 102, ../../../../sass/partials/page/modules/related-articles-right-rail.scss */
+  .related-articles-mobile {
+    display: block;
+  }
+}
+
 /*# sourceMappingURL=related-articles-right-rail.css.map */

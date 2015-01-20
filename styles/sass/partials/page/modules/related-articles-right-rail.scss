@@ -97,3 +97,14 @@ $module-name: 'related-articles-mobile';
 		}
 	}
 }
+
+@media (min-width: 768px) {
+	.#{$module-name} {
+		display: block;
+	}
+}
+
+
+
+
+
