@@ -19,7 +19,7 @@
         </select>
 
         <div class='filter-drop'>
-            <p>Search Filters</p>
+            <p>Filter by</p>
         </div>
 
         <a href='javascript:;'><div class='serp-map-button'><span><img class='serp-map-icon' src='images/listings/pindrop-icon-purple.png'/></span>Map</div></a>
