@@ -21,6 +21,10 @@ $(document).ready(function() {
 		$('.share-modal').modal();
 	});
 
+	$.modal.find('button').on('click', function(){
+		$.modal.close();
+	});
+
 	$(document).on('click', '.close-modal', function() {
         $.modal.close();
     });

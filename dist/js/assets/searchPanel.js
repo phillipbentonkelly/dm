@@ -28,12 +28,12 @@ dm.select2 = {};
 			$lower: $('.lower-level')
 		};
 
-		this.inputs = {
+		this.filters = {
 			$main: $('.page-search__dropdown--main'),
-			$allFilters: $('.page-search__dropdown--filter, .page-search__dropdown--filter-wide, .page-search__dropdown--filter-advanced'),
-			$filtersAddTitle: $('.page-search__dropdown--filter'),
-			$filtersOther: $('.page-search__dropdown--filter-wide, .page-search__dropdown--filter-advanced'),
-			$filterRange: $('.page-search__dropdown--filter-range'), 
+			$sub: $('.page-search__dropdown--filter, .page-search__dropdown--filter-wide, .page-search__dropdown--filter-advanced'),
+			$s2num: $('.page-search__dropdown--filter'),
+			$other: $('.page-search__dropdown--filter-wide, .page-search__dropdown--filter-advanced'),
+			$range: $('.page-search__dropdown--filter-range'), 
 			$tokenize: $('.page-search__input--tokenize')
 		};
 
@@ -77,15 +77,15 @@ dm.select2 = {};
             	}
             };
 
-            this.inputs.$main.selectize(mainInputParams);
-            this.inputs.$tokenize.selectize(tokenizeParams);
+            this.filters.$main.selectize(mainInputParams);
+            this.filters.$tokenize.selectize(tokenizeParams);
 
 
-			this.inputs.$filtersAddTitle.select2({
+			this.filters.$s2num.select2({
 				formatSelection: this.formatSelect
 			});
 
-			this.inputs.$filtersOther.select2();
+			this.filters.$other.select2();
 
             this.eventHandlers();
 
@@ -95,7 +95,6 @@ dm.select2 = {};
 
 			var self = this;
 
-
 			switch(self.device){
 
 				case 'desktop':
@@ -103,7 +102,6 @@ dm.select2 = {};
 					self.btns.$lvl2t.on('click', function(e){
 						e.preventDefault();
 						var arrow = $(this).children('span');
-
 						if(self.allOpen){
 							arrow.toggle();
 							self.lvls.$three.slideUp(400, function(e){
@@ -136,10 +134,15 @@ dm.select2 = {};
 					self.btns.$save.on('click', function(e){
 						e.preventDefault();
 						var status = $(this).children('span');
+						var modal = $('.save-search-modal');
 						if(!self.saved){
-							status.toggle();
-							self.saved = false;
+							modal.modal();
+							modal.find('button').on('click',function(e){
+								status.toggle();
+								self.saved = true;
+							});
 						}
+
 					});
 
 				break;
@@ -148,10 +151,7 @@ dm.select2 = {};
 				case 'mobile':
 
 					// for mobile, merge levels 2 and 3
-					//var $lvl2 = $.merge(self.lvls.$two, self.lvls.$three);
-
 					var $lvl2ts = self.btns.$lvl2t.children('span');
-					//var all = $.merge(self.lvls.$one, lvl2);
 
 					self.btns.$lvl1t.on('click', function(e){
 						e.preventDefault();
@@ -187,7 +187,10 @@ dm.select2 = {};
 			var dd = $(el).closest('section').children('select')[0];
 			var ph = $(dd).attr('data-placeholder');
 			return s.text + ' ' + ph;
-		}
+		},
+
+
+		
 
 	};	
 
