@@ -8,4 +8,4 @@
         <p class="info">SHARE COMING SOON</p>
     </div>
 </div>
-<!-- /MODAL: SAVE SEARCH -->
+<!-- /MODAL: /SHARE PROPERTY -->

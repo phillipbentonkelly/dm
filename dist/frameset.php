@@ -370,7 +370,7 @@
     <?php include 'page/page-footer.php'; ?>
 
     <!-- Search Modal -->
-    <?php include 'page/modules/search-modal.php'; ?>
+    <?php include 'page-content/modules/search-modal.php'; ?>
 
     <!-- ARTICLES: Discus -->
 	<?php if ($pageType == 'articles') { ?>

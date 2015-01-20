@@ -96,7 +96,7 @@
             </div>
 
             <div class='realtor-info--right'>
-                <button id='mobile-contact-btn' class='realtor-contact mobile-contact-btn'>Contact</button>
+                <button class='realtor-contact mobile-contact-btn'>Contact</button>
                 <p class='realtor-name'>Blake Sherwood</p>
             </div>
         </div>

@@ -170,7 +170,7 @@
         </a>
 
         <a href="javascript:;">
-            <div id="mobile-contact-btn" class="button right-button">
+            <div class="mobile-contact-btn button right-button">
                 <img class="contact-icon-white" src="images/listings/contact-icon-white.png">
                 <p>Contact</p>
             </div>
