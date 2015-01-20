@@ -168,13 +168,7 @@ $module-name: 'search-results';
     }
 
     .sort-drop {
-      position: absolute;
-      bottom: 5px;
-      top: 5px;
-      left: 120px;
-      background: white;
-      border: none;
-      font-family: 'OpenSans Regular'; 
+      display: none;
     }
 
     .filter-drop {
@@ -587,8 +581,14 @@ $module-name: 'search-results';
 
       .sort-drop {
         display: block;
+        position: absolute;
+        top: 5px;
+        bottom: 5px;
         right: 5px;
         left: initial;
+        background: white;
+        border: none;
+        font-family: 'OpenSans Regular'; 
       }
 
     }

@@ -29,9 +29,9 @@ dm.select2 = {};
 
 		this.inputs = {
 			$main: $('.page-search__dropdown--main'),
-			$allFilters: $('.page-search__dropdown--filter, .page-search__dropdown--filter-wide, .page-search__dropdown--filter-advanced'),
+			$allFilters: $('.page-search__dropdown--filter, .page-search__dropdown--filter-hometype, .page-search__dropdown--filter-dom'),
 			$filters1: $('.page-search__dropdown--filter'),
-			$filters2: $('.page-search__dropdown--filter-wide, .page-search__dropdown--filter-advanced'),
+			$filters2: $('.page-search__dropdown--filter-hometype, .page-search__dropdown--filter-dom'),
 			$filterRange: $('.page-search__dropdown--filter-range'), 
 			$tokenize: $('.page-search__input--tokenize')
 		};
@@ -95,20 +95,22 @@ dm.select2 = {};
 
 				case 'desktop':
 
+					var pOpen = 'select2-panel-open';
+
 					self.btns.$lvl2t.on('click', function(e){
 						e.preventDefault();
-						var arrow = $(this).children('span');
+						var status = $(this).getObservable();
 
 						if(self.allOpen){
-							arrow.toggle();
 							self.lvls.$three.hide();
 							self.lvls.$two.hide();
-							self.btns.$lvl3t.removeClass('select2-panel-open');
+							self.btns.$lvl3t.removeClass(pOpen);
 							self.allOpen = false;
-						}else{
-							arrow.toggle();
+							status.toggle();
+						}else{							
 							self.lvls.$two.toggle();
 							self.allOpen = false;
+							status.toggle();
 						}
 					
 					});
@@ -116,21 +118,24 @@ dm.select2 = {};
 					self.btns.$lvl3t.on('click', function(e){
 						e.preventDefault();
 						self.lvls.$three.toggle();
-						self.btns.$lvl3t.toggleClass('select2-panel-open');
+						self.btns.$lvl3t.toggleClass(pOpen);
 						self.allOpen = (self.allOpen == true) ? false : true;
 					});
 
 					self.btns.$close.on('click', function(e){
 						e.preventDefault();
 						self.lvls.$three.hide();
-						self.btns.$lvl3t.removeClass('select2-panel-open');
+						self.btns.$lvl3t.removeClass(pOpen);
 						self.allOpen = false;
 					});
 
 					self.btns.$save.on('click', function(e){
 						e.preventDefault();
-						var status = $(this).children('span');
+						var status = $(this).getObservable();
 						if(!self.saved){
+							// put yowah request heeyah...
+
+							// add these 2 lines to "if success" block
 							status.toggle();
 							self.saved = false;
 						}
@@ -144,29 +149,27 @@ dm.select2 = {};
 					// for mobile, merge levels 2 and 3
 					var lvl2 = $.merge(self.lvls.$two, self.lvls.$three);
 
-					var lvl2state = self.btns.$lvl2t.children('span');
-					//var all = $.merge(self.lvls.$one, lvl2);
+					var lvl2Status = self.btns.$lvl2t.getObservable();
 
 					self.btns.$lvl1t.on('click', function(e){
-						console.log('hello world');
 						e.preventDefault();
-						var span = $(this).children('span');
+						var status = $(this).getObservable();
 						if(self.allOpen){
 							self.lvls.$one.hide();
 							lvl2.hide();
-							lvl2state.toggle();
+							lvl2Status.toggle();
 							self.allOpen = false;
 						}else{
 							self.lvls.$one.toggle();
 							self.allOpen = false;
 						}
-						span.toggle();
+						status.toggle();
 					});
 
 					self.btns.$lvl2t.on('click', function(e){
 						e.preventDefault();
-						var sign = $(this).children('span');
-						sign.toggle();
+						var status = $(this).getObservable();
+						status.toggle();
 						lvl2.toggle();
 						self.allOpen = true;
 					});
@@ -184,6 +187,10 @@ dm.select2 = {};
 		return this.each(function(){
 			new dm.searchPanel(this);
 		});
+	};
+
+	$.fn.getObservable = function(){
+		return $(this).children('span');
 	}
 
 

@@ -19,7 +19,7 @@
         </select>
 
         <div class='filter-drop'>
-            <p>Search Filters</p>
+            <p>Filter by</p>
         </div>
 
         <a href='javascript:;'><div class='serp-map-button'><span><img class='serp-map-icon' src='images/listings/pindrop-icon-purple.png'/></span>Map</div></a>
@@ -96,7 +96,7 @@
             </div>
 
             <div class='realtor-info--right'>
-                <button class='realtor-contact'>Contact</button>
+                <button class='realtor-contact mobile-contact-btn'>Contact</button>
                 <p class='realtor-name'>Blake Sherwood</p>
             </div>
         </div>
@@ -171,7 +171,7 @@
             </div>
 
             <div class='realtor-info--right'>
-                <button class='realtor-contact'>Contact</button>
+                <button class='realtor-contact mobile-contact-btn'>Contact</button>
                 <p class='realtor-name'>Blake Sherwood</p>
             </div>
         </div>
@@ -247,7 +247,7 @@
             </div>
 
             <div class='realtor-info--right'>
-                <button class='realtor-contact'>Contact</button>
+                <button class='realtor-contact mobile-contact-btn'>Contact</button>
                 <p class='realtor-name'>Blake Sherwood</p>
             </div>
         </div> -->
@@ -334,7 +334,7 @@
             </div>
 
             <div class='realtor-info--right'>
-                <button class='realtor-contact'>Contact</button>
+                <button class='realtor-contact mobile-contact-btn'>Contact</button>
                 <p class='realtor-name'>Blake Sherwood</p>
             </div>
         </div>
@@ -410,7 +410,7 @@
             </div>
 
             <div class='realtor-info--right'>
-                <button class='realtor-contact'>Contact</button>
+                <button class='realtor-contact mobile-contact-btn'>Contact</button>
                 <p class='realtor-name'>Blake Sherwood</p>
             </div>
         </div>
@@ -486,7 +486,7 @@
             </div>
 
             <div class='realtor-info--right'>
-                <button class='realtor-contact'>Contact</button>
+                <button class='realtor-contact mobile-contact-btn'>Contact</button>
                 <p class='realtor-name'>Blake Sherwood</p>
             </div>
         </div>
@@ -574,7 +574,7 @@
             </div>
 
             <div class='realtor-info--right'>
-                <button class='realtor-contact'>Contact</button>
+                <button class='realtor-contact mobile-contact-btn'>Contact</button>
                 <p class='realtor-name'>Blake Sherwood</p>
             </div>
         </div>
@@ -650,7 +650,7 @@
             </div>
 
             <div class='realtor-info--right'>
-                <button class='realtor-contact'>Contact</button>
+                <button class='realtor-contact mobile-contact-btn'>Contact</button>
                 <p class='realtor-name'>Blake Sherwood</p>
             </div>
         </div>
@@ -726,7 +726,7 @@
             </div>
 
             <div class='realtor-info--right'>
-                <button class='realtor-contact'>Contact</button>
+                <button class='realtor-contact mobile-contact-btn'>Contact</button>
                 <p class='realtor-name'>Blake Sherwood</p>
             </div>
         </div>
@@ -814,7 +814,7 @@
             </div>
 
             <div class='realtor-info--right'>
-                <button class='realtor-contact'>Contact</button>
+                <button class='realtor-contact mobile-contact-btn'>Contact</button>
                 <p class='realtor-name'>Blake Sherwood</p>
             </div>
         </div>
@@ -830,37 +830,6 @@
             <a class='results-pag-link-left' href='javascript:;'><img class='results-pag-nav-right' src='images/listings/arrow-icon-purple.png'/></a>
         </div>
     </div>
-
-    <!-- MODAL: SAVE SEARCH -->
-    <div class="save-search-modal">
-        <div class="header">
-            <a class="close-modal-btn" href="javascript:;"><img class="close-modal" src="images/listings/x-icon.jpg"></a>
-            <p>Save Search</p>
-        </div>
-        <div class="content">
-            <p class="info">Save a search and get instant notifications about new listings and status changes on homes that match your search criteria</p>
-            <input placeholder="Search Nickname">
-            <button>Save</button>
-        </div>
-    </div>
-    <!-- /MODAL: SAVE SEARCH -->
-
-    <!-- MODAL: SEARCH FILTERS -->
-    <div class="search-filters-modal">
-        <div class="header">
-            <a class="close-modal-btn" href="javascript:;"><img class="close-modal" src="images/listings/x-icon.jpg"></a>
-            <p>Filter Search</p>
-        </div>
-        <div class="content">
-            <a href='javascript:;'><p class='filter-option' value="best-match">Best Match</p></a>
-            <a href='javascript:;'><p class='filter-option' value="newest">Newest</p></a>
-            <a href='javascript:;'><p class='filter-option' value="price-high-low">Price (High-Low)</p></a>
-            <a href='javascript:;'><p class='filter-option' value="prive-low-high">Price (Low-High)</p></a>
-            <a href='javascript:;'><p class='filter-option' value="bedrooms">Most Bedrooms</p></a>
-            <a href='javascript:;'><p class='filter-option' value="sqfeet">Largest Square Feet</p></a>
-        </div>
-    </div>
-    <!-- /MODAL: /SEARCH FILTERS -->
 
     <script type="text/javascript">
         $('.filter-option').on('click', function() {
