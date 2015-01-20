@@ -1,15 +1,16 @@
 /* line 3, ../../../../sass/partials/page/modules/related-articles-right-rail.scss */
 .related-articles-mobile {
+  display: none;
   position: relative;
 }
-/* line 6, ../../../../sass/partials/page/modules/related-articles-right-rail.scss */
+/* line 7, ../../../../sass/partials/page/modules/related-articles-right-rail.scss */
 .related-articles-mobile .related-articles-nav {
   float: right;
   position: absolute;
   top: 10px;
   right: 10px;
 }
-/* line 12, ../../../../sass/partials/page/modules/related-articles-right-rail.scss */
+/* line 13, ../../../../sass/partials/page/modules/related-articles-right-rail.scss */
 .related-articles-mobile .related-articles-nav .re-widget-left, .related-articles-mobile .related-articles-nav .re-widget-right {
   display: inline-block;
   background-image: url(../../images/listings/arrow-icon-grey.jpg);
@@ -20,11 +21,11 @@
   vertical-align: middle;
   margin: 0;
 }
-/* line 23, ../../../../sass/partials/page/modules/related-articles-right-rail.scss */
+/* line 24, ../../../../sass/partials/page/modules/related-articles-right-rail.scss */
 .related-articles-mobile .related-articles-nav .re-widget-right {
   transform: rotate(180deg);
 }
-/* line 27, ../../../../sass/partials/page/modules/related-articles-right-rail.scss */
+/* line 28, ../../../../sass/partials/page/modules/related-articles-right-rail.scss */
 .related-articles-mobile .related-articles-nav .re-widget-right:active {
   transform: rotate(270deg);
   background-size: 20px 24px;
@@ -32,19 +33,19 @@
   width: 20px;
   margin-left: 2px;
 }
-/* line 35, ../../../../sass/partials/page/modules/related-articles-right-rail.scss */
+/* line 36, ../../../../sass/partials/page/modules/related-articles-right-rail.scss */
 .related-articles-mobile .related-articles-nav .re-widget-left:active {
   transform: rotate(90deg);
   background-size: 20px 24px;
   height: 24px;
   width: 20px;
 }
-/* line 42, ../../../../sass/partials/page/modules/related-articles-right-rail.scss */
+/* line 43, ../../../../sass/partials/page/modules/related-articles-right-rail.scss */
 .related-articles-mobile .related-articles-nav .re-widget-left:active, .related-articles-mobile .related-articles-nav .re-widget-right:active {
   background-image: url(../../images/listings/arrow-icon-purple.png);
   margin-right: 0;
 }
-/* line 48, ../../../../sass/partials/page/modules/related-articles-right-rail.scss */
+/* line 49, ../../../../sass/partials/page/modules/related-articles-right-rail.scss */
 .related-articles-mobile__item {
   position: relative;
   display: inline-block;
@@ -56,19 +57,19 @@
   max-height: 250px;
   border-bottom: 1px solid #bebebe;
 }
-/* line 59, ../../../../sass/partials/page/modules/related-articles-right-rail.scss */
+/* line 60, ../../../../sass/partials/page/modules/related-articles-right-rail.scss */
 .related-articles-mobile__item .thumb {
   float: left;
   margin-bottom: 5px;
 }
-/* line 64, ../../../../sass/partials/page/modules/related-articles-right-rail.scss */
+/* line 65, ../../../../sass/partials/page/modules/related-articles-right-rail.scss */
 .related-articles-mobile__item h2.title {
   font-family: 'OpenSans Semibold';
   font-size: 13px !important;
   text-align: left;
   color: black;
 }
-/* line 71, ../../../../sass/partials/page/modules/related-articles-right-rail.scss */
+/* line 72, ../../../../sass/partials/page/modules/related-articles-right-rail.scss */
 .related-articles-mobile__item .description {
   font-family: 'OpenSans Regular';
   font-size: 11px !important;
@@ -76,7 +77,7 @@
   color: black;
   margin-bottom: 10px;
 }
-/* line 79, ../../../../sass/partials/page/modules/related-articles-right-rail.scss */
+/* line 80, ../../../../sass/partials/page/modules/related-articles-right-rail.scss */
 .related-articles-mobile__item .date {
   font-size: 11px;
   font-style: italic;
@@ -84,13 +85,13 @@
   bottom: 5px;
   left: 135px;
 }
-/* line 87, ../../../../sass/partials/page/modules/related-articles-right-rail.scss */
+/* line 88, ../../../../sass/partials/page/modules/related-articles-right-rail.scss */
 .related-articles-mobile__item .main-info {
   float: left;
   width: 55%;
   height: 100%;
 }
-/* line 93, ../../../../sass/partials/page/modules/related-articles-right-rail.scss */
+/* line 94, ../../../../sass/partials/page/modules/related-articles-right-rail.scss */
 .related-articles-mobile__item .additional-info {
   float: left;
   width: 45%;
