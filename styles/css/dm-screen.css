@@ -2657,7 +2657,7 @@ body.serp .page-layout {
 /* line 95, ../sass/partials/page/modules/_contact-form-premium.scss */
 .contact__agent-links {
   color: #2e1460;
-  font-family: 'OpenSans';
+  font-family: 'OpenSans Regular';
   margin-bottom: 0px;
 }
 /* line 99, ../sass/partials/page/modules/_contact-form-premium.scss */
@@ -2669,7 +2669,7 @@ body.serp .page-layout {
 /* line 106, ../sass/partials/page/modules/_contact-form-premium.scss */
 .contact__agent-name {
   margin: 0;
-  font-family: 'OpenSans';
+  font-family: 'OpenSans Regular';
   font-weight: 600;
 }
 /* line 112, ../sass/partials/page/modules/_contact-form-premium.scss */
@@ -2682,7 +2682,7 @@ body.serp .page-layout {
 /* line 120, ../sass/partials/page/modules/_contact-form-premium.scss */
 .contact__agent-address p {
   margin: 0;
-  font-family: 'OpenSans';
+  font-family: 'OpenSans Regular';
   font-size: 11px;
 }
 /* line 127, ../sass/partials/page/modules/_contact-form-premium.scss */
@@ -2692,7 +2692,7 @@ body.serp .page-layout {
 /* line 130, ../sass/partials/page/modules/_contact-form-premium.scss */
 .contact__form input, .contact__form textarea {
   display: inline-block;
-  font-family: OpenSans;
+  font-family: OpenSans Regular;
   color: rgba(0, 0, 0, 0.5);
   font-size: 13px;
   /* Approximation due to font substitution */
@@ -2717,7 +2717,7 @@ body.serp .page-layout {
   color: white;
   border: none;
   border-radius: 2px;
-  font-family: 'OpenSans', sans-serif;
+  font-family: 'OpenSans Regular', sans-serif;
   font-weight: 300;
   font-size: 105%;
   float: right;
@@ -2735,7 +2735,7 @@ body.serp .page-layout {
   background: #2e1460;
   float: right;
   border-radius: 2px;
-  font-family: 'OpenSans', sans-serif;
+  font-family: 'OpenSans Regular', sans-serif;
   font-size: 11px;
   font-weight: 700;
   text-transform: uppercase;
@@ -2745,7 +2745,7 @@ body.serp .page-layout {
   margin-right: -15px;
   margin-top: 15px;
   float: right;
-  font-family: OpenSans;
+  font-family: OpenSans Regular;
   color: #2e1460;
   font-size: 13px;
   /* Approximation due to font substitution */
@@ -2758,7 +2758,7 @@ body.serp .page-layout {
   margin-bottom: 3px;
   text-align: right;
   color: #A0A0A0;
-  font-family: OpenSans;
+  font-family: OpenSans Regular;
   font-size: 12px;
   font-weight: 200;
 }
@@ -2776,7 +2776,7 @@ body.serp .page-layout {
 }
 /* line 213, ../sass/partials/page/modules/_contact-form-premium.scss */
 .contact__company-name {
-  font-family: OpenSans;
+  font-family: OpenSans Regular;
   letter-spacing: 0px;
   color: #000000;
   font-size: 12px;
@@ -2858,7 +2858,6 @@ body.serp .page-layout {
 .listing__mobile-button-dock .button {
   width: 33.33%;
   float: left;
-  background: lightblue;
   background: #2e1460;
   color: white;
   text-align: center;
@@ -2866,34 +2865,34 @@ body.serp .page-layout {
   height: 40px;
   box-sizing: border-box;
 }
-/* line 70, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 69, ../sass/partials/page/modules/_listing-summary.scss */
 .listing__mobile-button-dock .button:active {
   background: black;
 }
-/* line 74, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 73, ../sass/partials/page/modules/_listing-summary.scss */
 .listing__mobile-button-dock .left-button, .listing__mobile-button-dock .middle-button, .listing__mobile-button-dock .right-button {
   border-right: 2px solid white;
   padding: 0 5px;
 }
-/* line 78, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 77, ../sass/partials/page/modules/_listing-summary.scss */
 .listing__mobile-button-dock .left-button img, .listing__mobile-button-dock .middle-button img, .listing__mobile-button-dock .right-button img {
   margin-right: 5px;
   height: 25px;
   vertical-align: middle;
 }
-/* line 84, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 83, ../sass/partials/page/modules/_listing-summary.scss */
 .listing__mobile-button-dock .left-button p, .listing__mobile-button-dock .middle-button p, .listing__mobile-button-dock .right-button p {
   margin-top: 12px;
 }
-/* line 88, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 87, ../sass/partials/page/modules/_listing-summary.scss */
 .listing__mobile-button-dock .left-button img, .listing__mobile-button-dock .left-button p, .listing__mobile-button-dock .middle-button img, .listing__mobile-button-dock .middle-button p, .listing__mobile-button-dock .right-button img, .listing__mobile-button-dock .right-button p {
   display: inline-block;
 }
-/* line 94, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 93, ../sass/partials/page/modules/_listing-summary.scss */
 .listing__tags {
   display: none;
 }
-/* line 98, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 97, ../sass/partials/page/modules/_listing-summary.scss */
 .listing__summary--mobile {
   display: inline-block;
   width: 100%;
@@ -2903,35 +2902,35 @@ body.serp .page-layout {
   box-sizing: border-box;
   margin-bottom: 15px;
 }
-/* line 108, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 107, ../sass/partials/page/modules/_listing-summary.scss */
 .listing__detail {
   width: 77%;
   float: left;
   border-right: 1px solid white;
   box-sizing: border-box;
 }
-/* line 114, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 113, ../sass/partials/page/modules/_listing-summary.scss */
 .listing__detail p {
   border-right: 1px solid white;
   border-bottom: 1px solid white;
 }
-/* line 120, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 119, ../sass/partials/page/modules/_listing-summary.scss */
 .listing__detail-share {
   float: left;
   width: 23%;
   height: 100%;
 }
-/* line 126, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 125, ../sass/partials/page/modules/_listing-summary.scss */
 .listing__detail--row1 {
   display: block;
   width: 100%;
 }
-/* line 131, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 130, ../sass/partials/page/modules/_listing-summary.scss */
 .listing__detail--row2 {
   display: block;
   width: 100%;
 }
-/* line 135, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 134, ../sass/partials/page/modules/_listing-summary.scss */
 .listing__detail--row2 p {
   box-sizing: border-box;
   width: 33.3%;
@@ -2944,47 +2943,47 @@ body.serp .page-layout {
   font-weight: 400;
   text-align: center;
 }
-/* line 149, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 148, ../sass/partials/page/modules/_listing-summary.scss */
 .listing__detail--row1 p:last-child, .listing__detail--row2 p:last-child, .listing__detail--row3 p:last-child {
   border-right: none;
 }
-/* line 154, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 153, ../sass/partials/page/modules/_listing-summary.scss */
 .listing__detail--row3 {
   display: block;
   width: 100%;
 }
-/* line 158, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 157, ../sass/partials/page/modules/_listing-summary.scss */
 .listing__detail--row3 p {
   box-sizing: border-box;
   width: 50%;
   padding: 7px 0;
   float: left;
   border-bottom: none;
-  font-family: OpenSans;
+  font-family: OpenSans Regular;
   color: #000000;
   font-size: 13px;
   /* Approximation due to font substitution */
   font-weight: 400;
   text-align: center;
 }
-/* line 172, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 171, ../sass/partials/page/modules/_listing-summary.scss */
 .listing__price {
   box-sizing: border-box;
   width: 100%;
   padding: 5px;
-  font-family: OpenSans;
+  font-family: OpenSans Regular;
   color: #000000;
   font-size: 18px;
   /* Approximation due to font substitution */
   font-weight: 600;
   text-align: center;
 }
-/* line 183, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 182, ../sass/partials/page/modules/_listing-summary.scss */
 .listing__share {
   width: 20%;
   float: left;
 }
-/* line 188, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 187, ../sass/partials/page/modules/_listing-summary.scss */
 .listing__detail-share--row1 {
   display: block;
   box-sizing: border-box;
@@ -2994,43 +2993,43 @@ body.serp .page-layout {
   height: 35px;
   overflow: hidden;
 }
-/* line 198, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 197, ../sass/partials/page/modules/_listing-summary.scss */
 .listing__detail-share--row2 {
   display: block;
   box-sizing: border-box;
   padding: 6px;
 }
-/* line 204, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 203, ../sass/partials/page/modules/_listing-summary.scss */
 .listing__detail-monthly-cost {
   font-size: 70%;
   color: #2e1460;
 }
-/* line 209, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 208, ../sass/partials/page/modules/_listing-summary.scss */
 .listing__summary--left {
   width: 75%;
   padding-right: 10px;
   clear: both;
 }
-/* line 214, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 213, ../sass/partials/page/modules/_listing-summary.scss */
 .listing__summary--left h2:nth-child(2) {
   margin-bottom: 10px;
 }
-/* line 219, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 218, ../sass/partials/page/modules/_listing-summary.scss */
 .listing__summary--right {
   display: none;
 }
-/* line 223, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 222, ../sass/partials/page/modules/_listing-summary.scss */
 .listing__summary {
   width: 100%;
   display: inline-block;
 }
-/* line 228, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 227, ../sass/partials/page/modules/_listing-summary.scss */
 .listing__address {
   display: none;
 }
-/* line 232, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 231, ../sass/partials/page/modules/_listing-summary.scss */
 .listing__address, .listing__address--mobile {
-  font-family: OpenSans;
+  font-family: OpenSans Regular;
   color: #000000;
   font-size: 24px;
   /* Approximation due to font substitution */
@@ -3039,16 +3038,16 @@ body.serp .page-layout {
   /* Approximation due to font substitution */
   text-align: left;
 }
-/* line 241, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 240, ../sass/partials/page/modules/_listing-summary.scss */
 .listing__address--mobile {
   display: block;
   margin-bottom: 15px;
 }
-/* line 246, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 245, ../sass/partials/page/modules/_listing-summary.scss */
 .listing__writeup-content {
   width: 100%;
   clear: both;
-  font-family: OpenSans;
+  font-family: OpenSans Regular;
   color: #000000;
   font-size: 16px;
   /* Approximation due to font substitution */
@@ -3057,37 +3056,37 @@ body.serp .page-layout {
   /* Approximation due to font substitution */
   text-align: left;
 }
-/* line 257, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 256, ../sass/partials/page/modules/_listing-summary.scss */
 .listing__writeup-more {
   float: right;
-  font-family: OpenSans;
+  font-family: OpenSans Regular;
   color: #666666;
   font-size: 11px;
   /* Approximation due to font substitution */
   font-weight: 600;
   text-align: left;
 }
-/* line 265, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 264, ../sass/partials/page/modules/_listing-summary.scss */
 .listing__writeup-more img {
   margin-left: 10px;
   vertical-align: middle;
   height: 30px;
   width: 30px;
 }
-/* line 273, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 272, ../sass/partials/page/modules/_listing-summary.scss */
 .listing__facts, .listing__features {
   clear: both;
   margin-bottom: 10px;
 }
-/* line 277, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 276, ../sass/partials/page/modules/_listing-summary.scss */
 .listing__facts h2, .listing__features h2 {
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Oswald Regular', sans-serif;
   font-weight: 400;
   color: #333333;
   text-align: center;
   margin-bottom: 15px;
 }
-/* line 286, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 285, ../sass/partials/page/modules/_listing-summary.scss */
 .listing__facts--left, .listing__facts--right, .listing__features--left, .listing__features--right {
   float: left;
   margin-top: 0;
@@ -3095,9 +3094,9 @@ body.serp .page-layout {
   padding-right: 10px;
   box-sizing: border-box;
 }
-/* line 293, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 292, ../sass/partials/page/modules/_listing-summary.scss */
 .listing__facts--left li, .listing__facts--right li, .listing__features--left li, .listing__features--right li {
-  font-family: OpenSans;
+  font-family: OpenSans Regular;
   color: #000000;
   font-size: 13px;
   /* Approximation due to font substitution */
@@ -3107,28 +3106,28 @@ body.serp .page-layout {
   text-align: left;
   padding-bottom: 5px;
 }
-/* line 304, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 303, ../sass/partials/page/modules/_listing-summary.scss */
 .listing__external-links {
   margin-bottom: 0;
   clear: both;
 }
-/* line 308, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 307, ../sass/partials/page/modules/_listing-summary.scss */
 .listing__external-links li {
-  font-family: OpenSans;
+  font-family: OpenSans Regular;
   font-size: 12px;
   font-weight: 700;
   padding-bottom: 5px;
 }
-/* line 315, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 314, ../sass/partials/page/modules/_listing-summary.scss */
 .listing__external-links a:link, .listing__external-links a:visited, .listing__external-links a:active {
   color: #2e1460;
   text-decoration: none;
 }
-/* line 319, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 318, ../sass/partials/page/modules/_listing-summary.scss */
 .listing__external-links a:hover {
   text-decoration: underline;
 }
-/* line 324, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 323, ../sass/partials/page/modules/_listing-summary.scss */
 .listing__details-expand {
   padding: 10px;
   display: inline-block;
@@ -3137,29 +3136,29 @@ body.serp .page-layout {
   margin-bottom: 5px;
   background: rgba(170, 170, 170, 0.3);
 }
-/* line 332, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 331, ../sass/partials/page/modules/_listing-summary.scss */
 .listing__details-expand h3 {
   text-align: center;
-  font-family: OpenSans;
+  font-family: OpenSans Regular;
   font-size: 18px;
   font-weight: 400;
 }
-/* line 339, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 338, ../sass/partials/page/modules/_listing-summary.scss */
 .listing__details-expand img {
   vertical-align: middle;
   margin-left: 10px;
 }
-/* line 344, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 343, ../sass/partials/page/modules/_listing-summary.scss */
 .listing__details-expand a:link, .listing__details-expand a:visited, .listing__details-expand a:active {
   color: black;
   text-decoration: none;
 }
-/* line 350, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 349, ../sass/partials/page/modules/_listing-summary.scss */
 .listing__contact-agent {
   display: none;
 }
 
-/* line 355, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 354, ../sass/partials/page/modules/_listing-summary.scss */
 .serp__mobile-button-dock {
   width: 100%;
   position: relative;
@@ -3171,7 +3170,7 @@ body.serp .page-layout {
   font-weight: 600;
   font-size: 12px;
 }
-/* line 366, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 365, ../sass/partials/page/modules/_listing-summary.scss */
 .serp__mobile-button-dock .button {
   width: 50%;
   float: left;
@@ -3183,117 +3182,117 @@ body.serp .page-layout {
   height: 40px;
   box-sizing: border-box;
 }
-/* line 378, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 377, ../sass/partials/page/modules/_listing-summary.scss */
 .serp__mobile-button-dock .button:active {
   background: black;
 }
-/* line 382, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 381, ../sass/partials/page/modules/_listing-summary.scss */
 .serp__mobile-button-dock .left-button {
   border-right: 2px solid white;
   padding: 0 5px;
 }
-/* line 386, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 385, ../sass/partials/page/modules/_listing-summary.scss */
 .serp__mobile-button-dock .left-button img {
   margin-right: 5px;
   height: 25px;
   vertical-align: middle;
 }
-/* line 392, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 391, ../sass/partials/page/modules/_listing-summary.scss */
 .serp__mobile-button-dock .left-button p {
   margin-top: 10px;
 }
-/* line 396, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 395, ../sass/partials/page/modules/_listing-summary.scss */
 .serp__mobile-button-dock .left-button img, .serp__mobile-button-dock .left-button p {
   display: inline-block;
 }
-/* line 401, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 400, ../sass/partials/page/modules/_listing-summary.scss */
 .serp__mobile-button-dock .right-button {
   padding: 5px;
 }
-/* line 404, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 403, ../sass/partials/page/modules/_listing-summary.scss */
 .serp__mobile-button-dock .right-button img {
   display: inline-block;
 }
-/* line 408, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 407, ../sass/partials/page/modules/_listing-summary.scss */
 .serp__mobile-button-dock .right-button p {
   line-height: 1;
   letter-spacing: 1;
 }
-/* line 413, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 412, ../sass/partials/page/modules/_listing-summary.scss */
 .serp__mobile-button-dock .right-button .title-block {
   display: inline-block;
 }
 
-/* line 419, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 418, ../sass/partials/page/modules/_listing-summary.scss */
 .mobile-ad {
   display: block;
   text-align: center;
 }
 
-/* line 425, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 424, ../sass/partials/page/modules/_listing-summary.scss */
 .image-carousel-wrapper {
   width: 100%;
   float: right;
   margin-bottom: 20px;
 }
 
-/* line 431, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 430, ../sass/partials/page/modules/_listing-summary.scss */
 #simplemodal-data {
   margin: 0 auto;
   width: 80%;
 }
 
-/* line 436, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 435, ../sass/partials/page/modules/_listing-summary.scss */
 #simplemodal-container {
   width: 100%;
 }
 
-/* line 440, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 439, ../sass/partials/page/modules/_listing-summary.scss */
 #simplemodal-overlay {
   background: rgba(10, 10, 10, 0.8);
 }
 
-/* line 444, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 443, ../sass/partials/page/modules/_listing-summary.scss */
 .save-search-modal, .share-modal {
   display: none;
   width: 100%;
   margin: 0 5%;
   text-align: center;
 }
-/* line 450, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 449, ../sass/partials/page/modules/_listing-summary.scss */
 .save-search-modal .close-modal-btn, .share-modal .close-modal-btn {
   float: right;
 }
-/* line 454, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 453, ../sass/partials/page/modules/_listing-summary.scss */
 .save-search-modal .close-modal, .share-modal .close-modal {
   height: 20px;
   width: 20px;
   padding: 0 10px;
 }
-/* line 460, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 459, ../sass/partials/page/modules/_listing-summary.scss */
 .save-search-modal .header, .share-modal .header {
   margin-bottom: 10px;
   background: #2e1460;
   text-align: center;
   margin-bottom: 3px;
   letter-spacing: 1px;
-  font-family: Oswald;
+  font-family: 'Oswald Regular';
   color: #ffffff;
   font-size: 26px;
   font-weight: 400;
 }
-/* line 473, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 472, ../sass/partials/page/modules/_listing-summary.scss */
 .save-search-modal .content, .share-modal .content {
   background: #dacef1;
   padding: 20px;
   height: 300px;
 }
-/* line 479, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 478, ../sass/partials/page/modules/_listing-summary.scss */
 .save-search-modal .info, .share-modal .info {
   line-height: 1.5;
   margin-bottom: 10px;
 }
-/* line 484, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 483, ../sass/partials/page/modules/_listing-summary.scss */
 .save-search-modal input, .share-modal input {
   margin-bottom: 15px;
   width: 100%;
@@ -3301,9 +3300,9 @@ body.serp .page-layout {
   border-radius: 5px;
   border: 1px solid #A0A0A0;
   box-sizing: border-box;
-  font-family: OpenSans;
+  font-family: OpenSans Regular;
 }
-/* line 495, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 494, ../sass/partials/page/modules/_listing-summary.scss */
 .save-search-modal button, .share-modal button {
   padding: 5px 15px;
   background: black;
@@ -3311,30 +3310,30 @@ body.serp .page-layout {
   border: none;
   border-radius: 3px;
   font-size: 18px;
-  font-family: 'OpenSans', sans-serif;
+  font-family: 'OpenSans Regular', sans-serif;
   font-weight: 300;
 }
 
 @media (min-width: 768px) {
-  /* line 516, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 515, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__mobile-button-dock {
     display: none;
   }
-  /* line 520, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 519, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__address--mobile {
     display: none;
   }
-  /* line 524, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 523, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__facts, .listing__features {
     font-size: 85%;
   }
-  /* line 528, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 527, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__address {
     display: block;
   }
 }
 @media (min-width: 768px) {
-  /* line 542, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 541, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__breadcrumbs {
     display: block;
     margin-bottom: 20px;
@@ -3347,31 +3346,31 @@ body.serp .page-layout {
     /* Approximation due to font substitution */
     text-align: left;
   }
-  /* line 552, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 551, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__breadcrumbs a:first-child:before {
     content: "";
   }
-  /* line 556, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 555, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__breadcrumbs a {
     color: #2e1460;
   }
-  /* line 561, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 560, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__breadcrumbs a:before, .listing__breadcrumb-address:before {
     content: " \B7 ";
     color: black;
   }
-  /* line 566, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 565, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__summary--mobile {
     display: none;
   }
-  /* line 570, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 569, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__summary--left {
     width: 50%;
     padding-right: 20px;
     float: left;
     box-sizing: border-box;
   }
-  /* line 577, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 576, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__summary--right {
     display: block;
     width: 50%;
@@ -3382,25 +3381,25 @@ body.serp .page-layout {
     box-sizing: border-box;
     margin-bottom: 15px;
   }
-  /* line 588, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 587, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__detail-pindrop {
     display: inline-block;
     vertical-align: middle;
   }
-  /* line 593, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 592, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__for-sale {
     font-family: 'Oswald', sans-serif;
     font-size: 12px;
     font-weight: 400;
     display: inline-block;
   }
-  /* line 600, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 599, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__tags {
     display: inline-block;
     min-height: 10px;
     overflow: hidden;
   }
-  /* line 605, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 604, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__tags .tag {
     display: block;
     float: left;
@@ -3413,7 +3412,7 @@ body.serp .page-layout {
     color: #fff;
     margin-bottom: 5px;
   }
-  /* line 617, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 616, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__tags .tag .arrow {
     display: block;
     float: right;
@@ -3424,44 +3423,44 @@ body.serp .page-layout {
     border-right: 8px solid white;
     margin-left: 6px;
   }
-  /* line 629, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 628, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__tags .location {
     background-color: #82b5e6;
   }
-  /* line 630, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 629, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__tags .class {
     background-color: #00a651;
   }
-  /* line 631, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 630, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__tags .event {
     background-color: #ff6c6c;
   }
-  /* line 632, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 631, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__tags .featured {
     background-color: #2e1460;
   }
-  /* line 635, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 634, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__facts--left, .listing__facts--right, .listing__features--left, .listing__features--right {
     width: 33.3%;
     box-sizing: border-box;
     margin-bottom: 20px;
   }
-  /* line 641, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 640, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__facts, .listing__features {
     font-size: 100%;
   }
-  /* line 645, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 644, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__external-links {
     float: left;
     width: 33.3%;
     box-sizing: border-box;
     clear: none;
   }
-  /* line 651, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 650, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__external-links li {
     padding-bottom: 10px;
   }
-  /* line 656, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 655, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__contact-agent {
     background: #2e1460;
     padding: 7px;
@@ -3476,18 +3475,18 @@ body.serp .page-layout {
     font-weight: 600;
     text-align: center;
   }
-  /* line 669, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 668, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__contact-agent a:link, .listing__contact-agent a:visited, .listing__contact-agent a:active {
     color: white;
     text-decoration: none;
   }
 
-  /* line 676, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 675, ../sass/partials/page/modules/_listing-summary.scss */
   .dfp-ads {
     display: block;
   }
 
-  /* line 680, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 679, ../sass/partials/page/modules/_listing-summary.scss */
   .mobile-ad {
     display: none;
   }
