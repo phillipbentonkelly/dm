@@ -24,21 +24,20 @@ dm.select2 = {};
 		this.lvls = {
 			$one: $('.page-search__row--level-one'),
 			$two: $('.page-search__row--level-two'),
-			$three: $('.page-search__row--level-three'),
-			$lower: $('.lower-level')
+			$three: $('.page-search__row--level-three')
 		};
 
 		this.inputs = {
 			$main: $('.page-search__dropdown--main'),
 			$allFilters: $('.page-search__dropdown--filter, .page-search__dropdown--filter-wide, .page-search__dropdown--filter-advanced'),
-			$filtersAddTitle: $('.page-search__dropdown--filter'),
-			$filtersOther: $('.page-search__dropdown--filter-wide, .page-search__dropdown--filter-advanced'),
+			$filters1: $('.page-search__dropdown--filter'),
+			$filters2: $('.page-search__dropdown--filter-wide, .page-search__dropdown--filter-advanced'),
 			$filterRange: $('.page-search__dropdown--filter-range'), 
 			$tokenize: $('.page-search__input--tokenize')
 		};
 
 		this.btns = {
-			$lvl1t: $('.page-nav__search-responsive-icon a'),
+			$lvl1t: $('.page-nav__search-responsive-icon > a'),
 			$lvl2t: $('.page-search__button--level-two-toggle'),
 			$lvl3t: $('.page-search__button--level-three-toggle'),
 			$close: $('.page-search__button--close'),
@@ -81,11 +80,7 @@ dm.select2 = {};
             this.inputs.$tokenize.selectize(tokenizeParams);
 
 
-			this.inputs.$filtersAddTitle.select2({
-				formatSelection: this.formatSelect
-			});
-
-			this.inputs.$filtersOther.select2();
+			this.inputs.$allFilters.select2();
 
             this.eventHandlers();
 
@@ -106,14 +101,13 @@ dm.select2 = {};
 
 						if(self.allOpen){
 							arrow.toggle();
-							self.lvls.$three.slideUp(400, function(e){
-								self.lvls.$two.slideUp(400);
-							});
+							self.lvls.$three.hide();
+							self.lvls.$two.hide();
 							self.btns.$lvl3t.removeClass('select2-panel-open');
 							self.allOpen = false;
 						}else{
 							arrow.toggle();
-							self.lvls.$two.slideToggle(400);
+							self.lvls.$two.toggle();
 							self.allOpen = false;
 						}
 					
@@ -121,8 +115,8 @@ dm.select2 = {};
 
 					self.btns.$lvl3t.on('click', function(e){
 						e.preventDefault();
+						self.lvls.$three.toggle();
 						self.btns.$lvl3t.toggleClass('select2-panel-open');
-						self.lvls.$three.slideToggle(400);
 						self.allOpen = (self.allOpen == true) ? false : true;
 					});
 
@@ -148,32 +142,33 @@ dm.select2 = {};
 				case 'mobile':
 
 					// for mobile, merge levels 2 and 3
-					//var $lvl2 = $.merge(self.lvls.$two, self.lvls.$three);
+					var lvl2 = $.merge(self.lvls.$two, self.lvls.$three);
 
-					var $lvl2ts = self.btns.$lvl2t.children('span');
+					var lvl2state = self.btns.$lvl2t.children('span');
 					//var all = $.merge(self.lvls.$one, lvl2);
 
 					self.btns.$lvl1t.on('click', function(e){
+						console.log('hello world');
 						e.preventDefault();
-						$(this).toggleClass('close-search');
+						var span = $(this).children('span');
 						if(self.allOpen){
-							self.lvls.$lower.slideUp(400, function(e){
-								self.lvls.$one.slideUp(400);
-							});
-							$lvl2ts.toggle();
+							self.lvls.$one.hide();
+							lvl2.hide();
+							lvl2state.toggle();
 							self.allOpen = false;
 						}else{
-							self.lvls.$one.slideToggle(400);
+							self.lvls.$one.toggle();
 							self.allOpen = false;
 						}
+						span.toggle();
 					});
 
 					self.btns.$lvl2t.on('click', function(e){
 						e.preventDefault();
-						var arrow = $(this).children('span');
-						arrow.toggle();						
-						self.lvls.$lower.slideToggle(400);
-						self.allOpen = (self.allOpen == true) ? false : true;
+						var sign = $(this).children('span');
+						sign.toggle();
+						lvl2.toggle();
+						self.allOpen = true;
 					});
 
 				break;
@@ -181,13 +176,6 @@ dm.select2 = {};
 			}
 
 		},
-
-
-		formatSelect: function(s, el, q){
-			var dd = $(el).closest('section').children('select')[0];
-			var ph = $(dd).attr('data-placeholder');
-			return s.text + ' ' + ph;
-		}
 
 	};	
 
