@@ -111,9 +111,11 @@
                 $('.page-layout__left-col').css('width', '100%');
             }
         });
-
     </script>
-        
+    
+	<script type="text/javascript">var switchTo5x=true;</script> 
+	<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script> 
+	<script type="text/javascript">stLight.options({publisher: "e851a161-a35b-49b9-8352-4cb9c793f371", doNotHash: false, doNotCopy: false, hashAddressBar: true});</script>
 </head>
 <body <?php if ($pageType == 'home') { echo 'class="home"'; } else {  echo "class='page-section $pageType'"; } ?>>
 
