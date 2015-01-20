@@ -10,8 +10,9 @@ $module-name: 'masthead';
 
 .#{$module-name} {
 	width: 100%;
-	/*height: $page-masthead;
-	margin-top: 41.5px;*/
+	height: 55px;
+	overflow: hidden;
+	/*margin-top: 41.5px;*/
 }
 
 // ------------------------------------------------------------

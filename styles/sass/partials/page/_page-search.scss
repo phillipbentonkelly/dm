@@ -75,7 +75,6 @@ $module-name: 'page-search';
 			h4{
 				display: inline-block;
 				width: 120px;
-
 			}
 
 			input[type=text]{
@@ -227,30 +226,6 @@ $module-name: 'page-search';
 			background: url(#{$img-path}icons/icon_search-magnifiying-glass.png) center center no-repeat #000;
 		}
 
-		&--cancel, &--apply{
-			float: right;
-			width: 70px;
-			height: 30px;
-			span{
-				text-transform:uppercase;
-				font-size: 14px;
-				font-weight: bold;
-			}
-		}
-
-		&--cancel{
-			background: transparent;
-			color: rgb(117, 124, 125);
-		}
-
-		&--apply{
-			margin: 0 10px 0 0;
-			border-radius: 2px;
-			background: rgb(56, 0, 99);
-			color: rgb(255, 255, 255);
-			
-		}
-
 		&--save{
 			position: absolute;
 			top: 10px;
@@ -345,10 +320,10 @@ $module-name: 'page-search';
 				background-color: #fff;
 
 			    -webkit-touch-callout: none;
-			      -webkit-user-select: none;
-			         -moz-user-select: none;
-			          -ms-user-select: none;
-			              user-select: none;			    
+			    -webkit-user-select: none;
+			    -moz-user-select: none;
+			    -ms-user-select: none;
+			    user-select: none;			    
 		    }
 
 			span.select2-arrow{
@@ -538,13 +513,13 @@ $module-name: 'page-search';
 			padding: 5px;
 		}
 
-		&--filter-wide{
+		&--filter-hometype{
 			width: 112px;
 			height: 30px;
 			padding: 5px;
 		}
 
-		&--filter-advanced{
+		&--filter-dom{
 			width: 170px;
 			height: 45px;
 			margin: 5px;
@@ -624,6 +599,18 @@ $module-name: 'page-search';
 			&--level-three-toggle{
 				border: 1px solid rgb(0,0,0);
 				height: 34px;
+
+				span.select2-chosen{
+					color: rgb(153, 153, 153);
+				}
+
+
+			}
+
+			&.select2-panel-open{
+				span.select2-chosen{
+					color: rgb(0, 0, 0);
+				}
 			}
 
 			&--close{
@@ -725,7 +712,6 @@ $module-name: 'page-search';
 		}
 
 		&__input{
-
 			&--tokenize{
 				width: 154px;
 			}
@@ -767,7 +753,6 @@ $module-name: 'page-search';
 				right: 15px;
 				width: 28px;
 				height: 28px;
-
 			}
 
 			&--level-three-toggle{

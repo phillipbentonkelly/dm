@@ -21,29 +21,35 @@ dm.select2 = {};
 
 		this.device = (screen.width <= 480) ? 'mobile' : 'desktop';
 
+		// store refs to DOM elements to save memory
+
+		// level in order of appearance...
 		this.lvls = {
 			$one: $('.page-search__row--level-one'),
 			$two: $('.page-search__row--level-two'),
 			$three: $('.page-search__row--level-three'),
-			$lower: $('.lower-level')
+			$lower: $('.lower-level') // refers to bottom 2 levels, relevent for mobile
 		};
 
 		this.filters = {
 			$main: $('.page-search__dropdown--main'),
-			$sub: $('.page-search__dropdown--filter, .page-search__dropdown--filter-wide, .page-search__dropdown--filter-advanced'),
-			$s2num: $('.page-search__dropdown--filter'),
-			$other: $('.page-search__dropdown--filter-wide, .page-search__dropdown--filter-advanced'),
-			$range: $('.page-search__dropdown--filter-range'), 
-			$tokenize: $('.page-search__input--tokenize')
+			$sub: $('.page-search__dropdown--filter, .page-search__dropdown--filter-hometype, .page-search__dropdown--filter-dom'),
+			$format: $('.page-search__dropdown--filter'), 
+			$other: $('.page-search__dropdown--filter-hometype, .page-search__dropdown--filter-dom'),
+			$tags: $('.page-search__input--tokenize')
 		};
 
 		this.btns = {
-			$lvl1t: $('.page-nav__search-responsive-icon a'),
+			$lvl1t: $('.page-nav__search-responsive-icon > a'),
 			$lvl2t: $('.page-search__button--level-two-toggle'),
 			$lvl3t: $('.page-search__button--level-three-toggle'),
 			$close: $('.page-search__button--close'),
 			$save: $('.page-search__button--save'), 
 			$search: $('.page-search__buttons--submit')
+		};
+
+		this.modals = {
+			$svSearch: $('.save-search-modal')
 		};
 
 		this.init();	
@@ -57,16 +63,16 @@ dm.select2 = {};
 
 		init: function(){
 
-			if(this.device === 'mobile') this.lvls.$one.hide();
-				
-			this.lvls.$two.hide();
-			this.lvls.$three.hide();
-
-			var mainInputParams = {
+			// to make things neat create objects as variables...
+			var mainParams = {
 				placeholder: "Search for real estate listings or articles. ex: 3 bedroom for sale in Brookline under 1,000,000"
 			};
 
-			var tokenizeParams = {
+			var fmtParams = {
+				formatSelection: this.formatSelection
+			};
+
+			var tagParams = {
             	delimeter: ',',
             	persist: true,
             	create: function(input){
@@ -77,16 +83,16 @@ dm.select2 = {};
             	}
             };
 
-            this.filters.$main.selectize(mainInputParams);
-            this.filters.$tokenize.selectize(tokenizeParams);
 
+			if(this.device === 'mobile') this.lvls.$one.hide();
+				
+			this.lvls.$two.hide();
+			this.lvls.$three.hide();
 
-			this.filters.$s2num.select2({
-				formatSelection: this.formatSelect
-			});
-
+            this.filters.$main.selectize(mainParams);
+            this.filters.$tags.selectize(tagParams);
+			this.filters.$format.select2(fmtParams);
 			this.filters.$other.select2();
-
             this.eventHandlers();
 
 		},
@@ -99,19 +105,20 @@ dm.select2 = {};
 
 				case 'desktop':
 
+					var panelOpen = 'select2-panel-open';
+
 					self.btns.$lvl2t.on('click', function(e){
 						e.preventDefault();
 						var arrow = $(this).children('span');
 						if(self.allOpen){
 							arrow.toggle();
-							self.lvls.$three.slideUp(400, function(e){
-								self.lvls.$two.slideUp(400);
-							});
-							self.btns.$lvl3t.removeClass('select2-panel-open');
+							self.lvls.$three.hide();
+							self.lvls.$two.hide();
+							self.btns.$lvl3t.removeClass(panelOpen);
 							self.allOpen = false;
 						}else{
 							arrow.toggle();
-							self.lvls.$two.slideToggle(400);
+							self.lvls.$two.toggle();
 							self.allOpen = false;
 						}
 					
@@ -119,22 +126,22 @@ dm.select2 = {};
 
 					self.btns.$lvl3t.on('click', function(e){
 						e.preventDefault();
-						self.btns.$lvl3t.toggleClass('select2-panel-open');
-						self.lvls.$three.slideToggle(400);
+						self.lvls.$three.toggle();
+						self.btns.$lvl3t.toggleClass(panelOpen);
 						self.allOpen = (self.allOpen == true) ? false : true;
 					});
 
 					self.btns.$close.on('click', function(e){
 						e.preventDefault();
 						self.lvls.$three.hide();
-						self.btns.$lvl3t.removeClass('select2-panel-open');
+						self.btns.$lvl3t.removeClass(panelOpen);
 						self.allOpen = false;
 					});
 
 					self.btns.$save.on('click', function(e){
 						e.preventDefault();
 						var status = $(this).children('span');
-						var modal = $('.save-search-modal');
+						var modal = self.modals.$svSearch;
 						if(!self.saved){
 							modal.modal();
 							modal.find('button').on('click',function(e){
@@ -155,26 +162,27 @@ dm.select2 = {};
 
 					self.btns.$lvl1t.on('click', function(e){
 						e.preventDefault();
-						$(this).toggleClass('close-search');
+						var span = $(this).children('span');
 						if(self.allOpen){
-							self.lvls.$lower.slideUp(400, function(e){
-								self.lvls.$one.slideUp(400);
-							});
-							$lvl2ts.toggle();
+							self.lvls.$one.hide();
+							lvl2.hide();
+							lvl2state.toggle();
 							self.allOpen = false;
 						}else{
-							self.lvls.$one.slideToggle(400);
+							self.lvls.$one.toggle();
 							self.allOpen = false;
 						}
+						span.toggle();
 					});
 
 					self.btns.$lvl2t.on('click', function(e){
 						e.preventDefault();
-						var arrow = $(this).children('span');
-						arrow.toggle();						
-						self.lvls.$lower.slideToggle(400);
-						self.allOpen = (self.allOpen == true) ? false : true;
+						var sign = $(this).children('span');
+						sign.toggle();
+						lvl2.toggle();
+						self.allOpen = true;
 					});
+
 
 				break;
 					
@@ -183,14 +191,13 @@ dm.select2 = {};
 		},
 
 
+		// appends the placeholder to the selected value
 		formatSelect: function(s, el, q){
 			var dd = $(el).closest('section').children('select')[0];
 			var ph = $(dd).attr('data-placeholder');
 			return s.text + ' ' + ph;
 		},
 
-
-		
 
 	};	
 

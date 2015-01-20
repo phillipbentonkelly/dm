@@ -212,9 +212,9 @@ a, img{
 			
 			.property {
 				display: inline-block;
-				float: left;
+				/*float: left;
+				height: 178px;*/
 				width: 145px;
-				height: 178px;
 				margin-bottom: 10px;
 
 				img {
@@ -304,7 +304,7 @@ a, img{
 					width: 70%;
 					padding: 3% 27% 3% 3%;
 					min-height: 33px;
-					max-height: 33px;
+					/*max-height: 33px;*/
 					margin-bottom: 1px;
 					
 					line-height: 1.25em;
@@ -357,7 +357,7 @@ a, img{
 
 @media screen and (max-width: 767px) {
 	.#{$module-name}{
-		max-width: 300px;
+		width: 300px;
 		overflow: hidden;
 
 		.navigation {

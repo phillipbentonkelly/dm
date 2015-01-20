@@ -29,9 +29,9 @@ dm.select2 = {};
 
 		this.inputs = {
 			$main: $('.page-search__dropdown--main'),
-			$allFilters: $('.page-search__dropdown--filter, .page-search__dropdown--filter-wide, .page-search__dropdown--filter-advanced'),
+			$allFilters: $('.page-search__dropdown--filter, .page-search__dropdown--filter-hometype, .page-search__dropdown--filter-dom'),
 			$filters1: $('.page-search__dropdown--filter'),
-			$filters2: $('.page-search__dropdown--filter-wide, .page-search__dropdown--filter-advanced'),
+			$filters2: $('.page-search__dropdown--filter-hometype, .page-search__dropdown--filter-dom'),
 			$filterRange: $('.page-search__dropdown--filter-range'), 
 			$tokenize: $('.page-search__input--tokenize')
 		};

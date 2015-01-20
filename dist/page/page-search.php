@@ -83,7 +83,7 @@
 
                 <section class="page-search__section" title="Home Type">
                     <h4 class="mobile">Home Type</h4>
-                    <select class="page-search__dropdown page-search__dropdown--filter-wide" name="home_type" data-placeholder="Home Type">
+                    <select class="page-search__dropdown page-search__dropdown--filter-hometype" name="home_type" data-placeholder="Home Type">
                         <option></option>
                         <option value="Single-Family">Single-Family</option>
                         <option value="Multi-Family">Multi-Family</option>
@@ -165,7 +165,6 @@
                                     <label for="forclosures">Forclosures</label>
                                 </div>
                             </li>
-
                         </ul>
 
                     </section>
@@ -176,13 +175,11 @@
                     
                     <section class="page-search__section" id="sqFt" title="Square Feet">
                         <h4>Square Feet</h4>
-
                         <div class="page-search__container page-search__container--range">
                             <input type="text" class="page-search__input page-search__input--numeric" name="sq_ft_min" placeholder="Min"></input>
                                 &mdash;&nbsp;
                             <input type="text" class="page-search__input page-search__input--numeric" name="sq_ft_max" placeholder="Max"></input>
                         </div>
-
                     </section>
 
                     <section class="page-search__section" id="lotSz" title="Lot Size">
@@ -197,7 +194,6 @@
 
                     <section class="page-search__section" id="yrsBuilt" title="Years Built">
                         <h4>Years Built</h4>
-
                         <div class="page-search__container page-search__container--range">
                             <input type="text" class="page-search__input page-search__input--numeric" name="yrs_built_min" placeholder="Min"></input>
                                 &mdash;&nbsp;
@@ -214,8 +210,8 @@
                     <section class="page-search__section" id="daysOnMkt" title="Days On Market">
                         <h4>Days On Market</h4>
 
-                        <select class="page-search__dropdown page-search__dropdown--filter-advanced" name="days_on_mkt">
-                            <option value="Any">Any</option>
+                        <select class="page-search__dropdown page-search__dropdown--filter-dom" name="days_on_mkt" data-placeholder="Any">
+                            <option></option>
                             <option value="1 day">1 day</option> 
                             <option value="7 days">7 days</option> 
                             <option value="14 days">14 days</option>
@@ -230,7 +226,7 @@
 
                     <section class="page-search__section page-search__section--tokenize" id="keywords" title="Keywords">
                         <h4>Keywords</h4>
-                        <span class="helper">(comma separated)</span>
+                        <span class="helper">(seperate with commas)</span>
                         <input type="text" class="page-search__input page-search__input--tokenize" name="keywords"></input>
                     </section>
 

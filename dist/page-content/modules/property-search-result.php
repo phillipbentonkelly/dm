@@ -2,13 +2,13 @@
 <div class='search-results'>
 
     <div class='search-results__summary'>
-        <p class='search-summary-count'><span class='search-neighborhood'>Brookline</span> Real Estate<span class='total-results'>147 results.</span></p>
+        <p class='search-summary-header'><span class='search-neighborhood'>Brookline</span> Real Estate<span class='total-results'>147 results.</span></p>
     </div>
 
     <div class='search-results__filter-bar'>
-        <p>Showing <span class='low-end'>1</span> to <span class='high-end'>10</span> of <span class='total-results'>147</span></p>
+        <p class='search-results__summary-count'>Showing <span class='low-end'>1</span> to <span class='high-end'>10</span> of <span class='total-results'>147</span></p>
 
-        <select class="filter-drop">
+        <select class="sort-drop">
             <option value="default">Sort by Default</option>
             <option value="best-match">Best Match</option>
             <option value="newest">Newest</option>
@@ -17,6 +17,10 @@
             <option value="bedrooms">Most Bedrooms</option>
             <option value="sqfeet">Largest Square Feet</option>
         </select>
+
+        <div class='filter-drop'>
+            <p>Search Filters</p>
+        </div>
     </div>
 
     <!-- SEARCH RESULT ITEM -->
@@ -835,6 +839,29 @@
         </div>
     </div>
     <!-- /MODAL: SAVE SEARCH -->
+
+    <!-- MODAL: SEARCH FILTERS -->
+    <div class="search-filters-modal">
+        <div class="header">
+            <a class="close-modal-btn" href="javascript:;"><img class="close-modal" src="images/listings/x-icon.jpg"></a>
+            <p>Filter Search</p>
+        </div>
+        <div class="content">
+            <a href='javascript:;'><p class='filter-option' value="best-match">Best Match</p></a>
+            <a href='javascript:;'><p class='filter-option' value="newest">Newest</p></a>
+            <a href='javascript:;'><p class='filter-option' value="price-high-low">Price (High-Low)</p></a>
+            <a href='javascript:;'><p class='filter-option' value="prive-low-high">Price (Low-High)</p></a>
+            <a href='javascript:;'><p class='filter-option' value="bedrooms">Most Bedrooms</p></a>
+            <a href='javascript:;'><p class='filter-option' value="sqfeet">Largest Square Feet</p></a>
+        </div>
+    </div>
+    <!-- /MODAL: /SEARCH FILTERS -->
+
+    <script type="text/javascript">
+        $('.filter-option').on('click', function() {
+            $(this).toggleClass('selected');
+        })
+    </script>
 
 
     <!-- SERP MOBILE BUTTON DOCK -->
