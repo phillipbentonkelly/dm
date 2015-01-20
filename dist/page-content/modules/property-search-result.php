@@ -1,4 +1,4 @@
-<!-- SERP SEARCH RESULTS -->
+ <!-- SERP SEARCH RESULTS -->
 <div class='search-results'>
 
     <div class='search-results__summary'>
@@ -21,6 +21,11 @@
         <div class='filter-drop'>
             <p>Search Filters</p>
         </div>
+
+        <a href='javascript:;'><div class='serp-map-button'><span><img class='serp-map-icon' src='images/listings/pindrop-icon-purple.png'/></span>Map</div></a>
+    </div>
+    <div class='serp-map--mobile'>
+        <img class='serp-map--mobile-image' style='max-height:350px;width:100%;overflow:hidden;box-sizing:border-box;display:none;' src='http://www.codeproject.com/KB/web-image/Google_map/sampleMap.JPG'/>
     </div>
 
     <!-- SEARCH RESULT ITEM -->
@@ -826,20 +831,6 @@
         </div>
     </div>
 
-    <!-- MODAL: SAVE SEARCH -->
-    <div class="save-search-modal">
-        <div class="header">
-            <a class="close-modal-btn" href="javascript:;"><img class="close-modal" src="images/listings/x-icon.jpg"></a>
-            <p>Save Search</p>
-        </div>
-        <div class="content">
-            <p class="info">Save a search and get instant notifications about new listings and status changes on homes that match your search criteria</p>
-            <input placeholder="Search Nickname">
-            <button>Save</button>
-        </div>
-    </div>
-    <!-- /MODAL: SAVE SEARCH -->
-
     <!-- MODAL: SEARCH FILTERS -->
     <div class="search-filters-modal">
         <div class="header">
@@ -883,6 +874,17 @@
     </div>
     <!-- /SERP MOBILE BUTTON DOCK -->
 
-
 </div>
 <!-- /SERP SEARCH RESULTS -->
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('.serp-map-button').click(function() {
+            $('.serp-map--mobile-image').slideToggle(200);
+        });
+    }); 
+</script>
+
+
+
+

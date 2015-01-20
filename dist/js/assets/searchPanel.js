@@ -2,18 +2,8 @@
 if (typeof dm === 'undefined') { dm = {}; }
 
 dm.searchPanel = {};
-dm.selectize = {};
-dm.select2 = {};
 
 (function($, window, document, undefined){
-
-	dm.selectize = function(el, opts){
-		$.fn.selectize.apply(el, opts);
-	};
-
-	dm.select2 = function(el, opts){
-		$.fn.select2.apply(el, opts);
-	};
 
 	dm.searchPanel = function(el){
 
@@ -55,6 +45,7 @@ dm.select2 = {};
 		this.init();	
 	}
 
+
 	dm.searchPanel.prototype = {
 
 		allOpen: false,
@@ -63,7 +54,8 @@ dm.select2 = {};
 
 		init: function(){
 
-			// to make things neat create objects as variables...
+			// to make things neat create objects to store params...
+
 			var mainParams = {
 				placeholder: "Search for real estate listings or articles. ex: 3 bedroom for sale in Brookline under 1,000,000"
 			};
@@ -105,21 +97,21 @@ dm.select2 = {};
 
 				case 'desktop':
 
-					var panelOpen = 'select2-panel-open';
+					var pOpen = 'select2-panel-open';
 
 					self.btns.$lvl2t.on('click', function(e){
 						e.preventDefault();
-						var arrow = $(this).children('span');
+						var state = $(this).getObservable();
 						if(self.allOpen){
-							arrow.toggle();
 							self.lvls.$three.hide();
 							self.lvls.$two.hide();
-							self.btns.$lvl3t.removeClass(panelOpen);
 							self.allOpen = false;
+							state.toggle();
+							self.btns.$lvl3t.removeClass(pOpen);
 						}else{
-							arrow.toggle();
 							self.lvls.$two.toggle();
 							self.allOpen = false;
+							state.toggle();
 						}
 					
 					});
@@ -127,26 +119,26 @@ dm.select2 = {};
 					self.btns.$lvl3t.on('click', function(e){
 						e.preventDefault();
 						self.lvls.$three.toggle();
-						self.btns.$lvl3t.toggleClass(panelOpen);
 						self.allOpen = (self.allOpen == true) ? false : true;
+						self.btns.$lvl3t.toggleClass(pOpen);
 					});
 
 					self.btns.$close.on('click', function(e){
 						e.preventDefault();
 						self.lvls.$three.hide();
-						self.btns.$lvl3t.removeClass(panelOpen);
 						self.allOpen = false;
+						self.btns.$lvl3t.removeClass(pOpen);
 					});
 
 					self.btns.$save.on('click', function(e){
 						e.preventDefault();
-						var status = $(this).children('span');
+						var state = $(this).getObservable();
 						var modal = self.modals.$svSearch;
 						if(!self.saved){
 							modal.modal();
 							modal.find('button').on('click',function(e){
-								status.toggle();
 								self.saved = true;
+								state.toggle();
 							});
 						}
 
@@ -157,30 +149,30 @@ dm.select2 = {};
 
 				case 'mobile':
 
-					// for mobile, merge levels 2 and 3
-					var $lvl2ts = self.btns.$lvl2t.children('span');
+					// keep track of level 2 button when user closes all
+					var $lvl2State = self.btns.$lvl2t.getObservable();
 
 					self.btns.$lvl1t.on('click', function(e){
 						e.preventDefault();
-						var span = $(this).children('span');
+						var state = $(this).getObservable();
 						if(self.allOpen){
 							self.lvls.$one.hide();
-							lvl2.hide();
-							lvl2state.toggle();
+							self.lvls.$lower.hide();
 							self.allOpen = false;
+							$lvl2State.toggle();
 						}else{
 							self.lvls.$one.toggle();
 							self.allOpen = false;
 						}
-						span.toggle();
+						state.toggle();
 					});
 
 					self.btns.$lvl2t.on('click', function(e){
 						e.preventDefault();
-						var sign = $(this).children('span');
-						sign.toggle();
-						lvl2.toggle();
-						self.allOpen = true;
+						var state = $(this).getObservable();
+						self.lvls.$lower.toggle();
+						self.allOpen = (self.allOpen == true) ? false : true;
+						state.toggle();
 					});
 
 
@@ -206,6 +198,11 @@ dm.select2 = {};
 		return this.each(function(){
 			new dm.searchPanel(this);
 		});
+	}
+
+	// shameful knockout plagiarism
+	$.fn.getObservable = function(){
+		return $(this).children('span');
 	}
 
 

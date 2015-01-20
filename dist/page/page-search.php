@@ -109,8 +109,7 @@
             </div>
 
             <div class="page-search__row page-search__row--level-three lower-level">
-
-                
+               
                 <div class="page-search__button page-search__button--close desktop">
                     <span>X</span>
                 </div>
@@ -209,7 +208,6 @@
 
                     <section class="page-search__section" id="daysOnMkt" title="Days On Market">
                         <h4>Days On Market</h4>
-
                         <select class="page-search__dropdown page-search__dropdown--filter-dom" name="days_on_mkt" data-placeholder="Any">
                             <option></option>
                             <option value="1 day">1 day</option> 

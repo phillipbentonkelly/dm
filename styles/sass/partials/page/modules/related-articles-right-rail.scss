@@ -1,6 +1,7 @@
 $module-name: 'related-articles-mobile';
 
 .#{$module-name} {
+	display: none;
 	position: relative;
 
 	.related-articles-nav {
@@ -96,3 +97,14 @@ $module-name: 'related-articles-mobile';
 		}
 	}
 }
+
+@media (min-width: 768px) {
+	.#{$module-name} {
+		display: block;
+	}
+}
+
+
+
+
+

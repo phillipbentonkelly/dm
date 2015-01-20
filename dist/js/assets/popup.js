@@ -21,12 +21,8 @@ $(document).ready(function() {
 		$('.share-modal').modal();
 	});
 	
-	$('body').click('.filter-drop', function() {
+	$('.filter-drop').click(function() {
 		$('.search-filters-modal').modal();
-	});
-
-	$('.save-search-modal').find('button').on('click', function(){
-		$.modal.close();
 	});
 
 	$(document).on('click', '.close-modal', function() {
