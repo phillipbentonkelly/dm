@@ -1,11 +1,11 @@
 $(document).ready(function() {
 
-	$('#mobile-save-btn').click(function() {
+	$('#mobile-save-btn, .save-modal-btn').click(function() {
 		$('.save-search-modal').modal();
 	});
 
 	$('#mobile-articles-btn').click(function() {
-		var closeModal = $("<a style='float:right' href='javascript:;'><img class='close-modal close-modal-js' src='images/listings/x-icon.jpg' style='height:20px;width:20px;'></a>");
+		var closeModal = $("<a style='float:right;margin-right:15px;' href='javascript:;'><img class='close-modal close-modal-js' src='images/listings/x-icon.jpg' style='height:20px;width:20px;'></a>");
 		$('.related-articles').addClass('related-articles-popup');
 		$('.related-articles__section-header').append(closeModal);
 		$('.related-articles-modal').modal();
@@ -17,7 +17,7 @@ $(document).ready(function() {
 		$('.contact-agent-modal').modal();
 	});
 
-	$('#mobile-share-btn').click(function() {
+	$('#mobile-share-btn, .share-modal-btn').click(function() {
 		$('.share-modal').modal();
 	});
 	

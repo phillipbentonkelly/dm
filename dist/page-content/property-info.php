@@ -37,8 +37,8 @@
 
         <div class="listing__detail-share">
             <div class="listing__detail-share--row1">
-                <a href="javascript:;"><img class="listing__detail-share-icons" src="images/listings/heart-icon-purple.png"></a>
-                <a href="javascript:;"><img class="listing__detail-share-icons" src="images/listings/share-icon-purple.png"></a>
+                <a class='save-modal-btn' href="javascript:;"><img class="listing__detail-share-icons" src="images/listings/heart-icon-purple.png"></a>
+                <a class='share-modal-btn' href="javascript:;"><img class="listing__detail-share-icons" src="images/listings/share-icon-purple.png"></a>
             </div>
 
             <div class="listing__detail-share--row2">
