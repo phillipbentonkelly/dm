@@ -94,7 +94,7 @@ $module-name: 'contact';
 
     &__agent-links {
       color: #2e1460;
-      font-family: 'OpenSans';
+      font-family: 'OpenSans Regular';
       margin-bottom: 0px;
       a {
         display: block;
@@ -105,7 +105,7 @@ $module-name: 'contact';
 
     &__agent-name {
       margin: 0;
-      font-family: 'OpenSans';
+      font-family: 'OpenSans Regular';
       font-weight: 600;
     }
 
@@ -119,7 +119,7 @@ $module-name: 'contact';
     &__agent-address {
       p {
         margin: 0;
-        font-family: 'OpenSans';
+        font-family: 'OpenSans Regular';
         font-size: 11px;
       }
     }
@@ -129,7 +129,7 @@ $module-name: 'contact';
 
       input, textarea{
         display: inline-block;
-        font-family: OpenSans;
+        font-family: OpenSans Regular;
         color: rgba(0, 0, 0, 0.5);
         font-size: 13px; /* Approximation due to font substitution */
         font-weight: 400;
@@ -153,7 +153,7 @@ $module-name: 'contact';
         color: white;
         border: none;
         border-radius: 2px;
-        font-family: 'OpenSans', sans-serif;
+        font-family: 'OpenSans Regular', sans-serif;
         font-weight: 300;
         font-size: 105%;
         float: right;
@@ -172,7 +172,7 @@ $module-name: 'contact';
       background: #2e1460;
       float: right;
       border-radius: 2px;
-      font-family: 'OpenSans', sans-serif;
+      font-family: 'OpenSans Regular', sans-serif;
       font-size: 11px;
       font-weight: 700;
       text-transform: uppercase;
@@ -182,7 +182,7 @@ $module-name: 'contact';
       margin-right: -15px;
       margin-top: 15px;
       float: right;
-      font-family: OpenSans;
+      font-family: OpenSans Regular;
       color: #2e1460;
       font-size: 13px; /* Approximation due to font substitution */
       font-weight: 400;
@@ -194,7 +194,7 @@ $module-name: 'contact';
       margin-bottom: 3px;
       text-align: right;
       color: #A0A0A0;
-      font-family: OpenSans;
+      font-family: OpenSans Regular;
       font-size: 12px;
       font-weight: 200;
 
@@ -211,7 +211,7 @@ $module-name: 'contact';
     }
 
     &__company-name {
-      font-family: OpenSans;
+      font-family: OpenSans Regular;
       letter-spacing: 0px;
       color:  #000000;
       font-size: 12px; /* Approximation due to font substitution */
