@@ -111,6 +111,10 @@ $module-name: 'search-results';
   }
 }
 
+.serp-map--mobile {
+  position: relative;
+}
+
 .related-articles-modal#simplemodal-data {
     width: 100%;
     margin: 0 auto;
@@ -152,11 +156,10 @@ $module-name: 'search-results';
     }
 
     .sort-drop {
-      display: none;
       position: absolute;
       bottom: 5px;
       top: 5px;
-      right: 5px;
+      left: 120px;
       background: white;
       border: none;
       font-family: 'OpenSans Regular'; 
@@ -172,6 +175,8 @@ $module-name: 'search-results';
       left: 5px;
       padding: 10px;
       border-radius: 3px;
+
+      font-family: 'OpenSans Semibold'
     }
   }
 
@@ -566,7 +571,10 @@ $module-name: 'search-results';
 
       .sort-drop {
         display: block;
+        right: 5px;
+        left: initial;
       }
+
     }
 
     &__filter-bar-bottom {
@@ -682,6 +690,19 @@ $module-name: 'search-results';
       float: right;
       width: 60%;
     }
+  }
+}
+
+.serp-map-button {
+  display: inline-block;
+  float: right;
+  margin-top: -7px;
+  color: #2e1460;
+
+  .serp-map-icon {
+    height: 30px;
+    margin-right: 7px;
+    vertical-align: middle;
   }
 }
 

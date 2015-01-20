@@ -1,6 +1,7 @@
 $module-name: 'related-articles-mobile';
 
 .#{$module-name} {
+	display: none;
 	position: relative;
 
 	.related-articles-nav {
