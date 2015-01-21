@@ -154,7 +154,27 @@ $module-name: 'search-results';
     position: relative;
     border-bottom: 1px solid grey;
     display: inline-block;
+  }
 
+  .serp-item-hovered {
+    background: #2e1460;
+    
+    p {
+      color: white !important;
+    }
+
+    .address {
+      text-decoration: underline;
+    }
+
+    .share-button--heart {
+      background-image: url(../../images/listings/heart-icon-white.png) !important;
+      background-size: 22px 20px;
+    }
+
+    .share-button--share {
+      background-image: url(../../images/listings/share-icon-white.png);
+    }
   }
 
   &__filter-bar-bottom {
@@ -240,6 +260,7 @@ $module-name: 'search-results';
       box-sizing: border-box;
     }
   }
+
   .header:hover {
     background: #2e1460;
 
@@ -513,7 +534,6 @@ $module-name: 'search-results';
     margin: 10px auto;
   }
 
-
 }
 
 @media (min-width: 768px) {
@@ -741,3 +761,4 @@ $module-name: 'search-results';
         }
     }
 }
+

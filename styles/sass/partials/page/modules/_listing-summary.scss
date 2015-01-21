@@ -427,6 +427,8 @@ $module-name: 'listing';
 	margin-bottom: 20px;
 }
 
+
+// MODAL STYLES
 #simplemodal-data {
 	margin: 0 auto;
 	width: 80%;
@@ -474,7 +476,9 @@ $module-name: 'listing';
 		padding: 20px;
 		height: 300px;
 	}
+}
 
+.save-search-modal {
 	.info {
 		line-height: 1.5;
 		margin-bottom: 10px;
@@ -503,6 +507,32 @@ $module-name: 'listing';
 	}
 }
 
+.share-modal {
+
+	.content {
+		position: relative;
+		width: 100%;
+		height: auto;
+		display: inline-block;
+		box-sizing: border-box;
+	}
+
+	.share-icon {
+		width: 49%;
+		max-width: 100px;
+		height: 100px;
+		display: inline-block;
+		padding: 10px;
+		box-sizing: border-box;
+		background: green;
+	}
+
+	.share-icons--row {
+		width: 100%;
+		max-width: 200px;
+		margin: 0 auto;
+	}
+}
 
 // ------------------------------------------------------------
 // Tablet Breakpoint
@@ -641,7 +671,7 @@ $module-name: 'listing';
 			font-size: 100%;
 		}
 
-	  &__external-links { 
+	  	&__external-links { 
 			float: left;
 			width: 33.3%;
 			box-sizing: border-box;
@@ -650,9 +680,9 @@ $module-name: 'listing';
 			li {
 				padding-bottom: 10px;
 			}
-	  }
+	  	}
 
-	  &__contact-agent {
+	  	&__contact-agent {
 			background: #2e1460;
 			padding: 7px;
 			margin-bottom: 40px;
@@ -670,9 +700,9 @@ $module-name: 'listing';
 	      		text-decoration: none;
 	    	}
 		}
-  }
+  	}
 
-  .dfp-ads {
+  	.dfp-ads {
 		display: block;
 	}
 

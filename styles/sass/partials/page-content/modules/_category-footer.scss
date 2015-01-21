@@ -21,7 +21,6 @@ $module-name: 'category-footer';
 			font-family: Oswald;
 			color:  #000000;
 			font-size: 18px;
-
 			padding-bottom: 5px;
 		}
 	}
@@ -58,7 +57,7 @@ $module-name: 'category-footer';
 			padding: 5px;
 		}
 		.agent-info{
-			//width: 40%;
+			min-width: 26%;
 			float: left;
 			padding: 5px;
 
@@ -69,8 +68,7 @@ $module-name: 'category-footer';
 				font-weight: 700;
 			}
 
-			.number{
-				color: red;
+			.number{				
 				font-family: Arial;
 				color:  #000000;
 				font-size: 12px;
