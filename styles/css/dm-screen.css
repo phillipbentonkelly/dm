@@ -683,20 +683,29 @@ textarea {
   margin-bottom: 1em;
 }
 
-/* line 197, ../sass/helpers/_common-assets.scss */
+/* line 196, ../sass/helpers/_common-assets.scss */
+.third-party-social-icons span[st_processed="yes"] {
+  display: inline-block;
+  float: left;
+  margin-right: 8px;
+  padding-top: -5px;
+}
+/* line 202, ../sass/helpers/_common-assets.scss */
 .third-party-social-icons span[st_processed="yes"] .stButton {
+  width: 26px;
+  height: 25px;
   margin: 0 !important;
 }
-/* line 200, ../sass/helpers/_common-assets.scss */
+/* line 207, ../sass/helpers/_common-assets.scss */
 .third-party-social-icons span[st_processed="yes"] .stButton .stLarge {
   background-size: 80%;
   background-repeat: no-repeat;
   height: 25px;
 }
-/* line 206, ../sass/helpers/_common-assets.scss */
+/* line 213, ../sass/helpers/_common-assets.scss */
 .third-party-social-icons span[st_processed="yes"] .stButton .stLarge:hover {
-  opacity: 75;
-  background-position: -32px;
+  opacity: 0.75;
+  background-position: 0px;
 }
 
 /* line 11, ../sass/partials/page/_page-masthead.scss */
