@@ -33,7 +33,7 @@
 	<script src="js/assets/mega-menu.js"></script>
 	<script src="js/assets/responsive-gallery.js"></script>
 
-	<?php if ($pageType == 'home' || $pageType == 'category') { ?>
+	<?php if ($pageType == 'home' || $pageType == 'category' || $pageType == 'category-details') { ?>
 	    <!-- Carousel Scripts -->
 		<script src="js/assets/basicMobileDetection.js"></script>
 		<script src="http://wurfl.io/wurfl.js"></script>
