@@ -683,6 +683,22 @@ textarea {
   margin-bottom: 1em;
 }
 
+/* line 197, ../sass/helpers/_common-assets.scss */
+.third-party-social-icons span[st_processed="yes"] .stButton {
+  margin: 0 !important;
+}
+/* line 200, ../sass/helpers/_common-assets.scss */
+.third-party-social-icons span[st_processed="yes"] .stButton .stLarge {
+  background-size: 80%;
+  background-repeat: no-repeat;
+  height: 25px;
+}
+/* line 206, ../sass/helpers/_common-assets.scss */
+.third-party-social-icons span[st_processed="yes"] .stButton .stLarge:hover {
+  opacity: 75;
+  background-position: -32px;
+}
+
 /* line 11, ../sass/partials/page/_page-masthead.scss */
 .masthead {
   width: 100%;
@@ -4061,7 +4077,7 @@ body.serp .page-layout {
 }
 /* line 22, ../sass/partials/page/modules/_articles-content.scss */
 .articles-content .social-icons {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 /* line 28, ../sass/partials/page/modules/_articles-content.scss */
 .articles-content__article {
