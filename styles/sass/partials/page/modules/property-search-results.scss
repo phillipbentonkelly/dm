@@ -115,12 +115,20 @@ $module-name: 'search-results';
   position: relative;
 }
 
-.serp-map-button {
+.serp-map-btn {
   display: inline-block;
-  float: right;
-  margin-top: -7px;
-  color: #2e1460;
+  background-image: url(../../images/listings/pindrop-icon-purple.png);
+  background-repeat: no-repeat;
+  vertical-align: middle;
+  height: 25px;
+  width: 20px;
+  margin-top: -3px;
 }
+
+.serp-list-btn {
+  background-image: url(../../images/listings/list-icon-purple.png);
+}
+
 .serp-map-icon {
   height: 30px;
   margin-right: 7px;
@@ -186,29 +194,29 @@ $module-name: 'search-results';
     }
   }
 
-    &__summary {
-      text-align: center;
-      margin: 25px 0;
-    }
+  &__summary {
+    text-align: center;
+    margin: 25px 0;
+  }
 
-    .search-summary-header {
-      font-family: 'OpenSans Regular';
-      font-size: 20px;
-      font-weight: 600;
+  .search-summary-header {
+    font-family: 'OpenSans Regular';
+    font-size: 20px;
+    font-weight: 600;
 
-      clear: both;
-      margin: 0 auto;
-      max-width: 960px;
-      padding: 0 0 10px 0;
-    }
+    clear: both;
+    margin: 0 auto;
+    max-width: 960px;
+    padding: 0 0 10px 0;
+  }
 
-    .search-summary-header > .total-results {
-      margin-left: 10px;
+  .search-summary-header > .total-results {
+    margin-left: 10px;
 
-      font-family: 'OpenSans Regular';
-      font-size: 16px;
-      font-weight: 400;
-    }
+    font-family: 'OpenSans Regular';
+    font-size: 16px;
+    font-weight: 400;
+  }
   
   .header { 
     width: 100%;
@@ -277,7 +285,6 @@ $module-name: 'search-results';
       height: 20px;
       width: 24px;
       vertical-align: middle;
-
     }
 
     .share-button--share {
@@ -294,6 +301,16 @@ $module-name: 'search-results';
       display: inline-block;
       font-family: OpenSans Regular;
       font-size: 11px;
+    }
+  }
+
+  &__toggle-view {
+    float: right;
+
+    p {
+      color: #2e1460;
+      display: inline-block;
+      font-size: 15px;
     }
   }
 
@@ -504,12 +521,11 @@ $module-name: 'search-results';
         display: none;
     }
 
-  .serp-map-button {
-    display: none;
-  }
-
-
   .#{$module-name} {
+
+    &__toggle-view {
+      display: none;
+    }
 
     .serp__mobile-button-dock {
         display: none;

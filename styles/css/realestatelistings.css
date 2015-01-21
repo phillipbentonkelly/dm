@@ -338,7 +338,7 @@ a, img {
 }
 /* line 346, ../sass/realestatelistings.scss */
 .mplistings .scrollWrapper .listing-container .property:nth-child(odd) {
-  margin-left: 10px;
+  margin-left: 7px;
 }
 
 @media screen and (max-width: 767px) {
