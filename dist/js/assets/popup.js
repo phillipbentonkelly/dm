@@ -48,6 +48,7 @@ $(document).ready(function() {
 
     $('.search-results__item').children('.header').on('touchstart touchend', function(e) {
 		e.preventDefault();
-    	$(this).toggleClass('serp-item-hovered');
+		$(this).toggleClass('serp-item-hovered');
 	});
+
 });
