@@ -432,6 +432,7 @@ $module-name: 'listing';
 #simplemodal-data {
 	margin: 0 auto;
 	width: 80%;
+	visibility: visible;
 }
 
 #simplemodal-container {
@@ -443,7 +444,6 @@ $module-name: 'listing';
 }
 
 .save-search-modal, .share-modal {
-	display: none;
 	width: 100%;
 	margin: 0 5%;
 	text-align: center;
@@ -479,6 +479,7 @@ $module-name: 'listing';
 }
 
 .save-search-modal {
+	display: none;
 	.info {
 		line-height: 1.5;
 		margin-bottom: 10px;
@@ -508,7 +509,7 @@ $module-name: 'listing';
 }
 
 .share-modal {
-
+	visibility: hidden;
 	.content {
 		position: relative;
 		width: 100%;
@@ -531,6 +532,11 @@ $module-name: 'listing';
 		width: 100%;
 		max-width: 200px;
 		margin: 0 auto;
+	}
+
+	span {
+		display: inline-block;
+		float: left;
 	}
 }
 

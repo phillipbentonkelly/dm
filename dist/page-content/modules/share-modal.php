@@ -6,21 +6,13 @@
     </div>
     <div class="content">
     	<div class='share-icons--row'>
-	        <div class="share-icon">
-	        	<img src=''/>
-	        </div>
-	        <div class="share-icon">
-	        	<img src=''/>
-	        </div>
+        	<span class='st_facebook_large' displayText='Facebook'></span> 
+        	<span class='st_pinterest_large' displayText='Pinterest'></span>
 	    </div>
 
     	<div class='share-icons--row'>
-	        <div class="share-icon">
-	        	<img src=''/>
-	        </div>
-	        <div class="share-icon">
-	        	<img src=''/>
-	        </div>
+			<span class='st_email_large' displayText='Email'></span> 
+        	<span class='st_twitter_large' displayText='Tweet'></span>
 	    </div>
     </div>
 </div>
