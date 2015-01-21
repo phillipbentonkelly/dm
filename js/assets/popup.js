@@ -28,19 +28,4 @@ $(document).ready(function() {
 	$(document).on('click', '.close-modal', function() {
         $.modal.close();
     });
-
-    // JS for SERP map
-
-    $('.search-results__toggle-view').click(function() {
-		$('.serp-map-btn').toggleClass('serp-list-btn');
-		$('.serp-map--mobile-image').slideToggle(200);
-
-		if(!$('.serp-map-btn').hasClass('serp-list-btn')) {
-			$(this).children('p').text('Map');
-			$('.search-results__item').show();
-		} else {
-			$(this).children('p').text('List');
-			$('.search-results__item').not('#result2').hide();
-		}
-    });
 });

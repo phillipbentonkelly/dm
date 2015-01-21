@@ -516,21 +516,20 @@
     display: none;
   }
 
-  /* line 524, ../../../../sass/partials/page/modules/property-search-results.scss */
-  .serp-map-btn {
+  /* line 526, ../../../../sass/partials/page/modules/property-search-results.scss */
+  .search-results__toggle-view {
     display: none;
   }
-
-  /* line 531, ../../../../sass/partials/page/modules/property-search-results.scss */
+  /* line 530, ../../../../sass/partials/page/modules/property-search-results.scss */
   .search-results .serp__mobile-button-dock {
     display: none;
   }
-  /* line 535, ../../../../sass/partials/page/modules/property-search-results.scss */
+  /* line 534, ../../../../sass/partials/page/modules/property-search-results.scss */
   .search-results .adSlots {
     margin: 10px 0;
     position: relative;
   }
-  /* line 539, ../../../../sass/partials/page/modules/property-search-results.scss */
+  /* line 538, ../../../../sass/partials/page/modules/property-search-results.scss */
   .search-results .adSlots .adSlot {
     width: 100%;
     box-sizing: border-box;
@@ -539,24 +538,24 @@
     width: 300px;
     float: none;
   }
-  /* line 549, ../../../../sass/partials/page/modules/property-search-results.scss */
+  /* line 548, ../../../../sass/partials/page/modules/property-search-results.scss */
   .search-results .adSlot-left, .search-results .adSlot-right {
     min-height: 250px;
     min-width: 300px;
   }
-  /* line 554, ../../../../sass/partials/page/modules/property-search-results.scss */
+  /* line 553, ../../../../sass/partials/page/modules/property-search-results.scss */
   .search-results .adSlot-left {
     margin-bottom: 10px !important;
   }
-  /* line 558, ../../../../sass/partials/page/modules/property-search-results.scss */
+  /* line 557, ../../../../sass/partials/page/modules/property-search-results.scss */
   .search-results .adSlot-right {
     display: block;
   }
-  /* line 562, ../../../../sass/partials/page/modules/property-search-results.scss */
+  /* line 561, ../../../../sass/partials/page/modules/property-search-results.scss */
   .search-results .search-results__summary-count {
     display: block;
   }
-  /* line 566, ../../../../sass/partials/page/modules/property-search-results.scss */
+  /* line 565, ../../../../sass/partials/page/modules/property-search-results.scss */
   .search-results .search-summary-header {
     display: block;
     font-family: 'OpenSans Regular';
@@ -564,15 +563,15 @@
     font-weight: 600;
     padding: 0;
   }
-  /* line 574, ../../../../sass/partials/page/modules/property-search-results.scss */
+  /* line 573, ../../../../sass/partials/page/modules/property-search-results.scss */
   .search-results .filter-drop {
     display: none;
   }
-  /* line 578, ../../../../sass/partials/page/modules/property-search-results.scss */
+  /* line 577, ../../../../sass/partials/page/modules/property-search-results.scss */
   .search-results__summary {
     text-align: left;
   }
-  /* line 582, ../../../../sass/partials/page/modules/property-search-results.scss */
+  /* line 581, ../../../../sass/partials/page/modules/property-search-results.scss */
   .search-results__filter-bar, .search-results__filter-bar-bottom {
     height: auto;
     position: relative;
@@ -583,14 +582,14 @@
     box-sizing: border-box;
     background: #dacef1;
   }
-  /* line 592, ../../../../sass/partials/page/modules/property-search-results.scss */
+  /* line 591, ../../../../sass/partials/page/modules/property-search-results.scss */
   .search-results__filter-bar p, .search-results__filter-bar-bottom p {
     display: block;
     font-family: 'OpenSans Semibold';
     font-size: 11px;
     font-weight: 400;
   }
-  /* line 599, ../../../../sass/partials/page/modules/property-search-results.scss */
+  /* line 598, ../../../../sass/partials/page/modules/property-search-results.scss */
   .search-results__filter-bar .sort-drop, .search-results__filter-bar-bottom .sort-drop {
     display: block;
     position: absolute;
@@ -602,21 +601,21 @@
     border: none;
     font-family: 'OpenSans Regular';
   }
-  /* line 613, ../../../../sass/partials/page/modules/property-search-results.scss */
+  /* line 612, ../../../../sass/partials/page/modules/property-search-results.scss */
   .search-results__filter-bar-bottom {
     background: none;
   }
-  /* line 616, ../../../../sass/partials/page/modules/property-search-results.scss */
+  /* line 615, ../../../../sass/partials/page/modules/property-search-results.scss */
   .search-results__filter-bar-bottom p {
     display: inline-block;
     vertical-align: middle;
   }
-  /* line 621, ../../../../sass/partials/page/modules/property-search-results.scss */
+  /* line 620, ../../../../sass/partials/page/modules/property-search-results.scss */
   .search-results__filter-bar-bottom .results-pag-nav {
     float: right;
     position: relative;
   }
-  /* line 625, ../../../../sass/partials/page/modules/property-search-results.scss */
+  /* line 624, ../../../../sass/partials/page/modules/property-search-results.scss */
   .search-results__filter-bar-bottom .results-pag-nav p {
     width: 60px;
     position: absolute;
@@ -625,13 +624,13 @@
     font-family: 'OpenSans Regular';
     margin: 0 5px;
   }
-  /* line 634, ../../../../sass/partials/page/modules/property-search-results.scss */
+  /* line 633, ../../../../sass/partials/page/modules/property-search-results.scss */
   .search-results__filter-bar-bottom .results-pag-nav span:first-child {
     padding: 0 10px;
     background: #c8c8c8;
     border-radius: 3px;
   }
-  /* line 641, ../../../../sass/partials/page/modules/property-search-results.scss */
+  /* line 640, ../../../../sass/partials/page/modules/property-search-results.scss */
   .search-results__filter-bar-bottom .results-pag-nav-left {
     position: absolute;
     right: 105px;
@@ -639,13 +638,13 @@
     width: 20px;
     transform: rotate(90deg);
   }
-  /* line 649, ../../../../sass/partials/page/modules/property-search-results.scss */
+  /* line 648, ../../../../sass/partials/page/modules/property-search-results.scss */
   .search-results__filter-bar-bottom .results-pag-nav-right {
     height: 20px;
     width: 20px;
     transform: rotate(270deg);
   }
-  /* line 656, ../../../../sass/partials/page/modules/property-search-results.scss */
+  /* line 655, ../../../../sass/partials/page/modules/property-search-results.scss */
   .search-results .photo-arrows {
     display: block !important;
     position: absolute;
@@ -653,18 +652,18 @@
     right: 10px;
     padding: 0 10px;
   }
-  /* line 663, ../../../../sass/partials/page/modules/property-search-results.scss */
+  /* line 662, ../../../../sass/partials/page/modules/property-search-results.scss */
   .search-results .photo-arrows .photo-arrow-right, .search-results .photo-arrows .photo-arrow-left {
     display: inline-block;
     height: 15px;
     width: 15px;
     box-sizing: border-box;
   }
-  /* line 670, ../../../../sass/partials/page/modules/property-search-results.scss */
+  /* line 669, ../../../../sass/partials/page/modules/property-search-results.scss */
   .search-results .photo-arrows .photo-arrow-right:hover, .search-results .photo-arrows .photo-arrow-left:hover {
     border: 1px solid white;
   }
-  /* line 674, ../../../../sass/partials/page/modules/property-search-results.scss */
+  /* line 673, ../../../../sass/partials/page/modules/property-search-results.scss */
   .search-results .photo-arrows .photo-arrow-right {
     -ms-transform: rotate(180deg);
     /* IE 9 */
@@ -672,53 +671,53 @@
     /* Chrome, Safari, Opera */
     transform: rotate(180deg);
   }
-  /* line 683, ../../../../sass/partials/page/modules/property-search-results.scss */
+  /* line 682, ../../../../sass/partials/page/modules/property-search-results.scss */
   .search-results .row1 .house-type {
     display: block;
     width: 50%;
   }
-  /* line 688, ../../../../sass/partials/page/modules/property-search-results.scss */
+  /* line 687, ../../../../sass/partials/page/modules/property-search-results.scss */
   .search-results .row1 p {
     width: 50%;
     float: right;
     box-sizing: border-box;
   }
-  /* line 694, ../../../../sass/partials/page/modules/property-search-results.scss */
+  /* line 693, ../../../../sass/partials/page/modules/property-search-results.scss */
   .search-results .row1 .price {
     width: 50%;
     border-right: 1px solid white;
   }
-  /* line 702, ../../../../sass/partials/page/modules/property-search-results.scss */
+  /* line 701, ../../../../sass/partials/page/modules/property-search-results.scss */
   .search-results .row4 .description {
     display: block;
     text-align: left !important;
   }
-  /* line 707, ../../../../sass/partials/page/modules/property-search-results.scss */
+  /* line 706, ../../../../sass/partials/page/modules/property-search-results.scss */
   .search-results .row4 .house-type {
     display: none;
   }
-  /* line 712, ../../../../sass/partials/page/modules/property-search-results.scss */
+  /* line 711, ../../../../sass/partials/page/modules/property-search-results.scss */
   .search-results .left-col {
     width: 40%;
   }
-  /* line 716, ../../../../sass/partials/page/modules/property-search-results.scss */
+  /* line 715, ../../../../sass/partials/page/modules/property-search-results.scss */
   .search-results .right-col {
     width: 60%;
     height: auto;
   }
-  /* line 722, ../../../../sass/partials/page/modules/property-search-results.scss */
+  /* line 721, ../../../../sass/partials/page/modules/property-search-results.scss */
   .search-results .realtor-info {
     float: right;
     width: 60%;
   }
 }
 @media (min-width: 960px) {
-  /* line 733, ../../../../sass/partials/page/modules/property-search-results.scss */
+  /* line 732, ../../../../sass/partials/page/modules/property-search-results.scss */
   .adSlots .adSlot {
     display: inline-block;
     margin-bottom: 0;
   }
-  /* line 739, ../../../../sass/partials/page/modules/property-search-results.scss */
+  /* line 738, ../../../../sass/partials/page/modules/property-search-results.scss */
   .adSlots .adSlot-right img {
     margin-left: 35px;
   }
