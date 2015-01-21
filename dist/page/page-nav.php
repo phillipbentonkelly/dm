@@ -4,7 +4,7 @@
         <ul>
             <li class="page-nav__mega-menu-responsive-icon"></li>
             <li class="page-nav__logo">
-                <a href="javascript:;">
+                <a href="index.html">
                     <h1>Real Estate</h1>
                     <h4>A Boston.com Site</h4>
                 </a>
@@ -15,7 +15,7 @@
                         <a href="javascript:;" class="page-nav__nav-lv0">Home</a>
                     </li>
                     <li id="find-home-menu" class="page-nav__nav-item">
-                        <a href="javascript:;" class="page-nav__nav-lv0">Find A Home <span class="page-nav__nav-item__responsive-drop-down-icon"></span></a>
+                        <a href="property-listings.html" class="page-nav__nav-lv0">Find A Home <span class="page-nav__nav-item__responsive-drop-down-icon"></span></a>
                         <div class="page-nav__arrow-up"></div>
 
                         <!-- MEGA-MENU: FIND A HOME -->
@@ -53,7 +53,7 @@
                                 <div class='mega-menu__section--middle'>
                                     <ul class='mega-menu__list-items'>
                                         <li class='mega-menu__list-item'>
-                                            <a class='mega-menu__list-link' href='#'>Tom and Gisele's Brookline Pad Looks Almost Ready</a>
+                                            <a class='mega-menu__list-link' href='articles.html'>Tom and Gisele's Brookline Pad Looks Almost Ready</a>
                                         </li>
 
                                         <li class='mega-menu__list-item'>
@@ -97,7 +97,7 @@
                     </li>
 
                     <li id="neighborhoods-menu" class="page-nav__nav-item">
-                        <a href="javascript:;" class="page-nav__nav-lv0">Neighborhoods <span class="page-nav__nav-item__responsive-drop-down-icon"></span></a>
+                        <a href="category.html" class="page-nav__nav-lv0">Neighborhoods <span class="page-nav__nav-item__responsive-drop-down-icon"></span></a>
                         <div class="page-nav__arrow-up"></div>
 
                         <!-- MEGAMENU: NEIGHBORHOODS -->
@@ -119,7 +119,7 @@
                                         </li>
 
                                         <li class='mega-menu__list-item'>
-                                            <a class='mega-menu__list-link' href='#'>Brookline</a>
+                                            <a class='mega-menu__list-link' href='neighborhood.html'>Brookline</a>
                                         </li>
 
                                         <li class='mega-menu__list-item'>
@@ -216,7 +216,7 @@
                         <!-- MEGAMENU: NEIGHBORHOODS -->
                     </li>
                     <li class="page-nav__nav-item"><a href="javascript:;" class="page-nav__nav-lv0">Open Houses</a></li>
-                    <li class="page-nav__nav-item"><a href="javascript:;" class="page-nav__nav-lv0">Luxury Living</a></li>
+                    <li class="page-nav__nav-item"><a href="serp.html" class="page-nav__nav-lv0">Luxury Living</a></li>
                     <li class="page-nav__nav-item myAccount"><a href="javascript:;" class="page-nav__nav-lv0">My Account <span class="page-nav__nav-item__responsive-drop-down-icon"></span></a></li>
                 </ul>
             </li>
