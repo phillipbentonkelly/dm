@@ -369,14 +369,13 @@
 	<?php } ?>
 
 	<!-- Page Footer -->
-	<?php include 'page-content/modules/category-footer.php'; ?>
+	<?php //include 'page-content/modules/category-footer.php'; ?>
     <?php include 'page/page-footer.php'; ?>
 
-<<<<<<< HEAD
-=======
+
     <!-- Search Modal -->
     <?php include 'page-content/modules/search-modal.php'; ?>
->>>>>>> af7d83cdb71a0af85312e843a1574d943bf0b200
+
 
     <!-- ARTICLES: Discus -->
 	<?php if ($pageType == 'articles') { ?>

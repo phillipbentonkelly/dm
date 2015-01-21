@@ -28,9 +28,9 @@
 		    <div class="company-logo-wrapper">
 		        <img class='company-logo' src='images/icons/realtorCarouselLogo_ColdwellBanker.png'/>
 		    </div>
-	    </div>	
+	    </div>
 		
-	    <!-- <div class="featured-agent">
+	    <div class="featured-agent">
 	        <div class="agent-pic-wrapper">
 	            <img class='agent-pic' src='images/icons/Featured_Agent_Pic.png'/>
 	        </div>
@@ -43,6 +43,7 @@
 	        </div>
 	    <div class="company-logo-wrapper">
 	        <img class='company-logo' src='images/icons/realtorCarouselLogo_ColdwellBanker.png'/>
-	    </div>-->
+	    </div>
+
 	</div>
 </div>

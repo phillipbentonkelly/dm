@@ -7,7 +7,10 @@ $module-name: 'category-footer';
 
 .#{$module-name}{
 
+	display: none;
 	position: relative;
+	float: left;
+	background-color: #e5e5e5;
 
 	&__left-container{
 		float: left;
@@ -34,7 +37,7 @@ $module-name: 'category-footer';
 	
 	&__right-container{
 		float: left;
-		width: 30%;
+		width: 40%;
 		box-sizing: border-box;
 		padding: 10px;
 
@@ -55,7 +58,7 @@ $module-name: 'category-footer';
 			padding: 5px;
 		}
 		.agent-info{
-			width: 40%;
+			//width: 40%;
 			float: left;
 			padding: 5px;
 
@@ -90,7 +93,7 @@ $module-name: 'category-footer';
 		}
 		.company-logo-wrapper{
 				float: left;
-				width: 30%;
+				//width: 30%;
 				padding-top: 25px;
 			}
 	}
@@ -100,12 +103,14 @@ $module-name: 'category-footer';
 //Content Footer Media Queries
 @include media-query(tablet){
 	.#{$module-name} {
-
+		display: block;
 	}
 }
 
 @include media-query(desktop){
 }
+
+
 
 
 // 	.#{$module-name} {	
