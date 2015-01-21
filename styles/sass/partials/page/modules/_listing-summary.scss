@@ -510,6 +510,12 @@ $module-name: 'listing';
 
 .share-modal {
 	visibility: hidden;
+
+	.share-icons__wrapper {
+		width: 100px;
+		margin: 0 auto;
+	}
+
 	.content {
 		position: relative;
 		width: 100%;
@@ -518,26 +524,20 @@ $module-name: 'listing';
 		box-sizing: border-box;
 	}
 
-	.share-icon {
-		width: 49%;
-		max-width: 100px;
-		height: 100px;
-		display: inline-block;
-		padding: 10px;
-		box-sizing: border-box;
-		background: green;
-	}
-
-	.share-icons--row {
-		width: 100%;
-		max-width: 200px;
-		margin: 0 auto;
-	}
-
 	span {
-		display: inline-block;
-		float: left;
+		width: 100%;
 	}
+
+	.share-icons {
+		float: left;
+		width: 50%;
+		max-width: 100px;
+	}
+
+	.share-icons:first-child {
+		margin-bottom: 10px;
+	}
+
 }
 
 // ------------------------------------------------------------

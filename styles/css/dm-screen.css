@@ -3376,7 +3376,12 @@ body.serp .page-layout {
 .share-modal {
   visibility: hidden;
 }
-/* line 513, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 514, ../sass/partials/page/modules/_listing-summary.scss */
+.share-modal .share-icons__wrapper {
+  width: 100px;
+  margin: 0 auto;
+}
+/* line 519, ../sass/partials/page/modules/_listing-summary.scss */
 .share-modal .content {
   position: relative;
   width: 100%;
@@ -3384,26 +3389,19 @@ body.serp .page-layout {
   display: inline-block;
   box-sizing: border-box;
 }
-/* line 521, ../sass/partials/page/modules/_listing-summary.scss */
-.share-modal .share-icon {
-  width: 49%;
-  max-width: 100px;
-  height: 100px;
-  display: inline-block;
-  padding: 10px;
-  box-sizing: border-box;
-  background: green;
+/* line 527, ../sass/partials/page/modules/_listing-summary.scss */
+.share-modal span {
+  width: 100%;
 }
 /* line 531, ../sass/partials/page/modules/_listing-summary.scss */
-.share-modal .share-icons--row {
-  width: 100%;
-  max-width: 200px;
-  margin: 0 auto;
+.share-modal .share-icons {
+  float: left;
+  width: 50%;
+  max-width: 100px;
 }
 /* line 537, ../sass/partials/page/modules/_listing-summary.scss */
-.share-modal span {
-  display: inline-block;
-  float: left;
+.share-modal .share-icons:first-child {
+  margin-bottom: 10px;
 }
 
 @media (min-width: 768px) {
