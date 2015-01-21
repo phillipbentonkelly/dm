@@ -1,11 +1,15 @@
 $module-name: 'listings-map';
 
 .#{$module-name} {
-	width: 630px;
-	height: 637px;
+	max-width: 630px;
+	min-height: 637px;
 	overflow: hidden;
 	margin-bottom: 50px;
 	/*border: 1px solid red;*/
+
+	h1 {
+		font-size: 3em;
+	}
 
 	&__wrapperArrow{
 		width: 0;
@@ -23,7 +27,7 @@ $module-name: 'listings-map';
 	&__title{
 		color: white;
 		font-family: Oswald Regular;
-		font-size: 42px;
+		font-size: 0.8em;
 		font-weight: 400;
 		display: block;
 		background: rgba(0, 0, 0, 0.4);
@@ -71,7 +75,7 @@ $module-name: 'listings-map';
 			border-right: 4px solid white;
 			text-transform: uppercase;
 			background-color: #e5e5e5;
-			padding: 0 11px 0 11px;
+			padding: 0 2% 0 2%;
 			position: relative;
 		}
 			a:nth-child(1) {
@@ -98,11 +102,12 @@ $module-name: 'listings-map';
 	}
 
 	&__map-wrapper {
-		width: 630px;
-		height: 448px;
+		max-width: 630px;
+		min-height: 448px;
 		background-color: #fff;
 
 		h1 {
+			font-size: 1em;
 			text-align: center;
 			vertical-align: middle;
 		}
@@ -118,5 +123,27 @@ $module-name: 'listings-map';
 		background-color: #e5e5e5;
 
 		margin-bottom: 44px;
+	}
+}
+
+
+// ------------------------------------------------------------
+// Desktop Breakpoint
+// ------------------------------------------------------------
+
+@include media-query(desktop) {
+	.#{$module-name} {
+		max-width: 630px;
+		min-height: 637px;
+	}
+}
+// ------------------------------------------------------------
+// Tablet Breakpoint
+// ------------------------------------------------------------
+
+@include media-query(tablet) {
+	.#{$module-name} {
+		max-width: 630px;
+		min-height: 637px;
 	}
 }
