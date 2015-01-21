@@ -521,12 +521,11 @@ $module-name: 'search-results';
         display: none;
     }
 
-  .serp-map-btn {
-    display: none;
-  }
-
-
   .#{$module-name} {
+
+    &__toggle-view {
+      display: none;
+    }
 
     .serp__mobile-button-dock {
         display: none;
