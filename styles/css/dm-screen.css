@@ -1258,7 +1258,6 @@ body.serp .page-layout {
 .page-footer {
   background-color: #fff;
   padding-top: 26px;
-  margin-top: 30px;
   overflow: hidden;
   clear: both;
 }
@@ -1948,17 +1947,19 @@ body.serp .page-layout {
   }
 }
 /* Target Firefox only */
-@-moz-document url-prefix() {
-  /* line 784, ../sass/partials/page/_page-search.scss */
-  .page-search__button--level-two-toggle {
-    height: 35px;
-  }
-}
+/*@-moz-document url-prefix() {
+	.page-search{
+		&__button{
+			&--level-two-toggle{
+				height: 35px;
+			}
+		}
+	}	
+}*/
 /* line 11, ../sass/partials/page/_page-footer.scss */
 .page-footer {
   background-color: #fff;
   padding-top: 26px;
-  margin-top: 30px;
   overflow: hidden;
   clear: both;
 }
@@ -5414,6 +5415,8 @@ a, img {
   font-size: 15px;
   color: #333;
   padding: 20px;
+  float: left;
+  border-top: 2px solid #2e1460;
 }
 @media screen and (min-width: 768px) {
   /* line 7, ../sass/partials/page-content/modules/_content-footer.scss */
@@ -5427,16 +5430,16 @@ a, img {
     width: 100%;
   }
 }
-/* line 14, ../sass/partials/page-content/modules/_content-footer.scss */
+/* line 16, ../sass/partials/page-content/modules/_content-footer.scss */
 .content-footer a {
   color: #333;
   text-decoration: none;
 }
-/* line 18, ../sass/partials/page-content/modules/_content-footer.scss */
+/* line 20, ../sass/partials/page-content/modules/_content-footer.scss */
 .content-footer a:hover {
   text-decoration: underline;
 }
-/* line 22, ../sass/partials/page-content/modules/_content-footer.scss */
+/* line 24, ../sass/partials/page-content/modules/_content-footer.scss */
 .content-footer__social-icons {
   width: 160px;
   margin: auto;
@@ -5445,7 +5448,7 @@ a, img {
   min-height: 10px;
   overflow: hidden;
 }
-/* line 30, ../sass/partials/page-content/modules/_content-footer.scss */
+/* line 32, ../sass/partials/page-content/modules/_content-footer.scss */
 .content-footer__social-icons a.icon {
   display: inline-block;
   float: left;
@@ -5455,33 +5458,33 @@ a, img {
   background: url(../../images/icons/sprites/sprite_footer-social-icons.png) 0 0 no-repeat;
   margin-left: 12px;
 }
-/* line 39, ../sass/partials/page-content/modules/_content-footer.scss */
+/* line 41, ../sass/partials/page-content/modules/_content-footer.scss */
 .content-footer__social-icons a.icon:first-child {
   margin-left: 0px;
 }
-/* line 42, ../sass/partials/page-content/modules/_content-footer.scss */
+/* line 44, ../sass/partials/page-content/modules/_content-footer.scss */
 .content-footer__social-icons a.facebook {
   background-position: -47px 0;
 }
-/* line 45, ../sass/partials/page-content/modules/_content-footer.scss */
+/* line 47, ../sass/partials/page-content/modules/_content-footer.scss */
 .content-footer__social-icons a.rss {
   background-position: -99px 0;
 }
-/* line 50, ../sass/partials/page-content/modules/_content-footer.scss */
+/* line 52, ../sass/partials/page-content/modules/_content-footer.scss */
 .content-footer__footer-links {
   text-align: center;
   margin-bottom: 8px;
 }
-/* line 54, ../sass/partials/page-content/modules/_content-footer.scss */
+/* line 56, ../sass/partials/page-content/modules/_content-footer.scss */
 .content-footer__footer-links a {
   display: inline-block;
   padding-left: 25px;
 }
-/* line 58, ../sass/partials/page-content/modules/_content-footer.scss */
+/* line 60, ../sass/partials/page-content/modules/_content-footer.scss */
 .content-footer__footer-links a:first-child {
   padding-left: 0;
 }
-/* line 63, ../sass/partials/page-content/modules/_content-footer.scss */
+/* line 65, ../sass/partials/page-content/modules/_content-footer.scss */
 .content-footer__copyright-block {
   text-align: center;
   font-size: 11px;
@@ -5527,157 +5530,103 @@ a, img {
     width: 298px;
   }
 }
-/* line 7, ../sass/partials/page-content/modules/_catagory-footer.scss */
-.catagory-footer {
-  width: 84.375%;
-  margin-left: auto;
-  margin-right: auto;
-  font-family: OpenSans Regular;
+/* line 8, ../sass/partials/page-content/modules/_category-footer.scss */
+.category-footer {
+  display: none;
+  position: relative;
+  float: left;
+  background-color: #e5e5e5;
+}
+/* line 15, ../sass/partials/page-content/modules/_category-footer.scss */
+.category-footer__left-container {
+  float: left;
+  width: 45%;
+  margin-left: 14%;
+}
+/* line 19, ../sass/partials/page-content/modules/_category-footer.scss */
+.category-footer__left-container p {
+  font-family: Oswald;
+  color: #000000;
+  font-size: 18px;
+  padding-bottom: 5px;
+}
+/* line 29, ../sass/partials/page-content/modules/_category-footer.scss */
+.category-footer__section {
+  padding: 15px;
+  box-sizing: border-box;
+  font-family: OpenSans;
+  color: #000000;
   font-size: 13px;
-  width: 960px !important;
-  height: 301px;
-  background-color: #e5e5e5;
+  font-weight: 400;
 }
-@media screen and (min-width: 768px) {
-  /* line 7, ../sass/partials/page-content/modules/_catagory-footer.scss */
-  .catagory-footer {
-    width: 94%;
-  }
+/* line 38, ../sass/partials/page-content/modules/_category-footer.scss */
+.category-footer__right-container {
+  float: left;
+  width: 40%;
+  box-sizing: border-box;
+  padding: 10px;
 }
-@media screen and (min-width: 960px) {
-  /* line 7, ../sass/partials/page-content/modules/_catagory-footer.scss */
-  .catagory-footer {
-    width: 100%;
-  }
-}
-/* line 15, ../sass/partials/page-content/modules/_catagory-footer.scss */
-.catagory-footer__wrapper {
-  background-color: #e5e5e5;
-  border-bottom: 2px solid #1a93b0;
-}
-/* line 22, ../sass/partials/page-content/modules/_catagory-footer.scss */
-.catagory-footer div.featured_agent_title {
+/* line 44, ../sass/partials/page-content/modules/_category-footer.scss */
+.category-footer__right-container .featured-agent-title {
   font-family: Oswald;
   color: #000000;
   font-size: 18px;
   font-weight: 400;
-  padding-bottom: 20px;
 }
-/* line 34, ../sass/partials/page-content/modules/_catagory-footer.scss */
-.catagory-footer__right-container {
+/* line 50, ../sass/partials/page-content/modules/_category-footer.scss */
+.category-footer__right-container .featured-agent {
+  width: 100%;
+  display: inline-block;
+}
+/* line 56, ../sass/partials/page-content/modules/_category-footer.scss */
+.category-footer__right-container .agent-pic-wrapper {
   float: left;
-  padding-top: 20px;
-  position: relative;
-}
-/* line 47, ../sass/partials/page-content/modules/_catagory-footer.scss */
-.catagory-footer__featured-agent {
-  width: 300px;
-  height: 85px;
-  position: relative;
-  background-color: white;
-  margin-bottom: 10px;
   padding: 5px;
 }
-/* line 56, ../sass/partials/page-content/modules/_catagory-footer.scss */
-.catagory-footer__featured-agent img.agent-pic {
-  width: 50px;
-  height: 75px;
-}
-/* line 64, ../sass/partials/page-content/modules/_catagory-footer.scss */
-.catagory-footer__featured-agent .agent-pic-wrapper {
-  width: 20%;
+/* line 60, ../sass/partials/page-content/modules/_category-footer.scss */
+.category-footer__right-container .agent-info {
   float: left;
+  padding: 5px;
 }
-/* line 69, ../sass/partials/page-content/modules/_catagory-footer.scss */
-.catagory-footer__featured-agent .agent-info {
-  width: 50%;
-  float: left;
-}
-/* line 73, ../sass/partials/page-content/modules/_catagory-footer.scss */
-.catagory-footer__featured-agent .agent-info p.name {
+/* line 65, ../sass/partials/page-content/modules/_category-footer.scss */
+.category-footer__right-container .agent-info .name {
   font-family: Arial;
   color: #2e1460;
   font-size: 12px;
   font-weight: 700;
-  line-height: 18px;
-  text-align: left;
 }
-/* line 81, ../sass/partials/page-content/modules/_catagory-footer.scss */
-.catagory-footer__featured-agent .agent-info p.contact__agent-number {
+/* line 72, ../sass/partials/page-content/modules/_category-footer.scss */
+.category-footer__right-container .agent-info .number {
+  color: red;
   font-family: Arial;
   color: #000000;
   font-size: 12px;
   font-weight: 400;
-  line-height: 18px;
-  text-align: left;
 }
-/* line 90, ../sass/partials/page-content/modules/_catagory-footer.scss */
-.catagory-footer__featured-agent div.contact-button {
-  width: 60px;
+/* line 80, ../sass/partials/page-content/modules/_category-footer.scss */
+.category-footer__right-container .agent-info .contact-button {
+  width: 40%;
   background-color: #2e1460;
   color: #ffffff;
-  padding: 4px;
+  padding: 7px;
   font-size: 11px;
   font-weight: 700;
   font-family: OpenSans;
+  margin-top: 9.5%;
+  text-align: center;
   border-radius: 3px;
-  margin-top: 16px;
 }
-/* line 103, ../sass/partials/page-content/modules/_catagory-footer.scss */
-.catagory-footer__featured-agent div.company-logo-wrapper {
-  position: relative;
-  width: 30%;
+/* line 94, ../sass/partials/page-content/modules/_category-footer.scss */
+.category-footer__right-container .company-logo-wrapper {
   float: left;
+  padding-top: 25px;
 }
-/* line 109, ../sass/partials/page-content/modules/_catagory-footer.scss */
-.catagory-footer__featured-agent div.company-logo-wrapper .company-logo {
-  width: 100%;
-}
-/* line 115, ../sass/partials/page-content/modules/_catagory-footer.scss */
-.catagory-footer__left-container {
-  float: left;
-  padding: 10px;
-}
-/* line 124, ../sass/partials/page-content/modules/_catagory-footer.scss */
-.catagory-footer__left-container p {
-  font-family: Oswald;
-  color: #000000;
-  font-size: 18px;
-  /* Approximation due to font substitution */
-  font-weight: 400;
-  line-height: 24px;
-  /* Approximation due to font substitution */
-  text-align: left;
-}
-/* line 134, ../sass/partials/page-content/modules/_catagory-footer.scss */
-.catagory-footer__locations {
-  width: 594px;
-  height: 80px;
-  /* Inline Style */
-  font-family: OpenSans;
-  color: #000000;
-  font-size: 13px;
-  /* Approximation due to font substitution */
-  font-weight: 400;
-  line-height: 18px;
-  /* Approximation due to font substitution */
-  text-align: left;
-  padding: 10px;
-}
-/* line 147, ../sass/partials/page-content/modules/_catagory-footer.scss */
-.catagory-footer__catagories {
-  width: 594px;
-  height: 80px;
-  /* Inline Style */
-  font-family: OpenSans;
-  color: #000000;
-  font-size: 13px;
-  /* Approximation due to font substitution */
-  font-weight: 400;
-  line-height: 18px;
-  /* Approximation due to font substitution */
-  text-align: left;
-  padding: 10px;
+
+@media (min-width: 768px) {
+  /* line 105, ../sass/partials/page-content/modules/_category-footer.scss */
+  .category-footer {
+    display: block;
+  }
 }
 
 /*# sourceMappingURL=dm-screen.css.map */
