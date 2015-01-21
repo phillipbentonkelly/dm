@@ -5610,7 +5610,7 @@ a, img {
   font-size: 18px;
   padding-bottom: 5px;
 }
-/* line 29, ../sass/partials/page-content/modules/_category-footer.scss */
+/* line 28, ../sass/partials/page-content/modules/_category-footer.scss */
 .category-footer__section {
   padding: 15px;
   box-sizing: border-box;
@@ -5619,51 +5619,51 @@ a, img {
   font-size: 13px;
   font-weight: 400;
 }
-/* line 38, ../sass/partials/page-content/modules/_category-footer.scss */
+/* line 37, ../sass/partials/page-content/modules/_category-footer.scss */
 .category-footer__right-container {
   float: left;
   width: 40%;
   box-sizing: border-box;
   padding: 10px;
 }
-/* line 44, ../sass/partials/page-content/modules/_category-footer.scss */
+/* line 43, ../sass/partials/page-content/modules/_category-footer.scss */
 .category-footer__right-container .featured-agent-title {
   font-family: Oswald;
   color: #000000;
   font-size: 18px;
   font-weight: 400;
 }
-/* line 50, ../sass/partials/page-content/modules/_category-footer.scss */
+/* line 49, ../sass/partials/page-content/modules/_category-footer.scss */
 .category-footer__right-container .featured-agent {
   width: 100%;
   display: inline-block;
 }
-/* line 56, ../sass/partials/page-content/modules/_category-footer.scss */
+/* line 55, ../sass/partials/page-content/modules/_category-footer.scss */
 .category-footer__right-container .agent-pic-wrapper {
   float: left;
   padding: 5px;
 }
-/* line 60, ../sass/partials/page-content/modules/_category-footer.scss */
+/* line 59, ../sass/partials/page-content/modules/_category-footer.scss */
 .category-footer__right-container .agent-info {
+  min-width: 26%;
   float: left;
   padding: 5px;
 }
-/* line 65, ../sass/partials/page-content/modules/_category-footer.scss */
+/* line 64, ../sass/partials/page-content/modules/_category-footer.scss */
 .category-footer__right-container .agent-info .name {
   font-family: Arial;
   color: #2e1460;
   font-size: 12px;
   font-weight: 700;
 }
-/* line 72, ../sass/partials/page-content/modules/_category-footer.scss */
+/* line 71, ../sass/partials/page-content/modules/_category-footer.scss */
 .category-footer__right-container .agent-info .number {
-  color: red;
   font-family: Arial;
   color: #000000;
   font-size: 12px;
   font-weight: 400;
 }
-/* line 80, ../sass/partials/page-content/modules/_category-footer.scss */
+/* line 78, ../sass/partials/page-content/modules/_category-footer.scss */
 .category-footer__right-container .agent-info .contact-button {
   width: 40%;
   background-color: #2e1460;
@@ -5676,14 +5676,14 @@ a, img {
   text-align: center;
   border-radius: 3px;
 }
-/* line 94, ../sass/partials/page-content/modules/_category-footer.scss */
+/* line 92, ../sass/partials/page-content/modules/_category-footer.scss */
 .category-footer__right-container .company-logo-wrapper {
   float: left;
   padding-top: 25px;
 }
 
 @media (min-width: 768px) {
-  /* line 105, ../sass/partials/page-content/modules/_category-footer.scss */
+  /* line 103, ../sass/partials/page-content/modules/_category-footer.scss */
   .category-footer {
     display: block;
   }
