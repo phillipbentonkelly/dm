@@ -139,7 +139,7 @@
             <div class="date">July 30, 2014</div>
 
             <div class="tags">
-                <a href="javascript:;" class="category-tag light-house">Open House</a>
+                <a href="javascript:;" class="category-tag light-blue">Open House</a>
                 <a href="javascript:;" class="category-tag maroon">Luxury</a>
                 <a href="javascript:;" class="category-tag orange">Jaimaca Plain</a>
             </div>
