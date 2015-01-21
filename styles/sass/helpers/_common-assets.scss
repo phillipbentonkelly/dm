@@ -184,6 +184,33 @@ $asset-2-name: 'quotebox';
 	}
 }
 
+
+
+// ------------------------------------------------------------
+// Third Party Social Icons
+// ------------------------------------------------------------
+
+$asset-3-name: 'third-party-social-icons';
+
+.#{$asset-3-name} {
+	span[st_processed="yes"] {
+		.stButton {
+			margin: 0 !important;
+
+			.stLarge {
+				background-size: 80%;
+				background-repeat: no-repeat;
+				height: 25px;
+			}
+
+			.stLarge:hover {
+				opacity: 75;
+				background-position: -32px;
+			}
+		}
+	}
+}
+
 // ------------------------------------------------------------
 // Desktop Breakpoint
 // ------------------------------------------------------------
