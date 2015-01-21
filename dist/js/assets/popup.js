@@ -29,7 +29,7 @@ $(document).ready(function() {
         $.modal.close();
     });
 
-    // JS for SERP map
+    // JS for SERP map/list toggle
 
     $('.search-results__toggle-view').click(function() {
 		$('.serp-map-btn').toggleClass('serp-list-btn');
@@ -43,4 +43,11 @@ $(document).ready(function() {
 			$('.search-results__item').not('#result2').hide();
 		}
     });
+
+    // JS for serp header hover
+
+    $('.search-results__item').children('.header').on('touchstart touchend', function(e) {
+		e.preventDefault();
+    	$(this).toggleClass('serp-item-hovered');
+	});
 });
