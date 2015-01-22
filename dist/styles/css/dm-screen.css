@@ -352,21 +352,24 @@ body {
 }
 /* line 370, ../sass/helpers/_mixins-and-extends.scss */
 .social-icons__comments {
-  width: 18px;
-  background-position: -118px 0px !important;
+  width: 27px;
+  height: 27px !important;
+  background-image: url(../../images/icons/comment.png) !important;
+  background-position: 0 0;
+  background-repeat: no-repeat;
 }
-/* line 375, ../sass/helpers/_mixins-and-extends.scss */
+/* line 378, ../sass/helpers/_mixins-and-extends.scss */
 .social-icons__print {
   width: 22px;
   background-position: -147px 0px !important;
 }
-/* line 380, ../sass/helpers/_mixins-and-extends.scss */
+/* line 383, ../sass/helpers/_mixins-and-extends.scss */
 .social-icons__favorite {
   width: 21px;
   background-position: -179px 0px !important;
 }
 
-/* line 395, ../sass/helpers/_mixins-and-extends.scss */
+/* line 398, ../sass/helpers/_mixins-and-extends.scss */
 .chevron::before, .full-screen-carousel .chevron::before, .gallery-widget .chevron::before, .gallery-widget__details__info-nav .chevron::before {
   color: #fff;
   border-style: solid;
@@ -384,19 +387,19 @@ body {
   font-size: 15px;
 }
 
-/* line 413, ../sass/helpers/_mixins-and-extends.scss */
+/* line 416, ../sass/helpers/_mixins-and-extends.scss */
 .chevron.right:before {
   left: 0;
   transform: rotate(45deg);
 }
 
-/* line 418, ../sass/helpers/_mixins-and-extends.scss */
+/* line 421, ../sass/helpers/_mixins-and-extends.scss */
 .chevron.bottom:before {
   top: 0;
   transform: rotate(135deg);
 }
 
-/* line 423, ../sass/helpers/_mixins-and-extends.scss */
+/* line 426, ../sass/helpers/_mixins-and-extends.scss */
 .chevron.left:before {
   left: 0.25em;
   transform: rotate(-135deg);
