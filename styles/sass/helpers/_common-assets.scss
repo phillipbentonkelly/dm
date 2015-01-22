@@ -16,6 +16,7 @@ $asset-1-name: 'category-tag';
 .#{$asset-1-name} {
 	display: block;
 	float: left;
+	clear: both;
 	font-size: 11px;
 	font-family: Avenir;
 	font-weight: bold;
@@ -224,7 +225,7 @@ $asset-3-name: 'third-party-social-icons';
 
 @include media-query(desktop) {
 	.#{$asset-1-name} {
-		
+		clear: none;
 	}
 }
 // ------------------------------------------------------------
@@ -233,6 +234,6 @@ $asset-3-name: 'third-party-social-icons';
 
 @include media-query(tablet) {
 	.#{$asset-1-name} {
-		
+		clear: none;
 	}
 }

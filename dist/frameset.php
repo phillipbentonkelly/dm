@@ -46,6 +46,10 @@
         <script src="js/assets/listings.data.js"></script>
 	<?php } ?>
 
+	<?php if ($pageType == 'home' || $pageType == 'category' || $pageType == 'category-details' || $pageType == 'neighborhood') { ?>
+		<script src="js/assets/listings.map.js"></script>
+	<?php } ?>
+
 	<?php if ($pageType == 'serp') { ?>
 		<script src="js/resources/basic/js/jquery.simplemodal.js"></script>
         <script src="js/assets/popup.js"></script>

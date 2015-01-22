@@ -505,6 +505,7 @@ textarea {
 .category-tag {
   display: block;
   float: left;
+  clear: both;
   font-size: 11px;
   font-family: Avenir;
   font-weight: bold;
@@ -516,7 +517,7 @@ textarea {
   color: #fff !important;
   margin-bottom: 5px;
 }
-/* line 30, ../sass/helpers/_common-assets.scss */
+/* line 31, ../sass/helpers/_common-assets.scss */
 .category-tag .arrow {
   display: none;
   float: right;
@@ -528,14 +529,14 @@ textarea {
   border-right-color: rgba(255, 255, 255, 0.5);
   margin-left: 6px;
 }
-/* line 42, ../sass/helpers/_common-assets.scss */
+/* line 43, ../sass/helpers/_common-assets.scss */
 .category-tag__container {
   display: block;
   position: absolute;
   left: 0px;
   top: 3%;
 }
-/* line 49, ../sass/helpers/_common-assets.scss */
+/* line 50, ../sass/helpers/_common-assets.scss */
 .category-tag__container .category-tag {
   margin-bottom: 0px;
   position: initial !important;
@@ -549,38 +550,38 @@ textarea {
 .category-tag.featured { background-color: #1a93b0; }
 .category-tag.trending { background-color: #6dcbd3; }
 .category-tag.sponsored { background-color: #A1B3B4; }*/
-/* line 64, ../sass/helpers/_common-assets.scss */
+/* line 65, ../sass/helpers/_common-assets.scss */
 .category-tag.gray {
   background-color: #A1B3B4;
 }
 
-/* line 65, ../sass/helpers/_common-assets.scss */
+/* line 66, ../sass/helpers/_common-assets.scss */
 .category-tag.maroon {
   background-color: #773659;
 }
 
-/* line 66, ../sass/helpers/_common-assets.scss */
+/* line 67, ../sass/helpers/_common-assets.scss */
 .category-tag.orange {
   background-color: #CE6323;
 }
 
-/* line 67, ../sass/helpers/_common-assets.scss */
+/* line 68, ../sass/helpers/_common-assets.scss */
 .category-tag.light-blue {
   background-color: #77A9CE;
 }
 
-/* line 68, ../sass/helpers/_common-assets.scss */
+/* line 69, ../sass/helpers/_common-assets.scss */
 .category-tag.gold {
   background-color: #B4A455;
 }
 
-/* line 69, ../sass/helpers/_common-assets.scss */
+/* line 70, ../sass/helpers/_common-assets.scss */
 .category-tag.white {
   background-color: #fff;
   color: #333 !important;
 }
 
-/* line 76, ../sass/helpers/_common-assets.scss */
+/* line 77, ../sass/helpers/_common-assets.scss */
 .quotebox__square {
   width: 50%;
   float: left;
@@ -590,7 +591,7 @@ textarea {
   position: relative;
   border: 1px solid #d4e8ef;
 }
-/* line 86, ../sass/helpers/_common-assets.scss */
+/* line 87, ../sass/helpers/_common-assets.scss */
 .quotebox__square:after, .quotebox__square:before {
   top: 100%;
   left: 30%;
@@ -601,7 +602,7 @@ textarea {
   position: absolute;
   pointer-events: none;
 }
-/* line 97, ../sass/helpers/_common-assets.scss */
+/* line 98, ../sass/helpers/_common-assets.scss */
 .quotebox__square:after {
   border-color: rgba(212, 233, 240, 0);
   border-top-color: #d4e8ef;
@@ -609,7 +610,7 @@ textarea {
   border-left-width: 1px;
   margin-left: -65px;
 }
-/* line 105, ../sass/helpers/_common-assets.scss */
+/* line 106, ../sass/helpers/_common-assets.scss */
 .quotebox__worthy {
   content: 'quoteworthy';
   display: block;
@@ -618,7 +619,7 @@ textarea {
   left: 0;
   top: 1%;
 }
-/* line 114, ../sass/helpers/_common-assets.scss */
+/* line 115, ../sass/helpers/_common-assets.scss */
 .quotebox__by-line {
   display: inline-block;
   width: 69%;
@@ -626,7 +627,7 @@ textarea {
   font-family: OpenSans Regular;
   font-size: 12px;
 }
-/* line 123, ../sass/helpers/_common-assets.scss */
+/* line 124, ../sass/helpers/_common-assets.scss */
 .quotebox__flag {
   width: 6.8%;
   height: 0.5%;
@@ -644,7 +645,7 @@ textarea {
   padding-right: 4px;
   padding-left: 4px;
 }
-/* line 144, ../sass/helpers/_common-assets.scss */
+/* line 145, ../sass/helpers/_common-assets.scss */
 .quotebox__rect1 {
   background: #3793b2;
   padding: 2% 3% 2% 3%;
@@ -656,7 +657,7 @@ textarea {
   margin-bottom: 2em;
   position: relative;
 }
-/* line 156, ../sass/helpers/_common-assets.scss */
+/* line 157, ../sass/helpers/_common-assets.scss */
 .quotebox__rect1:after, .quotebox__rect1:before {
   top: 100%;
   left: 30%;
@@ -667,7 +668,7 @@ textarea {
   position: absolute;
   pointer-events: none;
 }
-/* line 167, ../sass/helpers/_common-assets.scss */
+/* line 168, ../sass/helpers/_common-assets.scss */
 .quotebox__rect1:after {
   border-color: rgba(55, 147, 178, 0);
   border-top-color: #3793b2;
@@ -675,7 +676,7 @@ textarea {
   border-left-width: 1px;
   margin-left: -140px;
 }
-/* line 175, ../sass/helpers/_common-assets.scss */
+/* line 176, ../sass/helpers/_common-assets.scss */
 .quotebox__rect2 {
   background: #e5e5e5;
   padding: 3%;
@@ -686,31 +687,43 @@ textarea {
   margin-bottom: 1em;
 }
 
-/* line 196, ../sass/helpers/_common-assets.scss */
+/* line 197, ../sass/helpers/_common-assets.scss */
 .third-party-social-icons span[st_processed="yes"] {
   display: inline-block;
   float: left;
   margin-right: 8px;
   padding-top: -5px;
 }
-/* line 202, ../sass/helpers/_common-assets.scss */
+/* line 203, ../sass/helpers/_common-assets.scss */
 .third-party-social-icons span[st_processed="yes"] .stButton {
   width: 26px;
   height: 25px;
   margin: 0 !important;
 }
-/* line 207, ../sass/helpers/_common-assets.scss */
+/* line 208, ../sass/helpers/_common-assets.scss */
 .third-party-social-icons span[st_processed="yes"] .stButton .stLarge {
   background-size: 80%;
   background-repeat: no-repeat;
   height: 25px;
 }
-/* line 213, ../sass/helpers/_common-assets.scss */
+/* line 214, ../sass/helpers/_common-assets.scss */
 .third-party-social-icons span[st_processed="yes"] .stButton .stLarge:hover {
   opacity: 0.75;
   background-position: 0px;
 }
 
+@media (min-width: 960px) {
+  /* line 227, ../sass/helpers/_common-assets.scss */
+  .category-tag {
+    clear: none;
+  }
+}
+@media (min-width: 768px) {
+  /* line 236, ../sass/helpers/_common-assets.scss */
+  .category-tag {
+    clear: none;
+  }
+}
 /* line 11, ../sass/partials/page/_page-masthead.scss */
 .masthead {
   width: 100%;
@@ -4185,7 +4198,7 @@ body.serp .page-layout {
 }
 /* line 54, ../sass/partials/page/modules/_articles-content.scss */
 .articles-content__article__by-line h1 {
-  margin: 0px 0 2px 0;
+  margin: 0 0 2px 0;
   font-family: OpenSans;
   font-size: 13px;
 }
@@ -4212,7 +4225,7 @@ body.serp .page-layout {
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
-  padding: 0px 5px 0 5px;
+  padding: 0 5px 0 5px;
   margin-right: 7px;
 }
 /* line 87, ../sass/partials/page/modules/_articles-content.scss */
