@@ -352,21 +352,24 @@ body {
 }
 /* line 370, ../sass/helpers/_mixins-and-extends.scss */
 .social-icons__comments {
-  width: 18px;
-  background-position: -118px 0px !important;
+  width: 27px;
+  height: 27px !important;
+  background-image: url(../../images/icons/comment.png) !important;
+  background-position: 0 0;
+  background-repeat: no-repeat;
 }
-/* line 375, ../sass/helpers/_mixins-and-extends.scss */
+/* line 378, ../sass/helpers/_mixins-and-extends.scss */
 .social-icons__print {
   width: 22px;
   background-position: -147px 0px !important;
 }
-/* line 380, ../sass/helpers/_mixins-and-extends.scss */
+/* line 383, ../sass/helpers/_mixins-and-extends.scss */
 .social-icons__favorite {
   width: 21px;
   background-position: -179px 0px !important;
 }
 
-/* line 395, ../sass/helpers/_mixins-and-extends.scss */
+/* line 398, ../sass/helpers/_mixins-and-extends.scss */
 .chevron::before, .full-screen-carousel .chevron::before, .gallery-widget .chevron::before, .gallery-widget__details__info-nav .chevron::before {
   color: #fff;
   border-style: solid;
@@ -384,19 +387,19 @@ body {
   font-size: 15px;
 }
 
-/* line 413, ../sass/helpers/_mixins-and-extends.scss */
+/* line 416, ../sass/helpers/_mixins-and-extends.scss */
 .chevron.right:before {
   left: 0;
   transform: rotate(45deg);
 }
 
-/* line 418, ../sass/helpers/_mixins-and-extends.scss */
+/* line 421, ../sass/helpers/_mixins-and-extends.scss */
 .chevron.bottom:before {
   top: 0;
   transform: rotate(135deg);
 }
 
-/* line 423, ../sass/helpers/_mixins-and-extends.scss */
+/* line 426, ../sass/helpers/_mixins-and-extends.scss */
 .chevron.left:before {
   left: 0.25em;
   transform: rotate(-135deg);
@@ -3038,7 +3041,7 @@ body.serp .page-layout {
 }
 /* line 187, ../sass/partials/page/modules/_listing-summary.scss */
 .listing__detail-share--row1 {
-  display: block;
+  display: none;
   box-sizing: border-box;
   border-bottom: 1px solid white;
   width: 100%;
@@ -3058,7 +3061,7 @@ body.serp .page-layout {
 .listing__detail-share--row2 {
   display: block;
   box-sizing: border-box;
-  padding: 6px;
+  padding-top: 30px;
 }
 /* line 213, ../sass/partials/page/modules/_listing-summary.scss */
 .listing__detail-monthly-cost {
@@ -3537,32 +3540,36 @@ body.serp .page-layout {
   .listing__tags .featured {
     background-color: #2e1460;
   }
-  /* line 681, ../sass/partials/page/modules/_listing-summary.scss */
-  .listing__detail-share--row1 a:nth-child(2) {
-    display: inline-block;
+  /* line 680, ../sass/partials/page/modules/_listing-summary.scss */
+  .listing__detail-share--row1 {
+    display: block;
   }
-  /* line 686, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 684, ../sass/partials/page/modules/_listing-summary.scss */
+  .listing__detail-share--row2 {
+    padding: 7px;
+  }
+  /* line 688, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__facts--left, .listing__facts--right, .listing__features--left, .listing__features--right {
     width: 33.3%;
     box-sizing: border-box;
     margin-bottom: 20px;
   }
-  /* line 692, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 694, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__facts, .listing__features {
     font-size: 100%;
   }
-  /* line 696, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 698, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__external-links {
     float: left;
     width: 33.3%;
     box-sizing: border-box;
     clear: none;
   }
-  /* line 702, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 704, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__external-links li {
     padding-bottom: 10px;
   }
-  /* line 707, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 709, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__contact-agent {
     background: #2e1460;
     padding: 7px;
@@ -3577,18 +3584,18 @@ body.serp .page-layout {
     font-weight: 600;
     text-align: center;
   }
-  /* line 720, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 722, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__contact-agent a:link, .listing__contact-agent a:visited, .listing__contact-agent a:active {
     color: white;
     text-decoration: none;
   }
 
-  /* line 727, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 729, ../sass/partials/page/modules/_listing-summary.scss */
   .dfp-ads {
     display: block;
   }
 
-  /* line 731, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 733, ../sass/partials/page/modules/_listing-summary.scss */
   .mobile-ad {
     display: none;
   }
