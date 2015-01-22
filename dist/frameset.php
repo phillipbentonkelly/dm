@@ -323,10 +323,10 @@
 			<!-- NEIGHBORHOOD -->
 			<?php if ($pageType == 'neighborhood') { ?>
 				<!-- DFP Ad - Experience the Difference -->
-				<?php include 'ads/dfp-ads__experience-the-difference.php'; ?>
+				<?php include 'ads/ad_bigbox1.php'; ?>
 
 				<!-- DFP Ad - Moo Printing -->
-				<?php include 'ads/dfpAds__300by250__moo.php'; ?>
+				<?php include 'ads/ad_bigbox2.php'; ?>
 
 				<!-- DFP Sidebar Placeholder Ad Content -->
 				<?php include 'ads/adplaceholer__right-column.php'; ?>
