@@ -5692,45 +5692,49 @@ a, img {
   width: 40%;
   box-sizing: border-box;
   padding: 10px;
+  max-width: 320px;
 }
-/* line 43, ../sass/partials/page-content/modules/_category-footer.scss */
+/* line 44, ../sass/partials/page-content/modules/_category-footer.scss */
 .category-footer__right-container .featured-agent-title {
   font-family: Oswald Regular;
   color: #000000;
   font-size: 18px;
   font-weight: 400;
 }
-/* line 49, ../sass/partials/page-content/modules/_category-footer.scss */
+/* line 50, ../sass/partials/page-content/modules/_category-footer.scss */
 .category-footer__right-container .featured-agent {
   width: 100%;
   display: inline-block;
 }
-/* line 55, ../sass/partials/page-content/modules/_category-footer.scss */
+/* line 56, ../sass/partials/page-content/modules/_category-footer.scss */
 .category-footer__right-container .agent-pic-wrapper {
   float: left;
   padding: 5px;
+  width: 20%;
+  box-sizing: border-box;
 }
-/* line 59, ../sass/partials/page-content/modules/_category-footer.scss */
+/* line 62, ../sass/partials/page-content/modules/_category-footer.scss */
 .category-footer__right-container .agent-info {
-  min-width: 26%;
+  width: 55%;
   float: left;
   padding: 5px;
+  box-sizing: border-box;
 }
-/* line 64, ../sass/partials/page-content/modules/_category-footer.scss */
+/* line 69, ../sass/partials/page-content/modules/_category-footer.scss */
 .category-footer__right-container .agent-info .name {
   font-family: Arial;
   color: #2e1460;
   font-size: 12px;
   font-weight: 700;
 }
-/* line 71, ../sass/partials/page-content/modules/_category-footer.scss */
+/* line 76, ../sass/partials/page-content/modules/_category-footer.scss */
 .category-footer__right-container .agent-info .number {
   font-family: Arial;
   color: #000000;
   font-size: 12px;
   font-weight: 400;
 }
-/* line 78, ../sass/partials/page-content/modules/_category-footer.scss */
+/* line 83, ../sass/partials/page-content/modules/_category-footer.scss */
 .category-footer__right-container .agent-info .contact-button {
   width: 40%;
   background-color: #2e1460;
@@ -5742,15 +5746,19 @@ a, img {
   margin-top: 9.5%;
   text-align: center;
   border-radius: 3px;
+  min-width: 68px;
 }
-/* line 92, ../sass/partials/page-content/modules/_category-footer.scss */
+/* line 98, ../sass/partials/page-content/modules/_category-footer.scss */
 .category-footer__right-container .company-logo-wrapper {
   float: left;
+  min-width: 34px;
   padding-top: 25px;
+  box-sizing: border-box;
+  width: 25%;
 }
 
 @media (min-width: 768px) {
-  /* line 103, ../sass/partials/page-content/modules/_category-footer.scss */
+  /* line 111, ../sass/partials/page-content/modules/_category-footer.scss */
   .category-footer {
     display: block;
   }
