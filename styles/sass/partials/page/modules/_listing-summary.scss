@@ -192,6 +192,16 @@ $module-name: 'listing';
 		padding: 7px;
 		height: 35px;
 		overflow: hidden;
+
+		a:nth-child(2) {
+			display: none;
+		}
+	}
+
+	&__detail-share--row1 {
+		a:nth-child(2) {
+			display: none;
+		}
 	}
 
 	&__detail-share--row2 {
@@ -666,6 +676,12 @@ $module-name: 'listing';
 			.event { background-color: #ff6c6c; }
 			.featured { background-color: #2e1460; }
 		}
+
+			&__detail-share--row1 {
+				a:nth-child(2) {
+					display: inline-block;
+				}
+			}
 
 		&__facts--left, &__facts--right, &__features--left, &__features--right {
 			width: 33.3%;
