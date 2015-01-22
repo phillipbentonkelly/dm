@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-	$('#mobile-save-btn').click(function() {
+	$('#mobile-save-btn, .mobile-save-btn').click(function() {
 		$('.save-search-modal').modal();
 	});
 
@@ -17,7 +17,7 @@ $(document).ready(function() {
 		$('.contact-agent-modal').modal();
 	});
 
-	$('#mobile-share-btn').click(function() {
+	$('#mobile-share-btn, .mobile-share-btn').click(function() {
 		$('.share-modal').modal();
 	});
 	
