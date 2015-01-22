@@ -208,7 +208,7 @@ $module-name: 'mega-menu';
             .mega-menu__list-item {
                 padding: 10px 45px 10px 0;
                 border-top: 1px solid lightgrey;
-                font-family: 'OpenSans';
+                font-family: 'OpenSans Regular';
                 font-weight: 600;
             }
 
@@ -272,21 +272,6 @@ $module-name: 'mega-menu';
         position: absolute;
         left: 0;
         top: 0;
-        
-        // &__container {
-        //     position: absolute;
-        //     right: 0;
-        //     left: 0;
-        //     z-index: 100;
-        //     height: 280px;
-        //     width: #{$desktop-breakpoint};
-        //     margin: 0 auto;
-        //     padding: 10px;
-        //     background: rgba(255,255,255,0.9);
-        //     border: 1px solid lightgrey;
-        //     border-top: 0px;
-        //     box-sizing: border-box;
-        // }
 
         &__search-input {
             width: 220px;
@@ -342,7 +327,7 @@ $module-name: 'mega-menu';
             .mega-menu__list-item {
                 padding: 5px 45px 5px 0;
                 border-top: 1px solid lightgrey;
-                font-family: 'OpenSans';
+                font-family: 'OpenSans Regular';
                 font-weight: 600;
             }
 
