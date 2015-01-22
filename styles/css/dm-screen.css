@@ -4201,7 +4201,7 @@ body.serp .page-layout {
 }
 /* line 54, ../sass/partials/page/modules/_articles-content.scss */
 .articles-content__article__by-line h1 {
-  margin: 0px 0 2px 0;
+  margin: 0 0 2px 0;
   font-family: OpenSans;
   font-size: 13px;
 }
@@ -4228,7 +4228,7 @@ body.serp .page-layout {
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
-  padding: 0px 5px 0 5px;
+  padding: 0 5px 0 5px;
   margin-right: 7px;
 }
 /* line 87, ../sass/partials/page/modules/_articles-content.scss */
