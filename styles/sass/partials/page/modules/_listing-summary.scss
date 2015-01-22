@@ -679,6 +679,10 @@ $module-name: 'listing';
 
 		&__detail-share--row1 {
 			display: block;
+
+			a:nth-child(2) {
+				display: inline-block;
+			}
 		}
 
 		&__detail-share--row2 {

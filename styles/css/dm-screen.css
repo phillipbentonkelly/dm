@@ -3544,32 +3544,36 @@ body.serp .page-layout {
   .listing__detail-share--row1 {
     display: block;
   }
-  /* line 684, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 683, ../sass/partials/page/modules/_listing-summary.scss */
+  .listing__detail-share--row1 a:nth-child(2) {
+    display: inline-block;
+  }
+  /* line 688, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__detail-share--row2 {
     padding: 7px;
   }
-  /* line 688, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 692, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__facts--left, .listing__facts--right, .listing__features--left, .listing__features--right {
     width: 33.3%;
     box-sizing: border-box;
     margin-bottom: 20px;
   }
-  /* line 694, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 698, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__facts, .listing__features {
     font-size: 100%;
   }
-  /* line 698, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 702, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__external-links {
     float: left;
     width: 33.3%;
     box-sizing: border-box;
     clear: none;
   }
-  /* line 704, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 708, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__external-links li {
     padding-bottom: 10px;
   }
-  /* line 709, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 713, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__contact-agent {
     background: #2e1460;
     padding: 7px;
@@ -3584,18 +3588,18 @@ body.serp .page-layout {
     font-weight: 600;
     text-align: center;
   }
-  /* line 722, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 726, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__contact-agent a:link, .listing__contact-agent a:visited, .listing__contact-agent a:active {
     color: white;
     text-decoration: none;
   }
 
-  /* line 729, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 733, ../sass/partials/page/modules/_listing-summary.scss */
   .dfp-ads {
     display: block;
   }
 
-  /* line 733, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 737, ../sass/partials/page/modules/_listing-summary.scss */
   .mobile-ad {
     display: none;
   }
