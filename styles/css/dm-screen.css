@@ -177,7 +177,7 @@ body {
 }
 
 /* line 179, ../sass/helpers/_mixins-and-extends.scss */
-.adSlots, .mega-menu .adSlots, .real-estate-news .adSlots {
+.adSlots, .mega-menu .adSlots {
   margin: auto;
   display: block;
   min-height: 250px;
@@ -195,12 +195,12 @@ body {
   /*border: 1px solid #ccc;*/
   margin-bottom: 30px;
 }
-/* line 197, ../sass/helpers/_mixins-and-extends.scss */
+/* line 196, ../sass/helpers/_mixins-and-extends.scss */
 .adSlots .adSlot .category-tag {
   position: absolute;
   z-index: 101;
 }
-/* line 204, ../sass/helpers/_mixins-and-extends.scss */
+/* line 203, ../sass/helpers/_mixins-and-extends.scss */
 .adSlots .adSlot .detailsWrapper {
   width: 100%;
   clear: both;
@@ -211,7 +211,7 @@ body {
   left: 0;
   z-index: 1;
 }
-/* line 214, ../sass/helpers/_mixins-and-extends.scss */
+/* line 213, ../sass/helpers/_mixins-and-extends.scss */
 .adSlots .adSlot .detailsWrapper .detailsArrow {
   display: none;
   width: 0;
@@ -221,7 +221,7 @@ body {
   border-color: rgba(0, 0, 0, 0.6) transparent;
   float: right;
 }
-/* line 224, ../sass/helpers/_mixins-and-extends.scss */
+/* line 223, ../sass/helpers/_mixins-and-extends.scss */
 .adSlots .adSlot .detailsWrapper .detailsOverlay {
   width: 93%;
   min-height: 20%;
@@ -234,7 +234,7 @@ body {
   background-color: rgba(0, 0, 0, 0.6);
   clear: both;
 }
-/* line 236, ../sass/helpers/_mixins-and-extends.scss */
+/* line 235, ../sass/helpers/_mixins-and-extends.scss */
 .adSlots .adSlot .detailsWrapper .detailsOverlay h1 {
   font-size: 2em;
   font-weight: 500;
@@ -246,17 +246,17 @@ body {
   min-height: 10px;
   overflow: hidden;
 }
-/* line 247, ../sass/helpers/_mixins-and-extends.scss */
+/* line 246, ../sass/helpers/_mixins-and-extends.scss */
 .adSlots .adSlot .detailsWrapper .detailsOverlay h1 span.col {
   width: 60%;
 }
-/* line 251, ../sass/helpers/_mixins-and-extends.scss */
+/* line 250, ../sass/helpers/_mixins-and-extends.scss */
 .adSlots .adSlot .detailsWrapper .detailsOverlay h1 .priceSpan {
   float: right;
   width: 40%;
   text-align: right;
 }
-/* line 257, ../sass/helpers/_mixins-and-extends.scss */
+/* line 256, ../sass/helpers/_mixins-and-extends.scss */
 .adSlots .adSlot .detailsWrapper .detailsOverlay p {
   display: none;
   font-family: OpenSans;
@@ -265,62 +265,62 @@ body {
   padding: 0 0 0.5em 0;
   margin: 0 0 0 0;
 }
-/* line 268, ../sass/helpers/_mixins-and-extends.scss */
+/* line 267, ../sass/helpers/_mixins-and-extends.scss */
 .adSlots .adSlot:hover .detailsWrapper .detailsOverlay p {
   display: block;
 }
 
 @media (min-width: 960px) {
-  /* line 275, ../sass/helpers/_mixins-and-extends.scss */
+  /* line 274, ../sass/helpers/_mixins-and-extends.scss */
   .adSlots .adSlot {
     float: left;
     margin-right: 0px;
   }
-  /* line 281, ../sass/helpers/_mixins-and-extends.scss */
+  /* line 280, ../sass/helpers/_mixins-and-extends.scss */
   .adSlots .adSlot .detailsWrapper .detailsOverlay h1 {
     font-size: 18px;
   }
-  /* line 284, ../sass/helpers/_mixins-and-extends.scss */
+  /* line 283, ../sass/helpers/_mixins-and-extends.scss */
   .adSlots .adSlot .detailsWrapper .detailsOverlay h1 .priceSpan {
     width: 40%;
   }
-  /* line 291, ../sass/helpers/_mixins-and-extends.scss */
+  /* line 290, ../sass/helpers/_mixins-and-extends.scss */
   .adSlots .adSlot:first-child {
     float: left;
     margin-right: 30px;
   }
-  /* line 296, ../sass/helpers/_mixins-and-extends.scss */
+  /* line 295, ../sass/helpers/_mixins-and-extends.scss */
   .adSlots a.adSlot:first-child {
     margin: 0px;
   }
 }
 @media (min-width: 768px) {
-  /* line 304, ../sass/helpers/_mixins-and-extends.scss */
+  /* line 303, ../sass/helpers/_mixins-and-extends.scss */
   .adSlots .adSlot {
     float: left;
     margin-left: 30px;
   }
-  /* line 310, ../sass/helpers/_mixins-and-extends.scss */
+  /* line 309, ../sass/helpers/_mixins-and-extends.scss */
   .adSlots .adSlot .detailsWrapper .detailsOverlay h1 {
     font-size: 18px;
   }
-  /* line 313, ../sass/helpers/_mixins-and-extends.scss */
+  /* line 312, ../sass/helpers/_mixins-and-extends.scss */
   .adSlots .adSlot .detailsWrapper .detailsOverlay h1 .priceSpan {
     width: 40%;
   }
-  /* line 321, ../sass/helpers/_mixins-and-extends.scss */
+  /* line 320, ../sass/helpers/_mixins-and-extends.scss */
   .adSlots a.adSlot:first-child {
     margin-left: 0;
   }
 }
-/* line 334, ../sass/helpers/_mixins-and-extends.scss */
+/* line 333, ../sass/helpers/_mixins-and-extends.scss */
 .social-icons, .articles-content .social-icons {
   clear: both;
   min-width: 200px;
   min-height: 21px;
   overflow: hidden;
 }
-/* line 340, ../sass/helpers/_mixins-and-extends.scss */
+/* line 339, ../sass/helpers/_mixins-and-extends.scss */
 .social-icons a, .articles-content .social-icons a {
   display: inline-block;
   text-indent: -900px;
@@ -330,27 +330,27 @@ body {
   background-image: url(../../images/icons/sprites/social-icons.png);
   background-repeat: no-repeat;
 }
-/* line 350, ../sass/helpers/_mixins-and-extends.scss */
+/* line 349, ../sass/helpers/_mixins-and-extends.scss */
 .social-icons__facebook {
   width: 9px;
   background-position: 0px 0px !important;
 }
-/* line 355, ../sass/helpers/_mixins-and-extends.scss */
+/* line 354, ../sass/helpers/_mixins-and-extends.scss */
 .social-icons__twitter {
   width: 22px;
   background-position: -20px 0px !important;
 }
-/* line 360, ../sass/helpers/_mixins-and-extends.scss */
+/* line 359, ../sass/helpers/_mixins-and-extends.scss */
 .social-icons__share {
   width: 23px;
   background-position: -48px 0px !important;
 }
-/* line 365, ../sass/helpers/_mixins-and-extends.scss */
+/* line 364, ../sass/helpers/_mixins-and-extends.scss */
 .social-icons__email {
   width: 27px;
   background-position: -81px 0px !important;
 }
-/* line 370, ../sass/helpers/_mixins-and-extends.scss */
+/* line 369, ../sass/helpers/_mixins-and-extends.scss */
 .social-icons__comments {
   width: 27px;
   height: 27px !important;
@@ -358,18 +358,18 @@ body {
   background-position: 0 0;
   background-repeat: no-repeat;
 }
-/* line 378, ../sass/helpers/_mixins-and-extends.scss */
+/* line 377, ../sass/helpers/_mixins-and-extends.scss */
 .social-icons__print {
   width: 22px;
   background-position: -147px 0px !important;
 }
-/* line 383, ../sass/helpers/_mixins-and-extends.scss */
+/* line 382, ../sass/helpers/_mixins-and-extends.scss */
 .social-icons__favorite {
   width: 21px;
   background-position: -179px 0px !important;
 }
 
-/* line 398, ../sass/helpers/_mixins-and-extends.scss */
+/* line 397, ../sass/helpers/_mixins-and-extends.scss */
 .chevron::before, .full-screen-carousel .chevron::before, .gallery-widget .chevron::before, .gallery-widget__details__info-nav .chevron::before {
   color: #fff;
   border-style: solid;
@@ -387,19 +387,19 @@ body {
   font-size: 15px;
 }
 
-/* line 416, ../sass/helpers/_mixins-and-extends.scss */
+/* line 415, ../sass/helpers/_mixins-and-extends.scss */
 .chevron.right:before {
   left: 0;
   transform: rotate(45deg);
 }
 
-/* line 421, ../sass/helpers/_mixins-and-extends.scss */
+/* line 420, ../sass/helpers/_mixins-and-extends.scss */
 .chevron.bottom:before {
   top: 0;
   transform: rotate(135deg);
 }
 
-/* line 426, ../sass/helpers/_mixins-and-extends.scss */
+/* line 425, ../sass/helpers/_mixins-and-extends.scss */
 .chevron.left:before {
   left: 0.25em;
   transform: rotate(-135deg);
@@ -1205,7 +1205,7 @@ body.category-details {
 }
 /* line 27, ../sass/partials/page/_page-layout.scss */
 .page-layout__left-col {
-  max-width: 100%;
+  width: 100%;
   min-width: 30%;
   height: 100%;
   padding-top: 20px;
@@ -5400,7 +5400,7 @@ body.serp .page-layout {
   width: 100%;
   max-width: 960px;
   position: relative;
-  padding: 15px;
+  box-sizing: border-box;
 }
 /* line 9, ../sass/partials/page-content/modules/_real-estate-blog.scss */
 .hp-blogs__real-estate, .hp-blogs__explore-widget {
@@ -5534,7 +5534,7 @@ body.serp .page-layout {
   display: block;
   text-align: center;
   text-transform: capitalize;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'OpenSans Regular', sans-serif;
   font-weight: 400;
   color: #000;
   line-height: 1em;
@@ -5608,25 +5608,98 @@ a, img {
   font-size: 1em;
 }
 /* line 24, ../sass/partials/page-content/modules/_real-estate-news.scss */
+.real-estate-news__wrapper {
+  width: 300px;
+}
+/* line 28, ../sass/partials/page-content/modules/_real-estate-news.scss */
+.real-estate-news__tile {
+  width: 100%;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+/* line 34, ../sass/partials/page-content/modules/_real-estate-news.scss */
+.real-estate-news__tile .detailsWrapper {
+  width: 100%;
+  max-width: 300px;
+  max-height: 110px;
+  background-color: rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+  position: absolute;
+  bottom: 4px;
+  left: 0;
+  z-index: 1;
+}
+/* line 45, ../sass/partials/page-content/modules/_real-estate-news.scss */
+.real-estate-news__tile .detailsWrapper .detailsArrow {
+  display: none;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 25px 20px 25px;
+  border-color: rgba(0, 0, 0, 0.6) transparent;
+  float: right;
+}
+/* line 55, ../sass/partials/page-content/modules/_real-estate-news.scss */
+.real-estate-news__tile .detailsWrapper .detailsOverlay {
+  width: 93%;
+  max-height: 50%;
+  padding: 4% 5% 3% 3%;
+  color: #fff;
+  font-size: 85%;
+  letter-spacing: 1px;
+  font-family: 'Oswald Regular', sans-serif;
+  font-weight: 300;
+  clear: both;
+}
+/* line 66, ../sass/partials/page-content/modules/_real-estate-news.scss */
+.real-estate-news__tile .detailsWrapper .detailsOverlay h1 {
+  font-size: 100%;
+  font-weight: 500;
+  text-align: left;
+  padding: 0 0 0.5em 0;
+  margin: 0 0 0 0;
+  clear: both;
+  min-height: 10px;
+  overflow: hidden;
+}
+/* line 76, ../sass/partials/page-content/modules/_real-estate-news.scss */
+.real-estate-news__tile .detailsWrapper .detailsOverlay h1 span.col {
+  width: 60%;
+}
+/* line 80, ../sass/partials/page-content/modules/_real-estate-news.scss */
+.real-estate-news__tile .detailsWrapper .detailsOverlay h1 .priceSpan {
+  float: right;
+  width: 40%;
+  text-align: right;
+}
+/* line 87, ../sass/partials/page-content/modules/_real-estate-news.scss */
+.real-estate-news__tile .detailsWrapper .detailsOverlay p {
+  display: none;
+  font-family: OpenSans Regular;
+  font-size: 90%;
+  padding: 0 0 0.5em 0;
+  margin: 0 0 0 0;
+}
+/* line 100, ../sass/partials/page-content/modules/_real-estate-news.scss */
+.real-estate-news__tile:hover .detailsOverlay p {
+  display: block;
+}
+/* line 105, ../sass/partials/page-content/modules/_real-estate-news.scss */
+.real-estate-news__category-tag-container {
+  position: absolute;
+  top: 10px;
+  max-width: 130px;
+}
+/* line 111, ../sass/partials/page-content/modules/_real-estate-news.scss */
 .real-estate-news h1 {
   text-align: center;
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Oswald Regular', sans-serif;
   font-weight: 500;
   font-size: 1.5em;
   margin: 0 0 5% 0;
 }
-/* line 35, ../sass/partials/page-content/modules/_real-estate-news.scss */
-.real-estate-news .adSlots .adSlot {
-  margin-right: 0 !Important;
-  margin-left: 0px !Important;
-  margin-bottom: 20px;
-}
-/* line 41, ../sass/partials/page-content/modules/_real-estate-news.scss */
-.real-estate-news .adSlots .adSlot:nth-child(odd) {
-  margin-right: 0px !Important;
-  margin-left: 0px !Important;
-}
-/* line 47, ../sass/partials/page-content/modules/_real-estate-news.scss */
+/* line 119, ../sass/partials/page-content/modules/_real-estate-news.scss */
 .real-estate-news a.viewMore {
   clear: both;
   display: block;
@@ -5640,53 +5713,37 @@ a, img {
   text-decoration: none;
   background: #e5e5e5;
 }
-/* line 60, ../sass/partials/page-content/modules/_real-estate-news.scss */
+/* line 132, ../sass/partials/page-content/modules/_real-estate-news.scss */
 .real-estate-news a.viewMore img {
   margin-left: 4px;
 }
-/* line 65, ../sass/partials/page-content/modules/_real-estate-news.scss */
+/* line 137, ../sass/partials/page-content/modules/_real-estate-news.scss */
 .real-estate-news a.disabledViewMore {
   opacity: 0.4;
   cursor: default;
 }
 
-@media (min-width: 960px) {
-  /* line 72, ../sass/partials/page-content/modules/_real-estate-news.scss */
-  .real-estate-news {
-    width: 630px;
-    margin-left: 0;
+@media (min-width: 768px) {
+  /* line 147, ../sass/partials/page-content/modules/_real-estate-news.scss */
+  .real-estate-news__wrapper {
+    width: 100%;
   }
-  /* line 76, ../sass/partials/page-content/modules/_real-estate-news.scss */
-  .real-estate-news .adSlot {
-    margin-right: 4.7%;
-    margin-left: 0px;
+  /* line 151, ../sass/partials/page-content/modules/_real-estate-news.scss */
+  .real-estate-news__tile {
+    width: 49%;
+    float: left;
   }
-  /* line 81, ../sass/partials/page-content/modules/_real-estate-news.scss */
-  .real-estate-news .adSlot:nth-child(odd) {
-    margin-right: 4.7%;
-    margin-left: 0px;
+  /* line 156, ../sass/partials/page-content/modules/_real-estate-news.scss */
+  .real-estate-news__tile:nth-child(even) {
+    margin-left: 2%;
   }
 }
-@media (min-width: 768px) {
-  /* line 89, ../sass/partials/page-content/modules/_real-estate-news.scss */
-  .real-estate-news {
-    width: 630px;
-    margin-left: 0;
-  }
-  /* line 93, ../sass/partials/page-content/modules/_real-estate-news.scss */
-  .real-estate-news .adSlots {
-    float: left;
-    width: 630px;
-  }
-  /* line 97, ../sass/partials/page-content/modules/_real-estate-news.scss */
-  .real-estate-news .adSlots .adSlot {
-    margin-right: 0 !Important;
-    margin-left: 0px !Important;
-  }
-  /* line 102, ../sass/partials/page-content/modules/_real-estate-news.scss */
-  .real-estate-news .adSlots .adSlot:nth-child(odd) {
-    margin-right: 4.7% !Important;
-    margin-left: 0px !Important;
+@media (min-width: 960px) {
+  /* line 165, ../sass/partials/page-content/modules/_real-estate-news.scss */
+  .real-estate-news .adSlot {
+    margin: 0;
+    float: none;
+    display: inline-block;
   }
 }
 /* line 7, ../sass/partials/page-content/modules/_content-footer.scss */

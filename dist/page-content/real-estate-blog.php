@@ -71,7 +71,7 @@
         
         <div class="hp-blogs__wrapper">
             <a href="javascript:;" class="hp-blogs__blog-tile">
-                <img src="images/blogs/re-blog__entry__1.jpg">
+                <img src="images/neighborhoods/top-neighborhoods__entry__1.jpg">
                 <!-- <img src="imhp-blogs__hoods/top-neighborhoods__entry__1.jpg"> -->
                 
                 <div class="detailsWrapper">
@@ -84,8 +84,8 @@
             </a>
 
             <a href="javascript:;" class="hp-blogs__blog-tile">
-                <img src="images/blogs/re-blog__entry__1.jpg">
-                <!-- <img src="imhp-blogs__hoods/top-neighborhoods__entry__2.jpg"> -->
+                <img src="images/neighborhoods/top-neighborhoods__entry__3.jpg">
+                <!-- <img src="hp-blogs__hoods/top-neighborhoods__entry__2.jpg"> -->
                 
                 <div class="detailsWrapper">
                     <div class="detailsArrow"></div>
@@ -97,7 +97,7 @@
             </a>
 
             <a href="javascript:;" class="hp-blogs__blog-tile">
-                <img src="images/blogs/re-blog__entry__1.jpg">
+                <img src="images/neighborhoods/top-neighborhoods__entry__2.jpg">
                 <!-- <img src="imhp-blogs__hoods/top-neighborhoods__entry__3.jpg"> -->
                 
                 <div class="detailsWrapper">
