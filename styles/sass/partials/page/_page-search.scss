@@ -64,7 +64,7 @@ $module-name: 'page-search';
 			display: inline-block;
 			z-index: 100;
 			padding: 10px;
-			height: 47px;
+			height: auto;
 			background: #fff;
 			box-sizing: border-box;
 		}
@@ -219,8 +219,8 @@ $module-name: 'page-search';
 
 		&--submit{
 			float: right;
-			margin: 0 10px 20px 0;
-			width: 35px;
+			margin: 0 0 20px 0;
+			width: 26px;
 			height: 35px;
 			border-radius: 4px;
 			background: url(#{$img-path}icons/icon_search-magnifiying-glass.png) center center no-repeat #000;
