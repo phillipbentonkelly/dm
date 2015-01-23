@@ -1368,33 +1368,34 @@ body.serp .page-layout {
   padding: 10px;
   height: 47px;
   background: #fff;
+  box-sizing: border-box;
 }
-/* line 71, ../sass/partials/page/_page-search.scss */
+/* line 72, ../sass/partials/page/_page-search.scss */
 .page-search__row--level-two {
   display: inline-block;
   padding: 10px;
   width: 90%;
 }
-/* line 76, ../sass/partials/page/_page-search.scss */
+/* line 77, ../sass/partials/page/_page-search.scss */
 .page-search__row--level-two h4 {
   display: inline-block;
   width: 120px;
 }
-/* line 81, ../sass/partials/page/_page-search.scss */
+/* line 82, ../sass/partials/page/_page-search.scss */
 .page-search__row--level-two input[type=text] {
   padding: 5px;
   height: 22px;
 }
-/* line 86, ../sass/partials/page/_page-search.scss */
+/* line 87, ../sass/partials/page/_page-search.scss */
 .page-search__row--level-two .select2-container {
   float: right;
   padding: 5px 0;
 }
-/* line 89, ../sass/partials/page/_page-search.scss */
+/* line 90, ../sass/partials/page/_page-search.scss */
 .page-search__row--level-two .select2-container .select2-arrow {
   margin-top: 3px;
 }
-/* line 95, ../sass/partials/page/_page-search.scss */
+/* line 96, ../sass/partials/page/_page-search.scss */
 .page-search__row--level-three {
   display: inline-block;
   top: 0px;
@@ -1404,114 +1405,114 @@ body.serp .page-layout {
   width: 90%;
   height: auto;
 }
-/* line 104, ../sass/partials/page/_page-search.scss */
+/* line 105, ../sass/partials/page/_page-search.scss */
 .page-search__row--level-three .col {
   display: block;
   float: left;
   width: 100%;
 }
-/* line 110, ../sass/partials/page/_page-search.scss */
+/* line 111, ../sass/partials/page/_page-search.scss */
 .page-search__row--level-three ul {
   list-style-type: none;
   margin: 5px 0;
   padding-left: 0;
 }
-/* line 116, ../sass/partials/page/_page-search.scss */
+/* line 117, ../sass/partials/page/_page-search.scss */
 .page-search__row--level-three ul li label {
   font-size: 11px;
 }
-/* line 122, ../sass/partials/page/_page-search.scss */
+/* line 123, ../sass/partials/page/_page-search.scss */
 .page-search__row--level-three h4 {
   display: block;
   float: left;
   width: 100%;
 }
-/* line 129, ../sass/partials/page/_page-search.scss */
+/* line 130, ../sass/partials/page/_page-search.scss */
 .page-search__row--level-three .select2-container .select2-choice {
   height: 42px;
   line-height: 42px;
 }
-/* line 132, ../sass/partials/page/_page-search.scss */
+/* line 133, ../sass/partials/page/_page-search.scss */
 .page-search__row--level-three .select2-container .select2-choice .select2-arrow {
   top: 8px;
 }
-/* line 140, ../sass/partials/page/_page-search.scss */
+/* line 141, ../sass/partials/page/_page-search.scss */
 .page-search__section {
   display: block;
   float: left;
   width: 100%;
 }
-/* line 145, ../sass/partials/page/_page-search.scss */
+/* line 146, ../sass/partials/page/_page-search.scss */
 .page-search__section--tokenize {
   margin: 0 0 12px 0;
   height: auto;
   min-height: 70px;
 }
-/* line 151, ../sass/partials/page/_page-search.scss */
+/* line 152, ../sass/partials/page/_page-search.scss */
 .page-search__section input[type="text"], .page-search__section .select2-container {
   border: none;
 }
-/* line 155, ../sass/partials/page/_page-search.scss */
+/* line 156, ../sass/partials/page/_page-search.scss */
 .page-search__section ul {
   clear: both;
 }
-/* line 159, ../sass/partials/page/_page-search.scss */
+/* line 160, ../sass/partials/page/_page-search.scss */
 .page-search__section .price-range-container {
   margin: 5px 0 0 0;
   float: right;
 }
-/* line 167, ../sass/partials/page/_page-search.scss */
+/* line 168, ../sass/partials/page/_page-search.scss */
 .page-search__container {
   display: block;
 }
-/* line 170, ../sass/partials/page/_page-search.scss */
+/* line 171, ../sass/partials/page/_page-search.scss */
 .page-search__container--radio {
   float: right;
 }
-/* line 173, ../sass/partials/page/_page-search.scss */
+/* line 174, ../sass/partials/page/_page-search.scss */
 .page-search__container--range {
   float: left;
 }
-/* line 178, ../sass/partials/page/_page-search.scss */
+/* line 179, ../sass/partials/page/_page-search.scss */
 .page-search__list-item {
   display: block;
   margin: 0 5px 5px 5px;
 }
-/* line 184, ../sass/partials/page/_page-search.scss */
+/* line 185, ../sass/partials/page/_page-search.scss */
 .page-search__input {
   border-radius: 2px;
   height: 32px;
 }
-/* line 188, ../sass/partials/page/_page-search.scss */
+/* line 189, ../sass/partials/page/_page-search.scss */
 .page-search__input--numeric {
   width: 50px;
   padding: 5px;
 }
-/* line 193, ../sass/partials/page/_page-search.scss */
+/* line 194, ../sass/partials/page/_page-search.scss */
 .page-search__input--numeric-short {
   width: 50px;
   height: 26px;
   padding: 0 5px;
 }
-/* line 199, ../sass/partials/page/_page-search.scss */
+/* line 200, ../sass/partials/page/_page-search.scss */
 .page-search__input--text {
   width: 165px;
   padding: 5px;
 }
-/* line 204, ../sass/partials/page/_page-search.scss */
+/* line 205, ../sass/partials/page/_page-search.scss */
 .page-search__input--tokenize {
   width: 90%;
   min-height: 32px;
   height: auto;
 }
-/* line 213, ../sass/partials/page/_page-search.scss */
+/* line 214, ../sass/partials/page/_page-search.scss */
 .page-search__button {
   display: inline-block;
   outline: none;
   border: 0;
   cursor: pointer;
 }
-/* line 219, ../sass/partials/page/_page-search.scss */
+/* line 220, ../sass/partials/page/_page-search.scss */
 .page-search__button--submit {
   float: right;
   margin: 0 10px 20px 0;
@@ -1520,7 +1521,7 @@ body.serp .page-layout {
   border-radius: 4px;
   background: url(../../images/icons/icon_search-magnifiying-glass.png) center center no-repeat #000;
 }
-/* line 228, ../sass/partials/page/_page-search.scss */
+/* line 229, ../sass/partials/page/_page-search.scss */
 .page-search__button--save {
   position: absolute;
   top: 10px;
@@ -1533,16 +1534,16 @@ body.serp .page-layout {
   vertical-align: middle;
   box-shadow: none;
 }
-/* line 240, ../sass/partials/page/_page-search.scss */
+/* line 241, ../sass/partials/page/_page-search.scss */
 .page-search__button--save span.saved {
   display: none;
   color: #757c7d;
 }
-/* line 249, ../sass/partials/page/_page-search.scss */
+/* line 250, ../sass/partials/page/_page-search.scss */
 .page-search__button.select2-panel-open span.select2-arrow b {
   background-position: -18px 1px;
 }
-/* line 255, ../sass/partials/page/_page-search.scss */
+/* line 256, ../sass/partials/page/_page-search.scss */
 .page-search__button--level-two-toggle {
   position: relative;
   z-index: 600;
@@ -1553,7 +1554,7 @@ body.serp .page-layout {
   border-radius: 4px;
   background: #ececec;
 }
-/* line 265, ../sass/partials/page/_page-search.scss */
+/* line 266, ../sass/partials/page/_page-search.scss */
 .page-search__button--level-two-toggle span {
   position: absolute;
   top: 50%;
@@ -1565,19 +1566,19 @@ body.serp .page-layout {
   border-style: solid;
   content: ' ';
 }
-/* line 276, ../sass/partials/page/_page-search.scss */
+/* line 277, ../sass/partials/page/_page-search.scss */
 .page-search__button--level-two-toggle span.down-arrow {
   margin-top: -3px;
   border-width: 7px 7px 0 7px;
   border-color: #808080 transparent transparent transparent;
 }
-/* line 282, ../sass/partials/page/_page-search.scss */
+/* line 283, ../sass/partials/page/_page-search.scss */
 .page-search__button--level-two-toggle span.up-arrow {
   margin-top: -4px;
   border-color: transparent transparent #808080 transparent;
   border-width: 0 7px 7px 7px;
 }
-/* line 293, ../sass/partials/page/_page-search.scss */
+/* line 294, ../sass/partials/page/_page-search.scss */
 .page-search__button--level-three-toggle {
   position: relative;
   top: 5px;
@@ -1592,7 +1593,7 @@ body.serp .page-layout {
   vertical-align: middle;
   cursor: pointer;
 }
-/* line 307, ../sass/partials/page/_page-search.scss */
+/* line 308, ../sass/partials/page/_page-search.scss */
 .page-search__button--level-three-toggle span.select2-chosen {
   display: block;
   float: left;
@@ -1610,7 +1611,7 @@ body.serp .page-layout {
   -ms-user-select: none;
   user-select: none;
 }
-/* line 326, ../sass/partials/page/_page-search.scss */
+/* line 327, ../sass/partials/page/_page-search.scss */
 .page-search__button--level-three-toggle span.select2-arrow {
   display: inline-block;
   width: 18px;
@@ -1619,14 +1620,14 @@ body.serp .page-layout {
   right: 0;
   top: 3px;
 }
-/* line 334, ../sass/partials/page/_page-search.scss */
+/* line 335, ../sass/partials/page/_page-search.scss */
 .page-search__button--level-three-toggle span.select2-arrow b {
   display: block;
   width: 100%;
   height: 100%;
   background: url(../../images/icons/select2.png) no-repeat 0 1px;
 }
-/* line 343, ../sass/partials/page/_page-search.scss */
+/* line 344, ../sass/partials/page/_page-search.scss */
 .page-search__button--close {
   display: block;
   position: absolute;
@@ -1638,24 +1639,24 @@ body.serp .page-layout {
   border-radius: 2px;
   cursor: pointer;
 }
-/* line 354, ../sass/partials/page/_page-search.scss */
+/* line 355, ../sass/partials/page/_page-search.scss */
 .page-search__button--close span {
   font-size: 24px;
   background: none;
   text-align: center;
 }
-/* line 364, ../sass/partials/page/_page-search.scss */
+/* line 365, ../sass/partials/page/_page-search.scss */
 .page-search__fancy-radio-box {
   display: inline-block;
   float: left;
   margin: 8px 0 0 0;
 }
-/* line 369, ../sass/partials/page/_page-search.scss */
+/* line 370, ../sass/partials/page/_page-search.scss */
 .page-search__fancy-radio-box input[type=radio] {
   display: none;
   padding: 0;
 }
-/* line 374, ../sass/partials/page/_page-search.scss */
+/* line 375, ../sass/partials/page/_page-search.scss */
 .page-search__fancy-radio-box label {
   display: inline-block;
   position: relative;
@@ -1663,7 +1664,7 @@ body.serp .page-layout {
   margin-right: 5px;
   font-size: 11px;
 }
-/* line 382, ../sass/partials/page/_page-search.scss */
+/* line 383, ../sass/partials/page/_page-search.scss */
 .page-search__fancy-radio-box label:before {
   content: "";
   display: inline-block;
@@ -1682,7 +1683,7 @@ body.serp .page-layout {
   font-family: sans-serif;
   font-size: 13px;
 }
-/* line 401, ../sass/partials/page/_page-search.scss */
+/* line 402, ../sass/partials/page/_page-search.scss */
 .page-search__fancy-radio-box input[type=radio]:checked + label:before {
   content: "\2022";
   font-size: 30px;
@@ -1691,19 +1692,19 @@ body.serp .page-layout {
   -moz-line-height: 16px;
   color: #fff;
 }
-/* line 411, ../sass/partials/page/_page-search.scss */
+/* line 412, ../sass/partials/page/_page-search.scss */
 .page-search__fancy-radio-box--for-sale label:before {
   background: #1c93b5;
 }
-/* line 417, ../sass/partials/page/_page-search.scss */
+/* line 418, ../sass/partials/page/_page-search.scss */
 .page-search__fancy-radio-box--for-rent label:before {
   background: #05a851;
 }
-/* line 427, ../sass/partials/page/_page-search.scss */
+/* line 428, ../sass/partials/page/_page-search.scss */
 .page-search__fancy-checkbox input[type=checkbox] {
   display: none;
 }
-/* line 431, ../sass/partials/page/_page-search.scss */
+/* line 432, ../sass/partials/page/_page-search.scss */
 .page-search__fancy-checkbox label {
   display: inline-block;
   cursor: pointer;
@@ -1713,7 +1714,7 @@ body.serp .page-layout {
   padding-left: 20px;
   font-size: 13px;
 }
-/* line 441, ../sass/partials/page/_page-search.scss */
+/* line 442, ../sass/partials/page/_page-search.scss */
 .page-search__fancy-checkbox label:before {
   content: "";
   display: inline-block;
@@ -1727,21 +1728,21 @@ body.serp .page-layout {
   background: #fff;
   font-family: sans-serif;
 }
-/* line 455, ../sass/partials/page/_page-search.scss */
+/* line 456, ../sass/partials/page/_page-search.scss */
 .page-search__fancy-checkbox input[type=checkbox]:checked + label:before {
   content: "\2713";
   font-size: 15px;
   text-align: center;
   line-height: 15px;
 }
-/* line 465, ../sass/partials/page/_page-search.scss */
+/* line 466, ../sass/partials/page/_page-search.scss */
 .page-search__dropdown {
   display: inline-block;
   vertical-align: middle;
   font-family: 'Verdana', sans-serif;
   cursor: pointer;
 }
-/* line 471, ../sass/partials/page/_page-search.scss */
+/* line 472, ../sass/partials/page/_page-search.scss */
 .page-search__dropdown--main {
   float: left;
   margin: 0 0 0 10px;
@@ -1749,7 +1750,7 @@ body.serp .page-layout {
   height: 40px;
   border-radius: 4px;
 }
-/* line 478, ../sass/partials/page/_page-search.scss */
+/* line 479, ../sass/partials/page/_page-search.scss */
 .page-search__dropdown--main .selectize-input {
   padding: 10px 15px;
   height: 20px;
@@ -1757,11 +1758,11 @@ body.serp .page-layout {
   border-radius: 4px;
   line-height: 16px;
 }
-/* line 486, ../sass/partials/page/_page-search.scss */
+/* line 487, ../sass/partials/page/_page-search.scss */
 .page-search__dropdown--main .selectize-dropdown {
   height: auto;
 }
-/* line 492, ../sass/partials/page/_page-search.scss */
+/* line 493, ../sass/partials/page/_page-search.scss */
 .page-search__dropdown--range {
   float: right;
   padding: 5px;
@@ -1769,184 +1770,184 @@ body.serp .page-layout {
   height: 40px;
   font-size: 11px;
 }
-/* line 500, ../sass/partials/page/_page-search.scss */
+/* line 501, ../sass/partials/page/_page-search.scss */
 .page-search__dropdown--filter-fmt {
   width: 95px;
   height: 30px;
   padding: 5px;
 }
-/* line 506, ../sass/partials/page/_page-search.scss */
+/* line 507, ../sass/partials/page/_page-search.scss */
 .page-search__dropdown--filter-hometype {
   width: 112px;
   height: 30px;
   padding: 5px;
 }
-/* line 512, ../sass/partials/page/_page-search.scss */
+/* line 513, ../sass/partials/page/_page-search.scss */
 .page-search__dropdown--filter-dom {
   width: 170px;
   height: 45px;
   margin: 5px;
 }
 
-/* line 522, ../sass/partials/page/_page-search.scss */
+/* line 523, ../sass/partials/page/_page-search.scss */
 .select2-drop .select2-search {
   display: none;
 }
 
 @media (min-width: 960px) {
-  /* line 532, ../sass/partials/page/_page-search.scss */
+  /* line 533, ../sass/partials/page/_page-search.scss */
   .home .page-search {
     position: absolute;
     top: 160px;
     z-index: 10;
     background: rgba(255, 255, 255, 0.85);
   }
-  /* line 539, ../sass/partials/page/_page-search.scss */
+  /* line 540, ../sass/partials/page/_page-search.scss */
   .home .page-search__form input[type="text"], .home .page-search__form input[type=search] {
     border: none;
   }
-  /* line 545, ../sass/partials/page/_page-search.scss */
+  /* line 546, ../sass/partials/page/_page-search.scss */
   .home .page-search__dropdown--main {
     border: none;
   }
 
-  /* line 552, ../sass/partials/page/_page-search.scss */
+  /* line 553, ../sass/partials/page/_page-search.scss */
   .page-section .page-search {
     position: absolute;
     top: 160px;
     z-index: 10;
     background: rgba(255, 255, 255, 0.85);
   }
-  /* line 559, ../sass/partials/page/_page-search.scss */
+  /* line 560, ../sass/partials/page/_page-search.scss */
   .page-section .page-search__section input[type=text] {
     border: 1px solid black;
   }
-  /* line 565, ../sass/partials/page/_page-search.scss */
+  /* line 566, ../sass/partials/page/_page-search.scss */
   .page-section .page-search__dropdown .selectize-input {
     border: 1px solid black;
   }
-  /* line 573, ../sass/partials/page/_page-search.scss */
+  /* line 574, ../sass/partials/page/_page-search.scss */
   .page-section .page-search__input--numeric, .page-section .page-search__input--text {
     border: 1px solid black;
   }
-  /* line 578, ../sass/partials/page/_page-search.scss */
+  /* line 579, ../sass/partials/page/_page-search.scss */
   .page-section .page-search__input--tokenize .selectize-input, .page-section .page-search__input--main .selectize-input {
     border: 1px solid black;
   }
-  /* line 585, ../sass/partials/page/_page-search.scss */
+  /* line 586, ../sass/partials/page/_page-search.scss */
   .page-section .page-search__button--submit {
     margin: 0 84px 0 0;
   }
-  /* line 589, ../sass/partials/page/_page-search.scss */
+  /* line 590, ../sass/partials/page/_page-search.scss */
   .page-section .page-search__button--level-three-toggle {
     border: 1px solid black;
     height: 34px;
   }
-  /* line 593, ../sass/partials/page/_page-search.scss */
+  /* line 594, ../sass/partials/page/_page-search.scss */
   .page-section .page-search__button--level-three-toggle span.select2-chosen {
     color: #999999;
   }
-  /* line 601, ../sass/partials/page/_page-search.scss */
+  /* line 602, ../sass/partials/page/_page-search.scss */
   .page-section .page-search__button.select2-panel-open span.select2-chosen {
     color: black;
   }
-  /* line 606, ../sass/partials/page/_page-search.scss */
+  /* line 607, ../sass/partials/page/_page-search.scss */
   .page-section .page-search__button--close {
     margin-right: 32px;
   }
-  /* line 616, ../sass/partials/page/_page-search.scss */
+  /* line 617, ../sass/partials/page/_page-search.scss */
   .page-section .page-search__fancy-checkbox label:before {
     border: 1px solid black;
   }
-  /* line 621, ../sass/partials/page/_page-search.scss */
+  /* line 622, ../sass/partials/page/_page-search.scss */
   .page-section .page-search .select2-choice, .page-section .page-search .select2-container .select2-drop {
     border: 1px solid black;
   }
 
-  /* line 628, ../sass/partials/page/_page-search.scss */
+  /* line 629, ../sass/partials/page/_page-search.scss */
   .page-search {
     display: block;
     height: auto;
     min-height: 60px;
   }
-  /* line 633, ../sass/partials/page/_page-search.scss */
+  /* line 634, ../sass/partials/page/_page-search.scss */
   .page-search .mobile {
     display: none;
   }
-  /* line 637, ../sass/partials/page/_page-search.scss */
+  /* line 638, ../sass/partials/page/_page-search.scss */
   .page-search .desktop {
     display: inline-block;
   }
-  /* line 641, ../sass/partials/page/_page-search.scss */
+  /* line 642, ../sass/partials/page/_page-search.scss */
   .page-search .select2-drop {
     margin: 8px 0;
   }
-  /* line 645, ../sass/partials/page/_page-search.scss */
+  /* line 646, ../sass/partials/page/_page-search.scss */
   .page-search__content-wrapper {
     width: 960px;
   }
-  /* line 651, ../sass/partials/page/_page-search.scss */
+  /* line 652, ../sass/partials/page/_page-search.scss */
   .page-search__row--level-one {
     padding: 10px;
     height: 47px;
     background: none;
   }
-  /* line 657, ../sass/partials/page/_page-search.scss */
+  /* line 658, ../sass/partials/page/_page-search.scss */
   .page-search__row--level-two {
     margin: 0 50px 10px 50px;
   }
-  /* line 660, ../sass/partials/page/_page-search.scss */
+  /* line 661, ../sass/partials/page/_page-search.scss */
   .page-search__row--level-two section {
     display: inline-block;
     width: auto;
     margin: 0 4px;
   }
-  /* line 666, ../sass/partials/page/_page-search.scss */
+  /* line 667, ../sass/partials/page/_page-search.scss */
   .page-search__row--level-two section .select2-container .select2-choice {
     height: 32px;
     line-height: 32px;
   }
-  /* line 675, ../sass/partials/page/_page-search.scss */
+  /* line 676, ../sass/partials/page/_page-search.scss */
   .page-search__row--level-three {
     margin: 0px 20px 10px 50px;
   }
-  /* line 678, ../sass/partials/page/_page-search.scss */
+  /* line 679, ../sass/partials/page/_page-search.scss */
   .page-search__row--level-three .col {
     width: 21%;
     margin-right: 1%;
   }
-  /* line 683, ../sass/partials/page/_page-search.scss */
+  /* line 684, ../sass/partials/page/_page-search.scss */
   .page-search__row--level-three h4 {
     float: left;
   }
-  /* line 689, ../sass/partials/page/_page-search.scss */
+  /* line 690, ../sass/partials/page/_page-search.scss */
   .page-search__container {
     display: inline-block;
     float: left;
   }
-  /* line 693, ../sass/partials/page/_page-search.scss */
+  /* line 694, ../sass/partials/page/_page-search.scss */
   .page-search__container--radio {
     float: left;
     margin: 8px 0 0 0;
   }
-  /* line 698, ../sass/partials/page/_page-search.scss */
+  /* line 699, ../sass/partials/page/_page-search.scss */
   .page-search__container--range {
     float: left;
   }
-  /* line 703, ../sass/partials/page/_page-search.scss */
+  /* line 704, ../sass/partials/page/_page-search.scss */
   .page-search__list-item {
     float: left;
     width: 100%;
   }
-  /* line 709, ../sass/partials/page/_page-search.scss */
+  /* line 710, ../sass/partials/page/_page-search.scss */
   .page-search__input--tokenize {
     width: 154px;
   }
-  /* line 714, ../sass/partials/page/_page-search.scss */
+  /* line 715, ../sass/partials/page/_page-search.scss */
   .page-search__dropdown {
     cursor: pointer;
   }
-  /* line 717, ../sass/partials/page/_page-search.scss */
+  /* line 718, ../sass/partials/page/_page-search.scss */
   .page-search__dropdown--main {
     float: left;
     display: block;
@@ -1957,23 +1958,23 @@ body.serp .page-layout {
     border-radius: none;
     font-size: 17px;
   }
-  /* line 727, ../sass/partials/page/_page-search.scss */
+  /* line 728, ../sass/partials/page/_page-search.scss */
   .page-search__dropdown--main .selectize-input {
     height: auto;
     border: none;
     line-height: 28px;
   }
-  /* line 736, ../sass/partials/page/_page-search.scss */
+  /* line 737, ../sass/partials/page/_page-search.scss */
   .page-search__button--save {
     top: 23px;
   }
-  /* line 740, ../sass/partials/page/_page-search.scss */
+  /* line 741, ../sass/partials/page/_page-search.scss */
   .page-search__button--submit {
     margin-right: 52px;
     width: 44px;
     height: 44px;
   }
-  /* line 746, ../sass/partials/page/_page-search.scss */
+  /* line 747, ../sass/partials/page/_page-search.scss */
   .page-search__button--level-two-toggle {
     top: 8px;
     left: initial;
@@ -1981,14 +1982,14 @@ body.serp .page-layout {
     width: 28px;
     height: 28px;
   }
-  /* line 754, ../sass/partials/page/_page-search.scss */
+  /* line 755, ../sass/partials/page/_page-search.scss */
   .page-search__button--level-three-toggle {
     box-sizing: border-box;
     height: 34px;
   }
 }
 @media (min-width: 768px) {
-  /* line 770, ../sass/partials/page/_page-search.scss */
+  /* line 771, ../sass/partials/page/_page-search.scss */
   .page-search {
     display: block;
   }
@@ -5423,26 +5424,42 @@ body.serp .page-layout {
 .hp-blogs__explore-widget {
   margin-left: 1%;
 }
-/* line 34, ../sass/partials/page-content/modules/_real-estate-blog.scss */
+/* line 33, ../sass/partials/page-content/modules/_real-estate-blog.scss */
+.hp-blogs__explore-widget .detailsOverlay h1 {
+  font-size: 16px !important;
+  text-align: center !important;
+  padding-bottom: 0 !important;
+}
+/* line 40, ../sass/partials/page-content/modules/_real-estate-blog.scss */
 .hp-blogs__blog-tile {
   display: inline-block;
   margin-bottom: 10px;
   height: auto;
 }
-/* line 40, ../sass/partials/page-content/modules/_real-estate-blog.scss */
+/* line 46, ../sass/partials/page-content/modules/_real-estate-blog.scss */
 .hp-blogs__wrapper {
   margin: auto;
   display: block;
   overflow: hidden;
   clear: both;
 }
-/* line 48, ../sass/partials/page-content/modules/_real-estate-blog.scss */
+/* line 53, ../sass/partials/page-content/modules/_real-estate-blog.scss */
+.hp-blogs__flag-container {
+  position: absolute;
+  top: 10px;
+  max-width: 100px;
+}
+/* line 58, ../sass/partials/page-content/modules/_real-estate-blog.scss */
+.hp-blogs__flag-container .category-tag {
+  float: left;
+}
+/* line 63, ../sass/partials/page-content/modules/_real-estate-blog.scss */
 .hp-blogs__blog-tile {
   display: block;
   margin: 0 0  10px 0;
   position: relative;
 }
-/* line 54, ../sass/partials/page-content/modules/_real-estate-blog.scss */
+/* line 69, ../sass/partials/page-content/modules/_real-estate-blog.scss */
 .hp-blogs__blog-tile .detailsWrapper {
   width: 100%;
   max-width: 300px;
@@ -5454,7 +5471,7 @@ body.serp .page-layout {
   left: 0;
   z-index: 1;
 }
-/* line 65, ../sass/partials/page-content/modules/_real-estate-blog.scss */
+/* line 80, ../sass/partials/page-content/modules/_real-estate-blog.scss */
 .hp-blogs__blog-tile .detailsWrapper .detailsArrow {
   display: none;
   width: 0;
@@ -5464,7 +5481,7 @@ body.serp .page-layout {
   border-color: rgba(0, 0, 0, 0.6) transparent;
   float: right;
 }
-/* line 75, ../sass/partials/page-content/modules/_real-estate-blog.scss */
+/* line 90, ../sass/partials/page-content/modules/_real-estate-blog.scss */
 .hp-blogs__blog-tile .detailsWrapper .detailsOverlay {
   width: 93%;
   max-height: 50%;
@@ -5476,7 +5493,7 @@ body.serp .page-layout {
   font-weight: 300;
   clear: both;
 }
-/* line 86, ../sass/partials/page-content/modules/_real-estate-blog.scss */
+/* line 101, ../sass/partials/page-content/modules/_real-estate-blog.scss */
 .hp-blogs__blog-tile .detailsWrapper .detailsOverlay h1 {
   font-size: 100%;
   font-weight: 500;
@@ -5487,17 +5504,17 @@ body.serp .page-layout {
   min-height: 10px;
   overflow: hidden;
 }
-/* line 96, ../sass/partials/page-content/modules/_real-estate-blog.scss */
+/* line 111, ../sass/partials/page-content/modules/_real-estate-blog.scss */
 .hp-blogs__blog-tile .detailsWrapper .detailsOverlay h1 span.col {
   width: 60%;
 }
-/* line 100, ../sass/partials/page-content/modules/_real-estate-blog.scss */
+/* line 115, ../sass/partials/page-content/modules/_real-estate-blog.scss */
 .hp-blogs__blog-tile .detailsWrapper .detailsOverlay h1 .priceSpan {
   float: right;
   width: 40%;
   text-align: right;
 }
-/* line 107, ../sass/partials/page-content/modules/_real-estate-blog.scss */
+/* line 122, ../sass/partials/page-content/modules/_real-estate-blog.scss */
 .hp-blogs__blog-tile .detailsWrapper .detailsOverlay p {
   display: none;
   font-family: OpenSans Regular;
@@ -5505,11 +5522,11 @@ body.serp .page-layout {
   padding: 0 0 0.5em 0;
   margin: 0 0 0 0;
 }
-/* line 120, ../sass/partials/page-content/modules/_real-estate-blog.scss */
+/* line 135, ../sass/partials/page-content/modules/_real-estate-blog.scss */
 .hp-blogs__blog-tile:hover .detailsOverlay p {
   display: block;
 }
-/* line 125, ../sass/partials/page-content/modules/_real-estate-blog.scss */
+/* line 140, ../sass/partials/page-content/modules/_real-estate-blog.scss */
 .hp-blogs a.viewMore {
   display: block;
   text-align: center;
@@ -5522,17 +5539,17 @@ body.serp .page-layout {
   text-decoration: none;
   background: #e5e5e5;
 }
-/* line 137, ../sass/partials/page-content/modules/_real-estate-blog.scss */
+/* line 152, ../sass/partials/page-content/modules/_real-estate-blog.scss */
 .hp-blogs a.viewMore img {
   margin-left: 4px;
 }
 
 @media (min-width: 768px) {
-  /* line 144, ../sass/partials/page-content/modules/_real-estate-blog.scss */
+  /* line 159, ../sass/partials/page-content/modules/_real-estate-blog.scss */
   .hp-blogs {
     margin: 0 auto;
   }
-  /* line 148, ../sass/partials/page-content/modules/_real-estate-blog.scss */
+  /* line 163, ../sass/partials/page-content/modules/_real-estate-blog.scss */
   .hp-blogs__real-estate, .hp-blogs__explore-widget {
     width: 100%;
     max-width: 960px;
@@ -5541,7 +5558,11 @@ body.serp .page-layout {
     box-sizing: border-box;
     margin: 0;
   }
-  /* line 157, ../sass/partials/page-content/modules/_real-estate-blog.scss */
+  /* line 171, ../sass/partials/page-content/modules/_real-estate-blog.scss */
+  .hp-blogs__real-estate .detailsOverlay h1, .hp-blogs__explore-widget .detailsOverlay h1 {
+    font-size: 24px;
+  }
+  /* line 176, ../sass/partials/page-content/modules/_real-estate-blog.scss */
   .hp-blogs__blog-tile {
     display: block;
     float: left;
@@ -5551,12 +5572,12 @@ body.serp .page-layout {
     height: 100%;
     box-sizing: border-box;
   }
-  /* line 167, ../sass/partials/page-content/modules/_real-estate-blog.scss */
+  /* line 186, ../sass/partials/page-content/modules/_real-estate-blog.scss */
   .hp-blogs .detailsWrapper {
     bottom: 4px;
     max-height: 200px;
   }
-  /* line 172, ../sass/partials/page-content/modules/_real-estate-blog.scss */
+  /* line 191, ../sass/partials/page-content/modules/_real-estate-blog.scss */
   .hp-blogs .detailsOverlay {
     font-size: 100% !important;
   }
