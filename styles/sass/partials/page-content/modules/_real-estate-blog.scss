@@ -29,6 +29,12 @@ $module-name: 'hp-blogs';
 
 	&__explore-widget {
 		margin-left: 1%;
+
+		.detailsOverlay h1 {
+			font-size: 16px !important;
+			text-align: center !important;
+			padding-bottom: 0 !important;
+		}		
 	}
 
 	&__blog-tile {
@@ -40,9 +46,18 @@ $module-name: 'hp-blogs';
 	&__wrapper {
 		margin: auto;
 		display: block;
-		// min-height: 250px;
 		overflow: hidden;
 		clear: both;
+	}
+
+	&__flag-container {
+		position: absolute;
+		top: 10px;
+		max-width: 100px;
+
+		.category-tag {
+			float: left;
+		}
 	}
 
 	&__blog-tile {
@@ -152,6 +167,10 @@ $module-name: 'hp-blogs';
 			padding: 0 10px 10px 10px;
 			box-sizing: border-box;
 			margin: 0;
+
+			.detailsOverlay h1 {
+				font-size: 24px;
+			}
 		}
 
 		&__blog-tile {
