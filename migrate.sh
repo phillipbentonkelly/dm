@@ -26,13 +26,16 @@ read proceedVar
 echo "In order to proceed we need the path to the localhost of your repo. By default, if you are using PHP or other local dev environments, it would be something like this ... http://localhost/dm/dist/. Is http://localhost/dm/dist/ the path to your localhost? Y or N | "
 read useDefaultLocalhostPath
 
+echo 'yourLocalhost 1: $yourLocalhost'
+
 if [[ $useDefaultLocalhostPath =~ ^[Yy]$ ]]
 	then
-		yourLocalhost = "$defaultLocalhostPath"
+		echo 'useDefaultLocalhostPath: $useDefaultLocalhostPath'
+		echo 'yourLocalhost 2: $yourLocalhost'
+		yourLocalhost="$defaultLocalhostPath"
 else
-	then
-		echo "Please enter/paste the path to the repo's localhost URL: ex. http://localhost/dm/dist/"
-		read yourLocalhost
+	echo "Please enter/paste the path to the repo's localhost URL: ex. http://localhost/dm/dist/"
+	read yourLocalhost
 fi
 
 if [[ $proceedVar =~ ^[Yy]$ ]]
