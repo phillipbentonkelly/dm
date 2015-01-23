@@ -1,30 +1,126 @@
-$module-name: 'real-estate-blog';
+$module-name: 'hp-blogs';
 
 .#{$module-name} {
 	width: 100%;
-	min-height: 325px;
-	margin: auto;
-	padding-top: 20px;
+	max-width: 960px;
+	position: relative;
+	padding: 15px;
 	
-	h1{
-		text-align: center;
-		font-family: 'Oswald', sans-serif;
-		font-weight: 500;
-		font-size: 1.5em;
-		margin: 0 0 1.5% 0;
+	&__real-estate, &__explore-widget {
+		width: 49%;
+		max-width: 320px;
+		float: left;
+		background: lightgrey;
+		padding: 0 10px 10px 10px;
+		box-sizing: border-box;
+
+		h1 {
+			margin: 10px 0;
+			text-align: center;
+			font-family: 'Oswald Regular';
+			font-size: 26px;
+			font-weight: 400;
+		}
 	}
 
-	.adSlots {
-		@extend .adSlots;
+	&__real-estate {
+		margin-right: 1%;
+	}
 
-		.adSlot:hover .detailsWrapper .detailsOverlay p {
+	&__explore-widget {
+		margin-left: 1%;
+	}
+
+	&__blog-tile {
+		display: inline-block;
+		margin-bottom: 10px;
+		height: auto;
+	}
+
+	&__wrapper {
+		margin: auto;
+		display: block;
+		// min-height: 250px;
+		overflow: hidden;
+		clear: both;
+	}
+
+	&__blog-tile {
+		display: block;
+		margin: 0 0  10px 0;
+		position: relative;
+
+
+		.detailsWrapper {
+			width: 100%;
+			max-width: 300px;
+			max-height: 110px;
+			background-color: rgba(0, 0, 0, 0.6);
+			overflow: hidden;
+			position: absolute;
+			bottom: 2px;
+			left: 0;
+			z-index: 1;
+
+			.detailsArrow{
+				display: none;
+				width: 0;
+				height: 0;
+				border-style: solid;
+				border-width: 0 25px 20px 25px;
+				border-color: rgba(0, 0, 0, 0.6) transparent;
+				float: right;
+			}
+
+		    .detailsOverlay {
+				width: 93%;
+				max-height: 50%;
+				padding: 4% 5% 3% 3%;
+				color: #fff;
+				font-size: 85%;
+				letter-spacing: 1px;
+				font-family: 'Oswald Regular', sans-serif;
+				font-weight: 300;
+				clear: both;
+
+		        h1 {
+					font-size: 100%;
+					font-weight: 500;
+					text-align: left;
+					padding: 0 0 0.5em 0;
+					margin: 0 0 0 0;
+					clear: both;
+					min-height: 10px;
+					overflow: hidden;
+
+					span.col {
+						width: 60%;
+					}
+
+					.priceSpan {
+						float: right;
+						width: 40%;
+						text-align: right;
+					}
+		        }
+
+		        p {
+					display: none;
+					font-family: OpenSans Regular;
+					font-size: 90%;
+					padding: 0 0 0.5em 0;
+					margin: 0 0 0 0;
+		        }
+		    }
+	    }
+	}
+
+	&__blog-tile:hover {
+
+		.detailsOverlay p {
 			display: block;
 		}
-
-		a.adSlot:nth-child(odd){
-			margin-right: 0px;
-		}
-	}
+    }
 
 	a.viewMore{
 		display: block;
@@ -44,14 +140,44 @@ $module-name: 'real-estate-blog';
 	}
 }
 
-@include media-query(desktop) {
+@include media-query(tablet) {
 	.#{$module-name} {
-		width: ($left-col-width + $right-col-width + $right-col-right-gutter);
+
+		margin: 0 auto;
+
+		&__real-estate, &__explore-widget {
+			width: 100%;
+			max-width: 960px;
+			background: lightgrey;
+			padding: 0 10px 10px 10px;
+			box-sizing: border-box;
+			margin: 0;
+		}
+
+		&__blog-tile {
+			display: block;
+			float: left;
+			width: 31.33%;
+			max-width: 300px;
+			margin-right: 2%;
+			height: 100%;
+			box-sizing: border-box;
+		}
+
+		.detailsWrapper {
+			bottom: 4px;
+			max-height: 200px;
+		}
+		
+		.detailsOverlay {
+			font-size: 100% !important;
+		}
+
 	}
 }
 
-@include media-query(tablet) {
-	.#{$module-name} {
-		width: $desktop-breakpoint;
-	}
-}
+// @include media-query(desktop) {
+// 	.#{$module-name} {
+// 		width: ($left-col-width + $right-col-width + $right-col-right-gutter);
+// 	}
+// }

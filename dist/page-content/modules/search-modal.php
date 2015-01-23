@@ -7,7 +7,7 @@
     <div class="content">
         <p class="info">Save a search and get instant notifications about new listings and status changes on homes that match your search criteria</p>
         <input placeholder="Search Nickname">
-        <button>Save</button>
+        <button class="save-search-modal-save">Save</button>
     </div>
 </div>
 <!-- /MODAL: SAVE SEARCH -->

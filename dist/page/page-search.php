@@ -3,7 +3,7 @@
 <!-- Page Search -->
 <div class="page-search">
     <div class="page-search__content-wrapper">
-        <form class="page-search__form">
+        <form class="page-search__form" action="#">
 
             <div class="page-search__row page-search__row--level-one">
 
@@ -57,7 +57,7 @@
 
                 <section class="page-search__section" title="Beds">
                     <h4 class="mobile">Beds</h4>
-                    <select class="page-search__dropdown page-search__dropdown--filter" name="beds" data-placeholder="Beds">
+                    <select class="page-search__dropdown page-search__dropdown--filter-fmt" name="beds" data-placeholder="Beds">
                         <option></option>
                         <option value="0+">0+</option>
                         <option value="1+">1+</option>
@@ -70,7 +70,7 @@
 
                 <section class="page-search__section" title="Baths">
                     <h4 class="mobile">Baths</h4>
-                    <select class="page-search__dropdown page-search__dropdown--filter" name="baths" data-placeholder="Baths">
+                    <select class="page-search__dropdown page-search__dropdown--filter-fmt" name="baths" data-placeholder="Baths">
                         <option></option>
                         <option value="0+">0+</option>
                         <option value="1+">1+</option>
@@ -219,7 +219,6 @@
                             <option value="1 year">1 year</option> 
                             <option value="2 years+">2 years+</option>
                         </select>
-
                     </section>
 
                     <section class="page-search__section page-search__section--tokenize" id="keywords" title="Keywords">
