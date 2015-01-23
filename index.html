@@ -792,9 +792,28 @@
 <div class="real-estate-news">
     <h1>Real Estate News</h1>
 
-    <div class="adSlots">
-        <a href="javascript:;" class="adSlot">
-            <div class="category-tag__container">
+    <div class="real-estate-news__wrapper adSlots">
+        <a href="javascript:;" class="real-estate-news__tile">
+            <div class="real-estate-news__category-tag-container">
+                <div class="category-tag maroon topSpacing">Luxury</div>
+                <div class="category-tag white topSpacing">For Sale</div>
+            </div>
+
+            <img src="images/listings/reNews__listings__1.jpg" />
+            
+            <div class="detailsWrapper">
+                <div class="detailsArrow"></div>
+
+                <div class="detailsOverlay">
+                    <h1>Cape Mansion has iPads in Every Room</h1>
+
+                    <p>Behold, it's the totally baller house of the week; there's a bar, a theater, an infinity pool, iPads. Yes, there are iPads.</p>
+                </div>
+            </div>
+        </a>
+
+        <a href="javascript:;" class="real-estate-news__tile">
+            <div class="real-estate-news__category-tag-container">
                 <div class="category-tag maroon topSpacing">Luxury</div>
                 <div class="category-tag white topSpacing">For Sale</div>
             </div>
@@ -818,35 +837,35 @@
 <div id="ad_bigbox2" class="adSlot"><!--<img src="images/listings/reNews__listings__3.jpg" />--></div>
 
 <script>
-    var networkCode = 61381659;
-    var topLevelAdUnit = "testboston.com";
-    var s1 = "testboston.com";
-    var s2 = "real-estate";
-    var adUnit = topLevelAdUnit + "/" + s2;
-    var slotName = "/" + networkCode + "/" + adUnit;
+//     var networkCode = 61381659;
+//     var topLevelAdUnit = "testboston.com";
+//     var s1 = "testboston.com";
+//     var s2 = "real-estate";
+//     var adUnit = topLevelAdUnit + "/" + s2;
+//     var slotName = "/" + networkCode + "/" + adUnit;
     
-    googletag.cmd.push(function() {
-        googletag.defineSlot(slotName, [300,250], "ad_bigbox1")
-        googletag.defineSlot(slotName, [300,250], "ad_bigbox2")
-        .addService(googletag.pubads())
-        .setTargeting("pos", "ad_bigbox1")
-        .setTargeting("pos", "ad_bigbox2");
-        googletag.pubads().setTargeting("s1",s1);
-        googletag.pubads().setTargeting("s2",s2);      
-        googletag.pubads().enableSingleRequest();
-        googletag.enableServices();
-    });
+//     googletag.cmd.push(function() {
+//         googletag.defineSlot(slotName, [300,250], "ad_bigbox1")
+//         googletag.defineSlot(slotName, [300,250], "ad_bigbox2")
+//         .addService(googletag.pubads())
+//         .setTargeting("pos", "ad_bigbox1")
+//         .setTargeting("pos", "ad_bigbox2");
+//         googletag.pubads().setTargeting("s1",s1);
+//         googletag.pubads().setTargeting("s2",s2);      
+//         googletag.pubads().enableSingleRequest();
+//         googletag.enableServices();
+//     });
 </script>
 
 <script type="text/javascript">
-    googletag.cmd.push(function() {
-        googletag.display("ad_bigbox1");
-        googletag.display("ad_bigbox2");
-    });
+//     googletag.cmd.push(function() {
+//         googletag.display("ad_bigbox1");
+//         googletag.display("ad_bigbox2");
+//     });
 </script>        
 
-        <a href="javascript:;" class="adSlot">
-            <div class="category-tag__container">
+        <a href="javascript:;" class="real-estate-news__tile">
+            <div class="real-estate-news__category-tag-container">
                 <div class="category-tag orange topSpacing">East Boston</div>
                 <div class="category-tag white topSpacing">For Sale</div>
             </div>
@@ -864,8 +883,8 @@
             </div>
         </a>
 
-        <a href="javascript:;" class="adSlot">
-            <div class="category-tag__container">
+        <a href="javascript:;" class="real-estate-news__tile">
+            <div class="real-estate-news__category-tag-container">
                 <div class="category-tag light-blue topSpacing">Open House</div>
                 <div class="category-tag white topSpacing">For Sale</div>
             </div>
@@ -879,25 +898,6 @@
                     <h1>Cape Mansion has iPads in Every Room</h1>
 
                     <p>Behold, it's the totally baller house of the week; there's a bar, a theater, an infinity pool, iPads. Yes, there are iPads.</p>
-                </div>
-            </div>
-        </a>
-
-        <a href="javascript:;" class="adSlot">
-            <div class="category-tag__container">
-                <div class="category-tag gold topSpacing">New Listing</div>
-                <div class="category-tag white topSpacing">For Sale</div>
-            </div>
-
-            <img src="images/listings/reNews__listings__6.jpg" />
-            
-            <div class="detailsWrapper">
-                <div class="detailsArrow"></div>
-
-                <div class="detailsOverlay">
-                    <h1><span class="col">14 Chestnut Street Boston, MA</span> <span class="priceSpan">$190,000</span></h1>
-
-                    <p>One of Beacon Hill's most desirable tree-lined streets, this exquisite Triplex has 5,000+ sqf ft. of furnished living space. 4+ Beds/3.5 Baths</p>
                 </div>
             </div>
         </a>
@@ -1333,7 +1333,7 @@
         
         <div class="hp-blogs__wrapper">
             <a href="javascript:;" class="hp-blogs__blog-tile">
-                <img src="images/blogs/re-blog__entry__1.jpg">
+                <img src="images/neighborhoods/top-neighborhoods__entry__1.jpg">
                 <!-- <img src="imhp-blogs__hoods/top-neighborhoods__entry__1.jpg"> -->
                 
                 <div class="detailsWrapper">
@@ -1346,8 +1346,8 @@
             </a>
 
             <a href="javascript:;" class="hp-blogs__blog-tile">
-                <img src="images/blogs/re-blog__entry__1.jpg">
-                <!-- <img src="imhp-blogs__hoods/top-neighborhoods__entry__2.jpg"> -->
+                <img src="images/neighborhoods/top-neighborhoods__entry__3.jpg">
+                <!-- <img src="hp-blogs__hoods/top-neighborhoods__entry__2.jpg"> -->
                 
                 <div class="detailsWrapper">
                     <div class="detailsArrow"></div>
@@ -1359,7 +1359,7 @@
             </a>
 
             <a href="javascript:;" class="hp-blogs__blog-tile">
-                <img src="images/blogs/re-blog__entry__1.jpg">
+                <img src="images/neighborhoods/top-neighborhoods__entry__2.jpg">
                 <!-- <img src="imhp-blogs__hoods/top-neighborhoods__entry__3.jpg"> -->
                 
                 <div class="detailsWrapper">
