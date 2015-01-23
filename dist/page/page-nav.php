@@ -225,7 +225,6 @@
                 <a href="#" class="open-search">
                     <span>X</span>
                 </a>
-                
             </li>
         </ul>
     </div>

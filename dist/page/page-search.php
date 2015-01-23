@@ -57,7 +57,7 @@
 
                 <section class="page-search__section" title="Beds">
                     <h4 class="mobile">Beds</h4>
-                    <select class="page-search__dropdown page-search__dropdown--filter" name="beds" data-placeholder="Beds">
+                    <select class="page-search__dropdown page-search__dropdown--filter-fmt" name="beds" data-placeholder="Beds">
                         <option></option>
                         <option value="0+">0+</option>
                         <option value="1+">1+</option>
@@ -70,7 +70,7 @@
 
                 <section class="page-search__section" title="Baths">
                     <h4 class="mobile">Baths</h4>
-                    <select class="page-search__dropdown page-search__dropdown--filter" name="baths" data-placeholder="Baths">
+                    <select class="page-search__dropdown page-search__dropdown--filter-fmt" name="baths" data-placeholder="Baths">
                         <option></option>
                         <option value="0+">0+</option>
                         <option value="1+">1+</option>

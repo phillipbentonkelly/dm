@@ -26,7 +26,7 @@ dm.searchPanel = {};
 
 		this.filters = {
 			$main: $('.page-search__dropdown--main'),
-			$fmt: $('.page-search__dropdown--filter'),
+			$fmt: $('.page-search__dropdown--filter-fmt'),
 			$hometype: $('.page-search__dropdown--filter-hometype'),
 			$dom: $('.page-search__dropdown--filter-dom'),
 			$other: $('.page-search__dropdown--filter-hometype, .page-search__dropdown--filter-dom'),
@@ -39,7 +39,7 @@ dm.searchPanel = {};
 		};
 
 		this.btns = {
-			$lvl1t: $('.page-nav__search-responsive-icon').children('a'), // relevant for mobile only
+			$lvl1t: $('.page-nav__search-responsive-icon > a'), // relevant for mobile only
 			$lvl2t: $('.page-search__button--level-two-toggle'),
 			$lvl3t: $('.page-search__button--level-three-toggle'),
 			$close: $('.page-search__button--close'),
@@ -69,10 +69,6 @@ dm.searchPanel = {};
 				placeholder: "Search for real estate listings or articles. ex: 3 bedroom for sale in Brookline under 1,000,000"
 			};
 
-			var fmtParams = {
-				formatSelection: this.formatSelection
-			};
-
 			var tagParams = {
             	delimeter: ',',
             	persist: true,
@@ -84,10 +80,19 @@ dm.searchPanel = {};
             	}
             };
 
+            var fmtParams = {
+				formatSelection: this.fmtSelected,
+				shouldInputFocus: function(){ return false; }
+			};
+
+			var otherParams = {
+				shouldInputFocus: function(){ return false; }
+			};
+
             this.filters.$main.selectize(mainParams);
             this.filters.$tags.selectize(tagParams);
 			this.filters.$fmt.select2(fmtParams);
-			this.filters.$other.select2();
+			this.filters.$other.select2(otherParams);
 
 
 			this.setPanelState();
@@ -104,7 +109,6 @@ dm.searchPanel = {};
 			if( self.device === 'desktop' ){
 				switch(self.expanded){
 					case '3':
-						console.log('hello world');
 						//hide nothing...
 						// level 3 toggle arrow up
 						self.btns.$lvl3t.addClass(this.pOpen);
@@ -124,6 +128,10 @@ dm.searchPanel = {};
 					break;
 				}
 
+				if(self.isSaved){
+					self.btns.$save.getObservable().toggle();
+				}
+
 			}
 
 			if( self.device === 'mobile' ){
@@ -135,7 +143,7 @@ dm.searchPanel = {};
 						self.allOpen = true;
 					break;
 					case '1':
-						self.btns.$lvl1t.getObservable().toggle(); 
+						self.btns.$lvl1t.toggleClass('close-search'); 
 						self.lvls.$lower.hide();
 					break;
 					default:
@@ -160,13 +168,16 @@ dm.searchPanel = {};
 						e.preventDefault();
 						var state = $(this).getObservable();
 						if(self.allOpen){
-							self.lvls.$three.hide();
-							self.lvls.$two.hide();
-							self.allOpen = false;
-							state.toggle();
-							self.btns.$lvl3t.removeClass(self.pOpen);
+							self.lvls.$three.slideToggle('fast', function(){
+								self.lvls.$two.slideToggle('fast', function(){
+									state.toggle();
+									self.btns.$lvl3t.removeClass(self.pOpen);
+									self.allOpen = false;
+								});
+							});
+							
 						}else{
-							self.lvls.$two.toggle();
+							self.lvls.$two.slideToggle('fast');
 							self.allOpen = false;
 							state.toggle();
 						}				
@@ -174,16 +185,19 @@ dm.searchPanel = {};
 
 					self.btns.$lvl3t.on('click', function(e){
 						e.preventDefault();
-						self.lvls.$three.toggle();
-						self.btns.$lvl3t.toggleClass(self.pOpen);
-						self.allOpen = (self.allOpen == true) ? false : true;
+						self.lvls.$three.slideToggle('fast', function(){
+							self.btns.$lvl3t.toggleClass(self.pOpen);
+							self.allOpen = (self.allOpen == true) ? false : true;
+						});
+						
 					});
 
 					self.btns.$close.on('click', function(e){
 						e.preventDefault();
-						self.lvls.$three.hide();
-						self.btns.$lvl3t.removeClass(self.pOpen);
-						self.allOpen = false;
+						self.lvls.$three.slideToggle('fast', function(){
+							self.btns.$lvl3t.removeClass(self.pOpen);
+							self.allOpen = false;
+						});
 					});
 
 					self.btns.$save.on('click', function(e){
@@ -194,7 +208,7 @@ dm.searchPanel = {};
 							$(modal).modal();
 							$(modal).find('button').on('click',function(e){
 								self.saved = true;
-								state.toggle();
+								$(this).hide();
 							});
 						}
 					});
@@ -209,27 +223,32 @@ dm.searchPanel = {};
 
 					self.btns.$lvl1t.on('click', function(e){
 						e.preventDefault();
-						var state = $(this).getObservable();
 						if(self.allOpen){
-							self.lvls.$one.hide();
-							self.lvls.$lower.hide();
+							//self.lvls.$lower.hide();
+							//self.lvls.$one.hide();
+							self.lvls.$lower.slideToggle('fast', function(){
+								self.lvls.$one.slideToggle('fast');
+							});
 							self.expanded = self.getExpanded();
 							$lvl2State.toggle();
 						}else{
-							self.lvls.$one.toggle();
+							self.lvls.$one.slideToggle('fast');
 							self.expanded = self.getExpanded();
 						}
-						state.toggle();
+						self.allOpen = false;
+						$(this).toggleClass('close-search');
 					});
+
 
 					self.btns.$lvl2t.on('click', function(e){
 						e.preventDefault();
 						var state = $(this).getObservable();
-						self.lvls.$lower.toggle();
+						self.lvls.$lower.slideToggle('fast');
 						self.expanded = self.getExpanded();
 						state.toggle();
-						self.allOpen = true;
+						self.allOpen = (self.allOpen == true) ? false : true;
 					});
+
 
 				break;
 					
@@ -255,10 +274,10 @@ dm.searchPanel = {};
 
 
 		// appends the placeholder to the selected value
-		formatSelect: function(s, el, q){
+		fmtSelected: function(s, el, q){
 			var dd = $(el).closest('section').children('select')[0];
 			var ph = $(dd).attr('data-placeholder');
-			var fmt = s.text + ' ' + ph
+			var fmt = s.text + ' ' + ph;
 			return fmt;
 		},
 
@@ -285,7 +304,8 @@ dm.searchPanel = {};
 
 		checkIfSaved: function(){
 			var state = $('.page-search__button--save').getObservable().filter(':visible');
-			console.log(state);
+			var saved = state.attr('class') === 'saved' ? true : false
+			return saved;
 		}
 
 	};	
