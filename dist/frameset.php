@@ -33,7 +33,7 @@
 	<script src="js/assets/mega-menu.js"></script>
 	<script src="js/assets/responsive-gallery.js"></script>
 
-	<?php if ($pageType == 'home' || $pageType == 'category') { ?>
+	<?php if ($pageType == 'home' || $pageType == 'category' || $pageType == 'category-details' || $pageType == 'neighborhood') { ?>
 	    <!-- Carousel Scripts -->
 		<script src="js/assets/basicMobileDetection.js"></script>
 		<script src="http://wurfl.io/wurfl.js"></script>
@@ -44,6 +44,10 @@
 		<!-- Real Estate Listings -->
         <script src="js/assets/mpListings.js"></script>
         <script src="js/assets/listings.data.js"></script>
+	<?php } ?>
+
+	<?php if ($pageType == 'home' || $pageType == 'category' || $pageType == 'category-details' || $pageType == 'neighborhood') { ?>
+		<script src="js/assets/listings.map.js"></script>
 	<?php } ?>
 
 	<?php if ($pageType == 'serp') { ?>
@@ -111,9 +115,14 @@
                 $('.page-layout__left-col').css('width', '100%');
             }
         });
-
     </script>
-        
+    
+	<?php if ($pageType == 'articles' || $pageType == 'property-listings' || $pageType == 'property-listings-premium') { ?>
+	    <!-- Share This Plugin -->
+        <script type="text/javascript">var switchTo5x=true;</script> 
+		<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script> 
+		<script type="text/javascript">stLight.options({publisher: "e851a161-a35b-49b9-8352-4cb9c793f371", doNotHash: false, doNotCopy: false, hashAddressBar: true});</script>
+	<?php } ?>
 </head>
 <body <?php if ($pageType == 'home') { echo 'class="home"'; } else {  echo "class='page-section $pageType'"; } ?>>
 
@@ -314,10 +323,10 @@
 			<!-- NEIGHBORHOOD -->
 			<?php if ($pageType == 'neighborhood') { ?>
 				<!-- DFP Ad - Experience the Difference -->
-				<?php include 'ads/dfp-ads__experience-the-difference.php'; ?>
+				<?php include 'ads/ad_bigbox1.php'; ?>
 
 				<!-- DFP Ad - Moo Printing -->
-				<?php include 'ads/dfpAds__300by250__moo.php'; ?>
+				<?php include 'ads/ad_bigbox2.php'; ?>
 
 				<!-- DFP Sidebar Placeholder Ad Content -->
 				<?php include 'ads/adplaceholer__right-column.php'; ?>
@@ -367,10 +376,13 @@
 	<?php } ?>
 
 	<!-- Page Footer -->
+	<?php //include 'page-content/modules/category-footer.php'; ?>
     <?php include 'page/page-footer.php'; ?>
 
+
     <!-- Search Modal -->
-    <?php include 'page/modules/search-modal.php'; ?>
+    <?php include 'page-content/modules/search-modal.php'; ?>
+
 
     <!-- ARTICLES: Discus -->
 	<?php if ($pageType == 'articles') { ?>

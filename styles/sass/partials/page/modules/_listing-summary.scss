@@ -58,7 +58,6 @@ $module-name: 'listing';
 		.button {
 			width: 33.33%;
 			float: left;
-			background: lightblue;
 			background: #2e1460;
 			color: white;
 			text-align: center;
@@ -161,7 +160,7 @@ $module-name: 'listing';
 			padding: 7px 0;
 			float: left;
 			border-bottom: none;
-			font-family: OpenSans;
+			font-family: OpenSans Regular;
 			color:  #000000;
 			font-size: 13px; /* Approximation due to font substitution */
 			font-weight: 400;
@@ -173,7 +172,7 @@ $module-name: 'listing';
 		box-sizing: border-box;
 		width: 100%;
 		padding: 5px;
-		font-family: OpenSans;
+		font-family: OpenSans Regular;
 		color:  #000000;
 		font-size: 18px; /* Approximation due to font substitution */
 		font-weight: 600;
@@ -186,19 +185,29 @@ $module-name: 'listing';
 	}
 
 	&__detail-share--row1 {
-		display: block;
+		display: none;
 		box-sizing: border-box;
 		border-bottom: 1px solid white;
 		width: 100%;
 		padding: 7px;
 		height: 35px;
 		overflow: hidden;
+
+		a:nth-child(2) {
+			display: none;
+		}
+	}
+
+	&__detail-share--row1 {
+		a:nth-child(2) {
+			display: none;
+		}
 	}
 
 	&__detail-share--row2 {
 		display: block;
 		box-sizing: border-box;
-		padding: 6px;
+		padding-top: 30px;
 	}
 
 	&__detail-monthly-cost {
@@ -230,7 +239,7 @@ $module-name: 'listing';
 	}
 
 	&__address, &__address--mobile {
-		font-family: OpenSans;
+		font-family: OpenSans Regular;
 		color:  #000000;
 		font-size: 24px; /* Approximation due to font substitution */
 		font-weight: 600;
@@ -246,7 +255,7 @@ $module-name: 'listing';
 	&__writeup-content {
 		width: 100%;
 		clear: both;
-		font-family: OpenSans;
+		font-family: OpenSans Regular;
 		color:  #000000;
 		font-size: 16px; /* Approximation due to font substitution */
 		font-weight: 400;
@@ -256,7 +265,7 @@ $module-name: 'listing';
 
 	&__writeup-more {
 		float: right;
-		font-family: OpenSans;
+		font-family: OpenSans Regular;
 		color:  #666666;
 		font-size: 11px; /* Approximation due to font substitution */
 		font-weight: 600;
@@ -275,7 +284,7 @@ $module-name: 'listing';
 		margin-bottom: 10px;
 
 		h2 {
-			font-family: 'Oswald', sans-serif;
+			font-family: 'Oswald Regular', sans-serif;
 			font-weight: #{$fw-regular};
 			color: #333333;
 			text-align: center;
@@ -291,7 +300,7 @@ $module-name: 'listing';
 		box-sizing: border-box;
 
 		li {
-			font-family: OpenSans;
+			font-family: OpenSans Regular;
 			color:  #000000;
 			font-size: 13px; /* Approximation due to font substitution */
 			font-weight: 400;
@@ -306,19 +315,20 @@ $module-name: 'listing';
 		clear: both;
 
 		li {
-			font-family: OpenSans;
+			font-family: OpenSans Regular;
 			font-size: 12px;
 			font-weight: 700;
 			padding-bottom: 5px;
 		}
 
 		a:link, a:visited, a:active {
-	      color: #2e1460;
-	      text-decoration: none;
-	    }
-	    a:hover {
-	      text-decoration: underline;
-	    }
+      color: #2e1460;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
 	}
 
 	&__details-expand {
@@ -331,7 +341,7 @@ $module-name: 'listing';
 
 		h3 {
 			text-align: center;
-			font-family: OpenSans;
+			font-family: OpenSans Regular;
 			font-size: 18px;
 			font-weight: 400;
 		}
@@ -342,9 +352,9 @@ $module-name: 'listing';
 		}
 
 		a:link, a:visited, a:active {
-      		color: black;
-      		text-decoration: none;
-    	}
+  		color: black;
+  		text-decoration: none;
+  	}
 	}
 
 	&__contact-agent {
@@ -428,9 +438,12 @@ $module-name: 'listing';
 	margin-bottom: 20px;
 }
 
+
+// MODAL STYLES
 #simplemodal-data {
 	margin: 0 auto;
 	width: 80%;
+	visibility: visible;
 }
 
 #simplemodal-container {
@@ -442,7 +455,6 @@ $module-name: 'listing';
 }
 
 .save-search-modal, .share-modal {
-	display: none;
 	width: 100%;
 	margin: 0 5%;
 	text-align: center;
@@ -464,7 +476,7 @@ $module-name: 'listing';
       	margin-bottom: 3px;
 
       	letter-spacing: 1px;
-		font-family: Oswald;
+		font-family: 'Oswald Regular';
 		color: #ffffff;
 		font-size: 26px;
 		font-weight: 400
@@ -475,7 +487,10 @@ $module-name: 'listing';
 		padding: 20px;
 		height: 300px;
 	}
+}
 
+.save-search-modal {
+	display: none;
 	.info {
 		line-height: 1.5;
 		margin-bottom: 10px;
@@ -489,7 +504,7 @@ $module-name: 'listing';
 		border: 1px solid #A0A0A0;
 		box-sizing: border-box;
 
-		font-family: OpenSans;
+		font-family: OpenSans Regular;
 	}
 
 	button {
@@ -499,21 +514,51 @@ $module-name: 'listing';
 		border: none;
 		border-radius: 3px;
 		font-size: 18px;
-		font-family: 'OpenSans', sans-serif;
+		font-family: 'OpenSans Regular', sans-serif;
 		font-weight: 300;
 	}
 }
 
+.share-modal {
+	visibility: hidden;
+
+	.share-icons__wrapper {
+		width: 100px;
+		margin: 0 auto;
+	}
+
+	.content {
+		position: relative;
+		width: 100%;
+		height: auto;
+		display: inline-block;
+		box-sizing: border-box;
+	}
+
+	span {
+		width: 100%;
+	}
+
+	.share-icons {
+		float: left;
+		width: 50%;
+		max-width: 100px;
+	}
+
+	.share-icons:first-child {
+		margin-bottom: 10px;
+	}
+
+}
 
 // ------------------------------------------------------------
 // Tablet Breakpoint
 // ------------------------------------------------------------
 
-// Tablet Breakpoint
 @include media-query(tablet) {
   .#{$module-name} {
 
-	  	&__mobile-button-dock {
+  	&__mobile-button-dock {
 			display: none;	
 		}
 
@@ -529,20 +574,10 @@ $module-name: 'listing';
 			display: block;
 		}
 
-  	}
-}
-
-// ------------------------------------------------------------
-// Desktop Breakpoint
-// ------------------------------------------------------------
-
-@include media-query(tablet) {
-  .#{$module-name} {
-
 		&__breadcrumbs {
 			display: block;
 			margin-bottom: 20px;
-			font-family: OpenSans;
+			font-family: OpenSans Regular;
 			color:  black;
 			font-size: 13px; /* Approximation due to font substitution */
 			font-weight: 600;
@@ -591,7 +626,7 @@ $module-name: 'listing';
 		}
 
 		&__for-sale {
-			font-family: 'Oswald', sans-serif;
+			font-family: 'Oswald Regular', sans-serif;
 			font-size: 12px;
 			font-weight: 400;
 			display: inline-block;
@@ -632,6 +667,18 @@ $module-name: 'listing';
 			.featured { background-color: #2e1460; }
 		}
 
+		&__detail-share--row1 {
+			display: block;
+
+			a:nth-child(2) {
+				display: inline-block;
+			}
+		}
+
+		&__detail-share--row2 {
+			padding: 7px;
+		}	
+
 		&__facts--left, &__facts--right, &__features--left, &__features--right {
 			width: 33.3%;
 			box-sizing: border-box;
@@ -642,7 +689,7 @@ $module-name: 'listing';
 			font-size: 100%;
 		}
 
-	  &__external-links { 
+	  	&__external-links { 
 			float: left;
 			width: 33.3%;
 			box-sizing: border-box;
@@ -651,9 +698,9 @@ $module-name: 'listing';
 			li {
 				padding-bottom: 10px;
 			}
-	  }
+	  	}
 
-	  &__contact-agent {
+	  	&__contact-agent {
 			background: #2e1460;
 			padding: 7px;
 			margin-bottom: 40px;
@@ -661,7 +708,7 @@ $module-name: 'listing';
 			box-sizing: border-box;
 			width: 100%;
 			text-align: center;
-			font-family: OpenSans;
+			font-family: OpenSans Regular;
 			font-size: 16px; /* Approximation due to font substitution */
 			font-weight: 600;
 			text-align: center;
@@ -671,9 +718,9 @@ $module-name: 'listing';
 	      		text-decoration: none;
 	    	}
 		}
-  }
+  	}
 
-  .dfp-ads {
+  	.dfp-ads {
 		display: block;
 	}
 
@@ -681,8 +728,3 @@ $module-name: 'listing';
 		display: none;
 	}
 }
-
-
-
-
-

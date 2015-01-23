@@ -6,6 +6,7 @@ dm.searchPanel = {};
 
 (function($, window, document, undefined){
 
+
 	dm.searchPanel = function(el){
 
 		this.el = el;
@@ -20,8 +21,7 @@ dm.searchPanel = {};
 		this.lvls = {
 			$one: $('.page-search__row--level-one'),
 			$two: $('.page-search__row--level-two'),
-			$three: $('.page-search__row--level-three'),
-			$lower: $('.lower-level') // refers to bottom 2 levels, relevent for mobile
+			$three: $('.page-search__row--level-three')
 		};
 
 		this.filters = {
@@ -47,14 +47,12 @@ dm.searchPanel = {};
 			$submit: $('.page-search__buttons--submit')
 		};
 
-
 		this.modals = {
 			$svSearch: $('.save-search-modal')
 		};
 
 		this.init();	
 	}
-
 
 	dm.searchPanel.prototype = {
 
@@ -166,7 +164,8 @@ dm.searchPanel = {};
 
 					self.btns.$lvl2t.on('click', function(e){
 						e.preventDefault();
-						var state = $(this).getObservable();
+						var status = $(this).getObservable();
+
 						if(self.allOpen){
 							self.lvls.$three.slideToggle('fast', function(){
 								self.lvls.$two.slideToggle('fast', function(){
@@ -189,7 +188,6 @@ dm.searchPanel = {};
 							self.btns.$lvl3t.toggleClass(self.pOpen);
 							self.allOpen = (self.allOpen == true) ? false : true;
 						});
-						
 					});
 
 					self.btns.$close.on('click', function(e){
@@ -202,8 +200,7 @@ dm.searchPanel = {};
 
 					self.btns.$save.on('click', function(e){
 						e.preventDefault();
-						var state = $(this).getObservable();
-						var modal = self.modals.$svSearch;
+						var status = $(this).getObservable();
 						if(!self.saved){
 							$(modal).modal();
 							$(modal).find('button').on('click',function(e){
@@ -224,8 +221,6 @@ dm.searchPanel = {};
 					self.btns.$lvl1t.on('click', function(e){
 						e.preventDefault();
 						if(self.allOpen){
-							//self.lvls.$lower.hide();
-							//self.lvls.$one.hide();
 							self.lvls.$lower.slideToggle('fast', function(){
 								self.lvls.$one.slideToggle('fast');
 							});
@@ -249,7 +244,6 @@ dm.searchPanel = {};
 						self.allOpen = (self.allOpen == true) ? false : true;
 					});
 
-
 				break;
 					
 			} // end switch
@@ -271,7 +265,6 @@ dm.searchPanel = {};
 
 
 		},
-
 
 		// appends the placeholder to the selected value
 		fmtSelected: function(s, el, q){
@@ -315,7 +308,7 @@ dm.searchPanel = {};
 		return this.each(function(){
 			new dm.searchPanel(this);
 		});
-	}
+	};
 
 	// watch the span elements
 	$.fn.getObservable = function(){

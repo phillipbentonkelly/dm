@@ -37,8 +37,8 @@
 
         <div class="listing__detail-share">
             <div class="listing__detail-share--row1">
-                <a href="javascript:;"><img class="listing__detail-share-icons" src="images/listings/heart-icon-purple.png"></a>
-                <a href="javascript:;"><img class="listing__detail-share-icons" src="images/listings/share-icon-purple.png"></a>
+                <a class='mobile-save-btn' href="javascript:;"><img class="listing__detail-share-icons" src="images/listings/heart-icon-purple.png"></a>
+                <a class='mobile-share-btn' href="javascript:;"><img class="listing__detail-share-icons" src="images/listings/share-icon-purple.png"></a>
             </div>
 
             <div class="listing__detail-share--row2">
@@ -170,7 +170,7 @@
         </a>
 
         <a href="javascript:;">
-            <div id="mobile-contact-btn" class="button right-button">
+            <div class="mobile-contact-btn button right-button">
                 <img class="contact-icon-white" src="images/listings/contact-icon-white.png">
                 <p>Contact</p>
             </div>

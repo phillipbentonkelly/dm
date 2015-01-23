@@ -368,8 +368,11 @@
   }
 
   &__comments {
-    width: 18px;
-    background-position: -118px 0px !important;
+    width: 27px;
+    height: 27px !important;
+    background-image: url(#{$img-path}icons/comment.png) !important;
+    background-position: 0 0;
+    background-repeat: no-repeat;
   }
 
   &__print {

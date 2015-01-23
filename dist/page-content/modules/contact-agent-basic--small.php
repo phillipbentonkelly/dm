@@ -1,12 +1,3 @@
-<script type="text/javascript">
-    $(document).ready(function() {
-        $('.contact__agent-number').on('click', function(e) {
-            e.preventDefault();
-            $(this).text() == 'View My Contact Number' ? $(this).text('(617) 230-6674') : $(this).text('View My Contact Number');
-        })
-    });
-</script>
-
 <div class='contact__container'>
     <div class='contact__header'>
         <p>Listing Provided By</p>

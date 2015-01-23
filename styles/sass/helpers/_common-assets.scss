@@ -16,6 +16,7 @@ $asset-1-name: 'category-tag';
 .#{$asset-1-name} {
 	display: block;
 	float: left;
+	clear: both;
 	font-size: 11px;
 	font-family: Avenir;
 	font-weight: bold;
@@ -184,13 +185,47 @@ $asset-2-name: 'quotebox';
 	}
 }
 
+
+
+// ------------------------------------------------------------
+// Third Party Social Icons
+// ------------------------------------------------------------
+
+$asset-3-name: 'third-party-social-icons';
+
+.#{$asset-3-name} {
+	span[st_processed="yes"] {
+		display: inline-block;
+		float: left;
+		margin-right: 8px;
+		padding-top: -5px;
+
+		.stButton {
+			width: 26px;
+			height: 25px;
+			margin: 0 !important;
+
+			.stLarge {
+				background-size: 80%;
+				background-repeat: no-repeat;
+				height: 25px;
+			}
+
+			.stLarge:hover {
+				opacity: 0.75;
+				background-position: 0px;
+			}
+		}
+	}
+}
+
 // ------------------------------------------------------------
 // Desktop Breakpoint
 // ------------------------------------------------------------
 
 @include media-query(desktop) {
 	.#{$asset-1-name} {
-		
+		clear: none;
 	}
 }
 // ------------------------------------------------------------
@@ -199,6 +234,6 @@ $asset-2-name: 'quotebox';
 
 @include media-query(tablet) {
 	.#{$asset-1-name} {
-		
+		clear: none;
 	}
 }

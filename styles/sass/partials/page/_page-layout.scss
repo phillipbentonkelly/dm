@@ -1,6 +1,15 @@
 $module-name: 'page-layout';
 $padding-top: 20px;
 
+body.neighborhood, body.category-details {
+	background-image: url(#{$img-path}neighborhoods/19040004_source.jpg);
+	background-position: center 162px;
+	background-repeat: repeat-x;
+}
+	body.category-details {
+		background-image: url(#{$img-path}neighborhoods/Category-Details__1152x699.jpg);
+	}
+
 .#{$module-name} {
 	overflow: hidden;
 	clear: both;
@@ -22,8 +31,6 @@ $padding-top: 20px;
 		padding-top: $padding-top;
 		box-sizing: border-box;
 		overflow: hidden;
-
-		padding-right: 20px;
 
 		float: left;
 	}
@@ -53,7 +60,7 @@ $padding-top: 20px;
 		}
 
 		&__left-col {
-			/*padding-right: 25px;*/
+			padding-right: 20px;
 			max-width: 660px;
 			min-width: 435px;
 			box-sizing: border-box;
@@ -77,16 +84,16 @@ $padding-top: 20px;
 		.page-layout {
 			margin-top: 10px;
 		}		
-	}	
+	}
 
-	body.neighborhood, body.category-details {
+	/*body.neighborhood, body.category-details {
 		background-image: url(#{$img-path}neighborhoods/19040004_source.jpg);
 		background-position: center 162px;
 		background-repeat: repeat-x;
 	}
 		body.category-details {
 			background-image: url(#{$img-path}neighborhoods/Category-Details__1152x699.jpg);
-		}
+		}*/
 
 	body.neighborhood .page-nav, body.category-details .page-nav {
 		margin-bottom: 90px;

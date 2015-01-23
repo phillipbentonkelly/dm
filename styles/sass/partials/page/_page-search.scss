@@ -375,7 +375,7 @@ $module-name: 'page-search';
 			display: inline-block;
 			position: relative;			
 			padding-left: 25px;
-			margin-right: 15px;
+			margin-right: 5px;
 			font-size: 11px;
 		}
 
@@ -774,7 +774,7 @@ $module-name: 'page-search';
 
 
 /* Target Firefox only */
-@-moz-document url-prefix() {
+/*@-moz-document url-prefix() {
 	.#{$module-name}{
 		&__button{
 			&--level-two-toggle{
@@ -782,4 +782,5 @@ $module-name: 'page-search';
 			}
 		}
 	}	
-}			
+}*/
+

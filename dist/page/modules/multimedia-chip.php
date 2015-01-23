@@ -4,8 +4,8 @@
 	<div class="multimedia-chip__media-wrapper">
 		<div class="multimedia-chip__media-wrapper__short-description">
 			<p>Luxury Living Returns to Downtown Boston</p>
-			<a href="javascript:;" class="multimedia-chip__short-description__info">Info</a>
-			<a href="javascript:;" class="multimedia-chip__short-description__share">Share</a>
+			<a href="javascript:;" class="multimedia-chip__media-wrapper__short-description__info">Info</a>
+			<a href="javascript:;" class="multimedia-chip__media-wrapper__short-description__share">Share</a>
 		</div>
 
 		<img src="" />
