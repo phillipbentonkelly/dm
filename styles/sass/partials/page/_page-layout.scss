@@ -32,8 +32,6 @@ body.neighborhood, body.category-details {
 		box-sizing: border-box;
 		overflow: hidden;
 
-		padding-right: 20px;
-
 		float: left;
 	}
 	
@@ -62,7 +60,7 @@ body.neighborhood, body.category-details {
 		}
 
 		&__left-col {
-			/*padding-right: 25px;*/
+			padding-right: 20px;
 			max-width: 660px;
 			min-width: 435px;
 			box-sizing: border-box;
