@@ -50,6 +50,10 @@
 		<script src="js/assets/listings.map.js"></script>
 	<?php } ?>
 
+	<?php if ($pageType == 'category-details') { ?>
+		<script src="js/assets/gallery.js"></script>
+	<?php } ?>
+
 	<?php if ($pageType == 'serp') { ?>
 		<script src="js/resources/basic/js/jquery.simplemodal.js"></script>
         <script src="js/assets/popup.js"></script>
@@ -67,6 +71,7 @@
 	    <!-- Real Estate Listings -->
         <script src="js/assets/mpListings.js"></script>
         <script src="js/assets/listings.data.js"></script>
+        <script src="js/assets/gallery.js"></script>
 	<?php } ?>
 
 	<script type="text/javascript">
