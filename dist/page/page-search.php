@@ -3,7 +3,7 @@
 <!-- Page Search -->
 <div class="page-search">
     <div class="page-search__content-wrapper">
-        <form class="page-search__form">
+        <form class="page-search__form" action="#">
 
             <div class="page-search__row page-search__row--level-one">
 
@@ -219,7 +219,6 @@
                             <option value="1 year">1 year</option> 
                             <option value="2 years+">2 years+</option>
                         </select>
-
                     </section>
 
                     <section class="page-search__section page-search__section--tokenize" id="keywords" title="Keywords">
