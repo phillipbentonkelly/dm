@@ -584,7 +584,7 @@ $module-name: 'page-search';
 
 		&__button{
 			&--submit{
-				margin: 0 84px 0 0;
+				margin: 0 64px 0 0;
 			}
 
 			&--level-three-toggle{
@@ -607,10 +607,6 @@ $module-name: 'page-search';
 			&--close{
 				margin-right: 32px;
 			}
-		}
-
-		&__fancy-radio-box{
-
 		}
 
 		&__fancy-checkbox{
@@ -651,7 +647,7 @@ $module-name: 'page-search';
 
 			&--level-one{
 				padding: 10px;
-				height: 47px;
+				height: 55px;
 				background: none;
 			}
 
