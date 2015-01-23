@@ -222,17 +222,17 @@ dm.searchPanel = {};
 					self.btns.$lvl1t.on('click', function(e){
 						e.preventDefault();
 						if(self.allOpen){
-							self.lvls.$lower.slideToggle('fast', function(){
-								self.lvls.$one.slideToggle('fast');
-							});
+							self.lvls.$lower.slideToggle('fast');
+							self.lvls.$one.slideToggle('fast');
 							self.expanded = self.getExpanded();
 							$lvl2State.toggle();
 						}else{
 							self.lvls.$one.slideToggle('fast');
 							self.expanded = self.getExpanded();
 						}
-						self.allOpen = false;
+						
 						$(this).toggleClass('close-search');
+						self.allOpen = false;
 					});
 
 
