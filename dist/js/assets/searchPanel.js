@@ -165,7 +165,7 @@ dm.searchPanel = {};
 
 					self.btns.$lvl2t.on('click', function(e){
 						e.preventDefault();
-						var status = $(this).getObservable();
+						var state = $(this).getObservable();
 
 						if(self.allOpen){
 							self.lvls.$three.slideToggle('fast', function(){

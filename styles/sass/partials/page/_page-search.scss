@@ -609,10 +609,6 @@ $module-name: 'page-search';
 			}
 		}
 
-		&__fancy-radio-box{
-
-		}
-
 		&__fancy-checkbox{
 			label:before{
 				border: 1px solid rgb(0,0, 0);
@@ -651,7 +647,7 @@ $module-name: 'page-search';
 
 			&--level-one{
 				padding: 10px;
-				height: 47px;
+				height: 55px;
 				background: none;
 			}
 
