@@ -6,7 +6,7 @@
 
 	    <div class="gallery-widget__main-wrapper__scrolling-wrapper">
 	    	<div class="slide">
-	    		<img src="images/gallery/Gallery_01.jpg" srcset="images/gallery/Gallery_01.jpg 630w, images/gallery/Gallery_01.jpg 480w, images/gallery/Gallery_01.jpg 320w" alt="Gallery 1" />
+	    		<img src="images/gallery/gallery-01_2x.jpg" srcset="images/gallery/gallery-01_default.jpg 960w, images/gallery/gallery-01_tablet.jpg 630w, images/gallery/gallery-01_large.jpg 480w, images/gallery/gallery-01_small-2x.jpg 420w, images/gallery/gallery-01_small.jpg 320w" alt="Gallery 1" />
 		    	<div class="hidden-caption">
 		    		<p>Behold, it’s the totally baller house of the week: there’s a bar, a theater, an infinity pool, iPads.
 					Yes, there are iPads. This 1.32-acre, 10,279-square foot beachfront property in Cape Cod has been
