@@ -99,7 +99,7 @@ dm.select2 = {};
 
 					self.btns.$lvl2t.on('click', function(e){
 						e.preventDefault();
-						var status = $(this).getObservable();
+						var state = $(this).getObservable();
 
 						if(self.allOpen){
 							self.lvls.$three.hide();
