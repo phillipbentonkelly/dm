@@ -8,7 +8,6 @@ $module-name: 'hp-blogs';
 	
 	&__real-estate, &__explore-widget {
 		width: 49%;
-		max-width: 320px;
 		float: left;
 		background: lightgrey;
 		padding: 0 10px 10px 10px;
@@ -48,6 +47,10 @@ $module-name: 'hp-blogs';
 		display: block;
 		overflow: hidden;
 		clear: both;
+	}
+
+	&__wrapper:nth-child(3) {
+		margin-right: 0;
 	}
 
 	&__flag-container {
@@ -160,11 +163,15 @@ $module-name: 'hp-blogs';
 
 		margin: 0 auto;
 
+		&__blog-tile:last-child {
+			margin-right: 0 !important;
+		}
+
 		&__real-estate, &__explore-widget {
 			width: 100%;
 			max-width: 960px;
 			background: lightgrey;
-			padding: 0 10px 10px 10px;
+			padding: 0 13px 10px 13px;
 			box-sizing: border-box;
 			margin: 0;
 
@@ -176,7 +183,7 @@ $module-name: 'hp-blogs';
 		&__blog-tile {
 			display: block;
 			float: left;
-			width: 31.33%;
+			width: 32%;
 			max-width: 300px;
 			margin-right: 2%;
 			height: 100%;
@@ -184,7 +191,7 @@ $module-name: 'hp-blogs';
 		}
 
 		.detailsWrapper {
-			bottom: 4px;
+			bottom: 2px;
 			max-height: 200px;
 		}
 		
