@@ -2,7 +2,8 @@ $module-name: 'gallery-widget';
 
 .#{$module-name} {
 	width: 100%;
-	max-width: 630px;
+	/*max-width: 630px;*/
+	max-width: 100%;
 	min-height: 464px;
 	margin-bottom: 40px;
 

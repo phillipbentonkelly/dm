@@ -4285,47 +4285,48 @@ body.serp .page-layout {
 /* line 3, ../sass/partials/page/modules/_gallery-widget.scss */
 .gallery-widget {
   width: 100%;
-  max-width: 630px;
+  /*max-width: 630px;*/
+  max-width: 100%;
   min-height: 464px;
   margin-bottom: 40px;
 }
-/* line 9, ../sass/partials/page/modules/_gallery-widget.scss */
+/* line 10, ../sass/partials/page/modules/_gallery-widget.scss */
 .gallery-widget__main-wrapper {
   position: relative;
   overflow: hidden;
 }
-/* line 13, ../sass/partials/page/modules/_gallery-widget.scss */
+/* line 14, ../sass/partials/page/modules/_gallery-widget.scss */
 .gallery-widget__main-wrapper__scrolling-wrapper {
   width: 3150px;
 }
-/* line 16, ../sass/partials/page/modules/_gallery-widget.scss */
+/* line 17, ../sass/partials/page/modules/_gallery-widget.scss */
 .gallery-widget__main-wrapper__scrolling-wrapper .slide {
   display: inline-block;
   max-width: 630px;
   float: left;
 }
-/* line 21, ../sass/partials/page/modules/_gallery-widget.scss */
+/* line 22, ../sass/partials/page/modules/_gallery-widget.scss */
 .gallery-widget__main-wrapper__scrolling-wrapper .slide img {
   width: 630px;
 }
-/* line 32, ../sass/partials/page/modules/_gallery-widget.scss */
+/* line 33, ../sass/partials/page/modules/_gallery-widget.scss */
 .gallery-widget .left.chevron, .gallery-widget .right.chevron {
   position: absolute;
   top: 200px;
 }
-/* line 36, ../sass/partials/page/modules/_gallery-widget.scss */
+/* line 37, ../sass/partials/page/modules/_gallery-widget.scss */
 .gallery-widget .left.chevron {
   left: 20px;
 }
-/* line 39, ../sass/partials/page/modules/_gallery-widget.scss */
+/* line 40, ../sass/partials/page/modules/_gallery-widget.scss */
 .gallery-widget .right.chevron {
   right: 20px;
 }
-/* line 44, ../sass/partials/page/modules/_gallery-widget.scss */
+/* line 45, ../sass/partials/page/modules/_gallery-widget.scss */
 .gallery-widget .hidden-caption {
   display: none;
 }
-/* line 48, ../sass/partials/page/modules/_gallery-widget.scss */
+/* line 49, ../sass/partials/page/modules/_gallery-widget.scss */
 .gallery-widget__details {
   margin-top: 2px;
   background: #000;
@@ -4338,11 +4339,11 @@ body.serp .page-layout {
   overflow: hidden;
   min-height: 30px;
 }
-/* line 61, ../sass/partials/page/modules/_gallery-widget.scss */
+/* line 62, ../sass/partials/page/modules/_gallery-widget.scss */
 .gallery-widget__details a {
   text-decoration: none;
 }
-/* line 65, ../sass/partials/page/modules/_gallery-widget.scss */
+/* line 66, ../sass/partials/page/modules/_gallery-widget.scss */
 .gallery-widget__details__info-nav {
   clear: both;
   overflow: hidden;
@@ -4351,14 +4352,14 @@ body.serp .page-layout {
   	content: "\25B6";
   }*/
 }
-/* line 70, ../sass/partials/page/modules/_gallery-widget.scss */
+/* line 71, ../sass/partials/page/modules/_gallery-widget.scss */
 .gallery-widget__details__info-nav__show-caption {
   float: left;
   color: #fff;
   text-transform: uppercase;
   font-size: 12px;
 }
-/* line 84, ../sass/partials/page/modules/_gallery-widget.scss */
+/* line 85, ../sass/partials/page/modules/_gallery-widget.scss */
 .gallery-widget__details__info-nav .chevron:before {
   border-width: 0.15em 0.15em 0 0;
   width: 0.4em;
@@ -4366,23 +4367,23 @@ body.serp .page-layout {
   left: 7.6em;
   top: 3px;
 }
-/* line 92, ../sass/partials/page/modules/_gallery-widget.scss */
+/* line 93, ../sass/partials/page/modules/_gallery-widget.scss */
 .gallery-widget__details__info-nav__counter {
   float: right;
 }
-/* line 104, ../sass/partials/page/modules/_gallery-widget.scss */
+/* line 105, ../sass/partials/page/modules/_gallery-widget.scss */
 .gallery-widget__details__caption {
   display: none;
   clear: both;
   min-height: 10px;
   overflow: hidden;
 }
-/* line 110, ../sass/partials/page/modules/_gallery-widget.scss */
+/* line 111, ../sass/partials/page/modules/_gallery-widget.scss */
 .gallery-widget__details__caption p {
   padding: 0 0 0 0;
   margin: 15px 0 10px 0;
 }
-/* line 115, ../sass/partials/page/modules/_gallery-widget.scss */
+/* line 116, ../sass/partials/page/modules/_gallery-widget.scss */
 .gallery-widget__details__caption__photo-credit {
   font-family: OpenSans Italic;
   font-size: 12px;
