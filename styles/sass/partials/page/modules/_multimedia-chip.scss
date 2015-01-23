@@ -5,11 +5,9 @@
 $module-name: 'multimedia-chip';
 
 .#{$module-name} {
-	display: none;
+	display: block;
 	max-width: 630px;
-	min-width: 630px;
 	max-height: 616px;
-	min-height: 616px;
 	color: #fff;
 
 	a { color: #fff; text-decoration: none; }
