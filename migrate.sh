@@ -30,9 +30,8 @@ if [[ $useDefaultLocalhostPath =~ ^[Yy]$ ]]
 	then
 		yourLocalhost = "$defaultLocalhostPath"
 else
-	then
-		echo "Please enter/paste the path to the repo's localhost URL: ex. http://localhost/dm/dist/"
-		read yourLocalhost
+	echo "Please enter/paste the path to the repo's localhost URL: ex. http://localhost/dm/dist/"
+	read yourLocalhost
 fi
 
 if [[ $proceedVar =~ ^[Yy]$ ]]
