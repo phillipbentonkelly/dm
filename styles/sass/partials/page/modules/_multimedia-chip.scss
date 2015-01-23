@@ -56,19 +56,21 @@ $module-name: 'multimedia-chip';
 			&__share, &__info {
 				float: right;
 				text-indent: -9000px;
+				background: url(#{$img-path}icons/sprites/multimedia-chip__icons-sprite.png) 0 0 no-repeat;
 			}
 
 				&__share {
 					width: 15px;
 					height: 17px;
-					background: purple;
+					text-indent: -900px;
 				}
 
 				&__info {
 					width: 18px;
 					height: 16px;
-					background: violet;
+					text-indent: -900px;
 					margin-left: 1%;
+					background-position: -25px 0;
 				}
 		}
 	}
