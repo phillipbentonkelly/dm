@@ -10,6 +10,7 @@
         height: 50px;
         border: 1px solid black;
         margin: 10px auto;
+        overflow: hidden;
     }
 
     @media (min-width: 768px) {
@@ -24,6 +25,10 @@
             height: 184px;
             border: 1px solid black;
             margin-bottom: 10px;
+        }
+
+        .tmp-serp-ad > div {
+            max-width: 100%;
         }
     }
 
