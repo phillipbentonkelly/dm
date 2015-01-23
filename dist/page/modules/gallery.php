@@ -1,3 +1,5 @@
+<script src="js/assets/gallery.js"></script>
+
 <!-- Gallery Widget -->
 <div class="gallery-widget">
     <div class="gallery-widget__main-wrapper">
