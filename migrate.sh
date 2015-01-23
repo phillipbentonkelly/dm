@@ -2,6 +2,8 @@
 
 clear
 proceedVar=false
+useDefaultLocalhostPath=true
+defaultLocalhostPath='http://localhost/dm/dist/'
 tempDirName='GH-page-content'
 root=$(pwd)
 yourLocalhost=''
@@ -20,8 +22,18 @@ echo "Please make sure you are in the correct directory and that you are on the 
 echo ""
 echo "Would you like to proceed? Y or N | "
 read proceedVar
-echo "Please enter/paste the path to the repo's localhost URL: ex. http://localhost/dm/dist/"
-read yourLocalhost
+
+echo "In order to proceed we need the path to the localhost of your repo. By default, if you are using PHP or other local dev environments, it would be something like this ... http://localhost/dm/dist/. Is http://localhost/dm/dist/ the path to your localhost? Y or N | "
+read useDefaultLocalhostPath
+
+if [[ $useDefaultLocalhostPath =~ ^[Yy]$ ]]
+	then
+		yourLocalhost = "$defaultLocalhostPath"
+else
+	then
+		echo "Please enter/paste the path to the repo's localhost URL: ex. http://localhost/dm/dist/"
+		read yourLocalhost
+fi
 
 if [[ $proceedVar =~ ^[Yy]$ ]]
 	then
