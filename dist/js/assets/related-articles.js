@@ -1,4 +1,3 @@
-
 // Related Articles
 var article = {
 
