@@ -262,7 +262,9 @@ dm.searchPanel = {};
 				// validation, ajax, rest, etc.
 
 				// serp url
-				var serp = "frameset.php?page-type=serp";
+				var serp = "serp.html";
+				// form params
+
 				var lvls = "&expanded=" + self.expanded;
 				var saved = "&saved=" + self.saved;
 
