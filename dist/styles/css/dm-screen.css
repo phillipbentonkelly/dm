@@ -4302,7 +4302,8 @@ body.serp .page-layout {
 }
 /* line 14, ../sass/partials/page/modules/_gallery-widget.scss */
 .gallery-widget__main-wrapper__scrolling-wrapper {
-  /*width: 3150px;*/
+  width: 3150px;
+  /**/
   min-height: 170px;
   overflow: hidden;
   clear: both;

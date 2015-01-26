@@ -15,7 +15,9 @@ var galleryWidgetObj = {};
     GalleryWidget.prototype = {
     	init: function(){
     		galleryWidget.$topNode = $('.gallery-widget');
+    		galleryWidget.$nav = $('.gallery-widget__main-wrapper__nav-arrows');
     		galleryWidget.$slides = $('.gallery-widget .slide');
+    		galleryWidget.$scrollingWrapper = $('.gallery-widget__main-wrapper__scrolling-wrapper');
 
     		this.eventHandlers();
     	},
@@ -30,7 +32,7 @@ var galleryWidgetObj = {};
 				thisRef.updateSlideDim();
 			});
 
-			console.log("HEy");
+			console.log("Hey");
 
 			$('.gallery-widget__main-wrapper__nav-arrows').on('click', this.advanceGallery);
     	},

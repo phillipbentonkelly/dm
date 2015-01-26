@@ -15,7 +15,6 @@
 					<p class="gallery-widget__details__caption__photo-credit">Photo Credit- Elyssa Cohen</p>
 		    	</div>
 	    	</div>
-
 	    </div>
 	    
 	    <div class="gallery-widget__details">

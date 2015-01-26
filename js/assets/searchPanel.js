@@ -1,4 +1,3 @@
-
 if (typeof dm === 'undefined') { dm = {}; }
 
 dm.searchPanel = {};
