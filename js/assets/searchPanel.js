@@ -16,7 +16,6 @@ dm.searchPanel = {};
 		this.el = el;
 
 		this.device = (screen.width <= 480) ? 'mobile' : 'desktop';
-		this.local = (location.hostname.indexOf('localhost') > -1) ? true : false;
 		
 		// statefulness...
 		this.expanded = this.getExpanded();
@@ -206,14 +205,12 @@ dm.searchPanel = {};
 
 					self.btns.$save.on('click', function(e){
 						e.preventDefault();
-						var state = $(this).getObservable();
-						var modal = self.modals.$svSearch;
-						if(!self.isSaved){
+						var status = $(this).getObservable();
+						if(!self.saved){
 							$(modal).modal();
 							$(modal).find('button').on('click',function(e){
-								$.modal.close();
-								self.isSaved = true;
-								state.toggle();
+								self.saved = true;
+								$(this).hide();
 							});
 						}
 					});
@@ -264,9 +261,9 @@ dm.searchPanel = {};
 				// validation, ajax, rest, etc.
 
 				// serp url
-				var serp = self.local ? "frameset.php?page-type=serp" : "serp.html";
+				var serp = "frameset.php?page-type=serp";
 				var lvls = "&expanded=" + self.expanded;
-				var saved = "&saved=" + self.isSaved;
+				var saved = "&saved=" + self.saved;
 
 				location.href = serp + lvls + saved;
 			});
@@ -292,8 +289,8 @@ dm.searchPanel = {};
 
 		isSaved: function(){
 			var paramSaved = $.getParamVal('saved');
-			var isSaved = paramSaved == 'true' ? true : false;
-			return isSaved;
+			console.log(paramSaved || false);
+			return paramSaved || false;
 		},
 
 
