@@ -4,7 +4,9 @@
 
 if (typeof dm === 'undefined') { dm = {}; }
 
+
 dm.searchPanel = {};
+
 
 (function($, window, document, undefined){
 

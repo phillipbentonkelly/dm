@@ -1366,7 +1366,7 @@ body.serp .page-layout {
   display: inline-block;
   z-index: 100;
   padding: 10px;
-  height: 47px;
+  height: auto;
   background: #fff;
   box-sizing: border-box;
 }
@@ -1515,8 +1515,8 @@ body.serp .page-layout {
 /* line 220, ../sass/partials/page/_page-search.scss */
 .page-search__button--submit {
   float: right;
-  margin: 0 10px 20px 0;
-  width: 35px;
+  margin: 0 0 20px 0;
+  width: 26px;
   height: 35px;
   border-radius: 4px;
   background: url(../../images/icons/icon_search-magnifiying-glass.png) center center no-repeat #000;
@@ -2661,13 +2661,18 @@ body.serp .page-layout {
     margin-top: 0;
   }
 }
-/* line 9, ../sass/partials/page/modules/_contact-form-premium.scss */
+/* line 10, ../sass/partials/page/modules/_contact-form-premium.scss */
+.page-layout__left-col .contact__container {
+  display: none;
+}
+
+/* line 18, ../sass/partials/page/modules/_contact-form-premium.scss */
 .contact__container {
   position: relative;
   width: 100%;
   margin: 0 auto;
 }
-/* line 15, ../sass/partials/page/modules/_contact-form-premium.scss */
+/* line 24, ../sass/partials/page/modules/_contact-form-premium.scss */
 .contact__header {
   background: #2e1460;
   text-align: center;
@@ -2675,7 +2680,7 @@ body.serp .page-layout {
   width: 100%;
   display: inline-block;
 }
-/* line 22, ../sass/partials/page/modules/_contact-form-premium.scss */
+/* line 31, ../sass/partials/page/modules/_contact-form-premium.scss */
 .contact__header p {
   margin: 0;
   padding: 2px;
@@ -2685,61 +2690,61 @@ body.serp .page-layout {
   font-weight: 400;
   color: #ffffff;
 }
-/* line 33, ../sass/partials/page/modules/_contact-form-premium.scss */
+/* line 42, ../sass/partials/page/modules/_contact-form-premium.scss */
 .contact__wrapper {
   background: #dacef1;
   padding: 20px 25px 20px 20px;
   margin-bottom: 10px;
 }
-/* line 39, ../sass/partials/page/modules/_contact-form-premium.scss */
+/* line 48, ../sass/partials/page/modules/_contact-form-premium.scss */
 .contact__agent-info {
   margin-left: 60px;
 }
-/* line 42, ../sass/partials/page/modules/_contact-form-premium.scss */
+/* line 51, ../sass/partials/page/modules/_contact-form-premium.scss */
 .contact__agent-info a:link, .contact__agent-info a:visited, .contact__agent-info a:active {
   color: #2e1460;
   text-decoration: none;
 }
-/* line 46, ../sass/partials/page/modules/_contact-form-premium.scss */
+/* line 55, ../sass/partials/page/modules/_contact-form-premium.scss */
 .contact__agent-info a:hover {
   text-decoration: underline;
 }
-/* line 51, ../sass/partials/page/modules/_contact-form-premium.scss */
+/* line 60, ../sass/partials/page/modules/_contact-form-premium.scss */
 .contact__agent-links {
   color: #2e1460;
   font-family: 'OpenSans Regular';
   margin-bottom: 0px;
 }
-/* line 55, ../sass/partials/page/modules/_contact-form-premium.scss */
+/* line 64, ../sass/partials/page/modules/_contact-form-premium.scss */
 .contact__agent-links a {
   display: block;
   font-size: 13px;
   font-weight: 600;
 }
-/* line 62, ../sass/partials/page/modules/_contact-form-premium.scss */
+/* line 71, ../sass/partials/page/modules/_contact-form-premium.scss */
 .contact__agent-name {
   margin: 0;
   font-family: 'OpenSans Regular';
   font-weight: 600;
 }
-/* line 68, ../sass/partials/page/modules/_contact-form-premium.scss */
+/* line 77, ../sass/partials/page/modules/_contact-form-premium.scss */
 .contact__agent-img {
   float: left;
   height: 60px;
   width: 45px;
   margin-bottom: 10px;
 }
-/* line 76, ../sass/partials/page/modules/_contact-form-premium.scss */
+/* line 85, ../sass/partials/page/modules/_contact-form-premium.scss */
 .contact__agent-address p {
   margin: 0;
   font-family: 'OpenSans Regular';
   font-size: 11px;
 }
-/* line 83, ../sass/partials/page/modules/_contact-form-premium.scss */
+/* line 92, ../sass/partials/page/modules/_contact-form-premium.scss */
 .contact__form {
   padding-bottom: 70px;
 }
-/* line 86, ../sass/partials/page/modules/_contact-form-premium.scss */
+/* line 95, ../sass/partials/page/modules/_contact-form-premium.scss */
 .contact__form input, .contact__form textarea {
   display: inline-block;
   font-family: OpenSans Regular;
@@ -2755,12 +2760,12 @@ body.serp .page-layout {
   border: 1px solid #A0A0A0;
   box-sizing: border-box;
 }
-/* line 101, ../sass/partials/page/modules/_contact-form-premium.scss */
+/* line 110, ../sass/partials/page/modules/_contact-form-premium.scss */
 .contact__form textarea {
   height: 85px;
   margin-bottom: 15px;
 }
-/* line 106, ../sass/partials/page/modules/_contact-form-premium.scss */
+/* line 115, ../sass/partials/page/modules/_contact-form-premium.scss */
 .contact__form button {
   padding: 5px 15px;
   background: black;
@@ -2772,12 +2777,12 @@ body.serp .page-layout {
   font-size: 105%;
   float: right;
 }
-/* line 119, ../sass/partials/page/modules/_contact-form-premium.scss */
+/* line 128, ../sass/partials/page/modules/_contact-form-premium.scss */
 .contact__wrapper--lower {
   padding: 20px 10px 60px 20px;
   background: #dacef1;
 }
-/* line 124, ../sass/partials/page/modules/_contact-form-premium.scss */
+/* line 133, ../sass/partials/page/modules/_contact-form-premium.scss */
 .contact__contact-button {
   padding: 7px;
   clear: left;
@@ -2790,7 +2795,7 @@ body.serp .page-layout {
   font-weight: 700;
   text-transform: uppercase;
 }
-/* line 137, ../sass/partials/page/modules/_contact-form-premium.scss */
+/* line 146, ../sass/partials/page/modules/_contact-form-premium.scss */
 .contact__required-marker {
   margin-right: -15px;
   margin-top: 15px;
@@ -2802,7 +2807,7 @@ body.serp .page-layout {
   font-weight: 400;
   text-align: left;
 }
-/* line 148, ../sass/partials/page/modules/_contact-form-premium.scss */
+/* line 157, ../sass/partials/page/modules/_contact-form-premium.scss */
 .contact__form-required {
   margin: 0;
   margin-bottom: 3px;
@@ -2812,7 +2817,7 @@ body.serp .page-layout {
   font-size: 12px;
   font-weight: 200;
 }
-/* line 157, ../sass/partials/page/modules/_contact-form-premium.scss */
+/* line 166, ../sass/partials/page/modules/_contact-form-premium.scss */
 .contact__form-required span {
   color: #2e1460;
   font-size: 13px;
@@ -2820,11 +2825,11 @@ body.serp .page-layout {
   font-weight: 400;
   text-align: left;
 }
-/* line 165, ../sass/partials/page/modules/_contact-form-premium.scss */
+/* line 174, ../sass/partials/page/modules/_contact-form-premium.scss */
 .contact__company-wrapper {
   padding: 10px 25px 20px 15px;
 }
-/* line 169, ../sass/partials/page/modules/_contact-form-premium.scss */
+/* line 178, ../sass/partials/page/modules/_contact-form-premium.scss */
 .contact__company-name {
   font-family: OpenSans Regular;
   letter-spacing: 0px;
@@ -2836,28 +2841,28 @@ body.serp .page-layout {
   /* Approximation due to font substitution */
   text-align: left;
 }
-/* line 179, ../sass/partials/page/modules/_contact-form-premium.scss */
+/* line 188, ../sass/partials/page/modules/_contact-form-premium.scss */
 .contact__company-note {
   font-size: 70%;
   font-weight: 200;
   margin-top: 3px;
 }
-/* line 185, ../sass/partials/page/modules/_contact-form-premium.scss */
+/* line 194, ../sass/partials/page/modules/_contact-form-premium.scss */
 .contact__company-message {
   font-weight: 200;
 }
-/* line 189, ../sass/partials/page/modules/_contact-form-premium.scss */
+/* line 198, ../sass/partials/page/modules/_contact-form-premium.scss */
 .contact__company-img {
   float: left;
   height: 60px;
   width: 90px;
 }
-/* line 195, ../sass/partials/page/modules/_contact-form-premium.scss */
+/* line 204, ../sass/partials/page/modules/_contact-form-premium.scss */
 .contact__company-info {
   margin-left: 105px;
   margin-bottom: 15px;
 }
-/* line 200, ../sass/partials/page/modules/_contact-form-premium.scss */
+/* line 209, ../sass/partials/page/modules/_contact-form-premium.scss */
 .contact__company-name {
   margin: 0;
 }

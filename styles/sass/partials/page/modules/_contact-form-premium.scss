@@ -4,6 +4,15 @@
 
 $module-name: 'contact';
 
+.page-layout__left-col {
+  .#{$module-name} {
+
+    &__container {
+      display: none;
+    }
+  }
+}
+
 .#{$module-name} {
 
   &__container {
@@ -201,3 +210,4 @@ $module-name: 'contact';
     margin: 0;
   }
 }
+

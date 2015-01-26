@@ -50,6 +50,10 @@
 		<script src="js/assets/listings.map.js"></script>
 	<?php } ?>
 
+	<?php if ($pageType == 'category-details') { ?>
+		<script src="js/assets/gallery.js"></script>
+	<?php } ?>
+
 	<?php if ($pageType == 'serp') { ?>
 		<script src="js/resources/basic/js/jquery.simplemodal.js"></script>
         <script src="js/assets/popup.js"></script>
@@ -67,6 +71,7 @@
 	    <!-- Real Estate Listings -->
         <script src="js/assets/mpListings.js"></script>
         <script src="js/assets/listings.data.js"></script>
+        <script src="js/assets/gallery.js"></script>
 	<?php } ?>
 
 	<script type="text/javascript">
@@ -356,9 +361,6 @@
 
 				<!-- Related Articles (right rail) Widget -->
 				<?php include 'page-content/modules/related-articles-right-rail.php'; ?>
-
-				<!-- Contact The Agent Widget -->
-				<?php include 'page-content/modules/contact-agent-premium--large.php'; ?>
 
 			<?php } ?>
 		</div>
