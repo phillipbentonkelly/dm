@@ -289,7 +289,6 @@ dm.searchPanel = {};
 
 		isSaved: function(){
 			var paramSaved = $.getParamVal('saved');
-			console.log(paramSaved || false);
 			return paramSaved || false;
 		},
 
