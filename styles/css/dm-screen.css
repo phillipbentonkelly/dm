@@ -1366,7 +1366,7 @@ body.serp .page-layout {
   display: inline-block;
   z-index: 100;
   padding: 10px;
-  height: 47px;
+  height: auto;
   background: #fff;
   box-sizing: border-box;
 }
@@ -1515,8 +1515,8 @@ body.serp .page-layout {
 /* line 220, ../sass/partials/page/_page-search.scss */
 .page-search__button--submit {
   float: right;
-  margin: 0 10px 20px 0;
-  width: 35px;
+  margin: 0 0 20px 0;
+  width: 26px;
   height: 35px;
   border-radius: 4px;
   background: url(../../images/icons/icon_search-magnifiying-glass.png) center center no-repeat #000;
