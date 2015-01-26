@@ -57,6 +57,7 @@
 	<?php if ($pageType == 'serp') { ?>
 		<script src="js/resources/basic/js/jquery.simplemodal.js"></script>
         <script src="js/assets/popup.js"></script>
+        <script src="js/assets/related-articles.js"></script>
 	<?php } ?>
 
 	<?php if ($pageType == 'property-listings' || $pageType == 'property-listings-premium') { ?>

@@ -1,4 +1,4 @@
-<!-- Related Articles -->
+<!--Related Articles -->
 <div class="related-articles-mobile">
     <h1 class="related-articles__section-header">Related Articles</h1>
     <div class='related-articles-nav'>
@@ -6,10 +6,10 @@
         <div class='re-widget-right'></div>
     </div>
 
-    <div class="related-articles-mobile__item">
+    <!-- <div class="related-articles-mobile__item">
 
         <div class="additional-info">
-            <img class="thumb" src="images/related-articles/related-articles__thumbs__1.jpg" />
+            <img class="thumb" src="" />
             
             <div class="tags">
                 <a href="javascript:;" class="category-tag maroon">Luxury</a>
@@ -19,16 +19,16 @@
         
         <div class='main-info'>
             <a href="javascript:;">
-                <h2 class="title">Tom and Gisele's Brookline Pad Looks Almost Ready</h2>
+                <h2 class="title"></h2>
             </a>
 
-            <p class="description">The ream home of the most famouse couple in Massachusetts looks like it's close to completion.</p>
+            <p class="description">The dream home of the most famouse couple in Massachusetts looks like it's close to completion.</p>
         </div>
         <div class="date">September 9, 2014</div>
 
-    </div>
+    </div> -->
 
-    <div class="related-articles-mobile__item">
+    <!-- <div class="related-articles-mobile__item">
         <div class="additional-info">
             <img class="thumb" src="images/related-articles/related-articles__thumbs__2.jpg" />
 
@@ -48,7 +48,7 @@
         </div>
         <div class="date">July 30, 2014</div>
 
-    </div>
+    </div> -->
 
 </div>
 <!-- Related Articles -->
