@@ -16,6 +16,7 @@ dm.searchPanel = {};
 		this.el = el;
 
 		this.device = (screen.width <= 480) ? 'mobile' : 'desktop';
+		this.local = (location.hostname.indexOf('localhost') > -1) ? true : false;
 		
 		// statefulness...
 		this.expanded = this.getExpanded();
@@ -211,8 +212,8 @@ dm.searchPanel = {};
 							$(modal).modal();
 							$(modal).find('button').on('click',function(e){
 								$.modal.close();
-								state.toggle();
 								self.isSaved = true;
+								state.toggle();
 							});
 						}
 					});
@@ -261,8 +262,9 @@ dm.searchPanel = {};
 				self.expanded = self.checkExpanded();
 				self.isSaved = self.checkIfSaved();
 				// validation, ajax, rest, etc.
+
 				// serp url
-				var serp = "frameset.php?page-type=serp";
+				var serp = self.local ? "frameset.php?page-type=serp" : "serp.html";
 				var lvls = "&expanded=" + self.expanded;
 				var saved = "&saved=" + self.isSaved;
 
@@ -290,7 +292,6 @@ dm.searchPanel = {};
 
 		isSaved: function(){
 			var paramSaved = $.getParamVal('saved');
-			console.log(paramSaved);
 			var isSaved = paramSaved == 'true' ? true : false;
 			return isSaved;
 		},
