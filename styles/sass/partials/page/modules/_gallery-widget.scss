@@ -32,9 +32,6 @@ $module-name: 'gallery-widget';
 	.chevron {
 		@extend .chevron;
 	}
-		a.chevron {
-			text-indent: -900px;
-		}
 
 	.chevron.left, .chevron.right {
 		position: absolute;

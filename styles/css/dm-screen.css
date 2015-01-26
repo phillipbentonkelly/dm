@@ -4317,28 +4317,24 @@ body.serp .page-layout {
 .gallery-widget__main-wrapper__scrolling-wrapper .slide img {
   /*width: 630px;*/
 }
-/* line 35, ../sass/partials/page/modules/_gallery-widget.scss */
-.gallery-widget a.chevron {
-  text-indent: -900px;
-}
-/* line 39, ../sass/partials/page/modules/_gallery-widget.scss */
+/* line 36, ../sass/partials/page/modules/_gallery-widget.scss */
 .gallery-widget .left.chevron, .gallery-widget .right.chevron {
   position: absolute;
   top: 45%;
 }
-/* line 43, ../sass/partials/page/modules/_gallery-widget.scss */
+/* line 40, ../sass/partials/page/modules/_gallery-widget.scss */
 .gallery-widget .left.chevron {
   left: 20px;
 }
-/* line 46, ../sass/partials/page/modules/_gallery-widget.scss */
+/* line 43, ../sass/partials/page/modules/_gallery-widget.scss */
 .gallery-widget .right.chevron {
   right: 20px;
 }
-/* line 51, ../sass/partials/page/modules/_gallery-widget.scss */
+/* line 48, ../sass/partials/page/modules/_gallery-widget.scss */
 .gallery-widget .hidden-caption {
   display: none;
 }
-/* line 55, ../sass/partials/page/modules/_gallery-widget.scss */
+/* line 52, ../sass/partials/page/modules/_gallery-widget.scss */
 .gallery-widget__details {
   margin-top: 2px;
   background: #000;
@@ -4351,11 +4347,11 @@ body.serp .page-layout {
   overflow: hidden;
   min-height: 30px;
 }
-/* line 68, ../sass/partials/page/modules/_gallery-widget.scss */
+/* line 65, ../sass/partials/page/modules/_gallery-widget.scss */
 .gallery-widget__details a {
   text-decoration: none;
 }
-/* line 72, ../sass/partials/page/modules/_gallery-widget.scss */
+/* line 69, ../sass/partials/page/modules/_gallery-widget.scss */
 .gallery-widget__details__info-nav {
   clear: both;
   overflow: hidden;
@@ -4364,14 +4360,14 @@ body.serp .page-layout {
   	content: "\25B6";
   }*/
 }
-/* line 77, ../sass/partials/page/modules/_gallery-widget.scss */
+/* line 74, ../sass/partials/page/modules/_gallery-widget.scss */
 .gallery-widget__details__info-nav__show-caption {
   float: left;
   color: #fff;
   text-transform: uppercase;
   font-size: 12px;
 }
-/* line 91, ../sass/partials/page/modules/_gallery-widget.scss */
+/* line 88, ../sass/partials/page/modules/_gallery-widget.scss */
 .gallery-widget__details__info-nav .chevron:before {
   border-width: 0.15em 0.15em 0 0;
   width: 0.4em;
@@ -4379,23 +4375,23 @@ body.serp .page-layout {
   left: 7.6em;
   top: 3px;
 }
-/* line 99, ../sass/partials/page/modules/_gallery-widget.scss */
+/* line 96, ../sass/partials/page/modules/_gallery-widget.scss */
 .gallery-widget__details__info-nav__counter {
   float: right;
 }
-/* line 111, ../sass/partials/page/modules/_gallery-widget.scss */
+/* line 108, ../sass/partials/page/modules/_gallery-widget.scss */
 .gallery-widget__details__caption {
   display: none;
   clear: both;
   min-height: 10px;
   overflow: hidden;
 }
-/* line 117, ../sass/partials/page/modules/_gallery-widget.scss */
+/* line 114, ../sass/partials/page/modules/_gallery-widget.scss */
 .gallery-widget__details__caption p {
   padding: 0 0 0 0;
   margin: 15px 0 10px 0;
 }
-/* line 122, ../sass/partials/page/modules/_gallery-widget.scss */
+/* line 119, ../sass/partials/page/modules/_gallery-widget.scss */
 .gallery-widget__details__caption__photo-credit {
   font-family: OpenSans Italic;
   font-size: 12px;
