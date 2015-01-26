@@ -28,6 +28,7 @@ dm.searchPanel = {};
 			$three: $('.page-search__row--level-three'),
 			$lower: $('.lower-level')
 		};
+		
 
 		this.filters = {
 			$main: $('.page-search__dropdown--main'),
