@@ -37,7 +37,7 @@ module.exports = function(grunt) {
 			dist: {
 				options: {
 					style: 'expanded',
-					sourcemap: false,
+					sourcemap: 'none',
 					trace: false,
 					lineNumbers: true,
 					noCache: true, 

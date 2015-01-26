@@ -12,18 +12,26 @@ $module-name: 'gallery-widget';
 		overflow: hidden;
 
 		&__scrolling-wrapper {
-			width: 3150px;/**/
+			position: relative;
 			min-height: 170px;
 			overflow: hidden;
 			clear: both;
-
-			.slide {
-				display: inline-block;
-				/*max-width: 630px;*/
-				float: left;
-
-				img {
-					/*width: 630px;*/
+			
+			&__scroller {
+				position: absolute;
+				overflow: hidden;
+				min-height: 1px;
+				clear: both;
+				
+				.slide {
+					display: inline-block;
+					/*max-width: 630px;*/
+					float: left;
+					
+					img {
+						/*width: 630px;*/
+						display: none;
+					}
 				}
 			}
 		}
@@ -34,8 +42,10 @@ $module-name: 'gallery-widget';
 	}
 
 	.chevron.left, .chevron.right {
+		height: 28px;
 		position: absolute;
-		top: 45%;
+		z-index: 1;
+		top: 43%;
 	}
 	.chevron.left {
 		left: 20px;
