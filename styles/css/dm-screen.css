@@ -1660,7 +1660,7 @@ body.serp .page-layout {
 .page-search__fancy-radio-box label {
   display: inline-block;
   position: relative;
-  padding-left: 25px;
+  padding: 0 0 4px 25px;
   margin-right: 5px;
   font-size: 11px;
 }
@@ -1672,12 +1672,12 @@ body.serp .page-layout {
   left: 0;
   bottom: 1px;
   margin-right: 10px;
-  padding: 1px;
+  padding: 3px 1px 1px 1px;
   width: 16px;
-  height: 16px;
+  height: 14px;
   line-height: 20px;
   border: 1px solid #fff;
-  border-radius: 8px;
+  border-radius: 11px;
   -moz-border-radius: 8px;
   background: #fff;
   font-family: sans-serif;
@@ -1889,7 +1889,7 @@ body.serp .page-layout {
   /* line 648, ../sass/partials/page/_page-search.scss */
   .page-search__row--level-one {
     padding: 10px;
-    height: 55px;
+    height: 68px;
     background: none;
   }
   /* line 654, ../sass/partials/page/_page-search.scss */
@@ -1987,9 +1987,13 @@ body.serp .page-layout {
     box-sizing: border-box;
     height: 34px;
   }
+  /* line 758, ../sass/partials/page/_page-search.scss */
+  .page-search--close {
+    margin-right: 12px;
+  }
 }
 @media (min-width: 768px) {
-  /* line 767, ../sass/partials/page/_page-search.scss */
+  /* line 769, ../sass/partials/page/_page-search.scss */
   .page-search {
     display: block;
   }

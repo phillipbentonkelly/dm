@@ -375,7 +375,7 @@ $module-name: 'page-search';
 		label {
 			display: inline-block;
 			position: relative;			
-			padding-left: 25px;
+			padding: 0 0 4px 25px;
 			margin-right: 5px;
 			font-size: 11px;
 		}
@@ -387,12 +387,12 @@ $module-name: 'page-search';
 			left: 0;
 			bottom: 1px;
 			margin-right: 10px;
-			padding: 1px;
+			padding: 3px 1px 1px 1px;
 			width: 16px;
-			height: 16px;
+			height: 14px;
 			line-height: 20px;
 			border: 1px solid #fff;
-			border-radius: 8px;
+			border-radius: 11px;
 			-moz-border-radius: 8px;
 			background: #fff;
 			font-family: sans-serif;
@@ -647,7 +647,7 @@ $module-name: 'page-search';
 
 			&--level-one{
 				padding: 10px;
-				height: 55px;
+				height: 68px;
 				background: none;
 			}
 
@@ -755,7 +755,9 @@ $module-name: 'page-search';
 
 		}
 
-
+		&--close{
+			margin-right: 12px;
+		}
 	}
 	
 }
