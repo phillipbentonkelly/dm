@@ -1,0 +1,793 @@
+// *
+// * Page Masthead
+// *
+
+$module-name: 'page-search';
+
+// ------------------------------------------------------------
+// Default Styles
+// ------------------------------------------------------------
+
+.#{$module-name} {
+	position: absolute;
+	top: 40px;
+	left: 0;
+	z-index: 50;
+	width: 100%;
+	min-height: 60px;
+	height: auto;	
+	font: 11px sans-serif;
+	background: rgb(218, 206, 241);
+
+	.mobile{
+		display: inline-block;
+	}
+
+	.desktop{
+		display: none;
+	}
+	
+
+	&__content-wrapper {
+		width: 100%;
+		height: auto;
+		margin: auto;
+		position: relative;
+	}
+
+	&__form{
+		display: block;
+		width: 100%;
+		height: 90%;
+		margin: 10px auto;
+
+		input[type="text"], input[type="search"], input[type="radio"], input[type="checkbox"], button, .select2-container, .select2-choice {
+			box-sizing: border-box;
+		}
+
+		input[type="text"], input[type="search"], input[type="radio"], .select2-container, .select2-choice {
+			box-sizing: border-box;
+			margin: 0 5px 0 0;
+			padding: 0 5px;
+			height: 32px;
+			line-height: 32px;
+		}
+
+	}
+
+
+	&__row{
+		@extend .row;
+		overflow: visible;
+
+		h4{
+			float: left;
+			line-height: 32px;
+			font-size: 12px;
+			text-transform: uppercase;
+		}
+
+		span.helper{
+			position: relative;
+			top: -8px;
+		}
+
+		&--level-two{
+			display: inline-block;			
+			margin: 30px 20px 10px 20px;
+			width: 90%;
+
+			h4{
+				display: inline-block;
+				width: 120px;
+
+			}
+
+			input[type=text]{
+				height: 34px;
+			}
+
+			.select2-container{
+				float: right;
+				padding: 5px 0;
+				.select2-arrow{
+					margin-top: 3px;
+				}
+			}
+		}
+
+		&--level-three{
+			display: inline-block;
+			top: 46px;
+			left: 0;
+			z-index: 50;
+			margin: 0 20px 10px 20px;
+			width: 90%;
+			height: auto;
+			
+			.col{
+				display: block;
+				float: left;
+				width: 100%;
+			}
+
+			ul{
+				list-style-type: none;
+				margin: 5px 0;
+				padding-left: 0;
+
+				li{
+					
+					label{
+						font-size: 11px;
+					}
+				}
+			}
+
+			h4{
+				display: block;
+				float: left;
+				width: 100%;
+			}
+
+		}
+
+	}
+
+	&__section{
+		display: block;
+		float: left;
+		width: 100%;
+
+		&--tokenize{
+			margin: 0 0 12px 0;
+			height: 70px;
+		}
+
+		.select2-container{
+			border: none;
+		}
+
+		input[type="text"]{
+			border: none;
+		}
+
+		ul{
+			clear: both;
+		}
+
+		.price-range-container{
+			margin: 5px 0 0 0;
+		}
+	}
+
+
+
+	&__container{
+		display: block;
+
+		&--radio{
+			float: right;
+			margin-top: 9px;
+		}
+		&--range{
+			float: right;
+		}
+	}
+
+	&__list-item{
+		display: block;
+		margin-bottom: 5px;
+		margin-left: 5px;
+	}
+
+
+	&__input{
+		border-radius: 2px;
+		height: 32px;
+
+		&--main{
+			width: 680px;
+			height: 60px;
+			font-size: 17px;
+			float: left;
+
+			.selectize-input{
+				height: 30px;
+				padding: 10px 15px;
+				line-height: 28px;
+			}
+		}
+
+		&--numeric{
+			width: 50px;
+			padding: 5px;
+		}
+
+		&--numeric-short{
+			width: 50px;
+			height: 26px;
+			padding: 0 5px;
+		}
+
+		&--text{
+			width: 165px;
+			padding: 5px;
+		}
+
+	}
+
+
+
+	&__button{
+		display: inline-block;
+		outline: none;
+		border: 0;
+		cursor: pointer;
+
+		&--submit{
+			float: right;
+			width: 40px;
+			height: 44px;
+			border-radius: 4px;
+			margin: 0 100px 0 0;
+			background: url(#{$img-path}icons/icon_search-magnifiying-glass.png) center center no-repeat #000;
+		}
+
+		&--cancel, &--apply{
+			float: right;
+			width: 70px;
+			height: 30px;
+			span{
+				text-transform:uppercase;
+				font-size: 14px;
+				font-weight: bold;
+			}
+		}
+
+		&--cancel{
+			background: transparent;
+			color: rgb(117, 124, 125);
+		}
+
+		&--apply{
+			margin-right: 10px;
+			border-radius: 2px;
+			background: rgb(56, 0, 99);
+			color: rgb(255, 255, 255);
+			
+		}
+
+		&--save{
+			float: right;
+			background: none;
+			color: #000;
+			font-weight: bold;
+			text-transform: uppercase;
+			vertical-align: middle;
+			box-shadow: none;
+			outline: none;
+			margin: 10px 45px 0 13px;
+
+			span.saved{
+				display: none;
+				color: rgb(117, 124, 125);
+			}
+		}
+
+
+		&.select2-panel-open {
+			span.select2-arrow{
+				b{
+					background-position: -18px 1px;
+				}
+			}				
+		}
+
+		&--level-two-toggle{
+			display: inline-block;
+			position: absolute;
+			left: 15px;
+			width: 70px;
+			height: 30px;
+			background: rgb(255, 255, 255);
+			color: rgb(56, 0, 99);
+
+			b, span{
+				font-size: 15px;
+				font-weight: bold;
+			}
+			
+			
+		}
+
+
+		&--level-three-toggle{
+			display: inline-block;
+		    position: relative;
+		    top: 5px;
+		    zoom: 1;
+		    outline: none;
+		    margin: 0 0 0 6px;
+		    padding: 0;
+		    width: 70px;
+			height: 32px;
+			border: 1px solid #fff;
+			background: #fff;			
+		    vertical-align: middle;
+		    cursor: pointer;
+
+		    span.select2-chosen{
+		    	display: block;
+			    float: none;
+		    	margin-right: 40px;
+		    	width: 45px;
+		    	line-height: 26px;
+				overflow: hidden;
+				white-space: nowrap;
+				text-overflow: ellipsis;
+
+				background: #fff;
+
+			    -webkit-touch-callout: none;
+			      -webkit-user-select: none;
+			         -moz-user-select: none;
+			          -ms-user-select: none;
+			              user-select: none;			    
+		    }
+
+			span.select2-arrow{
+				display: inline-block;
+				margin-top: 3px;
+			    width: 18px;
+			    height: 100%;
+			    position: absolute;
+			    right: 0;
+			    top: 0;
+
+				b{
+					display: block;
+					display: block;
+					width: 100%;
+					height: 100%;
+					background: url(#{$img-path}icons/select2.png) no-repeat 0 1px;
+				}
+				
+			}
+
+		}
+
+		&--close{
+			display: block;
+			position: absolute;
+			right: 98px;
+			color: #0491aa;
+			background: rgb(254, 254, 254);
+			padding: 2px 4px;
+			border-radius: 2px;
+			cursor: pointer;
+
+			span{
+				font-size: 24px;
+				background: none;
+				text-align: center;
+			}
+		}
+
+	}
+
+
+	&__fancy-radio-box {
+		display: inline-block;
+		float: left;
+
+		input[type=radio] {
+			display: none;
+		}
+
+		label {
+			/*display: inline-block;
+			cursor: pointer;
+			position: relative;			
+			margin-right: 10px;
+			margin-bottom: 3px;
+			padding-left: 17px;
+			font-size: 11px;*/
+			display: inline-block;
+			cursor: pointer;
+			position: relative;			
+			margin-right: 10px;
+			margin-bottom: 3px;
+			padding-left: 20px;
+			font-size: 11px;
+		}
+
+		label:before {
+			/*content: "";
+			display: inline;
+			position: absolute;
+			bottom: 1px;
+			left: 0;
+			margin-right: 10px;
+			border-radius: 8px;
+			-moz-border-radius: 10px;
+			width: 14px;
+			height: 14px;
+			line-height: 15px;
+			overflow:visible;*/
+			content: "";
+			display: inline-block;
+			position: absolute;
+			left: 0;
+			bottom: 1px;
+			margin-right: 10px;
+			padding: 1px;
+			width: 11px;
+			height: 11px;
+			line-height: 20px;
+			border: 1px solid #fff;
+			border-radius: 8px;
+			-moz-border-radius: 8px;
+			background: #fff;
+			font-family: sans-serif;
+		}
+
+		input[type=radio]:checked + label:before  {
+		    content: "\2022";     
+		    font-size: 25px;  
+		    text-align: center;
+		    line-height: 14px;  
+		    -moz-line-height: 12px;
+		    color: #fff;
+		}
+
+		&--for-sale{
+			label:before{
+				background: #1c93b5;
+			}
+		}
+
+		&--for-rent{
+			label:before{
+				background: #05a851;
+			}
+		}
+	}
+
+	
+
+	&__fancy-checkbox{
+
+		input[type=checkbox]{
+			display: none;
+		}
+
+		label {
+			display: inline-block;
+			cursor: pointer;
+			position: relative;			
+			margin-right: 10px;
+			margin-bottom: 3px;
+			padding-left: 20px;
+			font-size: 11px;
+		}
+
+		label:before {
+			content: "";
+			display: inline-block;
+			position: absolute;
+			left: 0;
+			bottom: 1px;
+			margin-right: 10px;
+			border: 1px solid #fff;
+			width: 11px;
+			height: 11px;
+			line-height: 20px;
+			background: #fff;
+			font-family: sans-serif;
+		}
+
+		input[type=checkbox]:checked + label:before{
+			content: "\2713";     
+		    font-size: 15px;  
+		    text-align: center;
+		    line-height: 14px;  
+		    -moz-line-height: 12px;
+		}
+
+	}
+	
+
+	&__dropdown{
+		display: inline-block;
+		vertical-align: middle;
+		font-family: 'Verdana', sans-serif;
+		overflow-x: visible;
+
+		&--main{
+			display: none;
+			float: left;
+			width: 680px;
+			height: 60px;
+			margin-left: 78px;
+			font-size: 17px;
+			
+
+			.selectize-input{
+				height: 30px;
+				padding: 10px 15px;
+				line-height: 28px;
+			}
+
+		}
+
+		&--range{
+			padding: 5px;
+			float: right;
+			width: 180px;
+			height: 40px;
+			font-size: 11px;
+		}
+
+		&--narrow{
+			width: 242px;
+			height: 32px;
+			font-size: 17px;
+		}
+
+		&--filter{
+			max-width: 110px;
+			min-width: 80px;
+			height: 30px;
+			padding: 5px;
+
+		}
+
+		&--filter-hometype{
+			width: 120px;
+			height: 30px;
+			padding: 5px;
+		}
+
+		&--filter-dom{
+			width: 170px;
+			height: 32px;
+		}
+	}
+}
+
+.select2-drop{
+	.select2-search{
+		display: none;
+	}
+}
+
+// ------------------------------------------------------------
+// Desktop Breakpoint
+// ------------------------------------------------------------
+@include media-query(desktop) {
+
+	.home .#{$module-name}{
+		position: absolute;
+		top: 160px;
+		z-index: 10;
+		background: rgba(255, 255, 255, 0.85);
+
+		&__form{
+			input[type="text"], input[type=search] {
+				border: none;
+			}
+
+		}
+	
+	}
+
+	.page-section .#{$module-name}{
+		display: block;
+		position: relative;
+		top: 0;
+		float: left;
+		margin: 0 auto;
+		background: rgb(255, 255, 255);
+
+		&__row{
+			&--level-three{
+				margin-top: 20px;
+			}
+		}
+
+		&__section{
+			input[type=text]{
+				border: 1px solid rgb(0,0,0);
+			}
+		}
+
+		&__dropdown{
+			.selectize-input{
+				border: 1px solid rgb(0,0,0);
+			}
+			
+		}
+
+		&__input{
+
+			&--numeric, &--text{
+				border: 1px solid rgb(0,0,0);
+			}
+
+			&--tokenize, &--main{
+				.selectize-input{
+					border: 1px solid rgb(0,0,0);
+				}
+			}
+		}
+
+		&__button{
+			&--level-three-toggle{
+				border: 1px solid rgb(0,0,0);
+				height: 32px;
+			}
+		}
+
+		&__fancy-checkbox{
+			label:before{
+				border: 1px solid rgb(0,0, 0);
+			}
+		}
+
+		.select2-choice, .select2-container .select2-drop{
+			border: 1px solid rgb(0,0,0);
+		}
+
+	}
+
+
+	.#{$module-name} {
+		display: block;
+		height: auto;
+
+		.mobile{
+			display: none;
+		}
+
+		.desktop{
+			display: inline-block;
+		}
+
+		&__content-wrapper{
+			width: $page-search-desktop-width;
+		}
+
+		
+
+
+
+		&__row{
+			&--level-two{
+				margin: 0 50px;
+
+				section{
+					display: inline-block;
+					width: auto;
+					margin: 0 4px;
+
+					.select2-container{
+						.select2-choice{
+							height: 32px;
+							line-height: 32px;
+						}
+					}
+				}
+			}
+
+			&--level-three{
+				margin: 20px 20px 10px 50px;
+
+				.col{
+					width: 21%;
+					margin-right: 1%;
+				}
+
+				h4{
+					float: left;
+				}
+
+				section{
+					display: inline-block;
+					width: auto;
+					margin: 0 4px;
+
+					.select2-container{
+						padding: 0;
+						.select2-choice{
+							height: 32px;
+							line-height: 32px;
+						}
+					}
+				}
+
+			}
+		}
+
+		&__container{
+			display: inline-block;
+			float: left;
+
+			&--radio{			
+				margin-top: 15px;
+			}
+		}
+
+		&__list-item{
+			float: left;
+			width: 100%;
+		}
+
+		&__dropdown{
+			&--main{
+				display: block;
+			}
+		}
+
+		&__button{
+			&--level-two-toggle{
+				position: absolute;
+				z-index: 600;
+				top: 8px;
+				left: initial;
+				right: 178px;
+				padding: 17px;
+				width: 0;
+				height: 0;
+				border-radius: 4px;
+				background: #ececec;
+
+				span{
+					position: absolute;
+					top: 50%;
+					left: 30%;
+					display: block;
+					width: 0;
+					height: 0;
+					border-color: #808080 transparent transparent transparent;
+					border-style: solid;
+					content: ' ';
+
+					&.down-arrow{
+						margin-top: -3px;
+						border-width: 7px 7px 0 7px;
+						border-color: #808080 transparent transparent transparent;
+					}
+
+					&.up-arrow{
+						margin-top: -4px;
+						border-color: transparent transparent #808080 transparent;
+						border-width: 0 7px 7px 7px;
+					}				
+				}
+
+			}
+
+			&--save{
+				margin: 12px 58px 0 13px;
+			}
+
+		}
+
+
+	}
+
+	
+	
+}
+
+// ------------------------------------------------------------
+// Tablet Breakpoint
+// ------------------------------------------------------------
+@include media-query(tablet) {
+	.#{$module-name} {
+		display: block;
+	}
+}
+
+			

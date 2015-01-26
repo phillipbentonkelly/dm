@@ -1,0 +1,154 @@
+$module-name: 'articles-content';
+
+.#{$module-name} {
+	width: 100%;
+	min-height: 300px;
+
+	h1 {
+		font-family: OpenSans Semibold;
+		font-size: 28px;
+		margin-bottom: 10px;
+		padding-left: 1px;
+	}
+
+	.tags {
+		display: block;
+		min-height: 1px;
+		overflow: hidden;
+
+		margin-bottom: 10px;
+	}
+
+	.social-icons {
+        @extend .social-icons;
+
+        margin-bottom: 10px;
+    }
+
+	&__article {
+		font-family: OpenSans Regular;
+		font-size: 16px;
+		line-height: 24px;
+		margin-bottom: 30px;
+
+		p {
+			padding-bottom: 20px;
+		}
+
+		&__author-link-row {
+			margin-bottom: 15px;
+		}
+
+		&__by-line {
+			display: inline-block;
+			width: 69%;
+			padding-top: 3px;
+			font-family: OpenSans Regular;
+			font-size: 12px;
+			
+			img.author {
+				float: left;
+				margin: 8px 6px 0 0;
+			}
+
+			h1 {
+				margin: 0 0 2px 0;
+				font-family: OpenSans;
+				font-size: 13px;
+			}
+
+			p {
+				padding-bottom: 0px;
+			}
+			
+			a {
+				display: block;
+				float: left;
+			}
+
+			.social-wrapper__twitter {
+				display: inline-block;
+				height: 18px;
+				overflow: hidden;
+				font-size: 10px;
+				font-weight: bold;
+				color: #32342f;
+				text-decoration: none;
+				background: url(#{$img-path}icons/twitter-follow__background.png) top left repeat-x;
+
+				border: 1px solid #ccc;
+				-webkit-border-radius: 3px;
+				-moz-border-radius: 3px;
+				border-radius: 3px;
+
+				padding: 0 5px 0 5px;
+				margin-right: 7px;
+
+				img {
+					display: inline-block;
+					float: left;
+					margin-top: 2px;
+				}
+
+				label {
+					display: inline-block;
+					line-height: 1.5;
+					float: left;
+					margin: 2px 0 0 5px;
+				}
+			}
+
+			.social-icons__email {
+				display: inline-block;
+				float: left;
+				width: 27px;
+				height: 17px;
+				text-indent: -9000px;
+				overflow: hidden;
+				margin-top: 2px;
+				background: url(#{$img-path}icons/articles-content__author-mailto.png) top left repeat-x;
+			}
+		}
+		&__links {
+			width: 31%;
+			font-family: OpenSans;
+			font-size: 13px;
+			font-weight: bold;
+
+			ul {
+				margin: 0 0 0 17px;
+				padding: 0 0 0 0;
+
+				li {
+					padding-top: 0;
+					padding-bottom: 0;
+					margin-top: 0;
+					margin-bottom: 0;
+
+					a {
+						color: #1a93b0;
+						text-decoration: none;
+					}
+				}
+			}
+		}
+
+		.date {
+			font-size: 13px;
+			font-family: OpenSans Italic;
+			margin-bottom: 20px;
+		}
+	}
+}
+
+@include media-query(tablet) {
+	.#{$module-name} {
+		
+	}
+}
+
+@include media-query(desktop) {
+	.#{$module-name} {
+
+	}
+}

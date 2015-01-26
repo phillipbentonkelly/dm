@@ -1,0 +1,213 @@
+// *
+// *  Module Name 
+// *
+
+$module-name: 'contact';
+
+.page-layout__left-col {
+  .#{$module-name} {
+
+    &__container {
+      display: none;
+    }
+  }
+}
+
+.#{$module-name} {
+
+  &__container {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  &__header {
+    background: #2e1460;
+    text-align: center;
+    margin-bottom: 3px;
+    width: 100%;
+    display: inline-block;
+    
+    p {
+      margin: 0;
+      padding: 2px;
+      letter-spacing: 1px;
+      font-size: 26px;
+      font-family: 'Oswald Regular';
+      font-weight: 400;
+      color:  #ffffff;
+    }
+  }
+
+  &__wrapper {
+    background: #dacef1;
+    padding: 20px 25px 20px 20px;
+    margin-bottom: 10px;
+  }
+
+  &__agent-info {
+
+    margin-left: 60px;
+    a:link, a:visited, a:active {
+      color: #2e1460;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__agent-links {
+    color: #2e1460;
+    font-family: 'OpenSans Regular';
+    margin-bottom: 0px;
+    a {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+    }
+  }
+
+  &__agent-name {
+    margin: 0;
+    font-family: 'OpenSans Regular';
+    font-weight: 600;
+  }
+
+  &__agent-img {
+    float: left;
+    height: 60px;
+    width: 45px;
+    margin-bottom: 10px;
+  }
+
+  &__agent-address {
+    p {
+      margin: 0;
+      font-family: 'OpenSans Regular';
+      font-size: 11px;
+    }
+  }
+
+  &__form {
+    padding-bottom: 70px;
+
+    input, textarea{
+      display: inline-block;
+      font-family: OpenSans Regular;
+      color: rgba(0, 0, 0, 0.5);
+      font-size: 13px; /* Approximation due to font substitution */
+      font-weight: 400;
+      text-align: left;
+      width: 100%;
+      margin-bottom: 10px;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #A0A0A0;
+      box-sizing: border-box;
+    }
+
+    textarea {
+      height: 85px;
+      margin-bottom: 15px;
+    }
+
+    button {
+      padding: 5px 15px;
+      background: black;
+      color: white;
+      border: none;
+      border-radius: 2px;
+      font-family: 'OpenSans Regular', sans-serif;
+      font-weight: 300;
+      font-size: 105%;
+      float: right;
+    }
+  }
+
+  &__wrapper--lower {
+    padding: 20px 10px 60px 20px;
+    background: #dacef1;
+  }
+
+  &__contact-button {
+    padding: 7px;
+    clear: left;
+    color: white;
+    background: #2e1460;
+    float: right;
+    border-radius: 2px;
+    font-family: 'OpenSans Regular', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  &__required-marker {
+    margin-right: -15px;
+    margin-top: 15px;
+    float: right;
+    font-family: OpenSans Regular;
+    color: #2e1460;
+    font-size: 13px; /* Approximation due to font substitution */
+    font-weight: 400;
+    text-align: left;
+  }
+
+  &__form-required {
+    margin: 0;
+    margin-bottom: 3px;
+    text-align: right;
+    color: #A0A0A0;
+    font-family: OpenSans Regular;
+    font-size: 12px;
+    font-weight: 200;
+
+    span {
+    color: #2e1460;
+    font-size: 13px; /* Approximation due to font substitution */
+    font-weight: 400;
+    text-align: left;
+    }
+  }
+
+  &__company-wrapper {
+    padding: 10px 25px 20px 15px;
+  }
+
+  &__company-name {
+    font-family: OpenSans Regular;
+    letter-spacing: 0px;
+    color:  #000000;
+    font-size: 12px; /* Approximation due to font substitution */
+    font-weight: 600;
+    line-height: 18px; /* Approximation due to font substitution */
+    text-align: left;
+  }
+
+  &__company-note {
+    font-size: 70%;
+    font-weight: 200;
+    margin-top: 3px;
+  }
+
+  &__company-message {
+    font-weight: 200;
+  }
+
+  &__company-img {
+    float: left;
+    height: 60px;
+    width: 90px;
+  }
+
+  &__company-info {
+    margin-left: 105px;
+    margin-bottom: 15px;
+  }
+
+  &__company-name {
+    margin: 0;
+  }
+}
+

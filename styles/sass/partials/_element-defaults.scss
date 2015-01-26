@@ -1,0 +1,74 @@
+// *
+// * Site-Wide Element Defaults
+// *
+
+html {
+  font-size: 85%;
+}
+
+body {
+  background-color: color(white);
+  font-family: 'Roboto Condensed', sans-serif;
+  color: color(gray, xx-dark);
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: none;
+  -ms-text-size-adjust: none;
+  @extend %opaque-background;
+}
+
+a {
+  // @include link-states(color(blue), color(blue, dark), color(blue, x-dark));
+  text-decoration: none;
+  transition-property: background-color, color;
+  transition-duration: 0.2s;
+  transition-timing-function: cubic-bezier(0.49, 0.37, 0.445, 0.715);
+}
+
+img {
+  max-width: 100%;
+}
+
+strong {
+  font-weight: 700;
+}
+em {
+  font-style: italic;
+}
+i {
+  font-style: normal;
+}
+
+input {
+  font-family: 'Roboto Condensed', sans-serif;
+  padding: spacer(px, small);
+  padding: spacer(rem, small);
+  &:focus, &:active {
+    outline: none;
+  }
+}
+
+// keeps iOS from overriding our form styles
+input[type=text], 
+input[type=button], 
+input[type=email], 
+input[type=search], 
+input[type=submit],
+textarea {
+  -webkit-appearance: none;
+  -webkit-border-radius:0; 
+  border-radius: 0;
+}
+
+*, *:before, *:after {
+  -moz-box-sizing: /*border-box*/ content-box;
+  -webkit-box-sizing: /*border-box*/ content-box;
+  box-sizing: /*border-box*/ content-box;
+}
+
+// Element Defaults Media Queries
+
+@media screen and (min-width: $tablet-breakpoint) {
+  html {
+    font-size: 100%;
+  }
+}

@@ -1,0 +1,21 @@
+$module-name: 'page-blog';
+
+.#{$module-name} {
+	width: 100%;
+	clear: both;
+	min-height: 100px;
+	overflow: hidden;
+	margin-top: 20px;
+}
+
+@include media-query(desktop) {
+	.#{$module-name} {
+		background-color: #e5e5e5;
+	}
+}
+
+@include media-query(tablet) {
+	.#{$module-name} {
+		
+	}
+}

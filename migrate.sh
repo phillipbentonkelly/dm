@@ -43,18 +43,18 @@ if [[ $proceedVar =~ ^[Yy]$ ]]
 		git checkout gh-pages
 		echo "- Switched to Pages branch"
 
-		sleep 2
+		sleep 6
 		git stash
 		echo "- Stashed any local changes"
 
-		sleep 1
+		sleep 3
 		git pull
 		echo "- Pulled most recent"
 		git status
 
 		git checkout master
 
-		sleep 3
+		sleep 6
 		if [[ $yourLocalhost ]]
 		then
 			cd ..
@@ -67,7 +67,7 @@ if [[ $proceedVar =~ ^[Yy]$ ]]
 			cp -a -f $root/dm/dist/js/. $root/$tempDirName/js
 			cp -a -f $root/dm/dist/styles/. $root/$tempDirName/styles
 
-			sleep 2
+			sleep 3
 			for i in "${pages[@]}"
 			do
 				echo $localhost$i
@@ -84,13 +84,13 @@ if [[ $proceedVar =~ ^[Yy]$ ]]
 			cp -f home.html index.html
 			cd ..
 
-			sleep 2
+			sleep 5
 			cd dm
 			git checkout gh-pages
 			cd ..
 
 			echo "Removing the several resources from the gh-pages repo folder (folders and html pages)."
-			sleep 2
+			sleep 5
 			rm -r $root/dm/images
 			rm -r $root/dm/fonts
 			rm -r $root/dm/js
@@ -106,25 +106,28 @@ if [[ $proceedVar =~ ^[Yy]$ ]]
 			rm -f $root/dm/neighborhood.html
 
 			echo "Copying the content of the temporary folder into the gh-pages repo folder."
-			sleep 3
+			sleep 5
 			cp -a -f $root/$tempDirName/. $root/dm
 
-			sleep 2
+			sleep 5
 			echo "Removing temporary folder"
 			rm -r $root/$tempDirName
 
-			sleep 2
+			sleep 5
 			cd dm
 			git pull
 			git add .
 			git commit -m "Updated GH-Pages with the latest version of this repo that can be used for QA."
 			git push
 
-			sleep 2
+			sleep 5
 			git checkout master
 
 			echo ""
 			echo $root
+
+			sleep 6
+			echo "DONE! Check your repo to make sure all folders match what is suppose to be in that branch."
 		fi
 fi
 
