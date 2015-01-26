@@ -29,6 +29,16 @@ var galleryWidgetObj = {};
 			$(window).resize(function () {
 				thisRef.updateSlideDim();
 			});
+
+			console.log("HEy");
+
+			$('.gallery-widget__main-wrapper__nav-arrows').on('click', this.advanceGallery);
+    	},
+    	advanceGallery: function(e){
+    		var thisRef = this;
+    		var thisObj = $(this);
+
+    		console.log("Move: " + thisObj.attr('title'));
     	},
     	updateSlideDim: function(){
     		var w = galleryWidget.$topNode.width();

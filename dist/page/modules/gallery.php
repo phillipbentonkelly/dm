@@ -1,9 +1,9 @@
 <!-- Gallery Widget -->
 <div class="gallery-widget">
     <div class="gallery-widget__main-wrapper">
-    	<a href="javascript:;" class="gallery-widget__main-wrapper__nav-arrows chevron left js-slider-previous"></a>
-    	<a href="javascript:;" class="gallery-widget__main-wrapper__nav-arrows chevron right js-slider-next"></a>
-
+    	<a href="javascript:;" class="gallery-widget__main-wrapper__nav-arrows chevron left js-slider-previous" title="Previous" alt="Previous">Previous</a>
+    	<a href="javascript:;" class="gallery-widget__main-wrapper__nav-arrows chevron right js-slider-next" title="Next" alt="Next">Next</a>
+		
 	    <div class="gallery-widget__main-wrapper__scrolling-wrapper">
 	    	<div class="slide">
 	    		<img src="images/gallery/gallery-01_2x.jpg" srcset="images/gallery/gallery-01_default.jpg 960w, images/gallery/gallery-01_tablet.jpg 630w, images/gallery/gallery-01_large.jpg 480w, images/gallery/gallery-01_small-2x.jpg 420w, images/gallery/gallery-01_small.jpg 320w" alt="Gallery 1" />
