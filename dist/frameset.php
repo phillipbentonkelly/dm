@@ -231,7 +231,7 @@
 				<?php include 'page-content/modules/related-articles--mobile.php'; ?>
 
 				<!-- Contact Agent Popup -->
-				<?php include 'page-content/modules/conatct-agent-premium--large.php'; ?>
+				<?php include 'page-content/modules/contact-agent-premium--large.php'; ?>
 
 				<!-- Search Filter Modal for mobile -->
 				<?php include 'page-content/modules/search-filter-modal.php'; ?>
