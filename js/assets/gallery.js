@@ -15,7 +15,9 @@ var galleryWidgetObj = {};
     GalleryWidget.prototype = {
     	init: function(){
     		galleryWidget.$topNode = $('.gallery-widget');
+    		galleryWidget.$nav = $('.gallery-widget__main-wrapper__nav-arrows');
     		galleryWidget.$slides = $('.gallery-widget .slide');
+    		galleryWidget.$scrollingWrapper = $('.gallery-widget__main-wrapper__scrolling-wrapper');
 
     		this.eventHandlers();
     	},
@@ -29,6 +31,16 @@ var galleryWidgetObj = {};
 			$(window).resize(function () {
 				thisRef.updateSlideDim();
 			});
+
+			console.log("Hey");
+
+			$('.gallery-widget__main-wrapper__nav-arrows').on('click', this.advanceGallery);
+    	},
+    	advanceGallery: function(e){
+    		var thisRef = this;
+    		var thisObj = $(this);
+
+    		console.log("Move: " + thisObj.attr('title'));
     	},
     	updateSlideDim: function(){
     		var w = galleryWidget.$topNode.width();
