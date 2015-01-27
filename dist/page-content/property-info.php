@@ -4,56 +4,53 @@
     <span class="listing__breadcrumb-address"> 101 Fernwood Rd</span>
 </p>
 <div class="listing__summary">
-    <div class="listing__summary--left">
-
-        <h2 class="listing__address">101 Fernwood Rd</h2>
-        <h2 class="listing__address">Brookline, MA 02467</h2>
-        <div class="listing__tags">
-            <div class="tag featured">Featured Property<span class="arrow"></span>
-            </div>
-            <img class="listing__detail-pindrop" src="images/listings/pindrop-icon-purple.png">
-            <p class="listing__for-sale">FOR SALE</p>
-        </div>
-    </div>
-
-    <div class="listing__summary--right">
-
-        <div class="listing__detail">
-            <div class="listing__detail--row1">
-                <p class="listing__price">$18,000,000</p>
-            </div>
-
-            <div class="listing__detail--row2">
-                <p class="listing__beds">5 Beds</p>
-                <p class="listing__baths">6 Baths</p>
-                <p class="listing__partials">3 Partial</p>
-            </div>
-
-            <div class="listing__detail--row3">
-                <p class="listing__sqfeet">10,000 Sq. Ft.</p>
-                <p class="listing__type">Co-op/Condo</p>
+    
+    <div class="row">
+        <div class="listing__summary--left">
+            <h2 class="listing__address">101 Fernwood Rd</h2>
+            <h2 class="listing__address">Brookline, MA 02467</h2>
+            <div class="listing__tags">
+                <div class="tag featured">Featured Property<span class="arrow"></span>
+                </div>
+                <img class="listing__detail-pindrop" src="images/listings/pindrop-icon-purple.png">
+                <p class="listing__for-sale">FOR SALE</p>
             </div>
         </div>
 
-        <div class="listing__detail-share">
-            <div class="listing__detail-share--row1">
-                <a class='mobile-save-btn' href="javascript:;"><img class="listing__detail-share-icons" src="images/listings/heart-icon-purple.png"></a>
-                <a class='mobile-share-btn' href="javascript:;"><img class="listing__detail-share-icons" src="images/listings/share-icon-purple.png"></a>
+        <div class="listing__summary--right">
+            <div class="listing__detail">
+                <div class="listing__detail--row1">
+                    <p class="listing__price">$18,000,000</p>
+                </div>
+
+                <div class="listing__detail--row2">
+                    <p class="listing__beds">5 Beds</p>
+                    <p class="listing__baths">6 Baths</p>
+                    <p class="listing__partials">3 Partial</p>
+                </div>
+
+                <div class="listing__detail--row3">
+                    <p class="listing__sqfeet">10,000 Sq. Ft.</p>
+                    <p class="listing__type">Co-op/Condo</p>
+                </div>
             </div>
 
-            <div class="listing__detail-share--row2">
-                <img class="listing__detail-share-icons" src="images/listings/calculator-icon-purple.jpg">
-                <p class="listing__detail-monthly-cost">$88,456/ mo</p>
+            <div class="listing__detail-share">
+                <div class="listing__detail-share--row1">
+                    <a class='mobile-save-btn' href="javascript:;"><img class="listing__detail-share-icons" src="images/listings/heart-icon-purple.png"></a>
+                    <a class='mobile-share-btn' href="javascript:;"><img class="listing__detail-share-icons" src="images/listings/share-icon-purple.png"></a>
+                </div>
+
+                <div class="listing__detail-share--row2">
+                    <img class="listing__detail-share-icons" src="images/listings/calculator-icon-purple.jpg">
+                    <p class="listing__detail-monthly-cost">$88,456/ mo</p>
+                </div>
             </div>
         </div>
-
     </div>
-
-    <!-- CAROUSEL IMAGE -->
-    <div class="image-carousel-wrapper">
-        <img src="images/listings/Property_Detail_slider.jpg">
-    </div>
-    <!-- CAROUSEL IMAGE -->
+    
+    <!-- Gallery Widget -->
+    <?php include 'page/modules/gallery.php'; ?>
 
     <div class="listing__summary--mobile-wrapper">
 

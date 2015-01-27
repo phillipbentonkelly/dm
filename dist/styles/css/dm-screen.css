@@ -1660,7 +1660,7 @@ body.serp .page-layout {
 .page-search__fancy-radio-box label {
   display: inline-block;
   position: relative;
-  padding-left: 25px;
+  padding: 0 0 4px 25px;
   margin-right: 5px;
   font-size: 11px;
 }
@@ -1672,12 +1672,12 @@ body.serp .page-layout {
   left: 0;
   bottom: 1px;
   margin-right: 10px;
-  padding: 1px;
+  padding: 3px 1px 1px 1px;
   width: 16px;
-  height: 16px;
+  height: 14px;
   line-height: 20px;
   border: 1px solid #fff;
-  border-radius: 8px;
+  border-radius: 11px;
   -moz-border-radius: 8px;
   background: #fff;
   font-family: sans-serif;
@@ -1889,7 +1889,7 @@ body.serp .page-layout {
   /* line 648, ../sass/partials/page/_page-search.scss */
   .page-search__row--level-one {
     padding: 10px;
-    height: 55px;
+    height: 68px;
     background: none;
   }
   /* line 654, ../sass/partials/page/_page-search.scss */
@@ -1987,9 +1987,13 @@ body.serp .page-layout {
     box-sizing: border-box;
     height: 34px;
   }
+  /* line 758, ../sass/partials/page/_page-search.scss */
+  .page-search--close {
+    margin-right: 12px;
+  }
 }
 @media (min-width: 768px) {
-  /* line 767, ../sass/partials/page/_page-search.scss */
+  /* line 769, ../sass/partials/page/_page-search.scss */
   .page-search {
     display: block;
   }
@@ -5197,12 +5201,12 @@ body.serp .page-layout {
   height: 24px;
   width: 20px;
 }
-/* line 47, ../sass/partials/page/modules/related-articles-right-rail.scss */
+/* line 46, ../sass/partials/page/modules/related-articles-right-rail.scss */
 .related-articles-mobile .related-articles-nav .re-widget-left:active, .related-articles-mobile .related-articles-nav .re-widget-right:active {
   background-image: url(../../images/listings/arrow-icon-grey.jpg);
   margin-right: 0;
 }
-/* line 53, ../sass/partials/page/modules/related-articles-right-rail.scss */
+/* line 52, ../sass/partials/page/modules/related-articles-right-rail.scss */
 .related-articles-mobile__item {
   position: relative;
   display: inline-block;
@@ -5214,19 +5218,19 @@ body.serp .page-layout {
   max-height: 250px;
   border-bottom: 1px solid #bebebe;
 }
-/* line 64, ../sass/partials/page/modules/related-articles-right-rail.scss */
+/* line 63, ../sass/partials/page/modules/related-articles-right-rail.scss */
 .related-articles-mobile__item .thumb {
   float: left;
   margin-bottom: 5px;
 }
-/* line 69, ../sass/partials/page/modules/related-articles-right-rail.scss */
+/* line 68, ../sass/partials/page/modules/related-articles-right-rail.scss */
 .related-articles-mobile__item h2.title {
   font-family: 'OpenSans Semibold';
   font-size: 13px !important;
   text-align: left;
   color: black;
 }
-/* line 76, ../sass/partials/page/modules/related-articles-right-rail.scss */
+/* line 75, ../sass/partials/page/modules/related-articles-right-rail.scss */
 .related-articles-mobile__item .description {
   font-family: 'OpenSans Regular';
   font-size: 11px !important;
@@ -5234,7 +5238,7 @@ body.serp .page-layout {
   color: black;
   margin-bottom: 10px;
 }
-/* line 84, ../sass/partials/page/modules/related-articles-right-rail.scss */
+/* line 83, ../sass/partials/page/modules/related-articles-right-rail.scss */
 .related-articles-mobile__item .date {
   font-size: 11px;
   font-style: italic;
@@ -5242,20 +5246,20 @@ body.serp .page-layout {
   bottom: 5px;
   left: 135px;
 }
-/* line 92, ../sass/partials/page/modules/related-articles-right-rail.scss */
+/* line 91, ../sass/partials/page/modules/related-articles-right-rail.scss */
 .related-articles-mobile__item .main-info {
   float: left;
   width: 55%;
   height: 100%;
 }
-/* line 98, ../sass/partials/page/modules/related-articles-right-rail.scss */
+/* line 97, ../sass/partials/page/modules/related-articles-right-rail.scss */
 .related-articles-mobile__item .additional-info {
   float: left;
   width: 45%;
 }
 
 @media (min-width: 768px) {
-  /* line 106, ../sass/partials/page/modules/related-articles-right-rail.scss */
+  /* line 105, ../sass/partials/page/modules/related-articles-right-rail.scss */
   .related-articles-mobile {
     display: block;
   }
