@@ -171,7 +171,6 @@
 	// Event Handlers
 	module.eventHandlers = function() {
 		module.$pageback.click(function() {
-			console.log('you click back');
 			// if on first page
 			if(module.curPage != 1) {
 				module.curIndex -= 2;
@@ -183,7 +182,6 @@
 		});
 
 		module.$pageforawrd.click(function() {
-			console.log('you click forward');
 			
 			// if on last page
 			if(module.curPage < module.totalPages) {
