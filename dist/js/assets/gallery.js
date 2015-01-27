@@ -21,12 +21,19 @@ var galleryWidgetObj = {};
     		galleryWidget.$scrollingWrapper = $('.gallery-widget__main-wrapper__scrolling-wrapper');
     		galleryWidget.$scroller = $('.gallery-widget__main-wrapper__scrolling-wrapper__scroller');
     		galleryWidget.$IMGs = $('.gallery-widget__main-wrapper__scrolling-wrapper .slide img');
+    		galleryWidget.$label__total = $('.gallery-widget__details__info-nav__counter__total');
     		galleryWidget.nav = { 'prev': {}, 'next': {} };
     		galleryWidget.slideInterval = {};
 
     		_data._current = 0;
+    		_data.total = galleryWidget.$slidesImg.length;
 
-    		this.eventHandlers();
+    		if(_data.total > 0){
+    			galleryWidget.$label__total.html(_data.total);
+    			this.eventHandlers();
+    		}else{
+    			console.log("Sorry, but the gallery has no content to display.");
+    		}
     	},
     	eventHandlers: function(){
     		var thisRef = this;
@@ -95,9 +102,6 @@ var galleryWidgetObj = {};
     				height: galleryWidget.$scroller.height()
     			}, 700);
     		}, 100);
-
-    		/*console.log("_data.width: " + _data.width);
-    		console.log(scrollingWrapperW);*/
     	},
     	autoSlide: function() {
     		var thisRef = this;
