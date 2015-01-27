@@ -65,6 +65,7 @@
         <script src="js/assets/mpListings.js"></script>
         <script src="js/assets/listings.data.js"></script>
         <script src="js/resources/basic/js/jquery.simplemodal.js"></script>
+        <script src="js/assets/related-articles.js"></script>
         <script src="js/assets/popup.js"></script>
 	<?php } ?>
 	
