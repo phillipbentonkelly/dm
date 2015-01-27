@@ -87,7 +87,7 @@ var galleryWidgetObj = {};
     		galleryWidget.$IMGs.hide();
 
     		galleryWidget.$slides.width(_data.width);
-    			_data.height = galleryWidget.$slidesImg.height();
+    			_data.height = galleryWidget.$slidesImg.eq(0).height();
 
     		galleryWidget.$scrollingWrapper.width(_data.width);
     		galleryWidget.$scrollingWrapper.height(_data.height);
