@@ -31,7 +31,7 @@
 	<!-- SCRIPTS -->
     <script src="js/resources/jquery.min.js"></script>
 	<script src="js/assets/mega-menu.js"></script>
-	<script src="js/assets/responsive-gallery.js"></script>
+	<script src="js/assets/gallery.js"></script>
 
 	<?php if ($pageType == 'home' || $pageType == 'category' || $pageType == 'category-details' || $pageType == 'neighborhood') { ?>
 	    <!-- Carousel Scripts -->
@@ -48,10 +48,6 @@
 
 	<?php if ($pageType == 'home' || $pageType == 'category' || $pageType == 'category-details' || $pageType == 'neighborhood') { ?>
 		<script src="js/assets/listings.map.js"></script>
-	<?php } ?>
-
-	<?php if ($pageType == 'category-details') { ?>
-		<script src="js/assets/gallery.js"></script>
 	<?php } ?>
 
 	<?php if ($pageType == 'serp') { ?>
