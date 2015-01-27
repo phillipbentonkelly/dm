@@ -1631,7 +1631,7 @@ body.serp .page-layout {
 .page-search__button--close {
   display: block;
   position: absolute;
-  right: 0px;
+  right: 15px;
   color: #2E1460;
   opacity: 1;
   background: transparent;
@@ -3220,10 +3220,6 @@ body.serp .page-layout {
   color: black;
   text-decoration: none;
 }
-/* line 360, ../sass/partials/page/modules/_listing-summary.scss */
-.listing__contact-agent {
-  display: none;
-}
 
 /* line 365, ../sass/partials/page/modules/_listing-summary.scss */
 .serp__mobile-button-dock {
@@ -3576,9 +3572,10 @@ body.serp .page-layout {
   }
   /* line 703, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__contact-agent {
+    display: block;
     background: #2e1460;
     padding: 7px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     display: inline-block;
     box-sizing: border-box;
     width: 100%;
@@ -3589,18 +3586,18 @@ body.serp .page-layout {
     font-weight: 600;
     text-align: center;
   }
-  /* line 716, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 717, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__contact-agent a:link, .listing__contact-agent a:visited, .listing__contact-agent a:active {
     color: white;
     text-decoration: none;
   }
 
-  /* line 723, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 724, ../sass/partials/page/modules/_listing-summary.scss */
   .dfp-ads {
     display: block;
   }
 
-  /* line 727, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 728, ../sass/partials/page/modules/_listing-summary.scss */
   .mobile-ad {
     display: none;
   }
