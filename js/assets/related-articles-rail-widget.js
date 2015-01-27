@@ -156,15 +156,6 @@ var article = {
 				return;
 			}
 		});
-	},
-
-	nextPage: function() {
-		
-
-	},
-
-	lastPage: function() {
-
 	}
 };
 
