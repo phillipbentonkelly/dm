@@ -197,7 +197,6 @@
 	};
 
 	module.init = function() {
-		alert('shit if loaded');
 		module.$container = $('.related-articles-mobile');
 
 		module.$pageback = $('.related-articles-mobile').find('.re-widget-left');
