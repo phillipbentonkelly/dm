@@ -1,8 +1,3 @@
-//
-// Related Articles right rail widget
-//
-
-
 (function( win, $, undefined ) {
 	'use strict';
 	// Related Articles
@@ -127,10 +122,7 @@
 	];
 
 	module.buildWidget = function(indexStart) {
-		// teardown old articles to build next page
-		module.$container.find('.related-articles-mobile__item').remove();
-
-		var articlesDisplayed = module.allArticles.slice(indexStart, (indexStart+2));
+		var articlesDisplayed = module.allArticles.slice(indexStart, (indexStart+4));
 
 		// build each article's markup
 		for (var i = 0; i < articlesDisplayed.length; i++) {
@@ -145,7 +137,7 @@
 			}
 
 			var _tagMarkup = tagMarkup.join('');
-			markup = [	'<div class="related-articles-mobile__item">',
+			markup = [	'<div class="related-articles__item">',
 								'<div class="additional-info">',
 									'<img class="thumb" src="' + curItem.image + '" />',
 									'<div class="tags">',
@@ -165,43 +157,32 @@
 					].join('');
 
 			module.$container.append(markup);
+			module.$container.append(module.$viewMore)
+		}
+	};
+
+	module.showMoreArticles = function() {
+		if($('.related-articles__item').length < module.listLength) {
+			module.buildWidget(4);
+		} else {
+			return;
 		}
 	};
 
 	// Event Handlers
 	module.eventHandlers = function() {
-		module.$pageback.click(function() {
-			// if on first page
-			if(module.curPage != 1) {
-				module.curIndex -= 2;
-				module.curPage --;
-				module.buildWidget(module.curIndex);
-			} else {
-				return;
-			}
-		});
-
-		module.$pageforawrd.click(function() {
-			
-			// if on last page
-			if(module.curPage < module.totalPages) {
-				module.curIndex += 2;
-				module.curPage ++;
-				module.buildWidget(module.curIndex);
-			} else {
-				return;
-			}
+		module.$viewMore.click(function() {
+			module.showMoreArticles();
 		});
 	};
 
 	module.init = function() {
-		module.$container = $('.related-articles-mobile');
+		module.$container = $('.related-articles');
+		module.$viewMore = $('.related-articles').find('.viewMore');
+		module.$articlesDisplayed = $('.related-articles__item').length;
 
-		module.$pageback = $('.related-articles-mobile').find('.re-widget-left');
-		module.$pageforawrd = $('.related-articles-mobile').find('.re-widget-right');
 		module.listLength = module.allArticles.length;
-		module.totalPages = Math.ceil(module.listLength / 2);
-		module.curPage = 1;
+		module.totalPages = Math.ceil(module.listLength / 6);
 		module.curIndex = 0;
 
 		module.buildWidget(0);
