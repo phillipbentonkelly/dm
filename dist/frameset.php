@@ -379,6 +379,11 @@
     	<?php include 'page/modules/gallery.php'; ?>
 	<?php } ?>
 
+	<?php if ($pageType == 'serp') { ?>
+		<!-- Lower placeholders for ads -->
+		<?php include 'page/modules/serp-ad-placeholder-bottom.php'; ?>
+	<?php } ?>
+
 	<!-- Page Footer -->
 	<?php //include 'page-content/modules/category-footer.php'; ?>
     <?php include 'page/page-footer.php'; ?>
