@@ -37,7 +37,7 @@ $module-name: 'page-search';
 	&__form{
 		display: block;
 		margin: 0 auto;
-		width: 98%;
+		width: 100%;
 		height: auto;
 	}
 
@@ -220,7 +220,7 @@ $module-name: 'page-search';
 		&--submit{
 			float: right;
 			margin: 0 0 20px 0;
-			width: 26px;
+			width: 25px;
 			height: 35px;
 			border-radius: 4px;
 			background: url(#{$img-path}icons/icon_search-magnifiying-glass.png) center center no-repeat #000;
@@ -258,8 +258,8 @@ $module-name: 'page-search';
 			z-index: 600;
 			top: 8px;
 			right: 8px;
-			width: 20px;
-			height: 20px;
+			width: 10px;
+			height: 28px;
 			border-radius: 4px;
 			background: #ececec;
 
@@ -410,7 +410,7 @@ $module-name: 'page-search';
 		    content: "\2022";     
 		    font-size: 30px;  
 		    text-align: center;
-		    line-height: 16px;  
+		    line-height: 12px;  
 		    -moz-line-height: 20px;
 		    color: #fff;
 		}
@@ -766,6 +766,14 @@ $module-name: 'page-search';
 		&--close{
 			margin-right: 12px;
 		}
+
+		&__fancy-radio-box {
+			input[type=radio]:checked + label:before  {
+				line-height: 16px;
+			}
+		}
+
+
 	}
 	
 }
