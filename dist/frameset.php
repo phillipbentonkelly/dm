@@ -105,6 +105,10 @@
 		        $('.listing__contact-agent').hide();
 		    }
 
+		    if($ ('body').hasClass('property-listings-premium') && $(window).width() < 768) {
+		        $('.contact__company').hide();
+		    }
+
             if ($(window).width() > 752) {
                 $('.page-layout__left-col').width($(window).width() - 320);
             };
@@ -122,6 +126,19 @@
             } else {
                 $('.page-layout__left-col').css('width', '100%');
             }
+
+            if($ ('body').hasClass('property-listings-premium') && $(window).width() < 768) {
+		        $('.contact__company').hide();
+		    } else {
+		    	$('.contact__company').show();
+		    }
+
+
+      //       if($ ('body').hasClass('property-listings-premium') || $(window).width() > 768) {
+		    //     $('.contact__company').hide();
+		    // } else {
+		    // 	$('.contact__company').show();
+		    // }
         });
     </script>
     
