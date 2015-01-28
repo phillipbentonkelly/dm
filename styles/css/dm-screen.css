@@ -1340,7 +1340,7 @@ body.serp .page-layout {
 .page-search__form {
   display: block;
   margin: 0 auto;
-  width: 98%;
+  width: 100%;
   height: auto;
 }
 /* line 45, ../sass/partials/page/_page-search.scss */
@@ -1516,7 +1516,7 @@ body.serp .page-layout {
 .page-search__button--submit {
   float: right;
   margin: 0 0 20px 0;
-  width: 26px;
+  width: 25px;
   height: 35px;
   border-radius: 4px;
   background: url(../../images/icons/icon_search-magnifiying-glass.png) center center no-repeat #000;
@@ -1549,8 +1549,8 @@ body.serp .page-layout {
   z-index: 600;
   top: 8px;
   right: 8px;
-  width: 20px;
-  height: 20px;
+  width: 10px;
+  height: 28px;
   border-radius: 4px;
   background: #ececec;
 }
@@ -1695,7 +1695,7 @@ body.serp .page-layout {
   content: "\2022";
   font-size: 30px;
   text-align: center;
-  line-height: 16px;
+  line-height: 12px;
   -moz-line-height: 20px;
   color: #fff;
 }
@@ -1999,9 +1999,13 @@ body.serp .page-layout {
   .page-search--close {
     margin-right: 12px;
   }
+  /* line 771, ../sass/partials/page/_page-search.scss */
+  .page-search__fancy-radio-box input[type=radio]:checked + label:before {
+    line-height: 16px;
+  }
 }
 @media (min-width: 768px) {
-  /* line 777, ../sass/partials/page/_page-search.scss */
+  /* line 785, ../sass/partials/page/_page-search.scss */
   .page-search {
     display: block;
   }
