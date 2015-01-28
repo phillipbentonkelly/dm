@@ -2,8 +2,6 @@ $module-name: 'gallery-widget';
 
 .#{$module-name} {
 	width: 100%;
-	/*max-width: 630px;
-	min-height: 464px;*/
 	max-width: 100%;
 	margin-bottom: 20px;
 
@@ -25,11 +23,9 @@ $module-name: 'gallery-widget';
 				
 				.slide {
 					display: inline-block;
-					/*max-width: 630px;*/
 					float: left;
 					
 					img {
-						/*width: 630px;*/
 						display: none;
 					}
 				}
@@ -39,6 +35,10 @@ $module-name: 'gallery-widget';
 
 	.chevron {
 		@extend .chevron;
+
+		&.disable {
+			opacity: 0.5;
+		}
 	}
 
 	.chevron.left, .chevron.right {
@@ -116,7 +116,7 @@ $module-name: 'gallery-widget';
 		}
 
 		&__caption {
-			display: none;
+			display: block;
 			clear: both;
 			min-height: 10px;
 			overflow: hidden;
