@@ -36,6 +36,7 @@ var galleryWidgetObj = {};
     			this.eventHandlers();
     		}else{
     			console.log("Sorry, but the gallery has no content to display.");
+    			galleryWidget.$topNode.hide();
     		}
     	},
     	eventHandlers: function(){
@@ -94,8 +95,6 @@ var galleryWidgetObj = {};
 					thisObj.addClass('disable');
 				}
 			}
-
-    		console.log("Move: " + thisObj.attr('title'));
     	},
     	updateSlideDim: function(){
     		_data.width = galleryWidget.$topNode.width();
