@@ -73,8 +73,12 @@
 		        $('.listing__contact-agent').hide();
 		    }
 
-		    if($ ('body').hasClass('property-listings-premium') && $(window).width() < 768) {
+		    if( $('body').hasClass('property-listings-premium') && $(window).width() < 768) {
 		        $('.contact__company').hide();
+		    }
+
+		    if($('body').hasClass('serp')) {
+		    	$('.contact__company').hide();
 		    }
 
             if ($(window).width() > 752) {
@@ -101,12 +105,9 @@
 		    	$('.contact__company').show();
 		    }
 
-
-      //       if($ ('body').hasClass('property-listings-premium') || $(window).width() > 768) {
-		    //     $('.contact__company').hide();
-		    // } else {
-		    // 	$('.contact__company').show();
-		    // }
+			if($('body').hasClass('serp')) {
+		    	$('.contact__company').hide();
+		    }
         });
     </script>
     
@@ -678,7 +679,7 @@
 
             <div class="listing__detail-share">
                 <div class="listing__detail-share--row1">
-                    <a class='mobile-save-btn' href="javascript:;"><img class="listing__detail-share-icons" src="images/listings/heart-icon-purple.png"></a>
+                    <a class='mobile-favorite-btn' href="javascript:;"><img class="listing__detail-share-icons" src="images/listings/heart-icon-purple.png"></a>
                     <a class='mobile-share-btn' href="javascript:;"><img class="listing__detail-share-icons" src="images/listings/share-icon-purple.png"></a>
                 </div>
 
@@ -1576,7 +1577,20 @@
         <button class="save-search-modal-save">Save</button>
     </div>
 </div>
-<!-- /MODAL: SAVE SEARCH -->
+<!-- /MODAL: SAVE SEARCH -->    <!-- MODAL: FAVORITE LISTING ALERT -->
+<div class="favorite-listing-modal">
+    <div class="header">
+        <p>Marked as favorite!</p>
+    </div>
+    <div class="content">
+        <p class="info">This listing has been added to your favorites for later viewing</p>
+        <div class='contact__form'>
+        	<button class="save-search-modal-save close-modal-btn">Okay</button>
+        </div>
+    </div>
+</div>
+<!-- /MODAL: FAVORITE LISTING ALERT -->
+
 
     <!-- ARTICLES: Discus -->
 	</body>
