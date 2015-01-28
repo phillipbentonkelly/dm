@@ -15,7 +15,8 @@ dm.searchPanel = {};
 
 		this.el = el;
 
-		this.device = (screen.width <= 480) ? 'mobile' : 'desktop';
+		//this.device = (screen.width <= 480) ? 'mobile' : 'desktop';
+		this.device = 'mobile'; // safari testing
 		
 		// statefulness...
 		this.expanded = this.getExpanded();
@@ -26,7 +27,7 @@ dm.searchPanel = {};
 			$one: $('.page-search__row--level-one'),
 			$two: $('.page-search__row--level-two'),
 			$three: $('.page-search__row--level-three'),
-			$lower: $('.lower-level')
+			$lower: $('.page-search__form > .lower-level')
 		};
 
 		this.filters = {
@@ -243,6 +244,8 @@ dm.searchPanel = {};
 					self.btns.$lvl2t.on('click', function(e){
 						e.preventDefault();
 						var state = $(this).getObservable();
+						var lwrLvls = $.merge(self.lvls.$two, self.lvls.$three);
+						//lwrLvls.slideToggle('fast');
 						self.lvls.$lower.slideToggle('fast');
 						self.expanded = self.getExpanded();
 						state.toggle();
