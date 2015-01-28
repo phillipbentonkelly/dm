@@ -63,7 +63,7 @@ $module-name: 'page-search';
 		&--level-one{
 			display: inline-block;
 			z-index: 100;
-			padding: 10px;
+			padding: 10px 5px;
 			height: auto;
 			background: #fff;
 			box-sizing: border-box;
@@ -361,6 +361,13 @@ $module-name: 'page-search';
 
 	}
 
+	.lower-level{
+		display: block;
+		width: auto;
+		height: auto;
+		min-height: 0;
+	}
+
 
 	&__fancy-radio-box {
 		display: inline-block;
@@ -403,8 +410,8 @@ $module-name: 'page-search';
 		    content: "\2022";     
 		    font-size: 30px;  
 		    text-align: center;
-		    line-height: 18px;  
-		    -moz-line-height: 16px;
+		    line-height: 16px;  
+		    -moz-line-height: 20px;
 		    color: #fff;
 		}
 
@@ -741,11 +748,12 @@ $module-name: 'page-search';
 			}
 
 			&--level-two-toggle{
-				top: 8px;
+				box-sizing: border-box;
+				top: 10px;
 				left: initial;
 				right: 15px;
-				width: 28px;
-				height: 28px;
+				width: 36px;
+				height: 30px;
 			}
 
 			&--level-three-toggle{

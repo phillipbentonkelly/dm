@@ -26,7 +26,7 @@ dm.searchPanel = {};
 			$one: $('.page-search__row--level-one'),
 			$two: $('.page-search__row--level-two'),
 			$three: $('.page-search__row--level-three'),
-			$lower: $('.lower-level')
+			$lower: $('.page-search__form > .lower-level')
 		};
 
 		this.filters = {
