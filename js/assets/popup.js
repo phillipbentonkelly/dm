@@ -5,7 +5,7 @@ $(document).ready(function() {
 	});
 
 	$('#mobile-articles-btn').click(function() {
-		var closeModal = $("<a style='float: right' href='javascript:;'><img class='close-modal' src='images/listings/x-icon.jpg' style='height:20px;width:20px;'></a>");
+		var closeModal = $("<a style='float:right;margin-right:15px;' href='javascript:;'><img class='close-modal' src='images/listings/x-icon.jpg' style='height:20px;width:20px;'></a>");
 		$('.related-articles').addClass('related-articles-popup');
 		$('.related-articles__section-header').append(closeModal);
 		$('.related-articles-modal').modal();
