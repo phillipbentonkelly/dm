@@ -117,6 +117,7 @@ if [[ $proceedVar =~ ^[Yy]$ ]]
 			cd dm
 			git pull
 			git add .
+			git status
 			git commit -m "Updated GH-Pages with the latest version of this repo that can be used for QA."
 			git push
 
