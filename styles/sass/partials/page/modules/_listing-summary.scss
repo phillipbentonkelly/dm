@@ -88,6 +88,9 @@ $module-name: 'listing';
 				display: inline-block;
 			}
 		}
+		.right-button {
+			border-right: 0;
+		}
 	}
 
 	&__tags {
