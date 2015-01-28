@@ -25,8 +25,8 @@
                 <button class="page-search__button page-search__button--submit" value=""></button>
 
             </div>
-
-            <div class="page-search__row page-search__row--level-two lower-level">
+            <div class="lower-level">
+            <div class="page-search__row page-search__row--level-two">
 
                 <section class="page-search__section" title="Type">
                     <h4 class="mobile">Type</h4>
@@ -108,7 +108,7 @@
                 </button>
             </div>
 
-            <div class="page-search__row page-search__row--level-three lower-level">
+            <div class="page-search__row page-search__row--level-three">
                
                 <div class="page-search__button page-search__button--close desktop">
                     <span>X</span>
@@ -237,6 +237,7 @@
                     </section>
 
                 </div>
+            </div>
             </div>
         </form>
     </div>
