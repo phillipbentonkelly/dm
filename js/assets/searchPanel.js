@@ -85,13 +85,11 @@ dm.searchPanel = {};
 
             var fmtParams = {
 				formatSelection: this.fmtSelected,
-				shouldInputFocus: function(){ return false; },
-				minimumResultsForSearch: -1
+				shouldInputFocus: function(){ return false; }
 			};
 
 			var otherParams = {
-				shouldInputFocus: function(){ return false; },
-				minimumResultsForSearch: -1
+				shouldInputFocus: function(){ return false; }
 			};
 
             this.filters.$main.selectize(mainParams);
