@@ -53,7 +53,9 @@
 	<?php if ($pageType == 'serp') { ?>
 		<script src="js/resources/basic/js/jquery.simplemodal.js"></script>
         <script src="js/assets/popup.js"></script>
-        <script src="js/assets/related-articles.js"></script>
+        <script src="js/assets/related-articles-rail-widget.js"></script>
+        <script src="js/assets/related-articles-main-widget.js"></script>
+
 	<?php } ?>
 
 	<?php if ($pageType == 'property-listings' || $pageType == 'property-listings-premium') { ?>
@@ -61,6 +63,9 @@
         <script src="js/assets/mpListings.js"></script>
         <script src="js/assets/listings.data.js"></script>
         <script src="js/resources/basic/js/jquery.simplemodal.js"></script>
+        <script src="js/assets/related-articles-rail-widget.js"></script>
+        <script src="js/assets/related-articles-main-widget.js"></script>
+
         <script src="js/assets/popup.js"></script>
 	<?php } ?>
 	
@@ -95,7 +100,7 @@
                 $("#listingDropDown").select2({ dropdownCssClass: 'mplistings-dropdown' });
             }
 
-            if ($ ('body').hasClass('property-listings-premium')) {
+            if ($ ('body').hasClass('property-listings')) {
             	$('.listing__contact-agent').hide();
             }
 
@@ -253,8 +258,8 @@
 				<!-- Contact The Agent Widget -->
 				<?php include 'page-content/modules/contact-agent-premium--large.php'; ?>
 
-				<!-- DFP Ad - Experience the Difference -->
-				<?php include 'ads/dfp-ads__experience-the-difference.php'; ?>
+				<!-- DFP Ad - BigBox1 -->
+				<?php include 'ads/ad_bigbox1.php'; ?>
 
 				<!-- Property Listings Widget -->
 				<?php include 'page/modules/property-listings.php'; ?>
@@ -273,8 +278,8 @@
 				<!-- Contact The Agent Widget -->
 				<?php include 'page-content/modules/contact-agent-basic--large.php'; ?>
 
-				<!-- DFP Ad - Experience the Difference -->
-				<?php include 'ads/dfp-ads__experience-the-difference.php'; ?>
+				<!-- DFP Ad - BigBox1 -->
+				<?php include 'ads/ad_bigbox1.php'; ?>
 
 				<!-- Property Listings Widget -->
 				<?php include 'page/modules/property-listings.php'; ?>

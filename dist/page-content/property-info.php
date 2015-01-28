@@ -143,7 +143,7 @@
         </div>
 
 
-        <div class="listing__contact-agent">
+        <div class="listing__contact-agent mobile-contact-btn">
             <a href="javascript:;"><h3>Contact the Agent</h3></a>
         </div>
     </div>

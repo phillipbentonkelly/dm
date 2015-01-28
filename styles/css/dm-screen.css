@@ -3228,10 +3228,6 @@ body.serp .page-layout {
   color: black;
   text-decoration: none;
 }
-/* line 360, ../sass/partials/page/modules/_listing-summary.scss */
-.listing__contact-agent {
-  display: none;
-}
 
 /* line 365, ../sass/partials/page/modules/_listing-summary.scss */
 .serp__mobile-button-dock {
@@ -3584,9 +3580,10 @@ body.serp .page-layout {
   }
   /* line 703, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__contact-agent {
+    display: block;
     background: #2e1460;
     padding: 7px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     display: inline-block;
     box-sizing: border-box;
     width: 100%;
@@ -3597,18 +3594,18 @@ body.serp .page-layout {
     font-weight: 600;
     text-align: center;
   }
-  /* line 716, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 717, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__contact-agent a:link, .listing__contact-agent a:visited, .listing__contact-agent a:active {
     color: white;
     text-decoration: none;
   }
 
-  /* line 723, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 724, ../sass/partials/page/modules/_listing-summary.scss */
   .dfp-ads {
     display: block;
   }
 
-  /* line 727, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 728, ../sass/partials/page/modules/_listing-summary.scss */
   .mobile-ad {
     display: none;
   }
@@ -4302,40 +4299,40 @@ body.serp .page-layout {
 /* line 3, ../sass/partials/page/modules/_gallery-widget.scss */
 .gallery-widget {
   width: 100%;
-  /*max-width: 630px;
-  min-height: 464px;*/
   max-width: 100%;
   margin-bottom: 20px;
 }
-/* line 10, ../sass/partials/page/modules/_gallery-widget.scss */
+/* line 8, ../sass/partials/page/modules/_gallery-widget.scss */
 .gallery-widget__main-wrapper {
   position: relative;
   overflow: hidden;
 }
-/* line 14, ../sass/partials/page/modules/_gallery-widget.scss */
+/* line 12, ../sass/partials/page/modules/_gallery-widget.scss */
 .gallery-widget__main-wrapper__scrolling-wrapper {
   position: relative;
   min-height: 170px;
   overflow: hidden;
   clear: both;
 }
-/* line 20, ../sass/partials/page/modules/_gallery-widget.scss */
+/* line 18, ../sass/partials/page/modules/_gallery-widget.scss */
 .gallery-widget__main-wrapper__scrolling-wrapper__scroller {
   position: absolute;
   overflow: hidden;
   min-height: 1px;
   clear: both;
 }
-/* line 26, ../sass/partials/page/modules/_gallery-widget.scss */
+/* line 24, ../sass/partials/page/modules/_gallery-widget.scss */
 .gallery-widget__main-wrapper__scrolling-wrapper__scroller .slide {
   display: inline-block;
-  /*max-width: 630px;*/
   float: left;
 }
-/* line 31, ../sass/partials/page/modules/_gallery-widget.scss */
+/* line 28, ../sass/partials/page/modules/_gallery-widget.scss */
 .gallery-widget__main-wrapper__scrolling-wrapper__scroller .slide img {
-  /*width: 630px;*/
   display: none;
+}
+/* line 39, ../sass/partials/page/modules/_gallery-widget.scss */
+.gallery-widget .disable.chevron {
+  opacity: 0.5;
 }
 /* line 44, ../sass/partials/page/modules/_gallery-widget.scss */
 .gallery-widget .left.chevron, .gallery-widget .right.chevron {
@@ -4403,7 +4400,7 @@ body.serp .page-layout {
 }
 /* line 118, ../sass/partials/page/modules/_gallery-widget.scss */
 .gallery-widget__details__caption {
-  display: none;
+  display: block;
   clear: both;
   min-height: 10px;
   overflow: hidden;
