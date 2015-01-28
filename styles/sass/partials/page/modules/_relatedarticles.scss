@@ -43,7 +43,6 @@ $module-name: 'related-articles';
 			line-height: 18px; /* Approximation due to font substitution */
 			text-align: left;
 			margin: 0 0 4px 0;
-			// padding: 0 20px 0 0;
 		}
 
 		p.description {
@@ -69,9 +68,12 @@ $module-name: 'related-articles';
 			min-height: 10px;
 			overflow: hidden;
 
+			.category-tag {
+				float: right !important;
+			}
+
 			.tag {
 				display: block;
-				float: left;
 				font-size: 12px;
 				font-family: Oswald Bold;
 				text-transform: uppercase;
@@ -80,6 +82,7 @@ $module-name: 'related-articles';
 				margin: 0 6px 0 0;
 				color: #fff;
 				margin-bottom: 5px;
+				float: right !important;
 
 				.arrow {
 					display: block;
@@ -149,17 +152,40 @@ $module-name: 'related-articles';
 		&__item {
 			width: 100%;
 			height: auto;
+
+			img.thumb {
+				float: left;
+				margin-right: 10px;
+			}
 			
-			p.description, div.date {
-				display: block;
-				text-align: left;
+			.main-info {
+				h2.title {
+					font-size: 16px; /* Approximation due to font substitution */ 
+				}
+
+				p.description {
+					display: block;
+					text-align: left;
+				}
 			}
 
-			div.date {
-				max-width: 45%;
-				float: left;
-				font-family: OpenSans Italic;
-				font-size: 12px;
+			.additional-info {
+				display: block;
+				padding: 10px;
+				width: 100%;
+
+				div.date {
+					display: block;
+					max-width: 25%;
+					float: left;
+					font-family: OpenSans Italic;
+					font-size: 12px;
+				}
+
+				div.tags {
+					float: right;
+					display: inline-block;
+				}
 			}
 		}
 
@@ -167,29 +193,8 @@ $module-name: 'related-articles';
 			border-top: 0;
 		}
 
-		.additional-info {
-			display: block;
-
-		}
-
 		h2.title {
 			font-size: 16px; /* Approximation due to font substitution */ 
 		}
-		
-		.thumb {
-			float: left;
-			margin-right: 10px;
-		}
-
-		.tags { 
-			display: block;
-		}
-	}
-}
-
-
-@include media-query(desktop) {
-
-	.#{$module-name} {
 	}
 }

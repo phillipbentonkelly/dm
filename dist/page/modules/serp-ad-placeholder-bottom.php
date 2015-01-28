@@ -43,7 +43,7 @@
             width: 48%;
         }
 
-        #ad_spotlight1 {
+        #ad_spotlight3, #ad_spotlight4 {
             min-height: 150px;
             margin-right: 2%;
         }
