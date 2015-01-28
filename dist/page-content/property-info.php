@@ -153,7 +153,7 @@
     <div class="listing__mobile-button-dock">
     
         <a href="javascript:;">
-            <div id="mobile-save-btn" class="button left-button">
+            <div id="mobile-save-btn" class="button left-button mobile-favorite-btn">
                 <img src="images/listings/heart-icon-white.png">
                 <p>Save</p>
             </div>
