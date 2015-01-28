@@ -30,8 +30,6 @@ echo 'yourLocalhost 1: $yourLocalhost'
 
 if [[ $useDefaultLocalhostPath =~ ^[Yy]$ ]]
 	then
-		echo 'useDefaultLocalhostPath: $useDefaultLocalhostPath'
-		echo 'yourLocalhost 2: $yourLocalhost'
 		yourLocalhost="$defaultLocalhostPath"
 else
 	echo "Please enter/paste the path to the repo's localhost URL: ex. http://localhost/dm/dist/"
@@ -87,8 +85,9 @@ if [[ $proceedVar =~ ^[Yy]$ ]]
 			sleep 5
 			cd dm
 			git checkout gh-pages
+			git pull
 			cd ..
-
+			
 			echo "Removing the several resources from the gh-pages repo folder (folders and html pages)."
 			sleep 5
 			rm -r $root/dm/images
@@ -115,7 +114,6 @@ if [[ $proceedVar =~ ^[Yy]$ ]]
 
 			sleep 5
 			cd dm
-			git pull
 			git add .
 			git status
 			git commit -m "Updated GH-Pages with the latest version of this repo that can be used for QA."
