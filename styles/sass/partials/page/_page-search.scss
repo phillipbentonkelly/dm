@@ -93,6 +93,10 @@ $module-name: 'page-search';
 			}
 		}
 
+		input.select2-focusser{
+			color: transparent;
+		}
+
 		&--level-three{
 			display: inline-block;
 			top: 0px;
@@ -489,6 +493,7 @@ $module-name: 'page-search';
 				border: 1px solid rgb(235, 235, 235);
 				border-radius: 4px;
 				line-height: 16px;
+				cursor: none;
 			}
 
 			.selectize-dropdown{
@@ -624,6 +629,7 @@ $module-name: 'page-search';
 
 		.select2-choice, .select2-container .select2-drop{
 			border: 1px solid rgb(0,0,0);
+			color: transparent;
 		}
 
 	}
