@@ -85,7 +85,9 @@ if [[ $proceedVar =~ ^[Yy]$ ]]
 			sleep 5
 			cd dm
 			git checkout gh-pages
+			git status
 			git pull
+			git status
 			cd ..
 			
 			echo "Removing the several resources from the gh-pages repo folder (folders and html pages)."
@@ -114,9 +116,10 @@ if [[ $proceedVar =~ ^[Yy]$ ]]
 
 			sleep 5
 			cd dm
-			git add .
 			git status
-			git commit -m "Updated GH-Pages with the latest version of this repo that can be used for QA."
+			git add --all
+			git status
+			git commit -a -m "Updated GH-Pages with the latest version of this repo that can be used for QA."
 			git push
 
 			sleep 5
