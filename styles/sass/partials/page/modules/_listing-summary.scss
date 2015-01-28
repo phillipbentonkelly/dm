@@ -355,14 +355,30 @@ $module-name: 'listing';
 		}
 
 		a:link, a:visited, a:active {
-  		color: black;
-  		text-decoration: none;
-  	}
+  			color: black;
+  			text-decoration: none;
+  		}
 	}
 
-	// &__contact-agent {
-	// 	// display: none;
-	// }
+	&__contact-agent {
+		display: block;
+		background: #2e1460;
+		padding: 7px;
+		margin-bottom: 20px;
+		display: inline-block;
+		box-sizing: border-box;
+		width: 100%;
+		text-align: center;
+		font-family: OpenSans Regular;
+		font-size: 16px; /* Approximation due to font substitution */
+		font-weight: 600;
+		text-align: center;
+
+		a:link, a:visited, a:active {
+			color: white;
+      		text-decoration: none;
+    	}
+	}
 }
 
 .serp__mobile-button-dock {
@@ -702,26 +718,6 @@ $module-name: 'listing';
 				padding-bottom: 10px;
 			}
 	  	}
-
-	  	&__contact-agent {
-			display: block;
-			background: #2e1460;
-			padding: 7px;
-			margin-bottom: 20px;
-			display: inline-block;
-			box-sizing: border-box;
-			width: 100%;
-			text-align: center;
-			font-family: OpenSans Regular;
-			font-size: 16px; /* Approximation due to font substitution */
-			font-weight: 600;
-			text-align: center;
-
-			a:link, a:visited, a:active {
-				color: white;
-	      		text-decoration: none;
-	    	}
-		}
   	}
 
   	.dfp-ads {

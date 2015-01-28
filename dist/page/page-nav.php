@@ -97,7 +97,7 @@
                     </li>
 
                     <li id="neighborhoods-menu" class="page-nav__nav-item">
-                        <a href="category.html" class="page-nav__nav-lv0">Neighborhoods <span class="page-nav__nav-item__responsive-drop-down-icon"></span></a>
+                        <a href="javascript:;" class="page-nav__nav-lv0">Neighborhoods <span class="page-nav__nav-item__responsive-drop-down-icon"></span></a>
                         <div class="page-nav__arrow-up"></div>
 
                         <!-- MEGAMENU: NEIGHBORHOODS -->

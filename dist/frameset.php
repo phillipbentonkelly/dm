@@ -101,9 +101,9 @@
                 $("#listingDropDown").select2({ dropdownCssClass: 'mplistings-dropdown' });
             }
 
-            if ($ ('body').hasClass('property-listings')) {
-            	$('.listing__contact-agent').hide();
-            }
+		    if($ ('body').hasClass('property-listings')) {
+		        $('.listing__contact-agent').hide();
+		    }
 
             if ($(window).width() > 752) {
                 $('.page-layout__left-col').width($(window).width() - 320);

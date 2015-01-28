@@ -16,6 +16,7 @@ $module-name: 'contact';
 .#{$module-name} {
 
   &__container {
+    display: none;
     position: relative;
     width: 100%;
     margin: 0 auto;
@@ -208,6 +209,14 @@ $module-name: 'contact';
 
   &__company-name {
     margin: 0;
+  }
+}
+
+@include media-query(tablet) {
+  .#{$module-name} {
+    &__container {
+      display: block;
+    }
   }
 }
 
