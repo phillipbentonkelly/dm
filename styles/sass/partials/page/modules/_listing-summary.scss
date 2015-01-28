@@ -473,7 +473,7 @@ $module-name: 'listing';
 	background: rgba(10,10,10,0.8);
 }
 
-.save-search-modal, .share-modal {
+.save-search-modal, .share-modal, .favorite-listing-modal {
 	width: 100%;
 	margin: 0 5%;
 	text-align: center;
@@ -536,6 +536,10 @@ $module-name: 'listing';
 		font-family: 'OpenSans Regular', sans-serif;
 		font-weight: 300;
 	}
+}
+
+.favorite-listing-modal {
+	display: none;
 }
 
 .share-modal {

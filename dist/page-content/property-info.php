@@ -37,7 +37,7 @@
 
             <div class="listing__detail-share">
                 <div class="listing__detail-share--row1">
-                    <a class='mobile-save-btn' href="javascript:;"><img class="listing__detail-share-icons" src="images/listings/heart-icon-purple.png"></a>
+                    <a class='mobile-favorite-btn' href="javascript:;"><img class="listing__detail-share-icons" src="images/listings/heart-icon-purple.png"></a>
                     <a class='mobile-share-btn' href="javascript:;"><img class="listing__detail-share-icons" src="images/listings/share-icon-purple.png"></a>
                 </div>
 

@@ -2,7 +2,7 @@
 <div class="search-filters-modal">
     <div class="header">
         <a class="close-modal-btn" href="javascript:;"><img class="close-modal" src="images/listings/x-icon.jpg"></a>
-        <p>Filter Search</p>
+        <p>Sort by</p>
     </div>
     <div class="content">
         <a href='javascript:;'><p class='filter-option' value="best-match">Best Match</p></a>

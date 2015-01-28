@@ -10,6 +10,10 @@ $(document).ready(function() {
 		$('.related-articles__section-header').append(closeModal);
 		$('.related-articles-modal').modal();
 	});
+
+	$('.mobile-favorite-btn').click(function() {
+		$('.favorite-listing-modal').modal();
+	});
  
 	$('.mobile-contact-btn').click(function() {
 		var closeModal = $("<a class='close-modal-wrap' style='position:absolute;right:10px;top:10px;' href='javascript:;'><img class='close-modal' src='images/listings/x-icon.jpg' style='height:20px;width:20px;'></a>");
@@ -26,6 +30,11 @@ $(document).ready(function() {
 	});
 
 	$(document).on('click', '.close-modal', function() {
+        $.modal.close();
+        $('body').find('.close-modal-wrap').remove();
+    });
+
+    $(document).on('click', '.close-modal-btn', function() {
         $.modal.close();
         $('body').find('.close-modal-wrap').remove();
     });
