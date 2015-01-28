@@ -15,8 +15,7 @@ dm.searchPanel = {};
 
 		this.el = el;
 
-		//this.device = (screen.width <= 480) ? 'mobile' : 'desktop';
-		this.device = 'mobile'; // safari testing
+		this.device = (screen.width <= 480) ? 'mobile' : 'desktop';
 		
 		// statefulness...
 		this.expanded = this.getExpanded();
@@ -86,11 +85,13 @@ dm.searchPanel = {};
 
             var fmtParams = {
 				formatSelection: this.fmtSelected,
-				shouldInputFocus: function(){ return false; }
+				shouldInputFocus: function(){ return false; },
+				minimumResultsForSearch: -1
 			};
 
 			var otherParams = {
-				shouldInputFocus: function(){ return false; }
+				shouldInputFocus: function(){ return false; },
+				minimumResultsForSearch: -1
 			};
 
             this.filters.$main.selectize(mainParams);
@@ -292,7 +293,6 @@ dm.searchPanel = {};
 
 		isSaved: function(){
 			var paramSaved = $.getParamVal('saved');
-			console.log(paramSaved || false);
 			return paramSaved || false;
 		},
 

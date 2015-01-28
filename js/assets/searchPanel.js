@@ -15,8 +15,7 @@ dm.searchPanel = {};
 
 		this.el = el;
 
-		//this.device = (screen.width <= 480) ? 'mobile' : 'desktop';
-		this.device = 'mobile'; // safari testing
+		this.device = (screen.width <= 480) ? 'mobile' : 'desktop';
 		
 		// statefulness...
 		this.expanded = this.getExpanded();
@@ -292,7 +291,6 @@ dm.searchPanel = {};
 
 		isSaved: function(){
 			var paramSaved = $.getParamVal('saved');
-			console.log(paramSaved || false);
 			return paramSaved || false;
 		},
 
