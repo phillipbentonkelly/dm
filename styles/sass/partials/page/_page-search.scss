@@ -87,14 +87,15 @@ $module-name: 'page-search';
 			.select2-container{
 				float: right;
 				padding: 5px 0;
+				.select2-choice{
+					.select2-chosen{
+						color: #000;
+					}
+				}
 				.select2-arrow{
 					margin-top: 3px;
 				}
 			}
-		}
-
-		input.select2-focusser{
-			color: transparent;
 		}
 
 		&--level-three{
@@ -528,7 +529,13 @@ $module-name: 'page-search';
 			margin: 5px;
 		}
 	}
+
+	&.select2-focusser{
+		color: #000;
+	}
+
 }
+
 
 
 .select2-drop{
