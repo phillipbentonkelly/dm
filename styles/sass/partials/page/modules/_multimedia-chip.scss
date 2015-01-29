@@ -34,6 +34,7 @@ $module-name: 'multimedia-chip';
 		position: relative;
 
 		&__short-description {
+			display: none;
 			width: 96%;
 			height: 98%;
 			padding: 1% 2%;

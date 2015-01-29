@@ -5348,6 +5348,7 @@ body.serp .page-layout {
 }
 /* line 36, ../sass/partials/page/modules/_multimedia-chip.scss */
 .multimedia-chip__media-wrapper__short-description {
+  display: none;
   width: 96%;
   height: 98%;
   padding: 1% 2%;
@@ -5358,26 +5359,26 @@ body.serp .page-layout {
   overflow: hidden;
   background: rgba(0, 0, 0, 0.7);
 }
-/* line 47, ../sass/partials/page/modules/_multimedia-chip.scss */
+/* line 48, ../sass/partials/page/modules/_multimedia-chip.scss */
 .multimedia-chip__media-wrapper__short-description p {
   display: inline-block;
   float: left;
   width: 70%;
   overflow-y: hidden;
 }
-/* line 54, ../sass/partials/page/modules/_multimedia-chip.scss */
+/* line 55, ../sass/partials/page/modules/_multimedia-chip.scss */
 .multimedia-chip__media-wrapper__short-description__share, .multimedia-chip__media-wrapper__short-description__info {
   float: right;
   text-indent: -9000px;
   background: url(../../images/icons/sprites/multimedia-chip__icons-sprite.png) 0 0 no-repeat;
 }
-/* line 60, ../sass/partials/page/modules/_multimedia-chip.scss */
+/* line 61, ../sass/partials/page/modules/_multimedia-chip.scss */
 .multimedia-chip__media-wrapper__short-description__share {
   width: 15px;
   height: 17px;
   text-indent: -900px;
 }
-/* line 66, ../sass/partials/page/modules/_multimedia-chip.scss */
+/* line 67, ../sass/partials/page/modules/_multimedia-chip.scss */
 .multimedia-chip__media-wrapper__short-description__info {
   width: 18px;
   height: 16px;
@@ -5385,7 +5386,7 @@ body.serp .page-layout {
   margin-left: 1%;
   background-position: -25px 0;
 }
-/* line 76, ../sass/partials/page/modules/_multimedia-chip.scss */
+/* line 77, ../sass/partials/page/modules/_multimedia-chip.scss */
 .multimedia-chip__title-description {
   line-height: 22px;
   font-family: OpenSans;
@@ -5393,7 +5394,7 @@ body.serp .page-layout {
   padding: 16px 24px 16px 24px;
   background: rgba(0, 0, 0, 0.4);
 }
-/* line 85, ../sass/partials/page/modules/_multimedia-chip.scss */
+/* line 86, ../sass/partials/page/modules/_multimedia-chip.scss */
 .multimedia-chip__title-description h1 {
   font-family: OpenSans Semibold;
   font-size: 24px;
@@ -5401,12 +5402,12 @@ body.serp .page-layout {
   padding: 0;
   margin: 0 0 10px 0;
 }
-/* line 93, ../sass/partials/page/modules/_multimedia-chip.scss */
+/* line 94, ../sass/partials/page/modules/_multimedia-chip.scss */
 .multimedia-chip__title-description p {
   margin: 0 0 13px 0;
   padding: 0;
 }
-/* line 98, ../sass/partials/page/modules/_multimedia-chip.scss */
+/* line 99, ../sass/partials/page/modules/_multimedia-chip.scss */
 .multimedia-chip__title-description__photo-credit {
   line-height: 30px;
   font-style: italic;
@@ -5414,13 +5415,13 @@ body.serp .page-layout {
 }
 
 @media (min-width: 768px) {
-  /* line 107, ../sass/partials/page/modules/_multimedia-chip.scss */
+  /* line 108, ../sass/partials/page/modules/_multimedia-chip.scss */
   .multimedia-chip {
     display: block;
   }
 }
 @media (min-width: 960px) {
-  /* line 113, ../sass/partials/page/modules/_multimedia-chip.scss */
+  /* line 114, ../sass/partials/page/modules/_multimedia-chip.scss */
   .multimedia-chip {
     display: block;
   }
