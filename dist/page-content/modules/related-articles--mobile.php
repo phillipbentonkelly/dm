@@ -1,7 +1,7 @@
 <!-- Related Articles -->
-<div class="related-articles--mobile related-articles-modal">
-    <h1 class="related-articles__section-header">Related Articles</h1>
-
+<div class="related-articles related-articles--mobile related-articles-modal">
+    <h1 class="related-articles__section-header header">Related Articles</h1>
+<!-- 
     <div class="related-articles__item--mobile">
         <img class="thumb--mobile" src="images/related-articles/related-articles__thumbs__1.jpg" />
         
@@ -75,8 +75,8 @@
     </div>
 
     <div class="dfp-ad__row">
-        <div id="ad_bigbox2" class="dfp-ad__row__main-link"><!--<img src="images/ads/dfp/dfpAds__300by250__marriott.jpg" />--></div>
-        <div id="ad_bigbox3" class="dfp-ad__row__main-link"><!--<img src="images/ads/dfp/dfpAds__300by250__verizon.jpg" />--></div>
+        <div id="ad_bigbox2" class="dfp-ad__row__main-link"></div>
+        <div id="ad_bigbox3" class="dfp-ad__row__main-link"></div>
 
         <script>
             var networkCode = 61381659;
@@ -144,8 +144,8 @@
                 <a href="javascript:;" class="category-tag orange">Jaimaca Plain</a>
             </div>
         </div>
-    </div>
+    </div> -->
 
-    <a href="javascript:;" class="view-more-articles-mobile">View More <img src="images/view-more__arrow-down.gif" /></a>
+    <a href="javascript:;" class="view-more-articles-mobile viewMore">View More <img src="images/view-more__arrow-down.gif" /></a>
 </div>
 <!-- Related Articles -->
