@@ -75,7 +75,6 @@
 	    <!-- Real Estate Listings -->
         <script src="js/assets/mpListings.js"></script>
         <script src="js/assets/listings.data.js"></script>
-        <script src="js/assets/gallery.js"></script>
 	<?php } ?>
 
 	<script type="text/javascript">
