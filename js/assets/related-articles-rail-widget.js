@@ -152,6 +152,7 @@
 			var mediaCount = curItem.multimedia.length;
 			var description = curItem.metadata.SEOInformation.summary || curItem.content || 'Sorry, no description available for this article';
 			description = description.slice(0, 100) + ' ...';
+			var articleLink = curItem.link;
 			var title = curItem.title || curItem.metadata.SEOInformation.headline || 'Sorry, no title available for this article';
 			var date = curItem.creationDate ? module.formatDate(curItem.creationDate) : 'no date available';
 
@@ -191,7 +192,7 @@
 								'</div>',
 
 								'<div class="main-info">',
-									'<a href="javascript:;">',
+									'<a href="' + articleLink + '">',
 										'<h2 class="title">' + title + '</h2>',
 									'</a>',
 									'<p class="description">' + description + '</p>',

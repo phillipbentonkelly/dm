@@ -24,6 +24,7 @@
 			var media;
 			var description = curItem.metadata.SEOInformation.summary || curItem.content || 'Sorry, no description available for this article';
 			description = description.slice(0, 100) + ' ...';
+			var articleLink = curItem.link;
 			var title = curItem.title || curItem.metadata.SEOInformation.headline || 'Sorry, no title available for this article';
 
 			// build each article's tags
@@ -58,7 +59,7 @@
 			markup = [	'<div class="related-articles__item">',
 							mediaMarkup,
 							'<div class="main-info">',
-								'<a href="javascript:;">',
+								'<a href="' + articleLink + '">',
 									'<h2 class="title">' + title + '</h2>',
 								'</a>',
 								'<p class="description">' + description + '</p>',
