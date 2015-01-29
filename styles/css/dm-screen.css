@@ -3365,36 +3365,37 @@ body.serp .page-layout {
 #simplemodal-data {
   margin: 0 auto;
   width: 80%;
+  max-width: 300px;
   visibility: visible;
 }
 
-/* line 468, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 469, ../sass/partials/page/modules/_listing-summary.scss */
 #simplemodal-container {
   width: 100%;
 }
 
-/* line 472, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 473, ../sass/partials/page/modules/_listing-summary.scss */
 #simplemodal-overlay {
   background: rgba(10, 10, 10, 0.8);
 }
 
-/* line 476, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 477, ../sass/partials/page/modules/_listing-summary.scss */
 .save-search-modal, .share-modal, .favorite-listing-modal {
   width: 100%;
   margin: 0 5%;
   text-align: center;
 }
-/* line 481, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 482, ../sass/partials/page/modules/_listing-summary.scss */
 .save-search-modal .close-modal-btn, .share-modal .close-modal-btn, .favorite-listing-modal .close-modal-btn {
   float: right;
 }
-/* line 485, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 486, ../sass/partials/page/modules/_listing-summary.scss */
 .save-search-modal .close-modal, .share-modal .close-modal, .favorite-listing-modal .close-modal {
   height: 20px;
   width: 20px;
   padding: 0 10px;
 }
-/* line 491, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 492, ../sass/partials/page/modules/_listing-summary.scss */
 .save-search-modal .header, .share-modal .header, .favorite-listing-modal .header {
   margin-bottom: 10px;
   background: #2e1460;
@@ -3406,23 +3407,23 @@ body.serp .page-layout {
   font-size: 26px;
   font-weight: 400;
 }
-/* line 504, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 505, ../sass/partials/page/modules/_listing-summary.scss */
 .save-search-modal .content, .share-modal .content, .favorite-listing-modal .content {
   background: #dacef1;
   padding: 20px;
   height: 300px;
 }
 
-/* line 511, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 512, ../sass/partials/page/modules/_listing-summary.scss */
 .save-search-modal {
   display: none;
 }
-/* line 513, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 514, ../sass/partials/page/modules/_listing-summary.scss */
 .save-search-modal .info {
   line-height: 1.5;
   margin-bottom: 10px;
 }
-/* line 518, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 519, ../sass/partials/page/modules/_listing-summary.scss */
 .save-search-modal input {
   margin-bottom: 15px;
   width: 100%;
@@ -3432,7 +3433,7 @@ body.serp .page-layout {
   box-sizing: border-box;
   font-family: OpenSans Regular;
 }
-/* line 529, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 530, ../sass/partials/page/modules/_listing-summary.scss */
 .save-search-modal button {
   padding: 5px 15px;
   background: black;
@@ -3444,21 +3445,21 @@ body.serp .page-layout {
   font-weight: 300;
 }
 
-/* line 541, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 542, ../sass/partials/page/modules/_listing-summary.scss */
 .favorite-listing-modal {
   display: none;
 }
 
-/* line 545, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 546, ../sass/partials/page/modules/_listing-summary.scss */
 .share-modal {
   visibility: hidden;
 }
-/* line 548, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 549, ../sass/partials/page/modules/_listing-summary.scss */
 .share-modal .share-icons__wrapper {
   width: 100px;
   margin: 0 auto;
 }
-/* line 553, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 554, ../sass/partials/page/modules/_listing-summary.scss */
 .share-modal .content {
   position: relative;
   width: 100%;
@@ -3466,39 +3467,39 @@ body.serp .page-layout {
   display: inline-block;
   box-sizing: border-box;
 }
-/* line 561, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 562, ../sass/partials/page/modules/_listing-summary.scss */
 .share-modal span {
   width: 100%;
 }
-/* line 565, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 566, ../sass/partials/page/modules/_listing-summary.scss */
 .share-modal .share-icons {
   float: left;
   width: 50%;
   max-width: 100px;
 }
-/* line 571, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 572, ../sass/partials/page/modules/_listing-summary.scss */
 .share-modal .share-icons:first-child {
   margin-bottom: 10px;
 }
 
 @media (min-width: 768px) {
-  /* line 584, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 585, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__mobile-button-dock {
     display: none;
   }
-  /* line 588, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 589, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__address--mobile {
     display: none;
   }
-  /* line 592, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 593, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__facts, .listing__features {
     font-size: 85%;
   }
-  /* line 596, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 597, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__address {
     display: block;
   }
-  /* line 600, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 601, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__breadcrumbs {
     display: block;
     margin-bottom: 20px;
@@ -3511,31 +3512,31 @@ body.serp .page-layout {
     /* Approximation due to font substitution */
     text-align: left;
   }
-  /* line 610, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 611, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__breadcrumbs a:first-child:before {
     content: "";
   }
-  /* line 614, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 615, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__breadcrumbs a {
     color: #2e1460;
   }
-  /* line 619, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 620, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__breadcrumbs a:before, .listing__breadcrumb-address:before {
     content: " \B7 ";
     color: black;
   }
-  /* line 624, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 625, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__summary--mobile {
     display: none;
   }
-  /* line 628, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 629, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__summary--left {
     width: 50%;
     padding-right: 20px;
     float: left;
     box-sizing: border-box;
   }
-  /* line 635, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 636, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__summary--right {
     display: block;
     width: 50%;
@@ -3546,25 +3547,25 @@ body.serp .page-layout {
     box-sizing: border-box;
     margin-bottom: 15px;
   }
-  /* line 646, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 647, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__detail-pindrop {
     display: inline-block;
     vertical-align: middle;
   }
-  /* line 651, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 652, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__for-sale {
     font-family: 'Oswald Regular', sans-serif;
     font-size: 12px;
     font-weight: 400;
     display: inline-block;
   }
-  /* line 658, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 659, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__tags {
     display: inline-block;
     min-height: 10px;
     overflow: hidden;
   }
-  /* line 663, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 664, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__tags .tag {
     display: block;
     float: left;
@@ -3577,7 +3578,7 @@ body.serp .page-layout {
     color: #fff;
     margin-bottom: 5px;
   }
-  /* line 675, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 676, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__tags .tag .arrow {
     display: block;
     float: right;
@@ -3588,62 +3589,62 @@ body.serp .page-layout {
     border-right: 8px solid white;
     margin-left: 6px;
   }
-  /* line 687, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 688, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__tags .location {
     background-color: #82b5e6;
   }
-  /* line 688, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 689, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__tags .class {
     background-color: #00a651;
   }
-  /* line 689, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 690, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__tags .event {
     background-color: #ff6c6c;
   }
-  /* line 690, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 691, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__tags .featured {
     background-color: #2e1460;
   }
-  /* line 693, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 694, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__detail-share--row1 {
     display: block;
   }
-  /* line 696, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 697, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__detail-share--row1 a:nth-child(2) {
     display: inline-block;
   }
-  /* line 701, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 702, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__detail-share--row2 {
     padding: 7px;
   }
-  /* line 705, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 706, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__facts--left, .listing__facts--right, .listing__features--left, .listing__features--right {
     width: 33.3%;
     box-sizing: border-box;
     margin-bottom: 20px;
   }
-  /* line 711, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 712, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__facts, .listing__features {
     font-size: 100%;
   }
-  /* line 715, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 716, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__external-links {
     float: left;
     width: 33.3%;
     box-sizing: border-box;
     clear: none;
   }
-  /* line 721, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 722, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__external-links li {
     padding-bottom: 10px;
   }
 
-  /* line 727, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 728, ../sass/partials/page/modules/_listing-summary.scss */
   .dfp-ads {
     display: block;
   }
 
-  /* line 731, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 732, ../sass/partials/page/modules/_listing-summary.scss */
   .mobile-ad {
     display: none;
   }
