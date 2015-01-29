@@ -1,5 +1,6 @@
 $module-name: 'mplistings';
 $graphicsPath: '../../images/';
+$select2Path: '../../styles/css/plugins/select2/';
 
 body{
   margin: 0;
@@ -105,7 +106,7 @@ a, img{
 				border-left: 5px solid #fff;
 
 				b {
-					background: url('select2.png') no-repeat 0 1px !important;
+					background: url(#{$graphicsPath}shim.gif) no-repeat 0 1px !important;
 				}
 			}
 		}
