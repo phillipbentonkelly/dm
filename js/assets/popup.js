@@ -60,5 +60,4 @@ $(document).ready(function() {
 		e.preventDefault();
 		$(this).toggleClass('serp-item-hovered');
 	});
-
 });
