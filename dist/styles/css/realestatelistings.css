@@ -115,7 +115,7 @@ a, img {
 }
 /* line 107, ../sass/realestatelistings.scss */
 .mplistings .select2-container .select2-choice .select2-arrow b {
-  background-image: none;
+  background-image: url("select2.png") no-repeat 0 1px !important;
 }
 /* line 113, ../sass/realestatelistings.scss */
 .mplistings .select2-container .select2-choice > .select2-chosen {
