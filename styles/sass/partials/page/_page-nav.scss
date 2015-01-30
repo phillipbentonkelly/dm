@@ -190,7 +190,10 @@ $module-name: 'page-nav';
 
 	.myAccount{
 		.mega-menu__container{
-			width: 205px;
+			width: 206px;
+			.mega-menu__list-item:last-child{
+				border-top: 1px solid #e5e5e5;
+			}
 		}
 	}
 
@@ -315,7 +318,7 @@ $module-name: 'page-nav';
 		position: initial;
 
 		&__content-wrapper {
-			width: $desktop-breakpoint;
+			width: 100%;
 			height: 100%;
 			margin: auto;
 		}
