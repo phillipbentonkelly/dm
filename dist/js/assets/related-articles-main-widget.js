@@ -5,7 +5,7 @@
 
 	module.getArticles = function() {
 		$.get('http://devedit.boston.com/eom/SysConfig/WebPortal/BDC/Framework/feeds/placester/getArticles.jsp?mode=full', function(data) {
-			module.allArticles = data['articles'];
+			module.allArticles = data.articles; //['articles'] is better written in dot notation.
 			console.log('All Articles', module.allArticles);
 			module.buildWidget(module.allArticles);
 		});
@@ -26,6 +26,7 @@
 			description = description.slice(0, 100) + ' ...';
 			var articleLink = curItem.link;
 			var title = curItem.title || curItem.metadata.SEOInformation.headline || 'Sorry, no title available for this article';
+			var date = curItem.creationDate ? module.formatDate(curItem.creationDate) : 'no date available';
 
 			// build each article's tags
 			if(curItem.metadata.keywords.length > 1) {
@@ -65,7 +66,7 @@
 								'<p class="description">' + description + '</p>',
 							'</div>',
 							'<div class="additional-info">',
-								'<div class="date"> September 21st</div>',
+								'<div class="date">' + date + '</div>',
 								'<div class="tags">',
 									_tagMarkup,
 								'</div>',
@@ -85,6 +86,15 @@
 		} else {
 			return;
 		}
+	};
+
+	module.formatDate = function(timestamp) {
+		var year = timestamp.slice(0,4);
+		var month = timestamp.slice(4,6);
+		var day = timestamp.slice(6,8);
+		var date = moment(timestamp,'YYYYMMDDHHmmss');
+		var formattedDate = date.format('MMMM Do YYYY');
+		return formattedDate;
 	};
 
 	// Event Handlers

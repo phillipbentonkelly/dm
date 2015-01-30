@@ -27,7 +27,8 @@ $module-name: 'related-articles';
 		padding: 15px;
 		border-top: 1px solid #e5e5e5;
 		position: relative;
-		height: 200px;
+		height: 195px;
+		overflow: hidden;
 	}
 		
 	&__item {
