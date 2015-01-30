@@ -87,11 +87,6 @@ $module-name: 'page-search';
 			.select2-container{
 				float: right;
 				padding: 5px 0;
-				.select2-choice{
-					.select2-chosen{
-						color: #000;
-					}
-				}
 				.select2-arrow{
 					margin-top: 3px;
 				}
@@ -132,6 +127,11 @@ $module-name: 'page-search';
 			}
 
 			.select2-container{
+				.select2-choice{
+					.select2-chosen{
+						/*color: #000;*/
+					}
+				}
 				.select2-choice{
 					height: 42px;
 					line-height: 42px;
@@ -291,8 +291,7 @@ $module-name: 'page-search';
 					border-width: 0 7px 7px 7px;
 				}				
 			}
-			
-			
+					
 		}
 
 
@@ -530,13 +529,7 @@ $module-name: 'page-search';
 		}
 	}
 
-	&.select2-focusser{
-		color: #000;
-	}
-
 }
-
-
 
 .select2-drop{
 	.select2-search{
@@ -636,7 +629,6 @@ $module-name: 'page-search';
 
 		.select2-choice, .select2-container .select2-drop{
 			border: 1px solid rgb(0,0,0);
-			color: transparent;
 		}
 
 	}

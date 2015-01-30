@@ -97,7 +97,6 @@ dm.searchPanel = {};
 			this.filters.$fmt.select2(fmtParams);
 			this.filters.$other.select2(otherParams);
 
-
 			this.setPanelState();
 
             this.eventHandlers();
@@ -155,7 +154,6 @@ dm.searchPanel = {};
 						self.lvls.$one.hide();
 					break;
 				}
-
 			}
 		},
 
@@ -244,11 +242,14 @@ dm.searchPanel = {};
 						e.preventDefault();
 						var state = $(this).getObservable();
 						var lwrLvls = $.merge(self.lvls.$two, self.lvls.$three);
-						//lwrLvls.slideToggle('fast');
 						self.lvls.$lower.slideToggle('fast');
 						self.expanded = self.getExpanded();
 						state.toggle();
 						self.allOpen = (self.allOpen == true) ? false : true;
+					});
+
+					$('.select2-container').each(function () {
+						$(this).find('.select2-search, .select2-focusser').hide();
 					});
 
 				break;
@@ -269,7 +270,6 @@ dm.searchPanel = {};
 
 				location.href = serp + lvls + saved;
 			});
-
 
 		},
 
@@ -320,7 +320,7 @@ dm.searchPanel = {};
 	// watch the span elements
 	$.fn.getObservable = function(){
 		return $(this).children('span'); 
-	}
+	};
 
 	$.extend({
 		getParamVal : function(param){
