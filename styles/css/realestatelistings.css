@@ -182,7 +182,7 @@ a, img {
   overflow: hidden;
   overflow-y: scroll;
 }
-/* line 199, ../sass/realestatelistings.scss */
+/* line 181, ../sass/realestatelistings.scss */
 .mplistings .scrollWrapper {
   width: 334px;
   height: 100%;
@@ -190,31 +190,31 @@ a, img {
   position: relative;
   padding-bottom: 6px;
 }
-/* line 206, ../sass/realestatelistings.scss */
+/* line 188, ../sass/realestatelistings.scss */
 .mplistings .scrollWrapper .listing-container {
   width: 100%;
   max-height: 100%;
   overflow: hidden;
   overflow-y: scroll;
 }
-/* line 212, ../sass/realestatelistings.scss */
+/* line 194, ../sass/realestatelistings.scss */
 .mplistings .scrollWrapper .listing-container .property.template {
   display: none;
 }
-/* line 214, ../sass/realestatelistings.scss */
+/* line 196, ../sass/realestatelistings.scss */
 .mplistings .scrollWrapper .listing-container .property {
   display: inline-block;
   /*float: left;
-  height: 178px;*/
+  height: 178px;
+  margin-bottom: 10px;*/
   width: 145px;
-  margin-bottom: 10px;
 }
-/* line 221, ../sass/realestatelistings.scss */
+/* line 203, ../sass/realestatelistings.scss */
 .mplistings .scrollWrapper .listing-container .property img {
   width: 145px;
   height: 113px;
 }
-/* line 226, ../sass/realestatelistings.scss */
+/* line 208, ../sass/realestatelistings.scss */
 .mplistings .scrollWrapper .listing-container .property .top-level__details {
   width: 100%;
   height: 113px;
@@ -223,7 +223,7 @@ a, img {
   overflow: hidden;
   background-color: rgba(0, 0, 0, 0.7);
 }
-/* line 235, ../sass/realestatelistings.scss */
+/* line 217, ../sass/realestatelistings.scss */
 .mplistings .scrollWrapper .listing-container .property__label__for-sale {
   display: inline-block;
   padding: 0.25% 3.5%;
@@ -238,7 +238,7 @@ a, img {
   top: 6%;
   z-index: 100;
 }
-/* line 252, ../sass/realestatelistings.scss */
+/* line 234, ../sass/realestatelistings.scss */
 .mplistings .scrollWrapper .listing-container .property__bottom-overlay {
   width: 94%;
   height: 18px;
@@ -252,7 +252,7 @@ a, img {
   bottom: 0;
   z-index: 100;
 }
-/* line 268, ../sass/realestatelistings.scss */
+/* line 250, ../sass/realestatelistings.scss */
 .mplistings .scrollWrapper .listing-container .property__price {
   font-size: 40%;
   float: left;
@@ -263,7 +263,7 @@ a, img {
   font-weight: 700;
   text-align: right;
 }
-/* line 278, ../sass/realestatelistings.scss */
+/* line 260, ../sass/realestatelistings.scss */
 .mplistings .scrollWrapper .listing-container .property__time {
   display: none;
   font-size: 40%;
@@ -275,22 +275,22 @@ a, img {
   font-weight: 600;
   text-align: right;
 }
-/* line 290, ../sass/realestatelistings.scss */
+/* line 272, ../sass/realestatelistings.scss */
 .mplistings .scrollWrapper .listing-container .property .bottom-level__details {
   color: #000;
   font-size: 45%;
   font-family: 'OpensSans';
   font-weight: 400;
 }
-/* line 296, ../sass/realestatelistings.scss */
+/* line 278, ../sass/realestatelistings.scss */
 .mplistings .scrollWrapper .listing-container .property .bottom-level__details div {
   background: #e5e5e5;
 }
-/* line 300, ../sass/realestatelistings.scss */
+/* line 282, ../sass/realestatelistings.scss */
 .mplistings .scrollWrapper .listing-container .property__bed-and-baths {
   font-size: 45%;
 }
-/* line 304, ../sass/realestatelistings.scss */
+/* line 286, ../sass/realestatelistings.scss */
 .mplistings .scrollWrapper .listing-container .property__address {
   width: 70%;
   padding: 3% 27% 3% 3%;
@@ -305,13 +305,13 @@ a, img {
   font-weight: 600;
   text-align: left;
 }
-/* line 318, ../sass/realestatelistings.scss */
+/* line 300, ../sass/realestatelistings.scss */
 .mplistings .scrollWrapper .listing-container .property__address:before, .mplistings .scrollWrapper .listing-container .property__address:after {
   -moz-box-sizing: content-box;
   -webkit-box-sizing: content-box;
   box-sizing: content-box;
 }
-/* line 324, ../sass/realestatelistings.scss */
+/* line 306, ../sass/realestatelistings.scss */
 .mplistings .scrollWrapper .listing-container .property__bedrooms, .mplistings .scrollWrapper .listing-container .property__baths {
   width: 49%;
   min-height: 33%;
@@ -325,43 +325,47 @@ a, img {
   /* Approximation due to font substitution */
   text-align: center;
 }
-/* line 336, ../sass/realestatelistings.scss */
+/* line 318, ../sass/realestatelistings.scss */
 .mplistings .scrollWrapper .listing-container .property__bedrooms {
   border-right: 1px solid #fff;
 }
-/* line 340, ../sass/realestatelistings.scss */
+/* line 322, ../sass/realestatelistings.scss */
 .mplistings .scrollWrapper .listing-container .property__baths {
   width: 49%;
   min-height: 33%;
   padding: 2% 0 3% 0;
 }
-/* line 347, ../sass/realestatelistings.scss */
+/* line 329, ../sass/realestatelistings.scss */
 .mplistings .scrollWrapper .listing-container .property:nth-child(odd) {
   margin-left: 7px;
 }
 
 @media screen and (max-width: 767px) {
-  /* line 360, ../sass/realestatelistings.scss */
+  /* line 341, ../sass/realestatelistings.scss */
   .mplistings {
     width: 100%;
     overflow: hidden;
   }
-  /* line 364, ../sass/realestatelistings.scss */
+  /* line 345, ../sass/realestatelistings.scss */
   .mplistings .navigation {
     display: none;
   }
-  /* line 368, ../sass/realestatelistings.scss */
+  /* line 349, ../sass/realestatelistings.scss */
   .mplistings .hScrollWrapper {
-    height: 172px;
+    /*height: 172px;
+    border-bottom: 1px solid red;*/
+    height: 210px;
     overflow: hidden;
   }
-  /* line 373, ../sass/realestatelistings.scss */
+  /* line 356, ../sass/realestatelistings.scss */
   .mplistings .scrollFadeWrapper {
     display: block;
     position: relative;
     overflow-x: auto;
+    /*height: 250px;
+    border-bottom: 1px solid green;*/
   }
-  /* line 379, ../sass/realestatelistings.scss */
+  /* line 365, ../sass/realestatelistings.scss */
   .mplistings .fade-overlay {
     display: block;
     width: 15px;
@@ -384,35 +388,35 @@ a, img {
     background: linear-gradient(to left, white 0%, rgba(255, 255, 255, 0) 100%);
     /* W3C */
   }
-  /* line 398, ../sass/realestatelistings.scss */
+  /* line 384, ../sass/realestatelistings.scss */
   .mplistings .scrollWrapper {
-    width: 1680px;
+    height: 228px;
     overflow-x: auto;
   }
-  /* line 402, ../sass/realestatelistings.scss */
-  .mplistings .scrollWrapper .listing-container {
-    width: 1680px;
-  }
-  /* line 405, ../sass/realestatelistings.scss */
+  /* line 389, ../sass/realestatelistings.scss */
   .mplistings .scrollWrapper .listing-container .property {
     float: left;
     display: block;
     width: 136px;
-    height: 168px;
+    min-height: 168px;
     margin-right: 4px;
   }
-  /* line 412, ../sass/realestatelistings.scss */
+  /* line 396, ../sass/realestatelistings.scss */
   .mplistings .scrollWrapper .listing-container .property img {
     width: 136px;
     height: 106px;
   }
-  /* line 417, ../sass/realestatelistings.scss */
+  /* line 401, ../sass/realestatelistings.scss */
   .mplistings .scrollWrapper .listing-container .property .top-level__details {
     height: 106px;
   }
+  /* line 406, ../sass/realestatelistings.scss */
+  .mplistings .scrollWrapper .listing-container .property:nth-child(odd) {
+    margin-left: 0px;
+  }
 }
 @media screen and (min-width: 768px) {
-  /* line 430, ../sass/realestatelistings.scss */
+  /* line 418, ../sass/realestatelistings.scss */
   .mplistings .scrollWrapper {
     height: 771px;
     overflow-x: initial;

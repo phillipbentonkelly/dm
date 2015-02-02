@@ -15,8 +15,7 @@ dm.searchPanel = {};
 
 		this.el = el;
 
-		//this.device = (screen.width <= 480) ? 'mobile' : 'desktop';
-		this.device = 'mobile'; // safari testing
+		this.device = (screen.width <= 480) ? 'mobile' : 'desktop';
 		
 		// statefulness...
 		this.expanded = this.getExpanded();
@@ -244,6 +243,8 @@ dm.searchPanel = {};
 					self.btns.$lvl2t.on('click', function(e){
 						e.preventDefault();
 						var state = $(this).getObservable();
+						var lwrLvls = $.merge(self.lvls.$two, self.lvls.$three);
+						//lwrLvls.slideToggle('fast');
 						self.lvls.$lower.slideToggle('fast');
 						self.expanded = self.getExpanded();
 						state.toggle();
