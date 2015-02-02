@@ -63,7 +63,7 @@ a, img{
 
 .#{$module-name}{
 	margin-bottom: 20px;
-	max-width: 300px;
+	width: 100%;
 	min-height: 250px;
 	position: relative;
 	/*border: 1px solid green;*/
@@ -172,7 +172,7 @@ a, img{
 	}
 
 	.scrollFadeWrapper {
-		width: 332px;
+		// width: 332px;
 		/*height: 771px;*/
 		overflow: hidden;
 		overflow-y: scroll;
@@ -358,7 +358,7 @@ a, img{
 
 @media screen and (max-width: 767px) {
 	.#{$module-name}{
-		width: 300px;
+		width: 100%;
 		overflow: hidden;
 
 		.navigation {
