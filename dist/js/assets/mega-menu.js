@@ -13,6 +13,7 @@ $(document).ready(function () {
 
   $('#find-home-menu').on('click', toggleMobileMegaMenu);
   $('#neighborhoods-menu').on('click', toggleMobileMegaMenu);
+  $('#myAccount').on('click', toggleMobileMegaMenu);
 });
 
 function toggleMobileMenu(){

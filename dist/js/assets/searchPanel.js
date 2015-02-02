@@ -15,7 +15,8 @@ dm.searchPanel = {};
 
 		this.el = el;
 
-		this.device = (screen.width <= 480) ? 'mobile' : 'desktop';
+		//this.device = (screen.width <= 480) ? 'mobile' : 'desktop';
+		this.device = 'mobile'; // safari testing
 		
 		// statefulness...
 		this.expanded = this.getExpanded();
@@ -97,6 +98,7 @@ dm.searchPanel = {};
 			this.filters.$fmt.select2(fmtParams);
 			this.filters.$other.select2(otherParams);
 
+
 			this.setPanelState();
 
             this.eventHandlers();
@@ -154,6 +156,7 @@ dm.searchPanel = {};
 						self.lvls.$one.hide();
 					break;
 				}
+
 			}
 		},
 
@@ -241,15 +244,10 @@ dm.searchPanel = {};
 					self.btns.$lvl2t.on('click', function(e){
 						e.preventDefault();
 						var state = $(this).getObservable();
-						var lwrLvls = $.merge(self.lvls.$two, self.lvls.$three);
 						self.lvls.$lower.slideToggle('fast');
 						self.expanded = self.getExpanded();
 						state.toggle();
 						self.allOpen = (self.allOpen == true) ? false : true;
-					});
-
-					$('.select2-container').each(function () {
-						$(this).find('.select2-search, .select2-focusser').hide();
 					});
 
 				break;
@@ -270,6 +268,7 @@ dm.searchPanel = {};
 
 				location.href = serp + lvls + saved;
 			});
+
 
 		},
 
@@ -320,7 +319,7 @@ dm.searchPanel = {};
 	// watch the span elements
 	$.fn.getObservable = function(){
 		return $(this).children('span'); 
-	};
+	}
 
 	$.extend({
 		getParamVal : function(param){
