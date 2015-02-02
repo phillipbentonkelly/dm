@@ -178,24 +178,6 @@ a, img{
 		overflow-y: scroll;
 	}
 
-	// .fade-overlay {
-	// 	width: 100%;
-	// 	height: 40px;
-	// 	z-index: 10;
-	// 	position: absolute;
-	// 	bottom: 34px;
-	// 	left: 0;
-
-	// 	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMCIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
-	// 	background: -moz-linear-gradient(bottom,  rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
-	// 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(255,255,255,0)));
-	// 	background: -webkit-linear-gradient(bottom,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
-	// 	background: -o-linear-gradient(bottom,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
-	// 	background: -ms-linear-gradient(bottom,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
-	// 	background: linear-gradient(to top,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
-	// 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 );
-	// }
-
 	.scrollWrapper {
 		width: 334px;
 		height: 100%;
@@ -214,9 +196,9 @@ a, img{
 			.property {
 				display: inline-block;
 				/*float: left;
-				height: 178px;*/
+				height: 178px;
+				margin-bottom: 10px;*/
 				width: 145px;
-				margin-bottom: 10px;
 
 				img {
 					width: 145px;
@@ -349,7 +331,6 @@ a, img{
 			}
 		}
 	}
-	
 }
 
 
@@ -366,7 +347,9 @@ a, img{
 		}
 		
 		.hScrollWrapper{
-			height: 172px;
+			/*height: 172px;
+			border-bottom: 1px solid red;*/
+			height: 210px;
 			overflow: hidden;
 		}
 		
@@ -374,6 +357,9 @@ a, img{
 			display: block;
 			position: relative;
 			overflow-x: auto;
+
+			/*height: 250px;
+			border-bottom: 1px solid green;*/
 		}
 		
 		.fade-overlay {
@@ -396,17 +382,15 @@ a, img{
 		}
 		
 		.scrollWrapper {
-			width: 1680px;
+			height: 228px;
 			overflow-x: auto;
 
 			.listing-container {
-				width: 1680px;
-
 				.property {
 					float: left;
 					display: block;
 					width: 136px;
-					height: 168px;
+					min-height: 168px;
 					margin-right: 4px;
 
 					img {
@@ -417,6 +401,10 @@ a, img{
 					.top-level__details{
 						height: 106px;
 					}
+				}
+
+				.property:nth-child(odd){
+					margin-left: 0px;
 				}
 			}
 
