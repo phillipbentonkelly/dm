@@ -1196,18 +1196,6 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
   }
 }
 /* line 4, ../sass/partials/page/_page-layout.scss */
-body.neighborhood, body.category-details {
-  background-image: url(../../images/neighborhoods/19040004_source.jpg);
-  background-position: center 162px;
-  background-repeat: repeat-x;
-}
-
-/* line 9, ../sass/partials/page/_page-layout.scss */
-body.category-details {
-  background-image: url(../../images/neighborhoods/Category-Details__1152x699.jpg);
-}
-
-/* line 13, ../sass/partials/page/_page-layout.scss */
 .page-layout {
   overflow: hidden;
   clear: both;
@@ -1215,7 +1203,7 @@ body.category-details {
   max-width: 960px;
   min-width: 0;
 }
-/* line 27, ../sass/partials/page/_page-layout.scss */
+/* line 18, ../sass/partials/page/_page-layout.scss */
 .page-layout__left-col {
   width: 100%;
   min-width: 30%;
@@ -1225,17 +1213,29 @@ body.category-details {
   overflow: hidden;
   float: left;
 }
-/* line 38, ../sass/partials/page/_page-layout.scss */
+/* line 29, ../sass/partials/page/_page-layout.scss */
 .page-layout__right-col {
   display: block;
 }
 
-/* line 43, ../sass/partials/page/_page-layout.scss */
+/* line 34, ../sass/partials/page/_page-layout.scss */
 .mega-menu {
   display: none;
 }
 
 @media (min-width: 768px) {
+  /* line 39, ../sass/partials/page/_page-layout.scss */
+  body.neighborhood, body.category-details {
+    background-image: url(../../images/neighborhoods/19040004_source.jpg);
+    background-position: center 162px;
+    background-repeat: repeat-x;
+  }
+
+  /* line 44, ../sass/partials/page/_page-layout.scss */
+  body.category-details {
+    background-image: url(../../images/neighborhoods/Category-Details__1152x699.jpg);
+  }
+
   /* line 48, ../sass/partials/page/_page-layout.scss */
   .page-layout {
     margin: 0 auto;
@@ -1261,29 +1261,33 @@ body.category-details {
 }
 @media (min-width: 960px) {
   /* line 72, ../sass/partials/page/_page-layout.scss */
+  body.neighborhood, body.category-details {
+    background-image: url(../../images/neighborhoods/19040004_source.jpg);
+    background-position: center 162px;
+    background-repeat: repeat-x;
+  }
+
+  /* line 77, ../sass/partials/page/_page-layout.scss */
+  body.category-details {
+    background-image: url(../../images/neighborhoods/Category-Details__1152x699.jpg);
+  }
+
+  /* line 81, ../sass/partials/page/_page-layout.scss */
   .page-layout {
     width: 960px;
     margin: 0 auto;
   }
 
-  /* line 78, ../sass/partials/page/_page-layout.scss */
+  /* line 87, ../sass/partials/page/_page-layout.scss */
   body.home .page-layout {
     margin-top: 0;
   }
 
-  /* line 84, ../sass/partials/page/_page-layout.scss */
+  /* line 93, ../sass/partials/page/_page-layout.scss */
   body.serp .page-layout {
     margin-top: 10px;
   }
 
-  /*body.neighborhood, body.category-details {
-  	background-image: url(../../images/neighborhoods/19040004_source.jpg);
-  	background-position: center 162px;
-  	background-repeat: repeat-x;
-  }
-  	body.category-details {
-  		background-image: url(../../images/neighborhoods/Category-Details__1152x699.jpg);
-  	}*/
   /* line 98, ../sass/partials/page/_page-layout.scss */
   body.neighborhood .page-nav, body.category-details .page-nav {
     margin-bottom: 90px;
@@ -5348,7 +5352,7 @@ body.serp .page-layout {
 /* line 31, ../sass/partials/page/modules/_multimedia-chip.scss */
 .multimedia-chip__media-wrapper {
   width: 100%;
-  min-height: 354px;
+  min-height: 1px;
   position: relative;
 }
 /* line 36, ../sass/partials/page/modules/_multimedia-chip.scss */
