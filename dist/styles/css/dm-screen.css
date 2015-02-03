@@ -990,11 +990,12 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
   .page-nav__content-wrapper {
     max-width: 960px;
     width: 100%;
-    min-height: 1px;
-    overflow: hidden;
+    height: 100%;
+    /*min-height: 1px;
+    overflow: hidden;*/
     margin: auto;
   }
-  /* line 224, ../sass/partials/page/_page-nav.scss */
+  /* line 225, ../sass/partials/page/_page-nav.scss */
   .page-nav__main-nav-links {
     display: inline-block;
     width: 86.77%;
@@ -1004,11 +1005,11 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
     font-size: inherit;
     line-height: inherit;
   }
-  /* line 234, ../sass/partials/page/_page-nav.scss */
+  /* line 235, ../sass/partials/page/_page-nav.scss */
   .page-nav__main-nav-links li {
     border-top: 0px;
   }
-  /* line 238, ../sass/partials/page/_page-nav.scss */
+  /* line 239, ../sass/partials/page/_page-nav.scss */
   .page-nav__nav-item {
     display: inline-block;
     line-height: 60px;
@@ -1020,26 +1021,26 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
     padding: inherit;
     border-top: 0;
   }
-  /* line 250, ../sass/partials/page/_page-nav.scss */
+  /* line 251, ../sass/partials/page/_page-nav.scss */
   .page-nav__nav-item a {
     display: block;
     width: 100%;
     color: white;
     padding: inherit;
   }
-  /* line 257, ../sass/partials/page/_page-nav.scss */
+  /* line 258, ../sass/partials/page/_page-nav.scss */
   .page-nav__nav-item__responsive-drop-down-icon {
     display: none;
   }
-  /* line 260, ../sass/partials/page/_page-nav.scss */
+  /* line 261, ../sass/partials/page/_page-nav.scss */
   .page-nav__nav-item__responsive-drop-down-icon:after {
     content: "";
   }
-  /* line 264, ../sass/partials/page/_page-nav.scss */
+  /* line 265, ../sass/partials/page/_page-nav.scss */
   .page-nav__nav-item .page-nav__arrow-up {
     display: none;
   }
-  /* line 268, ../sass/partials/page/_page-nav.scss */
+  /* line 269, ../sass/partials/page/_page-nav.scss */
   .page-nav__nav-item .mega-menu__container {
     display: none;
     position: absolute;
@@ -1047,23 +1048,23 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
     left: 0px;
     line-height: 18px;
   }
-  /* line 275, ../sass/partials/page/_page-nav.scss */
+  /* line 276, ../sass/partials/page/_page-nav.scss */
   .page-nav__nav-item .mega-menu__container:first-child {
     display: none;
   }
-  /* line 279, ../sass/partials/page/_page-nav.scss */
+  /* line 280, ../sass/partials/page/_page-nav.scss */
   .page-nav__nav-item:hover .mega-menu__container {
     display: block;
   }
-  /* line 282, ../sass/partials/page/_page-nav.scss */
+  /* line 283, ../sass/partials/page/_page-nav.scss */
   .page-nav__nav-item:hover .page-nav__arrow-up {
     display: block;
   }
-  /* line 286, ../sass/partials/page/_page-nav.scss */
+  /* line 287, ../sass/partials/page/_page-nav.scss */
   .page-nav__responsive-home-link {
     display: none;
   }
-  /* line 290, ../sass/partials/page/_page-nav.scss */
+  /* line 291, ../sass/partials/page/_page-nav.scss */
   .page-nav__arrow-up {
     display: block;
     position: absolute;
@@ -1075,46 +1076,46 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
     border-right: 19px solid transparent;
     border-bottom: 15px solid rgba(255, 255, 255, 0.9);
   }
-  /* line 303, ../sass/partials/page/_page-nav.scss */
+  /* line 304, ../sass/partials/page/_page-nav.scss */
   .page-nav .myAccount {
     float: right;
     margin: 0 0 0 0px;
     padding: 0 5% 0 0;
     background: url(../../images/icons/icon_account.png) center right no-repeat;
   }
-  /* line 310, ../sass/partials/page/_page-nav.scss */
+  /* line 311, ../sass/partials/page/_page-nav.scss */
   .page-nav__mega-menu-responsive-icon, .page-nav__search-responsive-icon {
     display: none;
   }
 }
 @media (min-width: 768px) {
-  /* line 320, ../sass/partials/page/_page-nav.scss */
+  /* line 321, ../sass/partials/page/_page-nav.scss */
   .page-nav {
     height: 60px;
     position: initial;
   }
-  /* line 324, ../sass/partials/page/_page-nav.scss */
+  /* line 325, ../sass/partials/page/_page-nav.scss */
   .page-nav__content-wrapper {
     max-width: 960px;
     min-width: 768px;
     height: 100%;
     margin: auto;
   }
-  /* line 331, ../sass/partials/page/_page-nav.scss */
+  /* line 332, ../sass/partials/page/_page-nav.scss */
   .page-nav__logo {
     width: 134px;
     margin: initial;
   }
-  /* line 335, ../sass/partials/page/_page-nav.scss */
+  /* line 336, ../sass/partials/page/_page-nav.scss */
   .page-nav__logo h1 {
     font-size: 26px;
   }
-  /* line 339, ../sass/partials/page/_page-nav.scss */
+  /* line 340, ../sass/partials/page/_page-nav.scss */
   .page-nav__logo h4 {
     text-align: right;
     font-size: 10px;
   }
-  /* line 345, ../sass/partials/page/_page-nav.scss */
+  /* line 346, ../sass/partials/page/_page-nav.scss */
   .page-nav__main-nav-links {
     display: inline-block;
     max-width: 80%;
@@ -1124,11 +1125,11 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
     font-size: inherit;
     line-height: inherit;
   }
-  /* line 354, ../sass/partials/page/_page-nav.scss */
+  /* line 355, ../sass/partials/page/_page-nav.scss */
   .page-nav__main-nav-links li {
     border-top: 0px;
   }
-  /* line 358, ../sass/partials/page/_page-nav.scss */
+  /* line 359, ../sass/partials/page/_page-nav.scss */
   .page-nav__nav-item {
     display: inline-block;
     line-height: 60px;
@@ -1138,26 +1139,26 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
     padding-left: 2% !important;
     position: relative;
   }
-  /* line 367, ../sass/partials/page/_page-nav.scss */
+  /* line 368, ../sass/partials/page/_page-nav.scss */
   .page-nav__nav-item a {
     display: block;
     width: 100%;
     color: white;
     padding: inherit;
   }
-  /* line 374, ../sass/partials/page/_page-nav.scss */
+  /* line 375, ../sass/partials/page/_page-nav.scss */
   .page-nav__nav-item__responsive-drop-down-icon {
     display: none;
   }
-  /* line 377, ../sass/partials/page/_page-nav.scss */
+  /* line 378, ../sass/partials/page/_page-nav.scss */
   .page-nav__nav-item__responsive-drop-down-icon:after {
     content: "";
   }
-  /* line 381, ../sass/partials/page/_page-nav.scss */
+  /* line 382, ../sass/partials/page/_page-nav.scss */
   .page-nav__nav-item .page-nav__arrow-up {
     display: none;
   }
-  /* line 385, ../sass/partials/page/_page-nav.scss */
+  /* line 386, ../sass/partials/page/_page-nav.scss */
   .page-nav__nav-item .mega-menu__container {
     display: none;
     position: absolute;
@@ -1165,23 +1166,23 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
     left: 0px;
     line-height: 18px;
   }
-  /* line 392, ../sass/partials/page/_page-nav.scss */
+  /* line 393, ../sass/partials/page/_page-nav.scss */
   .page-nav__nav-item .mega-menu__container:first-child {
     display: none;
   }
-  /* line 396, ../sass/partials/page/_page-nav.scss */
+  /* line 397, ../sass/partials/page/_page-nav.scss */
   .page-nav__nav-item:hover .mega-menu__container {
     display: block;
   }
-  /* line 399, ../sass/partials/page/_page-nav.scss */
+  /* line 400, ../sass/partials/page/_page-nav.scss */
   .page-nav__nav-item:hover .page-nav__arrow-up {
     display: block;
   }
-  /* line 403, ../sass/partials/page/_page-nav.scss */
+  /* line 404, ../sass/partials/page/_page-nav.scss */
   .page-nav__responsive-home-link {
     display: none;
   }
-  /* line 407, ../sass/partials/page/_page-nav.scss */
+  /* line 408, ../sass/partials/page/_page-nav.scss */
   .page-nav__arrow-up {
     display: block;
     position: absolute;
@@ -1193,7 +1194,7 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
     border-right: 19px solid transparent;
     border-bottom: 15px solid rgba(255, 255, 255, 0.9);
   }
-  /* line 420, ../sass/partials/page/_page-nav.scss */
+  /* line 421, ../sass/partials/page/_page-nav.scss */
   .page-nav .myAccount {
     float: right;
     margin: 0;
@@ -1201,7 +1202,7 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
     padding: 0 5% 0 0;
     background: url(../../images/icons/icons_myAccount.png) center right no-repeat;
   }
-  /* line 428, ../sass/partials/page/_page-nav.scss */
+  /* line 429, ../sass/partials/page/_page-nav.scss */
   .page-nav__mega-menu-responsive-icon, .page-nav__search-responsive-icon {
     display: none;
   }
