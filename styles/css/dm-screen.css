@@ -980,10 +980,11 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
   .page-nav__content-wrapper {
     max-width: 960px;
     width: 100%;
-    height: 100%;
+    min-height: 1px;
+    overflow: hidden;
     margin: auto;
   }
-  /* line 223, ../sass/partials/page/_page-nav.scss */
+  /* line 224, ../sass/partials/page/_page-nav.scss */
   .page-nav__main-nav-links {
     display: inline-block;
     width: 86.77%;
@@ -993,11 +994,11 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
     font-size: inherit;
     line-height: inherit;
   }
-  /* line 233, ../sass/partials/page/_page-nav.scss */
+  /* line 234, ../sass/partials/page/_page-nav.scss */
   .page-nav__main-nav-links li {
     border-top: 0px;
   }
-  /* line 237, ../sass/partials/page/_page-nav.scss */
+  /* line 238, ../sass/partials/page/_page-nav.scss */
   .page-nav__nav-item {
     display: inline-block;
     line-height: 60px;
@@ -1009,26 +1010,26 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
     padding: inherit;
     border-top: 0;
   }
-  /* line 249, ../sass/partials/page/_page-nav.scss */
+  /* line 250, ../sass/partials/page/_page-nav.scss */
   .page-nav__nav-item a {
     display: block;
     width: 100%;
     color: white;
     padding: inherit;
   }
-  /* line 256, ../sass/partials/page/_page-nav.scss */
+  /* line 257, ../sass/partials/page/_page-nav.scss */
   .page-nav__nav-item__responsive-drop-down-icon {
     display: none;
   }
-  /* line 259, ../sass/partials/page/_page-nav.scss */
+  /* line 260, ../sass/partials/page/_page-nav.scss */
   .page-nav__nav-item__responsive-drop-down-icon:after {
     content: "";
   }
-  /* line 263, ../sass/partials/page/_page-nav.scss */
+  /* line 264, ../sass/partials/page/_page-nav.scss */
   .page-nav__nav-item .page-nav__arrow-up {
     display: none;
   }
-  /* line 267, ../sass/partials/page/_page-nav.scss */
+  /* line 268, ../sass/partials/page/_page-nav.scss */
   .page-nav__nav-item .mega-menu__container {
     display: none;
     position: absolute;
@@ -1036,23 +1037,23 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
     left: 0px;
     line-height: 18px;
   }
-  /* line 274, ../sass/partials/page/_page-nav.scss */
+  /* line 275, ../sass/partials/page/_page-nav.scss */
   .page-nav__nav-item .mega-menu__container:first-child {
     display: none;
   }
-  /* line 278, ../sass/partials/page/_page-nav.scss */
+  /* line 279, ../sass/partials/page/_page-nav.scss */
   .page-nav__nav-item:hover .mega-menu__container {
     display: block;
   }
-  /* line 281, ../sass/partials/page/_page-nav.scss */
+  /* line 282, ../sass/partials/page/_page-nav.scss */
   .page-nav__nav-item:hover .page-nav__arrow-up {
     display: block;
   }
-  /* line 285, ../sass/partials/page/_page-nav.scss */
+  /* line 286, ../sass/partials/page/_page-nav.scss */
   .page-nav__responsive-home-link {
     display: none;
   }
-  /* line 289, ../sass/partials/page/_page-nav.scss */
+  /* line 290, ../sass/partials/page/_page-nav.scss */
   .page-nav__arrow-up {
     display: block;
     position: absolute;
@@ -1064,46 +1065,46 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
     border-right: 19px solid transparent;
     border-bottom: 15px solid rgba(255, 255, 255, 0.9);
   }
-  /* line 302, ../sass/partials/page/_page-nav.scss */
+  /* line 303, ../sass/partials/page/_page-nav.scss */
   .page-nav .myAccount {
     float: right;
     margin: 0 0 0 0px;
     padding: 0 5% 0 0;
     background: url(../../images/icons/icon_account.png) center right no-repeat;
   }
-  /* line 309, ../sass/partials/page/_page-nav.scss */
+  /* line 310, ../sass/partials/page/_page-nav.scss */
   .page-nav__mega-menu-responsive-icon, .page-nav__search-responsive-icon {
     display: none;
   }
 }
 @media (min-width: 768px) {
-  /* line 319, ../sass/partials/page/_page-nav.scss */
+  /* line 320, ../sass/partials/page/_page-nav.scss */
   .page-nav {
     height: 60px;
     position: initial;
   }
-  /* line 323, ../sass/partials/page/_page-nav.scss */
+  /* line 324, ../sass/partials/page/_page-nav.scss */
   .page-nav__content-wrapper {
     max-width: 960px;
     min-width: 768px;
     height: 100%;
     margin: auto;
   }
-  /* line 330, ../sass/partials/page/_page-nav.scss */
+  /* line 331, ../sass/partials/page/_page-nav.scss */
   .page-nav__logo {
     width: 134px;
     margin: initial;
   }
-  /* line 334, ../sass/partials/page/_page-nav.scss */
+  /* line 335, ../sass/partials/page/_page-nav.scss */
   .page-nav__logo h1 {
     font-size: 26px;
   }
-  /* line 338, ../sass/partials/page/_page-nav.scss */
+  /* line 339, ../sass/partials/page/_page-nav.scss */
   .page-nav__logo h4 {
     text-align: right;
     font-size: 10px;
   }
-  /* line 344, ../sass/partials/page/_page-nav.scss */
+  /* line 345, ../sass/partials/page/_page-nav.scss */
   .page-nav__main-nav-links {
     display: inline-block;
     max-width: 80%;
@@ -1113,11 +1114,11 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
     font-size: inherit;
     line-height: inherit;
   }
-  /* line 353, ../sass/partials/page/_page-nav.scss */
+  /* line 354, ../sass/partials/page/_page-nav.scss */
   .page-nav__main-nav-links li {
     border-top: 0px;
   }
-  /* line 357, ../sass/partials/page/_page-nav.scss */
+  /* line 358, ../sass/partials/page/_page-nav.scss */
   .page-nav__nav-item {
     display: inline-block;
     line-height: 60px;
@@ -1127,26 +1128,26 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
     padding-left: 2% !important;
     position: relative;
   }
-  /* line 366, ../sass/partials/page/_page-nav.scss */
+  /* line 367, ../sass/partials/page/_page-nav.scss */
   .page-nav__nav-item a {
     display: block;
     width: 100%;
     color: white;
     padding: inherit;
   }
-  /* line 373, ../sass/partials/page/_page-nav.scss */
+  /* line 374, ../sass/partials/page/_page-nav.scss */
   .page-nav__nav-item__responsive-drop-down-icon {
     display: none;
   }
-  /* line 376, ../sass/partials/page/_page-nav.scss */
+  /* line 377, ../sass/partials/page/_page-nav.scss */
   .page-nav__nav-item__responsive-drop-down-icon:after {
     content: "";
   }
-  /* line 380, ../sass/partials/page/_page-nav.scss */
+  /* line 381, ../sass/partials/page/_page-nav.scss */
   .page-nav__nav-item .page-nav__arrow-up {
     display: none;
   }
-  /* line 384, ../sass/partials/page/_page-nav.scss */
+  /* line 385, ../sass/partials/page/_page-nav.scss */
   .page-nav__nav-item .mega-menu__container {
     display: none;
     position: absolute;
@@ -1154,23 +1155,23 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
     left: 0px;
     line-height: 18px;
   }
-  /* line 391, ../sass/partials/page/_page-nav.scss */
+  /* line 392, ../sass/partials/page/_page-nav.scss */
   .page-nav__nav-item .mega-menu__container:first-child {
     display: none;
   }
-  /* line 395, ../sass/partials/page/_page-nav.scss */
+  /* line 396, ../sass/partials/page/_page-nav.scss */
   .page-nav__nav-item:hover .mega-menu__container {
     display: block;
   }
-  /* line 398, ../sass/partials/page/_page-nav.scss */
+  /* line 399, ../sass/partials/page/_page-nav.scss */
   .page-nav__nav-item:hover .page-nav__arrow-up {
     display: block;
   }
-  /* line 402, ../sass/partials/page/_page-nav.scss */
+  /* line 403, ../sass/partials/page/_page-nav.scss */
   .page-nav__responsive-home-link {
     display: none;
   }
-  /* line 406, ../sass/partials/page/_page-nav.scss */
+  /* line 407, ../sass/partials/page/_page-nav.scss */
   .page-nav__arrow-up {
     display: block;
     position: absolute;
@@ -1182,7 +1183,7 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
     border-right: 19px solid transparent;
     border-bottom: 15px solid rgba(255, 255, 255, 0.9);
   }
-  /* line 419, ../sass/partials/page/_page-nav.scss */
+  /* line 420, ../sass/partials/page/_page-nav.scss */
   .page-nav .myAccount {
     float: right;
     margin: 0;
@@ -1190,7 +1191,7 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
     padding: 0 5% 0 0;
     background: url(../../images/icons/icons_myAccount.png) center right no-repeat;
   }
-  /* line 427, ../sass/partials/page/_page-nav.scss */
+  /* line 428, ../sass/partials/page/_page-nav.scss */
   .page-nav__mega-menu-responsive-icon, .page-nav__search-responsive-icon {
     display: none;
   }
@@ -5413,7 +5414,7 @@ body.serp .page-layout {
 .multimedia-chip__title-description h1 {
   font-family: OpenSans Semibold;
   font-size: 24px;
-  line-height: 20px;
+  line-height: 30px;
   padding: 0;
   margin: 0 0 10px 0;
 }
@@ -5434,11 +5435,19 @@ body.serp .page-layout {
   .multimedia-chip {
     display: block;
   }
+  /* line 112, ../sass/partials/page/modules/_multimedia-chip.scss */
+  .multimedia-chip__title-description h1 {
+    line-height: 20px;
+  }
 }
 @media (min-width: 960px) {
-  /* line 114, ../sass/partials/page/modules/_multimedia-chip.scss */
+  /* line 120, ../sass/partials/page/modules/_multimedia-chip.scss */
   .multimedia-chip {
     display: block;
+  }
+  /* line 124, ../sass/partials/page/modules/_multimedia-chip.scss */
+  .multimedia-chip__title-description h1 {
+    line-height: 20px;
   }
 }
 /* line 11, ../sass/partials/page-content/modules/_dfp-ads__new-homes.scss */
@@ -5462,6 +5471,7 @@ body.serp .page-layout {
 @media (min-width: 768px) {
   /* line 29, ../sass/partials/page-content/modules/_dfp-ads__new-homes.scss */
   .dfp-ads__new-homes {
+    margin-top: -20px;
     width: 100%;
     height: 320px;
     background-image: url(../../images/ads/dfp/dfp-mock-ads__home__desktop.jpg);
@@ -5614,11 +5624,7 @@ body.serp .page-layout {
   padding: 0 0 0.5em 0;
   margin: 0 0 0 0;
 }
-/* line 138, ../sass/partials/page-content/modules/_real-estate-blog.scss */
-.hp-blogs__blog-tile:hover .detailsOverlay p {
-  display: block;
-}
-/* line 143, ../sass/partials/page-content/modules/_real-estate-blog.scss */
+/* line 136, ../sass/partials/page-content/modules/_real-estate-blog.scss */
 .hp-blogs a.viewMore {
   display: block;
   text-align: center;
@@ -5631,21 +5637,21 @@ body.serp .page-layout {
   text-decoration: none;
   background: #e5e5e5;
 }
-/* line 155, ../sass/partials/page-content/modules/_real-estate-blog.scss */
+/* line 148, ../sass/partials/page-content/modules/_real-estate-blog.scss */
 .hp-blogs a.viewMore img {
   margin-left: 4px;
 }
 
 @media (min-width: 768px) {
-  /* line 162, ../sass/partials/page-content/modules/_real-estate-blog.scss */
+  /* line 155, ../sass/partials/page-content/modules/_real-estate-blog.scss */
   .hp-blogs {
     margin: 0 auto;
   }
-  /* line 166, ../sass/partials/page-content/modules/_real-estate-blog.scss */
+  /* line 159, ../sass/partials/page-content/modules/_real-estate-blog.scss */
   .hp-blogs__blog-tile:last-child {
     margin-right: 0 !important;
   }
-  /* line 170, ../sass/partials/page-content/modules/_real-estate-blog.scss */
+  /* line 163, ../sass/partials/page-content/modules/_real-estate-blog.scss */
   .hp-blogs__real-estate, .hp-blogs__explore-widget {
     width: 100%;
     max-width: 960px;
@@ -5654,11 +5660,11 @@ body.serp .page-layout {
     box-sizing: border-box;
     margin: 0;
   }
-  /* line 178, ../sass/partials/page-content/modules/_real-estate-blog.scss */
+  /* line 171, ../sass/partials/page-content/modules/_real-estate-blog.scss */
   .hp-blogs__real-estate .detailsOverlay h1, .hp-blogs__explore-widget .detailsOverlay h1 {
     font-size: 24px;
   }
-  /* line 183, ../sass/partials/page-content/modules/_real-estate-blog.scss */
+  /* line 176, ../sass/partials/page-content/modules/_real-estate-blog.scss */
   .hp-blogs__blog-tile {
     display: block;
     float: left;
@@ -5668,14 +5674,20 @@ body.serp .page-layout {
     height: 100%;
     box-sizing: border-box;
   }
-  /* line 193, ../sass/partials/page-content/modules/_real-estate-blog.scss */
+  /* line 186, ../sass/partials/page-content/modules/_real-estate-blog.scss */
   .hp-blogs .detailsWrapper {
     bottom: 2px;
     max-height: 200px;
   }
-  /* line 198, ../sass/partials/page-content/modules/_real-estate-blog.scss */
+  /* line 191, ../sass/partials/page-content/modules/_real-estate-blog.scss */
   .hp-blogs .detailsOverlay {
     font-size: 100% !important;
+  }
+}
+@media (min-width: 960px) {
+  /* line 202, ../sass/partials/page-content/modules/_real-estate-blog.scss */
+  .hp-blogs__blog-tile:hover .detailsOverlay p {
+    display: block;
   }
 }
 /* line 4, ../sass/partials/page-content/modules/_real-estate-news.scss */
@@ -5774,17 +5786,13 @@ a, img {
   padding: 0 0 0.5em 0;
   margin: 0 0 0 0;
 }
-/* line 100, ../sass/partials/page-content/modules/_real-estate-news.scss */
-.real-estate-news__tile:hover .detailsOverlay p {
-  display: block;
-}
-/* line 105, ../sass/partials/page-content/modules/_real-estate-news.scss */
+/* line 98, ../sass/partials/page-content/modules/_real-estate-news.scss */
 .real-estate-news__category-tag-container {
   position: absolute;
   top: 10px;
   max-width: 130px;
 }
-/* line 111, ../sass/partials/page-content/modules/_real-estate-news.scss */
+/* line 104, ../sass/partials/page-content/modules/_real-estate-news.scss */
 .real-estate-news h1 {
   text-align: center;
   font-family: 'Oswald Regular', sans-serif;
@@ -5792,7 +5800,7 @@ a, img {
   font-size: 1.5em;
   margin: 0 0 5% 0;
 }
-/* line 119, ../sass/partials/page-content/modules/_real-estate-news.scss */
+/* line 112, ../sass/partials/page-content/modules/_real-estate-news.scss */
 .real-estate-news a.viewMore {
   clear: both;
   display: block;
@@ -5806,37 +5814,49 @@ a, img {
   text-decoration: none;
   background: #e5e5e5;
 }
-/* line 132, ../sass/partials/page-content/modules/_real-estate-news.scss */
+/* line 125, ../sass/partials/page-content/modules/_real-estate-news.scss */
 .real-estate-news a.viewMore img {
   margin-left: 4px;
 }
-/* line 137, ../sass/partials/page-content/modules/_real-estate-news.scss */
+/* line 130, ../sass/partials/page-content/modules/_real-estate-news.scss */
 .real-estate-news a.disabledViewMore {
   opacity: 0.4;
   cursor: default;
 }
 
 @media (min-width: 768px) {
-  /* line 147, ../sass/partials/page-content/modules/_real-estate-news.scss */
+  /* line 140, ../sass/partials/page-content/modules/_real-estate-news.scss */
   .real-estate-news__wrapper {
     width: 100%;
   }
-  /* line 151, ../sass/partials/page-content/modules/_real-estate-news.scss */
+  /* line 144, ../sass/partials/page-content/modules/_real-estate-news.scss */
   .real-estate-news__tile {
     width: 49%;
     float: left;
   }
-  /* line 156, ../sass/partials/page-content/modules/_real-estate-news.scss */
+  /* line 149, ../sass/partials/page-content/modules/_real-estate-news.scss */
   .real-estate-news__tile:nth-child(even) {
     margin-left: 2%;
   }
+  /* line 153, ../sass/partials/page-content/modules/_real-estate-news.scss */
+  .real-estate-news .adSlot {
+    margin-left: 22%;
+  }
 }
 @media (min-width: 960px) {
-  /* line 165, ../sass/partials/page-content/modules/_real-estate-news.scss */
+  /* line 161, ../sass/partials/page-content/modules/_real-estate-news.scss */
   .real-estate-news .adSlot {
     margin: 0;
     float: none;
     display: inline-block;
+  }
+  /* line 167, ../sass/partials/page-content/modules/_real-estate-news.scss */
+  .real-estate-news #ad_bigbox2 {
+    margin-left: 3.5%;
+  }
+  /* line 173, ../sass/partials/page-content/modules/_real-estate-news.scss */
+  .real-estate-news__tile:hover .detailsOverlay p {
+    display: block;
   }
 }
 /* line 7, ../sass/partials/page-content/modules/_content-footer.scss */
@@ -5944,6 +5964,7 @@ a, img {
 @media (min-width: 768px) {
   /* line 29, ../sass/partials/page-content/modules/_dfp-ads__new-homes.scss */
   .dfp-ads__new-homes {
+    margin-top: -20px;
     width: 100%;
     height: 320px;
     background-image: url(../../images/ads/dfp/dfp-mock-ads__home__desktop.jpg);

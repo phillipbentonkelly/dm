@@ -54,6 +54,8 @@ var mplistingObj = {};
             }
         },
         listingsInit: function(){
+            mpListings.$body = $('body');
+                mpListings.$bodyWidth = mpListings.$body.width();
             mpListings.$topNode = $('.mplistings');
             mpListings.$listingFadeWrapper = $('.mplistings .scrollFadeWrapper');
             mpListings.$listingWrapper = $('.mplistings .scrollWrapper');
@@ -76,6 +78,12 @@ var mplistingObj = {};
                  }
             }
             reProperties.height(tallestProperty);
+            
+            if(mpListings.$bodyWidth < 768){
+                setTimeout(function(){
+                    mpListings.$listingsContainer.height(mpListings.$listings.eq(0).height());
+                }, 500);
+            }
         },
         listingsEventHandlers: function(){
             mpListings.$up.on('click', this.scrollListings);
@@ -83,6 +91,7 @@ var mplistingObj = {};
         },
         updateDisplayParams: function(){
             var thisRef = this;
+
             setTimeout(function(){
                 thisRef.updatePropertyAddressHeight();
             }, 500);
@@ -95,6 +104,12 @@ var mplistingObj = {};
 
             mpListings.listingsRows = (mpListings.$listings.length % 2 > 0)? ((mpListings.$listings.length - (mpListings.$listings.length % 2))/2)+1 : ((mpListings.$listings.length - (mpListings.$listings.length % 2))/2);
             mpListings.remainingRows = mpListings.listingsRows - (8/2);
+
+            if(mpListings.$bodyWidth < 768){
+                mpListings.$listingsContainer.width( (mpListings.$listings.eq(0).width() * mpListings.$listings.length) + 100 ).promise().done(function(){
+                    thisRef.updatePropertyAddressHeight();
+                });
+            }
 
             for(var u = 0; u < mpListings.remainingRows; u++){
                 var newPos = mpListings.$scrollScale * (u+1);
@@ -112,6 +127,9 @@ $(function(){
     mplistingObj.listingsInit();
 
     $(window).load(function(){
+        mplistingObj.updateDisplayParams();
+    });
+    $(window).resize(function () {
         mplistingObj.updateDisplayParams();
     });
 });
