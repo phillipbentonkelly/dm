@@ -31,6 +31,12 @@ $padding-top: 20px;
 	}
 }
 
+body.home {
+	.#{$module-name} {
+		margin: 0 auto !important;
+	}
+}
+
 .mega-menu {
 	display: none;
 }

@@ -14,7 +14,7 @@ $module-name: 'dfp-ads__new-homes';
 	background-image: url(#{$img-path}ads/dfp/dfp-mock-ads__home__mobile.jpg);
 	background-position: top left;
 	background-repeat: no-repeat;
-	margin-bottom: 30px;
+	margin: 0 auto 30px auto;
 }
 
 @include media-query(desktop) {
