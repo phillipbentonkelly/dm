@@ -3,7 +3,7 @@
     <div class="" id="carousel-wrap">
         <div class="carousel_wrapper">
             <div id="carousel">
-                <figure id="div-id-for-carousel1" class="slide"></figure>
+                <figure id="ad_carousel1" class="slide"></figure>
 
                 <figure class="slide">
                     <a href="collections/boards-provisions/products/table-setting-placard.html">
@@ -27,7 +27,7 @@
                     </a>
                 </figure>
 
-                <figure id="div-id-for-carousel2" class="slide"></figure>
+                <figure id="ad_carousel2" class="slide"></figure>
 
                 <figure class="slide active">
                     <a href="collections/new-arrivals.html">
@@ -51,7 +51,7 @@
                     </a>
                 </figure>
 
-                <figure id="div-id-for-carousel3" class="slide"></figure>
+                <figure id="ad_carousel3" class="slide"></figure>
 
                 <figure class="slide">
                     <a href="blogs/plate-the-slate/15553989-quarry-to-table.html">
@@ -109,36 +109,3 @@
     </div>
 </div>
 <!-- Full Screen Carousel -->
-
-<script>
-    var networkCode = 61381659;
-    var topLevelAdUnit = "testboston.com";
-    var s1 = "testboston.com";
-    var s2 = "real-estate";
-    var adUnit = topLevelAdUnit + "/" + s2;
-    var slotName = "/" + networkCode + "/" + adUnit;
-    
-    googletag.cmd.push(function() {
-        googletag.defineSlot(slotName, [960,580], "div-id-for-carousel1")
-        .addService(googletag.pubads())
-        .setTargeting("pos", "carousel1");
-        googletag.defineSlot(slotName, [960,580], "div-id-for-carousel2")
-        .addService(googletag.pubads())
-        .setTargeting("pos", "carousel2");
-        googletag.defineSlot(slotName, [960,580], "div-id-for-carousel3")
-        .addService(googletag.pubads())
-        .setTargeting("pos", "carousel3");
-        googletag.pubads().setTargeting("s1",s1);
-        googletag.pubads().setTargeting("s2",s2);      
-        googletag.pubads().enableSingleRequest();
-        googletag.enableServices();
-    });
-</script>
-
-<script type="text/javascript">
-    googletag.cmd.push(function() {
-        googletag.display("div-id-for-carousel1");
-        googletag.display("div-id-for-carousel2");
-        googletag.display("div-id-for-carousel3");
-    });
-</script>
