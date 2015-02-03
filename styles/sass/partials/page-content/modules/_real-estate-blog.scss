@@ -133,13 +133,6 @@ $module-name: 'hp-blogs';
 	    }
 	}
 
-	&__blog-tile:hover {
-
-		.detailsOverlay p {
-			display: block;
-		}
-    }
-
 	a.viewMore{
 		display: block;
 		text-align: center;
@@ -202,8 +195,13 @@ $module-name: 'hp-blogs';
 	}
 }
 
-// @include media-query(desktop) {
-// 	.#{$module-name} {
-// 		width: ($left-col-width + $right-col-width + $right-col-right-gutter);
-// 	}
-// }
+@include media-query(desktop) {
+	.#{$module-name} {
+		&__blog-tile:hover {
+
+			.detailsOverlay p {
+				display: block;
+			}
+    	}
+	}
+}
