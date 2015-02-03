@@ -1406,7 +1406,7 @@ body.serp .page-layout {
 /* line 72, ../sass/partials/page/_page-search.scss */
 .page-search__row--level-two {
   display: inline-block;
-  padding: 10px;
+  padding: 10px 10px 10px 20px;
   width: 90%;
 }
 /* line 77, ../sass/partials/page/_page-search.scss */
