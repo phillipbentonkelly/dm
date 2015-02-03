@@ -251,12 +251,6 @@ dm.searchPanel = {};
 						self.allOpen = (self.allOpen == true) ? false : true;
 					});
 
-					// DM-193 hide focusser for mobile
-					$('.select2-container').each(function () {
-						$(this).find('.select2-search, .select2-focusser').hide();
-					});
-
-
 				break;
 					
 			} // end switch
