@@ -5855,7 +5855,7 @@ a, img {
 @media (min-width: 960px) {
   /* line 161, ../sass/partials/page-content/modules/_real-estate-news.scss */
   .real-estate-news .adSlot {
-    margin: 0;
+    margin: 0 0 15px 0;
     float: none;
     display: inline-block;
   }
