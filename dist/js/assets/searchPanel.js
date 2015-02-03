@@ -205,7 +205,8 @@ dm.searchPanel = {};
 
 					self.btns.$save.on('click', function(e){
 						e.preventDefault();
-						var status = $(this).getObservable();
+						var state = $(this).getObservable();
+						var modal = self.modals.$svSearch;
 						if(!self.saved){
 							$(modal).modal();
 							$(modal).find('button').on('click',function(e){
