@@ -86,6 +86,7 @@ if [[ $proceedVar =~ ^[Yy]$ ]]
 			cd dm
 			git checkout gh-pages
 			git status
+			git stash
 			git pull
 			git status
 			cd ..
