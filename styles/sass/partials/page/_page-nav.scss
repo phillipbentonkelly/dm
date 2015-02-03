@@ -15,6 +15,7 @@ $module-name: 'page-nav';
 	clear: both;
 	color: #fff;
 
+
 	ul {
 		padding: 0 0 0 0;
 		margin: 0 0 0 0;
@@ -187,6 +188,16 @@ $module-name: 'page-nav';
 		padding: 0 10px 0 10px;
 		position: relative;
 	}
+
+	.myAccount{
+		.mega-menu__container{
+			width: 206px;
+			.mega-menu__list-item:last-child{
+				border-top: 1px solid #e5e5e5;
+			}
+		}
+	}
+
 }
 
 // ------------------------------------------------------------
@@ -194,6 +205,7 @@ $module-name: 'page-nav';
 // ------------------------------------------------------------
 @include media-query(desktop) {
 	.#{$module-name} {
+		width: 100%;
 		height: $page-nav-desktop-height;
 		position: initial;
 
@@ -202,8 +214,10 @@ $module-name: 'page-nav';
 		}
 
 		&__content-wrapper {
-			width: $desktop-breakpoint;
-			height: 100%;
+			max-width: $desktop-breakpoint;
+			width: 100%;
+			min-height: 1px;
+			overflow: hidden;
 			margin: auto;
 		}
 		
@@ -289,7 +303,7 @@ $module-name: 'page-nav';
 		.myAccount {
 			float: right;
 			margin: 0 0 0 0px;
-			padding: 0 26px 0 0;
+			padding: 0 5% 0 0;
 			background: url(#{$img-path}icons/icon_account.png) center right no-repeat;
 		}
 
@@ -308,7 +322,8 @@ $module-name: 'page-nav';
 		position: initial;
 
 		&__content-wrapper {
-			width: $desktop-breakpoint;
+			max-width: $desktop-breakpoint;
+			min-width: $tablet-breakpoint;
 			height: 100%;
 			margin: auto;
 		}
@@ -329,7 +344,7 @@ $module-name: 'page-nav';
 		
 		&__main-nav-links {
 			display: inline-block;
-			width: 83%;
+			max-width: 80%;
 			position: initial;
 			background-color: initial;
 			font-family: inherit;
@@ -346,7 +361,7 @@ $module-name: 'page-nav';
 				font-family: OpenSans Bold;
 				font-weight: 700;
 				font-size: 14px;
-				padding-left: 20px !important;
+				padding-left: 2% !important;
 				position: relative;
 				
 				a {
@@ -404,8 +419,9 @@ $module-name: 'page-nav';
 
 		.myAccount {
 			float: right;
-			margin: 0 0 0 0px;
-			padding: 0 26px 0 0;
+			margin: 0;
+			/*padding: 0 26px 0 0;*/
+			padding: 0 5% 0 0;
 			background: url(#{$img-path}icons/icons_myAccount.png) center right no-repeat;
 		}
 

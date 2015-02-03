@@ -87,11 +87,6 @@ $module-name: 'page-search';
 			.select2-container{
 				float: right;
 				padding: 5px 0;
-				.select2-choice{
-					.select2-chosen{
-						color: #000;
-					}
-				}
 				.select2-arrow{
 					margin-top: 3px;
 				}
@@ -291,8 +286,7 @@ $module-name: 'page-search';
 					border-width: 0 7px 7px 7px;
 				}				
 			}
-			
-			
+					
 		}
 
 
@@ -530,13 +524,7 @@ $module-name: 'page-search';
 		}
 	}
 
-	&.select2-focusser{
-		color: #000;
-	}
-
 }
-
-
 
 .select2-drop{
 	.select2-search{
@@ -609,18 +597,6 @@ $module-name: 'page-search';
 			&--level-three-toggle{
 				border: 1px solid rgb(0,0,0);
 				height: 34px;
-
-				span.select2-chosen{
-					color: rgb(153, 153, 153);
-				}
-
-
-			}
-
-			&.select2-panel-open{
-				span.select2-chosen{
-					color: rgb(0, 0, 0);
-				}
 			}
 
 			&--close{
@@ -636,7 +612,6 @@ $module-name: 'page-search';
 
 		.select2-choice, .select2-container .select2-drop{
 			border: 1px solid rgb(0,0,0);
-			color: transparent;
 		}
 
 	}
@@ -772,6 +747,18 @@ $module-name: 'page-search';
 			&--level-three-toggle{
 				box-sizing: border-box;
 				height: 34px;
+
+				span.select2-chosen{
+					color: rgb(153, 153, 153);
+				}
+
+				
+			}
+
+			&.select2-panel-open{
+				span.select2-chosen{
+					color: rgb(0, 0, 0);
+				}
 			}
 
 		}
