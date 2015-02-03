@@ -61,8 +61,8 @@ a, img{
 	}
 
 .#{$module-name}{
+	width: 100%;
 	margin-bottom: 20px;
-	max-width: 300px;
 	min-height: 250px;
 	position: relative;
 	/*border: 1px solid green;*/
@@ -171,10 +171,7 @@ a, img{
 	}
 
 	.scrollFadeWrapper {
-		width: 332px;
-		/*height: 771px;*/
-		overflow: hidden;
-		overflow-y: scroll;
+		white-space: nowrap;
 	}
 
 	// .fade-overlay {
@@ -206,7 +203,6 @@ a, img{
 			width: 100%;
 			max-height: 100%;
 			overflow: hidden;
-			overflow-y: scroll;
 			
 			.property.template { display: none; }
 			
@@ -291,6 +287,7 @@ a, img{
 					font-size: 45%;
 					font-family: 'OpensSans';
 					font-weight: 400;
+					white-space: initial;
 				}
 					.bottom-level__details div{
 						background: #e5e5e5;
@@ -357,7 +354,6 @@ a, img{
 
 @media screen and (max-width: 767px) {
 	.#{$module-name}{
-		width: 300px;
 		overflow: hidden;
 
 		.navigation {
@@ -430,6 +426,10 @@ a, img{
 			height: 771px;
 			overflow-x: initial;
 			overflow-y: scroll;
+		}
+
+		.scrollFadeWrapper {
+			white-space: initial;
 		}
 	}
 }

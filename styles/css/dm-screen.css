@@ -5817,13 +5817,21 @@ a, img {
   .real-estate-news__tile:nth-child(even) {
     margin-left: 2%;
   }
+  /* line 160, ../sass/partials/page-content/modules/_real-estate-news.scss */
+  .real-estate-news .adSlot {
+    margin-left: 22%;
+  }
 }
 @media (min-width: 960px) {
-  /* line 165, ../sass/partials/page-content/modules/_real-estate-news.scss */
+  /* line 168, ../sass/partials/page-content/modules/_real-estate-news.scss */
   .real-estate-news .adSlot {
     margin: 0;
     float: none;
     display: inline-block;
+  }
+  /* line 174, ../sass/partials/page-content/modules/_real-estate-news.scss */
+  .real-estate-news #ad_bigbox2 {
+    margin-left: 3.5%;
   }
 }
 /* line 7, ../sass/partials/page-content/modules/_content-footer.scss */
