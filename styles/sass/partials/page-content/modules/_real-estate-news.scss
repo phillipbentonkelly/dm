@@ -95,13 +95,6 @@ a, img{
 	    }
 	}
 
-	&__tile:hover {
-
-		.detailsOverlay p {
-			display: block;
-		}
-    }
-
     &__category-tag-container {
 		position: absolute;
 		top: 10px;
@@ -174,5 +167,12 @@ a, img{
 		#ad_bigbox2 {
 			margin-left: 3.5%;
 		}
+
+		&__tile:hover {
+
+			.detailsOverlay p {
+				display: block;
+			}
+	    }
 	}
 }
