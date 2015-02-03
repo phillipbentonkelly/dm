@@ -42,20 +42,42 @@
         <script src="js/assets/mpListings.js"></script>
         <script src="js/assets/listings.data.js"></script>
 	
-	<script type="text/javascript">
-	    var googletag = googletag || {};
-	    googletag.cmd = googletag.cmd || [];
-	    
-	    (function() {
-	        var gads = document.createElement("script");
-	        gads.async = true;
-	        gads.type = "text/javascript";
-	        var useSSL = "https:" == document.location.protocol;
-	        gads.src = (useSSL ? "https:" : "http:") + "//www.googletagservices.com/tag/js/gpt.js";
-	        var node =document.getElementsByTagName("script")[0];
-	        node.parentNode.insertBefore(gads, node);
-	    })();
-	</script>
+<script src="http://www.googletagservices.com/tag/js/gpt.js"></script>
+<script>
+    // DFP Setup
+    var bcom = bcom || {};
+    bcom.dfp = bcom.dfp || {};
+    bcom.dfp.networkCode = 61381659;
+    bcom.dfp.adUnit = 'boston.com/real-estate/homepage';
+
+        
+
+        
+    bcom.dfp.adSlots = ['ad_toprightslot','ad_lead1','ad_bigbox1','ad_bigbox2','ad_bigbox3','ad_outofpage1','ad_outofpage2','ad_outofpage3','ad_preroll'];
+    
+    
+    
+    
+
+    bcom.dfp.streamCount = '5';
+    bcom.dfp.galleryCount = '';
+    bcom.dfp.refreshRate = '';
+    bcom.dfp.keyValuePairs = {
+        s1: 'boston.com',
+        s2: 'buying',
+        s3: '',
+        s4: '',
+        s5: '',
+        pgtype : 'sectfront',
+        pageurl : '',
+        meta: '',
+        streamcount:'1'
+    };
+    
+</script>
+<script src="http://www.boston.com/js/bcom.util.js"></script>
+<script src="http://www.boston.com/js/bcom.dfp.ad-catalog.js"></script>
+<script src="http://www.boston.com/js/bcom.dfp.ad-init.js"></script>
 
 	<script src="js/resources/plugins/selectize/selectize.js"></script>
     <script src="js/resources/plugins/select2/select2.js"></script>
@@ -123,37 +145,15 @@
 
 	<!-- Page Masthead -->
     <!-- Page Masthead -->
+<div id="ad_outofpage1" class="out-of-page-ad"></div>
+<div id="ad_outofpage2" class="out-of-page-ad"></div>
+<div id="ad_outofpage3" class="out-of-page-ad"></div>
 <div class="masthead">
     <div class="page-header">
-        <div id="ad_lead1" class="page-header__content"><!--<img src="images/BannerAd-placeholder.jpg" />--></div>
+        <div id="ad_lead1" class="page-header__content"></div>
     </div>
 </div>
 <!-- Page Masthead -->
-
-<script>
-    var networkCode = 61381659;
-    var topLevelAdUnit = "testboston.com";
-    var s1 = "testboston.com";
-    var s2 = "real-estate";
-    var adUnit = topLevelAdUnit + "/" + s2;
-    var slotName = "/" + networkCode + "/" + adUnit;
-    
-    googletag.cmd.push(function() {
-        googletag.defineSlot(slotName, [728,90], "ad_lead1")
-        .addService(googletag.pubads())
-        .setTargeting("pos", "ad_lead1");
-        googletag.pubads().setTargeting("s1",s1);
-        googletag.pubads().setTargeting("s2",s2);      
-        googletag.pubads().enableSingleRequest();
-        googletag.enableServices();
-    });
-</script>
-
-<script type="text/javascript">
-    googletag.cmd.push(function() {
-        googletag.display("ad_lead1");
-    });
-</script>
     <!-- Page Nav -->
     <!-- Page Nav -->
 <div class="page-nav">
@@ -867,36 +867,8 @@
     </div> -->
 
     <div class="dfp-ad__row">
-        <div id="ad_bigbox2" class="dfp-ad__row__main-link"><!--<img src="images/ads/dfp/dfpAds__300by250__marriott.jpg" />--></div>
-        <div id="ad_bigbox3" class="dfp-ad__row__main-link"><!--<img src="images/ads/dfp/dfpAds__300by250__verizon.jpg" />--></div>
-
-        <script>
-            var networkCode = 61381659;
-            var topLevelAdUnit = "testboston.com";
-            var s1 = "testboston.com";
-            var s2 = "real-estate";
-            var adUnit = topLevelAdUnit + "/" + s2;
-            var slotName = "/" + networkCode + "/" + adUnit;
-            
-            googletag.cmd.push(function() {
-                googletag.defineSlot(slotName, [300,250], "ad_bigbox2")
-                googletag.defineSlot(slotName, [300,250], "ad_bigbox3")
-                .addService(googletag.pubads())
-                .setTargeting("pos", "ad_bigbox2")
-                .setTargeting("pos", "ad_bigbox3");
-                googletag.pubads().setTargeting("s1",s1);
-                googletag.pubads().setTargeting("s2",s2);      
-                googletag.pubads().enableSingleRequest();
-                googletag.enableServices();
-            });
-        </script>
-
-        <script type="text/javascript">
-            googletag.cmd.push(function() {
-                googletag.display("ad_bigbox2");
-                googletag.display("ad_bigbox3");
-            });
-        </script>
+        <div id="ad_bigbox2" class="dfp-ad__row__main-link"></div>
+        <div id="ad_bigbox3" class="dfp-ad__row__main-link"></div>
     </div>
 
     <!-- <div class="related-articles__item">

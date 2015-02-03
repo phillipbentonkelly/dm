@@ -6,7 +6,7 @@
 	module.getArticles = function() {
 		$.get('http://devedit.boston.com/eom/SysConfig/WebPortal/BDC/Framework/feeds/placester/getArticles.jsp?mode=full', function(data) {
 			module.allArticles = data.articles; //['articles'] is better written in dot notation.
-			console.log('All Articles', module.allArticles);
+			//console.log('All Articles', module.allArticles);
 			module.buildWidget(module.allArticles);
 		});
 	};
