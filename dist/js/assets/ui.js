@@ -20,8 +20,6 @@ var UIMods = {};
 			uiMods.$pageSearch = $('.page-search');
 		},
 		updateSearchOffset: function(){
-			console.log("uiMods.$pageNav.offset().top: " + uiMods.$pageNav.offset().top);
-			console.log("uiMods.$pageNav.offset().top: " + uiMods.$pageNav.offset().top + uiMods.$pageNav.height());
 			uiMods.$pageSearch.offset({ top: (uiMods.$pageNav.offset().top + uiMods.$pageNav.height()), left: 0 });
 		}
 	};
