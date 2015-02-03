@@ -430,6 +430,7 @@ $module-name: 'page-search';
 	
 
 	&__fancy-checkbox{
+		padding: 5px 0;
 
 		input[type=checkbox]{
 			display: none;
@@ -699,6 +700,8 @@ $module-name: 'page-search';
 
 		&__input{
 			&--tokenize{
+				position: relative;
+				top: -2px;
 				width: 154px;
 			}
 		}
