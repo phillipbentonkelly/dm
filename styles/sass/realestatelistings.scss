@@ -172,7 +172,7 @@ a, img{
 	}
 
 	.scrollFadeWrapper {
-		// width: 332px;
+		width: 332px;
 		/*height: 771px;*/
 		overflow: hidden;
 		overflow-y: scroll;
@@ -339,7 +339,7 @@ a, img{
 
 @media screen and (max-width: 767px) {
 	.#{$module-name}{
-		width: 100%;
+		width: 300px;
 		overflow: hidden;
 
 		.navigation {
@@ -349,6 +349,7 @@ a, img{
 		.hScrollWrapper{
 			/*height: 172px;
 			border-bottom: 1px solid red;*/
+			width: 332px;
 			height: 210px;
 			overflow: hidden;
 		}
