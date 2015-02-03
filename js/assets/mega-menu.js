@@ -57,7 +57,9 @@ var PageNav = {};
 			var stage = pageNav.$pageNav;
 			var logoW = stage.width() - (iconObj2.width()+parseInt(iconObj2.css('border-left-width')) + iconObj1.width()+parseInt(iconObj1.css('border-right-width')));
 
-			pageNav.menuObj.$logo.width(logoW);
+			if(pageNav.$body.width() < 768){
+				pageNav.menuObj.$logo.width(logoW);
+			}
 		}
 	};
 })(window, jQuery);
