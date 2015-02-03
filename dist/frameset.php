@@ -35,7 +35,7 @@
 	<script src="js/assets/gallery.js"></script>
     <script src="js/assets/related-articles-main-widget.js"></script>
 
-	<?php if ($pageType == 'home' || $pageType == 'category' || $pageType == 'category-details' || $pageType == 'neighborhood') { ?>
+	<?php if ($pageType == 'home' || $pageType == 'category-details' || $pageType == 'neighborhood') { ?>
 	    <!-- Carousel Scripts -->
 		<script src="js/assets/basicMobileDetection.js"></script>
 		<script src="http://wurfl.io/wurfl.js"></script>
