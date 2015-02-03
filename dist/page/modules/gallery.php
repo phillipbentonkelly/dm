@@ -30,7 +30,7 @@
 			</div>
 	    </div>
 	    
-	    <div class="gallery-widget__details">
+	    <!--<div class="gallery-widget__details"> Removed per DM-216 Feedback
 	    	<div class="gallery-widget__details__info-nav">
 	    		<a href="javascript:;" class="gallery-widget__details__info-nav__show-caption chevron bottom">Show Captions</a>
 	    		<div class="gallery-widget__details__info-nav__counter">
@@ -41,7 +41,7 @@
 				<p>Caption 1.</p>
 				<p class="gallery-widget__details__caption__photo-credit">Photo Credit- Elyssa Cohen</p>
 	    	</div>
-	    </div>
+	    </div>-->
     </div>
 </div>
 <!-- Gallery Widget -->

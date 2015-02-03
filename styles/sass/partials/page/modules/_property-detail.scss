@@ -89,6 +89,11 @@ $module-name: 'explore-widget';
       box-sizing: border-box;
     }
 
+    &__link-list-container{
+      float: left;
+      min-width: 50%;
+    }
+
     &__link-slot {
       display: block;
       box-sizing: border-box;
@@ -163,7 +168,7 @@ $module-name: 'explore-widget';
     &__link-list {
       float: left;
       display: inline-block;
-      width: 50%;
+      //width: 50%;
     }
   }
 }
