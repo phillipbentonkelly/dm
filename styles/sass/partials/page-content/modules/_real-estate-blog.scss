@@ -154,7 +154,7 @@ $module-name: 'hp-blogs';
 @include media-query(tablet) {
 	.#{$module-name} {
 
-		margin: 0 auto;
+		margin: 10px auto;
 
 		&__blog-tile:last-child {
 			margin-right: 0 !important;

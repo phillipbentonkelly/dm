@@ -16,6 +16,7 @@
 		// build each article's markup
 		for (var i = 0; i < articlesDisplayed.length; i++) {
 
+			var articlesOnPage = $('.related-articles').children('.related-articles__item').length;
 			var curItem = articlesDisplayed[i];
 			var markup =[];
 			var tagMarkup = [];
@@ -55,6 +56,10 @@
 					}
 				}
 			}
+			if(articlesOnPage > 0 && articlesOnPage %4 ===0) {
+				var adMarkup = '<div style="height:250px;width:300px;float:left;background:lightgrey;margin:0 20px 20px 0;" class="ad-placeholder"></div><div style="height:250px;width:300px;float:left;background:lightgrey;margin:0 20px 20px 0;" class="ad-placeholder"></div>';
+				module.$container.append(adMarkup);
+			}
 
 			var _tagMarkup = tagMarkup.join('');
 			markup = [	'<div class="related-articles__item">',
@@ -76,6 +81,7 @@
 
 			module.$container.append(markup);
 			module.$container.append(module.$viewMore);
+
 		}
 	};
 

@@ -5654,7 +5654,7 @@ body.serp .page-layout {
 @media (min-width: 768px) {
   /* line 155, ../sass/partials/page-content/modules/_real-estate-blog.scss */
   .hp-blogs {
-    margin: 0 auto;
+    margin: 10px auto;
   }
   /* line 159, ../sass/partials/page-content/modules/_real-estate-blog.scss */
   .hp-blogs__blog-tile:last-child {
