@@ -117,6 +117,10 @@
                 $('.page-layout__left-col').width($(window).width() - 320);
             };
 
+            if ($(window).width() < 768) {
+                $('.page-layout__right-col').find('.adplaceholer__right-column').hide();
+            };
+
             $('.contact__agent-number').on('click', function(e) {
             	e.preventDefault();
             	$(this).text() == 'View My Contact Number' ? $(this).text('(617) 230-6674') : $(this).text('View My Contact Number');
@@ -127,8 +131,10 @@
             if ($(window).width() > 752) {
             	$('.page-layout__right-col').find('.close-modal-wrap').remove();
                 $('.page-layout__left-col').width($(window).width() - 320);
+                $('.page-layout__right-col').find('.adplaceholer__right-column').show();
             } else {
                 $('.page-layout__left-col').css('width', '100%');
+                $('.page-layout__right-col').find('.adplaceholer__right-column').hide();
             }
 
             if($ ('body').hasClass('property-listings-premium') && $(window).width() < 768) {
