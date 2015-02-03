@@ -86,7 +86,7 @@ $module-name: 'multimedia-chip';
 		h1 {
 			font-family: OpenSans Semibold;
 			font-size: 24px;
-			line-height: 20px;
+			line-height: 30px;
 			padding: 0;
 			margin: 0 0 10px 0;
 		}
@@ -107,11 +107,23 @@ $module-name: 'multimedia-chip';
 @include media-query(tablet) {
 	.#{$module-name} {
 		display: block;
+		
+		&__title-description {
+			h1 {
+				line-height: 20px;
+			}
+		}
 	}
 }
 
 @include media-query(desktop) {
 	.#{$module-name} {
 		display: block;
+		
+		&__title-description {
+			h1 {
+				line-height: 20px;
+			}
+		}
 	}
 }

@@ -5408,7 +5408,7 @@ body.serp .page-layout {
 .multimedia-chip__title-description h1 {
   font-family: OpenSans Semibold;
   font-size: 24px;
-  line-height: 20px;
+  line-height: 30px;
   padding: 0;
   margin: 0 0 10px 0;
 }
@@ -5429,11 +5429,19 @@ body.serp .page-layout {
   .multimedia-chip {
     display: block;
   }
+  /* line 112, ../sass/partials/page/modules/_multimedia-chip.scss */
+  .multimedia-chip__title-description h1 {
+    line-height: 20px;
+  }
 }
 @media (min-width: 960px) {
-  /* line 114, ../sass/partials/page/modules/_multimedia-chip.scss */
+  /* line 120, ../sass/partials/page/modules/_multimedia-chip.scss */
   .multimedia-chip {
     display: block;
+  }
+  /* line 124, ../sass/partials/page/modules/_multimedia-chip.scss */
+  .multimedia-chip__title-description h1 {
+    line-height: 20px;
   }
 }
 /* line 11, ../sass/partials/page-content/modules/_dfp-ads__new-homes.scss */
