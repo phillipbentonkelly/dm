@@ -980,10 +980,11 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
   .page-nav__content-wrapper {
     max-width: 960px;
     width: 100%;
-    height: 100%;
+    min-height: 1px;
+    overflow: hidden;
     margin: auto;
   }
-  /* line 223, ../sass/partials/page/_page-nav.scss */
+  /* line 224, ../sass/partials/page/_page-nav.scss */
   .page-nav__main-nav-links {
     display: inline-block;
     width: 86.77%;
@@ -993,11 +994,11 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
     font-size: inherit;
     line-height: inherit;
   }
-  /* line 233, ../sass/partials/page/_page-nav.scss */
+  /* line 234, ../sass/partials/page/_page-nav.scss */
   .page-nav__main-nav-links li {
     border-top: 0px;
   }
-  /* line 237, ../sass/partials/page/_page-nav.scss */
+  /* line 238, ../sass/partials/page/_page-nav.scss */
   .page-nav__nav-item {
     display: inline-block;
     line-height: 60px;
@@ -1009,26 +1010,26 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
     padding: inherit;
     border-top: 0;
   }
-  /* line 249, ../sass/partials/page/_page-nav.scss */
+  /* line 250, ../sass/partials/page/_page-nav.scss */
   .page-nav__nav-item a {
     display: block;
     width: 100%;
     color: white;
     padding: inherit;
   }
-  /* line 256, ../sass/partials/page/_page-nav.scss */
+  /* line 257, ../sass/partials/page/_page-nav.scss */
   .page-nav__nav-item__responsive-drop-down-icon {
     display: none;
   }
-  /* line 259, ../sass/partials/page/_page-nav.scss */
+  /* line 260, ../sass/partials/page/_page-nav.scss */
   .page-nav__nav-item__responsive-drop-down-icon:after {
     content: "";
   }
-  /* line 263, ../sass/partials/page/_page-nav.scss */
+  /* line 264, ../sass/partials/page/_page-nav.scss */
   .page-nav__nav-item .page-nav__arrow-up {
     display: none;
   }
-  /* line 267, ../sass/partials/page/_page-nav.scss */
+  /* line 268, ../sass/partials/page/_page-nav.scss */
   .page-nav__nav-item .mega-menu__container {
     display: none;
     position: absolute;
@@ -1036,23 +1037,23 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
     left: 0px;
     line-height: 18px;
   }
-  /* line 274, ../sass/partials/page/_page-nav.scss */
+  /* line 275, ../sass/partials/page/_page-nav.scss */
   .page-nav__nav-item .mega-menu__container:first-child {
     display: none;
   }
-  /* line 278, ../sass/partials/page/_page-nav.scss */
+  /* line 279, ../sass/partials/page/_page-nav.scss */
   .page-nav__nav-item:hover .mega-menu__container {
     display: block;
   }
-  /* line 281, ../sass/partials/page/_page-nav.scss */
+  /* line 282, ../sass/partials/page/_page-nav.scss */
   .page-nav__nav-item:hover .page-nav__arrow-up {
     display: block;
   }
-  /* line 285, ../sass/partials/page/_page-nav.scss */
+  /* line 286, ../sass/partials/page/_page-nav.scss */
   .page-nav__responsive-home-link {
     display: none;
   }
-  /* line 289, ../sass/partials/page/_page-nav.scss */
+  /* line 290, ../sass/partials/page/_page-nav.scss */
   .page-nav__arrow-up {
     display: block;
     position: absolute;
@@ -1064,46 +1065,46 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
     border-right: 19px solid transparent;
     border-bottom: 15px solid rgba(255, 255, 255, 0.9);
   }
-  /* line 302, ../sass/partials/page/_page-nav.scss */
+  /* line 303, ../sass/partials/page/_page-nav.scss */
   .page-nav .myAccount {
     float: right;
     margin: 0 0 0 0px;
     padding: 0 5% 0 0;
     background: url(../../images/icons/icon_account.png) center right no-repeat;
   }
-  /* line 309, ../sass/partials/page/_page-nav.scss */
+  /* line 310, ../sass/partials/page/_page-nav.scss */
   .page-nav__mega-menu-responsive-icon, .page-nav__search-responsive-icon {
     display: none;
   }
 }
 @media (min-width: 768px) {
-  /* line 319, ../sass/partials/page/_page-nav.scss */
+  /* line 320, ../sass/partials/page/_page-nav.scss */
   .page-nav {
     height: 60px;
     position: initial;
   }
-  /* line 323, ../sass/partials/page/_page-nav.scss */
+  /* line 324, ../sass/partials/page/_page-nav.scss */
   .page-nav__content-wrapper {
     max-width: 960px;
     min-width: 768px;
     height: 100%;
     margin: auto;
   }
-  /* line 330, ../sass/partials/page/_page-nav.scss */
+  /* line 331, ../sass/partials/page/_page-nav.scss */
   .page-nav__logo {
     width: 134px;
     margin: initial;
   }
-  /* line 334, ../sass/partials/page/_page-nav.scss */
+  /* line 335, ../sass/partials/page/_page-nav.scss */
   .page-nav__logo h1 {
     font-size: 26px;
   }
-  /* line 338, ../sass/partials/page/_page-nav.scss */
+  /* line 339, ../sass/partials/page/_page-nav.scss */
   .page-nav__logo h4 {
     text-align: right;
     font-size: 10px;
   }
-  /* line 344, ../sass/partials/page/_page-nav.scss */
+  /* line 345, ../sass/partials/page/_page-nav.scss */
   .page-nav__main-nav-links {
     display: inline-block;
     max-width: 80%;
@@ -1113,11 +1114,11 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
     font-size: inherit;
     line-height: inherit;
   }
-  /* line 353, ../sass/partials/page/_page-nav.scss */
+  /* line 354, ../sass/partials/page/_page-nav.scss */
   .page-nav__main-nav-links li {
     border-top: 0px;
   }
-  /* line 357, ../sass/partials/page/_page-nav.scss */
+  /* line 358, ../sass/partials/page/_page-nav.scss */
   .page-nav__nav-item {
     display: inline-block;
     line-height: 60px;
@@ -1127,26 +1128,26 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
     padding-left: 2% !important;
     position: relative;
   }
-  /* line 366, ../sass/partials/page/_page-nav.scss */
+  /* line 367, ../sass/partials/page/_page-nav.scss */
   .page-nav__nav-item a {
     display: block;
     width: 100%;
     color: white;
     padding: inherit;
   }
-  /* line 373, ../sass/partials/page/_page-nav.scss */
+  /* line 374, ../sass/partials/page/_page-nav.scss */
   .page-nav__nav-item__responsive-drop-down-icon {
     display: none;
   }
-  /* line 376, ../sass/partials/page/_page-nav.scss */
+  /* line 377, ../sass/partials/page/_page-nav.scss */
   .page-nav__nav-item__responsive-drop-down-icon:after {
     content: "";
   }
-  /* line 380, ../sass/partials/page/_page-nav.scss */
+  /* line 381, ../sass/partials/page/_page-nav.scss */
   .page-nav__nav-item .page-nav__arrow-up {
     display: none;
   }
-  /* line 384, ../sass/partials/page/_page-nav.scss */
+  /* line 385, ../sass/partials/page/_page-nav.scss */
   .page-nav__nav-item .mega-menu__container {
     display: none;
     position: absolute;
@@ -1154,23 +1155,23 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
     left: 0px;
     line-height: 18px;
   }
-  /* line 391, ../sass/partials/page/_page-nav.scss */
+  /* line 392, ../sass/partials/page/_page-nav.scss */
   .page-nav__nav-item .mega-menu__container:first-child {
     display: none;
   }
-  /* line 395, ../sass/partials/page/_page-nav.scss */
+  /* line 396, ../sass/partials/page/_page-nav.scss */
   .page-nav__nav-item:hover .mega-menu__container {
     display: block;
   }
-  /* line 398, ../sass/partials/page/_page-nav.scss */
+  /* line 399, ../sass/partials/page/_page-nav.scss */
   .page-nav__nav-item:hover .page-nav__arrow-up {
     display: block;
   }
-  /* line 402, ../sass/partials/page/_page-nav.scss */
+  /* line 403, ../sass/partials/page/_page-nav.scss */
   .page-nav__responsive-home-link {
     display: none;
   }
-  /* line 406, ../sass/partials/page/_page-nav.scss */
+  /* line 407, ../sass/partials/page/_page-nav.scss */
   .page-nav__arrow-up {
     display: block;
     position: absolute;
@@ -1182,7 +1183,7 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
     border-right: 19px solid transparent;
     border-bottom: 15px solid rgba(255, 255, 255, 0.9);
   }
-  /* line 419, ../sass/partials/page/_page-nav.scss */
+  /* line 420, ../sass/partials/page/_page-nav.scss */
   .page-nav .myAccount {
     float: right;
     margin: 0;
@@ -1190,7 +1191,7 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
     padding: 0 5% 0 0;
     background: url(../../images/icons/icons_myAccount.png) center right no-repeat;
   }
-  /* line 427, ../sass/partials/page/_page-nav.scss */
+  /* line 428, ../sass/partials/page/_page-nav.scss */
   .page-nav__mega-menu-responsive-icon, .page-nav__search-responsive-icon {
     display: none;
   }
