@@ -27,6 +27,7 @@ $module-name: 'dfp-ads__new-homes';
 
 @include media-query(tablet) {
 	.#{$module-name} {
+		margin-top: -20px;
 		width: 100%;
 		height: 320px;
 		background-image: url(#{$img-path}ads/dfp/dfp-mock-ads__home__desktop.jpg);

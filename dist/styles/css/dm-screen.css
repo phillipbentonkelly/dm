@@ -5465,6 +5465,7 @@ body.serp .page-layout {
 @media (min-width: 768px) {
   /* line 29, ../sass/partials/page-content/modules/_dfp-ads__new-homes.scss */
   .dfp-ads__new-homes {
+    margin-top: -20px;
     width: 100%;
     height: 320px;
     background-image: url(../../images/ads/dfp/dfp-mock-ads__home__desktop.jpg);
@@ -5957,6 +5958,7 @@ a, img {
 @media (min-width: 768px) {
   /* line 29, ../sass/partials/page-content/modules/_dfp-ads__new-homes.scss */
   .dfp-ads__new-homes {
+    margin-top: -20px;
     width: 100%;
     height: 320px;
     background-image: url(../../images/ads/dfp/dfp-mock-ads__home__desktop.jpg);
