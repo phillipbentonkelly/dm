@@ -746,6 +746,16 @@ textarea {
     margin-top: 0px;
   }
 }
+/* line 42, ../sass/partials/page/_page-masthead.scss */
+.out-of-page-ad {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
 /* line 11, ../sass/partials/page/_page-header.scss */
 .page-header {
   width: 100%;
@@ -2316,7 +2326,7 @@ body.serp .page-layout {
   background-color: #ff6c6c;
 }
 /* line 106, ../sass/partials/page/modules/_relatedarticles.scss */
-.related-articles__item:nth-child(2), .related-articles__item:nth-child(3) {
+.related-articles__item:nth-child(3), .related-articles__item:nth-child(4) {
   border: none;
 }
 /* line 110, ../sass/partials/page/modules/_relatedarticles.scss */
@@ -2333,7 +2343,7 @@ body.serp .page-layout {
   padding: 0.5em 0 0.5em 0;
   text-decoration: none;
   background: #e5e5e5;
-  margin-top: 20px;
+  margin: 20px 0 10px 0;
 }
 /* line 125, ../sass/partials/page/modules/_relatedarticles.scss */
 .related-articles a.viewMore img {
@@ -2358,7 +2368,7 @@ body.serp .page-layout {
 
 @media (min-width: 768px) {
   /* line 149, ../sass/partials/page/modules/_relatedarticles.scss */
-  .related-articles__item:nth-child(3) {
+  .related-articles__item:nth-child(4) {
     border-top: 1px solid #e5e5e5;
   }
   /* line 153, ../sass/partials/page/modules/_relatedarticles.scss */
@@ -5654,7 +5664,7 @@ body.serp .page-layout {
 @media (min-width: 768px) {
   /* line 155, ../sass/partials/page-content/modules/_real-estate-blog.scss */
   .hp-blogs {
-    margin: 0 auto;
+    margin: 10px auto;
   }
   /* line 159, ../sass/partials/page-content/modules/_real-estate-blog.scss */
   .hp-blogs__blog-tile:last-child {
