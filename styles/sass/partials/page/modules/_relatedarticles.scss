@@ -103,7 +103,7 @@ $module-name: 'related-articles';
 		}
 	}
 
-	&__item:nth-child(2), &__item:nth-child(3) {
+	&__item:nth-child(3), &__item:nth-child(4) {
 		border: none;
 	}
 
@@ -120,7 +120,7 @@ $module-name: 'related-articles';
 		padding: 0.5em 0 0.5em 0;
 		text-decoration: none;
 		background: #e5e5e5;
-		margin-top: 20px;
+		margin: 20px 0 10px 0;
 
 		img {
 			margin-left: 4px;
@@ -146,7 +146,7 @@ $module-name: 'related-articles';
 @include media-query(tablet) {
 
 	.#{$module-name} {
-		&__item:nth-child(3) {
+		&__item:nth-child(4){
 			border-top: 1px solid #e5e5e5;
 		}
 
