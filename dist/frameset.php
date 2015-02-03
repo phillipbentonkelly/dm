@@ -35,7 +35,7 @@
 	<script src="js/assets/gallery.js"></script>
     <script src="js/assets/related-articles-main-widget.js"></script>
 
-	<?php if ($pageType == 'home' || $pageType == 'category' || $pageType == 'category-details' || $pageType == 'neighborhood') { ?>
+	<?php if ($pageType == 'home' || $pageType == 'category-details' || $pageType == 'neighborhood') { ?>
 	    <!-- Carousel Scripts -->
 		<script src="js/assets/basicMobileDetection.js"></script>
 		<script src="http://wurfl.io/wurfl.js"></script>
@@ -76,20 +76,54 @@
         <script src="js/assets/listings.data.js"></script>
 	<?php } ?>
 
-	<script type="text/javascript">
-	    var googletag = googletag || {};
-	    googletag.cmd = googletag.cmd || [];
-	    
-	    (function() {
-	        var gads = document.createElement("script");
-	        gads.async = true;
-	        gads.type = "text/javascript";
-	        var useSSL = "https:" == document.location.protocol;
-	        gads.src = (useSSL ? "https:" : "http:") + "//www.googletagservices.com/tag/js/gpt.js";
-	        var node =document.getElementsByTagName("script")[0];
-	        node.parentNode.insertBefore(gads, node);
-	    })();
-	</script>
+<script src="http://www.googletagservices.com/tag/js/gpt.js"></script>
+<script>
+    // DFP Setup
+    var bcom = bcom || {};
+    bcom.dfp = bcom.dfp || {};
+    bcom.dfp.networkCode = 61381659;
+    bcom.dfp.adUnit = 'boston.com/real-estate/homepage';
+
+    <?php if ($pageType == 'home') { ?>
+    bcom.dfp.adSlots = ['ad_lead1','ad_carousel1','ad_carousel2','ad_carousel3','ad_t6','ad_bigbox1','ad_bigbox2','ad_bigbox3','ad_bigbox4','ad_outofpage1','ad_outofpage2','ad_outofpage3'];
+    <?php } ?>    
+
+    <?php if ($pageType == 'articles') { ?>    
+    bcom.dfp.adSlots = ['ad_toprightslot','ad_lead1','ad_bigbox1','ad_bigbox2','ad_bigbox3','ad_outofpage1','ad_outofpage2','ad_outofpage3','ad_preroll'];
+    <?php } ?>
+
+    <?php if ($pageType == 'category' || $pageType == 'category-details' || $pageType == 'neighborhood') { ?>
+    bcom.dfp.adSlots = ['ad_lead1','ad_carousel1','ad_carousel2','ad_carousel3','ad_t6','ad_bigbox1','ad_bigbox2','ad_bigbox3','ad_bigbox4','ad_outofpage1','ad_outofpage2','ad_outofpage3'];
+    <?php } ?>
+
+    <?php if ($pageType == 'serp') { ?>
+    bcom.dfp.adSlots = ['ad_lead1','ad_spotlight1','ad_spotlight2','ad_spotlight3','ad_spotlight4','ad_bigbox1','ad_bigbox2','ad_bigbox3','ad_bigbox4','ad_bigbox5','ad_bigbox6','ad_outofpage1','ad_outofpage2','ad_outofpage3','ad_lead2'];
+    <?php } ?>
+
+    <?php if ($pageType == 'property-listings' || $pageType == 'property-listings-premium') { ?>
+    bcom.dfp.adSlots = ['ad_lead1','ad_bigbox1','ad_bigbox2','ad_outofpage1','ad_outofpage2','ad_outofpage3'];
+    <?php } ?>
+
+
+    bcom.dfp.streamCount = '5';
+    bcom.dfp.galleryCount = '';
+    bcom.dfp.refreshRate = '';
+    bcom.dfp.keyValuePairs = {
+        s1: 'boston.com',
+        s2: 'buying',
+        s3: '',
+        s4: '',
+        s5: '',
+        pgtype : 'sectfront',
+        pageurl : '',
+        meta: '',
+        streamcount:'1'
+    };
+    
+</script>
+<script src="http://www.boston.com/js/bcom.util.js"></script>
+<script src="http://www.boston.com/js/bcom.dfp.ad-catalog.js"></script>
+<script src="http://www.boston.com/js/bcom.dfp.ad-init.js"></script>
 
 	<script src="js/resources/plugins/selectize/selectize.js"></script>
     <script src="js/resources/plugins/select2/select2.js"></script>
