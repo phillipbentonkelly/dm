@@ -122,7 +122,7 @@
     
 </script>
 <script src="http://www.boston.com/js/bcom.util.js"></script>
-<script src="http://www.boston.com/js/bcom.dfp.ad-catalog.js"></script>
+<script src="js/assets/dm.dfp.ad-catalog.js"></script>
 <script src="http://www.boston.com/js/bcom.dfp.ad-init.js"></script>
 
 	<script src="js/resources/plugins/selectize/selectize.js"></script>
