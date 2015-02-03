@@ -1,14 +1,13 @@
 <style type="text/css">
 
     .tmp-serp-ad-wrap {
-        margin: 70px auto 10px auto;
+        margin: 90px auto 10px auto;
     }
 
 	.tmp-serp-ad {
         width: 320px;
         float: none;
         height: 50px;
-        border: 1px solid black;
         margin: 10px auto;
         overflow: hidden;
     }
@@ -23,7 +22,6 @@
             width: 460px;
             margin: 0 auto;
             height: 184px;
-            border: 1px solid black;
             margin-bottom: 10px;
         }
 
@@ -39,7 +37,6 @@
 
         .tmp-serp-ad {
             float: left;
-            border: 1px solid black;
             width: 48%;
         }
 
