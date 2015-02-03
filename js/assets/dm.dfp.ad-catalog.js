@@ -58,9 +58,9 @@ bcom.dfp.adCatalog = [
       name: 'ad_carousel3',
       size: [[960,580],[287.213]],
       sizeByBreakpoint: {
-	  mobile: [287,213],
-	  tablet: [960,580],
-	  desktop: [960,580]
+          mobile: [287,213],
+          tablet: [960,580],
+          desktop: [960,580]
       },
       position: 'carousel3'
   },
@@ -97,7 +97,7 @@ bcom.dfp.adCatalog = [
   },
   {
       name: 'ad_spotlight2',
-      size: [[460,150],[300x250]],
+      size: [[460,150],[300,250]],
       sizeByBreakpoint: {
           mobile: [[300,250]],
           tablet: [[460,150]],
@@ -117,7 +117,7 @@ bcom.dfp.adCatalog = [
   },
   {
       name: 'ad_toprightslot',
-      size: [300x250],
+      size: [300,250],
       position: ['atf', 'toprightslot']
   },
   {
