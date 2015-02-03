@@ -31,6 +31,7 @@
 	<!-- SCRIPTS -->
     <script src="js/resources/jquery.min.js"></script>
     <script src="js/resources/moment.min.js"></script>
+    <script src="js/assets/ui.js"></script>
 	<script src="js/assets/mega-menu.js"></script>
 	<script src="js/assets/gallery.js"></script>
     <script src="js/assets/related-articles-main-widget.js"></script>
