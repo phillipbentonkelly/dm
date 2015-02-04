@@ -157,7 +157,7 @@
 
 			// Ad placeholder injected every 4 articles
 			if(articlesOnPage > 0 && articlesOnPage %4 ===0) {
-				var adMarkup = '<div style="height:250px;width:300px;float:left;background:lightgrey;margin:0 20px 20px 0;" class="ad-placeholder"></div><div style="height:250px;width:300px;float:left;background:lightgrey;margin:0 20px 20px 0;" class="ad-placeholder"></div>';
+				var adMarkup = '<div style="height:250px;width:300px;float:left;background:lightgrey;margin:0 40px 20px 0;" class="ad-placeholder"></div><div style="height:250px;width:300px;float:left;background:lightgrey;margin:0 0 20px 0;" class="ad-placeholder"></div>';
 				module.$container.append(adMarkup);
 			}
 			module.$container.append(markup);
