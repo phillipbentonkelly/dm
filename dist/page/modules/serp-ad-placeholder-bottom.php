@@ -1,45 +1,42 @@
 <style type="text/css">
 
-    .tmp-serp-ad-wrap {
-        margin: 70px auto 10px auto;
+    .tmp-serp-ad-wrap--bottom {
+        margin: 30px auto 10px auto;
     }
 
-	.tmp-serp-ad {
+	.tmp-serp-ad--bottom {
         width: 320px;
         float: none;
         height: 50px;
-        border: 1px solid black;
         margin: 10px auto;
         overflow: hidden;
     }
 
     @media (min-width: 768px) {
 
-        .tmp-serp-ad-wrap {
+        .tmp-serp-ad-wrap--bottom {
             width: 100%;
         }
 
-        .tmp-serp-ad {
+        .tmp-serp-ad--bottom {
             width: 460px;
             margin: 0 auto;
             height: 184px;
-            border: 1px solid black;
             margin-bottom: 10px;
         }
 
-        .tmp-serp-ad > div {
+        .tmp-serp-ad--bottom > div {
             max-width: 100%;
         }
     }
 
     @media (min-width: 960px) {
-        .tmp-serp-ad-wrap {
+        .tmp-serp-ad-wrap--bottom {
             width: 960px;
         }
 
-        .tmp-serp-ad {
+        .tmp-serp-ad--bottom {
             float: left;
-            border: 1px solid black;
             width: 48%;
         }
 
@@ -51,7 +48,7 @@
 
 </style>
 
-<div class='tmp-serp-ad-wrap'>
-	<div id='ad_spotlight3' class='tmp-serp-ad'></div>
-	<div id='ad_spotlight4' class='tmp-serp-ad'></div>
+<div class='tmp-serp-ad-wrap--bottom'>
+	<div id='ad_spotlight3' class='tmp-serp-ad--bottom'></div>
+	<div id='ad_spotlight4' class='tmp-serp-ad--bottom'></div>
 </div>

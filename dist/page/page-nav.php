@@ -70,8 +70,8 @@
                                     </ul>
                                 </div>
 
-                                <div class='mega-menu__section--right'>
-                                    <div class='mega-menu__featured-home'>
+                                <div class="mega-menu__section--right">
+                                    <div class="mega-menu__featured-home">
                                         <div class="adSlots">
                                             <a href="javascript:;" class="adSlot">
                                                 <img src="images/icons/luxuryLabel.png" class="iconOverlay topSpacing">
@@ -169,8 +169,8 @@
 
 
                                 <div class="mega-menu__section--middle">
-                                    <ul class='mega-menu__list-items'>
-                                        <li class='mega-menu__list-item'>
+                                    <ul class="mega-menu__list-items">
+                                        <li class="mega-menu__list-item">
                                             <a class='mega-menu__list-link' href='#'>Tom and Gisele's Brookline Pad Looks Almost Ready</a>
                                         </li>
 
