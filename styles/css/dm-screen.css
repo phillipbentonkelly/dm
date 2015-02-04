@@ -3682,7 +3682,7 @@ body.serp .page-layout {
 }
 /* line 14, ../sass/partials/page/modules/_right-rail-list.scss */
 .right-rail__headline {
-  font-family: Oswald;
+  font-family: Oswald Regular;
   color: #333333;
   font-size: 26px;
   /* Approximation due to font substitution */
@@ -3692,7 +3692,7 @@ body.serp .page-layout {
 }
 /* line 25, ../sass/partials/page/modules/_right-rail-list.scss */
 .right-rail__subheadline {
-  font-family: OpenSans;
+  font-family: OpenSans Regular;
   color: #000000;
   font-size: 13px;
   /* Approximation due to font substitution */
@@ -3704,7 +3704,7 @@ body.serp .page-layout {
 /* line 35, ../sass/partials/page/modules/_right-rail-list.scss */
 .right-rail__linkList ul {
   font-size: 13px;
-  font-family: OpenSans;
+  font-family: OpenSans Regular;
   list-style-type: disc;
   list-style-position: inside;
   font-weight: 700;
@@ -3717,7 +3717,7 @@ body.serp .page-layout {
 /* line 46, ../sass/partials/page/modules/_right-rail-list.scss */
 .right-rail__linkList li {
   margin-bottom: 5px;
-  color: #1a93b0;
+  color: #2e1460;
 }
 
 /* line 11, ../sass/partials/page/modules/_mega-menu.scss */

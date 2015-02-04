@@ -12,7 +12,7 @@ $module-name: 'right-rail';
   // Module Styles
 
   &__headline{
-    font-family: Oswald;
+    font-family: Oswald Regular;
     color:  #333333;
     font-size: 26px; /* Approximation due to font substitution */
     font-weight: 400;
@@ -23,7 +23,7 @@ $module-name: 'right-rail';
   }
 
   &__subheadline{  
-      font-family: OpenSans;
+      font-family: OpenSans Regular;
       color:  #000000;
       font-size: 13px; /* Approximation due to font substitution */
       font-weight: 700;
@@ -34,7 +34,7 @@ $module-name: 'right-rail';
   &__linkList {
     ul{       
       font-size:  13px;
-      font-family: OpenSans;
+      font-family: OpenSans Regular;
       list-style-type: disc;
       list-style-position: inside;
       font-weight: 700;
@@ -45,7 +45,7 @@ $module-name: 'right-rail';
     }
     li{
     margin-bottom: 5px;
-    color: #1a93b0;
+    color: #2e1460;
     } 
 
   }
