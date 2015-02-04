@@ -57,8 +57,13 @@ var PageNav = {};
 			var stage = pageNav.$pageNav;
 			var logoW = stage.width() - (iconObj2.width()+parseInt(iconObj2.css('border-left-width')) + iconObj1.width()+parseInt(iconObj1.css('border-right-width')));
 
+			//console.log("Logo Width: " + pageNav.menuObj.$logo.width());
+
 			if(pageNav.$body.width() < 768){
 				pageNav.menuObj.$logo.width(logoW);
+			}
+			if(pageNav.$body.width() > 758){
+				pageNav.menuObj.$logo.width(137);
 			}
 		},
 		updateClickBehaviour: function(){

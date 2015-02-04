@@ -1211,11 +1211,10 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
 .page-layout {
   overflow: hidden;
   clear: both;
-  margin: 80px auto 0 auto !important;
   max-width: 960px;
   min-width: 0;
 }
-/* line 18, ../sass/partials/page/_page-layout.scss */
+/* line 17, ../sass/partials/page/_page-layout.scss */
 .page-layout__left-col {
   width: 100%;
   min-width: 30%;
@@ -1225,50 +1224,50 @@ a:hover .page-nav__nav-item__responsive-drop-down-icon:after {
   overflow: hidden;
   float: left;
 }
-/* line 29, ../sass/partials/page/_page-layout.scss */
+/* line 28, ../sass/partials/page/_page-layout.scss */
 .page-layout__right-col {
   display: block;
 }
 
-/* line 35, ../sass/partials/page/_page-layout.scss */
+/* line 34, ../sass/partials/page/_page-layout.scss */
 body.home .page-layout {
   margin: 0 auto !important;
 }
 
-/* line 40, ../sass/partials/page/_page-layout.scss */
+/* line 39, ../sass/partials/page/_page-layout.scss */
 .mega-menu {
   display: none;
 }
 
 @media (min-width: 768px) {
-  /* line 45, ../sass/partials/page/_page-layout.scss */
+  /* line 44, ../sass/partials/page/_page-layout.scss */
   body.neighborhood, body.category-details {
     background-image: url(../../images/neighborhoods/19040004_source.jpg);
     background-position: center 162px;
     background-repeat: repeat-x;
   }
 
-  /* line 50, ../sass/partials/page/_page-layout.scss */
+  /* line 49, ../sass/partials/page/_page-layout.scss */
   body.category-details {
     background-image: url(../../images/neighborhoods/Category-Details__1152x699.jpg);
   }
 
-  /* line 54, ../sass/partials/page/_page-layout.scss */
+  /* line 53, ../sass/partials/page/_page-layout.scss */
   .page-layout {
     margin: 0 auto;
   }
-  /* line 57, ../sass/partials/page/_page-layout.scss */
+  /* line 56, ../sass/partials/page/_page-layout.scss */
   .page-layout__wrapper {
     margin: 0 auto;
     min-width: 765px;
   }
-  /* line 62, ../sass/partials/page/_page-layout.scss */
+  /* line 61, ../sass/partials/page/_page-layout.scss */
   .page-layout__right-col {
     display: block;
     float: right;
     width: 300px;
   }
-  /* line 68, ../sass/partials/page/_page-layout.scss */
+  /* line 67, ../sass/partials/page/_page-layout.scss */
   .page-layout__left-col {
     padding-right: 20px;
     max-width: 660px;
@@ -1277,22 +1276,22 @@ body.home .page-layout {
   }
 }
 @media (min-width: 960px) {
-  /* line 78, ../sass/partials/page/_page-layout.scss */
+  /* line 77, ../sass/partials/page/_page-layout.scss */
   body.neighborhood, body.category-details {
     background-image: url(../../images/neighborhoods/19040004_source.jpg);
     background-position: center 162px;
     background-repeat: repeat-x;
   }
 
-  /* line 83, ../sass/partials/page/_page-layout.scss */
+  /* line 82, ../sass/partials/page/_page-layout.scss */
   body.category-details {
     background-image: url(../../images/neighborhoods/Category-Details__1152x699.jpg);
   }
 
-  /* line 87, ../sass/partials/page/_page-layout.scss */
+  /* line 86, ../sass/partials/page/_page-layout.scss */
   .page-layout {
     width: 960px;
-    margin: 0 auto;
+    margin: 80px auto 0 auto !important;
   }
 
   /* line 93, ../sass/partials/page/_page-layout.scss */
@@ -5490,7 +5489,7 @@ body.category-details .related-articles__section-header {
   }
   /* line 112, ../sass/partials/page/modules/_multimedia-chip.scss */
   .multimedia-chip__title-description h1 {
-    line-height: 20px;
+    line-height: 30px;
   }
 }
 @media (min-width: 960px) {

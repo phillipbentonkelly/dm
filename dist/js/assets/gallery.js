@@ -13,7 +13,9 @@ var galleryWidgetObj = {};
     };
 
     GalleryWidget.prototype = {
-    	init: function(){
+    	init: function( params ){
+    		_data.caption = params.captions? params.captions : false;
+    			console.log("_data.caption: " + _data.caption);
     		galleryWidget.$topNode = $('.gallery-widget');
     		galleryWidget.$nav = $('.gallery-widget__main-wrapper__nav-arrows');
     		galleryWidget.$slides = $('.gallery-widget .slide');
@@ -21,11 +23,15 @@ var galleryWidgetObj = {};
     		galleryWidget.$scrollingWrapper = $('.gallery-widget__main-wrapper__scrolling-wrapper');
     		galleryWidget.$scroller = $('.gallery-widget__main-wrapper__scrolling-wrapper__scroller');
     		galleryWidget.$IMGs = $('.gallery-widget__main-wrapper__scrolling-wrapper .slide img');
+    		galleryWidget.$details = $('.gallery-widget__details');
     		galleryWidget.$label__current = $('.gallery-widget__details__info-nav__counter__current');
     		galleryWidget.$label__total = $('.gallery-widget__details__info-nav__counter__total');
 			galleryWidget.$showCaption = $('.gallery-widget__details__info-nav__show-caption');
 			galleryWidget.$caption = $('.gallery-widget__details__caption');
-    		//galleryWidget.nav = { 'prev': {}, 'next': {} };
+			
+			if(_data.caption !== true){
+				galleryWidget.$details.hide();
+			}
     		galleryWidget.slideInterval = {};
 
     		_data._current = 1;
@@ -51,7 +57,9 @@ var galleryWidgetObj = {};
 			});
 
 			galleryWidget.$nav.on('click', this.advanceGallery);
-			galleryWidget.$showCaption.on('click', this.toggleCaptions);
+			if(_data.caption === true){
+				galleryWidget.$showCaption.on('click', this.toggleCaptions);
+			}
     	},
     	toggleCaptions: function(e){
     		galleryWidget.$caption.toggle();
@@ -64,17 +72,17 @@ var galleryWidgetObj = {};
 			var targetSlide, hideDuration, showDuration, appendMethod; // Set vars that modify the direction of the slide
 			var lock = false;
 
-			console.log(_data._current);
-
 			if(lock === false){
 				lock = true;
 				if(thisObj.attr('data-direction') === 'next'){
 					if(_data._current < _data._total){
 						galleryWidget.$scroller.animate({left: -(_data._current*_data.width)}, 500).promise().done(function(){
-							galleryWidget.$caption.html(galleryWidget.$slides.eq((_data._current)).find('.hidden-caption').html());
-							
 							_data._current += 1;
-							galleryWidget.$label__current.html(_data._current);
+							
+							if(_data.caption === true){
+								galleryWidget.$caption.html(galleryWidget.$slides.eq((_data._current-1)).find('.hidden-caption').html());
+								galleryWidget.$label__current.html(_data._current);
+							}
 							galleryWidget.$nav.removeClass('disable');
 
 							if(_data._current === _data._total){
@@ -93,8 +101,10 @@ var galleryWidgetObj = {};
 						galleryWidget.$scroller.animate({left: (parseInt(galleryWidget.$scroller.css('left')) + _data.width)}, 500).promise().done(function(){
 							_data._current -= 1;
 							
-							galleryWidget.$caption.html(galleryWidget.$slides.eq((_data._current-1)).find('.hidden-caption').html());
-							galleryWidget.$label__current.html(_data._current);
+							if(_data.caption === true){
+								galleryWidget.$caption.html(galleryWidget.$slides.eq((_data._current-1)).find('.hidden-caption').html());
+								galleryWidget.$label__current.html(_data._current);
+							}
 							galleryWidget.$nav.removeClass('disable');
 							if(_data._current === 1){
 								galleryWidget.$nav.eq(0).addClass('disable');
@@ -109,8 +119,6 @@ var galleryWidgetObj = {};
 					}
 				}
 			}
-
-    		console.log("Move: " + thisObj.attr('title'));
     	},
     	updateSlideDim: function(){
     		_data.width = galleryWidget.$topNode.width();
@@ -137,8 +145,3 @@ var galleryWidgetObj = {};
 		}
     };
 })(window, jQuery);
-
-$(function(){
-	galleryWidgetObj = GalleryWidget();
-	galleryWidgetObj.init();
-});

@@ -51,6 +51,12 @@
     
     <!-- Gallery Widget -->
     <?php include 'page/modules/gallery.php'; ?>
+    <script type="text/javascript">
+        $(function(){
+            galleryWidgetObj = GalleryWidget();
+            galleryWidgetObj.init( { captions: false } );
+        });
+    </script>
 
     <div class="listing__summary--mobile-wrapper">
 
