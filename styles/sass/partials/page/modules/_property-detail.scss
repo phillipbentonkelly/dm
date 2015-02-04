@@ -144,12 +144,12 @@ $module-name: 'explore-widget';
   }
 }
 
-@include media-query(desktop) {
+// @include media-query(desktop) {
 
-  .#{$module-name} {
+//   .#{$module-name} {
 
-  }
-}
+//   }
+// }
 
 @media (max-width: 950px) {
   
