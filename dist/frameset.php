@@ -436,6 +436,12 @@
 	<?php if ($pageType == 'category' || $pageType == 'category-details' || $pageType == 'neighborhood') { ?>
 		<!-- Gallery Widget -->
     	<?php include 'page/modules/gallery.php'; ?>
+    	<script type="text/javascript">
+			$(function(){
+				galleryWidgetObj = GalleryWidget();
+				galleryWidgetObj.init( { captions: false } );
+			});
+		</script>
 	<?php } ?>
 
 	<?php if ($pageType == 'serp') { ?>
