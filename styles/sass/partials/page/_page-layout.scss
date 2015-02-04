@@ -4,8 +4,7 @@ $padding-top: 20px;
 .#{$module-name} {
 	overflow: hidden;
 	clear: both;
-	
-	margin: 80px auto 0 auto !important;
+	//margin: 80px auto 0 auto !important; DM-215
 	max-width: $desktop-breakpoint;
 	min-width: 0;
 
@@ -86,7 +85,8 @@ body.home {
 
 	.#{$module-name} {
 		width: ($left-col-width + $right-col-width + $right-col-right-gutter);
-		margin: 0 auto;
+		//margin: 0 auto; DM-214
+		margin: 80px auto 0 auto !important; //DM-215
 	}
 
 	body.home {
