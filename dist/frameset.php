@@ -439,7 +439,7 @@
     	<script type="text/javascript">
 			$(function(){
 				galleryWidgetObj = GalleryWidget();
-				galleryWidgetObj.init( { captions: false } );
+				galleryWidgetObj.init( { captions: true } );
 			});
 		</script>
 	<?php } ?>
