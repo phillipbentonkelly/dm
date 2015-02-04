@@ -60,6 +60,9 @@ var PageNav = {};
 			if(pageNav.$body.width() < 768){
 				pageNav.menuObj.$logo.width(logoW);
 			}
+		},
+		updateClickBehaviour: function(){
+			
 		}
 	};
 })(window, jQuery);
@@ -71,8 +74,10 @@ $(function(){
 
     $(window).load(function(){
         pageNavObj.updateLogoDim();
+        pageNavObj.updateClickBehaviour();
     });
     $(window).resize(function () {
         pageNavObj.updateLogoDim();
+        pageNavObj.updateClickBehaviour();
     });
 });
