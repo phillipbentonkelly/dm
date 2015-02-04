@@ -1,42 +1,54 @@
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>DM | <?php echo ucwords($pageType) ?></title>
+    <meta name="description" content="">
+    <meta name=viewport content="width=device-width, initial-scale=1">
 
-<!-- STYLING -->
-<link rel="stylesheet" href="styles/css/dm-screen.css" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
-<!-- SCRIPTS -->
-<script src="js/resources/jquery.min.js"></script>
-	    <!-- Carousel Scripts -->
-	<script src="js/assets/basicMobileDetection.js"></script>
-	<script src="http://wurfl.io/wurfl.js"></script>
-	<script src="js/resources/img.srcset.polyfill.js"></script>
-	<script src="js/assets/bdc.carouselFullWidthSlider.js"></script>
-	<!-- Carousel Scripts -->
+    <!-- STYLING -->
+	<link rel="stylesheet" href="styles/css/dm-screen.css" />
 
-<script src="http://www.googletagservices.com/tag/js/gpt.js"></script>
-<script>
-    // DFP Setup
-    var bcom = bcom || {};
-    bcom.dfp = bcom.dfp || {};
-    bcom.dfp.networkCode = 61381659;
-    bcom.dfp.adUnit = 'boston.com/real-estate/homepage';
-        bcom.dfp.adSlots = ['ad_lead1','ad_carousel1','ad_carousel2','ad_carousel3','ad_t6','ad_bigbox1','ad_bigbox2','ad_bigbox3','ad_bigbox4','ad_outofpage1','ad_outofpage2','ad_outofpage3'];
-    bcom.dfp.streamCount = '5';
-    bcom.dfp.galleryCount = '';
-    bcom.dfp.refreshRate = '';
-    bcom.dfp.keyValuePairs = {
-        s1: 'boston.com',
-        s2: 'buying',
-        s3: '',
-        s4: '',
-        s5: '',
-        pgtype : 'sectfront',
-        pageurl : '',
-        meta: '',
-        streamcount:'1'
-    };
-</script>
-<script src="http://www.boston.com/js/bcom.util.js"></script>
-<script src="js/assets/dm.dfp.ad-catalog.js"></script>
-<script src="http://www.boston.com/js/bcom.dfp.ad-init.js"></script>
+	<!-- SCRIPTS -->
+	<script src="js/resources/jquery.min.js"></script>
+		    <!-- Carousel Scripts -->
+		<script src="js/assets/basicMobileDetection.js"></script>
+		<script src="http://wurfl.io/wurfl.js"></script>
+		<script src="js/resources/img.srcset.polyfill.js"></script>
+		<script src="js/assets/bdc.carouselFullWidthSlider.js"></script>
+		<!-- Carousel Scripts -->
 
-<?php include 'page/modules/full-width-carousel.php'; ?>
+	<script src="http://www.googletagservices.com/tag/js/gpt.js"></script>
+	<script>
+	    // DFP Setup
+	    var bcom = bcom || {};
+	    bcom.dfp = bcom.dfp || {};
+	    bcom.dfp.networkCode = 61381659;
+	    bcom.dfp.adUnit = 'boston.com/real-estate/homepage';
+	        bcom.dfp.adSlots = ['ad_lead1','ad_carousel1','ad_carousel2','ad_carousel3','ad_t6','ad_bigbox1','ad_bigbox2','ad_bigbox3','ad_bigbox4','ad_outofpage1','ad_outofpage2','ad_outofpage3'];
+	    bcom.dfp.streamCount = '5';
+	    bcom.dfp.galleryCount = '';
+	    bcom.dfp.refreshRate = '';
+	    bcom.dfp.keyValuePairs = {
+	        s1: 'boston.com',
+	        s2: 'buying',
+	        s3: '',
+	        s4: '',
+	        s5: '',
+	        pgtype : 'sectfront',
+	        pageurl : '',
+	        meta: '',
+	        streamcount:'1'
+	    };
+	</script>
+	<script src="http://www.boston.com/js/bcom.util.js"></script>
+	<script src="js/assets/dm.dfp.ad-catalog.js"></script>
+	<script src="http://www.boston.com/js/bcom.dfp.ad-init.js"></script>
+</head>
+<body>
+	<?php include 'page/modules/full-width-carousel.php'; ?>
+</body>
+</html>
