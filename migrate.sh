@@ -3,6 +3,7 @@
 clear
 proceedVar=false
 useDefaultLocalhostPath=true
+rootHost='http://localhost/dm/dist/'
 defaultLocalhostPath='http://localhost/dm/dist/'
 tempDirName='GH-page-content'
 root=$(pwd)
@@ -12,6 +13,8 @@ framesetString='frameset.php?page-type='
 pages=("articles" "neighborhood" "serp" "home" "property-listings" "category" "category-details" "property-listings-premium")
 phpModules=("carousel" "gallery-dev" "mega-menu-dev")
 tempModulueName=''
+phpExtension='.php'
+dist='/dist/'
 
 echo "Welcome ... you are currently in: " 
 pwd
@@ -73,10 +76,10 @@ if [[ $proceedVar =~ ^[Yy]$ ]]
 			for g in "${phpModules[@]}"
 			do
 				$tempModulueName="$g.php"
-				echo $localhost$tempModulueName
-				wget $localhost$tempModulueName
+				echo "$rootHost$g$phpExtension"
+				wget "$rootHost$g$phpExtension"
 				sleep 1
-				mv -f $g $root/$tempDirName/$g.html
+				mv -f $g$phpExtension $root/$tempDirName/$g.html
 
 				echo ""
 				echo "---------------------------------------------"
