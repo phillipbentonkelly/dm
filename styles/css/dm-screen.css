@@ -2330,7 +2330,7 @@ body.category-details .related-articles__section-header {
   background-color: #ff6c6c;
 }
 /* line 113, ../sass/partials/page/modules/_relatedarticles.scss */
-.related-articles__item:nth-child(3), .related-articles__item:nth-child(4) {
+.related-articles__item:nth-child(3) {
   border: none;
 }
 /* line 117, ../sass/partials/page/modules/_relatedarticles.scss */
