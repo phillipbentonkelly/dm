@@ -10,6 +10,7 @@ yourLocalhost=''
 localhost=''
 framesetString='frameset.php?page-type='
 pages=("articles" "neighborhood" "serp" "home" "property-listings" "category" "category-details" "property-listings-premium")
+phpModules=("carousel.php" "gallery-dev.php" "mega-menu-dev.php")
 
 echo "Welcome ... you are currently in: " 
 pwd
@@ -65,7 +66,23 @@ if [[ $proceedVar =~ ^[Yy]$ ]]
 			cp -a -f $root/dm/dist/js/. $root/$tempDirName/js
 			cp -a -f $root/dm/dist/styles/. $root/$tempDirName/styles
 
+
 			sleep 3
+			terminal-notifier -sound default -title 'Git: Migrating Master to GH-Pages' -message 'Creating Module Pages'
+			for g in "${phpModules[@]}"
+			do
+				echo $defaultLocalhostPath$g
+				wget $defaultLocalhostPath$g
+				sleep 1
+				mv -f $g $root/$tempDirName/$g.html
+
+				echo ""
+				echo "---------------------------------------------"
+				echo ""
+			done
+
+			sleep 3
+			terminal-notifier -sound default -title 'Git: Migrating Master to GH-Pages' -message 'Creating Pages'
 			for i in "${pages[@]}"
 			do
 				echo $localhost$i

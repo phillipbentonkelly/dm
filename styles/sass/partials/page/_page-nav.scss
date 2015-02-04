@@ -322,6 +322,10 @@ $module-name: 'page-nav';
 		height: $page-nav-desktop-height;
 		position: initial;
 
+		&__nav-item:hover .mega-menu, &__nav-item:hover .mega-menu__container {
+			display: block;
+		}
+
 		&__content-wrapper {
 			max-width: $desktop-breakpoint;
 			min-width: $tablet-breakpoint;
