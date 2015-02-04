@@ -12,6 +12,8 @@ $module-name: 'content-footer';
 	padding: 20px;
 	float: left;
 	border-top: 2px solid #2e1460;
+	width: 100%;
+	box-sizing: border-box;
 	
 	a {
 		color: #333;

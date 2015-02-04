@@ -219,7 +219,8 @@ $module-name: 'page-search';
 
 		&--submit{
 			float: right;
-			margin: 0 0 20px 0;
+			// margin: 0 0 20px 0;
+			margin: 0;
 			width: 25px;
 			height: 35px;
 			border-radius: 4px;
