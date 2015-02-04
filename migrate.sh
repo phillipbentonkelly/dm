@@ -73,8 +73,8 @@ if [[ $proceedVar =~ ^[Yy]$ ]]
 			for g in "${phpModules[@]}"
 			do
 				$tempModulueName="$g.php"
-				echo $yourLocalhost$tempModulueName
-				wget $yourLocalhost$tempModulueName
+				echo $localhost$tempModulueName
+				wget $localhost$tempModulueName
 				sleep 1
 				mv -f $g $root/$tempDirName/$g.html
 
