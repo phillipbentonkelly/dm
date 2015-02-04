@@ -2281,7 +2281,6 @@ body.category-details .related-articles__section-header {
 /* line 67, ../sass/partials/page/modules/_relatedarticles.scss */
 .related-articles__item .additional-info {
   min-height: 10px;
-  display: none;
 }
 /* line 72, ../sass/partials/page/modules/_relatedarticles.scss */
 .related-articles__item .tags {
