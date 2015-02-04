@@ -90,15 +90,15 @@
     <?php } ?>    
 
     <?php if ($pageType == 'articles') { ?>    
-    bcom.dfp.adSlots = ['ad_toprightslot','ad_lead1','ad_bigbox1','ad_bigbox2','ad_bigbox3','ad_outofpage1','ad_outofpage2','ad_outofpage3','ad_preroll'];
+    bcom.dfp.adSlots = ['ad_toprightslot','ad_lead1','ad_bigbox1','ad_bigbox3','ad_bigbox4','ad_outofpage1','ad_outofpage2','ad_outofpage3','ad_preroll'];
     <?php } ?>
 
     <?php if ($pageType == 'category' || $pageType == 'category-details' || $pageType == 'neighborhood') { ?>
-    bcom.dfp.adSlots = ['ad_lead1','ad_carousel1','ad_carousel2','ad_carousel3','ad_t6','ad_bigbox1','ad_bigbox2','ad_bigbox3','ad_bigbox4','ad_outofpage1','ad_outofpage2','ad_outofpage3'];
+    bcom.dfp.adSlots = ['ad_lead1','ad_carousel1','ad_carousel2','ad_carousel3','ad_t6','ad_bigbox1','ad_bigbox3','ad_bigbox4','ad_outofpage1','ad_outofpage2','ad_outofpage3'];
     <?php } ?>
 
     <?php if ($pageType == 'serp') { ?>
-    bcom.dfp.adSlots = ['ad_lead1','ad_spotlight1','ad_spotlight2','ad_spotlight3','ad_spotlight4','ad_bigbox1','ad_bigbox2','ad_bigbox3','ad_bigbox4','ad_bigbox5','ad_bigbox6','ad_outofpage1','ad_outofpage2','ad_outofpage3','ad_lead2'];
+    bcom.dfp.adSlots = ['ad_lead1','ad_spotlight1','ad_spotlight2','ad_spotlight3','ad_spotlight4','ad_bigbox1','ad_bigbox3','ad_bigbox4','ad_bigbox5','ad_bigbox6','ad_outofpage1','ad_outofpage2','ad_outofpage3','ad_lead2'];
     <?php } ?>
 
     <?php if ($pageType == 'property-listings' || $pageType == 'property-listings-premium') { ?>
@@ -353,15 +353,10 @@
 			
 			<!-- CATEGORY -->
 			<?php if ($pageType == 'category') { ?>
-				<!-- DFP Ad - Experience the Difference -->
-				<?php include 'ads/dfp-ads__experience-the-difference.php'; ?>
-
-				<!-- DFP Ad - Moo Printing -->
-				<?php include 'ads/dfpAds__300by250__moo.php'; ?>
-
-				<!-- DFP Sidebar Placeholder Ad Content -->
-				<?php include 'ads/adplaceholer__right-column.php'; ?>
+				<?php include 'ads/ad_bigbox1.php'; ?>
+                                <?php include 'ads/ad_bigbox2.php'; ?>				
 				
+								
 				<!-- Explore Brookline -->
 				<?php include 'page-content/explore-brookline.php'; ?>
 			<?php } ?>
