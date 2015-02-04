@@ -82,9 +82,9 @@ if (typeof bdc === 'undefined') { bdc = {}; }
 
     _engine.autoSlide = function() {
     	if(WURFL.is_mobile !== true){
-    		slideInterval = setInterval( function(){
+    		/*slideInterval = setInterval( function(){
 				_engine.moveCarousel();
-			}, 16000);/**/
+			}, 16000);*/
     	}
 	};
 

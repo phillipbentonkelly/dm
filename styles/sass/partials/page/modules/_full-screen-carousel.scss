@@ -292,6 +292,10 @@ $module-name: 'full-screen-carousel';
 @include media-query(desktop) {
 	.#{$module-name} {
 		margin-top: 0;
+
+		.category-tag {
+			display: block;
+		}
 	}
 }
 // ------------------------------------------------------------
@@ -301,5 +305,9 @@ $module-name: 'full-screen-carousel';
 @include media-query(tablet) {
 	.#{$module-name} {
 		margin-top: 0;
+
+		.category-tag {
+			display: block;
+		}
 	}
 }

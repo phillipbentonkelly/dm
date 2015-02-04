@@ -2721,11 +2721,19 @@ body.category-details .related-articles__section-header {
   .full-screen-carousel {
     margin-top: 0;
   }
+  /* line 296, ../sass/partials/page/modules/_full-screen-carousel.scss */
+  .full-screen-carousel .category-tag {
+    display: block;
+  }
 }
 @media (min-width: 768px) {
-  /* line 302, ../sass/partials/page/modules/_full-screen-carousel.scss */
+  /* line 306, ../sass/partials/page/modules/_full-screen-carousel.scss */
   .full-screen-carousel {
     margin-top: 0;
+  }
+  /* line 309, ../sass/partials/page/modules/_full-screen-carousel.scss */
+  .full-screen-carousel .category-tag {
+    display: block;
   }
 }
 /* line 10, ../sass/partials/page/modules/_contact-form-premium.scss */
