@@ -10,7 +10,8 @@ yourLocalhost=''
 localhost=''
 framesetString='frameset.php?page-type='
 pages=("articles" "neighborhood" "serp" "home" "property-listings" "category" "category-details" "property-listings-premium")
-phpModules=("carousel.php" "gallery-dev.php" "mega-menu-dev.php")
+phpModules=("carousel" "gallery-dev" "mega-menu-dev")
+tempModulueName=''
 
 echo "Welcome ... you are currently in: " 
 pwd
@@ -71,8 +72,9 @@ if [[ $proceedVar =~ ^[Yy]$ ]]
 			terminal-notifier -sound default -title 'Git: Migrating Master to GH-Pages' -message 'Creating Module Pages'
 			for g in "${phpModules[@]}"
 			do
-				echo $defaultLocalhostPath$g
-				wget $defaultLocalhostPath$g
+				$tempModulueName="$g.php"
+				echo $defaultLocalhostPath$tempModulueName
+				wget $defaultLocalhostPath$tempModulueName
 				sleep 1
 				mv -f $g $root/$tempDirName/$g.html
 
