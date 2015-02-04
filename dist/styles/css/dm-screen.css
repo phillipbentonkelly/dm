@@ -5490,7 +5490,7 @@ body.category-details .related-articles__section-header {
   }
   /* line 112, ../sass/partials/page/modules/_multimedia-chip.scss */
   .multimedia-chip__title-description h1 {
-    line-height: 20px;
+    line-height: 30px;
   }
 }
 @media (min-width: 960px) {
