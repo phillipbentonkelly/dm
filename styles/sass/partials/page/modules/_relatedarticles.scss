@@ -1,5 +1,12 @@
 $module-name: 'related-articles';
 
+// temporary fix for category detail page
+body.category-details {
+	.related-articles__section-header {
+		margin-top: 90px;
+	}
+}
+
 .#{$module-name} {
 	position: relative;
 	width: 100%;
