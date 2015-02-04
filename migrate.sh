@@ -68,7 +68,7 @@ if [[ $proceedVar =~ ^[Yy]$ ]]
 
 
 			sleep 3
-			terminal-notifier -sound default -title 'Git: Migrating Master to GH-Pages' -m 'Creating Module Pages'
+			terminal-notifier -sound default -title 'Git: Migrating Master to GH-Pages' -message 'Creating Module Pages'
 			for g in "${phpModules[@]}"
 			do
 				echo $defaultLocalhostPath$g
@@ -82,7 +82,7 @@ if [[ $proceedVar =~ ^[Yy]$ ]]
 			done
 
 			sleep 3
-			terminal-notifier -sound default -title 'Git: Migrating Master to GH-Pages' -m 'Creating Pages'
+			terminal-notifier -sound default -title 'Git: Migrating Master to GH-Pages' -message 'Creating Pages'
 			for i in "${pages[@]}"
 			do
 				echo $localhost$i
