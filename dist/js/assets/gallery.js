@@ -15,7 +15,6 @@ var galleryWidgetObj = {};
     GalleryWidget.prototype = {
     	init: function( params ){
     		_data.caption = params.captions? params.captions : false;
-    			console.log("_data.caption: " + _data.caption);
     		galleryWidget.$topNode = $('.gallery-widget');
     		galleryWidget.$nav = $('.gallery-widget__main-wrapper__nav-arrows');
     		galleryWidget.$slides = $('.gallery-widget .slide');

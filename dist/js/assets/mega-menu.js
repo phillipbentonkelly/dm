@@ -24,7 +24,6 @@ var PageNav = {};
 			pageNav.$resSearchIcon = $('.page-nav__search-responsive-icon');
 			pageNav.menuObj.$findAHome = $('#find-home-menu');
 			pageNav.menuObj.$neighborhoods = $('#neighborhoods-menu');
-			pageNav.menuObj.$myAccount = $('#myAccount');
 			pageNav.menuObj.$logo = $('.page-nav__logo');
 			pageNav.menuObj.$mainNavLinks = $('.page-nav__main-nav-links');
 			pageNav.menuObj.$logo = $('.page-nav__logo');
@@ -35,26 +34,20 @@ var PageNav = {};
 			var thisRef = this;
 
 			pageNav.$responsiveIcon.on('click', thisRef.toggleMobileMenu);
-
-			pageNav.menuObj.$findAHome.on('touchstart click', thisRef.toggleMobileMegaMenu);
-			pageNav.menuObj.$neighborhoods.on('touchstart click', thisRef.toggleMobileMegaMenu);
-			pageNav.menuObj.$myAccount.on('touchstart click', thisRef.toggleMobileMenu);
+			pageNav.menuObj.$findAHome.on('click', thisRef.toggleMobileMegaMenu);
+			pageNav.menuObj.$neighborhoods.on('click', thisRef.toggleMobileMegaMenu);
 		},
 		toggleMobileMenu: function(e){
 			e.preventDefault();
 			pageNav.menuObj.$mainNavLinks.toggle();
 		},
 		toggleMobileMegaMenu: function(e){
-			e.stopPropagation();
-			e.preventDefault();
 			var thisRef = this;
 			var thisObj = $(this);
 
 			if(pageNav.$body.width() < 768){
-				var megaMenu = $(thisObj.find('.mega-menu'));
-				megaMenu.toggle(0, function(){
-					$(this).find('.mega-menu__container').toggle();
-				});
+				$(thisObj.find('.mega-menu')).toggle();
+				$(thisObj.find('.mega-menu__container')).toggle();
 			}
 		},
 		updateLogoDim: function(){
