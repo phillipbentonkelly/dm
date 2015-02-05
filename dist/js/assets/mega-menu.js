@@ -39,17 +39,19 @@ PageNav = {};
 
 			pageNav.$responsiveIcon.on('click', thisRef.toggleMobileMenu);
 
-			pageNav.menuObj.$findAHome.on('click touchend', thisRef.toggleMobileMegaMenu);
-			pageNav.menuObj.$neighborhoods.on('click touchend', thisRef.toggleMobileMegaMenu);
-			pageNav.menuObj.$myAccount.on('click touchend', thisRef.toggleMobileMegaMenu);
+			pageNav.menuObj.$findAHome.on('touchstart click', thisRef.toggleMobileMegaMenu);
+			pageNav.menuObj.$neighborhoods.on('touchstart click', thisRef.toggleMobileMegaMenu);
+			pageNav.menuObj.$myAccount.on('touchstart click', thisRef.toggleMobileMegaMenu);
 		},
 		toggleMobileMenu: function(e){
 			e.preventDefault();
 			pageNav.menuObj.$mainNavLinks.toggle();
 		},
 		toggleMobileMegaMenu: function(e){
-			//e.stopPropagation();
+			e.stopPropagation();
 			e.preventDefault();
+			console.log(e.handled);
+
 			var thisRef = this;
 			var thisObj = $(this);
 
