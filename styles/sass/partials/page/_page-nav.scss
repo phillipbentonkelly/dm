@@ -165,7 +165,7 @@ $module-name: 'page-nav';
 			&__nav-item:first-child {
 				color: #000;
 				border-top: 0px;
-				background: #dacef1;
+				background: #dacef1 !important;
 			}
 			&__nav-item:hover .mega-menu, &__nav-item:hover .mega-menu__container {
 				// display: block;

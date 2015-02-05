@@ -39,22 +39,25 @@ PageNav = {};
 
 			pageNav.$responsiveIcon.on('click', thisRef.toggleMobileMenu);
 
-			pageNav.menuObj.$findAHome.on('click', thisRef.toggleMobileMegaMenu);
-			pageNav.menuObj.$neighborhoods.on('click', thisRef.toggleMobileMegaMenu);
-			pageNav.menuObj.$myAccount.on('click', thisRef.toggleMobileMegaMenu);
+			pageNav.menuObj.$findAHome.on('click touchend', thisRef.toggleMobileMegaMenu);
+			pageNav.menuObj.$neighborhoods.on('click touchend', thisRef.toggleMobileMegaMenu);
+			pageNav.menuObj.$myAccount.on('click touchend', thisRef.toggleMobileMegaMenu);
 		},
 		toggleMobileMenu: function(e){
 			e.preventDefault();
 			pageNav.menuObj.$mainNavLinks.toggle();
 		},
 		toggleMobileMegaMenu: function(e){
+			//e.stopPropagation();
 			e.preventDefault();
 			var thisRef = this;
 			var thisObj = $(this);
 
 			if(pageNav.$body.width() < 768){
 				var megaMenu = $(thisObj.find('.mega-menu'));
-				megaMenu.toggle();
+				megaMenu.toggle(0, function(){
+					$(this).find('.mega-menu__container').toggle();
+				});
 			}
 		},
 		updateLogoDim: function(){
