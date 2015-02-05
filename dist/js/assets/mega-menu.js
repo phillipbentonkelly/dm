@@ -50,7 +50,6 @@ PageNav = {};
 		toggleMobileMegaMenu: function(e){
 			e.stopPropagation();
 			e.preventDefault();
-			console.log(e.handled);
 
 			var thisRef = this;
 			var thisObj = $(this);
