@@ -34,7 +34,8 @@ var PageNav = {};
 		initEventHandlers: function(){
 			var thisRef = this;
 
-			pageNav.$responsiveIcon.on('touchstart click', thisRef.toggleMobileMenu);
+			pageNav.$responsiveIcon.on('click', thisRef.toggleMobileMenu);
+
 			pageNav.menuObj.$findAHome.on('touchstart click', thisRef.toggleMobileMegaMenu);
 			pageNav.menuObj.$neighborhoods.on('touchstart click', thisRef.toggleMobileMegaMenu);
 			pageNav.menuObj.$myAccount.on('touchstart click', thisRef.toggleMobileMenu);
@@ -49,7 +50,7 @@ var PageNav = {};
 
 			if(pageNav.$body.width() < 768){
 				var megaMenu = $(thisObj.find('.mega-menu'));
-				megaMenu.toggle({
+				megaMenu.toggle(0, function(){
 					$(this).find('.mega-menu__container').toggle();
 				});
 			}
