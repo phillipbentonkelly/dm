@@ -88,14 +88,14 @@ dm.searchPanel = {};
 				shouldInputFocus: function(){ return false; }
 			};
 
-			var otherParams = {
-				shouldInputFocus: function(){ return false; }
-			};
+			// var otherParams = {
+			// 	shouldInputFocus: function(){ return false; }
+			// };
 
             this.filters.$main.selectize(mainParams);
             this.filters.$tags.selectize(tagParams);
 			this.filters.$fmt.select2(fmtParams);
-			this.filters.$other.select2(otherParams);
+			//this.filters.$other.select2(otherParams);
 
 
 			this.setPanelState();
