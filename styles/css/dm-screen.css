@@ -5517,33 +5517,6 @@ body.category-details .related-articles__section-header {
     line-height: 20px;
   }
 }
-/* line 11, ../sass/partials/page-content/modules/_dfp-ads__new-homes.scss */
-.dfp-ads__new-homes {
-  width: 300px;
-  height: 127px;
-  background-image: url(../../images/ads/dfp/dfp-mock-ads__home__mobile.jpg);
-  background-position: top left;
-  background-repeat: no-repeat;
-  margin: 0 auto 30px auto;
-}
-
-@media (min-width: 960px) {
-  /* line 21, ../sass/partials/page-content/modules/_dfp-ads__new-homes.scss */
-  .dfp-ads__new-homes {
-    width: 630px;
-    height: 320px;
-    background-image: url(../../images/ads/dfp/dfp-mock-ads__home__desktop.jpg);
-  }
-}
-@media (min-width: 768px) {
-  /* line 29, ../sass/partials/page-content/modules/_dfp-ads__new-homes.scss */
-  .dfp-ads__new-homes {
-    margin-top: -20px;
-    width: 100%;
-    height: 320px;
-    background-image: url(../../images/ads/dfp/dfp-mock-ads__home__desktop.jpg);
-  }
-}
 /* line 12, ../sass/partials/page-content/modules/_adplaceholer__right-column.scss */
 .adplaceholer__right-column {
   width: 298px;
@@ -6012,33 +5985,6 @@ a, img {
   font-size: 11px;
 }
 
-/* line 11, ../sass/partials/page-content/modules/_dfp-ads__new-homes.scss */
-.dfp-ads__new-homes {
-  width: 300px;
-  height: 127px;
-  background-image: url(../../images/ads/dfp/dfp-mock-ads__home__mobile.jpg);
-  background-position: top left;
-  background-repeat: no-repeat;
-  margin: 0 auto 30px auto;
-}
-
-@media (min-width: 960px) {
-  /* line 21, ../sass/partials/page-content/modules/_dfp-ads__new-homes.scss */
-  .dfp-ads__new-homes {
-    width: 630px;
-    height: 320px;
-    background-image: url(../../images/ads/dfp/dfp-mock-ads__home__desktop.jpg);
-  }
-}
-@media (min-width: 768px) {
-  /* line 29, ../sass/partials/page-content/modules/_dfp-ads__new-homes.scss */
-  .dfp-ads__new-homes {
-    margin-top: -20px;
-    width: 100%;
-    height: 320px;
-    background-image: url(../../images/ads/dfp/dfp-mock-ads__home__desktop.jpg);
-  }
-}
 /* line 12, ../sass/partials/page-content/modules/_adplaceholer__right-column.scss */
 .adplaceholer__right-column {
   width: 298px;
