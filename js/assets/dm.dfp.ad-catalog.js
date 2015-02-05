@@ -40,7 +40,7 @@ bcom.dfp.adCatalog = [
       sizeByBreakpoint: {
     mobile: [[287,213]],
     tablet: [[960,580]],
-    desktop: [[960,580]
+    desktop: [[960,580]]
       },
       position: ['atf', 'carousel1']
   },
