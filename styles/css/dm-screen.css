@@ -391,18 +391,30 @@ body {
 .chevron.right:before {
   left: 0;
   transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  /* IE 9 */
+  -webkit-transform: rotate(45deg);
+  /* Chrome, Safari, Opera */
 }
 
-/* line 420, ../sass/helpers/_mixins-and-extends.scss */
+/* line 422, ../sass/helpers/_mixins-and-extends.scss */
 .chevron.bottom:before {
   top: 0;
   transform: rotate(135deg);
+  -ms-transform: rotate(135deg);
+  /* IE 9 */
+  -webkit-transform: rotate(135deg);
+  /* Chrome, Safari, Opera */
 }
 
-/* line 425, ../sass/helpers/_mixins-and-extends.scss */
+/* line 429, ../sass/helpers/_mixins-and-extends.scss */
 .chevron.left:before {
   left: 0.25em;
   transform: rotate(-135deg);
+  -ms-transform: rotate(-135deg);
+  /* IE 9 */
+  -webkit-transform: rotate(-135deg);
+  /* Chrome, Safari, Opera */
 }
 
 /* line 5, ../sass/partials/_element-defaults.scss */
