@@ -34,20 +34,26 @@ var PageNav = {};
 			var thisRef = this;
 
 			pageNav.$responsiveIcon.on('click', thisRef.toggleMobileMenu);
-			pageNav.menuObj.$findAHome.on('click', thisRef.toggleMobileMegaMenu);
-			pageNav.menuObj.$neighborhoods.on('click', thisRef.toggleMobileMegaMenu);
+
+			pageNav.menuObj.$findAHome.on('touchstart click', thisRef.toggleMobileMegaMenu);
+			pageNav.menuObj.$neighborhoods.on('touchstart click', thisRef.toggleMobileMegaMenu);
+			pageNav.menuObj.$myAccount.on('touchstart click', thisRef.toggleMobileMenu);
 		},
 		toggleMobileMenu: function(e){
 			e.preventDefault();
 			pageNav.menuObj.$mainNavLinks.toggle();
 		},
 		toggleMobileMegaMenu: function(e){
+			e.stopPropagation();
+			e.preventDefault();
 			var thisRef = this;
 			var thisObj = $(this);
 
 			if(pageNav.$body.width() < 768){
-				$(thisObj.find('.mega-menu')).toggle();
-				$(thisObj.find('.mega-menu__container')).toggle();
+				var megaMenu = $(thisObj.find('.mega-menu'));
+				megaMenu.toggle(0, function(){
+					$(this).find('.mega-menu__container').toggle();
+				});
 			}
 		},
 		updateLogoDim: function(){
