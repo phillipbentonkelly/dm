@@ -2,9 +2,7 @@
 // *  Mega Menu
 // *
 
-if (typeof dm === 'undefined') { dm = {}; }
-
-PageNav = {};
+var PageNav = {};
 
 (function( win, $, undefined ) {
 	'use strict';
@@ -14,8 +12,8 @@ PageNav = {};
 	};
 
 	PageNav = function (){
-		if( ! (this instanceof PageNav ))
-		    return new PageNav();
+	if( ! (this instanceof PageNav ))
+	    return new PageNav();
 	};
 
 	PageNav.prototype = {
@@ -24,13 +22,11 @@ PageNav = {};
 			pageNav.$pageNav = $('.page-nav');
 			pageNav.$responsiveIcon = $('.page-nav__mega-menu-responsive-icon');
 			pageNav.$resSearchIcon = $('.page-nav__search-responsive-icon');
-			
+			pageNav.menuObj.$findAHome = $('#find-home-menu');
+			pageNav.menuObj.$neighborhoods = $('#neighborhoods-menu');
 			pageNav.menuObj.$logo = $('.page-nav__logo');
 			pageNav.menuObj.$mainNavLinks = $('.page-nav__main-nav-links');
-
-			pageNav.menuObj.$findAHome = $('li#find-home-menu');
-			pageNav.menuObj.$neighborhoods = $('li#neighborhoods-menu');
-			pageNav.menuObj.$myAccount = $('li#myAccount');
+			pageNav.menuObj.$logo = $('.page-nav__logo');
 
 			this.initEventHandlers();
 		}, 
@@ -38,27 +34,20 @@ PageNav = {};
 			var thisRef = this;
 
 			pageNav.$responsiveIcon.on('click', thisRef.toggleMobileMenu);
-
-			pageNav.menuObj.$findAHome.on('touchstart click', thisRef.toggleMobileMegaMenu);
-			pageNav.menuObj.$neighborhoods.on('touchstart click', thisRef.toggleMobileMegaMenu);
-			pageNav.menuObj.$myAccount.on('touchstart click', thisRef.toggleMobileMegaMenu);
+			pageNav.menuObj.$findAHome.on('click', thisRef.toggleMobileMegaMenu);
+			pageNav.menuObj.$neighborhoods.on('click', thisRef.toggleMobileMegaMenu);
 		},
 		toggleMobileMenu: function(e){
 			e.preventDefault();
 			pageNav.menuObj.$mainNavLinks.toggle();
 		},
 		toggleMobileMegaMenu: function(e){
-			e.stopPropagation();
-			e.preventDefault();
-
 			var thisRef = this;
 			var thisObj = $(this);
 
 			if(pageNav.$body.width() < 768){
-				var megaMenu = $(thisObj.find('.mega-menu'));
-				megaMenu.toggle(0, function(){
-					$(this).find('.mega-menu__container').toggle();
-				});
+				$(thisObj.find('.mega-menu')).toggle();
+				$(thisObj.find('.mega-menu__container')).toggle();
 			}
 		},
 		updateLogoDim: function(){
