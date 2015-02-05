@@ -38,9 +38,9 @@ bcom.dfp.adCatalog = [
       name: 'ad_carousel1',
       size: [[960,580],[287,213]],
       sizeByBreakpoint: {
-	  mobile: [287,213],
-	  tablet: [960,580],
-	  desktop: [960,580]
+    mobile: [[287,213]],
+    tablet: [[960,580]],
+    desktop: [[960,580]
       },
       position: ['atf', 'carousel1']
   },
@@ -48,9 +48,9 @@ bcom.dfp.adCatalog = [
       name: 'ad_carousel2',
       size: [[960,580],[287,213]],
       sizeByBreakpoint: {
-          mobile: [287,213],
-          tablet: [960,580],
-          desktop: [960,580]
+          mobile: [[287,213]],
+          tablet: [[960,580]],
+          desktop: [[960,580]]
       },
       position: 'carousel2'
   },
@@ -58,9 +58,9 @@ bcom.dfp.adCatalog = [
       name: 'ad_carousel3',
       size: [[960,580],[287.213]],
       sizeByBreakpoint: {
-          mobile: [287,213],
-          tablet: [960,580],
-          desktop: [960,580]
+          mobile: [[287,213]],
+          tablet: [[960,580]],
+          desktop: [[960,580]]
       },
       position: 'carousel3'
   },
@@ -68,9 +68,9 @@ bcom.dfp.adCatalog = [
       name: 'ad_lead1',
       size: [[728,90],[320,50]],
       sizeByBreakpoint: {
-	  mobile: [[320,50]],
-	  tablet: [[728,90]],
-	  desktop: [[728,90]]
+    mobile: [[320,50]],
+    tablet: [[728,90]],
+    desktop: [[728,90]]
       },
       position: ['atf', 'lead1'],
       refresher: true
@@ -79,9 +79,9 @@ bcom.dfp.adCatalog = [
       name: 'ad_lead2',
       size: [[728,90],[320,50]],
       sizeByBreakpoint: {
-	  mobile: [[320,50]],
-	  tablet: [[728,90]],
-	  desktop: [[728,90]]
+    mobile: [[320,50]],
+    tablet: [[728,90]],
+    desktop: [[728,90]]
       },
       position: ['btf','lead2']
   },
@@ -107,17 +107,17 @@ bcom.dfp.adCatalog = [
   },
   {
       name: 'ad_spotlight3',
-      size: [460,150],
+      size: [[460,150]],
       position: ['btf', 'spotlight3']
   },
   {
       name: 'ad_spotlight4',
-      size: [460,150],
+      size: [[460,150]],
       position: ['btf', 'spotlight4']
   },
   {
       name: 'ad_toprightslot',
-      size: [300,250],
+      size: [[300,250]],
       position: ['atf', 'toprightslot']
   },
   {
