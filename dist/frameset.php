@@ -102,7 +102,7 @@
     <?php } ?>
 
     <?php if ($pageType == 'property-listings' || $pageType == 'property-listings-premium') { ?>
-    bcom.dfp.adSlots = ['ad_lead1','ad_bigbox1','ad_bigbox2','ad_outofpage1','ad_outofpage2','ad_outofpage3'];
+    bcom.dfp.adSlots = ['ad_lead1','ad_bigbox1','ad_bigbox2','ad_bigbox3','ad_bigbox4','ad_outofpage1','ad_outofpage2','ad_outofpage3'];
     <?php } ?>
 
 

@@ -2275,30 +2275,28 @@ body.category-details .related-articles__section-header {
 .related-articles__item h2.title {
   font-family: OpenSans Bold;
   color: #000000;
-  font-size: 100%;
+  font-size: 14px;
   /* Approximation due to font substitution */
   font-weight: 900;
-  line-height: 18px;
-  /* Approximation due to font substitution */
   text-align: left;
   margin: 0 0 4px 0;
 }
-/* line 56, ../sass/partials/page/modules/_relatedarticles.scss */
+/* line 55, ../sass/partials/page/modules/_relatedarticles.scss */
 .related-articles__item p.description {
   display: none;
   font-family: OpenSans Regular;
   font-size: 13px;
   margin-bottom: 6px;
 }
-/* line 63, ../sass/partials/page/modules/_relatedarticles.scss */
+/* line 62, ../sass/partials/page/modules/_relatedarticles.scss */
 .related-articles__item div.date {
   display: none;
 }
-/* line 67, ../sass/partials/page/modules/_relatedarticles.scss */
+/* line 66, ../sass/partials/page/modules/_relatedarticles.scss */
 .related-articles__item .additional-info {
   min-height: 10px;
 }
-/* line 72, ../sass/partials/page/modules/_relatedarticles.scss */
+/* line 71, ../sass/partials/page/modules/_relatedarticles.scss */
 .related-articles__item .tags {
   display: none;
   float: right;
@@ -2306,11 +2304,11 @@ body.category-details .related-articles__section-header {
   min-height: 10px;
   overflow: hidden;
 }
-/* line 79, ../sass/partials/page/modules/_relatedarticles.scss */
+/* line 78, ../sass/partials/page/modules/_relatedarticles.scss */
 .related-articles__item .tags .category-tag {
   float: right !important;
 }
-/* line 83, ../sass/partials/page/modules/_relatedarticles.scss */
+/* line 82, ../sass/partials/page/modules/_relatedarticles.scss */
 .related-articles__item .tags .tag {
   display: block;
   font-size: 12px;
@@ -2323,7 +2321,7 @@ body.category-details .related-articles__section-header {
   margin-bottom: 5px;
   float: right !important;
 }
-/* line 95, ../sass/partials/page/modules/_relatedarticles.scss */
+/* line 94, ../sass/partials/page/modules/_relatedarticles.scss */
 .related-articles__item .tags .tag .arrow {
   display: block;
   float: right;
@@ -2334,19 +2332,19 @@ body.category-details .related-articles__section-header {
   border-right: 8px solid white;
   margin-left: 6px;
 }
-/* line 107, ../sass/partials/page/modules/_relatedarticles.scss */
+/* line 106, ../sass/partials/page/modules/_relatedarticles.scss */
 .related-articles__item .tags .location {
   background-color: #82b5e6;
 }
-/* line 108, ../sass/partials/page/modules/_relatedarticles.scss */
+/* line 107, ../sass/partials/page/modules/_relatedarticles.scss */
 .related-articles__item .tags .class {
   background-color: #00a651;
 }
-/* line 109, ../sass/partials/page/modules/_relatedarticles.scss */
+/* line 108, ../sass/partials/page/modules/_relatedarticles.scss */
 .related-articles__item .tags .event {
   background-color: #ff6c6c;
 }
-/* line 113, ../sass/partials/page/modules/_relatedarticles.scss */
+/* line 112, ../sass/partials/page/modules/_relatedarticles.scss */
 .related-articles a.viewMore {
   clear: both;
   display: block;
@@ -2362,59 +2360,59 @@ body.category-details .related-articles__section-header {
   background: #e5e5e5;
   margin: 20px 0 10px 0;
 }
-/* line 128, ../sass/partials/page/modules/_relatedarticles.scss */
+/* line 127, ../sass/partials/page/modules/_relatedarticles.scss */
 .related-articles a.viewMore img {
   margin-left: 4px;
 }
-/* line 133, ../sass/partials/page/modules/_relatedarticles.scss */
+/* line 132, ../sass/partials/page/modules/_relatedarticles.scss */
 .related-articles .dfp-ad__row {
   display: block;
   clear: both;
   min-height: 1px;
   overflow: hidden;
 }
-/* line 139, ../sass/partials/page/modules/_relatedarticles.scss */
+/* line 138, ../sass/partials/page/modules/_relatedarticles.scss */
 .related-articles .dfp-ad__row__main-link {
   display: none;
   float: left;
 }
-/* line 143, ../sass/partials/page/modules/_relatedarticles.scss */
+/* line 142, ../sass/partials/page/modules/_relatedarticles.scss */
 .related-articles .dfp-ad__row__main-link:nth-child(odd) {
   margin-right: 30px;
 }
 
 @media (min-width: 768px) {
-  /* line 152, ../sass/partials/page/modules/_relatedarticles.scss */
+  /* line 151, ../sass/partials/page/modules/_relatedarticles.scss */
   .related-articles__item:nth-child(4) {
     border-top: 1px solid #e5e5e5;
   }
-  /* line 156, ../sass/partials/page/modules/_relatedarticles.scss */
+  /* line 155, ../sass/partials/page/modules/_relatedarticles.scss */
   .related-articles__item {
     width: 100%;
     height: auto;
   }
-  /* line 160, ../sass/partials/page/modules/_relatedarticles.scss */
+  /* line 159, ../sass/partials/page/modules/_relatedarticles.scss */
   .related-articles__item img.thumb {
     float: left;
     margin-right: 10px;
   }
-  /* line 166, ../sass/partials/page/modules/_relatedarticles.scss */
+  /* line 165, ../sass/partials/page/modules/_relatedarticles.scss */
   .related-articles__item .main-info h2.title {
     font-size: 16px;
     /* Approximation due to font substitution */
   }
-  /* line 170, ../sass/partials/page/modules/_relatedarticles.scss */
+  /* line 169, ../sass/partials/page/modules/_relatedarticles.scss */
   .related-articles__item .main-info p.description {
     display: block;
     text-align: left;
   }
-  /* line 176, ../sass/partials/page/modules/_relatedarticles.scss */
+  /* line 175, ../sass/partials/page/modules/_relatedarticles.scss */
   .related-articles__item .additional-info {
     display: block;
     padding: 10px;
     width: 100%;
   }
-  /* line 181, ../sass/partials/page/modules/_relatedarticles.scss */
+  /* line 180, ../sass/partials/page/modules/_relatedarticles.scss */
   .related-articles__item .additional-info div.date {
     display: block;
     max-width: 25%;
@@ -2422,14 +2420,10 @@ body.category-details .related-articles__section-header {
     font-family: OpenSans Italic;
     font-size: 12px;
   }
-  /* line 189, ../sass/partials/page/modules/_relatedarticles.scss */
+  /* line 188, ../sass/partials/page/modules/_relatedarticles.scss */
   .related-articles__item .additional-info div.tags {
     float: right;
     display: inline-block;
-  }
-  /* line 196, ../sass/partials/page/modules/_relatedarticles.scss */
-  .related-articles__item:nth-child(2) {
-    border-top: 0;
   }
 }
 /* line 11, ../sass/partials/page/modules/_full-screen-carousel.scss */

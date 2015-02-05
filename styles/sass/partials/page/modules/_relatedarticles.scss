@@ -46,9 +46,8 @@ body.category-details {
 		h2.title {
 			font-family: OpenSans Bold;
 			color:  #000000;
-			font-size: 100%; /* Approximation due to font substitution */
+			font-size: 14px; /* Approximation due to font substitution */
 			font-weight: 900;
-			line-height: 18px; /* Approximation due to font substitution */
 			text-align: left;
 			margin: 0 0 4px 0;
 		}
@@ -191,10 +190,6 @@ body.category-details {
 					display: inline-block;
 				}
 			}
-		}
-
-		&__item:nth-child(2) {
-			border-top: 0;
 		}
 	}
 }
