@@ -45,6 +45,8 @@ var PageNav = {};
 			pageNav.menuObj.$mainNavLinks.toggle();
 		},
 		toggleMobileMegaMenu: function(e){
+			e.stopPropagation();
+			e.preventDefault();
 			var thisRef = this;
 			var thisObj = $(this);
 
