@@ -3507,14 +3507,14 @@ body.category-details .related-articles__section-header {
 
 /* line 546, ../sass/partials/page/modules/_listing-summary.scss */
 .share-modal {
-  visibility: hidden;
+  display: none;
 }
-/* line 549, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 550, ../sass/partials/page/modules/_listing-summary.scss */
 .share-modal .share-icons__wrapper {
   width: 100px;
   margin: 0 auto;
 }
-/* line 554, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 555, ../sass/partials/page/modules/_listing-summary.scss */
 .share-modal .content {
   position: relative;
   width: 100%;
@@ -3522,39 +3522,39 @@ body.category-details .related-articles__section-header {
   display: inline-block;
   box-sizing: border-box;
 }
-/* line 562, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 563, ../sass/partials/page/modules/_listing-summary.scss */
 .share-modal span {
   width: 100%;
 }
-/* line 566, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 567, ../sass/partials/page/modules/_listing-summary.scss */
 .share-modal .share-icons {
   float: left;
   width: 50%;
   max-width: 100px;
 }
-/* line 572, ../sass/partials/page/modules/_listing-summary.scss */
+/* line 573, ../sass/partials/page/modules/_listing-summary.scss */
 .share-modal .share-icons:first-child {
   margin-bottom: 10px;
 }
 
 @media (min-width: 768px) {
-  /* line 585, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 586, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__mobile-button-dock {
     display: none;
   }
-  /* line 589, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 590, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__address--mobile {
     display: none;
   }
-  /* line 593, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 594, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__facts, .listing__features {
     font-size: 85%;
   }
-  /* line 597, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 598, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__address {
     display: block;
   }
-  /* line 601, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 602, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__breadcrumbs {
     display: block;
     margin-bottom: 20px;
@@ -3567,31 +3567,31 @@ body.category-details .related-articles__section-header {
     /* Approximation due to font substitution */
     text-align: left;
   }
-  /* line 611, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 612, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__breadcrumbs a:first-child:before {
     content: "";
   }
-  /* line 615, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 616, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__breadcrumbs a {
     color: #2e1460;
   }
-  /* line 620, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 621, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__breadcrumbs a:before, .listing__breadcrumb-address:before {
     content: " \B7 ";
     color: black;
   }
-  /* line 625, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 626, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__summary--mobile {
     display: none;
   }
-  /* line 629, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 630, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__summary--left {
     width: 50%;
     padding-right: 20px;
     float: left;
     box-sizing: border-box;
   }
-  /* line 636, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 637, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__summary--right {
     display: block;
     width: 50%;
@@ -3602,25 +3602,25 @@ body.category-details .related-articles__section-header {
     box-sizing: border-box;
     margin-bottom: 15px;
   }
-  /* line 647, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 648, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__detail-pindrop {
     display: inline-block;
     vertical-align: middle;
   }
-  /* line 652, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 653, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__for-sale {
     font-family: 'Oswald Regular', sans-serif;
     font-size: 12px;
     font-weight: 400;
     display: inline-block;
   }
-  /* line 659, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 660, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__tags {
     display: inline-block;
     min-height: 10px;
     overflow: hidden;
   }
-  /* line 664, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 665, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__tags .tag {
     display: block;
     float: left;
@@ -3633,7 +3633,7 @@ body.category-details .related-articles__section-header {
     color: #fff;
     margin-bottom: 5px;
   }
-  /* line 676, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 677, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__tags .tag .arrow {
     display: block;
     float: right;
@@ -3644,62 +3644,62 @@ body.category-details .related-articles__section-header {
     border-right: 8px solid white;
     margin-left: 6px;
   }
-  /* line 688, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 689, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__tags .location {
     background-color: #82b5e6;
   }
-  /* line 689, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 690, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__tags .class {
     background-color: #00a651;
   }
-  /* line 690, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 691, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__tags .event {
     background-color: #ff6c6c;
   }
-  /* line 691, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 692, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__tags .featured {
     background-color: #2e1460;
   }
-  /* line 694, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 695, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__detail-share--row1 {
     display: block;
   }
-  /* line 697, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 698, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__detail-share--row1 a:nth-child(2) {
     display: inline-block;
   }
-  /* line 702, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 703, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__detail-share--row2 {
     padding: 7px;
   }
-  /* line 706, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 707, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__facts--left, .listing__facts--right, .listing__features--left, .listing__features--right {
     width: 33.3%;
     box-sizing: border-box;
     margin-bottom: 20px;
   }
-  /* line 712, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 713, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__facts, .listing__features {
     font-size: 100%;
   }
-  /* line 716, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 717, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__external-links {
     float: left;
     width: 33.3%;
     box-sizing: border-box;
     clear: none;
   }
-  /* line 722, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 723, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__external-links li {
     padding-bottom: 10px;
   }
 
-  /* line 728, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 729, ../sass/partials/page/modules/_listing-summary.scss */
   .dfp-ads {
     display: block;
   }
 
-  /* line 732, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 733, ../sass/partials/page/modules/_listing-summary.scss */
   .mobile-ad {
     display: none;
   }

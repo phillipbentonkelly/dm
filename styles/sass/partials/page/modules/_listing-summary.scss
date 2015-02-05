@@ -544,7 +544,8 @@ $module-name: 'listing';
 }
 
 .share-modal {
-	visibility: hidden;
+	// visibility: hidden;
+	display: none;
 
 	.share-icons__wrapper {
 		width: 100px;
