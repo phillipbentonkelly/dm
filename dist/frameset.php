@@ -57,7 +57,6 @@
 		<script src="js/resources/basic/js/jquery.simplemodal.js"></script>
         <script src="js/assets/popup.js"></script>
         <script src="js/assets/related-articles-rail-widget.js"></script>
-        <script src="js/assets/related-articles-main-widget.js"></script>
 
 	<?php } ?>
 

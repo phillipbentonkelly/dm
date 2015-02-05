@@ -6,7 +6,7 @@
 	module.allArticles = [
 		{
 			image: 'images/related-articles/related-articles__thumbs__2.jpg',
-			title: "1",
+			title: "Article #1",
 			description: "The dream home of the most famouse couple in Massachusetts looks like it's close to completion.",
 			date: "September 9, 2014",
 			tags: [
@@ -22,7 +22,7 @@
 
 		{
 			image: 'images/related-articles/related-articles__thumbs__1.jpg',
-			title: "2",
+			title: "Article #2",
 			description: "This updated Italianate mansion, once known as The Gilbert House, was originally built in 1854 and has undergone extensive renovations while remaining loyal to the home's orignal design.",
 			date: "September 9, 2014",
 			tags: [
@@ -34,7 +34,7 @@
 
 		{
 			image: 'images/related-articles/related-articles__thumbs__1.jpg',
-			title: "3",
+			title: "Article #3",
 			description: "This updated Italianate mansion, once known as The Gilbert House, was originally built in 1854 and has undergone extensive renovations while remaining loyal to the home's orignal design.",
 			date: "September 9, 2014",
 			tags: [
@@ -50,7 +50,7 @@
 
 		{
 			image: 'images/related-articles/related-articles__thumbs__2.jpg',
-			title: "4",
+			title: "Article #4",
 			description: "The dream home of the most famouse couple in Massachusetts looks like it's close to completion.",
 			date: "September 9, 2014",
 			tags: [
@@ -66,7 +66,7 @@
 
 		{
 			image: 'images/related-articles/related-articles__thumbs__1.jpg',
-			title: "5",
+			title: "Article #5",
 			description: "This updated Italianate mansion, once known as The Gilbert House, was originally built in 1854 and has undergone extensive renovations while remaining loyal to the home's orignal design.",
 			date: "September 9, 2014",
 			tags: [
@@ -79,7 +79,7 @@
 
 		{
 			image: 'images/related-articles/related-articles__thumbs__1.jpg',
-			title: "6",
+			title: "Article #6",
 			description: "This updated Italianate mansion, once known as The Gilbert House, was originally built in 1854 and has undergone extensive renovations while remaining loyal to the home's orignal design.",
 			date: "September 9, 2014",
 			tags: [
@@ -91,7 +91,7 @@
 
 		{
 			image: 'images/related-articles/related-articles__thumbs__1.jpg',
-			title: "7",
+			title: "Article #7",
 			description: "This updated Italianate mansion, once known as The Gilbert House, was originally built in 1854 and has undergone extensive renovations while remaining loyal to the home's orignal design.",
 			date: "September 9, 2014",
 			tags: [
@@ -107,7 +107,7 @@
 
 		{
 			image: 'images/related-articles/related-articles__thumbs__2.jpg',
-			title: "8",
+			title: "Article #8",
 			description: "The dream home of the most famouse couple in Massachusetts looks like it's close to completion.",
 			date: "September 9, 2014",
 			tags: [
@@ -123,7 +123,7 @@
 
 		{
 			image: 'images/related-articles/related-articles__thumbs__1.jpg',
-			title: "9",
+			title: "Article #9",
 			description: "This updated Italianate mansion, once known as The Gilbert House, was originally built in 1854 and has undergone extensive renovations while remaining loyal to the home's orignal design.",
 			date: "September 9, 2014",
 			tags: [
@@ -135,7 +135,7 @@
 
 		{
 			image: 'images/related-articles/related-articles__thumbs__1.jpg',
-			title: "10",
+			title: "Article #10",
 			description: "This updated Italianate mansion, once known as The Gilbert House, was originally built in 1854 and has undergone extensive renovations while remaining loyal to the home's orignal design.",
 			date: "September 9, 2014",
 			tags: [
@@ -147,7 +147,7 @@
 
 		{
 			image: 'images/related-articles/related-articles__thumbs__1.jpg',
-			title: "11",
+			title: "Article #11",
 			description: "This updated Italianate mansion, once known as The Gilbert House, was originally built in 1854 and has undergone extensive renovations while remaining loyal to the home's orignal design.",
 			date: "September 9, 2014",
 			tags: [
@@ -163,7 +163,7 @@
 
 		{
 			image: 'images/related-articles/related-articles__thumbs__2.jpg',
-			title: "12",
+			title: "Article #12",
 			description: "The dream home of the most famouse couple in Massachusetts looks like it's close to completion.",
 			date: "September 9, 2014",
 			tags: [
@@ -179,7 +179,7 @@
 
 		{
 			image: 'images/related-articles/related-articles__thumbs__1.jpg',
-			title: "13",
+			title: "Article #13",
 			description: "This updated Italianate mansion, once known as The Gilbert House, was originally built in 1854 and has undergone extensive renovations while remaining loyal to the home's orignal design.",
 			date: "September 9, 2014",
 			tags: [
@@ -192,7 +192,7 @@
 		
 		{
 			image: 'images/related-articles/related-articles__thumbs__1.jpg',
-			title: "14",
+			title: "Article #14",
 			description: "This updated Italianate mansion, once known as The Gilbert House, was originally built in 1854 and has undergone extensive renovations while remaining loyal to the home's orignal design.",
 			date: "September 9, 2014",
 			tags: [
@@ -204,51 +204,7 @@
 
 		{
 			image: 'images/related-articles/related-articles__thumbs__1.jpg',
-			title: "15",
-			description: "This updated Italianate mansion, once known as The Gilbert House, was originally built in 1854 and has undergone extensive renovations while remaining loyal to the home's orignal design.",
-			date: "September 9, 2014",
-			tags: [
-					{'tag-type':'Jamaica Plain',
-					'tag-color': 'orange'
-					},
-
-					{'tag-type':'Open House',
-					'tag-color': 'light-blue'
-					}
-			]
-		},
-
-		{
-			image: 'images/related-articles/related-articles__thumbs__2.jpg',
-			title: "16",
-			description: "The dream home of the most famouse couple in Massachusetts looks like it's close to completion.",
-			date: "September 9, 2014",
-			tags: [
-					{'tag-type':'Open House',
-					'tag-color': 'light-blue'
-					},
-
-					{'tag-type':'Luxury',
-					'tag-color': 'maroon'
-					}
-			]
-		},
-
-		{
-			image: 'images/related-articles/related-articles__thumbs__1.jpg',
-			title: "17",
-			description: "This updated Italianate mansion, once known as The Gilbert House, was originally built in 1854 and has undergone extensive renovations while remaining loyal to the home's orignal design.",
-			date: "September 9, 2014",
-			tags: [
-					{'tag-type':'Jamaica Plain',
-					'tag-color': 'orange'
-					}
-			]
-		},
-
-		{
-			image: 'images/related-articles/related-articles__thumbs__1.jpg',
-			title: "18",
+			title: "Article #15",
 			description: "This updated Italianate mansion, once known as The Gilbert House, was originally built in 1854 and has undergone extensive renovations while remaining loyal to the home's orignal design.",
 			date: "September 9, 2014",
 			tags: [
@@ -264,7 +220,7 @@
 
 		{
 			image: 'images/related-articles/related-articles__thumbs__2.jpg',
-			title: "19",
+			title: "Article #16",
 			description: "The dream home of the most famouse couple in Massachusetts looks like it's close to completion.",
 			date: "September 9, 2014",
 			tags: [
@@ -280,7 +236,51 @@
 
 		{
 			image: 'images/related-articles/related-articles__thumbs__1.jpg',
-			title: "20",
+			title: "Article #17",
+			description: "This updated Italianate mansion, once known as The Gilbert House, was originally built in 1854 and has undergone extensive renovations while remaining loyal to the home's orignal design.",
+			date: "September 9, 2014",
+			tags: [
+					{'tag-type':'Jamaica Plain',
+					'tag-color': 'orange'
+					}
+			]
+		},
+
+		{
+			image: 'images/related-articles/related-articles__thumbs__1.jpg',
+			title: "Article #18",
+			description: "This updated Italianate mansion, once known as The Gilbert House, was originally built in 1854 and has undergone extensive renovations while remaining loyal to the home's orignal design.",
+			date: "September 9, 2014",
+			tags: [
+					{'tag-type':'Jamaica Plain',
+					'tag-color': 'orange'
+					},
+
+					{'tag-type':'Open House',
+					'tag-color': 'light-blue'
+					}
+			]
+		},
+
+		{
+			image: 'images/related-articles/related-articles__thumbs__2.jpg',
+			title: "Article #19",
+			description: "The dream home of the most famouse couple in Massachusetts looks like it's close to completion.",
+			date: "September 9, 2014",
+			tags: [
+					{'tag-type':'Open House',
+					'tag-color': 'light-blue'
+					},
+
+					{'tag-type':'Luxury',
+					'tag-color': 'maroon'
+					}
+			]
+		},
+
+		{
+			image: 'images/related-articles/related-articles__thumbs__1.jpg',
+			title: "Article #20",
 			description: "This updated Italianate mansion, once known as The Gilbert House, was originally built in 1854 and has undergone extensive renovations while remaining loyal to the home's orignal design.",
 			date: "September 9, 2014",
 			tags: [
@@ -325,12 +325,6 @@
 						'</div>'
 					].join('');
 
-			// Ad placeholder injected every 4 articles
-			// if(articlesOnPage > 0 && articlesOnPage % 6 ===0) {
-			//	var adMarkup = '<div id="ad_bigbox3" style="height:250px;width:300px;float:left;background:lightgrey;margin:20px 40px 20px 0;" class="ad-placeholder"></div><div id="ad_bigbox4" style="height:250px;width:300px;float:left;background:lightgrey;margin:20px 0 20px 0;" class="ad-placeholder"></div>';
-			//	module.$container.append(adMarkup);
-			// }
-
 			// Inject ads after first 4 articles
 			if( module.allArticles.indexOf(articlesDisplayed[i]) < 4 ) {
 				module.$hook.append(markup);
@@ -359,6 +353,7 @@
 	module.init = function() {
 		module.$container = $('.related-articles');
 		module.$hook =  $('.related-articles__hook');
+		module.$ads = $('.related-articles__ad-container');
 		module.$viewMore = $('.related-articles').find('.viewMore');
 		module.$articlesDisplayed = $('.related-articles__item').length;
 
