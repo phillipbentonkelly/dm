@@ -205,8 +205,7 @@ dm.searchPanel = {};
 
 					self.btns.$save.on('click', function(e){
 						e.preventDefault();
-						var state = $(this).getObservable();
-						var modal = self.modals.$svSearch;
+						var status = $(this).getObservable();
 						if(!self.saved){
 							$(modal).modal();
 							$(modal).find('button').on('click',function(e){
@@ -244,6 +243,8 @@ dm.searchPanel = {};
 					self.btns.$lvl2t.on('click', function(e){
 						e.preventDefault();
 						var state = $(this).getObservable();
+						var lwrLvls = $.merge(self.lvls.$two, self.lvls.$three);
+						//lwrLvls.slideToggle('fast');
 						self.lvls.$lower.slideToggle('fast');
 						self.expanded = self.getExpanded();
 						state.toggle();

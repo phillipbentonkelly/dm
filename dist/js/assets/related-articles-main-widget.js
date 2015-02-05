@@ -3,104 +3,174 @@
 	// Related Articles
 	var module = {};
 
-	module.getArticles = function() {
-		$.get('http://devedit.boston.com/eom/SysConfig/WebPortal/BDC/Framework/feeds/placester/getArticles.jsp?mode=full', function(data) {
-			module.allArticles = data.articles; //['articles'] is better written in dot notation.
-			//console.log('All Articles', module.allArticles);
-			module.buildWidget(module.allArticles);
-		});
-	};
+	module.allArticles = [
+		{
+			image: 'images/related-articles/related-articles__thumbs__2.jpg',
+			title: "Tom and Gisele's Brookline Pad Looks Almost Ready",
+			description: "The dream home of the most famouse couple in Massachusetts looks like it's close to completion.",
+			date: "September 9, 2014",
+			tags: [
+					{'tag-type':'Open House',
+					'tag-color': 'light-blue'
+					},
 
-	module.buildWidget = function(allArticles) {
-		var articlesDisplayed = allArticles.slice(module.curIndex, (module.curIndex+6));
+					{'tag-type':'Luxury',
+					'tag-color': 'maroon'
+					},
+			]
+		},
+
+		{
+			image: 'images/related-articles/related-articles__thumbs__1.jpg',
+			title: "Tom and Gisele's Brookline Pad Looks Almost Ready",
+			description: "This updated Italianate mansion, once known as The Gilbert House, was originally built in 1854 and has undergone extensive renovations while remaining loyal to the home's orignal design.",
+			date: "September 9, 2014",
+			tags: [
+					{'tag-type':'Jamaica Plain',
+					'tag-color': 'orange'
+					}
+			]
+		},
+
+		{
+			image: 'images/related-articles/related-articles__thumbs__1.jpg',
+			title: "Testing this article, This should be on Page 2",
+			description: "This updated Italianate mansion, once known as The Gilbert House, was originally built in 1854 and has undergone extensive renovations while remaining loyal to the home's orignal design.",
+			date: "September 9, 2014",
+			tags: [
+					{'tag-type':'Jamaica Plain',
+					'tag-color': 'orange'
+					},
+
+					{'tag-type':'Open House',
+					'tag-color': 'light-blue'
+					}
+			]
+		},
+
+		{
+			image: 'images/related-articles/related-articles__thumbs__2.jpg',
+			title: "Tom and Gisele's Brookline Pad Looks Almost Ready",
+			description: "The dream home of the most famouse couple in Massachusetts looks like it's close to completion.",
+			date: "September 9, 2014",
+			tags: [
+					{'tag-type':'Open House',
+					'tag-color': 'light-blue'
+					},
+
+					{'tag-type':'Luxury',
+					'tag-color': 'maroon'
+					}
+			]
+		},
+
+		{
+			image: 'images/related-articles/related-articles__thumbs__1.jpg',
+			title: "Tom and Gisele's Brookline Pad Looks Almost Ready",
+			description: "This updated Italianate mansion, once known as The Gilbert House, was originally built in 1854 and has undergone extensive renovations while remaining loyal to the home's orignal design.",
+			date: "September 9, 2014",
+			tags: [
+					{'tag-type':'Jamaica Plain',
+					'tag-color': 'orange'
+					}
+			]
+		},
+
+		{
+			image: 'images/related-articles/related-articles__thumbs__1.jpg',
+			title: "Testing this article, This should be on Page 2",
+			description: "This updated Italianate mansion, once known as The Gilbert House, was originally built in 1854 and has undergone extensive renovations while remaining loyal to the home's orignal design.",
+			date: "September 9, 2014",
+			tags: [
+					{'tag-type':'Jamaica Plain',
+					'tag-color': 'orange'
+					},
+
+					{'tag-type':'Open House',
+					'tag-color': 'light-blue'
+					}
+			]
+		},
+
+		{
+			image: 'images/related-articles/related-articles__thumbs__2.jpg',
+			title: "Tom and Gisele's Brookline Pad Looks Almost Ready",
+			description: "The dream home of the most famouse couple in Massachusetts looks like it's close to completion.",
+			date: "September 9, 2014",
+			tags: [
+					{'tag-type':'Open House',
+					'tag-color': 'light-blue'
+					},
+
+					{'tag-type':'Luxury',
+					'tag-color': 'maroon'
+					}
+			]
+		},
+
+		{
+			image: 'images/related-articles/related-articles__thumbs__1.jpg',
+			title: "Tom and Gisele's Brookline Pad Looks Almost Ready",
+			description: "This updated Italianate mansion, once known as The Gilbert House, was originally built in 1854 and has undergone extensive renovations while remaining loyal to the home's orignal design.",
+			date: "September 9, 2014",
+			tags: [
+					{'tag-type':'Jamaica Plain',
+					'tag-color': 'orange'
+					}
+			]
+		}
+	];
+
+	module.buildWidget = function(indexStart) {
+		var articlesDisplayed = module.allArticles.slice(indexStart, (indexStart+4));
+
 		// build each article's markup
 		for (var i = 0; i < articlesDisplayed.length; i++) {
-
-			var articlesOnPage = $('.related-articles').children('.related-articles__item').length;
 			var curItem = articlesDisplayed[i];
 			var markup =[];
 			var tagMarkup = [];
-			var mediaMarkup = [];
-			var mediaCount = curItem.multimedia.length;
-			var media;
-			var description = curItem.metadata.SEOInformation.summary || curItem.content || 'Sorry, no description available for this article';
-			description = description.slice(0, 100) + ' ...';
-			var articleLink = curItem.link;
-			var title = curItem.title || curItem.metadata.SEOInformation.headline || 'Sorry, no title available for this article';
-			var date = curItem.creationDate ? module.formatDate(curItem.creationDate) : 'no date available';
+			var articlesOnPage = $('.related-articles').children('.related-articles__item').length;
 
 			// build each article's tags
-			if(curItem.metadata.keywords.length > 1) {
-				var t = 0;
-				while (t < 3) {
-					var tag = '<a href="javascript:;" class="category-tag maroon">' + curItem.metadata.keywords[t] + '</a>';
-					tagMarkup.push(tag);
-					t++;
-				}
-			}
-
-			// find best image to use as thumbnail
-			if(mediaCount < 1) {
-				media = '<img class="thumb" style="height:120px;width:175px;border:1px solid black" src="" />';
-				mediaMarkup.push(media);
-			} else {
-				for (var p = 0; p < mediaCount; p++) {
-					if(!curItem.hasImage) {
-						if(curItem.multimedia[p]['--class'] && curItem.multimedia[p]['--class'] == 'main-web-images') {
-							media = '<img class="thumb" style="height:120px;width:175px" src="' + curItem.multimedia[p].url + '" />';
-						} else {
-							media = '<img class="thumb" style="height:120px;width:175px" src="' + curItem.multimedia[0].url + '" />';
-						}
-						curItem.hasImage = true;
-						mediaMarkup.push(media);
-					}
-				}
-			}
-			if(articlesOnPage > 0 && articlesOnPage %4 ===0) {
-				var adMarkup = '<div style="height:250px;width:300px;float:left;background:lightgrey;margin:0 20px 20px 0;" class="ad-placeholder"></div><div style="height:250px;width:300px;float:left;background:lightgrey;margin:0 20px 20px 0;" class="ad-placeholder"></div>';
-				module.$container.append(adMarkup);
+			for (var j = 0; j < curItem.tags.length; j++) {
+				var tag = '<a href="javascript:;" class="category-tag ' + curItem.tags[j]['tag-color'] + '">' + curItem.tags[j]['tag-type'] + '</a>';
+				tagMarkup.push(tag);
 			}
 
 			var _tagMarkup = tagMarkup.join('');
 			markup = [	'<div class="related-articles__item">',
-							mediaMarkup,
+							'<img class="thumb" src="' + curItem.image + '" />',
 							'<div class="main-info">',
-								'<a href="' + articleLink + '">',
-									'<h2 class="title">' + title + '</h2>',
+								'<a href="javascript:;">',
+									'<h2 class="title">' + curItem.title + '</h2>',
 								'</a>',
-								'<p class="description">' + description + '</p>',
+								'<p class="description">' + curItem.description + '</p>',
 							'</div>',
 							'<div class="additional-info">',
-								'<div class="date">' + date + '</div>',
+								'<div class="date">' + curItem.date + '</div>',
 								'<div class="tags">',
-									_tagMarkup,
+								_tagMarkup,
 								'</div>',
 							'</div>',
 						'</div>'
 					].join('');
 
+			// Ad placeholder injected every 4 articles
+			if(articlesOnPage > 0 && articlesOnPage %4 ===0) {
+				var adMarkup = '<div id="ad_bigbox3" style="height:250px;width:300px;float:left;background:lightgrey;margin:20px 40px 20px 0;" class="ad-placeholder"></div><div id="ad_bigbox4" style="height:250px;width:300px;float:left;background:lightgrey;margin:20px 0 20px 0;" class="ad-placeholder"></div>';
+				module.$container.append(adMarkup);
+			}
 			module.$container.append(markup);
 			module.$container.append(module.$viewMore);
-
 		}
 	};
 
 	module.showMoreArticles = function() {
-		if($('.related-articles__item').length < module.allArticles.length) {
-			module.curIndex += 6;
-			module.buildWidget(module.allArticles);
+		if($('.related-articles__item').length < module.listLength) {
+			module.buildWidget(4);
 		} else {
 			return;
 		}
-	};
-
-	module.formatDate = function(timestamp) {
-		var year = timestamp.slice(0,4);
-		var month = timestamp.slice(4,6);
-		var day = timestamp.slice(6,8);
-		var date = moment(timestamp,'YYYYMMDDHHmmss');
-		var formattedDate = date.format('MMMM Do YYYY');
-		return formattedDate;
 	};
 
 	// Event Handlers
@@ -114,11 +184,12 @@
 		module.$container = $('.related-articles');
 		module.$viewMore = $('.related-articles').find('.viewMore');
 		module.$articlesDisplayed = $('.related-articles__item').length;
+
+		module.listLength = module.allArticles.length;
+		module.totalPages = Math.ceil(module.listLength / 6);
 		module.curIndex = 0;
 
-		module.getArticles();
-
-		// module.buildWidget(0);
+		module.buildWidget(0);
 		module.eventHandlers();
 	};
 

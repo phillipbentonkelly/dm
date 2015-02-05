@@ -13,6 +13,12 @@
     
     <!-- Gallery Widget -->
     <?php include 'page/modules/gallery.php'; ?>
+    <script type="text/javascript">
+        $(function(){
+            galleryWidgetObj = GalleryWidget();
+            galleryWidgetObj.init( { captions: true } );
+        });
+    </script>
     
     <!-- Article Text -->
     <?php include 'page-content/article-text.php'; ?>
