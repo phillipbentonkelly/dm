@@ -301,7 +301,7 @@
 			
 			<!-- HOME -->
 			<?php if ($pageType == 'home') { ?>
-				<!-- Property Listings Widget -->
+				<!-- Newsletter Widget -->
 				<?php include 'page-content/modules/newsletter-widget.php'; ?>
 
 				<!-- DFP Sidebar Placeholder Ad Content -->
@@ -357,7 +357,9 @@
 				<?php include 'ads/ad_bigbox1.php'; ?>
                 <?php include 'ads/ad_bigbox2.php'; ?>				
 				
-								
+				<!-- Newsletter Widget -->
+				<?php include 'page-content/modules/newsletter-widget.php'; ?>
+
 				<!-- Explore Brookline -->
 				<?php include 'page-content/explore-brookline.php'; ?>
 			<?php } ?>
@@ -370,6 +372,9 @@
 
 				<!-- DFP Ad - Moo Printing -->
 				<?php include 'ads/ad_bigbox2.php'; ?>
+
+				<!-- Newsletter Widget -->
+				<?php include 'page-content/modules/newsletter-widget.php'; ?>
 
 				<!-- DFP Sidebar Placeholder Ad Content -->
 				<?php include 'ads/adplaceholer__right-column.php'; ?>
@@ -389,6 +394,9 @@
 
 				<!-- DFP Ad - Moo Printing -->
 				<?php include 'ads/ad_bigbox2.php'; ?>
+
+				<!-- Newsletter Widget -->
+				<?php include 'page-content/modules/newsletter-widget.php'; ?>
 
 				<!-- DFP Sidebar Placeholder Ad Content -->
 				<?php include 'ads/adplaceholer__right-column.php'; ?>

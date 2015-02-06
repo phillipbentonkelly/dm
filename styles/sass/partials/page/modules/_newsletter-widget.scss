@@ -5,7 +5,7 @@
 $module-name: 'newsletter-widget';
 
 .#{$module-name} {
-
+	// display: none;
 }
 
 @include media-query(tablet) {
@@ -91,6 +91,7 @@ $module-name: 'newsletter-widget';
 			div {
 				position: absolute;
 				top: 27px;
+				left: 23px;
 			}
 		}
 	}
