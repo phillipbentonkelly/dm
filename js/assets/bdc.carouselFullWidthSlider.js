@@ -54,6 +54,9 @@ if (typeof bdc === 'undefined') { bdc = {}; }
 					module.$slide = $('#carousel-wrap figure');
 					module.$slide.removeClass('active');
 					module.$slide.eq( _engine.current ).addClass('active');
+
+					// From Philippe
+					module.$slide.eq( _engine.current ).trigger('trackIfAd');
 				});
 			});
 		});
@@ -142,6 +145,9 @@ if (typeof bdc === 'undefined') { bdc = {}; }
 				_engine.current = 0; // Set the active item to be the first one, index 0.
 				module.$slide.removeClass('active'); // Remove the active class
 				module.$slide.eq( _engine.current ).addClass('active'); // Add the active class to the first item
+
+				//From Philippe
+				module.$slide.eq( _engine.current ).trigger('trackIfAd');
 			}
 			module.$mLayout_slide.width( bodyWidth );
 			module.$mLayout_slide.width( module.$mLayout_slide.width() - (module.$mLayout_slide.width() - module.$mLayout_img.width()) );
