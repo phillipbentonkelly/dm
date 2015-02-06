@@ -11,6 +11,8 @@ var PageNav = {};
 		menuObj: {}
 	};
 
+	var pageSearch = {};
+
 	PageNav = function (){
 	if( ! (this instanceof PageNav ))
 	    return new PageNav();
@@ -18,15 +20,24 @@ var PageNav = {};
 
 	PageNav.prototype = {
 		init: function(){
+
+			pageSearch = $('.page-search');
 			pageNav.$body = $('body');
 			pageNav.$pageNav = $('.page-nav');
 			pageNav.$responsiveIcon = $('.page-nav__mega-menu-responsive-icon');
 			pageNav.$resSearchIcon = $('.page-nav__search-responsive-icon');
-			pageNav.menuObj.$findAHome = $('#find-home-menu');
-			pageNav.menuObj.$neighborhoods = $('#neighborhoods-menu');
+
+			pageNav.$megaMenus = $('.mega-menu');
+			pageNav.$dropDownIcons = $('.page-nav__nav-item__responsive-drop-down-icon');
+			
 			pageNav.menuObj.$logo = $('.page-nav__logo');
 			pageNav.menuObj.$mainNavLinks = $('.page-nav__main-nav-links');
-			pageNav.menuObj.$logo = $('.page-nav__logo');
+
+			pageNav.menuObj.$searchSubmit = $('.page-nav__search-submit');
+
+			pageNav.menuObj.$findAHome = $('li#find-home-menu');
+			pageNav.menuObj.$neighborhoods = $('li#neighborhoods-menu');
+			pageNav.menuObj.$myAccount = $('li#myAccount');
 
 			this.initEventHandlers();
 		}, 
@@ -35,23 +46,34 @@ var PageNav = {};
 
 			pageNav.$responsiveIcon.on('click', thisRef.toggleMobileMenu);
 
-			pageNav.menuObj.$findAHome.on('touchstart click', thisRef.toggleMobileMegaMenu);
-			pageNav.menuObj.$neighborhoods.on('touchstart click', thisRef.toggleMobileMegaMenu);
-			pageNav.menuObj.$myAccount.on('touchstart click', thisRef.toggleMobileMenu);
+			pageNav.menuObj.$findAHome.children('a').on('touchstart click', thisRef.toggleMobileMegaMenu);
+			pageNav.menuObj.$neighborhoods.children('a').on('touchstart click', thisRef.toggleMobileMegaMenu);
+			pageNav.menuObj.$myAccount.children('a').on('touchstart click', thisRef.toggleMobileMegaMenu);
+
+			pageNav.menuObj.$searchSubmit.on('click', function(){
+				location.href = 'serp.html';
+			});
 		},
 		toggleMobileMenu: function(e){
 			e.preventDefault();
+			if(pageSearch.is(':visible')){
+				pageSearch.hide();
+			}
 			pageNav.menuObj.$mainNavLinks.toggle();
 		},
 		toggleMobileMegaMenu: function(e){
-			e.stopPropagation();
 			e.preventDefault();
+			e.stopPropagation();
+			
 			var thisRef = this;
-			var thisObj = $(this);
+			var thisObj = $(this).parent();
 
 			if(pageNav.$body.width() < 768){
+				var thisToggle = $(this).children('span');
+				
 				var megaMenu = $(thisObj.find('.mega-menu'));
 				megaMenu.toggle(0, function(){
+					thisToggle.toggleClass('minus');
 					$(this).find('.mega-menu__container').toggle();
 				});
 			}
@@ -62,8 +84,6 @@ var PageNav = {};
 			var iconObj2 = pageNav.$resSearchIcon;
 			var stage = pageNav.$pageNav;
 			var logoW = stage.width() - (iconObj2.width()+parseInt(iconObj2.css('border-left-width')) + iconObj1.width()+parseInt(iconObj1.css('border-right-width')));
-
-			//console.log("Logo Width: " + pageNav.menuObj.$logo.width());
 
 			if(pageNav.$body.width() < 768){
 				pageNav.menuObj.$logo.width(logoW);
