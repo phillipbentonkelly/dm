@@ -11,6 +11,8 @@ $module-name: 'newsletter-widget';
 @include media-query(tablet) {
 	.#{$module-name} {
 		display: block;
+		background: white;
+		margin-top: 20px;
 		width: 99%;
 		padding: 10px;
 		box-sizing: border-box;
