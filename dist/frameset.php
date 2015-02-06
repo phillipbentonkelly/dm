@@ -301,6 +301,9 @@
 			
 			<!-- HOME -->
 			<?php if ($pageType == 'home') { ?>
+				<!-- Property Listings Widget -->
+				<?php include 'page-content/modules/newsletter-widget.php'; ?>
+
 				<!-- DFP Sidebar Placeholder Ad Content -->
 				<?php include 'ads/adplaceholer__right-column.php'; ?>
 
