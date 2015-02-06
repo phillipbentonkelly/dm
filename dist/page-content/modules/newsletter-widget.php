@@ -11,12 +11,12 @@
 		<p class="newsletter-widget__connect-header">Connect With Us</p>
 		<div class="newsletter-widget__connect--left-col">
 			<!-- FACEBOOK CONNECT  BUTTON -->
-			<div class="fb-like" data-href="https://facebook.com/boston" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
+			<div class="fb-like" data-href="https://facebook.com/boston" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>
 		</div>
 
 		<div class="newsletter-widget__connect--right-col">
 			<!-- PINTREST CONNECT  BUTTON -->
-			<a data-pin-do="buttonFollow" href="https://www.pinterest.com/bostondotcom/dream-home-real-estate/">Boston Real Estate</a>
+			<a data-pin-do="buttonFollow" href="https://www.pinterest.com/bostondotcom/dream-home-real-estate">Boston Real Estate</a>
 		</div>
 	</div>
 	<script type="text/javascript" async defer src="//assets.pinterest.com/js/pinit.js"></script>

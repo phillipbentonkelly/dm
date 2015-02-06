@@ -5606,6 +5606,7 @@ body.category-details .related-articles__section-header {
   .newsletter-widget__connect--left-col div {
     position: absolute;
     top: 27px;
+    left: 23px;
   }
 }
 /* line 12, ../sass/partials/page-content/modules/_adplaceholer__right-column.scss */
