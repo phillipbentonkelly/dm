@@ -44,9 +44,6 @@ $(document).ready(function() {
         $.modal.close();
         var $modal = $('body').find('.related-articles-modal');
         $('body').find('.related-articles-modal__overlay').hide();
-		// $modal.removeClass('related-articles-modal');
-		// $modal.addClass('related-articles-modal');
-
 		$modal.animate({
 			'right': '100%'
 		});

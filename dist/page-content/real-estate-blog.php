@@ -9,8 +9,8 @@
         <div class="hp-blogs__wrapper">
             <a href="javascript:;" class="hp-blogs__blog-tile">
                 <div class="hp-blogs__flag-container">
-                    <div class="category-tag maroon topSpacing">Trending</div>
-                    <div class="category-tag white topSpacing">For Sale</div>
+                    <div class="category-tag gray topSpacing">Sponsored</div> <!-- DM-206-->
+                    <!-- <div class="category-tag white topSpacing">For Sale</div> DM-206 -->
                 </div>
 
                 <img src="images/blogs/re-blog__entry__1.jpg">
@@ -29,7 +29,7 @@
             <a href="javascript:;" class="hp-blogs__blog-tile">
                 <div class="hp-blogs__flag-container">
                     <div class="category-tag gray topSpacing">Sponsored</div>
-                    <div class="category-tag white topSpacing">For Sale</div>
+                    <!-- <div class="category-tag white topSpacing">For Sale</div> DM-206 -->
                 </div>
 
                 <img src="images/blogs/re-blog__entry__2.jpg">
@@ -48,7 +48,7 @@
             <a href="javascript:;" class="hp-blogs__blog-tile">
                 <div class="hp-blogs__flag-container">
                     <div class="category-tag gray topSpacing">Sponsored</div>
-                    <div class="category-tag white topSpacing">For Sale</div>
+                    <!-- <div class="category-tag white topSpacing">For Sale</div> DM-206 -->
                 </div>
 
                 <img src="images/blogs/re-blog__entry__3.jpg">
