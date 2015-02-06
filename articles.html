@@ -519,10 +519,6 @@
                     </span>
                 </select>
 
-                <button class="page-search__button page-search__button--save desktop" value="saved">
-                    <span class="save-search">Save Search</span>
-                    <span class="saved" style="display:none;">Saved!</span>
-                </button>
             </div>
 
             <div class="page-search__row page-search__row--level-three">
@@ -541,46 +537,15 @@
 
                         <ul>
                             <li class="page-search__list-item">
-                                <div class="page-search__fancy-checkbox">
-                                    <input type="checkbox" id="openHouses" name="open_houses"></input>
-                                    <label for="openHouses">Open Houses</label>
-                                </div>
+                                <input type="checkbox" id="openHouses" name="open_houses"></input>
+                                <label for="openHouses">Open Houses</label>
                             </li>
-
-                            <!-- <li class="page-search__list-item">
-                                <div class="page-search__fancy-checkbox">
-                                    <input type="checkbox" id="newListings" name="new_listings"></input>
-                                    <label for="newListings">New Listings</label>
-                                </div>
-                            </li> -->
-
-                            <!-- <li class="page-search__list-item">
-                                <div class="page-search__fancy-checkbox">
-                                    <input type="checkbox" id="reducedPrice" name="reduced_price"></input>
-                                    <label for="reducedPrice">Reduced Price</label>
-                                </div>
-                            </li> -->
 
                             <li class="page-search__list-item">
-                                <div class="page-search__fancy-checkbox">
-                                    <input type="checkbox" id="newDevelopments" name="new_developments"></input>
-                                     <label for="newDevelopments">New Developments</label>
-                                </div>
+                                <input type="checkbox" id="newDevelopments" name="new_developments"></input>
+                                <label for="newDevelopments">New Developments</label>
                             </li>
 
-                            <!-- <li class="page-search__list-item">
-                                <div class="page-search__fancy-checkbox">
-                                    <input type="checkbox" id="sold" name="sold"></input>
-                                    <label for="sold">Sold</label>
-                                </div>
-                            </li> -->
-
-                            <!-- <li class="page-search__list-item">
-                                <div class="page-search__fancy-checkbox">
-                                    <input type="checkbox" id="forclosures" name="forclosures"></input>
-                                    <label for="forclosures">Forclosures</label>
-                                </div>
-                            </li> -->
                         </ul>
 
                     </section>
@@ -598,6 +563,14 @@
                         </div>
                     </section>
 
+                    
+
+                    
+
+                </div>
+
+                <div class="col">
+
                     <section class="page-search__section" id="lotSz" title="Lot Size">
                         <h4>Lot Size</h4>
                         <div class="page-search__container page-search__container--range">
@@ -607,21 +580,6 @@
                         </div>
 
                     </section>
-
-                    <section class="page-search__section" id="yrsBuilt" title="Years Built">
-                        <h4>Years Built</h4>
-                        <div class="page-search__container page-search__container--range">
-                            <input type="text" class="page-search__input page-search__input--numeric" name="yrs_built_min" placeholder="Min"></input>
-                                &mdash;&nbsp;
-                            <input type="text" class="page-search__input page-search__input--numeric" name="yrs_built_max" placeholder="Max">
-                            </input>
-                        </div>
-
-                    </section>
-
-                </div>
-
-                <div class="col">
 
                     <!-- <section class="page-search__section" id="daysOnMkt" title="Days On Market">
                         <h4>Days On Market</h4>
@@ -638,20 +596,31 @@
                         </select>
                     </section> -->
 
-                    <section class="page-search__section page-search__section--tokenize" id="keywords" title="Keywords">
+                    <!-- <section class="page-search__section page-search__section--tokenize" id="keywords" title="Keywords">
                         <h4>Keywords</h4>
                         <span class="helper">(seperate with commas)</span>
                         <input type="text" class="page-search__input page-search__input--tokenize" name="keywords"></input>
-                    </section>
+                    </section> -->
 
                 </div>
 
                 <div class="col">
 
-                    <section class="page-search__section" id="findByMLS" title="Find by MLS">
+                    <section class="page-search__section" id="yrsBuilt" title="Years Built">
+                        <h4>Years Built</h4>
+                        <div class="page-search__container page-search__container--range">
+                            <input type="text" class="page-search__input page-search__input--numeric" name="yrs_built_min" placeholder="Min"></input>
+                                &mdash;&nbsp;
+                            <input type="text" class="page-search__input page-search__input--numeric" name="yrs_built_max" placeholder="Max">
+                            </input>
+                        </div>
+
+                    </section>
+
+                    <!-- <section class="page-search__section" id="findByMLS" title="Find by MLS">
                         <h4>Find by MLS</h4>
                         <input type="text" class="page-search__input page-search__input--text" name="mls_id"></input>
-                    </section>
+                    </section> -->
 
                 </div>
             </div>
