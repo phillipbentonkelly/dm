@@ -5576,15 +5576,15 @@ body.category-details .related-articles__section-header {
   /* line 63, ../sass/partials/page/modules/_newsletter-widget.scss */
   .newsletter-widget__connect-header {
     text-align: center;
-    padding: 15px;
-    font-size: 14px;
+    padding: 10px;
+    font-size: 12px;
     font-family: 'OpenSans SemiBold';
   }
   /* line 70, ../sass/partials/page/modules/_newsletter-widget.scss */
   .newsletter-widget__connect--left-col, .newsletter-widget__connect--right-col {
     float: left;
     width: 48%;
-    background: lightgrey;
+    background: rgba(100, 100, 100, 0.1);
     height: 75px;
     position: relative;
   }

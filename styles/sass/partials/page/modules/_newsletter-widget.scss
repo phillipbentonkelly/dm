@@ -62,15 +62,15 @@ $module-name: 'newsletter-widget';
 
 		&__connect-header {
 			text-align: center;
-			padding: 15px;
-			font-size: 14px;
+			padding: 10px;
+			font-size: 12px;
 			font-family: 'OpenSans SemiBold';
 		}
 
 		&__connect--left-col, &__connect--right-col {
 			float: left;
 			width: 48%;
-			background: lightgrey;
+			background: rgba(100,100,100,0.1);
 			height: 75px;
 			position: relative;
 		}
