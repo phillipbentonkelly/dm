@@ -1,18 +1,12 @@
 $module-name: 'search-results';
 
-// display via popup on mobile
-.related-articles--mobile {
-    display: none;
-    background: white;
-
-    .dfp-ad__row {
-      display: inline-block;
-    }
-}
-
 .related-articles-modal {
-  display: none;
+  position: fixed;
+  top: 30px;
+  right: 100%;
+  z-index: 150;
   background: white;
+  width: 90%;
 
   .related-articles__item--mobile {
       border-top: 0;
@@ -28,6 +22,13 @@ $module-name: 'search-results';
       font-family: OpenSans Regular;
       font-size: 13px;
       margin-bottom: 6px;
+  }
+
+  .related-articles__section-header {
+    position: fixed;
+    top: 0px;
+    width: 90%;
+    z-index: 151;
   }
 
   h2.title--mobile {
