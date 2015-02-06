@@ -36,20 +36,19 @@
 	<script src="js/assets/gallery.js"></script>
     <script src="js/assets/related-articles-main-widget.js"></script>
 
-	<?php if ($pageType == 'home' || $pageType == 'category-details' || $pageType == 'neighborhood') { ?>
+	<?php if ($pageType == 'home' || $pageType == 'category' || $pageType == 'category-details' || $pageType == 'neighborhood') { ?>
 	    <!-- Carousel Scripts -->
 		<script src="js/assets/basicMobileDetection.js"></script>
 		<script src="http://wurfl.io/wurfl.js"></script>
 		<script src="js/resources/img.srcset.polyfill.js"></script>
 		<script src="js/assets/bdc.carouselFullWidthSlider.js"></script>
 		<!-- Carousel Scripts -->
+	<?php } ?>
 
+	<?php if ($pageType == 'home' || $pageType == 'category-details' || $pageType == 'neighborhood') { ?>
 		<!-- Real Estate Listings -->
         <script src="js/assets/mpListings.js"></script>
         <script src="js/assets/listings.data.js"></script>
-	<?php } ?>
-
-	<?php if ($pageType == 'home' || $pageType == 'category' || $pageType == 'category-details' || $pageType == 'neighborhood') { ?>
 		<script src="js/assets/listings.map.js"></script>
 	<?php } ?>
 
