@@ -6,9 +6,20 @@ $(document).ready(function() {
 
 	$('#mobile-articles-btn').click(function() {
 		var closeModal = $("<a class='close-modal-wrap' style='float:right;margin-right:15px;' href='javascript:;'><img class='close-modal' src='images/listings/x-icon.jpg' style='height:20px;width:20px;'></a>");
-		$('.related-articles').addClass('related-articles-popup');
 		$('.related-articles__section-header').append(closeModal);
-		$('.related-articles-modal').modal();
+		$('.related-articles__ad-container').hide();
+		$('.related-articles-modal').css('overflow', 'scroll');
+		$('.related-articles-modal').animate({
+			'top': '30px',
+			'bottom': '10px',
+			'left': '0px',
+			'right': '0px'
+		});
+		var $overlay = $('<div style="position:fixed;top:0px;left:0px;width:100%;height:100%;z-index:149;background:rgba(10,10,10,0.4);" class="related-articles-modal__overlay"></div>');
+		$overlay.append($('.related-articles-modal'));
+		$('body').append($overlay);
+		// $('body').append($('.related-articles-modal'));
+
 	});
 
 	$('.mobile-favorite-btn').click(function() {
@@ -31,7 +42,16 @@ $(document).ready(function() {
 
 	$(document).on('click', '.close-modal', function() {
         $.modal.close();
-        $('body').find('.close-modal-wrap').remove();
+        var $modal = $('body').find('.related-articles-modal');
+        $('body').find('.related-articles-modal__overlay').hide();
+		// $modal.removeClass('related-articles-modal');
+		// $modal.addClass('related-articles-modal');
+
+		$modal.animate({
+			'right': '100%'
+		});
+
+		$('body').find('.close-modal-wrap').remove();
     });
 
     $(document).on('click', '.close-modal-btn', function() {
