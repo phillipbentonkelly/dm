@@ -1881,7 +1881,7 @@ body.serp .page-layout {
   }
   /* line 585, ../sass/partials/page/_page-search.scss */
   .page-section .page-search__button--close {
-    margin-right: 32px;
+    margin-right: 47px;
   }
   /* line 591, ../sass/partials/page/_page-search.scss */
   .page-section .page-search__fancy-checkbox label:before {
@@ -1922,7 +1922,7 @@ body.serp .page-layout {
   }
   /* line 632, ../sass/partials/page/_page-search.scss */
   .page-search__row--level-two {
-    margin: 0 50px 10px 50px;
+    margin: 0 50px 10px 66px;
   }
   /* line 635, ../sass/partials/page/_page-search.scss */
   .page-search__row--level-two section {
@@ -1937,7 +1937,7 @@ body.serp .page-layout {
   }
   /* line 650, ../sass/partials/page/_page-search.scss */
   .page-search__row--level-three {
-    margin: 0px 20px 10px 50px;
+    margin: 0px 20px 10px 80px;
   }
   /* line 653, ../sass/partials/page/_page-search.scss */
   .page-search__row--level-three .col {
