@@ -45,6 +45,7 @@ var PageNav = {};
 			var thisRef = this;
 
 			pageNav.$responsiveIcon.on('click', thisRef.toggleMobileMenu);
+			pageNav.$resSearchIcon.on('click', thisRef.hideMobileMenu);
 
 			pageNav.menuObj.$findAHome.children('a').on('touchstart click', thisRef.toggleMobileMegaMenu);
 			pageNav.menuObj.$neighborhoods.children('a').on('touchstart click', thisRef.toggleMobileMegaMenu);
@@ -56,26 +57,36 @@ var PageNav = {};
 		},
 		toggleMobileMenu: function(e){
 			e.preventDefault();
-			if(pageSearch.is(':visible')){
-				pageSearch.hide();
-			}
-			pageNav.menuObj.$mainNavLinks.toggle();
+			pageNav.menuObj.$mainNavLinks.slideToggle('fast');
 		},
+		hideMobileMenu: function(e){
+			pageNav.menuObj.$mainNavLinks.hide('fast');
+		},	
 		toggleMobileMegaMenu: function(e){
 			e.preventDefault();
 			e.stopPropagation();
-			
+
 			var thisRef = this;
 			var thisObj = $(this).parent();
 
+			console.log(thisObj.parent());
+
 			if(pageNav.$body.width() < 768){
+				//$(this).trigger('focus');
 				var thisToggle = $(this).children('span');
-				
 				var megaMenu = $(thisObj.find('.mega-menu'));
-				megaMenu.toggle(0, function(){
-					thisToggle.toggleClass('minus');
-					$(this).find('.mega-menu__container').toggle();
+				var visibleOthers = $('.mega-menu').not(megaMenu).has(':visible');
+				visibleOthers.hide(0, function(){
+					$(this).parent().children('a').children('span').removeClass('minus');
+					$(this).find('.mega-menu__container').hide();
 				});
+				megaMenu.toggle(0, function(){
+					$(this).find('.mega-menu__container').toggle(0, function(){
+						thisToggle.toggleClass('minus');
+					});
+
+				});
+				
 			}
 		},
 		updateLogoDim: function(){

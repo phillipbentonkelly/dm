@@ -125,25 +125,6 @@ $module-name: 'page-nav';
 				padding: 8px 2% 8px 2%;
 				cursor: pointer;
 			}
-
-			/*> a{
-				span{
-					&:after{
-						content: "+"; 
-					}
-				}
-
-				&:hover{
-					span{
-						&:after{
-							content: "-"; 
-						}
-					}
-					
-				}
-			}*/
-
-
 			
 			&__responsive-drop-down-icon {
 				display: block;
@@ -154,32 +135,17 @@ $module-name: 'page-nav';
 				top: 10px;
 				right: 30px;
 				line-height: 15px;
-			}
-				/*&__responsive-drop-down-icon:after {
-					content: "+";
+
+				&:after{
+					content: '+';
 				}
-		    
-		    a:hover &__responsive-drop-down-icon:after {
-				content: "-";
-			}*/
-
-
-			&__responsive-drop-down-icon{
-
-				/*//&.plus{*/
-					&:after{
-						content: '+';
-					}
-				/*//}*/
 
 				&.minus{
 					&:after{
 						content: '-';
 					}
 				}
-
 			}
-
 
 			.page-nav__arrow-up {
 				display: none;
@@ -230,12 +196,7 @@ $module-name: 'page-nav';
 	}
 
 	
-	.mega-menu__container.myAccount{
-		width: 206px;
-		.mega-menu__list-item:last-child{
-			border-top: 1px solid #e5e5e5;
-		}
-	}
+	
 	
 
 }
@@ -347,6 +308,13 @@ $module-name: 'page-nav';
 			padding: 0 5% 0 0;
 			background: url(#{$img-path}icons/icon_account.png) center right no-repeat;
 		}*/
+
+		.mega-menu__container.myAccount{
+			width: 206px;
+			.mega-menu__list-item:last-child{
+				border-top: 1px solid #e5e5e5;
+			}
+		}
 
 		&__mega-menu-responsive-icon, &__search-responsive-icon {
 			display: none;

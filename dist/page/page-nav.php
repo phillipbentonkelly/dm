@@ -12,10 +12,10 @@
             <li class="page-nav__main-nav-links">
                 <ul>
                     <li class="page-nav__nav-item page-nav__responsive-home-link">
-                        <a href="javascript:;" class="page-nav__nav-lv0">Home</a>
+                        <a id="find-home-menu-link" href="javascript:;" class="page-nav__nav-lv0">Home</a>
                     </li>
                     <li id="find-home-menu" class="page-nav__nav-item">
-                        <a href="javascript:;" class="page-nav__nav-lv0">
+                        <a class="page-nav__nav-lv0">
                             Find A Home 
                             <span class="page-nav__nav-item__responsive-drop-down-icon">
                             </span>
