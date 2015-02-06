@@ -4565,7 +4565,7 @@ body.category-details .related-articles__section-header {
 /* line 27, ../sass/partials/page/modules/property-search-results.scss */
 .related-articles-modal .related-articles__section-header {
   position: fixed;
-  top: 0px;
+  top: 25px;
   width: 90%;
   z-index: 151;
 }

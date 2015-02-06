@@ -11,7 +11,7 @@ $(document).ready(function() {
 		$('.related-articles-modal').css('overflow', 'scroll');
 		$('.related-articles-modal').animate({
 			'top': '30px',
-			'bottom': '10px',
+			'bottom': '40px',
 			'left': '0px',
 			'right': '0px'
 		});
