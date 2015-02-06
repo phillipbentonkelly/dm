@@ -5519,6 +5519,95 @@ body.category-details .related-articles__section-header {
     line-height: 20px;
   }
 }
+@media (min-width: 768px) {
+  /* line 12, ../sass/partials/page/modules/_newsletter-widget.scss */
+  .newsletter-widget {
+    width: 99%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid lightgrey;
+    padding-bottom: 85px;
+  }
+  /* line 19, ../sass/partials/page/modules/_newsletter-widget.scss */
+  .newsletter-widget__header {
+    text-align: center;
+    font-size: 18px;
+    font-family: 'OpenSans Bold';
+    margin-bottom: 15px;
+    font-weight: 900;
+  }
+  /* line 27, ../sass/partials/page/modules/_newsletter-widget.scss */
+  .newsletter-widget__signup-wrapper {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    padding: 45px 0;
+    box-sizing: border-box;
+    background: url(http://cdn.moneycrashers.com/wp-content/uploads/2012/02/moving5-edit.jpg);
+    background-position: -111px 157px;
+  }
+  /* line 37, ../sass/partials/page/modules/_newsletter-widget.scss */
+  .newsletter-widget__input-wrapper {
+    margin: 0 auto;
+    width: 96%;
+    overflow: hidden;
+    border-radius: 5px;
+  }
+  /* line 43, ../sass/partials/page/modules/_newsletter-widget.scss */
+  .newsletter-widget__signup-input, .newsletter-widget__signup-button {
+    float: left;
+    box-sizing: border-box;
+    border: none;
+  }
+  /* line 49, ../sass/partials/page/modules/_newsletter-widget.scss */
+  .newsletter-widget__signup-input {
+    width: 70%;
+    padding: 11px;
+    font-family: 'OpenSans Italic';
+  }
+  /* line 55, ../sass/partials/page/modules/_newsletter-widget.scss */
+  .newsletter-widget__signup-button {
+    width: 30%;
+    padding: 11px;
+    background: #2e1460;
+    color: white;
+    font-family: 'OpenSans Bold';
+  }
+  /* line 63, ../sass/partials/page/modules/_newsletter-widget.scss */
+  .newsletter-widget__connect-header {
+    text-align: center;
+    padding: 10px;
+    font-size: 12px;
+    font-family: 'OpenSans SemiBold';
+  }
+  /* line 70, ../sass/partials/page/modules/_newsletter-widget.scss */
+  .newsletter-widget__connect--left-col, .newsletter-widget__connect--right-col {
+    float: left;
+    width: 48%;
+    background: rgba(100, 100, 100, 0.1);
+    height: 75px;
+    position: relative;
+  }
+  /* line 78, ../sass/partials/page/modules/_newsletter-widget.scss */
+  .newsletter-widget__connect--right-col {
+    margin-left: 2%;
+  }
+  /* line 81, ../sass/partials/page/modules/_newsletter-widget.scss */
+  .newsletter-widget__connect--right-col a {
+    position: absolute;
+    top: 29px;
+    left: 7px;
+  }
+  /* line 88, ../sass/partials/page/modules/_newsletter-widget.scss */
+  .newsletter-widget__connect--left-col {
+    margin-right: 2%;
+  }
+  /* line 91, ../sass/partials/page/modules/_newsletter-widget.scss */
+  .newsletter-widget__connect--left-col div {
+    position: absolute;
+    top: 27px;
+  }
+}
 /* line 12, ../sass/partials/page-content/modules/_adplaceholer__right-column.scss */
 .adplaceholer__right-column {
   width: 298px;
