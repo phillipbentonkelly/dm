@@ -5,11 +5,12 @@
 $module-name: 'newsletter-widget';
 
 .#{$module-name} {
-	// display: none;
+	display: none;
 }
 
 @include media-query(tablet) {
 	.#{$module-name} {
+		display: block;
 		width: 99%;
 		padding: 10px;
 		box-sizing: border-box;
