@@ -3028,7 +3028,7 @@ body.category-details .related-articles__section-header {
 }
 /* line 110, ../sass/partials/page/modules/_listing-summary.scss */
 .listing__detail {
-  width: 77%;
+  width: 100%;
   float: left;
   border-right: 1px solid white;
   box-sizing: border-box;
@@ -3630,45 +3630,56 @@ body.category-details .related-articles__section-header {
     background-color: #2e1460;
   }
   /* line 695, ../sass/partials/page/modules/_listing-summary.scss */
-  .listing__detail-share--row1 {
+  .listing__detail-share {
     display: block;
   }
   /* line 698, ../sass/partials/page/modules/_listing-summary.scss */
-  .listing__detail-share--row1 a:nth-child(2) {
-    display: inline-block;
+  .listing__detail-share a {
+    height: 50%;
+    box-sizing: border-box;
+    display: block;
+    padding: 16px;
   }
-  /* line 703, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 705, ../sass/partials/page/modules/_listing-summary.scss */
+  .listing__detail-share a:nth-child(2) {
+    border-top: 1px solid white;
+  }
+  /* line 710, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__detail-share--row2 {
     padding: 7px;
   }
-  /* line 707, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 714, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__facts--left, .listing__facts--right, .listing__features--left, .listing__features--right {
     width: 33.3%;
     box-sizing: border-box;
     margin-bottom: 20px;
   }
-  /* line 713, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 720, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__facts, .listing__features {
     font-size: 100%;
   }
-  /* line 717, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 724, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__external-links {
     float: left;
     width: 33.3%;
     box-sizing: border-box;
     clear: none;
   }
-  /* line 723, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 730, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__external-links li {
     padding-bottom: 10px;
   }
+  /* line 735, ../sass/partials/page/modules/_listing-summary.scss */
+  .listing__detail {
+    width: 77%;
+  }
 
-  /* line 729, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 740, ../sass/partials/page/modules/_listing-summary.scss */
   .dfp-ads {
     display: block;
   }
 
-  /* line 733, ../sass/partials/page/modules/_listing-summary.scss */
+  /* line 744, ../sass/partials/page/modules/_listing-summary.scss */
   .mobile-ad {
     display: none;
   }
