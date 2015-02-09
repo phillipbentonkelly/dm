@@ -3638,7 +3638,7 @@ body.category-details .related-articles__section-header {
     height: 50%;
     box-sizing: border-box;
     display: block;
-    padding: 16px;
+    padding: 15px;
   }
   /* line 705, ../sass/partials/page/modules/_listing-summary.scss */
   .listing__detail-share a:nth-child(2) {
