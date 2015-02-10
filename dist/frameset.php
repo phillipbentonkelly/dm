@@ -296,6 +296,12 @@
 				<?php include 'page-content/modules/search-filter-modal.php'; ?>
 
 			<?php } ?>
+
+			<?php if ($pageType == 'my-account') { ?>
+
+				<?php include 'page-content/modules/my-account.php'; ?>
+
+			<?php } ?>
 			
         </div>
 		<div class="page-layout__right-col">
