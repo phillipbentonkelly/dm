@@ -36,15 +36,8 @@
             </div>
 
             <div class="listing__detail-share">
-                <div class="listing__detail-share--row1">
-                    <a class='mobile-favorite-btn' href="javascript:;"><img class="listing__detail-share-icons" src="images/listings/heart-icon-purple.png"></a>
-                    <a class='mobile-share-btn' href="javascript:;"><img class="listing__detail-share-icons" src="images/listings/share-icon-purple.png"></a>
-                </div>
-
-                <div class="listing__detail-share--row2">
-                    <img class="listing__detail-share-icons" src="images/listings/calculator-icon-purple.jpg">
-                    <p class="listing__detail-monthly-cost">$88,456/ mo</p>
-                </div>
+                <a class='mobile-favorite-btn' href="javascript:;"><img class="listing__detail-share-icons" src="images/listings/heart-icon-purple.png"></a>
+                <a class='mobile-share-btn' href="javascript:;"><img class="listing__detail-share-icons" src="images/listings/share-icon-purple.png"></a>
             </div>
         </div>
     </div>
@@ -77,18 +70,6 @@
                 <div class="listing__detail--row3">
                     <p class="listing__sqfeet">10,000 Sq. Ft.</p>
                     <p class="listing__type">Co-op/Condo</p>
-                </div>
-            </div>
-
-            <div class="listing__detail-share">
-                <div class="listing__detail-share--row1">
-                    <a href="javascript:;"><img class="listing__detail-share-icons" src="images/listings/heart-icon-purple.png"></a>
-                    <a href="javascript:;"><img class="listing__detail-share-icons" src="images/listings/share-icon-purple.png"></a>
-                </div>
-
-                <div class="listing__detail-share--row2">
-                    <img class="listing__detail-share-icons" src="images/listings/calculator-icon-purple.jpg">
-                    <p class="listing__detail-monthly-cost">$88,456/ mo</p>
                 </div>
             </div>
         </div>

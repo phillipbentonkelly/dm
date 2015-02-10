@@ -108,7 +108,7 @@ $module-name: 'listing';
 	}
 
 	&__detail {
-		width: 77%;
+		width: 100%;
 		float: left;
 		border-right: 1px solid white;
 		box-sizing: border-box;
@@ -581,9 +581,9 @@ $module-name: 'listing';
 // ------------------------------------------------------------
 
 @include media-query(tablet) {
-  .#{$module-name} {
+  	.#{$module-name} {
 
-  	&__mobile-button-dock {
+  		&__mobile-button-dock {
 			display: none;	
 		}
 
@@ -692,11 +692,18 @@ $module-name: 'listing';
 			.featured { background-color: #2e1460; }
 		}
 
-		&__detail-share--row1 {
+		&__detail-share {
 			display: block;
 
+			a {
+				height: 50%;
+				box-sizing: border-box;
+				display: block;
+				padding: 15px;
+			}
+
 			a:nth-child(2) {
-				display: inline-block;
+				border-top: 1px solid white;
 			}
 		}
 
@@ -723,6 +730,10 @@ $module-name: 'listing';
 			li {
 				padding-bottom: 10px;
 			}
+	  	}
+
+	  	&__detail {
+			width: 77%;
 	  	}
   	}
 
