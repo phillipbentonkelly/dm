@@ -31,9 +31,9 @@
             <p class='contact__form-required'><span>* </span>Required</p>
             <input class='contact__form-name' placeholder='Name' required/><span class='contact__required-marker'>*</span>
             <input class='contact__form-email' placeholder='Email' type="email" required/><span class='contact__required-marker'>*</span>
-            <input class='contact__form-number' type="tel" placeholder='Phone Number'/>
+            <input class='contact__form-number' placeholder='Phone Number'/>
             <textarea class='contact__form-message' placeholder='Hi Deborah, I found your listing on Boston.com. Please send me more infomation about 101 Fernwood Rd, Brookline, MA. Thank you'></textarea>
-            <button class='contact__form-submit' type='submit'>Send</button>
+            <button class='contact__form-submit'>Send</button>
         </form>
     </div>
 </div>

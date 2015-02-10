@@ -3,7 +3,6 @@ var validate = {};
 validate.form = function() {
 	var errors = 0;
 	var inputs = this.$form.children();
-	var emailRegex = new RegExp("@");
 
 	// validate name field
 	this.$name.val() === "" ? this.$name.css('border', '1px solid red') : this.$name.css('border', '1px solid #A0A0A0');
