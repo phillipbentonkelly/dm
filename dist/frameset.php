@@ -35,6 +35,7 @@
 	<script src="js/assets/mega-menu.js"></script>
 	<script src="js/assets/gallery.js"></script>
     <script src="js/assets/related-articles-main-widget.js"></script>
+	<script src="js/assets/form-validation.js"></script>
 
 	<?php if ($pageType == 'home' || $pageType == 'category' || $pageType == 'category-details' || $pageType == 'neighborhood') { ?>
 	    <!-- Carousel Scripts -->
@@ -109,14 +110,14 @@
     bcom.dfp.refreshRate = '';
     bcom.dfp.keyValuePairs = {
         s1: 'boston.com',
-        s2: 'buying',
+        s2: 'real-estate',
         s3: '',
         s4: '',
         s5: '',
         pgtype : 'sectfront',
         pageurl : '',
         meta: '',
-        streamcount:'1'
+	redesigntest: 'on'
     };
     
 </script>
