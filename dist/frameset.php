@@ -35,6 +35,7 @@
 	<script src="js/assets/mega-menu.js"></script>
 	<script src="js/assets/gallery.js"></script>
     <script src="js/assets/related-articles-main-widget.js"></script>
+	<script src="js/assets/form-validation.js"></script>
 
 	<?php if ($pageType == 'home' || $pageType == 'category' || $pageType == 'category-details' || $pageType == 'neighborhood') { ?>
 	    <!-- Carousel Scripts -->
