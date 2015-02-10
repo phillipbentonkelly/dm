@@ -10,7 +10,6 @@ validate.form = function() {
 
 	// validate email field
 	this.$email.val() === "" ? this.$email.css('border', '1px solid red') : this.$email.css('border', '1px solid #A0A0A0');
-	// emailRegex.test(this.$email) ? this.$email.css('border', '1px solid #A0A0A0') : this.$email.css('border', '1px solid red');
 	
 	// check for errors
 	for(var i = 0; i < inputs.length; i++) {
@@ -24,9 +23,17 @@ validate.form = function() {
 };
 
 validate.eventHandlers = function() {
+
+	// on "submit" of contact form, run validation check
 	validate.$submitButton.click(function(e) {
 		validate.form();
 	});
+
+	// prevent contact form submission to show validation error message
+	validate.$submitButton.submit(function(e){
+		e.preventDefault();
+	});
+
 };
 
 
