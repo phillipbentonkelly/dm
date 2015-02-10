@@ -6,7 +6,7 @@ bcom.dfp = bcom.dfp || {};
 bcom.dfp.adCatalog = [
   {
     name: 'ad_bigbox1',
-    size: [[300,250],[300,600]],
+    size: [[300,250]],
     position: ['atf', 'bigbox1']
   },
   {
