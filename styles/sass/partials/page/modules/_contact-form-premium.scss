@@ -126,6 +126,18 @@ $module-name: 'contact';
     }
   }
 
+  // displays on successful form submission
+  &__form-success {
+    display: none;
+    margin: 15px 0 220px 0;
+
+    p {
+      font-family: 'OpenSans Regular';
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+  }
+
   &__wrapper--lower {
     padding: 20px 10px 60px 20px;
     background: #dacef1;

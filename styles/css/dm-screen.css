@@ -2407,17 +2407,18 @@ body.category-details .related-articles__section-header {
   min-height: 10px;
   margin-bottom: 30px;
   overflow: hidden;
+  margin-top: 2%;
 }
-/* line 17, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 19, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel a, .full-screen-carousel img {
   outline: none;
   border: 0;
 }
-/* line 22, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 24, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .category-tag {
   display: none;
 }
-/* line 26, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 28, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .carousel-searchField-wrapper {
   width: 100%;
   padding: 8px 0 8px 0;
@@ -2425,13 +2426,13 @@ body.category-details .related-articles__section-header {
   z-index: 100;
   background: rgba(255, 255, 255, 0.3);
 }
-/* line 33, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 35, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .carousel-searchField {
   max-width: 760px;
   height: 54px;
   margin: auto;
 }
-/* line 39, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 41, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .search_real-estate-field {
   display: block;
   float: left;
@@ -2445,7 +2446,7 @@ body.category-details .related-articles__section-header {
   -moz-border-radius: 2px;
   border-radius: 2px;
 }
-/* line 52, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 54, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .search-real-estateBtn {
   display: block;
   float: left;
@@ -2458,11 +2459,11 @@ body.category-details .related-articles__section-header {
   border-radius: 2px;
   background: url("../images/icons/magGlass_bg_blk.gif") center center no-repeat #000;
 }
-/* line 65, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 67, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel #carousel-wrap, .full-screen-carousel .slide {
   max-height: 580px;
 }
-/* line 68, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 70, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel #carousel-wrap .slide .detailsArrow {
   width: 0;
   height: 0;
@@ -2477,18 +2478,16 @@ body.category-details .related-articles__section-header {
   margin-left: auto;
   margin-right: auto;
 }
-/* line 83, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 85, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel #carousel-wrap {
   overflow: hidden;
   position: relative;
 }
-/* line 87, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 89, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .carousel_wrapper {
-  float: none;
   display: block;
-  width: 100%;
-  min-height: 189px;
   text-align: start;
+  float: none;
   position: relative;
   top: auto;
   right: auto;
@@ -2496,17 +2495,18 @@ body.category-details .related-articles__section-header {
   left: auto;
   z-index: auto;
   /*width: 1113px;
-  background-color: yellow;
-  height: 637px;*/
+  background-color: yellow;*/
+  width: 100%;
+  height: 637px;
   margin: 0px;
   overflow: hidden;
 }
-/* line 105, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 106, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel #carousel {
-  float: none;
+  /*width: 9033px;*/
   width: 100%;
-  /*width: 9033px;
-  height: 637px;*/
+  height: 637px;
+  float: none;
   text-align: left;
   margin: 0px;
   position: absolute;
@@ -2515,37 +2515,37 @@ body.category-details .related-articles__section-header {
   bottom: auto;
   z-index: auto;
 }
-/* line 118, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 119, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel #carousel figure {
   position: relative;
 }
-/* line 121, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 122, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .slide {
   float: left;
   text-align: center;
   margin: 0 4px 0 0;
 }
-/* line 126, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 127, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .slide > a {
   display: block;
   clear: both;
   min-height: 10px;
   overflow: hidden;
 }
-/* line 132, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 133, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .slide a img {
   max-width: 960px;
   max-height: 580px;
   border: 0;
 }
-/* line 138, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 139, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .carousel-nav {
   display: block;
   max-height: 580px;
   height: 100%;
   background-color: rgba(255, 255, 255, 0.4);
   display: block;
-  /*padding-bottom: 67px;*/
+  padding-bottom: 67px;
   width: 20vw;
   top: 0;
   left: 0;
@@ -2556,26 +2556,26 @@ body.category-details .related-articles__section-header {
   transition: background-color 0.2s ease-out, color 0.2s ease-out;
   text-align: right;
 }
-/* line 155, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 156, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .carousel-nav:hover {
   background-color: rgba(255, 255, 255, 0.1);
 }
-/* line 158, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 159, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .carousel-nav.next {
   left: auto;
   right: 0;
   text-align: left;
 }
-/* line 164, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 165, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .useMobileLayout .carousel-nav {
   display: none;
 }
-/* line 167, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 168, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .useMobileLayout .slide a img {
   float: left;
   width: 88%;
 }
-/* line 172, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 173, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .carousel-fullwidth_slide-details {
   width: 100%;
   height: 91px;
@@ -2591,7 +2591,7 @@ body.category-details .related-articles__section-header {
   bottom: 0;
   left: 0;
 }
-/* line 187, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 188, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .carousel-fullwidth_slide-detail-icon {
   float: left;
   width: 15%;
@@ -2599,47 +2599,47 @@ body.category-details .related-articles__section-header {
   padding-top: 10px;
   text-align: left;
 }
-/* line 194, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 195, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .carousel-fullwidth_slide-detail-content {
   float: left;
   width: 85%;
   height: 87px;
   text-align: left;
 }
-/* line 200, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 201, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .carousel-fullwidth_slide-detail-content .listing-data {
   float: left;
   width: 70%;
   height: 100%;
   font-size: 0.7em;
 }
-/* line 206, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 207, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .carousel-fullwidth_slide-detail-content p:nth-child(1) {
   font-size: 1.7em;
   line-height: 1.5em;
   margin: 4.7% 0 0 0;
 }
-/* line 211, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 212, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .carousel-fullwidth_slide-detail-content .providerIcon {
   width: 23%;
   height: 100%;
   padding-right: 7%;
   float: right;
 }
-/* line 217, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 218, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .carousel-fullwidth_slide-detail-content .providerIcon img {
   margin-top: 5%;
 }
-/* line 226, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 227, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel #carousel-wrap .chevron::before {
-  top: 45%;
+  top: 48%;
   cursor: pointer;
 }
-/* line 232, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 233, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .carouselRightNavFade {
   display: none;
 }
-/* line 237, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 238, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .useMobileLayout .carouselRightNavFade {
   display: block;
   width: 15px;
@@ -2664,35 +2664,35 @@ body.category-details .related-articles__section-header {
   right: 0;
   top: 0;
 }
-/* line 256, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 257, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .useMobileLayout .carousel-fullwidth_slide-detail-content {
   width: 97%;
   padding-left: 3%;
 }
-/* line 261, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 262, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .useMobileLayout .carousel-fullwidth_slide-detail-content p {
   display: none;
 }
-/* line 264, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 265, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .useMobileLayout .carousel-fullwidth_slide-detail-content p:nth-child(1) {
   display: block;
 }
-/* line 267, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 268, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .useMobileLayout .carousel-fullwidth_slide-details {
   overflow: initial;
 }
-/* line 270, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 271, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .useMobileLayout .carousel-fullwidth_slide-detail-icon {
   position: absolute;
   bottom: 25%;
   z-index: 1;
 }
-/* line 276, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 277, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel #carousel-wrap.useMobileLayout .slide .detailsArrow {
   border-color: rgba(0, 0, 0, 0.8) transparent;
   bottom: 60px;
 }
-/* line 281, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 282, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .useMobileLayout .carousel-fullwidth_slide-details {
   border-color: rgba(0, 0, 0, 0.8) transparent;
   height: 60px;
@@ -2700,21 +2700,21 @@ body.category-details .related-articles__section-header {
 }
 
 @media (min-width: 960px) {
-  /* line 292, ../sass/partials/page/modules/_full-screen-carousel.scss */
+  /* line 293, ../sass/partials/page/modules/_full-screen-carousel.scss */
   .full-screen-carousel {
     margin-top: 0;
   }
-  /* line 295, ../sass/partials/page/modules/_full-screen-carousel.scss */
+  /* line 296, ../sass/partials/page/modules/_full-screen-carousel.scss */
   .full-screen-carousel .category-tag {
     display: block;
   }
 }
 @media (min-width: 768px) {
-  /* line 305, ../sass/partials/page/modules/_full-screen-carousel.scss */
+  /* line 306, ../sass/partials/page/modules/_full-screen-carousel.scss */
   .full-screen-carousel {
     margin-top: 0;
   }
-  /* line 308, ../sass/partials/page/modules/_full-screen-carousel.scss */
+  /* line 309, ../sass/partials/page/modules/_full-screen-carousel.scss */
   .full-screen-carousel .category-tag {
     display: block;
   }
@@ -2836,12 +2836,23 @@ body.category-details .related-articles__section-header {
   font-size: 105%;
   float: right;
 }
-/* line 129, ../sass/partials/page/modules/_contact-form-premium.scss */
+/* line 130, ../sass/partials/page/modules/_contact-form-premium.scss */
+.contact__form-success {
+  display: none;
+  margin: 15px 0 220px 0;
+}
+/* line 134, ../sass/partials/page/modules/_contact-form-premium.scss */
+.contact__form-success p {
+  font-family: 'OpenSans Regular';
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+/* line 141, ../sass/partials/page/modules/_contact-form-premium.scss */
 .contact__wrapper--lower {
   padding: 20px 10px 60px 20px;
   background: #dacef1;
 }
-/* line 134, ../sass/partials/page/modules/_contact-form-premium.scss */
+/* line 146, ../sass/partials/page/modules/_contact-form-premium.scss */
 .contact__contact-button {
   padding: 7px;
   clear: left;
@@ -2854,7 +2865,7 @@ body.category-details .related-articles__section-header {
   font-weight: 700;
   text-transform: uppercase;
 }
-/* line 147, ../sass/partials/page/modules/_contact-form-premium.scss */
+/* line 159, ../sass/partials/page/modules/_contact-form-premium.scss */
 .contact__required-marker {
   margin-right: -15px;
   margin-top: 15px;
@@ -2866,7 +2877,7 @@ body.category-details .related-articles__section-header {
   font-weight: 400;
   text-align: left;
 }
-/* line 158, ../sass/partials/page/modules/_contact-form-premium.scss */
+/* line 170, ../sass/partials/page/modules/_contact-form-premium.scss */
 .contact__form-required {
   margin: 0;
   margin-bottom: 3px;
@@ -2876,7 +2887,7 @@ body.category-details .related-articles__section-header {
   font-size: 12px;
   font-weight: 200;
 }
-/* line 167, ../sass/partials/page/modules/_contact-form-premium.scss */
+/* line 179, ../sass/partials/page/modules/_contact-form-premium.scss */
 .contact__form-required span {
   color: #2e1460;
   font-size: 13px;
@@ -2884,11 +2895,11 @@ body.category-details .related-articles__section-header {
   font-weight: 400;
   text-align: left;
 }
-/* line 175, ../sass/partials/page/modules/_contact-form-premium.scss */
+/* line 187, ../sass/partials/page/modules/_contact-form-premium.scss */
 .contact__company-wrapper {
   padding: 10px 25px 20px 15px;
 }
-/* line 179, ../sass/partials/page/modules/_contact-form-premium.scss */
+/* line 191, ../sass/partials/page/modules/_contact-form-premium.scss */
 .contact__company-name {
   font-family: OpenSans Regular;
   letter-spacing: 0px;
@@ -2900,34 +2911,34 @@ body.category-details .related-articles__section-header {
   /* Approximation due to font substitution */
   text-align: left;
 }
-/* line 189, ../sass/partials/page/modules/_contact-form-premium.scss */
+/* line 201, ../sass/partials/page/modules/_contact-form-premium.scss */
 .contact__company-note {
   font-size: 70%;
   font-weight: 200;
   margin-top: 3px;
 }
-/* line 195, ../sass/partials/page/modules/_contact-form-premium.scss */
+/* line 207, ../sass/partials/page/modules/_contact-form-premium.scss */
 .contact__company-message {
   font-weight: 200;
 }
-/* line 199, ../sass/partials/page/modules/_contact-form-premium.scss */
+/* line 211, ../sass/partials/page/modules/_contact-form-premium.scss */
 .contact__company-img {
   float: left;
   height: 60px;
   width: 90px;
 }
-/* line 205, ../sass/partials/page/modules/_contact-form-premium.scss */
+/* line 217, ../sass/partials/page/modules/_contact-form-premium.scss */
 .contact__company-info {
   margin-left: 105px;
   margin-bottom: 15px;
 }
-/* line 210, ../sass/partials/page/modules/_contact-form-premium.scss */
+/* line 222, ../sass/partials/page/modules/_contact-form-premium.scss */
 .contact__company-name {
   margin: 0;
 }
 
 @media (min-width: 768px) {
-  /* line 217, ../sass/partials/page/modules/_contact-form-premium.scss */
+  /* line 229, ../sass/partials/page/modules/_contact-form-premium.scss */
   .contact__container {
     display: block;
   }
@@ -5383,602 +5394,6 @@ body.category-details .related-articles__section-header {
     display: block;
   }
 }
-/* line 7, ../sass/partials/page/modules/_saved-listings.scss */
-.saved-listings {
-  display: inline-block;
-  margin-bottom: 15px;
-}
-/* line 11, ../sass/partials/page/modules/_saved-listings.scss */
-.saved-listings .serp__mobile-button-dock {
-  display: block;
-}
-/* line 16, ../sass/partials/page/modules/_saved-listings.scss */
-.saved-listings__item {
-  max-height: 355px;
-  position: relative;
-  border-bottom: 1px solid grey;
-  display: inline-block;
-}
-/* line 23, ../sass/partials/page/modules/_saved-listings.scss */
-.saved-listings .serp-item-hovered {
-  background: #2e1460;
-}
-/* line 26, ../sass/partials/page/modules/_saved-listings.scss */
-.saved-listings .serp-item-hovered p {
-  color: white !important;
-}
-/* line 30, ../sass/partials/page/modules/_saved-listings.scss */
-.saved-listings .serp-item-hovered .address {
-  text-decoration: underline;
-}
-/* line 34, ../sass/partials/page/modules/_saved-listings.scss */
-.saved-listings .serp-item-hovered .share-button--heart {
-  background-image: url(../../images/listings/heart-icon-white.png) !important;
-  background-size: 22px 20px;
-}
-/* line 39, ../sass/partials/page/modules/_saved-listings.scss */
-.saved-listings .serp-item-hovered .share-button--share {
-  background-image: url(../../images/listings/share-icon-white.png);
-}
-/* line 45, ../sass/partials/page/modules/_saved-listings.scss */
-.saved-listings__filter-bar-bottom {
-  height: auto;
-  position: relative;
-  display: block;
-  width: 100%;
-  padding: 16px;
-  margin-bottom: 5px;
-  box-sizing: border-box;
-}
-/* line 55, ../sass/partials/page/modules/_saved-listings.scss */
-.saved-listings__filter-bar-bottom p {
-  font-family: 'OpenSans Semibold';
-  font-size: 11px;
-  font-weight: 400;
-  display: inline-block;
-  vertical-align: middle;
-}
-/* line 63, ../sass/partials/page/modules/_saved-listings.scss */
-.saved-listings__filter-bar-bottom .results-pag-nav {
-  float: right;
-  position: relative;
-}
-/* line 67, ../sass/partials/page/modules/_saved-listings.scss */
-.saved-listings__filter-bar-bottom .results-pag-nav p {
-  width: 60px;
-  position: absolute;
-  right: 25px;
-  top: 3px;
-  font-family: 'OpenSans Regular';
-  margin: 0 5px;
-}
-/* line 76, ../sass/partials/page/modules/_saved-listings.scss */
-.saved-listings__filter-bar-bottom .results-pag-nav span:first-child {
-  padding: 0 10px;
-  background: #c8c8c8;
-  border-radius: 3px;
-}
-/* line 83, ../sass/partials/page/modules/_saved-listings.scss */
-.saved-listings__filter-bar-bottom .results-pag-nav-left {
-  position: absolute;
-  right: 105px;
-  height: 20px;
-  width: 20px;
-  transform: rotate(90deg);
-}
-/* line 91, ../sass/partials/page/modules/_saved-listings.scss */
-.saved-listings__filter-bar-bottom .results-pag-nav-right {
-  height: 20px;
-  width: 20px;
-  transform: rotate(270deg);
-}
-/* line 98, ../sass/partials/page/modules/_saved-listings.scss */
-.saved-listings__filter-bar {
-  height: 47px;
-  position: relative;
-  display: block;
-  width: 100%;
-  padding: 16px;
-  margin-bottom: 5px;
-  box-sizing: border-box;
-  background: #dacef1;
-}
-/* line 108, ../sass/partials/page/modules/_saved-listings.scss */
-.saved-listings__filter-bar .search-results__summary-count {
-  display: none;
-}
-/* line 112, ../sass/partials/page/modules/_saved-listings.scss */
-.saved-listings__filter-bar .sort-drop {
-  display: none;
-}
-/* line 116, ../sass/partials/page/modules/_saved-listings.scss */
-.saved-listings__filter-bar .filter-drop {
-  display: inline-block;
-  background: white;
-  color: #2e1460;
-  position: absolute;
-  bottom: 5px;
-  top: 5px;
-  left: 5px;
-  padding: 10px;
-  border-radius: 3px;
-  font-family: "OpenSans Semibold";
-}
-/* line 131, ../sass/partials/page/modules/_saved-listings.scss */
-.saved-listings__summary {
-  text-align: center;
-  margin: 0 0 14px 0;
-}
-/* line 136, ../sass/partials/page/modules/_saved-listings.scss */
-.saved-listings .search-summary-header {
-  font-family: 'OpenSans Regular';
-  font-size: 20px;
-  font-weight: 600;
-  clear: both;
-  margin: 0 auto;
-  max-width: 960px;
-  padding: 0 0 10px 0;
-}
-/* line 147, ../sass/partials/page/modules/_saved-listings.scss */
-.saved-listings .search-summary-header > .total-results {
-  margin-left: 10px;
-  font-family: 'OpenSans Regular';
-  font-size: 16px;
-  font-weight: 400;
-}
-/* line 155, ../sass/partials/page/modules/_saved-listings.scss */
-.saved-listings .header {
-  width: 100%;
-  color: black;
-  padding: 10px;
-  position: relative;
-  margin-bottom: 5px;
-  box-sizing: border-box;
-  display: inline-block;
-}
-/* line 164, ../sass/partials/page/modules/_saved-listings.scss */
-.saved-listings .header .address {
-  font-family: 'Oswald Regular';
-  color: black;
-  font-size: 17.93px;
-  /* Approximation due to font substitution */
-  font-weight: 400;
-  text-align: left;
-  display: inline-block;
-  width: 60%;
-  padding-right: 10px;
-  box-sizing: border-box;
-}
-/* line 178, ../sass/partials/page/modules/_saved-listings.scss */
-.saved-listings .header:hover {
-  background: #2e1460;
-}
-/* line 181, ../sass/partials/page/modules/_saved-listings.scss */
-.saved-listings .header:hover p {
-  color: white;
-}
-/* line 185, ../sass/partials/page/modules/_saved-listings.scss */
-.saved-listings .header:hover .address {
-  text-decoration: underline;
-}
-/* line 189, ../sass/partials/page/modules/_saved-listings.scss */
-.saved-listings .header:hover .share-button--heart {
-  background-image: url(../../images/listings/heart-icon-white.png);
-  background-size: 22px 20px;
-}
-/* line 194, ../sass/partials/page/modules/_saved-listings.scss */
-.saved-listings .header:hover .share-button--share {
-  background-image: url(../../images/listings/share-icon-white.png);
-}
-/* line 199, ../sass/partials/page/modules/_saved-listings.scss */
-.saved-listings .share-buttons {
-  display: inline-block;
-  float: right;
-  padding-top: 5px;
-  width: 40%;
-}
-/* line 205, ../sass/partials/page/modules/_saved-listings.scss */
-.saved-listings .share-buttons .share-block {
-  margin-left: 15px;
-  display: inline-block;
-  float: right;
-}
-/* line 211, ../sass/partials/page/modules/_saved-listings.scss */
-.saved-listings .share-buttons .share-link--heart {
-  float: right;
-}
-/* line 215, ../sass/partials/page/modules/_saved-listings.scss */
-.saved-listings .share-buttons .share-button--heart {
-  display: inline-block;
-  background-image: url(../../images/listings/heart-icon-purple.png);
-  background-repeat: no-repeat;
-  background-size: 24px 20px;
-  height: 20px;
-  width: 24px;
-  vertical-align: middle;
-}
-/* line 225, ../sass/partials/page/modules/_saved-listings.scss */
-.saved-listings .share-buttons .share-button--share {
-  display: inline-block;
-  background-image: url(../../images/listings/share-icon-purple.png);
-  background-repeat: no-repeat;
-  background-size: 23px 20px;
-  height: 20px;
-  width: 23px;
-  vertical-align: middle;
-}
-/* line 235, ../sass/partials/page/modules/_saved-listings.scss */
-.saved-listings .share-buttons p {
-  display: inline-block;
-  font-family: OpenSans Regular;
-  font-size: 11px;
-}
-/* line 242, ../sass/partials/page/modules/_saved-listings.scss */
-.saved-listings__toggle-view {
-  float: right;
-}
-/* line 245, ../sass/partials/page/modules/_saved-listings.scss */
-.saved-listings__toggle-view p {
-  color: #2e1460;
-  display: inline-block;
-  font-size: 15px;
-}
-/* line 252, ../sass/partials/page/modules/_saved-listings.scss */
-.saved-listings .right-col, .saved-listings .left-col {
-  float: left;
-  position: relative;
-  overflow: hidden;
-  margin-bottom: 10px;
-  max-height: 200px;
-}
-/* line 260, ../sass/partials/page/modules/_saved-listings.scss */
-.saved-listings .left-col {
-  width: 60%;
-}
-/* line 264, ../sass/partials/page/modules/_saved-listings.scss */
-.saved-listings .right-col {
-  width: 40%;
-}
-/* line 268, ../sass/partials/page/modules/_saved-listings.scss */
-.saved-listings .left-col {
-  padding-right: 10px;
-  box-sizing: border-box;
-}
-/* line 272, ../sass/partials/page/modules/_saved-listings.scss */
-.saved-listings .left-col img {
-  max-height: 230px;
-  width: 100%;
-}
-/* line 277, ../sass/partials/page/modules/_saved-listings.scss */
-.saved-listings .left-col .photo-count {
-  position: absolute;
-  bottom: 10px;
-  left: 0;
-  background: rgba(10, 10, 10, 0.7);
-  padding: 0 10px;
-  font-family: 'Oswald Regular';
-  color: #ffffff;
-  font-size: 11.96px;
-  /* Approximation due to font substitution */
-  font-weight: 400;
-  line-height: 23.91px;
-  /* Approximation due to font substitution */
-  text-align: left;
-}
-/* line 292, ../sass/partials/page/modules/_saved-listings.scss */
-.saved-listings .left-col .photo-arrows {
-  display: none;
-}
-/* line 297, ../sass/partials/page/modules/_saved-listings.scss */
-.saved-listings .property-info {
-  border-radius: 5px;
-  overflow: hidden;
-}
-/* line 301, ../sass/partials/page/modules/_saved-listings.scss */
-.saved-listings .property-info .row1, .saved-listings .property-info .row2, .saved-listings .property-info .row3, .saved-listings .property-info .row4 {
-  width: 100%;
-  display: block;
-  overflow: hidden;
-}
-/* line 307, ../sass/partials/page/modules/_saved-listings.scss */
-.saved-listings .property-info .row1 p, .saved-listings .property-info .row2 p, .saved-listings .property-info .row3 p, .saved-listings .property-info .row4 p {
-  padding: 5px 15px;
-  text-align: center;
-  float: left;
-  box-sizing: border-box;
-  background: rgba(10, 10, 10, 0.1);
-  border-top: 1px solid white;
-}
-/* line 317, ../sass/partials/page/modules/_saved-listings.scss */
-.saved-listings .property-info .row1, .saved-listings .property-info .row4 {
-  text-align: center;
-}
-/* line 320, ../sass/partials/page/modules/_saved-listings.scss */
-.saved-listings .property-info .row1 p, .saved-listings .property-info .row4 p {
-  float: left;
-  font-size: 12px;
-  font-family: 'OpenSans Regular';
-}
-/* line 329, ../sass/partials/page/modules/_saved-listings.scss */
-.saved-listings .property-info .row2 p, .saved-listings .property-info .row3 p {
-  padding-bottom: 1005px;
-  margin-bottom: -1000px;
-  width: 50%;
-  float: left;
-  box-sizing: border-box;
-  font-size: 12px;
-  font-family: 'OpenSans Regular';
-  border-top: 1px solid white;
-}
-/* line 340, ../sass/partials/page/modules/_saved-listings.scss */
-.saved-listings .property-info .row2 p:nth-child(1), .saved-listings .property-info .row3 p:nth-child(1) {
-  border-right: 1px solid white;
-}
-/* line 345, ../sass/partials/page/modules/_saved-listings.scss */
-.saved-listings .property-info .description {
-  display: none;
-}
-/* line 352, ../sass/partials/page/modules/_saved-listings.scss */
-.saved-listings .row1 .price {
-  width: 100%;
-  font-weight: 700;
-}
-/* line 357, ../sass/partials/page/modules/_saved-listings.scss */
-.saved-listings .row1 .house-type {
-  display: none;
-}
-/* line 362, ../sass/partials/page/modules/_saved-listings.scss */
-.saved-listings .row4 {
-  max-height: 75px;
-}
-/* line 365, ../sass/partials/page/modules/_saved-listings.scss */
-.saved-listings .row4 .house-type {
-  display: block;
-  width: 100%;
-}
-/* line 371, ../sass/partials/page/modules/_saved-listings.scss */
-.saved-listings .property-info {
-  display: block;
-  box-sizing: border-box;
-}
-/* line 376, ../sass/partials/page/modules/_saved-listings.scss */
-.saved-listings .realtor-info {
-  max-height: 68px;
-  display: inline-block;
-  width: 100%;
-}
-/* line 383, ../sass/partials/page/modules/_saved-listings.scss */
-.saved-listings .realtor-info--right {
-  text-align: center;
-}
-/* line 387, ../sass/partials/page/modules/_saved-listings.scss */
-.saved-listings .realtor-info--left, .saved-listings .realtor-info--right, .saved-listings .realtor-info--middle {
-  float: left;
-  box-sizing: border-box;
-}
-/* line 392, ../sass/partials/page/modules/_saved-listings.scss */
-.saved-listings .realtor-info--middle {
-  width: 20%;
-  padding: 0 15px;
-}
-/* line 396, ../sass/partials/page/modules/_saved-listings.scss */
-.saved-listings .realtor-info--middle img {
-  max-width: 50px;
-  max-height: 60px;
-}
-/* line 402, ../sass/partials/page/modules/_saved-listings.scss */
-.saved-listings .realtor-info--left {
-  padding-top: 15px;
-  width: 43%;
-  position: relative;
-}
-/* line 407, ../sass/partials/page/modules/_saved-listings.scss */
-.saved-listings .realtor-info--left .realtor-company {
-  max-height: 100%;
-  max-width: 125px;
-}
-/* line 413, ../sass/partials/page/modules/_saved-listings.scss */
-.saved-listings .realtor-info--right {
-  padding-top: 13px;
-  width: 37%;
-}
-/* line 417, ../sass/partials/page/modules/_saved-listings.scss */
-.saved-listings .realtor-info--right .realtor-contact {
-  margin-bottom: 10px;
-  padding: 5px;
-  background: #2e1460;
-  color: white;
-  border: none;
-  border-radius: 2px;
-  font-family: 'OpenSans Regular';
-  color: #ffffff;
-  font-size: 12.95px;
-  /* Approximation due to font substitution */
-  font-weight: 700;
-  line-height: 17.933px;
-  /* Approximation due to font substitution */
-  text-align: left;
-}
-/* line 433, ../sass/partials/page/modules/_saved-listings.scss */
-.saved-listings .realtor-info--right .realtor-name {
-  font-family: Arial;
-  color: #000000;
-  font-size: 11.96px;
-  font-weight: 700;
-  line-height: 16px;
-  text-align: center;
-}
-/* line 443, ../sass/partials/page/modules/_saved-listings.scss */
-.saved-listings .adSlot-right {
-  display: none;
-}
-/* line 447, ../sass/partials/page/modules/_saved-listings.scss */
-.saved-listings .adSlot-left {
-  margin: 10px auto;
-}
-
-@media (min-width: 768px) {
-  /* line 457, ../sass/partials/page/modules/_saved-listings.scss */
-  .saved-listings__toggle-view {
-    display: none;
-  }
-  /* line 461, ../sass/partials/page/modules/_saved-listings.scss */
-  .saved-listings .serp__mobile-button-dock {
-    display: none;
-  }
-  /* line 465, ../sass/partials/page/modules/_saved-listings.scss */
-  .saved-listings .adSlots {
-    margin: 10px 0;
-    position: relative;
-  }
-  /* line 469, ../sass/partials/page/modules/_saved-listings.scss */
-  .saved-listings .adSlots .adSlot {
-    width: 100%;
-    box-sizing: border-box;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    width: 300px;
-    float: none;
-  }
-  /* line 479, ../sass/partials/page/modules/_saved-listings.scss */
-  .saved-listings .adSlot-left, .saved-listings .adSlot-right {
-    min-height: 250px;
-    min-width: 300px;
-  }
-  /* line 484, ../sass/partials/page/modules/_saved-listings.scss */
-  .saved-listings .adSlot-left {
-    margin-bottom: 10px !important;
-  }
-  /* line 488, ../sass/partials/page/modules/_saved-listings.scss */
-  .saved-listings .adSlot-right {
-    display: block;
-  }
-  /* line 492, ../sass/partials/page/modules/_saved-listings.scss */
-  .saved-listings .search-results__summary-count {
-    display: block;
-  }
-  /* line 496, ../sass/partials/page/modules/_saved-listings.scss */
-  .saved-listings .search-summary-header {
-    display: block;
-    font-family: 'OpenSans Regular';
-    font-size: 26px;
-    font-weight: 600;
-    padding: 0;
-  }
-  /* line 504, ../sass/partials/page/modules/_saved-listings.scss */
-  .saved-listings .filter-drop {
-    display: none;
-  }
-  /* line 508, ../sass/partials/page/modules/_saved-listings.scss */
-  .saved-listings__summary {
-    text-align: left;
-  }
-  /* line 512, ../sass/partials/page/modules/_saved-listings.scss */
-  .saved-listings__filter-bar {
-    height: auto;
-    position: relative;
-    display: block;
-    width: 100%;
-    padding: 16px;
-    margin-bottom: 5px;
-    box-sizing: border-box;
-    background: #dacef1;
-  }
-  /* line 522, ../sass/partials/page/modules/_saved-listings.scss */
-  .saved-listings__filter-bar p {
-    display: block;
-    font-family: 'OpenSans Semibold';
-    font-size: 11px;
-    font-weight: 400;
-  }
-  /* line 529, ../sass/partials/page/modules/_saved-listings.scss */
-  .saved-listings__filter-bar .sort-drop {
-    display: block;
-    position: absolute;
-    top: 5px;
-    bottom: 5px;
-    right: 5px;
-    left: initial;
-    background: white;
-    border: none;
-    font-family: 'OpenSans Regular';
-  }
-  /* line 543, ../sass/partials/page/modules/_saved-listings.scss */
-  .saved-listings .photo-arrows {
-    display: block !important;
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    padding: 0 10px;
-  }
-  /* line 550, ../sass/partials/page/modules/_saved-listings.scss */
-  .saved-listings .photo-arrows .photo-arrow-right, .saved-listings .photo-arrows .photo-arrow-left {
-    display: inline-block;
-    height: 15px;
-    width: 15px;
-    box-sizing: border-box;
-  }
-  /* line 557, ../sass/partials/page/modules/_saved-listings.scss */
-  .saved-listings .photo-arrows .photo-arrow-right:hover, .saved-listings .photo-arrows .photo-arrow-left:hover {
-    border: 1px solid white;
-  }
-  /* line 561, ../sass/partials/page/modules/_saved-listings.scss */
-  .saved-listings .photo-arrows .photo-arrow-right {
-    -ms-transform: rotate(180deg);
-    /* IE 9 */
-    -webkit-transform: rotate(180deg);
-    /* Chrome, Safari, Opera */
-    transform: rotate(180deg);
-  }
-  /* line 570, ../sass/partials/page/modules/_saved-listings.scss */
-  .saved-listings .row1 .house-type {
-    display: block;
-    width: 50%;
-  }
-  /* line 575, ../sass/partials/page/modules/_saved-listings.scss */
-  .saved-listings .row1 p {
-    width: 50%;
-    float: right;
-    box-sizing: border-box;
-  }
-  /* line 581, ../sass/partials/page/modules/_saved-listings.scss */
-  .saved-listings .row1 .price {
-    width: 50%;
-    border-right: 1px solid white;
-  }
-  /* line 589, ../sass/partials/page/modules/_saved-listings.scss */
-  .saved-listings .row4 .description {
-    display: block;
-    text-align: left !important;
-  }
-  /* line 594, ../sass/partials/page/modules/_saved-listings.scss */
-  .saved-listings .row4 .house-type {
-    display: none;
-  }
-  /* line 599, ../sass/partials/page/modules/_saved-listings.scss */
-  .saved-listings .left-col {
-    width: 40%;
-  }
-  /* line 603, ../sass/partials/page/modules/_saved-listings.scss */
-  .saved-listings .right-col {
-    width: 60%;
-    height: auto;
-  }
-  /* line 609, ../sass/partials/page/modules/_saved-listings.scss */
-  .saved-listings .realtor-info {
-    float: right;
-    width: 60%;
-  }
-}
-/* line 618, ../sass/partials/page/modules/_saved-listings.scss */
-.about-you-widget__header {
-  text-align: center;
-  font-size: 18px;
-  font-family: 'OpenSans Bold';
-  margin-bottom: 15px;
-  font-weight: 900;
-}
-
 /* line 7, ../sass/partials/page/modules/_multimedia-chip.scss */
 .multimedia-chip {
   display: block;
@@ -6199,85 +5614,6 @@ body.category-details .related-articles__section-header {
     left: 23px;
   }
 }
-/* line 3, ../sass/partials/page/modules/_right-rail-widget.scss */
-.right-rail-wrapper {
-  padding-top: 20px;
-}
-
-/* line 7, ../sass/partials/page/modules/_right-rail-widget.scss */
-.right-rail-widget {
-  display: block;
-  margin: 0 0 30px 0;
-  width: 100%;
-}
-/* line 12, ../sass/partials/page/modules/_right-rail-widget.scss */
-.right-rail-widget__section-header {
-  display: inline-block;
-  width: 100%;
-}
-/* line 16, ../sass/partials/page/modules/_right-rail-widget.scss */
-.right-rail-widget__section-header h3 {
-  display: inline-block;
-  padding: 0;
-  margin: 0 0 5px 0;
-  width: auto;
-  float: left;
-  font-family: 'Oswald Regular';
-  font-size: 26px;
-  font-weight: normal;
-}
-/* line 27, ../sass/partials/page/modules/_right-rail-widget.scss */
-.right-rail-widget__section-header a {
-  display: inline-block;
-  float: right;
-  margin-top: 19px;
-  width: 28%;
-}
-/* line 35, ../sass/partials/page/modules/_right-rail-widget.scss */
-.right-rail-widget__container {
-  display: inline-block;
-  background: #dacef1;
-  padding: 20px 25px 20px 20px;
-  margin-bottom: 10px;
-  width: 100%;
-}
-/* line 42, ../sass/partials/page/modules/_right-rail-widget.scss */
-.right-rail-widget__container ul {
-  margin: 0;
-  padding: 0;
-}
-/* line 46, ../sass/partials/page/modules/_right-rail-widget.scss */
-.right-rail-widget__container ul li {
-  list-style: none;
-  margin: 5px 0;
-  font-size: .9em;
-}
-/* line 51, ../sass/partials/page/modules/_right-rail-widget.scss */
-.right-rail-widget__container ul li span {
-  font-weight: normal;
-}
-/* line 58, ../sass/partials/page/modules/_right-rail-widget.scss */
-.right-rail-widget__keywords {
-  margin: 5px 0;
-  font-weight: bold;
-}
-/* line 63, ../sass/partials/page/modules/_right-rail-widget.scss */
-.right-rail-widget__search-type {
-  margin: 5px 0;
-  font-size: 14px;
-  font-style: italic;
-}
-/* line 69, ../sass/partials/page/modules/_right-rail-widget.scss */
-.right-rail-widget__button-list {
-  margin: 10px 0;
-  text-transform: uppercase;
-  font-size: 11px;
-}
-/* line 74, ../sass/partials/page/modules/_right-rail-widget.scss */
-.right-rail-widget__button-list ul li {
-  margin: 5px 0;
-}
-
 /* line 12, ../sass/partials/page-content/modules/_adplaceholer__right-column.scss */
 .adplaceholer__right-column {
   width: 298px;

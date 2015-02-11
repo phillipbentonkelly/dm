@@ -22,8 +22,8 @@
             <button class='contact__form-submit'>Send</button>
         </div>
 
-        <div style="display:none;" class='contact__form contact__form-success'>
-            <p style="font-family:OpenSans Semibold;margin-bottom: 255px;" class='contact__form-messge'>Entry successful. Thank you.</p>
+        <div class='contact__form contact__form-success'>
+            <p class='contact__form-message'>Entry successful. Thank you.</p>
             <button class='contact__form-dismiss'>Okay</button>
         </div>
     </div>
