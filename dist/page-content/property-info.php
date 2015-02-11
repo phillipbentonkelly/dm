@@ -10,7 +10,7 @@
             <h2 class="listing__address">101 Fernwood Rd</h2>
             <h2 class="listing__address">Brookline, MA 02467</h2>
             <div class="listing__tags">
-                <div class="tag featured">Featured Property<span class="arrow"></span>
+                <div class="category-tag light-blue">Open House<span class="arrow"></span>
                 </div>
                 <img class="listing__detail-pindrop" src="images/listings/pindrop-icon-purple.png">
                 <p class="listing__for-sale">FOR SALE</p>
