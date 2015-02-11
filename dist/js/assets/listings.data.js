@@ -219,7 +219,7 @@
 				for (var filter in base.options.filters) {
 					_ret += '&keys[]=' + base.options.filters[filter].key;
 				}
-				var _feedParams = this.getFeedParams(this.options.URLfromFeed);
+				var _feedParams = this.getFeedParams(this.options.URLFromFeed);
 				var _mappedFeedParams = this.mapFeedParams(_feedParams);
 				_ret += "&" + _mappedFeedParams;
 				return _ret.substring(1);
