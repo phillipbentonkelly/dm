@@ -1,0 +1,1864 @@
+<!doctype html>
+<!--[if !IE]>
+  <html class="no-js">
+<![endif]-->
+<!--[if lte IE 8]> 
+  <html class="no-js ie8" lang="en">
+<![endif]-->
+<!--[if lte IE 9]> 
+  <html class="no-js ie9" lang="en">
+<![endif]-->
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>DM | Serp</title>
+    <meta name="description" content="">
+    <meta name=viewport content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    
+    <!-- STYLING -->
+    <link rel="stylesheet" href="styles/css/dm-screen.css" />
+
+        <!-- Real Estate Listings -->
+        <link rel="stylesheet" href="styles/css/realestatelistings.css" />
+        <link rel="stylesheet" href="styles/css/plugins/selectize/selectize.css" />
+        <link rel="stylesheet" href="styles/css/plugins/select2/select2.css" />
+
+	<!-- SCRIPTS -->
+    <script src="js/resources/jquery.min.js"></script>
+    <script src="js/resources/moment.min.js"></script>
+    <script src="js/assets/ui.js"></script>
+	<script src="js/assets/mega-menu.js"></script>
+	<script src="js/assets/gallery.js"></script>    
+	<script src="js/assets/form-validation.js"></script>
+	<!-- <script src="js/assets/homepage-view-more-widget.js"></script> -->
+
+		
+	
+    
+
+
+	
+	
+			<script src="js/resources/basic/js/jquery.simplemodal.js"></script>
+        <script src="js/assets/popup.js"></script>
+        <script src="js/assets/related-articles-rail-widget.js"></script>
+
+	
+		
+	
+<script src="http://www.googletagservices.com/tag/js/gpt.js"></script>
+<script>
+    // DFP Setup
+    var bcom = bcom || {};
+    bcom.dfp = bcom.dfp || {};
+    bcom.dfp.networkCode = 61381659;
+    bcom.dfp.adUnit = 'boston.com/real-estate/homepage';
+
+        
+
+    
+    
+        bcom.dfp.adSlots = ['ad_lead1','ad_spotlight1','ad_spotlight2','ad_spotlight3','ad_spotlight4','ad_bigbox1','ad_bigbox3','ad_bigbox4','ad_bigbox5','ad_bigbox6','ad_outofpage1','ad_outofpage2','ad_outofpage3','ad_lead2'];
+    
+    
+
+    bcom.dfp.streamCount = '5';
+    bcom.dfp.galleryCount = '';
+    bcom.dfp.refreshRate = '';
+    bcom.dfp.keyValuePairs = {
+        s1: 'boston.com',
+        s2: 'real-estate',
+        s3: '',
+        s4: '',
+        s5: '',
+        pgtype : 'sectfront',
+        pageurl : '',
+        meta: '',
+	redesigntest: 'on'
+    };
+    
+</script>
+<script src="http://www.boston.com/js/bcom.util.js"></script>
+<script src="js/assets/dm.dfp.ad-catalog.js"></script>
+<script src="http://www.boston.com/js/bcom.dfp.ad-init.js"></script>
+
+	<script src="js/resources/plugins/selectize/selectize.js"></script>
+    <script src="js/resources/plugins/select2/select2.js"></script>
+    <script src="js/assets/searchPanel.js"></script>
+    <script>
+        $(document).ready(function(){
+        	if('#listingDropDown'){
+                $("#listingDropDown").select2({ dropdownCssClass: 'mplistings-dropdown' });
+            }
+
+		    if($ ('body').hasClass('property-listings')) {
+		        $('.listing__contact-agent').hide();
+		    }
+
+		    if( $('body').hasClass('property-listings-premium') && $(window).width() < 768) {
+		        $('.contact__company').hide();
+		    }
+
+		    if($('body').hasClass('serp')) {
+		    	$('.contact__company').hide();
+		    }
+
+            if ($(window).width() > 752) {
+                $('.page-layout__left-col').width($(window).width() - 320);
+            };
+
+            if ($(window).width() < 768) {
+                $('.page-layout__right-col').find('.adplaceholer__right-column').hide();
+            };
+
+            $('.contact__agent-number').on('click', function(e) {
+            	e.preventDefault();
+            	$(this).text() == 'View My Contact Number' ? $(this).text('(617) 230-6674') : $(this).text('View My Contact Number');
+        	});
+        });
+
+        $(window).resize(function() {
+            if ($(window).width() > 752) {
+            	$('.page-layout__right-col').find('.close-modal-wrap').remove();
+                $('.page-layout__left-col').width($(window).width() - 320);
+                $('.page-layout__right-col').find('.adplaceholer__right-column').show();
+            } else {
+                $('.page-layout__left-col').css('width', '100%');
+                $('.page-layout__right-col').find('.adplaceholer__right-column').hide();
+            }
+
+            if($ ('body').hasClass('property-listings-premium') && $(window).width() < 768) {
+		        $('.contact__company').hide();
+		    } else {
+		    	$('.contact__company').show();
+		    }
+
+			if($('body').hasClass('serp')) {
+		    	$('.contact__company').hide();
+		    }
+        });
+    </script>
+    
+	</head>
+<body class='page-section serp'>
+
+	<!-- Page Masthead -->
+    <!-- Page Masthead -->
+<div id="ad_outofpage1" class="out-of-page-ad"></div>
+<div id="ad_outofpage2" class="out-of-page-ad"></div>
+<div id="ad_outofpage3" class="out-of-page-ad"></div>
+<div class="masthead">
+    <div class="page-header">
+        <div id="ad_lead1" class="page-header__content"></div>
+    </div>
+</div>
+<!-- Page Masthead -->
+    <!-- Page Nav -->
+    <!-- Page Nav -->
+<div class="page-nav">
+    <div class="page-nav__content-wrapper">
+        <ul>
+            <li class="page-nav__mega-menu-responsive-icon"></li>
+            <li class="page-nav__logo">
+                <a href="index.html">
+                    <h1>Real Estate</h1>
+                    <h4>A Boston.com Site</h4>
+                </a>
+            </li>
+            <li class="page-nav__main-nav-links">
+                <ul>
+                    <li class="page-nav__nav-item page-nav__responsive-home-link">
+                        <a id="find-home-menu-link" href="javascript:;" class="page-nav__nav-lv0">Home</a>
+                    </li>
+                    <li id="find-home-menu" class="page-nav__nav-item">
+                        <a class="page-nav__nav-lv0">
+                            Find A Home 
+                            <span class="page-nav__nav-item__responsive-drop-down-icon">
+                            </span>
+                        </a>
+                        <div class="page-nav__arrow-up"></div>
+
+                        <!-- MEGA-MENU: FIND A HOME -->
+                        <div class="mega-menu">
+                            <div class="mega-menu__container find-home-menu">
+                                <div class="mega-menu__section--left">
+                                    <div class="row">
+                                        <input class="mega-menu__search-input" placeholder="search for real estate listings are articles."/>
+                                        <button class="mega-menu__search-submit"></button>
+                                    </div>
+
+                                    <ul class="mega-menu__list-items">
+                                        <li class="mega-menu__list-item">
+                                            <a class="mega-menu__list-link" href="#">Buying</a>
+                                        </li>
+
+                                        <li class="mega-menu__list-item">
+                                            <a class="mega-menu__list-link" href="#">Renting</a>
+                                        </li>
+
+                                        <li class="mega-menu__list-item">
+                                            <a class="mega-menu__list-link" href="#">New Development</a>
+                                        </li>
+
+                                        <li class="mega-menu__list-item">
+                                            <a class="mega-menu__list-link" href="#">Student Living</a>
+                                        </li>
+
+                                        <li class="mega-menu__list-item">
+                                            <a class="mega-menu__list-link" href="#">Suburban Living</a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="mega-menu__section--middle">
+                                    <ul class="mega-menu__list-items">
+                                        <li class="mega-menu__list-item">
+                                            <a class="mega-menu__list-link" href="articles.html">Tom and Gisele's Brookline Pad Looks Almost Ready</a>
+                                        </li>
+
+                                        <li class="mega-menu__list-item">
+                                            <a class="mega-menu__list-link" href="#">For Sale: $2.85M Italianate Mansion in JP</a>
+                                        </li>
+
+                                        <li class="mega-menu__list-item">
+                                            <a class="mega-menu__list-link" href="#">For Sale: Historic Weston Mansion</a>
+                                        </li>
+
+                                        <li class="mega-menu__list-item">
+                                            <a class="mega-menu__list-link" href="#">New Construction, Chestnut Hill Colonial - $2,400,000</a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="mega-menu__section--right">
+                                    <div class="mega-menu__featured-home">
+                                        <div class="adSlots">
+                                            <a href="javascript:;" class="adSlot">
+                                                <img src="images/icons/luxuryLabel.png" class="iconOverlay topSpacing">
+
+                                                <img src="images/listings/reNews__listings__6.jpg">
+                                                
+                                                <div class="detailsWrapper">
+                                                    <div class="detailsArrow"></div>
+
+                                                    <div class="detailsOverlay">
+                                                        <h1><span class="col">14 Chestnut Street Boston, MA</span> <span class="priceSpan">$190,000</span></h1>
+
+                                                        <p>One of Beacon Hill's most desirable tree-lined streets, this exquisite Triplex has 5,000+ sqf ft. of furnished living space. 4+ Beds/3.5 Baths</p>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!---->
+                        <!-- MEGA-MENU: FIND A HOME -->
+                    </li>
+
+                    <li id="neighborhoods-menu" class="page-nav__nav-item">
+                        <a href="javascript:;" class="page-nav__nav-lv0">
+                            Neighborhoods 
+                            <span class="page-nav__nav-item__responsive-drop-down-icon">
+                            </span>
+                        </a>
+                        <div class="page-nav__arrow-up"></div>
+
+                        <!-- MEGAMENU: NEIGHBORHOODS -->
+                        <div class="mega-menu"><!---->
+                            <div class="mega-menu__container neighborhoods-menu">
+
+                                <div class="mega-menu__section--left">
+                                    <ul id="mega-menu__list-items--left" class="mega-menu__list-items">
+                                        <li class="mega-menu__list-item">
+                                            <a class="mega-menu__list-link" href="#">Back Bay</a>
+                                        </li>
+
+                                        <li class="mega-menu__list-item">
+                                            <a class="mega-menu__list-link" href="#">Beacon Hill</a>
+                                        </li>
+
+                                        <li class="mega-menu__list-item">
+                                            <a class="mega-menu__list-link" href="#">Boston</a>
+                                        </li>
+
+                                        <li class="mega-menu__list-item">
+                                            <a class="mega-menu__list-link" href='neighborhood.html'>Brookline</a>
+                                        </li>
+
+                                        <li class="mega-menu__list-item">
+                                            <a class="mega-menu__list-link" href="#">Cambridge</a>
+                                        </li>
+
+                                        <li class="mega-menu__list-item">
+                                            <a class="mega-menu__list-link" href="#">Charlestown</a>
+                                        </li>
+
+                                        <li class="mega-menu__list-item">
+                                            <a class="mega-menu__list-link" href="#">Dorchester</a>
+                                        </li>
+
+                                        <li class="mega-menu__list-item">
+                                            <a class="mega-menu__list-link" href="#">Newton</a>
+                                        </li>
+                                    </ul>
+
+                                    <ul id="mega-menu__list-items--right" class="mega-menu__list-items">
+                                        <li class="mega-menu__list-item">
+                                            <a class="mega-menu__list-link" href="#">Cape Cod/Islands</a>
+                                        </li>
+
+                                        <li class="mega-menu__list-item">
+                                            <a class="mega-menu__list-link" href="#">Berkshires</a>
+                                        </li>
+
+                                        <li class="mega-menu__list-item">
+                                            <a class='mega-menu__list-link' href="#">Metro West</a>
+                                        </li>
+
+                                        <li class="mega-menu__list-item">
+                                            <a class='mega-menu__list-link' href="#">North Shore</a>
+                                        </li>
+
+                                        <li class="mega-menu__list-item">
+                                            <a class='mega-menu__list-link' href="#">South Shore</a>
+                                        </li>
+
+                                        <li class="mega-menu__list-item">
+                                            <a class="mega-menu__list-item" href="#">More</a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+
+                                <div class="mega-menu__section--middle">
+                                    <ul class="mega-menu__list-items">
+                                        <li class="mega-menu__list-item">
+                                            <a class="mega-menu__list-link" href="#">Tom and Gisele's Brookline Pad Looks Almost Ready</a>
+                                        </li>
+
+                                        <li class="mega-menu__list-item">
+                                            <a class="mega-menu__list-link" href='#'>For Sale: $2.85M Italianate Mansion in JP</a>
+                                        </li>
+
+                                        <li class='mega-menu__list-item'>
+                                            <a class='mega-menu__list-link' href='#'>For Sale: Historic Weston Mansion</a>
+                                        </li>
+
+                                        <li class='mega-menu__list-item'>
+                                            <a class='mega-menu__list-link' href='#'>New Construction, Chestnut Hill Colonial - $2,400,000</a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+
+                                <div class='mega-menu__section--right'>
+                                    <div class="mega-menu__featured-home">
+                                        <div class="adSlots">
+                                            <a href="javascript:;" class="adSlot">
+                                                <img src="images/neighborhoods/top-neighborhoods__entry__2.jpg">
+                                                
+                                                <div class="detailsWrapper">
+                                                    <div class="detailsArrow"></div>
+
+                                                    <div class="detailsOverlay">
+                                                        <h1><span class="col">14 Chestnut Street Boston, MA</span> <span class="priceSpan">$190,000</span></h1>
+
+                                                        <p>One of Beacon Hill's most desirable tree-lined streets, this exquisite Triplex has 5,000+ sqf ft. of furnished living space. 4+ Beds/3.5 Baths</p>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!---->
+                        <!-- MEGAMENU: NEIGHBORHOODS -->
+                    </li>
+                    <li class="page-nav__nav-item"><a href="javascript:;" class="page-nav__nav-lv0">Open Houses</a></li>
+                    <li class="page-nav__nav-item"><a href="serp.html" class="page-nav__nav-lv0">Luxury Living</a></li>
+                    <li class="page-nav__nav-item"><a href="javascript:;" class="page-nav__nav-lv0">News</a></li>
+
+                    <li id="myAccount" class="page-nav__nav-item">
+                        <a href="javascript:;" class="page-nav__nav-lv0">
+                            My Account 
+                            <span class="page-nav__nav-item__responsive-drop-down-icon">
+                            </span>
+                        </a>
+                        <div class="page-nav__arrow-up"></div>
+                        <div class="mega-menu"><!---->
+                            <div class="mega-menu__container myAccount">
+                                <ul class="mega-menu__list-items">
+                                    <li class="mega-menu__list-item">
+                                        <a class="mega-menu__list-link" href="#">Register</a>
+                                    </li>
+                                    <li class="mega-menu__list-item">
+                                        <a class="mega-menu__list-link" href="#">Login</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+
+                </ul>
+                
+            </li>
+            
+            <li class="page-nav__search-responsive-icon">
+                <a href="#" class="open-search">
+                    <span>X</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+<!-- Page Nav -->
+    <!-- Page Search -->
+    
+<!-- Page Search -->
+<div class="page-search">
+    <div class="page-search__content-wrapper">
+        <form class="page-search__form" action="#">
+
+            <div class="page-search__row page-search__row--level-one">
+
+                <select class="page-search__dropdown page-search__dropdown--main" name="q">
+                    <option></option>
+                    <option value="Boston">Boston</option>
+                    <option value="Brookline">Brookline</option>
+                    <option value="Cambridge">Cambridge</option>
+                    <option value="Somerville">Somerville</option>
+                    <option value="Waltham">Waltham</option>
+                    <option value="Braintree">Braintree</option>
+                    <option value="Newton">Newton</option>
+                </select>
+                <button class="page-search__button page-search__button--level-two-toggle">           
+                    <span class="down-arrow"></span>
+                    <span class="up-arrow" style="display:none;"></span>                           
+                </button>
+
+                <button class="page-search__button page-search__button--submit" value=""></button>
+
+            </div>
+            <div class="lower-level">
+            <div class="page-search__row page-search__row--level-two">
+
+                <section class="page-search__section" title="Type">
+                    <h4 class="mobile">Type</h4>
+                    <div class="page-search__container page-search__container--radio">
+                        <div class="page-search__fancy-radio-box page-search__fancy-radio-box--for-sale">
+                            <input type="radio" id="forSale" name="buy_or_rent" value="ForSale" checked>
+                            </input>
+                            <label for="forSale" class="for-sale">For Sale</label>
+                        </div>
+
+                        <div class="page-search__fancy-radio-box page-search__fancy-radio-box--for-rent">
+                            <input type="radio" id="forRent" name="buy_or_rent" value="ForRent"></input> 
+                            <label for="forRent" class="for-rent" >For Rent</label>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="page-search__section" title="Price">
+                    <h4 class="mobile">Price</h4>
+                    <div class="page-search__container page-search__container--range price-range-container">
+                        <input type="text" class="page-search__input page-search__input--numeric" name="price_range_min" maxlength="9" placeholder="$ Min">
+                        </input>
+                        &mdash;&nbsp;
+                        <input type="text" class="page-search__input page-search__input--numeric" name="price_range_max" maxlength="9" placeholder="$ Max">
+                        </input>
+                    </div>
+                </section>
+
+                <section class="page-search__section" title="Beds">
+                    <h4 class="mobile">Beds</h4>
+                    <select class="page-search__dropdown page-search__dropdown--filter-fmt" name="beds" data-placeholder="Beds">
+                        <option></option>
+                        <option value="0+">0+</option>
+                        <option value="1+">1+</option>
+                        <option value="2+">2+</option>
+                        <option value="3+">3+</option>
+                        <option value="4+">4+</option>
+                        <option value="5+">5+</option>
+                    </select>
+                </section>
+
+                <section class="page-search__section" title="Baths">
+                    <h4 class="mobile">Baths</h4>
+                    <select class="page-search__dropdown page-search__dropdown--filter-fmt" name="baths" data-placeholder="Baths">
+                        <option></option>
+                        <option value="0+">0+</option>
+                        <option value="1+">1+</option>
+                        <option value="2+">2+</option>
+                        <option value="3+">3+</option>
+                        <option value="4+">4+</option>
+                        <option value="5+">5+</option>
+                    </select>
+                </section>
+
+                <section class="page-search__section" title="Home Type">
+                    <h4 class="mobile">Home Type</h4>
+                    <select class="page-search__dropdown page-search__dropdown--filter-hometype" name="home_type" data-placeholder="Home Type">
+                        <option></option>
+                        <option value="Single-Family">Single-Family</option>
+                        <option value="Multi-Family">Multi-Family</option>
+                        <option value="Apartment">Apartment</option>
+                        <option value="Co-op/Condo">Co-op/Condo</option>
+                        <option value="Townhome">Town Home</option>
+                        <option value="Manufactured">Manufactured</option>
+                        <option value="Lot/Land">Land/Lot</option>
+                    </select>
+                </section>
+
+                <button class="page-search__button page-search__button--level-three-toggle desktop" id="moreOptions" name="more_options">
+                    <span class="select2-chosen">More</span>
+                    <span class="select2-arrow" role="presentation">
+                        <b role="presentation"></b>
+                    </span>
+                </select>
+
+            </div>
+
+            <div class="page-search__row page-search__row--level-three">
+               
+                <div class="page-search__button page-search__button--close desktop">
+                    <span>X</span>
+                </div>
+                
+
+                <div class="col">
+
+                    <section class="page-search__section" id="subtypes" title="Subtypes">
+
+                        <h4 class="desktop">Filter By</h4>
+                        <h4 class="mobile">Subtype</h4>
+
+                        <ul>
+                            <li class="page-search__list-item">
+                                <input type="checkbox" id="openHouses" name="open_houses"></input>
+                                <label for="openHouses">Open Houses</label>
+                            </li>
+
+                            <li class="page-search__list-item">
+                                <input type="checkbox" id="newDevelopments" name="new_developments"></input>
+                                <label for="newDevelopments">New Developments</label>
+                            </li>
+
+                        </ul>
+
+                    </section>
+
+                </div>
+
+                <div class="col">
+                    
+                    <section class="page-search__section" id="sqFt" title="Square Feet">
+                        <h4>Square Feet</h4>
+                        <div class="page-search__container page-search__container--range">
+                            <input type="text" class="page-search__input page-search__input--numeric" name="sq_ft_min" placeholder="Min"></input>
+                                &mdash;&nbsp;
+                            <input type="text" class="page-search__input page-search__input--numeric" name="sq_ft_max" placeholder="Max"></input>
+                        </div>
+                    </section>
+
+                    
+
+                    
+
+                </div>
+
+                <div class="col">
+
+                    <section class="page-search__section" id="lotSz" title="Lot Size">
+                        <h4>Lot Size</h4>
+                        <div class="page-search__container page-search__container--range">
+                            <input type="text" class="page-search__input page-search__input--numeric" name="lot_sz_min" placeholder="Min"></input>
+                                &mdash;&nbsp;
+                            <input type="text" class="page-search__input page-search__input--numeric" name="lot_sz_max" placeholder="Max"></input>
+                        </div>
+
+                    </section>
+
+                    <!-- <section class="page-search__section" id="daysOnMkt" title="Days On Market">
+                        <h4>Days On Market</h4>
+                        <select class="page-search__dropdown page-search__dropdown--filter-dom" name="days_on_mkt" data-placeholder="Any">
+                            <option></option>
+                            <option value="1 day">1 day</option> 
+                            <option value="7 days">7 days</option> 
+                            <option value="14 days">14 days</option>
+                            <option value="1 month">1 month</option> 
+                            <option value="3 months">3 months</option> 
+                            <option value="6 months">6 month</option> 
+                            <option value="1 year">1 year</option> 
+                            <option value="2 years+">2 years+</option>
+                        </select>
+                    </section> -->
+
+                    <!-- <section class="page-search__section page-search__section--tokenize" id="keywords" title="Keywords">
+                        <h4>Keywords</h4>
+                        <span class="helper">(seperate with commas)</span>
+                        <input type="text" class="page-search__input page-search__input--tokenize" name="keywords"></input>
+                    </section> -->
+
+                </div>
+
+                <div class="col">
+
+                    <section class="page-search__section" id="yrsBuilt" title="Years Built">
+                        <h4>Years Built</h4>
+                        <div class="page-search__container page-search__container--range">
+                            <input type="text" class="page-search__input page-search__input--numeric" name="yrs_built_min" placeholder="Min"></input>
+                                &mdash;&nbsp;
+                            <input type="text" class="page-search__input page-search__input--numeric" name="yrs_built_max" placeholder="Max">
+                            </input>
+                        </div>
+
+                    </section>
+
+                    <!-- <section class="page-search__section" id="findByMLS" title="Find by MLS">
+                        <h4>Find by MLS</h4>
+                        <input type="text" class="page-search__input page-search__input--text" name="mls_id"></input>
+                    </section> -->
+
+                </div>
+            </div>
+            </div>
+        </form>
+    </div>
+</div>
+<!-- Page Search -->    
+	
+	
+			<!-- Module Content -->
+		<style type="text/css">
+
+    .tmp-serp-ad-wrap {
+        margin: 90px auto 10px auto;
+    }
+
+	.tmp-serp-ad {
+        width: 320px;
+        float: none;
+        height: 50px;
+        margin: 10px auto;
+        overflow: hidden;
+    }
+
+    @media (min-width: 768px) {
+
+        .tmp-serp-ad-wrap {
+            width: 100%;
+        }
+
+        .tmp-serp-ad {
+            width: 460px;
+            margin: 0 auto;
+            height: 184px;
+            margin-bottom: 10px;
+        }
+
+        .tmp-serp-ad > div {
+            max-width: 100%;
+        }
+    }
+
+    @media (min-width: 960px) {
+        .tmp-serp-ad-wrap {
+            width: 960px;
+        }
+
+        .tmp-serp-ad {
+            float: left;
+            width: 48%;
+        }
+
+        #ad_spotlight1 {
+            min-height: 150px;
+            margin-right: 2%;
+        }
+    }
+
+</style>
+
+<div class='tmp-serp-ad-wrap'>
+	<div id='ad_spotlight1' class='tmp-serp-ad'></div>
+	<div id='ad_spotlight2' class='tmp-serp-ad'></div>
+</div>
+	
+	<!-- Page Layout -->
+    <div class="page-layout">
+        <div class="page-layout__left-col">
+        	<!-- HOME -->
+						
+			
+			<!-- PROPERTY LISTINGS -->
+						
+			
+			<!-- NEIGHBORHOOD -->
+						
+			<!-- CATEGORY -->
+						
+			<!-- CATEGORY DETAILS -->
+						
+			<!-- NEIGHBORHOOD -->
+						
+			
+			<!-- ARTICLES -->
+						
+
+			<!-- SEARCH PAGE -->
+							<!-- Search Result -->
+				<!-- SERP SEARCH RESULTS -->
+<div class="search-results">
+
+    <div class="search-results__summary">
+        <p class="search-summary-header"><span class="search-neighborhood">Brookline</span> Real Estate<span class="total-results">147 results.</span></p>
+    </div>
+
+    <div class="search-results__filter-bar">
+        <p class="search-results__summary-count">Showing <span class="low-end">1</span> to <span class="high-end">10</span> of <span class="total-results">147</span></p>
+
+        <select class="sort-drop">
+            <option value="default">Sort by Default</option>
+            <option value="best-match">Best Match</option>
+            <option value="newest">Newest</option>
+            <option value="price-high-low">Price (High-Low)</option>
+            <option value="prive-low-high">Price (Low-High)</option>
+            <option value="bedrooms">Most Bedrooms</option>
+            <option value="sqfeet">Largest Square Feet</option>
+        </select>
+
+        <div class="filter-drop">
+            <p>Sort by</p>
+        </div>
+
+        <a class="search-results__toggle-view" href="javascript:;">
+            <div class="serp-map-btn"></div>
+            <p>Map</p>
+        </a>
+    </div>
+    <div class="serp-map--mobile">
+        <img class="serp-map--mobile-image" style="max-height:350px;width:100%;overflow:hidden;box-sizing:border-box;display:none;" src="http://www.codeproject.com/KB/web-image/Google_map/sampleMap.JPG"/>
+    </div>
+
+    <!-- SEARCH RESULT ITEM -->
+    <div id="result1" class="search-results__item">
+
+        <div class="header serp-item-hovered">
+            <a href="javascript:;"><p class="address">101 Fernwood Road, Brookline, Ma</p></a>
+            <div class="share-buttons">
+
+                <a class="share-link--heart" href="javascript:;">
+                    <div class="share-button--heart"></div>
+                </a>
+
+            </div>
+        </div>
+
+        <div class="left-col">
+            <div class="property-images">
+                <img src="images/neighborhoods/top-neighborhoods__entry__1.jpg"/>
+                <div class="photo-count">18 Photos</div>
+                <div class="photo-arrows">
+                    <a href="javascript:;"><img class="photo-arrow-left" src="images/listings/arrow-icon-trans-black.png"/></a>
+                    <a href="javascript:;"><img class="photo-arrow-right" src="images/listings/arrow-icon-trans-black.png"/></a>
+                </div>
+            </div>
+        </div>
+            
+        <div class="right-col">
+            <div class="property-info">
+                <div class="row1">
+                    <p class="price">$18,000,000</p>
+                    <p class="house-type">Co-op/Condo</p>
+                </div>
+
+                <div class="row2">
+                    <p class="sqfeet">10,000 Sq. Ft.</p>
+                    <p class="beds">5 Beds</p>
+                </div>
+
+                <div class="row3">
+                    <p class="baths">6 Baths</p>
+                    <p class="partials">3 Partial</p>
+                </div>
+
+                <div class="row4">
+                    <p class="house-type">Co-op/Condo</p>
+                    <p class="description">Secluded single floor residence with gated drive set on a lush cul-de-sac. Designed by architect Adolfo Perez. ngle floor residence with gated drive set on a lush cul-de-sac. Designed</p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="realtor-info">
+            <div class="realtor-info--left">
+                <img class="realtor-company" src="http://www.vanguard-realty.com/files/2013/06/innerpage-logo.png"/>
+            </div>
+
+            <div class="realtor-info--middle">
+                <img class="realtor-img" src="http://newlistingphotos.com/wp-content/uploads/2011/04/Blog.jpg"/>
+            </div>
+
+            <div class="realtor-info--right">
+                <button class="realtor-contact mobile-contact-btn">Contact</button>
+                <p class="realtor-name">Blake Sherwood</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- SEARCH RESULT ITEM -->
+    <div id="result2" class="search-results__item">
+
+        <div class="header">
+            <a href="javascript:;"><p class="address">101 Fernwood Road, Brookline, Ma</p></a>
+            <div class="share-buttons">
+
+                <a class="share-link--heart" href="javascript:;">
+                    <div class="share-button--heart"></div>
+                </a>
+
+            </div>
+        </div>
+
+        <div class="left-col">
+            <div class="property-images">
+                <img src="images/neighborhoods/top-neighborhoods__entry__1.jpg"/>
+                <div class="photo-count">18 Photos</div>
+                <div class="photo-arrows">
+                    <a href="javascript:;"><img class="photo-arrow-left" src="images/listings/arrow-icon-trans-black.png"/></a>
+                    <a href="javascript:;"><img class="photo-arrow-right" src="images/listings/arrow-icon-trans-black.png"/></a>
+                </div>
+            </div>
+        </div>
+            
+        <div class="right-col">
+            <div class="property-info">
+                <div class="row1">
+                    <p class="price">$18,000,000</p>
+                    <p class="house-type">Co-op/Condo</p>
+                </div>
+
+                <div class="row2">
+                    <p class="sqfeet">10,000 Sq. Ft.</p>
+                    <p class="beds">5 Beds</p>
+                </div>
+
+                <div class="row3">
+                    <p class="baths">6 Baths</p>
+                    <p class="partials">3 Partial</p>
+                </div>
+
+                <div class="row4">
+                    <p class="house-type">Co-op/Condo</p>
+                    <p class="description">Secluded single floor residence with gated drive set on a lush cul-de-sac. Designed by architect Adolfo Perez.</p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="realtor-info">
+            <div class="realtor-info--left">
+                <img class="realtor-company" src="http://www.vanguard-realty.com/files/2013/06/innerpage-logo.png"/>
+            </div>
+
+            <div class="realtor-info--right">
+                <button class="realtor-contact mobile-contact-btn">Contact</button>
+                <p class="realtor-name">Blake Sherwood</p>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <!-- SEARCH RESULT ITEM -->
+    <div class="search-results__item">
+
+        <div class="header">
+            <a href="javascript:;"><p class="address">101 Fernwood Road, Brookline, Ma</p></a>
+            <div class="share-buttons">
+
+                <a class="share-link--heart" href="javascript:;">
+                    <div class="share-button--heart"></div>
+                </a>
+
+            </div>
+        </div>
+
+        <div class="left-col">
+            <div class="property-images">
+                <img src="images/neighborhoods/top-neighborhoods__entry__1.jpg"/>
+                <div class="photo-count">18 Photos</div>
+                <div class="photo-arrows">
+                    <a href="javascript:;"><img class="photo-arrow-left" src="images/listings/arrow-icon-trans-black.png"/></a>
+                    <a href="javascript:;"><img class="photo-arrow-right" src="images/listings/arrow-icon-trans-black.png"/></a>
+                </div>
+            </div>
+        </div>
+            
+        <div class="right-col">
+            <div class="property-info">
+                <div class="row1">
+                    <p class="price">$18,000,000</p>
+                    <p class="house-type">Co-op/Condo</p>
+                </div>
+
+                <div class="row2">
+                    <p class="sqfeet">10,000 Sq. Ft.</p>
+                    <p class="beds">5 Beds</p>
+                </div>
+
+                <div class="row3">
+                    <p class="baths">6 Baths</p>
+                    <p class="partials">3 Partial</p>
+                </div>
+
+                <div class="row4">
+                    <p class="house-type">Co-op/Condo</p>
+                    <p class="description">Secluded single floor residence with gated drive set on a lush cul-de-sac. Designed by architect Adolfo Perez. Secluded single floor residence with gated drive set on a lush cul-de-sac. Designed by architect Adolfo Perez.</p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="realtor-info">
+            <!-- <div class="realtor-info--left">
+                <img class="realtor-company" src="http://www.vanguard-realty.com/files/2013/06/innerpage-logo.png"/>
+            </div>
+
+            <div class="realtor-info--middle">
+                <img class="realtor-img" src="http://newlistingphotos.com/wp-content/uploads/2011/04/Blog.jpg"/>
+            </div>
+
+            <div class="realtor-info--right">
+                <button class="realtor-contact mobile-contact-btn">Contact</button>
+                <p class="realtor-name">Blake Sherwood</p>
+            </div> -->
+        </div>
+
+    </div>
+
+    <!-- AD SLOT -->
+        <div class="adSlots">
+            <a href="javascript:;" class="adSlot adSlot-left">
+                <img src="images/neighborhoods/top-neighborhoods__entry__2.jpg">
+            </a>
+
+            <a href="javascript:;" class="adSlot adSlot-right">
+                <img src="images/neighborhoods/top-neighborhoods__entry__2.jpg">
+            </a>
+        </div>
+    <!-- /AD SLOT -->
+
+    <!-- SEARCH RESULT ITEM -->
+    <div class="search-results__item">
+
+        <div class="header">
+            <a href="javascript:;"><p class="address">101 Fernwood Road, Brookline, Ma</p></a>
+            <div class="share-buttons">
+
+                <a class="share-link--heart" href="javascript:;">
+                    <div class="share-button--heart"></div>
+                </a>
+
+            </div>
+        </div>
+
+        <div class="left-col">
+            <div class="property-images">
+                <img src="images/neighborhoods/top-neighborhoods__entry__1.jpg"/>
+                <div class="photo-count">18 Photos</div>
+                <div class="photo-arrows">
+                    <a href="javascript:;"><img class="photo-arrow-left" src="images/listings/arrow-icon-trans-black.png"/></a>
+                    <a href="javascript:;"><img class="photo-arrow-right" src="images/listings/arrow-icon-trans-black.png"/></a>
+                </div>
+            </div>
+        </div>
+            
+        <div class="right-col">
+            <div class="property-info">
+                <div class="row1">
+                    <p class="price">$18,000,000</p>
+                    <p class="house-type">Co-op/Condo</p>
+                </div>
+
+                <div class="row2">
+                    <p class="sqfeet">10,000 Sq. Ft.</p>
+                    <p class="beds">5 Beds</p>
+                </div>
+
+                <div class="row3">
+                    <p class="baths">6 Baths</p>
+                    <p class="partials">3 Partial</p>
+                </div>
+
+                <div class="row4">
+                    <p class="house-type">Co-op/Condo</p>
+                    <p class="description">Secluded single floor residence with gated drive set on a lush cul-de-sac. Designed by architect Adolfo Perez.</p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="realtor-info">
+            <div class="realtor-info--left">
+                <img class="realtor-company" src="http://www.vanguard-realty.com/files/2013/06/innerpage-logo.png"/>
+            </div>
+
+           <!--  <div class="realtor-info--middle">
+                <img class="realtor-img" src="http://newlistingphotos.com/wp-content/uploads/2011/04/Blog.jpg"/>
+            </div> -->
+
+            <div class="realtor-info--right">
+                <button class="realtor-contact mobile-contact-btn">Contact</button>
+                <p class="realtor-name">Blake Sherwood</p>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- SEARCH RESULT ITEM -->
+    <div class="search-results__item">
+
+        <div class="header">
+            <a href="javascript:;"><p class="address">101 Fernwood Road, Brookline, Ma</p></a>
+            <div class="share-buttons">
+
+                <a class="share-link--heart" href="javascript:;">
+                    <div class="share-button--heart"></div>
+                </a>
+
+            </div>
+        </div>
+
+        <div class="left-col">
+            <div class="property-images">
+                <img src="images/neighborhoods/top-neighborhoods__entry__1.jpg"/>
+                <div class="photo-count">18 Photos</div>
+                <div class="photo-arrows">
+                    <a href="javascript:;"><img class="photo-arrow-left" src="images/listings/arrow-icon-trans-black.png"/></a>
+                    <a href="javascript:;"><img class="photo-arrow-right" src="images/listings/arrow-icon-trans-black.png"/></a>
+                </div>
+            </div>
+        </div>
+            
+        <div class="right-col">
+            <div class="property-info">
+                <div class="row1">
+                    <p class="price">$18,000,000</p>
+                    <p class="house-type">Co-op/Condo</p>
+                </div>
+
+                <div class="row2">
+                    <p class="sqfeet">10,000 Sq. Ft.</p>
+                    <p class="beds">5 Beds</p>
+                </div>
+
+                <div class="row3">
+                    <p class="baths">6 Baths</p>
+                    <p class="partials">3 Partial</p>
+                </div>
+
+                <div class="row4">
+                    <p class="house-type">Co-op/Condo</p>
+                    <p class="description">Secluded single floor residence with gated drive set on a lush cul-de-sac. Designed by architect Adolfo Perez.</p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="realtor-info">
+            <div class="realtor-info--left">
+                <img class="realtor-company" src="http://www.vanguard-realty.com/files/2013/06/innerpage-logo.png"/>
+            </div>
+
+            <div class="realtor-info--middle">
+                <img class="realtor-img" src="http://newlistingphotos.com/wp-content/uploads/2011/04/Blog.jpg"/>
+            </div>
+
+            <div class="realtor-info--right">
+                <button class="realtor-contact mobile-contact-btn">Contact</button>
+                <p class="realtor-name">Blake Sherwood</p>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- SEARCH RESULT ITEM -->
+    <div class="search-results__item">
+
+        <div class="header">
+            <a href="javascript:;"><p class="address">101 Fernwood Road, Brookline, Ma</p></a>
+            <div class="share-buttons">
+
+                <a class="share-link--heart" href="javascript:;">
+                    <div class="share-button--heart"></div>
+                </a>
+
+            </div>
+        </div>
+
+        <div class="left-col">
+            <div class="property-images">
+                <img src="images/neighborhoods/top-neighborhoods__entry__1.jpg"/>
+                <div class="photo-count">18 Photos</div>
+                <div class="photo-arrows">
+                    <a href="javascript:;"><img class="photo-arrow-left" src="images/listings/arrow-icon-trans-black.png"/></a>
+                    <a href="javascript:;"><img class="photo-arrow-right" src="images/listings/arrow-icon-trans-black.png"/></a>
+                </div>
+            </div>
+        </div>
+            
+        <div class="right-col">
+            <div class="property-info">
+                <div class="row1">
+                    <p class="price">$18,000,000</p>
+                    <p class="house-type">Co-op/Condo</p>
+                </div>
+
+                <div class="row2">
+                    <p class="sqfeet">10,000 Sq. Ft.</p>
+                    <p class="beds">5 Beds</p>
+                </div>
+
+                <div class="row3">
+                    <p class="baths">6 Baths</p>
+                    <p class="partials">3 Partial</p>
+                </div>
+
+                <div class="row4">
+                    <p class="house-type">Co-op/Condo</p>
+                    <p class="description">Secluded single floor residence with gated drive set on a lush cul-de-sac. Designed by architect Adolfo Perez. Secluded single floor residence with gated drive set on a lush cul-de-sac. Designed by architect Adolfo Perez.</p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="realtor-info">
+            <!-- <div class="realtor-info--left">
+                <img class="realtor-company" src="http://www.vanguard-realty.com/files/2013/06/innerpage-logo.png"/>
+            </div>
+
+            <div class="realtor-info--middle">
+                <img class="realtor-img" src="http://newlistingphotos.com/wp-content/uploads/2011/04/Blog.jpg"/>
+            </div>
+
+            <div class="realtor-info--right">
+                <button class="realtor-contact mobile-contact-btn">Contact</button>
+                <p class="realtor-name">Blake Sherwood</p>
+            </div> -->
+        </div>
+
+    </div>
+
+    <!-- AD SLOT -->
+        <div class="adSlots">
+            <a href="javascript:;" class="adSlot adSlot-left">
+                <img src="images/listings/reNews__listings__6.jpg">
+            </a>
+
+            <a href="javascript:;" class="adSlot adSlot-right">
+                <img src="images/listings/reNews__listings__6.jpg">
+            </a>
+        </div>
+    <!-- /AD SLOT -->
+
+
+    <!-- SEARCH RESULT ITEM -->
+    <div class="search-results__item">
+
+        <div class="header">
+            <a href="javascript:;"><p class="address">101 Fernwood Road, Brookline, Ma</p></a>
+            <div class="share-buttons">
+
+                <a class="share-link--heart" href="javascript:;">
+                    <div class="share-button--heart"></div>
+                </a>
+
+            </div>
+        </div>
+
+        <div class="left-col">
+            <div class="property-images">
+                <img src="images/neighborhoods/top-neighborhoods__entry__1.jpg"/>
+                <div class="photo-count">18 Photos</div>
+                <div class="photo-arrows">
+                    <a href="javascript:;"><img class="photo-arrow-left" src="images/listings/arrow-icon-trans-black.png"/></a>
+                    <a href="javascript:;"><img class="photo-arrow-right" src="images/listings/arrow-icon-trans-black.png"/></a>
+                </div>
+            </div>
+        </div>
+            
+        <div class="right-col">
+            <div class="property-info">
+                <div class="row1">
+                    <p class="price">$18,000,000</p>
+                    <p class="house-type">Co-op/Condo</p>
+                </div>
+
+                <div class="row2">
+                    <p class="sqfeet">10,000 Sq. Ft.</p>
+                    <p class="beds">5 Beds</p>
+                </div>
+
+                <div class="row3">
+                    <p class="baths">6 Baths</p>
+                    <p class="partials">3 Partial</p>
+                </div>
+
+                <div class="row4">
+                    <p class="house-type">Co-op/Condo</p>
+                    <p class="description">Secluded single floor residence with gated drive set on a lush cul-de-sac. Designed by architect Adolfo Perez.</p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="realtor-info">
+            <div class="realtor-info--left">
+                <img class="realtor-company" src="http://www.vanguard-realty.com/files/2013/06/innerpage-logo.png"/>
+            </div>
+
+            <div class="realtor-info--middle">
+                <img class="realtor-img" src="http://newlistingphotos.com/wp-content/uploads/2011/04/Blog.jpg"/>
+            </div>
+
+            <div class="realtor-info--right">
+                <button class="realtor-contact mobile-contact-btn">Contact</button>
+                <p class="realtor-name">Blake Sherwood</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- SEARCH RESULT ITEM -->
+    <div class="search-results__item">
+
+        <div class="header">
+            <a href="javascript:;"><p class="address">101 Fernwood Road, Brookline, Ma</p></a>
+            <div class="share-buttons">
+
+                <a class="share-link--heart" href="javascript:;">
+                    <div class="share-button--heart"></div>
+                </a>
+
+            </div>
+        </div>
+
+        <div class="left-col">
+            <div class="property-images">
+                <img src="images/neighborhoods/top-neighborhoods__entry__1.jpg"/>
+                <div class="photo-count">18 Photos</div>
+                <div class="photo-arrows">
+                    <a href="javascript:;"><img class="photo-arrow-left" src="images/listings/arrow-icon-trans-black.png"/></a>
+                    <a href="javascript:;"><img class="photo-arrow-right" src="images/listings/arrow-icon-trans-black.png"/></a>
+                </div>
+            </div>
+        </div>
+            
+        <div class="right-col">
+            <div class="property-info">
+                <div class="row1">
+                    <p class="price">$18,000,000</p>
+                    <p class="house-type">Co-op/Condo</p>
+                </div>
+
+                <div class="row2">
+                    <p class="sqfeet">10,000 Sq. Ft.</p>
+                    <p class="beds">5 Beds</p>
+                </div>
+
+                <div class="row3">
+                    <p class="baths">6 Baths</p>
+                    <p class="partials">3 Partial</p>
+                </div>
+
+                <div class="row4">
+                    <p class="house-type">Co-op/Condo</p>
+                    <p class="description">Secluded single floor residence with gated drive set on a lush cul-de-sac. Designed by architect Adolfo Perez.</p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="realtor-info">
+            <div class="realtor-info--left">
+                <img class="realtor-company" src="http://www.vanguard-realty.com/files/2013/06/innerpage-logo.png"/>
+            </div>
+
+            <div class="realtor-info--middle">
+                <img class="realtor-img" src="http://newlistingphotos.com/wp-content/uploads/2011/04/Blog.jpg"/>
+            </div>
+
+            <div class="realtor-info--right">
+                <button class="realtor-contact mobile-contact-btn">Contact</button>
+                <p class="realtor-name">Blake Sherwood</p>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- SEARCH RESULT ITEM -->
+    <div class="search-results__item">
+
+        <div class="header">
+            <a href="javascript:;"><p class="address">101 Fernwood Road, Brookline, Ma</p></a>
+            <div class="share-buttons">
+
+                <a class="share-link--heart" href="javascript:;">
+                    <div class="share-button--heart"></div>
+                </a>
+
+            </div>
+        </div>
+
+        <div class="left-col">
+            <div class="property-images">
+                <img src="images/neighborhoods/top-neighborhoods__entry__1.jpg"/>
+                <div class="photo-count">18 Photos</div>
+                <div class="photo-arrows">
+                    <a href="javascript:;"><img class="photo-arrow-left" src="images/listings/arrow-icon-trans-black.png"/></a>
+                    <a href="javascript:;"><img class="photo-arrow-right" src="images/listings/arrow-icon-trans-black.png"/></a>
+                </div>
+            </div>
+        </div>
+            
+        <div class="right-col">
+            <div class="property-info">
+                <div class="row1">
+                    <p class="price">$18,000,000</p>
+                    <p class="house-type">Co-op/Condo</p>
+                </div>
+
+                <div class="row2">
+                    <p class="sqfeet">10,000 Sq. Ft.</p>
+                    <p class="beds">5 Beds</p>
+                </div>
+
+                <div class="row3">
+                    <p class="baths">6 Baths</p>
+                    <p class="partials">3 Partial</p>
+                </div>
+
+                <div class="row4">
+                    <p class="house-type">Co-op/Condo</p>
+                    <p class="description">Secluded single floor residence with gated drive set on a lush cul-de-sac. Designed by architect Adolfo Perez.</p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="realtor-info">
+            <div class="realtor-info--left">
+                <img class="realtor-company" src="http://www.vanguard-realty.com/files/2013/06/innerpage-logo.png"/>
+            </div>
+
+            <div class="realtor-info--middle">
+                <img class="realtor-img" src="http://newlistingphotos.com/wp-content/uploads/2011/04/Blog.jpg"/>
+            </div>
+
+            <div class="realtor-info--right">
+                <button class="realtor-contact mobile-contact-btn">Contact</button>
+                <p class="realtor-name">Blake Sherwood</p>
+            </div>
+        </div>
+
+    </div>
+
+     <!-- AD SLOT -->
+        <div class="adSlots">
+            <a href="javascript:;" class="adSlot adSlot-left">
+                <img src="images/listings/reNews__listings__6.jpg">
+            </a>
+
+            <a href="javascript:;" class="adSlot adSlot-right">
+                <img src="images/listings/reNews__listings__6.jpg">
+            </a>
+        </div>
+    <!-- /AD SLOT -->
+
+
+    <!-- SEARCH RESULT ITEM -->
+    <div class="search-results__item">
+
+        <div class="header">
+            <a href="javascript:;"><p class="address">101 Fernwood Road, Brookline, Ma</p></a>
+            <div class="share-buttons">
+
+                <a class="share-link--heart" href="javascript:;">
+                    <div class="share-button--heart"></div>
+                </a>
+
+            </div>
+        </div>
+
+        <div class="left-col">
+            <div class="property-images">
+                <img src="images/neighborhoods/top-neighborhoods__entry__1.jpg"/>
+                <div class="photo-count">18 Photos</div>
+                <div class="photo-arrows">
+                    <a href="javascript:;"><img class="photo-arrow-left" src="images/listings/arrow-icon-trans-black.png"/></a>
+                    <a href="javascript:;"><img class="photo-arrow-right" src="images/listings/arrow-icon-trans-black.png"/></a>
+                </div>
+            </div>
+        </div>
+            
+        <div class="right-col">
+            <div class="property-info">
+                <div class="row1">
+                    <p class="price">$18,000,000</p>
+                    <p class="house-type">Co-op/Condo</p>
+                </div>
+
+                <div class="row2">
+                    <p class="sqfeet">10,000 Sq. Ft.</p>
+                    <p class="beds">5 Beds</p>
+                </div>
+
+                <div class="row3">
+                    <p class="baths">6 Baths</p>
+                    <p class="partials">3 Partial</p>
+                </div>
+
+                <div class="row4">
+                    <p class="house-type">Co-op/Condo</p>
+                    <p class="description">Secluded single floor residence with gated drive set on a lush cul-de-sac. Designed by architect Adolfo Perez.</p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="realtor-info">
+            <div class="realtor-info--left">
+                <img class="realtor-company" src="http://www.vanguard-realty.com/files/2013/06/innerpage-logo.png"/>
+            </div>
+
+            <div class="realtor-info--middle">
+                <img class="realtor-img" src="http://newlistingphotos.com/wp-content/uploads/2011/04/Blog.jpg"/>
+            </div>
+
+            <div class="realtor-info--right">
+                <button class="realtor-contact mobile-contact-btn">Contact</button>
+                <p class="realtor-name">Blake Sherwood</p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class='search-results__filter-bar-bottom'>
+        <p>Showing <span class='low-end'>1</span> to <span class='high-end'>10</span> of <span class='total-results'>147</span></p>
+
+        <div class='results-pag-nav'>
+            <a class='results-pag-link-left' href='javascript:;'><img class='results-pag-nav-left' src='images/listings/arrow-icon-purple.png'/></a>
+            <p><span class='current-page-num'>1</span> of <span class='total-page-num'>15</span></p>
+            <a class='results-pag-link-left' href='javascript:;'><img class='results-pag-nav-right' src='images/listings/arrow-icon-purple.png'/></a>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        $('.filter-option').on('click', function() {
+            $(this).toggleClass('selected');
+        })
+    </script>
+
+
+    <!-- SERP MOBILE BUTTON DOCK -->
+    <div class='serp__mobile-button-dock'>
+    
+        <a href='javascript:;'><div id='mobile-save-btn' class='button left-button'>
+            <img src='images/listings/heart-icon-white.png'>
+            <p>Save</p>
+        </div></a>
+
+        <a href='javascript:;'><div id='mobile-articles-btn' class='button right-button'>
+            <img class='articles-icon' src='images/listings/articles-icon-white.png'>
+            <div class='title-block'>
+                <p>Related</p>
+                <p>Articles</p>
+            </div>
+        </div></a>
+
+    </div>
+    <!-- /SERP MOBILE BUTTON DOCK -->
+
+</div>
+<!-- /SERP SEARCH RESULTS -->
+
+				<!-- Related Articles -->
+				<!-- Related Articles -->
+<div class="related-articles related-articles--mobile related-articles-modal">
+    <h1 class="related-articles__section-header header">Related Articles</h1>
+    
+    <div class="related-articles__hook"></div>
+
+    <div class="related-articles__ad-container">
+        <div id="ad_bigbox3" style="height:250px;width:300px;float:left;background:lightgrey;margin:20px 40px 20px 0;" class="ad-placeholder"></div>
+        <div id="ad_bigbox4" style="height:250px;width:300px;float:left;background:lightgrey;margin:20px 0 20px 0;" class="ad-placeholder"></div>'
+    </div>
+    
+    <a href="javascript:;" class="view-more-articles-mobile viewMore">View More <img src="images/view-more__arrow-down.gif" /></a>
+</div>
+<!-- Related Articles -->
+				<!-- Contact Agent Popup -->
+				<div class='contact__company' style='margin:75px 0 45px 0;'>
+    <img class='contact__company-img' src='http://www.motihomes.com/Customers/5430/assets/images/3785DE71-155D-0078-0BA5D1687C016B53.jpg'>
+    <div class='contact__company-info'>
+        <p class='contact__company-name'>Coldwell Banker Residential Brokerage - <span class='contact__company-city'> Brookline </span></p>
+        <p class='contact__company-note'>(Visit office website)</p>
+    </div>
+</div>
+
+<!-- Contact the Agent -->
+<div class='contact__container contact-agent-modal'>
+    
+    <div class='contact__header'>
+        <p>Contact the Agent</p>
+    </div>
+
+    <div class='contact__wrapper'>
+            <img class='contact__agent-img' src='http://commissionsforeducation.org/wp-content/uploads/2011/01/daniellenewheadcrop.jpg'>
+        <div class='contact__agent-info'>
+            <p class='contact__agent-name'>Deborah M. Gordon</p>
+            <div class='contact__agent-links'>
+                <a class='contact__agent-number' href='javascript:;'>View My Contact Number</a>
+                <a class='contact__agent-website' href='#'>Visit My Website</a>
+            </div>
+            <div class='contact__agent-address'>
+                <p>1375 Beacon St</p>
+                <p>Brookline, MA 02446</p>
+            </div>
+        </div>
+        
+        <form class='contact__form'>
+            <p class='contact__form-required'><span>* </span>Required</p>
+            <input class='contact__form-name' placeholder='Name' required/><span class='contact__required-marker'>*</span>
+            <input class='contact__form-email' placeholder='Email' type="email" required/><span class='contact__required-marker'>*</span>
+            <input class='contact__form-number' placeholder='Phone Number'/>
+            <textarea class='contact__form-message' placeholder='Hi Deborah, I found your listing on Boston.com. Please send me more infomation about 101 Fernwood Rd, Brookline, MA. Thank you'></textarea>
+            <button class='contact__form-submit'>Send</button>
+        </form>
+    </div>
+</div>
+<!-- Contact the Agent -->
+				<!-- Search Filter Modal for mobile -->
+				<!-- MODAL: SEARCH FILTERS -->
+<div class="search-filters-modal">
+    <div class="header">
+        <a class="close-modal-btn" href="javascript:;"><img class="close-modal" src="images/listings/x-icon.jpg"></a>
+        <p>Sort by</p>
+    </div>
+    <div class="content">
+        <a href='javascript:;'><p class='filter-option' value="best-match">Best Match</p></a>
+        <a href='javascript:;'><p class='filter-option' value="newest">Newest</p></a>
+        <a href='javascript:;'><p class='filter-option' value="price-high-low">Price (High-Low)</p></a>
+        <a href='javascript:;'><p class='filter-option' value="prive-low-high">Price (Low-High)</p></a>
+        <a href='javascript:;'><p class='filter-option' value="bedrooms">Most Bedrooms</p></a>
+        <a href='javascript:;'><p class='filter-option' value="sqfeet">Largest Square Feet</p></a>
+    </div>
+</div>
+<!-- /MODAL: /SEARCH FILTERS -->
+			
+						
+        </div>
+		<div class="page-layout__right-col">
+			
+			<!-- HOME -->
+						
+			
+			<!-- PROPERTY LISTINGS -->
+			
+						
+			
+			<!-- CATEGORY -->
+						
+			
+			<!-- CATEGORY DETAILS -->
+						
+			
+			<!-- NEIGHBORHOOD -->
+						
+			
+			<!-- ARTICLES/GALLERY -->
+						
+			
+			<!-- SEARCH PAGE -->
+							<!-- Contact The Agent Widget -->
+				<script type="text/javascript">
+	$(function() {
+
+	    var $sidebar   = $(".sticky-map-wrapper"), 
+	        $window    = $(window),
+	        offset     = $sidebar.offset(),
+	        topPadding = 100;
+
+	    $window.scroll(function() {
+	    	var resultsContainerHeight = $('.search-results').height();
+	    	if ($window.scrollTop() > resultsContainerHeight - 345) return;
+	        if ($window.scrollTop() > offset.top) {
+	            $sidebar.stop().animate({
+	                marginTop: $window.scrollTop() - offset.top + topPadding
+	            });
+	        } else {
+	            $sidebar.stop().animate({
+	                marginTop: 10
+	            });
+	        }
+	    });
+	});
+	
+</script>
+
+<style>
+	@media (max-width: 768px) {
+
+		.sticky-map-wrapper {
+			display: none;
+		}
+	}
+</style>
+
+<div class='sticky-map-wrapper'>
+	<div class='map-header' style='text-align:right;margin:95px 0 5px 0;padding:15px;background:lightgrey;'>
+		<p><span><input type='checkbox'/></span>Redo search on move</p>
+	</div>
+
+	<div class='map-placeholder' style='height:300px;width:100%;border: 1px solid black;box-sizing:border-box;'></div>
+</div>
+				<!-- Related Articles (right rail) Widget -->
+				<!--Related Articles -->
+<div class="related-articles-mobile">
+    <h1 class="related-articles__section-header">Related Articles</h1>
+    <div class='related-articles-nav'>
+        <div class='re-widget-left'></div>
+        <div class='re-widget-right'></div>
+    </div>
+
+    <!-- <div class="related-articles-mobile__item">
+
+        <div class="additional-info">
+            <img class="thumb" src="" />
+            
+            <div class="tags">
+                <a href="javascript:;" class="category-tag maroon">Luxury</a>
+                <a href="javascript:;" class="category-tag orange">Brookline</a>
+            </div>
+        </div>
+        
+        <div class='main-info'>
+            <a href="javascript:;">
+                <h2 class="title"></h2>
+            </a>
+
+            <p class="description">The dream home of the most famouse couple in Massachusetts looks like it's close to completion.</p>
+        </div>
+        <div class="date">September 9, 2014</div>
+
+    </div> -->
+
+    <!-- <div class="related-articles-mobile__item">
+        <div class="additional-info">
+            <img class="thumb" src="images/related-articles/related-articles__thumbs__2.jpg" />
+
+            <div class="tags">
+                <a href="javascript:;" class="category-tag light-blue">Open House</a>
+                <a href="javascript:;" class="category-tag maroon">Luxury</a>
+                <a href="javascript:;" class="category-tag orange">Jaimaca Plain</a>
+            </div>
+        </div>
+
+        <div class='main-info'>
+            <a href="javascript:;">
+                <h2 class="title">For Sale: $2.85M Italianate Mansion in JP</h2>
+            </a>
+            
+            <p class="description">This updated Italianate mansion, once known as The Gilbert House, was originally built in 1854 and has undergone extensive renovations while remaining loyal to the home's orignal design.</p>
+        </div>
+        <div class="date">July 30, 2014</div>
+
+    </div> -->
+
+</div>
+<!-- Related Articles -->
+			
+			<!-- SEARCH PAGE -->
+					</div>
+
+	</div>
+	
+	
+	
+			<!-- Lower placeholders for ads -->
+		<style type="text/css">
+
+    .tmp-serp-ad-wrap--bottom {
+        margin: 30px auto 10px auto;
+    }
+
+	.tmp-serp-ad--bottom {
+        width: 320px;
+        float: none;
+        height: 50px;
+        margin: 10px auto;
+        overflow: hidden;
+    }
+
+    @media (min-width: 768px) {
+
+        .tmp-serp-ad-wrap--bottom {
+            width: 100%;
+        }
+
+        .tmp-serp-ad--bottom {
+            width: 460px;
+            margin: 0 auto;
+            height: 184px;
+            margin-bottom: 10px;
+        }
+
+        .tmp-serp-ad--bottom > div {
+            max-width: 100%;
+        }
+    }
+
+    @media (min-width: 960px) {
+        .tmp-serp-ad-wrap--bottom {
+            width: 960px;
+        }
+
+        .tmp-serp-ad--bottom {
+            float: left;
+            width: 48%;
+        }
+
+        #ad_spotlight3, #ad_spotlight4 {
+            min-height: 150px;
+            margin-right: 2%;
+        }
+    }
+
+</style>
+
+<div class='tmp-serp-ad-wrap--bottom'>
+	<div id='ad_spotlight3' class='tmp-serp-ad--bottom'></div>
+	<div id='ad_spotlight4' class='tmp-serp-ad--bottom'></div>
+</div>
+	
+	<!-- Page Footer -->
+	    <div class="page-footer">
+
+    <div><div class="category-footer">
+	<div class="category-footer__left-container">
+        <div class="category-footer__locations category-footer__section">
+            <p>Locations</p> Allston-Brighton | Arlington | Back Bay | Beacon Hill | Boston | Brookline | Cambridge | Cape Cod | Charlestown | Dorchester | East Boston | Fenway-Kenmore | Financial District | Newton | North End | Quincy | Somerville | South Boston | South End | West Roxbury || All
+        </div>
+        <div class="category-footer__categories category-footer__section">
+            <p>Categories</p> For Rent | For Sale | Home Improvement | Luxury Living | New Developments | Open Houses | Real Estate News || All
+        </div>
+    </div>
+
+
+
+	<div class="category-footer__right-container">
+
+		<div class="featured-agent-title">Featured Agents</div>
+
+	    <div class="featured-agent">
+	        <div class="agent-pic-wrapper">
+	            <img class='agent-pic' src='images/icons/Featured_Agent_Pic.png'/>
+	        </div>
+		        <div class="agent-info">
+		            <p class="name">Beverly Winthrop</p>
+		            <p class="contact__agent-number number" href="#">View My Contact Number</p>
+		            <a href='javascript:;'>
+		                <div class="contact-button mobile-contact-btn button right-button">CONTACT</div>
+		            </a>
+		        </div>
+		    <div class="company-logo-wrapper">
+		        <img class='company-logo' src='images/icons/realtorCarouselLogo_ColdwellBanker.png'/>
+		    </div>
+	    </div>
+		
+	    <div class="featured-agent">
+	        <div class="agent-pic-wrapper">
+	            <img class='agent-pic' src='images/icons/Featured_Agent_Pic.png'/>
+	        </div>
+	        <div class="agent-info">
+	            <p class="name">Beverly Winthrop</p>
+	            <p class="contact__agent-number number" href="#">View My Contact Number</p>
+	            <a href='javascript:;'>
+	                <div class="contact-button mobile-contact-btn button right-button">CONTACT</div>
+	            </a>
+	        </div>
+	    <div class="company-logo-wrapper">
+	        <img class='company-logo' src='images/icons/realtorCarouselLogo_ColdwellBanker.png'/>
+	    </div>
+
+	</div>
+</div></div>
+    
+<!-- Content Footer -->
+    <div class="content-footer">
+            <div class="content-footer__social-icons">
+                <a href="javascript:;" class="icon twitter">twitter</a>
+                <a href="javascript:;" class="icon facebook">facebook</a>
+                <a href="javascript:;" class="icon rss">rss</a>
+            </div>
+
+            <div class="content-footer__footer-links">
+                <a href="javascript:;">Boston.com</a>
+                <a href="javascript:;">Contact Us</a>
+                <a href="javascript:;">Advertise Here</a>
+                <a href="javascript:;">Work Here</a>
+                <a href="javascript:;">Privacy Policy</a>
+                <a href="javascript:;">Ad Choices</a>
+                <a href="javascript:;">Terms of Use</a>
+                <a href="javascript:;">Real Estate Blogs</a>
+            </div>
+
+            <div class="content-footer__copyright-block">
+                <strong>Address - A Boston.com Website</strong> &copy;2014 Boston Globe Media Partners, LLC Powered by Company Name Here
+            </div>
+    </div>
+</div>
+<!-- Page Footer! -->
+
+    <!-- Search Modal -->
+    <!-- MODAL: SAVE SEARCH -->
+<div class="save-search-modal">
+    <div class="header">
+        <a class="close-modal-btn" href="javascript:;"><img class="close-modal" src="images/listings/x-icon.jpg"></a>
+        <p>Save Search</p>
+    </div>
+    <div class="content">
+        <p class="info">Save a search and get instant notifications about new listings and status changes on homes that match your search criteria</p>
+        <input placeholder="Search Nickname">
+        <button class="save-search-modal-save">Save</button>
+    </div>
+</div>
+<!-- /MODAL: SAVE SEARCH -->    <!-- MODAL: FAVORITE LISTING ALERT -->
+<div class="favorite-listing-modal">
+    <div class="header">
+        <p>Marked as favorite!</p>
+    </div>
+    <div class="content">
+        <p class="info">This listing has been added to your favorites for later viewing</p>
+        <div style='margin-top:15px' class='contact__form'>
+        	<button class="save-search-modal-save close-modal-btn">Okay</button>
+        </div>
+    </div>
+</div>
+<!-- /MODAL: FAVORITE LISTING ALERT -->
+
+
+    <!-- ARTICLES: Discus -->
+	</body>
+</html>
