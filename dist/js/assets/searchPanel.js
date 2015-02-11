@@ -49,11 +49,16 @@ dm.searchPanel = {};
 			$lvl3t: $('.page-search__button--level-three-toggle'),
 			$close: $('.page-search__button--close'),
 			$save: $('.page-search__button--save'), 
-			$submit: $('.page-search__buttons--submit')
+			$submit: $('.page-search__buttons--submit'),
+			$megaMenu: $('.page-nav__mega-menu-responsive-icon')
 		};
 
 		this.modals = {
 			$svSearch: $('.save-search-modal')
+		};
+
+		this.other = {
+			$pageNavLinks : $('.page-nav__main-nav-links')
 		};
 
 		this.init();	
@@ -96,7 +101,6 @@ dm.searchPanel = {};
             this.filters.$tags.selectize(tagParams);
 			this.filters.$fmt.select2(fmtParams);
 			this.filters.$other.select2(otherParams);
-
 
 			this.setPanelState();
 
@@ -251,6 +255,15 @@ dm.searchPanel = {};
 						self.allOpen = (self.allOpen == true) ? false : true;
 					});
 
+					self.btns.$megaMenu.on('click', function(){						
+						if(self.allOpen){
+							self.lvls.$lower.hide('fast');
+						}
+						self.lvls.$one.hide('fast');
+						self.btns.$lvl1t.removeClass('close-search');
+						self.allOpen = false;
+					});
+
 				break;
 					
 			} // end switch
@@ -307,6 +320,7 @@ dm.searchPanel = {};
 			var saved = state.attr('class') === 'saved' ? true : false
 			return saved;
 		}
+
 
 	};	
 
