@@ -239,6 +239,10 @@
                                     <li class="mega-menu__list-item">
                                         <a class="mega-menu__list-link" href="#">Login</a>
                                     </li>
+                                    <li class="mega-menu__list-item">
+                                        <a class="mega-menu__list-link" 
+                                        href="https://advertising.bostonglobemedia.com/WebCategories.aspx?REF=RealEstate">Place an ad</a>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
