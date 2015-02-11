@@ -33,8 +33,20 @@
     <script src="js/resources/moment.min.js"></script>
     <script src="js/assets/ui.js"></script>
 	<script src="js/assets/mega-menu.js"></script>
-	<script src="js/assets/gallery.js"></script>
-    <script src="js/assets/related-articles-main-widget.js"></script>
+	<script src="js/assets/gallery.js"></script>    
+	<script src="js/assets/form-validation.js"></script>
+	<!-- <script src="js/assets/homepage-view-more-widget.js"></script> -->
+
+	<?php if ($pageType == 'home') { ?>
+		<script src="js/assets/homepage-view-more-widget.js"></script>
+	<?php } ?>
+	
+	<?php if ($pageType == 'category' || $pageType == 'category-details' || $pageType == 'neighborhood' || $pageType == 'articles'){ ?>
+		<script src="js/assets/related-articles-main-widget.js"></script>
+	<?php } ?>
+
+    
+
 
 	<?php if ($pageType == 'home' || $pageType == 'category' || $pageType == 'category-details' || $pageType == 'neighborhood') { ?>
 	    <!-- Carousel Scripts -->
@@ -109,14 +121,14 @@
     bcom.dfp.refreshRate = '';
     bcom.dfp.keyValuePairs = {
         s1: 'boston.com',
-        s2: 'buying',
+        s2: 'real-estate',
         s3: '',
         s4: '',
         s5: '',
         pgtype : 'sectfront',
         pageurl : '',
         meta: '',
-        streamcount:'1'
+	redesigntest: 'on'
     };
     
 </script>
