@@ -5507,7 +5507,7 @@ body.category-details .related-articles__section-header {
 /* line 131, ../sass/partials/page/modules/_saved-listings.scss */
 .saved-listings__summary {
   text-align: center;
-  margin: 0 0 25px 0;
+  margin: 0 0 14px 0;
 }
 /* line 136, ../sass/partials/page/modules/_saved-listings.scss */
 .saved-listings .search-summary-header {
@@ -6224,16 +6224,16 @@ body.category-details .related-articles__section-header {
   float: left;
   font-family: 'Oswald Regular';
   font-size: 26px;
-  font-weight: bold;
+  font-weight: normal;
 }
-/* line 28, ../sass/partials/page/modules/_right-rail-widget.scss */
+/* line 27, ../sass/partials/page/modules/_right-rail-widget.scss */
 .right-rail-widget__section-header a {
   display: inline-block;
   float: right;
   margin-top: 19px;
   width: 28%;
 }
-/* line 36, ../sass/partials/page/modules/_right-rail-widget.scss */
+/* line 35, ../sass/partials/page/modules/_right-rail-widget.scss */
 .right-rail-widget__container {
   display: inline-block;
   background: #dacef1;
@@ -6241,39 +6241,39 @@ body.category-details .related-articles__section-header {
   margin-bottom: 10px;
   width: 100%;
 }
-/* line 43, ../sass/partials/page/modules/_right-rail-widget.scss */
+/* line 42, ../sass/partials/page/modules/_right-rail-widget.scss */
 .right-rail-widget__container ul {
   margin: 0;
   padding: 0;
 }
-/* line 47, ../sass/partials/page/modules/_right-rail-widget.scss */
+/* line 46, ../sass/partials/page/modules/_right-rail-widget.scss */
 .right-rail-widget__container ul li {
   list-style: none;
   margin: 5px 0;
   font-size: .9em;
 }
-/* line 52, ../sass/partials/page/modules/_right-rail-widget.scss */
+/* line 51, ../sass/partials/page/modules/_right-rail-widget.scss */
 .right-rail-widget__container ul li span {
-  font-weight: bold;
+  font-weight: normal;
 }
-/* line 59, ../sass/partials/page/modules/_right-rail-widget.scss */
+/* line 58, ../sass/partials/page/modules/_right-rail-widget.scss */
 .right-rail-widget__keywords {
   margin: 5px 0;
   font-weight: bold;
 }
-/* line 64, ../sass/partials/page/modules/_right-rail-widget.scss */
+/* line 63, ../sass/partials/page/modules/_right-rail-widget.scss */
 .right-rail-widget__search-type {
   margin: 5px 0;
   font-size: 14px;
   font-style: italic;
 }
-/* line 70, ../sass/partials/page/modules/_right-rail-widget.scss */
+/* line 69, ../sass/partials/page/modules/_right-rail-widget.scss */
 .right-rail-widget__button-list {
   margin: 10px 0;
   text-transform: uppercase;
   font-size: 11px;
 }
-/* line 75, ../sass/partials/page/modules/_right-rail-widget.scss */
+/* line 74, ../sass/partials/page/modules/_right-rail-widget.scss */
 .right-rail-widget__button-list ul li {
   margin: 5px 0;
 }
