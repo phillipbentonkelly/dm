@@ -30,6 +30,113 @@
 		this.options = $.extend({}, defaultOptions, options);
 
 
+		//This is a field on the feed
+		this.options.URLfromFeed = "http://realestate.chron.com/listings-search/?sort_field=featured_weight&sort_direction=desc&search_num_results=10&region=MA&locality=Springfield&neighborhood=East Springfield&curr_page=1&view=gallery";
+		//  Get this ^ from the feed
+
+
+		this.getFeedParams = function (url) {
+			var params = url.split("?")[1];
+			var paramArray = params.split("&");
+			var _return = [];
+			for (var i=0; i < paramArray.length; i++) {
+				var itemSplit= paramArray[i].split("=");
+				var item = {
+					"param": itemSplit[0],
+					"value": itemSplit[1]
+				};
+				_return.push(item);
+			}
+
+			return _return;
+		}
+
+		this.mapFeedParams = function (params) {
+			var _returnArray = [];
+			for (var i=0; i < params.length; i++) {
+				var paramAPI = {
+					"name": params[i].param,
+					"value": params[i].value
+				};
+				//These are the fields that I could figure out because the URL samples are for some apiv3 and the one I was given is apiv2.1
+				var validList= "region,locality,neighborhood,zip,min_baths,max_baths,min_half_baths,max_half_baths,min_beds,max_beds,min_price,max_price,min_sqft,max_sqft,placester_prop_type,air_cond,address,county,name,agent_name,email,phone,min_floors,max_floors,min_parking_spaces,max_parking_spaces,min_lotsize,max_lotsize,min_hoa,max_hoa,min_year_built,max_year_built,purchase_types,listing_type,zoning_type";
+
+				if ( (validList.indexOf(params[i].param + ",") >= 0) ||
+					 ("," + validList.indexOf(params[i].param + ",") >= 0) ||
+					 ("," + validList.indexOf(params[i].param) >= 0) ) {
+					//List all known parameters
+					console.log("me",params[i].param);
+					switch (params[i].param) {
+
+						case "region":
+							paramAPI["name"]= "location[region]";
+							break;
+
+						case "zip":
+							paramAPI.name = "location[postal]";
+							break;
+
+						case "neighborhood":
+							paramAPI.name = "location[neighborhood]";
+							break;
+						
+						case "locality":
+							paramAPI.name = "location[locality]";
+							break;
+
+						case "neighborhood":
+							paramAPI.name = "location[neighborhood]";
+							break;
+
+						case "address":
+							paramAPI.name = "location[address]";
+							break;
+
+						case "purchase_types":
+							paramAPI.name = "purchase_types[]";
+							break;
+
+						case "listing_type":
+							paramAPI.name = "listing_type[]";
+							break;
+
+						case "zoning_type":
+							paramAPI.name = "zoning_type[]";
+							break;
+
+						case "phone":
+							paramAPI.name = "contact[phone]";
+							break;
+
+						case "email":
+							paramAPI.name = "contact[email]";
+							break;
+
+						case "agent_name":
+							paramAPI.name = "rets[aname]";
+							break;
+
+						default: 
+							paramAPI.name = params[i].param;
+
+					}
+					_returnArray.push(paramAPI);
+				}
+
+				
+				
+			}
+			
+			var _return = "";
+			for (var i=0; i < _returnArray.length; i++) {
+				_return += _returnArray[i].name + "=" + _returnArray[i].value + "&";
+			}
+
+
+			return _return;
+		}
+
+
 
 		this.init = function () {
 			base.options.apiKey = 'LpjiWDtK7ViWvh1PiO53IKe34j8yZjcuKnIk46ZHYnAa';
@@ -112,6 +219,9 @@
 				for (var filter in base.options.filters) {
 					_ret += '&keys[]=' + base.options.filters[filter].key;
 				}
+				var _feedParams = this.getFeedParams(this.options.URLfromFeed);
+				var _mappedFeedParams = this.mapFeedParams(_feedParams);
+				_ret += "&" + _mappedFeedParams;
 				return _ret.substring(1);
 			},
 			get: function () {
