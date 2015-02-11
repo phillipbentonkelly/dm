@@ -3,13 +3,24 @@ var validate = {};
 validate.form = function() {
 	var errors = 0;
 	var inputs = this.$form.children();
-
-	// validate name field
+	var emailRegex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    
+// validate name field
 	this.$name.val() === "" ? this.$name.css('border', '1px solid red') : this.$name.css('border', '1px solid #A0A0A0');
 
-	// validate email field
-	this.$email.val() === "" ? this.$email.css('border', '1px solid red') : this.$email.css('border', '1px solid #A0A0A0');
-	
+// validate email field
+	// if nothing is provided
+	if(this.$email.val() === "") {
+		this.$email.css('border', '1px solid red')
+	// if errors, update alert message
+	} else if( !emailRegex.test(this.$email.val()) ) {
+		errors ++;
+		validate.$required.text('Please provide a valid email');
+	// keep the original state
+	} else {
+		this.$email.css('border', '1px solid #A0A0A0');
+		validate.$required.html('<span>* </span>Required');
+	}
 	// check for errors
 	for(var i = 0; i < inputs.length; i++) {
 		if( $(inputs[i]).attr('style') === 'border: 1px solid red;')  {
@@ -22,19 +33,12 @@ validate.form = function() {
 };
 
 validate.eventHandlers = function() {
-
-	// on "submit" of contact form, run validation check
-	validate.$submitButton.click(function(e) {
+	// prevent contact form submission to show validation error message
+	validate.$submitButton.click(function(e){
+		e.preventDefault();
 		validate.form();
 	});
-
-	// prevent contact form submission to show validation error message
-	validate.$submitButton.submit(function(e){
-		e.preventDefault();
-	});
-
 };
-
 
 validate.init = function() {
 	validate.$form = $('.contact__form');

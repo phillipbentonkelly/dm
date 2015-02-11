@@ -13,14 +13,14 @@
             </div>
         </div>
         
-        <form class='contact__form'>
+        <div class='contact__form'>
             <p class='contact__form-required'><span>* </span>Required</p>
             <input class='contact__form-name' placeholder='Name' required/><span class='contact__required-marker'>*</span>
             <input class='contact__form-email' type='email' placeholder='Email' required/><span class='contact__required-marker'>*</span>
             <input class='contact__form-number' placeholder='Phone Number'/>
             <textarea class='contact__form-message' placeholder='Please send me more infomation about 101 Fernwood Rd, Brookline, MA. Thank you'></textarea>
             <button class='contact__form-submit'>Send</button>
-        </form>
+        </div>
     </div>
 </div>
 <!-- Contact the Agent -->
