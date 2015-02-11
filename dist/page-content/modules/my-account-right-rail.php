@@ -14,7 +14,7 @@
 		</div>
 	</div>
 
-	<div id="saved-searches" class="rail-rail-widget">
+	<div id="saved-searches" class="right-rail-widget">
 		<div class="right-rail-widget__section-header">
 			<h3>Saved Searches</h3>
 		</div>
@@ -31,7 +31,7 @@
 		</div>
 	</div>
 
-	<div id="get-in-touch" class="rail-rail-widget">
+	<div id="get-in-touch" class="right-rail-widget">
 		<div class="right-rail-widget__section-header">
 			<h3>Get In Touch</h3>
 		</div>
