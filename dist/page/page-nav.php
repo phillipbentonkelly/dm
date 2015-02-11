@@ -78,8 +78,9 @@
                                     <div class="mega-menu__featured-home">
                                         <div class="adSlots">
                                             <a href="javascript:;" class="adSlot">
-                                                <img src="images/icons/luxuryLabel.png" class="iconOverlay topSpacing">
-
+                                                <div class="real-estate-news__category-tag-container">
+                                                    <div class="category-tag maroon topSpacing">Luxury</div>
+                                                </div>
                                                 <img src="images/listings/reNews__listings__6.jpg">
                                                 
                                                 <div class="detailsWrapper">
