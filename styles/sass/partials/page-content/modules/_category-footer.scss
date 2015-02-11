@@ -1,0 +1,276 @@
+// *
+// * Category Footer
+// *
+
+$module-name: 'category-footer';
+
+
+.#{$module-name}{
+
+	display: none;
+	position: relative;
+	float: left;
+	background-color: #e5e5e5;
+
+	&__left-container{
+		float: left;
+		width: 45%;
+		margin-left: 14%;
+		p
+		{
+			font-family: Oswald Regular;
+			color:  #000000;
+			font-size: 18px;
+			padding-bottom: 5px;
+		}
+	}
+
+	&__section{
+		padding: 15px;
+		box-sizing: border-box;
+		font-family: OpenSans;
+		color:  #000000;
+		font-size: 13px; 
+		font-weight: 400;
+	}
+	
+	&__right-container{
+		float: left;
+		width: 40%;
+		box-sizing: border-box;
+		padding: 10px;
+		max-width: 320px;
+
+		.featured-agent-title{
+			font-family: Oswald Regular;
+			color: #000000;
+			font-size: 18px;
+			font-weight: 400;
+		}
+		.featured-agent
+		{
+			//background-color: pink;
+			width: 100%;
+			display: inline-block;
+		}
+		.agent-pic-wrapper{
+			float: left;
+			padding: 5px;
+			width: 20%;
+			box-sizing: border-box;
+		}
+		.agent-info{
+			width: 55%;
+			float: left;
+			padding: 5px;
+			box-sizing: border-box;
+
+
+			.name{
+				font-family: Arial;
+				color:  #2e1460;
+				font-size: 12px;
+				font-weight: 700;
+			}
+
+			.number{				
+				font-family: Arial;
+				color:  #000000;
+				font-size: 12px;
+				font-weight: 400;
+			}
+
+			.contact-button{
+				width: 40%;
+				background-color: #2e1460;
+				color: #ffffff;
+				padding: 7px;
+				font-size: 11px;
+				font-weight: 700;
+				font-family: OpenSans;
+				margin-top: 9.5%;
+				text-align: center;
+    			border-radius: 3px;
+    			min-width: 68px;
+			}
+			
+		}
+		.company-logo-wrapper{
+				float: left;
+				min-width: 34px;
+				padding-top: 25px;
+				box-sizing: border-box;
+				width: 25%
+			}
+	}
+}
+
+
+//Content Footer Media Queries
+@include media-query(tablet){
+	.#{$module-name} {
+		display: block;
+	}
+}
+
+@include media-query(desktop){
+}
+
+
+
+
+// 	.#{$module-name} {	
+// 		@include constrain;
+// 		font-family: OpenSans Regular;
+// 		font-size: 13px;
+// 		width: 960px !important;
+// 		height: 301px;
+// 		background-color: rgb(229, 229, 229);
+
+// 		&__wrapper
+// 		{
+// 			background-color: rgb(229, 229, 229);
+// 			border-bottom: 2px solid #1a93b0;
+// 		}
+		
+		
+// 		div.featured_agent_title
+// 		{		
+// 			font-family: Oswald;
+// 			color: #000000;
+// 			font-size: 18px;
+// 			font-weight: 400;
+// 			padding-bottom: 20px
+// 			//text-align: left;
+// 			//width: 109px;
+// 			//height: 20px;
+// 		}
+
+// 		&__right-container{
+// 			//width: 300px;
+// 			//height: 200px;
+// 			//background-color: aqua;
+// 			float: left;
+// 			//margin-right: 100px;
+// 			padding-top: 20px;
+// 			//min-width: 300px;
+// 			//margin-right: 28%;
+// 			position: relative;
+// 		}
+
+
+// 		&__featured-agent
+// 		{
+// 			width: 300px;
+// 			height: 85px;
+// 			position: relative;
+// 			background-color: white;
+// 			margin-bottom: 10px;
+// 			padding: 5px;
+
+// 			img.agent-pic
+// 			{
+// 				width: 50px;
+// 				height: 75px;
+// 				// position: absolute;
+// 				// background: url(#{$img-path}/icons/Featured_Agent_Pic.png) 0 0 no-repeat;
+// 			}
+
+// 			.agent-pic-wrapper {
+// 				width: 20%;
+// 				float: left;
+// 			}
+
+// 			.agent-info {
+// 				width: 50%;
+// 				float: left;
+
+// 				p.name{
+// 					font-family: Arial;
+// 					color:  #2e1460;
+// 					font-size: 12px;
+// 					font-weight: 700;
+// 					line-height: 18px;
+// 					text-align: left;
+// 				}
+// 				p.contact__agent-number{
+// 					font-family: Arial;
+// 					color:  #000000;
+// 					font-size: 12px;
+// 					font-weight: 400;
+// 					line-height: 18px;
+// 					text-align: left;
+// 				}
+// 			}
+// 			div.contact-button
+// 			{
+// 				width: 60px;
+// 				background-color: #2e1460;
+// 				color: #ffffff;
+// 				padding: 4px;
+// 				font-size: 11px;
+// 				font-weight: 700;
+// 				font-family: OpenSans;
+// 				border-radius: 3px;
+// 				margin-top: 16px;
+// 			}
+
+// 			div.company-logo-wrapper
+// 			{
+// 				position: relative;
+// 				width: 30%;
+// 				float: left;
+
+// 				.company-logo {
+// 					width: 100%;
+// 				}
+// 			}
+
+// 		}
+// 		&__left-container{
+// 			//width: 594px;
+// 			//height: 193px;
+// 			//background-color: grey;
+// 			float: left;
+// 			//margin-left: 100px;
+// 			padding: 10px;
+// 			//margin-left: 20%;
+
+// 			p{
+// 				font-family: Oswald;
+// 				color:  #000000;
+// 				font-size: 18px; /* Approximation due to font substitution 
+// 				font-weight: 400;
+// 				line-height: 24px; /* Approximation due to font substitution */
+// 				text-align: left;
+// 			}
+
+// 		}
+// 		&__locations{
+// 			//background-color: blue;
+// 			width: 594px;
+// 			height: 80px;
+// 			/* Inline Style */
+// 			font-family: OpenSans;
+// 			color:  #000000;
+// 			font-size: 13px; /* Approximation due to font substitution */
+// 			font-weight: 400;
+// 			line-height: 18px; /* Approximation due to font substitution */
+// 			text-align: left;
+// 			padding: 10px;
+// 		}
+// 		&__catagories{
+// 			//background-color: purple;
+// 			width: 594px;
+// 			height: 80px;
+// 			/* Inline Style */
+// 			font-family: OpenSans;
+// 			color:  #000000;
+// 			font-size: 13px; /* Approximation due to font substitution */
+// 			font-weight: 400;
+// 			line-height: 18px; /* Approximation due to font substitution */
+// 			text-align: left;
+// 			padding: 10px;
+// 		}
+// 	}
+

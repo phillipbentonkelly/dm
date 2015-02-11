@@ -1,0 +1,239 @@
+$asset-1-name: 'category-tag';
+
+.row {
+	clear: both;
+	min-height: 10px;
+	overflow: hidden;
+}
+	.col {
+		float: left;
+	}
+	.colRight {
+		float: right;
+	}
+
+
+.#{$asset-1-name} {
+	display: block;
+	float: left;
+	clear: both;
+	font-size: 11px;
+	font-family: Avenir;
+	font-weight: bold;
+	text-transform: uppercase;
+	letter-spacing: 0;
+	line-height: 18px;
+	padding: 5px 10px 3px 8px;
+	margin: 0 6px 0 0;
+	color: #fff !important;
+	margin-bottom: 5px;
+
+	.arrow {
+		display: none;
+		float: right;
+		width: 0;
+		height: 0;
+		border-top: 8px solid transparent;
+		border-bottom: 8px solid transparent;
+		border-right: 8px solid white;
+		border-right-color: rgba(255, 255, 255, .5);
+		margin-left: 6px;
+	}
+
+	&__container {
+		display: block;
+		position: absolute;
+
+		left: 0px;
+		top: 3%;
+
+		.#{$asset-1-name} {
+			margin-bottom: 0px;
+			position: initial !important;
+			display: block;
+			clear: both;
+		}
+	}
+}
+	/*.#{$asset-1-name}.location { background-color: #CE6323; }
+	.#{$asset-1-name}.class { background-color: #00a651; }
+	.#{$asset-1-name}.event { background-color: #77A9CE; }
+	.#{$asset-1-name}.featured { background-color: #1a93b0; }
+	.#{$asset-1-name}.trending { background-color: #6dcbd3; }
+	.#{$asset-1-name}.sponsored { background-color: #A1B3B4; }*/
+
+	.#{$asset-1-name}.gray { background-color: #A1B3B4; } // For Sponsored Flags
+	.#{$asset-1-name}.maroon { background-color: #773659; } // For Categories Flags such as Luxury, Trending, News
+	.#{$asset-1-name}.orange { background-color: #CE6323; } // For Neighborhood Flags like Beacon Hill
+	.#{$asset-1-name}.light-blue { background-color: #77A9CE; } // For Open Houses and Featured Flags
+	.#{$asset-1-name}.gold { background-color: #B4A455; } // For New Listings Flag
+	.#{$asset-1-name}.white { background-color: #fff; color: #333 !important; } // For Sale Flag
+
+
+
+$asset-2-name: 'quotebox';
+
+.#{$asset-2-name} {
+	&__square {
+		width: 50%;
+		float: left;
+		padding: 3% 3% 3% 3%;
+		margin: 0 3% 20px 0;
+		background: #d4e8ef;
+
+		position: relative;
+		border: 1px solid #d4e8ef;
+	}
+		&__square:after, &__square:before {
+			top: 100%;
+			left: 30%;
+			border: solid transparent;
+			content: " ";
+			height: 0;
+			width: 0;
+			position: absolute;
+			pointer-events: none;
+		}
+
+		&__square:after {
+			border-color: rgba(212, 233, 240, 0);
+			border-top-color: #d4e8ef;
+			border-width: 21px;
+			border-left-width: 1px;
+			margin-left: -65px;
+		}
+
+	&__worthy {
+		content: 'quoteworthy';
+		display: block;
+		background: #000;
+		position: absolute;
+		left: 0;
+		top: 1%;
+
+	}
+	&__by-line{
+		//color: green;
+		display: inline-block;
+		width: 69%;
+		padding-top: 3px;
+		font-family: OpenSans Regular;
+		font-size: 12px;
+	}
+
+	&__flag
+	{
+		width: 6.8%;
+		height: 0.5%;		
+		font-family: Oswald;
+		color:  #ffffff;
+		background-color: black;
+		font-size: 11px; /* Approximation due to font substitution */
+		font-weight: 700;
+		text-align: left;
+		//width: 5.8%;
+		//height: 0.4%;
+		position: relative;
+		bottom: 20px;
+		margin-right: 100%;
+		margin-left: -18px;
+		padding-right: 4px;
+		padding-left: 4px;
+	}
+
+
+	&__rect1 {
+		background: #3793b2;
+		padding: 2% 3% 2% 3%;
+		width: 94%;
+		color: #fff;
+		line-height: 1.7em;
+		font-family: OpenSans;
+		font-size: 1.1em;
+
+		margin-bottom: 2em;
+		position: relative;
+	}
+		&__rect1:after, &__rect1:before {
+			top: 100%;
+			left: 30%;
+			border: solid transparent;
+			content: " ";
+			height: 0;
+			width: 0;
+			position: absolute;
+			pointer-events: none;
+		}
+
+		&__rect1:after {
+			border-color: rgba(55, 147, 178, 0);
+			border-top-color: #3793b2;
+			border-width: 21px;
+			border-left-width: 1px;
+			margin-left: -140px;
+		}
+
+	&__rect2 {
+		background: #e5e5e5;
+		padding: 3%;
+		width: 94%;
+		line-height: 1.7em;
+		font-family: OpenSans;
+		font-size: 1.0em;
+
+		margin-bottom: 1em;
+	}
+}
+
+
+
+// ------------------------------------------------------------
+// Third Party Social Icons
+// ------------------------------------------------------------
+
+$asset-3-name: 'third-party-social-icons';
+
+.#{$asset-3-name} {
+	span[st_processed="yes"] {
+		display: inline-block;
+		float: left;
+		margin-right: 8px;
+		padding-top: -5px;
+
+		.stButton {
+			width: 26px;
+			height: 25px;
+			margin: 0 !important;
+
+			.stLarge {
+				background-size: 80%;
+				background-repeat: no-repeat;
+				height: 25px;
+			}
+
+			.stLarge:hover {
+				opacity: 0.75;
+				background-position: 0px;
+			}
+		}
+	}
+}
+
+// ------------------------------------------------------------
+// Desktop Breakpoint
+// ------------------------------------------------------------
+
+@include media-query(desktop) {
+	.#{$asset-1-name} {
+		clear: none;
+	}
+}
+// ------------------------------------------------------------
+// Tablet Breakpoint
+// ------------------------------------------------------------
+
+@include media-query(tablet) {
+	.#{$asset-1-name} {
+		clear: none;
+	}
+}

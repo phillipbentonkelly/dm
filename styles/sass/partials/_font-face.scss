@@ -1,0 +1,131 @@
+// *
+// * Font Face Rules
+// *
+
+$basePath: '../../fonts/';
+
+// Avenir
+@font-face {
+  font-family: "Avenir";
+  src: url("#{$basePath}avenir.ttf") format("truetype"),
+  url("#{$basePath}avenir.otf") format("opentype");;
+  font-weight: 200;
+}
+
+
+// OpenSans: This is the same as OpenSans Regular, added it because there a places using it as just OpenSans.
+@font-face {
+  font-family: "OpenSans";
+  src: url("#{$basePath}OpenSans-Regular.ttf") format("truetype");
+  font-weight: 400;
+}
+
+// OpenSans Regular
+@font-face {
+  font-family: "OpenSans Regular";
+  src: url("#{$basePath}OpenSans-Regular.ttf") format("truetype");
+  font-weight: 400;
+}
+
+// OpenSans Italic
+@font-face {
+  font-family: "OpenSans Italic";
+  src: url("#{$basePath}OpenSans-Italic.ttf") format("truetype");
+  font-weight: 400;
+}
+
+// OpenSans Bold
+@font-face {
+  font-family: "OpenSans Bold";
+  src: url("#{$basePath}OpenSans-Bold.ttf") format("truetype");
+  font-weight: 700;
+}
+
+// OpenSans Extra Bold
+@font-face {
+  font-family: "OpenSans Extra Bold";
+  src: url("#{$basePath}OpenSans-ExtraBold.ttf") format("truetype");
+  font-weight: 700;
+}
+
+// OpenSans Extra Bold Italic
+@font-face {
+  font-family: "OpenSans Extra Bold Italic";
+  src: url("#{$basePath}OpenSans-ExtraBoldItalic.ttf") format("truetype");
+  font-weight: 400;
+}
+
+// OpenSans Semibold
+@font-face {
+  font-family: "OpenSans Semibold";
+  src: url("#{$basePath}OpenSans-Semibold.ttf") format("truetype");
+  font-weight: 500;
+}
+
+// OpenSans Semibold Italic
+@font-face {
+  font-family: "OpenSans Semibold Italic";
+  src: url("#{$basePath}OpenSans-SemiboldItalic.ttf") format("truetype");
+  font-weight: 500;
+}
+
+// OpenSans Light
+@font-face {
+  font-family: "OpenSans Light";
+  src: url("#{$basePath}OpenSans-Light.ttf") format("truetype");
+  font-weight: 400;
+}
+
+// OpenSans Light Italic
+@font-face {
+  font-family: "OpenSans Light Italic";
+  src: url("#{$basePath}OpenSans-LightItalic.ttf") format("truetype");
+  font-weight: 400;
+}
+
+// Oswald Regular
+@font-face {
+  font-family: "Oswald Regular";
+  src: url("#{$basePath}Oswald-Regular.otf") format("opentype");
+  font-weight: 400;
+}
+
+// Oswald Bold
+@font-face {
+  font-family: "Oswald Bold";
+  src: url("#{$basePath}Oswald-Bold.otf") format("opentype");
+  font-weight: 700;
+}
+
+// Oswald Light
+@font-face {
+  font-family: "Oswald Light";
+  src: url("#{$basePath}Oswald-Light.otf") format("opentype");
+  font-weight: 400;
+}
+
+// Oswald Stencil
+@font-face {
+  font-family: "Oswald Stencil";
+  src: url("#{$basePath}Oswald-Stencil.otf") format("opentype");
+  font-weight: 400;
+}
+
+// Helvetica Neue
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url("#{$basePath}HelveticaNeue.eot?#iefix") format("embedded-opentype"),
+    url("#{$basePath}HelveticaNeue.woff") format("woff"),
+    url("#{$basePath}HelveticaNeue.ttf") format("truetype");
+  font-weight: 400;
+}
+
+// Helvetica Neue Bold
+@font-face {
+  font-family: "Helvetica Neue Bold";
+  src: url("#{$basePath}HelveticaNeue-Bold.eot?#iefix") format("embedded-opentype"),
+    url("#{$basePath}HelveticaNeue-Bold.woff") format("woff"),
+    url("#{$basePath}HelveticaNeue-Bold.ttf") format("truetype");
+  font-weight: 700;
+}
+
