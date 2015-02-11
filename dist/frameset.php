@@ -115,6 +115,10 @@
     bcom.dfp.adSlots = ['ad_lead1','ad_bigbox1','ad_bigbox2','ad_bigbox3','ad_bigbox4','ad_outofpage1','ad_outofpage2','ad_outofpage3'];
     <?php } ?>
 
+    <?php if ($pageType == '404') { ?>
+    bcom.dfp.adSlots = ['ad_lead1', 'ad_bigbox1', 'ad_outofpage1','ad_outofpage2','ad_outofpage3' ]
+    <?php } ?>
+
 
     bcom.dfp.streamCount = '5';
     bcom.dfp.galleryCount = '';
@@ -308,9 +312,17 @@
 
 			<?php } ?>
 
+			<!-- ACCOUNT SETTINGS PAGE -->
 			<?php if ($pageType == 'my-account') { ?>
 
-				<?php include 'page-content/modules/my-account.php'; ?>
+				<?php include 'page-content/my-account.php'; ?>
+
+			<?php } ?>
+
+			<!-- 404 -->
+			<?php if ($pageType == '404') { ?>
+
+				<?php include 'page-content/404.php'; ?>
 
 			<?php } ?>
 			
@@ -453,6 +465,14 @@
 				<?php include 'page-content/modules/my-account-right-rail.php'; ?>
 
 			<?php } ?>
+
+			<?php if ($pageType == '404') { ?>
+
+				<!-- DFP Ad - Experience the Difference -->
+				<?php include 'ads/ad_bigbox1.php'; ?>
+
+			<?php } ?>
+
 		</div>
 
 	</div>
