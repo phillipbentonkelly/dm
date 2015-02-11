@@ -21,6 +21,11 @@
             <textarea class='contact__form-message' placeholder='Please send me more infomation about 101 Fernwood Rd, Brookline, MA. Thank you'></textarea>
             <button class='contact__form-submit'>Send</button>
         </div>
+
+        <div style="display:none;" class='contact__form contact__form-success'>
+            <p style="font-family:OpenSans Semibold;margin-bottom: 255px;" class='contact__form-messge'>Entry successful. Thank you.</p>
+            <button class='contact__form-dismiss'>Okay</button>
+        </div>
     </div>
 </div>
 <!-- Contact the Agent -->

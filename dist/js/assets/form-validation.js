@@ -1,5 +1,20 @@
 var validate = {};
 
+validate.resetForm = function() {
+	var inputs = [validate.$name, validate.$email, validate.$phoneNumber, validate.$message];
+	validate.$form.show();
+	validate.$successMessage.hide();
+	// reset all form inputs
+	for(var i = 0; i < inputs.length; i ++) {
+		inputs[i].val('');
+	}
+};
+
+validate.success = function() {
+	validate.$form.hide();
+	validate.$successMessage.show();
+};
+
 validate.form = function() {
 	var errors = 0;
 	var inputs = this.$form.children();
@@ -11,7 +26,7 @@ validate.form = function() {
 // validate email field
 	// if nothing is provided
 	if(this.$email.val() === "") {
-		this.$email.css('border', '1px solid red')
+		this.$email.css('border', '1px solid red');
 	// if errors, update alert message
 	} else if( !emailRegex.test(this.$email.val()) ) {
 		errors ++;
@@ -29,7 +44,12 @@ validate.form = function() {
 		}
 	}
 
-	errors ? validate.$required.css('color', 'red') : validate.$required.css('color', '#A0A0A0');
+	if(errors) {
+		validate.$required.css('color', 'red');
+	} else {
+		validate.$required.css('color', '#A0A0A0');
+		validate.success();
+	}
 };
 
 validate.eventHandlers = function() {
@@ -38,10 +58,15 @@ validate.eventHandlers = function() {
 		e.preventDefault();
 		validate.form();
 	});
+
+	$('body').on('click', '.contact__form-dismiss', function() {
+		validate.resetForm();
+	});
 };
 
 validate.init = function() {
 	validate.$form = $('.contact__form');
+	validate.$successMessage = $('.contact__form-success');
 	validate.$required = $('.contact__form-required');
 	validate.$name = $('.contact__form-name');
 	validate.$email = $('.contact__form-email');
