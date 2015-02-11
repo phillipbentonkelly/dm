@@ -8,6 +8,4 @@
 		<a href="404.html">http://realestate.boston.com/404</a>
 	</p>
 
-	<?php include 'page-content/modules/property-search-result.php'; ?>
-
 </div>
