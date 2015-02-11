@@ -524,5 +524,8 @@
 			}()); 
 		</script> 
 	<?php } ?>
+    <!-- Omniture -->
+    <?php include 'page/modules/omniture.php'; ?>  	
+
 </body>
 </html>
