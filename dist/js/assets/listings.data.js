@@ -219,8 +219,8 @@
 				for (var filter in base.options.filters) {
 					_ret += '&keys[]=' + base.options.filters[filter].key;
 				}
-				var _feedParams = this.getFeedParams(base.options.URLFromFeed);
-				var _mappedFeedParams = this.mapFeedParams(_feedParams);
+				var _feedParams = base.getFeedParams(base.options.URLFromFeed);
+				var _mappedFeedParams = base.mapFeedParams(_feedParams);
 				_ret += "&" + _mappedFeedParams;
 				return _ret.substring(1);
 			},
