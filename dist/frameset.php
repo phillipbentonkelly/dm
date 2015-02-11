@@ -446,6 +446,13 @@
 				<?php include 'page-content/modules/related-articles-right-rail.php'; ?>
 
 			<?php } ?>
+
+			<!-- SEARCH PAGE -->
+			<?php if ($pageType == 'my-account') { ?>
+
+				<?php include 'page-content/modules/my-account-right-rail.php'; ?>
+
+			<?php } ?>
 		</div>
 
 	</div>
