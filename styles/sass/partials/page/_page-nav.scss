@@ -153,7 +153,13 @@ $module-name: 'page-nav';
 
 			.mega-menu {
 				display: none;
+				background: #ffffff;
 				/*padding: 13px 10px 13px 10px;*/
+
+				&__section--left{
+					padding: 10px 0 0 0;
+				}
+
 			}
 
 			.mega-menu__container {
@@ -164,6 +170,7 @@ $module-name: 'page-nav';
 				.mega-menu__container:first-child {
 					display: none;
 				}
+
 		}
 			&__nav-item:first-child {
 				color: #000;
