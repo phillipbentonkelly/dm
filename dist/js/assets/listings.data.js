@@ -31,7 +31,7 @@
 
 
 		//This is a field on the feed
-		this.options.URLfromFeed = "http://realestate.chron.com/listings-search/?sort_field=featured_weight&sort_direction=desc&search_num_results=10&region=MA&locality=Springfield&neighborhood=East Springfield&curr_page=1&view=gallery";
+		this.options.URLFromFeed = "http://realestate.chron.com/listings-search/?sort_field=featured_weight&sort_direction=desc&search_num_results=10&region=MA&locality=Springfield&neighborhood=East Springfield&curr_page=1&view=gallery";
 		//  Get this ^ from the feed
 
 
@@ -219,7 +219,7 @@
 				for (var filter in base.options.filters) {
 					_ret += '&keys[]=' + base.options.filters[filter].key;
 				}
-				var _feedParams = this.getFeedParams(this.options.URLFromFeed);
+				var _feedParams = this.getFeedParams(base.options.URLFromFeed);
 				var _mappedFeedParams = this.mapFeedParams(_feedParams);
 				_ret += "&" + _mappedFeedParams;
 				return _ret.substring(1);
