@@ -157,7 +157,12 @@
 				return 'http://api.cfk.placester.net/api/v2.1/listings.json?api_key=' + base.options.apiKey;
 			}, 
 			_keys: function () {
-				return this.$element.data('realestatePropertyListingFilter') + '[]=' + this.$element.data('realestatePropertyListingFilterValue');
+				var _ret = this.$element.data('realestatePropertyListingFilter') + '[]=' + this.$element.data('realestatePropertyListingFilterValue');
+				var _feedParams = base.getFeedParams(base.options.URLFromFeed);
+				var _mappedFeedParams = base.mapFeedParams(_feedParams);
+				_ret += "&" + _mappedFeedParams;
+
+				return _ret;
 			},
 			get: function ($element) {
 				this.$element = $element;
@@ -219,9 +224,6 @@
 				for (var filter in base.options.filters) {
 					_ret += '&keys[]=' + base.options.filters[filter].key;
 				}
-				var _feedParams = base.getFeedParams(base.options.URLFromFeed);
-				var _mappedFeedParams = base.mapFeedParams(_feedParams);
-				_ret += "&" + _mappedFeedParams;
 				return _ret.substring(1);
 			},
 			get: function () {
