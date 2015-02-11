@@ -1,6 +1,6 @@
 <!-- Multimedia Chip Widget -->
 <div class="multimedia-chip">
-	<h1 class="multimedia-chip__header"><a href="javascript:;" class="category-tag maroon">Luxury</a> Luxury</h1>
+	<h1 class="multimedia-chip__header"><a href="javascript:;" class="category-tag maroon">Luxury</a>Luxury</h1>
 	<div class="multimedia-chip__media-wrapper">
 		<div class="multimedia-chip__media-wrapper__short-description">
 			<p>Luxury Living Returns to Downtown Boston</p>
