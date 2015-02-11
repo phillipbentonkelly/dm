@@ -13,8 +13,6 @@ $module-name: 'full-screen-carousel';
 	min-height: 10px;
 	margin-bottom: 30px;
 	overflow: hidden;
-
-	margin-top: 2%;
 	
 	a, img{
 		outline: none;
@@ -87,9 +85,11 @@ $module-name: 'full-screen-carousel';
 		position: relative;
 	}
 	.carousel_wrapper{
-		display: block;
-		text-align: start;
 		float: none;
+		display: block;
+		width: 100%;
+		min-height: 189px;
+		text-align: start;
 		position: relative;
 		top: auto;
 		right: auto;
@@ -97,17 +97,16 @@ $module-name: 'full-screen-carousel';
 		left: auto;
 		z-index: auto;
 		/*width: 1113px;
-		background-color: yellow;*/
-		width: 100%;
-		height: 637px;
+		background-color: yellow;
+		height: 637px;*/
 		margin: 0px;
 		overflow: hidden;
 	}
 	#carousel{
-		/*width: 9033px;*/
-		width: 100%;
-		height: 637px;
 		float: none;
+		width: 100%;
+		/*width: 9033px;
+		height: 637px;*/
 		text-align: left;
 		margin: 0px;
 		position: absolute;
@@ -142,7 +141,7 @@ $module-name: 'full-screen-carousel';
 		height: 100%;
 		background-color: rgba(255, 255, 255, 0.4);
 		display: block;
-		padding-bottom: 67px;
+		/*padding-bottom: 67px;*/
 		width: 20vw;
 		top: 0;
 		left: 0;
@@ -225,7 +224,7 @@ $module-name: 'full-screen-carousel';
 
 
 	#carousel-wrap .chevron::before{
-		top: 48%;
+		top: 45%;
 		cursor: pointer;
 	}
 
