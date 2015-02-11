@@ -16,10 +16,12 @@ $module-name: 'multimedia-chip';
 		width: 100%;
 		display: block;
 		text-align: center;
-		text-transform: uppercase;
+		// text-transform: uppercase;
 		position: relative;
 		background: rgba(0, 0, 0, 0.4);
 		border-bottom: 2px solid white;
+		font-size: 48px;
+		padding: 15px 0 10px 0;
 
 		.category-tag {
 			position: absolute;
