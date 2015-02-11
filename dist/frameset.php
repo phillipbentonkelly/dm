@@ -33,9 +33,20 @@
     <script src="js/resources/moment.min.js"></script>
     <script src="js/assets/ui.js"></script>
 	<script src="js/assets/mega-menu.js"></script>
-	<script src="js/assets/gallery.js"></script>
-    <script src="js/assets/related-articles-main-widget.js"></script>
+	<script src="js/assets/gallery.js"></script>    
 	<script src="js/assets/form-validation.js"></script>
+	<!-- <script src="js/assets/homepage-view-more-widget.js"></script> -->
+
+	<?php if ($pageType == 'home') { ?>
+		<script src="js/assets/homepage-view-more-widget.js"></script>
+	<?php } ?>
+	
+	<?php if ($pageType == 'category' || $pageType == 'category-details' || $pageType == 'neighborhood' || $pageType == 'articles'){ ?>
+		<script src="js/assets/related-articles-main-widget.js"></script>
+	<?php } ?>
+
+    
+
 
 	<?php if ($pageType == 'home' || $pageType == 'category' || $pageType == 'category-details' || $pageType == 'neighborhood') { ?>
 	    <!-- Carousel Scripts -->
@@ -433,6 +444,13 @@
 
 				<!-- Related Articles (right rail) Widget -->
 				<?php include 'page-content/modules/related-articles-right-rail.php'; ?>
+
+			<?php } ?>
+
+			<!-- SEARCH PAGE -->
+			<?php if ($pageType == 'my-account') { ?>
+
+				<?php include 'page-content/modules/my-account-right-rail.php'; ?>
 
 			<?php } ?>
 		</div>

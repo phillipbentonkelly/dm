@@ -1,3 +1,6 @@
+<script src="js/resources/jquery.min.js"></script>
+<script src="http://wurfl.io/wurfl.js"></script>
+<script src="js/assets/fullScreenCarousel.js"></script>
 <link rel="stylesheet" href="styles/css/dm-screen.css" />
 
 <!-- Full Screen Carousel -->
