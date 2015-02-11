@@ -1,0 +1,101 @@
+// *
+// *  Newsletter Widget 
+// *
+
+$module-name: 'newsletter-widget';
+
+.#{$module-name} {
+	display: none;
+}
+
+@include media-query(tablet) {
+	.#{$module-name} {
+		display: block;
+		background: white;
+		margin-top: 20px;
+		width: 99%;
+		padding: 10px;
+		box-sizing: border-box;
+		border: 1px solid lightgrey;
+		padding-bottom: 85px;
+
+		&__header {
+			text-align: center;
+			font-size: 18px;
+			font-family: 'OpenSans Bold';
+			margin-bottom: 15px;
+			font-weight: 900;
+		}
+
+		&__signup-wrapper {
+			display: inline-block;
+			position: relative;
+			width: 100%;
+			padding: 45px 0;
+			box-sizing: border-box;
+			background: url(http://cdn.moneycrashers.com/wp-content/uploads/2012/02/moving5-edit.jpg);
+			background-position: -111px 157px;
+		}
+
+		&__input-wrapper {
+			margin: 0 auto;
+			width: 96%;
+			overflow: hidden;
+			border-radius: 5px;
+		}
+		&__signup-input, &__signup-button {
+			float: left;
+			box-sizing: border-box;
+			border: none;
+		}
+
+		&__signup-input {
+			width: 70%;
+			padding: 11px;
+			font-family: 'OpenSans Italic';
+		}
+
+		&__signup-button {
+			width: 30%;
+			padding: 11px;
+			background: #2e1460;
+			color: white;
+			font-family: 'OpenSans Bold';
+		}
+
+		&__connect-header {
+			text-align: center;
+			padding: 10px;
+			font-size: 12px;
+			font-family: 'OpenSans SemiBold';
+		}
+
+		&__connect--left-col, &__connect--right-col {
+			float: left;
+			width: 48%;
+			background: rgba(100,100,100,0.1);
+			height: 75px;
+			position: relative;
+		}
+
+		&__connect--right-col {
+			margin-left: 2%;
+
+			a {
+				position: absolute;
+				top: 29px;
+				left: 7px;
+			}
+		}
+
+		&__connect--left-col {
+			margin-right: 2%;
+
+			div {
+				position: absolute;
+				top: 27px;
+				left: 23px;
+			}
+		}
+	}
+}

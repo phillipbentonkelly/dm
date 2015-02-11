@@ -1,0 +1,207 @@
+$module-name: 'hp-blogs';
+
+.#{$module-name} {
+	width: 100%;
+	max-width: 960px;
+	position: relative;
+	box-sizing: border-box;
+	
+	&__real-estate, &__explore-widget {
+		width: 49%;
+		float: left;
+		background: lightgrey;
+		padding: 0 10px 10px 10px;
+		box-sizing: border-box;
+
+		h1 {
+			margin: 10px 0;
+			text-align: center;
+			font-family: 'Oswald Regular';
+			font-size: 26px;
+			font-weight: 400;
+		}
+	}
+
+	&__real-estate {
+		margin-right: 1%;
+	}
+
+	&__explore-widget {
+		margin-left: 1%;
+
+		.detailsOverlay h1 {
+			font-size: 16px !important;
+			text-align: center !important;
+			padding-bottom: 0 !important;
+		}		
+	}
+
+	&__blog-tile {
+		display: inline-block;
+		margin-bottom: 10px;
+		height: auto;
+	}
+
+	&__wrapper {
+		margin: auto;
+		display: block;
+		overflow: hidden;
+		clear: both;
+	}
+
+	&__wrapper:nth-child(3) {
+		margin-right: 0;
+	}
+
+	&__flag-container {
+		position: absolute;
+		top: 10px;
+		max-width: 100px;
+
+		.category-tag {
+			float: left;
+		}
+	}
+
+	&__blog-tile {
+		display: block;
+		margin: 0 0  10px 0;
+		position: relative;
+
+
+		.detailsWrapper {
+			width: 100%;
+			max-width: 300px;
+			max-height: 110px;
+			background-color: rgba(0, 0, 0, 0.6);
+			overflow: hidden;
+			position: absolute;
+			bottom: 2px;
+			left: 0;
+			z-index: 1;
+
+			.detailsArrow{
+				display: none;
+				width: 0;
+				height: 0;
+				border-style: solid;
+				border-width: 0 25px 20px 25px;
+				border-color: rgba(0, 0, 0, 0.6) transparent;
+				float: right;
+			}
+
+		    .detailsOverlay {
+				width: 93%;
+				max-height: 50%;
+				padding: 4% 5% 3% 3%;
+				color: #fff;
+				font-size: 85%;
+				letter-spacing: 1px;
+				font-family: 'Oswald Regular', sans-serif;
+				font-weight: 300;
+				clear: both;
+
+		        h1 {
+					font-size: 100%;
+					font-weight: 500;
+					text-align: left;
+					padding: 0 0 0.5em 0;
+					margin: 0 0 0 0;
+					clear: both;
+					min-height: 10px;
+					overflow: hidden;
+
+					span.col {
+						width: 60%;
+					}
+
+					.priceSpan {
+						float: right;
+						width: 40%;
+						text-align: right;
+					}
+		        }
+
+		        p {
+					display: none;
+					font-family: OpenSans Regular;
+					font-size: 90%;
+					padding: 0 0 0.5em 0;
+					margin: 0 0 0 0;
+		        }
+		    }
+	    }
+	}
+
+	a.viewMore{
+		display: block;
+		text-align: center;
+		text-transform: capitalize;
+		font-family: 'OpenSans Regular', sans-serif;
+		font-weight: 400;
+		color: #000;
+		line-height: 1em;
+		padding: 0.5em 0 0.5em 0;
+		text-decoration: none;
+		background: #e5e5e5;
+
+		img {
+			margin-left: 4px;
+		}
+	}
+}
+
+@include media-query(tablet) {
+	.#{$module-name} {
+
+		margin: 10px auto;
+
+		&__blog-tile:last-child {
+			margin-right: 0 !important;
+		}
+
+		&__real-estate, &__explore-widget {
+			width: 100%;
+			max-width: 960px;
+			background: lightgrey;
+			padding: 0 13px 10px 13px;
+			box-sizing: border-box;
+			margin: 0;
+
+			.detailsOverlay h1 {
+				font-size: 24px;
+			}
+		}
+
+		&__blog-tile {
+			display: block;
+			float: left;
+			width: 32%;
+			max-width: 300px;
+			margin-right: 2%;
+			height: 100%;
+			box-sizing: border-box;
+		}
+
+		.detailsWrapper {
+			bottom: 2px;
+			max-height: 200px;
+		}
+		
+		.detailsOverlay {
+			font-size: 100% !important;
+		}
+
+	}
+}
+
+@include media-query(desktop) {
+	.#{$module-name} {
+		&__blog-tile:hover {
+
+			.detailsOverlay p {
+				display: block;
+			}
+    	}
+	}
+}
