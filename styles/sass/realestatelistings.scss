@@ -2,11 +2,6 @@ $module-name: 'mplistings';
 $graphicsPath: '../../images/';
 $select2Path: '../../styles/css/plugins/select2/';
 
-body{
-  margin: 0;
-  padding: 0;
-}
-
 .mplistings-dropdown {
 	.select2-search {
 		display: none !important;
@@ -70,6 +65,7 @@ a, img{
 	font-family: 'Roboto Condensed', sans-serif;
 	font-weight: 400;
 	font-size: 1.5em;
+	background-color: #fff;
 
 	h4{
 		margin: 5% 0 5% 0;
@@ -152,7 +148,7 @@ a, img{
 		    /* IE9 */
 		    -ms-transform:rotate(180deg);
 		}
-
+		
 		.view-all{
 			float: left;
 			width: 64%;
