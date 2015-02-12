@@ -2360,39 +2360,64 @@ body.category-details .related-articles__section-header {
 .related-articles .dfp-ad__row__main-link:nth-child(odd) {
   margin-right: 30px;
 }
+/* line 147, ../sass/partials/page/modules/_relatedarticles.scss */
+.related-articles__ad-container {
+  clear: both;
+  min-height: 1px;
+  overflow: hidden;
+}
+/* line 152, ../sass/partials/page/modules/_relatedarticles.scss */
+.related-articles__ad-container .ad-placeholder {
+  width: 300px;
+  height: 250px;
+  background: lightgrey;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
 
 @media (min-width: 768px) {
-  /* line 151, ../sass/partials/page/modules/_relatedarticles.scss */
+  /* line 166, ../sass/partials/page/modules/_relatedarticles.scss */
+  .related-articles__ad-container .ad-placeholder {
+    float: left;
+  }
+  /* line 169, ../sass/partials/page/modules/_relatedarticles.scss */
+  .related-articles__ad-container .ad-placeholder:nth-child(odd) {
+    margin-right: 40px;
+  }
+}
+@media (min-width: 768px) {
+  /* line 178, ../sass/partials/page/modules/_relatedarticles.scss */
   .related-articles__item:nth-child(4) {
     border-top: 1px solid #e5e5e5;
   }
-  /* line 155, ../sass/partials/page/modules/_relatedarticles.scss */
+  /* line 182, ../sass/partials/page/modules/_relatedarticles.scss */
   .related-articles__item {
     width: 100%;
     height: auto;
   }
-  /* line 159, ../sass/partials/page/modules/_relatedarticles.scss */
+  /* line 186, ../sass/partials/page/modules/_relatedarticles.scss */
   .related-articles__item img.thumb {
     float: left;
     margin-right: 10px;
   }
-  /* line 165, ../sass/partials/page/modules/_relatedarticles.scss */
+  /* line 192, ../sass/partials/page/modules/_relatedarticles.scss */
   .related-articles__item .main-info h2.title {
     font-size: 16px;
     /* Approximation due to font substitution */
   }
-  /* line 169, ../sass/partials/page/modules/_relatedarticles.scss */
+  /* line 196, ../sass/partials/page/modules/_relatedarticles.scss */
   .related-articles__item .main-info p.description {
     display: block;
     text-align: left;
   }
-  /* line 175, ../sass/partials/page/modules/_relatedarticles.scss */
+  /* line 202, ../sass/partials/page/modules/_relatedarticles.scss */
   .related-articles__item .additional-info {
     display: block;
     padding: 10px;
     width: 100%;
   }
-  /* line 180, ../sass/partials/page/modules/_relatedarticles.scss */
+  /* line 207, ../sass/partials/page/modules/_relatedarticles.scss */
   .related-articles__item .additional-info div.date {
     display: block;
     max-width: 25%;
@@ -2400,10 +2425,18 @@ body.category-details .related-articles__section-header {
     font-family: OpenSans Italic;
     font-size: 12px;
   }
-  /* line 188, ../sass/partials/page/modules/_relatedarticles.scss */
+  /* line 215, ../sass/partials/page/modules/_relatedarticles.scss */
   .related-articles__item .additional-info div.tags {
     float: right;
     display: inline-block;
+  }
+  /* line 223, ../sass/partials/page/modules/_relatedarticles.scss */
+  .related-articles__ad-container .ad-placeholder {
+    float: left;
+  }
+  /* line 226, ../sass/partials/page/modules/_relatedarticles.scss */
+  .related-articles__ad-container .ad-placeholder:nth-child(odd) {
+    margin-right: 40px;
   }
 }
 /* line 11, ../sass/partials/page/modules/_full-screen-carousel.scss */
