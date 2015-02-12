@@ -3,8 +3,8 @@
         <div class="category-footer__locations category-footer__section">
             <p>Locations</p> Allston-Brighton | Arlington | Back Bay | Beacon Hill | Boston | Brookline | Cambridge | Cape Cod | Charlestown | Dorchester | East Boston | Fenway-Kenmore | Financial District | Newton | North End | Quincy | Somerville | South Boston | South End | West Roxbury || All
         </div>
-        <div class="category-footer__categories category-footer__section">
-            <p>Categories</p> For Rent | For Sale | Home Improvement | Luxury Living | New Developments | Open Houses | Real Estate News || All
+        <div class="category-footer__categories category-footer__section">            
+            <p>Categories</p> Buying | Home Improvement | Luxury | New Developments | Open Houses | Real Estate News || All
         </div>
     </div>
 
