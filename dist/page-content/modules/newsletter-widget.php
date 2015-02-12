@@ -3,7 +3,7 @@
 
 	<div class="newsletter-widget__signup-wrapper">
 		<div class="newsletter-widget__input-wrapper">
-			<input class="newsletter-widget__signup-input" placeholder="Please enter your email" type="text"/><button class="newsletter-widget__signup-button">Submit</button>
+				<input class="newsletter-widget__signup-input" placeholder="Please enter your email" type="text"/><button class="newsletter-widget__signup-button">Submit</button>
 		</div>
 	</div>
 
