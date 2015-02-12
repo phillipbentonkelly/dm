@@ -5583,15 +5583,16 @@ body.category-details .related-articles__section-header {
     background: #2e1460;
     color: white;
     font-family: 'OpenSans Bold';
+    cursor: pointer;
   }
-  /* line 66, ../sass/partials/page/modules/_newsletter-widget.scss */
+  /* line 67, ../sass/partials/page/modules/_newsletter-widget.scss */
   .newsletter-widget__connect-header {
     text-align: center;
     padding: 10px;
     font-size: 12px;
     font-family: 'OpenSans SemiBold';
   }
-  /* line 73, ../sass/partials/page/modules/_newsletter-widget.scss */
+  /* line 74, ../sass/partials/page/modules/_newsletter-widget.scss */
   .newsletter-widget__connect--left-col, .newsletter-widget__connect--right-col {
     float: left;
     width: 48%;
@@ -5599,21 +5600,21 @@ body.category-details .related-articles__section-header {
     height: 75px;
     position: relative;
   }
-  /* line 81, ../sass/partials/page/modules/_newsletter-widget.scss */
+  /* line 82, ../sass/partials/page/modules/_newsletter-widget.scss */
   .newsletter-widget__connect--right-col {
     margin-left: 2%;
   }
-  /* line 84, ../sass/partials/page/modules/_newsletter-widget.scss */
+  /* line 85, ../sass/partials/page/modules/_newsletter-widget.scss */
   .newsletter-widget__connect--right-col a {
     position: absolute;
     top: 29px;
     left: 7px;
   }
-  /* line 91, ../sass/partials/page/modules/_newsletter-widget.scss */
+  /* line 92, ../sass/partials/page/modules/_newsletter-widget.scss */
   .newsletter-widget__connect--left-col {
     margin-right: 2%;
   }
-  /* line 94, ../sass/partials/page/modules/_newsletter-widget.scss */
+  /* line 95, ../sass/partials/page/modules/_newsletter-widget.scss */
   .newsletter-widget__connect--left-col div {
     position: absolute;
     top: 27px;
