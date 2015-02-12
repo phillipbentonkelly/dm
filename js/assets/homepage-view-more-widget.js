@@ -313,7 +313,6 @@
 			for (var j = 0; j < curItem.tags.length; j++) {
 				var tag = '<a href="javascript:;" class="category-tag ' + curItem.tags[j]['tag-color'] + ' topSpacing' + '">' + curItem.tags[j]['tag-type'] + '</a>';
 				tagMarkup.push(tag);
-				console.log("Building Tags");
 			}
 
 			var _tagMarkup = tagMarkup.join('');
@@ -334,6 +333,8 @@
 							'</div>',
 						'</div>'
 					].join('');
+
+
 
 			// Inject ads after first 4 articles
 			// change the int value to change what gets generated on the page
