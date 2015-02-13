@@ -142,7 +142,7 @@ dm.searchPanel = {};
 					case '2':
 						// keep buttons in an open state
 						self.btns.$lvl2t.getObservable().toggle();
-						self.btns.$lvl1t.getObservable().toggle();
+						// self.btns.$lvl1t.getObservable().toggle();
 						self.allOpen = true;
 					break;
 					case '1':
@@ -230,10 +230,11 @@ dm.searchPanel = {};
 							self.lvls.$one.slideToggle('fast');
 							self.expanded = self.getExpanded();
 							$lvl2State.toggle();
-						}else{
-							self.lvls.$one.slideToggle('fast');
-							self.expanded = self.getExpanded();
 						}
+						// }else{
+						// 	self.lvls.$one.slideToggle('fast');
+						// 	self.expanded = self.getExpanded();
+						// }
 						
 						$(this).toggleClass('close-search');
 						self.allOpen = false;
@@ -342,5 +343,6 @@ dm.searchPanel = {};
 $(document).ready(function(){
 	if($('.page-search').length){
 		$('.page-search').searchPanel();
+		$('.page-search__form').hide();
 	}
 });
