@@ -127,7 +127,7 @@ $module-name: 'contact';
   }
 
   // displays on successful form submission
-  &__form-success {
+  &__form-success, &__form-error {
     display: none;
     margin: 15px 0 220px 0;
 

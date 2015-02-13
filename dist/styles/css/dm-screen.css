@@ -2446,17 +2446,18 @@ body.category-details .related-articles__section-header {
   min-height: 10px;
   margin-bottom: 30px;
   overflow: hidden;
+  margin-top: 1%;
 }
-/* line 17, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 19, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel a, .full-screen-carousel img {
   outline: none;
   border: 0;
 }
-/* line 22, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 24, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .category-tag {
   display: none;
 }
-/* line 26, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 28, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .carousel-searchField-wrapper {
   width: 100%;
   padding: 8px 0 8px 0;
@@ -2464,13 +2465,13 @@ body.category-details .related-articles__section-header {
   z-index: 100;
   background: rgba(255, 255, 255, 0.3);
 }
-/* line 33, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 35, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .carousel-searchField {
   max-width: 760px;
   height: 54px;
   margin: auto;
 }
-/* line 39, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 41, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .search_real-estate-field {
   display: block;
   float: left;
@@ -2484,7 +2485,7 @@ body.category-details .related-articles__section-header {
   -moz-border-radius: 2px;
   border-radius: 2px;
 }
-/* line 52, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 54, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .search-real-estateBtn {
   display: block;
   float: left;
@@ -2497,11 +2498,11 @@ body.category-details .related-articles__section-header {
   border-radius: 2px;
   background: url("../images/icons/magGlass_bg_blk.gif") center center no-repeat #000;
 }
-/* line 65, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 67, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel #carousel-wrap, .full-screen-carousel .slide {
   max-height: 580px;
 }
-/* line 68, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 70, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel #carousel-wrap .slide .detailsArrow {
   width: 0;
   height: 0;
@@ -2516,12 +2517,12 @@ body.category-details .related-articles__section-header {
   margin-left: auto;
   margin-right: auto;
 }
-/* line 83, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 85, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel #carousel-wrap {
   overflow: hidden;
   position: relative;
 }
-/* line 87, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 89, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .carousel_wrapper {
   display: block;
   text-align: start;
@@ -2539,7 +2540,7 @@ body.category-details .related-articles__section-header {
   margin: 0px;
   overflow: hidden;
 }
-/* line 104, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 106, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel #carousel {
   /*width: 9033px;*/
   width: 100%;
@@ -2553,30 +2554,30 @@ body.category-details .related-articles__section-header {
   bottom: auto;
   z-index: auto;
 }
-/* line 117, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 119, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel #carousel figure {
   position: relative;
 }
-/* line 120, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 122, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .slide {
   float: left;
   text-align: center;
   margin: 0 4px 0 0;
 }
-/* line 125, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 127, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .slide > a {
   display: block;
   clear: both;
   min-height: 10px;
   overflow: hidden;
 }
-/* line 131, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 133, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .slide a img {
   max-width: 960px;
   max-height: 580px;
   border: 0;
 }
-/* line 137, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 139, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .carousel-nav {
   display: block;
   max-height: 580px;
@@ -2594,26 +2595,26 @@ body.category-details .related-articles__section-header {
   transition: background-color 0.2s ease-out, color 0.2s ease-out;
   text-align: right;
 }
-/* line 154, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 156, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .carousel-nav:hover {
   background-color: rgba(255, 255, 255, 0.1);
 }
-/* line 157, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 159, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .carousel-nav.next {
   left: auto;
   right: 0;
   text-align: left;
 }
-/* line 163, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 165, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .useMobileLayout .carousel-nav {
   display: none;
 }
-/* line 166, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 168, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .useMobileLayout .slide a img {
   float: left;
   width: 88%;
 }
-/* line 171, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 173, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .carousel-fullwidth_slide-details {
   width: 100%;
   height: 91px;
@@ -2629,7 +2630,7 @@ body.category-details .related-articles__section-header {
   bottom: 0;
   left: 0;
 }
-/* line 186, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 188, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .carousel-fullwidth_slide-detail-icon {
   float: left;
   width: 15%;
@@ -2637,47 +2638,47 @@ body.category-details .related-articles__section-header {
   padding-top: 10px;
   text-align: left;
 }
-/* line 193, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 195, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .carousel-fullwidth_slide-detail-content {
   float: left;
   width: 85%;
   height: 87px;
   text-align: left;
 }
-/* line 199, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 201, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .carousel-fullwidth_slide-detail-content .listing-data {
   float: left;
   width: 70%;
   height: 100%;
   font-size: 0.7em;
 }
-/* line 205, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 207, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .carousel-fullwidth_slide-detail-content p:nth-child(1) {
   font-size: 1.7em;
   line-height: 1.5em;
   margin: 4.7% 0 0 0;
 }
-/* line 210, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 212, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .carousel-fullwidth_slide-detail-content .providerIcon {
   width: 23%;
   height: 100%;
   padding-right: 7%;
   float: right;
 }
-/* line 216, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 218, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .carousel-fullwidth_slide-detail-content .providerIcon img {
   margin-top: 5%;
 }
-/* line 225, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 227, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel #carousel-wrap .chevron::before {
   top: 48%;
   cursor: pointer;
 }
-/* line 231, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 233, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .carouselRightNavFade {
   display: none;
 }
-/* line 236, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 238, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .useMobileLayout .carouselRightNavFade {
   display: block;
   width: 15px;
@@ -2702,35 +2703,35 @@ body.category-details .related-articles__section-header {
   right: 0;
   top: 0;
 }
-/* line 255, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 257, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .useMobileLayout .carousel-fullwidth_slide-detail-content {
   width: 97%;
   padding-left: 3%;
 }
-/* line 260, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 262, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .useMobileLayout .carousel-fullwidth_slide-detail-content p {
   display: none;
 }
-/* line 263, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 265, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .useMobileLayout .carousel-fullwidth_slide-detail-content p:nth-child(1) {
   display: block;
 }
-/* line 266, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 268, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .useMobileLayout .carousel-fullwidth_slide-details {
   overflow: initial;
 }
-/* line 269, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 271, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .useMobileLayout .carousel-fullwidth_slide-detail-icon {
   position: absolute;
   bottom: 25%;
   z-index: 1;
 }
-/* line 275, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 277, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel #carousel-wrap.useMobileLayout .slide .detailsArrow {
   border-color: rgba(0, 0, 0, 0.8) transparent;
   bottom: 60px;
 }
-/* line 280, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 282, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .useMobileLayout .carousel-fullwidth_slide-details {
   border-color: rgba(0, 0, 0, 0.8) transparent;
   height: 60px;
@@ -2738,21 +2739,21 @@ body.category-details .related-articles__section-header {
 }
 
 @media (min-width: 960px) {
-  /* line 291, ../sass/partials/page/modules/_full-screen-carousel.scss */
+  /* line 293, ../sass/partials/page/modules/_full-screen-carousel.scss */
   .full-screen-carousel {
     margin-top: 0;
   }
-  /* line 294, ../sass/partials/page/modules/_full-screen-carousel.scss */
+  /* line 296, ../sass/partials/page/modules/_full-screen-carousel.scss */
   .full-screen-carousel .category-tag {
     display: block;
   }
 }
 @media (min-width: 768px) {
-  /* line 304, ../sass/partials/page/modules/_full-screen-carousel.scss */
+  /* line 306, ../sass/partials/page/modules/_full-screen-carousel.scss */
   .full-screen-carousel {
     margin-top: 0;
   }
-  /* line 307, ../sass/partials/page/modules/_full-screen-carousel.scss */
+  /* line 309, ../sass/partials/page/modules/_full-screen-carousel.scss */
   .full-screen-carousel .category-tag {
     display: block;
   }
@@ -2875,12 +2876,12 @@ body.category-details .related-articles__section-header {
   float: right;
 }
 /* line 130, ../sass/partials/page/modules/_contact-form-premium.scss */
-.contact__form-success {
+.contact__form-success, .contact__form-error {
   display: none;
   margin: 15px 0 220px 0;
 }
 /* line 134, ../sass/partials/page/modules/_contact-form-premium.scss */
-.contact__form-success p {
+.contact__form-success p, .contact__form-error p {
   font-family: 'OpenSans Regular';
   font-weight: 500;
   margin-bottom: 20px;

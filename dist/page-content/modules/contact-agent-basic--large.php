@@ -20,10 +20,16 @@
             <input class='contact__form-number' placeholder='Phone Number'/>
             <textarea class='contact__form-message' placeholder='Please send me more infomation about 101 Fernwood Rd, Brookline, MA. Thank you'></textarea>
             <button class='contact__form-submit'>Send</button>
+            <a href="javascript:;"><p class="temp-error-trigger">test error</p></a>
         </div>
 
         <div class='contact__form contact__form-success'>
             <p class='contact__form-message'>Entry successful. Thank you.</p>
+            <button class='contact__form-dismiss'>Okay</button>
+        </div>
+
+        <div class='contact__form contact__form-error'>
+            <p class='contact__form-message'>An error has ocurred. Please try again.</p>
             <button class='contact__form-dismiss'>Okay</button>
         </div>
     </div>
