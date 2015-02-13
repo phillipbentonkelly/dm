@@ -22,7 +22,7 @@ var PageNav = {};
 			pageNav.$pageNav = $('.page-nav');
 			pageNav.$responsiveIcon = $('.page-nav__mega-menu-responsive-icon');
 			pageNav.$resSearchIcon = $('.page-nav__search-responsive-icon');
-			pageNav.menuObj.$findAHome = $('#find-home-menu');
+			pageNav.menuObj.$findAHome = $('#find-home-menu').children('a');
 			pageNav.menuObj.$neighborhoods = $('#neighborhoods-menu');
 			pageNav.menuObj.$logo = $('.page-nav__logo');
 			pageNav.menuObj.$mainNavLinks = $('.page-nav__main-nav-links');
@@ -34,7 +34,11 @@ var PageNav = {};
 			var thisRef = this;
 
 			pageNav.$responsiveIcon.on('click', thisRef.toggleMobileMenu);
-			pageNav.menuObj.$findAHome.on('click', thisRef.toggleMobileMegaMenu);
+
+			// done by Ethan DM-237
+			pageNav.menuObj.$findAHome.on('click', function() {
+				thisRef.ethanMenu($(this));
+			});
 			pageNav.menuObj.$neighborhoods.on('click', thisRef.toggleMobileMegaMenu);
 		},
 		toggleMobileMenu: function(e){
@@ -42,12 +46,20 @@ var PageNav = {};
 			pageNav.menuObj.$mainNavLinks.toggle();
 		},
 		toggleMobileMegaMenu: function(e){
+			// debugger;
 			var thisRef = this;
 			var thisObj = $(this);
 
 			if(pageNav.$body.width() < 768){
 				$(thisObj.find('.mega-menu')).toggle();
 				$(thisObj.find('.mega-menu__container')).toggle();
+			}
+		},
+		ethanMenu: function($el){
+			var $parentEl = $el.parent('.page-nav__nav-item');
+			if(pageNav.$body.width() < 768){
+				$parentEl.find('.mega-menu').toggle();
+				$parentEl.find('.mega-menu__container').toggle();
 			}
 		},
 		updateLogoDim: function(){
