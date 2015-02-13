@@ -2875,12 +2875,12 @@ body.category-details .related-articles__section-header {
   float: right;
 }
 /* line 130, ../sass/partials/page/modules/_contact-form-premium.scss */
-.contact__form-success {
+.contact__form-success, .contact__form-error {
   display: none;
   margin: 15px 0 220px 0;
 }
 /* line 134, ../sass/partials/page/modules/_contact-form-premium.scss */
-.contact__form-success p {
+.contact__form-success p, .contact__form-error p {
   font-family: 'OpenSans Regular';
   font-weight: 500;
   margin-bottom: 20px;
