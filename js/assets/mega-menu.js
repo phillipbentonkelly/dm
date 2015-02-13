@@ -39,6 +39,11 @@ var PageNav = {};
 			pageNav.menuObj.$findAHome.on('click', function() {
 				thisRef.ethanMenu($(this));
 			});
+			pageNav.$resSearchIcon.on('click', function() {
+				// alert('cki');
+				pageNav.menuObj.$mainNavLinks.slideUp('fast');
+			});
+
 			pageNav.menuObj.$neighborhoods.on('click', thisRef.toggleMobileMegaMenu);
 		},
 		toggleMobileMenu: function(e){
@@ -46,7 +51,6 @@ var PageNav = {};
 			pageNav.menuObj.$mainNavLinks.toggle();
 		},
 		toggleMobileMegaMenu: function(e){
-			// debugger;
 			var thisRef = this;
 			var thisObj = $(this);
 
