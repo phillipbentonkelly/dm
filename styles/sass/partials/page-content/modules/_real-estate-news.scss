@@ -29,7 +29,7 @@ a, img{
 		width: 100%;
 		max-width: 300px;
 		position: relative;
-		display: inline-block;
+		display: block;
 		margin: auto;
 		margin-bottom: 10px;
 
@@ -145,6 +145,7 @@ a, img{
 
 		&__tile {
 			width: 49%;
+			display: inline-block;
 			float: left;
 			margin: initial;
 		}
@@ -172,6 +173,7 @@ a, img{
 		}
 
 		&__tile {
+			display: inline-block;
 			margin: initial;
 		}
 			&__tile:hover {
