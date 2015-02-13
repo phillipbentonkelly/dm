@@ -130,7 +130,12 @@
         s3: '',
         s4: '',
         s5: '',
+	<?php if ($pageType == 'serp' || $pageType == 'property-listings' || $pageType == 'property-listings-premium') { ?>
+        pgtype : 'results',
+	<?php } ?>
+        <?php if ($pageType == '404' || $pageType == 'category' || $pageType == 'category-details' || $pageType == 'neighborhood' || $pageType == 'articles' || $pageType == 'home' || ) { ?>
         pgtype : 'sectfront',
+        <?php } ?>
         pageurl : '',
         meta: '',
 	redesigntest: 'on'
