@@ -4,6 +4,7 @@ validate.resetForm = function() {
 	var inputs = [validate.$name, validate.$email, validate.$phoneNumber, validate.$message];
 	validate.$form.show();
 	validate.$successMessage.hide();
+	validate.$errorMessage.hide();
 	// reset all form inputs
 	for(var i = 0; i < inputs.length; i ++) {
 		inputs[i].val('');
@@ -13,6 +14,11 @@ validate.resetForm = function() {
 validate.success = function() {
 	validate.$form.hide();
 	validate.$successMessage.show();
+};
+
+validate.error = function() {
+	validate.$form.hide();
+	validate.$errorMessage.show();
 };
 
 validate.form = function() {
@@ -62,17 +68,24 @@ validate.eventHandlers = function() {
 	$('body').on('click', '.contact__form-dismiss', function() {
 		validate.resetForm();
 	});
+
+	validate.$tempErrorTrigger.click(function() {
+		validate.error();
+	});
+
 };
 
 validate.init = function() {
 	validate.$form = $('.contact__form');
 	validate.$successMessage = $('.contact__form-success');
+	validate.$errorMessage = $('.contact__form-error');
 	validate.$required = $('.contact__form-required');
 	validate.$name = $('.contact__form-name');
 	validate.$email = $('.contact__form-email');
 	validate.$phoneNumber = $('.contact__form-number');
 	validate.$message = $('.contact__form-message');
 	validate.$submitButton = $('.contact__form-submit');
+	validate.$tempErrorTrigger = $('.temp-error-trigger');
 	validate.eventHandlers();
 };
 
