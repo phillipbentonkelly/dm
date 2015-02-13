@@ -42,8 +42,7 @@
         </a>
 
         
-        <?php include 'ads/real-estate-news.php'; ?>
-        
+        <?php include 'ads/real-estate-news.php'; ?>        
 
         <a href="javascript:;" class="real-estate-news__tile">
             <div class="real-estate-news__category-tag-container">

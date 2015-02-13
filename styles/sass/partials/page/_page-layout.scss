@@ -21,6 +21,7 @@ $padding-top: 20px;
 	
 	&__right-col {
 		display: block;
+		float: left;
 	}
 }
 
@@ -82,7 +83,10 @@ body.home {
 
 	.#{$module-name} {
 		width: ($left-col-width + $right-col-width + $right-col-right-gutter);
-		 
+
+		&__right-col {
+			float: right;
+		}
 	}
 
 	body.home {

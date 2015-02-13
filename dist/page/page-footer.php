@@ -17,8 +17,7 @@
                 <a href="javascript:;">Work Here</a>
                 <a href="javascript:;">Privacy Policy</a>
                 <a href="javascript:;">Ad Choices</a>
-                <a href="javascript:;">Terms of Use</a>
-                <a href="javascript:;">Real Estate Blogs</a>
+                <a href="javascript:;">Terms of Use</a>                
             </div>
 
             <div class="content-footer__copyright-block">

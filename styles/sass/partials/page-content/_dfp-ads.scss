@@ -1,0 +1,23 @@
+$module-name: 'ad-placeholder';
+
+.ad-dim__300by250 { // Ad Dimensions
+	width: 300px;
+	height: 250px;
+}
+
+.#{$module-name} {
+	background: lightgrey;
+	margin: auto;
+}
+
+@include media-query(tablet) {
+	.#{$module-name} {
+		
+	}
+}
+
+@include media-query(tablet) {
+	.#{$module-name} {
+		
+	}
+}
