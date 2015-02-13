@@ -43,7 +43,7 @@ var PageNav = {};
 			// when search button is clicked, close expanded megamenu and toggle search form
 			pageNav.$resSearchIcon.on('click', function() {
 				pageNav.menuObj.$mainNavLinks.slideUp('fast');
-				// pageNav.$searchForm.slideToggle('fast');
+				pageNav.$searchForm.slideToggle('fast');
 			});
 			// when hamburger button is clicked, close page-search
 			pageNav.$responsiveIcon.on('click', function() {
