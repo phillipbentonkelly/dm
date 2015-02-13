@@ -48,10 +48,9 @@ var PageNav = {};
 				thisRef.ethanMenu($(this));
 			});
 			// when search button is clicked, close expanded megamenu and toggle search form
-			pageNav.$resSearchIcon.on('click', function() {
+			pageNav.$resSearchIcon.on('click', thisRef.toggleSearchForm)
 				// pageNav.menuObj.$mainNavLinks.slideUp('fast');
-				pageNav.$searchForm.toggle();
-			});
+				// thisRef.toggleSearchForm;
 			// when hamburger button is clicked, close page-search
 			pageNav.$responsiveIcon.on('click', function() {
 				pageNav.$searchForm.slideUp('fast');
@@ -70,6 +69,9 @@ var PageNav = {};
 				$(thisObj.find('.mega-menu')).toggle();
 				$(thisObj.find('.mega-menu__container')).toggle();
 			}
+		},
+		toggleSearchForm: function() {
+			pageNav.$searchForm.toggle();
 		},
 		ethanMenu: function($el){
 			var $parentEl = $el.parent('.page-nav__nav-item');
