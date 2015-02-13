@@ -372,7 +372,6 @@
 		module.$viewMore.click(function() {
 			module.showMoreArticles();
 			console.log("eventHandler");
-
 		});
 	};
 
