@@ -287,7 +287,6 @@ body {
   /* line 290, ../sass/helpers/_mixins-and-extends.scss */
   .adSlots .adSlot:first-child {
     float: left;
-    margin-right: 30px;
   }
   /* line 295, ../sass/helpers/_mixins-and-extends.scss */
   .adSlots a.adSlot:first-child {
@@ -298,7 +297,6 @@ body {
   /* line 303, ../sass/helpers/_mixins-and-extends.scss */
   .adSlots .adSlot {
     float: left;
-    margin-left: 30px;
   }
   /* line 309, ../sass/helpers/_mixins-and-extends.scss */
   .adSlots .adSlot .detailsWrapper .detailsOverlay h1 {

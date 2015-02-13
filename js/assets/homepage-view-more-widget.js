@@ -300,7 +300,7 @@
 	];
 
 	module.buildWidget = function() {
-		var articlesDisplayed = module.allArticles.slice(module.curIndex, (module.curIndex+6));
+		var articlesDisplayed = module.allArticles.slice(module.curIndex, (module.curIndex+4));
 
 		// build each article's markup
 		for (var i = 0; i < articlesDisplayed.length; i++) {
@@ -336,20 +336,31 @@
 
 
 
-			// Inject ads after first 4 articles
 			// change the int value to change what gets generated on the page
-			if( module.allArticles.indexOf(articlesDisplayed[i]) < 6 ) {
-				module.$hook.append(markup);
+			// append first 2 tiles above ads
+			if( module.allArticles.indexOf(articlesDisplayed[i]) < 2 ) {
+				// append above ad slots
+				module.$hook.prepend(markup);
+			} else if( (module.allArticles.indexOf(articlesDisplayed[i]) % 2 === 0) && (module.allArticles.indexOf(articlesDisplayed[i]) > 4) ) {
+				module.$container.append(module.adsInit());
+				module.$container.append(markup);
 			} else {
+				// append velow ad slots
 				module.$container.append(markup);
 			}
+			// append button after all items
 			module.$container.append(module.$viewMore);
-
 		}
 	};
 
+	module.adsInit = function() {
+		// 2 bigbox_ads
+		var adsMarkup = $(	'<div id="ad_bigbox1" style="background:lightgrey;height:250px;width:300px;margin-right: 0;" class="adSlot"></div><div id="ad_bigbox2" style="background:tomato;height:250px;width:300px;margin-right: 0;" class="adSlot"></div>');
+		return adsMarkup;
+	};
+
 	module.showMoreArticles = function() {
-		module.curIndex += 6;
+		module.curIndex += 4;
 		if($('.real-estate-news__tile').length < module.listLength) {
 			module.buildWidget(module.curIndex);
 		}
@@ -366,14 +377,15 @@
 	};
 
 	module.init = function() {
-		module.$container = $('.real-estate-news'); //effective change
-		module.$hook =  $('.related-articles__hook'); // I know that this is what helps ads populate....
-		module.$ads = $('.real-estate-news__wrapper adSlots');
+		module.$container = $('.real-estate-news__wrapper'); //effective change
+		module.$hook = $('.real-estate-news__hook'); // I know that this is what helps ads populate....
+		
+		module.$ads = $('.adSlots');
 		module.$viewMore = $('.real-estate-news').find('.viewMore'); ///effective change
 		module.$articlesDisplayed = $('.real-estate-news__tile').length;
 
 		module.listLength = module.allArticles.length;
-		module.totalPages = Math.ceil(module.listLength / 6);
+		module.totalPages = Math.ceil(module.listLength / 4);
 		module.curIndex = 0;
 
 		module.buildWidget(0);
