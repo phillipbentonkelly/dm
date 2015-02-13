@@ -27,8 +27,10 @@ a, img{
 
 	&__tile {
 		width: 100%;
+		max-width: 300px;
 		position: relative;
 		display: inline-block;
+		margin: auto;
 		margin-bottom: 10px;
 
 		.detailsWrapper {
@@ -144,6 +146,7 @@ a, img{
 		&__tile {
 			width: 49%;
 			float: left;
+			margin: initial;
 		}
 
 		&__tile:nth-child(even) {
@@ -168,11 +171,14 @@ a, img{
 			margin-left: 3.5%;
 		}
 
-		&__tile:hover {
+		&__tile {
+			margin: initial;
+		}
+			&__tile:hover {
 
-			.detailsOverlay p {
-				display: block;
-			}
-	    }
+				.detailsOverlay p {
+					display: block;
+				}
+		    }
 	}
 }
