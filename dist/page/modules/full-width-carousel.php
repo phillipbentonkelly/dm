@@ -3,7 +3,7 @@
     <div class="" id="carousel-wrap">
         <div class="carousel_wrapper">
             <div id="carousel">
-                <figure id="ad_carousel1" class="slide ad-slot"></figure>
+                <figure id="ad_carousel1" class="slide ad-slot"><div class="placeholder"></div></figure>
 
                 <figure class="slide">
                     <a href="collections/boards-provisions/products/table-setting-placard.html">
@@ -27,7 +27,7 @@
                     </a>
                 </figure>
 
-                <figure id="ad_carousel2" class="slide ad-slot"></figure>
+                <figure id="ad_carousel2" class="slide ad-slot"><div class="placeholder"></div></figure>
 
                 <figure class="slide active">
                     <a href="collections/new-arrivals.html">
@@ -51,7 +51,7 @@
                     </a>
                 </figure>
 
-                <figure id="ad_carousel3" class="slide ad-slot"></figure>
+                <figure id="ad_carousel3" class="slide ad-slot"><div class="placeholder"></div></figure>
 
                 <figure class="slide">
                     <a href="blogs/plate-the-slate/15553989-quarry-to-table.html">
@@ -74,6 +74,7 @@
                         </div>
                     </a>
                 </figure>
+                
                 <figure class="slide">
                     <a href="blogs/from-the-kitchen/15566461-fennel-panna-cotta.html">
                         <img src="images/responsive/slide3-default.jpg" srcset="images/responsive/slide3-tablet.jpg 618w, images/responsive/slide3-large.jpg 490w, images/responsive/slide3-small_x2.jpg 330w, images/responsive/slide3-small.jpg 320w" alt="Recipe: Fennel Panna Cotta" />
