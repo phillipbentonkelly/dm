@@ -3,7 +3,7 @@
     <div class="" id="carousel-wrap">
         <div class="carousel_wrapper">
             <div id="carousel">
-                <figure id="ad_carousel1" class="slide"></figure>
+                <figure id="ad_carousel1" class="slide ad-slot"></figure>
 
                 <figure class="slide">
                     <a href="collections/boards-provisions/products/table-setting-placard.html">
@@ -27,7 +27,7 @@
                     </a>
                 </figure>
 
-                <figure id="ad_carousel2" class="slide"></figure>
+                <figure id="ad_carousel2" class="slide ad-slot"></figure>
 
                 <figure class="slide active">
                     <a href="collections/new-arrivals.html">
@@ -51,7 +51,7 @@
                     </a>
                 </figure>
 
-                <figure id="ad_carousel3" class="slide"></figure>
+                <figure id="ad_carousel3" class="slide ad-slot"></figure>
 
                 <figure class="slide">
                     <a href="blogs/plate-the-slate/15553989-quarry-to-table.html">
