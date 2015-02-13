@@ -2584,11 +2584,10 @@ body.category-details .related-articles__section-header {
 }
 /* line 141, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .carousel-nav {
-  display: block;
+  display: none;
   max-height: 580px;
   height: 100%;
   background-color: rgba(255, 255, 255, 0.4);
-  display: block;
   padding-bottom: 67px;
   width: 20vw;
   top: 0;
@@ -2600,26 +2599,26 @@ body.category-details .related-articles__section-header {
   transition: background-color 0.2s ease-out, color 0.2s ease-out;
   text-align: right;
 }
-/* line 158, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 157, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .carousel-nav:hover {
   background-color: rgba(255, 255, 255, 0.1);
 }
-/* line 161, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 160, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .carousel-nav.next {
   left: auto;
   right: 0;
   text-align: left;
 }
-/* line 167, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 166, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .useMobileLayout .carousel-nav {
   display: none;
 }
-/* line 170, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 169, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .useMobileLayout .slide a img {
   float: left;
   width: 88%;
 }
-/* line 175, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 174, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .carousel-fullwidth_slide-details {
   width: 100%;
   height: 91px;
@@ -2635,7 +2634,7 @@ body.category-details .related-articles__section-header {
   bottom: 0;
   left: 0;
 }
-/* line 190, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 189, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .carousel-fullwidth_slide-detail-icon {
   float: left;
   width: 15%;
@@ -2643,47 +2642,47 @@ body.category-details .related-articles__section-header {
   padding-top: 10px;
   text-align: left;
 }
-/* line 197, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 196, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .carousel-fullwidth_slide-detail-content {
   float: left;
   width: 85%;
   height: 87px;
   text-align: left;
 }
-/* line 203, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 202, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .carousel-fullwidth_slide-detail-content .listing-data {
   float: left;
   width: 70%;
   height: 100%;
   font-size: 0.7em;
 }
-/* line 209, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 208, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .carousel-fullwidth_slide-detail-content p:nth-child(1) {
   font-size: 1.7em;
   line-height: 1.5em;
   margin: 4.7% 0 0 0;
 }
-/* line 214, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 213, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .carousel-fullwidth_slide-detail-content .providerIcon {
   width: 23%;
   height: 100%;
   padding-right: 7%;
   float: right;
 }
-/* line 220, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 219, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .carousel-fullwidth_slide-detail-content .providerIcon img {
   margin-top: 5%;
 }
-/* line 229, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 228, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel #carousel-wrap .chevron::before {
   top: 48%;
   cursor: pointer;
 }
-/* line 235, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 234, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .carouselRightNavFade {
   display: none;
 }
-/* line 240, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 239, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .useMobileLayout .carouselRightNavFade {
   display: block;
   width: 15px;
@@ -2708,41 +2707,41 @@ body.category-details .related-articles__section-header {
   right: 0;
   top: 0;
 }
-/* line 259, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 258, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .useMobileLayout .carousel-fullwidth_slide-detail-content {
   width: 97%;
   padding-left: 3%;
 }
-/* line 264, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 263, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .useMobileLayout .carousel-fullwidth_slide-detail-content p {
   display: none;
 }
-/* line 267, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 266, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .useMobileLayout .carousel-fullwidth_slide-detail-content p:nth-child(1) {
   display: block;
 }
-/* line 270, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 269, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .useMobileLayout .carousel-fullwidth_slide-details {
   overflow: initial;
 }
-/* line 273, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 272, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .useMobileLayout .carousel-fullwidth_slide-detail-icon {
   position: absolute;
   bottom: 25%;
   z-index: 1;
 }
-/* line 279, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 278, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel #carousel-wrap.useMobileLayout .slide .detailsArrow {
   border-color: rgba(0, 0, 0, 0.8) transparent;
   bottom: 60px;
 }
-/* line 284, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 283, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .useMobileLayout .carousel-fullwidth_slide-details {
   border-color: rgba(0, 0, 0, 0.8) transparent;
   height: 60px;
   bottom: 0px;
 }
-/* line 291, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 290, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .ad-slot .placeholder {
   width: 100%;
   height: 100%;
@@ -2751,7 +2750,7 @@ body.category-details .related-articles__section-header {
   left: 0;
   top: 0;
 }
-/* line 300, ../sass/partials/page/modules/_full-screen-carousel.scss */
+/* line 299, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .ad-slot div[id*="google_ads_iframe_"] {
   width: 100%;
   height: 100%;
@@ -2761,21 +2760,29 @@ body.category-details .related-articles__section-header {
 }
 
 @media (min-width: 960px) {
-  /* line 314, ../sass/partials/page/modules/_full-screen-carousel.scss */
+  /* line 313, ../sass/partials/page/modules/_full-screen-carousel.scss */
   .full-screen-carousel {
     margin-top: 0;
   }
-  /* line 317, ../sass/partials/page/modules/_full-screen-carousel.scss */
+  /* line 316, ../sass/partials/page/modules/_full-screen-carousel.scss */
+  .full-screen-carousel .carousel-nav {
+    display: block;
+  }
+  /* line 320, ../sass/partials/page/modules/_full-screen-carousel.scss */
   .full-screen-carousel .category-tag {
     display: block;
   }
 }
 @media (min-width: 768px) {
-  /* line 327, ../sass/partials/page/modules/_full-screen-carousel.scss */
+  /* line 330, ../sass/partials/page/modules/_full-screen-carousel.scss */
   .full-screen-carousel {
     margin-top: 0;
   }
-  /* line 330, ../sass/partials/page/modules/_full-screen-carousel.scss */
+  /* line 333, ../sass/partials/page/modules/_full-screen-carousel.scss */
+  .full-screen-carousel .carousel-nav {
+    display: block;
+  }
+  /* line 337, ../sass/partials/page/modules/_full-screen-carousel.scss */
   .full-screen-carousel .category-tag {
     display: block;
   }

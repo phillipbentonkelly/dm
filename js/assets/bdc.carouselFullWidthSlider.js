@@ -97,7 +97,7 @@ if (typeof bdc === 'undefined') { bdc = {}; }
 		var carouselNav_UI = '#carousel-wrap .prev, #carousel-wrap .next';
 		var bodyWidth = module.$body.width();
 		var actualWidth = module.$carouselWrapperImg.width();
-		var w = (bodyWidth - actualWidth - 6)/2;
+		var w = ((bodyWidth - actualWidth)/2 < 30)? 50 : (bodyWidth - actualWidth)/2;
 		var slideMarginRight = module.$slide.css('margin-right')? parseInt(module.$slide.css('margin-right')) : 0;
 			module.$mLayout_slide = $('#carousel figure.slide');
 			module.$mLayout_img = $('#carousel figure.slide a img');
@@ -106,7 +106,7 @@ if (typeof bdc === 'undefined') { bdc = {}; }
     	module.$adSlots__dfpIframes = $('#carousel div[id*="google_ads_iframe_"] iframe');
     	module.$adSlots__dfpPlaceholder = $('#carousel .slide .placeholder');
 
-		if(WURFL.is_mobile === true && bodyWidth < 768){
+		if(bodyWidth < 768){
 			if(module.$wrapper.hasClass('useMobileLayout') === false){
 				module.$wrapper.addClass('useMobileLayout');
 
@@ -121,10 +121,10 @@ if (typeof bdc === 'undefined') { bdc = {}; }
 			module.$mLayout_slide.width( module.$mLayout_slide.width() - (module.$mLayout_slide.width() - module.$mLayout_img.width()) );
 				module.$mLayout_img.css('width', '100%');
 
-			module.$carouselWrapper.css('overflow-x', 'auto');
+			if(WURFL.is_mobile === true){
+				module.$carouselWrapper.css('overflow-x', 'auto');
+			}
 		}
-
-		console.log("module.$mLayout_slide.width: " + module.$mLayout_slide.width());
 			
 		var carouselWidth = (module.$slide.width() * module.$mLayout_slide.length) + (slideMarginRight * module.$mLayout_slide.length);
 		module.$carousel.width( carouselWidth );
@@ -134,9 +134,15 @@ if (typeof bdc === 'undefined') { bdc = {}; }
 		
 		module.$carouselWrapper.width(bodyWidth); // Change the width of the wrapper element to match the existing with available.
 		$(carouselNav_UI).css('width',w); // Change the width of the nav arrows and their area.
+		console.log("w: " + w);
+		console.log("actualWidth: " + actualWidth);
+		console.log("bodyWidth: " + bodyWidth);
+		console.log("bodyWidth/actualWidth: " + bodyWidth/actualWidth);
 		
 		if(bodyWidth > 767){
 			module.$carousel.css('left', -(module.$carouselWrapperImg.width() - (bodyWidth - actualWidth - 6)/2)); // Update the width of the node
+		}else{
+			module.$carousel.css('left', 0);
 		}
 		
 		// Updated the dimensions of the DFP ad containers

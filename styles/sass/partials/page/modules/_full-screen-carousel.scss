@@ -139,11 +139,10 @@ $module-name: 'full-screen-carousel';
 	}
 
 	.carousel-nav {
-		display: block;
+		display: none;
 		max-height: 580px;
 		height: 100%;
 		background-color: rgba(255, 255, 255, 0.4);
-		display: block;
 		padding-bottom: 67px;
 		width: 20vw;
 		top: 0;
@@ -314,6 +313,10 @@ $module-name: 'full-screen-carousel';
 	.#{$module-name} {
 		margin-top: 0;
 
+		.carousel-nav {
+			display: block;
+		}
+
 		.category-tag {
 			display: block;
 		}
@@ -326,6 +329,10 @@ $module-name: 'full-screen-carousel';
 @include media-query(tablet) {
 	.#{$module-name} {
 		margin-top: 0;
+
+		.carousel-nav {
+			display: block;
+		}
 
 		.category-tag {
 			display: block;
