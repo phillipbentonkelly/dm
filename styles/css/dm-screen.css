@@ -5921,7 +5921,7 @@ a, img {
   width: 100%;
   max-width: 300px;
   position: relative;
-  display: inline-block;
+  display: block;
   margin: auto;
   margin-bottom: 10px;
 }
@@ -6034,34 +6034,36 @@ a, img {
   /* line 146, ../sass/partials/page-content/modules/_real-estate-news.scss */
   .real-estate-news__tile {
     width: 49%;
+    display: inline-block;
     float: left;
     margin: initial;
   }
-  /* line 152, ../sass/partials/page-content/modules/_real-estate-news.scss */
+  /* line 153, ../sass/partials/page-content/modules/_real-estate-news.scss */
   .real-estate-news__tile:nth-child(even) {
     margin-left: 2%;
   }
-  /* line 156, ../sass/partials/page-content/modules/_real-estate-news.scss */
+  /* line 157, ../sass/partials/page-content/modules/_real-estate-news.scss */
   .real-estate-news .adSlot {
     margin-left: 22%;
   }
 }
 @media (min-width: 960px) {
-  /* line 164, ../sass/partials/page-content/modules/_real-estate-news.scss */
+  /* line 165, ../sass/partials/page-content/modules/_real-estate-news.scss */
   .real-estate-news .adSlot {
     margin: 0 0 15px 0;
     float: none;
     display: inline-block;
   }
-  /* line 170, ../sass/partials/page-content/modules/_real-estate-news.scss */
+  /* line 171, ../sass/partials/page-content/modules/_real-estate-news.scss */
   .real-estate-news #ad_bigbox2 {
     margin-left: 3.5%;
   }
-  /* line 174, ../sass/partials/page-content/modules/_real-estate-news.scss */
+  /* line 175, ../sass/partials/page-content/modules/_real-estate-news.scss */
   .real-estate-news__tile {
+    display: inline-block;
     margin: initial;
   }
-  /* line 179, ../sass/partials/page-content/modules/_real-estate-news.scss */
+  /* line 181, ../sass/partials/page-content/modules/_real-estate-news.scss */
   .real-estate-news__tile:hover .detailsOverlay p {
     display: block;
   }
