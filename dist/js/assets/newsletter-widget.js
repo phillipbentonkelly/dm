@@ -10,7 +10,7 @@ $(function(){
 		var pubListId = '19196655';
 		var email = $('.newsletter-widget__signup-input').val();
 
-		var params = 'a=sub&m=' + mId + '&email=' + email + '&l=' + pubListId;
+		var params = 'a=sub&m=' + mId + '&e=' + email + '&l=' + pubListId;
 
 		alert(params);
 
