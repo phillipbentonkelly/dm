@@ -71,7 +71,7 @@ var PageNav = {};
 			}
 		},
 		toggleSearchForm: function() {
-			pageNav.$searchForm.toggle();
+			pageNav.$searchForm.show();
 		},
 		ethanMenu: function($el){
 			var $parentEl = $el.parent('.page-nav__nav-item');
