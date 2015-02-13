@@ -1,9 +1,10 @@
-<!-- Real Estate News (300x250) -->
 <div class="real-estate-news">
     <h1>Real Estate News</h1>
 
+    <div class="real-estate-news__hook"></div>
     <div class="real-estate-news__wrapper adSlots">
-        <a href="javascript:;" class="real-estate-news__tile">
+
+<!--         <a href="javascript:;" class="real-estate-news__tile">
             <div class="real-estate-news__category-tag-container">
                 <div class="category-tag maroon topSpacing">Luxury</div>
                 <div class="category-tag white topSpacing">For Sale</div>
@@ -40,11 +41,11 @@
                 </div>
             </div>
         </a>
-
+ -->
         
         <?php include 'ads/real-estate-news.php'; ?>        
 
-        <a href="javascript:;" class="real-estate-news__tile">
+        <!-- <a href="javascript:;" class="real-estate-news__tile">
             <div class="real-estate-news__category-tag-container">
                 <div class="category-tag orange topSpacing">East Boston</div>
                 <div class="category-tag white topSpacing">For Sale</div>
@@ -80,10 +81,10 @@
                     <p>Behold, it's the totally baller house of the week; there's a bar, a theater, an infinity pool, iPads. Yes, there are iPads.</p>
                 </div>
             </div>
-        </a>
+        </a> -->
 
     </div>
     
     <a href="javascript:;" class="viewMore">View More <img src="images/300by250---Arrow-Down.gif" /></a>
 </div>
-<!-- Real Estate News (300x250) -->
+<!-- Real Estate News (300x250)
