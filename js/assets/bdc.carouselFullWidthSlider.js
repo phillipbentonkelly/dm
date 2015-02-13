@@ -36,19 +36,9 @@ if (typeof bdc === 'undefined') { bdc = {}; }
 			targetSlide = 0; hideDuration = 500; showDuration = 0; appendMethod = 'appendTo';
 		}
 
-		if(usingDFP === true){
-			if((module.$slide.eq( targetSlide ).attr('id') === undefined) === false){
-				//console.log(module.$slide.eq( targetSlide ).attr('id'));
-			}else{
-
-			}
-		}
-
 		module.$slide.eq( targetSlide ).hide(hideDuration).promise().done(function(){
 			this.detach().promise().done(function(){
 				detachedObj = this;
-				/*console.log(this);
-				console.log(this.html());*/
 
 				detachedObj[appendMethod]( module.$carousel ).show(showDuration).promise().done(function(){
 					module.$slide = $('#carousel-wrap figure');
@@ -60,34 +50,13 @@ if (typeof bdc === 'undefined') { bdc = {}; }
 				});
 			});
 		});
-
-		/*module.$slide.eq( targetSlide ).hide(hideDuration).promise().done(function(){
-			detachedObj = this.detach();
-
-			detachedObj[appendMethod]( module.$carousel );
-
-			detachedObj[appendMethod]( module.$carousel ).show(showDuration).promise().done(function(){
-				module.$slide = $('#carousel-wrap figure');
-				module.$slide.removeClass('active');
-				module.$slide.eq( _engine.current ).addClass('active');
-			});
-
-			console.log(detachedObj);
-		});
-
-		detachedObj = module.$slide.eq( targetSlide ).detach();
-		detachedObj[appendMethod]( module.$carousel ).promise().done(function(){
-			module.$slide = $('#carousel-wrap figure');
-			module.$slide.removeClass('active');
-			module.$slide.eq( _engine.current ).addClass('active');
-		});*/
 	};
 
     _engine.autoSlide = function() {
     	if(WURFL.is_mobile !== true){
-    		/*slideInterval = setInterval( function(){
+    		slideInterval = setInterval( function(){
 				_engine.moveCarousel();
-			}, 16000);*/
+			}, 16000);
     	}
 	};
 
@@ -98,6 +67,9 @@ if (typeof bdc === 'undefined') { bdc = {}; }
     	module.$carouselWrapper = $('.carousel_wrapper');
     	module.$carouselWrapperImg = $('#carousel-wrap figure.slide a img[srcset]');
     	module.$slide = $('#carousel-wrap figure');
+    	module.$adSlots = $('.ad-slot');
+    	module.$adSlots__dfpContainers = {};
+    	module.$adSlots__dfpIframes = {};
 		module.$nextSlide = $('.js-slider-next');
 		module.$previousSlide = $('.js-slider-previous');
     	_engine.current = module.$slide.length > 2? 1 : 0;
@@ -128,17 +100,11 @@ if (typeof bdc === 'undefined') { bdc = {}; }
 		var slideMarginRight = module.$slide.css('margin-right')? parseInt(module.$slide.css('margin-right')) : 0;
 			module.$mLayout_slide = $('#carousel figure.slide');
 			module.$mLayout_img = $('#carousel figure.slide a img');
-		
-		/*console.log(WURFL.is_mobile);
-		console.log("bodyWidth: " + bodyWidth);*/
+
+    	module.$adSlots__dfpContainers = $('#carousel div[id*="google_ads_iframe_"]');
+    	module.$adSlots__dfpIframes = $('#carousel div[id*="google_ads_iframe_"] iframe');
 
 		if(WURFL.is_mobile === true && bodyWidth < 768){
-			/*console.log("Adjust Carousel Layout based on device and dimensions. If on mobile device and width is less 768 and not on a ");
-			console.log("Orientation: " + module.orientation);
-			console.log("inLandscape: " + inLandscape);
-			console.log(isMobile.any());
-			console.log(bodyWidth);*/
-
 			if(module.$wrapper.hasClass('useMobileLayout') === false){
 				module.$wrapper.addClass('useMobileLayout');
 
@@ -155,18 +121,26 @@ if (typeof bdc === 'undefined') { bdc = {}; }
 
 			module.$carouselWrapper.css('overflow-x', 'auto');
 		}
+
+		console.log("module.$mLayout_slide.width: " + module.$mLayout_slide.width());
 			
 		var carouselWidth = (module.$slide.width() * module.$mLayout_slide.length) + (slideMarginRight * module.$mLayout_slide.length);
 		module.$carousel.width( carouselWidth );
 		
 		module.$carouselWrapper.height(module.$carouselWrapperImg.height());
 		module.$carousel.height(module.$carouselWrapperImg.height());
-
-		/*if(bodyWidth > 767){*/
-			module.$carouselWrapper.width(bodyWidth); // Change the width of the wrapper element to match the existing with available.
-			$(carouselNav_UI).css('width',w); // Change the width of the nav arrows and their area.
-			module.$carousel.css('left', -(module.$carouselWrapperImg.width() - (bodyWidth - actualWidth - 6)/2)); // Update the width of the node
-		/*}*/
 		
+		module.$carouselWrapper.width(bodyWidth); // Change the width of the wrapper element to match the existing with available.
+		$(carouselNav_UI).css('width',w); // Change the width of the nav arrows and their area.
+		
+		if(bodyWidth > 767){
+			module.$carousel.css('left', -(module.$carouselWrapperImg.width() - (bodyWidth - actualWidth - 6)/2)); // Update the width of the node
+		}
+		
+		// Updated the dimensions of the DFP ad containers
+		module.$adSlots.width(module.$carouselWrapperImg.width()).height(module.$carouselWrapperImg.height());
+		module.$adSlots__dfpContainers.width(module.$carouselWrapperImg.width()).height(module.$carouselWrapperImg.height());
+		module.$adSlots__dfpIframes.width(module.$carouselWrapperImg.width()).height(module.$carouselWrapperImg.height());
+			module.$adSlots__dfpIframes.attr('width', module.$carouselWrapperImg.width()).attr('height', module.$carouselWrapperImg.height());
 	}
 })(window, jQuery);
