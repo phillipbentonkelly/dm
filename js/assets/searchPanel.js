@@ -142,7 +142,7 @@ dm.searchPanel = {};
 					case '2':
 						// keep buttons in an open state
 						self.btns.$lvl2t.getObservable().toggle();
-						// self.btns.$lvl1t.getObservable().toggle();
+						self.btns.$lvl1t.getObservable().toggle();
 						self.allOpen = true;
 					break;
 					case '1':
@@ -225,19 +225,19 @@ dm.searchPanel = {};
 
 					self.btns.$lvl1t.on('click', function(e){
 						e.preventDefault();
-						if(self.allOpen){
-							self.lvls.$lower.slideToggle('fast');
-							self.lvls.$one.slideToggle('fast');
-							self.expanded = self.getExpanded();
-							$lvl2State.toggle();
-						}
+						// if(self.allOpen){
+						// 	self.lvls.$lower.slideToggle('fast');
+						// 	self.lvls.$one.slideToggle('fast');
+						// 	self.expanded = self.getExpanded();
+						// 	$lvl2State.toggle();
+						// }
 						// }else{
 						// 	self.lvls.$one.slideToggle('fast');
 						// 	self.expanded = self.getExpanded();
 						// }
 						
-						$(this).toggleClass('close-search');
-						self.allOpen = false;
+						// $(this).toggleClass('close-search');
+						// self.allOpen = false;
 					});
 
 
