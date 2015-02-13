@@ -29,29 +29,34 @@ var PageNav = {};
 			pageNav.menuObj.$mainNavLinks = $('.page-nav__main-nav-links');
 			pageNav.menuObj.$logo = $('.page-nav__logo');
 
+			// hide search form on mobile at page load
+			if(pageNav.$body.width() < 768){
+				pageNav.$searchForm.hide();
+			}
+
 			this.initEventHandlers();
 		},
 		initEventHandlers: function(){
 			var thisRef = this;
 
 			pageNav.$responsiveIcon.on('click', thisRef.toggleMobileMenu);
+			pageNav.menuObj.$neighborhoods.on('click', thisRef.toggleMobileMegaMenu);
 
 		// done by Ethan DM-237
+			// toggles sublinks within find-a-home menu
 			pageNav.menuObj.$findAHome.on('click', function() {
 				thisRef.ethanMenu($(this));
 			});
 			// when search button is clicked, close expanded megamenu and toggle search form
 			pageNav.$resSearchIcon.on('click', function() {
-				pageNav.menuObj.$mainNavLinks.slideUp('fast');
-				pageNav.$searchForm.slideToggle('fast');
+				// pageNav.menuObj.$mainNavLinks.slideUp('fast');
+				pageNav.$searchForm.toggle();
 			});
 			// when hamburger button is clicked, close page-search
 			pageNav.$responsiveIcon.on('click', function() {
 				pageNav.$searchForm.slideUp('fast');
 			});
 		// end Ethan DM-237
-		
-			pageNav.menuObj.$neighborhoods.on('click', thisRef.toggleMobileMegaMenu);
 		},
 		toggleMobileMenu: function(e){
 			e.preventDefault();
