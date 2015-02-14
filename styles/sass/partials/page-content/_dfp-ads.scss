@@ -3,10 +3,16 @@ $module-name: 'ad-placeholder';
 .ad-dim__300by250 { // Ad Dimensions
 	width: 300px;
 	height: 250px;
+	background: lightgrey;
+}
+
+.ad-dim__leaderboard {
+	max-width: 728px;
+	max-height: 90px;
+	margin: auto;
 }
 
 .#{$module-name} {
-	background: lightgrey;
 	margin: auto;
 }
 

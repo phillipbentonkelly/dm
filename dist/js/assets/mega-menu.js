@@ -20,21 +20,37 @@ var PageNav = {};
 		init: function(){
 			pageNav.$body = $('body');
 			pageNav.$pageNav = $('.page-nav');
+			pageNav.$searchForm = $('.page-search__form');
 			pageNav.$responsiveIcon = $('.page-nav__mega-menu-responsive-icon');
 			pageNav.$resSearchIcon = $('.page-nav__search-responsive-icon');
-			pageNav.menuObj.$findAHome = $('#find-home-menu');
+			pageNav.menuObj.$findAHome = $('#find-home-menu').children('a');
 			pageNav.menuObj.$neighborhoods = $('#neighborhoods-menu');
 			pageNav.menuObj.$logo = $('.page-nav__logo');
 			pageNav.menuObj.$mainNavLinks = $('.page-nav__main-nav-links');
 			pageNav.menuObj.$logo = $('.page-nav__logo');
 
 			this.initEventHandlers();
-		}, 
+		},
 		initEventHandlers: function(){
 			var thisRef = this;
 
 			pageNav.$responsiveIcon.on('click', thisRef.toggleMobileMenu);
-			pageNav.menuObj.$findAHome.on('click', thisRef.toggleMobileMegaMenu);
+
+		// done by Ethan DM-237
+			pageNav.menuObj.$findAHome.on('click', function() {
+				thisRef.ethanMenu($(this));
+			});
+			// when search button is clicked, close expanded megamenu and toggle search form
+			pageNav.$resSearchIcon.on('click', function() {
+				pageNav.menuObj.$mainNavLinks.slideUp('fast');
+				pageNav.$searchForm.slideToggle('fast');
+			});
+			// when hamburger button is clicked, close page-search
+			pageNav.$responsiveIcon.on('click', function() {
+				pageNav.$searchForm.slideUp('fast');
+			});
+		// end Ethan DM-237
+		
 			pageNav.menuObj.$neighborhoods.on('click', thisRef.toggleMobileMegaMenu);
 		},
 		toggleMobileMenu: function(e){
@@ -48,6 +64,13 @@ var PageNav = {};
 			if(pageNav.$body.width() < 768){
 				$(thisObj.find('.mega-menu')).toggle();
 				$(thisObj.find('.mega-menu__container')).toggle();
+			}
+		},
+		ethanMenu: function($el){
+			var $parentEl = $el.parent('.page-nav__nav-item');
+			if(pageNav.$body.width() < 768){
+				$parentEl.find('.mega-menu').toggle();
+				$parentEl.find('.mega-menu__container').toggle();
 			}
 		},
 		updateLogoDim: function(){

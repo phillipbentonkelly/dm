@@ -342,5 +342,6 @@ dm.searchPanel = {};
 $(document).ready(function(){
 	if($('.page-search').length){
 		$('.page-search').searchPanel();
+		$('.page-search__form').hide();
 	}
 });
