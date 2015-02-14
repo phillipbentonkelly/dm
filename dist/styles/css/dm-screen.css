@@ -3483,23 +3483,23 @@ body.category-details .related-articles__section-header {
 }
 
 /* line 477, ../sass/partials/page/modules/_listing-summary.scss */
-.save-search-modal, .share-modal, .favorite-listing-modal, .related-articles-modal {
+.save-search-modal, .share-modal, .register-modal, .login-modal, .favorite-listing-modal, .related-articles-modal {
   width: 100%;
   margin: 0 5%;
   text-align: center;
 }
 /* line 482, ../sass/partials/page/modules/_listing-summary.scss */
-.save-search-modal .close-modal-btn, .share-modal .close-modal-btn, .favorite-listing-modal .close-modal-btn, .related-articles-modal .close-modal-btn {
+.save-search-modal .close-modal-btn, .share-modal .close-modal-btn, .register-modal .close-modal-btn, .login-modal .close-modal-btn, .favorite-listing-modal .close-modal-btn, .related-articles-modal .close-modal-btn {
   float: right;
 }
 /* line 486, ../sass/partials/page/modules/_listing-summary.scss */
-.save-search-modal .close-modal, .share-modal .close-modal, .favorite-listing-modal .close-modal, .related-articles-modal .close-modal {
+.save-search-modal .close-modal, .share-modal .close-modal, .register-modal .close-modal, .login-modal .close-modal, .favorite-listing-modal .close-modal, .related-articles-modal .close-modal {
   height: 20px;
   width: 20px;
   padding: 0 10px;
 }
 /* line 492, ../sass/partials/page/modules/_listing-summary.scss */
-.save-search-modal .header, .share-modal .header, .favorite-listing-modal .header, .related-articles-modal .header {
+.save-search-modal .header, .share-modal .header, .register-modal .header, .login-modal .header, .favorite-listing-modal .header, .related-articles-modal .header {
   margin-bottom: 10px;
   background: #2e1460;
   text-align: center;
@@ -3511,7 +3511,7 @@ body.category-details .related-articles__section-header {
   font-weight: 400;
 }
 /* line 505, ../sass/partials/page/modules/_listing-summary.scss */
-.save-search-modal .content, .share-modal .content, .favorite-listing-modal .content, .related-articles-modal .content {
+.save-search-modal .content, .share-modal .content, .register-modal .content, .login-modal .content, .favorite-listing-modal .content, .related-articles-modal .content {
   background: #dacef1;
   padding: 20px;
   height: 300px;

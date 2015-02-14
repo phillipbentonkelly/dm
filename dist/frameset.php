@@ -133,7 +133,7 @@
 	<?php if ($pageType == 'serp' || $pageType == 'property-listings' || $pageType == 'property-listings-premium') { ?>
         pgtype : 'results',
 	<?php } ?>
-        <?php if ($pageType == '404' || $pageType == 'category' || $pageType == 'category-details' || $pageType == 'neighborhood' || $pageType == 'articles' || $pageType == 'home' || ) { ?>
+        <?php if ($pageType == '404' || $pageType == 'category' || $pageType == 'category-details' || $pageType == 'neighborhood' || $pageType == 'articles' || $pageType == 'home') { ?>
         pgtype : 'sectfront',
         <?php } ?>
         pageurl : '',
@@ -511,6 +511,8 @@
 
     <!-- Search Modal -->
     <?php include 'page-content/modules/search-modal.php'; ?>
+    <?php include 'page-content/modules/register-modal.php'; ?>
+    <?php include 'page-content/modules/login-modal.php'; ?>
     <?php include 'page-content/modules/favorite-listing-modal.php'; ?>
 
 
