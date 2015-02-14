@@ -14,6 +14,7 @@
 <style>
 	.login-modal {
 		padding: 15px;
+		display: none;
 	}
 
 	.login-modal .content {

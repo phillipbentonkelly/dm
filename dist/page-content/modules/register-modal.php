@@ -16,6 +16,7 @@
 <style>
 	.register-modal {
 		padding: 15px;
+		display: none;
 	}
 
 	.register-modal .content {

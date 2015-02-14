@@ -33,9 +33,10 @@
     <script src="js/resources/moment.min.js"></script>
     <script src="js/assets/ui.js"></script>
 	<script src="js/assets/mega-menu.js"></script>
-	<script src="js/assets/gallery.js"></script>    
+	<script src="js/assets/gallery.js"></script>
+	<script src="js/resources/basic/js/jquery.simplemodal.js"></script>
 	<script src="js/assets/form-validation.js"></script>
-	<!-- <script src="js/assets/homepage-view-more-widget.js"></script> -->
+	<script src="js/assets/popup.js"></script>
 
 	<?php if ($pageType == 'home') { ?>
 		<script src="js/assets/homepage-view-more-widget.js"></script>
@@ -67,7 +68,6 @@
 
 	<?php if ($pageType == 'serp') { ?>
 		<script src="js/resources/basic/js/jquery.simplemodal.js"></script>
-        <script src="js/assets/popup.js"></script>
         <script src="js/assets/related-articles-rail-widget.js"></script>
 
 	<?php } ?>
@@ -78,8 +78,6 @@
         <script src="js/assets/listings.data.js"></script>
         <script src="js/resources/basic/js/jquery.simplemodal.js"></script>
         <script src="js/assets/related-articles-rail-widget.js"></script>
-
-        <script src="js/assets/popup.js"></script>
 	<?php } ?>
 	
 	<?php if ($pageType == 'articles') { ?>
@@ -509,7 +507,7 @@
     <?php include 'page/page-footer.php'; ?>
 
 
-    <!-- Search Modal -->
+    <!-- Modals -->
     <?php include 'page-content/modules/search-modal.php'; ?>
     <?php include 'page-content/modules/register-modal.php'; ?>
     <?php include 'page-content/modules/login-modal.php'; ?>
