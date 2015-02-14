@@ -25,6 +25,18 @@ $(document).ready(function() {
 	$('.mobile-favorite-btn').click(function() {
 		$('.favorite-listing-modal').modal();
 	});
+
+	// LOGIN MODAL
+	$('.mega-menu-login').click(function() {
+		// alert('baananas');
+		$('.login-modal').modal();
+	});
+
+	// REGISTER MODAL
+	$('.mega-menu-register').click(function() {
+		// alert('apples');
+		$('.register-modal').modal();
+	});
  
 	$('.mobile-contact-btn').click(function() {
 		var closeModal = $("<a class='close-modal-wrap' style='position:absolute;right:10px;top:10px;' href='javascript:;'><img class='close-modal' src='images/listings/x-icon.jpg' style='height:20px;width:20px;'></a>");
@@ -39,6 +51,7 @@ $(document).ready(function() {
 	$('.filter-drop').click(function() {
 		$('.search-filters-modal').modal();
 	});
+
 
 	$(document).on('click', '.close-modal', function() {
         $.modal.close();

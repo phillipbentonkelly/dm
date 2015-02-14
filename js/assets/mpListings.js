@@ -57,6 +57,7 @@ var mplistingObj = {};
             mpListings.$body = $('body');
                 mpListings.$bodyWidth = mpListings.$body.width();
             mpListings.$topNode = $('.mplistings');
+            mpListings.$hScrollWrapper = $('.mplistings .hScrollWrapper');
             mpListings.$listingFadeWrapper = $('.mplistings .scrollFadeWrapper');
             mpListings.$listingWrapper = $('.mplistings .scrollWrapper');
             mpListings.$listingsContainer = $('.listing-container');
@@ -108,6 +109,11 @@ var mplistingObj = {};
             if(mpListings.$bodyWidth < 768){
                 mpListings.$listingsContainer.width( (mpListings.$listings.eq(0).width() * mpListings.$listings.length) + 100 ).promise().done(function(){
                     thisRef.updatePropertyAddressHeight();
+                    mpListings.$hScrollWrapper.width(mpListings.$body.width());
+                });
+            }else{
+                mpListings.$listingsContainer.width(300).promise().done(function(){
+                    mpListings.$hScrollWrapper.width(300);
                 });
             }
 

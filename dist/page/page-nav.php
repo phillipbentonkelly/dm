@@ -234,10 +234,10 @@
                         <div class="mega-menu"><!---->
                             <div class="mega-menu__container myAccount">
                                 <ul class="mega-menu__list-items">
-                                    <li class="mega-menu__list-item">
+                                    <li class="mega-menu__list-item mega-menu-register">
                                         <a class="mega-menu__list-link" href="#">Register</a>
                                     </li>
-                                    <li class="mega-menu__list-item">
+                                    <li class="mega-menu__list-item mega-menu-login">
                                         <a class="mega-menu__list-link" href="#">Login</a>
                                     </li>
                                     <li class="mega-menu__list-item">
