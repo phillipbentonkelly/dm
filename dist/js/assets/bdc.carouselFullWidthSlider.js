@@ -134,10 +134,6 @@ if (typeof bdc === 'undefined') { bdc = {}; }
 		
 		module.$carouselWrapper.width(bodyWidth); // Change the width of the wrapper element to match the existing with available.
 		$(carouselNav_UI).css('width',w); // Change the width of the nav arrows and their area.
-		console.log("w: " + w);
-		console.log("actualWidth: " + actualWidth);
-		console.log("bodyWidth: " + bodyWidth);
-		console.log("bodyWidth/actualWidth: " + bodyWidth/actualWidth);
 		
 		if(bodyWidth > 767){
 			module.$carousel.css('left', -(module.$carouselWrapperImg.width() - (bodyWidth - actualWidth - 6)/2)); // Update the width of the node
