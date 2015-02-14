@@ -511,6 +511,8 @@
 
     <!-- Search Modal -->
     <?php include 'page-content/modules/search-modal.php'; ?>
+    <?php include 'page-content/modules/register-modal.php'; ?>
+    <?php include 'page-content/modules/login-modal.php'; ?>
     <?php include 'page-content/modules/favorite-listing-modal.php'; ?>
 
 
