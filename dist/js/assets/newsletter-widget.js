@@ -10,9 +10,9 @@ $(function(){
 		var pubListId = '19196655';
 		var email = $('.newsletter-widget__signup-input').val();
 
-		var params = 'a=sub&m=' + mId + '&e=' + email + '&l=' + pubListId;
+		var params = 'a=sub&m=' + mId + '&e=' + email + '&l=' + pubListId + '&o=j';
 
-		alert(params);
+		console.log(params);
 
 		$.ajax({
 			url: 'http://pages.exacttarget.com/bgcenter/',
@@ -24,7 +24,7 @@ $(function(){
                 "Access-Control-Allow-Origin": "*"
 			}
 		}).then(function(data){
-			alert(data);
+			console.log(data.success);
 		});
 
 	});
