@@ -16,9 +16,12 @@ dm.searchPanel = {};
 		this.el = el;
 
 		this.device = (screen.width <= 480) ? 'mobile' : 'desktop';
+
+		this.local = document.URL.indexOf('localhost') != -1 ? true : false;
 		
 		// statefulness...
 		this.expanded = this.getExpanded();
+
 		//this.isSaved = this.isSaved();
 
 		// store refs to DOM elements to save memory
@@ -165,6 +168,8 @@ dm.searchPanel = {};
 
 			var self = this;
 
+			var serpUrl = self.local ? 'frameset.php?page-type=serp' : 'serp.html';
+
 			switch(self.device){
 
 				case 'desktop':
@@ -264,11 +269,10 @@ dm.searchPanel = {};
 				self.isSaved = self.checkIfSaved();
 				// validation, ajax, rest, etc.
 
-				// serp url
-				var serp = "frameset.php?page-type=serp";
-				var lvls = "&expanded=" + self.expanded;
+				var sep = self.local ? '&' : '?';
+				var lvls = "expanded=" + self.expanded;
 
-				location.href = serp + lvls;
+				location.href = serpUrl + sep + lvls;
 			});
 
 			// form submit boilerplate
@@ -278,11 +282,11 @@ dm.searchPanel = {};
 				//self.isSaved = self.checkIfSaved();
 				// validation, ajax, rest, etc.
 
-				// serp url
-				var serp = "frameset.php?page-type=serp";
-				var lvls = "&expanded=1";
+				
+				var sep = self.local ? '&' : '?';
+				var lvls = "expanded=" + self.expanded;
 
-				location.href = serp + lvls;
+				location.href = serpUrl + sep + lvls;
 			});
 
 
