@@ -19,7 +19,7 @@ dm.searchPanel = {};
 		
 		// statefulness...
 		this.expanded = this.getExpanded();
-		this.isSaved = this.isSaved();
+		//this.isSaved = this.isSaved();
 
 		// store refs to DOM elements to save memory
 		this.lvls = {
@@ -148,6 +148,8 @@ dm.searchPanel = {};
 					case '1':
 						self.btns.$lvl1t.toggleClass('close-search'); 
 						self.lvls.$lower.hide();
+						self._form.show();
+						self.lvls.$one.show();
 					break;
 					default:
 						// hide both
@@ -265,9 +267,22 @@ dm.searchPanel = {};
 				// serp url
 				var serp = "frameset.php?page-type=serp";
 				var lvls = "&expanded=" + self.expanded;
-				var saved = "&saved=" + self.saved;
 
-				location.href = serp + lvls + saved;
+				location.href = serp + lvls;
+			});
+
+			// form submit boilerplate
+			$('.mega-menu__search-submit').on('click', function(e){
+				e.preventDefault();
+				self.expanded = self.checkExpanded();
+				//self.isSaved = self.checkIfSaved();
+				// validation, ajax, rest, etc.
+
+				// serp url
+				var serp = "frameset.php?page-type=serp";
+				var lvls = "&expanded=1";
+
+				location.href = serp + lvls;
 			});
 
 

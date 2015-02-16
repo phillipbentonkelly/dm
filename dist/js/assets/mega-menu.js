@@ -28,6 +28,8 @@ var PageNav = {};
 			pageNav.menuObj.$logo = $('.page-nav__logo');
 			pageNav.menuObj.$mainNavLinks = $('.page-nav__main-nav-links');
 			pageNav.menuObj.$logo = $('.page-nav__logo');
+			pageNav.$searchInput = $('.mega-menu__search-input');
+			pageNav.$searchSubmit = $('.mega-menu__search-submit');
 
 			this.initEventHandlers();
 		},
@@ -50,6 +52,7 @@ var PageNav = {};
 				pageNav.$searchForm.slideUp('fast');
 			});
 		// end Ethan DM-237
+
 		
 			pageNav.menuObj.$neighborhoods.on('click', thisRef.toggleMobileMegaMenu);
 		},
