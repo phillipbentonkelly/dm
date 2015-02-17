@@ -3,330 +3,93 @@
 	// Related Articles
 	var module = {};
 
-	module.allArticles = [
-		{
-			image: 'images/related-articles/related-articles__thumbs__2.jpg',
-			title: "Article #1",
-			description: "The dream home of the most famouse couple in Massachusetts looks like it's close to completion.",
-			date: "September 9, 2014",
-			tags: [
-					{'tag-type':'Open House',
-					'tag-color': 'light-blue'
-					},
+	module.getArticles = function() {
+		$.get('http://devedit.boston.com/eom/SysConfig/WebPortal/BDC/Framework/feeds/placester/getArticles.jsp?mode=full', function(data) {
+			module.allArticles = data['articles'];
+			console.log('All Articles', module.allArticles);
+			module.buildWidget(module.allArticles);
+		});
+	};
 
-					{'tag-type':'Luxury',
-					'tag-color': 'maroon'
-					},
-			]
-		},
-
-		{
-			image: 'images/related-articles/related-articles__thumbs__1.jpg',
-			title: "Article #2",
-			description: "This updated Italianate mansion, once known as The Gilbert House, was originally built in 1854 and has undergone extensive renovations while remaining loyal to the home's orignal design.",
-			date: "September 9, 2014",
-			tags: [
-					{'tag-type':'Jamaica Plain',
-					'tag-color': 'orange'
-					}
-			]
-		},
-
-		{
-			image: 'images/related-articles/related-articles__thumbs__1.jpg',
-			title: "Article #3",
-			description: "This updated Italianate mansion, once known as The Gilbert House, was originally built in 1854 and has undergone extensive renovations while remaining loyal to the home's orignal design.",
-			date: "September 9, 2014",
-			tags: [
-					{'tag-type':'Jamaica Plain',
-					'tag-color': 'orange'
-					},
-
-					{'tag-type':'Open House',
-					'tag-color': 'light-blue'
-					}
-			]
-		},
-
-		{
-			image: 'images/related-articles/related-articles__thumbs__2.jpg',
-			title: "Article #4",
-			description: "The dream home of the most famouse couple in Massachusetts looks like it's close to completion.",
-			date: "September 9, 2014",
-			tags: [
-					{'tag-type':'Open House',
-					'tag-color': 'light-blue'
-					},
-
-					{'tag-type':'Luxury',
-					'tag-color': 'maroon'
-					}
-			]
-		},
-
-		{
-			image: 'images/related-articles/related-articles__thumbs__1.jpg',
-			title: "Article #5",
-			description: "This updated Italianate mansion, once known as The Gilbert House, was originally built in 1854 and has undergone extensive renovations while remaining loyal to the home's orignal design.",
-			date: "September 9, 2014",
-			tags: [
-					{'tag-type':'Jamaica Plain',
-					'tag-color': 'orange'
-					}
-			]
-		},
-
-
-		{
-			image: 'images/related-articles/related-articles__thumbs__1.jpg',
-			title: "Article #6",
-			description: "This updated Italianate mansion, once known as The Gilbert House, was originally built in 1854 and has undergone extensive renovations while remaining loyal to the home's orignal design.",
-			date: "September 9, 2014",
-			tags: [
-					{'tag-type':'Jamaica Plain',
-					'tag-color': 'orange'
-					}
-			]
-		},
-
-		{
-			image: 'images/related-articles/related-articles__thumbs__1.jpg',
-			title: "Article #7",
-			description: "This updated Italianate mansion, once known as The Gilbert House, was originally built in 1854 and has undergone extensive renovations while remaining loyal to the home's orignal design.",
-			date: "September 9, 2014",
-			tags: [
-					{'tag-type':'Jamaica Plain',
-					'tag-color': 'orange'
-					},
-
-					{'tag-type':'Open House',
-					'tag-color': 'light-blue'
-					}
-			]
-		},
-
-		{
-			image: 'images/related-articles/related-articles__thumbs__2.jpg',
-			title: "Article #8",
-			description: "The dream home of the most famouse couple in Massachusetts looks like it's close to completion.",
-			date: "September 9, 2014",
-			tags: [
-					{'tag-type':'Open House',
-					'tag-color': 'light-blue'
-					},
-
-					{'tag-type':'Luxury',
-					'tag-color': 'maroon'
-					}
-			]
-		},
-
-		{
-			image: 'images/related-articles/related-articles__thumbs__1.jpg',
-			title: "Article #9",
-			description: "This updated Italianate mansion, once known as The Gilbert House, was originally built in 1854 and has undergone extensive renovations while remaining loyal to the home's orignal design.",
-			date: "September 9, 2014",
-			tags: [
-					{'tag-type':'Jamaica Plain',
-					'tag-color': 'orange'
-					}
-			]
-		},
-
-		{
-			image: 'images/related-articles/related-articles__thumbs__1.jpg',
-			title: "Article #10",
-			description: "This updated Italianate mansion, once known as The Gilbert House, was originally built in 1854 and has undergone extensive renovations while remaining loyal to the home's orignal design.",
-			date: "September 9, 2014",
-			tags: [
-					{'tag-type':'Jamaica Plain',
-					'tag-color': 'orange'
-					}
-			]
-		},
-
-		{
-			image: 'images/related-articles/related-articles__thumbs__1.jpg',
-			title: "Article #11",
-			description: "This updated Italianate mansion, once known as The Gilbert House, was originally built in 1854 and has undergone extensive renovations while remaining loyal to the home's orignal design.",
-			date: "September 9, 2014",
-			tags: [
-					{'tag-type':'Jamaica Plain',
-					'tag-color': 'orange'
-					},
-
-					{'tag-type':'Open House',
-					'tag-color': 'light-blue'
-					}
-			]
-		},
-
-		{
-			image: 'images/related-articles/related-articles__thumbs__2.jpg',
-			title: "Article #12",
-			description: "The dream home of the most famouse couple in Massachusetts looks like it's close to completion.",
-			date: "September 9, 2014",
-			tags: [
-					{'tag-type':'Open House',
-					'tag-color': 'light-blue'
-					},
-
-					{'tag-type':'Luxury',
-					'tag-color': 'maroon'
-					}
-			]
-		},
-
-		{
-			image: 'images/related-articles/related-articles__thumbs__1.jpg',
-			title: "Article #13",
-			description: "This updated Italianate mansion, once known as The Gilbert House, was originally built in 1854 and has undergone extensive renovations while remaining loyal to the home's orignal design.",
-			date: "September 9, 2014",
-			tags: [
-					{'tag-type':'Jamaica Plain',
-					'tag-color': 'orange'
-					}
-			]
-		},
-
-		
-		{
-			image: 'images/related-articles/related-articles__thumbs__1.jpg',
-			title: "Article #14",
-			description: "This updated Italianate mansion, once known as The Gilbert House, was originally built in 1854 and has undergone extensive renovations while remaining loyal to the home's orignal design.",
-			date: "September 9, 2014",
-			tags: [
-					{'tag-type':'Jamaica Plain',
-					'tag-color': 'orange'
-					}
-			]
-		},
-
-		{
-			image: 'images/related-articles/related-articles__thumbs__1.jpg',
-			title: "Article #15",
-			description: "This updated Italianate mansion, once known as The Gilbert House, was originally built in 1854 and has undergone extensive renovations while remaining loyal to the home's orignal design.",
-			date: "September 9, 2014",
-			tags: [
-					{'tag-type':'Jamaica Plain',
-					'tag-color': 'orange'
-					},
-
-					{'tag-type':'Open House',
-					'tag-color': 'light-blue'
-					}
-			]
-		},
-
-		{
-			image: 'images/related-articles/related-articles__thumbs__2.jpg',
-			title: "Article #16",
-			description: "The dream home of the most famouse couple in Massachusetts looks like it's close to completion.",
-			date: "September 9, 2014",
-			tags: [
-					{'tag-type':'Open House',
-					'tag-color': 'light-blue'
-					},
-
-					{'tag-type':'Luxury',
-					'tag-color': 'maroon'
-					}
-			]
-		},
-
-		{
-			image: 'images/related-articles/related-articles__thumbs__1.jpg',
-			title: "Article #17",
-			description: "This updated Italianate mansion, once known as The Gilbert House, was originally built in 1854 and has undergone extensive renovations while remaining loyal to the home's orignal design.",
-			date: "September 9, 2014",
-			tags: [
-					{'tag-type':'Jamaica Plain',
-					'tag-color': 'orange'
-					}
-			]
-		},
-
-		{
-			image: 'images/related-articles/related-articles__thumbs__1.jpg',
-			title: "Article #18",
-			description: "This updated Italianate mansion, once known as The Gilbert House, was originally built in 1854 and has undergone extensive renovations while remaining loyal to the home's orignal design.",
-			date: "September 9, 2014",
-			tags: [
-					{'tag-type':'Jamaica Plain',
-					'tag-color': 'orange'
-					},
-
-					{'tag-type':'Open House',
-					'tag-color': 'light-blue'
-					}
-			]
-		},
-
-		{
-			image: 'images/related-articles/related-articles__thumbs__2.jpg',
-			title: "Article #19",
-			description: "The dream home of the most famouse couple in Massachusetts looks like it's close to completion.",
-			date: "September 9, 2014",
-			tags: [
-					{'tag-type':'Open House',
-					'tag-color': 'light-blue'
-					},
-
-					{'tag-type':'Luxury',
-					'tag-color': 'maroon'
-					}
-			]
-		},
-
-		{
-			image: 'images/related-articles/related-articles__thumbs__1.jpg',
-			title: "Article #20",
-			description: "This updated Italianate mansion, once known as The Gilbert House, was originally built in 1854 and has undergone extensive renovations while remaining loyal to the home's orignal design.",
-			date: "September 9, 2014",
-			tags: [
-					{'tag-type':'Jamaica Plain',
-					'tag-color': 'orange'
-					}
-			]
-		}
-	];
-
-	module.buildWidget = function() {
-		var articlesDisplayed = module.allArticles.slice(module.curIndex, (module.curIndex+6));
-
+	module.buildWidget = function(allArticles) {
+		var articlesDisplayed = allArticles.slice(module.curIndex, (module.curIndex+6));
 		// build each article's markup
 		for (var i = 0; i < articlesDisplayed.length; i++) {
+
 			var curItem = articlesDisplayed[i];
 			var markup =[];
 			var tagMarkup = [];
-			var articlesOnPage = $('.related-articles').children('.related-articles__item').length;
+			var mediaMarkup = [];
+			var mediaCount = curItem.images ? curItem.images.length : 0;
+			var date = curItem.creationDate ? module.formatDate(curItem.creationDate) : 'no date available';
+			var media;
+			var description;
+			if (curItem.SEOInformation) {
+				description  = curItem.SEOInformation.summary;
+			} else if (curItem.content) {
+				description = curItem.content;
+			} else {
+				description = 'Sorry, no description available for this article';
+			}
+			description = description.slice(0, 100) + ' ...';
+
+			// var title = curItem.title || curItem.SEOInformation.headline || 'Sorry, no title available for this article';
+			var title;
+			if (curItem.title) {
+				title  = curItem.title;
+			} else if (curItem.SEOInformation) {
+				title = curItem.SEOInformation.headline;
+			} else {
+				title = 'Sorry, no title available for this article';
+			}
 
 			// build each article's tags
-			for (var j = 0; j < curItem.tags.length; j++) {
-				var tag = '<a href="javascript:;" class="category-tag ' + curItem.tags[j]['tag-color'] + '">' + curItem.tags[j]['tag-type'] + '</a>';
-				tagMarkup.push(tag);
+			if(curItem.keywords && curItem.keywords.length > 1) {
+				var t = 0;
+				while (t < 3) {
+					var tag = '<a href="javascript:;" class="category-tag maroon">' + curItem.keywords[t] + '</a>';
+					tagMarkup.push(tag);
+					t++;
+				}
+			}
+
+			// find best image to use as thumbnail
+			if(mediaCount < 1) {
+				media = '<img class="thumb" style="height:120px;width:175px;border:1px solid black" src="" />';
+				mediaMarkup.push(media);
+			} else {
+				for (var p = 0; p < mediaCount; p++) {
+					if(!curItem.hasImage) {
+						if(curItem.images[p]['--class'] && curItem.images[p]['--class'] == 'main-web-images') {
+							media = '<img class="thumb" style="height:120px;width:175px" src="' + curItem.images[p].url + '" />';
+						} else {
+							media = '<img class="thumb" style="height:120px;width:175px" src="' + curItem.images[0].url + '" />';
+						}
+						curItem.hasImage = true;
+						mediaMarkup.push(media);
+					}
+				}
 			}
 
 			var _tagMarkup = tagMarkup.join('');
 			markup = [	'<div class="related-articles__item">',
-							'<img class="thumb" src="' + curItem.image + '" />',
+							mediaMarkup,
 							'<div class="main-info">',
 								'<a href="javascript:;">',
-									'<h2 class="title">' + curItem.title + '</h2>',
+									'<h2 class="title">' + title + '</h2>',
 								'</a>',
-								'<p class="description">' + curItem.description + '</p>',
+								'<p class="description">' + description + '</p>',
 							'</div>',
 							'<div class="additional-info">',
-								'<div class="date">' + curItem.date + '</div>',
+								'<div class="date">' + date + '</div>',
 								'<div class="tags">',
-								_tagMarkup,
+									_tagMarkup,
 								'</div>',
 							'</div>',
 						'</div>'
 					].join('');
 
-			// Inject ads after first 4 articles
-			if( module.allArticles.indexOf(articlesDisplayed[i]) < 4 ) {
+			if(module.allArticles.indexOf(articlesDisplayed[i]) < 4) {
 				module.$hook.append(markup);
 			} else {
 				module.$container.append(markup);
@@ -336,11 +99,12 @@
 	};
 
 	module.showMoreArticles = function() {
-		module.curIndex += 6;
-		if($('.related-articles__item').length < module.listLength) {
-			module.buildWidget(module.curIndex);
+		if($('.related-articles__item').length < module.allArticles.length) {
+			module.curIndex += 6;
+			module.buildWidget(module.allArticles);
+		} else {
+			return;
 		}
-		return;
 	};
 
 	// Event Handlers
@@ -350,18 +114,25 @@
 		});
 	};
 
+	module.formatDate = function(timestamp) {
+		var year = timestamp.slice(0,4);
+		var month = timestamp.slice(4,6);
+		var day = timestamp.slice(6,8);
+		var date = moment(timestamp,'YYYYMMDDHHmmss');
+		var formattedDate = date.format('MMMM Do YYYY');
+		return formattedDate;
+	};
+
 	module.init = function() {
 		module.$container = $('.related-articles');
-		module.$hook =  $('.related-articles__hook');
-		module.$ads = $('.related-articles__ad-container');
 		module.$viewMore = $('.related-articles').find('.viewMore');
+		module.$hook = $('.related-articles__hook')
 		module.$articlesDisplayed = $('.related-articles__item').length;
-
-		module.listLength = module.allArticles.length;
-		module.totalPages = Math.ceil(module.listLength / 6);
 		module.curIndex = 0;
 
-		module.buildWidget(0);
+		module.getArticles();
+
+		// module.buildWidget(0);
 		module.eventHandlers();
 	};
 
