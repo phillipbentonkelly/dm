@@ -7,7 +7,6 @@ if (typeof dm === 'undefined') { dm = {}; }
 
 dm.searchPanel = {};
 
-
 (function($, window, document, undefined){
 
 
@@ -342,6 +341,5 @@ dm.searchPanel = {};
 $(document).ready(function(){
 	if($('.page-search').length){
 		$('.page-search').searchPanel();
-		$('.page-search__form').hide();
 	}
 });
