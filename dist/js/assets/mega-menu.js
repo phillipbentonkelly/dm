@@ -2,6 +2,8 @@
 // *  Mega Menu
 // *
 
+if (typeof dm === 'undefined') { dm = {}; }
+
 var PageNav = {};
 
 (function( win, $, undefined ) {
@@ -42,17 +44,7 @@ var PageNav = {};
 			pageNav.menuObj.$findAHome.on('click', function() {
 				thisRef.ethanMenu($(this));
 			});
-			// when search button is clicked, close expanded megamenu and toggle search form
-			pageNav.$resSearchIcon.on('click', function() {
-				pageNav.menuObj.$mainNavLinks.slideUp('fast');
-				pageNav.$searchForm.slideToggle('fast');
-			});
-			// when hamburger button is clicked, close page-search
-			pageNav.$responsiveIcon.on('click', function() {
-				pageNav.$searchForm.slideUp('fast');
-			});
 		// end Ethan DM-237
-
 		
 			pageNav.menuObj.$neighborhoods.on('click', thisRef.toggleMobileMegaMenu);
 		},
@@ -67,6 +59,7 @@ var PageNav = {};
 			if(pageNav.$body.width() < 768){
 				$(thisObj.find('.mega-menu')).toggle();
 				$(thisObj.find('.mega-menu__container')).toggle();
+				$('.page-nav__main-nav-links').trigger('change');
 			}
 		},
 		ethanMenu: function($el){
