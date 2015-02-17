@@ -1,6 +1,6 @@
 <div class="login-modal">
     <div class="header">
-        <a class="close-modal-btn" href="javascript:;"><img class="close-modal" src="images/listings/x-icon.jpg"></a>
+        <a class="close-modal-btn" href="javascript:;"><img class="close-modal" src="images/listings/x-icon.JPG"></a>
         <p>Sign In</p>
     </div>
     <div class="content">

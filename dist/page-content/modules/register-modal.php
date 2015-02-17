@@ -1,6 +1,6 @@
 <div class="register-modal">
     <div class="header">
-        <a class="close-modal-btn" href="javascript:;"><img class="close-modal" src="images/listings/x-icon.jpg"></a>
+        <a class="close-modal-btn" href="javascript:;"><img class="close-modal" src="images/listings/x-icon.JPG"></a>
         <p>Register</p>
     </div>
     <div class="content">

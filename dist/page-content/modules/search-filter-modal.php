@@ -1,7 +1,7 @@
 <!-- MODAL: SEARCH FILTERS -->
 <div class="search-filters-modal">
     <div class="header">
-        <a class="close-modal-btn" href="javascript:;"><img class="close-modal" src="images/listings/x-icon.jpg"></a>
+        <a class="close-modal-btn" href="javascript:;"><img class="close-modal" src="images/listings/x-icon.JPG"></a>
         <p>Sort by</p>
     </div>
     <div class="content">
