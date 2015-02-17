@@ -28,13 +28,11 @@ $(document).ready(function() {
 
 	// LOGIN MODAL
 	$('.mega-menu-login').click(function() {
-		// alert('baananas');
 		$('.login-modal').modal();
 	});
 
 	// REGISTER MODAL
 	$('.mega-menu-register').click(function() {
-		// alert('apples');
 		$('.register-modal').modal();
 	});
  
