@@ -124,9 +124,9 @@
 	};
 
 	module.init = function() {
-		module.$container = $('.related-articles');
+		module.$container = $(window).width() < 768 ? $('.related-articles-modal') : $('.related-articles');
 		module.$viewMore = $('.related-articles').find('.viewMore');
-		module.$hook = $('.related-articles__hook')
+		module.$hook = $('.related-articles__hook');
 		module.$articlesDisplayed = $('.related-articles__item').length;
 		module.curIndex = 0;
 
