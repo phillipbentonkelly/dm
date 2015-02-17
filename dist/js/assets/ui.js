@@ -37,7 +37,7 @@ var UIMods = {};
 			uiMods.$pageSearch.offset({ top: (uiMods.$pageNav.offset().top + uiMods.$pageNav.height()), left: 0 });
 		},
 		mobileEventHandlers: function(){
-
+			// mouseup events trigger the click events for the other visible panel
 			uiMods.$megaMenu.$icon.on('mouseup', function(){
 				if(uiMods.$pageSearch.$form.is(':visible')){
 					uiMods.$pageSearch.$icon.trigger('click');
@@ -51,9 +51,6 @@ var UIMods = {};
 			});
 
 		},
-
-
-
 
 	};
 })(window, jQuery);
