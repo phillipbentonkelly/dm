@@ -13,7 +13,7 @@ dm.env = {
 
 dm.searchPanel = {};
 
-(function($, window, document, undefined, dm){
+(function($, window, document, undefined){
 
 
 	dm.searchPanel = function(el){
@@ -333,7 +333,7 @@ dm.searchPanel = {};
 	});
 
 
-})(jQuery, window, document, undefined, dm);
+})(jQuery, window, document, undefined);
 
 
 $(document).ready(function(){
