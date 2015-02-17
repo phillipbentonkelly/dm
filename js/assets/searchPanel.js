@@ -4,29 +4,32 @@
 
 if (typeof dm === 'undefined') { dm = {}; }
 
+/* environmental variables */
+dm.env = {
+	device : (screen.width <= 480) ? 'mobile' : 'desktop',
+	local : document.URL.indexOf('localhost') != -1 ? true : false
+};
+
 
 dm.searchPanel = {};
 
-
-(function($, window, document, undefined){
+(function($, window, document, undefined, dm){
 
 
 	dm.searchPanel = function(el){
 
 		this.el = el;
-
-		this.device = (screen.width <= 480) ? 'mobile' : 'desktop';
 		
 		// statefulness...
 		this.expanded = this.getExpanded();
-		this.isSaved = this.isSaved();
 
 		// store refs to DOM elements to save memory
 		this.lvls = {
 			$one: $('.page-search__row--level-one'),
 			$two: $('.page-search__row--level-two'),
 			$three: $('.page-search__row--level-three'),
-			$lower: $('.page-search__form > .lower-level')
+			$lower: $('.page-search__form > .lower-level'),
+			$all: $('.page-search__row, .page-search__form > .lower-level')
 		};
 
 		this.filters = {
@@ -44,19 +47,24 @@ dm.searchPanel = {};
 		};
 
 		this.btns = {
-			$lvl1t: $('.page-nav__search-responsive-icon > a'), // relevant for mobile only
+			$mobileOpen: $('.page-nav__search-responsive-icon > a'), // relevant for mobile only
 			$lvl2t: $('.page-search__button--level-two-toggle'),
 			$lvl3t: $('.page-search__button--level-three-toggle'),
 			$close: $('.page-search__button--close'),
-			$save: $('.page-search__button--save'), 
+			//$save: $('.page-search__button--save'), 
 			$submit: $('.page-search__buttons--submit')
+		};
+
+		this.megamenuSearch = {
+			$submit: $('.mega-menu__search-submit')
 		};
 
 		this.modals = {
 			$svSearch: $('.save-search-modal')
 		};
 
-		this.init();	
+		this.init();
+
 	}
 
 	dm.searchPanel.prototype = {
@@ -108,8 +116,7 @@ dm.searchPanel = {};
 
 			var self = this;
 
-
-			if( self.device === 'desktop' ){
+			if( dm.env.device === 'desktop' ){
 				switch(self.expanded){
 					case '3':
 						//hide nothing...
@@ -131,13 +138,9 @@ dm.searchPanel = {};
 					break;
 				}
 
-				if(self.isSaved){
-					self.btns.$save.getObservable().toggle();
-				}
-
 			}
 
-			if( self.device === 'mobile' ){
+			if( dm.env.device === 'mobile' ){
 				switch(self.expanded){
 					case '2':
 						// keep buttons in an open state
@@ -152,7 +155,9 @@ dm.searchPanel = {};
 					default:
 						// hide both
 						self.lvls.$lower.hide();
-						self.lvls.$one.hide();
+						// hide the form instead of the first level
+						self._form.$el.hide();
+						// self.lvls.$one.hide();
 					break;
 				}
 
@@ -163,7 +168,9 @@ dm.searchPanel = {};
 
 			var self = this;
 
-			switch(self.device){
+			var serpUrl = dm.env.local ? 'frameset.php?page-type=serp' : 'serp.html';
+
+			switch(dm.env.device){
 
 				case 'desktop':
 
@@ -203,18 +210,6 @@ dm.searchPanel = {};
 						});
 					});
 
-					self.btns.$save.on('click', function(e){
-						e.preventDefault();
-						var status = $(this).getObservable();
-						if(!self.saved){
-							$(modal).modal();
-							$(modal).find('button').on('click',function(e){
-								self.saved = true;
-								$(this).hide();
-							});
-						}
-					});
-
 				break;
 
 
@@ -223,28 +218,24 @@ dm.searchPanel = {};
 					// keep track of level#2 state when user closes all
 					var $lvl2State = self.btns.$lvl2t.getObservable();
 
-					self.btns.$lvl1t.on('click', function(e){
+					
+					self.btns.$mobileOpen.on('click', function(e){
 						e.preventDefault();
+						self._form.$el.toggle();
 						if(self.allOpen){
-							self.lvls.$lower.slideToggle('fast');
-							self.lvls.$one.slideToggle('fast');
-							self.expanded = self.getExpanded();
-							$lvl2State.toggle();
-						}else{
-							self.lvls.$one.slideToggle('fast');
-							self.expanded = self.getExpanded();
+							self.lvls.$lower.slideToggle('fast', function(){
+								$lvl2State.toggle();
+							});
 						}
-						
+						self.expanded = self.getExpanded();
 						$(this).toggleClass('close-search');
 						self.allOpen = false;
 					});
-
 
 					self.btns.$lvl2t.on('click', function(e){
 						e.preventDefault();
 						var state = $(this).getObservable();
 						var lwrLvls = $.merge(self.lvls.$two, self.lvls.$three);
-						//lwrLvls.slideToggle('fast');
 						self.lvls.$lower.slideToggle('fast');
 						self.expanded = self.getExpanded();
 						state.toggle();
@@ -255,17 +246,24 @@ dm.searchPanel = {};
 					
 			} // end switch
 
-			// form submit boilerplate
 			self._form.$el.on('submit', function(e){
 				e.preventDefault();
 				self.expanded = self.checkExpanded();
 				self.isSaved = self.checkIfSaved();
 				// validation, ajax, rest, etc.
 
-				// serp url
-				var serp = "frameset.php?page-type=serp";
-				var lvls = "&expanded=" + self.expanded;
-				var saved = "&saved=" + self.saved;
+				var sep = dm.env.local ? '&' : '?';
+				var lvls = "expanded=" + self.expanded;
+
+				location.href = serpUrl + sep + lvls;
+			});
+
+			self.megamenuSearch.$submit.on('click', function(e){
+				e.preventDefault();
+				self.expanded = self.checkExpanded();
+
+				var sep = dm.env.local ? '&' : '?';
+				var lvls = "expanded=1";
 
 				location.href = serp + lvls + saved;
 			});
@@ -283,7 +281,7 @@ dm.searchPanel = {};
 
 
 		getExpanded: function(){
-			var def = self.device == 'mobile' ? 0 : 1;
+			var def = dm.env.device == 'mobile' ? 0 : 1;
 			var paramExpanded = $.getParamVal('expanded');
 			return paramExpanded || def;
 		},
@@ -301,14 +299,13 @@ dm.searchPanel = {};
 			return (rows - rowsHidden);
 		},
 
-
 		checkIfSaved: function(){
 			var state = $('.page-search__button--save').getObservable().filter(':visible');
 			var saved = state.attr('class') === 'saved' ? true : false
 			return saved;
 		}
 
-	};	
+	};
 
 
 	$.fn.searchPanel = function(){
@@ -336,12 +333,11 @@ dm.searchPanel = {};
 	});
 
 
-})(jQuery, window, document, undefined);
+})(jQuery, window, document, undefined, dm);
 
 
 $(document).ready(function(){
 	if($('.page-search').length){
 		$('.page-search').searchPanel();
-		$('.page-search__form').hide();
 	}
 });
