@@ -23,6 +23,7 @@
 			var mediaCount = curItem.images ? curItem.images.length : 0;
 			var date = curItem.creationDate ? module.formatDate(curItem.creationDate) : 'no date available';
 			var media;
+			var articleLink = curItem.link;
 			var description;
 			if (curItem.SEOInformation) {
 				description  = curItem.SEOInformation.summary;
@@ -75,7 +76,7 @@
 			markup = [	'<div class="related-articles__item">',
 							mediaMarkup,
 							'<div class="main-info">',
-								'<a href="javascript:;">',
+								'<a href="' + articleLink + '">',
 									'<h2 class="title">' + title + '</h2>',
 								'</a>',
 								'<p class="description">' + description + '</p>',
