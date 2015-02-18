@@ -5623,8 +5623,8 @@ body.category-details .related-articles__section-header {
     width: 100%;
     padding: 45px 0;
     box-sizing: border-box;
-    background: url(http://cdn.moneycrashers.com/wp-content/uploads/2012/02/moving5-edit.jpg);
-    background-position: -111px 157px;
+    background-image: url(../../images/listings/newsletter-widget-img.png);
+    background-position: -15px -65px;
   }
   /* line 40, ../sass/partials/page/modules/_newsletter-widget.scss */
   .newsletter-widget__input-wrapper {
@@ -5665,13 +5665,34 @@ body.category-details .related-articles__section-header {
     color: #b48455;
   }
   /* line 77, ../sass/partials/page/modules/_newsletter-widget.scss */
+  .newsletter-widget__pintrest-btn {
+    position: relative;
+    border-radius: 5px;
+    color: white;
+    padding: 5px 5px 5px 20px;
+    font-size: 10px;
+    font-weight: 600;
+    background: #AE2B30;
+  }
+  /* line 87, ../sass/partials/page/modules/_newsletter-widget.scss */
+  .newsletter-widget__pintrest-img {
+    position: absolute;
+    top: 2px;
+    left: 3px;
+    height: 16px;
+    width: 16px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url(../../images/listings/pintrest-logo.png);
+  }
+  /* line 98, ../sass/partials/page/modules/_newsletter-widget.scss */
   .newsletter-widget__connect-header {
     text-align: center;
     padding: 10px;
     font-size: 12px;
     font-family: 'OpenSans SemiBold';
   }
-  /* line 84, ../sass/partials/page/modules/_newsletter-widget.scss */
+  /* line 105, ../sass/partials/page/modules/_newsletter-widget.scss */
   .newsletter-widget__connect--left-col, .newsletter-widget__connect--right-col {
     float: left;
     width: 48%;
@@ -5679,21 +5700,21 @@ body.category-details .related-articles__section-header {
     height: 75px;
     position: relative;
   }
-  /* line 92, ../sass/partials/page/modules/_newsletter-widget.scss */
+  /* line 113, ../sass/partials/page/modules/_newsletter-widget.scss */
   .newsletter-widget__connect--right-col {
     margin-left: 2%;
   }
-  /* line 95, ../sass/partials/page/modules/_newsletter-widget.scss */
+  /* line 116, ../sass/partials/page/modules/_newsletter-widget.scss */
   .newsletter-widget__connect--right-col a {
     position: absolute;
     top: 29px;
     left: 7px;
   }
-  /* line 102, ../sass/partials/page/modules/_newsletter-widget.scss */
+  /* line 123, ../sass/partials/page/modules/_newsletter-widget.scss */
   .newsletter-widget__connect--left-col {
     margin-right: 2%;
   }
-  /* line 105, ../sass/partials/page/modules/_newsletter-widget.scss */
+  /* line 126, ../sass/partials/page/modules/_newsletter-widget.scss */
   .newsletter-widget__connect--left-col div {
     position: absolute;
     top: 27px;

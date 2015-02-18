@@ -33,8 +33,8 @@ $module-name: 'newsletter-widget';
 			width: 100%;
 			padding: 45px 0;
 			box-sizing: border-box;
-			background: url(http://cdn.moneycrashers.com/wp-content/uploads/2012/02/moving5-edit.jpg);
-			background-position: -111px 157px;
+			background-image: url(#{$img-path}listings/newsletter-widget-img.png);
+			background-position: -15px -65px;
 		}
 
 		&__input-wrapper {
@@ -72,6 +72,27 @@ $module-name: 'newsletter-widget';
 				background: #b48455;
 				color: #b48455;
 			}
+		}
+
+		&__pintrest-btn {
+			position: relative;
+			border-radius: 5px;
+			color: white;
+			padding: 5px 5px 5px 20px;
+			font-size: 10px;
+			font-weight: 600;
+			background: #AE2B30;
+		}
+
+		&__pintrest-img {
+			position: absolute;
+			top: 2px;
+			left: 3px;
+			height: 16px;
+			width: 16px;
+			background-repeat: no-repeat; 
+			background-size: contain;
+			background-image: url(#{$img-path}listings/pintrest-logo.png);
 		}
 
 		&__connect-header {
