@@ -1011,7 +1011,7 @@ textarea {
   }
   /* line 233, ../sass/partials/page/_page-nav.scss */
   .page-nav__main-nav-links {
-    display: inline-block;
+    display: block;
     width: 86.77%;
     position: relative;
     background-color: initial;
