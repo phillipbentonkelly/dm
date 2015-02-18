@@ -62,6 +62,16 @@ $module-name: 'newsletter-widget';
 			color: white;
 			font-family: 'OpenSans Bold';
 			cursor: pointer;
+
+			&.failure{
+				background: rgb(255, 0, 0);
+				color: rgb(255, 0, 0);
+			}
+
+			&.success{
+				background: #b48455;
+				color: #b48455;
+			}
 		}
 
 		&__connect-header {
