@@ -94,6 +94,7 @@ var galleryWidgetObj = {};
 									galleryWidget.$showCaption.css("display","block");
 									galleryWidget.$caption.html(_hiddenCaption.html());
 								} else {
+									galleryWidget.$caption.html("");
 									galleryWidget.$showCaption.css("display","none");
 								}
 								galleryWidget.$label__current.html(_data._current);
@@ -123,6 +124,7 @@ var galleryWidgetObj = {};
 									galleryWidget.$showCaption.css("display","block");
 									galleryWidget.$caption.html(_hiddenCaption.html());
 								} else {
+									galleryWidget.$caption.html("");
 									galleryWidget.$showCaption.css("display","none");
 								}
 								galleryWidget.$label__current.html(_data._current);
@@ -154,6 +156,7 @@ var galleryWidgetObj = {};
 					galleryWidget.$showCaption.css("display","block");
 					galleryWidget.$caption.html(_hiddenCaption.html());
 				} else {
+					galleryWidget.$caption.html("");
 					galleryWidget.$showCaption.css("display","none");
 				}
 			}
