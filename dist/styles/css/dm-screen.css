@@ -5450,17 +5450,22 @@ body.category-details .related-articles__section-header {
   float: left;
   width: 55%;
   height: 100%;
+  box-sizing: border-box;
 }
-/* line 97, ../sass/partials/page/modules/related-articles-right-rail.scss */
+/* line 98, ../sass/partials/page/modules/related-articles-right-rail.scss */
 .related-articles-mobile__item .additional-info {
   float: left;
   width: 45%;
 }
 
 @media (min-width: 768px) {
-  /* line 105, ../sass/partials/page/modules/related-articles-right-rail.scss */
+  /* line 106, ../sass/partials/page/modules/related-articles-right-rail.scss */
   .related-articles-mobile {
     display: block;
+  }
+  /* line 110, ../sass/partials/page/modules/related-articles-right-rail.scss */
+  .related-articles-mobile__item .main-info {
+    padding-left: 10px;
   }
 }
 /* line 7, ../sass/partials/page/modules/_multimedia-chip.scss */

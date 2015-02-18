@@ -92,6 +92,7 @@ $module-name: 'related-articles-mobile';
 			float: left;
 			width: 55%;
 			height: 100%;
+			box-sizing: border-box;
 		}
 
 		.additional-info {
@@ -104,6 +105,12 @@ $module-name: 'related-articles-mobile';
 @media (min-width: 768px) {
 	.#{$module-name} {
 		display: block;
+		&__item {
+
+			.main-info {
+				padding-left: 10px;
+			}
+		}
 	}
 }
 
