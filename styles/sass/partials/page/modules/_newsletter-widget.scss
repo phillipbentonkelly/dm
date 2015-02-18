@@ -86,12 +86,13 @@ $module-name: 'newsletter-widget';
 
 		&__pintrest-img {
 			position: absolute;
-			left: 2px;
-			top: 1px;
-			height: 18px;
-			width: 18px;
+			top: 2px;
+			left: 3px;
+			height: 16px;
+			width: 16px;
+			background-repeat: no-repeat; 
 			background-size: contain;
-			background-image: url(#{$img-path}listings/pinterest-logo.png);
+			background-image: url(#{$img-path}listings/pintrest-logo.png);
 		}
 
 		&__connect-header {
