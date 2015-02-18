@@ -485,7 +485,7 @@ textarea {
 *, *:before, *:after {
   -moz-box-sizing: content-box;
   -webkit-box-sizing: content-box;
-  box-sizing: content-box;
+  /*box-sizing: border-box content-box;*/
 }
 
 @media screen and (min-width: 768px) {
