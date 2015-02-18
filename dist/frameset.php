@@ -31,12 +31,16 @@
 	<!-- SCRIPTS -->
     <script src="js/resources/jquery.min.js"></script>
     <script src="js/resources/moment.min.js"></script>
-   
+    <script src="js/resources/plugins/selectize/selectize.js"></script>
+    <script src="js/resources/plugins/select2/select2.js"></script>
+
 	<script src="js/assets/mega-menu.js"></script>
 	<script src="js/assets/gallery.js"></script>
 	<script src="js/resources/basic/js/jquery.simplemodal.js"></script>
 	<script src="js/assets/form-validation.js"></script>
 	<script src="js/assets/popup.js"></script>
+	<script src="js/assets/searchPanel.js"></script>
+    <script src="js/assets/ui.js"></script>
 
 	<?php if ($pageType == 'home') { ?>
 		<script src="js/assets/homepage-view-more-widget.js"></script>
@@ -145,10 +149,7 @@
 <script src="js/assets/dm.dfp.ad-catalog.js"></script>
 <script src="http://www.boston.com/js/bcom.dfp.ad-init.js"></script>
 
-	<script src="js/resources/plugins/selectize/selectize.js"></script>
-    <script src="js/resources/plugins/select2/select2.js"></script>
-    <script src="js/assets/searchPanel.js"></script>
-     <script src="js/assets/ui.js"></script>
+	
     <script>
         $(document).ready(function(){
         	if('#listingDropDown'){
@@ -340,9 +341,6 @@
 			<?php if ($pageType == 'home') { ?>
 				<!-- Newsletter Widget -->
 				<?php include 'page-content/modules/newsletter-widget.php'; ?>
-
-				<!-- DFP Sidebar Placeholder Ad Content -->
-				<?php include 'ads/adplaceholer__right-column.php'; ?>
 
 				<!-- Property Listings Widget -->
 				<?php include 'page/modules/property-listings.php'; ?>
