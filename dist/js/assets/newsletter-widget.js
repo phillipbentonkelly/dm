@@ -1,47 +1,35 @@
 
-$(function(){
+$(document).ready(function(){
 
-	var $widget = $('.newsletter-widget__input-wrapper');
-	var $button = $('.newsletter-widget__signup-button');
-	var $input = $('.newsletter-widget__signup-input');
+	var newsletterSignup = {
+		$form : $('.newsletter-widget__signup-form'),
+		$email: $('.newsletter-widget__signup-input'),
+		$successMsg : $('.newsletter-widget__msg--success'),
+		$failureMsg : $('.newsletter-widget__msg--failure'),
+		$invalidEmail : $('.newsletter-widget__msg--invalid-email'),
+		$submit : $('.newsletter-widget__signup-button')
+	};
 
-	$('.newsletter-widget__signup-button').bind('click', function(e){
+	$('.newsletter-widget__signup-form').on('submit', function(e){
 		e.preventDefault();
-		var base = "http://pages.exacttarget.com/bgcenter";
-		var mId = '10790730';
-		var pubListId = '19196655';
-		var email = $('.newsletter-widget__signup-input').val();
-
-		var paramObj = {
-			'a' : 'sub',
-			'm' : mId,
-			'l' : pubListId,
-			'e' : email,
-			'o' : 'j'
-		};
-
-		var params = $.param(paramObj);
-
-		//console.log(params);
+		var params = $( this ).serialize();
 
 		$.ajax({
-			url: 'http://pages.exacttarget.com/bgcenter/',
-			type: 'POST',
+			url: 'newsletter-handler.php',
+			type: 'post',
 			data: params,
-			dataType: 'jsonp',
-			headers: {
-				Accept: "application/json",
-                "Access-Control-Allow-Origin": "*"
-			}
-		}).then(function(data){
-			if(data.success){
-				var successMsg = '<p class="newsletter-widget__sucess-msg">Success! Thank you</p>';
-				$input.remove();
-				$widget.append(successMsg);
-				
-				$button.text('').style('background: #b48455');
-			}else{
-				console.log(params);
+			dataType: 'json',
+			success: function(data){
+				newsletterSignup.$email.val('').attr('placeholder', 'Success! Thank you');
+				newsletterSignup.$submit.addClass('success').attr('disabled', 'disabled');
+			},
+			error: function(data){
+				// below
+				newsletterSignup.$email.val('').attr('placeholder', 'Error. Please try again.');
+				newsletterSignup.$submit.addClass('failure');
+				setTimeout(function(){
+					newsletterSignup.$submit.removeClass('failure');
+				}, 500);
 			}
 		});
 

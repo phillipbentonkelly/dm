@@ -5649,14 +5649,24 @@ body.category-details .related-articles__section-header {
     font-family: 'OpenSans Bold';
     cursor: pointer;
   }
-  /* line 67, ../sass/partials/page/modules/_newsletter-widget.scss */
+  /* line 66, ../sass/partials/page/modules/_newsletter-widget.scss */
+  .newsletter-widget__signup-button.failure {
+    background: red;
+    color: red;
+  }
+  /* line 71, ../sass/partials/page/modules/_newsletter-widget.scss */
+  .newsletter-widget__signup-button.success {
+    background: #b48455;
+    color: #b48455;
+  }
+  /* line 77, ../sass/partials/page/modules/_newsletter-widget.scss */
   .newsletter-widget__connect-header {
     text-align: center;
     padding: 10px;
     font-size: 12px;
     font-family: 'OpenSans SemiBold';
   }
-  /* line 74, ../sass/partials/page/modules/_newsletter-widget.scss */
+  /* line 84, ../sass/partials/page/modules/_newsletter-widget.scss */
   .newsletter-widget__connect--left-col, .newsletter-widget__connect--right-col {
     float: left;
     width: 48%;
@@ -5664,21 +5674,21 @@ body.category-details .related-articles__section-header {
     height: 75px;
     position: relative;
   }
-  /* line 82, ../sass/partials/page/modules/_newsletter-widget.scss */
+  /* line 92, ../sass/partials/page/modules/_newsletter-widget.scss */
   .newsletter-widget__connect--right-col {
     margin-left: 2%;
   }
-  /* line 85, ../sass/partials/page/modules/_newsletter-widget.scss */
+  /* line 95, ../sass/partials/page/modules/_newsletter-widget.scss */
   .newsletter-widget__connect--right-col a {
     position: absolute;
     top: 29px;
     left: 7px;
   }
-  /* line 92, ../sass/partials/page/modules/_newsletter-widget.scss */
+  /* line 102, ../sass/partials/page/modules/_newsletter-widget.scss */
   .newsletter-widget__connect--left-col {
     margin-right: 2%;
   }
-  /* line 95, ../sass/partials/page/modules/_newsletter-widget.scss */
+  /* line 105, ../sass/partials/page/modules/_newsletter-widget.scss */
   .newsletter-widget__connect--left-col div {
     position: absolute;
     top: 27px;
