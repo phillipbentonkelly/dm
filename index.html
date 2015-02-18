@@ -896,7 +896,10 @@
 
 	<div class="newsletter-widget__signup-wrapper">
 		<div class="newsletter-widget__input-wrapper">
-				<input class="newsletter-widget__signup-input" placeholder="Please enter your email" type="text"/><button class="newsletter-widget__signup-button">Submit</button>
+			<form class="newsletter-widget__signup-form" name="newsletter-signup-form" action="#" method="post">
+				<input type="text" name="email" class="newsletter-widget__signup-input" placeholder="Please enter your email"/>		
+				<input type="submit" name="submit" class="newsletter-widget__signup-button" value="Submit"/>
+			</form>
 		</div>
 	</div>
 
