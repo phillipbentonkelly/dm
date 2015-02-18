@@ -8,56 +8,56 @@
 	// Related Articles
 	var module = {};
 
-	module.tags = 	[	{ tag: 'Arlington', color: '#c6323', link: '/locations/arlington/2.0.1944328483', tagtype: 'Location'},
-						{ tag: 'Boston', color: '#c6323', link: '/locations/boston/2.0.1944328611', tagtype: 'Location'},
-						{ tag: 'Allston-Brighton', color: '#c6323', link: '/locations/allston+brighton/2.0.1944328466', tagtype: 'Location'},
-						{ tag: 'Back Bay', color: '#c6323', link: '/locations/back+bay/2.0.1944328500', tagtype: 'Location'},
-						{ tag: 'Beacon Hill', color: '#c6323', link: '/locations/beacon+hill/2.0.1944328577', tagtype: 'Location'},
-						{ tag: 'Charlestown', color: '#c6323', link: '/locations/charlestown/2.0.1944328696', tagtype: 'Location'},
-						{ tag: 'Dorchester', clor: '#c6323', link: '/locations/dorchester/2.0.1944328713', tagtype: 'Location'},
-						{ tag: 'Downtown', color: '#c6323', link: '/locations/downtown/2.0.1944328730', tagtype: 'Location'},
-						{ tag: 'East Boston', color: '#c6323', link: '/locations/east+boston/2.0.1944328611', tagtype: 'Location'},
-						{ tag: 'Fenway-Kenmore', color: '#c6323', link: '/locations/fenway+kenmore/2.0.1944328764', tagtype: 'Location'},
-						{ tag: 'Financial District', color: '#c6323', link: '/locations/financial+district/2.0.1944328781', tagtype: 'Location'},
-						{ tag: 'Jamaica Plain', color: '#c6323', link: '/locations/jamaica+plain/2.0.1944328852', tagtype: 'Location'},
-						{ tag: 'North End', color: '#c6323', link: '/locations/north+end/2.0.1944329141', tagtype: 'Location'},
-						{ tag: 'South Boston', color: '#c6323', link: '/locations/south+boston/2.0.1944329255', tagtype: 'Location'},
-						{ tag: 'South End', color: '#c6323', link: '/locations/south+end/2.0.1944329272', tagtype: 'Location'},
-						{ tag: 'West Roxbury', color: '#c6323', link: '/locations/west+roxbury/2.0.1944430437', tagtype: 'Location'},
-						{ tag: 'Brookline', color: '#c6323', link: '/locations/brookline/2.0.1944328645', tagtype: 'Location'},
-						{ tag: 'Cambridge', color: '#c6323', link: '/locations/cambridge/2.0.1944328662', tagtype: 'Location'},
-						{ tag: 'Newton', color: '#c6323', link: '/locations/newton/2.0.1944329124', tagtype: 'Location'},
-						{ tag: 'Quincy', color: '#c6323', link: '/locations/quincy/2.0.1944329158', tagtype: 'Location'},
-						{ tag: 'Somerville', color: '#c6323', link: '/locations/somerville/2.0.1944329192', tagtype: 'Location'},
-						{ tag: 'Cape Cod', color: '#c6323', link: '/locations/cape+cod/2.0.1944328679', tagtype: 'Location'},
-						{ tag: 'Belmont', color: '#c6323', link: '/locations/belmont/2.0.1944328594', tagtype: 'Location'},
-						{ tag: 'Braintree', color: '#c6323', link: '/locations/braintree/2.0.1944328628', tagtype: 'Location'},
-						{ tag: 'Hingham', color: '#c6323', link: '/locations/hingham/2.0.1944328798', tagtype: 'Location'},
-						{ tag: 'Lexington', color: '#c6323', link: '/locations/lexington/2.0.1944328913', tagtype: 'Location'},
-						{ tag: 'Medford', color: '#c6323', link: '/locations/medford/2.0.1944328930', tagtype: 'Location'},
-						{ tag: 'Melrose', color: '#c6323', link: '/locations/melrose/2.0.1944329036', tagtype: 'Location'},
-						{ tag: 'Milton', color: '#c6323', link: '/locations/milton/2.0.1944329053', tagtype: 'Location'},
-						{ tag: 'Natick', color: '#c6323', link: '/locations/natick/2.0.1944329070', tagtype: 'Location'},
-						{ tag: 'Needham Heights', color: '#c6323', link: '/locations/needham+heights/2.0.1944329107', tagtype: 'Location'},
-						{ tag: 'Reading', color: '#c6323', link: '/locations/reading/2.0.1944329175', tagtype: 'Location'},
-						{ tag: 'Wakefield', color: '#c6323', link: '/locations/wakefield/2.0.1944329289', tagtype: 'Location'},
-						{ tag: 'Waltham', color: '#c6323', link: '/locations/waltham/2.0.1944329306', tagtype: 'Location'},
-						{ tag: 'Watertown', color: '#c6323', link: '/locations/watertown/2.0.1944329323', tagtype: 'Location'},
-						{ tag: 'Westwood', color: '#c6323', link: '/locations/westwood/2.0.1944430454', tagtype: 'Location'},
-						{ tag: 'Weymouth', color: '#c6323', link: '/locations/weymouth/2.0.1944430471', tagtype: 'Location'},
-						{ tag: 'Winchester', color: '#c6323', link: '/locations/winchester/2.0.1944430488', tagtype: 'Location'},
-						{ tag: 'Wellesley', color: '#c6323', link: '/locations/wellesley/2.0.1944329340', tagtype: 'Location'},
-						{ tag: 'Buying', color: '#c6323', link: '/buying/2.0.1966001199', tagtype: 'Category'},
-						{ tag: 'New Developments', color: '#c6323', link: '/new+developments/2.0.1966001250', tagtype: 'Category'},
-						{ tag: 'Open Houses', color: '#c6323', link: '/open+houses/2.0.1966017649', tagtype: 'Category'},
-						{ tag: 'Home Improvement', color: '#c6323', link: '/home+improvement/2.0.1966001216', tagtype: 'Category'},
-						{ tag: 'News', color: '#c6323', link: '/news/2.0.1966017666', tagtype: 'Category'},
-						{ tag: 'Renting', color: '#c6323', link: '/renting/2.0.1966017683', tagtype: 'Category'},
-						{ tag: 'Luxury', color: '#c6323', link: '/luxury/2.0.1966001233', tagtype: 'Category'},
-						{ tag: 'Sponsored', color: '#c6323', link: '', tagtype: 'Sponsored'},
-						{ tag: 'Open House', color: '#c6323', link: '', tagtype: 'Open House'},
-						{ tag: 'New Listing', color: '#c6323', link: '', tagtype: 'New Listing'}
-					];
+	module.tags =	{	'Arlington': { color: '#ce6323', link: '/locations/arlington/2.0.1944328483', tagtype: 'Location'},
+						'Boston': { color: '#ce6323', link: '/locations/boston/2.0.1944328611', tagtype: 'Location'},
+						'Allston-Brighton': { color: '#ce6323', link: '/locations/allston+brighton/2.0.1944328466', tagtype: 'Location'},
+						'Back Bay': { color: '#ce6323', link: '/locations/back+bay/2.0.1944328500', tagtype: 'Location'},
+						'Beacon Hill': { color: '#ce6323', link: '/locations/beacon+hill/2.0.1944328577', tagtype: 'Location'},
+						'Charlestown': { color: '#ce6323', link: '/locations/charlestown/2.0.1944328696', tagtype: 'Location'},
+						'Dorchester': { color: '#ce6323', link: '/locations/dorchester/2.0.1944328713', tagtype: 'Location'},
+						'Downtown': { color: '#ce6323', link: '/locations/downtown/2.0.1944328730', tagtype: 'Location'},
+						'East Boston': { color: '#ce6323', link: '/locations/east+boston/2.0.1944328611', tagtype: 'Location'},
+						'Fenway-Kenmore': { color: '#ce6323', link: '/locations/fenway+kenmore/2.0.1944328764', tagtype: 'Location'},
+						'Financial District': { color: '#ce6323', link: '/locations/financial+district/2.0.1944328781', tagtype: 'Location'},
+						'Jamaica Plain': { color: '#ce6323', link: '/locations/jamaica+plain/2.0.1944328852', tagtype: 'Location'},
+						'North End': { color: '#ce6323', link: '/locations/north+end/2.0.1944329141', tagtype: 'Location'},
+						'South Boston': { color: '#ce6323', link: '/locations/south+boston/2.0.1944329255', tagtype: 'Location'},
+						'South End': { color: '#ce6323', link: '/locations/south+end/2.0.1944329272', tagtype: 'Location'},
+						'West Roxbury': { color: '#ce6323', link: '/locations/west+roxbury/2.0.1944430437', tagtype: 'Location'},
+						'Brookline': { color: '#ce6323', link: '/locations/brookline/2.0.1944328645', tagtype: 'Location'},
+						'Cambridge': { color: '#ce6323', link: '/locations/cambridge/2.0.1944328662', tagtype: 'Location'},
+						'Newton': { color: '#ce6323', link: '/locations/newton/2.0.1944329124', tagtype: 'Location'},
+						'Quincy': { color: '#ce6323', link: '/locations/quincy/2.0.1944329158', tagtype: 'Location'},
+						'Somerville': { color: '#ce6323', link: '/locations/somerville/2.0.1944329192', tagtype: 'Location'},
+						'Cape Cod': { color: '#ce6323', link: '/locations/cape+cod/2.0.1944328679', tagtype: 'Location'},
+						'Belmont': { color: '#ce6323', link: '/locations/belmont/2.0.1944328594', tagtype: 'Location'},
+						'Braintree': { color: '#ce6323', link: '/locations/braintree/2.0.1944328628', tagtype: 'Location'},
+						'Hingham': { color: '#ce6323', link: '/locations/hingham/2.0.1944328798', tagtype: 'Location'},
+						'Lexington': { color: '#ce6323', link: '/locations/lexington/2.0.1944328913', tagtype: 'Location'},
+						'Medford': { color: '#ce6323', link: '/locations/medford/2.0.1944328930', tagtype: 'Location'},
+						'Melrose': { color: '#ce6323', link: '/locations/melrose/2.0.1944329036', tagtype: 'Location'},
+						'Milton': { color: '#ce6323', link: '/locations/milton/2.0.1944329053', tagtype: 'Location'},
+						'Natick': { color: '#ce6323', link: '/locations/natick/2.0.1944329070', tagtype: 'Location'},
+						'Needham Heights': { color: '#ce6323', link: '/locations/needham+heights/2.0.1944329107', tagtype: 'Location'},
+						'Reading': { color: '#ce6323', link: '/locations/reading/2.0.1944329175', tagtype: 'Location'},
+						'Wakefield': { color: '#ce6323', link: '/locations/wakefield/2.0.1944329289', tagtype: 'Location'},
+						'Waltham': { color: '#ce6323', link: '/locations/waltham/2.0.1944329306', tagtype: 'Location'},
+						'Watertown': { color: '#ce6323', link: '/locations/watertown/2.0.1944329323', tagtype: 'Location'},
+						'Westwood': { color: '#ce6323', link: '/locations/westwood/2.0.1944430454', tagtype: 'Location'},
+						'Weymouth': { color: '#ce6323', link: '/locations/weymouth/2.0.1944430471', tagtype: 'Location'},
+						'Winchester': { color: '#ce6323', link: '/locations/winchester/2.0.1944430488', tagtype: 'Location'},
+						'Wellesley': { color: '#ce6323', link: '/locations/wellesley/2.0.1944329340', tagtype: 'Location'},
+						'Buying': { color: '#773659', link: '/buying/2.0.1966001199', tagtype: 'Category'},
+						'New Developments': { color: '#773659', link: '/new+developments/2.0.1966001250', tagtype: 'Category'},
+						'Open Houses': { color: '#773659', link: '/open+houses/2.0.1966017649', tagtype: 'Category'},
+						'Home Improvement': { color: '#773659', link: '/home+improvement/2.0.1966001216', tagtype: 'Category'},
+						'News': { color: '#773659', link: '/news/2.0.1966017666', tagtype: 'Category'},
+						'Renting': { color: '#773659', link: '/renting/2.0.1966017683', tagtype: 'Category'},
+						'Luxury': { color: '#773659', link: '/luxury/2.0.1966001233', tagtype: 'Category'},
+						'Sponsored': { color: '#a1b3b4', link: '', tagtype: 'Sponsored'},
+						'Open House': { color: '#77a9c3', link: '', tagtype: 'Open House'},
+						'New Listing': { color: '#b4a455', link: '', tagtype: 'New Listing'}
+					};
 
 	module.getArticles = function() {
 		$.get('http://devedit.boston.com/eom/SysConfig/WebPortal/BDC/Framework/feeds/placester/getArticles.jsp?mode=full', function(data) {
@@ -109,12 +109,17 @@
 			}
 
 			// build each article's tags
-			if(curItem.keywords && curItem.keywords.length > 1) {
-				var t = 0;
-				while (t < 3) {
-					var tag = '<a href="javascript:;" class="category-tag maroon">' + curItem.keywords[t] + '</a>';
-					tagMarkup.push(tag);
-					t++;
+			if(curItem.keywords) {
+				var c = 0;
+				for (var k=0; k < curItem.keywords.length; k++) {
+					if (typeof module.tags[curItem.keywords[k]] !== "undefined") {
+						console.log(curItem.keywords[k]);
+						var curTag = module.tags[curItem.keywords[k]];
+						var tag = '<a href="' + curTag.link + '" style="background:' + curTag.color + '" class="category-tag">' + curItem.keywords[k] + '</a>';
+						tagMarkup.push(tag);
+						c++;
+					}
+					if (c >= 4) break;
 				}
 			}
 
