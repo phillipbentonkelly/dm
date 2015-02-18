@@ -39,12 +39,12 @@ $(document).ready(function(){
 
 	$('.newsletter-widget__signup-form').on('submit', function(e){
 		e.preventDefault();
-		var email = newsletterSignup.$email.val()
+		var email = newsletterSignup.$email.val();
 		var dataToSend = {
 			'a': 'sub',
 			'm': '10790730',
 			'l': '19196655',
-			'e': newsletterSignup.$email.val()
+			'e': email
 		};
 		var params = $.param(dataToSend);
 
