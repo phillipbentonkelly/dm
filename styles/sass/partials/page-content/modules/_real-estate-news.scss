@@ -151,7 +151,8 @@ a, img{
 		}
 
 		&__tile:nth-child(even) {
-			margin-left: 2%
+			margin-left: 2%;
+			margin-bottom: 10px;
 		}
 
 		.adSlot {
@@ -163,13 +164,14 @@ a, img{
 @include media-query(desktop) {
 	.#{$module-name} {
 		.adSlot {
-			margin: 0 0 15px 0;
+			margin: 0 0 5px 0;
 			float: none;
 			display: inline-block;
 		}
 
 		#ad_bigbox2 {
-			margin-left: 3.5%;
+			margin-left: 2%;
+			margin-bottom: 10px;
 		}
 
 		&__tile {
