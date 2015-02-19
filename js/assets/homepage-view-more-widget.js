@@ -2,6 +2,7 @@
 	'use strict';
 	// Related Articles
 	var module = {};
+	var _ads = _ads || {};
 
 	module.allArticles = [
 		{
@@ -298,13 +299,12 @@
 			]
 		},
 	];
-
+	var adCount = 0;
 	module.buildWidget = function() {
-		var articlesDisplayed = module.allArticles.slice(module.curIndex, (module.curIndex+4));
-
+		module.articlesDisplayed = module.allArticles.slice(module.curIndex, (module.curIndex+4));
 		// build each article's markup
-		for (var i = 0; i < articlesDisplayed.length; i++) {
-			var curItem = articlesDisplayed[i];
+		for (var i = 0; i < module.articlesDisplayed.length; i++) {
+			var curItem = module.articlesDisplayed[i];
 			var markup =[];
 			var tagMarkup = [];
 			var articlesOnPage = $('.real-estate-news').children('.real-state-news__tile').length;
@@ -334,15 +334,38 @@
 						'</div>'
 					].join('');
 
+			
+			if( module.articlesDisplayed.indexOf(curItem) === 2 ) {
+				// module.$container.append(_ads.scroll.init);
+				var adName = "ad_bigbox" +  (++adCount);
+				var adName2 = "ad_bigbox" + (++adCount);
+				var adMarkup = [
+					'<div class="adSlot ad-container ad-container--content-ad ad-container--' + adName + '" style="margin-bottom:15px;margin-right:2%;">',
+						'<div id="' + adName + '"></div>',
+					'</div>',
+					'<div class="adSlot ad-container ad-container--content-ad ad-container--' + adName2 + '" style="margin-bottom:15px;">',
+						'<div id="' + adName2 + '"></div>',
+					'</div>',
+				].join('');
 
+				module.$container.append(adMarkup);
 
-			// change the int value to change what gets generated on the page
-			// append first 2 tiles above ads
-			if( module.allArticles.indexOf(articlesDisplayed[i]) < 2 ) {
-				// append above ad slots
-				module.$hook.prepend(markup);
-			} else if( (module.allArticles.indexOf(articlesDisplayed[i]) % 2 === 0) && (module.allArticles.indexOf(articlesDisplayed[i]) > 4) ) {
-				module.$container.append(module.adsInit());
+				var networkCode = bcom.dfp.networkCode;
+				var adUnit = bcom.dfp.adUnit;
+				googletag.cmd.push(function() {
+					googletag.defineSlot('/' + networkCode + '/' + adUnit, [[300,250]], adName)
+					.addService(googletag.pubads())
+					.setTargeting("pos", "atf");
+					googletag.display( adName );
+				});
+
+				googletag.cmd.push(function() {
+					googletag.defineSlot('/' + networkCode + '/' + adUnit, [[300,250]], adName2)
+					.addService(googletag.pubads())
+					.setTargeting("pos", "atf");
+					googletag.display( adName2 );
+				});
+
 				module.$container.append(markup);
 			} else {
 				// append velow ad slots
@@ -353,41 +376,33 @@
 		}
 	};
 
-	module.adsInit = function() {
-		// 2 bigbox_ads
-		var adsMarkup = $(	'<div id="ad_bigbox1" style="background:lightgrey;height:250px;width:300px;margin-right: 0;" class="adSlot"></div><div id="ad_bigbox2" style="background:tomato;height:250px;width:300px;margin-right: 0;" class="adSlot"></div>');
-		return adsMarkup;
-	};
-
 	module.showMoreArticles = function() {
+		// increase index to grab next 6 articles
 		module.curIndex += 4;
 		if($('.real-estate-news__tile').length < module.listLength) {
 			module.buildWidget(module.curIndex);
 		}
-		return;
 	};
 
 	// Event Handlerss
 	module.eventHandlers = function() {
 		module.$viewMore.click(function() {
 			module.showMoreArticles();
-			console.log("eventHandler");
 		});
 	};
 
 	module.init = function() {
-		module.$container = $('.real-estate-news__wrapper'); //effective change
-		module.$hook = $('.real-estate-news__hook'); // I know that this is what helps ads populate....
+		module.$container = $('.real-estate-news__wrapper');
 		
 		module.$ads = $('.adSlots');
-		module.$viewMore = $('.real-estate-news').find('.viewMore'); ///effective change
+		module.$viewMore = $('.real-estate-news').find('.viewMore');
 		module.$articlesDisplayed = $('.real-estate-news__tile').length;
 
 		module.listLength = module.allArticles.length;
 		module.totalPages = Math.ceil(module.listLength / 4);
 		module.curIndex = 0;
 
-		module.buildWidget(0);
+		module.buildWidget();
 		module.eventHandlers();
 	};
 
