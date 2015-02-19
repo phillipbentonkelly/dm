@@ -101,6 +101,18 @@ body.home {
 		}		
 	}
 
+	body.serp {
+		.page-layout__right-col {
+			padding-top:10px;
+		}
+	}
+		  
+	body.serp {
+		.sticky-map-wrapper {
+			padding-bottom:20px
+		}
+	}
+
 	body.neighborhood .page-nav, body.category-details .page-nav {
 		margin-bottom: 90px;
 	}
@@ -116,3 +128,6 @@ body.serp {
 	}		
 }	
 
+body.serp .page-layout__right-col .dfp-ads {
+          padding-bottom:20px
+}
