@@ -456,11 +456,24 @@
 			
 			<!-- SEARCH PAGE -->
 			<?php if ($pageType == 'serp') { ?>
+
+                                <!-- DFP - BigBox1 -->
+                                <?php include 'ads/ad_bigbox1.php'; ?>
+
 				<!-- Contact The Agent Widget -->
 				<?php include 'page-content/modules/search-map.php'; ?>
 
+                                <!-- DFP - BigBox2,3 -->
+                                <?php include 'ads/ad_bigbox2.php'; ?>
+                                <?php include 'ads/ad_bigbox3.php'; ?>
+
 				<!-- Related Articles (right rail) Widget -->
 				<?php include 'page-content/modules/related-articles-right-rail.php'; ?>
+
+                                <!-- DFP - BigBox4,5,6 -->
+                                <?php include 'ads/ad_bigbox4.php'; ?>
+                                <?php include 'ads/ad_bigbox5.php'; ?>
+                                <?php include 'ads/ad_bigbox6.php'; ?>
 
 			<?php } ?>
 

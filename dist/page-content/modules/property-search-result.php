@@ -230,19 +230,6 @@
 
     </div>
 
-    <!-- AD SLOT -->
-        <div class="adSlots">
-
-            <div class="adSlot adSlot-left">
-                <div id="ad_bigbox1" ></div>
-            </div>
-
-            <div class="adSlot adSlot-right">
-                <div id="ad_bigbox2"></div>
-            </div>
-        </div>
-    <!-- /AD SLOT -->
-
     <!-- SEARCH RESULT ITEM -->
     <div class="search-results__item">
 
@@ -446,21 +433,6 @@
 
     </div>
 
-    <!-- AD SLOT -->
-        <div class="adSlots">
-            <div class="adSlot adSlot-left">
-                <div id="ad_bigbox3">
-                </div>
-            </div>
-
-            <div class="adSlot adSlot-right">
-                <div id="ad_bigbox4">
-                </div>
-            </div>
-        </div>
-    <!-- /AD SLOT -->
-
-
     <!-- SEARCH RESULT ITEM -->
     <div class="search-results__item">
 
@@ -662,21 +634,6 @@
         </div>
 
     </div>
-
-     <!-- AD SLOT -->
-        <div class="adSlots" class="adSlot adSlot-right">
-
-            <div class="adSlot adSlot-left">
-                <div id="ad_bigbox5"></div>
-            </div>
-
-            <div class="adSlot adSlot-right">
-                <div id="ad_bigbox6"></div>
-            </div>
-
-        </div>
-    <!-- /AD SLOT -->
-
 
     <!-- SEARCH RESULT ITEM -->
     <div class="search-results__item">
