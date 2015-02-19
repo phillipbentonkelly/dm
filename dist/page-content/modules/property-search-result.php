@@ -232,13 +232,14 @@
 
     <!-- AD SLOT -->
         <div class="adSlots">
-            <a href="javascript:;" class="adSlot adSlot-left">
-                <img src="images/neighborhoods/top-neighborhoods__entry__2.jpg">
-            </a>
 
-            <a href="javascript:;" class="adSlot adSlot-right">
-                <img src="images/neighborhoods/top-neighborhoods__entry__2.jpg">
-            </a>
+            <div class="adSlot adSlot-left">
+                <div id="ad_bigbox1" ></div>
+            </div>
+
+            <div class="adSlot adSlot-right">
+                <div id="ad_bigbox2"></div>
+            </div>
         </div>
     <!-- /AD SLOT -->
 
@@ -447,13 +448,15 @@
 
     <!-- AD SLOT -->
         <div class="adSlots">
-            <a href="javascript:;" class="adSlot adSlot-left">
-                <img src="images/listings/reNews__listings__6.jpg">
-            </a>
+            <div class="adSlot adSlot-left">
+                <div id="ad_bigbox3">
+                </div>
+            </div>
 
-            <a href="javascript:;" class="adSlot adSlot-right">
-                <img src="images/listings/reNews__listings__6.jpg">
-            </a>
+            <div class="adSlot adSlot-right">
+                <div id="ad_bigbox4">
+                </div>
+            </div>
         </div>
     <!-- /AD SLOT -->
 
@@ -661,14 +664,16 @@
     </div>
 
      <!-- AD SLOT -->
-        <div class="adSlots">
-            <a href="javascript:;" class="adSlot adSlot-left">
-                <img src="images/listings/reNews__listings__6.jpg">
-            </a>
+        <div class="adSlots" class="adSlot adSlot-right">
 
-            <a href="javascript:;" class="adSlot adSlot-right">
-                <img src="images/listings/reNews__listings__6.jpg">
-            </a>
+            <div class="adSlot adSlot-left">
+                <div id="ad_bigbox5"></div>
+            </div>
+
+            <div class="adSlot adSlot-right">
+                <div id="ad_bigbox6"></div>
+            </div>
+
         </div>
     <!-- /AD SLOT -->
 

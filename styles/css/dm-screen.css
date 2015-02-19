@@ -5354,6 +5354,10 @@ body.category-details .related-articles__section-header {
   .adSlots .adSlot-right img {
     margin-left: 35px;
   }
+  /* line 817, ../sass/partials/page/modules/property-search-results.scss */
+  .adSlots .adSlot-right div {
+    margin-left: 18px;
+  }
 }
 /* line 3, ../sass/partials/page/modules/related-articles-right-rail.scss */
 .related-articles-mobile {
