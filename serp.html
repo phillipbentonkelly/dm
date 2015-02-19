@@ -954,19 +954,6 @@
 
     </div>
 
-    <!-- AD SLOT -->
-        <div class="adSlots">
-
-            <div class="adSlot adSlot-left">
-                <div id="ad_bigbox1" ></div>
-            </div>
-
-            <div class="adSlot adSlot-right">
-                <div id="ad_bigbox2"></div>
-            </div>
-        </div>
-    <!-- /AD SLOT -->
-
     <!-- SEARCH RESULT ITEM -->
     <div class="search-results__item">
 
@@ -1170,21 +1157,6 @@
 
     </div>
 
-    <!-- AD SLOT -->
-        <div class="adSlots">
-            <div class="adSlot adSlot-left">
-                <div id="ad_bigbox3">
-                </div>
-            </div>
-
-            <div class="adSlot adSlot-right">
-                <div id="ad_bigbox4">
-                </div>
-            </div>
-        </div>
-    <!-- /AD SLOT -->
-
-
     <!-- SEARCH RESULT ITEM -->
     <div class="search-results__item">
 
@@ -1386,21 +1358,6 @@
         </div>
 
     </div>
-
-     <!-- AD SLOT -->
-        <div class="adSlots" class="adSlot adSlot-right">
-
-            <div class="adSlot adSlot-left">
-                <div id="ad_bigbox5"></div>
-            </div>
-
-            <div class="adSlot adSlot-right">
-                <div id="ad_bigbox6"></div>
-            </div>
-
-        </div>
-    <!-- /AD SLOT -->
-
 
     <!-- SEARCH RESULT ITEM -->
     <div class="search-results__item">
@@ -1620,33 +1577,12 @@
 						
 			
 			<!-- SEARCH PAGE -->
-							<!-- Contact The Agent Widget -->
-				<script type="text/javascript">
-	$(function() {
+			
+                                <!-- DFP - BigBox1 -->
+                                <div id="ad_bigbox1" class="ad-placeholder ad-dim__300by250"></div>
 
-	    var $sidebar   = $(".sticky-map-wrapper"), 
-	        $window    = $(window),
-	        offset     = $sidebar.offset(),
-	        topPadding = 100;
-
-	    $window.scroll(function() {
-	    	var resultsContainerHeight = $('.search-results').height();
-	    	if ($window.scrollTop() > resultsContainerHeight - 345) return;
-	        if ($window.scrollTop() > offset.top) {
-	            $sidebar.stop().animate({
-	                marginTop: $window.scrollTop() - offset.top + topPadding
-	            });
-	        } else {
-	            $sidebar.stop().animate({
-	                marginTop: 10
-	            });
-	        }
-	    });
-	});
-	
-</script>
-
-<style>
+				<!-- Contact The Agent Widget -->
+				<style>
 	@media (max-width: 768px) {
 
 		.sticky-map-wrapper {
@@ -1662,6 +1598,10 @@
 
 	<div class='map-placeholder' style='height:300px;width:100%;border: 1px solid black;box-sizing:border-box;'></div>
 </div>
+                                <!-- DFP - BigBox2,3 -->
+                                <div id="ad_bigbox2" class="dfp-ads"></div>
+                                <div id="ad_bigbox3" class="dfp-ads"></div>
+
 				<!-- Related Articles (right rail) Widget -->
 				<!--Related Articles -->
 <div class="related-articles-mobile">
@@ -1717,6 +1657,11 @@
 
 </div>
 <!-- Related Articles -->
+                                <!-- DFP - BigBox4,5,6 -->
+                                <div id="ad_bigbox4" class="dfp-ads"></div>
+                                <div id="ad_bigbox5" class="dfp-ads"></div>
+                                <div id="ad_bigbox6" class="dfp-ads"></div>
+
 			
 			<!-- SEARCH PAGE -->
 			
