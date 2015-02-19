@@ -1,28 +1,3 @@
-<script type="text/javascript">
-	$(function() {
-
-	    var $sidebar   = $(".sticky-map-wrapper"), 
-	        $window    = $(window),
-	        offset     = $sidebar.offset(),
-	        topPadding = 100;
-
-	    $window.scroll(function() {
-	    	var resultsContainerHeight = $('.search-results').height();
-	    	if ($window.scrollTop() > resultsContainerHeight - 345) return;
-	        if ($window.scrollTop() > offset.top) {
-	            $sidebar.stop().animate({
-	                marginTop: $window.scrollTop() - offset.top + topPadding
-	            });
-	        } else {
-	            $sidebar.stop().animate({
-	                marginTop: 10
-	            });
-	        }
-	    });
-	});
-	
-</script>
-
 <style>
 	@media (max-width: 768px) {
 
