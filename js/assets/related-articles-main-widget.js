@@ -54,8 +54,8 @@
 						'New Listing': { color: '#b4a455', link: '', tagtype: 'New Listing'}
 					};
 
-	module.getArticles = function() {
-		$.get('http://devedit.boston.com/eom/SysConfig/WebPortal/BDC/Framework/feeds/placester/getArticles.jsp?mode=full', function(data) {
+	module.getArticles = function(id) {
+		$.get('devedit.boston.com/eom/SysConfig/WebPortal/BDC/DM/Framework/feeds/RelatedArticles.jsp?id=' + id, function(data) {
 			module.allArticles = data['articles'];
 			console.log('All Articles', module.allArticles);
 			module.buildWidget(module.allArticles);
@@ -187,7 +187,7 @@
 		module.$articlesDisplayed = $('.related-articles__item').length;
 		module.curIndex = 0;
 
-		module.getArticles();
+		module.getArticles($("body").attr("data-loid"));
 
 		// module.buildWidget(0);
 		module.eventHandlers();

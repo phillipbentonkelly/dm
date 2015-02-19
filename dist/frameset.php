@@ -212,7 +212,7 @@
 		<script type="text/javascript">stLight.options({publisher: "e851a161-a35b-49b9-8352-4cb9c793f371", doNotHash: false, doNotCopy: false, hashAddressBar: true});</script>
 	<?php } ?>
 </head>
-<body <?php if ($pageType == 'home') { echo 'class="home"'; } else {  echo "class='page-section $pageType'"; } ?>>
+<body <?php if ($pageType == 'home') { echo 'class="home"'; } else {  echo "class='page-section $pageType'"; } ?> data-loid="1.0.425520821">
 
 	<!-- Page Masthead -->
     <?php include 'page/page-masthead.php'; ?>
