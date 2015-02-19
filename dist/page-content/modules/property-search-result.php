@@ -230,18 +230,6 @@
 
     </div>
 
-    <!-- AD SLOT -->
-        <div class="adSlots">
-            <a href="javascript:;" class="adSlot adSlot-left">
-                <img src="images/neighborhoods/top-neighborhoods__entry__2.jpg">
-            </a>
-
-            <a href="javascript:;" class="adSlot adSlot-right">
-                <img src="images/neighborhoods/top-neighborhoods__entry__2.jpg">
-            </a>
-        </div>
-    <!-- /AD SLOT -->
-
     <!-- SEARCH RESULT ITEM -->
     <div class="search-results__item">
 
@@ -445,19 +433,6 @@
 
     </div>
 
-    <!-- AD SLOT -->
-        <div class="adSlots">
-            <a href="javascript:;" class="adSlot adSlot-left">
-                <img src="images/listings/reNews__listings__6.jpg">
-            </a>
-
-            <a href="javascript:;" class="adSlot adSlot-right">
-                <img src="images/listings/reNews__listings__6.jpg">
-            </a>
-        </div>
-    <!-- /AD SLOT -->
-
-
     <!-- SEARCH RESULT ITEM -->
     <div class="search-results__item">
 
@@ -659,19 +634,6 @@
         </div>
 
     </div>
-
-     <!-- AD SLOT -->
-        <div class="adSlots">
-            <a href="javascript:;" class="adSlot adSlot-left">
-                <img src="images/listings/reNews__listings__6.jpg">
-            </a>
-
-            <a href="javascript:;" class="adSlot adSlot-right">
-                <img src="images/listings/reNews__listings__6.jpg">
-            </a>
-        </div>
-    <!-- /AD SLOT -->
-
 
     <!-- SEARCH RESULT ITEM -->
     <div class="search-results__item">

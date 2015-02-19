@@ -112,7 +112,7 @@
     <?php } ?>
 
     <?php if ($pageType == 'serp') { ?>
-    bcom.dfp.adSlots = ['ad_lead1','ad_spotlight1','ad_spotlight2','ad_spotlight3','ad_spotlight4','ad_bigbox1','ad_bigbox3','ad_bigbox4','ad_bigbox5','ad_bigbox6','ad_outofpage1','ad_outofpage2','ad_outofpage3','ad_lead2'];
+    bcom.dfp.adSlots = ['ad_lead1','ad_spotlight1','ad_spotlight2','ad_spotlight3','ad_spotlight4','ad_bigbox1','ad_bigbox2','ad_bigbox3','ad_bigbox4','ad_bigbox5','ad_bigbox6','ad_outofpage1','ad_outofpage2','ad_outofpage3','ad_lead2'];
     <?php } ?>
 
     <?php if ($pageType == 'property-listings' || $pageType == 'property-listings-premium') { ?>
@@ -212,7 +212,7 @@
 		<script type="text/javascript">stLight.options({publisher: "e851a161-a35b-49b9-8352-4cb9c793f371", doNotHash: false, doNotCopy: false, hashAddressBar: true});</script>
 	<?php } ?>
 </head>
-<body <?php if ($pageType == 'home') { echo 'class="home"'; } else {  echo "class='page-section $pageType'"; } ?>>
+<body <?php if ($pageType == 'home') { echo 'class="home"'; } else {  echo "class='page-section $pageType'"; } ?> data-loid="1.0.425520821">
 
 	<!-- Page Masthead -->
     <?php include 'page/page-masthead.php'; ?>
@@ -456,11 +456,24 @@
 			
 			<!-- SEARCH PAGE -->
 			<?php if ($pageType == 'serp') { ?>
+
+                                <!-- DFP - BigBox1 -->
+                                <?php include 'ads/ad_bigbox1.php'; ?>
+
 				<!-- Contact The Agent Widget -->
 				<?php include 'page-content/modules/search-map.php'; ?>
 
+                                <!-- DFP - BigBox2,3 -->
+                                <?php include 'ads/ad_bigbox2.php'; ?>
+                                <?php include 'ads/ad_bigbox3.php'; ?>
+
 				<!-- Related Articles (right rail) Widget -->
 				<?php include 'page-content/modules/related-articles-right-rail.php'; ?>
+
+                                <!-- DFP - BigBox4,5,6 -->
+                                <?php include 'ads/ad_bigbox4.php'; ?>
+                                <?php include 'ads/ad_bigbox5.php'; ?>
+                                <?php include 'ads/ad_bigbox6.php'; ?>
 
 			<?php } ?>
 

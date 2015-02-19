@@ -749,4 +749,8 @@
   .adSlots .adSlot-right img {
     margin-left: 35px;
   }
+  /* line 817, ../../../../sass/partials/page/modules/property-search-results.scss */
+  .adSlots .adSlot-right div {
+    margin-left: 18px;
+  }
 }

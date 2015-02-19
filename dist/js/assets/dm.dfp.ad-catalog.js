@@ -13,12 +13,12 @@ bcom.dfp.adCatalog = [
     name: 'ad_bigbox2',
     size: [[300,250]],
     position: ['btf', 'bigbox2']
-  }/*,
+  },
   {
     name: 'ad_bigbox3',
     size: [[300,250]],
     position: ['btf', 'bigbox3']
-  }*/,
+  },
   {
     name: 'ad_bigbox4',
     size: [[300,250]],
