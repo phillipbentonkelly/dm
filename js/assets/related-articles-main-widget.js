@@ -54,10 +54,10 @@
 						'New Listing': { color: '#b4a455', link: '', tagtype: 'New Listing'}
 					};
 
-	module.getArticles = function(id) {
-		$.get('devedit.boston.com/eom/SysConfig/WebPortal/BDC/DM/Framework/feeds/RelatedArticles.jsp?id=' + id, function(data) {
+	module.getArticles = function() {
+		var url = 'http://localhost/dm/feeds/index.php?name=related-articles&keywords=' + module.$keywords.replace(/ /g, '%20');
+		$.get(url, function(data) {
 			module.allArticles = data['articles'];
-			console.log('All Articles', module.allArticles);
 			module.buildWidget(module.allArticles);
 		});
 	};
@@ -100,7 +100,6 @@
 				var c = 0;
 				for (var k=0; k < curItem.keywords.length; k++) {
 					if (typeof module.tags[curItem.keywords[k]] !== "undefined") {
-						console.log(curItem.keywords[k]);
 						var curTag = module.tags[curItem.keywords[k]];
 						var tag = '<a href="' + curTag.link + '" style="background:' + curTag.color + '" class="category-tag">' + curItem.keywords[k] + '</a>';
 						tagMarkup.push(tag);
@@ -184,10 +183,11 @@
 		module.$container = $('.related-articles');
 		module.$viewMore = module.$container.find('.viewMore');
 		module.$hook = $('.related-articles__hook');
+		module.$keywords = $('meta[name="keywords"]').attr("content");
 		module.$articlesDisplayed = $('.related-articles__item').length;
 		module.curIndex = 0;
 
-		module.getArticles($("body").attr("data-loid"));
+		module.getArticles();
 
 		// module.buildWidget(0);
 		module.eventHandlers();
