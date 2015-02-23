@@ -11,7 +11,7 @@ yourLocalhost=''
 localhost=''
 framesetString='frameset.php?page-type='
 pages=("articles" "neighborhood" "serp" "home" "property-listings" "category" "category-details" "property-listings-premium" "my-account" "404")
-phpModules=("carousel" "gallery-dev" "mega-menu-dev")
+phpModules=("carousel" "gallery-dev" "mega-menu-dev" "feeds")
 tempModulueName=''
 phpExtension='.php'
 dist='/dist/'
