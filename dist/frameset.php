@@ -47,21 +47,6 @@
 	<script src="js/assets/searchPanel.js"></script>
     <script src="js/assets/ui.js"></script>
 
-    <?php if ($pageType == 'serp') { ?>
-    <script>
-    	google.load('search', '1', {"language" : "en"});
-
-    	var localSearch = new google.search.LocalSearch();
-
-    	// function initSearch(){
-    	// 	var localSearch = new google.search.LocalSearch();
-     //  		searchControl.addSearcher(localSearch);
-    	// }
-    	//google.setOnLoadCallback(initSearch);
-
-    </script>
-    <?php } ?>
-
 	<?php if ($pageType == 'home') { ?>
 		<script src="js/assets/homepage-view-more-widget.js"></script>
 	<?php } ?>

@@ -4,9 +4,13 @@
 
 if (typeof dm === 'undefined') { dm = {}; }
 
+/* environmental variables */
+dm.env = {
+	device : (screen.width <= 480) ? 'mobile' : 'desktop',
+	local : document.URL.indexOf('localhost') != -1 ? true : false
+};
 
 dm.searchPanel = {};
-
 
 (function($, window, document, undefined){
 
@@ -17,9 +21,7 @@ dm.searchPanel = {};
 
 		this.device = (screen.width <= 480) ? 'mobile' : 'desktop';
 
-		this.q = $.getParamVal('q');
-
-		console.log(this.q);
+		this.q = decodeURIComponent($.getParamVal('q'));
 		
 		// statefulness...
 		this.expanded = this.getExpanded();
@@ -48,19 +50,23 @@ dm.searchPanel = {};
 		};
 
 		this.btns = {
-			$lvl1t: $('.page-nav__search-responsive-icon > a'), // relevant for mobile only
+			$mobileOpen: $('.page-nav__search-responsive-icon > a'), // relevant for mobile only
 			$lvl2t: $('.page-search__button--level-two-toggle'),
 			$lvl3t: $('.page-search__button--level-three-toggle'),
 			$close: $('.page-search__button--close'),
-			$save: $('.page-search__button--save'), 
 			$submit: $('.page-search__buttons--submit')
+		};
+
+		this.megamenuSearch = {
+			$submit: $('.mega-menu__search-submit')
 		};
 
 		this.modals = {
 			$svSearch: $('.save-search-modal')
 		};
 
-		this.init();	
+		this.init();
+
 	}
 
 	dm.searchPanel.prototype = {
@@ -68,6 +74,8 @@ dm.searchPanel = {};
 		allOpen: false,
 
 		pOpen: 'select2-panel-open',
+
+		searchPgUrl: dm.env.local ? 'frameset.php?page-type=serp' : 'serp.html',
 
 		init: function(){
 
@@ -208,17 +216,6 @@ dm.searchPanel = {};
 						});
 					});
 
-					self.btns.$save.on('click', function(e){
-						e.preventDefault();
-						var status = $(this).getObservable();
-						if(!self.saved){
-							$(modal).modal();
-							$(modal).find('button').on('click',function(e){
-								self.saved = true;
-								$(this).hide();
-							});
-						}
-					});
 
 				break;
 
@@ -269,22 +266,11 @@ dm.searchPanel = {};
 				var q = self.filters.$main.val();
 				// serp url
 				var _href = "frameset.php?page-type=serp";
-				_href += encodeURIComponent("&expanded=" + self.expanded + '&q=' + q);
+				_href += "&expanded=" + self.expanded + '&q=' + encodeURIComponent(q);
 
 				location.href = _href;
 
 			});
-
-			// self.megamenuSearch.$submit.on('click', function(e){
-			// 	e.preventDefault();
-			// 	self.expanded = self.checkExpanded();
-			// 	var q = self.filters.$main.val();
-
-			// 	var _href = dm.env.local ? '&' : '?';
-			// 	_href += "expanded=1&q=" + q;
-
-			// 	location.href = _href;
-			// });
 
 
 		},
