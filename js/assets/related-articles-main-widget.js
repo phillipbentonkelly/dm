@@ -55,10 +55,12 @@
 					};
 
 	module.getArticles = function() {
-		var url = 'http://private.boston.com/images/digitalmarketplaces/realestate/feeds/index.php?name=related-articles&keywords=' + module.$keywords.replace(/ /g, '%20');
+		console.log('getting articles');
+		var url = 'http://www.boston.com/newsprojects/getRelated.php?env=prod1&name=related-articles&keywords=' + module.$keywords.replace(/ /g, '%20');
 		$.get(url, function(data) {
 			module.allArticles = data['articles'];
 			module.buildWidget(module.allArticles);
+			consiole.log(module.allArticles);
 		});
 	};
 
