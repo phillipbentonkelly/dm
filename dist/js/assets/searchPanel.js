@@ -16,6 +16,10 @@ dm.searchPanel = {};
 		this.el = el;
 
 		this.device = (screen.width <= 480) ? 'mobile' : 'desktop';
+
+		this.q = $.getParamVal('q');
+
+		console.log(this.q);
 		
 		// statefulness...
 		this.expanded = this.getExpanded();
@@ -72,6 +76,7 @@ dm.searchPanel = {};
 				placeholder: "Search for real estate listings or articles. ex: 3 bedroom for sale in Brookline under 1,000,000"
 			};
 
+
 			var tagParams = {
             	delimeter: ',',
             	persist: true,
@@ -93,10 +98,15 @@ dm.searchPanel = {};
 			};
 
             this.filters.$main.selectize(mainParams);
+
+            if(self.q != '' || self.q != null){
+				this.filters.$main[0].selectize.setValue(this.q);
+			}
+
+
             this.filters.$tags.selectize(tagParams);
 			this.filters.$fmt.select2(fmtParams);
 			this.filters.$other.select2(otherParams);
-
 
 			this.setPanelState();
 
@@ -107,7 +117,6 @@ dm.searchPanel = {};
 		setPanelState: function(){
 
 			var self = this;
-
 
 			if( self.device === 'desktop' ){
 				switch(self.expanded){
@@ -129,10 +138,6 @@ dm.searchPanel = {};
 						self.lvls.$three.hide();
 						self.lvls.$two.hide();
 					break;
-				}
-
-				if(self.isSaved){
-					self.btns.$save.getObservable().toggle();
 				}
 
 			}
@@ -261,14 +266,25 @@ dm.searchPanel = {};
 				self.expanded = self.checkExpanded();
 				self.isSaved = self.checkIfSaved();
 				// validation, ajax, rest, etc.
-
+				var q = self.filters.$main.val();
 				// serp url
-				var serp = "frameset.php?page-type=serp";
-				var lvls = "&expanded=" + self.expanded;
-				var saved = "&saved=" + self.saved;
+				var _href = "frameset.php?page-type=serp";
+				_href += encodeURIComponent("&expanded=" + self.expanded + '&q=' + q);
 
-				location.href = serp + lvls + saved;
+				location.href = _href;
+
 			});
+
+			// self.megamenuSearch.$submit.on('click', function(e){
+			// 	e.preventDefault();
+			// 	self.expanded = self.checkExpanded();
+			// 	var q = self.filters.$main.val();
+
+			// 	var _href = dm.env.local ? '&' : '?';
+			// 	_href += "expanded=1&q=" + q;
+
+			// 	location.href = _href;
+			// });
 
 
 		},

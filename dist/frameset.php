@@ -33,6 +33,7 @@
         <link rel="stylesheet" href="styles/css/plugins/select2/select2.css" />
 
 	<!-- SCRIPTS -->
+	<script src="https://www.google.com/jsapi"></script>
     <script src="js/resources/jquery.min.js"></script>
     <script src="js/resources/moment.min.js"></script>
     <script src="js/resources/plugins/selectize/selectize.js"></script>
@@ -45,6 +46,21 @@
 	<script src="js/assets/popup.js"></script>
 	<script src="js/assets/searchPanel.js"></script>
     <script src="js/assets/ui.js"></script>
+
+    <?php if ($pageType == 'serp') { ?>
+    <script>
+    	google.load('search', '1', {"language" : "en"});
+
+    	var localSearch = new google.search.LocalSearch();
+
+    	// function initSearch(){
+    	// 	var localSearch = new google.search.LocalSearch();
+     //  		searchControl.addSearcher(localSearch);
+    	// }
+    	//google.setOnLoadCallback(initSearch);
+
+    </script>
+    <?php } ?>
 
 	<?php if ($pageType == 'home') { ?>
 		<script src="js/assets/homepage-view-more-widget.js"></script>

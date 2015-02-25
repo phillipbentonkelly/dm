@@ -50,7 +50,6 @@ dm.searchPanel = {};
 			$lvl2t: $('.page-search__button--level-two-toggle'),
 			$lvl3t: $('.page-search__button--level-three-toggle'),
 			$close: $('.page-search__button--close'),
-			//$save: $('.page-search__button--save'), 
 			$submit: $('.page-search__buttons--submit')
 		};
 
@@ -256,6 +255,9 @@ dm.searchPanel = {};
 
 			self._form.$el.on('submit', function(e){
 				e.preventDefault();
+
+				console.log('mobile');
+				debugger;
 				self.expanded = self.checkExpanded();
 				self.isSaved = self.checkIfSaved();
 				// validation, ajax, rest, etc.
@@ -264,6 +266,7 @@ dm.searchPanel = {};
 				var lvls = "expanded=" + self.expanded;
 
 				location.href = self.searchPgUrl + sep + lvls;
+
 			});
 
 			self.megamenuSearch.$submit.on('click', function(e){
@@ -311,6 +314,31 @@ dm.searchPanel = {};
 			var state = $('.page-search__button--save').getObservable().filter(':visible');
 			var saved = state.attr('class') === 'saved' ? true : false
 			return saved;
+		},
+
+		callGoogleSearchApi: function(){
+
+			$.ajax({
+				crossDomain: true,
+				url: 'http://pages.exacttarget.com/bgcenterstage/',
+				type: 'post',
+				data: params,
+				dataType: 'jsonp',
+				headers: { 'Access-Control-Allow-Origin': '*' },
+				complete: function(data){
+					if(data.statusText){
+						newsletterSignup.$email.val('').attr('placeholder', 'Success! Thank you');
+						newsletterSignup.$submit.addClass('success').attr('disabled', 'disabled');
+					}else{
+						newsletterSignup.$email.val('').attr('placeholder', 'Error. Please try again.');
+						newsletterSignup.$submit.addClass('failure');
+						setTimeout(function(){
+							newsletterSignup.$submit.removeClass('failure');
+						}, 500);
+					}
+				}
+			});
+
 		}
 
 	};
