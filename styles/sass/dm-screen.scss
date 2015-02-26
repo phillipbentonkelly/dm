@@ -33,6 +33,9 @@
 // * Dependencies: 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 @import 'helpers/common-assets';
+@import 'helpers/bcom-mixins'; //-added for comments -CGO
+@import 'helpers/bcom-variables'; //added for comments -CGO
+
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 // Page - Masthead Styles
@@ -70,7 +73,13 @@
 @import 'partials/page/modules/related-articles-right-rail';
 @import 'partials/page/modules/multimedia-chip';
 @import 'partials/page/modules/newsletter-widget';
-
+@import 'partials/page/modules/comments'; //-added for comments CGO.
+@import 'partials/page/modules/bcom-pagination'; //-added for comments CGO
+@import 'partials/page/modules/bcom-teases'; //-added for comments CGO
+//@import 'partials/page/modules/bcom-icons';//-added for comments CGO
+@import 'partials/page/modules/bcom-type'; //-added for comments CGO
+@import 'partials/page/modules/bcom-forms'; //-added for comments CGO
+@import 'partials/page/modules/bcom-profiles';
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 // Content Styles
 // * Dependencies: bdc-base
