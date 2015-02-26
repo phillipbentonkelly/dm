@@ -271,7 +271,7 @@
 /* line 269, ../../../../sass/partials/page/modules/property-search-results.scss */
 .search-results__summary {
   text-align: center;
-  margin: 0 0 25px 0;
+  margin: 25px 0;
 }
 /* line 274, ../../../../sass/partials/page/modules/property-search-results.scss */
 .search-results .search-summary-header {
