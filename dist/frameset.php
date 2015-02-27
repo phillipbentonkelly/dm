@@ -113,7 +113,7 @@
     <?php } ?>
 
     <?php if ($pageType == 'category' || $pageType == 'category-details' || $pageType == 'neighborhood') { ?>
-    bcom.dfp.adSlots = ['ad_lead1','ad_carousel1','ad_carousel2','ad_carousel3','ad_t6','ad_bigbox1','ad_bigbox3','ad_bigbox4','ad_outofpage1','ad_outofpage2','ad_outofpage3'];
+    bcom.dfp.adSlots = ['ad_lead1','ad_carousel1','ad_carousel2','ad_carousel3','ad_t6','ad_bigbox1','ad_bigbox2','ad_bigbox3','ad_bigbox4','ad_outofpage1','ad_outofpage2','ad_outofpage3'];
     <?php } ?>
 
     <?php if ($pageType == 'serp') { ?>
@@ -364,6 +364,9 @@
 				<!-- Property Listings Widget -->
 				<?php include 'page/modules/property-listings.php'; ?>
 
+                                <!-- DFP Ad - BigBox1 -->
+                                <?php include 'ads/ad_bigbox2.php'; ?>
+
 				<!-- Contact This Agent Widget -->
 				<?php include 'page-content/modules/contact-agent-premium--small.php'; ?>
 
@@ -384,6 +387,9 @@
 				<!-- Property Listings Widget -->
 				<?php include 'page/modules/property-listings.php'; ?>
 
+                                <!-- DFP Ad - BigBox2 -->
+                                <?php include 'ads/ad_bigbox2.php'; ?>
+
 				<!-- Contact This Agent Widget -->
 				<?php include 'page-content/modules/contact-agent-basic--small.php'; ?>
 
@@ -395,8 +401,8 @@
 			<!-- CATEGORY -->
 			<?php if ($pageType == 'category') { ?>
 				<?php include 'ads/ad_bigbox1.php'; ?>
-                <?php include 'ads/ad_bigbox2.php'; ?>				
-				
+		                <?php include 'ads/ad_bigbox2.php'; ?>
+
 				<!-- Newsletter Widget -->
 				<?php include 'page-content/modules/newsletter-widget.php'; ?>
 
