@@ -60,13 +60,50 @@
 					};
 
 	module.getArticles = function() {
-		$.get('http://devedit.boston.com/eom/SysConfig/WebPortal/BDC/Framework/feeds/placester/getArticles.jsp?mode=full', function(data) {
-			module.allArticles = data['articles'];
-			console.log('All Articles', module.allArticles);
-			module.buildWidget(module.allArticles, 0);
-			module.listLength = module.allArticles.length;
-			module.totalPages = Math.ceil(module.listLength / 2);
-		});
+		var q = decodeURIComponent($.getParamVal('q'));
+		if(q != '' || q != null){
+			var markup = [];
+			var container = $('.related-articles-mobile__items');	
+			// initialize google api
+
+			// send query to google
+
+			// return response data
+			var dummyData = {"responseData": {"results":[{"GsearchResultClass":"GwebSearch","unescapedUrl":"http://www.brooklinema.gov/","url":"http://www.brooklinema.gov/","visibleUrl":"www.brooklinema.gov","cacheUrl":"http://www.google.com/search?q\u003dcache:83HZKvm-2cMJ:www.brooklinema.gov","title":"\u003cb\u003eBrookline\u003c/b\u003e, MA - Official Website | Official Website","titleNoFormatting":"Brookline, MA - Official Website | Official Website","content":"The \u003cb\u003eBrookline\u003c/b\u003e Fire Department and the Town of \u003cb\u003eBrookline\u003c/b\u003e are asking residents \nand business owners to \u0026quot;Help Us Help You\u0026quot; by locating and shoveling out your ..."},{"GsearchResultClass":"GwebSearch","unescapedUrl":"http://en.wikipedia.org/wiki/Brookline,_Massachusetts","url":"http://en.wikipedia.org/wiki/Brookline,_Massachusetts","visibleUrl":"en.wikipedia.org","cacheUrl":"http://www.google.com/search?q\u003dcache:ZdGpJr56pJIJ:en.wikipedia.org","title":"\u003cb\u003eBrookline\u003c/b\u003e, Massachusetts - Wikipedia, the free encyclopedia","titleNoFormatting":"Brookline, Massachusetts - Wikipedia, the free encyclopedia","content":"\u003cb\u003eBrookline\u003c/b\u003e /ˈbrʊkˌlɪn/, /ˈbrʊkˌlaɪn/ is a town in Norfolk County, \nMassachusetts, in the United States, and is a part of Greater Boston. \u003cb\u003eBrookline\u003c/b\u003e \nborders six of ..."},{"GsearchResultClass":"GwebSearch","unescapedUrl":"http://www.brookline.k12.ma.us/","url":"http://www.brookline.k12.ma.us/","visibleUrl":"www.brookline.k12.ma.us","cacheUrl":"","title":"Public Schools of \u003cb\u003eBrookline\u003c/b\u003e","titleNoFormatting":"Public Schools of Brookline","content":"Official site contains information about the administration, schools, curriculum, \nand school committee."},{"GsearchResultClass":"GwebSearch","unescapedUrl":"http://www.brooklinelibrary.org/","url":"http://www.brooklinelibrary.org/","visibleUrl":"www.brooklinelibrary.org","cacheUrl":"http://www.google.com/search?q\u003dcache:T8wsoq8sl9MJ:www.brooklinelibrary.org","title":"The Public Library of \u003cb\u003eBrookline\u003c/b\u003e Home Page","titleNoFormatting":"The Public Library of Brookline Home Page","content":"The mission of the Public Library of \u003cb\u003eBrookline\u003c/b\u003e is to provide access to recorded \nknowledge and information to all the people of \u003cb\u003eBrookline\u003c/b\u003e, Massachusetts."}],"cursor":{"resultCount":"943,000","pages":[{"start":"0","label":1},{"start":"4","label":2},{"start":"8","label":3},{"start":"12","label":4},{"start":"16","label":5},{"start":"20","label":6},{"start":"24","label":7},{"start":"28","label":8}],"estimatedResultCount":"943000","currentPageIndex":0,"moreResultsUrl":"http://www.google.com/search?oe\u003dutf8\u0026ie\u003dutf8\u0026source\u003duds\u0026start\u003d0\u0026hl\u003den\u0026q\u003dBrookline","searchResultTime":"0.21"}}, "responseDetails": null, "responseStatus": 200};
+			
+			$.each(dummyData.responseData.results, function(item, data){
+				markup = [	'<div class="related-articles-mobile__item">',
+								'<div class="additional-info">',
+									'<div class="tags">',
+									'</div>',
+								'</div>',
+
+								'<div class="main-info">',
+									'<a href="' + data.cacheUrl + '">',
+										'<h2 class="title">' + data.title + '</h2>',
+									'</a>',
+									'<p class="description">' + data.content + '</p>',
+								'</div>',
+
+								//'<div class="date">' + date + '</div>',
+						'</div>'
+					].join('');
+			});
+
+			container.append(markup);
+
+			// insert response data in DOM
+			
+		}else{
+			$.get('http://devedit.boston.com/eom/SysConfig/WebPortal/BDC/Framework/feeds/placester/getArticles.jsp?mode=full', function(data) {
+				module.allArticles = data['articles'];
+				console.log('All Articles', module.allArticles);
+				module.buildWidget(module.allArticles, 0);
+				module.listLength = module.allArticles.length;
+				module.totalPages = Math.ceil(module.listLength / 2);
+			});
+		}
+		
 	};
 
 	module.buildWidget = function(allArticles, indexStart) {
