@@ -7,7 +7,7 @@ if (typeof dm === 'undefined') { dm = {}; }
 /* environmental variables */
 dm.env = {
 	device : (screen.width <= 480) ? 'mobile' : 'desktop',
-	local : document.URL.indexOf('localhost') != -1 || document.URL.indexOf('127.0.0.1') != -1 ? true : false
+	local : document.URL.indexOf(':8888') != -1 ? true : false
 };
 
 dm.searchPanel = {};
