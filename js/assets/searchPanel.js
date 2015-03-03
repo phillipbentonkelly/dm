@@ -7,7 +7,7 @@ if (typeof dm === 'undefined') { dm = {}; }
 /* environmental variables */
 dm.env = {
 	device : (screen.width <= 480) ? 'mobile' : 'desktop',
-	local : document.URL.indexOf('localhost') != -1 ? true : false
+	local : document.URL.indexOf('localhost') != -1 || document.URL.indexOf('127.0.0.1') != -1 ? true : false
 };
 
 dm.searchPanel = {};
@@ -54,6 +54,7 @@ dm.searchPanel = {};
 		};
 
 		this.megamenuSearch = {
+			$input: $('.mega-menu__search-input'),
 			$submit: $('.mega-menu__search-submit')
 		};
 
@@ -256,23 +257,25 @@ dm.searchPanel = {};
 			self._form.$el.on('submit', function(e){
 				e.preventDefault();
 				self.expanded = self.checkExpanded();
-				self.isSaved = self.checkIfSaved();
 				// validation, ajax, rest, etc.
+				var q = self.filters.$main.val();
 
 				var sep = dm.env.local ? '&' : '?';
 				var lvls = "expanded=" + self.expanded;
 
-				location.href = self.searchPgUrl + sep + lvls;
+				location.href = self.searchPgUrl + sep + lvls + '&q=' + encodeURIComponent(q);
 			});
 
 			self.megamenuSearch.$submit.on('click', function(e){
 				e.preventDefault();
 				self.expanded = self.checkExpanded();
 
+				var q = self.megamenuSearch.$input.val();
+
 				var sep = dm.env.local ? '&' : '?';
 				var lvls = "expanded=1";
 
-				location.href = serp + lvls + saved;
+				location.href = self.searchPgUrl + sep + lvls + '&q=' + encodeURIComponent(q);
 			});
 
 
