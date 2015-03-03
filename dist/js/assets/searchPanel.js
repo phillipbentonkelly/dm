@@ -25,14 +25,14 @@ dm.searchPanel = {};
 		
 		// statefulness...
 		this.expanded = this.getExpanded();
-		this.isSaved = this.isSaved();
 
 		// store refs to DOM elements to save memory
 		this.lvls = {
 			$one: $('.page-search__row--level-one'),
 			$two: $('.page-search__row--level-two'),
 			$three: $('.page-search__row--level-three'),
-			$lower: $('.page-search__form > .lower-level')
+			$lower: $('.page-search__form > .lower-level'),
+			$all: $('.page-search__row, .page-search__form > .lower-level')
 		};
 
 		this.filters = {

@@ -1,0 +1,159 @@
+/* ============================================= */
+
+/*	Universal						   			 */
+
+/* ============================================= */
+
+a 		{ 	text-decoration: none; color: inherit; }
+strong	{	font-weight: 700;	}
+em   	{	font-style: italic;	}
+i 		{  	font-style: normal; }
+
+body {
+	// Fonts will be smoother and prettier in webkit
+	-webkit-font-smoothing: antialiased;
+
+	// // Don't highlight things with a color when we tap
+	// -webkit-tap-highlight-color: rgba(0,0,0,0);
+
+	// Hide things that try to break outer page bounds
+	// overflow: hidden;
+
+	// Don't change text size on device orientation switch
+	-webkit-text-size-adjust: none;
+
+	
+	// Global Type Defaults
+	font-family: $sans-fallback;
+	.fontface & {
+		font-family: $sans;
+	}
+
+	font: 13px/1.231 sans-serif; *font-size: small; /*text-rendering: optimizeLegibility;*/
+  /* this causes problems in Chrome for Windows and on iOS */ -webkit-overflow-scrolling : touch; // hack retained to preserve specificity
+
+}
+
+.site-container {
+	overflow: hidden;
+}
+
+
+
+/* ============================================= */
+
+/*	Homepage						   			 */
+
+/* ============================================= */
+
+.page-hp {
+	background-color: $bg;
+	// .site-container {
+	 	// @include loading(1.5s);
+	// }
+}
+.hp-mod {
+	// Make room for weather or mobile ad
+	padding-top: 45px;
+	@include mq($nav-break) {
+		padding-top: 50px;
+	}
+	@include mq($leaderboard) {
+		padding-top: 0;
+	}
+	@include mq(max, $break-lg) {
+		padding-top: 0;
+	}
+	.search-active & {
+		@include mq($label-break) {
+			 // extra room necessary for weather/ad on tablets
+			padding-top: 110px;
+		}
+		@include mq($leaderboard) {
+			padding-top: 69px;
+		}
+	}
+}
+
+//
+// Ads
+//
+
+.hp-big-1 {
+	display: block;
+	margin: 20px auto;
+	width: 300px;
+	@include mq($sidebar-break) {
+		margin: 0;
+	}
+}
+
+
+
+/* ============================================= */
+
+/*	Errors						   			 	 */
+
+/* ============================================= */
+
+.page-error-hgroup {
+	text-align: center;
+	margin-top: -30px;
+	@include mq($leaderboard) {
+		margin-top: 0;
+		padding: 50px 0 70px;
+	}
+}
+
+.page-error-h {
+	@include sans(em(48), 300);
+	color: #000;
+	margin-bottom: 10px;
+
+	@include mq(600px) {
+		font-size: em(69);
+	}
+}
+
+.page-error-deck {
+	@include sans(em(21)/120%, 300, italic);
+	margin-bottom: 10px;
+
+	@include mq(600px) {
+		font-size: em(28);
+	}
+
+	a {
+		@include link;
+	}
+
+	.break {
+		@include mq($article-lg) {
+			display: block;
+		}
+	}
+}
+
+// this was in shame and has beem moved into here until the stream is no more.
+.stream-notification {
+	display: none;
+}
+
+// Override for link colors
+.primary,
+.secondary {
+  a {
+    color: inherit !important;
+  }
+}
+
+//
+// Back To Top Button
+//
+//
+// Appears in lower left at large screen sizes. 
+// Helps user quickly jump back to top of page.   
+
+.to-top-btn {
+	display: none;
+}
