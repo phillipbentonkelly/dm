@@ -107,12 +107,20 @@ bcom.dfp.adCatalog = [
   },
   {
       name: 'ad_spotlight3',
-      size: [[460,184]],
+      size: [[460,184],[300x50]],
+      sizeByBreakpoint: {
+          mobile: [[300,50]],
+          tablet: [[460,184]],
+          desktop: [[460,184]]
       position: ['btf', 'spotlight3']
   },
   {
       name: 'ad_spotlight4',
-      size: [[460,184]],
+      size: [[460,184],[300x50]],
+      sizeByBreakpoint: {
+          mobile: [[300,50]],
+          tablet: [[460,184]],
+          desktop: [[460,184]]
       position: ['btf', 'spotlight4']
   },
   {

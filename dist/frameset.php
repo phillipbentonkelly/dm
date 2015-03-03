@@ -276,21 +276,23 @@
 			
 			<!-- CATEGORY -->
 			<?php if ($pageType == 'category') { ?>
-				<!-- Related Articles -->
-				<?php include 'page-content/modules/related-articles.php'; ?>
+			      <?php include 'ads/ad_t6.php'; ?>
+			      <!-- Related Articles -->
+			      <?php include 'page-content/modules/related-articles.php'; ?>
 			<?php } ?>
 			
 			<!-- CATEGORY DETAILS -->
 			<?php if ($pageType == 'category-details') { ?>
-				<!-- Related Articles -->
-				<?php include 'page-content/modules/related-articles.php'; ?>
+			      <?php include 'ads/ad_t6.php'; ?>
+			      <!-- Related Articles -->
+			      <?php include 'page-content/modules/related-articles.php'; ?>
 			<?php } ?>
 			
 			<!-- NEIGHBORHOOD -->
 			<?php if ($pageType == 'neighborhood') { ?>
 				<!-- Property Listings Map -->
 				<?php include 'page/modules/property-listing-map.php'; ?>
-
+				<?php include 'ads/ad_t6.php'; ?>
 				<!-- Related Articles -->
 				<?php include 'page-content/modules/related-articles.php'; ?>
 			<?php } ?>
@@ -367,7 +369,7 @@
 				<!-- Property Listings Widget -->
 				<?php include 'page/modules/property-listings.php'; ?>
 
-                                <!-- DFP Ad - BigBox1 -->
+                                <!-- DFP Ad - BigBox2 -->
                                 <?php include 'ads/ad_bigbox2.php'; ?>
 
 				<!-- Contact This Agent Widget -->
@@ -379,7 +381,6 @@
 			<?php } ?>
 
 			<?php if ($pageType == 'property-listings') { ?>
-	
 
 				<!-- Contact The Agent Widget -->
 				<?php include 'page-content/modules/contact-agent-basic--large.php'; ?>
@@ -427,9 +428,6 @@
 
 				<!-- DFP Sidebar Placeholder Ad Content -->
 				<?php include 'ads/adplaceholer__right-column.php'; ?>
-
-				<!-- Property Listings Widget -->
-				<?php include 'page/modules/property-listings.php'; ?>
 				
 				<!-- Explore Brookline -->
 				<?php include 'page-content/explore-brookline.php'; ?>
@@ -446,9 +444,6 @@
 
 				<!-- Newsletter Widget -->
 				<?php include 'page-content/modules/newsletter-widget.php'; ?>
-
-				<!-- DFP Sidebar Placeholder Ad Content -->
-				<?php include 'ads/adplaceholer__right-column.php'; ?>
 
 				<!-- Property Listings Widget -->
 				<?php include 'page/modules/property-listings.php'; ?>
