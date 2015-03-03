@@ -106,8 +106,6 @@ dm.Article = {};
 			$.ajaxSetup({ type: 'get' });
 
 			if(this.search){
-
-				var userAgent = navigator.userAgent;
 				// call google
 				callUrl = 'https://www.googleapis.com/customsearch/v1';
 
@@ -115,22 +113,16 @@ dm.Article = {};
 					cx: '001595115685171809073:-cf7lydwdko',
 					key: 'AIzaSyAwimkmoYzcHFWespvmJbPG_fpveRm4LgI',
 					q: decodeURIComponent(query),
-					imgType: 'photo',
-					lr: 'lang_en'
+					alt: 'jsonp'
 				};
 
 				$.ajax({
 					url: callUrl,
 					data: params,
-					headers: {
-						'User-Agent': userAgent
-					},
-					success: function(data){
-						console.log(data);
-						//self.buildWidget(data);
-					},
-					error: function(data){
-						console.log(data);
+					complete: function(data){
+						self.articles = data.items;
+						self.buildWidget(self.articles, 0);
+						self.totalPgs = Math.ceil(self.articles.length / self.articlesToDisplay);
 					}
 				});
 
