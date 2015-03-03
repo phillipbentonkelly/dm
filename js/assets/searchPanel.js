@@ -18,10 +18,6 @@ dm.searchPanel = {};
 	dm.searchPanel = function(el){
 
 		this.el = el;
-
-		this.device = (screen.width <= 480) ? 'mobile' : 'desktop';
-
-		this.q = decodeURIComponent($.getParamVal('q'));
 		
 		// statefulness...
 		this.expanded = this.getExpanded();
@@ -83,7 +79,6 @@ dm.searchPanel = {};
 			var mainParams = {
 				placeholder: "Search for real estate listings or articles. ex: 3 bedroom for sale in Brookline under 1,000,000"
 			};
-
 
 			var tagParams = {
             	delimeter: ',',
@@ -222,7 +217,6 @@ dm.searchPanel = {};
 						});
 					});
 
-
 				break;
 
 
@@ -231,28 +225,24 @@ dm.searchPanel = {};
 					// keep track of level#2 state when user closes all
 					var $lvl2State = self.btns.$lvl2t.getObservable();
 
-					self.btns.$lvl1t.on('click', function(e){
+					
+					self.btns.$mobileOpen.on('click', function(e){
 						e.preventDefault();
+						self._form.$el.toggle();
 						if(self.allOpen){
-							self.lvls.$lower.slideToggle('fast');
-							self.lvls.$one.slideToggle('fast');
-							self.expanded = self.getExpanded();
-							$lvl2State.toggle();
-						}else{
-							self.lvls.$one.slideToggle('fast');
-							self.expanded = self.getExpanded();
+							self.lvls.$lower.slideToggle('fast', function(){
+								$lvl2State.toggle();
+							});
 						}
-						
+						self.expanded = self.getExpanded();
 						$(this).toggleClass('close-search');
 						self.allOpen = false;
 					});
-
 
 					self.btns.$lvl2t.on('click', function(e){
 						e.preventDefault();
 						var state = $(this).getObservable();
 						var lwrLvls = $.merge(self.lvls.$two, self.lvls.$three);
-						//lwrLvls.slideToggle('fast');
 						self.lvls.$lower.slideToggle('fast');
 						self.expanded = self.getExpanded();
 						state.toggle();
@@ -263,19 +253,26 @@ dm.searchPanel = {};
 					
 			} // end switch
 
-			// form submit boilerplate
 			self._form.$el.on('submit', function(e){
 				e.preventDefault();
 				self.expanded = self.checkExpanded();
 				self.isSaved = self.checkIfSaved();
 				// validation, ajax, rest, etc.
-				var q = self.filters.$main.val();
-				// serp url
-				var _href = "frameset.php?page-type=serp";
-				_href += "&expanded=" + self.expanded + '&q=' + encodeURIComponent(q);
 
-				location.href = _href;
+				var sep = dm.env.local ? '&' : '?';
+				var lvls = "expanded=" + self.expanded;
 
+				location.href = self.searchPgUrl + sep + lvls;
+			});
+
+			self.megamenuSearch.$submit.on('click', function(e){
+				e.preventDefault();
+				self.expanded = self.checkExpanded();
+
+				var sep = dm.env.local ? '&' : '?';
+				var lvls = "expanded=1";
+
+				location.href = serp + lvls + saved;
 			});
 
 
@@ -291,7 +288,7 @@ dm.searchPanel = {};
 
 
 		getExpanded: function(){
-			var def = self.device == 'mobile' ? 0 : 1;
+			var def = dm.env.device == 'mobile' ? 0 : 1;
 			var paramExpanded = $.getParamVal('expanded');
 			return paramExpanded || def;
 		},
@@ -309,14 +306,13 @@ dm.searchPanel = {};
 			return (rows - rowsHidden);
 		},
 
-
 		checkIfSaved: function(){
 			var state = $('.page-search__button--save').getObservable().filter(':visible');
 			var saved = state.attr('class') === 'saved' ? true : false
 			return saved;
 		}
 
-	};	
+	};
 
 
 	$.fn.searchPanel = function(){
