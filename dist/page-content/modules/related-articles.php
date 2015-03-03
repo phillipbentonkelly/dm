@@ -10,4 +10,4 @@
     
     <a href="javascript:;" class="viewMore">View More <img src="images/view-more__arrow-down.gif" /></a>
 </div>
-<!-- Related Articles
+<!-- Related Articles -->
