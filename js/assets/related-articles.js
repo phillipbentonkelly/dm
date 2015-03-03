@@ -111,7 +111,7 @@ dm.Article = {};
 
 				params = {
 					cx: '001595115685171809073:-cf7lydwdko',
-					key: 'AIzaSyAwimkmoYzcHFWespvmJbPG_fpveRm4LgI',
+					key: 'AIzaSyBzi21Tf-qWHnKjnXyOjRvIiNgtiwbUGX8',
 					q: decodeURIComponent(query),
 					alt: 'json'
 				};
