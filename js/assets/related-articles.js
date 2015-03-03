@@ -113,7 +113,7 @@ dm.Article = {};
 					cx: '001595115685171809073:-cf7lydwdko',
 					key: 'AIzaSyAwimkmoYzcHFWespvmJbPG_fpveRm4LgI',
 					q: decodeURIComponent(query),
-					alt: 'jsonp'
+					alt: 'json'
 				};
 
 				$.ajax({
