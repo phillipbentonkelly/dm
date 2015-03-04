@@ -116,16 +116,21 @@
 				media = '<img class="thumb" style="height:120px;width:175px;border:1px solid black" src="" />';
 				mediaMarkup.push(media);
 			} else {
+				curItem.hasImage=false;
 				for (var p = 0; p < mediaCount; p++) {
 					if(!curItem.hasImage) {
-						if(curItem.images[p]['--class'] && curItem.images[p]['--class'] == 'main-web-images') {
-							media = '<img class="thumb" style="height:120px;width:175px" src="' + curItem.images[p].url + '" />';
-						} else {
-							media = '<img class="thumb" style="height:120px;width:175px" src="' + curItem.images[0].url + '" />';
-						}
-						curItem.hasImage = true;
-						mediaMarkup.push(media);
+						if(curItem.images[p]['--format'] && curItem.images[p]['--format'] == 'image_371w') {
+							media = '<img class="thumb" style="height:120px;width:175px" src="' + curItem.images[p].url.replace("image_371w","image_700w") + '" />';
+							curItem.hasImage = true;
+							mediaMarkup.push(media);
+							break;
+						} 
 					}
+				}
+				if (!curItem.hasImage) {
+					media = '<img class="thumb" style="height:120px;width:175px" src="' + curItem.images[0].url.replace("image_371w","image_700w") + '" />';
+					curItem.hasImage = true;
+					mediaMarkup.push(media);
 				}
 			}
 
