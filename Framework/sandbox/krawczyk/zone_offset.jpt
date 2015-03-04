@@ -1,0 +1,49 @@
+<%@ page import="java.lang.Math" %>
+
+<p:out var="stackAdBreak" value="5" />
+<p:getPageZone name="features" var="stack_items" url="/Boston/Production/Boston.com/WebPages/__COMPONENTS__/feature_stack.dwc"/>
+<%--
+	String adBreak = (String)pageContext.getAttribute("stackAdBreak");
+	String zoneSize = (String)pageContext.getAttribute("zone_size");
+	
+	double iterations = (Double.parseDouble(zoneSize) / Double.parseDouble(adBreak));
+	double rounded = Math.round(iterations);
+	pageContext.setAttribute("iterations", rounded);
+--%>
+<%-- <fmt:parseNumber var="iterations" value="${iterations - 1}" integerOnly="true" /> --%>
+
+<p>
+	<b>Number of items in zone: </b>
+	${stack_items.size}
+</p>
+
+<c:forEach begin="0" end="1" var="count">
+	<!-- Component offset = ${count * stackAdBreak} -->
+	<p:include pageZoneName="features" 
+		styleName="$configurationURI/Framework/sandbox/krawczyk/fartnoise.jpt" 
+		maxItems="${(count + 1) * stackAdBreak}" offset="${count * stackAdBreak}"
+	 	url="/Boston/Production/Boston.com/WebPages/__COMPONENTS__/feature_stack.dwc">
+		<p:param name="dwp" value="${cacheScope.dwp}" />
+	</p:include>
+	<!-- Sponsored/DFP/Other thing -->
+	<div><b>BREAK</b></div>
+</c:forEach>
+
+<pre>
+This test is going horribly:
+	<p:include pageZoneName="features" 
+		styleName="$configurationURI/Framework/sandbox/krawczyk/fartnoise.jpt" 
+		maxItems="10" offset="5"
+	 	url="/Boston/Production/Boston.com/WebPages/__COMPONENTS__/feature_stack.dwc">
+		<p:param name="dwp" value="${cacheScope.dwp}" />
+	</p:include>
+</pre>
+
+<pre>
+All the things:
+	<p:include pageZoneName="features" 
+		styleName="$configurationURI/Framework/sandbox/krawczyk/fartnoise.jpt" 
+	 	url="/Boston/Production/Boston.com/WebPages/__COMPONENTS__/feature_stack.dwc">
+		<p:param name="dwp" value="${cacheScope.dwp}" />
+	</p:include>
+</pre>

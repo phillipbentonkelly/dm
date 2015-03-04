@@ -1,0 +1,28 @@
+<%--
+	This template is used for the default when a gallery, summary, etc. doesn't have a layer
+	to inherit from.
+--%>
+
+<p:out var="gigyaCanonical"	value="${cacheScope.gigyaCanonical}" />
+<p:out var="gigyaShortUrl"	value="${cacheScope.gigyaShortUrl}" />
+<p:out var="gigyaHeadline"	value="${cacheScope.gigyaHeadline}" />
+<p:out var="gigyaThumb"		value="${cacheScope.gigyaThumb}" />
+<p:out var="gigyaThumbType"	value="${cacheScope.gigyaThumbType}" />
+<p:out var="className"		value="${cacheScope.className}" />
+
+<c:if test="${fn:trim(gigyaThumb) eq ''}">
+	<p:out var="gigyaThumb" value="http://c.o0bc.com/rw$configurationURI/Framework/img/bcom_logo_with_name.png" />
+</c:if>
+<c:if test="${fn:startsWith(gigyaThumb, '//')}">
+	<p:out var="gigyaThumb" value="http:${gigyaThumb}" />
+</c:if>
+
+<c:if test="${fn:trim(gigyaThumbType) eq ''}">
+	<p:out var="gigyaThumbType" value="image" />
+</c:if>
+
+<a class="${className}" href="#mfp-share" data-load-ad="true" data-ad-name="ad_share" 
+	data-canonical="${gigyaCanonical}" data-shorturl="${gigyaShortURL}" data-headline="${gigyaHeadline}" data-thumbnail="${gigyaThumb}" data-thumb-type="${gigyaThumbType}">
+	<i class="share-icon"></i>
+	<i class="tools-txt">Share</i>
+</a>

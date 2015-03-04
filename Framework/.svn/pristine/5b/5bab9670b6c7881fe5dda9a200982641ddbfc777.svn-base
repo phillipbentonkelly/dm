@@ -1,0 +1,12 @@
+<p:currentObject metadata="meta" />
+
+<p:out var="locationCode" xvalue="$meta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/WidgetConfig/LocationCode" />
+<p:out var="widgetHeight" xvalue="$meta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/WidgetConfig/Height" />
+
+<!--
+	Location code = ${locationCode}
+	Height = ${widgetHeight}
+-->
+<article class="feat-tz feat-tz-no-art">
+	<iframe width="100%" height="${widgetHeight}" src="http://www.tripadvisor.com/WidgetEmbed-cdsdestnarrow?locationId=${locationCode}&partnerId=5EC93643C116416BAE3514F53B6FC872&display=true"></iframe>
+</article>

@@ -1,0 +1,216 @@
+// *
+// *  Headline Stack
+// *
+$module-name: 'instagram-feed';
+// ------------------------------------------------------------
+// Default Styles
+// ------------------------------------------------------------
+
+.#{$module-name} {
+  // @include container(12);
+  // @include gutters(0em);
+  @extend %clearfix;
+
+  &__header {
+    @include font-scale(base);
+    padding: spacer(rem, small);
+    padding: spacer(px, small);
+    font-weight: $fw-bold;
+    line-height: 1;
+    color: color(white);
+    background-color: color(gray, xx-dark);
+  }
+
+  &__header-text {
+    vertical-align: super;
+  }
+
+  &__header-link {
+    @include link-states(color(white), color(white), color(white));
+  }
+
+  &__credit {
+    @include font-scale(x-small);
+    @include link-states(color(white), color(white), color(white));
+    text-shadow: 1px 1px color(black);
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    max-width: 90%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap; 
+  }
+
+  &__image {
+    float: left;
+  }
+
+  &__image-link {
+    width: 100%;
+  }
+
+  &__image-wrapper {
+    position: relative;
+    float: left;
+    &--lead {
+      display: inline-block;
+      width: 100%;
+      height: auto;
+      float: left;
+    }
+
+    &--1 {
+      display: none;
+    }
+
+    &--2 {
+      display: none;
+    }
+
+    &--3 {
+      display: none;
+    }
+
+    &--4 {
+      display: none;
+    }
+
+  }
+
+}
+
+// ------------------------------------------------------------
+// Tablet Breakpoint - 448px
+// ------------------------------------------------------------
+
+@include media-query(448) {
+  .#{$module-name} {
+    &__image-wrapper {
+      &--lead {
+        display: none;
+      }
+
+      &--1 {
+        display: inline-block;
+        width: 50%;
+      }
+
+      &--2 {
+        display: inline-block;
+        width: 50%;
+      }
+
+      &--3 {
+        display: inline-block;
+        width: 50%;
+      }
+
+      &--4 {
+        display: inline-block;
+        width: 50%;
+      }
+    }
+  }
+}
+
+// // ------------------------------------------------------------
+// // Tablet Breakpoint - 700px
+// // ------------------------------------------------------------
+
+// @include media-query(700) {
+//   .#{$module-name} {
+//     &__image-wrapper {
+//       &--lead {
+//         display: none;
+//       }
+
+//       &--1 {
+//         display: inline-block;
+//         width: 50%;
+//       }
+
+//       &--2 {
+//         display: inline-block;
+//         width: 50%;
+//       }
+
+//       &--3 {
+//         display: inline-block;
+//         width: 50%;
+//       }
+
+//       &--4 {
+//         display: inline-block;
+//         width: 50%;
+//       }
+//     }
+//   }
+// }
+// ------------------------------------------------------------
+// Tablet Breakpoint - 770px
+// ------------------------------------------------------------
+@include media-query(tablet) {
+  .#{$module-name} {
+    &__image-wrapper {
+      &--lead {
+        display: inline-block;
+        width: 66.6667%;
+      }
+
+      &--1 {
+        display: inline-block;
+        width: 33.3333%;
+      }
+
+      &--2 {
+        display: inline-block;
+        width: 33.3333%;
+      }
+
+      &--3 {
+        display: none;
+      }
+
+      &--4 {
+        display: none;
+      }
+    }
+  }
+}
+//  
+// ------------------------------------------------------------
+// Tablet Breakpoint - 960px
+// ------------------------------------------------------------
+
+
+@include media-query(desktop) {
+  .#{$module-name} {
+    &__image-wrapper {
+      &--lead {
+        display: inline-block;
+        width: 50%;
+      }
+
+      &--1 {
+        display: inline-block;
+        width: 25%;
+      }
+
+      &--2 {
+        display: inline-block;
+        width: 25%;
+      }
+
+      &--3 {
+        display: inline-block;
+        width: 25%;
+      }
+
+      &--4 {
+        display: inline-block;
+        width: 25%;
+      }
+    }
+  }
+}

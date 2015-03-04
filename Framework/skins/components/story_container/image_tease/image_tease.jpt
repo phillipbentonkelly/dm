@@ -1,0 +1,45 @@
+<%-- passed variables --%>
+<p:out var="visualRevenue" value="${cacheScope.visualRevenue}" />
+<p:out var="wellTitle" value="${cacheScope.wellTitle}" />
+<p:out var="dwp" value="${cacheScope.dwp}" />
+<p:out var="p1" value="${cacheScope.p1}" />
+<p:out var="dataOmniture" value="${cacheScope.dataOmniture}" />	
+<p:out var="isHomepage" value="${cacheScope.isHomepage}" />
+
+<%-- things from metadata --%>
+<p:currentObject metadata="meta" />
+<p:out var="conf" value="$meta//StoryContainerDisplay" />
+<%-- p:param supports xvalue but it acts weird. so i used this. --%>
+<p:out var="imageSize" xvalue="${conf}/ImageSize/text()" /> 
+<p:out var="displaySection" xvalue="${conf}/SectionDisplay/text()" />
+<p:out var="displayOverline" xvalue="${conf}/OverlineDisplay/text()" />
+<p:out var="displayTime" xvalue="${conf}/TimeDisplay/text()" />
+<p:out var="headlineType" xvalue="${conf}/HeadlineDisplay/text()" />
+<p:out var="social" xvalue="${conf}/ShareTools/text()" />
+<p:out var="offset" xvalue="$meta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/OffsetStartPoint" />
+<p:out var="maxItems" xvalue="$meta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/MaxStoriesToDisplay" />
+
+<c:if test="${empty offset}">
+	<p:out var="offset" value="0" />
+</c:if>
+
+<c:if test="${empty maxItems}">
+	<p:out var="offset" value="0" />
+</c:if>
+
+<p:include pageZoneName="content" templateName="sc_image_tease_item" maxItems="1">
+	<p:param name="imageSize" value="${imageSize}" />
+	<p:param name="displayOverline" value="${displayOverline}" /> 
+	<p:param name="displaySection" value="${displaySection}" />
+	<p:param name="displayTime" value="${displayTime}" />
+ 	<p:param name="headlineType" value="${headlineType}" />
+ 	<p:param name="social" value="${social}" />
+ 	<p:param name="queryOffset" value="${offset}" />
+	<p:param name="queryMaxItems" value="${maxItems}" />	
+	<p:param name="visualRevenue" value="${visualRevenue}" />
+	<p:param name="wellTitle" value="${wellTitle}" />
+	<p:param name="dwp" value="${dwp}" />
+	<p:param name="p1" value="${p1}" />
+	<p:param name="dataOmniture" value="${dataOmniture}" />
+	<p:param name="isHomepage" value="${isHomepage}" />
+</p:include>

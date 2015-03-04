@@ -1,0 +1,133 @@
+// *
+// * $configurationURI/Framework/bdc-styles/bdc-screen--critical.scss
+// *
+// * Boston.com bdc-screen--critical.scss
+// * Brings in all critical partials to generate a single CSS file
+// * This file should only contain @import rules
+// * Dependencies should be listed
+// *
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// @font-face Rules
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+@import 'partials/font-face';
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// Reset Styles
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+@import 'partials/reset';
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// Base SCSS
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+@import 'partials/base';
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// BCOM SCSS
+// * Should all be removed eventually
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// No Output
+@import "partials/bcom/variables";
+@import "partials/bcom/bcom-mixins";
+//
+@import "partials/bcom/base";
+@import "partials/bcom/layout-base"; // look to cut out spacer
+@import "partials/bcom/layout";
+@import "partials/bcom/breaking-news";
+@import "partials/bcom/modules";
+@import "partials/bcom/ads";
+@import "partials/bcom/404";
+@import "partials/bcom/search";
+// maybe non-critical?
+@import "partials/bcom/lists";
+@import "partials/bcom/teases";
+@import "partials/bcom/lead-teases";
+@import "partials/bcom/top-teases";
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// Element Default Styles
+// * Dependencies: bdc-base
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+@import 'partials/element-defaults';
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// Global Styles
+// * Dependencies: bdc-base
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+@import 'partials/global';
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// Icons
+// * Dependencies: bdc-base
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+@import 'partials/icons';
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// Page - Masthead Styles
+// * Dependencies: bdc-base
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+@import 'partials/page/page-masthead';
+@import 'partials/page/page-header';
+@import 'partials/page/page-header__search';
+@import 'partials/page/page-header__social';
+@import 'partials/page/page-nav';
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// Page - Layout Styles
+// * Dependencies: bdc-base
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+@import 'partials/page/page-layout';
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// Grid - Styles
+// * Dependencies: bdc-base
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+@import 'partials/grid/grid';
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// Section Front Styles
+// * Dependencies: bdc-base
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+@import 'partials/page-section/modules/image-tease';
+@import 'partials/page-section/modules/weather-current';
+@import 'partials/page-section/modules/weather-hourly';
+@import 'partials/page-section/modules/instagram-feed';
+@import 'partials/page-section/modules/headline-list';
+@import 'partials/page-section/modules/sub-brands';
+@import 'partials/page-modules/page-module-header';
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// Page-Module Styles
+// * Dependencies: bdc-base
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+@import 'partials/page-modules/page-module';
+@import 'partials/page/modules/dropdown-search';
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// Content Styles
+// * Dependencies: bdc-base
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+@import 'partials/page-content/modules/content-header';
+@import 'partials/page-content/modules/content-media';
+@import 'partials/page-content/modules/content-byline';
+@import 'partials/page-content/modules/content-text';
+@import 'partials/page-content/modules/content-gallery';
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// Content Module Styles
+// * Dependencies: bdc-base
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+@import 'partials/page-content/modules/related-links';
+@import 'partials/page-content/modules/social-bar';
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// Ad Styles
+// * Dependencies: bdc-base
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+@import 'partials/ads/ads';
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// Resume 
+// * Dependencies: bdc-base
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+//@import 'partials/page-content/modules/resume';

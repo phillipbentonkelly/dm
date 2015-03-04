@@ -1,0 +1,83 @@
+<%--
+{comments}
+DM-101 Adding commit message
+{comments}
+--%>
+
+<%@ taglib prefix="bgm" uri="bgmtags" %>
+<p:refresh time="IN T5M" />
+<%-- http://jira.boston.com/browse/BCOMSM-115 --%>
+<p:currentObject webType="WT" metadata="meta" />
+<bdc:getBorderClass webObject="${currentObject}"
+	defaultBorder="disabled" var="borderClasses" />
+<p:out var="source" xvalue="$meta//Source" />
+<p:out var="headerImgSrc" xvalue="$meta//HeaderImgSrc" />
+<%-- the overline is in the teaseHeader, cause I suck --%>
+<p:out var="overline" xvalue="$meta//TeaseHeader" />
+<bgm:import var="blogObj" url="${source}" />
+<c:if test="${not empty blogObj}">
+	<x:parse var="doc" xml="${blogObj}" />
+	<x:set var="blog_title" select="string($doc//channel/title/text())" />
+	<x:set var="blog_link" select="string($doc//channel/link/text())" />
+	<x:set var="link" select="string($doc//item[1]/link/text())" />
+	<x:set var="description" select="string($doc//item[1]/description/text())" />
+	<x:set var="title" select="string($doc//item[1]/title/text())" />
+	<div class="row">
+		<div class="widget tease image-left blog ${borderClasses}">
+			<c:if test="${fn:trim(blog_link) == ''}">
+				<p:out var="blog_link" xvalue="$meta//TeaseHeaderURL" />
+			</c:if>
+			<c:set var="descSplit" value="${fn:split(description, ' ')}" />
+			<c:set var="descWordCount" value="" />
+			<c:forEach items="${descSplit}" var="item" varStatus="status"
+				begin="0" end="24">
+				<c:choose>
+					<c:when test="${fn:trim(descWordCount) == ''}">
+						<p:out var="descWordCount" value="${item}" />
+					</c:when>
+					<c:otherwise>
+						<c:if test="${status.index == 24}">
+							<c:if test="${fn:substring(item, fn:length(item)-1, fn:length(item)) == ',' || fn:substring(item, fn:length(item)-1, fn:length(item)) == ';'}">
+								<c:set var="item" value="${fn:substring(item, 0, fn:length(item)-1)}" />
+							</c:if>
+						</c:if>
+						<c:set var="descWordCount" value="${descWordCount} ${item}" />
+					</c:otherwise>
+				</c:choose>
+			</c:forEach>
+			<c:set var="descWordCount" value="${descWordCount}..." />
+			<c:choose>
+				<c:when test="${not empty link and fn:trim(link) != ''}">
+					<div>
+						<c:if test="${not empty overline}">
+							<div class="overline">${overline}</div>
+						</c:if>
+						<a href="${blog_link}">
+							<c:choose>
+								<c:when test="${not empty headerImgSrc and fn:trim(headerImgSrc) != ''}">
+									<img src="${headerImgSrc}" title="${blog_title}" />
+								</c:when>
+								<c:otherwise>
+									${blog_title}
+								</c:otherwise>
+							</c:choose>
+						</a>
+					</div>
+					<div class="content">
+						<h3 class="headline big-headline">
+							<bdc:link value="${link}">${title}</bdc:link>
+						</h3>
+						<p>${descWordCount}</p>
+					</div>
+				</c:when>
+				<c:otherwise>
+					<div class="overline">${blog_title}</div>
+					<div class="content">
+						<h2>${title}</h2>
+						<p>${descWordCount}</p>
+					</div>
+				</c:otherwise>
+			</c:choose>
+		</div>
+	</div>
+</c:if>

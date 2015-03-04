@@ -1,0 +1,72 @@
+<p:currentObject webType="WT" channel="Boston.com" sectionId="section" metadata="meta" />
+
+<%--
+	///// Stream & Feature Stack display overrides
+--%>
+
+<p:out var="hideFeatureStack"	xvalue="$meta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/DisplayOptions/HideFeatureStack" />
+<p:out var="hideStream"			xvalue="$meta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/DisplayOptions/HideStreams" />
+
+<!-- hideStream = ${hideStream} -->
+
+<%--
+//////////////////////////////////////////////////////// STREAM AND FEATURE STACK INHERITANCE ////////////////////////////////////////////////////////
+--%>
+
+<%-- Allow producers to shut off the Stream, and prevent us from needing to do inheritance things --%>
+<c:if test="${fn:trim(hideStream) ne 'True'}">
+	<c:choose>
+		<c:when test="${not empty editorialLayer and fn:trim(editorialLayer) ne ''}">
+			<p:include pageZoneName="stream_config" inherits="${editorialLayer}">
+				<p:param name="dwp" value="${editorialLayer}" />
+				<p:param name="linkedType" value="${WT}" />
+			</p:include>
+		</c:when>
+		<c:otherwise>
+			<bdc:inheritZoneGlobal var="inheritancePath" section="${section}" zoneName="stream_config" />
+			<p:include pageZoneName="stream_config" inherits="${inheritancePath}">
+				<p:param name="dwp" value="${inheritancePath}" />
+				<p:param name="linkedType" value="${WT}" />
+			</p:include>
+		</c:otherwise>
+	</c:choose>
+</c:if>
+
+<%-- Everything below this line was copied from the old story_default. It had to be edited, because we were making reference to metadata fields that exist only on
+	DWPs, and I have no idea why we would be doing that unless things were copied from section front rendering templates. --%>
+<c:if test="${fn:trim(hideFeatureStack) ne 'True' or fn:trim(hideStream) ne 'True'}">
+	<%-- If both the Feature Stack and Stream are marked as "Hey bro, hide this" then we don't need to include anything below. Like, at all. --%>
+	<footer class="article-ftr">
+		<div class="site-width">
+			
+			<%-- Stream container --%>
+			<div class="primary">
+				<c:if test="${fn:trim(hideStream) ne 'True'}">
+					<div id="streams-row" class="inner"></div> <!-- /inner -->
+				</c:if>
+			</div> <!-- /primary -->
+	
+			<%-- Feature stack container --%>
+			<div class="feat-tz-holder secondary" >
+				<c:if test="${fn:trim(hideFeatureStack) ne 'True'}">
+					<c:if test="${not empty adLayer and not empty editorialLayer}">
+						<p:include pageZoneName="ad_featurestack_top" inherits="${adLayer}" />
+										
+						<p:include pageZoneName="features_bottom" inherits="${editorialLayer}">
+							<p:param name="adLayerDwpPath" value="${adLayer}" />
+						</p:include>
+						
+						<p:include pageZoneName="ad_featurestack_bottom" inherits="${adLayer}" />	
+					</c:if>
+				</c:if>
+			</div>
+		</div> <!-- /site-width -->
+	
+		<!-- Scroll to Top Button -->
+		<a class="to-top-btn is-off" href="#top">
+			<i class="top-top-arrow"></i>
+			Back to Top
+		</a>
+	
+	</footer> <!-- /article-ftr -->
+</c:if>

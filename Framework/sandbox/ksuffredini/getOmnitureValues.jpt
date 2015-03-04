@@ -1,0 +1,7 @@
+<p:out var="values" value="Sports/Redsox/Milford/Legion" />
+<p:out var="lowerCase" value="${fn:toLowerCase(values)}" />
+<p:out var="newValues" value="${fn:replace(lowerCase, '/', ' | ')}" />
+
+<p>before: ${values}</p>
+<p>lower: ${lowerCase}</p>
+<p>after: ${newValues}</p>

@@ -1,0 +1,41 @@
+<%--
+{comments}
+BDC-1716 - renaming classes based on newer naming system
+BDC-1716 - removing a class that is not used on the ul
+{comments}
+--%>
+
+<%--
+	Based on:
+	/bcom-redesign-beta/bdc-markup/page-content/modules/trending.php
+--%>
+
+<p:currentObject channel="Boston.com" webType="WT" sectionId="section" />
+
+<p:update timeout="300" />
+
+<bdc:getTrackingData var="tracking" webObject="${currentObject}" />
+
+<p:out var="xmlUrl" value="http://www.boston.com/partners/chartbeat/chartbeat.xml" />
+<c:import url="${xmlUrl}" var="mostPopularXml" />
+<x:parse xml="${mostPopularXml}" var="mostPopularParsed" />
+
+<div class="trending">
+  <h3 class="trending__header">Trending</h3>
+  <ul>
+  	<x:forEach var="mostPop" begin="0" end="4" select="$mostPopularParsed/elements/page" varStatus="loop">
+  		
+  		<x:set var="storyLink" select="string($mostPop/@path)" />
+  		<x:set var="headline" select="string($mostPop/title/text())" />
+  		
+  		<bdc:rwCleanTrending var="mp" headline="${headline}" link="${storyLink}" />
+  		
+  		<li class="trending__list-item">
+  			<bdc:link value="${mp.link}"
+  				className="trending__list-link"
+  				linkParam="p1=trending_${tracking.pageAsset}_${loop.count}">${mp.headline}</bdc:link>
+  		</li>
+  		
+  	</x:forEach>
+  </ul>
+</div><!-- / trending -->

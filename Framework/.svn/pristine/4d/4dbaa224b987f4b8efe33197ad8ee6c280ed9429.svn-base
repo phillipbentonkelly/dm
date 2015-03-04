@@ -1,0 +1,248 @@
+<p:currentObject metadata="meta" />
+<p:out var="headerTitle" xvalue="$meta//TeaseHeader" scope="request" /> 
+<p:out var="headerURL" xvalue="$meta//TeaseHeaderURL" scope="request" /> 
+<p:out var="League" xvalue="$meta//League" />
+<p:out var="League" value="${fn:toUpperCase(League)}" />
+<bc:getBorderClass webObject="${currentObject}" defaultBorder="enabled" var="borderClasses"/>
+
+<article class="feat-tz-no-art">
+	<c:if test="${not empty headerTitle}">
+		<div class="overline-feat-scoreboard overline"> 
+	   		<h3> 
+			<bc:link value="${headerURL}">${headerTitle}</bc:link> 
+	   		</h3> 
+		</div> 
+	</c:if>
+	
+	<c:choose>
+		<c:when test="${League eq 'NFL'}">
+			<p:out var="latestMatchupStatus" xvalue="$meta//Pros/NFL/LatestMatchup/Status" scope="request" />
+			<p:out var="overallLeadersStatus" xvalue="$meta//Pros/NFL/OverallLeaders/Status" scope="request" />
+			<p:out var="scoreboardStatus" xvalue="$meta//Pros/NFL/Scoreboard/Status" scope="request" />
+			<p:out var="divisionStandingsStatus" xvalue="$meta//Pros/NFL/DivisionStandings/Status" scope="request" />
+			<c:choose>
+				<c:when test="${latestMatchupStatus eq 'enabled'}">
+					<p:out var="teamName" xvalue="$meta//Pros/NFL/LatestMatchup/TeamNameNFL" scope="request" />
+					<p:inline url="$configurationURI/Framework/skins/components/sports/getTeamName.jpt" />
+				</c:when>
+				<c:when test="${overallLeadersStatus eq 'enabled'}">
+					<p:out var="teamName" xvalue="$meta//Pros/NFL/OverallLeaders/TeamNameNFL" scope="request" />
+					<p:inline url="$configurationURI/Framework/skins/components/sports/getTeamName.jpt" />
+					<p:out var="category" xvalue="$meta//Pros/NFL/OverallLeaders/Category" scope="request" />
+				</c:when>
+				<c:when test="${scoreboardStatus eq 'enabled'}">
+					<p:out var="scoreboardStatus" value="enabled" scope="request" />
+				</c:when>
+				<c:when test="${divisionStandingsStatus eq 'enabled'}">
+					<p:out var="division" xvalue="$meta//Pros/NFL/DivisionStandings/Division" scope="request" />
+				</c:when>
+			</c:choose>
+			<p:inline url="$configurationURI/Framework/skins/components/sports/nfl.jpt" />
+		</c:when>
+		<c:when test="${League eq 'NHL'}">
+			<p:out var="latestMatchupStatus" xvalue="$meta//Pros/NHL/LatestMatchup/Status" scope="request" />
+			<p:out var="overallLeadersStatus" xvalue="$meta//Pros/NHL/OverallLeaders/Status" scope="request" />
+			<p:out var="scoreboardStatus" xvalue="$meta//Pros/NHL/Scoreboard/Status" scope="request" />
+			<p:out var="divisionStandingsStatus" xvalue="$meta//Pros/NHL/DivisionStandings/Status" scope="request" />
+			<c:choose>
+				<c:when test="${latestMatchupStatus eq 'enabled'}">
+					<p:out var="teamName" xvalue="$meta//Pros/NHL/LatestMatchup/TeamNameNHL" scope="request" />
+					<p:inline url="$configurationURI/Framework/skins/components/sports/getTeamName.jpt" />
+				</c:when>
+				<c:when test="${overallLeadersStatus eq 'enabled'}">
+					<p:out var="teamName" xvalue="$meta//Pros/NHL/OverallLeaders/TeamNameNHL" scope="request" />
+					<p:inline url="$configurationURI/Framework/skins/components/sports/getTeamName.jpt" />
+					<p:out var="category" xvalue="$meta//Pros/NHL/OverallLeaders/Category" scope="request" />
+				</c:when>
+				<c:when test="${scoreboardStatus eq 'enabled'}">
+					<p:out var="scoreboardStatus" value="enabled" scope="request" />
+				</c:when>
+				<c:when test="${divisionStandingsStatus eq 'enabled'}">
+					<p:out var="division" xvalue="$meta//Pros/NHL/DivisionStandings/Division" scope="request" />
+				</c:when>
+			</c:choose>
+			<p:inline url="$configurationURI/Framework/skins/components/sports/nhl.jpt" />
+		</c:when>
+		<c:when test="${League eq 'NBA'}">
+			<p:out var="latestMatchupStatus" xvalue="$meta//Pros/NBA/LatestMatchup/Status" scope="request" />
+			<p:out var="overallLeadersStatus" xvalue="$meta//Pros/NBA/OverallLeaders/Status" scope="request" />
+			<p:out var="scoreboardStatus" xvalue="$meta//Pros/NBA/Scoreboard/Status" scope="request" />
+			<p:out var="divisionStandingsStatus" xvalue="$meta//Pros/NBA/DivisionStandings/Status" scope="request" />
+			<c:choose>
+				<c:when test="${latestMatchupStatus eq 'enabled'}">
+					<p:out var="teamName" xvalue="$meta//Pros/NBA/LatestMatchup/TeamNameNBA" scope="request" />
+					<p:inline url="$configurationURI/Framework/skins/components/sports/getTeamName.jpt" />
+				</c:when>
+				<c:when test="${overallLeadersStatus eq 'enabled'}">
+					<p:out var="teamName" xvalue="$meta//Pros/NBA/OverallLeaders/TeamNameNBA" scope="request" />
+					<p:inline url="$configurationURI/Framework/skins/components/sports/getTeamName.jpt" />
+					<p:out var="category" xvalue="$meta//Pros/NBA/OverallLeaders/Category" scope="request" />
+				</c:when>
+				<c:when test="${scoreboardStatus eq 'enabled'}">
+					<p:out var="scoreboardStatus" value="enabled" scope="request" />
+				</c:when>
+				<c:when test="${divisionStandingsStatus eq 'enabled'}">
+					<p:out var="division" xvalue="$meta//Pros/NBA/DivisionStandings/Division" scope="request" />
+				</c:when>
+			</c:choose>
+			<p:inline url="$configurationURI/Framework/skins/components/sports/nba.jpt" />
+		</c:when>
+		<c:when test="${League eq 'MLB'}">
+			<p:out var="leadingPitcherStatus" xvalue="$meta//Pros/MLB/BattingAndPitchingLeaders/Status" scope="request" />	
+			<p:out var="latestMatchupStatus" xvalue="$meta//Pros/MLB/LatestMatchup/Status" scope="request" />
+			<p:out var="overallLeadersStatus" xvalue="$meta//Pros/MLB/OverallLeaders/Status" scope="request" />
+			<p:out var="scoreboardStatus" xvalue="$meta//Pros/MLB/Scoreboard/Status" scope="request" />
+			<p:out var="divisionStandingsStatus" xvalue="$meta//Pros/MLB/DivisionStandings/Status" scope="request" />
+			<c:choose>
+				<c:when test="${leadingPitcherStatus eq 'enabled'}">
+					<p:out var="teamName" xvalue="$meta//Pros/MLB/BattingAndPitchingLeaders/TeamNameMLB" scope="request" />
+					<p:inline url="$configurationURI/Framework/skins/components/sports/getTeamName.jpt" />
+				</c:when>
+				<c:when test="${latestMatchupStatus eq 'enabled'}">
+					<p:out var="teamName" xvalue="$meta//Pros/MLB/LatestMatchup/TeamNameMLB" scope="request" />
+					<p:inline url="$configurationURI/Framework/skins/components/sports/getTeamName.jpt" />
+				</c:when>
+				<c:when test="${overallLeadersStatus eq 'enabled'}">
+					<p:out var="teamName" xvalue="$meta//Pros/MLB/OverallLeaders/TeamNameMLB" scope="request" />
+					<p:inline url="$configurationURI/Framework/skins/components/sports/getTeamName.jpt" />
+					<p:out var="category" xvalue="$meta//Pros/MLB/OverallLeaders/Category" scope="request" />
+				</c:when>
+				<c:when test="${scoreboardStatus eq 'enabled'}">
+					<p:out var="scoreboardStatus" value="enabled" scope="request" />
+				</c:when>
+				<c:when test="${divisionStandingsStatus eq 'enabled'}">
+					<p:out var="division" xvalue="$meta//Pros/MLB/DivisionStandings/MLBDivision" scope="request" />
+				</c:when>
+			</c:choose>
+			<p:inline url="$configurationURI/Framework/skins/components/sports/mlb.jpt" />
+		</c:when>
+		<c:when test="${League eq 'SOCCER'}">
+			<p:out var="overallLeadersStatus" xvalue="$meta//Pros/Soccer/OverallLeaders/Status" scope="request" />
+			<p:out var="scoreboardStatus" xvalue="$meta//Pros/Soccer/Scoreboard/Status" scope="request" />
+ 			<c:choose>
+				<c:when test="${overallLeadersStatus eq 'enabled'}">
+					<p:out var="teamName" xvalue="$meta//Pros/Soccer/OverallLeaders/TeamNameSoccer" scope="request" />
+					<p:inline url="$configurationURI/Framework/skins/components/sports/getTeamName.jpt" />
+					<p:out var="category" xvalue="$meta//Pros/Soccer/OverallLeaders/Category" scope="request" />
+				</c:when>
+				<c:when test="${scoreboardStatus eq 'enabled'}">
+					<p:out var="scoreboardStatus" value="enabled" scope="request" />
+				</c:when>
+			</c:choose>
+			<p:inline url="$configurationURI/Framework/skins/components/sports/soccer.jpt" />
+		</c:when>
+		<c:when test="${League eq 'NCAAM'}">
+			<p:out var="collegeSport" value="${League}" scope="request" />
+			<p:out var="latestMatchupStatus" xvalue="$meta//College/NCAAM/LatestMatchup/Status" scope="request" />
+			<p:out var="overallLeadersStatus" xvalue="$meta//College/NCAAM/OverallLeaders/Status" scope="request" />
+			<p:out var="scoreboardStatus" xvalue="$meta//College/NCAAM/Scoreboard/Status" scope="request" />
+			<p:out var="divisionStandingsStatus" xvalue="$meta//College/NCAAM/DivisionStandings/Status" scope="request" />
+			<c:choose>
+				<c:when test="${latestMatchupStatus eq 'enabled'}">
+					<p:out var="teamName" xvalue="$meta//College/NCAAM/LatestMatchup/TeamNameNCAAM" scope="request" />
+					<p:inline url="$configurationURI/Framework/skins/components/sports/getTeamName.jpt" />
+				</c:when>
+				<c:when test="${overallLeadersStatus eq 'enabled'}">
+					<p:out var="teamName" xvalue="$meta//College/NCAAM/OverallLeaders/TeamNameNCAAM" scope="request" />
+					<p:inline url="$configurationURI/Framework/skins/components/sports/getTeamName.jpt" />
+					<p:out var="category" xvalue="$meta//College/NCAAM/OverallLeaders/Category" scope="request" />
+					<p:out var="division" xvalue="$meta//College/NCAAM/OverallLeaders/Division" scope="request" />
+				</c:when>
+				<c:when test="${scoreboardStatus eq 'enabled'}">
+					<p:out var="scoreboardStatus" value="enabled" scope="request" />
+				</c:when>
+				<c:when test="${divisionStandingsStatus eq 'enabled'}">
+					<p:out var="type" xvalue="$meta//College/NCAAM/DivisionStandings/Type" scope="request" />
+					<p:out var="conference" xvalue="$meta//College/NCAAM/DivisionStandings/Conference" scope="request" />
+				</c:when>
+			</c:choose>
+			<p:inline url="$configurationURI/Framework/skins/components/sports/ncaa_bk_mens.jpt" />
+		</c:when>
+		<c:when test="${League eq 'NCAAF'}">
+			<p:out var="collegeSport" value="${League}" scope="request" />
+			<p:out var="latestMatchupStatus" xvalue="$meta//College/NCAAF/LatestMatchup/Status" scope="request" />
+			<p:out var="overallLeadersStatus" xvalue="$meta//College/NCAAF/OverallLeaders/Status" scope="request" />
+			<p:out var="scoreboardStatus" xvalue="$meta//College/NCAAF/Scoreboard/Status" scope="request" />
+			<p:out var="divisionStandingsStatus" xvalue="$meta//College/NCAAF/DivisionStandings/Status" scope="request" />
+			<c:choose>
+				<c:when test="${latestMatchupStatus eq 'enabled'}">
+					<p:out var="teamName" xvalue="$meta//College/NCAAF/LatestMatchup/TeamNameNCAAF" scope="request" />
+					<p:inline url="$configurationURI/Framework/skins/components/sports/getTeamName.jpt" />
+				</c:when>
+				<c:when test="${overallLeadersStatus eq 'enabled'}">
+					<p:out var="teamName" xvalue="$meta//College/NCAAF/OverallLeaders/TeamNameNCAAF" scope="request" />
+					<p:inline url="$configurationURI/Framework/skins/components/sports/getTeamName.jpt" />
+					<p:out var="category" xvalue="$meta//College/NCAAF/OverallLeaders/Category" scope="request" />
+					<p:out var="division" xvalue="$meta//College/NCAAF/OverallLeaders/Division" scope="request" />
+				</c:when>
+				<c:when test="${scoreboardStatus eq 'enabled'}">
+					<p:out var="scoreboardStatus" value="enabled" scope="request" />
+				</c:when>
+				<c:when test="${divisionStandingsStatus eq 'enabled'}">
+					<p:out var="type" xvalue="$meta//College/NCAAF/DivisionStandings/Type" scope="request" />
+					<p:out var="conference" xvalue="$meta//College/NCAAF/DivisionStandings/Conference" scope="request" />
+				</c:when>
+			</c:choose>
+			<p:inline url="$configurationURI/Framework/skins/components/sports/ncaa_fb.jpt" />
+		</c:when>
+		<c:when test="${League eq 'GOLF'}">
+			<p:out var="leaderBoard" xvalue="$meta//Pros/Golf/Leaderboard" scope="request" />
+			<p:inline url="$configurationURI/Framework/skins/components/sports/golf.jpt" />
+		</c:when>
+		<c:when test="${League eq 'WNBA'}">
+			<p:out var="latestMatchupStatus" xvalue="$meta//Pros/WNBA/LatestMatchup/Status" scope="request" />
+			<p:out var="overallLeadersStatus" xvalue="$meta//Pros/WNBA/OverallLeaders/Status" scope="request" />
+			<p:out var="scoreboardStatus" xvalue="$meta//Pros/WNBA/Scoreboard/Status" scope="request" />
+			<p:out var="divisionStandingsStatus" xvalue="$meta//Pros/WNBA/DivisionStandings/Status" scope="request" />
+			<c:choose>
+				<c:when test="${latestMatchupStatus eq 'enabled'}">
+					<p:out var="teamName" xvalue="$meta//Pros/WNBA/LatestMatchup/TeamNameWNBA" scope="request" />
+					<p:inline url="$configurationURI/Framework/skins/components/sports/getTeamName.jpt" />
+				</c:when>
+				<c:when test="${overallLeadersStatus eq 'enabled'}">
+					<p:out var="teamName" xvalue="$meta//Pros/WNBA/OverallLeaders/TeamNameWNBA" scope="request" />
+					<p:inline url="$configurationURI/Framework/skins/components/sports/getTeamName.jpt" />
+					<p:out var="category" xvalue="$meta//Pros/WNBA/OverallLeaders/Category" scope="request" />
+				</c:when>
+				<c:when test="${scoreboardStatus eq 'enabled'}">
+					<p:out var="scoreboardStatus" value="enabled" scope="request" />
+				</c:when>
+				<c:when test="${divisionStandingsStatus eq 'enabled'}">
+					<p:out var="division" xvalue="$meta//Pros/WNBA/DivisionStandings/Division" scope="request" />
+				</c:when>
+			</c:choose>
+			<p:inline url="$configurationURI/Framework/skins/components/sports/wnba.jpt" />
+		</c:when>
+		<c:when test="${League eq 'NCAAW'}">
+			<p:out var="collegeSport" value="${League}" scope="request" />
+			<p:out var="latestMatchupStatus" xvalue="$meta//College/NCAAW/LatestMatchup/Status" scope="request" />
+			<p:out var="overallLeadersStatus" xvalue="$meta//College/NCAAW/OverallLeaders/Status" scope="request" />
+			<p:out var="scoreboardStatus" xvalue="$meta//College/NCAAW/Scoreboard/Status" scope="request" />
+			<p:out var="divisionStandingsStatus" xvalue="$meta//College/NCAAW/DivisionStandings/Status" scope="request" />
+			<c:choose>
+				<c:when test="${latestMatchupStatus eq 'enabled'}">
+					<p:out var="teamName" xvalue="$meta//College/NCAAW/LatestMatchup/TeamNameNCAAW" scope="request" />
+					<p:inline url="$configurationURI/Framework/skins/components/sports/getTeamName.jpt" />
+				</c:when>
+				<c:when test="${overallLeadersStatus eq 'enabled'}">
+					<p:out var="teamName" xvalue="$meta//College/NCAAW/OverallLeaders/TeamNameNCAAW" scope="request" />
+					<p:inline url="$configurationURI/Framework/skins/components/sports/getTeamName.jpt" />
+					<p:out var="category" xvalue="$meta//College/NCAAW/OverallLeaders/Category" scope="request" />
+					<p:out var="division" xvalue="$meta//College/NCAAW/OverallLeaders/Division" scope="request" />
+				</c:when>
+				<c:when test="${scoreboardStatus eq 'enabled'}">
+					<p:out var="scoreboardStatus" value="enabled" scope="request" />
+				</c:when>
+				<c:when test="${divisionStandingsStatus eq 'enabled'}">
+					<p:out var="type" xvalue="$meta//College/NCAAW/DivisionStandings/Type" scope="request" />
+					<p:out var="conference" xvalue="$meta//College/NCAAW/DivisionStandings/Conference" scope="request" />
+				</c:when>
+			</c:choose>			
+			<p:inline url="$configurationURI/Framework/skins/components/sports/ncaa_bk_womens.jpt" />
+		</c:when>
+		<c:otherwise>
+			
+			
+		</c:otherwise>
+	</c:choose>
+</article>

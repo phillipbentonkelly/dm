@@ -1,0 +1,125 @@
+@import "partials/variables";
+
+.ie8 {
+    .nav-sm-icon-hidden {
+        display: none;
+    }
+    .nav-sm-button-3:hover {
+        .nav-sm-icon-hidden {
+            display: inline-block;
+        }
+    }
+
+    //Navigation Stylings for ie8
+    .global-nav {
+        ul {
+            overflow: auto;
+        }
+    }
+}    
+
+.ie9 {
+    // Fixes problem of pagination styling not coming through due to the fact that IE has a limit on the css per page
+    .pagination {
+        font: normal 500 0.92308em Arial, Helvetica, Verdana, sans-serif;
+        font-family: "effra", Arial, Helvetica, Verdana, sans-serif;
+        position: relative;
+        width: 100%;
+        text-align: right;
+        margin-bottom: 1em;
+        overflow: hidden;
+        // Overrides for comments pagination
+        .story-comments-mod & {
+            width: auto;
+            margin: 25px 0;
+            ul {
+                text-align: center;
+            }
+            @media screen and (min-width: 400px) {
+                margin: 0px 0px 25px;
+                ul {
+                text-align: left;
+                }
+            }
+        }
+        ul {
+            display: table;
+            width: auto;
+            float: right;
+        }
+        li {
+            float: left;
+            margin: 0 1px;
+        }
+        a, li.active {
+            display: block;
+            padding: 3px 6px;
+            border: 1px solid $black-15;
+            color: $black-50;
+            text-decoration: none;
+            &:hover {
+              background: $black-10;
+            }
+        }
+        li.active:hover {
+            background: $blue;
+        }
+        .active a, li.active {
+            border-color: $blue;
+            color: #fff;
+            cursor: default;
+            background: $blue;
+        }
+        .disabled a {
+            border-color: $black-15;
+            color: $black-50;
+            cursor: default;
+        }
+        .prev,
+        .next {
+            position: absolute;
+            a {
+              padding-left: 15px;
+              padding-right: 15px;
+              font-weight: 400;
+              white-space: nowrap;
+              span {
+                font-size: 12px;
+              }
+            }
+        }
+        .prev {
+            left: 0;
+        }
+        .next {
+            right: 0;
+        }
+        .ellipses {
+            padding: 5px 6px 1px;
+        }
+    }
+}
+//CSS specifically for all IEs
+
+// table of contents (toc)
+.toc-mod{
+    display: none;
+    .toc-active &{
+        display: block!important;
+        width:360px;
+    }
+}
+.toc-active .toc-trigger{
+    margin-left:350px;
+    width:35px;
+    overflow: hidden;
+
+}
+// sign in and profile
+.nav-profile-mod{
+    display: none;
+    .profile-active &{
+        display: block!important;
+        width:280px;
+    }
+}

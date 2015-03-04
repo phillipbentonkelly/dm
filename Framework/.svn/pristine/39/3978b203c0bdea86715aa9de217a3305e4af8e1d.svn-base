@@ -1,0 +1,241 @@
+// *
+// *  Weather Icons 
+// *
+// ------------------------------------------------------------
+// Standard
+// ------------------------------------------------------------
+
+.icon-weather {
+  background-image: url('/hash/#{$sprite-weather-hash}/bdc-img/sprites/sprite-weather.png');
+  text-indent: -9999px;
+  display: inline-block;
+  
+  &--clouds {
+    @include sprite-position($ico-weather-clouds-x-large);
+    @include sprite-width($ico-weather-clouds-x-large);
+    @include sprite-height($ico-weather-clouds-x-large);
+  }
+
+  &--moon {
+    @include sprite-position($ico-weather-moon-x-large);
+    @include sprite-width($ico-weather-moon-x-large);
+    @include sprite-height($ico-weather-moon-x-large);
+  }
+  
+  &--mooncloud {
+    @include sprite-position($ico-weather-mooncloud-x-large);
+    @include sprite-width($ico-weather-mooncloud-x-large);
+    @include sprite-height($ico-weather-mooncloud-x-large);
+  }
+
+  &--rain {
+    @include sprite-position($ico-weather-rain-x-large);
+    @include sprite-width($ico-weather-rain-x-large);
+    @include sprite-height($ico-weather-rain-x-large);
+  }
+
+  &--snow {
+    @include sprite-position($ico-weather-snow-x-large);
+    @include sprite-width($ico-weather-snow-x-large);
+    @include sprite-height($ico-weather-snow-x-large);
+  }
+
+  &--sun {
+    @include sprite-position($ico-weather-sun-x-large);
+    @include sprite-width($ico-weather-sun-x-large);
+    @include sprite-height($ico-weather-sun-x-large);
+  }
+
+  &--hot {
+    @include sprite-position($ico-weather-hot-x-large);
+    @include sprite-width($ico-weather-hot-x-large);
+    @include sprite-height($ico-weather-hot-x-large);
+  }
+
+  &--cold {
+    @include sprite-position($ico-weather-cold-x-large);
+    @include sprite-width($ico-weather-cold-x-large);
+    @include sprite-height($ico-weather-cold-x-large);
+  }
+
+  &--suncloud {
+    @include sprite-position($ico-weather-suncloud-x-large);
+    @include sprite-width($ico-weather-suncloud-x-large);
+    @include sprite-height($ico-weather-suncloud-x-large);
+  }
+
+  &--thunder {
+    @include sprite-position($ico-weather-thunder-x-large);
+    @include sprite-width($ico-weather-thunder-x-large);
+    @include sprite-height($ico-weather-thunder-x-large);
+  }
+
+  &--wind {
+    @include sprite-position($ico-weather-wind-x-large);
+    @include sprite-width($ico-weather-wind-x-large);
+    @include sprite-height($ico-weather-wind-x-large);
+  }
+
+  // Small Versions of the Icons
+
+  &--clouds-medium {
+    @include sprite-position($ico-weather-clouds-medium);
+    @include sprite-width($ico-weather-clouds-medium);
+    @include sprite-height($ico-weather-clouds-medium);
+  }
+  
+  &--rain-medium {
+    @include sprite-position($ico-weather-rain-medium);
+    @include sprite-width($ico-weather-rain-medium);
+    @include sprite-height($ico-weather-rain-medium);
+  }
+
+  &--snow-medium {
+    @include sprite-position($ico-weather-snow-medium);
+    @include sprite-width($ico-weather-snow-medium);
+    @include sprite-height($ico-weather-snow-medium);
+  }
+
+  &--sun-medium {
+    @include sprite-position($ico-weather-sun-medium);
+    @include sprite-width($ico-weather-sun-medium);
+    @include sprite-height($ico-weather-sun-medium);
+  }
+  &--suncloud-medium {
+    @include sprite-position($ico-weather-suncloud-medium);
+    @include sprite-width($ico-weather-suncloud-medium);
+    @include sprite-height($ico-weather-suncloud-medium);
+  }
+
+  &--wind-medium {
+    @include sprite-position($ico-weather-wind-medium);
+    @include sprite-width($ico-weather-wind-medium);
+    @include sprite-height($ico-weather-wind-medium);
+  }
+
+  &--thunder-medium {
+    @include sprite-position($ico-weather-thunder-medium);
+    @include sprite-width($ico-weather-thunder-medium);
+    @include sprite-height($ico-weather-thunder-medium);
+  }
+
+  &--moon-medium {
+    @include sprite-position($ico-weather-moon-medium);
+    @include sprite-width($ico-weather-moon-medium);
+    @include sprite-height($ico-weather-moon-medium);
+  }
+
+  &--mooncloud-medium {
+    @include sprite-position($ico-weather-mooncloud-medium);
+    @include sprite-width($ico-weather-mooncloud-medium);
+    @include sprite-height($ico-weather-mooncloud-medium);
+  }
+
+  &--hot-medium {
+    @include sprite-position($ico-weather-hot-medium);
+    @include sprite-width($ico-weather-hot-medium);
+    @include sprite-height($ico-weather-hot-medium);
+  }
+
+  &--cold-medium {
+    @include sprite-position($ico-weather-cold-medium);
+    @include sprite-width($ico-weather-cold-medium);
+    @include sprite-height($ico-weather-cold-medium);
+  }
+}
+
+// ------------------------------------------------------------
+// Retina
+// ------------------------------------------------------------
+
+@include media-query--retina {
+  .icon-weather {
+    background-image: url('/hash/#{$sprite-weather-at-2x-hash}/bdc-img/sprites/sprite-weather@2x.png');
+  
+  &--clouds {
+    @include sprite--retina($ico-weather-clouds-x-large-2x);
+  }
+
+  &--moon {
+    @include sprite--retina($ico-weather-moon-x-large-2x);
+  }
+  
+  &--mooncloud {
+    @include sprite--retina($ico-weather-mooncloud-x-large-2x);
+  }
+
+  &--rain {
+    @include sprite--retina($ico-weather-rain-x-large-2x);
+  }
+
+  &--snow {
+    @include sprite--retina($ico-weather-snow-x-large-2x);
+  }
+
+  &--sun {
+    @include sprite--retina($ico-weather-sun-x-large-2x);
+  }
+  &--suncloud {
+    @include sprite--retina($ico-weather-suncloud-x-large-2x);
+  }
+  &--thunder {
+    @include sprite--retina($ico-weather-thunder-x-large-2x);
+  }
+  &--wind {
+    @include sprite--retina($ico-weather-wind-x-large-2x);
+  }
+
+  &--hot {
+    @include sprite--retina($ico-weather-hot-x-large-2x);
+  }
+
+  &--cold {
+    @include sprite--retina($ico-weather-cold-x-large-2x);
+  }
+
+  &--clouds-medium {
+    @include sprite--retina($ico-weather-clouds-medium-2x);
+  }
+
+  &--rain-medium {
+    @include sprite--retina($ico-weather-rain-medium-2x);
+  }
+
+  &--snow-medium {
+    @include sprite--retina($ico-weather-snow-medium-2x);
+  }
+
+  &--sun-medium {
+    @include sprite--retina($ico-weather-sun-medium-2x);
+  }
+
+  &--suncloud-medium {
+    @include sprite--retina($ico-weather-suncloud-medium-2x);
+  }
+
+  &--wind-medium {
+    @include sprite--retina($ico-weather-wind-medium-2x);
+  }
+
+  &--thunder-medium {
+    @include sprite--retina($ico-weather-thunder-medium-2x);
+  }
+
+  &--moon-medium {
+    @include sprite--retina($ico-weather-moon-medium-2x);
+  }
+
+  &--mooncloud-medium {
+    @include sprite--retina($ico-weather-mooncloud-medium-2x);
+  }
+
+  &--hot-medium {
+    @include sprite--retina($ico-weather-hot-medium-2x);
+  }
+
+  &--cold-medium {
+    @include sprite--retina($ico-weather-cold-medium-2x);
+  }
+
+  }
+}

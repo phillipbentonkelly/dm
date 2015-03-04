@@ -1,0 +1,17 @@
+<p:currentObject webType="WT" sectionId="section" />
+<p:getContext var="ctx" entries="urlentry" />
+
+<bdc:getLayer var="adLayerName" webType="${WT}" layerType="ad" />
+<bdc:inheritStoryLayer var="adLayerDwpPath" section="${section}" layer="${adLayerName}" />
+
+<div class="site-width forum ${class}">
+	<div class="primary">
+		<div class="inner">
+			<p:jspInclude eomdb="true" url="$configurationURI/Framework/skins/section/dwp_forumpage/forumpage_standard/forumpage_standard.jsp"/>
+		</div> <!--  / .inner -->
+	</div><!-- / .primary -->
+	<div class="secondary">
+		<p:include url="$configurationURI/Framework/skins/components/ads/dfp_ad_controller.jpt" context="ad_toprightslot,forum-advertisement" />	
+		<p:include url="$configurationURI/Framework/skins/components/ads/dfp_ad_controller.jpt" context="ad_featurestack1,forum-advertisement" />
+	</div><!-- / .secondary -->
+</div><!-- / .forum -->

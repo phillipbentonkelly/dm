@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PubNubRules>
+	<!--  Use the metadata to control how ${HOME}/scripts/push2pubnub.bash works  -->
+</PubNubRules>

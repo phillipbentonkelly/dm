@@ -1,0 +1,76 @@
+<p:getContext var="uuid" />
+<p:getObject uuid="${uuid}" var="webObject" />
+<p:object webObject="${webObject}" content="story" metadata="meta" />
+
+<p:out var="review_title" xvalue="$story//review-containers/review-container-dance/review-title/p"/>
+
+<p:out var="dance_loc_name" xvalue="$story//review-containers/review-container-dance/review-loc-name/p"/>
+<p:out var="dance_loc_street_address" xvalue="$story//review-containers/review-container-dance/review-loc-street-address/p"/>
+<p:out var="dance_loc_city" xvalue="$story//review-containers/review-container-dance/review-loc-city/p"/>
+<p:out var="dance_loc_state" xvalue="$story//review-containers/review-container-dance/review-loc-state/p"/>
+<p:out var="dance_loc_zipcode" xvalue="$story//review-containers/review-container-dance/review-loc-zipcode/p"/>
+<p:out var="dance_box_office_phone" xvalue="$story//review-containers/review-container-dance/review-box-office-phone/p"/>
+<p:out var="dance_venue_url" xvalue="$story//review-containers/review-container-dance/review-venue-url/p"/>
+
+<p:out var="dance_performing_company" xvalue="$story//review-containers/review-container-dance/review-performing-company/p"/>
+<p:out var="dance_date_opening" xvalue="$story//review-containers/review-container-dance/review-date-of-first-performance/p"/>
+<p:out var="dance_date_closing" xvalue="$story//review-containers/review-container-dance/review-date-closing/p"/>
+<p:out var="dance_ticket_price" xvalue="$story//review-containers/review-container-dance/review-ticket-price/p"/>
+<p:out var="dance_company_url" xvalue="$story//review-containers/review-container-dance/review-company-url/p"/>
+
+<div class="review-item">
+	<h3 class="review-item-title">${fn:trim(review_title)}</h3>
+</div>
+
+<aside class="review-box">
+	
+	<c:if test="${not empty fn:trim(dance_loc_name)}">
+		${dance_loc_name} |
+	</c:if>
+	
+	<p:out var="addressAmalgam" value="${dance_loc_street_address}${dance_loc_city}${dance_loc_state}${dance_loc_zipcode}" />
+	<c:if test="${not empty fn:trim(addressAmalgam)}">
+		${dance_loc_street_address} | ${dance_loc_city}, ${dance_loc_state} ${dance_loc_zipcode} |
+	</c:if>
+	
+	<c:if test="${not empty fn:trim(dance_box_office_phone)}">
+		${dance_box_office_phone} |
+	</c:if>
+	
+	<c:if test="${not empty fn:trim(dance_venue_url)}">
+		<bdc:link value="${fn:trim(dance_venue_url)}">${dance_venue_url}</bdc:link> |
+	</c:if>
+	
+	<c:if test="${not empty fn:trim(dance_performing_company)}">
+		${dance_performing_company} |
+	</c:if>
+	
+	<c:set var="alsoPerforming" value="" />
+	<%-- It's here that I stopped caring if my variable names made any sense, because GOOD LORD THESE THINGS HAVE A TON OF FIELDS. -- MMK, 1/31/2014 @ 10:01am --%>
+	<x:forEach var="otherDudes" select="$story//review-containers/review-container-dance/review-presenting-organizations/review-presenting-organization" varStatus="loop">
+		<p:out var="otherGuy" xvalue="$otherDudes/p" />
+		<c:if test="${not empty fn:trim(otherGuy)}">
+			<c:set var="alsoPerforming">${alsoPerforming}<c:if test="${not loop.first}">,</c:if> ${otherGuy}</c:set>
+		</c:if>
+	</x:forEach>
+	<c:if test="${not empty alsoPerforming}">
+		<b>Also performing:</b> ${alsoPerforming} |
+	</c:if>
+	
+	<c:if test="${not empty fn:trim(dance_date_opening)}">
+		<b>First performance:</b> ${dance_date_opening} |
+	</c:if>
+	
+	<c:if test="${not empty fn:trim(dance_date_closing)}">
+		<b>Closing date:</b> ${dance_date_closing} |
+	</c:if>
+	
+	<c:if test="${not empty fn:trim(dance_ticket_price)}">
+		<b>Ticket price:</b> ${dance_ticket_price} |
+	</c:if>
+	
+	<c:if test="${not empty fn:trim(dance_company_url)}">
+		<b>Company website:</b> <bdc:link value="${fn:trim(dance_company_url)}">${fn:trim(dance_company_url)}</bdc:link>
+	</c:if>
+	
+</aside>

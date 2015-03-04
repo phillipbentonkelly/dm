@@ -1,0 +1,88 @@
+<p:import var="nav" url="/SysConfig/Classify/Data/BDC_nav_menu.xml" xml="true" />
+
+<nav class="toc-mod reverse nocontent">
+	<form class="toc-form" action="${portalContext.publicBaseUrl}/search" ><!-- on means open nav -->
+		<input class="toc-search-input nav-label" type="text" placeholder="Search stories or sections" />
+		<input type="submit" class="toc-search-btn toc-search-icon" value="Search" />
+		<input type="hidden" name="p1" value="TotalHamburgerSearches" />
+	</form> <!-- /toc-form -->
+	
+	<%----------------------------%>
+	<%-- Sections and Shortcuts --%>
+	<%----------------------------%>
+	
+	<x:forEach var="section" select="$nav//Nav/Sections/SectionGroup">
+		<p:out var="sectionClass" xvalue="$section/@class" />
+		<p:out var="sectionLabel" xvalue="$section/Label" />
+		<p:out var="groupClass" xvalue="$section/GroupData/@class" />
+		
+		<div class="${sectionClass}">
+			<h3 class="toc-section-head">${sectionLabel}</h3>
+			<ul class="toc-list ${groupClass}">
+				<x:forEach var="secItem" select="$section//GroupData/Section">
+					<p:out var="itemClass" xvalue="$secItem/@class" />
+					<p:out var="sectionName" xvalue="$secItem/SectionName" />
+					<p:out var="sectionUrl" xvalue="$secItem/URL" />
+					<p:out var="sectionPath" xvalue="$secItem/SectionPath" />
+					
+					<p:out var="objectUrl" value="${sectionPath}" />
+					<c:if test="${fn:trim(sectionUrl) ne '' and not empty sectionUrl}">
+						<p:out var="objectUrl" value="${sectionUrl}" />
+					</c:if>
+					
+					<li class="toc-item ${itemClass}">
+						<a href="${objectUrl}">${sectionName}</a>
+					</li>
+				</x:forEach>
+			</ul>
+		</div>
+	</x:forEach>
+	
+	<%------------------%>
+	<%-- Sister Sites --%>
+	<%------------------%>
+	
+	<p:out var="sisterLabel" xvalue="$nav//SisterSites/Label" />
+	
+	<div class="toc-sites-mod">
+		<h3 class="toc-section-head">${sisterLabel}</h3>
+		<ul class ="toc-sister-list">
+			<x:forEach var="sisterItem" select="$nav//SisterSites/Sites/Site">
+				<p:out var="itemClass" xvalue="$sisterItem/@class" />
+				<p:out var="label" xvalue="$sisterItem/Label" />
+				<p:out var="imageClass" xvalue="$sisterItem/ImageClass" />
+				<p:out var="itemUrl" xvalue="$sisterItem/URL" />
+				<p:out var="tease" xvalue="$sisterItem/Tease" />
+				
+				<li class="sister-item ${itemClass}">
+					<a href="${itemUrl}">
+						<div class="${imageClass} sister-logo">${label}</div>
+						<p class="sister-txt radio-txt">${tease}</p>
+					</a>
+				</li>
+			</x:forEach>
+        </ul> <!-- /toc-sister-list -->
+        
+        <footer class="nav-ftr">
+			<ul class="sm-icon-list">
+				<li><a href="http://www.boston.com/tools/twitter?p1=HP_StayConnected_Twitter" class="twitter-icon sm-icons"></a></li>
+				<li><a href="http://www.boston.com/tools/facebook?p1=HP_StayConnected_Facebook" class="facebook-icon sm-icons"></a></li>
+				<li><a href="https://plus.google.com/105846714412577435274/posts" class="google-icon sm-icons"></a></li>
+            </ul>
+			<ul class="ftr-info list-horiz ftr-text">
+				<li class="list-item nav-ftr-item"><a href="http://www.boston.com/help/privacy_policy/">Privacy Policy</a></li>
+				<li class="list-item nav-ftr-item"><a href="http://www.boston.com/help/bostoncom_info/">Contact</a></li>
+			</ul>
+            <p class="nav-copyright ftr-text">&copy;2014 Boston.com</p>
+        </footer> <!-- /nav-ftr -->
+
+        <!-- Article Banner Ad -->
+       <div class="ad-banner-mod ad-nav-banner-mod">
+         <%--
+          <p:currentObject metadata="dwpMeta" content="dwpContent" webType="WT" uuid="uuid" channel="Boston.com" sectionPage="dwp" sectionId="sectionId" />
+		  <bdc:getAdLayer var="adLayerName" webType="${WT}"/>
+		  <bdc:inheritStoryLayer var="adLayerDwpPath" section="${sectionId}" layer="${adLayerName}" />
+		  <p:include pageZoneName="ad_navdisplay" inherits="${adLayerDwpPath}" />
+		--%>
+	</div>
+</nav> <!-- /toc-mod -->

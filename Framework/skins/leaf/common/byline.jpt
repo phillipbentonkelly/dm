@@ -1,0 +1,34 @@
+<%--
+	Based on:
+	/bcom-redesign-beta/bdc-markup/page-content/modules/content-byline.php
+--%>
+
+<p:currentObject content="story" metadata="meta" channel="Boston.com" />
+
+<%-- byline info --%>
+<p:out var="byname" xvalue="$story//byline/byname" />
+<p:out var="bysource" xvalue="$story//byline/bysource/p" />
+
+<%-- replace @twittername with link to twitter --%>
+<bdc:twitterLinks var="byname" value="${byname}" />
+
+<%-- timestamp info --%>
+<p:out var="lastPubDate" xvalue="$meta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/LastPublicationDate" />
+<p:out var="firstPubDate" xvalue="$meta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/FirstPublicationDate" />
+
+<c:choose>
+	<c:when test="${not empty lastPubDate}">
+		<!-- storyPubDate = ${lastPubDate} // lastPubDate -->
+		<p:out var="storyPubDate" value="${lastPubDate}" format="eomdate:MM.dd.yy | h:mm a" timeZone="America/New_York" />
+	</c:when>
+	<c:otherwise>
+		<!-- storyPubDate = ${firstPubDate} // firstPubDate -->
+		<p:out var="storyPubDate" value="${firstPubDate}" format="eomdate:MM.dd.yy | h:mm a" timeZone="America/New_York" />
+	</c:otherwise>
+</c:choose>
+
+  
+<div class="content-byline">
+	<div class="content-byline__producer">${byname}</div>
+	<div class="content-byline__details">${bysource}${not empty bysource && not empty storyPubDate ? " | " : ""}${storyPubDate}</div>
+</div><!-- / content-byline -->

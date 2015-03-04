@@ -1,0 +1,50 @@
+<p:currentObject webType="WT" />
+
+<c:choose>
+	<c:when test="${fn:endsWith(WT, 'picturestory') or fn:endsWith(WT, 'gallery')}">
+		<bdc:rwArticleLeadImage var="imgData" webObject="${currentObject}" galleryFormat="${galleryFormat}" />
+		<bdc:rwGetGallery webObject="${currentObject}" var="galleryData" format="${galleryFormat}" />
+	</c:when>
+	<c:otherwise>
+		<bdc:rwArticleLeadImage var="imgData" webObject="${currentObject}" />
+	</c:otherwise>
+</c:choose>
+	
+<p:out var="mediaClass" value="content-media--wide" />
+<c:if test="${imgData.orientation eq 'vertical' or galleryType eq 'text'}">
+	<p:out var="mediaClass" value="content-media--inline-right" />
+</c:if>
+
+<c:if test="${not empty imgData.src}">
+	<!-- ${imgData.debug} -->
+	<div class="content-media ${mediaClass}">
+	  <figure>
+	  	<c:choose>
+	  		<c:when test="${fn:endsWith(WT, 'picturestory') or fn:endsWith(WT, 'gallery')}">
+	  		
+	  			<img src="#" data-img-src="${galleryData[0].imageSrc}" class="content-media__image js-image-load" alt="${galleryData[0].altText}"/>
+	  			<c:if test="${fn:trim(galleryData[0].credit) ne ''}">
+		  			<figcaption class="content-media__caption">
+		  				<div class="content-media__credit">${galleryData[0].credit}</div>
+		  			</figcaption>
+	  			</c:if>
+	  		
+	  		</c:when>
+	  		<c:when test="${fn:startsWith(WT, 'video')}">
+	  			<!-- Video -->
+			    <!--
+			    	<img src="http://placehold.it/680x439" class="content-media__image" alt="Image caption maybe?"/>
+			    -->
+	  		</c:when>
+	  		<c:otherwise>
+	  			<img src="${imgData.src}" class="content-media__image" alt="${imgData.altText}"/>
+	  			<c:if test="${fn:trim(imgData.caption) ne '' or fn:trim(imgData.credit) ne ''}">
+		  			<figcaption class="content-media__caption">
+		  				${imgData.caption} <div class="content-media__credit">${imgData.credit}</div>
+		  			</figcaption>
+	  			</c:if>
+	  		</c:otherwise>
+	  	</c:choose>
+	  </figure>
+	</div><!-- / content-media -->
+</c:if>

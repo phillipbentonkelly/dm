@@ -1,0 +1,53 @@
+<p:currentObject webType="WT" sectionId="section" metadata="meta" />
+
+<p:out var="isForum" value="False" />
+<c:if test="${WT eq 'dwp_forumpage' or WT eq 'dwp_userprofile'}">
+  <p:out var="isForum" value="True" scope="page" />
+</c:if>
+
+<section class="masthead" role="banner">
+  <div class="masthead__content">
+    <!-- Page Header -->
+    <p:inline url="$configurationURI/Framework/frameset/masthead/page_header.jpt" />
+  <!-- salsman -->
+    <!-- Dropdown Search -->
+    <%-- NESTED INLINE SEARCH STUFF --%>
+    <p:inline url="$configurationURI/Framework/frameset/search/dropdown_search.jpt" />
+
+    <!-- Page Nav -->
+    <%-- HORIZONTAL NAVIGATION --%>
+    <c:if test="${not isForum}">
+      <c:choose>
+        <c:when test="${WT eq 'dwp_modulepage' and section eq '/'}">
+          <p:include pageZoneName="navigation_horizontal">
+            <p:param name="isHomepage" value="True" />
+                    <p:param name="section" value="${section}" />
+          </p:include>
+        </c:when>
+        <c:when test="${WT eq 'story'}">
+        </c:when>
+        <c:otherwise>
+          <p:out var="navHorizIsEmpty" value="${1==1}" />
+        <p:ifZone name="navigation_horizontal" empty="false">
+                    <p:out var="navHorizIsEmpty" value="${1==2}" />
+          <p:include pageZoneName="navigation_horizontal">
+            <p:param name="dwp" value="${currentObject}" />
+          </p:include>
+        </p:ifZone>
+        
+        <c:if test="${navHorizIsEmpty}">
+          <bdc:inheritZoneGlobal var="navigationBarDwp" section="${section}" zoneName="navigation_horizontal"/>
+          <p:include pageZoneName="navigation_horizontal" inherits="${navigationBarDwp}">
+                        <%-- RMK - commented this out, but I have no idea why it was here... anyone? 
+                          <p:param name="isHomepage" value="True" />
+                        --%>                                      
+                      <p:param name="section" value="${section}" />
+          </p:include>
+        </c:if>
+        </c:otherwise>
+      </c:choose>
+    </c:if>
+  </div>
+</section><!-- / masthead -->
+
+<p:inline url="$configurationURI/Framework/skins/common/ads/ad_pushdown.jpt" />

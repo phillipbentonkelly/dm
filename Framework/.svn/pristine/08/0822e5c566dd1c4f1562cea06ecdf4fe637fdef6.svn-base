@@ -1,0 +1,38 @@
+<%-- 
+{comments}
+DM-43: Handle omniture tags in links with anchor tags.
+{comments}
+--%>
+ 
+<div class="page-module page-module--gray optimizely__section-highlights-a-show">
+	<h3 class="page-module__header--red">${cacheScope.title}</h3>
+	<ul class="page-module__list">
+		<c:set var="iter" value="0" /> 	
+		<bdc:forEachZoneItemNew var="story" end="${cacheScope.storyCount}" backfill="${cacheScope.section}">
+			<p:object webObject="${story}" loidEx="loid" />
+			<p:out var="urlAnchorTag" value="" />
+			<c:if test="${loid != cacheScope.skipId && iter <= cacheScope.storyCount - 1}">
+				<bdc:getHeadlines var="headlines" webObject="${story}" />
+				<c:set var="headline" value="${headlines.carouselHeadline}" />
+				<bdc:url var="url" webObject="${story}" />
+				<bdc:imagesWithCaptionCredit webObject="${story}" var="image" format="image_676x282" />
+				<li class="page-module__list-item">
+					<c:if test="${iter == 0 && not empty image}">
+						<p:out var="imgP1" value="?p1=highlights_big_image_article_page"/>
+						<bdc:cleanOmnitureHref var="url" url="${url}" omnitureTags="${imgP1}" /> 
+						<a href="${url}">
+							<img src="${image.src}" alt="" class="page-module__media--wide">
+						</a>
+					</c:if>
+					<p:out var="hrefP1" value="?p1=highlights_${iter==0 ? 'big' : 'no'}_image_headline_article_page"/>
+					<bdc:cleanOmnitureHref var="url" url="${url}" omnitureTags="${hrefP1}" />
+					<a href="${url}" 
+						 class="page-module__link${not empty image && iter == 0?' page-module__link--bold':''}">
+						 ${headline}
+					</a>
+				</li>
+				<c:set var="iter" value="${iter + 1}" />
+			</c:if>
+		</bdc:forEachZoneItemNew>
+	</ul>
+</div>

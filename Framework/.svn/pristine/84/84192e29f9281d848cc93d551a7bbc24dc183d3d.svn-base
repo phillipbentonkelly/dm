@@ -1,0 +1,32 @@
+<%@ taglib prefix="jp" uri="jptag"%>
+<%@ taglib prefix="x" uri="jstlXml"%>
+<%--
+hey everyone this is the only part that was doing anything
+so, uncomment it later 
+
+- adam d
+<p:applicationBuffer />
+--%>
+
+<%-- <p:currentObject content="objContent" metadata="objMeta" webType="wt" sectionPage="dwpObj" />
+<p:blogId var="blogId" />
+<p:getBlog blogId="${blogId}" var="blog" />
+<p:object webObject="${blog.webObject}" metadata="m" content="c" />
+<p:out var="blog_title" xvalue="$m//Title" />
+<p:out var="blog_desc" xvalue="$m//Description" /> --%>
+
+<%--<p:out var="blog_categories" xvalue="$m//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/Sections/Section/SubSections/SubSection/SubSectionName" />--%>
+<%--<p:out var="blog_blogger" xvalue="$m//Blogger" />
+<p:out var="editorialLayerdwpPath" xvalue="$m//Page/ContainerPath" scope="page" /> 
+<p:out var="dwpWT" xvalue="$dwpObj//OnlineProducts/OnlineProduct/WebType" />
+<p:out var="container_path" xvalue="$m//Page/ContainerPath" />
+<p:getObject path="${container_path}" var="dwp" />
+<p:object webObject="${dwp}" content="story" metadata="meta" channel="Boston.com" />
+<p:out var="sectionPath" xvalue="$meta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/Sections/Section/SectionPath" /> --%>
+
+<%-- ${dwpWT} -- testing --%>
+<%--<bc:getLayer var="adLayerName" webType="${wt}" layerType="ad"/>
+<bc:getLayer var="editorialLayerName" webType="${wt}" layerType="editorial"/>
+<bc:inheritBlogLayer var="adLayerDwpPath" blogId="${blogId}" layer="${adLayerName}"/> 
+<bc:inheritBlogLayer var="editorialLayerdwpPath" blogId="${blogId}" layer="${editorialLayerName}"/>--%>
+

@@ -1,0 +1,17 @@
+<bdc:getMegaMenuNavData nav="navItems" menu="megaMenus" section="${cacheScope.section}"
+                        homepageOverride="${cacheScope.homepage == 'false' ? 'true' : 'false'}" /> 
+
+<p:out var="ajaxUrl" value="/fragment${currentObject.path}" />
+
+<nav class="page-nav js-mega-menu-nav" id="page-nav" role="navigation"
+     data-ajax-load="${ajaxUrl}" data-ajax-success="bdc.megamenuLoad">
+
+	<ul>
+		<c:forEach var="nav" items="${navItems}">
+			<li	class="${nav.navClass}" data-section="${nav.section}">
+				<a href="${nav.url}" class="${nav.linkClass}">${nav.path} ${nav.label}</a>
+			</li>
+		</c:forEach>
+	</ul>
+</nav><!-- / page nav -->
+ 

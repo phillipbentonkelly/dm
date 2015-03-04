@@ -1,0 +1,119 @@
+/* Helper classes for floating elements */
+.pull-right { float: right; }
+.pull-left { float: left; }
+
+.toc-item > a.temporary {
+	color: red;
+}
+
+.quick-tz-img-mod {
+	height: 92px;
+	overflow: hidden;
+}
+
+/* The new bar! */
+.stream-notification {
+	width: 100%;//was 52em;
+	-webkit-transition: all 0.8s ease-in;
+	-moz-transition: all 0.8s ease-in;
+	-o-transition: all 0.8s ease-in;
+	transition: all 0.8s ease-in;
+}
+.stream-notification[data-new-count="0"] {
+	display: none;
+}
+.filter-sub-active .stream-notification {
+	position: fixed;
+	top: 100px;
+	width: 100%;//was 52em;
+	z-index: 100;
+}
+.stream-notification a {
+	display: block;
+	width: 100%;
+	padding: 8px 0;
+	background: #fff;
+	border: 1px solid #e5e5e5;
+	font: normal 500 0.76923em "effra", Arial, Helvetica, Verdana, sans-serif;
+	color: #999;
+	text-align: center;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	-webkit-transition: all 0.2s ease-in;
+	-moz-transition: all 0.2s ease-in;
+	-o-transition: all 0.2s ease-in;
+	transition: all 0.2s ease-in;
+}
+.stream-notification a:hover {
+	color: #444;
+	border-color: #ccc;
+}
+
+/* Temporary styles for pinning items */
+.quick-tz .user-action {
+	opacity: 0;
+	-webkit-transition: all 0.15s ease-in;
+	-moz-transition: all 0.15s ease-in;
+	-o-transition: all 0.15s ease-in;
+	transition: all 0.15s ease-in;
+}
+.quick-tz:hover .user-action {
+	opacity: 0.8;
+}
+
+/* Temporary scrolled item styles */
+.stream-item.read {
+	opacity: 0.5;
+	-webkit-transition: all 0.15s ease-in;
+	-moz-transition: all 0.15s ease-in;
+	-o-transition: all 0.15s ease-in;
+	transition: all 0.15s ease-in;
+}
+.stream-item.read:hover {
+	opacity: 1;
+}
+
+
+.subnav-label, .subnav-link {
+	display: block;
+	height: 32px;
+	float: left;
+	padding: 8px 6px;
+	font: normal 500 0.92308em "effra", Arial, Helvetica, Verdana, sans-serif;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	color: #eee;
+}
+.subnav-txt {
+	padding: 3px 5px;
+	border: 1px solid rgba(255, 255, 255, 0);
+	-webkit-transition: all 0.15s ease-in;
+	-moz-transition: all 0.15s ease-in;
+	-o-transition: all 0.15s ease-in;
+	transition: all 0.15s ease-in;
+	color: #eee;
+}
+.filter-active .subnav-txt {
+border-color: #4f6c8a;
+border-color: rgba(255, 255, 255, 0.3);
+}
+
+
+.filter-sub-active .filter-nav-mod{
+		position: fixed;
+		left:0;
+		top:65px;
+		z-index:997;
+		-webkit-transition: all 0.6s ease-in;
+		-moz-transition: all 0.6s ease-in;
+		-o-transition: all 0.6s ease-in;
+		transition: all 0.6s ease-in;
+		.filter-nav{
+			font: normal 500 0.92308em "effra", Arial, Helvetica, Verdana, sans-serif;
+			text-transform: uppercase;
+			background-color:#052f59;
+			// li:first-child:before{
+			//	content: 'hello'
+			// }
+		}
+	}

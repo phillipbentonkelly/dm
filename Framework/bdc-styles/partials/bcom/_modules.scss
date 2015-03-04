@@ -1,0 +1,1408 @@
+//
+// Must Reads & Event Listings
+//
+
+// .must-reads, .event-listings, .trending, .trending-slotted {
+// 	position: relative;
+// 	background-color: #fff;
+// 	padding: 20px 14px 0;
+// 	@include mq(max, $sidebar-break) {
+// 		border-bottom: 1px solid #ccc;
+// 		padding-bottom: 12px;
+// 	}
+
+// 	.section-h {
+// 		text-align:center;
+// 	}
+// }
+
+// // Hide the slotted trending widget on mobile/tablet breakpoints
+// .trending-slotted {
+// 	@include mq(max, $break-lg) {
+// 		display: none;
+// 	}
+// 	ul.trending-slotted-list {
+// 		margin-right: 5px;
+		
+// 		li,
+// 		li.list-bull-item {
+// 			position: relative;
+// 			margin-bottom: 0px!important;
+
+// 			a {
+// 				@include sans(em(15), 500);
+// 				color: $txt-black;
+// 				position: relative;
+// 				display: block;
+// 				padding: 12px 12px 12px 0px;
+// 				border-bottom: 1px solid #e5e5e5;
+// 				&:hover {
+// 					color: $link;
+// 					text-decoration: none;
+// 				}
+// 			}
+// 		}
+// 	}
+// }
+// // from shame
+// .mr-closed .mr-list.list-bull {
+
+// 	border-top:none !important; 
+// }
+
+// ul.list-bull > li:before {
+// 	content:"\2022";
+// 	color:#9b1518;
+// 	background-color:#fff;
+// 	box-shadow:none;
+// 	font-size:16px!important; 
+// }
+
+// ul.mr-list.list-bull > li:hover:before {
+// 	background:none;
+// }
+// ul.list-bull li.list-bull-item {
+// 	color: #9b1518!important; 
+// }
+// @media (min-width: 600px) and (max-width: 1023px) {
+//   .mr-list .list-bull-item {
+//     float: left;
+//     padding-left: 16px;
+//     width: 49%;
+//   }
+// }
+// //end shame
+
+// .mr-btn, .event-btn, .trending-btn {
+// 	@include input-default;
+// 	position: relative;
+// 	width: 100%;
+// 	margin-top: 12px;
+// 	padding: 8px 12px;
+// 	border: 1px solid #e5e5e5;
+// 	display: block;
+// 	// Type styles
+// 	@include sans(em(10), 500);
+// 	text-transform: uppercase;
+// 	letter-spacing: 1px;
+// 	text-align: center;
+// 	color: #999;
+// 	@include trans;
+// 	&:hover {
+// 		color: #444;
+// 		border-color: #ccc;
+// 	}
+// }
+// .trending .loading{
+// 	//these are the three red loading balls that will be deleted when the json request completes - we need to override the baseline 'loading' styles a bit.
+// 	margin:20px auto;
+// 	z-index: 1;
+
+// }
+// .mr-list, .event-list, .trending-list {
+// 	margin-right: 5px;
+// 	// @extend .list-num-big;
+// 	@include mq (max, $mr-list-sm){
+// 		position: relative;
+// 	}
+// 		@include mq($mr-list-sm, $sidebar-break) {
+// 		@include media-grid(2, 16px, mr-item);
+// 		&:after {
+// 	    content: "";
+// 	    display: table;
+// 	    clear: both;
+// 	    *zoom: 1;
+// 	  }
+// 	}
+// 	.mr-closed &, .event-closed &, .trending-closed &{
+// 		position: relative;
+// 		overflow: hidden;
+// 		@include mq(max, $mr-list-sm){
+// 			height: 170px;
+// 		}
+// 		@include mq($sidebar-break){
+// 			height: 280px;
+// 		}
+// 		@include mq($mr-list-sm, $sidebar-break) {
+// 			height:160px;
+// 			@include media-grid(2, 16px, mr-item);
+// 			&:after {
+// 		    content: "";
+// 		    display: table;
+// 		    clear: both;
+// 		    *zoom: 1;
+// 		  }
+// 		}
+// 	}
+// 	> li > a {
+// 		color: $txt-black;
+// 		&:hover {
+// 			color: $link;
+// 			text-decoration: none;
+// 		}
+// 	}
+
+// }
+
+// .mr-closed .mr-list {
+// 	border-top: 1px solid #e5e5e5;
+// 	border-bottom: 1px solid #e5e5e5;
+// }
+// // Ryan 8.21
+// .mr-list, .event-list, .trending-list {
+// 	// @extend .list-num-big;
+// 	counter-reset: li 0;
+// }
+
+// .event-search {
+// 	color: #000;
+// 	font-weight: 500;
+// 	margin-top: 20px;
+// 	margin-bottom: 10px;
+// }
+// .event-form {
+// 	display: table;
+// 	margin: 0 auto;
+// 	width: 100%;
+// }
+
+// .event-form-input {
+// 	display: table-cell;
+// 	float: left;
+// 	//default stuff
+// 	@include input-default;
+// 	border: 1px solid #bbb;
+// 	//input style
+// 	position: relative;
+// 	height: 37px;
+// 	padding: 7px 10px;
+// 	background-color: #fff;
+// 	//text style
+// 	@include sans(em(14)/155%, 400);
+// 	@include placeholder-state (#bbb, #bbb, #222);
+// 	color: #222;
+// }
+// .event-search-button {
+// 	@include sans(em(12)/155%, 400);
+// 	width: 72px;
+// 	height: 37px;
+// 	display: table-cell;
+// 	float: left;
+// 	background-color: $red;
+// 	color: white;
+// }
+
+// .add-event-link {
+// 	float: right;
+// 	padding: 5px;
+// 	color: $txt-black;
+// 		&:hover {
+// 			color: $link;
+// 			text-decoration: none;
+// 		}
+
+// }
+
+// // Enable scrolling when user hovers
+// .mr-closed .mr-list:hover, .event-closed .event-list:hover, .trending-closed .trending-list:hover {
+// 	// Ensures that browsers who wish to show scroll bar, like,
+// 	// all the time instead only show it when the user signals intent
+// 	overflow-y: scroll;
+// 	-webkit-overflow-scrolling: touch;
+// }
+
+// // Enable touch scrolling only when the screen
+// // is large enough to get your finger of the way
+// .touch .mr-closed .mr-list, .touch .event-closed .event-list, .touch .trending-closed .trending-list {
+// 	@include mq(600px) {
+// 		overflow-y: scroll;
+// 		-webkit-overflow-scrolling: touch;
+// 	}
+// }
+
+// .mr-list > .mr-item > a, .event-list > .event-item > a, .trending-list > .trending-item > a {
+// 	// Middle breakpoint, with side-by-side columns
+// 	@include mq($mr-list-sm, $sidebar-break) {
+// 		// Keep consistent heights when
+// 		// columns are side-by-side
+// 		min-height: 57px;
+// 	} //mq
+// }
+
+// .mr-item:last-child > a, .event-item:last-child > a, .event-item:nth-child(6) > a, .trending-item:last-child > a  {
+// 	border-bottom: 0;
+// }
+
+
+// .mr-item:nth-last-child(2) > a, .trending-item:nth-last-child(2) > a {
+// 	@include mq($mr-list-sm, $sidebar-break) {
+// 		// Remove bottom-border from
+// 		// second-to-last list item
+// 		border-bottom: 0;
+// 	}
+// }
+
+// Must Reads Ad
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+// At large sizes, this looks as if it's the bottom
+// of the Must Reads container. At smaller sizes,
+// it sits on a transparent box unto itself, just below
+
+// .mr-ad-mod, .trending-ad-mod  {
+// 	background-color: #fff;
+// 	padding: 15px 0 14px;
+// 	border-bottom: 1px solid #ccc;
+// 	margin-bottom: 20px;
+// 	@include mq(max, $sidebar-break) {
+// 		background-color: transparent;
+// 		padding: 12px 0;
+// 		margin-bottom: 0;
+// 		@include quick-border;
+// 	}
+// }
+
+// .mr-ad, .trending-ad {
+// 	display: block;
+// 	width: 234px;
+// 	margin: 0 auto;
+// }
+
+//
+// Tools
+//
+// This is being used for the red icons in articles and galleries and in _image-popup.scss. - Ellen 6/25
+//
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+// Base styles for sharing, commenting,
+// and other site-wide tools
+
+// Generic Styles
+// 
+
+@mixin tools($type: icons) {
+
+	@if $type == "icons" or $type == "horiz" {
+		.share-icon,
+		.comment-icon,
+		.preview-icon {
+			display: inline-block;
+			margin-right: 4px;
+			margin-bottom: -5px;
+			background-repeat: no-repeat;
+			background-position: 50% 50%;
+		}
+	}
+
+	// Icons
+	@if $type == "icons" {
+		// Icons gets large ...
+		.share-icon {
+			@include svg('share-red');
+			@include size(25px 22px);
+			.svg & {
+    			background-size: cover;
+    		}
+		}
+
+		.comment-icon {
+			@include svg('comment-red');
+			@include size(20px 22px);
+			position: relative;
+			top: 3px;
+			.svg & {
+    			background-size: cover;
+    		}
+		}
+		.preview-icon {
+			@include svg('preview-red');
+			@include size(20px 20px);
+			position: relative;
+			top: 1px;
+			.svg & {
+    			background-size: cover;
+    		}
+		}
+
+
+		// ... and the labels disappear
+		.tools-txt {
+			display: none;
+		}
+	} // icons
+
+	// Horizontal
+	@if $type == "horiz" {
+		.share-icon {
+			@include svg('share-red');
+			@include size(20px 22px);
+			.svg & {
+    			background-size: cover;
+    		}
+		}
+
+		.comment-icon {
+			@include svg('comment-red');
+			@include size(16px 18px);
+			.svg & {
+    			background-size: cover;
+    		}
+		}
+
+		.preview-icon {
+			@include svg('preview-red');
+			@include size(16px 18px);
+			.svg & {
+    			background-size: cover;
+    		}
+		}
+
+		// Hide tool text when it's just the icons
+		.tools-txt {
+			display: inline;
+		}
+	} // horiz
+
+	// Buttons
+	@if $type == "btn" or $type == "btns" {
+		.touch & {
+			display: none;
+		}
+
+		.tools-item > a {
+			display: block;
+			@include size(36px);
+			padding: 6px;
+			@include button-state($blue);
+		}
+
+		.tools-item .tools-link-comment {
+			padding: 6px 1px;
+		}
+
+		.tools-share {
+			margin-bottom: 10px;
+		}
+
+		.share-icon,
+		.comment-icon {
+			display: block;
+			background-repeat: no-repeat;
+			background-position: 50% 50%;
+		}
+
+		.share-icon {
+			@include size(25px 22px);
+			@include svg('share-white');
+		}
+
+		.comment-icon {
+			@include size(30px 24px);
+			@include svg('comment-white');
+			background-size: cover;
+			position: relative;
+			top: 2px;
+			left: 2px;
+		}
+
+		.preview-icon {
+			@include size(20px 20px);
+			@include svg('preview-white');
+			position: relative;
+			top: 2px;
+			left: 2px;
+		}
+
+		// Hide tool text
+		.tools-txt {
+			display: block;
+			text-indent: -9999em;
+			@include trans(.2s);
+			opacity: 0;
+			height: 36px;
+			padding: 10px;
+			z-index: -1;
+			vertical-align: middle;
+			text-shadow: none;
+			position: absolute;
+			text-indent: 0;
+			background-color: rgba(255,255,255,.95);
+			border: solid 1px #ddd;
+			left: 0px;
+		}
+		.tools-link-share {
+			.tools-txt {
+				top: 0;
+			}
+		}
+		.tools-link-comment {
+			.tools-txt {
+				bottom: 0;
+			}
+		}
+
+	} // btns
+
+} // tools-icons
+
+
+.story-tools-sidecar {
+	z-index: 1;
+	.tools-link:hover {
+		.tools-txt {
+			opacity: 1;
+			left: 36px;
+		}
+	}
+}
+
+.tools-horiz {
+	@include tools(horiz);
+}
+
+.tools-btns {
+	@include tools(btns);
+}
+
+
+.tools-txt {
+	@include sans(em(12), 500, normal, 1px);
+	color: $med-gray;
+	text-transform: uppercase;
+	.tools-item:hover & {
+		color: $dark-gray;
+		@include trans;
+	}
+}
+
+//
+// Weather
+//
+
+.l-weather {
+	border-bottom: 1px solid #dfd4ca;
+	-webkit-box-shadow: 0 2px white;
+	-moz-box-shadow: 0 2px white;
+	box-shadow: 0 2px white;
+	padding: .5em 0;
+	@include mq(960px) {
+		padding: 0 0 .5em;
+	}
+	@include mq($leaderboard) {
+		@include unabsolute;
+		margin-bottom: 20px;
+	}
+	@include mq($leaderboard, $sidebar-break) {
+		margin-top: 20px;
+	}
+}
+
+.weather-wrapper {
+	width: 100%;
+	height: 34px;
+    display: inline-block; //jm
+	overflow-x: hidden;
+	overflow-y: hidden;
+	.traffic-block, .today-forecast {
+		border-right: 1px solid #dfd4ca;
+	}
+	.today-forecast, .tomorrow-forecast {
+		@include mq($sidebar-break) {
+			border-right: none;
+		}
+		@include mq(max, 620px) {
+			border-right: none;
+		}
+	}
+	.weather-content {
+		width: 95%;
+		margin: 0 auto;
+		@include mq(max, $sidebar-break) {
+			width: 85%;
+		}
+		@include mq(max, 400px) {
+			width: 100%;
+		}
+	}
+}
+
+.weather-block {
+	width: 50%;
+	float: left;
+	position: relative;
+	min-height: 35px;
+	margin:0 auto;
+	@include mq(max, $sidebar-break) {
+		width: 30%;
+		margin: 0 1.5%; 
+	}
+	@include mq(max, 620px) {
+		width: 50%;
+		margin: 0 auto;
+	}
+	.traffic-icon {
+		position: absolute;
+		top: -7px;
+		width: 40px;
+		height: 45px;
+		@include svg(traffic-icon);
+	}
+
+	.traffic-text {
+		// this is 5 px smaller than weather-hgroup to allow extra space for the longer text 
+		// and because the traffic img is thinner than weather to allow for this
+		margin: 0 0 0 45px;
+		@extend %clearfix;
+	}
+	a {
+		color: $blue-lt;
+		display: block;
+		clear: both;
+		&:hover {
+			color: $blue;
+			text-decoration: underline;
+		}
+	}
+	.weather-temp, p {
+		float: left;
+		color: #000;
+		@include sans(em(15)/100%, 600);
+	}
+
+	.weather-temp.temp-low {
+		@include sans(em(15)/100%, 400);
+	}
+}
+
+.weather-block.tomorrow-forecast {
+
+	.weather-traffic, .weather-temp, .weather-day, i[class*="future-"] {
+	   color: #000;
+	   opacity: .5;
+	}
+}
+
+.weather-icon-hp {
+	position: absolute;
+	top: -7px;
+	@include size(45px);
+	background-image: url('/img/weather-sprite.png');
+
+	&.sun-cloud{
+		background-position: 0px -276px;
+	}
+
+	&.clouds {
+		background-position: 0px 0px;
+	}
+
+	&.moon {
+		background-position: 0px -46px;
+	}
+
+	&.mooncloud {
+		background-position: 0px -92px;
+	}
+
+	&.rain {
+		background-position: 0px -138px;
+	}
+
+	&.snow {
+		background-position: 0px -184px;	
+	}
+
+	&.sun {
+		background-position: 0px -230px;
+	}
+
+	&.thunder {
+		background-position: 0px -322px;
+	}
+
+	&.wind {
+		background-position: 0px -368px;
+	}
+}
+
+.weather-hgroup {
+	margin: 0 0 0 50px;
+	@extend %clearfix;
+}
+
+.weather-h {
+	max-width: 85px;
+	line-height: 1px;
+	@include sans(em(14)/122%, 400);
+	color: #000;
+	opacity: .5;
+
+	a:hover & {
+		text-decoration: underline;
+	}
+}
+
+
+// Radio BDC component that sits in the featured stack
+.radiobdc{
+	a{
+		color:#ffffff;
+	}
+	background: #C50B30;
+	overflow: auto;
+	color:#ffffff;
+	font: 700 15px/18px "effra", Arial, Helvetica, Verdana, sans-serif;
+	padding:15px 20px;
+	ul{
+		margin-bottom:10px;
+		li{
+			font-weight: 400;
+			display: inline;
+			&:first-child{
+				margin-left:10px;
+				&:after{
+					content:"|";
+					padding-left:8px;
+					padding-right:5px;
+				}
+			}
+
+		}
+	}
+	.player{
+		border-top: 1px solid #ffffff;
+		padding: 13px 0;
+		overflow: auto;
+		a.player-icon{
+			background: url('/img/radiobdc/button_native.gif') no-repeat;
+			height:58px;
+			width:58px;
+			float:left;
+			margin-right:15px;
+			-webkit-transition: background .2s ease-in;
+			-moz-transition: background .2s ease-in;
+			-ms-transition: background .2s ease-in;
+			-o-transition: background .2s ease-in;
+			transition: background .2s ease-in;
+			&:hover{
+				background: url('/img/radiobdc/button_hover.gif') no-repeat;
+			}
+		}
+		.player-info{
+			overflow: auto;
+			// Padding stops scrollbar from appearing in certain browsers
+			padding-bottom: 1px;
+			.track-title{
+				font-weight: 400;
+			}
+		}
+	}
+	.footer{
+		font-size: 10px;
+		font-weight: 400;
+		color:#000000;
+		text-transform: uppercase;
+		background: #ffffff url('/img/radiobdc/RadioBDC.gif') no-repeat 10px;
+		padding: 10px 0 10px 125px;
+		overflow: auto;
+		a{
+
+		}
+		> div{
+			line-height: 15px;
+			float:right;
+			margin-right:5px;
+		}
+	}
+}
+
+
+// Big News
+
+// .big-news-mod {
+// 	background-color: #000;
+// 	margin: 0px 0 15px;
+// 	color: #fff;
+// 	position: relative;
+// 	overflow: hidden;
+// 	&.big-news-no-img {
+// 		background-color: #222B39;
+// 	}
+// 	&.big-news-marathon {
+// 		background: url(photos/marathon-bg.jpg) top center;
+// 	}
+// }
+
+// .big-news-inner-mod {
+// 	padding: 20px 0 10px;
+// 	text-align: center;
+// 	position: relative;
+// 	margin-left: $site-margin;
+// 	margin-right: $site-margin;
+// 	@include mq(450px) {
+// 		padding-top: 30px;
+// 	}
+// 	@extend %clearfix;
+// 	@include mq($site-middle-mq) {
+// 		padding-bottom: 30px;
+// 		width: 94%;
+// 		max-width: 700px;
+// 		margin-left: auto;
+// 		margin-right: auto;
+// 	}
+// 	@include mq($sidebar-break) {
+// 		max-width: 850px;
+// 	}
+// 	.big-news-with-img & {
+// 		// margin-top: -40%;
+// 	}
+// }
+
+// .big-news-img {
+// 	@include trans;
+// 	width: 130%;
+// 	opacity: .9;
+// 	margin-left: -15%;
+// 	@include mq(800px){
+// 		width: 100%;
+// 		margin-left: 0;
+// 	}
+// }
+
+// .big-news-img-mod {
+// 	width: 100%;
+// 	display: block;
+// 	position: absolute;
+// 	overflow: hidden;
+// 	z-index: 0;
+// 	background-color: #000;
+// 	&:after {
+// 		@include content;
+// 		width: 100%;
+// 		height: 100px;
+// 		display: block;
+// 		position: absolute;
+// 		left: 0;
+// 		right: 0;
+// 		bottom: 0;
+// 		z-index: 1;
+// 		background-image: linear-gradient(top, rgba(0, 0, 0, 0),  rgba(0, 0, 0, 1));
+// 	}
+// 	@include mq(450px) {
+// 		&:after {
+// 			height: 150px;
+// 		}
+// 	}
+// }
+
+// .big-news-h1 {
+// 	display: block;
+// 	@include sans(em(36)/100%, 700);
+// 	text-align: center;
+// 	margin-bottom: 15px;
+// 	text-shadow: rgba(0,0,0,.3) 3px 4px 5px;
+// 	@include mq(450px, 750px) {
+// 		font-size: 60px;
+// 	}
+// 	@include mq(750px) {
+// 		font-size: 80px;
+// 		margin-bottom: 20px;
+// 	}
+// 	// &:hover {
+// 	// 	text-decoration: underline;
+// 	// }
+// }
+
+// .big-news-subhead {
+// 	display: block;
+// 	margin-bottom: 20px;
+// 	@include sans(em(20)/120%, 500);
+// 	text-shadow: rgba(0,0,0,.3) 2px 3px 5px;
+// 	@include mq(450px, 750px) {
+// 		font-size: 28px;
+// 		margin-bottom: 25px;
+// 	}
+// 	@include mq(750px) {
+// 		font-size: 35px;
+// 		margin-bottom: 30px;
+// 	}
+// 	// &:hover {
+// 	// 	text-decoration: underline;
+// 	// }
+// }
+
+// ELLEN
+// .big-news-overline {
+// 	display: inline-block;
+// 	background-color: $red;
+// 	padding: 3px 5px;
+// 	@include sans(em(11), 900, normal, 1px);
+// 	text-transform: uppercase;
+// 	margin-bottom: 15px;
+// 	@include text-shadow(1px 1px 1px rgba(0, 0, 0, 0.2));
+// }
+
+// .bn-support-tz-mod {
+// 	@include mq(max, 600px) {
+// 		margin: 0 auto;
+// 		max-width: 420px;
+// 	}
+// 	@include mq(600px, 750px) {
+// 		@include media-grid(2, 10px, bn-media-block);
+// 	}
+// 	@include mq(750px) {
+// 		@include media-grid(2, 12px, bn-media-block);
+// 	}
+// }
+
+// .bn-support-tz {
+// 	background-color: #fff;
+// 	padding: 10px;
+// 	border-bottom: $border;
+// 	min-height: 60px;
+// 	@include mq(600px) {
+// 		margin-bottom: 10px;
+// 		height: 90px;
+// 		.bn-media-block:nth-last-child(2) &,
+// 		.bn-media-block:last-child &{
+// 			margin-bottom: 0;
+// 		}
+// 	}
+// 	@include mq(720px) {
+// 		margin-bottom: 12px;
+// 	}
+// }
+
+// .bn-support-tz-title {
+// 	color: $blue;
+// 	text-align: left;
+// 	@include sans(em(16)/110%, 500);
+// 	.bn-support-tz:hover & {
+// 		text-decoration: underline;
+// 	}
+// 	@include mq(600px) {
+// 		font-size: 18px;
+// 	}
+// }
+
+// .bn-support-tz-img {
+// 	padding: 5px;
+// 	.bn-support-tz-title {
+// 		padding: 5px 0 5px 5px;
+// 	}
+// 	@include mq(max, 600px){
+// 		@include pair(100px, 10px, top, right);
+// 	}
+// 	@include mq(600px){
+// 		@include pair(130px, 10px, top, right);
+// 	}
+// }
+
+// // Big news bulleted list
+// .bn-support-tz-bull {
+// 	@include mq(max, 600px) {
+// 		padding: 0;
+// 	}
+// }
+
+// .bn-list {
+// 	@include mq(max, 600px) {
+// 		list-style: none;
+// 		padding: 0;
+// 	}
+// }
+
+// .bn-item.list-bull-item {
+// 	text-align: left;
+// 	@include mq(max, 600px) {
+// 		margin-bottom: 0px;
+// 		min-height: 60px;
+// 		border-bottom: solid 1px #ccc;
+// 		padding: 10px;
+// 		&:last-child {
+// 			border-bottom: solid 0px #ccc;
+// 		}
+// 	}
+// }
+
+// .bn-media-tz {
+// 	@include mq(max, 400px) {
+// 		background-color: #fff;
+// 		border-bottom: $border;
+// 		margin-bottom: 0px;
+// 		padding: 10px;
+// 	}
+// 	@include mq(400px){
+// 		@include pair(130px, 20px, top, right);
+// 		margin: 0 auto 18px;
+// 		padding: 8px;
+// 		max-width: 420px;
+// 		background-color: rgba(0,0,0,.7);
+// 	}
+// 	@include mq(600px){
+// 		@include pair(160px, 20px, top, right);
+// 		max-width: 100%;
+// 		padding: 8px;
+// 	}
+// }
+
+// .bn-media-tz-h {
+// 	display: block;
+// 	padding: 0px;
+// 	@include sans(em(16)/120%, 500);
+// 	text-shadow: none;
+// 	color: $blue;
+// 	text-align: left;
+// 	@include mq(400px) {
+// 		color: #fff;
+// 		padding: 7px 0 7px 7px;
+// 		font-size: 20px;
+// 		text-shadow: rgba(0,0,0,.3) 3px 4px 5px;
+// 	}
+// 	@include mq(600px) {
+// 		font-size: 30px;
+// 	}
+// 	.video-active & {
+// 		width: 100%;
+// 	}
+// }
+// .bn-media-tz-img {
+// 	margin-bottom: 10px;
+// 	width: 100%;
+// 	// @include trans;
+// 	@include mq(400px) {
+// 		margin-bottom: 0;
+// 	}
+// }
+
+
+// .bn-media-tz-art-mod {
+// 	position: relative;
+// 	@include trans;
+// 	.video-active & {
+// 		width: 100%;
+// 		@include mq(400px) {
+// 			margin-bottom: 10px;
+// 		}
+// 	}
+// }
+
+// .bn-play-btn {
+// 	display: block;
+// 	background-color: rgba(0,0,0,.7);
+// 	@include svg(tease-video);
+// 	@include size($bn-play-btn);
+// 	@include absolute-center($bn-play-btn $bn-play-btn);
+// 	border-radius: 50%;
+// 	.video-active & {
+// 		display: none;
+// 	}
+// }
+
+// ELLEN
+// .bn-close-video-btn {
+// 	display: none;
+// 	float: right;
+// 	margin-left: 10px;
+// 	@include mq(400px) {
+// 		.video-active & {
+// 			display: block;
+// 		}
+// 	}
+// }
+
+// .bn-support-img {
+//	float: right;
+//	width: 120px;
+// }
+// Classifieds Mod
+.classifieds-mod{
+	display: none;
+	margin-bottom: 20px;
+    position: relative;
+
+	@include mq($break-sm) {
+		display: block;
+		font-size: 1em;
+	}
+	@include mq($break-md) {
+	 	font-size: 1.5em;
+	}
+	@include mq(960px) {
+		font-size: 100%;
+		//margin-bottom:0;
+	}
+
+	ul{
+		li{
+			display: inline;
+			text-transform: none;
+			margin-right:1em;
+			a{
+				font-weight: 500;
+			}
+			&.txt{
+				font-size: 1em;
+				color:#999999;
+				@include mq(960px) {
+					display: none;
+				}
+			}
+		}
+	}
+}
+
+// Classifieds div at the top of the page (eg. is on the cars page)
+
+.classifieds-top {
+	width: 100%;
+	height: 50px;
+}
+
+// Blog related styles.
+// about-this-blog
+h3.blog-header {
+	font-size: 36px;
+	font-family: "effra", Arial, Helvetica, Verdana, sans-serif;
+	color: #222222;
+	margin: 0px;
+	padding: 0px;
+}
+section.about-this-blog{
+  h3{
+    text-transform: uppercase;
+    color:$red;
+
+  }
+  p {
+    font-size:1.1em;
+    line-height:1.6em;
+    color:black;
+    a{color:$link;}
+
+  }
+  &::after {
+   content: "\0020";
+   display: block;
+   width: 100%;
+   height: 5px;
+   //@include svg('wave');
+   background-repeat: repeat-x;
+   margin: 15px auto;
+  }
+  @include mq(max,960px) {
+  	display: none;
+  }
+}
+body.blog-story section.about-this-blog h3 {
+  color:black;
+}
+.tz-category a{
+  //margin-left:3px;
+}
+
+// Traffic page
+
+.primary .inner .boxed{
+  padding:10px 0;
+  border-bottom: 1px dotted $blue;
+ h2.region{
+   & + span{margin-left:10px;}
+   font-size:1.4em; display:inline-block;
+ }
+  .col-3 {
+    margin: 10px 0;
+    @include media-grid(3);
+  }
+
+}
+ul.traffic-tabs {
+  width:100%;
+  li {
+    display:inline-block;
+    width:125px;
+    text-align:center;
+    padding:15px 0;
+    margin:10px auto 0;
+    border:1px solid grey;
+    background:$light-gray;
+    border-bottom:0px;
+    &.selected {
+      border-top:3px solid black;
+      background:white;
+    }
+  }
+}
+
+//Cars Section Front for Mobile
+
+.car-gurus {
+	border-bottom: 5px solid #222222;
+	padding: 12px 8px;
+	@include mq(960px) {
+		margin-top: 25px;
+	}
+
+	h3 {
+		font: normal 500 1.61538em/110% "effra", Arial, Helvetica, Verdana, sans-serif;
+		margin-right: 25px;
+		margin-bottom: 10px;
+		color: #222222;
+	}
+	a {
+		button {
+			width: 30%;
+			background-color: #ededed;
+			border: 1px solid #dcdcdc;
+			box-shadow: inset 0 1px 0 0 #fff;
+			margin: 0 5px 5px;
+			height: 40px;
+			border-radius: 8px;
+		}
+	}
+}
+.cars-lower {
+	height: 95px;
+	border-bottom: 1px solid #e0e0e0;
+	-webkit-box-shadow: 0 2px white;
+	-moz-box-shadow: 0 2px white;
+	box-shadow: 0 2px white;
+	padding: 12px 8px;
+	h3 {
+		font: normal 500 1.61538em/110% "effra", Arial, Helvetica, Verdana, sans-serif;
+		margin-right: 25px;
+		margin-bottom: 5px;
+		color: #222222;
+	}
+	ul {
+		li {
+			-webkit-border-radius: 5;
+			-moz-border-radius: 5;
+			border-radius: 5px;
+			-webkit-box-shadow: 0px 1px 3px #959593;
+			-moz-box-shadow: 0px 1px 3px #959593;
+			box-shadow: 0px 1px 3px #959593;
+			color: #ffffff;
+			background: #21925c;
+			padding: 4px 8px 4px 8px;
+			border: solid #ffffff 2px;
+			text-decoration: none;
+			display: inline-block;
+			margin: 10px 12px 10px 0px;
+			&:last-child {
+				margin: 10px 0px;
+			}
+			float: left;
+			@include sans(em(13), 500);
+		}
+	}
+}
+//blah blah blah testing
+
+//not the most elegant breadcrumb fix buuuuutttt....
+//keeps empty breadcrumbs from collapsing the parent container. http://jira.boston.com/browse/BCOMREDESIGN-1075
+a.story-cat.overline {
+	border: 1px solid transparent;
+}
+
+// Scoreboard
+//, #shsMiniDivStand
+.shsMiniCopyright, .shsMiniCopyrightText, .shsTVChannels, .shsMiniRowSpacer {
+	display: none;
+} 
+
+.nhl-scoreboard {
+	#shsMiniDivStand {
+		display: none;
+	}
+}
+.overline-feat-scoreboard {
+	@include mq(max, 960px) {
+		display: none;
+	}
+}
+
+.feat-scoreboard {
+	width: 320px;
+	background-color: white;
+
+	@include mq(max, 960px) {
+		display: none;
+	}
+
+	h3 {
+		@include sans(em(14)/120%, 700);
+		color: $txt-black;
+		padding: 10px 0px 0px 10px;
+	}
+	
+	.gamedate {
+		color: $black-50;  //#999
+	}
+
+	#shsBody, #shsMiniBody {
+		font-size: 12px;
+		color: $txt-black; 
+		//color: $black-50;  //#999
+		
+		.shsViewMore, .shsPreviewLink {
+			a {
+				color: $red;
+
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+		.shsTable {
+			width: 100%;
+		}
+	}
+
+	.shsTimezone {
+		display: none;
+		&.shsETZone {
+			display: block;
+		}
+	}
+
+	#shsBody {
+
+		padding: 0px 10px 10px 10px; 
+		
+		#shsTeamScoreboardsEntry {
+
+		}
+
+		.shsTableTtlRow {
+
+			tr:nth-child(odd) {
+				background-color: $light-gray;
+			}
+			margin-top: 10px;
+			margin-bottom: 5px;
+			@include sans(em(12)/120%, 500);
+			.shsTimezone {
+				display: none;
+			}
+		}
+
+		.shsColTtlRow {
+			//border-top: 1px solid #999;
+			border-bottom: $border;
+		}
+
+	}
+
+	#shsMiniBody {
+		//display: table-cell;
+		padding: 0px 10px 10px 10px; 
+		.shsTableTtlRow {
+			@include sans(em(14)/120%, 700);
+			.shsTimezone {
+				display: none;
+			}
+		}
+		.shsColTtlRow {
+			border-top: $border;
+			border-bottom: $border;
+		}
+	}
+	.shsRow1Row {
+		background-color: $light-gray;
+	}
+
+	.shsSeriesStatus {
+		border: none; 
+	}
+
+	.shsTable {
+		width: 100%;
+	}
+
+	.shsNumD {
+		padding: 1px 3px; 
+	}
+	.pleaseDeleteMe {
+		display: none;
+	}
+
+	#shsTeamScoreboardsEntry table {
+		width: 100%;
+	}
+
+	.shsLinescore .shsTableTtlRow:first-child {
+		display: none; 
+	}
+}
+
+#shsMultisportScoreboard {
+	tr:nth-child(2), tr:nth-child(3), tr:nth-child(7), tr:nth-child(8), tr:nth-child(9) {
+		background-color: #ededed;
+	}
+}
+
+//Poll Daddy
+
+.PDS_Poll {
+	margin-bottom: 20px;
+}
+
+.pds-total-votes {
+	margin-bottom: 10px;
+}
+
+// Globe Callout
+
+.secondary #globe-callout {
+	margin-bottom:22px;
+	@include mq (max, $sidebar-break) {
+		display: none;
+	}
+}
+.secondary #globe-callout img {
+	float:left;
+	height:38px;
+	margin-right:15px;
+}
+		
+.secondary #globe-callout a {
+		color: #2494E3;
+		};
+		
+.secondary #globe-callout a:hover {
+	color: #0D5799;
+	text-decoration: underline;
+}
+
+// Send Tips
+.secondary #tips-callout {
+	margin-bottom:22px;
+	text-align: center;
+	border-top: 1px solid #dfd4ca;
+	padding: 15px;
+	@include mq (max, $sidebar-break) {
+		display: none;
+	}
+	p {
+		@include sans(em(15)/120%, 500);
+		color: $txt-black;
+	}
+	a {
+		color: $txt-black;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
+@media (max-width: 960px) {
+	.secondary #globe-callout, .secondary #tips-callout {
+		display:none;
+	}
+}
+
+@media (max-width: 960px) {
+	.secondary #tips-callout {
+		display:none;
+	}
+}

@@ -1,0 +1,49 @@
+<div id="bs-must-reads" class="must-reads-holder">
+					<!-- #must-reads -->
+					<section id="must-reads" class="must-reads-mod">
+						<div class="must-reads mr-closed">
+							<h3 class="section-h fancy">Must Reads</h3>
+							<ol class="mr-list process-me" data-type="headlines"
+								data-template="headlines" data-repeat="10">
+								<li class="mr-item">
+									<a href="/article.html#avoid-ticks">How to Avoid Tick Bites</a>
+								</li>
+								<li class="mr-item">
+									<a href="/article.html#best-ponds">Best Ponds and Lakes in Rhode Island</a>
+								</li>
+								<li class="mr-item">
+									<a href="/article.html#lulu-ceo">Lululemon's Cheeky CEO Ad</a>
+								</li>
+								<li class="mr-item">
+									<a href="/article.html#doughnuts-over">'Time to Make the Doughnuts' Ad is Over</a>
+								</li>
+								<li class="mr-item">
+									<a href="/article.html#menino-clinton">Mayor Menino Dines with Hillary Clinton at
+										Hammersley's Bistro</a>
+								</li>
+								<li class="mr-item">
+									<a href="/article.html#jerry-remy">Jerry Remy to Miss Another Week</a>
+								</li>
+								<li class="mr-item">
+									<a href="/article.html#flash-mob">Hingham Middle School Sends Principal Off with Flash
+										Mob</a>
+								</li>
+								<li class="mr-item">
+									<a href="/article.html#parents">Parents: Sibling Fights Can Lead to Mental Health
+										Problems</a>
+								</li>
+								<li class="mr-item">
+									<a href="/article.html#rowling-unmasked">J.K. Rowling Unmasked as Author of Crime Thriller</a>
+								</li>
+								<li class="mr-item">
+									<a href="/article.html#brain-yoga">Your Brain on Yoga: Practice Offers Bigger Mental
+										Boost than Running</a>
+								</li>
+							</ol>
+							<button class="mr-btn" href="#">Show All</button>
+						</div> <!-- /must-reads -->
+						<div class="mr-ad-mod">
+							<img class="mr-ad headline-ad" src="ads/headline-ad-1.jpg">
+						</div> <!-- /mr-ad-mod -->
+					</section>
+				</div>

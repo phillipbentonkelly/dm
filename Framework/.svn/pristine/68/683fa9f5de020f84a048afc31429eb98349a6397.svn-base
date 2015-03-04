@@ -1,0 +1,39 @@
+<%--
+	{comments}
+		DM-26: Moving navDeals html into new .jpt (nav_deals.jpt)
+	{comments}
+ --%>
+<!-- Leaderboard Ad Module -->
+<section class="leaderboard-mod nav-leaderboard-mod classifieds-top-mod container">
+
+	<div id="top-ads-wrapper" class="row">
+
+<%-- i don't think either of these p:includes do anything, as cars has no ad layer - adamd --%>
+		<div id="lAdClassy" class="span4">
+			<div id="ad_topleft">
+				<p:include pageZoneName="ad_topleft" inherits="${adLayerDwpPath}"/>
+			</div>
+		</div>
+
+		<div class="span6">
+			<p:inline url="$configurationURI/Framework/skins/components/classifieds/nav_deals.jpt"></p:inline>
+		</div>
+
+		<div id="rAdClassy" class="span4">
+			<div id="ad_topright">
+				<p:include pageZoneName="ad_topright" inherits="${adLayerDwpPath}"/>
+			</div>
+		</div>
+		
+	</div>
+	
+</section> <!-- /leaderboard-mod -->
+
+<div class="cf"></div>
+	
+<%-- the ad layer here never worked, hardcoded it as a div --%>
+<div id="adBILLBOARD">
+	<div id="ad_pencil" class="advertisement">
+		<div id="ad_outofpage2"></div>
+	</div>
+</div>

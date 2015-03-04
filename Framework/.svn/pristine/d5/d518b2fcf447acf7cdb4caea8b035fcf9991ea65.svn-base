@@ -1,0 +1,94 @@
+<p:getContext var="StoryID" />
+<p:getObject uuid="${StoryID}" var="webObject" />
+<p:object webObject="${webObject}" content="story" metadata="meta"/>
+
+<p:out var="item_title"  xvalue="$story//review-containers/review-container-restaurant/review-title/p" />
+<p:out var="star_rating" xvalue="$story//review-containers/review-container-restaurant/review-rating/p" />
+
+<p:out var="restaurant_loc_name" xvalue="$story//review-containers/review-container-restaurant/review-loc-name/p"/>
+<p:out var="restaurant_loc_street_address" xvalue="$story//review-containers/review-container-restaurant/review-loc-street-address/p"/>
+<p:out var="restaurant_loc_city" xvalue="$story//review-containers/review-container-restaurant/review-loc-city/p"/>
+<p:out var="restaurant_loc_state" xvalue="$story//review-containers/review-container-restaurant/review-loc-state/p"/>
+<p:out var="restaurant_loc_zipcode" xvalue="$story//review-containers/review-container-restaurant/review-loc-zipcode/p"/>
+<p:out var="restaurant_telephone" xvalue="$story//review-containers/review-container-restaurant/review-telephone/p"/>
+<p:out var="restaurant_cuisine" xvalue="$story//review-containers/review-container-restaurant/review-cuisine/p"/>
+<p:out var="restaurant_liquor" xvalue="$story//review-containers/review-container-restaurant/review-liquor/p"/>
+<p:out var="restaurant_suggested_dish" xvalue="$story//review-containers/review-container-restaurant/review-suggested-dishes/p"/>
+<p:out var="restaurant_prices" xvalue="$story//review-containers/review-container-restaurant/review-prices/p"/>
+<p:out var="restaurant_hours" xvalue="$story//review-containers/review-container-restaurant/review-hours/p"/>
+<p:out var="restaurant_reservations" xvalue="$story//review-containers/review-container-restaurant/review-reservations/p"/>
+<p:out var="restaurant_noise_level" xvalue="$story//review-containers/review-container-restaurant/review-noise-level/p"/>
+<p:out var="restaurant_credit_cards" xvalue="$story//review-containers/review-container-restaurant/review-credit-cards/p"/>
+<p:out var="restaurant_handicap" xvalue="$story//review-containers/review-container-restaurant/review-handicap-accessibility/p"/>
+<p:out var="restaurant_url" xvalue="$story//review-containers/review-container-restaurant/review-restaurant-url/p"/>
+<p:out var="restaurant_email" xvalue="$story//review-containers/review-container-restaurant/review-restaurant-email/p"/>
+
+
+<c:if test="${empty fn:trim(star_rating)}">
+	<div class="review-item">
+		<h3 class="review-item-title">${fn:trim(item_title)}</h3>
+	</div>
+</c:if>
+
+<aside class="review-box">
+	<c:if test="${not empty fn:trim(restaurant_loc_name)}">
+		${fn:trim(restaurant_loc_name)} |
+	</c:if>
+	<%--
+		Address info with the structure copied from the current restaurant review boxes.
+		It might make sense to consolidate this part
+	--%>
+	<c:if test="${not empty fn:trim(restaurant_loc_street_address)}">
+		<b>Address:</b> ${fn:trim(restaurant_loc_street_address)} |
+	</c:if>
+	<c:if test="${not empty fn:trim(restaurant_loc_city)}">
+		<b>City:</b> ${fn:trim(restaurant_loc_city)} |
+	</c:if>
+	<c:if test="${not empty fn:trim(restaurant_loc_state)}">
+		<b>State:</b> ${fn:trim(restaurant_loc_state)} |
+	</c:if>
+	<c:if test="${not empty fn:trim(restaurant_loc_zipcode)}">
+		<b>Zipcode:</b> ${fn:trim(restaurant_loc_zipcode)} |
+	</c:if>
+	<c:if test="${not empty fn:trim(restaurant_telephone)}">
+		<b>Telephone:</b> ${fn:trim(restaurant_telephone)} |
+	</c:if>
+	
+	<c:if test="${not empty fn:trim(restaurant_cuisine)}">
+		<b>Cuisine:</b> ${fn:trim(restaurant_cuisine)} |
+	</c:if>
+	<c:if test="${not empty fn:trim(restaurant_liquor)}">
+		<b>Liquor:</b> ${fn:trim(restaurant_liquor)} |
+	</c:if>
+	<c:if test="${not empty fn:trim(restaurant_suggested_dish)}">
+		<b>Suggested Dish:</b> ${fn:trim(restaurant_suggested_dish)} |
+	</c:if>
+	
+	<c:if test="${not empty fn:trim(restaurant_prices)}">
+		<b>Prices:</b> ${fn:trim(restaurant_prices)} |
+	</c:if>
+	<c:if test="${not empty fn:trim(restaurant_hours)}">
+		<b>Hours:</b> ${fn:trim(restaurant_hours)} |
+	</c:if>
+	<c:if test="${not empty fn:trim(restaurant_reservations)}">
+		<b>Reservations:</b> ${fn:trim(restaurant_reservations)} |
+	</c:if>
+	
+	<%-- GOOD LORD THERE'S SO MUCH DATA~! --%>
+	<c:if test="${not empty fn:trim(restaurant_noise_level)}">
+		<b>Noise Level:</b> ${fn:trim(restaurant_noise_level)} |
+	</c:if>
+	<c:if test="${not empty fn:trim(restaurant_credit_cards)}">
+		<b>Credit Cards:</b> ${fn:trim(restaurant_credit_cards)} |
+	</c:if>
+	<c:if test="${not empty fn:trim(restaurant_handicap)}">
+		<b>Handicap accessibility:</b> ${fn:trim(restaurant_handicap)} |
+	</c:if>
+	
+	<c:if test="${not empty fn:trim(restaurant_url)}">
+		<b>URL:</b> <bdc:link value="${fn:trim(restaurant_url)}">${fn:trim(restaurant_url)}</bdc:link> |
+	</c:if>
+	<c:if test="${not empty fn:trim(restaurant_email)}">
+		<b>Email:</b> ${fn:trim(restaurant_email)}
+	</c:if>
+</aside>

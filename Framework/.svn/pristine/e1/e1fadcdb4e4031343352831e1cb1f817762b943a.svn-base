@@ -1,0 +1,320 @@
+// *
+// *  Event List
+// *
+
+$module-name: 'events-list';
+
+// ------------------------------------------------------------
+// Default Styles
+// ------------------------------------------------------------
+
+.#{$module-name} {
+  // Module Styles
+  @include font-scale(x-small, 1.15);
+  margin-bottom: spacer(px, x-large);
+  margin-bottom: spacer(rem, x-large);
+
+  // Some Element Styles
+  &__header {
+  	@include font-scale(xx-small, 1.66666);
+  	color: color(white, base);
+  	font-weight: $fw-bold;
+    height: 20px;
+    background-color: color(black, base);
+    padding-left: spacer(px, small);
+    padding-left: spacer(rem, small);
+  }
+
+  &__wrapper {
+  	// height: 1025px;
+  	overflow: hidden;
+  }
+
+  &__time-of-day {
+  	@include font-scale(xxx-small, 1.75);
+  	font-weight: $fw-medium;
+  	background-color: color(gray, x-light);
+  	height: 20px;
+  	padding-left: spacer(px, small);
+  	padding-left: spacer(rem, small);
+  }
+
+  &__event {
+  	padding: spacer(px, mid) 0;
+  	padding: spacer(rem, mid) 0;
+  	width: 100%;
+    cursor: pointer;
+
+  	&:not(:nth-child(2)) {
+  		border-top: 1px solid color(gray, mid-light);
+  	}
+  }
+
+  &__event__wrapper {
+    position: relative;
+  }
+
+  &__event__image {											
+  	height: 35px;
+  	width: 35px;
+  	display: inline-block;
+  	vertical-align: top;
+  }
+
+  &__event__info {
+  	display: inline-block;
+  	padding-left: spacer(px, base);
+  	padding-left: spacer(rem, base);
+  	width: 84%;
+  }
+
+  &__event__name {
+  	@include font-scale(small);
+  	font-weight: $fw-bold;
+  	color: color(black, base);
+  	transition-property: background-color, color;
+		transition-duration: 0.2s;
+		transition-timing-function: cubic-bezier(0.49, 0.37, 0.445, 0.715);
+    margin-bottom: 3px;
+  }
+
+  &__event__date-time {
+  	color: color(black, base);
+  }
+
+  &__event__location {
+  	color: color(gray, base);
+    width: 95%;
+  }
+
+  &__more {
+  	@include font-scale(x-small);
+  	color: color(gray, base);
+  	font-weight: $fw-bold;
+  	text-align: center;
+  	padding: spacer(px, base);
+  	padding: spacer(rem, base);
+  	border: 1px solid color(gray, mid-light);
+  	cursor: pointer;
+  }
+
+  &__more:hover {
+  	color: color(gray,dark);
+  	transition-property: background-color, color;
+		transition-duration: 0.2s;
+		transition-timing-function: cubic-bezier(0.49, 0.37, 0.445, 0.715);
+  }
+
+  &__expand-icon--down {
+    position: absolute;
+    bottom: 40%;
+    right: 1px;
+    transform: rotate( 0deg );
+    -ms-transform: rotate( 0deg );
+    -moz-transform: rotate( 0deg );
+    -webkit-transform: rotate( 0deg );
+    transition: transform 650ms ease, bottom 650ms ease;
+    -moz-transition: -moz-transform 650ms ease, bottom 650ms ease;
+    -webkit-transition: -webkit-transform 650ms ease, bottom 650ms ease;
+  }
+
+  &__expand-icon--up {
+    position: absolute;
+    bottom: 0;
+    right: 1px;
+    transform: rotate( -180deg );
+    -ms-transform: rotate( -180deg );
+    -moz-transform: rotate( -180deg );
+    -webkit-transform: rotate( -180deg );         
+    transition: transform 650ms ease, bottom 650ms ease;
+    -moz-transition: -moz-transform 650ms ease, bottom 650ms ease;
+    -webkit-transition: -webkit-transform 650ms ease, bottom 650ms ease;
+  }
+
+  &__event-more-info {
+    @include font-scale(x-small, 1.25);
+    display: none;
+    padding-top: spacer(px, large);
+    padding-top: spacer(rem, large);
+    width: 95%;
+
+    p:not(:first-child):not(:nth-child(2)) {
+      font-weight: $fw-medium;
+    }
+
+    .events-list__link{
+      color: color(blue, base);
+
+      &:hover {
+        color: color(blue, dark);
+      }
+    }
+  }
+
+  &__cost-title {
+    color: color(gray, base);
+    display: inline-block;
+    margin-bottom: spacer(px, base);
+    margin-bottom: spacer(rem, base);
+  }
+
+  &__cost {
+    color: color(red, base);
+    font-weight: $fw-bold;
+    display: inline-block;
+    margin-left: spacer(px, small);
+    margin-left: spacer(rem, small);
+  }
+
+  .spinner-container {
+    height: 450px;
+  }
+
+  .spinner {
+    top: 45%;
+  }
+}
+
+.results-header {
+ @include font-scale(xx-small, 1.66666);
+  color: color(white, base);
+  font-weight: $fw-bold;
+  height: 20px;
+  background-color: color(black, base);
+  margin-bottom: spacer(px, small);
+  margin-bottom: spacer(rem, small);
+  padding-left: spacer(px, small);
+  padding-left: spacer(rem, small);
+}
+
+.add-event {
+	@include font-scale(small);
+	text-align: center;
+	color: color(white, base);
+	border: none;
+	border-radius: none;
+	background-color: color(orange, base);
+	width: 100%;
+	padding: spacer(px, base) 0;
+	padding: spacer(rem, base) 0;
+
+	.bdc-icon--plus-x-small {
+		margin-right: spacer(px, base);
+		margin-right: spacer(rem, base);
+		position: relative;
+		top: 3px;
+	}
+}
+
+// ------------------------------------------------------------
+// Spinner CSS
+// ------------------------------------------------------------
+
+// Placeholder
+.spinner-container {
+  position: relative;
+  display: none;
+  height: 200px;
+}
+
+.spinner {
+  position: absolute;
+  top: 35%;
+  right: 45%;
+  height:60px;
+  width:60px;
+  margin:0 auto;
+  -webkit-animation: rotation .6s infinite linear;
+  -moz-animation: rotation .6s infinite linear;
+  -o-animation: rotation .6s infinite linear;
+  animation: rotation .6s infinite linear;
+  border-left:6px solid color(gray, x-light);
+  border-right:6px solid color(gray, x-light);
+  border-bottom:6px solid color(gray, x-light);
+  border-top:6px solid color(gray, base);
+  border-radius:100%;
+}
+
+@-webkit-keyframes rotation {
+  from {-webkit-transform: rotate(0deg);}
+  to {-webkit-transform: rotate(359deg);}
+}
+
+@-moz-keyframes rotation {
+  from {-moz-transform: rotate(0deg);}
+  to {-moz-transform: rotate(359deg);}
+}
+
+@keyframes rotation {
+  from {transform: rotate(0deg);}
+  to {transform: rotate(359deg);}
+}
+
+
+// ------------------------------------------------------------
+// Tablet Breakpoint
+// ------------------------------------------------------------
+
+// Tablet Breakpoint
+@include media-query(tablet) {
+  .#{$module-name} {
+    // Module Styles
+		
+    // Some Element Styles
+		&__header {
+			line-height: 1.4;
+		}
+
+		&__time-of-day {
+			line-height: 1.5;
+		}
+
+    &__event__image {
+    	height: 70px;
+    	width: 70px;
+    }
+
+    // &__event__info {
+    //   width: 86%;
+    // }
+  }
+}
+
+// ------------------------------------------------------------
+// Desktop Breakpoint
+// ------------------------------------------------------------
+
+@include media-query(desktop) {
+  .#{$module-name} {
+    // Module Styles
+
+    // Some Element Styles
+    &__event {
+      &:hover {
+        .icon-events--expand-resting-small {
+          background-position: 0 -263px;
+        }
+      }
+    }
+
+    &__event__info {
+      width: 86%;
+    }
+  }
+}
+
+// ------------------------------------------------------------
+// Desktop Plus Breakpoint
+// ------------------------------------------------------------
+
+@include media-query(1024) {
+  .#{$module-name} {
+    // Module Styles
+
+    // Some Element Styles
+    // &__event__info {
+    //   width: 82%;
+    // }
+
+  }
+}

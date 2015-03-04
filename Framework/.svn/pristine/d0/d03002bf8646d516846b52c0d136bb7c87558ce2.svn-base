@@ -1,0 +1,15 @@
+<%@page
+import=
+	"java.util.Date,
+	java.text.DateFormat,
+	java.text.SimpleDateFormat,
+	java.util.Calendar;"
+%>
+
+
+<%
+String timeStamp = new SimpleDateFormat("EEEE MMMM dd, yyyy").format(Calendar.getInstance().getTime());
+pageContext.setAttribute("ts", timeStamp);
+%>
+
+${ts}

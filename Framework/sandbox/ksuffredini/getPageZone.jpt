@@ -1,0 +1,11 @@
+<p:getCollection 
+	path="/Boston/Production/Boston.com/WebPages/__COMPONENTS__/beverly_section_well3.dwc"
+	var="mainZone"
+	partPageName="main"
+	/>	
+	test2
+<c:if test="${mainZone.size > 0}">
+	<c:forEach items="${mainZone.items}" var="main_item" varStatus="status">
+		${status.count}
+	</c:forEach>  
+</c:if>  

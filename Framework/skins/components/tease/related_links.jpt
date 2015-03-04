@@ -1,0 +1,50 @@
+<p:object webObject="${cacheScope.dwp}" metadata="dwpMeta"/>
+<p:out var="edition" xvalue="$dwpMeta//sys/props/productInfo/edition"/>
+<bdc:getRelatedLinks var="relatedLinks" webObject="${currentObject}" edition="${edition}"/>
+<p:out var="linksPerLine" value="${cacheScope.linksPerLine}"/>
+<c:if test="${empty linksPerLine}">
+	<p:out var="linksPerLine" value="1"/>
+</c:if>
+<p:out var="numLinks" value="${fn:length(relatedLinks.relatedLinksArray)}"/>
+<p:out var="defaultTemplate" value="${cacheScope.templateName}"/>
+<c:if test="${empty defaultTemplate}">
+	<p:out var="defaultTemplate" value="regular_simple"/>
+</c:if>
+<%-- <c:choose>
+	<c:when test="${linksPerLine > 1}">
+		<p:out var="pipesClass" value=" class='pipes'"/>
+	</c:when>
+	<c:otherwise>
+		<p:out var="pipesClass" value=""/>
+	</c:otherwise>
+</c:choose> --%>
+
+
+<p:getObject path="$configurationURI/BDC_WebTypes.cfg" var="WT"/>
+<p:object webObject="${WT}" content="c"/>
+<p:out var="jpt" xvalue="$c//types/type[child::name='story']/template[@name=$defaultTemplate]/@jspPath"/>
+
+<c:if test="${numLinks gt 0}">
+	<ul class="link-list">
+		<c:forEach items="${relatedLinks.relatedLinksArray}" var="link" varStatus="status">
+			<p:out var="itemTemplate" value="${link[6]}"/>
+			<p:out var="jpt" xvalue="$c//types/type[child::name='story']/template[@name=$itemTemplate]/@jspPath"/>
+			<li>
+				<p:include url="${jpt}">
+					<p:param name="type" value="${link[0]}"/>
+					<p:param name="linkURL" value="${link[1]}"/>
+					<p:param name="linkText" value="${link[2]}"/>
+					<p:param name="leadIn" value="${link[3]}"/>
+					<p:param name="reviewRating" value="${link[4]}"/>
+					<p:param name="new" value="${link[5]}"/>
+				</p:include>
+			</li>
+			<c:if test="${link[7]}">
+					</ul>
+				</li>
+				<li class="pipes">
+					<ul>
+			</c:if>
+		</c:forEach>
+	</ul>
+</c:if>

@@ -1,0 +1,16 @@
+<p:out var="WT" value="story" />
+<p:out var="sectionId" value="/news/local/massachusetts" />
+<bdc:getAdLayer var="adLayerName" webType="${WT}"/>
+layername: ${adLayerName}, ${sectionId}<br/>
+<bdc:inheritStoryLayer var="adLayerDwpPath" section="${sectionId}" layer="${adLayerName}" />
+kdwpsearch: ${adLayerDwpPath}<br/>
+<p:include pageZoneName="ad_searchbar" inherits="${adLayerDwpPath}" />
+
+
+
+<bdc:inheritZoneGlobal var="navigationBarDwp" section="${sectionId}" zoneName="navigation_horizontal"/>
+navigationBarDwp:${navigationBarDwp}<br/>
+sectionis: ${dwp}, ${sectionId}!!<br/>
+<p:include pageZoneName="navigation_horizontal" inherits="${navigationBarDwp}">
+	<p:param name="isHomepage" value="${1==2}" />
+</p:include>

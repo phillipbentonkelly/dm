@@ -1,0 +1,163 @@
+<p:currentObject content="dwcContent" metadata="dwcMeta" />
+<p:getCollection path="/SysConfig/WebPortal/Boston/Framework/sandbox/ksuffredini/test_story" var="q" />
+
+<%-- Params --%>
+<p:out var="edition" value="${cacheScope.dwpEdition}" />
+
+<%--
+<p:out var="stackAdBreak" xvalue="$dwcMeta//ObjectMetadata/OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/AdInterval" />
+--%>
+<p:out var="stackAdBreak" value="5" />
+
+<p:out var="itemCounter" value="0" />
+<c:if test="${q.size > 0}">
+	<p:out var="stackAdBreak" value="${stackAdBreak - 1}" />	<%-- Offset for the loop --%>
+	
+	<div class="feat-tz-fader">
+	<section id="feat-tz-top" class="feat-tz-mod"
+		data-transition="slide">
+		<div class="feat-tz-scroller ups-processed-dynamic" data-type="feature"
+			data-repeat="28" data-ad="feat-ad-config" data-dynamic="">
+	
+	<c:forEach items="${q.items}" var="qItem" begin="0" end="25">
+		<p:getObject webObject="${qItem}" var="webObject" />
+		<p:object webObject="${webObject}" metadata="storyMeta" content="storyData" />
+		
+		<p:out var="objectType" xvalue="$storyMeta//type" />
+		<p:url var="objectLink" webObject="${webObject}" />
+		
+		<bdc:getHeadlines webObject="${webObject}" var="headlines" edition="${edition}" />
+		<bdc:getIconForTease webObject="${webObject}" var="itemIcon" />
+		<bdc:getSummaryForSectionFront webObject="${webObject}" var="summary" />
+		
+		<p:out var="mainWebImage" xvalue="$storyData//doc/story/multimedia-container/photo-container/photogrp[@class='main-web-images']/photo/@fileref" />
+		<p:out var="hasImage" value="no" />
+		<c:if test="${not empty mainWebImage and mainWebImage ne ''}">
+			<p:out var="hasImage" value="yes" />
+			<p:out var="pictureID" value="${fn:substringAfter(mainWebImage, '?uuid=')}" />
+			<p:getObject var="imgObject" uuid="${pictureID}" onError="ignore" />
+		</c:if>
+		
+		<p:out var="sectionName" xvalue="$storyMeta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/Sections/Section/SectionName" />
+		<p:out var="sectionPath" xvalue="$storyMeta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/Sections/Section/SectionPath" />
+		
+		<c:choose>
+			<c:when test="${not empty imgObject}">
+				<p:url var="imgSrc" webObject="${imgObject}" format="image_255x106" type="resource" />
+			
+				<article class="feat-tz">
+					<bdc:link className="feat-tz-img-mod art-bd" webObject="${webObject}">
+					<%-- <a class="feat-tz-img-mod art-bd" href="${objectLink}"> --%>
+						<img class="feat-tz-img" src="${imgSrc}"> <!-- IMAGE?!?!?!!? -->
+						<c:if test="${itemIcon.objectType ne 'none'}">
+							<div class="feat-tz-icon tz-icon ${itemIcon.stackClass}"></div>
+						</c:if>
+					<%-- </a> --%>
+					</bdc:link>
+					<div class="feat-tz-bd txt-bd">
+						<h4 class="feat-tz-h tz-title">
+							<bdc:link webObject="${webObject}">${headlines.headline}</bdc:link>
+							<%-- <a href="${objectLink}">${headlines.headline}</a> --%>
+						</h4>
+						<ul class="tz-meta feat-tz-meta">
+							<li class="tz-meta-item tz-category">
+								<bdc:link value="${sectionPath}">${sectionName}</bdc:link>
+							</li>
+							<li class="tz-meta-item tz-share">
+								<a class="tz-share-link popup-trigger" href="#mfp-share">
+									<i class="tz-share-icon tz-meta-icon"></i>
+									<i class="tz-share tz-meta-txt">Share</i>
+								</a>
+							</li>
+						</ul> <!-- /.tz-meta -->
+					</div> <!-- /feat-tz-bd -->
+				</article>
+			</c:when>
+			<c:otherwise>
+				<article class="feat-tz feat-tz-no-art">
+					<div class="feat-tz-bd txt-bd">
+						<div class="feat-tz-no-art-txt-mod">
+						<h4 class="feat-tz-h tz-title">
+							<%-- <a href="${objectLink}">${headlines.headline}</a> --%>
+							<bdc:link webObject="${webObject}">${headlines.headline}</bdc:link>
+						</h4>
+						<p class="tz-txt feat-tz-txt">${summary}</p>
+						</div>
+						<ul class="tz-meta feat-tz-meta">
+							<li class="tz-meta-item tz-category">
+								<bdc:link value="${sectionPath}">${sectionName}</bdc:link>
+							</li>
+							<li class="tz-meta-item tz-share">
+								<a class="tz-share-link popup-trigger" href="#mfp-share">
+									<i class="tz-share-icon tz-meta-icon"></i>
+									<i class="tz-share tz-meta-txt">Share</i>
+								</a>
+							</li>
+						</ul> <!-- /.tz-meta -->
+					</div> <!-- /feat-tz-bd -->
+				</article>
+			</c:otherwise>
+		</c:choose>
+				
+		<c:if test="${itemCounter > 0 and itemCounter % stackAdBreak == 0}">
+			<%-- Include the nth entry from DFP --%>
+			<article class="feat-tz sponsor-feat-tz ">
+				<a class="feat-tz-img-mod  art-bd" href=" article.html#10-hot-concerts">
+					<img class="feat-tz-img" src="photos/Kei$ha-thumb.jpg">
+					</a> <!-- feat-tz -->
+				<div class="feat-tz-bd txt-bd">
+					
+					<h4 class="feat-tz-h tz-title"><a href="article.html#10-hot-concerts">SPONSORED TEST</a></h4>
+					
+					<ul class="tz-meta feat-tz-meta">
+						<li class="tz-meta-item tz-category">
+							<a href="#ae">Music</a>
+						</li>
+						<li class="tz-meta-item tz-share">
+							<a class="tz-share-link popup-trigger" href="#mfp-share">
+								<i class="tz-share-icon tz-meta-icon"></i>
+								<i class="tz-share tz-meta-txt">Share</i>
+							</a>
+						</li>
+					</ul> <!-- /.tz-meta -->
+				</div> <!-- /feat-tz-bd -->
+			</article>
+		</c:if>
+		
+		<p:out var="itemCounter" value="${itemCounter + 1}" />
+	</c:forEach>
+	
+	</div>
+	</section> <!-- /feat-tz-mod -->
+	
+</div> <!-- /feat-tz-fader -->
+	
+</c:if>
+
+<%-- I hate the living hell out of these class names --%>
+
+
+
+<%-- SPONSORED
+	<article class="feat-tz sponsor-feat-tz ">
+		<a class="feat-tz-img-mod  art-bd" href=" article.html#10-hot-concerts">
+			<img class="feat-tz-img" src="photos/Kei$ha-thumb.jpg">
+			</a> <!-- feat-tz -->
+		<div class="feat-tz-bd txt-bd">
+			
+			<h4 class="feat-tz-h tz-title"><a href="article.html#10-hot-concerts">Kei$ha and 10 Other Hot Fall Concerts</a></h4>
+			
+			<ul class="tz-meta feat-tz-meta">
+				<li class="tz-meta-item tz-category">
+					<a href="#ae">Music</a>
+				</li>
+				<li class="tz-meta-item tz-share">
+					<a class="tz-share-link popup-trigger" href="#mfp-share">
+						<i class="tz-share-icon tz-meta-icon"></i>
+						<i class="tz-share tz-meta-txt">Share</i>
+					</a>
+				</li>
+			</ul> <!-- /.tz-meta -->
+		</div> <!-- /feat-tz-bd -->
+	</article>
+--%>

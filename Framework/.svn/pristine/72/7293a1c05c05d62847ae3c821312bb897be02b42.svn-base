@@ -1,0 +1,576 @@
+// This was because when the original sticky subnav appeared, the main nav became shorter. 
+// I don't think we are using this shorter nav at all in reality, but this mixin is included a lot. - Ellen 6/25
+// Universal circumstances that allow for a tall nav
+@mixin if-tall-nav {
+	.tall-nav-potential & {
+		@include mq($nav-break) {
+			@content;
+		}
+	}
+}
+// The "sticky" nav was the original design for the horizontal subnav from upstatment. 
+// I don't think we are using their implementation at all - Ellen 6/25
+//
+// Universal circumstances that allow for sticky nav
+// Currently applies to: main-nav, subnav, search
+@mixin if-sticky-nav {
+	@include mq($fixed-nav-break) {
+		@content;
+	}
+	.sticky-nav-active & {
+		@content;
+	}
+}
+
+// This nav-ui-link is being used for the nav and TOC menu, but those are the only 2 places. 
+// Unneccessary? perhaps an extend would be better... - Ellen 6/25
+//
+// Link style used inside nav link lists
+// such as TOC and profile
+@mixin nav-ui-link {
+	@include sans(em(14)/100%, 400);
+	padding: 9px 0;
+	border-bottom: $nav-ui-border;
+	display: block;
+	position: relative;
+	@include button-state(#2a2a2a, white, no-shadow);
+	@include transition-timing-function(ease-in-out);
+	&:hover {
+		@include mq(340px){
+			padding: 9px 10px 9px 7px;
+		}
+	}
+}
+
+.main-nav {
+	z-index: 999;
+	position: absolute;  // change to fixed if we are actually using sticky nav stuff
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: $nav-short;
+	display: block;
+	background-color: $nav-black;
+	padding: 15px 10px;
+	margin: 0 0 20px;
+	// Show overflow so we can see smart search
+	// menu and to make all contained icons visible
+	overflow: visible;
+	// Fix to make sure fixed nav still scrolls smoothly
+	@include transform(translate3d(0, 0, 0));
+	@include trans;
+
+	@include if-tall-nav {
+		height: $nav-tall;
+	}
+
+	@include mq($nav-break) {
+		padding: 15px 25px;
+	}
+
+	.sticky-nav-ready & {
+		position: fixed;
+		top: -$nav-short;
+	}
+	.tall-nav-potential.sticky-nav-ready & {
+		top: -$nav-tall;
+	}
+
+	// Fix the nav above a certain break point.
+	// TODO: Get a better test for fixed positioning support
+	// .site-container must increase its padding-top when active
+	@include if-sticky-nav {
+		position: fixed;
+		top: 0;
+	}
+}
+
+.main-nav-inner {
+	position: relative;
+}
+
+.nav-left-ear,
+.nav-right-ear {
+	top: -10px;
+	@include trans;
+	@include if-tall-nav {
+		top: -5px;
+	}
+}
+
+.nav-left-ear {
+	position: absolute;
+}
+
+.nav-right-ear {
+	position: absolute;
+	right: 0;
+}
+
+
+// Logo
+.bcom-logo {
+	display: block;
+	width: 150px;
+	height: 21px;
+	display: block;
+	margin: 1px auto 0;
+	@include svg('bcom-logo');
+	@include trans(.15s);
+	@include if-tall-nav {
+		width: 200px;
+		height: 28px;
+		@include svg('bcom-logo');
+	}
+	.section-front & {
+		display: none;
+	}
+}
+
+.bcom-logo-section-mod {
+	text-align: center;
+	.section-front & {
+		display: block;
+	}
+}
+
+.bcom-logo-b {
+	display: inline-block;
+	@include size(25px);
+	margin: -2px 5px 0 -12px;
+    @include svg('bcom-logo-circle');
+    .svg & {
+    	background-size: cover;
+    }
+	@include trans;
+	@include mq(400px) {
+		@include size(28px);
+		margin-left: -14px;
+	}
+	@include if-tall-nav {
+		@include size(35px);
+		margin-left: -17px;
+	}
+}
+
+.bcom-logo-section {
+	@include sans(em(23)/90%, 600);
+	color: #fff;
+	display: inline-block;
+	vertical-align: top;
+	@include trans;
+	@include mq(400px) {
+		font-size: em(29);
+		margin-top: -2px;
+	}
+	@include if-tall-nav {
+		font-size: em(37);
+	}
+}
+
+// This is used 4 times and only in this file. - Ellen 6/25
+//
+@mixin nav-btn-active {
+	color: #fff;
+	background-color: rgba(0,0,0,.3);
+	@include box-shadow(0 0px 1px #ccc);
+}
+
+// Universal style for nav trigger buttons
+.nav-btn {
+	@include sans(em(15)/155%, 500);
+	color: #eee;
+	background-color: rgba(0,0,0,0);
+	padding: 10px 5px;
+	@include border-radius(3px);
+	@include trans;
+	@include mq($label-break) {
+		display: block;
+		padding: 10px;
+		&:hover {
+			@include nav-btn-active;
+		}
+	}
+}
+
+//Global Nav
+
+.global-nav {
+	// Added top for BDC-1074 - Kwall
+	top: 65px;
+
+	width:100%;
+	position: fixed; // commented due to BCOMREDESIGN-1102
+	z-index: 5;
+	background-color: #fff;
+	color:#000; 
+	text-align:center;
+	border-bottom:1px solid #ccc;
+	@include transform(translate3d(0, 0, 0));
+	@include trans;
+
+	.search-active & {
+		top: 130px;
+	}
+
+
+	@include mq(max, 750px) {
+		position: absolute;
+		top: 55px;
+	}
+	
+	ul {
+		max-width: 1044px;
+		margin: 0 auto; overflow:hidden;
+		padding:7px 0 7px 0;
+		white-space: nowrap;
+	}
+
+
+	li {
+		display:inline;
+		line-height:18px;
+		&:hover {
+			a { 
+				color: #0d5799; 
+			}
+		}
+		a {
+			margin-right: 20px;
+			letter-spacing: 1px;
+			color:#000000;
+			text-transform: uppercase;
+			@include sans(em(12), 700);	
+		}
+
+		&.desktopOnly {
+			display: inline;
+
+			@include mq(max, 960px) {
+				display: none;
+			}
+
+		}
+		
+		&.desktopAndTablet {
+			display: inline;
+
+			@include mq(max, 500px) {
+				display: none;
+			}
+		}
+
+		&:first-child {
+			margin-left: 20px;
+		}
+
+	}
+}
+
+// TOC Trigger
+
+.toc-trigger {
+
+	// .nav-btn applied in HTML
+	display: block;
+	@include size(40px);
+	@include mq($label-break) {
+		@include size(auto);
+	}
+}
+
+.toc-trigger-icon {
+	position: absolute;
+	display: block;
+	@include size(22px);
+    @include svg('hamburger');
+}
+
+.toc-active {
+    .nav-mod .toc-trigger{
+        display: none;
+    }
+    @include mq(600px) {
+        .nav-mod .toc-trigger {
+            display: block;
+            @include nav-btn-active;
+        }
+    }
+
+
+	.toc-trigger-icon {
+        @include svg('x-white');
+		@include mq(max, $label-break) {
+			// center the x button
+			position: static;
+			margin: auto;
+		}
+	}
+}
+
+.toc-trigger-label {
+	display: none;
+	@media (min-width: $label-break) {
+		display: block;
+		margin-left: 35px;
+	}
+}
+
+
+
+// Nav Search Trigger
+
+.nav-search-trigger {
+	// .nav-btn applied in HTML
+	// Leave room for avatar
+	position: absolute;
+	right: 50px;
+	display: none;
+	@include mq($label-break) {
+		display: block;
+		padding-left: 12px;
+	}
+
+	.search-active & {
+		@include nav-btn-active;
+	}
+}
+
+.nav-search-icon {
+	display: block;
+	position: absolute;
+	right: 9px; // Moves in relation to .nav-btn padding
+	top: 9px; // Moves in relation to .nav-btn padding
+	@include size(22px);
+    @include svg('mag');
+	.search-active & {
+		@include svg('x-white');
+	}
+}
+
+.nav-search-label {
+	display: block;
+	padding-right: 30px;
+}
+
+// Nav Profile & Avatar
+.nav-profile-trigger {
+	// .nav-btn applied in HTML
+	position: absolute;
+	right: 0;
+	top: 1px;
+	padding: 5px;
+	.profile-active & {
+		@include nav-btn-active;
+	}
+}
+
+.nav-avatar {
+	display: block;
+	@include size(30px);
+	//background: url("#{$asset_path}photos/avatar-colin.jpg") no-repeat 50% 50%;
+	@include background-size(100%);
+}
+
+//
+// Nav Profile
+//
+
+$nav-profile-width: 280px;
+
+.nav-profile-mod {
+	position: fixed;
+	top: $nav-short;
+	right: 0;
+	width: $nav-profile-width;
+	padding: 20px;
+	background-color: $nav-ui-bg;
+	z-index: 9999;
+	@include trans($trans-time);
+	@include transform(translate3d(100%,0,0)); // Keeps hidden offscreen
+
+	@include if-tall-nav {
+		top: $nav-tall;
+	}
+
+	.profile-active & {
+		@include transform(translate3d(0,0,0)); // Brings into view
+	}
+
+	.profile-active & {
+		position: absolute;
+		@include mq($fixed-nav-break) {
+			position: fixed;
+		}
+	}
+}
+
+.nav-profile-hdr {
+	width: 100%;
+	padding-bottom: 12px;
+	border-bottom: $nav-ui-border;
+	color: #fff;
+	@include pair(50px, 20px);
+}
+
+.nav-avatar-dd {
+	// Shares styles with .nav-avatar
+	@include size(50px);
+}
+
+.nav-profile-greeting {
+	@include sans(em(20)/145%, 500);
+}
+
+.nav-username {
+	@include sans(em(13), 400);
+	@include hide-text;
+	> a {
+		@include link(light);
+	}
+}
+
+.nav-profile-item > a {
+	@include nav-ui-link;
+}
+
+// Reveal Nav Profile: Touch
+
+.nav-profile-close {
+	display: none;
+	@include svg('x-white');
+	@include size(22px);
+	margin: 4px;
+	.profile-active & {
+		display: block;
+	}
+}
+
+// Show close button
+.profile-active {
+	.nav-avatar-ear {
+		// Hide avatar in navbar
+		display: none;
+	}
+}
+
+
+//
+// Nav Search
+//
+
+.nav-search-mod {
+	position: absolute;
+	top: $nav-short;
+	left: 0;
+	z-index: 999;
+	width: 100%;
+	padding: 0 15px; // 0 top/bottom to accomodate show/hide height animation
+	height: 0;
+	background-color: $nav-ui-bg;
+	margin-bottom: 15px;
+	overflow: hidden;
+	//commented because the trans time is faster than that of the global nav
+	@include trans;
+
+	@include if-tall-nav {
+		top: $nav-tall;
+	}
+
+	&:hover {
+		// Make nav visible for things
+		// such as smart search
+		overflow: visible;
+	}
+
+	.search-active & {
+		height: 67px;
+		padding: 15px;
+	}
+
+	// When sticky nav is on, fix that b*tch
+	@include if-sticky-nav {
+		position: fixed;
+	}
+
+	//fix for when the trigger button disappears
+	// TODO: Have Nathan (I think) explain this
+	display: none;
+	@include mq($label-break){
+		display: block;
+	}
+}
+
+.l-nav-search {
+	@include pie-clearfix;
+}
+
+// ad
+.nav-search-ad-mod {
+	display: block;
+	float: left;
+	padding-top:4px;
+}
+
+//
+// Nav Search Form
+//
+
+.nav-search-form {
+	margin-left: 110px;
+	position: relative;
+}
+
+// Search Input
+.nav-search-form-input {
+	//default stuff
+	@include input-default;
+	//input style
+	position: relative;
+	width: 100%;
+	height: 37px;
+	padding: 7px 10px;
+	background-color: #fff;
+	//text style
+	@include trans($trans-time);
+	@include sans(em(14)/155%, 400);
+	@include placeholder-state (#bbb, #bbb, #222);
+	color: #222;
+}
+
+// Search Button
+.nav-search-btn {
+	right: 0;
+	top: 0;
+	position: absolute;
+	text-indent: -9999px;
+    @include svg('mag-white');
+	.nav-search-form & {
+		// Overrides default submit button size
+		@include size(37px);
+	}
+}
+
+
+// TODO: Figure out what this is doing in here ...
+.article-related-links {
+	.related-list.horiz-list li.hl-share-mod i.hl-share-meta-icon{
+      @include svg('share-grey');
+  }
+	.share-icon {
+		@include svg('share-red');
+		@include size(18px);
+		margin-bottom: -4px;
+		display: inline-block;
+		.svg {
+			background-size: cover;
+		}
+	}
+	.tools-txt {
+		font-size: 12px;
+		padding-left: 5px;
+	}
+	a:hover {
+		text-decoration: none !important;
+	}
+}

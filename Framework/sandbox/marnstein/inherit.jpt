@@ -1,0 +1,3 @@
+<bdc:getLayer var="adLayerName" webType="dwp_homepage" type="ad"/>
+<bdc:inheritStoryLayer var="adLayerDwpPath" section="/" layer="${adLayerName}" />
+adLayerPath: ${adLayerDwpPath}

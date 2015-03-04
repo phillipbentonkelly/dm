@@ -1,0 +1,46 @@
+<p:out var="storyId"	value="f69e2bf6-5c39-11e3-a280-a01d19815602" />
+<p:out var="galleryId"	value="8d5ea200-5c3a-11e3-a280-a01d19815602" />
+
+<!-- story -->
+<bdc:MMKsummary var="story_fs" uuid="${storyId}" priority="feature_stack" />
+<bdc:MMKsummary var="story_car" uuid="${storyId}" priority="carousel" />
+<bdc:MMKsummary var="story_stream" uuid="${storyId}" priority="stream" />
+
+<h3>Story</h3>
+
+<p>
+	<b>Feature Stack</b><br>
+	${story_fs}
+</p>
+
+<p>
+	<b>Carousel</b><br>
+	${story_car}
+</p>
+ 
+<p>
+	<b>Stream</b><br>
+	${story_stream}
+</p>
+
+<!-- gallery -->
+<bdc:MMKsummary var="gallery_fs" uuid="${galleryId}" priority="feature_stack" />
+<bdc:MMKsummary var="gallery_car" uuid="${galleryId}" priority="carousel" />
+<bdc:MMKsummary var="gallery_stream" uuid="${galleryId}" priority="stream" />
+
+<h3>Gallery</h3>
+
+<p>
+	<b>Feature Stack</b><br>
+	${gallery_fs}
+</p>
+
+<p>
+	<b>Carousel</b><br>
+	${gallery_car}
+</p>
+
+<p>
+	<b>Stream</b><br>
+	${gallery_stream}
+</p>

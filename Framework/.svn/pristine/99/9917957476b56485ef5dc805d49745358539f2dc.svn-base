@@ -1,0 +1,45 @@
+<%-- This should be moved to a headline list style. #techdebt --%>
+<%--	Feature Stack replacement? Huzzah!	--%>
+<p:currentObject content="content" metadata="meta" />
+
+<p:out var="adLayerDwpPath" value="${cacheScope.adLayerDwpPath}" />
+
+<%-- Component name/link metadata --%>
+<p:out var="rpTitle" xvalue="$meta//ObjectMetadata/TeaseHeader" />
+
+<%-- Metadata on the DWC that determines what he ad interval is, and what the maximum number of items is that we show --%>
+<p:out var="adInterval" xvalue="$meta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/AdInterval" />
+<p:out var="maxStories" xvalue="$meta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/MaxStoriesToDisplay" />
+
+<%-- get the recent posts with a query --%>
+<bdc:fixRefresh path="$configurationURI/Framework/queries/bdc_recent_posts.query" />
+<p:getCollection path="$configurationURI/Framework/queries/bdc_recent_posts.query" var="recentPosts" />
+
+<%-- Ad counter --%>
+<p:out var="adCounter" value="1" />
+
+<%-- Actual stuff below this line --%>
+<div class="section-recent-list">
+	<c:if test="${not empty rpTitle}">
+		<div class="page-module-header">${rpTitle}</div>
+	</c:if>
+
+	<ul class="section-recent-list__list">
+		<%-- for each recent post --%>
+  	<c:forEach items="${recentPosts.items}" var="rp" begin="0" end="${maxStories - 1}" varStatus="loop">
+
+  		<%-- display a tease --%>
+  		<p:include url="$configurationURI/Framework/skins/components/story_container/recent_posts/recent_posts_indiv.jpt">
+  			<p:param name="webObject" value="${rp}" />
+  		</p:include>
+
+  		<%-- maybe display an ad --%>
+  		<p:out var="countdownToAd" value="${loop.count % adInterval}" />
+  		<c:if test="${countdownToAd == 0 and adCounter < 5}">
+  			<p:include pageZoneName="ad_featurestack_middle_${adCounter}" inherits="${adLayerDwpPath}" />
+  			<p:out var="adCounter" value="${adCounter + 1}" />
+  		</c:if>
+
+  	</c:forEach>
+	</ul>
+</div>

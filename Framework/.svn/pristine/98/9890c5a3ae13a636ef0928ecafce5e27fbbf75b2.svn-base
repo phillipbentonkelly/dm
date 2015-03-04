@@ -1,0 +1,7 @@
+<script type="text/mustache" id="trending-item">
+	{{#.}}
+		<li class="trending-item">
+			<a href="{{{page}}}?p1=Trending">{{title}}</a>
+		</li>
+	{{/.}}
+</script>

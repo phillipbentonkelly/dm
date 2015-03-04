@@ -1,0 +1,62 @@
+<%--
+What this does:
+	-- Get the tease header and tease header URL from the metadata
+	-- Perform the following on either a carousel or a centerpiece/top of page
+		-- Take the first item and make it the big tease
+		-- Take the remainder of the items and rendering them as links
+		-- If there are less than X links pull in from a stream query
+		-- Make sure nothing is duplicated 
+--%>
+
+<p:currentObject metadata="meta" sectionId="section" />
+
+<p:out var="headlineLabel" xvalue="$meta//HeadlineLabel" />
+<p:out var="teaseHeader" xvalue="$meta//TeaseHeader" />
+<p:out var="teaseHeaderLink" xvalue="$meta//TeaseHeaderURL" />
+<p:out var="streamName" xvalue="$meta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/StreamConfig/Slug" scope="request" />
+<p:out var="streamFilter" xvalue="$meta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/StreamConfig/StreamFilters/Filter[1]/FilterSlug" scope="request" />
+<%-- Actual stuff below this line --%>
+
+<div class="section-well" data-vr-zone="${teaseHeader} main">
+<%--div class="section-well section-well--sponsored"--%>
+	<c:if test="${not empty teaseHeader and fn:trim(teaseHeader) ne ''}">
+		<h2 class="section-well__header">
+			<a class="section-well__header-link" href="${teaseHeaderLink}?p1=well_${fn:trim(teaseHeader)}_breadcrumb_hp">
+				${teaseHeader}
+			</a>
+		</h2>
+	</c:if>
+
+  <div class="section-well__content">
+
+    <%-- First item --%>
+    <p:include pageZoneName="content" maxItems="1" templateName="stream_well_large_tease">
+    	<p:param name="visualRevenue" value="${cacheScope.visualRevenue}" />
+    	<p:param name="visualRevenuePrefix" value="${teaseHeader}" />
+    </p:include>
+    
+    <div class="section-well__list-container">
+      <div class="section-well__list-header">
+        ${headlineLabel}
+      </div>
+        <ul class="section-well__list">
+          
+          <%-- All the rest of the items --%>
+          <p:include pageZoneName="content" offset="1" templateName="stream_well_tease_list" >
+          	<p:param name="visualRevenue" value="${cacheScope.visualRevenue}" />
+          	<p:param name="visualRevenuePrefix" value="${teaseHeader}" />
+          </p:include>
+          
+          <%-- Items from the stream if the zone is lacking in content --%>
+          <p:out var="prefixVR" value="${teaseHeader}" scope="request" />
+          <p:out var="hasVR" value="${fn:toLowerCase(cacheScope.visualRevenue)}" scope="request" />
+          <p:inline url="$configurationURI/Framework/skins/components/story_container/stream_well/sc_tease_list_item_stream.jpt" />
+          
+        </ul>
+    </div>
+  </div><!-- / content -->
+  
+	<c:if test="${not empty teaseHeaderLink and fn:trim(teaseHeaderLink) ne ''}">
+		<bdc:link value="${teaseHeaderLink}" linkParam="p1=well_${fn:trim(teaseHeader)}_more_hp" className="section-well__more-link">More in ${teaseHeader}</bdc:link>
+	</c:if>
+</div>

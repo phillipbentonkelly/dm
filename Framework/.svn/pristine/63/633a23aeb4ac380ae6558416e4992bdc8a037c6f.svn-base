@@ -1,0 +1,38 @@
+<%@ page import="java.util.HashMap" %>
+<%@ page import="java.util.Map" %>
+
+<%
+
+	Map testMap = new HashMap();
+	
+	String[] weatherNames = new String[] { "clouds", "moon", "mooncloud", "rain", "snow", "suncloud", "thunder", "wind"};
+	String[] clouds = new String[] { "06s", "07s", "08s", "11s" };
+	String[] moon = new String[] { "33s", "34s", "37s" };
+	String[] mooncloud = new String[] { "35s", "36s", "38s" };
+	String[] rain = new String[] { "12s", "13s", "14s", "18s", "26s", "29s", "39s", "40s" };
+	String[] snow = new String[] { "19s", "20s", "21s", "22s", "23s", "24s", "25s", "43s", "44s" };
+	String[] suncloud = new String[] { "03s", "04s" };
+	String[] thunder = new String[] { "15s", "16s", "17s", "41s", "42s" };
+	String[] wind = new String[] {"32s"};
+	String[][] arrayLists = new String[][] { clouds, moon, mooncloud, rain, snow, suncloud, thunder, wind };
+	
+	for(int x = 0; x < arrayLists.length; x++) {
+		for(int y = 0; y < arrayLists[x].length; y++) {
+			testMap.put(arrayLists[x][y], weatherNames[x]);
+		}
+	}
+	
+	String hasKey = (testMap.containsKey("37s")) ? "yes" : "no";
+	String weatherClass = (testMap.containsKey("44b") ? (String)testMap.get("44b") : "sun");
+	
+	pageContext.setAttribute("testMap", testMap); 
+	pageContext.setAttribute("hasKey", hasKey);
+	pageContext.setAttribute("weatherClass", weatherClass);
+%>
+
+<p><b>Weather Class:</b> ${weatherClass}</p>
+<p><b>Has Key:</b> ${hasKey}</p>
+
+<c:forEach var="mapValue" items="${testMap}">
+	<p>Key is ${mapValue.key}, Value is ${mapValue.value}</p>
+</c:forEach>

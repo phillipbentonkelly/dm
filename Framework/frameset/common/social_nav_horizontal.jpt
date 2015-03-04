@@ -1,0 +1,34 @@
+<%--
+	Based on:
+	/bcom-redesign-beta/bdc-markup/page/modules/social-nav--horizontal.php
+--%>
+
+<p:import var="nav" url="/SysConfig/Classify/Data/BDC_nav_menu.xml" xml="true" />
+<p:out var="socialTwitter"	xvalue="$nav//SocialSharing/Twitter" />
+<p:out var="socialFacebook"	xvalue="$nav//SocialSharing/Facebook" />
+<p:out var="socialGoogle"	xvalue="$nav//SocialSharing/GooglePlus" />
+ 
+ <nav class="social-nav social-nav--horizontal">
+	<ul>
+		<li class="social-nav__item">
+			<a href="${socialTwitter}" target="_blank">
+				<span class="bdc-icon bdc-icon--twitter-x-small">Twitter</span>
+			</a>
+		</li>
+		<li class="social-nav__item">
+			<a href="${socialFacebook}" target="_blank">
+				<span class="bdc-icon bdc-icon--facebook-x-small">Facebook</span>
+			</a>
+		</li>
+		<li class="social-nav__item">
+			<a href="${socialGoogle}" target="_blank">
+				<span class="bdc-icon bdc-icon--google-x-small">Google +</span>
+			</a>
+		</li>
+		<li class="social-nav__item">
+			<a href="http://boston.custhelp.com/app/" target="_blank">
+				<span class="bdc-icon bdc-icon--questionmark-x-small">?</span>
+			</a>
+		</li>
+	</ul>
+</nav>

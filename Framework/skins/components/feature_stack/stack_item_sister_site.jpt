@@ -1,0 +1,23 @@
+<article class="feat-tz sister-site">
+	<a class="feat-tz-img-mod  art-bd" href="">
+		<img class="feat-tz-img" src="http://placehold.it/680x283&text=Placeholder">
+	</a> <!-- feat-tz -->
+	<div class="feat-tz-bd txt-bd">
+		
+		<h4 class="feat-tz-h tz-title"><a href="">Cambridge loses lawsuit to keep Uber off the roads</a></h4>
+	</div> <!-- /feat-tz-bd -->
+	<a class="border">
+		<div>
+		<%-- 
+			IMG options include:
+			$configurationURI/Framework/img/sister_sites/bdcwire.png
+			$configurationURI/Framework/img/sister_sites/betaboston.png
+			$configurationURI/Framework/img/sister_sites/radiobdc.png
+		--%>
+			<img src="http://placehold.it/70x50&text=The+Hive" alt=""/>
+		</div>
+		<div class="tagline">
+			Boston's source for innovation
+		</div>
+	</a>
+</article>

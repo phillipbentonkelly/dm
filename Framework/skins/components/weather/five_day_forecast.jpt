@@ -1,0 +1,15 @@
+<%--
+{comments}
+BDC-2003 - 5 day forecast for the weather page
+{comments}
+--%>
+
+<div class="section-well section-well--5-day-forecast">
+  <a class="hash-anchor" id="FiveDayForecast"></a>
+  <div class="grid--12">
+    <div class="section-well__header">
+    	<h2 class="section-well__header-title">5-Day Forecast</h2>
+    </div>
+		<p:inline url="$configurationURI/Framework/skins/components/weather/weather_forecast.jpt" />
+  </div>
+</div>

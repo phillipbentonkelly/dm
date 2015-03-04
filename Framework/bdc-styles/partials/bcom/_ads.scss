@@ -1,0 +1,217 @@
+.ad-big,
+.ad-banner,
+.ad-big-banner,
+.ad-halfpager,
+.ad-leaderboard,
+.ad-microbanner {
+	// Ensure that the ad is centered 
+	display: block;
+	margin: auto;
+}
+
+.ad-big,
+.ad-banner,
+.ad-halfpager {
+	width: 300px;
+}
+//
+// Pencil Ad directly below global navigation
+//
+
+img#pencil-replace {
+	margin-top: 33px;
+}
+
+//
+// Big Banner
+//
+
+
+
+.big-banner-mod {
+	display: none;
+	@include mq(620px) {
+		display: block;
+	}	
+}
+
+.ad-big-banner {
+	width: 600px;
+}
+
+//
+// Leaderboards
+//
+.nav-leaderboard-mod {
+	max-width: $site-max;
+	@include quick-border;	
+	@include trans;
+	margin: 0 auto 5px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	div:first-child {
+		margin: 0 auto;
+		text-align: center;
+		height: 50px;
+	}
+	@include mq(600px) {
+		padding-top: 33px; // .site-container padding adds 15px at the breakpoint
+	}
+	@include mq(720px) {
+		width: 94%;
+	}
+	@include mq(768px) {
+		padding-top: 10px; // 33px for the global nav + 15px for padding
+		padding-bottom: 10px;
+		div:first-child {
+			height: 90px;
+		}
+	}
+	@include mq(960px) {
+		margin: 0 auto 10px;
+	}
+}
+
+//
+// Microbanner
+//
+.ad-microbanner {
+	@include size(88px 31px);	
+}
+
+//
+// Tease Ads
+//
+
+.quick-tz-ad,
+.quick-tz-mod .ad-mod {
+	@extend %quick-tz-layout;
+	// Helps big ads fit
+	// and center themselves
+	padding-left: 0;
+	padding-right: 0;
+	@include mq(max, $sidebar-break) {
+		text-align: center;
+	}
+}
+
+.feat-tz-ad,
+.feat-tz-mod .ad-mod,
+.ad-featurestack {
+	display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+
+    div:first-child {
+    	margin-right: 20px;
+    }
+
+	@include mq($sidebar-break) {
+		display: block;
+
+		div:first-child {
+			margin-bottom: 25px;
+		}
+	}
+}
+.secondary .ad-featurestack {
+	
+	div:first-child {
+		margin:0 auto 20px;
+	}
+}
+//padding issues fix
+
+.secondary {
+
+	div[class*="ad-"], .secondary article[class*="ad-"]  {
+
+		text-align: center;
+
+		div:first-child {
+			margin-bottom: 20px;
+		}
+
+	}
+
+	.ad-banner, .ad-mustread {
+		div:first-child {
+			margin: 20px 0;
+		}
+	} 
+
+	.ad-mustread {
+		div:first-child {
+			margin-left: -14px;
+		}
+	}
+	
+}
+
+// TODO: the following is for TEST ad related spacing, overflow managment, etc. Remove/refactor this prior to launch.
+// .ad.ad-swap-test{
+// 	height:50px;
+// 	display: block;
+// 	overflow: hidden;
+// 	text-align: center;	
+// 	@include mq($sidebar-break) {
+// 		height:250px;
+// 	}
+// }
+
+/* Temporary ad styles */
+.advertisement {
+	margin: 0 auto;
+}
+.ad-leaderboard {
+	height: 90px;
+}
+.quick-tz-ad > div {
+	text-align: center;
+	margin: 0 auto;
+}
+.quick-tz-ad.sponsor-quick-tz {
+	 padding-left: 8px;
+	 padding-right: 8px;
+	 > div {
+		text-align: left;
+	}
+}
+
+// Out of page ads
+.out-of-page-ad {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+}
+
+// Top Right Slot Ad
+
+.ad-toprightslot {
+	@include mq(max, $sidebar-break) {	
+	margin: 0 auto;
+	width: 300px;
+	}
+//	padding-bottom: 10px;
+//	border-bottom: $border;
+}
+
+
+// For deprecated overlay templates
+.Overlay, .overlay{
+   width: 100%;
+   height: 100%;
+   position: fixed;
+   top: 0;
+   left: 0;
+   z-index: 10000;
+} 
+
+.Overlay img, .overlay img{
+	display: block;
+	margin: 0 auto;
+	display: none;
+}

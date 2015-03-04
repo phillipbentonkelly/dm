@@ -1,0 +1,108 @@
+// *
+// * Layout for Section Fronts and Content Pages
+// *
+
+// Page Content
+
+$page-content: 'bdc-page-content';
+
+.#{$page-content} {
+  width: 100%;
+  max-width: $site-max-width;
+  margin: 0 auto;
+  @extend %clearfix;
+  background: color(white);
+  &--section {
+    padding: 0 spacer(px);
+    padding: 0 spacer(rem);
+  }
+}
+
+// Content Wells
+
+$content-well: 'content-well';
+
+.#{$content-well}  {
+  &--sidebar {
+    display: none;
+  }
+  &--section {
+    display: block;
+    padding-right: 1.13636%; // when the sidebar spans full width it has the same susy padding as everything around it
+    padding-left: 1.13636%;
+    &.#{$content-well}--main {
+      margin-bottom: spacer(px, xx-large);
+      margin-bottom: spacer(rem, xx-large);
+    }
+    &.#{$content-well}--wide {
+      width: 100%;
+      margin-bottom: spacer(px, xx-large);
+      margin-bottom: spacer(rem, xx-large);
+    }
+  }
+}
+
+// ------------------------------------------------------------
+// Desktop Styles
+// ------------------------------------------------------------
+
+@include media-query(desktop) {
+  
+  // Page Content
+
+  .#{$page-content} {
+    position: relative;
+    width: 94%;
+    padding: spacer(px, mid) spacer(px, mid) spacer(px);
+    padding: spacer(rem, mid) spacer(rem, mid) spacer(rem);
+  }
+
+  // Content Wells
+
+  .#{$content-well} {
+    &--article,
+    &--gallery,
+    &--section {
+      width: 64%;
+      float: left;
+    }
+    &--sidebar {
+      display: block;
+      position: relative;
+      width: percentage($right-col-width / $site-max-width);
+      float: right;
+      padding: 0; // remove the susy padding when the sidebar is not full width
+
+      // To keep right of sidebar in line with Susy stuff
+      // Only applicable on the homepage at this point
+      // #techdebt
+      .homepage & {
+        padding-right: 0.7%;
+      }
+
+    }
+  }
+
+}
+
+// ------------------------------------------------------------
+// >1000px Styles
+//
+// This is here so that the proper width is applied at widths 
+// above 1000px. Between the tablet breakpoint and 1000px the 
+// width is 64% to allow for more space between the content 
+// well and the sidebar, otherwise the columns appear too 
+// close together.
+// ------------------------------------------------------------
+
+@include media-query(1000) {
+
+  // Content Well
+  .#{$content-well} {
+    &--article, 
+    &--gallery {
+      width: percentage($left-col-width / $site-max-width);
+    }
+  }
+
+}

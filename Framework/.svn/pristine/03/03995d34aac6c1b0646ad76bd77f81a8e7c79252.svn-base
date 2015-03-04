@@ -1,0 +1,178 @@
+<p:currentObject metadata="meta" />
+<p:refresh time="AT 00:01:01" />
+<p:refresh time="AT 14:01:01" />
+<c:set var="now" value="<%=new java.util.Date()%>" />
+<fmt:formatDate var="nowPath" pattern="yyyy/MM/dd" value="${now}" timeZone="US/Eastern"/>
+<fmt:formatDate var="day" pattern="EEEE" value="${now}" timeZone="US/Eastern"/>
+<fmt:formatDate var="hour" pattern="HH" value="${now}" timeZone="US/Eastern"/>
+
+<%--
+<p:jspInclude url="$configurationURI/Framework/skins/components/scheduled_asset/getCurrentTime.jsp" eomdb="true"/>
+--%>
+
+<c:choose>
+	<c:when test="${day eq 'Monday'}">
+		<p:getPageZone name="monday" var="mon"/>
+		<c:choose>
+			<c:when test="${mon.size == 0}">
+				<p:include pageZoneName="default">
+					<p:param name="dwp" value="${cacheScope.dwp}"/>
+					<p:param name="CampaignCodes" value="${cacheScope.CampaignCodes}"/>
+					<p:param name="ScribleWidth" value="${cacheScope.ScribleWidth}"/>
+					<p:param name="videoWidth" value="${cacheScope.videoWidth}" />
+					<p:param name="videoHeight" value="${cacheScope.videoHeight}" />
+				</p:include>
+			</c:when>
+			<c:otherwise>
+				<p:include pageZoneName="monday">
+					<p:param name="dwp" value="${cacheScope.dwp}"/>
+					<p:param name="CampaignCodes" value="${cacheScope.CampaignCodes}"/>
+					<p:param name="ScribleWidth" value="${cacheScope.ScribleWidth}"/>
+					<p:param name="videoWidth" value="${cacheScope.videoWidth}" />
+					<p:param name="videoHeight" value="${cacheScope.videoHeight}" />
+				</p:include>
+			</c:otherwise>
+		</c:choose>
+	</c:when>
+	<c:when test="${day eq 'Tuesday'}">
+		<p:getPageZone name="tuesday" var="tue"/>
+		<c:choose>
+			<c:when test="${tue.size == 0}">
+				<p:include pageZoneName="default">
+					<p:param name="dwp" value="${cacheScope.dwp}"/>
+					<p:param name="CampaignCodes" value="${cacheScope.CampaignCodes}"/>
+					<p:param name="ScribleWidth" value="${cacheScope.ScribleWidth}"/>
+					<p:param name="videoWidth" value="${cacheScope.videoWidth}" />
+					<p:param name="videoHeight" value="${cacheScope.videoHeight}" />
+				</p:include>
+			</c:when>
+			<c:otherwise>
+				<p:include pageZoneName="tuesday">
+					<p:param name="dwp" value="${cacheScope.dwp}"/>
+					<p:param name="CampaignCodes" value="${cacheScope.CampaignCodes}"/>
+					<p:param name="ScribleWidth" value="${cacheScope.ScribleWidth}"/>
+					<p:param name="videoWidth" value="${cacheScope.videoWidth}" />
+					<p:param name="videoHeight" value="${cacheScope.videoHeight}" />
+				</p:include>
+			</c:otherwise>
+		</c:choose>
+	</c:when>
+	<c:when test="${day eq 'Wednesday'}">
+		<p:getPageZone name="wednesday" var="wed"/>
+		<c:choose>
+			<c:when test="${wed.size == 0}">
+				<p:include pageZoneName="default">
+					<p:param name="dwp" value="${cacheScope.dwp}"/>
+					<p:param name="CampaignCodes" value="${cacheScope.CampaignCodes}"/>
+					<p:param name="ScribleWidth" value="${cacheScope.ScribleWidth}"/>
+					<p:param name="videoWidth" value="${cacheScope.videoWidth}" />
+					<p:param name="videoHeight" value="${cacheScope.videoHeight}" />
+				</p:include>
+			</c:when>
+			<c:otherwise>
+				<p:include pageZoneName="wednesday">
+					<p:param name="dwp" value="${cacheScope.dwp}"/>
+					<p:param name="CampaignCodes" value="${cacheScope.CampaignCodes}"/>
+					<p:param name="ScribleWidth" value="${cacheScope.ScribleWidth}"/>
+					<p:param name="videoWidth" value="${cacheScope.videoWidth}" />
+					<p:param name="videoHeight" value="${cacheScope.videoHeight}" />
+				</p:include>
+			</c:otherwise>
+		</c:choose>
+	</c:when>
+	<c:when test="${day eq 'Thursday'}">
+		<p:getPageZone name="thursday" var="thu"/>
+		<c:choose>
+			<c:when test="${thu.size == 0}">
+				<p:include pageZoneName="default">
+					<p:param name="dwp" value="${cacheScope.dwp}"/>
+					<p:param name="CampaignCodes" value="${cacheScope.CampaignCodes}"/>
+					<p:param name="ScribleWidth" value="${cacheScope.ScribleWidth}"/>
+					<p:param name="videoWidth" value="${cacheScope.videoWidth}" />
+					<p:param name="videoHeight" value="${cacheScope.videoHeight}" />
+				</p:include>
+			</c:when>
+			<c:otherwise>
+				<p:include pageZoneName="thursday">
+					<p:param name="dwp" value="${cacheScope.dwp}"/>
+					<p:param name="CampaignCodes" value="${cacheScope.CampaignCodes}"/>
+					<p:param name="ScribleWidth" value="${cacheScope.ScribleWidth}"/>
+					<p:param name="videoWidth" value="${cacheScope.videoWidth}" />
+					<p:param name="videoHeight" value="${cacheScope.videoHeight}" />
+				</p:include>
+			</c:otherwise>
+		</c:choose>
+	</c:when>
+	<c:when test="${day eq 'Friday'}">
+		<p:getPageZone name="friday" var="fri"/>
+		<c:choose>
+			<c:when test="${fri.size == 0}">
+				<p:include pageZoneName="default">
+					<p:param name="dwp" value="${cacheScope.dwp}"/>
+					<p:param name="CampaignCodes" value="${cacheScope.CampaignCodes}"/>
+					<p:param name="ScribleWidth" value="${cacheScope.ScribleWidth}"/>
+					<p:param name="videoWidth" value="${cacheScope.videoWidth}" />
+					<p:param name="videoHeight" value="${cacheScope.videoHeight}" />
+				</p:include>
+			</c:when>
+			<c:otherwise>
+				<p:include pageZoneName="friday">
+					<p:param name="dwp" value="${cacheScope.dwp}"/>
+					<p:param name="CampaignCodes" value="${cacheScope.CampaignCodes}"/>
+					<p:param name="ScribleWidth" value="${cacheScope.ScribleWidth}"/>
+					<p:param name="videoWidth" value="${cacheScope.videoWidth}" />
+					<p:param name="videoHeight" value="${cacheScope.videoHeight}" />
+				</p:include>
+			</c:otherwise>
+		</c:choose>
+	</c:when>
+	<c:when test="${day eq 'Saturday'}">
+		<p:getPageZone name="saturday" var="sat"/>
+		<c:choose>
+			<c:when test="${sat.size == 0}">
+				<p:include pageZoneName="default">
+					<p:param name="dwp" value="${cacheScope.dwp}"/>
+					<p:param name="CampaignCodes" value="${cacheScope.CampaignCodes}"/>
+					<p:param name="ScribleWidth" value="${cacheScope.ScribleWidth}"/>
+					<p:param name="videoWidth" value="${cacheScope.videoWidth}" />
+					<p:param name="videoHeight" value="${cacheScope.videoHeight}" />
+				</p:include>
+			</c:when>
+			<c:otherwise>
+				<p:include pageZoneName="saturday">
+					<p:param name="dwp" value="${cacheScope.dwp}"/>
+					<p:param name="CampaignCodes" value="${cacheScope.CampaignCodes}"/>
+					<p:param name="ScribleWidth" value="${cacheScope.ScribleWidth}"/>
+					<p:param name="videoWidth" value="${cacheScope.videoWidth}" />
+					<p:param name="videoHeight" value="${cacheScope.videoHeight}" />
+				</p:include>
+			</c:otherwise>
+		</c:choose>
+	</c:when>
+	
+	<c:when test="${day eq 'Sunday'}">
+		<p:getPageZone name="sunday" var="sun"/>
+		<c:choose>
+			<c:when test="${sun.size == 0}">
+				<p:include pageZoneName="default">
+					<p:param name="dwp" value="${cacheScope.dwp}"/>
+					<p:param name="CampaignCodes" value="${cacheScope.CampaignCodes}"/>
+					<p:param name="ScribleWidth" value="${cacheScope.ScribleWidth}"/>
+					<p:param name="videoWidth" value="${cacheScope.videoWidth}" />
+					<p:param name="videoHeight" value="${cacheScope.videoHeight}" />
+				</p:include>
+			</c:when>
+			<c:otherwise>
+				<p:include pageZoneName="sunday">
+					<p:param name="dwp" value="${cacheScope.dwp}"/>
+					<p:param name="CampaignCodes" value="${cacheScope.CampaignCodes}"/>
+					<p:param name="ScribleWidth" value="${cacheScope.ScribleWidth}"/>
+					<p:param name="videoWidth" value="${cacheScope.videoWidth}" />
+					<p:param name="videoHeight" value="${cacheScope.videoHeight}" />
+				</p:include>
+			</c:otherwise>
+		</c:choose>
+	</c:when>
+	
+</c:choose>
+

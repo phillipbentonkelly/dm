@@ -1,0 +1,194 @@
+<%--<p:currentObject content="story" metadata="meta" webType="WT" sectionId="section" channel="Boston.com" uuid="uuid" />--%>
+<%-- AD
+<p:out var="bysource" value="${cacheScope.bysource}" />
+<p:out var="byname" value="${cacheScope.byname}" />
+<p:out var="byname" value="${fn:trim(byname)}" />
+<p:out var="assetPrintPub" value="${cacheScope.assetPrintPub}" />
+<p:out var="assetLastPub" value="${cacheScope.assetLastPub}" />
+
+<p:getObject path="/SysConfig/Classify/Data/LinkableBylines.xml" var="staff_map" /> 
+<p:object webObject="${staff_map}" content="c" />
+<p:out var="authorName" xvalue="$c//Bylines/Staff/Byline/ByName[normalize-space(text())]" />
+--%>
+
+<%-- <p:out var="byname" xvalue="$meta//ObjectMetadata/Editorial/Bylines/Byline/ByName[normalize-space(text())]" /> --%>
+<%
+	
+	String bynameVar = (String)pageContext.getAttribute("byname");
+	String delimeterRegex = "(?i),\\s*AND\\s+|,\\s*&\\s*|\\s+AND\\s+|\\s*&\\s*|\\s*,\\s*";
+	String byRegex = "(?i)BY\\s+";
+	String byline = bynameVar;
+	String[] authors = null;
+
+	//byline = byline.replaceFirst(byRegex, "");
+	authors = byline.split(delimeterRegex);
+	
+	pageContext.setAttribute("authors", authors);
+	
+%>
+
+<%-- AD
+<c:forEach items="${authors}" varStatus="one_name">
+
+	<p:out var="authorCounter" value="${one_name.count}" scope="page" />
+</c:forEach>
+
+<c:choose>
+	<c:when test="${authorCounter <= 1}">
+		<p:out var="bynameTrim" value="${fn:trim(authors[0])}" />
+		<x:forEach var="authorPath" select="$c//Bylines/Staff/Byline">
+			<x:set var="authorString" select="string($authorPath/ByName/text())" />
+			<c:if test="${bynameTrim == authorString}">
+				<x:set var="authorByName" select="string($authorPath/ByName/text())" />
+				<x:set var="authorUsername" select="string($authorPath/UserName/text())" />
+				<x:set var="authorRole" select="string($authorPath/Role/text())" />
+				<p:getObject path="/Boston/Library/Staff/Bios/${authorUsername}.xml" var="authorObj" />
+				<p:object webObject="${authorObj}" metadata="authorMeta" content="authorContent" />
+				<p:out var="authorTwitter" xvalue="$authorMeta//General/TwitterId" />
+				<c:if test="${fn:contains(authorTwitter, '@')}">
+					<p:out var="authorTwitter" value="${fn:substringAfter(authorTwitter, '@')}" />
+				</c:if>
+				<p:out var="bynameLink" value="${fn:trim(authorByName)}"  />
+				<p:out var="bynameSearchParam" value="${fn:replace(bynameLink,' ','+')}" />
+				<p:out var="bynameSearchURL" value="http://search.boston.com/local/Search.do?s.tab=ssearch&amp;s.sm.query=${bynameSearchParam}" />
+			</c:if>
+		</x:forEach>
+		
+		<section class="story-byline-mod">
+			<!--<c:choose>
+				<c:when test="${not empty fn:trim(authorUsername)}">
+					<a href="${bynameSearchURL}" class="byline-avatar-mod art-bd">
+						<p:url var="img" value="/Boston/Library/Staff/Images/${authorUsername}.jpg" type="resource" format="image_50x50"/>
+						<img class="story-byline-avatar art" src="${img}">
+					</a>
+				</c:when>
+				<c:otherwise> </c:otherwise>
+			</c:choose> -->
+			<div class="txt-bd">
+				<ul class="article-byline-list">
+					<c:choose>
+						<c:when test="${not empty bynameLink}">
+							<li class="story-byline"><a href="${bynameSearchURL}">${bynameLink}</a></li>
+						</c:when>
+						<c:otherwise>
+							<li class="story-byline">${bynameTrim}</li>
+						</c:otherwise>
+					</c:choose>
+					<!--
+					<c:if test="${not empty bynameLink}">
+						<li class="story-byline"><a href="${bynameSearchURL}">${bynameLink}</a></li>
+					</c:if>
+					-->
+					<c:if test="${not empty authorTwitter}">
+						<li class="story-byline-handle"><a href="http://www.twitter.com/@${authorTwitter}">@${authorTwitter}</a></li>
+					</c:if>
+					<c:if test="${not empty bysource}">
+						<li class="story-byline-affiliation">${bysource}</li>
+					</c:if>
+					
+					<c:choose>
+						<c:when test="${not empty assetPrintPub or assetPrintPub != ''}">
+							<li class="story-timestamp"><p:out value="${assetPrintPub}" format="eomdate:MMMM d, yyyy h:mm a" /></li>
+						</c:when>
+						<c:otherwise>
+							<li class="story-timestamp"><p:out value="${assetLastPub}" format="eomdate:MMMM d, yyyy h:mm a" /></li>
+						</c:otherwise>
+					</c:choose>
+					
+					
+						<p:getObject path="/Boston/Library/Staff/Bios/${authorUsername}.xml" var="stafferObj" /> 
+						<p:object webObject="${stafferObj}" content="c" />
+						<p:out var="staffBio" xvalue="$c//story/text/content/p" />
+						
+						<c:set var="descSplit" value="${fn:split(staffBio, ' ')}" />
+	 					<c:set var="descWordCount" value="" />
+	 					
+	 					<c:forEach items="${descSplit}" var="item" varStatus="status" begin="0" end="19">
+					 		<c:choose>
+								<c:when test="${fn:trim(descWordCount) == ''}">
+									<p:out var="descWordCount" value="${item}" />
+								</c:when>
+								<c:otherwise>
+									<c:if test="${status.index == 24}" >
+										<c:if test="${fn:substring(item, fn:length(item)-1, fn:length(item)) == ',' || fn:substring(item, fn:length(item)-1, fn:length(item)) == ';'}" >
+											<c:set var="item" value="${fn:substring(item, 0, fn:length(item)-1)}" />
+										</c:if>	
+									</c:if>
+									<c:set var="descWordCount" value="${descWordCount} ${item}" />
+								</c:otherwise>
+							</c:choose>
+						</c:forEach>
+						<c:set var="descWordCount" value="${descWordCount}..." />
+						<section class="about-this-blog"><h3>About This Blog</h3>
+						
+						<!--<li>${descWordCount}<a href="http://www.bostonglobe.com/staff/${authorUsername}">More</a> </li>-->
+							<li>${staffBio}</li>
+						</section>
+				</ul>
+			</div> <!-- /txt-bd -->
+		</section> <!-- /story-byline-mod -->
+		
+	</c:when>
+	<c:otherwise>
+			<section class="story-byline-mod">
+				<div class="txt-bd">
+					<ul class="story-multi-byline">
+					<c:forEach items="${authors}" var="byname" varStatus="counter">
+						<p:out var="bynameTrim" value="${fn:trim(byname)}"  />
+						<x:forEach var="authorPath" select="$c//Bylines/Staff/Byline">
+							<x:set var="authorString" select="string($authorPath/ByName/text())" />
+							<c:if test="${bynameTrim == authorString}">
+								<x:set var="authorByName" select="string($authorPath/ByName/text())" />
+								<x:set var="authorUsername" select="string($authorPath/UserName/text())" />
+								<x:set var="authorRole" select="string($authorPath/Role/text())" />
+								<p:getObject path="/Boston/Library/Staff/Bios/${authorUsername}.xml" var="authorObj" />
+								<p:object webObject="${authorObj}" metadata="authorMeta" content="authorContent" />
+								<p:out var="authorTwitter" xvalue="$authorMeta//General/TwitterId" />
+								<c:if test="${fn:contains(authorTwitter, '@')}">
+									<p:out var="authorTwitter" value="${fn:substringAfter(authorTwitter, '@')}" />
+								</c:if>
+								<p:out var="bynameLink" value="${fn:trim(authorByName)}"  />
+								<p:out var="bynameSearchParam" value="${fn:replace(bynameLink,' ','+')}" />
+								<p:out var="bynameSearchURL" value="http://search.boston.com/local/Search.do?s.tab=ssearch&amp;s.sm.query=${bynameSearchParam}" />
+							</c:if>
+						</x:forEach>
+						<li>
+						<ul class="article-byline-list">
+							<c:choose>
+								<c:when test="${not empty bynameLink}">
+									<li class="story-byline">
+										<a href="${bynameSearchURL}">${bynameLink}</a>
+									</li>
+								</c:when>
+								<c:otherwise>
+									<li class="story-byline">${bynameTrim}</li>
+								</c:otherwise>
+							</c:choose>
+							<c:if test="${not empty authorTwitter}">
+								<li class="story-byline-handle">
+									<a href="http://www.twitter.com/@${authorTwitter}">@${authorTwitter}</a>
+								</li>
+							</c:if>
+							<c:if test="${not empty bysource}">
+								<li class="story-byline-affiliation">${bysource}</li>
+							</c:if>
+							<c:if test="${counter.last}">
+								<c:choose>
+									<c:when test="${not empty assetPrintPub or assetPrintPub != ''}">
+										<li class="story-timestamp"><p:out value="${assetPrintPub}" format="eomdate:MMMM d, yyyy h:mm a" /></li>
+									</c:when>
+									<c:otherwise> <!-- using assetLastPub -->
+										<li class="story-timestamp"><p:out value="${assetLastPub}" format="eomdate:MMMM d, yyyy h:mm a" /></li>
+									</c:otherwise>
+								</c:choose>
+							</c:if>
+						</ul>
+						</li>
+					</c:forEach>
+					</ul>
+				</div> <!-- /txt-bd -->
+			</section> <!-- /story-byline-mod -->
+	</c:otherwise>
+</c:choose>
+
+--%>

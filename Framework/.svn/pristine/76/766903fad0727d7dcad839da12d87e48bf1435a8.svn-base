@@ -1,0 +1,427 @@
+<%@ page import="java.util.Calendar"%>
+<%@ page import="java.util.Date"%>
+<%@ page import="java.text.*"%>
+<%@ page import="java.util.GregorianCalendar"%>
+<%@ page import="java.util.regex.*"%>
+
+<p:currentObject webType="WT" metadata="meta" content="story" sectionId="section" uuid="uuid" />
+<!--  webtype="${WT}" -->
+
+<%-- this file is a mess #techdebt --%>
+<c:choose>
+	<%-- these aren't the blogs you're looking for --%>
+	<c:when test="${WT == 'BlogPage'}">
+	    <p:blogId var="blogId"/>
+	    <c:choose>
+	    	<c:when test="${empty blogId}">
+	    		<p:currentObject metadata="meta" webType="WT" />
+	    	</c:when>
+	    	<c:otherwise>
+				<p:getBlog blogId="${blogId}" var="blog" />
+				<p:object webObject="${blog.webObject}" metadata="m" />
+				<p:out var="container_path" xvalue="$m//Page/ContainerPath" />
+				<p:getObject path="${container_path}" var="dwp" />
+				<p:object webObject="${dwp}" content="story" metadata="meta" channel="Boston.com"/>
+	    	</c:otherwise>
+	    </c:choose>
+	</c:when>
+	<c:when test="${WT == 'BlogStory'}">
+		<p:blogId var="blogId" />
+		<p:getBlog blogId="${blogId}" var="blog" />
+		<p:object webObject="${blog.webObject}" metadata="m" />
+		<p:out var="container_path" xvalue="$m//Page/ContainerPath" />
+		<p:getObject path="${container_path}" var="dwp" />
+		<p:object webObject="${dwp}" metadata="dwpMeta" />
+	</c:when>
+	<c:otherwise>
+		<%-- why is this line even here --%>
+		<p:currentObject metadata="meta" webType="WT" />
+	</c:otherwise>
+</c:choose>
+
+<p:out var="eomType" xvalue="$meta//sys/type" />
+
+<c:choose>
+	<c:when test="${not empty cacheScope.pg}">
+		<c:choose>
+			<c:when test="${not empty cacheScope.page}">
+				<p:out var="s_prop5" value="${cacheScope.pg} | ${cacheScope.page}" />
+			</c:when>
+			<c:otherwise>
+				<p:out var="s_prop5" value="${cacheScope.pg}" />
+			</c:otherwise>
+		</c:choose>
+	</c:when>
+	<c:otherwise>
+		<c:choose>
+			<c:when test="${not empty cacheScope.page}">
+				<p:out var="s_prop5" value="${cacheScope.page}" />
+			</c:when>
+			<c:otherwise>
+				<p:out var="s_prop5" value="1" />
+			</c:otherwise>
+		</c:choose>
+	</c:otherwise>
+</c:choose>
+
+<%-- universal tracking vars --%>
+<p:out var="s_prop17" value="Methode" />
+<p:out var="s_prop34" value="" />
+
+<%-- setting tracking vars --%>
+<c:choose>
+	<c:when test="${eomType == 'EOM::WebPage'}">
+
+		<%-- set s.pagename, using a default if one is not provided --%>
+		<p:out var="s_pageName" xvalue="$meta//ObjectMetadata/OnlineProducts/OnlineProduct[child::ProductName = 'Boston.com']/AdPageValues/Pagename" />
+		<c:if test="${empty fn:trim(s_pageName)}">
+			<p:out var="s_pageName" value="News | Local | Massachusetts" />
+		</c:if>
+		
+		<%-- set s.channel, using a default if one is not provided --%>
+		<p:out var="channel" xvalue="$meta//ObjectMetadata/OnlineProducts/OnlineProduct[child::ProductName = 'Boston.com']/AdPageValues/Channel" escape="javascript" />
+		<c:if test="${empty fn:trim(channel)}">
+			<p:out var="channel" value="News" />
+		</c:if>
+		
+		<%-- set s.prop1, using a default if one is not provided --%>
+		<p:out var="s_prop1" xvalue="$meta//ObjectMetadata/OnlineProducts/OnlineProduct[child::ProductName = 'Boston.com']/AdPageValues/Prop1" />
+		<c:if test="${empty fn:trim(s_prop1)}">
+			<p:out var="s_prop1" value="News | Local" />
+		</c:if>
+		
+		<p:out var="s_prop6" xvalue="$meta//ObjectMetadata/OnlineProducts/OnlineProduct[child::ProductName = 'Boston.com']/AdPageValues/Prop6" escape="javascript" />
+		<p:out var="s_prop14" value="" />
+	</c:when>
+	<c:otherwise> <%-- otherwise, the rest of the file ... --%>
+		<p:out var="trackingHeadline" xvalue="$meta//ObjectMetadata/OnlineProducts/OnlineProduct[child::ProductName = 'Boston.com']/TrackingHeadline" />
+		<p:out var="trackingOptVal" xvalue="$meta//ObjectMetadata/OnlineProducts/OnlineProduct[child::ProductName = 'Boston.com']/TrackingOptVal" />
+		<p:out var="trackingBlogName" xvalue="$meta//ObjectMetadata/OnlineProducts/OnlineProduct[child::ProductName = 'Boston.com']/BlogName" />
+		
+		<p:out var="refProvider" xvalue="$meta//ObjectMetadata/Reference/Provider" />
+		<c:if test="${WT == 'summarystory' and not empty refProvider}">
+			<p:out var="refProvider" value="${refProvider} | Summary" />
+		</c:if>
+		
+		<p:out var="sectionTracking" xvalue="$meta//ObjectMetadata/OnlineProducts/OnlineProduct[child::ProductName = 'Boston.com']/Sections/Section/SectionTracking" />
+		<p:out var="sectionTracking" value="${fn:trim(sectionTracking)}" />
+		
+		<%-- set s.pagename, s.channel, and s.prop1, using defaults if sectionTracking is empty --%>
+		<p:out var="s_pageName" value="${(not empty sectionTracking) ? sectionTracking : 'News | Local | Massachusetts' }" />
+		<p:out var="channel"    value="${(not empty sectionTracking) ? sectionTracking : 'News' }" />
+		<p:out var="s_prop1"    value="${(not empty sectionTracking) ? sectionTracking : 'News | Local' }" />
+		<p:out var="trackingType" xvalue="$meta//ObjectMetadata/OnlineProducts/OnlineProduct[child::ProductName = 'Boston.com']/TrackingType" />
+		
+		<c:if test="${fn:endsWith(fn:toLowerCase(WT), 'gallery')}">
+			<p:out var="clickScrollMeta" xvalue="$meta//ObjectMetadata/OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/GalleryViewType" /> 
+			<!-- clickScrollMeta = ${clickScrollMeta} -->
+		    <c:choose>
+		        <c:when test="${not empty clickScrollMeta and clickScrollMeta eq 'Scroll'}">
+		            <c:set var="clickOrScroll" value="scrolling-gallery" />
+		        </c:when>
+		        <c:otherwise>
+		            <c:set var="clickOrScroll" value="click-gallery" />
+		        </c:otherwise>
+		    </c:choose>
+			    
+		    <%-- text-focused, split-focused, or image-focused gallery --%>
+		    <p:out var="galleryDeterminant" xvalue="$meta//Editorial/EditorialType" />
+		    <p:out var="galleryDeterminant" value="${fn:trim(fn:toLowerCase(galleryDeterminant))}" />
+		    <c:choose>
+		        <c:when test="${galleryDeterminant eq 'image-focused'}">
+		            <c:set var="galleryClass" value="Image" />
+		                    </c:when>
+		        <c:when test="${galleryDeterminant eq 'split-focused'}">
+		            <c:set var="galleryClass" value="Split" />
+		                    </c:when>
+		        <c:otherwise>
+		            <c:set var="galleryClass" value="Text" />
+		        </c:otherwise>
+		    </c:choose> <!-- galleryDeterminant = ${galleryDeterminant} -->
+		 
+			<p:out var="trackingType" value="${galleryClass} ${clickOrScroll}" />
+		</c:if>
+		
+		<p:out var="s_prop6" value="${trackingType}" />
+		<p:out var="s_prop8" xvalue="$meta//ObjectMetadata/OnlineProducts/OnlineProduct[child::ProductName = 'Boston.com']/FirstPublicationDate"
+			format="eomdate:MM/dd/yyyy" />
+		<p:out var="webType" xvalue="$meta//ObjectMetadata/OnlineProducts/OnlineProduct[child::ProductName = 'Boston.com']/WebType" />
+		<c:if test="${webType == 'dwp_page_not_found'}">
+			<p:out var="s_pageType" value="errorPage"/>
+			<p:out var="s_prop1" value=""/>
+			<p:out var="s_prop6" value=""/>
+			<p:out var="channel" value=""/>
+		</c:if>
+
+		<p:out var="byname" xvalue="$story//text/byline/byname/p" />
+		<p:out var="byname" value="${fn:trim(byname)}" />
+		<c:if test="${fn:startsWith(byname, 'By')}">
+			<p:out var="byname" value="${fn:substringAfter(byname, 'By')}" />	
+		</c:if>
+		<c:if test="${not empty byname or byname != ''}">
+			<%
+				String bynameVar = (String)pageContext.getAttribute("byname");
+				String delimeterRegex = "(?i),\\s*AND\\s+|,\\s*&\\s*|\\s+AND\\s+|\\s*&\\s*|\\s*,\\s*";
+				String byRegex = "(?i)BY\\s+";
+				String byline = bynameVar;
+				String[] authors = null;
+
+				byline = byline.replaceFirst(byRegex, "");
+				authors = byline.split(delimeterRegex);
+				
+				StringBuilder builder = new StringBuilder();
+				for (int i = 0; i < authors.length; ++i)
+				{
+					builder.append(authors[i]);
+					if (i < authors.length - 1) builder.append(", ");
+				}
+				pageContext.setAttribute("s_prop3", builder.toString());
+			%>
+			<p:out var="s_prop3" value="${fn:trim(s_prop3)}" escape="javascript"/>
+			<!-- authors: ${s_prop3} -->
+		</c:if>
+		
+		<%--<x:if select="$meta//LastPrintOutput/PrintPublicationDate">
+			<p:out var="s_prop9" xvalue="$meta//LastPrintOutput/PrintPublicationDate" />
+			<p:out var="s_prop9"
+				value="${fn:substring(s_prop9,4,6)}/${fn:substring(s_prop9,6,8)}/${fn:substring(s_prop9,0,4)}" />
+		</x:if>--%>
+		
+		<c:if test="${fn:endsWith(fn:toLowerCase(WT), 'story')}">
+			<p:out var="stubStatus" xvalue="$meta//ObjectMetadata/OnlineProducts/StubStatus" />
+			<c:choose>
+				<c:when test="${stubStatus == '3'}">
+					<p:out var="seoSummary" xvalue="$story//doc/story/text/content"
+						xslt="$configurationURI/Framework/xslt/remove_markup.xslt" />
+					<!-- seoSummary: ${seoSummary} -->
+				</c:when>
+				<c:otherwise>
+					<p:out var="seoSummary" xvalue="$meta//ObjectMetadata/SEOInformation/Summary" />
+					<!-- OLD VALUE:  xvalue="$story//doc/story/text/content" xslt="$configurationURI/Framework/xslt/remove_markup.xslt"-->
+				</c:otherwise>
+			</c:choose>
+			<%
+			String summary = (String)pageContext.getAttribute("seoSummary");
+			String[] words = summary.split("\\s+");
+			pageContext.setAttribute("summary_length", words.length);
+			%>
+			<p:out var="s_prop20" value="${summary_length}" />
+		</c:if>
+		
+		<c:set var="count" value="0" />
+		<c:forTokens var="item" items="${channel}" delims="|" varStatus="status">
+			<c:set var="count" value="${count+1}" />
+			<c:if test="${status.first}">
+				<p:out var="channel" value="${fn:trim(item)}" />
+			</c:if>
+			<c:if test="${status.count == 2}">
+				<p:out var="s_prop1" value="${channel} | ${fn:trim(item)}" />
+			</c:if>
+		</c:forTokens>
+
+		<c:if test="${trackingType == 'Blog'}">
+			<c:catch var="blogprop14">
+				<!-- Blogname: ${trackingBlogName} trackingtype: ${trackingType} END -->
+				<p:out var="blogData" value="${trackingBlogName} | ${trackingType}" />
+				<p:out var="s_prop14" value="${s_prop1} | ${blogData}" escape="javascript" />
+			</c:catch>
+		</c:if>
+
+		<c:catch var="blogprop34">
+			<x:if
+				select="$meta//ObjectMetadata/OnlineProducts/OnlineProduct[child::ProductName = 'Boston.com']/FirstPublicationDate">
+				<p:out var="prop34"
+					xvalue="$meta//ObjectMetadata/OnlineProducts/OnlineProduct[child::ProductName = 'Boston.com']/FirstPublicationDate" />
+				<%
+				int MILLISECONDS_IN_DAY = 1000 * 60 * 60 * 24;
+
+				String str_date =
+				(String)pageContext.getAttribute("prop34");
+				SimpleDateFormat format =
+				new SimpleDateFormat("yyyyMMddhhmmss");
+				Date start =
+				(Date)format.parse(str_date);
+
+				// Calculate end date as now
+				Date end =
+				new java.util.Date();
+
+				//reset all hours mins and secs to zero on start date
+				Calendar startCal = GregorianCalendar.getInstance();
+				startCal.setTime(start);
+				startCal.set(Calendar.HOUR_OF_DAY, 0);
+				startCal.set(Calendar.MINUTE, 0);
+				startCal.set(Calendar.SECOND, 0);
+				long startTime = startCal.getTimeInMillis();
+
+				//reset all hours mins and secs to zero on end date
+				Calendar endCal =
+				GregorianCalendar.getInstance();
+				endCal.setTime(end);
+				endCal.set(Calendar.HOUR_OF_DAY, 0);
+				endCal.set(Calendar.MINUTE, 0);
+				endCal.set(Calendar.SECOND, 0);
+				long endTime =
+				endCal.getTimeInMillis();
+
+				pageContext.setAttribute("s_prop34",(endTime - startTime) /
+				MILLISECONDS_IN_DAY);
+				%>
+				<p:out var="s_prop34" value="${s_prop34} days old" />
+			</x:if>
+		</c:catch>
+
+		<!-- ref provider ${refProvider} -->
+		<c:if test="${not empty refProvider}">
+			<p:out var="s_prop6" value="${s_prop6} | ${refProvider}" />
+		</c:if>
+
+		<p:out var="s_headline" value="${trackingOptVal}" />
+		<c:if test="${empty s_headline}">
+			<p:out var="s_headline" value="${trackingHeadline}" />
+		</c:if>
+		<c:choose>
+			<c:when
+				test="${trackingType == 'story' or trackingType == 'Article Page'}">
+				<p:out var="s_pageName" value="${s_pageName} | ${s_headline}" />
+			</c:when>
+			<c:when test="${WT == 'BlogStory'}">
+				<p:out var="s_pageName"
+					value="${s_pageName} | ${trackingBlogName} | ${s_headline} | ${trackingType}" />
+			</c:when>
+			<c:when test="${WT == 'dwp_page_not_found'}">
+				<p:out var="s_pageName" value="" />
+			</c:when>
+			<c:otherwise>
+				<p:out var="s_pageName" value="${s_pageName} | ${s_headline} | ${trackingType}" />
+			</c:otherwise>
+		</c:choose>
+	</c:otherwise>
+</c:choose>
+
+<%-- s.prop 29 gets the keyword metadata field --%>
+<p:out var="s_prop29" value="" />
+<c:if test="${WT == 'story' or WT == 'gallery'}">
+	<%-- the var attribute for the tag below must be named either storyKeywords or news_keywords >________< #techdebt --%>
+	<b:getKeywords var="storyKeywords" uuid="${uuid}" />
+	<p:out var="s_prop29" value="${storyKeywords}" />
+</c:if>
+
+<p:out var="s_pageName" value="${s_pageName}" escape="javascript" />
+<p:out var="s_pageName" value="${s_pageName}" escape="url" />
+
+<p:out var="s_prop1" value="${s_prop1}" escape="javascript" />
+
+<%-- Newsright Tracking pixel --%>
+<c:catch var="newsright">
+	<p:inline
+		url="$configurationURI/Framework/frameset/tracking/newsright.jpt" />
+</c:catch>
+
+<!-- Begin Tracking JS -->
+
+<script language="JavaScript" type="text/javascript">
+ianTmpFixForChartbeat = {
+	channel : "${channel}",
+	prop1 : "${s_prop1}",
+	prop3 : "${s_prop3}"
+}	
+</script>
+
+<!-- Omniture -->
+<!-- SiteCatalyst code version: G.5. Copyright 1997-2003 Omniture, Inc. More 
+	info available at http://www.omniture.com -->
+<!-- Chartbeat -->
+
+<%-- TODO figure out how to do this with JPT #techdebt --%>
+<p:getObject path="$configurationURI/Framework/js/dist/tracking.min.js.md5" var="tracking_min_js_md5"/>
+<p:jspInclude url="$configurationURI/Framework/frameset/js/tracking.jsp?hash=${tracking_min_js_md5.text}" eomdb="true"/>
+
+<!-- s_pageName = ${s_pageName}, s_headline = ${s_headline} -->
+<c:choose>
+	<c:when test="${webType ne 'error_404'}">
+		<script language="JavaScript" type="text/javascript">
+			<!-- 
+		        s.pageName='<p:jspInclude eomdb="true" url="$configurationURI/Framework/frameset/tracking/getCategory.jsp?s_pageName=${s_pageName}"/>',s.channel='${channel}',s.prop1='${s_prop1}'; 
+				s.server='',s.pageType='${s_pageType}',s.prop2='',s.prop3='${s_prop3}',s.prop4='',s.prop5='${s_prop5}',s.prop6='${s_prop6}',s.prop7='',s.prop8='${s_prop8}',s.prop9='${s_prop9}',s.prop10='',s.prop14='${s_prop14}',s.prop17='${s_prop17}',s.prop20='${s_prop20}',s.prop22=bcom.util.getQueryStringValue('q'),s.prop29='${s_prop29}',s.prop34='${s_prop34}',s.prop41='Boston.com'; 
+				if(document.location.search.indexOf('comments=all')!=-1) { s.prop6 += ' | Comments view'; }
+				//if (archivedState && (archivedState=1)) {s.prop6 += ' | Archive Stub';}
+				/* E-commerce Variables */
+				s.campaign='',s.state='',s.zip='',s.events='',s.products='',s.purchaseID='',s.eVar1='',s.eVar2='',s.eVar3='',s.eVar4='',s.eVar5='',s.eVar6='',s.eVar7='',s.eVar8='',s.eVar9='',s.eVar10='',s.eVar41='Boston.com';
+
+			// -->
+		</script>
+	</c:when>
+	<c:otherwise>
+		<script language="JavaScript" type="text/javascript">
+			<!-- 
+		        s.pageName='',s.channel='${channel}',s.prop1='${s_prop1}'; 
+				s.server='',s.pageType='errorPage',s.prop2='',s.prop3='${s_prop3}',s.prop4='',s.prop5='${s_prop5}',s.prop6='${s_prop6}',s.prop7='',s.prop8='${s_prop8}',s.prop9='${s_prop9}',s.prop10='',s.prop14='${s_prop14}',s.prop17='${s_prop17}',s.prop20='${s_prop20}',s.prop34='${s_prop34}',s.prop41='Boston.com'; 
+				if(document.location.search.indexOf('comments=all')!=-1) { s.prop6 += ' | Comments view'; }
+				//if (archivedState && (archivedState=1)) {s.prop6 += ' | Archive Stub';}
+				/* E-commerce Variables */
+				s.campaign='',s.state='',s.zip='',s.events='',s.products='',s.purchaseID='',s.eVar1='',s.eVar2='',s.eVar3='',s.eVar4='',s.eVar5='',s.eVar6='',s.eVar7='',s.eVar8='',s.eVar9='',s.eVar10='',s.eVar41='Boston.com';
+			// -->
+		</script>
+	</c:otherwise>
+</c:choose>
+
+<script language="JavaScript" type="text/javascript">
+	<!-- 
+		var s_code=s.t();if(s_code)document.write(s_code)
+	// -->
+</script>
+
+<script language="JavaScript" type="text/javascript"><!-- if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-') 
+		// -->
+</script>
+<noscript>
+    <p:out var="webType" xvalue="$meta//ObjectMetadata/OnlineProducts/OnlineProduct[child::ProductName = 'Boston.com']/WebType" />
+	<c:choose>
+		<c:when test="${webType == 'dwp_modulepage' and section eq '/'}">
+			<a href="http://www.omniture.com" title="Web Analytics">
+				<img src="http://nytbglobe.112.2O7.net/b/ss/nytbglobe/1/H.19.4--NS/0?pageName=Boston.com%20home%20page&amp;ch=Home%20page&amp;c1=Boston.com%20home%20page&amp;c6=Boston.com%20homepage&amp;c41=Boston.com&amp;v41=Boston.com"
+					height="1" width="1" alt="" />
+			</a>
+		</c:when>
+		<c:otherwise>
+			<p:out var="omniPageName" value="${s_pageName}" escape="url" />
+			<p:out var="omniChannel" value="${channel}" escape="url" />
+			<p:out var="omni_s1" value="${s_prop1}" escape="url" />
+			<p:out var="omni_s6" value="${s_prop6}" escape="url" />
+			
+			<a href="http://www.omniture.com" title="Web Analytics">
+				<img src="http://nytbglobe.112.2O7.net/b/ss/nytbglobe/1/H.19.3--NS/0?pageName=${omniPageName}&amp;ch=${omniChannel}&amp;c1=${omni_s1}&amp;c6=${omni_s6}&amp;c41=Boston.com&amp;v41=Boston.com"
+					height="1" width="1" alt="" />
+			</a>
+		</c:otherwise>
+	</c:choose>
+</noscript><!--/DO NOT REMOVE/ -->
+
+<!-- Nielsen -->
+<!-- START Nielsen Online SiteCensus V6.0 -->
+<!-- COPYRIGHT 2010 Nielsen Online -->
+<script type="text/javascript">
+	(function () {
+	var d = new Image(1, 1);
+	d.onerror =
+	d.onload = function () {
+	d.onerror = d.onload = null;
+	};
+	d.src =
+	["//secure-us.imrworldwide.com/cgi-bin/m?ci=us-604060h&cg=0&cc=1&si=",escape(window.location.href),
+	"&rp=", escape(document.referrer),"&ts=compact&rnd=", (new
+	Date()).getTime()].join('');
+	})();
+</script>
+
+<noscript>
+	<div>
+		<img
+			src="//secure-us.imrworldwide.com/cgi-bin/m?ci=us-604060h&amp;cg=0&amp;cc=1&amp;ts=noscript"
+			width="1" height="1" alt="" />
+	</div>
+</noscript>
+			
+<!-- END Nielsen Online SiteCensus V6.0 -->
+<!-- End Tracking JS -->

@@ -1,0 +1,16 @@
+<p:out var="sport" value="${cacheScope.sport}" />
+
+<c:choose>
+	<c:when test="${sport eq 'NHL'}">
+		<p:inline url="$configurationURI/Framework/skins/components/global_carousel/scoreboard/nhl_carousel_scoreboard.jpt" />
+	</c:when>
+	<c:when test="${sport eq 'NBA'}">
+		<p:inline url="$configurationURI/Framework/skins/components/global_carousel/scoreboard/nba_carousel_scoreboard.jpt" />
+	</c:when>
+	<c:when test="${sport eq 'NFL'}">
+		<p:inline url="$configurationURI/Framework/skins/components/global_carousel/scoreboard/nfl_carousel_scoreboard.jpt" />
+	</c:when>
+	<c:when test="${sport eq 'MLB'}">
+		<p:inline url="$configurationURI/Framework/skins/components/global_carousel/scoreboard/mlb_carousel_scoreboard.jpt" />
+	</c:when>
+</c:choose>

@@ -1,0 +1,7 @@
+<form class="search-form js-search-strip-colon" action="${portalContext.publicBaseUrl}/search">
+  <input type="hidden" name="p1" value="${searchFormP1}" />
+  <input type="text" class="search-form__input" placeholder="Search stories or sections" name="q"/>
+  <button type="submit" class="search-form__button" value="Search">
+    <span class="bdc-icon bdc-icon--search-medium">Search</span>
+  </button>
+</form>

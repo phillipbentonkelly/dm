@@ -1,0 +1,52 @@
+// *
+// * Content Header
+// *
+
+$content-header: 'content-header';
+
+// ------------------------------------------------------------
+// Default Styles
+// ------------------------------------------------------------
+
+.#{$content-header} {
+  margin-bottom: spacer(px, large);
+  margin-bottom: spacer(rem, large);
+  @include constrain;
+
+  // Content Headline
+  &__headline {
+    @include font-scale(x-large);
+    font-weight: $fw-medium;
+  }
+
+  &__subheadline {
+    padding-top: spacer(px, small);
+    padding-top: spacer(rem, small);
+    @include font-scale(base);
+    font-weight: $fw-regular;
+    line-height: 1.25;
+  }
+
+}
+
+// ------------------------------------------------------------
+// Tablet Styles
+// ------------------------------------------------------------
+
+@include media-query(tablet) {
+  .#{$content-header} {
+
+    margin-bottom: spacer(px, large);
+    margin-bottom: spacer(rem, large);
+
+    // Content Headline
+    &__headline {
+      @include font-scale(x-large);
+    }
+
+    &__subheadline {
+      @include font-scale(small);
+    }
+
+  }
+}

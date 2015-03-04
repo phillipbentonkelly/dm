@@ -1,0 +1,13 @@
+<p:out var="leaderBoard" value="${cacheScope.leaderBoard}" />
+<p:out var="leaderBoard" value="${fn:toLowerCase(leaderBoard)}" />
+<c:if test="${empty leaderBoard}">
+	<p:out var="leaderBoard" value="pga" />
+</c:if>
+<div class="feat-scoreboard content">
+	<h3>Scoreboard</h3>
+	<script language="JavaScript">
+		var now = new Date();
+		var nowSecs = now.getTime();
+		document.write( '<scr'+'ipt language="javascript" SRC="http://stats.boston.com/multisport/today.js.asp?sport=golf&tour=${leaderBoard}&lang=en&random='+(nowSecs * Math.Random)+'"> <\/scr'+'ipt>' );
+	</script>
+</div>

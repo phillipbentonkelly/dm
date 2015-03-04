@@ -1,0 +1,31 @@
+.breaking-news{
+	background-color: $red;
+	font: 700 15px/20px "effra", Arial, Helvetica, Verdana, sans-serif;
+	color: #ffffff;
+	padding:.5em .8em;
+	margin-bottom: .8em;
+	@include mq($site-middle-max) {
+		font-size: 26px;
+		line-height: 32px
+	}
+	// fontsize and lineheight have been converted to ems using 15px as base pixel size. 1.533em/1.667em  http://pxtoem.com/
+	.more{
+		text-transform: uppercase;
+		font-size: 12px;
+		margin:0 .5em;
+		@include mq($site-middle-max) {
+			font-size: 14px;
+		}
+
+	}
+	.timestamp{
+		font-size: 12px;
+		font-weight: 400;
+		@include mq($site-middle-max) {
+			font-size: 14px;
+		}
+
+	}
+}
+
+

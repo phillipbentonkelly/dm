@@ -1,0 +1,64 @@
+<!-- Inside share tools JPT -->
+
+<p:out var="gigyaCanonical"	value="${cacheScope.gigyaCanonical}" />
+<p:out var="gigyaShortUrl"	value="${cacheScope.gigyaShortUrl}" />
+<p:out var="gigyaHeadline"	value="${cacheScope.gigyaHeadline}" />
+<p:out var="gigyaThumb"		value="${cacheScope.gigyaThumb}" />
+<p:out var="gigyaThumbType"	value="${cacheScope.gigyaThumbType}" />
+
+<p:out var="shareView" value="${displayData.templateName}" />
+<c:choose>
+	<c:when test="${shareView eq 'share_tools_story_header'}">
+		<p:out var="anchorClass" value="popup-trigger" />
+	</c:when>
+	<c:when test="${shareView eq 'share_tools_story_sidecar'}">
+		<p:out var="anchorClass" value="popup-trigger tools-link tools-link-share" />
+	</c:when>
+	<c:when test="${shareView eq 'share_tools_story_footer'}">
+		<p:out var="anchorClass" value="popup-trigger tools-link tools-link-share" />
+	</c:when>
+	<c:otherwise>
+		<p:out var="anchorClass" value="popup-trigger" />
+	</c:otherwise>
+</c:choose>
+
+<p:getPageZone name="shareTools" var="shareTools" />
+<c:choose>
+	<c:when test="${shareTools.size > 0}">
+		<c:set var="toolsList" value="" />
+		<c:forEach items="${shareTools.items}" var="tool" varStatus="loop">
+			<p:object webObject="${tool}" metadata="toolMeta" />
+			<p:out var="toolData" xvalue="$toolMeta//ShareTool" />
+			<c:set var="toolsList">${toolsList} ${toolData}<c:if test="${not loop.last}">,</c:if></c:set>
+		</c:forEach>
+	</c:when>
+	<c:otherwise>
+		<c:set var="toolsList" value="" />
+	</c:otherwise>
+</c:choose>
+
+<c:if test="${fn:trim(gigyaThumb) eq ''}">
+	<p:out var="gigyaThumb" value="http://c.o0bc.com/rw$configurationURI/Framework/img/bcom_logo_with_name.png" />
+</c:if>
+<c:if test="${fn:startsWith(gigyaThumb, '//')}">
+	<p:out var="gigyaThumb" value="http:${gigyaThumb}" />
+</c:if>
+
+<c:if test="${fn:trim(gigyaThumbType) eq ''}">
+	<p:out var="gigyaThumbType" value="image" />
+</c:if>
+<!-- 333 -->
+<c:choose>
+	<c:when test="${shareView eq 'share_tools_story_related'}">
+		<a href="#mfp-share" class="hl-share-link popup-trigger" data-load-ad="true" data-ad-name="ad_share" data-canonical="${gigyaCanonical}" data-shorturl="${gigyaShortUrl}" data-headline="${gigyaHeadline}" data-thumbnail="${gigyaThumb}" data-thumb-type="${gigyaThumbType}" data-providers="${toolsList}">
+			<i class="hl-share-meta-icon hl-meta-icon"></i>
+			<i class="hl-share-txt hl-meta-txt">Share This Story</i>
+		</a>
+	</c:when>
+	<c:otherwise>
+		<a class="${anchorClass}" href="#mfp-share" data-load-ad="true" data-ad-name="ad_share" data-canonical="${gigyaCanonical}" data-shorturl="${gigyaShortUrl}" data-headline="${gigyaHeadline}" data-thumbnail="${gigyaThumb}" data-thumb-type="${gigyaThumbType}" data-providers="${toolsList}">
+			<i class="share-icon"></i>
+			<i class="tools-txt">Share</i>
+		</a>
+	</c:otherwise>
+</c:choose>

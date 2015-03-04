@@ -1,0 +1,12 @@
+<p:import var="nav" url="/SysConfig/Classify/Data/BDC_nav_menu.xml" xml="true" />
+
+<p:out var="socialTwitter" xvalue="$nav//SocialSharing/Twitter" />
+<p:out var="socialFacebook" xvalue="$nav//SocialSharing/Facebook" />
+<p:out var="socialGoogle" xvalue="$nav//SocialSharing/GooglePlus" />
+<p:out var="socialRSS" xvalue="$nav//SocialSharing/RSS" />
+
+<ul class="social-icon-list">
+	<li><a href="${socialTwitter}" class="twitter-icon social-icon" target="_blank"></a></li>
+	<li><a href="${socialFacebook}" class="facebook-icon social-icon" target="_blank"></a></li>
+	<li><a href="${socialGoogle}" class="google-icon social-icon" target="_blank"></a></li>
+</ul>

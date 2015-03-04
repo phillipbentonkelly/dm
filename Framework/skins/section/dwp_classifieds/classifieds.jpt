@@ -1,0 +1,112 @@
+<%--
+	{comments}
+	DM-27: Adding isCars boolean for loading header include
+	{comments}
+	
+--%>
+<p:currentObject metadata="dwpMeta" content="dwpContent"
+	webType="WT" uuid="uuid" channel="Boston.com" sectionPage="dwp"
+	sectionId="sectionId" />
+<bdc:getAdLayer var="adLayerName" webType="${WT}"/>
+<bdc:inheritStoryLayer var="adLayerDwpPath" section="${sectionId}" layer="${adLayerName}" />
+<p:out var="inheritCarousel" xvalue="$dwpMeta//InheritCarousel" />
+<%-- inheritAboveCarousel defaults to True --%>
+<p:out var="inheritAboveCarousel" xvalue="$dwpMeta//InheritAboveCarousel" />
+<c:if test="${empty inheritAboveCarousel}">
+	<p:out var="inheritAboveCarousel" value="True" />
+</c:if>
+
+<p:out var="dwpSection"
+	xvalue="$dwpMeta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/Sections/Section/SectionPath"
+	scope="application" />
+<bdc:getAdLayer var="adLayerName" webType="${WT}" />
+<bdc:inheritStoryLayer var="adLayerDwpPath"
+	section="${sectionId}" layer="${adLayerName}" />
+
+<p:out var="superBigNews" xvalue="$dwpMeta//SuperBigNews" scope="page" />
+<bdc:inheritZoneGlobal var="navigationDwp"
+	section="${sectionId}" zoneName="navigation" />
+<p:include pageZoneName="navigation" inherits="${navigationDwp}">
+	<p:param name="dwp" value="${currentObject}" />
+	<p:param name="dwpSection" value="${sectionId}" />
+</p:include>
+<p:out var="adLayerDwpPath" value="${adLayerDwpPath}" scope="request" />
+
+<p:getPageZone name="features_top" var="zoneFT" />
+<p:out var="hasFeaturesTop" value="${zoneFT.size}" />
+
+<p:out var="isSponsored" value="no" />
+<c:if test="${fn:startsWith(sectionId, '/sponsored')}">
+	<p:out var="isSponsored" value="yes" />
+</c:if>
+
+<%-- Determinant for whether we have any carousel on the page --%>
+<p:getPageZone name="carousel" var="zoneCheck" />
+<p:out var="hasNoTop" value="0" />
+<c:if test="${zoneCheck.size == 0 and inheritCarousel ne 'True'}">
+	<p:out var="hasNoTop" value="1" />
+</c:if>
+<!-- ZC SIZE = ${zoneCheck.size} -->
+
+<%-- super big news --%>
+<c:if test="${superBigNews eq 'True'}">
+	<p:include pageZoneName="carousel">
+		<p:param name="dwp" value="${currentObject}" />
+		<p:param name="sectionForTracking" value="${sectionId}" />
+	</p:include>
+</c:if>
+
+<p:out var="isHomepage" value="${fn:contains(fn:substringAfter(sectionId,'/'),'/') != 'true'}"/>
+<p:out var="isCars" value="${fn:contains(sectionId,'/cars') == 'true'}"/>
+
+<div class="hp-mod page-content">
+
+		<c:choose>
+			<%-- {comments} DM-27: Ensure 'this weeks specials' only display on cars homepage. {comments} --%>
+			<c:when test="${isHomepage == 'true' and isCars == 'true'}">
+				<p:inline url="$configurationURI/Framework/skins/components/classifieds/this_weeks_specials.jpt"/>
+			</c:when>
+			<c:otherwise>
+				<!-- Leaderboard Ad Module -->
+				<section class="leaderboard-mod nav-leaderboard-mod classifieds-top-mod container">
+					<div id="ad_lead1" class="ad-lead1 advertisement">
+						<script type="text/javascript">
+						  googletag.cmd.push(function() { googletag.display('ad_lead1'); });
+						</script>
+					</div> 
+				</section> 
+				<!-- /leaderboard-mod -->
+			</c:otherwise>
+		</c:choose>
+
+		
+	<div class="site-width">
+		
+		<div id="content">
+		
+			<div id="upper">
+				<p:include pageZoneName="upper">
+					<p:param name="dwp" value="${currentObject}" />
+					<p:param name="depth" value="0" />
+				</p:include>
+			</div>
+			
+			<div id="middle">
+				<p:include pageZoneName="middle">
+					<p:param name="dwp" value="${currentObject}"/>
+					<p:param name="depth" value="0" />
+				</p:include>
+			</div>
+			
+			<div id="lower">
+				<p:include pageZoneName="lower">
+					<p:param name="dwp" value="${currentObject}" />
+					<p:param name="depth" value="0" />
+				</p:include>
+			</div>
+						
+		</div>	
+
+	</div> <!-- /site-width -->
+
+</div> <!-- /hp-mod -->	

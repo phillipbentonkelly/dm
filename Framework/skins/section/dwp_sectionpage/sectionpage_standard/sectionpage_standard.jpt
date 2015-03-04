@@ -1,0 +1,276 @@
+<%-- 
+{comments}
+BDC-1892 updating location of outofpage ads
+{comments}
+--%>
+
+<p:currentObject metadata="dwpMeta" content="dwpContent" webType="WT" uuid="uuid" channel="Boston.com" sectionPage="dwp" sectionId="sectionId" />
+<p:out var="inheritCarousel" xvalue="$dwpMeta//InheritCarousel" />
+<p:out var="dwpSection" xvalue="$dwpMeta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/Sections/Section/SectionPath" scope="application" />
+<bdc:getAdLayer var="adLayerName" webType="${WT}"/>
+<bdc:inheritStoryLayer var="adLayerDwpPath" section="${sectionId}" layer="${adLayerName}" />
+<p:out var="superBigNews" xvalue="$dwpMeta//SuperBigNews" scope="page" /> 
+<bdc:inheritZoneGlobal var="navigationDwp" section="${sectionId}" zoneName="navigation" />
+<p:include pageZoneName="navigation" inherits="${navigationDwp}">
+	<p:param name="dwp" value="${currentObject}" />
+	<p:param name="dwpSection" value="${sectionId}" />
+</p:include>
+
+<p:out var="adLayerDwpPath" value="${adLayerDwpPath}" scope="request" />
+
+<p:getPageZone name="features_top" var="zoneFT" />
+<p:out var="hasFeaturesTop" value="${zoneFT.size}" />
+
+<p:out var="isSponsored" value="no" />
+<c:if test="${fn:startsWith(sectionId, '/sponsored')}">
+	<p:out var="isSponsored" value="yes" />
+</c:if>
+ 
+<%-- Determinant for whether we have any carousel on the page --%>
+<p:getPageZone name="carousel" var="zoneCheck" />
+<p:out var="hasNoTop" value="0" />
+<c:if test="${zoneCheck.size == 0 and inheritCarousel ne 'True'}">
+	<p:out var="hasNoTop" value="1" />
+</c:if>
+<!-- ZC SIZE = ${zoneCheck.size} -->
+
+<%-- super big news --%>
+<c:if test="${superBigNews eq 'True'}">
+<p:include pageZoneName="carousel">
+	<p:param name="dwp" value="${currentObject}" />
+	<p:param name="sectionForTracking" value="${sectionId}" />
+</p:include>
+</c:if>
+
+<div class="hp-mod page-content">
+	<!-- Leaderboard Ad Module -->
+	<section class="leaderboard-mod nav-leaderboard-mod">
+		<p:include pageZoneName="ad_lead1" inherits="${adLayerDwpPath}" /> 
+	</section> <!-- /leaderboard-mod -->
+	
+	<p:inline url="$configurationURI/Framework/skins/common/ads/ad_pencil.jpt" />
+	
+	<div class="site-width">
+	
+	<c:if test="${empty superBigNews or superBigNews eq 'False'}">
+	
+		<c:if test="${isSponsored eq 'no'}">
+			<p:out var="aboveCarouselZoneIsEmpty" value="${1==1}" />
+			<p:ifZone name="above_carousel" empty="false">
+				<p:out var="aboveCarouselZoneIsEmpty" value="${1==2}" />
+				<p:include pageZoneName="above_carousel">
+					<p:param name="dwp" value="${currentObject}" />
+				</p:include>
+			</p:ifZone>
+			
+			<c:if test="${aboveCarouselZoneIsEmpty}">
+				<bdc:inheritZoneGlobal var="breakingDwp" section="${sectionId}" zoneName="above_carousel" />
+				<p:include pageZoneName="above_carousel" inherits="${breakingDwp}">
+					<p:param name="dwp" value="${currentObject}" />
+				</p:include>
+			</c:if>
+		</c:if>
+		
+		<div class="secondary">
+
+			<c:if test="${hasNoTop == 0}">
+				<p:ifZone name="features_top" empty="false">
+					<p:include pageZoneName="ad_topright" inherits="${adLayerDwpPath}" />
+					<p:include pageZoneName="features_top">
+						<p:param name="dwp" value="${currentObject}" />
+					</p:include>
+				</p:ifZone>
+				
+				
+				<c:choose>
+					<c:when test="${inheritCarousel eq 'False'}">
+						<p:ifZone name="carousel" empty="false">
+							<p:ifZone name="features_top" empty="true">
+								<%-- Weather --%>
+								<p:include url="$configurationURI/Framework/frameset/header/weather.jpt" />
+							</p:ifZone>
+						</p:ifZone>
+					</c:when>
+					<c:otherwise>
+						<p:ifZone name="features_top" empty="true">
+							<%-- Weather --%>
+							<p:include url="$configurationURI/Framework/frameset/header/weather.jpt" />
+						</p:ifZone>
+					</c:otherwise>
+				</c:choose>
+				<!-- Big Ad Module -->
+				<section class="hp-big-mod hp-big-1">
+					<%--<p:include pageZoneName="ad_featurestack" inherits="${adLayerDwpPath}" />--%>			
+				</section>
+			</c:if>
+			
+		</div>
+		<!-- what the hell, man -->
+		<c:choose>
+		<c:when test="${inheritCarousel eq 'False'}">
+		<!-- no carousel inheritance -->
+		<p:ifZone name="carousel" empty="false">
+		<div class="primary"> <!-- CAROUSEL ?! -->
+			<c:if test="${hasNoTop == 0}">
+				<div class="inner">
+				
+					<%-- Carousel --%>
+					 <c:choose>
+					 	<c:when test="${inheritCarousel eq 'True'}">
+							<bdc:inheritZoneGlobal var="pathToCarouselDWP" section="${sectionId}" zoneName="carousel" />
+							<p:include pageZoneName="carousel" inherits="${pathToCarouselDWP}">
+								<p:param name="sectionForTracking" value="${sectionId}" />
+								<p:param name="dwp" value="${currentObject}" />
+							</p:include>
+						</c:when>
+						<c:otherwise>
+							<p:include pageZoneName="carousel">
+								<p:param name="dwp" value="${currentObject}" />
+								<p:param name="sectionForTracking" value="${sectionId}" />
+							</p:include>
+						</c:otherwise>
+					</c:choose>
+					
+						<p:include pageZoneName="middle">
+							<p:param name="dwp" value="${currentObject}" />
+						</p:include>
+					
+					<div class="quick-tz-ad">
+						<%--<p:include pageZoneName="ad_carousel" inherits="${adLayerDwpPath}" />--%>
+					</div>
+				</div>
+			</c:if>
+		</div>
+		</p:ifZone>
+		</c:when>
+		<c:otherwise>
+		<div class="primary">
+			<c:if test="${hasNoTop == 0}">
+				<div class="inner">
+					<%-- Carousel --%>
+					 <c:choose>
+					 	<c:when test="${inheritCarousel eq 'True'}">
+							<bdc:inheritZoneGlobal var="pathToCarouselDWP" section="${sectionId}" zoneName="carousel" />
+							<p:include pageZoneName="carousel" inherits="${pathToCarouselDWP}">
+								<p:param name="sectionForTracking" value="${sectionId}" />
+								<p:param name="dwp" value="${currentObject}" />
+							</p:include>
+						</c:when>
+						<c:otherwise>
+							<p:include pageZoneName="carousel">
+								<p:param name="dwp" value="${currentObject}" />
+								<p:param name="sectionForTracking" value="${sectionId}" />
+							</p:include>
+						</c:otherwise>
+					</c:choose>
+					
+						<p:include pageZoneName="middle">
+							<p:param name="dwp" value="${currentObject}" />
+						</p:include>
+					
+					<div class="quick-tz-ad">
+						<%--<p:include pageZoneName="ad_carousel" inherits="${adLayerDwpPath}" />--%>
+					</div>
+				</div>
+			</c:if>
+		</div>
+		</c:otherwise>
+		</c:choose>
+		<div class="secondary">
+			<c:if test="${hasNoTop == 0}">
+				<p:ifZone name="features_top" empty="true">
+					<p:include pageZoneName="ad_topright" inherits="${adLayerDwpPath}" />
+				</p:ifZone>
+			</c:if>
+		</div>
+		
+		<div class="secondary">
+			<!-- "must reads" -->
+			<c:if test="${hasNoTop == 0}">
+				<p:ifZone name="features_top" empty="true">
+					<%-- Do NOT point to "trending.jpt". It wasn't written for this purpose. --%>
+					<%--<p:inline url="$configurationURI/Framework/skins/components/must_reads/must_reads.jpt" />--%>
+				</p:ifZone>
+			</c:if>				
+		</div>
+	</c:if>
+		<div class="primary">
+			<div class="inner" id="streams-row"></div>
+		</div>
+		
+		<p:out var="streamConfigZoneIsEmpty" value="${1==1}" />
+		<p:ifZone name="stream_config" empty="false">
+			<p:out var="streamConfigZoneIsEmpty" value="${1==2}" />
+			<p:include pageZoneName="stream_config">
+				<p:param name="dwp" value="${currentObject}" />
+			</p:include>
+		</p:ifZone>
+		
+		<c:if test="${streamConfigZoneIsEmpty}">
+			<bdc:inheritZoneGlobal var="pathToStreamConfig" section="${sectionId}" zoneName="stream_config" />
+			<p:include pageZoneName="stream_config" inherits="${pathToStreamConfig}">
+				<p:param name="dwp" value="${currentObject}" />
+			</p:include>
+		</c:if>
+		
+		<div class="secondary">
+		
+			<p:include pageZoneName="ad_featurestack_top" inherits="${adLayerDwpPath}" />
+			<%--
+			<p:getPageZone name="ad_featurestack_middle" inherits="${adLayerDwpPath}" var="middleZone" />			
+			<p:out var="numberOfAdsInFeatureStackMiddle" value="${middleZone.size}" />
+			--%>
+			<%-- Visual Revenue: money you can see with your eyes in your face-head! --%>
+			<p:out var="VREnabled"	xvalue="$dwpMeta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/VisualRevenue" />
+			<c:choose>
+				<c:when test="${VREnabled eq 'True'}">
+					<p:out var="VisRev" value='data-vr-zone="Feature Stack"' />
+				</c:when>
+				<c:otherwise>
+					<p:out var="VisRev" value="" />
+				</c:otherwise>
+			</c:choose>
+			
+			<%-- 
+			 we need to see if the feature stack is empty before we start inheriting.
+			 this is for the special unique snow flake section fronts that arnt actually
+			 a part of the site structure. - kevin suff
+			 --%>
+			<p:out var="edition" xvalue="$dwpMeta//sys/props/productInfo/edition" />
+			 
+			<p:out var="featuresBottomZoneIsEmpty" value="${1==1}" />
+			<p:ifZone name="features_bottom" empty="false">
+				<p:out var="featuresBottomZoneIsEmpty" value="${1==2}" />
+				<p:include pageZoneName="features_bottom">
+					<p:param name="VisRev" value="${VisRev}" />
+					<p:param name="edition" value="${edition}" />
+					<p:param name="adLayerDwpPath" value="${adLayerDwpPath}" />
+				</p:include>
+			</p:ifZone>
+			
+			<c:if test="${featuresBottomZoneIsEmpty}">
+				<bdc:inheritZoneGlobal var="pathToFeatureStackDWP" section="${sectionId}" zoneName="features_bottom" />
+				<p:include pageZoneName="features_bottom" inherits="${pathToFeatureStackDWP}">
+					<p:param name="VisRev" value="${VisRev}" />
+					<p:param name="edition" value="${edition}" />
+					<p:param name="adLayerDwpPath" value="${adLayerDwpPath}" />
+				</p:include>
+			</c:if>
+			
+			<p:include pageZoneName="ad_featurestack_bottom" inherits="${adLayerDwpPath}" />					
+			
+		</div>
+		
+
+		<!-- Scroll to Top Button -->
+		<a class="to-top-btn is-off" href="#top">
+			<i class="top-top-arrow"></i>
+			Back to Top
+		</a>
+
+	</div> <!-- /site-width -->
+
+	
+</div> <!-- /hp-mod -->	
+
+

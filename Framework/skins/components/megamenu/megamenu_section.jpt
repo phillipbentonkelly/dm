@@ -1,0 +1,72 @@
+<bdc:getMegaMenuData var="mega" imageFormat="image_300x240"
+	leadCount="2" teaserCount="6" />
+
+
+<p:update timeout="600" />
+
+<c:if test="${mega.menuEnabled == 'True'}">
+	<div class="mega-menu js-mega-menu hidden" data-section="${mega.sectionId}">
+		<div class="mega-menu__wrapper">
+			<div class="mega-menu__section mega-menu__section--wide">
+				<%-- LEAD ITEMS --%>
+				<c:if test="${fn:length(mega.leads) gt 0}">
+					<div class="mega-menu__lead">
+						<c:forEach items="${mega.leads}" var="tease">
+							<div class="mega-menu__lead-item">
+								<a class="mega-menu__list-link" href="${tease.url}">
+									<img class="mega-menu__lead-item-image" src="${tease.imageUrl}">
+									<h2 class="mega-menu__lead-item-headline">${tease.headline}</h2>
+								</a>
+							</div>
+						</c:forEach>
+					</div><!-- / lead -->
+				</c:if>  
+  
+				<%-- HEADLINE LIST --%>
+				
+				<c:if test="${fn:length(mega.teasers) gt 0}">
+				
+					<div class="mega-menu__headline-list mega-menu__container">
+						<div class="mega-menu__list-header">${mega.storyHeader}</div>
+						<ul class="mega-menu__list mega-menu__list--border">
+							<c:forEach items="${mega.teasers}" var="tease">
+								<li class="mega-menu__list-item">
+									<a class="mega-menu__list-link" href="${tease.url}">${tease.headline}</a>
+								</li>
+							</c:forEach>
+						</ul>
+						</div><!-- / headline-list -->
+				</c:if>
+			
+				<c:choose>
+					<c:when test="${mega.widgetClickthrough == 'True'}">
+						<a href="${mega.sectionLink}">
+							<p:include pageZoneName="widgets" />
+						</a>
+					</c:when>
+					<c:otherwise>
+						<p:include pageZoneName="widgets" />
+					</c:otherwise>
+				</c:choose>
+				
+			</div><!-- / section -->
+			<div class="mega-menu__section mega-menu__section--thin">
+
+				<%-- SECTION LIST --%>
+				<div class="mega-menu__section-list mega-menu__container">
+					<div class="mega-menu__list-header">${mega.linksHeader}</div>
+					<ul class="mega-menu__list-items">
+						<c:forEach items="${mega.links}" var="link">
+							<li class="mega-menu__list-item">
+								<a class="mega-menu__list-link" href="${link.url}">${link.title}</a>
+							</li>
+						</c:forEach>
+					</ul>
+				</div><!-- / section list -->
+
+			</div><!-- / section -->
+		</div><!-- / wrapper -->
+	</div>
+
+</c:if>
+ 

@@ -1,0 +1,46 @@
+<p:out var="q" value="${cacheScope.q}" />
+
+<%-- clean up the query --%>
+<%
+	String queryString = (String)pageContext.getAttribute("q");
+	String noSpecialChars = "[^a-zA-Z0-9\\s]";
+
+	queryString = queryString.replaceAll(noSpecialChars, "");
+
+	pageContext.setAttribute("q", queryString);
+%>
+
+
+<script src="https://www.google.com/jsapi" type="text/javascript"></script>
+<script type="text/javascript">
+	// Load the Search API
+	google.load('search', '1');
+	
+	// Set a callback to load the Custom Search Element when your page loads
+	google.setOnLoadCallback(
+	  function(){
+	    var customSearchControl = new google.search.CustomSearchControl('006376928391721581342:5qlsdflvkwc');
+	
+	    // Use "boston_" as a unique ID to override the default rendering.
+	    google.search.Csedr.addOverride("boston_");
+	    
+	    // Show 10 results
+	    customSearchControl.setResultSetSize(10);
+	
+	    // Draw the Custom Search Control in the #cse
+	    customSearchControl.draw('cse');
+	    
+	    // Draw the search form in #top-search-form and the results in #cse
+	    //var drawOptions = new google.search.DrawOptions();
+	    //drawOptions.setSearchFormRoot('top-search-form');
+	    //customSearchControl.draw('cse', drawOptions);
+	    
+	    // Execute an initial search
+	    var query = '${q}';
+	    var qq = query;
+	    if (query !== '') {
+	     customSearchControl.execute(query);
+	    }
+	  },
+	true);
+</script>

@@ -1,0 +1,32 @@
+<%-- things passed --%>
+<p:out var="visualRevenue" value="${cacheScope.visualRevenue}" />
+<p:out var="isHomepage" value="${cacheScope.isHomepage}" />
+
+<p:out var="vrMaybe" value="" />
+<c:if test="${visualRevenue eq 'True'}">
+	<p:out var="vrMaybe" value="data-vr-zone=\"Centerpiece\"" />
+</c:if>
+
+<%-- the markup --%>
+<div class="page-module" ${vrMaybe}>
+	<div class="grid--12">
+	  <div class="page-module-header">${title}</div>        
+	</div>
+
+	<c:set var="positions" value="${fn:split('top-left,top-center,top-right,bottom-left,bottom-center,bottom-right', ',')}" />
+	<div class="grid--4-4-4">
+		<%-- for each in 6 --%>
+		<c:forEach begin="0" end="5" varStatus="loop">
+		  <div class="grid-4">
+				<p:include pageZoneName="${positions[loop.index]}">
+					<p:param name="visualRevenue" value="${visualRevenue}" />
+					<p:param name="wellTitle" value="${title}" />
+					<p:param name="dwp" value="${dwp}" />	
+					<p:param name="p1" value="p1=story_hp" />
+					<p:param name="dataOmniture" value="data-omniture=\"story cluster | homepage\"" />
+					<p:param name="isHomepage" value="${isHomepage}" />		
+				</p:include>
+		  </div>
+		</c:forEach>
+	</div>
+</div>

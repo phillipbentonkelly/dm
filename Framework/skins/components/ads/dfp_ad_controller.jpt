@@ -1,0 +1,14 @@
+<p:getContext var="placement" />
+<c:set var="adParts" value="${fn:split(placement, ',')}" />
+
+<div id="${adParts[0]}" class="${adParts[1]}">
+	 <%--
+	 <div class="ad-container">
+	 	<script type="text/javascript">
+			googletag.cmd.push(function(){
+				googletag.cmd.push(function() { googletag.display('${placement}'); });
+			});
+		</script>
+	</div>
+	--%>
+</div> 

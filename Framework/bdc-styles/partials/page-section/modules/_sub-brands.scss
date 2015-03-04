@@ -1,0 +1,80 @@
+// *
+// *  Sub Brands
+// *
+
+$module-name: 'sub-brands';
+
+// ------------------------------------------------------------
+// Default Styles
+// ------------------------------------------------------------
+.#{$module-name} {
+  display: none; // hidden on mobile
+
+  &__list-item {
+    @extend %clearfix; // placed here to avoid sass error
+  }
+}
+
+// ------------------------------------------------------------
+// Desktop Breakpoint
+// ------------------------------------------------------------
+
+@include media-query(desktop) {
+  .#{$module-name} {
+    display: block;
+    padding: spacer(px, large) spacer(px, base);
+    padding: spacer(rem, large) spacer(rem, base);
+    margin-bottom: spacer(px, x-large);
+    margin-bottom: spacer(rem, x-large);
+    border: 2px solid color(black);
+    border-radius: 6px;
+    @include font-scale(xxx-small);
+
+    .bdc-icon--plug {
+      margin-left: -1px;
+      float: left;
+    }
+
+    &__description {
+      width: 60%;
+      display: table-cell;
+      vertical-align: middle;
+    }
+
+    &__link {
+      display: block; // prevents loss of hover in between lines
+      @include link-states(color(gray, xx-dark), color(gray), color(black));
+    }
+
+    &__header {
+      width: 75%;
+      margin-top: -28px;
+      margin-left: auto;
+      margin-right: auto;
+      background-color: color(white);
+      font-weight: $fw-bold;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    &__image {
+      width: 40%;
+      display: table-cell;
+      vertical-align: middle;
+      padding-right: spacer(px, base);
+      padding-right: spacer(rem, base);
+    }
+
+    &__list-item {
+      display: table;
+      &:first-child {
+        padding: spacer(px, small) 0;
+        padding: spacer(rem, small) 0;
+        margin-bottom: spacer(px, small);
+        margin-bottom: spacer(rem, small);
+        border-bottom: 1px solid color(gray, x-light);
+      }
+    }
+
+  }
+}

@@ -1,0 +1,2 @@
+<p:currentObject uuid="uuid" />
+<p>Thing - ${uuid}</p>

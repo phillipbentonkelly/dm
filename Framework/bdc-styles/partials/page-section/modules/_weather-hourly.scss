@@ -1,0 +1,76 @@
+// *
+// *  Module Name 
+// *
+
+$module-name: 'weather-hourly';
+
+// ------------------------------------------------------------
+// Default Styles
+// ------------------------------------------------------------
+.#{$module-name} {
+  position: relative;
+  clear: both;
+  text-align: center;
+
+  &__list-container {
+    float: left;
+    width: 100%;
+    height: 90px;
+    overflow: auto;
+    position: relative;
+    margin: 0 auto;
+  }
+
+  &__list {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    white-space: nowrap;
+  }
+
+  &__list-item {
+    &:first-child {
+      padding-left: 0;
+    }
+    width: 17.3%;
+    display: inline-block;
+  }
+
+  &__temp {
+    font-weight: $fw-medium;
+  }
+
+  &__button {
+    display: none;
+  }
+
+}
+
+
+
+
+// ------------------------------------------------------------
+// Tablet Breakpoint
+// ------------------------------------------------------------
+
+@include media-query(tablet) {
+  .#{$module-name} {
+    background: blue;
+    &__list-container {
+      width: 80%;
+      overflow: hidden;
+    }
+
+    &__list-item {
+      width: 19%;
+    }
+
+    &__button {
+      margin-top: 5%;
+      display: inline-block;
+      width: 10%;
+      float: left;
+    }
+
+  }
+}

@@ -1,0 +1,63 @@
+// *
+// *  Section Well
+// *
+
+$module-name: 'jump-to-recent';
+
+// ------------------------------------------------------------
+// Default Styles
+// ------------------------------------------------------------
+
+.#{$module-name} {
+  margin-bottom: spacer(px, xx-large);
+  margin-bottom: spacer(rem, xx-large);
+
+  // The Link
+  &__link {
+    display: block;
+    padding: spacer(px);
+    padding: spacer(rem);
+    background: color(red);
+    font-weight: $fw-bold;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 0px 1px 1px color(red, mid-dark);
+    @include link-states(color(white), color(white), color(white));
+  }
+
+  // Recent Count
+  &__count {
+    display: none;
+  }
+
+}
+
+// ------------------------------------------------------------
+// >400 Breakpoint
+// ------------------------------------------------------------
+
+@include media-query(400) {
+  .#{$module-name} {
+    // Recent Count
+    &__count {
+      display: inline-block;
+      margin-left: spacer(px, mid);
+      margin-left: spacer(rem, mid);
+      padding: spacer(px, small) spacer(px);
+      padding: spacer(rem, small) spacer(rem);
+      background: color(red, dark);
+      border-radius: 10px;
+      text-transform: capitalize;
+    }
+  }
+}
+
+// ------------------------------------------------------------
+// Desktop Breakpoint
+// ------------------------------------------------------------
+
+@include media-query(desktop) {
+  .#{$module-name} {
+    display: none;
+  }
+}

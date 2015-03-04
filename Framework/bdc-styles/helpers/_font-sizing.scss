@@ -1,0 +1,130 @@
+// Font Sizing ////////////////////////////////////////////////////////////////
+
+
+// FOR: Managing Boston.com font sizes
+// WHY: A set list of named font sizes with predetermined measures and line
+//      height ratios aids in uniformity and maintainability, makes later
+//      component typesetting decisions easier.
+// NOTES: - Avoid drift from semantic variable names (i.e. "$modal-title")
+//        - Use rems for easily scaling responsive type. Make sure there's a pt
+//          fallback for browsers that don't support it (pts are more
+//          accessible than px)
+//        - Line-height ratios are purposely kept unitless to scale with page
+//          zoom
+// SEE: http://erskinedesign.com/blog/setting-typographic-scale-with-sass-maps/
+// USE: `@include font-scale(x-large);`
+
+
+// Variables ==================================================================
+
+// Font Stacks
+$font-face-effra: "Effra, Helvetica, Arial, Verdana, sans-serif";
+$font-face-helvetica: "Helvetica, Arial, Verdana, sans-serif";
+
+
+
+// Maps =======================================================================
+
+// Separate fonts out for better control; different sizes and line height
+// ratios look better for different fonts.
+
+
+// Effra ----------------------------------------------------------------------
+$font-effra: (
+    stack: $font-face-effra,
+
+    xxx-small: (
+        font-size: 0.8333,      // 13px
+        line-height: 1.5
+    ),
+    xx-small: (
+        font-size: 0.9167,      // 15px
+        line-height: 1.33333
+    ),
+    x-small: (
+        font-size: 1,           // 16px
+        line-height: 1.33333
+    ),
+    small: (
+        font-size: 1.083,       // 17px
+        line-height: 1.35
+    ),
+    base: (
+        font-size: 1.167,       // 19px
+        line-height: 1.5
+    ),
+    mid: (
+        font-size: 1.333,       // 21px
+        line-height: 1.5
+    ),
+    large: (
+        font-size: 1.5,         // 24px
+        line-height: 1.2
+    ),
+    x-large: (
+        font-size: 2,           // 32px
+        line-height: 1.3
+    ),
+    xx-large: (
+        font-size: 3,           // 48px
+        line-height: 1.2
+    ),
+    xxx-large: (
+        font-size: 4,           // 64px
+        line-height: 1.1
+    )
+);
+
+
+// Functions ==================================================================
+
+// Sets default font
+$font-default: $font-effra;
+
+// fontset-feature ------------------------------------------------------------
+// Pulls information from the map above. Called by other functions. The
+// `$feature` can be any key from the Sass list such as `line-height` or
+// `font-size`.
+@function _fontset-feature($feature, $family:$font-default, $set: 'base'){
+    $result: map-get(map-get($family, $set), $feature);
+    @return ($result);
+}
+
+// fontset-family -------------------------------------------------------------
+@function fontset-family($family) {
+    $result: map-get($family, stack);
+    @return unquote($result);     // Removes quotes, declare in stack variable
+}
+
+// calc-font-size -------------------------------------------------------------
+@function calc-font-size-pt($set, $family:$font-default) {
+    @return _fontset-feature(font-size, $family, $set) * 12 + pt;
+}
+
+@function calc-font-size-rem($set, $family:$font-default) {
+    @return _fontset-feature(font-size, $family, $set) + rem;
+}
+
+// calc-line-height -----------------------------------------------------------
+@function calc-line-height($set, $family:$font-default) {
+    @return _fontset-feature(line-height, $family, $set);
+}
+
+
+// Mixins =====================================================================
+
+// Applies the fuctions above to declare font-size and line-height
+// simultaneously. Generates rem with px fallback for IE <= 8, Opera Mini
+@mixin font-scale($font-size:'base', $line-height:'default', $family:$font-default) {
+    font-size: calc-font-size-pt($font-size, $family);     // Generates pt fallback
+    font-size: calc-font-size-rem($font-size, $family);     // Generates rem
+    @if $line-height == 'default' {
+        line-height: calc-line-height($font-size, $family);
+    }
+    @else {
+      line-height: $line-height;
+    }
+    @if $family != $font-default {
+        font-family: fontset-family($family);
+    }
+}

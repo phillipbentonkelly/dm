@@ -1,0 +1,583 @@
+/* ============================================= */
+
+/*	Share										 */
+
+/* ============================================= */
+
+.share-overline {
+	@include sans(em(14), 600, normal, .05em);
+	text-align: center;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	color: $red;
+	// &:after {
+	// 	@include content;
+	// 	@include wave;
+	// 	margin: 15px auto;
+	// }
+}
+
+.share-h {
+	text-align: center;
+	@include sans(em(26)/120%, 500);
+	margin-bottom: 25px;
+	@include mq(400px) {
+		font-size: em(36);
+	}
+}
+
+.share-mod {
+	position: relative;
+	z-index: 9999;
+	padding: 30px 0 40px;
+	background-color: #fff;
+	margin: 0px auto;
+	@include mq($quick-break) {
+		@include box-shadow(0px 0px 160px rgba(0,0,0,.5));
+		width: 70%;
+		max-width: 500px;
+		margin: 50px auto;
+		width: 100%;
+		padding: 30px 20px 40px;
+		}
+}
+
+.share-icon-mod {
+	width: 280px;
+	position: relative;
+	overflow: hidden;
+	margin: 0 auto;
+	display: block;
+	@include mq(400px) {
+		width: 300px;
+	}
+}
+
+.share-icon-list {
+	@include media-grid(3, 10px, share-icon);
+	@include mq(400px) {
+		@include media-grid(3, 20px, share-icon);
+	}
+}
+
+.share-icon {
+	padding-bottom: 20px;
+//TODO transition wont work in just .share-icon-link
+	.share-icon-link {
+		display: block;
+		background-color: $red;
+		@include trans ($trans-time);
+		&:hover {
+			background-color: $red-drk;
+		}
+		&:active {
+			background-color: $red;
+		}
+		img{
+			width:100%;
+		}
+
+	}
+	&.email {
+		.share-icon-link a {
+			text-align: center;
+			img {
+			 	width:90%;
+			}
+		}
+	}
+}
+.share-message {
+	display: none;
+}
+
+.copy-txt {
+	//width: 70%;
+	width:100%;
+	height: 35px;
+	float: left;
+	display: block;
+	border: solid #bbb 1px;
+	margin: 0 0 20px;
+}
+
+.copy-txt-link {
+	text-align: center;
+	@include sans(em(14)/155%, 400);
+	background-color: $black-10;
+	margin: 6px;
+	color: $black-50;
+}
+// Ryan 8.21
+// .copy-btn  {
+// 	@include input-default;
+// 	float: left;
+// 	text-align: center;
+// 	@include sans(em(11)/155%, 700, normal, .2em);
+// 	width: 30%;
+// 	height: 35px;
+// 	text-transform: uppercase;
+// 	color: #fff;
+// 	@include button-state($red);
+// }
+
+// .copy-btn:active {
+// 	background-color: rgb(155,21,24);
+// }
+
+// TODO
+// make sure this is actually correct
+//
+.share-ad-banner-mod {
+ 	display: block;
+ 	width: 300px;
+ 	margin: 0 auto;
+ 	border-top: $border;
+ 	padding-top:20px;
+}
+
+//Share Modal Shame Shame Shame
+#mfp-share{
+	.char-count{
+		background: transparent;
+		// Ryan 8.21
+		// &.length-warning{
+		// 	background: red;
+		// }
+	}
+	textarea.share-message-textarea{
+		height:7em;
+	}
+	.form-row{
+		margin-bottom:1em;
+
+		label.error{
+			color:$red;
+			display: none;
+		}
+	}
+	// .cancel-link{
+	//	color: #0d5799;
+	//	text-decoration: none;
+	//	font-weight: 700;
+	//	margin: 0 1em;
+	// }
+	// input.submit-btn{
+	//	float:right;
+	//	margin:1em 0;
+	// }
+	// .share-close{
+	//	float: right;
+	// }
+}
+
+//Share styles stolen from bglobe - BDC 792
+
+/* Icons */
+.share-button {
+margin-right: 8px;
+	@include mq(max, 345px) {
+		margin-right: 3px;
+	}
+}
+.share-button.email {
+position: relative;
+}
+ // Ryan 8.21
+// .share-print, .share-reprint {
+// float: right!important;
+// 	@media (max-width: 480px){
+// 	display: none;
+// 	}
+// }
+.social-icon {
+background: url("$configurationURI/Framework/img/socialmedia-sprite.png") no-repeat;
+
+//Note: Email was not used for BCOM due to time constraints, this is actually used for REDDIT 
+&.email {
+// background-position: 0px 0px;
+// width: 20px;
+// height: 15px;
+background-position: 12px -143px;
+width: 50px;
+height: 30px;
+background-color: darken( #e6e6e6, 10% );
+ 
+&:hover {
+background-color: darken( #e6e6e6, 20% );
+}
+}
+ 
+&.fb {
+// background-position: 0px -25px;
+// width: 11px;
+// height: 23px;
+background-position: 19px -21px;
+width: 50px;
+height: 30px;
+background-color: darken( #3b5998, 10% );
+ 
+&:hover {
+background-color: darken( #3b5998, 20% );
+}
+ 
+}
+ 
+&.goog {
+// background-position: 0px -58px;
+// width: 26px;
+// height: 22px;
+background-position: 13px -53px;
+width: 50px;
+height: 30px;
+background-color: #dd4b38;
+ 
+&:hover {
+background-color: darken( #dd4b38, 10% );
+}
+ 
+}
+ 
+&.linkedin {
+// background-position: 0px -90px;
+// width: 20px;
+// height: 19px;
+background-position: 15px -85px;
+width: 50px;
+height: 30px;
+background-color: #007bb6;
+ 
+&:hover {
+background-color: darken( #007bb6, 10% );
+}
+ 
+}
+ 
+&.tw {
+// background-position: 0px -119px;
+// width: 21px;
+// height: 17px;
+background-position: 15px -112px;
+width: 50px;
+height: 30px;
+background-color: #55acee;
+ 
+&:hover {
+background-color: darken( #55acee, 10% );
+}
+ 
+}
+}
+ 
+ 
+// .icon {
+// background: url("$configurationURI/Framework/img/icon-types-all.png") no-repeat;
+// padding-left: 20px;
+// }
+
+
+.social-icon {
+background: url("$configurationURI/Framework/img/socialmedia-sprite.png") no-repeat;
+ 
+&.email {
+// background-position: 0px 0px;
+// width: 20px;
+// height: 15px;
+background-position: 12px -143px;
+width: 50px;
+height: 30px;
+background-color: darken( #e6e6e6, 10% );
+ 
+&:hover {
+background-color: darken( #e6e6e6, 20% );
+}
+}
+ 
+&.fb {
+// background-position: 0px -25px;
+// width: 11px;
+// height: 23px;
+background-position: 19px -21px;
+width: 50px;
+height: 30px;
+background-color: #3b5998;
+ 
+&:hover {
+background-color: darken( #3b5998, 10% );
+}
+ 
+}
+ 
+&.goog {
+// background-position: 0px -58px;
+// width: 26px;
+// height: 22px;
+background-position: 13px -53px;
+width: 50px;
+height: 30px;
+background-color: #dd4b38;
+ 
+&:hover {
+background-color: darken( #dd4b38, 10% );
+}
+ 
+}
+ 
+&.linkedin {
+// background-position: 0px -90px;
+// width: 20px;
+// height: 19px;
+background-position: 15px -85px;
+width: 50px;
+height: 30px;
+background-color: #007bb6;
+ 
+&:hover {
+background-color: darken( #007bb6, 10% );
+}
+ 
+}
+ 
+&.tw {
+// background-position: 0px -119px;
+// width: 21px;
+// height: 17px;
+background-position: 15px -112px;
+width: 50px;
+height: 30px;
+background-color: #55acee;
+ 
+&:hover {
+background-color: darken( #55acee, 10% );
+}
+ 
+}
+}
+
+/* Article tools */
+.tools,
+.tools input,
+.tools textarea {
+font: normal 11px/1.3 Helvetica, Arial, sans-serif;
+}
+.tools {
+// float: left;
+letter-spacing: 0.01em;
+margin: 0 0 40px;
+position: relative;
+text-transform: uppercase;
+}
+.primary-tools {
+//overflow: hidden;
+margin-bottom: 25px;
+}
+.tools li {
+float: left;
+}
+.tools a,
+.tools .top,
+.tools button {
+display: block;
+}
+.tools .top {
+padding-top: 0.95em;
+padding-right: 1em;
+}
+.tools a.ico-email {
+background-position: 0 8px;
+}
+.tools a.ico-email:hover,
+.tools a.ico-email:focus {
+background-position: 0 -108px;
+}
+.tools a.ico-print {
+background-position: 0 -224px;
+}
+.tools a.ico-reprint {
+background-position: 0 -5287px;
+}
+.tools a.ico-reprint:hover,
+.tools a.ico-reprint:focus {
+background-position: 0 -5135px;
+}
+.tools a.ico-print:hover,
+.tools a.ico-print:focus {
+background-position: 0 -329px;
+}
+ 
+/* Email form & Share menu */
+.email .email-error {
+color: #AA0016;
+font-weight: bold;
+margin: 0 0 1em;
+}
+.email-form h4 {
+color: #000;
+font: 1.54545em/0.823529 "Benton Sans Bold", Arial, Helvetica, sans-serif;
+text-transform: none;
+margin: 0 0 1em;
+}
+.tools .email a.ico-email {
+background-position: .5em 6px;
+}
+.tools .email a.ico-email:hover,
+.tools .email a.ico-email:focus {
+background-position: .5em -110px;
+}
+.email-form p {
+padding: 0 0 1em;
+}
+.email-form label {
+display: block;
+font-size: .9em;
+padding: .5em 0;
+}
+.email-form p input,
+.email-form p textarea {
+border: 1px solid #ddd;
+border-top-color: #bdbdbd;
+font-size: 1.2em;
+width: 95%;
+background-color: #f5f5f5;
+padding:6px;
+-moz-box-shadow: rgba(0, 0, 0, .1) -1px 0 3px inset;
+-o-box-shadow: rgba(0, 0, 0, .1) -1px 0 3px inset;
+-webkit-box-shadow: rgba(0, 0, 0, .1) -1px 0 3px inset;
+box-shadow: rgba(0, 0, 0, .1) -1px 0 3px inset;
+}
+.email-form input.bg-button,
+.email-form a.cancel {
+width: 30%;
+float: none;
+display: inline;
+display: inline-block;
+vertical-align: middle;
+font-size: 1em;
+}
+.email-form a.cancel {
+text-transform: none;
+margin-left: 1em;
+}
+ 
+.email-form .error {
+border: solid 2px red;
+}
+ 
+.share {
+position: relative;
+z-index: 5;
+}
+.tools .share {
+margin-right: 0.5em;
+}
+.share .top,
+.email .top {
+ 
+border: 1px solid #FFF;
+padding: 0.75em 1em;
+margin-top: 1px;
+position: relative;
+z-index: 50;
+background-color: #fff;
+}
+.email .top {
+padding-left: 28px;
+}
+.share .top i {
+background: url("$configurationURI/Framework/img/share-sprite.gif") no-repeat 100% 0;
+display: inline-block;
+width: 12px;
+height: 7px;
+}
+.applicationcache .share .top i {
+background-image: url(data:image/gif;base64,R0lGODlhBwDIALMOACMfIJOVmNDQ0qepq0xJSp6dnevr7OPj49bV1VpXWK6wsvHy8qGipT87PP///wAAACH5BAEAAA4ALAAAAAAHAMgAAARNcIQ5h6HTOEGF+0qgfN/CLGSqrmzrvnAsz3Rt33iu73zv/8CgcEgsGo/IZIoAaDYJCGcT4Sg4C6QEIJE6NA7KsHhMLpvP6LR6zW67WREAOw==);
+}
+.email-on,
+.share-on {
+z-index: 99;
+}
+.email-on .top,
+.share-on .top {
+// color: #000;
+// border: 1px solid #DBDBDB;
+// border-bottom-color: #FFF;
+}
+.share-on .top i {
+background-position: 100% -100px;
+}
+.share ul,
+.email-form {
+-moz-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+-o-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+-webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+background-color: #fff;
+border-bottom: none;
+border: 1px solid #DBDBDB;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+left: -1000em;
+//margin-top: -2px;
+//display: none;
+// margin-top: 29px;
+position: absolute;
+width: 130px;
+z-index: 10;
+}
+ 
+.email-form {
+padding: 1.2em 1em;
+width: 280px;
+}
+ul.tools {
+&.email-on {
+ 
+.email-form {
+left: 0;
+z-index: 51;
+}
+ 
+}
+}
+ 
+//ul.tools:nth-of-type(2) {
+// &.email-on {
+//
+// + .email-form {
+// left: 189px;
+// right: 0;
+// top: 1394px;
+// }
+//
+// }
+//}
+ 
+.email-on .email-form {
+display: block;
+//left: 0;
+z-index:51;
+}
+.email-on .ico-email{ z-index:52; }
+ 
+@media (max-width: 960px) {
+.primary-tools {
+.ico-print {
+display: none;
+}
+ 
+.ico-reprint {
+display: none;
+}
+ 
+.ico-email {
+padding-right: 0;
+}
+ 
+}
+}
+
+.sharetools-new {
+	width: 100%;
+	border: 1px solid transparent;
+	clear: both;
+	&.top { margin-bottom: 10px;}
+	&.bottom { margin-top: 10px; margin-bottom: 20px; }
+}

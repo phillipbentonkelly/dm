@@ -1,0 +1,203 @@
+<%-- 
+{comments}
+BDC-1812 - changed wrapping class of the grid again. this time to primary to fit legacy layout
+{comments}
+--%>
+
+<p:currentObject metadata="dwpMeta" content="dwpContent" webType="WT" uuid="uuid" channel="Boston.com" sectionPage="dwp" sectionId="sectionId" />
+<bdc:getAdLayer var="adLayerName" webType="${WT}"/>
+<bdc:inheritStoryLayer var="adLayerDwpPath" section="${sectionId}" layer="${adLayerName}" />
+<p:out var="adLayerDwpPath" value="${adLayerDwpPath}" scope="request" /> <%-- Needed for the way we call the must_reads --%>
+<p:out var="edition" xvalue="$dwpMeta//dbMetadata/sys/props/productInfo/edition" scope="request" /> 
+<p:out var="superBigNews" xvalue="$dwpMeta//SuperBigNews" scope="page" />
+
+<p:out var="VREnabled"	xvalue="$dwpMeta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/VisualRevenue" />
+
+<!-- adlayer: ${adLayerDwpPath} -->
+<%--
+<p:include pageZoneName="navigation">
+	<p:param name="dwp" value="${currentObject}" />
+	<p:param name="dwpSection" value="${sectionId}" />
+	<p:param name="adLayerDwpPath" value="${adLayerDwpPath}" />	
+</p:include>
+--%>
+<%-- 
+<p:include url="$configurationURI/Framework/skins/components/navigation/navigation_menu.jpt" />
+--%>
+
+<%-- this zone was added for elections --%>
+<p:include pageZoneName="window_width" />
+
+<%-- super big news --%>
+<%-- this probably won't work --%>
+<c:if test="${superBigNews eq 'True'}">
+	<p:include pageZoneName="carousel">
+		<p:param name="dwp" value="${currentObject}" />
+	</p:include>
+</c:if>
+
+<div class="hp-mod page-content bdc-page-content bdc-page-content--section">
+
+	<!-- Leaderboard Ad Module -->
+	<section class="leaderboard-mod nav-leaderboard-mod">
+		<p:include pageZoneName="ad_lead1" inherits="${adLayerDwpPath}" /> 
+	</section> <!-- /leaderboard-mod -->
+
+	<p:inline url="$configurationURI/Framework/skins/common/ads/ad_pencil.jpt" />
+	
+<div class="site-width">
+<c:if test="${superBigNews eq 'False'}">
+
+	<%-- Need to determine not only IF something is slotted, but WHAT is slotted in the features_top zone --%>
+	<p:out var="hasTrending" value="${1==2}" />
+	<p:ifZone name="features_top" empty="false">
+		<p:getPageZone name="features_top" var="FT" />
+		<c:forEach items="${FT.items}" var="ftItem">
+			<p:object webObject="${ftItem}" webType="FTWT" />
+			<c:if test="${FTWT eq 'dwc_trending'}"><p:out var="hasTrending" value="${1==1}" /></c:if>
+		</c:forEach>
+	</p:ifZone>
+	
+	<p:include pageZoneName="above_carousel">
+		<p:param name="dwp" value="${currentObject}" />
+	</p:include>
+
+	<div class="secondary">
+		<%-- Weather --%>
+		<p:inline url="$configurationURI/Framework/frameset/header/weather.jpt" />
+
+		<p:ifZone name="features_top" empty="false">
+			<c:if test="${not hasTrending}">
+				<!-- ad_topright ad -->
+				<p:include pageZoneName="ad_topright" inherits="${adLayerDwpPath}" />
+				
+				<p:include pageZoneName="features_top">
+					<p:param name="dwp" value="${currentObject}" />
+					<p:param name="adLayerDwpPath" value="${adLayerDwpPath}" />
+				</p:include>
+			</c:if>
+		</p:ifZone>
+		
+		<!-- Big Ad Module -->
+		<section class="hp-big-mod hp-big-1">
+			<%--<p:include pageZoneName="ad_topright" inherits="${adLayerDwpPath}" />--%>			
+		</section>
+	</div>
+	
+	<div class="primary">
+		<div class="inner">
+			<p:include pageZoneName="carousel">
+				<p:param name="dwp" value="${currentObject}" />
+				<p:param name="visualRevenue" value="${VREnabled}" />
+			</p:include>
+			<p:include pageZoneName="middle">
+				<p:param name="dwp" value="${currentObject}" />
+			</p:include>
+		</div>
+	</div>
+	
+	<div class="secondary">
+		<p:ifZone name="features_top" empty="true">
+			<!-- ad_topright ad -->
+			<p:include pageZoneName="ad_topright" inherits="${adLayerDwpPath}" />
+		</p:ifZone>	
+		<%-- For slottable must reads --%>
+		<p:ifZone name="features_top" empty="false">
+			<c:if test="${hasTrending}">
+				<!-- ad_topright ad -->
+				<p:include pageZoneName="ad_topright" inherits="${adLayerDwpPath}" />
+			</c:if>
+		</p:ifZone>
+	</div>
+	
+	<div class="secondary">
+	<!-- PIFZONE -->
+		<p:ifZone name="features_top" empty="true">
+			<%-- Do NOT point to "trending.jpt". It wasn't written for this purpose. --%>
+			<p:inline url="$configurationURI/Framework/skins/components/must_reads/must_reads.jpt" />
+		</p:ifZone>
+		
+		<p:ifZone name="features_top" empty="false">
+			<c:if test="${hasTrending}"> <%-- Only include this here if the curated must reads is present --%>
+				<p:include pageZoneName="features_top">
+					<p:param name="dwp" value="${currentObject}" />
+					<p:param name="adLayerDwpPath" value="${adLayerDwpPath}" />
+					<p:param name="visualRevenue" value="${VREnabled}" />
+				</p:include>
+			</c:if>
+		</p:ifZone>
+	</div>
+</c:if> <%-- /if not super big news--%>
+
+<%--<p:inline url="$configurationURI/Framework/skins/components/seo_stream_load/seo_stream_load.jpt" />--%>
+		
+	<%-- section wells --%>
+	<p:getPageZone var="wells" name="stream_config" />
+	<c:set var="wellSize" value="${wells.size}" />
+	<%-- wellsize: ${wellSize} --%>
+	
+	<div class="content-well content-well--main content-well--section">
+		<div class="grid">
+
+			<%-- the first two wells --%>
+			<p:include pageZoneName="stream_config" maxItems="2">
+				<p:param name="dwp" value="${currentObject}" />
+				<p:param name="adLayerDwpPath" value="${adLayerDwpPath}" />
+				<p:param name="visualRevenue" value="${VREnabled}" />
+			</p:include>
+	
+			<%-- the first ad --%>
+			<div class="ad-container ad-container--section-ad">
+				<div class="ad-container__ad-slot" id="ad_stream1"></div>
+			</div>
+
+			<%-- for the rest, alternate between well and ad --%>
+			<c:if test="${wellSize > 2}">
+				<c:forEach begin="1" end="${wellSize - 2}" varStatus="loop">
+
+					<%-- well ${loop.count + 1} --%>
+					<p:include pageZoneName="stream_config" offset="${loop.count + 1}" maxItems="${loop.count + 2}">
+						<p:param name="dwp" value="${currentObject}" />
+						<p:param name="adLayerDwpPath" value="${adLayerDwpPath}" />
+						<p:param name="visualRevenue" value="${VREnabled}" />
+					</p:include>
+
+					<%-- ad ${loop.count + 1} --%>
+					<div class="ad-container ad-container--section-ad">
+						<div class="ad-container__ad-slot" id="ad_stream${loop.count + 1}"></div>
+					</div>
+
+				</c:forEach>
+			</c:if>
+		</div>
+	</div>
+
+	<%-- the feature stack --%>
+	<div class="content-well content-well--sidebar content-well--section">
+		<p:include pageZoneName="ad_featurestack_top" inherits="${adLayerDwpPath}" />
+		
+		<c:choose>
+			<c:when test="${VREnabled eq 'True'}">
+				<p:out var="VisRev" value='data-vr-zone="Feature Stack"' />
+			</c:when>
+			<c:otherwise>
+				<p:out var="VisRev" value="" />
+			</c:otherwise>
+		</c:choose>
+		
+		<p:out var="edition" xvalue="$dwpMeta//sys/props/productInfo/edition" />
+		<p:include pageZoneName="features_bottom">
+			<p:param name="VisRev" value="${VisRev}" />
+			<p:param name="edition" value="${edition}" />
+			<p:param name="adLayerDwpPath" value="${adLayerDwpPath}" />
+		</p:include>
+		<p:include pageZoneName="ad_featurestack_bottom" inherits="${adLayerDwpPath}" />
+	</div>
+	
+	<!-- Scroll to Top Button -->
+	<a class="to-top-btn is-off" href="#top">
+		<i class="top-top-arrow"></i>
+		Back to Top
+	</a>
+</div> <!-- /site-width -->
+</div> <!-- /hp-mod -->	

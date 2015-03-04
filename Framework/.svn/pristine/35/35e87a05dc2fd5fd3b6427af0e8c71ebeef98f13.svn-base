@@ -1,0 +1,98 @@
+<p:currentObject sectionId="section" webType="WT" metadata="meta"/>
+
+<p:out var="sectionName" xvalue="$meta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/Sections/Section/SectionName" />
+<p:siteRoot var="SiteRoot" />
+
+<div class="nav-mod">
+	<nav class="main-nav">
+	<div class="main-nav-inner">
+		<div class="nav-left-ear">
+			<c:choose> <%-- Determination of what type of page we're on for the basis of click-tracking --%>
+				<c:when test="${WT eq 'dwp_modulepage' and section eq '/'}"> <%-- The homepage --%>
+					<a class="toc-trigger js-toc-trigger nav-btn" href="#">
+						<div class="toc-trigger-icon"></div>
+						<h4 class="toc-trigger-label">Sections</h4>
+					</a><!-- /sec-nav -->
+				</c:when>
+				<c:otherwise> <%-- Not the homepage --%>
+					<a class="toc-trigger js-toc-trigger nav-btn" href="#">
+						<div class="toc-trigger-icon"></div>
+						<h4 class="toc-trigger-label">Sections</h4>
+					</a><!-- /sec-nav -->
+				</c:otherwise>
+			</c:choose>
+		</div> <!-- /nav-left-ear -->
+
+	<%-- Type-specific logo --%>
+	<c:choose>
+		<c:when test="${WT eq 'dwp_modulepage' and section eq '/'}">
+			
+		</c:when>
+		<c:when test="${WT eq 'dwp_sectionpage' or (WT eq 'dwp_modulepage' and section ne '/')}">
+			<!-- ${section} -->
+			<p:out var="siteSection" value="${fn:substringAfter(section, '/')}" />
+			<p:out var="headerUrl" value="#" />
+			<c:choose>
+				<c:when test="${fn:indexOf(siteSection, '/') != -1}">
+					<p:out var="parentSection" value="/${fn:substringBefore(siteSection, '/')}" />
+					<p:out var="childSection" value="${fn:substringAfter(siteSection, '/')}" />
+					<p:siteRoot var="bdcSR" siteId="${parentSection}" />
+					<c:forEach items="${bdcSR.children}" var="bdcChild">
+						<p:out var="paddedName" value="${parentSection}" />
+						<p:out var="shortSubSecName" value="${fn:substringAfter(bdcChild.sectionId, paddedName)}" />
+						<c:if test="${fn:toLowerCase(shortSubSecName) == fn:toLowerCase(childSection)}">
+							<p:url var="headerUrl" siteNode="${bdcChild}" />
+						</c:if>
+					</c:forEach>
+				</c:when>
+				<c:otherwise>
+					<p:out var="parentSection" value="${section}" />
+					<c:forEach items="${SiteRoot.children}" var="srChild">
+						<p:out var="childSection" value="${fn:substringAfter(srChild.sectionId, '/')}" />
+						<c:if test="${fn:toLowerCase(siteSection) == fn:toLowerCase(childSection)}">
+							<p:url var="headerUrl" siteNode="${srChild}" />
+						</c:if>
+					</c:forEach>
+				</c:otherwise>
+			</c:choose>
+			<!-- Section: ${sectionName} ... Url: ${headerUrl} -->
+			<div class="bcom-logo-section-mod">
+				<a class="bcom-logo-b" href="" alt="${portalContext.publicBaseUrl}"></a>
+				<a class="bcom-logo-section" href="${portalContext.publicBaseUrl}">${sectionName}</a>
+			</div>
+		</c:when>
+		<c:otherwise>
+			<a href="${portalContext.publicBaseUrl}" class="bcom-logo">
+				<img class="bcom-logo-img" src="${portalContext.publicBaseUrl}/svgs/bcom-logo.svg" alt="boston.com"/>
+			</a><!-- /bcom-logo -->
+		</c:otherwise>
+	</c:choose>
+
+		<div class="nav-right-ear">
+			<a class="nav-search-trigger js-search-trigger nav-btn" href="#" data-load-ad="true" data-ad-name="ad_searchbarsponsor">
+				<i class="nav-search-label">Search</i>
+				<i class="nav-search-icon"></i>
+			</a> <!-- /search-form -->
+
+			<a id="trigger-avatar-profile" class="nav-profile-trigger js-profile-trigger nav-btn" href="#URL:trigger-user-id-nav">
+				<i class="nav-profile-close"></i>
+				<img class="nav-avatar nav-avatar-ear" src="${portalContext.publicBaseUrl}/rw/SysConfig/WebPortal/BDC/Framework/img/user-blank.jpg" />
+				<h4	class="nav-username a11y-only">User1234</h4>
+			</a><!-- /nav-profile-trigger -->
+		</div> <!-- /nav-right-ear -->
+	</div> <!-- /main-nav-inner --></nav><!-- /main-nav -->
+</div> 
+<div class="nav-search-mod">
+	<div class="l-nav-search site-width">
+		<div class="nav-search-ad-mod">
+			<img class="nav-search-ad" src="${portalContext.publicBaseUrl}/rw/SysConfig/WebPortal/BDC/Framework/img/sponsor-2.jpg" />
+		</div>
+		<div id="top-search-form">
+			<form class="nav-search-form" action="${portalContext.publicBaseUrl}/search" >
+				<input class="nav-search-form-input" type="text" placeholder="Search stories or sections" name="q" />
+				<input type="hidden" name="p1" value="TotalMastheadSearches" /> 
+				<button type="submit" class="submit-btn nav-search-btn" value="Search"> </button>
+			</form> <!-- /nav-search-form -->
+		</div>
+	</div> <!-- /l-nav-search -->
+</div> <!-- /nav-search-mod -->	

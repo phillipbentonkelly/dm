@@ -1,0 +1,77 @@
+// *
+// *  Weather John Daily
+// *
+$module-name: 'weather-daily';
+$days: 5;
+
+
+// ------------------------------------------------------------
+// Default Styles
+// ------------------------------------------------------------
+
+// this adds a matching bottom margin when weather daily is in a section-well
+.section-well {
+  .#{$module-name} {
+    margin-bottom: spacer(px, mid);
+    margin-bottom: spacer(rem, mid);
+  }
+}
+
+.#{$module-name} {
+  width: 100%;
+  height: 100%;
+  @include font-scale(xx-small);
+  color: color(gray, x-dark);
+
+  // The List of Days
+  &__list {
+    height: 100%;
+    @extend %clearfix;
+    padding-top: spacer(px, x-large);
+    padding-top: spacer(rem, x-large);
+    .section-well & {
+      padding-top: 0;
+    }
+
+    .icon-weather {
+      margin: spacer(px, mid);
+      margin: spacer(rem, mid);
+    }
+
+  }
+
+  &__list-item {
+    padding: spacer(px) spacer(px, mid);
+    padding: spacer(rem) spacer(rem, mid);
+    float: left;
+    width: 100% / $days;
+    height: 100%;
+    text-align: center;
+    border-right: 1px solid color(gray, x-light);
+    &:last-child {
+      border-right: 0px;
+    }
+  }
+
+  // The Day
+  &__day {
+    text-transform: uppercase;
+    font-weight: $fw-bold;
+  }
+
+  // The Date
+  &__date {
+    text-transform: uppercase;
+  }
+
+  // The Forecast
+  &__temperature-text {
+    @include font-scale(xxx-small);
+    color: color(gray, dark);
+    &:first-child {
+      font-weight: $fw-bold;
+      color: color(black);
+    }
+  }
+
+}

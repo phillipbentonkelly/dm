@@ -1,0 +1,93 @@
+// Ryan 8.21
+// .login-mod {
+// 	position: relative;
+// 	width: 340px;
+// 	background-color: $black-90;
+// 	color: #fff;
+// 	padding: 20px;
+// 	height: 245px;
+// }
+// // .login
+
+
+// .dark-input {
+// 	@include input-default;
+// 	position: relative;
+// 	box-shadow: none;
+// 	-webkit-box-shadow: none;
+// 	@include placeholder-state(#777, #777, $black-15);
+// 	@include sans(em(14)/155%, 400);
+// 	color: #ddd;
+// 	width: 100%;
+// 	background-color: #383838;
+// 	padding: 7px 10px;
+// 	border: solid 1px #555;
+// }
+
+// .user-input {
+// 	margin-bottom: 10px;
+// 	height:34px;
+// }
+
+// .login-button {
+// 	@include input-default;
+// 	@include button-state;
+// 	width: 100%;
+// 	height: 25px;
+// 	@include sans(em(10)/155%, 400, normal, .1em);
+// 	text-transform: uppercase;
+// 	margin: 10px 0;
+// }
+
+// //log in form
+
+// .login-remember-form {
+// 	position: absolute;
+// 	top: 165px;
+// 	@include sans(em(13)/125%, 400);
+// 	color: #999;
+// }
+
+
+.login-form [type="checkbox"] {
+	width: 16px;
+	height: 16px;
+	margin: 0 8px 0 0;
+	background-color: #999;
+}
+
+.login-form [type="checkbox"]:checked {
+	@include svg('checked-box');
+	background-size: 18px 18px;
+	background-position: 50% 50%;
+	width: 16px;
+	height: 16px;
+}
+
+.login-link-sm {
+	position: absolute;
+	right: 20px;
+	top: 165px;
+	@include sans(em(12)/155%, 500);
+	color: $blue-lt;
+}
+
+.login-link-sm:hover {
+	text-decoration: underline;
+}
+
+.login-link-big {
+	position: absolute;
+	bottom: 10px;
+	text-align: center;
+	width: 300px;
+	@include sans(em(14)/155%, 500);
+	color: $black-50;
+	> a {
+		color:$blue-lt;
+	}
+	> a:hover{
+		text-decoration: underline;
+	}
+}
+

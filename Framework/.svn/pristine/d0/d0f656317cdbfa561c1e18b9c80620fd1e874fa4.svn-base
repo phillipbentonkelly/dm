@@ -1,0 +1,353 @@
+/* ============================================= */
+
+/*	Quick Gallery: Popup			   			 */
+
+/* ============================================= */
+
+$qg-pop-padding: 20px 20px 10px;
+$qg-ad-break: 700px;
+
+.quick-gallery-popup {
+	max-width: 1500px;
+	position: relative;
+	background-color: #fff;
+	@include mq(500px) {
+		margin: 15px;
+	}
+	@include mq(900px) {
+		margin: 35px;
+	}
+	@include mq(1585px) {
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.quick-gallery-img-nav {
+		display: block;
+	}
+
+	.arrow-btn-prev.qg-arrow-btn-prev,
+	.arrow-btn-next.qg-arrow-btn-next {
+		opacity: .7;
+		width: 25%;
+		padding: 0;
+	}
+	.arrow-btn-next.qg-arrow-btn-next {
+		pointer-events: none;
+	}
+
+	.gallery-hint-mod {
+			margin-top: 28%;
+			display: block;
+		}
+} // quick-gallery-popup
+
+.qg-swiper-mod,
+.qg-img-mod {
+	height: 100%;
+}
+
+.qg-swiper-mod {
+	height: 100%;
+	@include mq($article-lg){
+		min-height: 485px;
+		height: 100%;
+	}
+}
+
+.qg-img {
+	max-height: 100%;
+	display: block;
+}
+.qg-gallery-slide {
+	height: 100% !important;
+}
+.qg-gallery-slides {
+	height:100px;
+	cursor: pointer;
+	min-height:250px;
+	@include mq(400px, $article-lg){
+		min-height:400px;
+	}
+	@include mq($article-lg){
+		min-height:482px;
+	}
+}
+
+
+// Shared Styles 
+.qg-pop-hdr {
+	padding: 40px 0 10px;
+	@include mq(400px) {
+		padding: $qg-pop-padding;
+	}
+}
+.qg-pop-ftr {
+	padding: 10px;
+	@include mq(400px) {
+		padding: $qg-pop-padding;
+	}
+}
+
+.qg-pop-bd {
+	padding: 10px 0;
+	@include mq(400px) {
+		padding: $qg-pop-padding;
+	}
+}
+
+.qg-pop-hdr,
+.qg-pop-ftr {
+	background-color: $bg;	
+}
+
+
+// Quick Gallery Popup Header 
+.qg-pop-hdr {
+	border-bottom: 1px solid $light-gray;
+}
+
+.qg-pop-banner-mod {
+	@include mq(850px) {
+		display: none;
+	}
+}
+
+.qg-pop-leaderboard-mod {
+	display: none;
+	@include mq(850px) {
+		display: block;
+	}
+}
+
+// Quick Gallery Popup Body
+.qg-pop-bd {
+	@include mq($article-lg) {
+		@include grid-static(300px, 20px);
+	}
+}
+
+.qg-photo-block {
+	padding-bottom: 10px;
+	border-bottom: 1px solid #ededed;	
+	margin-bottom: 10px;
+	@include mq($article-lg) {
+		border-bottom: 0;
+		margin-bottom: 0;
+		padding-bottom: 0;
+	}
+}
+
+.qg-pop-hgroup {
+	position: relative;
+	padding: 10px 10px 35px; // Leaves space for the absolutely positioned caption below
+	margin-bottom: 10px;
+	@include pie-clearfix;
+	@include mq(400px) {
+		padding: 0 0 35px;
+	}
+}
+
+.qg-pop-h {
+	@include sans(em(23)/140%, 600);
+	color: #000;
+	margin: 0 60px 2px 0;
+}
+
+// - Absolutely positioned so caption can appear right on top of image.
+// - Height limited so no more than one line of caption text is ever present.
+// - Has some style attributes to make it look like the bottom of the
+//   container that holds itself, the headline, and share tools.
+.qg-pop-meta-mod {
+	z-index: 5;
+	position: absolute;
+	left: 0;
+	right: 0;
+	@include ellipsis;
+
+	height: 29px;
+	border-bottom: 1px solid #ededed;
+	padding-bottom: 10px;
+	padding-right: 88px; // Leaves room for 'Show Caption' trigger
+	background-color: rgba(255, 255, 255, 0.5);
+
+	.caption-active & {
+		white-space: normal;
+		height: auto;
+		padding-right: 0;
+	}
+}
+
+.qg-pop-meta {
+	display: inline;
+	@include sans(em(13)/140%, 400);
+	color: $txt-black;
+	> a {
+		@include link;
+	}
+}
+
+.qg-show-caption {
+	display: inline;
+	margin-left: 4px;
+	color: $med-gray;
+	position: absolute;
+	right: 0;
+	.caption-active & {
+		position: static;
+		right: auto;
+	}	
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+.gallery-img-mod.qg-img-mod {
+	background-color: white;
+}
+
+.qg-img {
+	display: block;
+	max-width: 100%;
+	margin: auto;
+}
+
+.qg-gallery-caption {
+	display: none;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	padding: 10px;
+	color: #fff;	
+	background-color: rgba(0, 0, 0, 0.5);
+	@extend .caption;
+}
+
+//
+// Quick Gallery Tools
+//
+.qg-pop-tools-mod {
+	position: absolute;
+	top: -2px;
+	right: 10px;
+	@include mq(400px) {
+		right: 0;
+	}
+
+	// Styles for share tools themselves
+	// Uses tools-horiz markup structure
+	.tools-item {
+		display: inline-block;
+	}
+
+	// Hide the tool names
+	.tools-txt {
+		display: none;
+	}
+
+	.tools-share {
+		margin-right: 6px;
+		// @include mq($article-tools) {
+		// 	margin-right: 30px;
+		// }
+	}
+
+	// @include mq(max, $article-tools) {
+	// 	// Icons gets large ...
+	// 	.share-icon {
+	// 		@include size(25px 22px);
+	// 	}
+
+	// 	.comment-icon {
+	// 		@include size(20px 22px);
+	// 		position: relative;
+	// 		top: 3px;
+	// 	}
+
+	// 	// ... and the labels disappear
+	// 	.tools-txt {
+	// 		display: none;
+	// 	}
+	// }
+
+} // story-tools-hdr
+
+//
+// Quick Gallery Aside
+//
+
+.qg-aside {
+	@include mq($qg-ad-break, $article-lg) {
+		@include ui-grid(2);
+	}
+}
+
+.qg-pop-big-mod {
+	margin-bottom: 30px;
+}
+
+.qg-taboola-list-mod {
+	@include mq(550px, $qg-ad-break) {
+		@include taboola-list-split;
+	}
+}
+
+
+//
+// Quick Gallery Popup Footer 
+//
+
+.qg-pop-ftr {
+	border-top: 1px solid $light-gray;
+}
+
+.qg-feat-tzs {
+	max-width: 1086px;
+	margin: auto;
+}
+
+//
+// Quick Gallery Popup Share Tools
+//
+
+.qg-share-mod {
+	display: none;
+	z-index: 100;
+	@include absolute(63px n 0 0);
+	width: 100%;
+	background-color: rgba(0,0,0,.5);
+
+	.share-active & {
+		display: block;
+	}
+
+	.share-icon-mod {
+		background-color: rgba(255,255,255,.95);
+		padding: 10px;
+		width: 300px;
+
+		// Center based on consistent WxH of 340 x 360 
+		position: absolute;
+		top: 50%;
+		margin-top: -180px;
+		left: 50%;
+		margin-left: -150px;
+
+		@include mq(400px) {
+			padding: 20px;
+			width: 340px;
+			margin-left: -170px;
+		}
+	}
+}
+
+.qg-share-close {
+	@extend .mfp-close;
+}
+
+
+/* ============================================= */
+
+/*	Quick Gallery: Page			   			 	 */
+
+/* ============================================= */

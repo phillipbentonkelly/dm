@@ -1,0 +1,50 @@
+<p:getContext var="uuid" />
+<p:getObject uuid="${uuid}" var="webObject" />
+<p:object webObject="${webObject}" content="story" metadata="meta" />
+
+<p:out var="review_title" xvalue="$story//review-containers/review-container-television/review-title/p" />
+
+<p:out var="tv_director" xvalue="$story//review-containers/review-container-television/review-director/p" />
+<p:out var="tv_network" xvalue="$story//review-containers/review-container-television/review-network/p" />
+<p:out var="tv_show_date" xvalue="$story//review-containers/review-container-television/review-show-date/p" />
+<p:out var="tv_show_time" xvalue="$story//review-containers/review-container-television/review-show-time/p" />
+<p:out var="tv_show_url" xvalue="$story//review-containers/review-container-television/review-show-url/p" />
+
+<div class="review-item">
+	<h3 class="review-item-title">${fn:trim(review_title)}</h3>
+</div>
+
+<aside class="review-box">
+	<c:if test="${not empty fn:trim(tv_director)}">
+		<b>Director:</b> ${fn:trim(tv_director)} |
+	</c:if>
+	
+	<c:set var="castList" value="" />
+	<x:forEach var="castMember" select="$story//review-containers/review-container-television/review-casts/review-cast" varStatus="loop">
+		<p:out var="actor" xvalue="$castMember/p" />
+		<c:if test="${not empty fn:trim(actor)}">
+			<c:set var="castList">${castList}<c:if test="${not loop.first}">, </c:if>${actor}</c:set>
+		</c:if>
+	</x:forEach>
+	
+	<c:if test="${not empty castList}">
+		<b>Cast:</b> ${castList} |
+	</c:if>
+	
+	<c:if test="${not empty fn:trim(tv_network)}">
+		<b>Network:</b> ${fn:trim(tv_network)} |
+	</c:if>
+	
+	<c:if test="${not empty fn:trim(tv_show_date)}">
+		<b>Show Date:</b> ${fn:trim(tv_show_date)} |
+	</c:if>
+	
+	<c:if test="${not empty fn:trim(tv_show_time)}">
+		<b>Show Time:</b> ${fn:trim(tv_show_time)} |
+	</c:if>
+	
+	<c:if test="${not empty fn:trim(tv_show_url)}">
+		<b>Show Website:</b> <bdc:link value="${fn:trim(tv_show_url)}">${fn:trim(tv_show_url)}</bdc:link>
+	</c:if>
+	
+</aside>

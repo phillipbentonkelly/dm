@@ -1,0 +1,9 @@
+<div class="page-header__search--inline js-header-search" id="page-header__search--inline" role="search"  data-target="page-header__search--dropdown">
+  <form class="page-header__search---inline-form js-search-strip-colon" action="${portalContext.publicBaseUrl}/search">
+    <input class="page-header__search--inline-input js-header-search-input" type="text" placeholder="Search" name="q">
+  	<button type="submit" class="page-header__search--inline-submit js-header-search-submit" value="Search">
+	    <span class="bdc-icon bdc-icon--search-medium" data-state="closed">Search</span>
+	    <span class="bdc-icon bdc-icon--close-medium" data-state="open"></span>
+	  </button>
+  </form>
+</div>

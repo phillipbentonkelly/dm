@@ -1,0 +1,56 @@
+
+<%--
+  Based on:
+  /bcom-redesign-beta/bdc-markup/page-content/modules/social-bar.php
+--%>
+
+<p:currentObject content="content" metadata="meta" webType="WT" channel="Boston.com" sectionId="section" />
+
+<bdc:teaseSection var="secData" section="${section}" />
+<bdc:rwShareData var="share" webObject="${currentObject}" />
+<bdc:getTrackingData var="tracking" webObject="${currentObject}" />
+
+
+<div class="content-social-bar content-social-bar--top js-share-bar nocontent">
+  <ul class="content-social-bar__list">
+    <li class="content-social-bar__item">
+      <a href="#" class="content-social-bar__button facebook-button js-gigya-share" data-provider="facebook" data-canonical="${share.canonical}" data-headline="${share.headline}" data-thumbnail="${share.thumb}" data-thumb-type="${share.thumbType}" data-cid="${tracking.pageAsset}_${fn:toLowerCase(sharePosition)}_facebook"
+      data-omniture="Gigya | facebook">
+        <span class="content-social-bar__button-icon bdc-icon bdc-icon--facebook-x-small"></span>
+        <span class="content-social-bar__button-copy">Share</span>
+        <span class="content-social-bar__button-count js-facebook-count">0</span>
+      </a>
+    </li>
+    <li class="content-social-bar__item">
+      <a href="#" class="content-social-bar__button twitter-button js-gigya-share" data-provider="twitter" data-canonical="${share.canonical}" data-headline="${share.headline}" data-thumbnail="${share.thumb}" data-thumb-type="${share.thumbType}" data-cid="${tracking.pageAsset}_${fn:toLowerCase(sharePosition)}_twitter"
+      data-omniture="Gigya | twitter">
+        <span class="content-social-bar__button-icon bdc-icon bdc-icon--twitter-x-small "></span>
+        <span class="content-social-bar__button-copy">Tweet</span>
+        <span class="content-social-bar__button-count js-twitter-count">0</span>
+      </a>
+    </li>
+    <li class="content-social-bar__item">
+      <a href="#" class="content-social-bar__button pinterest-button js-gigya-share" data-provider="pinterest" data-canonical="${share.canonical}" data-headline="${share.headline}" data-thumbnail="${share.thumb}" data-thumb-type="${share.thumbType}" data-cid="${tracking.pageAsset}_${fn:toLowerCase(sharePosition)}_pinterest"
+      data-omniture="Gigya | pinterest">
+        <span class="content-social-bar__button-icon bdc-icon bdc-icon--pinterest-x-small"></span>
+        <span class="content-social-bar__button-copy">Pin</span>
+        <span class="content-social-bar__button-count js-pinterest-count">0</span>
+      </a>
+    </li>
+    <c:if test="${commentsEnabled eq 'true'}">
+    <li class="content-social-bar__item" data-canonical="${share.canonical}" data-headline="${share.headline}" data-thumbnail="${share.thumb}" data-thumb-type="${share.thumbType}">
+      <a href="#comments" class="content-social-bar__button comment-button js-goto-open-comments" data-omniture="Comment | Social Bar ${sharePosition} | ${tracking.prop6}">
+        <span class="content-social-bar__button-icon bdc-icon bdc-icon--comment-x-small"></span>
+        <span class="content-social-bar__button-copy">Comment</span>
+        <span class="content-social-bar__button-count total-comment-count">0</span>
+      </a>
+    </li>
+  </c:if>
+    <li class="content-social-bar__item">
+      <a href="#share-modal" class="content-social-bar__button email-button js-share-modal" data-omniture="Email | Social Bar ${sharePosition} | ${tracking.prop6}" data-provider="email" data-canonical="${share.canonical}" data-headline="${share.headline}" data-thumbnail="${share.thumb}" data-thumb-type="${share.thumbType}">
+        <span class="content-social-bar__button-icon bdc-icon bdc-icon--email-x-small"></span>
+        <span class="content-social-bar__button-copy">Email</span>
+      </a>
+    </li>
+  </ul>
+</div><!-- / .content-social--bar -->

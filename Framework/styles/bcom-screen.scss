@@ -1,0 +1,472 @@
+// Fonts
+@import "project/fonts";
+// ## Bring in all Compass Helpers
+@import "partials/base";
+
+// ## Project Styles
+@import "project/mixins";
+@import "project/animations";
+@import "project/type";
+@import "project/lists";
+@import "project/forms";
+@import "project/modal";
+
+
+/* ============================================= */
+
+/*	Universal						   			 */
+
+/* ============================================= */
+
+a 		{ 	text-decoration: none; color: inherit; }
+strong	{	font-weight: 700;	}
+em   	{	font-style: italic;	}
+i 		{  	font-style: normal; }
+
+body {
+	// Fonts will be smoother and prettier in webkit
+	-webkit-font-smoothing: antialiased;
+
+	// // Don't highlight things with a color when we tap
+	// -webkit-tap-highlight-color: rgba(0,0,0,0);
+
+	// Hide things that try to break outer page bounds
+	overflow: hidden;
+
+	// Don't change text size on device orientation switch
+	-webkit-text-size-adjust: none;
+
+	
+	// Global Type Defaults
+	font-family: $sans-fallback;
+	.fontface & {
+		font-family: $sans;
+	}
+}
+
+.site-container {
+	overflow: hidden;
+}
+
+
+/* ============================================= */
+
+/*	Layout						   			 	 */
+
+/* ============================================= */
+
+@import "project/layout";
+
+
+
+/* ============================================= */
+
+/*	MAIN NAV			 						 */
+
+//	This is the primary navigation bar found
+//	on top of the screen. It contains triggers
+//	for the Table of Contents and User Menus.
+//	On some devices, it follows the user around.
+
+/* ============================================= */
+
+// @import "project/nav";
+
+// On larger devices, subnav appears as user scrolls,
+// allowing them to filter the stream from anywhere
+
+
+
+
+
+
+
+/* ============================================= */
+
+/*	TABLE OF CONTENTS			   			 	 */
+
+//	This menu is revealed when clicking on the
+//  Hamburger/Sections button in the main nav.
+// 	It contains all the primary site navigation
+//	for Sections, Shortcuts, and Sister Sites
+
+/* ============================================= */
+
+// @import "project/toc";
+
+
+
+
+
+/* ============================================= */
+
+/*	USER MENU			   			 	 		*/
+
+//	This menu is revealed when clicking on the
+//  Avatar or Log In link in the main nav.
+// 	It contains basic user information and
+//	common links for profile, settings, etc.
+
+/* ============================================= */
+
+// @import "project/user";
+
+
+
+
+
+/* ============================================= */
+
+/*	Tease Filter Nav			   			 	 */
+
+/* ============================================= */
+
+
+@import "project/filter-nav";
+
+
+
+/* ============================================= */
+
+/*	Site Footer									 */
+
+/* ============================================= */
+
+// @import "project/footer";
+
+
+
+
+/* ============================================= */
+
+/*	OBJECTS						   			 	 */
+
+//	Smaller, uncomplicated style pieces that
+// 	appear site-wide & should work regardless
+//	of context. Each style works independently.
+
+//	Ex: Generic Styled Boxes, Wavey Lines, etc.
+
+/* ============================================= */
+
+@import "project/objects";
+@import "project/buttons";
+
+
+/* ============================================= */
+
+/*	Teases						   			 	 */
+
+/* ============================================= */
+
+@import "project/teases";
+@import "project/lead-teases";
+@import "project/top-teases";
+
+@import "project/breaking-news";
+
+
+/* ============================================= */
+
+/*	MODULES						   			 	 */
+
+//	Larger, multi-part objects that appear
+//	all over and depend on a more complicated
+//	HTML structure and style relationship. Each
+//	and every style may not work independently.
+
+//	Ex: Scoreboard, Weather, Must Reads
+
+/* ============================================= */
+
+@import "project/modules";
+
+
+//
+// Share Screen
+//
+
+@import "project/share";
+
+//
+// Image Popups
+//
+
+@import "project/image-popup";
+
+
+//
+// Sliders
+//
+
+@import "project/slider";
+
+
+//
+// Loading Animation
+//
+
+@import "project/loader";
+
+
+
+/* ============================================= */
+
+/*	Comments						   			 */
+
+/* ============================================= */
+
+@import "project/comments";
+
+
+
+
+
+
+/* ============================================= */
+
+/*	Advertisements					   			 */
+
+/* ============================================= */
+
+@import "project/ads";
+
+
+
+
+
+
+/* ============================================= */
+
+/*	Article Pages						   		 */
+
+/* ============================================= */
+
+@import "project/article";
+
+
+
+
+
+/* ============================================= */
+
+/*	Homepage						   			 */
+
+/* ============================================= */
+
+.page-hp {
+	background-color: $bg;
+	// .site-container {
+	 	// @include loading(1.5s);
+	// }
+}
+.hp-mod {
+	// Make room for weather or mobile ad
+	padding-top: 45px;
+	@include mq($nav-break) {
+		padding-top: 50px;
+	}
+	@include mq($leaderboard) {
+		padding-top: 0;
+	}
+	@include mq(max, $break-lg) {
+		padding-top: 0;
+	}
+	.search-active & {
+		@include mq($label-break) {
+			 // extra room necessary for weather/ad on tablets
+			padding-top: 110px;
+		}
+		@include mq($leaderboard) {
+			padding-top: 69px;
+		}
+	}
+}
+
+//
+// Ads
+//
+
+.hp-big-1 {
+	display: block;
+	margin: 20px auto;
+	width: 300px;
+	@include mq($sidebar-break) {
+		margin: 0;
+	}
+}
+
+
+
+/* ============================================= */
+
+/*	Errors						   			 	 */
+
+/* ============================================= */
+
+.page-error-hgroup {
+	text-align: center;
+	margin-top: -30px;
+	@include mq($leaderboard) {
+		margin-top: 0;
+		padding: 50px 0 70px;
+	}
+}
+
+.page-error-h {
+	@include sans(em(48), 300);
+	color: #000;
+	margin-bottom: 10px;
+
+	@include mq(600px) {
+		font-size: em(69);
+	}
+}
+
+.page-error-deck {
+	@include sans(em(21)/120%, 300, italic);
+	margin-bottom: 10px;
+
+	@include mq(600px) {
+		font-size: em(28);
+	}
+
+	a {
+		@include link;
+	}
+
+	.break {
+		@include mq($article-lg) {
+			display: block;
+		}
+	}
+}
+
+
+/* ============================================= */
+
+/*	Other Pages						   			 */
+
+/* ============================================= */
+
+
+/* ============================================= */
+
+/*	404											 */
+
+/* ============================================= */
+
+
+@import "project/404";
+
+
+/* ============================================= */
+
+/*	Galleries									 */
+
+/* ============================================= */
+// Ryan P 8.18
+//@import "project/gallery";
+//@import "project/gallery-quick";
+
+
+/* ============================================= */
+
+/*	Gallery End Test					   		 */
+
+/* ============================================= */
+// Ryan P 8.18
+//@import "project/gallery-end";
+
+
+/* ============================================= */
+
+/*	House Ad 							   		 */
+
+/* ============================================= */
+
+// @import "project/house-ad";
+
+/* ============================================= */
+
+/*	Search Page									*/
+
+/* ============================================= */
+
+@import "project/search";
+
+
+/* ============================================= */
+
+/*	Videos										*/
+
+/* ============================================= */
+
+@import "project/video";
+
+/* ============================================= */
+
+/*	Pagination							 */
+
+/* ============================================= */
+
+@import "project/pagination";
+
+
+/* ============================================= */
+
+/*  --------------------------------------------------------------------------
+* Modal Window
+*/
+.ugc-modal {
+  z-index: 999;
+  position: fixed;
+  top: 90px;
+  left: 25%;
+  width: 50%;
+  padding: 20px;
+  padding-bottom: 10px;
+  background: #fff;
+  border: 3px solid $blue;
+  box-shadow: 0 0 50px rgba(0,0,0, .5);
+  .heading {
+    font-size: 16px;
+    border-bottom: 1px solid $black-15;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+  }
+  .form-section {
+    margin-bottom: 10px;
+    overflow: hidden;
+    padding-bottom: 0;
+  }
+  label {
+    display: inline-block;
+    width: 100px;
+  }
+  &.abuse label {
+    display: block;
+    width: 100%;
+    margin-bottom: 3px;
+  }
+  input[type=text],
+  textarea {
+    width: 100%;
+    padding: 3px 5px;
+    border: 1px solid $black-15;
+  }
+  textarea {
+    height: 100px;
+  }
+  select {
+    width: 100%;
+  }
+  a.close-modal {
+    float: right;
+    font-size: 18px;
+    &:hover {
+      text-decoration: none;
+      border-bottom: none;
+    }
+  }
+}

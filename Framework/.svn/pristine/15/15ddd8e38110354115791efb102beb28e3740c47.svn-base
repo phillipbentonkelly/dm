@@ -1,0 +1,58 @@
+// *
+// * Header Social
+// *
+
+$module-name: 'page-header__social';
+
+// ------------------------------------------------------------
+// Default Styles
+// ------------------------------------------------------------
+
+.#{$module-name} {
+  display: none;
+}
+
+// ------------------------------------------------------------
+// >880px Styles
+// ------------------------------------------------------------
+
+@include media-query(880) {
+  .#{$module-name}  {
+    display: block;
+    float: right;
+    height: $page-header-height;
+    padding-top: 12px;
+    margin-left: spacer(px);
+    margin-left: spacer(rem);
+    // Negative margins to offset header padding
+    margin-top: -(spacer(px, mid));
+    margin-top: -(spacer(rem, mid));
+    margin-right: -(spacer(px, x-large));
+    margin-right: -(spacer(rem, x-large));
+    background: color(gray, x-dark);
+
+    &-button {
+      float: left;
+      padding: 0 10px;
+      @include font-scale(xx-small);
+      color: color(white);
+      text-align: center;
+      &:hover {
+        color: color(white);
+        & .bdc-icon,
+        & .#{$module-name}-count {
+          opacity: 1;
+        }
+      }
+      &:first-child {
+        border-right: 1px solid color(gray);
+      }
+      .bdc-icon,
+      .#{$module-name}-count {
+        opacity: .7;
+      }
+    }
+
+
+  }
+}

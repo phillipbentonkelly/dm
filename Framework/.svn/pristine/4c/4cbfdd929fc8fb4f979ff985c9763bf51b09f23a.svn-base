@@ -1,0 +1,37 @@
+<p:currentObject content="c" metadata="meta" channel="Boston.com"/>
+
+<p:out var="edition" value=""/>
+<c:if test="${not empty cacheScope.edition}">
+	<p:out var="edition" value="${cacheScope.edition}"/>
+</c:if>
+
+<p:out var="timeStamp" value="" />
+<p:out var="timeStampDuration" value="" />
+<p:out var="displayTimeStamp" value="" />
+<c:if test="${not empty cacheScope.dwc}">
+	<p:object webObject="${cacheScope.dwc}" metadata="dwcMeta"/>
+	<x:if select="$dwcMeta//TimeStamp" >
+		<p:out var="timeStamp" xvalue="$dwcMeta//TimeStamp" />
+	</x:if>
+	<x:if select="$dwcMeta//TimeStampDuration" >
+		<p:out var="timeStampDuration" xvalue="$dwcMeta//TimeStampDuration" />
+	</x:if>
+</c:if>
+
+<c:choose>
+	<c:when test="${cacheScope.type eq 'external' or cacheScope.type eq 'internal'}">
+		<bdc:leadIn leadIn="${cacheScope.leadIn}" reviewRating="${cacheScope.reviewRating}">
+			<bdc:link value="${cacheScope.linkURL}" type="${cacheScope.type}" className="bold">${cacheScope.linkText}</bdc:link>
+		</bdc:leadIn>
+	</c:when>
+	<c:otherwise>
+		<bdc:getHeadlines var="headlines" webObject="${currentObject}" edition="${edition}"/>
+		<bdc:timestamp webObject="${currentObject}" var="displayTimeStamp" timeStampAccess="${timeStamp}" timeStampDuration="${timeStampDuration}"/>
+		<p:out var="leadIn" value="${headlines.overline}"/>
+		<p:out var="linkText" value="${headlines.headline}"/>
+
+		<bdc:leadIn leadIn="${leadIn}">
+			<bdc:link webObject="${currentObject}" className="bold">${linkText}<c:if test="${displayTimeStamp != null && displayTimeStamp != ''}"><span class="timestamp">${displayTimeStamp}</span></c:if></bdc:link>
+		</bdc:leadIn>
+	</c:otherwise>
+</c:choose>

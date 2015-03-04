@@ -1,0 +1,24 @@
+<%@ page import="java.util.Calendar" %>
+
+<%
+	Calendar cal = Calendar.getInstance();
+	int copyrightYear = cal.get(Calendar.YEAR);
+	pageContext.setAttribute("copyrightYear", copyrightYear);
+%>
+<c:if test="${WT eq 'dwp_sectionpage' or WT eq 'dwp_blogpage' or WT eq 'dwp_modulepage'}">
+	<p:inline url="$configurationURI/Framework/frameset/common/social_nav_vertical.jpt" />
+</c:if>
+
+<footer class="page-footer" role="contentinfo">
+	<div class="page-footer__content">
+		
+		<div class="page-footer__social-nav--horizontal">
+			<p:inline url="$configurationURI/Framework/frameset/common/social_nav_horizontal.jpt" />
+		</div>
+		
+		<div class="page-footer__text">
+			<p>&copy;${copyrightYear} Boston Globe Media Partners, LLC </p>
+			<a href="/help/privacy-policy">Privacy Policy</a> | <a href="/help/privacy-policy#adchoices">Ad Choices</a>
+		</div>
+	</div> <!-- /page-footer__content -->
+</footer>

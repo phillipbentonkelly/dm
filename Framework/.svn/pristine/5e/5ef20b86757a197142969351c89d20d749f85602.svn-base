@@ -1,0 +1,40 @@
+// *
+// *  Tease Footer
+// *
+
+$module-name: 'tease-footer';
+
+// ------------------------------------------------------------
+// Default Styles
+// ------------------------------------------------------------
+
+.#{$module-name} {
+  position: relative;
+  @extend %clearfix;
+  margin-top: spacer(px, base);
+  margin-top: spacer(rem, base);
+
+  // Tease Footer Text
+  &__text {
+    color: color(gray, light);
+    border-left: 1px solid color(gray, light);
+    margin-left: spacer(px);
+    margin-left: spacer(rem);
+    padding-left: spacer(px);
+    @include font-scale(xxx-small);
+  }
+
+  // Tease Footer Hover Actions
+  // Show tease icons and hide text
+  // Use --active class for .touch devices
+  &:hover,
+  &--active {
+    .#{$module-name}__text,
+    .tease-share__text {
+      display: none;
+    }
+    .tease-share__list {
+      display: block;
+    }
+  }
+}

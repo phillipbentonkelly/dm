@@ -1,0 +1,20 @@
+<section id="navDeals">
+ <h2>This Week's Specials</h2>
+ <div id="poweredByBcom">
+   <img src="/bdc-img/classifieds/powered_by_bcom.gif" width="90" height="14"></img>
+ </div>
+ <nav>
+   <ul>
+     <li id="NCS_button_carshomepage">
+       <a href="http://www.boston.com/cars/new_car_deals/?p1=CarsNav_NewDeals">
+       <span>New Car Deals</span>
+       </a>
+     </li>
+     <li id="UCS_button_carshomepage">
+       <a href="http://www.boston.com/cars/used_car_deals/?p1=CarsNav_UsedDeals">
+       <span>Used Car Deals</span>
+       </a>
+     </li>
+    </ul>
+  </nav>
+</section>

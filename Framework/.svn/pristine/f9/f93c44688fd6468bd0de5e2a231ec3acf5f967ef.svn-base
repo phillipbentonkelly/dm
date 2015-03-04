@@ -1,0 +1,15 @@
+<%--
+{comments}
+BDC-???? - mystery
+{comments}
+--%>
+<div class="grid">
+	<div class="grid--4-8">
+		<div class="grid-4">
+			<p:include pageZoneName="left" />
+		</div>
+		<div class="grid-8">
+			<p:include pageZoneName="right" />
+		</div>
+	</div>
+</div>

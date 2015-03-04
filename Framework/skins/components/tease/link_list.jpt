@@ -1,0 +1,103 @@
+<%@ page import="
+	java.util.*,
+	java.net.*,
+	java.io.*,
+	java.lang.*,
+	com.eidosmedia.eomcache.*,
+	com.eidosmedia.portal.*,
+	com.eidosmedia.eomcache.impl.*,
+	com.eidosmedia.eomcache.impl.EOMCacheImpl.CacheReference,
+	com.eidosmedia.eomcache.proxies.*,
+	com.eidosmedia.eomcache.console.commands.*,
+	com.eidosmedia.eomcache.proxies.data.*,
+	com.eidosmedia.misc.*,
+	com.eidosmedia.portal.util.*,
+	com.eidosmedia.web.framework.*,
+	com.eidosmedia.debug.*,
+	com.eidosmedia.wa.render.*
+" %>
+
+<p:out var="edition" value=""/>
+<c:if test="${not empty cacheScope.dwp}">
+	<p:object webObject="${cacheScope.dwp}" metadata="dwpMeta"/>
+	<p:out var="edition" xvalue="$dwpMeta/dbMetadata/sys/props/productInfo/edition"/>
+</c:if>
+
+<p:getObject webObject="${currentObject}" var="dwxObj" />
+<p:out var="linksPerLine" value="${cacheScope.linksPerLine}"/>
+<p:out var="templateName" value="${cacheScope.templateName}"/>
+<c:if test="${empty templateName}">
+	<p:out var="templateName" value="regular_simple" />
+</c:if>
+<p:out var="zoneName" value="${cacheScope.zoneName}" />
+<p:out var="bulletClass" value="${cacheScope.bulletClass}"/>
+<c:if test="${empty zoneName}">
+	<p:out var="zoneName" value="related" />
+</c:if>
+<p:out var="zoneName" value="${zoneName}"/>
+
+<p:ifZone name="${zoneName}">
+	<c:choose>
+		<c:when test="${not empty cacheScope.suppressLinkClass and cacheScope.suppressLinkClass eq 'yes'}">
+			<ul class="${bulletClass}">
+		</c:when>
+		<c:otherwise>
+			<ul class="link-list ${bulletClass}">
+		</c:otherwise>
+	</c:choose> 
+	<c:if test="${not empty cacheScope.leadInLabel}">
+		<span class="lead-in">${cacheScope.leadInLabel}</span>
+	</c:if>
+	<c:if test="${dwxObj != null}">
+		<p:object webObject="${dwxObj}" metadata="container_meta" content="container_content" />
+		<%
+		   try {
+		   
+			 	PortalWebObjectWrapper pwebObj = (PortalWebObjectWrapper)pageContext.getAttribute("dwxObj");
+			 	WebObject dwc = pwebObj.getWebObject();
+			 	WebContainer dwcCont = dwc.getContainer();
+			 	
+			 	String zoneName = (String)pageContext.getAttribute("zoneName");
+			 	String defaultTemplateName = (String)pageContext.getAttribute("templateName");
+			 	Map zones = dwcCont.getNameToZoneMap();
+			 	WebZone wZone =(WebZone)zones.get(zoneName);
+			 	WebLink links[] = wZone.getLinks();
+               	//pageContext.setAttribute("linkSize",links.length);
+  
+				for(int i=0; i<links.length; i++) {
+					String templateName = ( (String)links[i].getTemplateName() != null) ? (String)links[i].getTemplateName() : defaultTemplateName;
+					Object linkObj = (links[i].getLinkedObject() != null) ? links[i].getLinkedObject() : "";
+					pageContext.setAttribute("templateName", templateName);
+					pageContext.setAttribute("counter", i);
+					pageContext.setAttribute("linkObj", linkObj);
+					//out.println("template used now now: " + templateName + "count: " + i);
+					//out.println("linked object: "+ links[i].getLinkedObject());
+		%>
+			
+			<c:if test="${linksPerLine != 1}">
+				<c:if test="${(counter % linksPerLine) == 0}">
+					<li class="pipes" data-vr-contentbox=""><ul>
+				</c:if>
+			</c:if>
+			
+			<li data-vr-contentbox="">
+				<p:include webObject="${linkObj}" templateName="${templateName}">
+					<p:param name="edition" value="${edition}"/>
+				</p:include>
+			</li>
+			
+			<c:if test="${linksPerLine != 1}">
+				<c:if test="${(counter % linksPerLine) == 1}">
+					</ul></li>
+				</c:if>
+			</c:if>
+		<%
+				}	
+			} catch (Exception e) {
+				//out.println("<error>Error processing zone item templates: " + e.toString() + "</error>");
+			}
+		%>		
+	</c:if>
+		
+	</ul>
+</p:ifZone>

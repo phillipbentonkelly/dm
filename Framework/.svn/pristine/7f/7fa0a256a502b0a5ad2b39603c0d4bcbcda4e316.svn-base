@@ -1,0 +1,78 @@
+<p:currentObject metadata="meta" />
+<p:out var="videoID" xvalue="$meta//ObjectMetadata/OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/VideoID" />
+<p:out var="externalProvider" xvalue="$meta//ObjectMetadata/OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/ExternalProvider" />
+<p:out var="dataVideoType" xvalue="$meta//ObjectMetadata/OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/DataVideoType" />
+<p:out var="dataPlayerType" xvalue="$meta//ObjectMetadata/OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/DataPlayerType" />
+
+<p:getPageZone name="external_video_story" var="storyobj" />
+
+<div class="lead-tz lead-tz-w-art">
+<%-- <div class="swiper-slide lead-tz lead-tz-no-art"> --%>
+	<c:choose>
+		<c:when test="${externalProvider eq 'Ustream'}">
+			<div class="videoplayer ustream"
+			   	 data-schema="5"
+			 	 id="${videoID}">
+			</div>
+			
+			<c:if test="${storyobj.size == 1}">
+				<c:forEach items="${storyobj.items}" var="dwcItem">
+					<p:getObject webObject="${dwcItem}" var="storyInfo" />
+					<bdc:getHeadlines webObject="${storyInfo}" var="headlines" />
+					<bdc:getSummaryForSectionFront webObject="${storyInfo}" var="webtease" priority="carousel"/>
+					
+					<div class="lead-tz-txt-bd reverse">
+						<h4 class="lead-tz-overline">
+							${headlines.overline}
+						</h4>
+						<h1 class="lead-tz-h">
+							${headlines.headline}
+						</h1>
+						<c:if test="${not empty fn:trim(webtease)}">
+							<p class="lead-tz-txt tz-txt">${webtease}</p>
+						</c:if>			
+					</div> <!-- /lead-tz-txt-bd -->
+				</c:forEach>
+			</c:if>
+		</c:when>
+		<c:when test="${externalProvider eq 'NESN'}">
+			<c:choose>
+				<c:when test="${dataVideoType eq 'latest' or videoID eq 0}">
+					<div class="videoplayer nesn"
+				    	 data-schema="6"
+				    	 data-player-type="${dataPlayerType}"
+				    	 data-video-type="latest"
+				    	 data-video-id="0">
+					</div>
+				</c:when>
+				<c:otherwise>
+					<div class="videoplayer nesn"
+				    	 data-schema="6"
+				    	 data-video-type="${dataVideoType}"
+				    	 data-player-type="${dataPlayerType}"
+					 	 data-video-id="${videoID}">		    	 
+					</div>
+				</c:otherwise>
+			</c:choose>
+			<c:if test="${storyobj.size == 1}">
+				<c:forEach items="${storyobj.items}" var="dwcItem">
+					<p:getObject webObject="${dwcItem}" var="storyInfo" />
+					<bdc:getHeadlines webObject="${storyInfo}" var="headlines" />
+					<bdc:getSummaryForSectionFront webObject="${storyInfo}" var="webtease" priority="carousel"/>
+					
+					<div class="lead-tz-txt-bd reverse">
+						<h4 class="lead-tz-overline">
+							${headlines.overline}
+						</h4>
+						<h1 class="lead-tz-h">
+							${headlines.headline}
+						</h1>
+						<c:if test="${not empty fn:trim(webtease)}">
+							<p class="lead-tz-txt tz-txt">${webtease}</p>
+						</c:if>			
+					</div> <!-- /lead-tz-txt-bd -->
+				</c:forEach>
+			</c:if>
+		</c:when>
+	</c:choose>
+</div>	<!-- swiper-slide lead-tz lead-tz-w-art -->

@@ -1,0 +1,252 @@
+<p:currentObject metadata="storyMeta" content="storyData" webType="WT" sectionId="section" uuid="storyId" />
+
+<p:out var="trackingSection" value="${applicationScope.trackingSection}" />
+<p:out var="position" value="${cacheScope.iteration}" />
+<c:if test="${empty trackingSection or trackingSection eq '/'}">
+	<p:out var="trackingSection" value="/homepage" />
+</c:if>
+
+<%--
+	${displayData.templateName} will return the name of the item template. This is super useful.
+	Options are:
+		feature_stack_item
+		feature_stack_sister_radiobdc
+		feature_stack_sister_bdcwire
+		feature_stack_sister_betaboston
+--%>
+
+<p:out var="sisterSiteClass" value="" />
+<c:if test="${fn:startsWith(displayData.templateName, 'feature_stack_sister_')}">
+	<p:out var="sisterSiteClass" value="sister-site" />
+</c:if>
+
+<c:choose>
+	<c:when test="${not empty cacheScope.dwp}">
+		<p:getObject var="dwp" path="${cacheScope.dwp}" />
+		<p:object webObject="${dwp}" metadata="dwpMeta" />
+		<p:out var="edition" xvalue="$dwpMeta//sys/props/productInfo/edition" />
+		<bdc:getHeadlines webObject="${currentObject}" var="headlines" edition="${edition}" />
+	</c:when>
+	<c:otherwise>
+		<bdc:getHeadlines webObject="${currentObject}" var="headlines" />
+	</c:otherwise>
+</c:choose> 
+
+<%-- Inheritance for the share tool selection --%>
+<c:choose>
+	<c:when test="${fn:endsWith(WT, 'gallery') or WT eq 'picturestory'}">
+		<bdc:inheritStoryLayer var="editorialLayer" section="${section}" layer="EDITORIAL_GALLERY_ASSET_LAYER" />
+	</c:when>
+	<c:when test="${WT eq 'summarystory'}">
+		<bdc:inheritStoryLayer var="editorialLayer" section="${section}" layer="EDITORIAL_SUMMARY_ASSET_LAYER" />
+	</c:when>
+	<c:otherwise>
+		<bdc:inheritStoryLayer var="editorialLayer" section="${section}" layer="EDITORIAL_STORY_ASSET_LAYER" />
+	</c:otherwise>
+</c:choose>
+<p:out var="editorialLayer" value="${editorialLayer}" scope="request" />
+<%-- --%>
+
+<p:out var="objectType" xvalue="$storyMeta//type" />
+
+<bdc:getIconForTease webObject="${currentObject}" var="itemIcon" />
+<bdc:getSummaryForSectionFront webObject="${currentObject}" var="summary" priority="feature_stack"/>
+
+<%
+	String source = (String)pageContext.getAttribute("section");
+	int count = org.apache.commons.lang.StringUtils.countMatches(source, "/");
+	if (count > 1) {
+		int index = source.indexOf('/');
+		int indexEnd = source.length();
+		int indexStart = index + 1;
+		String id = source.substring(indexStart,indexEnd);
+		int indexRoundTwo = id.indexOf('/');
+		int indexEndRoundTwo = indexRoundTwo + 1;
+		String finalParentSection = source.substring(0,indexEndRoundTwo);
+		pageContext.setAttribute("section", finalParentSection);
+		} else {
+			pageContext.setAttribute("section", source);
+		}
+%>
+
+<bdc:teaseSection section="${section}" var="sectionData" />
+
+<p:out var="hasImage" value="no" />
+<bdc:imagesWithCaptionCredit webObject="${currentObject}" var="imageData" format="image_255x106" />
+<c:if test="${not empty imageData.src}">
+	<p:out var="hasImage" value="yes" />
+	<p:out var="gigyaImage" value="${imageData.src}" scope="request" />
+</c:if>
+
+<p:out var="xref" xvalue="$storyData//xref" />
+		
+<%-- Share tools and stuff --%>
+<p:url var="gigyaCanonical" webObject="${currentObject}" public="true" />
+<p:out var="gigyaCanonical" value="${gigyaCanonical}" scope="request" />
+<p:out var="gigyaShortURL" xvalue="$storyMeta//ObjectMetadata/OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/ShortUrl" scope="request" />
+<p:out var="gigyaHeadline" xvalue="$storyData//headlines/headline/p" scope="request" />
+
+<c:choose>
+	<c:when test="${hasImage eq 'yes'}">
+
+		<p:out var="dataThumbType" value="image" scope="request" />
+		<c:if test="${itemIcon.objectType eq 'VideoStory'}">
+			<p:out var="dataThumbType" value="video" scope="request" />
+		</c:if>
+	
+		<article class="feat-tz ${sisterSiteClass}" data-vr-contentbox="">
+			<!-- trackingSection = ${trackingSection}, position = ${position} -->
+			<bdc:link className="feat-tz-img-mod art-bd" webObject="${currentObject}"
+				onClick="true" section="${trackingSection}" objectPosition="${position}" element="image" elementType="feature-stack-bundle">
+					<p:out var="altHeadline" value="${headlines.featureStackHeadline}" escape="html" />
+					<img class="feat-tz-img" src="${imageData.src}" alt="${altHeadline}">
+					<c:if test="${itemIcon.objectType ne 'none'}">
+						<div class="feat-tz-icon tz-icon ${itemIcon.stackClass}"></div>
+					</c:if>
+			</bdc:link>
+			<div class="feat-tz-bd txt-bd">
+				<h4 class="feat-tz-h tz-title">
+					<c:choose>
+						<c:when test="${WT eq 'streamtease' or WT eq 'textAsset'}">
+							<bdc:cleanXref var="xref" url="${xref}" />
+							
+							<bdc:link value="${xref}"
+								onClick="true" section="${trackingSection}" objectPosition="${position}" element="headline" elementType="feature-stack-bundle">${headlines.featureStackHeadline}</bdc:link>
+						</c:when>
+						<c:otherwise>
+							<bdc:link webObject="${currentObject}"
+								onClick="true" section="${trackingSection}" objectPosition="${position}" element="headline" elementType="feature-stack-bundle">${headlines.featureStackHeadline}</bdc:link>
+						</c:otherwise>
+					</c:choose>
+				</h4>
+				<c:choose>
+					<c:when test="${sisterSiteClass eq ''}"> <!-- no sister sites -->
+						<ul class="tz-meta feat-tz-meta">
+							<li class="tz-meta-item tz-category">
+								<bdc:link value="${sectionData.path}"
+									onClick="true" section="${trackingSection}" objectPosition="${position}" element="section label" elementType="feature-stack-bundle">${sectionData.name}</bdc:link>
+							</li>
+							<li class="tz-meta-item tz-share">
+								<!-- editorialLayer = ${editorialLayer} -->
+								<p:inline url="$configurationURI/Framework/skins/components/feature_stack/fs_share_controller.jpt" />
+							</li>
+						</ul> <!-- /.tz-meta -->
+					</c:when>
+					<c:otherwise>
+					
+						<c:choose>
+							<c:when test="${displayData.templateName eq 'feature_stack_sister_radiobdc'}">
+								<p:url var="ssImage" value="$configurationURI/Framework/img/sister_sites/radiobdc.png" />
+								<p:out var="ssTagline" value="Boston's Alternative Music Source" />
+								<p:out var="ssLink" value="http://bdcwire.com/radiobdc" />
+							</c:when>
+							<c:when test="${displayData.templateName eq 'feature_stack_sister_bdcwire'}">
+								<p:url var="ssImage" value="$configurationURI/Framework/img/sister_sites/bdcwire.png" />
+								<p:out var="ssTagline" value="I'd Click That" />
+								<p:out var="ssLink" value="http://bdcwire.com" />
+							</c:when>
+							<c:when test="${displayData.templateName eq 'feature_stack_sister_betaboston'}">
+								<p:url var="ssImage" value="$configurationURI/Framework/img/sister_sites/betaboston.png" />
+								<p:out var="ssTagline" value="Innovation and technology news" />
+								<p:out var="ssLink" value="http://www.betaboston.com" />
+							</c:when>
+							<c:when test="${displayData.templateName eq 'feature_stack_sister_globe'}">
+								<p:url var="ssImage" value="$configurationURI/Framework/img/sister_sites/globe_b.png" />
+								<p:out var="ssTagline" value="The only place to read every Globe story: BostonGlobe.com" />
+								<p:out var="ssLink" value="http://www.bostonglobe.com" />
+							</c:when>
+						</c:choose>
+					
+						<a class="border" href="${ssLink}"> 
+							<div>
+								<img src="${ssImage}" alt="${ssTagline}"/>
+							</div>
+							<div class="tagline">
+								${ssTagline}
+							</div>
+						</a>
+						
+					</c:otherwise>
+				</c:choose>
+				
+			</div> <!-- /feat-tz-bd -->
+		</article>
+	</c:when>
+	<c:otherwise>
+		<%--
+			Everything below here handles rendering for a feature stack tease that does not have an image slotted.
+			These are the teases with a blue background. Like the TARDIS. I'm calling these "TARDIS'ed" teases from
+			now on.
+		--%>
+		<article class="feat-tz feat-tz-no-art ${sisterSiteClass}" data-vr-contentbox="">
+			<div class="feat-tz-bd txt-bd">
+				<div class="feat-tz-no-art-txt-mod">
+				<h4 class="feat-tz-h tz-title">
+					<c:choose>
+						<c:when test="${WT eq 'streamtease' or WT eq 'textAsset'}">
+							<bdc:cleanXref var="xref" url="${xref}" />
+						
+							<bdc:link value="${xref}"
+								onClick="true" section="${trackingSection}" objectPosition="${position}" element="headline" elementType="feature-stack-bundle">${headlines.featureStackHeadline}</bdc:link>
+						</c:when>
+						<c:otherwise>
+							<bdc:link webObject="${currentObject}"
+								onClick="true" section="${trackingSection}" objectPosition="${position}" element="headline" elementType="feature-stack-bundle">${headlines.featureStackHeadline}</bdc:link>
+						</c:otherwise>
+					</c:choose>
+				</h4>
+				</div>
+					<c:if test="${sisterSiteClass ne ''}">
+						<c:choose>
+							<c:when test="${displayData.templateName eq 'feature_stack_sister_radiobdc'}">
+								<p:url var="ssImage" value="$configurationURI/Framework/img/sister_sites/radiobdc.png" />
+								<p:out var="ssTagline" value="Boston's Alternative Music Source" />
+								<p:out var="ssLink" value="http://bdcwire.com/radiobdc" />
+							</c:when>
+							<c:when test="${displayData.templateName eq 'feature_stack_sister_bdcwire'}">
+								<p:url var="ssImage" value="$configurationURI/Framework/img/sister_sites/bdcwire.png" />
+								<p:out var="ssTagline" value="I'd Click That" />
+								<p:out var="ssLink" value="http://bdcwire.com" />
+							</c:when>
+							<c:when test="${displayData.templateName eq 'feature_stack_sister_betaboston'}">
+								<p:url var="ssImage" value="$configurationURI/Framework/img/sister_sites/betaboston.png" />
+								<p:out var="ssTagline" value="Innovation and technology news" />
+								<p:out var="ssLink" value="http://www.betaboston.com" />
+							</c:when>
+							<c:when test="${displayData.templateName eq 'feature_stack_sister_globe'}">
+								<p:url var="ssImage" value="$configurationURI/Framework/img/sister_sites/globe_b.png" />
+								<p:out var="ssTagline" value="The only place to read every Globe story: BostonGlobe.com" />
+								<p:out var="ssLink" value="http://www.bostonglobe.com" />
+							</c:when>
+						</c:choose>
+						<div class="tz-meta feat-tz-meta">
+						<a class="border" href="${ssLink}"> 
+							<div>
+								<img src="${ssImage}" alt="${ssTagline}"/>
+							</div>
+							<div class="tagline">
+								${ssTagline}
+							</div>
+						</a>
+						</div> <!-- /feat-tz -->
+					</c:if>
+				
+				
+				<c:if test="${sisterSiteClass eq ''}">
+					<ul class="tz-meta feat-tz-meta">
+						<li class="tz-meta-item tz-category">
+							<bdc:link value="${sectionData.path}"
+								onClick="true" section="${trackingSection}" objectPosition="${position}" element="section label" elementType="feature-stack-bundle">${sectionData.name}</bdc:link>
+						</li>
+						<li class="tz-meta-item tz-share">
+							<p:inline url="$configurationURI/Framework/skins/components/feature_stack/fs_share_controller.jpt" />
+						</li>
+					</ul> <!-- /.tz-meta -->
+				</c:if>
+			</div> <!-- /feat-tz-bd -->
+		</article>
+	</c:otherwise>
+</c:choose>
+
+
+	

@@ -1,0 +1,19 @@
+<p:object webObject="${currentObject}" content="c" metadata="m" webType="WT" uuid="uuid" channel="Boston.com"/>	
+<p:out var="section" xvalue="$m//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/Sections/Section/SectionPath" />
+<bdc:getSummaryForSectionFront webObject="${currentObject}" var="webtease" priority="carousel" />
+<bdc:getHeadlines webObject="${currentObject}" var="title" edition="${edition}"/>
+<p:out var="leadingPhotoPath" xvalue="$c//photogrp[@class='alt-web-images']/photo[@name='image_676x282']/@fileref" scope="request" />
+<c:if test="${empty leadingPhotoPath}">
+	<p:out var="leadingPhotoPath" xvalue="$c//photogrp[@class='main-web-images']/photo[@name='image_371w']/@fileref" scope="request"/>
+</c:if>
+<p:url var="img" value="${leadingPhotoPath}" type="resource" format="image_130x80"/>
+
+<div class="bn-media-tz">
+	<bdc:link className="bn-media-tz-art-mod art-bd bn-video-trigger" webObject="${currentObject}">
+        <img class="bn-media-tz-img art" src="${img}">
+        <i class="bn-play-btn"></i>
+    </bdc:link>
+	<bdc:link className="bn-media-tz-h txt-bd bn-video-trigger" webObject="${currentObject}">${title.carouselHeadline}</bdc:link>
+</div>        
+	 
+   

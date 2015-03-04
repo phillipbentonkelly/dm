@@ -1,0 +1,181 @@
+<%@ page import="java.util.Calendar" %>
+
+<%
+	Calendar cal = Calendar.getInstance();
+	int copyrightYear = cal.get(Calendar.YEAR);
+	pageContext.setAttribute("copyrightYear", copyrightYear);
+%>
+
+<p:currentObject metadata="meta" />
+<p:import var="nav" url="/SysConfig/Classify/Data/BDC_nav_menu.xml" xml="true" />
+<p:out var="adLayerDwpPath" value="${cacheScope.adLayerDwpPath}" />
+
+<p:out var="parentType" value="${cacheScope.linkedType}" />
+<p:out var="sectionAppend" value="" />
+<c:if test="${empty cacheScope.linkedType or fn:trim(cacheScope.linkedType)}">
+	<p:out var="navDwp" value="${cacheScope.dwp}" />
+	<p:out var="navSection" value="${cacheScope.dwpSection}" /> <!-- navSection = ${navSection} -->
+	
+	<p:object webObject="${cacheScope.dwp}" metadata="dwpMeta" />
+	<p:out var="parentType" xvalue="$dwpMeta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/WebType" />
+	
+	<p:out var="sectionAppend" value="" />
+	<c:if test="${navSection ne '/'}">
+		<c:set var="topSection" value="${fn:split(navSection, '/')}" />
+		<!-- topSection = ${topSection[0]} -->
+		<p:out var="sectionAppend" value="_${topSection[0]}" />
+	</c:if>
+	
+	<p:out var="hpAppend" value="" />
+	<c:if test="${parentType == 'dwp_homepage'}">
+		<p:out var="hpAppend" value="_hp" />
+		<p:out var="sectionAppend" value="${hpAppend}" />
+	</c:if>
+
+</c:if>
+<!--
+	parentType = ${parentType}
+	navSection = ${navSection}
+-->
+
+<nav class="toc-mod reverse nocontent">
+
+	<%-----------------------------------%>
+	<%-- Logo + Close only for > 500px --%>
+	<%-----------------------------------%>
+    <div class="toc-logo">
+        <a href="${portalContext.publicBaseUrl}" class="bcom-logo"></a><!-- /bcom-logo -->
+        <a class="toc-trigger js-toc-trigger nav-btn" href="#">
+            <div class="toc-trigger-icon"></div>
+        </a>
+    </div>
+
+	<form class="toc-form" action="${portalContext.publicBaseUrl}/search" ><!-- on means open nav -->
+		<input class="toc-search-input nav-label" type="text" placeholder="Search stories or sections" name="q" />
+		<input type="hidden" name="p1" value="TotalHamburgerSearches" />
+		<input type="submit" class="toc-search-btn toc-search-icon" value="Search" />
+	</form> <!-- /toc-form -->
+	
+	<%----------------------------%>
+	<%-- Sections 				--%>
+	<%----------------------------%>
+	
+	<div class="toc-sec-mod">
+		<h3 class="toc-section-head">Sections</h3>
+		<ul class="toc-list toc-section-list">
+			<x:forEach var="secItem" select="$nav//Nav/Sections/Section">
+				<p:out var="itemClass" xvalue="$secItem/@class" />
+				<p:out var="sectionName" xvalue="$secItem/SectionName" />
+				<p:out var="sectionUrl" xvalue="$secItem/URL" />
+				<p:out var="sectionPath" xvalue="$secItem/SectionPath" />
+				
+				<c:if test="${fn:trim(sectionUrl) eq '' and fn:trim(sectionPath) ne ''}">
+					<p:out var="sectionUrl" value="${sectionPath}" />
+				</c:if>
+				
+				<c:choose>
+					<c:when test="${fn:contains(sectionUrl, '?p1=')}">
+						<li class="toc-item ${itemClass}">
+							<a href="${sectionUrl}${hpAppend}">${sectionName}</a>
+						</li>
+					</c:when>
+					<c:otherwise>
+						<li class="toc-item ${itemClass}">
+							<a href="${sectionUrl}">${sectionName}</a>
+						</li>
+					</c:otherwise>
+				</c:choose>
+			</x:forEach>
+		</ul>
+	</div>
+	
+	<%----------------------------%>
+	<%-- Shortcuts 				--%>
+	<%----------------------------%>
+	
+	<div class="toc-sec-mod">
+		<h3 class="toc-section-head">Shortcuts</h3>
+		<ul class="toc-list toc-shortcut-list">
+			<x:forEach var="sc" select="$meta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/NavConfig/Shortcuts/Shortcut">
+				<p:out var="sc_text" xvalue="$sc/ShortcutName" />
+				<p:out var="sc_link" xvalue="$sc/ShortcutUrl" />
+				
+				<p:out var="linkDelim" value="?" />
+				
+				<c:if test="${not fn:contains(sc_link, '?p1=')}">
+					<p:out var="sc_link" value="${sc_link}${linkDelim}p1=Main_Shortcuts${sectionAppend}" />
+				</c:if>
+				
+				<li class="toc-item"><a href="${sc_link}">${sc_text}</a></li>
+			</x:forEach>
+		</ul>
+	</div>
+	
+	<%------------------%>
+	<%-- Sister Sites --%>
+	<%------------------%>
+	
+	<p:out var="sisterLabel" xvalue="$nav//SisterSites/Label" />
+	
+	<div class="toc-sites-mod">
+		<%-- <h3 class="toc-section-head">${sisterLabel}</h3> --%>
+		<ul class ="toc-sister-list">
+			<x:forEach var="sisterItem" select="$nav//SisterSites/Sites/Site">
+				<p:out var="itemClass" xvalue="$sisterItem/@class" />
+				<p:out var="label" xvalue="$sisterItem/Label" />
+				<p:out var="imageClass" xvalue="$sisterItem/ImageClass" />
+				<p:out var="itemUrl" xvalue="$sisterItem/URL" />
+				<p:out var="tease" xvalue="$sisterItem/Tease" />
+				
+				<p:out var="itemUrl" value="${itemUrl}" />
+				
+				<li class="sister-item ${itemClass}">
+					<a href="${itemUrl}?p1=Main_Sites${sectionAppend}">
+						<div class="${imageClass} sister-logo">${label}</div>
+						<p class="sister-txt radio-txt">${tease}</p>
+					</a>
+				</li>
+			</x:forEach>
+		</ul> <!-- /toc-sister-list -->
+
+        <!--  legal footer -->
+        <p:out var="socialTwitter" xvalue="$nav//SocialSharing/Twitter" />
+        <p:out var="socialTwitter" value="${fn:trim(socialTwitter)}" />
+        
+        <p:out var="socialFacebook" xvalue="$nav//SocialSharing/Facebook" />
+        <p:out var="socialFacebook" value="${fn:trim(socialFacebook)}" />
+        
+        <p:out var="socialGoogle" xvalue="$nav//SocialSharing/GooglePlus" />
+        <p:out var="socialGoogle" value="${fn:trim(socialGoogle)}" />
+        
+        <p:out var="socialRSS" xvalue="$nav//SocialSharing/RSS" />
+        <p:out var="socialRSS" value="${fn:trim(socialRSS)}" />
+        
+        <footer class="nav-footer">
+			<ul class="social-icon-list">
+				<li><a href="${socialTwitter}" class="twitter-icon social-icon"></a></li>
+				<li><a href="${socialFacebook}" class="facebook-icon social-icon"></a></li>
+				<li><a href="${socialGoogle}" class="google-icon social-icon"></a></li>
+				<li><a href="${socialRSS}" class="rss-icon social-icon"></a></li>				
+            </ul>
+			<ul class="footer-legal-links list-horiz footer-text">
+				<x:forEach var="legal" select="$nav//LegalLinks/LinkData">
+					<p:out var="legal_text" xvalue="$legal/Text" />
+					<p:out var="legal_link" xvalue="$legal/URL" />
+					<li class="list-item"><a href="${legal_link}?p1=Main_Nav${sectionAppend}">${legal_text}</a></li>
+				</x:forEach> <!-- Legal derived from XML -->
+			</ul>
+            <p class="nav-copyright footer-text">&copy;${copyrightYear} Boston Globe Media Partners, LLC</p>
+        </footer> <!-- /nav-ftr -->
+
+        <!-- Article Banner Ad -->
+        <%--
+        <p:include pageZoneName="ad_navdisplay" inherits="${adLayerDwpPath}" />
+        --%>
+       <%--
+       		<div class="ad-banner-mod ad-nav-banner-mod">
+            	<img class="ad-banner ad-nav-banner" src="ads/banner-1.jpg" />
+			</div>
+		--%>
+	</div>
+</nav> <!-- /toc-mod -->

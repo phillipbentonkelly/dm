@@ -1,0 +1,69 @@
+<p:currentObject metadata="meta" />
+<bdc:getBorderClass webObject="${currentObject}" defaultBorder="disabled" var="borderClasses"/>
+<p:object webObject="${cacheScope.dwp}" metadata="dwpMeta" webType="WT"/>
+<p:out var="section" xvalue="$dwpMeta//ObjectMetadata/OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/Sections/Section/SectionPath"/>
+
+<bdc:getAdLayer var="layer" webType="${WT}" />
+<bdc:inheritStoryLayer var="adLayerDwpPath" section="${section}" layer="${layer}"/>
+<c:if test="${not empty cacheScope.dwp}">
+	<p:object webObject="${cacheScope.dwp}" metadata="dwpMeta"/>
+	<p:out var="VREnabled" xvalue="$dwpMeta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/VisualRevenue"/>
+	<p:out var="VRZoneName" xvalue="$meta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/VisualRevenueZoneName"/>
+	<c:choose>
+		<c:when test="${VREnabled eq 'True' and not empty VRZoneName}">
+			<p:out var="VRZoneName" value='data-vr-zone="${VRZoneName}"'/>
+		</c:when>
+		<c:otherwise>
+			<p:out var="VRZoneName" value=""/>
+		</c:otherwise>
+	</c:choose>
+</c:if>
+
+
+<div class="main span9" ${VRZoneName}>
+
+	<p:include pageZoneName="SLIDER" inherits="${adLayerDwpPath}" />
+	<p:include pageZoneName="left">
+		<p:param name="dwp" value="${cacheScope.dwp}"/>
+		<p:param name="vidWidth" value="609" />
+		<p:param name="vidHeight" value="341" />
+		<p:param name="ScribleWidth" value="579" />
+		<p:param name="depth" value="${cacheScope.depth + 1}" />
+	</p:include>
+	
+</div>
+<div class="right-rail span5">
+	
+	<%-- include LOGO ad position here --%>
+	<%-- THIS IS AN AD LAYER ZONE --%>
+	<p:include pageZoneName="LOGO" inherits="${adLayerDwpPath}" />
+	
+	<%-- include CENTRAL ad position here --%>
+	<%-- THIS IS AN AD LAYER ZONE --%>
+	<p:include pageZoneName="CENTRAL" inherits="${adLayerDwpPath}" />
+	
+	<p:include pageZoneName="right">
+		<p:param name="dwp" value="${cacheScope.dwp}"/>
+		<p:param name="videoWidth" value="329" />
+		<p:param name="videoHeight" value="230" />
+		<p:param name="ScribleWidth" value="310" />
+	</p:include>
+	
+	<%-- include positions from the RIGHT zone --%>
+	<%-- THIS IS AN AD LAYER ZONE --%>
+	<p:include pageZoneName="VENDOR" inherits="${adLayerDwpPath}" />
+	
+	<p:include pageZoneName="right_below_ad">
+		<p:param name="dwp" value="${cacheScope.dwp}"/>
+		<p:param name="ScribleWidth" value="310" />
+	</p:include>
+	
+	<%-- include positions from the BOX zone --%>
+	<%-- THIS IS AN AD LAYER ZONE --%>
+	<p:include pageZoneName="BOX" inherits="${adLayerDwpPath}" />
+	
+	<%-- include positions from the BOX zone --%>
+	<%-- THIS IS AN AD LAYER ZONE --%>
+	<p:include pageZoneName="BOTTOM" inherits="${adLayerDwpPath}" />
+	
+</div>

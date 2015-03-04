@@ -1,0 +1,16 @@
+<%-- passed variables --%>
+<p:out var="visualRevenue" value="${cacheScope.visualRevenue}" />
+<p:out var="dwp" value="${cacheScope.dwp}" />
+<p:out var="isHomepage" value="${cacheScope.isHomepage}" />
+
+<%-- things from metadata --%>
+<p:currentObject metadata="meta" />
+<p:out var="conf" value="$meta//StoryContainerDisplay/EmergencyTeaseDisplay" />
+<p:out var="hedPosition" xvalue="${conf}/HedPosition/text()" />
+<p:out var="dekPosition" xvalue="${conf}/DekPosition/text()" />
+
+<p:include pageZoneName="content" templateName="sc_image_tease_emergency_item" maxItems="1">
+	<p:param name="hedPosition" value="${hedPosition}" /> 
+	<p:param name="dekPosition" value="${dekPosition}" />
+	<p:param name="isHomepage" value="${isHomepage}" />
+</p:include>

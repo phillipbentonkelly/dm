@@ -1,0 +1,73 @@
+<p:currentObject webType="WT" /> <!-- error page WT = ${WT} -->
+<!--  HERE BE THE HEADER all the way down to .site-container > .page-content -->
+
+                <div class="site-width four-oh-four-content">
+                    <h3 class="h4">The page you requested has either moved or been deleted.</h3>
+                    <div class="four-oh-four-message">
+                    	<p>Sorry, the page you have requested does not exist at this address.</p>
+						<p>If you are trying to reach a Boston.com page from a bookmark, the address may have changed, or the page may have been eliminated. Please use the search below or visit <a href="http://www.boston.com" class="link">our homepage</a>.</p>
+						<p>If you need immediate assistance, please visit our <a href="http://boston.custhelp.com/" class="link">Help Center</a> or contact us by filling out <a href="http://boston.custhelp.com/app/ask/" class="link">our feedback form</a>.</p>
+						<p>We apologize for the inconvenience.</p>
+                    </div>
+                    
+                    <div class="search-mod">
+
+                        <form class="form-large" action="${portalContext.publicBaseUrl}/search">
+                            <div class="form-row">
+                                <label for="search">Boston.com Site Tools</label>
+                                <div class="input-mod single-liner">
+                                    <input type="text" placeholder="Search Boston.com" name="q">
+                                    <button type="submit" class="submit-btn search-btn" value="Search"><i class="search-icon"></i></button>
+                                    
+                                </div><!-- /.input-->
+                            </div> <!-- /.form-row --> 
+                        </form> <!-- /.form-large -->       
+                    </div>
+                    <div class="table">
+                        <ul class="site-tools-mod">
+                            <li>
+                                <a href="${portalContext.publicBaseUrl}" class="logo link">
+                                 <span>boston.com home</span>   
+                                </a>
+                            </li>
+                            <li>
+                                <a href="http://www.boston.com/help/bostoncom_info/" class="pencil link">
+                                    <span>contact boston.com</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="http://boston.custhelp.com/" class="help link">
+                                    <span>boston.com help center</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div> <!-- /site-width -->
+            	<div class="site-full-width">
+           			<div class="primary">
+						<div id="streams-row" class="inner"></div>
+					</div>
+
+					<div class="secondary">
+						<%-- Feature stack --%>
+						<bdc:inheritZoneGlobal var="fsDwp" section="/" zoneName="features_bottom" />
+						<p:getObject path="${fsDwp}" var="fsDwpObj" />
+						<p:include pageZoneName="features_bottom" inherits="${fsDwp}">
+							<p:param name="dwp" value="${fsDwpObj}" />
+						</p:include>
+					</div>
+            	
+            
+			<%-- The stream --%>
+			<div class="content-well content-well--main content-well--section">
+
+				<bdc:inheritZoneGlobal var="streamDwp" section="/" zoneName="stream_config" />
+				<p:getObject path="${streamDwp}" var="streamDwpObj" />
+				<p:include pageZoneName="stream_config" inherits="${streamDwp}">
+					<p:param name="dwp" value="${streamDwpObj}" />
+				</p:include>
+			</div>
+       
+       </div> <!-- /site-full-width -->
+       
+<!--  HERE BE THE FOOTER AND THE CLOSING TAGS FOR .page-content and .site-container -->                

@@ -1,0 +1,130 @@
+<p:currentObject content="c" metadata="meta" webType="WT" sectionId="section"/>
+<%--
+<c:choose>
+	<c:when test="${not empty cacheScope.edition}">
+		<bdc:getHeadlines webObject="${currentObject}" var="headlines" edition="${cacheScope.edition}" />
+	</c:when>
+	<c:otherwise>
+	</c:otherwise>
+</c:choose>
+--%>
+
+<bdc:getHeadlines webObject="${currentObject}" var="headlines" />
+
+<p:out var="sisterSiteClass" value="" />
+<c:if test="${fn:startsWith(displayData.templateName, 'feature_stack_sister_')}">
+	<p:out var="sisterSiteClass" value="sister-site" />
+</c:if>
+
+
+<%-- Inheritance for the share tool selection --%>
+<bdc:inheritStoryLayer var="editorialLayer" section="${section}" layer="EDITORIAL_STORY_ASSET_LAYER" />
+<p:out var="editorialLayer" value="${editorialLayer}" scope="request" />
+<%-- --%>
+<%
+	String source = (String)pageContext.getAttribute("section");
+	int count = org.apache.commons.lang.StringUtils.countMatches(source, "/");
+	if (count > 1) {
+		int index = source.indexOf('/');
+		int indexEnd = source.length();
+		int indexStart = index + 1;
+		String id = source.substring(indexStart,indexEnd);
+		int indexRoundTwo = id.indexOf('/');
+		int indexEndRoundTwo = indexRoundTwo + 1;
+		String finalParentSection = source.substring(0,indexEndRoundTwo);
+		pageContext.setAttribute("section", finalParentSection);
+		} else {
+			pageContext.setAttribute("section", source);
+		}
+%>
+
+
+<bdc:sectionLinkData var="secData" sectionId="${section}" />
+
+<bdc:teaseSection section="${section}" var="sectionData" />
+
+<p:out var="provider" value="${fn:toLowerCase(videoObject.provider)}" />
+<p:out var="videoId" value="${videoObject.videoId}" />
+
+<%-- Share tools and stuff --%>
+<p:url var="gigyaCanonical" webObject="${currentObject}" public="true" />
+<p:out var="gigyaCanonical" value="${gigyaCanonical}" scope="request" />
+<p:out var="gigyaShortURL" xvalue="$meta//ObjectMetadata/OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/ShortUrl" scope="request" />
+<p:out var="gigyaHeadline" value="${videoObject.videoHeadline}" scope="request" />
+
+<p:out var="gigyaThumb" xvalue="$c//doc/story/video-container/videogrp/thumbnail/@fileref" />
+<p:out var="gigyaThumbType" value="video" scope="request" />
+<c:if test="${not empty gigyaThumb or fn:trim(gigyaThumb) ne ''}">
+	<p:out var="pictureID" value="${fn:substringAfter(gigyaThumb, '?uuid=')}" />
+	<p:getObject var="imgObject" uuid="${pictureID}" onError="ignore" />
+	<p:url var="imgSrc" webObject="${imgObject}" format="image_255x106" type="resource" baseDomain="httpCache" />
+	<p:out var="gigyaImage" value="${imgSrc}" scope="request" />
+</c:if>
+
+<article class="feat-tz ${sisterSiteClass}" data-vr-contentbox="">
+	<bdc:link className="feat-tz-img-mod art-bd omnistack" webObject="${currentObject}"
+		onClick="true"
+		isFStack="true" element="image" elementType="feature-stack-bundle">
+		<p:out var="altHeadline" value="${headlines.featureStackHeadline}" escape="html" />
+		<img class="feat-tz-img" src="${imgSrc}" alt="${altHeadline}">
+		<div class="feat-tz-icon tz-icon tz-video-icon"></div>
+	</bdc:link>
+	<div class="feat-tz-bd txt-bd">
+		<h4 class="feat-tz-h tz-title">
+			<bdc:link webObject="${currentObject}"
+				onClick="true" 
+				className="omnistack"
+				isFStack="true" element="headline" elementType="feature-stack-bundle">${headlines.featureStackHeadline}</bdc:link> <!-- video update -->
+		</h4>
+		<c:choose>
+			<c:when test="${sisterSiteClass eq ''}">
+				<ul class="tz-meta feat-tz-meta">
+					<li class="tz-meta-item tz-category">
+						<bdc:link value="${sectionData.path}"
+							className="omnistack"
+							onClick="true" 
+							isFStack="true" element="section label" elementType="feature-stack-bundle">${sectionData.name}</bdc:link>
+					</li>
+					<li class="tz-meta-item tz-share">
+						<p:inline url="$configurationURI/Framework/skins/components/feature_stack/fs_share_controller.jpt" />
+					</li>
+				</ul> <!-- /.tz-meta -->
+			</c:when>
+			<c:otherwise>
+				
+				<c:choose>
+					<c:when test="${displayData.templateName eq 'feature_stack_sister_radiobdc'}">
+						<p:url var="ssImage" value="$configurationURI/Framework/img/sister_sites/radiobdc.png" />
+						<p:out var="ssTagline" value="Boston's Alternative Music Source" />
+						<p:out var="ssLink" value="http://bdcwire.com/radiobdc" />
+					</c:when>
+					<c:when test="${displayData.templateName eq 'feature_stack_sister_bdcwire'}">
+						<p:url var="ssImage" value="$configurationURI/Framework/img/sister_sites/bdcwire.png" />
+						<p:out var="ssTagline" value="I'd Click That" />
+						<p:out var="ssLink" value="http://bdcwire.com" />
+					</c:when>
+					<c:when test="${displayData.templateName eq 'feature_stack_sister_betaboston'}">
+						<p:url var="ssImage" value="$configurationURI/Framework/img/sister_sites/betaboston.png" />
+						<p:out var="ssTagline" value="Innovation and technology news" />
+						<p:out var="ssLink" value="http://www.betaboston.com" />
+					</c:when>
+					<c:when test="${displayData.templateName eq 'feature_stack_sister_globe'}">
+						<p:url var="ssImage" value="$configurationURI/Framework/img/sister_sites/globe_b.png" />
+						<p:out var="ssTagline" value="The only place to read every Globe story: BostonGlobe.com" />
+						<p:out var="ssLink" value="http://www.bostonglobe.com" />
+					</c:when>
+				</c:choose>
+				
+				<a class="border" href="${ssLink}">
+					<div>
+						<img src="${ssImage}" alt="${ssTagline}" />
+					</div>
+					<div class="tagline">
+						${ssTagline}
+					</div>
+				</a>
+				
+			</c:otherwise>
+		</c:choose>
+	</div> <!-- /feat-tz-bd -->
+</article>

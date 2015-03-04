@@ -1,0 +1,142 @@
+// Create Loading Effect
+@mixin loading($time:1000s) {
+  @include animation(page-fade $time ease);
+  @include animation-fill-mode(forwards);
+}
+
+.loading {
+  display: block;
+  width: 38px;
+  margin: 80px auto;
+  @include absolute(33% 0 n 0);
+  z-index: -1;
+  // Ryan 8.21
+  // .infinity & {
+  //   position: relative;
+  //   top: auto;
+  //   z-index: 19;
+  //   margin: 30px auto;
+  // }
+  .loading-stream-items & {
+    position: static;
+    margin-top: 20px;
+    margin-bottom: 40px;
+  }
+}
+
+.dot {
+  display: inline-block;
+  @include size(8px);
+  @include border-radius(8px);
+  background-color: $red;
+  margin-right: 4px;
+  @include box-shadow(0 1px 1px rgba(0, 0, 0, 0.5));
+}
+.dot.one {
+  @include animation(scale-one 1.5s infinite);
+  @include animation-fill-mode(forwards);
+}
+.dot.two {
+  @include animation(scale-two 1.5s infinite);
+  @include animation-fill-mode(forwards);
+}
+.dot.three {
+  @include animation(scale-three 1.5s infinite);
+  @include animation-fill-mode(forwards);
+  margin-right: 0;
+}
+
+//
+// Cross-Platform CSS Animations
+//
+
+@include keyframes(scale-one) {
+  0% {
+    @include scale(0);
+    opacity: 0;
+  }
+
+  20% {
+    @include scale(1);
+    opacity: 1;
+  }
+
+  80% {
+    @include scale(1);
+    opacity: 1;
+  }
+
+  90% {
+    @include scale(0);
+    opacity: 0;
+  }
+
+  100% {
+    @include scale(0);
+    opacity: 0;
+  }
+}
+
+@include keyframes(scale-two) {
+  0% {
+    @include scale(0);
+    opacity: 0;
+  }
+
+  20% {
+    @include scale(0);
+    opacity: 0;
+  }
+
+  40% {
+    @include scale(1);
+    opacity: 1;
+  }
+
+  80% {
+    @include scale(1);
+    opacity: 1;
+  }
+
+  90% {
+    @include scale(0);
+    opacity: 0;
+  }
+
+  100% {
+    @include scale(0);
+    opacity: 0;
+  }
+}
+
+@include keyframes(scale-three) {
+  0% {
+    @include scale(0);
+    opacity: 0;
+  }
+
+  40% {
+    @include scale(0);
+    opacity: 0;
+  }
+
+  60% {
+    @include scale(1);
+    opacity: 1;
+  }
+
+  80% {
+    @include scale(1);
+    opacity: 1;
+  }
+
+  90% {
+    @include scale(0);
+    opacity: 0;
+  }
+
+  100% {
+    @include scale(0);
+    opacity: 0;
+  }
+}

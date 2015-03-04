@@ -1,0 +1,56 @@
+<p:currentObject content="content" metadata="meta" channel="Boston.com" sectionId="section" />
+
+<bdc:getHeadlines var="headlines" webObject="${currentObject}" />
+
+<p:out var="objectType" xvalue="$meta//sys/type" scope="request" />
+
+<p:out var="hasVR" value="${fn:toLowerCase(cacheScope.visualRevenue)}" />
+<p:out var="prefixVR" value="${cacheScope.visualRevenuePrefix}" />
+
+<c:set var="visualRevenueData" value="" />
+<c:if test="${hasVR eq 'true'}">
+	<c:set var="visualRevenueData">data-vr-zone="${prefixVR} main"</c:set>
+</c:if>
+
+<c:choose>
+	<c:when test="${objectType eq 'EOM::MediaGallery'}">
+		<x:set var="imgLocation" select="string($content//multimedia-container/gallery-container/headlines/photogrp[@class='alt-web-images']/photo[@name='image_300x240']/@fileref/text())" />
+		<c:if test="${empty imgLocation}">
+			<x:set var="imgLocation" select="string($content//multimedia-container/gallery-container/headlines/photogrp[@class='photo-gallery-tease']/photo[@name='image_399w']/@fileref/text())" />
+		</c:if>
+		<c:if test="${empty imgLocation}">
+			<x:set var="imgLocation" select="string($content//multimedia-container/gallery-container/photogrp[1]/photo/@fileref/text())" />
+		</c:if>
+	</c:when>
+	<c:otherwise>
+		<x:set var="imgLocation" select="string($content//multimedia-container/photo-container/photogrp[@class='alt-web-images']/photo[@name='image_300x240']/@fileref/text())" />
+		<c:if test="${empty imgLocation}">
+			<x:set var="imgLocation" select="string($content//multimedia-container/photo-container/photogrp[@class='main-web-images']/photo/@fileref/text())" />
+		</c:if>
+	</c:otherwise>
+</c:choose>
+<p:url var="img" value="${imgLocation}" type="resource" format="image_300x240" baseDomain="httpCache" />
+
+<div class="section-well__lead" data-vr-contentbox="">
+	<c:if test="${not empty fn:trim(img)}" >
+		<div class="section-well__lead-image">
+			<bdc:link webObject="${currentObject}" linkParam="p1=well_${fn:trim(prefixVR)}_main_image_hp">
+				<img src="${img}" />
+			</bdc:link>
+		</div>
+	</c:if>
+	<div class="section-well__lead-container">
+		<div class="section-well__lead-headline">
+			<bdc:link webObject="${currentObject}" className="section-well__lead-link" linkParam="p1=well_${fn:trim(prefixVR)}_main_headline_hp">
+				${headlines.carouselHeadline}
+			</bdc:link>
+		</div>
+
+		<!-- Tease Share -->
+		<p:include url="$configurationURI/Framework/skins/components/story_container/tease_footer.jpt">
+			<p:param name="viewType" value="WELL" />
+			<p:param name="storyObject" value="${currentObject}" />
+		</p:include>
+
+	</div><!-- / lead-container -->
+</div><!-- / lead -->

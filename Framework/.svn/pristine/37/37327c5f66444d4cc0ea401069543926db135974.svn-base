@@ -1,0 +1,5 @@
+<%@ page import="org.jsoup.Jsoup" %>
+<%@ page import="org.jsoup.safety.Whitelist" %>
+<%
+Whitelist whitelist = Whitelist.none();
+%>

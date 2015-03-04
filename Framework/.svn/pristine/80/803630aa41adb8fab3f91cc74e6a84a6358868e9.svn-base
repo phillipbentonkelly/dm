@@ -1,0 +1,53 @@
+<p:currentObject  metadata="meta"/>
+
+<p:out var="isHomepage" value="${cacheScope.isHomepage}"/>
+<x:forEach select="$meta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/NavConfig/Shortcuts/Shortcut" var="sc" varStatus="status">
+	<p:out var="title" xvalue="$sc//ShortcutName" />
+	<c:if test="${not empty title}">
+		<p:out var="shortCutCheck" value="${status.count}" scope="page" />
+	</c:if>
+</x:forEach>
+
+
+<c:if test="${shortCutCheck >= 1}">
+<nav class="page-nav" id="page-nav" role="navigation">
+	<ul>
+		<x:forEach select="$meta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/NavConfig/Shortcuts/Shortcut" var="sc">
+			<p:out var="title" xvalue="$sc//ShortcutName" />
+			<p:out var="url" xvalue="$sc//ShortcutUrl" />
+			<p:out var="tag" xvalue="$sc//OmnitureTag" />
+			<p:out var="navType" xvalue="$sc//NavigationDisplay"/>
+			
+			<p:out var="redTextClass" value="" />
+			<p:out var="tempTitle" value="${fn:trim(fn:toLowerCase(title))}" />
+			<c:if test="${tempTitle eq 'cars' or tempTitle eq 'jobs' or tempTitle eq 'real estate' or tempTitle eq 'circulars'}">
+				<p:out var="redTextClass" value="page-nav__link--red" />
+			</c:if>
+			
+			<c:if test="${not empty title and not empty url}">
+				<p:out var="finalURL" value="${url}?${tag}" />
+				<c:if test="${isHomepage}">
+					<p:out var="finalURL" value="${finalURL}_hp" />
+				</c:if>
+				
+				<c:choose>
+					<c:when test="${navType eq 'Desktoponly'}">
+						<p:out var="navClass" value="page-nav__item--tertiary" />
+					</c:when>
+					<c:when test="${navType eq 'DesktopandTablet'}">
+						<p:out var="navClass" value="page-nav__item--secondary" />
+					</c:when>
+					<c:otherwise>
+						<p:out var="navClass" value="" /> <%-- This space intentionally left blank --%>
+					</c:otherwise>
+				</c:choose>
+			
+				<li class="page-nav__item ${navClass}">
+					<a href="${finalURL}" class="page-nav__link ${redTextClass}">${title}</a>
+				</li>
+			</c:if>
+			
+		</x:forEach>
+	</ul>
+</nav><!-- / page nav -->
+</c:if>

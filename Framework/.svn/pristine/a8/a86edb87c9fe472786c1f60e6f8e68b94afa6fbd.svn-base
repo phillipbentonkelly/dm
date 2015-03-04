@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-16"?>
+<!DOCTYPE EOMSearch>
+<EOMSearch version="1.0" 
+	xmlns="http://EidosMedia.com/EOM/SearchEngine" 
+	xmlns:se="http://EidosMedia.com/EOM/SearchEngine" 
+	xmlns:q="http://EidosMedia.com/EOM/SearchEngine/query" 
+	xmlns:qm="http://EidosMedia.com/EOM/SearchEngine/query/macro" 
+	xmlns:qa="http://EidosMedia.com/EOM/SearchEngine/query/alias" 
+	xmlns:qui="http://EidosMedia.com/EOM/SearchEngine/query/UI">
+	<q:Query type="INDEX">
+		<q:Properties>
+			<q:Index name="wires@meth01_eomse2"/>
+			<q:MaxResultItems value="500"/>
+			<q:Sort on="ObjectInfo/Created" type="NDESCENDING"/>
+		</q:Properties>
+		<q:Boolean>
+			<se:Attributes xmlns="">
+			<ObjectMetadata><OnlineProducts><OnlineProduct><WebType>streamTease</WebType>
+			</OnlineProduct>
+			</OnlineProducts>
+			<Reference><Provider>$0</Provider><TransmissionReference>$1</TransmissionReference>
+			</Reference>
+			</ObjectMetadata>
+			</se:Attributes>
+		</q:Boolean>
+	</q:Query>
+</EOMSearch>

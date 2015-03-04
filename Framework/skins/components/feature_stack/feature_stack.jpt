@@ -1,0 +1,78 @@
+<%@ page import="java.lang.Math" %>
+<p:out var="adLayerDwpPath" value="${cacheScope.adLayerDwpPath}" />
+<!-- kevins blog ad: ${adLayerDwpPath} -->
+<p:currentObject metadata="fsMeta" />
+
+<%-- Determine the number of iterations we need to process the zone --%>
+<p:out var="stackAdBreak" xvalue="$fsMeta//ObjectMetadata/OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/AdInterval" />
+
+<c:if test="${empty stackAdBreak or stackAdBreak eq ''}">
+	<p:out var="stackAdBreak" value="5" />
+</c:if>
+<p:getPageZone name="features" var="stack_items" />
+<p:out var="zone_size" value="${stack_items.size}" />
+
+<%
+	String adBreak = (String)pageContext.getAttribute("stackAdBreak");
+	String zoneSize = (String)pageContext.getAttribute("zone_size");
+	
+	double iterations = (Double.parseDouble(zoneSize) / Double.parseDouble(adBreak));
+	double rounded = Math.round(iterations);
+	if(iterations > rounded) rounded += 1;
+	pageContext.setAttribute("iterations", rounded);
+%>
+
+<fmt:parseNumber var="iterations" value="${iterations - 1}" integerOnly="true" />
+<p:out var="featureStackAdMiddleCounter" value="0" />
+<div class="feat-tz-fader">
+	<section id="feat-tz-top" class="feat-tz-mod"
+		data-transition="slide">
+		<div class="feat-tz-scroller nocontent" ${cacheScope.VisRev}>
+			
+		<c:choose> <%-- Fix for situations when a feature stack has 0 items in it to prevent weird "divide by 0 errors". --%>
+			<c:when test="${zone_size == 0}">
+				<article class="feat-tz ad-featurestack ad ad-mod" id="ad_featurestack2"></article>
+			</c:when>
+			<c:otherwise>
+				<c:forEach begin="0" end="${iterations}" var="count" varStatus="counter">
+					<p:out var="adcount" value="${counter.count + 1}" />
+					
+					<p:include pageZoneName="features" templateName="feature_stack_item" maxItems="${(count + 1) * stackAdBreak}" offset="${count * stackAdBreak}"/>
+					
+					<c:choose>
+						<c:when test="${adcount == 2}">
+						
+							<p:include pageZoneName="ad_featurestack_middle_1" inherits="${adLayerDwpPath}">
+								<p:param name="isFS" value="${1==1}" />
+							</p:include>
+							<p:out var="featureStackAdMiddleCounter" value="${featureStackAdMiddleCounter + 1}" />
+						</c:when>
+						<c:when test="${adcount == 3}">
+								
+							<p:include pageZoneName="ad_featurestack_middle_2" inherits="${adLayerDwpPath}">
+								<p:param name="isFS" value="${1==1}" />
+							</p:include>
+							<p:out var="featureStackAdMiddleCounter" value="${featureStackAdMiddleCounter + 1}" />
+						</c:when>
+						<c:when test="${adcount == 4}">
+								
+							<p:include pageZoneName="ad_featurestack_middle_3" inherits="${adLayerDwpPath}">
+								<p:param name="isFS" value="${1==1}" />
+							</p:include>							
+							<p:out var="featureStackAdMiddleCounter" value="${featureStackAdMiddleCounter + 1}" />
+						</c:when>
+						<c:when test="${adcount == 5}">
+							
+							<p:include pageZoneName="ad_featurestack_middle_4" inherits="${adLayerDwpPath}">
+								<p:param name="isFS" value="${1==1}" />
+							</p:include>							
+							<p:out var="featureStackAdMiddleCounter" value="${featureStackAdMiddleCounter + 1}" />
+						</c:when>
+					</c:choose>
+				</c:forEach>
+			</c:otherwise>
+		</c:choose>
+	
+		</div> <!--  /feat-tz-scroller -->
+	</section> <!-- /feat-tz-mod -->
+</div> <!-- /feat-tz-fader -->

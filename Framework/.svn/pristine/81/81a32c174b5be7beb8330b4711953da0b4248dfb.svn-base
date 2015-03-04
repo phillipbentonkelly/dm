@@ -1,0 +1,21 @@
+<%-- these need to be updated to match image_tease_item.jpt #techdebt--%>
+
+<%-- ensure query updates don't break during server restart --%>
+<bdc:fixRefresh webObject="${currentObject}" />
+
+<%-- always include one item --%>
+<p:getCollection webObject="${currentObject}" var="query"/>
+<p:update timeout="300" />
+
+<p:include collection="${query}" templateName="${displayData.templateName}" 
+   offset="${cacheScope.queryOffset}" maxItems="${cacheScope.queryOffset + 1}">
+	<p:param name="listType" value="${cacheScope.listType}" />
+	<p:param name="imageSize" value="${cacheScope.imageSize}" />
+	<p:param name="displaySection" value="${cacheScope.displaySection}" />
+	<p:param name="displayTime" value="${cacheScope.displayTime}" />
+	<p:param name="headlineType" value="${cacheScope.headlineType}" />
+	<p:param name="social" value="${cacheScope.social}" />
+	<p:param name="visualRevenue" value="${cacheScope.visualRevenue}" />
+	<p:param name="wellTitle" value="${cacheScope.wellTitle}" />
+	<p:param name="dwp" value="${cacheScope.dwp}" />
+</p:include>

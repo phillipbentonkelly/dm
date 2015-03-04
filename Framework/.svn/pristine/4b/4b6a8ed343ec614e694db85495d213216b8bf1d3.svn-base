@@ -1,0 +1,98 @@
+<%--
+{comments}
+BDC-1735 - Never thoughfully-merged this work after the deployment process.
+{comments}
+--%>
+
+<%-- Logic lifted mostly wholesale from global_carousel.jpt; altered to
+account for different styles being used --%>
+
+<%-- Visual Revenue;
+currently unclear as to whether this is needed, so I'm including it to
+be safe --%>
+
+<p:out var="VR" value="${cacheScope.visualRevenue}" />
+
+<p:out var="vrDwp" value="" />
+<p:out var="vrDwc" value="" />
+
+<c:if test="${not empty cacheScope.dwp}">
+	<p:object webObject="${cacheScope.dwp}" metadata="dwpVRMeta" />
+	<p:out var="vrDwp"
+		xvalue="$dwpVRMeta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/VisualRevenue" />
+</c:if>
+<c:if test="${not empty cacheScope.VREnabled}">
+	<p:out var="vrDwc" value="${cacheScope.VREnabled}" />
+</c:if>
+
+<p:out var="VisRevTop" value="" />
+<p:out var="VisRevBottom" value="" />
+
+
+<%-- check if VREnabled has been in either dwp or top_of_page.dwc --%>
+<c:if test="${ VR eq 'True' }">
+	<p:out var="VisRevTop" value='data-vr-zone="Centerpiece"' />
+	<p:out var="VisRevBottom" value='data-vr-zone="Centerpiece Bottom"' />
+</c:if>
+<%-- determinant of whether the main story has a video tease or not --%>
+<p:getPageZone name="main" var="mainZone" webObject="${currentObject}" />
+<c:forEach items="${mainZone.items}" var="mainItem" begin="0"
+	end="0">
+	<p:getObject webObject="${mainItem}" var="mainItemObj" />
+</c:forEach>
+<p:object webObject="${mainItemObj}" metadata="mainObjMeta" />
+<bdc:getTeaseType webObject="${mainItemObj}" var="teaseType" />
+<p:out var="objectType"
+	xvalue="$mainObjMeta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/WebType" />
+<p:out var="standAloneVideo" value="${1==2}" />
+
+<c:if test="${objectType eq 'dwc_external_video_carousel'}">
+	<c:set var="teaseType" value="video-container" />
+</c:if>
+
+<c:if test="${objectType eq 'video'}">
+	<c:set var="teaseType" value="video-container" />
+	<p:out var="standAloneVideo" value="${1==1}" />
+</c:if>
+
+
+<div class="lead-tz-mod" data-vr-zone="Centerpiece">
+	<div class="lead-tzs">
+
+		<c:choose>
+			<c:when test="${teaseType eq 'video-container'}">
+				<p:out var="teaseAssetType" value="video" scope="page" />
+				<c:choose>
+					<c:when test="${standAloneVideo}">
+						<p:include pageZoneName="main" templateName="static_carousel_video_story">
+							<p:param name="dwp" value="${cacheScope.dwp}" />
+						</p:include>
+					</c:when>
+					<c:otherwise>
+						<p:include pageZoneName="main" templateName="static_carousel_video_tease">
+							<p:param name="objectType" value="${objectType}" />
+							<p:param name="dwp" value="${cacheScope.dwp}" />
+						</p:include>
+					</c:otherwise>
+				</c:choose>
+			</c:when>
+			<c:otherwise>
+				<p:include pageZoneName="main" templateName="static_carousel_image_tease">
+					<p:param name="dwp" value="${cacheScope.dwp}" />
+				</p:include>
+			</c:otherwise>
+		</c:choose>
+
+
+
+		<ul class="lead-list">
+
+			<%-- the individual tease items; fancy --%>
+			<p:include pageZoneName="page_top_links" templateName="static_carousel_small_tease">
+				<p:param name="dwp" value="${cacheScope.dwp}" />
+			</p:include>
+		</ul>
+
+	</div>
+</div>
+<%-- MMK 06-06-2014 ... ¯\_(ツ)_/¯ --%>

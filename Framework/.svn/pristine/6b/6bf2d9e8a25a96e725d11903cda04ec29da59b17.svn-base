@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width">
+	<link rel="shortcut icon" href="favicon.ico">
+	<title>Boston.com | Streamer Bookmarklet</title>
+	<style>
+		body {
+			padding-top: 50px;
+			background: #f4f6f1;
+			font-family: Arial, Helvetica, Verdana, sans-serif;
+			color: #222;
+			text-align: center;
+		}
+		.container {
+			width: 600px;
+			margin: 0 auto;
+			padding: 35px 0 70px;
+			background: #fff;
+			border-bottom: 1px solid #cccccc;
+		}
+		h3 {
+			margin-bottom: 2em;
+		}
+		.button {
+			display: inline-block;
+			padding: 10px 30px;
+			background: #2494e3;
+			font-size: 24px;
+			color: #fff;
+			text-decoration: none;
+			text-transform: uppercase;
+			letter-spacing: 0.2em;
+			cursor: grab;
+			cursor: -webkit-grab; 
+			cursor: -moz-grab;
+			-webkit-box-shadow: -1px -1px 0 #1b6faa inset;
+		}
+		.button:hover {
+			background: #399ee5;
+			-webkit-transition: all 0.15s ease-in;
+			-moz-transition: all 0.15s ease-in;
+			-o-transition: all 0.15s ease-in;
+			transition: all 0.15s ease-in;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h3>Drag these buttons to your bookmarks bar:</h3>
+		<a id="streamer" class="button">Streamer</a>
+		<a id="enhance" href="javascript:(function() {
+		var script = document.createElement('script');
+		script.setAttribute('src', baseUrl + enhance.js');
+		document.body.appendChild( script );
+})();" class="button">Enhance</a>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script>
+		var baseUrl = '//' + window.location.host + '/streamer/';
+		var streamerJS = [
+		"javascript:(function() {",
+			"try{",
+			"var remove = function (id){return (elem=document.getElementById(id)); if(elem){ elem.parentNode.removeChild(elem)}};",
+			"remove('streamerJS');",
+			"var script = document.createElement('script');",
+			"script.setAttribute('id', 'streamerJS');",
+			"script.setAttribute('src', '{{baseUrl}}streamer.js');",
+			"document.body.appendChild( script );",
+			"remove('streamerCSS');",
+			"var styles = document.createElement('link');",
+			"styles.setAttribute('id', 'streamerCSS');",
+			"styles.setAttribute('href', '{{baseUrl}}streamer.css');",
+			"styles.setAttribute('rel', 'stylesheet');",
+			"document.getElementsByTagName('head')[0].appendChild( styles );",
+			"} catch(e){alert(e.message)}",
+		"})();"
+		].join('').replace(/{{baseUrl}}/g, baseUrl);
+		console.log(streamerJS);
+		var enhanceJS = [
+		"javascript:(function() {",
+				"var script = document.createElement('script');",
+				"script.setAttribute('src', {{baseUrl}}enhance.js');",
+				"document.body.appendChild( script );"
+			].join('').replace(/{{baseUrl}}/g, baseUrl);
+		$('#streamer').attr('href', streamerJS );
+		$('#enhance').attr('href', enhanceJS);
+	</script>
+	</div>
+</body>
+</html>

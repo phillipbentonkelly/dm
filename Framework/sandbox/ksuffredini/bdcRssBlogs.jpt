@@ -1,0 +1,18 @@
+<%--
+CDEV-52 - bdc blog rss feeds
+--%>
+
+<entries>
+<p:getObject path="/SysConfig/Classify/Data/rssfeeds.xml" var="feeds" />
+<p:object webObject="${feeds}" content="c" />
+<x:forEach select="$c//rssFeeds/RSSFeed" var="feed">
+	<x:set select="string($feed/@url/text())" var="url"/>
+	<x:set select="string($feed/@name/text())" var="title"/>
+
+	<p:include url="$configurationURI/Framework/sandbox/ksuffredini/rssQuery.jpt">
+		<p:param name="guid" value="${guid}" />
+		<p:param name="date" value="${date}" />
+		<p:param name="title" value="${title}" />
+	</p:include>
+</x:forEach>
+<entries>

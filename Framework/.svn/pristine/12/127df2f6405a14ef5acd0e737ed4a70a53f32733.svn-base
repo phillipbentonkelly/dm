@@ -1,0 +1,78 @@
+<%-- {comments} DM-27: h3 alterations {comments} --%>
+<p:currentObject metadata="meta" channel="Boston.com"/>
+
+<p:out var="sharebar" xvalue="$meta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/SectionShareBar"/>
+<p:out var="reviewRating" xvalue="$meta//Editorial/ReviewRating"/>
+
+<bdc:getHeadlines webObject="${currentObject}" var="title" />
+<bdc:getTeaseData webObject="${currentObject}" templateName="${displayData.templateName}" var="teaseData" />
+<bdc:imagesWithCaptionCredit webObject="${currentObject}" var="imageData" format="${teaseData.imageFormat}" />
+<bdc:getSummaryForSectionFront webObject="${currentObject}" var="webtease" />
+<p:out var="CampaignCodes" value="${cacheScope.CampaignCodes}"/>
+
+
+<p:out var="timeStamp" value="" />
+<p:out var="timeStampDuration" value="" />
+<p:out var="displayTimeStamp" value="" />
+<p:out var="hClass" value="${teaseData.hSize}"/>
+
+
+<c:if test="${not empty cacheScope.dwp}">
+	<p:object webObject="${cacheScope.dwp}" metadata="dwpMeta"/>
+	<p:out var="edition" xvalue="$dwpMeta//sys/props/productInfo/edition"/>
+	<bdc:getRelatedLinks webObject="${currentObject}" var="relatedLinks" edition="${edition}" />
+	<bdc:getHeadlines webObject="${currentObject}" var="title" edition="${edition}"/>
+	<bdc:getSummaryForSectionFront webObject="${currentObject}" var="webtease" edition="${edition}" />
+</c:if>
+
+<c:if test="${not empty cacheScope.dwc}">
+	<p:object webObject="${cacheScope.dwc}" metadata="dwcMeta"/>
+	<x:if select="$dwcMeta//TimeStamp" >
+		<p:out var="timeStamp" xvalue="$dwcMeta//TimeStamp" />
+	</x:if>
+	<x:if select="$dwcMeta//TimeStampDuration" >
+		<p:out var="timeStampDuration" xvalue="$dwcMeta//TimeStampDuration" />
+	</x:if>
+</c:if>
+<bdc:timestamp webObject="${currentObject}" var="displayTimeStamp" timeStampAccess="${timeStamp}" timeStampDuration="${timeStampDuration}"/>
+
+<div class="widget tease image-left" data-vr-contentbox="">
+	<c:if test="${not empty title.overline or title.overline != ''}">
+		
+		<div class="overline">${title.overline}</div>
+	</c:if>
+		<c:if test="${fn:trim(imageData.src) != ''}">
+			<div class="image ${teaseData.imageFormat}">
+			<bdc:link webObject="${currentObject}" className="image-link" >
+				<img alt="${title.headline}" title="${title.headline}" src="${imageData.src}" />
+			</bdc:link>
+			</div>
+		</c:if>
+	
+	<div class="content">
+		<h3 class="headline ${hClass}">
+			<bdc:link linkParam="${CampaignCodes}" webObject="${currentObject}">${title.headline}</bdc:link>
+		</h3>
+		<p>
+			<c:if test="${not empty reviewRating}">
+				<bdc:leadIn reviewRating="${reviewRating}"/>
+			</c:if>
+			${webtease}
+			<c:if test="${displayTimeStamp != null && displayTimeStamp != ''}">
+				<span class="timestamp">${displayTimeStamp}</span>
+			</c:if>
+		</p>
+		<%-- Related Links --%>
+		<p:inline url="$configurationURI/Framework/skins/components/tease/related_links.jpt">
+			<p:param name="linksPerLine" value="1" />
+			<p:param name="templateName" value="regular_simple" />
+			<p:param name="CampaignCodes" value="${CampaignCodes}"/>
+		</p:inline>
+	</div>
+
+
+	<%-- Social Bar --%>
+	<c:if test="${sharebar eq 'True'}">
+		<p:inline url="$configurationURI/Framework/skins/components/tease/social_bar.jpt"/>
+	</c:if>
+</div>

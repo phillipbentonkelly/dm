@@ -1,0 +1,95 @@
+<%@ page import="java.util.Arrays" %>
+<%@ taglib prefix="x" uri="jstlXml"%>
+<%@ taglib prefix="jp"uri="jptag"%>
+
+<%--
+<p:out var="blog_id" value="${cacheScope.blog_id}" />
+<p:out var="sectionPath" value="${cacheScope.sectionPath}" />
+<!-- sectionPath is ${sectionPath} -->
+<c:catch var="categoryException">
+	<p:out var="xmlDoc" value="/SysConfig/Classify/Data/BlogCategories/${blog_id}.xml"/>
+	<p:getObject path="${xmlDoc}" var="categoryDocObj"/>
+	<p:object webObject="${categoryDocObj}" content="c"/>
+	
+	<!-- This goes to the appropriate query for the blog and returns all entries for category manipulation -->
+	
+	<p:out var="cats" value=" " />
+	
+	<!-- This block takes the collection from the tease separated by commas -->
+	<x:forEach var="cat" select="$c//BlogCategories/SubSection">
+		<p:out var="theCat" xvalue="$cat/SubSectionName" />
+		
+		<c:choose>
+			<c:when test="${fn:trim(cats) == ''}">
+				<p:out var="cats" value="${theCat}" />
+			</c:when>
+			<c:otherwise>
+				<p:out var="cats" value="${cats},${theCat}" />
+			</c:otherwise>
+		</c:choose>
+	</x:forEach>
+
+	<!-- This Java bit sorts the list alphabetically -->
+	<%
+		String theCats = (String)pageContext.getAttribute("cats");
+		
+		String[] cats_array = theCats.split(",");
+		
+		Arrays.sort(cats_array);
+		
+		String cats = "";
+		
+		for(int i=0;i < cats_array.length; i++)
+		{
+			if (cats == "")
+			{
+				cats = cats_array[i];
+			}
+			else
+			{
+				cats = cats +","+ cats_array[i];
+			}
+		}
+		
+		pageContext.setAttribute("cats", cats);
+	%>
+	
+	<c:if test="${not empty cats}">
+		<div class="blogwidget">
+			<h4 class="widgetTitle">Blog categories</h4>
+			<div>Browse this blog by category</div>
+			<ul class="blog_cat double">
+				<c:forEach var="item" items="${fn:split(cats, ',')}">
+					<p:out var="item" value="${fn:trim(item)}" />
+					<c:if test="${!empty item}">
+						<li>
+							<a href="${sectionPath}/blogs/${blog_id}/category/${item}">${item}</a>
+						</li>
+					</c:if>
+				</c:forEach>
+			</ul>
+			<!--
+			<form id="blogArchiveForm">
+				<select class="overrideSelect">
+					<option value="">Select a blog archive month</option>
+					<option value="May 2012">May 2012</option>
+					<option value="Apr 2012">Apr 2012</option>
+					<option value="Mar 2012">Mar 2012</option>
+					<option value="Feb 2012">Feb 2012</option>
+					<option value="Jan 2012">Jan 2012</option>
+					<option value="Dec 2011">Dec 2011</option>
+				</select>
+			</form>
+			-->
+		</div>
+	</c:if>
+	<script type="text/javascript">
+		$(document).ready(function(){
+		var test = $('ul.blog_cat li');
+	
+		console.log(test);
+		});
+	 </script>
+ </c:catch>
+ <!-- ${categoryException}  -->
+ --%>

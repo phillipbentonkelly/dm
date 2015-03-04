@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EOMSearch xmlns="http://EidosMedia.com/EOM/SearchEngine" xmlns:q="http://EidosMedia.com/EOM/SearchEngine/query" xmlns:qa="http://EidosMedia.com/EOM/SearchEngine/query/alias" xmlns:qm="http://EidosMedia.com/EOM/SearchEngine/query/macro"
+xmlns:qui="http://EidosMedia.com/EOM/SearchEngine/query/UI" xmlns:se="http://EidosMedia.com/EOM/SearchEngine">
+
+	<q:Query type="INDEX">
+    	<q:Properties>
+      		<q:MaxResultItems value="100"/>
+			<q:Index name='boston@meth01_eomse1'/>
+      		<q:Sort on="ObjectInfo/Created" type="NDESCENDING"/>
+      		<q:Sort on="ObjectInfo/Creator" type="ASCENDING"/>
+    	</q:Properties>
+    
+		<q:Boolean>
+			<ObjectInfo>
+				<q:OR>
+					<type>EOM::CompoundStory</type>
+					<type>EOM::MediaGallery</type>
+					<type>EOM::Story</type>
+					<type>StreamTease</type>
+				</q:OR>
+				<q:NOT>
+					<q:OR>
+						<type>VideoStory</type>
+						<type>igraphic</type>
+						<type>summarystory</type>
+					</q:OR>
+				</q:NOT>
+			</ObjectInfo>
+
+			<se:Attributes xmlns="">
+				<ObjectMetadata>
+						<OnlineProducts>
+							<OnlineProduct>
+								<ProductName>Boston.com</ProductName>	
+								<q:AND>
+									<q:OR>
+										<q:NOT>
+											<PublicationEndDate q:op="RANGE">
+												<q:LowValue><qm:TMinDateTime/></q:LowValue>
+												<q:HighValue><qm:TNow/></q:HighValue>
+											</PublicationEndDate>
+										</q:NOT>
+										<PublicationEndDate q:op="EMPTY" />
+									</q:OR>
+									<q:OR>
+										<q:NOT>
+											<PublicationStartDate q:op="RANGE">
+												<q:LowValue><qm:TNow/></q:LowValue>
+												<q:HighValue><qm:TMaxDateTime/></q:HighValue>
+											</PublicationStartDate>
+										</q:NOT>
+										<PublicationStartDate q:op="EMPTY" />
+									</q:OR>
+								</q:AND>
+								<Sections>
+									<Section>
+										<q:NOT>
+											<SectionName>Sponsored</SectionName>
+										</q:NOT>
+									</Section>
+								</Sections>
+							</OnlineProduct>
+						</OnlineProducts>
+					<q:NOT>
+						<Reference>
+							<Provider>Globe Story</Provider>
+						</Reference>
+					</q:NOT>
+				</ObjectMetadata>
+			</se:Attributes>
+
+		</q:Boolean>
+
+	</q:Query>
+
+</EOMSearch>
+

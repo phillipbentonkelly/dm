@@ -1,0 +1,33 @@
+<%--
+	Based on:
+	/bcom-redesign-beta/bdc-markup/page-content/modules/content-text.php
+--%>
+
+<p:currentObject webType="WT" content="story" metadata="meta" channel="Boston.com" />
+
+<c:choose>
+	<%-- Galleries --%>
+	<c:when test="${fn:endsWith(WT, 'picturestory') or fn:endsWith(WT, 'gallery')}">
+		<div class="content-text content-text--gallery">
+			<bdc:rwCompoundGallery var="gallery" webObject="${currentObject}" />
+			<p class="content-text__text content-text--gallery__text--title">
+				${gallery[0].headline}
+			</p>
+			${gallery[0].caption} <%-- The wrapping <p> tags are added in the gallery tag --%>
+		</div><!-- / content-text -->
+	</c:when>
+	<%-- Stories --%>
+	<c:when test="${WT eq 'video'}">
+		<bdc:videoJavaBeanMap webObject="${currentObject}" var="objectMap" />
+		<div class="content-text">
+			${objectMap.videoCaption}
+		</div>
+	</c:when>
+	<c:otherwise>
+		<div class="content-text">
+			<p:out xvalue="$story//text/content" xslt="$configurationURI/Framework/xslt/bdc_story_default_new.xslt">
+				<p:param name="objectPath" value="${currentObject.path}" />
+			</p:out>
+		</div><!-- / content-text -->
+	</c:otherwise>
+</c:choose>

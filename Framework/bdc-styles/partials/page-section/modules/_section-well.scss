@@ -1,0 +1,161 @@
+// *
+// *  Section Well
+// *
+
+$module-name: 'section-well';
+
+// ------------------------------------------------------------
+// Default Styles
+// ------------------------------------------------------------
+
+.#{$module-name} {
+  margin-bottom: spacer(px, xx-large);
+  margin-bottom: spacer(rem, xx-large);
+  padding-bottom: spacer(px);
+  padding-bottom: spacer(rem);
+  border-bottom: 2px solid color(gray, x-light);
+  @extend %clearfix;
+
+  // Well Header
+  &__header {
+    display: block;
+    margin-bottom: spacer(px, base);
+    margin-bottom: spacer(rem, base);
+    color: color(gray, xx-dark);
+    text-transform: uppercase;
+    @include font-scale(large);
+    &--red {
+      padding: spacer(px);
+      padding: spacer(px);
+      background: color(red);
+      color: color(white);
+      @include font-scale(mid);
+      line-height: 1;
+      .section-well__header-link {
+        @include link-states(color(white), color(white), color(white));
+        line-height: 1;
+      }
+    }
+  }
+
+  &__header-title {
+    display: inline-block;
+    &:before {
+      content: "[ ";
+      color: color(red);
+    }
+    &:after {
+      content: " ]";
+      color: color(red);
+    }
+  }
+
+  &__header--red &__header-title {
+    &:before {
+      content: none;
+    }
+    &:after {
+      content: none;
+    }
+  }
+
+  &__header-link {
+    display: inline-block;
+    padding-left: spacer(px, small);
+    padding-left: spacer(rem, small);
+    @include font-scale(x-small);
+    text-decoration: underline;
+    text-transform: capitalize;
+    @include link-states(color(gray), color(gray, light), color(gray, light));
+  }
+
+  // 5 Day Forecast Well
+  &--5-day-forecast {
+    display: none;
+  }
+
+  // Sponsored Section Well
+
+  &--sponsored {
+    position: relative;
+    background: color(yellow);
+    padding: spacer(px);
+    padding: spacer(rem);
+    margin-bottom: 35px;
+    margin-bottom: 2.188rem;
+    @extend %clearfix;
+  }
+
+  &__sponsor-headline {
+    @include link-states(color(gray, xx-dark), color(gray), color(gray, x-dark));
+    margin-bottom: spacer(px, mid);
+    margin-bottom: spacer(rem, mid);
+    @include font-scale(large);
+    font-weight: $fw-bold;
+    text-align: left;
+  }
+  &__sponsor-text {
+    @include font-scale(small);
+  }
+  &__sponsor-info {
+    margin: 0 spacer(px, mid);
+    margin: 0 spacer(rem, mid);
+    padding-bottom: spacer(px, large);
+    padding-bottom: spacer(rem, large);
+    clear: both;
+    @include font-scale(xxx-small);
+  }
+  &__sponsor-image {
+    vertical-align: middle;
+    margin-right: spacer(px);
+    margin-right: spacer(rem);
+  }
+  &__sponsor-message {
+    @include font-scale(x-small);
+    text-transform: uppercase;
+    color: color(gray);
+    vertical-align: middle;
+  }
+  &__sponsor-link {
+    text-transform: capitalize;
+    @include link-states(color(gray, xx-dark), color(gray), color(gray, x-dark));
+  }
+}
+
+// ------------------------------------------------------------
+// Tablet Breakpoint
+// ------------------------------------------------------------
+
+// Tablet Breakpoint
+@include media-query(tablet) {
+  .#{$module-name} {
+
+    // 5 Day Forecast Well
+    &--5-day-forecast {
+      display: block;
+    }
+
+    // Sponsor Info
+    &__sponsor-info {
+      margin-left: 0;
+      padding-bottom: 0;
+    }
+
+  }
+}
+
+// ------------------------------------------------------------
+// Desktop Breakpoint
+// ------------------------------------------------------------
+
+@include media-query(desktop) {
+  .#{$module-name} {
+
+    // Sponsor Info
+    &__sponsor-info {
+      margin: 0;
+      padding-bottom: 0;
+    }
+
+  }
+}

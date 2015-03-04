@@ -1,0 +1,58 @@
+<%-- things passed --%>
+<p:out var="visualRevenue" value="${cacheScope.visualRevenue}" />
+<p:out var="isHomepage" value="${cacheScope.isHomepage}" />
+
+<p:out var="vrMaybe" value="" />
+<c:if test="${visualRevenue eq 'True'}">
+	<p:out var="vrMaybe" value="data-vr-zone=\"Top of Page Well\"" />
+</c:if>
+
+<%-- the markup --%>
+<div class="page-module" ${vrMaybe}>
+	<div class="grid--12">
+		<div class="page-module-header">${title}</div>
+	</div>
+	<div class="grid--8-4">
+	 	<div class="grid-8">
+			<p:include pageZoneName="image-top" styleName="sc_image_tease">
+				<p:param name="visualRevenue" value="${visualRevenue}" />
+				<p:param name="wellTitle" value="${title}" />
+				<p:param name="dwp" value="${dwp}" />
+				<p:param name="p1" value="p1=feature_pri_hp" />
+				<p:param name="dataOmniture" value="data-omniture=\"feature | primary | homepage\"" />
+				<p:param name="isHomepage" value="${isHomepage}" />					
+			</p:include>
+			<div class="grid-4 grid--nested-first">
+				<p:include pageZoneName="image-bottom-left" styleName="sc_image_tease">
+					<p:param name="visualRevenue" value="${visualRevenue}" />
+					<p:param name="wellTitle" value="${title}" />
+					<p:param name="dwp" value="${dwp}" />	
+					<p:param name="p1" value="p1=feature_sec_hp" />
+					<p:param name="dataOmniture" value="data-omniture=\"feature | secondary | homepage\"" />
+					<p:param name="isHomepage" value="${isHomepage}" />			
+				</p:include>
+			</div>
+			<div class="grid-4 grid--nested-last">
+				<p:include pageZoneName="image-bottom-right" styleName="sc_image_tease">
+					<p:param name="visualRevenue" value="${visualRevenue}" />
+					<p:param name="wellTitle" value="${title}" />
+					<p:param name="dwp" value="${dwp}" />
+					<p:param name="p1" value="p1=feature_sec_hp" />
+					<p:param name="dataOmniture" value="data-omniture=\"feature | secondary | homepage\"" />
+					<p:param name="isHomepage" value="${isHomepage}" />			
+				</p:include>
+			</div>
+		</div>
+		<div class="grid-4">
+			<p:include pageZoneName="headlines" styleName="sc_headline_list">
+				<p:param name="visualRevenue" value="${visualRevenue}" />
+				<p:param name="wellTitle" value="${title}" />
+				<p:param name="dwp" value="${dwp}" />
+				<p:param name="dataP1" value="feature_stack_#_hp" />
+				<p:param name="dataOmniture" value="data-omniture=\"feature | stack | homepage\"" />
+				<p:param name="additionalContainerClass" value="js-add-p1" />
+				<p:param name="isHomepage" value="${isHomepage}" />
+			</p:include>
+		</div>
+	</div>
+</div>

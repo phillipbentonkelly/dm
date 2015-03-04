@@ -1,0 +1,14 @@
+<li class="lead-nav-item {{^image}}lead-item-no-art{{/image}}">
+	<a class="lead-item-link" href="{{^gallery_link}}article.html{{/gallery_link}}{{#gallery_link}}gallery.html{{/gallery_link}}#{{slug}}">
+		<div class="lead-list-art-bd art-bd">
+			{{#image}}<img class="lead-list-art" src="{{image.thumb_quick}}" />{{/image}}
+			{{^image}}<p class="lead-list-cat">{{category}}</p>{{/image}}
+		</div>
+		<div class="lead-list-txt-bd txt-bd">
+			<h4 class="lead-list-h">{{{head}}}</h4>
+			{{#image}}
+			<p class="lead-list-overline">{{category}}</p>
+			{{/image}}
+		</div>
+	</a>
+</li>

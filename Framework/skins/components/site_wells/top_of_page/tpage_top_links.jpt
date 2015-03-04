@@ -1,0 +1,25 @@
+<%--
+{comments}
+BDC-1735 - Uncommitted changes are my enemy.
+{comments}
+--%>
+<p:currentObject metadata="meta" content="content" webType="WT" sectionId="section" uuid="storyID" />
+
+<bdc:getHeadlines webObject="${currentObject}" var="headlines" />
+<p:out var="xref" xvalue="$content//xref" scope="request" />
+<p:out var="tzTxtVRAttr" value=""/>
+
+<c:if test="${cacheScope.visualRevenue eq 'True'}">
+	<p:out var="tzTxtVRAttr" value='data-vr-contentbox=""'/>
+</c:if>
+
+<li class="top-tz-txt" data-vr-contentbox="">
+	<c:choose>
+		<c:when test="${fn:trim(xref) != '' and not empty xref}">
+			<bdc:link value="${xref}" className="tz-txt">${headlines.carouselHeadline}</bdc:link>
+		</c:when>
+		<c:otherwise>
+			<bdc:link webObject="${currentObject}" className="tz-txt">${headlines.carouselHeadline}</bdc:link>
+		</c:otherwise>
+	</c:choose>
+</li>

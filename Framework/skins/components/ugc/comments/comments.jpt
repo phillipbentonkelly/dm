@@ -1,0 +1,18 @@
+<%-- COMMENTS COMPONENT --%>
+<p:out var="showLoginBox" value="${cacheScope.showLoginBox}" />
+<p:currentObject content="story" metadata="meta"
+	webType="webtype" />
+<p:out var="metaCommentsEnabled"
+	xvalue="$meta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/CommentingEnabled" />
+
+<div id="comments" class="story-width story-comments closed">
+	<div class="l-story-txt no-flow clearfix">
+		<section class="story-comments-mod">
+			<div id="comments-wrapper" class="ugc-comments comments comments-wrapper">
+				<!--div class="loading-message" id="loading-comments">
+					Loading comments...
+				</div-->
+			</div><!-- / #comments -->
+		</section><!-- / .story-comments-mod -->
+	</div><!-- / .l-story-txt -->
+</div><!-- / #story-comments -->

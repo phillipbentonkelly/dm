@@ -1,0 +1,21 @@
+<article class="feat-tz sponsor-feat-tz ">
+	<a class="feat-tz-img-mod art-bd" href="article.html#featured-property">
+		<img class="feat-tz-img" src="/photos/brownstone-2-thumb.jpg">
+	</a> <!-- feat-tz -->
+	<div class="feat-tz-bd txt-bd">
+		<h4 class="feat-tz-h tz-title">
+			<a href="article.html#featured-property">Featured Property: Beautiful South End Brownstone</a>
+		</h4>
+		<ul class="tz-meta feat-tz-meta">
+			<li class="tz-meta-item tz-category">
+				<a href="#">Real Estate</a>
+			</li>
+			<li class="tz-meta-item tz-share">
+				<a class="tz-share-link js-share-modal" href="#share-modal">
+					<i class="tz-share-icon tz-meta-icon"></i>
+					<i class="tz-share tz-meta-txt">Share</i>
+				</a>
+			</li>
+		</ul> <!-- /.tz-meta -->
+	</div> <!-- /feat-tz-bd -->
+</article> <!-- /feat-tz -->

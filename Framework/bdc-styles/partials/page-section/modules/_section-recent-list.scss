@@ -1,0 +1,103 @@
+// *
+// *  Section Recent List
+// *
+
+$module-name: 'section-recent-list';
+
+// ------------------------------------------------------------
+// Default Styles
+// ------------------------------------------------------------
+
+.#{$module-name} {
+  margin-top: spacer(px, mid);
+  margin-top: spacer(rem, mid);
+  clear: both;
+  // List Header
+  &__header {
+    margin-bottom: spacer(px, large);
+    margin-bottom: spacer(rem, large);
+    @include font-scale(large);
+  }
+  &__header-link {
+    @include link-states(color(gray, xx-dark), color(gray), color(black));
+  }
+
+  // List Items
+  &__item {
+    margin-bottom: spacer(px, mid);
+    margin-bottom: spacer(rem, mid);
+    padding-bottom: spacer(px, mid);
+    padding-bottom: spacer(rem, mid);
+    @extend %clearfix;
+    border-bottom: 1px solid color(gray, x-light);
+    &:last-child {
+      border-bottom: 0;
+    }
+    &--ad {
+      margin-bottom: 0;
+      border: none;
+    }
+  }
+
+  &__content {
+    margin-left: 50px + 10px; // Thumb width + 10px for good measure
+    &--no-image {
+      margin-left: 0;
+    }
+  }
+
+  // Item Thumbs
+  &__image {
+    float: left;
+    width: 50px;
+  }
+
+  // Item Headline
+  &__headline {
+    @include font-scale(x-small);
+    font-weight: $fw-medium;
+    // margin-bottom: spacer(px, small);
+    // margin-bottom: spacer(rem, small);
+  }
+  &__headline-link {
+    @include link-states(color(gray, xx-dark), color(gray), color(black));
+  }
+
+  // Item Section
+  &__section {
+    margin-bottom: spacer(px);
+    margin-bottom: spacer(rem);
+  }
+  &__section-link {
+    font-size: 11px; // Special case
+    text-transform: uppercase;
+    @include link-states(color(red), color(red, dark));
+  }
+}
+
+// ------------------------------------------------------------
+// Tablet Breakpoint
+// ------------------------------------------------------------
+
+// Tablet Breakpoint
+@include media-query(tablet) {
+  .#{$module-name} {
+    // Item Headline
+    &__headline {
+      @include font-scale();
+    }
+  }
+}
+
+// ------------------------------------------------------------
+// Desktop Breakpoint
+// ------------------------------------------------------------
+
+@include media-query(desktop) {
+  .#{$module-name} {
+    // Item Headline
+    &__headline {
+      @include font-scale(x-small);
+    }
+  }
+}

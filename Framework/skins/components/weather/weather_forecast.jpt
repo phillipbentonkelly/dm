@@ -1,0 +1,26 @@
+<%-- <p:refresh time="IN 600000" /> --%>
+<p:update timeout="600"/>
+       
+<div class="weather-daily">
+
+<bdc:getWeatherData var="forecast" days="5"  />
+	
+	<ul class="weather-daily__list">
+	
+		<c:forEach var="day" items="${forecast}">
+			<li class="weather-daily__list-item">
+      			<div class="weather-daily__day">${day.day}</div>
+      			<div class="weather-daily__date">${day.date}</div>
+      			<span class="icon-weather icon-weather--${day.iconClass}"></span>
+      			<div class="weather-daily__forecast">${day.forecast}</div>
+      			<div class="weather-daily__temperature">
+        			<span class="weather-daily__temperature-text">${day.high}&deg;</span>
+        			<span class="weather-daily__temperature-text">${day.low}&deg;</span>
+      			</div>
+    		</li>
+	
+		</c:forEach>
+       
+	</ul>
+	
+</div>

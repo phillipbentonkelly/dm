@@ -1,0 +1,124 @@
+<div class="page-content">
+	<div class="site-width">
+
+		<!-- Leaderboard Ad Module -->
+		<section class="leaderboard-mod nav-leaderboard-mod">
+			<p:include
+				url="$configurationURI/Framework/skins/components/ads/dfp_ad_controller.jpt"
+				context="ad_lead1" />
+		</section>
+		
+		<!-- /leaderboard-mod -->		
+		<div class="secondary">
+			<p:include
+				url="$configurationURI/Framework/skins/components/ads/dfp_ad_controller.jpt"
+				context="ad_toprightslot" />
+		</div>
+		
+		<!-- Includes css styling -->
+			<!-- <link rel="stylesheet" href="/css/bcom-lottery.css" /> -->
+		
+		<!--START HEADER-->
+			<h4 class="lgHeader">lottery</h4>
+			<br>
+			<ul class="linklistInline">
+				<li><a href="javascript:ShowResultsOf('MA');">Massachusetts</a></li>
+				<li class="listPipe">|</li>
+				<li><A href="javascript:ShowResultsOf('CT');">Connecticut</A></li>
+				<li class="listPipe">|</li>
+				<li><A href="javascript:ShowResultsOf('ME');">Maine</A></li>
+				<li class="listPipe">|</li>
+				<li><A href="javascript:ShowResultsOf('NH');">New Hampshire</A></li>
+				<li class="listPipe">|</li>
+				<li><A href="javascript:ShowResultsOf('RI');">Rhode Island</A> </li>
+				<li class="listPipe">|</li>
+				<li><A href="javascript:ShowResultsOf('VT');">Vermont</A></li>
+				<li class="listPipe">|</li>
+				<li><A href="#OtherStates">Others</A></li>
+			</ul>
+			<div class="cf"></div>
+			<div class="dotted4px"></div>
+		<!--END HEADER ENTRY-->
+		
+		<!-- LOTTERY CONTENT START HERE -->
+			<center><table width=470><tr><td>
+			<link rel=STYLESHEET href="http://www.lottochina.com/css/sml02a.css" type="text/css">
+			<link rel=STYLESHEET href="http://www.lottochina.com/css/LS_A.css" type="text/css">
+			<script language="JAVASCRIPT" src="http://www.lottochina.com/js/ldc_feed2.js"></script>
+			<script Language="JAVASCRIPT" src="http://www.lottochina.com/js/usmaps/uscanada_416x302.js"></script>
+			<script Language="JAVASCRIPT" src="http://www.lottochina.com/feed/jp/topjp_fmt1.js"></script>
+			
+			<center><table border=0 cellpadding=0 cellspacing=0 width=100%>
+			<tr><td colspan=2>
+			<script language="JAVASCRIPT">
+			<!--//
+			results_page="./lottery.html";
+			var auth_id="1000";
+			var fmt_id="h04";
+			var popup=false;
+			var page_type=true;
+			var defstate="MA";
+			var jp_fmt=0;
+			function ShowPastResults(game) { ShowPastResultsReq(auth_id,fmt_id,popup,page_type,game); }
+			function ShowFreqChart(game) { ShowFreqChartReq(auth_id,fmt_id,popup,page_type,game); }
+			function ShowSmartPick(game) { ShowSmartPickReq(auth_id,fmt_id,popup,page_type,game); }
+			function ShowQuickPick(game) { ShowQuickPickReq(auth_id,fmt_id,popup,page_type,game); }
+			function ShowHaveIWon(game) { ShowHaveIWonReq(auth_id,fmt_id,popup,page_type,game); }
+			function ShowOddsCalculate(game) { ShowOddsCalculateReq(auth_id,fmt_id,popup,page_type,game); }
+			function ShowJackpotHist(game,sort) { ShowJackpotHistReq(auth_id,fmt_id,popup,page_type,game,sort); }
+			function ShowCurrUSJackpots(order) { ShowCurrUSJackpotsReq(auth_id,fmt_id,popup,page_type,order); }
+			function ShowTopJackpotsFromState() { ShowTopJackpotsReq(auth_id,fmt_id,popup,page_type); }
+			function ShowSearchResults(state) { ShowSearchReq(auth_id,fmt_id,popup,page_type,state); }
+			function ShowJPInfoOfState(state) { ShowJPInfoReq(auth_id,fmt_id,popup,page_type,state); }
+			function ShowDrawScheduleOfState(state) { ShowScheduleReq(auth_id,fmt_id,popup,page_type,state); }
+			LSLinkSwitchOff (true);
+			ShowLotteryData2 (fmt_id, defstate, jp_fmt);
+			//-->
+			</script>
+			<script language="JAVASCRIPT">
+			<!--//
+			 var FlagVal = IsResFlag();
+			 if (FlagVal == 1) {
+			  ShowTopOfResults();
+			  ShowBottomOfResults();
+			  document.write("<br>");
+			  ShowRecentResultsList ();
+			  document.write("<br>");
+			  ShowLinkButtons ();
+			  document.write("<br>");
+			 } else if (FlagVal == 2) {
+			  ShowTopOfJackpots();
+			  ShowBottomOfJackpots();
+			  document.write("<br>");
+			  ShowJPAnalysis ();
+			  ResetResFlag ();
+			 } else if (FlagVal == 3) {
+			  ShowTopUSJackpotsStart(10);
+			  ShowTopUSJackpots(10);
+			  ShowTopUSJackpotsEnd();
+			  ResetResFlag ();
+			 }
+			//-->
+			</script>
+			</td></tr>
+			<tr><td align=CENTER colspan=2 class=AZ09><br>
+			<script language="JAVASCRIPT">
+			<!--//
+			ShowPageBottom ();
+			//-->
+			</script>
+			</td></tr>
+			</table></center>
+			<a name="OtherStates">
+			<script language="JAVASCRIPT">
+			<!--//
+			ShowUSLinks();
+			//-->
+			</script>
+			<div align=RIGHT><A class=LKBK href="http://www.lottofactor.com/"><I>Powered by</I> <U>LottoFactor.com</U></A></div>
+			</td></tr></table></center>
+			<br><br><br>
+		<!-- LOTTERY CONTENT END HERE -->
+		
+	</div>
+</div>

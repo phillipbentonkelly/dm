@@ -1,0 +1,47 @@
+// *
+// *  Tease Share
+// *
+
+$module-name: 'tease-share';
+
+// ------------------------------------------------------------
+// Default Styles
+// ------------------------------------------------------------
+
+.#{$module-name} {
+  float: left;
+  color: color(gray);
+  @include font-scale(xxx-small);
+
+  &__text {
+    //margin-right: spacer(px);
+    //margin-right: spacer(rem);
+    //padding-right: spacer(px);
+    //margin-right: spacer(rem);
+    //border-right: 1px solid color(gray, light);
+    font-weight: $fw-medium;
+    vertical-align: top;
+  }
+
+  // Adjust all icons
+  .bdc-icon {
+    margin-right: spacer(px, small);
+    margin-right: spacer(rem, small);
+    vertical-align: text-bottom;
+  }
+
+  // Share Icon List
+  &__list {
+    display: none;
+    @extend %clearfix;
+  }
+  &__list-item {
+    float: left;
+    margin-right: spacer(px, large);
+    margin-right: spacer(rem, large);
+  }
+  &__count {
+    vertical-align: top;
+    color: color(gray);
+  }
+}

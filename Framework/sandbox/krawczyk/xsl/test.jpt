@@ -1,0 +1,8 @@
+<p:out var="storyId" value="c6f706f2-4889-11e3-af97-06534b8a5608" />
+
+<p:getObject uuid="${storyId}" var="webObject" />
+<p:object webObject="${webObject}" content="story" metadata="meta" />
+
+<p:out xvalue="$story//text/content" xslt="$configurationURI/Framework/sandbox/krawczyk/xsl/test.xslt">
+	<p:param name="afterRelated" value="yes" />
+</p:out>

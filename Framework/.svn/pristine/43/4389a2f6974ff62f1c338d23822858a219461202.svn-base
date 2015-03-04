@@ -1,0 +1,48 @@
+<%--
+	Based on:
+	/bcom-redesign-beta/bdc-markup/page/modules/social-nav--vertical.php
+--%>
+
+<p:import var="nav" url="/SysConfig/Classify/Data/BDC_nav_menu.xml" xml="true" />
+<p:out var="socialTwitter"	xvalue="$nav//SocialSharing/Twitter" />
+<p:out var="socialFacebook"	xvalue="$nav//SocialSharing/Facebook" />
+<p:out var="socialGoogle"	xvalue="$nav//SocialSharing/GooglePlus" />
+<p:out var="socialPinterest"	xvalue="$nav//SocialSharing/Pinterest" />
+<p:out var="socialInstagram"	xvalue="$nav//SocialSharing/Instagram" />
+
+<!-- social_nav_vertical.jpt -->
+<nav class="social-nav social-nav--vertical">
+	<ul>
+		<li class="social-nav__item social-nav__item--1">
+			<a href="http://boston.custhelp.com/app/" target="_blank">
+				<span class="bdc-icon bdc-icon--questionmark-x-small">?</span>
+				<span class="social-nav__text">Help</span>
+			</a>
+		</li>
+		<li class="social-nav__item social-nav__item--2">
+			<a href="${socialFacebook}" target="_blank">
+				<span class="bdc-icon bdc-icon--facebook-x-small">Facebook</span>
+				<span class="social-nav__text">Like</span>
+			</a>
+		</li>
+		<li class="social-nav__item social-nav__item--3">
+			<a href="${socialTwitter}" target="_blank">
+				<span class="bdc-icon bdc-icon--twitter-x-small">Twitter</span>
+				<span class="social-nav__text">Follow</span>
+			</a>
+		</li>
+		<li class="social-nav__item social-nav__item--4">
+			<span class="social-nav__icon--plus bdc-icon bdc-icon--plus-x-small">+</span>
+			<a href="${socialGoogle}" class="social-nav__link--hidden" target="_blank">
+				<span class="social-nav__icon--hidden bdc-icon bdc-icon--google-x-small">google +</span>
+			</a>
+			<a href="${socialPinterest}" class="social-nav__link--hidden" target="_blank">
+				<span class="social-nav__icon--hidden bdc-icon bdc-icon--pinterest-x-small">pinterest</span>
+			</a>
+			<a href="${socialInstagram}" class="social-nav__link--hidden" target="_blank">
+				<span class="social-nav__icon--hidden bdc-icon bdc-icon--instagram-x-small">instagram</span>
+			</a>
+		</li>
+	</ul>
+</nav>
+        

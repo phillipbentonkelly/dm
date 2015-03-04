@@ -1,0 +1,69 @@
+<p:currentObject content="story" metadata="meta" webType="WT" sectionId="section" channel="Boston.com" />
+<%-- Images, GO! --%>
+<p:out var="mainWebImage"
+	xvalue="$story//doc/story/multimedia-container/photo-container/photogrp[@class='main-web-images']/photo/@fileref" scope="request" />
+<c:if test="${not empty mainWebImage and mainWebImage != ''}">
+	<p:out var="imageId" value="${fn:substringAfter(mainWebImage, '?uuid=')}" />
+	<p:getObject var="imageObj" uuid="${imageId}" onError="ignore" />
+	<c:if test="${not empty imageObj}">
+		<p:object webObject="${imageObj}" metadata="imageMeta" />
+		<p:out var="orientation" xvalue="$imageMeta//ObjectMetadata/Reference/Orientation" />
+		<c:choose>
+			<c:when test="${orientation eq 'Landscape'}">
+				<p:out var="storyImageFormat" value="image_700w" />
+			</c:when>
+			<c:otherwise>
+				<p:out var="storyImageFormat" value="image_360w" />
+			</c:otherwise>
+		</c:choose>
+		<p:url var="imgSrc" webObject="${imageObj}" format="${storyImageFormat}" type="resource" />
+	</c:if>
+</c:if>
+
+<!-- Story Lead Art -->
+<c:if test="${not empty imgSrc}">
+
+	<p:out var="imageAltText"	xvalue="$story//doc/story/multimedia-container/photo-container/photogrp[@class='main-web-images']/captiongrp/alt-tag/p" escape="xml" />
+	<p:out var="imageCaption"	xvalue="$story//doc/story/multimedia-container/photo-container/photogrp[@class='main-web-images']/captiongrp/caption/p" escape="xml" />
+	<p:out var="imageCredit"	xvalue="$story//doc/story/multimedia-container/photo-container/photogrp[@class='main-web-images']/captiongrp/credit/p" escape="xml" />
+	
+	<c:if test="${fn:trim(imageAltText) eq ''}">
+		<p:out var="imageAltText" value="${imageCaption}" />
+	</c:if>
+
+
+<%-- Vertical images are first child of div class="l-story-txt-share article-txt-top" --%>
+<%-- Horizontal images are first child of div class="article-bd" --%>
+
+	<c:choose>
+		<%-- Horizontal image --%>
+		<c:when test="${orientation eq 'Landscape'}">
+			<p:out var="outerDivClasses" value="l-story-primary no-flow" />
+			<p:out var="figureClasses"   value="article-lead-art-mod" />
+			<p:out var="imgClasses"      value="article-lead-art" />
+		</c:when>
+		<%-- Vertical image --%>
+		<c:otherwise> 
+			<p:out var="outerDivClasses" value="" />
+			<p:out var="figureClasses"   value="article-lead-art-mod-vert" />
+			<p:out var="imgClasses"      value="article-vert-art" />
+		</c:otherwise>
+	</c:choose>
+
+	<div class="${outerDivClasses}">
+		<figure class="${figureClasses}">
+			<img class="article-art ${imgClasses}" src="${imgSrc}" alt="${imageAltText}">
+			<c:if test="${not empty fn:trim(imageCaption) || not empty fn:trim(imageCredit)}">
+				<figcaption class="caption story-caption reverse">
+					<c:if test="${not empty fn:trim(imageCaption)}">
+						${imageCaption}
+					</c:if>
+					<c:if test="${not empty fn:trim(imageCredit)}">
+						<i class="credit">${imageCredit}</i>
+					</c:if>
+				</figcaption>
+			</c:if>
+		</figure>
+	</div>
+
+</c:if>

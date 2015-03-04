@@ -1,0 +1,21 @@
+<p:currentObject metadata="meta" content="content" webType="WT" sectionId="section" uuid="storyID" />
+
+<bdc:getHeadlines webObject="${currentObject}" var="headlines" />
+<bdc:getSummaryForSectionFront webObject="${currentObject}" var="teaseText" priority="carousel" />
+
+<p:out var="xref" xvalue="$content//xref" scope="request" />
+
+<c:choose>
+	<c:when test="${fn:trim(xref) != '' and not empty xref}">
+		<p:out var="storyLink" value="${xref}" />
+	</c:when>
+	<c:otherwise>
+		<p:url var="storyLink" webObject="${currentObject}" />
+	</c:otherwise>
+</c:choose>
+
+<a href="${storyLink}?p1=Topopage:Test_B:Main_headline" class="lead-tz-h">${headlines.carouselHeadline}</a>
+
+<p class="tz-txt">
+	${teaseText}
+</p>

@@ -1,0 +1,55 @@
+<div class="share-mod mfp-hide" id="mfp-share">
+	<h1 class="share-h1">Share</h1>
+	<h2 class="share-h2 title"></h2>
+	<h3 class="share-h3 author">By Gary Dzen</h3>
+
+	<div class="wave share"></div>
+
+	<div class="share-icon-mod">
+		<ul class="share-icon-list">
+			<li class="share-icon">
+				<a href="#URL:facebook" class="share-icon-link">
+					<img src="/assets/icons/fb.svg" alt="facebook">
+				</a>
+			</li>
+			<li class="share-icon">
+				<a href="#URL:twitter" class="share-icon-link">
+					<img src="/assets/icons/twitter.svg" alt="twitter">
+				</a>
+			</li>
+			<li class="share-icon">
+				<a href="#URL:pinterest" class="share-icon-link">
+					<img src="/assets/icons/pin.svg" alt="pinterest">
+				</a>
+			</li>
+			<li class="share-icon">
+				<a href="#URL:googleplus" class="share-icon-link">
+					<img src="/assets/icons/goog.svg" alt="google plus">
+				</a>
+			</li>
+			<li class="share-icon">
+				<a href="#URL:linkedin" class="share-icon-link">
+					<img src="/assets/icons/inde.svg" alt="Linked In">
+				</a>
+			</li>
+			<li class="share-icon">
+				<a href="#URL:email" class="share-icon-link">
+					<img src="/assets/icons/mail.svg" alt="email">
+				</a>
+			</li>
+		</ul>
+		<div class="copy">
+			<div class="copy-txt">
+				<h1 class="copy-txt-link">http://bit.ly/1d1p7E</h1>
+			</div>
+
+			<a href="#copyURL">
+				<button type="button" class="copy-btn">Copy</button>
+			</a>
+		</div>
+	</div>
+	<section class="share-ad-banner-mod">
+		<img src="assets/ads/banner-1.jpg" class="ad-banner"/>
+	</section>
+
+</div><!-- .share-mod -->

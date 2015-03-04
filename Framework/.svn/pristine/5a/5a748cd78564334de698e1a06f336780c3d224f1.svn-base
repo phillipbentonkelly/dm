@@ -1,0 +1,9 @@
+<c:choose>
+	<c:when test="${not empty cacheScope.path}">
+		<p:getObject path="${cacheScope.path}" var="obj"/>
+	</c:when>
+	<c:when test="${not empty cacheScope.uuid}">
+		<p:getObject uuid="${cacheScope.uuid}" var="obj"/>
+	</c:when>
+</c:choose>
+<p:url webObject="${obj}" public="true"/>

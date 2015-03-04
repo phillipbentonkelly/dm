@@ -1,0 +1,727 @@
+/*
+*   --------------------------------------------------------------------------
+* SCSS for Boston.com Forums
+*   --------------------------------------------------------------------------
+*/
+
+//adding a line to for compression to take place
+
+@import "partials/variables";
+@import "partials/mixins";
+
+.forum {
+  .primary {
+    margin-bottom: 30px;
+  }
+  p { margin: 0; }
+}
+
+a.icon {
+    background-repeat: no-repeat;
+    display: block;
+    height: 16px;
+    padding-left: 12px;
+    padding-top: 3px;
+}
+
+/*  --------------------------------------------------------------------------
+* Forum Head
+*/
+.forum-head {
+  overflow: hidden;
+  h1 {
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    float: left;
+    clear: both;
+    span {
+      display: block;
+      padding-top: 3px;
+      font-size: 12px;
+      font-weight: 400;
+      text-transform: none;
+    }
+  }
+  > * {
+    margin-bottom: 15px;
+    clear: both;
+  }
+  li {
+    float: left;
+  }
+}
+/* User Utility */
+.user-utility {
+  overflow: hidden;
+  font-size: 12px;
+  ul {
+    float: right;
+    overflow: hidden;
+    padding-bottom: 2px;
+  }
+  li {
+    border-right: 1px solid $black-15;
+    padding: 0 5px;
+    &:last-child {
+      border-right: none;
+      padding-right: 0;
+    }
+  }
+  a {
+    color: #0d5799;
+  }
+}
+
+/* Forum Utility */
+.forum-utility {
+  position: relative;
+  overflow: hidden;
+  li {
+    margin-right: 5px;
+  }
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+  font-size: 12px;
+  overflow: hidden;
+  li {
+    margin-right: 3px;
+  }
+  a {
+    color: #0d5799;
+  }
+}
+
+/* Admin Utility */
+.admin-utility {
+  padding: 5px 10px;
+  background: $red;
+  overflow: hidden;
+  display: none; /* Hide by default. Show with JavaScript */
+  li {
+    float: left;
+    border-left: 1px solid $red-drk;
+    padding-left: 8px;
+    padding-right: 8px;
+    &:first-child {
+      border-left: none;
+      padding-left: 0;
+    }
+  }
+  a {
+    color: #fff;
+    padding-left: 0;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  .forum td & a {
+    color: #fff;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  .archive-status {
+    color: #fff;
+    float: right;
+  }
+}
+
+/*  --------------------------------------------------------------------------
+* Forum Sections (the <table> wrapper)
+*/
+.forum-section {
+  position: relative;
+  margin-bottom: 20px;
+  clear: both;
+  border-bottom: 1px solid $black-15;
+}
+.section-head {
+  background: #2a2a2a;
+  color: #fff;
+  padding: 1em 10px;
+  h2 {
+    padding-bottom: 0;
+    font-size: 14px;
+    text-transform: uppercase;
+    line-height: 24px;
+    a {
+      color: #fff;
+    }
+  }
+  .forum-counts {
+    font-size: 12px;
+  }
+  .toggle {
+    position: absolute;
+    top: 12px;
+    right: 2px;
+    border: 1px solid #444;
+    height: 10px;
+    padding: 0 2px;
+    font-size:12px;
+    color: #444;
+    background: #eeeeee; /* Old browsers */
+    background: -moz-linear-gradient(top,  #ffffff 0%, #dddddd 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#dddddd)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #ffffff 0%,#dddddd 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #ffffff 0%,#dddddd 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #ffffff 0%,#dddddd 100%); /* IE10+ */
+    background: linear-gradient(top,  #ffffff 0%,#dddddd 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#dddddd',GradientType=0 ); /* IE6-9 */
+  }
+}
+.forum {
+  .see-more {
+    display: block;
+    color: #fff;
+    font-size: 12px;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+/*  --------------------------------------------------------------------------
+* Forum Table Defaults
+*/
+
+.forum {
+  table {
+    width: 100%;
+  }
+  tr {
+    padding-left: 10px;
+  }
+  th {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 12px;
+    font-weight: 700;
+    text-align:left;
+    text-transform: uppercase;
+    background: #444;
+    color: #fff;
+    &.primary-col {
+      width: 50%;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+    &.secondary-col {
+      display: none;
+    }
+  }
+  td {
+    background: #fff;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid $black-10;
+    vertical-align: top;
+    line-height: 14px;
+    &.primary-col {
+      width: 50%;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+    &.secondary-col {
+      display: none;
+    }
+    &.name {
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 18px;
+      padding-left: 10px;
+      padding-right: 10px;
+      &.sticky a {
+        color: $red;
+      }
+    }
+    a {
+      color: $blue;
+    }
+    .author {
+      display: block;
+      font-size: 12px;
+      font-weight: 400;
+      a {
+        color: $blue;
+      }
+    }
+  }
+  // Browse category links
+  .browse {
+    background: #fff;
+    overflow: hidden;
+    padding: 10px;
+    span {
+      float: left;
+      text-transform: uppercase;
+    }
+    a {
+      color: $blue;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    ul {
+      float: left;
+    }
+    li {
+      float: left;
+      border-left: 1px solid $black-15;
+      padding-left: 5px;
+      padding-right: 5px;
+      &:first-child {
+        border: none;
+      }
+    }
+  }
+}
+@media screen and (min-width: 600px){
+  .forum {
+    th {
+      &.primary-col {
+        width: 30%;
+      }
+      &.secondary-col {
+        width: 15%;
+        display: table-cell;
+      }
+    }
+    td {
+      &.primary-col {
+        width: 30%;
+      }
+      &.secondary-col {
+        width: 15%;
+        display: table-cell;
+      }
+    }
+  }
+}
+
+/* Category List Admin */
+tr.admin {
+  display: none; /* Hide by default. Show with JavaScript */
+}
+
+/*  --------------------------------------------------------------------------
+* The Discussion
+*/
+.discussion-list {
+  padding-bottom: 5px;
+  .post {
+    margin: 0 0 15px 0;
+    padding: 10px;
+    background: #fff;
+    border-bottom: 1px solid $black-15;
+    position: relative;
+    overflow: hidden;
+  }
+}
+
+.icon.star {
+	background-image:url(/img/star.png);
+	background-position:left 1px
+}
+
+.post-count a.icon.star {
+    padding-left: 18px;
+}
+
+/* Post Head */
+.post-head {
+  position: relative;
+  padding-bottom: 5px;
+  border-bottom: 1px solid $black-10;
+  .post.star & {
+    background: url(/img/star.png) no-repeat right 0;
+  }
+}
+
+p.post-subject {
+  font-weight: 700;
+  margin-bottom: 3px;
+}
+.post-date {
+  font-size: 10px;
+  color: #666;
+}
+.post-link {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: block;
+  width: 16px;
+  height: 16px;
+  background: url(community/link.png) no-repeat;
+  text-indent: -999999px;
+}
+
+/* User Info */
+.user-info {
+  width: 12%;
+  float: left;
+  padding-right: 3px;
+  padding-top: 10px;
+  font-size: 10px;
+  li {
+    margin-bottom: 3px;
+  }
+  img {
+    border: 1px solid #ccc;
+    max-width: 100%;
+  }
+  .username {
+    font-size: 13px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    font-weight: 700;
+    word-wrap: break-word;
+  }
+}
+
+/* Post Content */
+.post-content {
+  width: 85%;
+  float: right;
+  padding-bottom: 15px;
+  padding-top: 10px;
+  line-height: 18px;
+  p {
+    margin-bottom: 7px;
+  }
+  ul {
+    list-style-type: disc;
+    padding-left: 15px;
+    margin-bottom: 7px;
+  }
+  ol {
+    list-style-type: decimal;
+    padding-left: 15px;
+    margin-bottom: 7px
+  }
+  .quote {
+    border-left: 2px solid $red;
+    font-style: italic;
+    padding: 5px 5px 5px 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  a {
+    color: #0d5799;
+  }
+}
+.deleted-post-message {
+  @extend .post-content;
+  font-size: 110%;
+  color: $med-gray;
+}
+
+/* Post Utility */
+.post-utility {
+  clear: both;
+  ul {
+    float: right;
+  }
+  li {
+    float: left;
+    padding-top: 7px;
+    margin-right: 4px;
+  }
+  a {
+    color: #999999;
+  }
+  li.admin {
+    display: none; /* Hide by default. Show with JavaScript */
+  }
+  .share-icons {
+    display: block;
+    clear: both;
+    opacity: .3;
+    li {
+      float: left;
+      margin-left: 5px;
+    }
+    a {
+      display: block;
+      width: 24px;
+      height: 24px;
+      background: $blue;
+      color: #fff;
+      text-align: center;
+    }
+    .post:hover & {
+      opacity: 1;
+    }
+    .twitter-icon {
+      background: url('/img/social_icons/twitter-24-blue.png') no-repeat;
+    }
+    .facebook-icon {
+      background: url('/img/social_icons/facebook-24-blue.png') no-repeat;
+    }
+  }
+}
+.post-anchor {
+  clear: both;
+  float: right;
+  height: 1px;
+}
+
+/* Ignored Posts */
+.post.ignore {
+  background: #ccc;
+  overflow: hidden;
+  p {
+    color: #666;
+    font-weight: 700;
+    float: left;
+  }
+  a {
+    float: right;
+    &:hover {
+      border: none;
+    }
+  }
+}
+
+/*  FIX THIS *** */
+.post.ignored > div {
+  display: none;
+}
+.post .ignored-message {
+  display: none;
+}
+.post.ignored .ignored-message {
+  display: block;
+  opacity: 1;
+}
+.post.ignored p {
+  font-style: italic;
+  color: #444;
+}
+
+/* Footer */
+.forum-footer {
+  .discussion-utility {
+    clear: both;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    a {
+      color: #fff;
+    }
+  }
+}
+
+/*  --------------------------------------------------------------------------
+* Add Content Forms
+*/
+.forum {
+  /* Forms */
+  .add-content {
+    clear:both;
+  }
+  label {
+    display: block;
+    clear: both;
+    margin-bottom: 5px;
+    font-weight: 500;
+  }
+  .inline label {
+    float: left;
+    display: inline-block;
+    margin-right: 10px;
+  }
+  .inline span {
+    margin-right: 10px;
+  }
+  input[type=text] {
+    width: 100%;
+    padding: 1%;
+    border: 1px solid $black-15;
+    font-family: $sans;
+  }
+  input[type=radio] {
+    vertical-align: inherit;
+  }
+  textarea {
+    width: 100%;
+    height: 140px;
+    padding: 1%;
+    border: 1px solid $black-15;
+    font-family: $sans;
+  }
+  .add-content-head {
+    margin-bottom: 20px
+  }
+  .intro {
+    margin-bottom: 20px;
+  }
+  .form-section {
+    margin-bottom: 20px;
+  }
+  .posting-policy-links{
+    clear: both;
+    text-align: right;
+    font-size: 12px;
+    line-height: 16px;
+    a {
+      color: $blue;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  .validation.req {
+    color: $red;
+    margin-left: 15px;
+    display: none;
+  }
+}
+
+/*
+================================================================================
+  Status Message
+================================================================================
+*/
+/* Status Message */
+.status-message {
+  width: 100%;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  z-index: 10000;
+  .message {
+    padding: 5px 30px 7px;
+    box-shadow: 0 0 5px rgba(0,0,0, .8);
+    font-size: 16px;
+    color: #fff;
+    text-shadow: 0 1px 0 rgba(0,0,0, .8);
+    /* */
+    -webkit-border-bottom-right-radius: 3px;
+    -webkit-border-bottom-left-radius: 3px;
+    -moz-border-radius-bottomright: 3px;
+    -moz-border-radius-bottomleft: 3px;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+    &.action {
+      background: #2851A2;
+      border: 1px solid #172f5e;
+      border-top: none;
+      display: inline-block;
+    }
+    &.success {
+      background: #008000;
+      border: 1px solid #003c00;
+      border-top: none;
+      display: inline-block;
+    }
+    &.error {
+      background: #FF0000;
+      border: 1px solid #003c00;
+      border-top: none;
+      display: inline-block;
+    }
+    &.maintenance {
+      background: #faefa6;
+      border: 1px solid #c9b00b;
+      border-top: none;
+      display: inline-block;
+      color: #333;
+      text-shadow: none;
+    }
+  }
+}
+/*  --------------------------------------------------------------------------
+* Forum Admin
+*/
+.admin-alert {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  background: #7BAE48;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  text-shadow: 0 1px 0 #3E7E7B;
+  text-align: center;
+  padding: 5px 20px 7px;
+  border: 1px solid #3E7E7B;
+  border-top: none;
+  box-shadow: 0 0 5px rgba(0,0,0, .7);
+  display: none;
+  z-index: 999;
+}
+
+//BDC-647 - fix highlighting anchor
+.post-anchor:focus {outline: none;}
+
+
+/*  --------------------------------------------------------------------------
+* Profile Modal
+*/
+.ugc-modal {
+  z-index: 999;
+  position: fixed;
+  top: 90px;
+  left: 25%;
+  width: 50%;
+  padding: 20px;
+  padding-bottom: 10px;
+  background: #fff;
+  border: 3px solid $blue;
+  box-shadow: 0 0 50px rgba(0,0,0, .5);
+  .heading {
+    font-size: 16px;
+    border-bottom: 1px solid $black-15;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+  }
+  .form-section {
+    margin-bottom: 10px;
+    overflow: hidden;
+    padding-bottom: 0;
+  }
+  label {
+    display: inline-block;
+    width: 100px; 
+  }
+  &.abuse label {
+    display: block;
+    width: 100%;
+    margin-bottom: 3px; 
+  }
+  input[type=text],
+  textarea {
+    width: 100%;
+    padding: 3px 5px;
+    border: 1px solid $black-15;
+  }
+  textarea {
+    height: 100px;
+  }
+  select {
+    width: 100%;
+  }
+  a.close-modal {
+    float: right;
+    font-size: 18px;
+    &:hover {
+      text-decoration: none;
+      border-bottom: none;
+    }
+  }
+}
+
+/* BDC-902 */
+.admin-label {
+  font-weight: bold;
+  color: red;
+  font-size: 11px;
+}

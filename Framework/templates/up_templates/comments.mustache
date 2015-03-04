@@ -1,0 +1,19 @@
+
+<li class="comment-mod {{#is_reply}}comment-mod-reply{{/is_reply}}">
+	<div class="comment-avatar-bd art-bd">
+		<img class="comment-list-art" src="{{#has_avatar}}{{avatar}}{{/has_avatar}}{{^has_avatar}}assets/photos/avatar-blank.jpg{{/has_avatar}}"/>
+	</div> <!-- /art-bd -->
+	<div class="comment-txt-bd txt-bd">
+		<ul class="comment-title-list">
+			<li class="comment-username comment-title-item">{{username}}</li>
+			<li class="comment-timestamp comment-title-item">{{timestamp}}</li>
+		</ul>
+		<p class="comment-txt">{{{comment}}}</p>
+		<div class="comment-button-mod">
+			<a href="#:URL-trigger-up" class="comment-vote-up  comment-vote comment-btn"></a>
+			<a href="#:URL-trigger-down" class="comment-vote-down comment-vote comment-btn"></a>
+			<a href="#:URL-reply" class="comment-reply comment-btn">Reply</a>
+			<a href="#URL:report" class="report-comment link">Report</a>
+		</div>	
+	</div> <!-- /txt-bd -->
+</li>

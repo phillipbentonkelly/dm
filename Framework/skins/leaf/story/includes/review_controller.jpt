@@ -1,0 +1,53 @@
+<p:getContext var="uuid" />
+<p:getObject uuid="${uuid}" var="webObject" />
+<p:object webObject="${webObject}" content="story" metadata="meta" />
+
+<x:choose>
+	<x:when select="$story//review-containers/review-container-art">
+		<p:out var="has_review" value="yes" />
+		<p:out var="review_type" value="art" />
+	</x:when>
+	<x:when select="$story//review-containers/review-container-book">
+		<p:out var="has_review" value="yes" />
+		<p:out var="review_type" value="book" />
+	</x:when>
+	<x:when select="$story//review-containers/review-container-cd">
+		<p:out var="has_review" value="yes" />
+		<p:out var="review_type" value="cd" />
+	</x:when>
+	<x:when select="$story//review-containers/review-container-concert">
+		<p:out var="has_review" value="yes" />
+		<p:out var="review_type" value="concert" />
+	</x:when>
+	<x:when select="$story//review-containers/review-container-dance">
+		<p:out var="has_review" value="yes" />
+		<p:out var="review_type" value="dance" />
+	</x:when>
+	<x:when select="$story//review-containers/review-container-dvd">
+		<p:out var="has_review" value="yes" />
+		<p:out var="review_type" value="dvd" />
+	</x:when>
+	<x:when select="$story//review-containers/review-container-movie">
+		<p:out var="has_review" value="yes" />
+		<p:out var="review_type" value="movie" />
+	</x:when>
+	<x:when select="$story//review-containers/review-container-restaurant">
+		<p:out var="has_review" value="yes" />
+		<p:out var="review_type" value="restaurant" />
+	</x:when>
+	<x:when select="$story//review-containers/review-container-television">
+		<p:out var="has_review" value="yes" />
+		<p:out var="review_type" value="television" />
+	</x:when>
+	<x:when select="$story//review-containers/review-container-theater">
+		<p:out var="has_review" value="yes" />
+		<p:out var="review_type" value="theater" />
+	</x:when>
+	<x:otherwise>
+		<p:out var="has_review" value="no" />
+	</x:otherwise>
+</x:choose>
+
+<c:if test="${has_review eq 'yes'}">
+	<p:include url="$configurationURI/Framework/skins/leaf/story/includes/review_box/review_${review_type}.jpt" context="${uuid}" />
+</c:if>

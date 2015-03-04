@@ -1,0 +1,105 @@
+<%@ page language="java" contentType="application/json; charset=UTF-8" pageEncoding="UTF-8" %>	
+<%@page import="java.util.*"%>
+<%@page import = "java.lang.Integer"%>
+<%@page import="java.text.SimpleDateFormat"%>
+<p:template contentType="application/json" />
+
+<%--
+
+	return a collection of json objects for the requested stream and filter
+	
+--%>
+
+<p:out var="stream" value="${cacheScope.stream}" />
+<p:out var="filter" value="${cacheScope.filter}" />
+<p:out var="limit" value="${cacheScope.limit}" />
+<p:out var="status" value="${cacheScope.status}" />
+<p:out var="startingdate" value="${cacheScope.startingdate}" />
+
+<c:if test="${empty stream}"><c:set var="stream">not-specified</c:set></c:if>
+<c:if test="${empty filter}"><c:set var="filter">all</c:set></c:if>
+<c:if test="${empty limit}"><c:set var="limit">25</c:set></c:if>
+<c:if test="${empty status}"><c:set var="status">APPROVED</c:set></c:if>
+
+<% 
+
+	// calculate the current time  of execution 
+	
+	SimpleDateFormat format = new SimpleDateFormat("yyyyMMddHHmmssS");
+	format.setTimeZone(TimeZone.getTimeZone("GMT"));
+	
+    String tsDateStr = format.format(new Date());
+
+	pageContext.setAttribute("timestamp", tsDateStr);
+
+%>
+
+<%--
+  
+	if not specified, use a maximum date value cannot pass seem to pass a value of <qm:TMaxDateTime/>  into the query 
+	also set a timed refresh for this jpt so that the initial stream load is kept current
+	
+ --%>
+<c:if test="${empty startingdate}">
+	<c:set var="startingdate" value="99991231235900"/>
+	<p:update timeout="120"/>
+</c:if>
+
+
+<%-- 
+
+	fetch the simple stream from stream manager 
+	
+--%>
+	<c:import url="http://dev.tomcat.boston.com/streamservice/simplestream/xml/${stream}/${filter}" var="qXml">
+		<c:param name="limit">${limit}</c:param>
+		<c:param name="startingdate">${startingdate}</c:param>
+	</c:import>
+		
+	<x:parse var="q" xml="${qXml}"/>
+	<p:out var="maxLastStreamDate" value="0" />
+{ "stream": "${stream}",
+	"filter": "${filter}",
+   "timestamp": "${timestamp}",
+   "limit": "${limit}",
+   "startingdate": "${startingdate}",
+	"data": [
+	<x:forEach select="$q//simplestream" varStatus="status">
+	
+		<%-- loop over result set and get uuid
+			for each uuid, get a json payload
+			track the highest stream date
+		--%>
+		<x:set var="uuid" select="string(uuid)"/>
+		<%-- <p:out value="${uuid}"/> --%>
+		<c:catch var="err">
+			<%-- p include url works ok but try other techniques to
+			<p:include url="$configurationURI/Framework/templates/streams/getJson.jpt" >
+				<p:param name="uuid" value="${uuid}"/>
+				<p:param name="modelOnly" value="1"/>
+				<p:param name="stream" value="${stream}"/>
+			</p:include>
+			--%>
+			
+			<p:getObject uuid="${uuid}" var="i" onError="throw" />
+			<p:object webObject="${i}" metadata="meta"/> 
+			<p:include styleName="$configurationURI/Framework/templates/streams/getJson.jpt" webObject="${i}">
+				<p:param name="modelOnly" value="1"/>
+				<p:param name="stream" value="${stream}"/>
+			</p:include>
+			 <p:out var="lastStreamDate" xvalue="$meta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/Streams/Stream[StreamId=$stream]/LastStreamDate" /> 
+			<c:if test="${ lastStreamDate gt maxLastStreamDate }">
+				<p:out var="maxLastStreamDate" value="${lastStreamDate}"/>
+			</c:if>
+				
+		</c:catch>
+		<c:if test="${not empty err}" >
+			{"error":"${err}"}
+		</c:if>
+		<c:if test="${not status.last}">,
+		</c:if>
+	</x:forEach>
+	
+	],
+	"maxLastStreamDate": "${maxLastStreamDate}"
+}

@@ -1,0 +1,7 @@
+<!--  NEW megamenu -->
+
+<p:include pageZoneName="megamenu_sections" templateName="${displayData.templateName}">
+	<p:param name="isHomepage" value="${cacheScope.isHomepage}" />
+	<p:param name="section" value="${cacheScope.section}" />
+</p:include> 
+

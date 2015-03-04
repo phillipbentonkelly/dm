@@ -1,0 +1,77 @@
+<%--
+{comments}
+BDC-1818 modified dedup logic again to ensure 5 list teases per container, for real this time
+{comments} 
+--%>
+
+<%@ page import="java.util.*" %>
+<p:currentObject metadata="meta" channel="Boston.com" />
+
+<c:set var="streamName" value="${fn:trim(streamName)}" />
+<c:if test="${empty streamName}">
+	<c:set var="streamName">not-specified</c:set>
+</c:if>
+
+<c:set var="streamFilter" value="${fn:trim(streamFilter)}" />
+<c:if test="${empty streamFilter}">
+	<c:set var="streamFilter">all</c:set>
+</c:if>
+
+<c:set var="limit">25</c:set>
+<c:set var="status">Approved</c:set>
+<c:set var="startingDate" value="99991231235900" />
+
+<p:getPageZone name="content" var="contentZone" />
+
+<%-- gets uuids from all objects in named zone --%>
+<bdc:rwIdListFromZone zone="content" dwc="${currentObject}" var="contentIDs" />
+
+<%
+	String[] queryParams = new String[5];
+		queryParams[0] = (String)pageContext.getAttribute("streamName");
+		queryParams[1] = (String)pageContext.getAttribute("streamFilter");
+		queryParams[2] = (String)pageContext.getAttribute("startingDate");
+		queryParams[3] = (String)pageContext.getAttribute("limit");
+		queryParams[4] = (String)pageContext.getAttribute("status");
+
+	pageContext.setAttribute("queryParams", queryParams);
+%>
+<c:set var="numberOfTeases" value="${contentZone.size}" />
+
+<%-- if the well isn't full... --%>
+<c:if test="${numberOfTeases < 6}">
+
+	<%-- for each item in the stream included in metadata (well, the first 10) --%>
+	<p:getCollection path="$configurationURI/Framework/queries/bdc_stream_filterkey.vquery" virtualParams="${queryParams}" var="q" />
+	<%-- gee i sure do hope this doesn't break horribly if there are less than 10 stories in a stream --%>
+	<c:forEach items="${q.items}" var="streamItem" begin="0" end="10" varStatus="loop">
+
+		<p:object webObject="${streamItem}" content="content" metadata="meta" webType="WT" uuid="storyID" channel="Boston.com" />
+		<bdc:getHeadlines webObject="${streamItem}" var="headlines" />
+
+		<%-- dedup, be sure that we aren't pulling a story from the stream that's already in the well --%>
+		<%
+		  String contentIDs = (String)pageContext.getAttribute("contentIDs");
+		  List<String> oldIDs = Arrays.asList(contentIDs.split("\\s*,\\s*"));
+			String newID = (String)pageContext.getAttribute("storyID");
+			boolean inList = (oldIDs.contains(newID)) ? true : false;
+			pageContext.setAttribute("isInList", inList);
+	 	%>
+
+		<%-- if it's not a duplicate and we still have a not-full well... --%>
+		<c:if test="${(not isInList) and (numberOfTeases < 6)}">
+			<%-- add the new tease --%>
+			<c:set var="numberOfTeases" value="${numberOfTeases + 1}" />
+			<c:set var="visualRevenueData" value="" />
+			<c:if test="${hasVR eq 'true'}">
+				<c:set var="visualRevenueData">data-vr-zone="${prefixVR} links"</c:set>
+			</c:if>
+			<li class="section-well__list-item" data-vr-contentbox="">
+				<bdc:link webObject="${streamItem}" className="section-well__list-link" linkParam="p1=well_${fn:trim(prefixVR)}_subheadline_hp">
+					${headlines.carouselHeadline}
+				</bdc:link>
+			</li>
+		</c:if>
+
+	</c:forEach>	
+</c:if>

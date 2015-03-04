@@ -1,0 +1,41 @@
+/* !============================================= */
+
+/* ! Universal						   			  */
+
+/* !============================================= */
+
+
+/* Kill the margin on the last column */
+
+.ui-block:last-child,
+.ui-block.last {
+	margin-right: 0;
+}
+
+/* Set a background color and a fixed width at max-width for wallpaper ad */
+.page-content { background: #fff; }
+
+@media screen and (min-width: 1044px) {
+	.page-content {
+		width: 1044px;
+		margin: 0 auto;
+	}
+}
+
+/* Selectors */
+
+.spacer {
+	margin-bottom: $spacer;
+}
+
+.spacer-small {
+	margin-bottom: $spacer-small;
+}
+
+.spacer-med {
+	margin-bottom: $spacer-med;
+}
+
+.spacer-large {
+	margin-bottom: $spacer-large;
+}

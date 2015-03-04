@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?><!DOCTYPE EOMSearch>
+<EOMSearch version="1.0" xmlns="http://EidosMedia.com/EOM/SearchEngine"
+	xmlns:se="http://EidosMedia.com/EOM/SearchEngine" xmlns:q="http://EidosMedia.com/EOM/SearchEngine/query"
+	xmlns:qm="http://EidosMedia.com/EOM/SearchEngine/query/macro" xmlns:qa="http://EidosMedia.com/EOM/SearchEngine/query/alias"
+	xmlns:qui="http://EidosMedia.com/EOM/SearchEngine/query/UI">
+	<q:Query type="INDEX">
+		<q:Properties>
+			<q:Index name="boston@meth01_eomse1"></q:Index>
+			<q:Index name="wires@meth01_eomse2"/>
+			<q:MaxResultItems value="$3"></q:MaxResultItems>
+			<!-- 20140403 take out pinned <q:Sort on="attributes/ObjectMetadata/OnlineProducts/OnlineProduct/Streams/Stream/Pinned" type="DESCENDING" /> -->
+			<q:Sort on="attributes/ObjectMetadata/OnlineProducts/OnlineProduct/LastPublicationDate" type="NDESCENDING"></q:Sort>
+		</q:Properties>
+		<q:Boolean>
+			<ObjectInfo>   
+				<q:OR>
+					<type>EOM::CompoundStory</type>
+					<type>EOM::MediaGallery</type>
+					<type>VideoStory</type>					
+					<type>WireStory</type>
+					<type>EOM::Story</type>
+					<type>StreamTease</type>
+				</q:OR>
+			</ObjectInfo>
+			<se:Attributes xmlns="">
+				<ObjectMetadata>
+					<OnlineProducts>
+						<OnlineProduct>
+							<ProductName>Boston.com</ProductName>
+							<LastPublicationDate q:op="RANGE">
+		                        <q:LowValue><qm:TMinDateTime/></q:LowValue>
+		                        <q:HighValue>$2</q:HighValue>
+				            </LastPublicationDate>													
+							<Streams>
+								<Stream>
+									<Filters>
+										<Filter>
+												<FilterKey q:op="MATCH">$0:$1:$4</FilterKey>
+										</Filter>
+									</Filters>
+								</Stream>
+							</Streams>							
+						</OnlineProduct>
+					</OnlineProducts>
+				</ObjectMetadata>
+			</se:Attributes>
+		</q:Boolean>
+		
+	
+	</q:Query>
+</EOMSearch>

@@ -1,0 +1,190 @@
+
+<div class=" gallery-wrapper {{#is_text_focused}}text-focused-gallery{{/is_text_focused}} {{#is_split_focused}}split-focused-gallery{{/is_split_focused}} {{#is_image_focused}}image-focused-gallery{{/is_image_focused}} {{#is_click}}click-gallery{{/is_click}} {{#is_scrolling}}scrolling-gallery{{/is_scrolling}} {{#is_num_ascend}}num-ascend{{/is_num_ascend}} {{#is_num_descend}}num-descend{{/is_num_descend}} story-width gallery-type">
+		
+	<header class="gallery-hdr clearfix">
+
+		<div class="story-overline-mod">
+			<a href="index.html#" class="story-cat overline">{{category}}</a>
+		</div> <!-- /story-overline-mod -->
+		<a class="gallery-h1-link" href="#{{slug}}">
+			<h1 class="story-h1">{{head}}</h1>
+		</a>
+		<div class="arrow-top-mod">
+			<a class="prev-top-btn" href="#"><i class="prev-top-arrow"></i>Previous</a>
+			<a class="next-top-btn" href="#"><i class="next-top-arrow"></i>Next</a>
+		</div>
+
+	</header> <!-- /gallery-hdr -->
+		
+		<div class="gallery-slides">
+
+				{{#slides}}
+				<div class="gallery-slide">
+
+					<div class="gallery-meta">
+
+						{{#is_intro_slide}}
+						<div class="byline-pair-mod gallery-byline clearfix">
+						<!-- l-story-Byline -->
+							<aside class="l-story-byline ups-process-static" data-ups-template="byline"></aside> <!-- l-story-byline -->
+
+							<!-- Story Banner Ad -->
+							<div class="l-ad-story-banner-1">
+								<section class="ad-banner-mod story-banner-1">
+									<img src="assets/ads/banner-1.jpg" class="ad-banner" />
+								</section>
+							</div> 
+						</div> 
+						{{/is_intro_slide}}
+
+					</div><!-- gallery-meta -->
+
+					<div class="gallery-body-mod">
+
+						{{#slide_head}}
+						<div class="slide-headline-mod">
+							<i class="slide-num"></i>
+							<h3 class="slide-head">{{slide_head}}</h3>
+							<i class="slide-subhead">{{slide_subhead}}</i>
+						</div>
+						{{/slide_head}}
+
+							<figure class="gallery-img-mod">
+								<img class="gallery-img" src="{{image}}"/>
+								<figcaption class="gallery-caption">
+									<i class="credit">{{credit}}</i>
+								</figcaption> <!-- /img-caption -->
+
+								<nav class="gallery-img-nav">
+									<button class="arrow-btn-prev swiper-prev" aria-hidden="true" title="Previous">Prev</button>
+									<button class="arrow-btn-next swiper-next" aria-hidden="true" title="Next">Next</button>
+								</nav>
+
+							</figure><!-- gallery-img-mod -->
+							
+							<div class="gallery-ad-mod{{#slide_head}} gallery-ad-title-fix{{/slide_head}}">
+								<img class="gallery-ad" src="assets/ads/banner-3.jpg"/>
+							</div>
+
+							<div class="gallery-ad-big-mod{{#slide_head}} gallery-ad-title-fix{{/slide_head}}">
+								<img src="assets/ads/big-2.jpg" class="ad-big"/>
+							</div>
+
+							<div class="gallery-text-mod">
+								<div class="gallery-tools-img{{#slide_head}} gallery-share-title-fix{{/slide_head}}">
+									<div class="tools-item tools-share">
+										<a class="popup-trigger tools-link tools-link-share" href="#mfp-share">
+											<i class="share-icon"></i>
+											<i class="tools-txt">Share</i>
+										</a>
+									</div>
+								</div>
+								{{{text}}}
+							</div><!-- gallery-text-mod -->
+							<div class="gallery-ad-mod-secondary">
+								<img class="gallery-ad" src="assets/ads/banner-3.jpg"/>
+							</div>
+
+							<div class="gallery-ad-big-mod-secondary">
+								<img src="assets/ads/big-2.jpg" class="ad-big"/>
+							</div>
+					</div><!-- gallery-body-mod -->
+				</div><!-- gallery-slide -->
+				{{/slides}}
+
+			<div class="slide-footer">
+				<div class="arrow-bottom-mod">
+					<a class="prev-bottom-btn btn-light" href="#"><i class="prev-bottom-arrow"></i>Previous</a>
+					<i class="gallery-pagination"><span class="current-page">1</span> of <span class="total-pages">26</span></i>
+					<a class="next-bottom-btn btn-light" href="#"><i class="next-bottom-arrow"></i>Next</a>
+				</div>
+				<form class="gallery-drop-down">
+					<div class="drop-down-list">
+						<select name="page-select" value="jump-to">
+							<option value="Jump to" selected>Jump to</option>
+							<option value="1-20">1-20</option>
+							<option value="21-40">21-40</option>
+							<option value="41-60">41-60</option>
+							<option value="51-80">51-80</option>
+							<option value="81-87">81-87</option>
+						</select>
+					</div>
+				</form>
+			</div>
+
+		</div> <!-- gallery-body-mod -->
+
+		<footer class="story-tools-mod story-tools-ftr">
+			<ul class="tools-horiz story-tools-horiz">
+			<li class="tools-item tools-share"><a class="popup-trigger tools-link tools-link-share" href="#mfp-share"><i class="share-icon"></i> <i class="tools-txt">Share</i></a></li>
+			<li class="tools-item tools-comment js-toggle-comments"><a class="tools-link tools-link-comment-ftr" href="#URL:comment-trigger"><i class="comment-icon"></i> <i class="tools-txt">Comment</i></a></li>
+		</ul>
+	</footer>  <!-- /story-tools-ftr -->
+
+	<div id="story-comments" class="story-comments">
+		<div class="l-story-txt no-flow clearfix">
+			<section class="story-comments-mod is-closed">
+				<div class="comment-label">
+					<h3 class="comment-h"><a href="#URL:trigger-open-comments" class="js-toggle-comments">5 Comments</a></h3><a class="link-secondary view-comments js-toggle-comments" href="#URL:trigger-open-comments" >View all</a>
+				</div>
+				<div class="add-comment-mod">
+					<div class="add-comment-avatar-bd art-bd">
+						<img class="comment-list-art" src="assets/photos/avatar-blank.jpg"/>
+					</div> <!-- /art-bd -->
+					<div class="add-comment-txt-bd txt-bd">
+						<ul class="add-comment-title-list">
+							<li class="add-comment-item add-comment-name">MyUsername</li>
+							<li class="add-comment-item add-comment-ques">Not you? <a href="#" class="add-comment-item add-comment-queslink link">Sign out</a></li>
+						</ul>
+						<form class="form-large expandable-form">
+							<div class="input-mod">
+								<textarea id="textarea" class="textarea tz-comment-input add-comment-input expandable-input" type="search" placeholder="What do you think?"></textarea>
+							<button type="submit" class="submit-btn btn-medium btn-strong expandable-comment-btn">Submit</button>
+							</div>	
+						</form>
+					</div>
+				</div> <!-- /add-comment-mod -->
+				<ul class="process-me comment-list" data-type="comments" data-repeat="5">
+				</ul>
+				<a href="#URL:trigger-view-comments" class="view-comments-btn btn-light btn-medium js-toggle-comments">Hide Comments</a>
+			</section> <!-- /story-comments-mod -->
+		</div> <!-- /l-story-txt -->
+	</div>
+	<section class="taboola-list-mod story-taboola-list-mod l-story-secondary">
+		<h3 class="section-h taboola-list-h">Stories Like This</h3>
+		<ul class="taboola-list">
+			<li class="taboola-item taboola-item-primary">
+				<h3 class="taboola-h taboola-reload"><a href="#11-best-cocktails">11 Best Cocktails for Summer</a></h3>
+				<h6 class="taboola-src taboola-reload"><a href="#11-best-cocktails">Boston.com</a></h6>
+			</li>
+			<li class="taboola-item taboola-item-primary">
+				<h3 class="taboola-h"><a href="http://movies.yahoo.com/blogs/movie-talk/jim-carrey-career-kicked-shins-dumb-dumber-fumbles-164942151.html" target="_blank">Tough News for Struggling Jim Carrey</a></h3>
+				<h6 class="taboola-src"><a href="#http://movies.yahoo.com/blogs/movie-talk/jim-carrey-career-kicked-shins-dumb-dumber-fumbles-164942151.html">Yahoo!</a></h6>
+			</li>
+			<li class="taboola-item taboola-item-primary">
+				<h3 class="taboola-h taboola-reload"><a href="#city-fires">City Fires Big Dig Contractor</a></h3>
+				<h6 class="taboola-src taboola-reload"><a href="#city-fires">Boston.com</a></h6>
+			</li>
+			<li class="taboola-item taboola-item-primary">
+				<h3 class="taboola-h"><a href="http://nysebigstage.com/articles/ellie-mae-rings-the-nyse-opening-bell-special-edit" target="_blank">Ellie Mae Rings the NYSE Opening Bell Special Edit </a></h3>
+				<h6 class="taboola-src"><a href="http://nysebigstage.com/articles/ellie-mae-rings-the-nyse-opening-bell-special-edit">Big Stage by NYSE</a></h6>
+			</li>
+			<li class="taboola-item taboola-item-secondary taboola-hidden">
+				<h3 class="taboola-h taboola-reload"><a href="#scenes-from">Scenes from a Magical Bruins Season</a></h3>
+				<h6 class="taboola-src taboola-reload"><a href="#scenes-from">Boston.com</a></h6>
+			</li>
+			<li class="taboola-item taboola-item-secondary taboola-hidden">
+				<h3 class="taboola-h"><a href="http://w3.newsmax.com/blaylock/2b.cfm" target="_blank">7 Tips to Avoid Alzheimers</a></h3>
+				<h6 class="taboola-src"><a href="http://w3.newsmax.com/blaylock/2b.cfm">Newsmax Health</a></h6>
+			</li>
+			<li class="taboola-item taboola-item-secondary taboola-hidden">
+				<h3 class="taboola-h taboola-reload"><a href="#lester-injured">Lester Injured, but Sox Still Rolling</a></h3>
+				<h6 class="taboola-src taboola-reload"><a href="#lester-injured">Boston.com</a></h6>
+			</li>
+			<li class="taboola-item taboola-item-secondary taboola-hidden">
+				<h3 class="taboola-h"><a href="http://www.parade.com/celebrity/slideshows/style/grammy-awards-wardrobe-malfunction-nudity.html#?slideindex=0" target="_blank">10 Most Scandalous Looks at the Grammys</a></h3>
+				<h6 class="taboola-src"><a href="http://www.parade.com/celebrity/slideshows/style/grammy-awards-wardrobe-malfunction-nudity.html#?slideindex=0">Parade Magazine</a></h6>
+			</li>
+		</ul>
+	</section> <!-- taboola-list-mod -->
+</div> <!-- story-mod -->

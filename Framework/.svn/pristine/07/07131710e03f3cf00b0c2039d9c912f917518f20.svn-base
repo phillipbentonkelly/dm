@@ -1,0 +1,48 @@
+// *
+// *  Events Mail
+// *
+
+$module-name: 'events-main';
+
+// ------------------------------------------------------------
+// Default Styles
+// ------------------------------------------------------------
+
+.#{$module-name} {
+  // Module Styles
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+
+  // Some Element Styles
+  // &__element {}
+
+}
+
+// ------------------------------------------------------------
+// Tablet Breakpoint
+// ------------------------------------------------------------
+
+// Tablet Breakpoint
+// @include media-query(tablet) {
+//   .#{$module-name} {
+//     // Module Styles
+// 	width: 100%
+//   }
+// }
+
+// ------------------------------------------------------------
+// Desktop Breakpoint
+// ------------------------------------------------------------
+
+// @include media-query(desktop) {
+//   .#{$module-name} {
+//     // Module Styles
+
+//     // Some Element Styles
+//     &__element {}
+
+//   }
+// }
+
+

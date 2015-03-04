@@ -1,0 +1,16 @@
+<%--
+<p:currentObject metadata="meta" />
+<p:getBlogs var="blogs" />
+
+<div id="Col1" class="span5">
+	<div id="blogListHeader"></div>
+	<div class="cf"></div>
+<ul style="list-style: none;">
+	<c:forEach var="blog" items="${blogs}">
+		<p:out var="blogURL" value="/blogs/${blog.id}" />	
+		<li><h3><a href="${blogURL}">${blog.title}</a></h3>${blogger}</li>
+		<br/>
+	</c:forEach>
+</ul>
+</div>
+--%>

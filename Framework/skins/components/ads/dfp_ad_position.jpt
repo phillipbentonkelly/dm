@@ -1,0 +1,216 @@
+<p:currentObject webType="WT" metadata="meta" />
+<p:out var="position" xvalue="$meta//DfpAdPosition" scope="request"/>
+<p:out var="enabled" xvalue="$meta//Enabled" />
+<p:out var="isFS" value="${cacheScope.isFS}" />
+<c:if test="${enabled eq 'True'}">
+<c:choose>
+	 <c:when test="${isFS}">
+		<article class="feat-tz-ad ad-featurestack" id="${position}"></article>
+	 </c:when>
+	 <c:otherwise>
+	 	 <c:choose>
+		 	<c:when test="${position eq 'ad_lead1'}">
+		 		<div class="ad-lead ad" id="ad_lead1"></div>
+		 	</c:when>
+		 	<c:when test="${position eq 'ad_sponsor1'}">
+		 		<div class="ad-sponsor1 ad" id="ad_sponsor1"></div>
+		 	</c:when>
+		 	<c:when test="${position eq 'ad_sponsor2'}">
+		 		<div class="ad-sponsor2 ad" id="ad_sponsor2"></div>
+		 	</c:when>
+		 	<c:when test="${position eq 'ad_classifiedhighlight'}">
+		 		<div class="ad-classifiedhighlight" id="ad_classifiedhighlight"></div>
+		 	</c:when>
+		 	<c:when test="${position eq 'ad_featuredjobs'}">
+		 		<div class="ad-featuredjobs" id="ad_featuredjobs"></div>
+		 	</c:when>
+		 	<c:when test="${position eq 'ad_toprightslot'}">
+		 		<div class="ad-toprightslot" id="ad_toprightslot"></div>
+		 	</c:when>
+		 	<c:when test="${position eq 'ad_mustread'}">
+		 		<div class="ad-container ad-container--ad_mustread">
+				  <div class="ad-mustread" id="ad_mustread">
+				  </div>
+				</div><!-- / ad-container -->
+		 	</c:when>
+		 	<c:when test="${position eq 'ad_navdisplay'}">
+		 		<div class="ad-navdisplay ad" id="ad_navdisplay"></div>
+		 	</c:when>
+		 	<c:when test="${position eq 'ad_searchbar'}">
+		 		<div class="ad-searchbar ad" id="ad_searchbar"></div>
+		 	</c:when>
+		 	<c:when test="${position eq 'ad_searchbarsponsor'}">
+		 		<div class="ad-searchbarsponsor ad" id="ad_searchbarsponsor"></div>
+		 	</c:when>
+		 	<c:when test="${position eq 'ad_t6'}">
+		 		<div class="ad-t6 ad" id="ad_t6"></div>
+		 	</c:when>
+		 	<c:when test="${position eq 'ad_topright'}">
+		 		<div class="ad-topright ad" id="ad_topright"></div>
+		 	</c:when>
+		 	<c:when test="${position eq 'ad_tile'}">
+		 		<div class="ad-tile advertisement" id="ad_tile"></div>
+		 	</c:when>
+		 	<c:when test="${position eq 'ad_sponsor'}">
+		 		<div class="ad-sponsor ad" id="ad_sponsor"></div>
+		 	</c:when>		 	
+		 	<c:when test="${position eq 'ad_banner'}">
+		 		<div class="ad-banner advertisement" id="ad_banner"></div>
+		 	</c:when>
+		 	<c:when test="${position eq 'ad_midbanner'}">
+		 		<div class="ad-midbanner advertisement" id="ad_midbanner"></div>
+		 	</c:when>
+		 	<c:when test="${position eq 'ad_minibanner2'}">
+		 		<div class="ad-minibanner2 advertisement" id="ad_minibanner2"></div>
+		 	</c:when>
+		 	<c:when test="${position eq 'ad_minibanner3'}">
+		 		<div class="ad-minibanner3 advertisement" id="ad_minibanner3"></div>
+		 	</c:when>
+		 	<c:when test="${position eq 'ad_midleftbox'}">
+		 		<div class="ad-midleftbox advertisement" id="ad_midleftbox"></div>
+		 	</c:when>
+		 	<c:when test="${position eq 'ad_midrightbox'}">
+		 		<div class="ad-midrightbox advertisement" id="ad_midrightbox"></div>
+		 	</c:when>
+		 	<c:when test="${position eq 'ad_minibox1'}">
+		 		<div class="ad-minibox1 advertisement" id="ad_minibox1"></div>
+		 	</c:when>
+		 	<c:when test="${position eq 'ad_minibox2'}">
+		 		<div class="ad-minibox2 advertisement" id="ad_minibox2"></div>
+		 	</c:when>
+		 	<c:when test="${position eq 'ad_featurestack1'}">
+		 		<div class="ad-container ad-container--section-ad">
+				  <div class="ad-container__ad-slot" id="ad_featurestack1">
+				  </div>
+				</div><!-- / ad-container -->
+		 	</c:when>
+		 	<c:when test="${position eq 'ad_featurestack2'}">
+		 		<div class="ad-container ad-container--section-ad">
+				  <div class="ad-container__ad-slot" id="ad_featurestack2">
+				  </div>
+				</div><!-- / ad-container -->
+				</c:when>
+		 	<c:when test="${position eq 'ad_featurestack3'}">
+		 		<div class="ad-container ad-container--section-ad">
+				  <div class="ad-container__ad-slot" id="ad_featurestack3">
+				  </div>
+				</div><!-- / ad-container -->
+			</c:when>
+		 	<c:when test="${position eq 'ad_featurestack4'}">
+		 		<div class="ad-container ad-container--section-ad">
+				  <div class="ad-container__ad-slot" id="ad_featurestack4"> 
+				  </div>
+				</div><!-- / ad-container -->
+		 	</c:when>
+		 	<c:when test="${position eq 'ad_featurestack5'}">
+		 		<div class="ad-container ad-container--section-ad">
+				  <div class="ad-container__ad-slot" id="ad_featurestack5"> 
+				  </div>
+				</div><!-- / ad-container -->
+		 	</c:when>
+		 	<c:when test="${position eq 'ad_bigbox'}">
+		 		<div class="ad-bigbox advertisement" id="ad_bigbox"></div>
+		 	</c:when>
+		 	<c:when test="${position eq 'ad_bigbox1'}">
+		 		<div class="ad-bigbox1 advertisement" id="ad_bigbox1"></div>
+		 	</c:when>
+		 	<c:when test="${position eq 'ad_bigbox2'}">
+		 		<div class="ad-bigbox2 advertisement" id="ad_bigbox2"></div>
+		 	</c:when>
+		 	<c:when test="${position eq 'ad_bigbox3'}">
+		 		<div class="ad-bigbox3 advertisement" id="ad_bigbox3"></div>
+		 	</c:when>
+		 	<c:when test="${position eq 'ad_box1'}">
+		 		<div class="ad-box1 advertisement" id="ad_box1"></div>
+		 	</c:when>
+		 	<c:when test="${position eq 'ad_box2'}">
+		 		<div class="ad-box2 advertisement" id="ad_box2"></div>
+		 	</c:when>
+		 	<c:when test="${position eq 'ad_box3'}">
+		 		<div class="ad-box3 advertisement" id="ad_box3"></div>
+		 	</c:when>
+		 	<c:when test="${position eq 'ad_box4'}">
+		 		<div class="ad-box4 advertisement" id="ad_box4"></div>
+		 	</c:when>
+		 	<c:when test="${position eq 'ad_box5'}">
+		 		<div class="ad-box5 advertisement" id="ad_box5"></div>
+		 	</c:when>
+		 	<c:when test="${position eq 'ad_topbox'}">
+		 		<div class="ad-topbox advertisement" id="ad_topbox"></div>
+		 	</c:when>
+		 	<c:when test="${position eq 'ad_botbox'}">
+		 		<div class="ad-botbox advertisement" id="ad_botbox"></div>
+		 	</c:when>
+		 	<c:when test="${position eq 'ad_ingallery'}">
+		 		<div class="ad-ingallery advertisement" id="ad_ingallery"></div>
+		 	</c:when>
+		 	<c:when test="${position eq 'ad_outofpage'}">
+		 		<div class="ad-outofpage advertisement" id="ad_outofpage"></div>
+		 	</c:when>
+		 	<c:when test="${position eq 'ad_outofpage1'}">
+		 		<div class="ad-outofpage1 advertisement" id="ad_outofpage1"></div>
+		 	</c:when>
+		 	<c:when test="${position eq 'ad_outofpage2'}">
+		 		<div class="ad-outofpage2 advertisement" id="ad_outofpage2"></div>
+		 	</c:when>
+		 	<c:when test="${position eq 'ad_outofpage3'}">
+		 		<div class="ad-outofpage3 advertisement" id="ad_outofpage3"></div>
+		 	</c:when>
+		 	<c:when test="${position eq 'ad_sky'}">
+		 		<div class="ad-sky advertisement" id="ad_sky"></div>
+		 	</c:when>
+		 	<c:when test="${position eq 'ad_featuredadvertiser'}">
+		 		<div class="ad-featuredadvertiser advertisement" id="ad_featuredadvertiser"></div>
+		 	</c:when>
+		 	<c:when test="${position eq 'ad_featurepartner1'}">
+		 		<div class="ad-featurepartner1 advertisement" id="ad_featurepartner1"></div>
+		 	</c:when>
+		 	<c:when test="${position eq 'ad_featurepartner2'}">
+		 		<div class="ad-featurepartner2 advertisement" id="ad_featurepartner2"></div>
+		 	</c:when>
+		 	<c:when test="${position eq 'ad_featurepartner3'}">
+		 		<div class="ad-featurepartner3 advertisement" id="ad_featurepartner3"></div>
+		 	</c:when>
+		 	<c:when test="${position eq 'ad_showcase'}">
+		 		<div class="ad-showcase advertisement" id="ad_showcase"></div>
+		 	</c:when>
+		 	<c:when test="${position eq 'ad_showcasebanner'}">
+		 		<div class="ad-showcasebanner advertisement" id="ad_showcasebanner"></div>
+		 	</c:when>
+		 	<c:when test="${position eq 'ad_stream1'}">
+				<div class="ad-container ad-container--section-ad">
+					<div class="ad-container__ad-slot" id="ad_stream1"></div>
+				</div>
+		 	</c:when>
+		 	<c:when test="${position eq 'ad_stream2'}">
+				<div class="ad-container ad-container--section-ad">
+					<div class="ad-container__ad-slot" id="ad_stream2"></div>
+				</div>
+		 	</c:when>
+		 	<c:when test="${position eq 'ad_stream3'}">
+				<div class="ad-container ad-container--section-ad">
+					<div class="ad-container__ad-slot" id="ad_stream3"></div>
+				</div>
+		 	</c:when>
+		 	<c:when test="${position eq 'ad_stream4'}">
+				<div class="ad-container ad-container--section-ad">
+					<div class="ad-container__ad-slot" id="ad_stream4"></div>
+				</div>
+		 	</c:when>
+		 	<c:when test="${position eq 'ad_stream5'}">
+				<div class="ad-container ad-container--section-ad">
+					<div class="ad-container__ad-slot" id="ad_stream5"></div>
+				</div>
+		 	</c:when>
+		 	<c:when test="${position eq 'ad_stream6'}">
+				<div class="ad-container ad-container--section-ad">
+					<div class="ad-container__ad-slot" id="ad_stream6"></div>
+				</div>
+		 	</c:when>
+		 	<c:otherwise>
+		 		need a check for position '${position}' in dfp_ad_position.jpt
+		 	</c:otherwise>
+		 </c:choose>
+	 </c:otherwise>
+</c:choose>
+</c:if>

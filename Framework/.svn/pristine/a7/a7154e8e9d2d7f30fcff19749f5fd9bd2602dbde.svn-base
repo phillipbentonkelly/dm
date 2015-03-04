@@ -1,0 +1,8 @@
+<p:getObject path="/Boston/Content/Business/Stories/06chocolate.xml" var="storyObj"/>
+<bdc:imagesWithCaptionCredit webObject="${storyObj}" format="image_609w" var="tease" type="resource"/>
+image src: ${tease.src}<br/>
+
+
+<p:url var="src" value="/Boston/Content/Sports/Images/d1b3a526e2f341d58dfe60ad4e99461a-d1b3a526e2f341d58dfe60ad4e99461a-0.jpg" format="image_609w" baseDomain="" />
+
+image src: ${src}

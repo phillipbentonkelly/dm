@@ -1,0 +1,41 @@
+<p:getContext var="uuid" />
+<p:getObject uuid="${uuid}" var="webObject"/>
+<p:object webObject="${webObject}" content="story" metadata="meta" />
+
+<p:out var="review_title" xvalue="$story//review-containers/review-container-cd/review-title/p" />
+
+<p:out var="cd_label" xvalue="$story//review-containers/review-container-cd/review-label/p" />
+<p:out var="cd_release_date" xvalue="$story//review-containers/review-container-cd/review-release-date/p" />
+
+<p:out var="hasMulti" xvalue="$story//review-containers/review-container-cd/review-performers/review-performer[2]/p" />
+
+<c:set var="artistLabel" value="Artist" />
+<p:out var="artistList" xvalue="$story//review-containers/review-container-cd/review-performers/review-performer[1]/p" />
+<c:if test="${not empty fn:trim(hasMulti)}">
+	<c:set var="artistLabel" value="Artists" />
+	<p:out var="artistList" value="" />
+	<x:forEach var="artistInfo" select="$story//review-containers/review-container-cd/review-performers/review-performer" varStatus="loop">
+		<p:out var="artist" xvalue="$artistInfo/p" />
+		<c:if test="${not empty fn:trim(artist)}">
+			<c:set var="artistList">${artistList}<c:if test="${not loop.first}">, </c:if> ${artist}</c:set>
+		</c:if>
+	</x:forEach>
+</c:if>
+
+<div class="review-item">
+	<h3 class="review-item-title">${fn:trim(review_title)}</h3>
+</div>
+
+<aside class="review-box">
+	<c:if test="${not empty fn:trim(artistList)}">
+		<b>${artistLabel}:</b> ${artistList} |
+	</c:if> 
+	
+	<c:if test="${not empty fn:trim(cd_label)}">
+		<b>Label:</b> ${cd_label} |
+	</c:if>
+	
+	<c:if test="${not empty fn:trim(cd_release_date)}">
+		<b>Release Date:</b> ${cd_release_date}
+	</c:if>
+</aside>

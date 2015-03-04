@@ -1,0 +1,276 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Boston.com</title>
+	    <!--
+	    For non-responsive css, (static layout, smaller file)
+	    uncomment non-resp-tmpl-article.css
+	    and comment out the tmpl-article.css.
+	    -->
+     	<link rel="stylesheet" href="http://p.o0bc.com/css/non-resp-tmpl-article.css"> 
+		<!--<link rel="stylesheet" href="http://p.o0bc.com/css/tmpl-article.css">-->
+		<script type="text/javascript" src="http://prototype.boston.com/js/libs/jquery-1.11.0.min.js"></script>
+		<script type="text/javascript" src="http://p.o0bc.com/js/_src/modernizr/modernizr.js"></script>
+		<script type="text/javascript"> // Typekit
+     /*
+     (function() {
+			var config = {
+			  kitId: 'cug4tlt',
+			  scriptTimeout: 3000
+			};
+			var h=document.getElementsByTagName("html")[0];h.className+=" wf-loading";var t=setTimeout(function(){h.className=h.className.replace(/(\s|^)wf-loading(\s|$)/g," ");h.className+=" wf-inactive"},config.scriptTimeout);var tk=document.createElement("script"),d=false;tk.src='//use.typekit.net/'+config.kitId+'.js';tk.type="text/javascript";tk.async="true";tk.onload=tk.onreadystatechange=function(){var a=this.readyState;if(d||a&&a!="complete"&&a!="loaded")return;d=true;clearTimeout(t);try{Typekit.load(config)}catch(b){}};var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(tk,s)
+		  })();
+      */
+		</script>
+		<script> // DFP
+			var googletag = googletag || {};
+			googletag.cmd = googletag.cmd || [];
+			(function() {
+				var gads = document.createElement("script");
+				gads.async = true;
+				gads.type = "text/javascript";
+				var useSSL = "https:" == document.location.protocol;
+				gads.src = (useSSL ? "https:" : "http:") + "//www.googletagservices.com/tag/js/gpt.js";
+				var node = document.getElementsByTagName("script")[0];
+				node.parentNode.insertBefore(gads, node);
+			})();
+		</script>
+		<script> // DFP Setup
+			var bcom = bcom || {};
+			bcom.dfp = bcom.dfp || {};
+			bcom.dfp.networkCode = 61381659;
+			bcom.dfp.adUnit = 'testbostonglobe/test-bcom-redesign';
+			//bcom.dfp.adSlots = ['ad_lead1', 'ad_sponsor', 'ad_carousel', 'ad_featurestack', 'ad_streamsponstease', 'ad_featurestacksponsor'];
+			bcom.dfp.adSlots = ['ad_sponsor', 'ad_carousel', 'ad_featurestack'];
+			bcom.dfp.streamCount = 5;
+			bcom.dfp.keyValuePairs = {};
+		</script>
+		
+	</head>
+	<body class="page-story top-btn-off tall-nav-potential" id="top">
+
+<!--		<div class="loading page-loading"><i class="dot one"></i><i class="dot two"></i><i class="dot three"></i></div>
+ -->
+
+<div class="site-container"> 
+	<!-- Main Nav -->
+<div class="nav-mod">
+	<nav class="main-nav">
+		<div class="main-nav-inner">
+			<div class="nav-left-ear">
+				<a class="toc-trigger js-toc-trigger nav-btn" href="#">
+					<div class="toc-trigger-icon"></div>
+					<h4 class="toc-trigger-label">Sections</h4>
+				</a><!-- /sec-nav -->
+			</div> <!-- /nav-left-ear -->
+
+			<a href="http://www.boston.com/index.html" class="bcom-logo"></a><!-- /bcom-logo -->
+
+			<div class="nav-right-ear">
+				<a class="nav-search-trigger js-search-trigger nav-btn" href="#">
+					<i class="nav-search-label">Search</i>
+					<i class="nav-search-icon"></i>
+				</a> <!-- /search-form -->
+
+			</div> <!-- /nav-right-ear -->
+		</div> <!-- /main-nav-inner -->
+	</nav><!-- /main-nav -->
+</div> 
+<div class="nav-search-mod">
+    <div class="l-nav-search site-width">
+        <%--<div class="nav-search-ad-mod">
+            <img class="nav-search-ad" src="http://www.boston.com/ads/sponsor-2.jpg"/>
+        </div>--%>
+        <form class="nav-search-form">
+            <input class="nav-search-form-input" type="text" placeholder="Search stories or sections"/>
+            <button type="submit" class="submit-btn nav-search-btn" value="Search"> </button>
+        </form> <!-- /nav-search-form -->
+    </div> <!-- /l-nav-search -->
+</div> <!-- /nav-search-mod -->
+<nav class="global-nav nocontent">
+	<ul>
+	<li>
+				<a href="/news?p1=Levelone_Nav_news">News</a></li>
+		<li>
+				<a href="/sports?p1=Levelone_Nav_sports">Sports</a></li>
+		<li>
+				<a href="/entertainment?p1=Levelone_Nav_entertainment">Entertainment</a></li>
+		<li>
+				<a href="/business?p1=Levelone_Nav_business">Business</a></li>
+		<li>
+				<a href="/life?p1=Levelone_Nav_lifestyle">Lifestyle</a></li>
+		<li>
+				<a href="/health?p1=Levelone_Nav_health">Health</a></li>
+		<li>
+				<a href="/travel?p1=Levelone_Nav_travel">Travel</a></li>
+		<li>
+				<a href="/cars?p1=Levelone_Nav_cars">Cars</a></li>
+		<li>
+				<a href="/jobs?p1=Levelone_Nav_jobs">Jobs</a></li>
+		<li>
+				<a href="/realestate/new/?p1=Levelone_Nav_realestate">Real Estate</a></li>
+		<li>
+				<a href="http://circulars.boston.com/">Circulars</a></li>
+		</ul>
+</nav>
+<!-- /global nav -->
+<nav class="toc-mod reverse nocontent">
+	<form class="toc-form" action="http://www.boston.com/search" ><!-- on means open nav -->
+		<input class="toc-search-input nav-label" type="text" placeholder="Search stories or sections"> </input>
+		<input type="submit" class="toc-search-btn toc-search-icon" value="Search"> </input>
+	</form> <!-- /toc-form -->
+	
+	<div class="toc-sec-mod">
+		<h3 class="toc-section-head">Sections</h3>
+		<ul class="toc-list toc-section-list">
+					<li class="toc-item toc-hp">
+							<a href="http://www.boston.com/?p1=Main_Nav_home">Home</a>
+						</li>
+					<li class="toc-item toc-news">
+							<a href="http://www.boston.com/news?p1=Main_Nav_news">News</a>
+						</li>
+					<li class="toc-item toc-sports">
+							<a href="http://www.boston.com/sports?p1=Main_Nav_sports">Sports</a>
+						</li>
+					<li class="toc-item toc-ae">
+							<a href="http://www.boston.com/entertainment?p1=Main_Nav_entertainment">Entertainment</a>
+						</li>
+					<li class="toc-item toc-lifestyle">
+							<a href="http://www.boston.com/life?p1=Main_Nav_lifestyle">Lifestyle</a>
+						</li>
+					<li class="toc-item toc-health">
+							<a href="http://www.boston.com/health?p1=Main_Nav_health">Health</a>
+						</li>
+					<li class="toc-item toc-travel">
+							<a href="http://www.boston.com/travel?p1=Main_Nav_travel">Travel</a>
+						</li>
+					<li class="toc-item toc-business">
+							<a href="http://www.boston.com/business?p1=Main_Nav_business">Business</a>
+						</li>
+					<li class="toc-item toc-cars">
+							<a href="http://www.boston.com/cars?p1=Main_Nav_cars">Cars</a>
+						</li>
+					<li class="toc-item toc-jobs">
+							<a href="http://www.boston.com/jobs?p1=Main_Nav_jobs">Jobs</a>
+						</li>
+					<li class="toc-item toc-real-estate">
+							<a href="http://www.boston.com/realestate?p1=Main_Nav_realestate">Real Estate</a>
+						</li>
+					<li class="toc-item toc-circulars">
+							<a href="http://circulars.boston.com/">Circulars</a>
+						</li>
+			</ul>
+	</div>
+	
+	<div class="toc-sites-mod">
+		<h3 class="toc-section-head">Sister Sites</h3>
+		<ul class ="toc-sister-list">
+			<li class="sister-item toc-radiobdc">
+					<a href="http://bdcwire.com/radiobdc?p1=Main_Sites_">
+						<div class="radiodbc-logo sister-logo">RadioBDC</div>
+						<p class="sister-txt radio-txt">Streaming today's top alternative music & more</p>
+					</a>
+				</li>
+			<li class="sister-item toc-hive">
+					<a href="http://www.betaboston.com?p1=Main_Sites_">
+						<div class="betab-logo sister-logo">BetaBoston</div>
+						<p class="sister-txt radio-txt">Your one-stop source for local innovation news</p>
+					</a>
+				</li>
+			<li class="sister-item toc-bdcwire">
+					<a href="http://www.bdcwire.com/?p1=Main_Sites_">
+						<div class="bdcwire-logo sister-logo">BDCWire</div>
+						<p class="sister-txt radio-txt">I'd click that</p>
+					</a>
+				</li>
+			<li class="sister-item toc-globe">
+					<a href="http://www.bostonglobe.com?p1=Main_Sites_">
+						<div class="globe-logo sister-logo">The Boston Globe</div>
+						<p class="sister-txt radio-txt">News & more from the state's leading resource</p>
+					</a>
+				</li>
+			</ul> <!-- /toc-sister-list -->
+        <!--  legal footer -->
+        <footer class="nav-footer">
+			<ul class="social-icon-list">
+				<li><a href="https://twitter.com/intent/user?screen_name=BostonDotCom&p1=Main_Nav_hp" class="twitter-icon social-icon"></a></li>
+				<li><a href="https://www.facebook.com/boston?p1=Main_Nav_hp" class="facebook-icon social-icon"></a></li>
+				<li><a href="https://plus.google.com/+BostonDotCom/?p1=Main_Nav_hp" class="google-icon social-icon"></a></li>
+				<li><a href="http://www.boston.com/tools/rss/?p1=Main_Nav_hp" class="rss-icon social-icon"></a></li>				
+            </ul>
+			<ul class="footer-legal-links list-horiz footer-text">
+				<li class="list-item"><a href="http://www.boston.com/help/privacy_policy/?p1=Main_Nav_hp">Privacy Policy</a></li>
+				<li class="list-item"><a href="http://www.boston.com/help/bostoncom_info/?p1=Main_Nav_hp">Contact</a></li>
+				<!-- Legal derived from XML -->
+			</ul>
+            <p class="nav-copyright footer-text">&copy;2014 Boston.com</p>
+        </footer> <!-- /nav-ftr -->
+
+        <!-- Article Banner Ad -->
+        <!-- ad_position: ad_navdisplay, enabled: True -->
+<div class="ad-navdisplay ad" id="ad_navdisplay"></div>
+	 	</nav> <!-- /toc-mod -->
+	<div class="page-content">
+
+		<!-- Leaderboard Ad Module -->
+		<section class="leaderboard-mod nav-leaderboard-mod">
+    	<!-- place any code for a top-of-page banner-ad here -->  
+    	</section> 
+
+	
+	</div> <!-- /page-content -->
+	<footer class="site-footer site-width">
+		<ul class="social-icon-list">
+			<li><a href="https://twitter.com/intent/user?screen_name=BostonDotCom " class="twitter-icon social-icon" target="_blank"></a></li>
+			<li><a href="https://www.facebook.com/boston " class="facebook-icon social-icon" target="_blank"></a></li>
+			<li><a href="https://plus.google.com/+BostonDotCom/" class="google-icon social-icon" target="_blank"></a></li>
+		</ul>
+		<aside class="footer-aside">
+			<p class="footer-copyright"><a href="http://www.boston.com/help/privacy-policy/#adchoice">Ad Choices</a> | ©2014 Boston.com</p>
+		</aside>
+	</footer>
+</div> <!-- /site-container -->
+
+<!-- Omniture -->
+<script type="text/javascript" language="JavaScript" src="//cache.boston.com/omniture/hcode/s_code_latest.js"></script>
+<!-- s_pageName = Boston.com+home+page, s_headline =  -->
+<script language="JavaScript" type="text/javascript">
+	<!-- 
+        s.pageName='Boston.com home page',s.channel='Home page',s.prop1='Boston.com home page'; 
+		s.server='',s.pageType='',s.prop2='',s.prop3='',s.prop4='',s.prop5='1',s.prop6='Boston.com home page',s.prop7='',s.prop8='',s.prop9='',s.prop10='',s.prop14='',s.prop17='Methode',s.prop20='',s.prop34='',s.prop41='Boston.com'; 
+		if(document.location.search.indexOf('comments=all')!=-1) { s.prop6 += ' | Comments view'; }
+		//if (archivedState && (archivedState=1)) {s.prop6 += ' | Archive Stub';}
+		/* E-commerce Variables */
+		s.campaign='',s.state='',s.zip='',s.events='',s.products='',s.purchaseID='',s.eVar1='',s.eVar2='',s.eVar3='',s.eVar4='',s.eVar5='',s.eVar6='',s.eVar7='',s.eVar8='',s.eVar9='',s.eVar10='',s.eVar41='Boston.com';
+	// -->
+</script>
+<script type="text/javascript" language="JavaScript" src="http://p.o0bc.com/js/tracking/audience_manager.js"></script>
+
+<!--  -->
+<script language="JavaScript" type="text/javascript">
+	var s_code=s.t();if(s_code)document.write(s_code)
+</script>
+<script language="JavaScript" type="text/javascript"><!-- if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-') // --></script>
+<noscript>
+	<a href="http://www.omniture.com" title="Web Analytics"><img src="http://nytbglobe.112.2O7.net/b/ss/nytbglobe/1/H.19.4--NS/0?pageName=Boston.com%20home%20page&amp;ch=Home%20page&amp;c1=Boston.com%20home%20page&amp;c6=Boston.com%20homepage&amp;c41=Boston.com&amp;v41=Boston.com" height="1" width="1" alt="" /></a>
+</noscript><!--/DO NOT REMOVE/ -->
+<script type="text/javascript" src="http://prototype.boston.com/js/bcom.customscroll.js"></script>
+<!-- Chartbeat -->
+			<script type="text/javascript" src="http://p.o0bc.com/js/tracking/bcom-chartbeat.js"></script>
+		<div id=pubnub pub-key=pub-c-127a2b10-aa80-4a62-ac2e-30a1fce6f220 sub-key=sub-c-4a78c224-164c-11e3-9f04-02ee2ddab7fe></div>
+		<script type="text/javascript" src="http://p.o0bc.com/js/libs/jquery-2.0.2.min.js"></script>
+		<script type="text/javascript" src="http://p.o0bc.com/js/app.js"></script>
+		<script type="text/javascript" src="http://p.o0bc.com/js/libs/moment.min.js"></script>
+		<script type="text/javascript" src="http://p.o0bc.com/js/bcom.util.js"></script>
+		<script type="text/javascript" src="http://p.o0bc.com/js/libs/mustache.js"></script>
+		<script type="text/javascript" src="http://p.o0bc.com/js/bcom.videoplayer.js"></script>
+		<script type="text/javascript" src="http://p.o0bc.com/js/bcom.inits.js"></script>
+		<script type="text/javascript" src="http://p.o0bc.com/js/bcom.nav.js"></script>
+		<script type="text/javascript" src="http://p.o0bc.com/js/libs/jquery.mCustomScrollbar.js"></script>
+		<script type="text/javascript" src="http://p.o0bc.com/js/libs/underscore.js"></script>
+		<script type="text/javascript" src="http://p.o0bc.com/js/libs/jquery.serializeObject.js"></script>
+	</body>
+</html>	

@@ -1,0 +1,69 @@
+// Page Skeleton
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+// Every page should contain these nested classes,
+// each of which serves a slightly different purpose
+
+// - <body>
+// Includes states that could effect entire page, such as
+// whether the TOC is active. Should also include a class
+// that describes the current page (page-hp, page-story, etc.)
+
+// - .site-container
+// Holds all site content, *including* the nav, and remains
+// hidden (while loading graphic runs) until enough of
+// the page can be rendered
+
+// - .page-content
+// Holds all the page content *excluding* the nav.
+// Necessary so we can shift the entire page when
+// showing/hiding TOC
+
+.site-container {
+	font-family: $sans;
+	overflow-y: hidden;
+	width: 100%;
+	@include trans;
+}
+
+.page-content {
+	// Starts low to create page fade-in effect
+	// opacity: 0.001;
+	@include trans;
+	// @include transform(translate3d(0, 0, 0));
+}
+
+.site-width {
+	position: relative;
+	margin-left: $site-margin;
+	margin-right: $site-margin;
+	@extend %clearfix;
+	@include mq($site-middle-mq) {
+		width: 94%;
+		max-width: 700px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	@include mq($sidebar-break) {
+		max-width: $site-max;
+	}
+}
+
+@include mq($sidebar-break) {
+	.primary {
+		width:100%;
+		float: left;
+		clear: left;
+		margin-right: -370px;
+		> .inner {
+			margin-right: 344px;
+		}
+		
+	}
+	.secondary {
+		position:relative;
+		z-index:1;
+		width: 320px;
+		float: right;
+		clear: right;
+	}
+} //mq

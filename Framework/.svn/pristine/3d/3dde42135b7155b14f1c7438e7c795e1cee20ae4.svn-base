@@ -1,0 +1,28 @@
+<p:currentObject metadata="trendingMeta" />
+<p:out var="trendingHeader" xvalue="$trendingMeta//ObjectMetadata/TeaseHeader" />
+
+<p:out var="VR" value="${cacheScope.visualRevenue}" /> <!-- VR = ${VR} -->
+<p:out var="VisRevAttribute" value='data-vr-zone="Seriously Well"' /> <%-- This is seriously a dumb name. Seriously. --%>
+<c:if test="${VR == False}">
+	<p:out var="VisRevAttribute" value="" />
+</c:if>
+          
+
+<div class="trending" ${VisRevAttribute}>
+	<h3 class="trending__header">${trendingHeader}</h3>
+	<ul class="trending__list">
+	
+		<p:getPageZone name="trending" var="trending" />
+		<c:forEach items="${trending}" var="trendingItem" end="5" varStatus="loop">
+			<p:object webObject="${trendingItem}" metadata="tiMeta" content="tiContent" />
+			<bdc:getHeadlines webObject="${trendingItem}" var="headlines" />
+			<bdc:getTrackingData webObject="${cacheScope.sourceObject}" var="tracking" />
+			
+			<li class="trending__list-item" data-vr-contentbox="">
+				<bdc:link webObject="${trendingItem}" className="trending__list-link"
+					linkParam="p1=trending_${tracking.pageAsset}_${loop.count}">${headlines.headline}</bdc:link>
+			</li>
+		</c:forEach>
+		
+	</ul>
+</div>

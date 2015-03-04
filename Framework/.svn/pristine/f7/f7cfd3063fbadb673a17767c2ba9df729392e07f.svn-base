@@ -1,0 +1,237 @@
+@charset "utf-8";
+
+/* ============================================= */
+
+/*  BCOM CARS WIDGETS                    */
+
+/* ============================================= */
+
+.cars-right-rail .widget img{
+    width: 100% !important;
+    height: 100% !important;
+    border: none;
+}
+
+#poweredByBcom img{
+    margin-left: 112px;
+}
+
+#navDeals {
+    float: left;
+    padding: 0 5px;
+    text-align: center;
+    font-weight: normal;
+    width: 430px;
+    height: 68px;   
+}
+
+.cars-right-rail #navDeals{
+    width: 292px;
+    height: 120px;
+}
+
+#navDeals nav {
+    margin-top: 10px;
+    display: inline-block;
+    text-align: center;
+}
+
+#navDeals a span {
+    position: relative;
+    font-weight: bold;
+    color: #fff;
+}
+
+#navDeals a, #navDeals a:hover {
+    height: 20px;
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    margin-top: 3px;
+    font-size: 15px;
+}
+
+#navDeals h2 {
+    font-size:20px; 
+    line-height:22px;
+}
+
+#navDeals li{
+    background: -webkit-gradient(linear, left top, right top, from(#1e935c), to(#229258));
+    background: -webkit-linear-gradient(top, #1e935c, #229258);
+    background: -moz-linear-gradient(top, #1e935c, #229258);
+    background: -o-linear-gradient(top, #1e935c, #229258);
+    background: -ms-linear-gradient(top, #1e935c, #229258);
+    background: linear-gradient(top, #1e935c, #229258);
+    background-color: #1e935c;
+    -webkit-border-radius: 18px;
+    -moz-border-radius: 18px;
+    border-radius: 18px;
+    -webkit-box-shadow: 0px 2px 3px #949293;
+    -moz-box-shadow: 0px 2px 3px #949293;
+    box-shadow: 0px 2px 3px #949293;
+}
+
+#navDeals li#NCS_button_carshomepage {
+    width: 132px;
+    margin: 0 0 5px 2px;
+}
+
+#navDeals li#UCS_button_carshomepage {
+    width: 137px;
+}
+
+#navDeals li:hover {
+    background: -webkit-gradient(linear, left top, right top, from(#1a8252), to(#1d804d));
+    background: -webkit-linear-gradient(top, #1a8252, #1d804d);
+    background: -moz-linear-gradient(top, #1a8252, #1d804d);
+    background: -o-linear-gradient(top, #1a8252, #1d804d);
+    background: -ms-linear-gradient(top, #1a8252, #1d804d);
+    background: linear-gradient(top, #1a8252, #1d804d);
+    background-color: #1a8252;
+}
+
+#navDeals li:active{
+    background: -webkit-gradient(linear, left top, right top, from(#167046), to(#196e42));
+    background: -webkit-linear-gradient(top, #167046, #196e42);
+    background: -moz-linear-gradient(top, #167046, #196e42);
+    background: -o-linear-gradient(top, #167046, #196e42);
+    background: -ms-linear-gradient(top, #167046, #196e42);
+    background: linear-gradient(top, #167046, #196e42);
+    background-color: #167046;
+}
+
+#navDeals li a, #navDeals li a:active, #navDeals li a:hover{
+    outline: 0;
+    border: none;
+    text-decoration: none;
+}
+
+
+/** CAR GURUS **/
+
+#carsGuruSearchBox{
+    background: #fff;
+}
+
+#carsHead{
+   width: 100%;
+}
+
+.ui-tabs-hide {
+    display:none;
+  }
+
+div#tabbed-carpicker {
+  padding-top: 1em;
+  background-color: white;
+  width:100%;
+}
+
+.cars-right-rail #tabbed-carpicker{
+    padding-top: 14em;
+}
+
+ul.box-tabs {
+  text-align:center;
+  padding: 0;
+  margin-left:20px;
+}
+
+ul.box-tabs li {
+  border: lightgray;
+  display: inline;
+  text-align:center;
+  margin: 0 auto;
+}
+
+ul.box-tabs li a {
+  float:left;
+  display:block;
+  color: black;
+  font-weight: bold;
+  font-size: 1.1em;
+  padding: .25em .5em;
+  border: 1px solid lightgray;
+  border-left: none;
+  width: 40%;
+}
+ul.box-tabs li:first-child a {
+  margin-left: 4px;
+  border-left: 1px solid lightgray;
+}
+ul.box-tabs li.ui-tabs-selected a {
+  background: #0099ff;
+  color: white;
+}
+
+div#carsHead span {
+  font-family: arial;
+  font-size: 20px;
+  font-weight: bold;
+  color: #000000
+}
+div#carsHead img {
+  position: relative;
+  top: 10px;
+}
+
+div#tabbed-carpicker div.active {
+  display:block;
+}
+
+li.ui-state-hover {
+    background:#0099ff;
+}
+
+form.QuickForm, form.NewQuickForm {
+    clear: left;   
+    width: 90%;
+    margin: 0em auto;
+    height: 22em;
+}
+
+form.QuickForm legend, form.NewQuickForm legend {
+    font-size: 16px;
+    line-height: 2;
+    font-weight:bold;
+}
+
+form.QuickForm h3, form.NewQuickForm h3 {
+    font-size: 12px;
+}
+
+form.QuickForm select.widgetmm, form.NewQuickForm select.widgetmm {
+    width: 285px;
+}
+
+form.QuickForm div.BttnPill a {
+    background: url('http://cache.boston.com/universal/site_graphics/UsedCar_Search.gif') no-repeat;
+    text-indent: -300em;
+    width: 113px;
+    height: 20px;
+    display: block;
+    margin: 10px 0px 10px 0px;
+}
+
+form.NewQuickForm div.BttnPill a {
+    background: url('http://cache.boston.com/universal/site_graphics/NewCar_Search.gif') no-repeat;
+    text-indent: -300em;
+    width: 113px;
+    height: 20px;
+    display:block;
+    margin: 10px 0px 10px 0px;
+}
+
+div.bottomLinks ul {
+    padding: 0px;
+    width: 300px;
+}
+
+div.bottomLinks ul li {
+    font-family: arial;
+    font-size: 12px;
+    color: #000000;
+    display: inline;
+    float: left;
+}

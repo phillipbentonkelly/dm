@@ -1,0 +1,10 @@
+<p:getCollection 
+	path="$configurationURI/Framework/sandbox/ksuffredini/stream" 
+	var="q" />
+
+<p>"query": ${q}</p>
+<c:forEach var="x" items="${q.items}" varStatus="status">
+	<p:getObject var="o" webObject="${x}" />
+	<p:object webObject="${o}" metadata="m" content="c" />
+	<p>${status.count}.] ${o.path}</p>
+</c:forEach>

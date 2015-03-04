@@ -1,0 +1,300 @@
+<%--
+{comments}
+	BDC-1938: Update GPT tag for OpenX
+{comments}
+--%>
+
+<p:currentObject metadata="meta" content="story" webType="WT" uuid="uuid" sectionId="section" channel="Boston.com" />
+<p:getObject path="/SysConfig/Classify/Data/TaxonomySectionsMap_BDC.xml" var="mapsTaxonomy" />
+<p:out var="baseDomain" xvalue="$mapsTaxonomy/maps/@baseDomain" />
+<p:out var="eomType" xvalue="$meta//sys/type"/>
+<p:out var="adPageType" xvalue="$meta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/AdPageType"/>
+<p:out var="pageType" value=""/>
+<!-- dfp-webtype: ${WT} -->
+<p:out var="adFrequency" value="${cacheScope.adFrequency}" />
+<c:if test="${empty adFrequency}">
+	<p:out var="adFrequency" value="5"/>
+</c:if>
+<!-- section ${section} -->
+
+<c:if test="${eomType eq 'EOM::MediaGallery'}">
+	<p:out var="galleryRefreshRate" xvalue="$meta//AdRefreshRate" />
+	<p:out var="galleryAdFrequency" xvalue="$meta//GalleryAdFrequency" />
+	<c:if test="${empty galleryRefreshRate}">
+		<p:out var="galleryRefreshRate" value="4"/>
+	</c:if>
+	<c:if test="${empty galleryAdFrequency}">
+		<p:out var="galleryAdFrequency" value="5"/>
+	</c:if>
+</c:if>
+
+<%-- get the current page url --%>
+<c:choose>
+	<c:when test="${fn:startsWith(WT, 'dwp_') or WT == 'SectionPage'}">
+		<p:out var="pageUrl" xvalue="$meta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/CanonicalUrl"/>
+	</c:when>
+	<c:otherwise>
+		<p:url webObject="${currentObject}" var="pageUrl"/>
+	</c:otherwise>
+</c:choose>
+
+<%-- make a unique id based off of the page's url --%>
+<p:out var="pageUrl" value="${fn:replace(pageUrl, 'http://www.boston.com','')}"/>	
+<p:out var="replace" value="_" />
+<p:out var="pageUrl" value="${fn:replace(pageUrl, '/',replace)}"/>
+<p:out var="pageUrl" value="${fn:replace(pageUrl, '.',replace)}"/>
+
+<c:choose>
+	<c:when test="${fn:startsWith(WT, 'dwp_') or WT == 'BlogPage'}">
+		<c:choose>
+			<c:when test="${WT == 'BlogPage'}">
+				<p:blogId var="blogId" />
+				<p:getBlog blogId="${blogId}" var="blog" />
+				<p:object webObject="${blog.webObject}" metadata="m" />
+				<p:out var="container_path" xvalue="$m//Page/ContainerPath"/>
+				<p:getObject path="${container_path}" var="dwp" />
+				<p:object webObject="${dwp}" content="story" metadata="meta" channel="Boston.com"/>
+				<p:out var="section" xvalue="$meta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/BlogPostMetadata/BlogAdTagGenericPage"/>
+				<!-- section is ${section} -->
+				<p:out var="pageType" value="blog"/>
+			</c:when>
+			<c:otherwise>			
+				<c:if test="${WT != 'dwp_modulepage'}">
+					<%-- whyyyyyyyyyyyyyyyyyyyy --%>
+					<%-- the next line overwrites the methode section with the ad taxonomy section --%>
+					<%-- this is bad, there should just be a different variable for the ad taxonomy section --%>
+					<%-- this also means that the ad unit and methode taxonomy have to be the same (they are not) --%>
+					<%-- there are probably things out there that rely on this misbehavior :( --%>
+					<p:out var="section" xvalue="$meta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/Sections/Section/SectionAdTagIndexPage"/>
+				</c:if>
+				<p:out var="sectionGeneric" xvalue="$meta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/Sections/Section/SectionAdTagGenericPage"/>
+		    <c:choose>
+	        <c:when test="${WT == 'dwp_forumpage' || WT == 'dwp_userprofile'}">
+	        	<p:out var="pageType" value="${adPageType}"/>
+	        	<p:out var="section" value="${sectionGeneric}"/>
+	        </c:when>
+        	<c:when test="${fn:contains(fn:substringAfter(sectionGeneric,'/'),'/')}">
+        		<p:out var="pageType" value="subsectfront"/>
+        	</c:when>
+        	<c:otherwise>
+        		<p:out var="pageType" value="sectfront"/>
+        	</c:otherwise>
+     			</c:choose>  
+			</c:otherwise>
+		</c:choose>
+
+    <%-- ... and now we use the section to map the ad --%>
+    <%-- http://www.youtube.com/watch?v=9CS7j5I6aOc --%>
+		<%-- SET dfp_sitepage --%>
+    <p:out var="dfp_sitepage" value=""/>
+    <p:out var="dfp_sitepage" value="${baseDomain}${section}"/>
+    <p:out var="dfp_sitepage" value="${dfp_sitepage}" scope="request"/>
+	</c:when>
+	<%-- if it's not a blogpage or dwp... --%>
+	<c:otherwise>
+		<p:out var="pageType" value="${adPageType}"/>
+		<%-- override mode --%>
+		<p:out var="lowestRank" value="" />
+		<x:forEach var="taxonomyValues" select="$meta//Categorization/Taxonomies/Taxonomy" >
+			<p:out var="taxonomyValue" xvalue="$taxonomyValues"/>
+			<p:out var="rank" xvalue="$mapsTaxonomy//map[@taxonomy=$taxonomyValue]/@rank" />
+			<fmt:parseNumber value="${rank}" integerOnly="true" var="rank"/>
+			<c:if test="${rank < lowestRank or empty lowestRank}">
+				<p:out var="lowestRank" value="${rank}"/>
+				<p:out var="taxonomy" xvalue="$mapsTaxonomy//map[@taxonomy=$taxonomyValue]/@taxonomy"/>
+				<p:out var="section" xvalue="$mapsTaxonomy//map[@taxonomy=$taxonomyValue]/@section"/>
+				<p:out var="legacyOasTag" xvalue="$mapsTaxonomy//map[@taxonomy=$taxonomyValue]/@legacyOasTag"/>
+			</c:if>
+			<!-- taxonomy: ${taxonomyValue} rank: ${rank} lowestRank: ${lowestRank} section: ${section} -->
+		</x:forEach>
+		<%-- lowestRank: ${lowestRank} taxonomy: ${taxonomy} --%>
+
+		<c:if test="${empty section}">
+			<!-- section is empty using default value-->
+			<p:out var="section" value="/news"/>
+		</c:if>
+
+		<%-- SET dfp_sitepage --%>
+		<x:if select="$meta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/Sections/Section/SectionAdTagGenericPage/@mode" >
+		  <p:out var="mode" xvalue="$meta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/Sections/Section/SectionAdTagGenericPage/@mode" />
+		</x:if>
+
+		<!-- mode: ${mode} sectionId: ${sectionName} section ${section} -->
+		<c:choose>
+			<c:when test="${mode == 'user'}">
+				<p:out var="dfp_sitepage" xvalue="$meta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/Sections/Section/SectionAdTagGenericPage"/>
+				<p:out var="dfp_sitepage" value="${dfp_sitepage}"/>
+			</c:when>
+			<c:when test="${mode == 'blog' or WT == 'BlogStory'}">
+				<p:out var="dfp_sitepage" xvalue="$meta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/Sections/Section/SectionAdTagGenericPage"/>
+				<p:out var="dfp_sitepage" value="${baseDomain}${dfp_sitepage}"/>
+			</c:when>
+			<c:otherwise>
+				<c:choose>
+					<c:when test="${not empty legacyOasTag}">
+						<p:out var="dfp_sitepage" value="${baseDomain}${legacyOasTag}"/>
+					</c:when>
+					<c:otherwise>
+						<p:out var="sectionGeneric" xvalue="$meta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/Sections/Section/SectionAdTagGenericPage"/>
+						<c:if test="${empty sectionGeneric}">
+							<!-- sectionGeneric is empty using default value-->
+							<p:out var="sectionGeneric" value="/news"/>
+						</c:if>
+						<p:out var="dfp_sitepage" value="${baseDomain}${sectionGeneric}"/>
+					</c:otherwise>
+				</c:choose>
+				<c:if test="${adPageType != 'section'}">
+					<c:if test="${not empty adPageType}">
+						<p:out var="dfp_sitepage" value="${dfp_sitepage}"/>
+					</c:if>
+				</c:if>
+			</c:otherwise>
+		</c:choose>
+
+		<c:if test="${dfp_sitepage == 'boston.com/business/innovation'}">
+			<p:out var="dfp_sitepage" value="betaboston.com"/>
+		</c:if>
+
+		<%-- SET dfp_sitepage --%>
+		<p:out var="dfp_sitepage" value="${dfp_sitepage}" scope="request"/>
+
+	</c:otherwise>
+</c:choose>
+	
+	<%-- this is really just for the weather section front --%>
+	<%-- if there is any content with the weather section, it'll probably get the default homepage adunit --%>
+	<c:if test="${WT == 'dwp_modulepage'}">
+		<p:out var="dfp_sitepage" xvalue="$meta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/Sections/Section/SectionAdTagIndexPage" />
+		<p:out var="dfp_sitepage" value="${baseDomain}${dfp_sitepage}" />
+	</c:if>
+	<!-- woohoo ${dfp_sitepage}-->
+	
+	<%-- grab the SectionAdTagOverride, which is where a client user would force a different ad unit --%>
+	<%-- if it exists, it's our new ad_unit/sitepage --%>
+	<p:out var="adUnitOverride" xvalue="$meta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/SectionAdTagOverride"/>
+	<c:if test="${not empty adUnitOverride}">
+		<p:out var="dfp_sitepage" value="${adUnitOverride}" />
+	</c:if>
+	
+	<%-- if we haven't gotten a sitepage yet, just use this default one --%>
+	<c:if test="${empty fn:trim(dfp_sitepage)}">
+		<p:out var="dfp_sitepage" value="${boston.com/news}" />
+	</c:if>
+	
+	
+	<p:out var="s1" value="${fn:split(dfp_sitepage,'/')[0]}" />
+	<p:out var="s2" value="${fn:split(dfp_sitepage,'/')[1]}" />
+	<p:out var="s3" value="${fn:split(dfp_sitepage,'/')[2]}" />
+	<p:out var="s4" value="${fn:split(dfp_sitepage,'/')[3]}" />
+	<p:out var="s5" value="${fn:split(dfp_sitepage,'/')[4]}" />
+	
+	<p:out var="meta_values" value="" />
+	
+	<c:catch>
+		<p:out var="mKeyWord" xvalue="$meta//Categorization/Keywords/Keyword" />
+		<c:if test="${not empty mKeyWord}">
+			<x:forEach var="metaKeyWord" select="$meta//Categorization/Keywords/Keyword" varStatus="status">
+				<p:out var="temp" xvalue="$metaKeyWord/text()"/>
+				<p:out var="meta_values" value="${meta_values}${temp}"/>
+					<c:if test="${status.last ne true}">
+							<p:out var="meta_values" value="${meta_values},"/>
+					</c:if>
+			</x:forEach>
+	   </c:if>
+	</c:catch>
+	<!-- section is ${section}, layer is ${layer} -->
+ 
+   <p:out var="replace" value="_" />
+   <p:out var="meta_values" value="${fn:replace(meta_values, '/',replace)}"/>
+   <p:out var="meta_values" value="${fn:replace(meta_values, '.',replace)}"/>
+   <p:out var="meta_values" value="${fn:replace(meta_values, ' ',replace)}"/>
+   <p:out var="meta_values" value="${meta_values}" escape="javascript"/>
+   
+  <%-- build out the ad slots array --%>
+	<c:choose>
+		<c:when test="${WT == 'dwp_forumpage' || WT == 'dwp_userprofile'}">
+			<p:out var="dfp_listpos" value="'ad_lead1','ad_toprightslot','ad_featurestack1','ad_lead2','ad_wallpaper','ad_outofpage1'"/>
+		</c:when>
+		<c:when test="${WT == 'dwp_page_not_found'}">
+			<p:out var="dfp_listpos" value="'ad_lead1','ad_toprightslot','ad_lead2'"/>
+		</c:when>
+		<c:when test="${WT == 'dwp_classifieds'}">
+			<p:out var="dfp_listpos" value="'ad_outofpage1','ad_billboard','ad_wallpaper','ad_topright','ad_topleft','ad_bigbox1','ad_bigbox2','ad_bigbox3','ad_box1','ad_box2','ad_box3','ad_box4','ad_box5','ad_sky','ad_lead2','ad_tile','ad_topbox','ad_botbox','ad_midleftbox','ad_midrightbox','ad_topleftmini','ad_toprightmini','ad_midbanner','ad_minibox1','ad_minibox2','ad_outofpage2'"/>
+		</c:when>
+		<%-- most pages skip down to here --%>
+		<c:when test="${eomType == 'EOM::WebPage'}">
+			<bdc:getAdLayer var="layer" webType="${WT}"/>
+			<bdc:inheritStoryLayer var="dwpPath" section="${section}" layer="${layer}" />
+			<!-- dwpPath ${dwpPath} -->
+			<bdc:getListPositions var="dfp_listpos" path="${dwpPath}" />
+		  <!-- adslots : ${dfp_listpos} -->
+		</c:when>
+		<c:otherwise>
+			<bdc:getAdLayer var="layer" webType="${WT}"/>
+			<!-- adLayer is ${layer} -->
+			<bdc:inheritStoryLayer var="dwpPath" section="${section}" layer="${layer}" />
+			<!-- dwpPath ${dwpPath} -->
+			<bdc:getListPositions var="dfp_listpos" path="${dwpPath}" />
+			<!-- adslots : ${dfp_listpos} -->
+		</c:otherwise>
+	</c:choose>	
+	
+	
+<%-- Load DFP JS Asynchronously  --%>
+<script type="text/javascript">
+  var googletag = googletag || {};
+  googletag.cmd = googletag.cmd || [];
+  (function() {
+    var gads = document.createElement("script");
+    gads.async = true;
+    gads.type = "text/javascript";
+    var useSSL = "https:" == document.location.protocol;
+    gads.src = (useSSL ? "https:" : "http:") + "//www.googletagservices.com/tag/js/gpt.js";
+    var node = document.getElementsByTagName("script")[0];
+    node.parentNode.insertBefore(gads, node);
+  })();
+</script>
+
+
+<%-- Load DFP JS Synchronously --%>
+<%-- <script src="//www.googletagservices.com/tag/js/gpt.js"></script> --%>
+
+<%-- OpenX BDC-1938 
+<script type="text/javascript" >
+   (function() {
+   var src = 'http://ox-d.boston.servedbyopenx.com/w/1.0/jstag?nc=61381659-boston';
+   document.write('<scr' + 'ipt src="' + src + '"></scr' + 'ipt>');
+})();
+</script>
+--%>
+
+<p:out var="cityName"  xvalue="$meta//ObjectMetadata/Location/City/text()" />
+
+<!-- Build Key/Value Object + Set adUnit Name -->
+<script>
+    // DFP Setup
+    var bcom = bcom || {};
+    bcom.dfp = bcom.dfp || {};
+    bcom.dfp.networkCode = 61381659;
+    bcom.dfp.adUnit = '${dfp_sitepage}';
+    bcom.dfp.adSlots = [${dfp_listpos}];
+    bcom.dfp.streamCount = '${adFrequency}';
+    bcom.dfp.galleryCount = '${galleryAdFrequency}';
+    bcom.dfp.refreshRate = '${galleryRefreshRate}';
+    bcom.dfp.keyValuePairs = {
+        <c:if test="${not empty cityName}">
+            location: '${cityName}',
+        </c:if>
+        s1: '${s1}',
+        s2: '${s2}',
+        s3: '${s3}',
+        s4: '${s4}',
+        s5: '${s5}',
+        pgtype : '${pageType}',
+        pageurl : '${pageUrl}',
+        meta: '${meta_values}'
+    };
+    
+</script>
+
+<%-- this whole file #techdebt --%>

@@ -1,0 +1,108 @@
+<%-- things passed --%>
+<p:out var="visualRevenue" value="${cacheScope.visualRevenue}" />
+<p:out var="wellTitle" value="${cacheScope.wellTitle}" />
+<p:out var="dwp" value="${cacheScope.dwp}" />
+<p:out var="p1" value="${cacheScope.p1}" />
+<p:out var="dataOmniture" value="${cacheScope.dataOmniture}" />	
+<p:out var="headlineType" value="${cacheScope.headlineType}" />
+<p:out var="imageSize" value="${cacheScope.imageSize}" />
+<p:out var="isHomepage" value="${cacheScope.isHomepage}" />
+<p:out var="displaySection" value="${cacheScope.displaySection}" />
+<p:out var="displayOverline" value="${cacheScope.displayOverline}" />
+
+<p:currentObject sectionId="section" metadata="meta" webType="wt" />
+<bdc:getHeadlines webObject="${currentObject}" var="headlines" />
+
+<%-- let's make the p1 tag, if one hasn't already been passed in --%>
+<c:if test="${empty p1}">
+	<p:out var="p1" value="p1=well_${wellTitle}_main" />
+	<bdc:regexReplace var="p1" value="${p1}" regex="\s" replace="" />
+	<c:if test="${isHomepage}">
+		<p:out var="p1" value="${p1}_hp" />
+	</c:if>
+</c:if>
+
+<%-- include vr, or don't --%>
+<p:out var="vrMaybe" value="" />
+<c:if test="${visualRevenue eq 'True'}">
+	<p:out var="vrMaybe" value="data-vr-contentbox=\"\"" />
+</c:if>
+
+<%-- this is a mess #techdebt --%>
+<c:if test="${headlineType != 'standard' && headlineType != 'none' && headlineType != 'overlayLarge'}">
+	<p:out var="headlineClass" value="--${headlineType}" />  
+</c:if>
+<c:if test="${headlineType == 'reverse'}">
+	<p:out var="imageClass" value="class=\"image-tease__image\"" />
+</c:if>
+<c:if test="${headlineType == 'overlayLarge'}">
+	<p:out var="headlineClass" value="--overlay image-tease__text--overlay-large" />
+</c:if>
+
+<c:choose>
+	<c:when test="${cacheScope.imageSize == 'Wide'}">
+		<p:out var="imageFormat" value="image_650x365" />
+		<p:out var="sizeClass" value="image-tease--16-9" />
+	</c:when>
+	<c:otherwise>
+		<p:out var="imageFormat" value="image_650x488" />
+		<p:out var="sizeClass" value="image-tease--4-3" />     	 
+	</c:otherwise>
+</c:choose>
+
+<%-- initial test of new default image logic. if this works out well, tag-ify it --%>
+<bdc:imagesWithCaptionCredit webObject="${currentObject}" var="image" format="${imageFormat}" />
+<c:if test="${not empty image}">
+	<p:out var="imageUrl" value="${image.src}" />
+</c:if>
+<c:if test="${empty image}">
+	<bdc:defaultImage var="defImg" webObject="${currentObject}" format="${imageFormat}" />
+	<c:if test="${not empty defImg}">
+		<p:out var="imageUrl" value="${defImg}" />
+	</c:if>
+</c:if>
+
+<div class="image-tease ${sizeClass}" ${vrMaybe}>       
+
+	<%-- choose a title for the tag in the corner; section, overline, or ...none --%>
+	<%-- these should be options from a list #techdebt --%>
+	<p:out var="headlineTitle" value="" />
+	<%-- section! --%>
+	<c:if test="${displaySection == 'True'}">
+		<bdc:teaseSection section="${section}" var="sectionData" />
+		<a class="image-tease__section image-tease__section--link" href="${sectionData.path}">${sectionData.name}</a>
+	</c:if>
+	<%-- overline! --%>
+	<c:if test="${displayOverline == 'True'}">
+		<div class="image-tease__section">${headlines.overline}</div>
+	</c:if>
+
+	<%-- Metadata option: DisplayTimestamp --%>
+	<c:if test="${cacheScope.displayTime == 'TimeSince'}">
+		<bdc:ifHasTimestamp>
+			<div class="image-tease__timestamp"><bdc:time format="since" /></div>
+		</bdc:ifHasTimestamp>
+	</c:if>
+	<c:if test="${cacheScope.displayTime == 'Timestamp'}">
+		<bdc:ifHasTimestamp>
+			<div class="image-tease__timestamp"><bdc:time format="shortDateTime" /></div>
+		</bdc:ifHasTimestamp>
+	</c:if>
+
+	<bdc:link webObject="${currentObject}" className="image-tease__link" linkParam="${p1}" otherAttributes="${dataOmniture}">
+		<div class="image-tease__image-container">
+			<img src="${imageUrl}" ${imageClass} />
+		</div>
+		<%-- Metadata option: DisplayHeadlineType --%>
+		<c:if test="${headlineType != 'none'}">
+			<div class="image-tease__text${headlineClass}">${headlines.carouselHeadline}</div>
+		</c:if>
+	</bdc:link>
+
+	<c:if test="${cacheScope.social == 'True'}">
+		<p:include url="$configurationURI/Framework/skins/components/story_container/tease_footer.jpt">
+			<p:param name="viewType" value="LIST" />
+			<p:param name="storyObject" value="${currentObject}" />
+		</p:include>
+	</c:if>
+</div>

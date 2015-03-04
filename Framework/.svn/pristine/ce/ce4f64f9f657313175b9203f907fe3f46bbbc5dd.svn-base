@@ -1,0 +1,7 @@
+<%--
+	 		  <script>
+  				googletag.cmd.push(function() {
+     				googletag.cmd.push(function(){ googletag.display( "${position}" );});
+  				});
+  			  </script>
+--%>

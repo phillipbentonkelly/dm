@@ -1,0 +1,95 @@
+// *
+// * $configurationURI/Framework/bdc-styles/bdc-screen--non-critical.scss
+// *
+// * Boston.com bdc-screen--non-critical.scss
+// * Brings in all critical partials to generate a single CSS file
+// * This file should only contain @import rules
+// * Dependencies should be listed
+// *
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// Base SCSS
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+@import 'partials/base';
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// BCOM SCSS
+// * Should all be removed eventually
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// No Output
+@import "partials/bcom/variables";
+@import "partials/bcom/bcom-mixins";
+//
+@import "partials/bcom/article";
+@import "partials/bcom/type";
+@import "partials/bcom/filter-nav";
+@import "partials/bcom/forms";
+@import "partials/bcom/buttons";
+@import "partials/bcom/comments";
+@import "partials/bcom/pagination";
+@import "partials/bcom/loader";
+@import "partials/bcom/animations";
+@import "partials/bcom/video";
+// maybe critical?
+@import "partials/bcom/objects";
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// Icons
+// * Dependencies: bdc-base
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+@import 'partials/icons-weather';
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// Page - Module Styles
+// * Dependencies: bdc-base
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+@import 'partials/page/modules/search-form';
+@import 'partials/page/modules/slide-out-nav';
+@import 'partials/page/modules/user-panel';
+@import 'partials/page/modules/mega-menu';
+@import 'partials/page/modules/weather-daily';
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// Section Front Styles
+// * Dependencies: bdc-base
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+@import 'partials/page-section/modules/section-recent-list';
+@import 'partials/page-section/modules/section-well';
+@import 'partials/page-section/modules/tease-share';
+@import 'partials/page-section/modules/tease-footer';
+@import 'partials/page-section/modules/author-bio';
+@import 'partials/page-section/modules/video-player';
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// Content Styles
+// * Dependencies: bdc-base
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+@import 'partials/page-content/modules/content-gallery-preview';
+@import 'partials/page-content/modules/content-footer';
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// Page - Footer Styles
+// * Dependencies: bdc-base
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+@import 'partials/page/page-footer';
+@import 'partials/page/modules/page-social-nav';
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// Page - Share Modal Styles
+// * Dependencies: bdc-base
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+@import 'partials/page/modules/share-modal';
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// Third Party Styles - *** Move these to ajaxed stylesheet?
+// * Dependencies: bdc-base
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+@import 'lib/magnific-popup';
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// Print Styles
+// * Dependencies: none
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+@media print {
+  @import 'partials/print';
+}

@@ -1,0 +1,28 @@
+<%-- 
+{comments}
+BDC-1720 - Remove the article a user is currently reading from "We think you'll like" 
+{comments}
+--%>
+<p:currentObject metadata="meta" />
+<p:object webObject="${cacheScope.sourceObject}" metadata="sourceMeta" />
+  
+<p:out var="section" xvalue="$sourceMeta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/Sections/Section/SectionPath/text()" />
+  
+<p:out var="title" xvalue="$meta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/Title" />
+<c:if test="${empty title}">
+	<p:out var="title" value="WE THINK YOU'LL LIKE" />	
+</c:if>
+
+<p:out var="storyCount" xvalue="$meta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/MaxStoriesToDisplay" />
+<c:if test="${empty storyCount}">
+	<p:out var="storyCount" value="5" />	
+</c:if>
+
+<p:object webObject="${cacheScope.sourceObject}" loidEx="loid" />
+  
+<p:include pageZoneName="content" templateName="${displayData.templateName}">
+	<p:param name="title" value="${title}" />
+	<p:param name="storyCount" value="${storyCount}" />
+	<p:param name="skipId" value="${loid}" />
+ 	<p:param name="section" value="${section}" /> 
+</p:include>

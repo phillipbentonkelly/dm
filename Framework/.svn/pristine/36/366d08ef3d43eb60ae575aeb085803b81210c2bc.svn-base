@@ -1,0 +1,22 @@
+<%--
+{comments}
+BDC-1647 - deleting everything except the headline
+{comments}
+--%>
+
+<%--
+	Based on:
+	/bcom-redesign-beta/bdc-markup/page-content/modules/content-header.php
+--%>
+
+<p:currentObject content="story" />
+
+<p:out var="headline" xvalue="$story//headlines/headline/p" />
+<p:out var="subheadline" xvalue="$story//headlines/subheadline/p" />
+
+<header class="content-header">
+  <h1 class="content-header__headline">${headline}</h1>
+  <c:if test="${not empty subheadline}">
+    <h2 class="content-header__subheadline">${subheadline}</h2>
+  </c:if>
+</header>

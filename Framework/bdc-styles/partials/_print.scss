@@ -1,0 +1,77 @@
+// *
+// *  Print Styles
+// *  @media print {} media query wraps @import in bdc-screen.scss
+// *  This allows re-use of this file for browsers that do not support @media
+// *
+
+// ------------------------------------------------------------
+// Display Properties
+// ------------------------------------------------------------
+
+// Page Elements
+.masthead,
+.user-panel,
+.ad-container,
+.globe-non-enhanced-cta,
+.social-nav--horizontal,
+
+// Content Elements
+.content-header__ui__item,
+.content-header__section-name,
+.content-social-bar,
+.content-gallery-controls__preview,
+.content-gallery-controls__pager-info,
+.content-gallery-controls__pager-controls,
+.content-text--gallery__next,
+.content-footer__tagline,
+.content-module--related-links,
+.content-well--sidebar,
+.embed-container,
+
+// Module Elements
+.content-module--trending,
+.content-module__list--trending,
+
+// Leftovers from BCOM
+.story-comments,
+.article-ftr {
+  display: none !important;
+}
+
+// ------------------------------------------------------------
+// Other Properties
+// ------------------------------------------------------------
+.content-well {
+  width: 700px !important;
+}
+.content-media,
+.content-media__lead,
+.content-media--inline-right {
+  margin: 0 auto;
+  figure {
+    width: 50% !important;
+    margin: 0 auto;
+  }
+}
+.content-byline__timestamp {
+  clear: right;
+}
+.content-text,
+.content-text--gallery {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+.content-text__blockquote__text {
+  font-size: 12px;
+}
+.content-gallery__slide {
+  .content-text__text {
+    font-size: 12px;
+    clear: right;
+    a:after {
+      content:" (" attr(href) ") ";
+      font-size: 12px;
+    }
+  }
+}

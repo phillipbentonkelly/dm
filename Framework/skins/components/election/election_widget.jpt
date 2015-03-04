@@ -1,0 +1,122 @@
+<p:currentObject metadata="m" />
+
+<p:script name="election-widget">
+var candidateOverrides = [];
+
+<x:forEach select="$m//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/Election/WinnerOverrides/WinnerId" var="id">
+	<c:if test="${not empty id}">
+		<p:out var="idText" xvalue="$id/text()" />
+		candidateOverrides.push("${idText}")
+	</c:if>
+</x:forEach>
+
+</p:script>
+
+<p:script src="/rw$configurationURI/Framework/bdc-scripts/bdc.election.js" type="context" />
+<p:script src="/rw$configurationURI/Framework/bdc-scripts/bdc.election-widget.js" type="context" />
+<p:script src="/rw$configurationURI/Framework/bdc-scripts/bdc.election-results.js" type="context" />
+<p:style  src="/css/dist/bdc-special.css" type="context" />
+
+<div class="election-widget-final">
+	<div class="election-widget-final__container">
+	<div class="election-widget-final__democrats election-widget-final__candidate" data-id="39385862">
+		<p class="election-widget-final__precincts-reporting">%</p>
+		<p class="election-widget-final__precincts-reporting-txt">Precincts Reporting</p>
+		<div class="election-widget-final__info election-widget-final__candidate-blue">
+			<div class="election-widget-final__checkmark"></div>
+			<img class="election-widget-final__party-logo" src="/bdc-img/special/election-democratic-donkey.png">		
+			<p class="election-widget-final__percentage election-widget-final__percentage--blue">%</p>
+			<p class="election-widget-final__votes election-widget-final__votes--blue"><span class="election-widget-final__vote-count election-widget-final__vote-count--blue"></span> votes</p>
+		</div>
+	</div>
+	<div class="election-widget-final__main">
+		<a href="/news/politics/extra/election-results"><img class="election-widget-final__img" src="/bdc-img/special/election-final-logo.png"></a>
+	</div>
+	<div class="election-widget-final__republicans election-widget-final__candidate" data-id="39388934">
+		<a class="election-widget-final__results" href="/news/politics/extra/election-results"><p class="election-widget-final__results">Full Election Results</p></a>
+		<div class="election-widget-final__info">
+			<div class="election-widget-final__candidate-red">
+			<div class="election-widget-final__checkmark"></div>
+			<img class="election-widget-final__party-logo" src="/bdc-img/special/election-republican-elephant.png">
+			<p class="election-widget-final__percentage election-widget-final__percentage--red">%</p>
+			<p class="election-widget-final__votes election-widget-final__votes--red"><span class="election-widget-final__vote-count election-widget-final__vote-count--red"></span> votes</p>
+			</div>
+			</div>
+		</div>		
+	</div>
+	</div>
+
+
+
+
+
+
+<div class="election-widget-final--mobile">
+	
+	<p class="election-results__heading--mobile"><span class="election-results__heading--red">20</span><span class="election-results__heading--blue">14</span> General Election</p>
+	
+		<!-- Election Office -->
+	<div class="election-results__office">
+
+		<!-- Election Party Title -->
+		<div class="election-results__title">
+			<div class="election-results__title-office">
+				<p>Governor</p>
+			</div>
+			<div class="election-results__title-data">	
+				<p>VOTES</p>
+			</div>
+			<div class="election-results__title-data election-results__title-data--percent">
+				<p>PCT.</p>
+			</div>
+		</div>
+		
+		<!-- Election Party Candidates -->
+		<div class="election-results__candidates">
+
+			<!-- Candidate Row -->
+			<div class="election-results__candidate-row election-widget-final__candidate-blue" id="coakley" data-id="39385862">
+								
+				<div class="election-results__candidate-party election-results__candidate-party--blue">D</div>
+				<div class="election-results__candidate-name">Martha Coakley</div>
+				<div class="election-results__color-check">
+					<div class="election-widget-final__checkmark--small"></div> 
+				</div>
+				<div class="election-results__candidate-bar">
+					<div class="election-results__candidate-bar-wrap">
+						<div class="election-results__candidate-bar-percent--blue">
+							<span class="election-results__checkmark"></span>
+						</div>
+					</div>
+				</div>
+				<div class="election-results__candidate-votes"></div>
+				<div class="election-results__candidate-percent">%</div>
+			</div> <!-- /candidate-row -->
+			
+			<!-- Candidate Row -->
+			<div class="election-results__candidate-row election-widget-final__candidate-red" id="baker" data-id="39388934">
+							
+				<div class="election-results__candidate-party election-results__candidate-party--red">R</div>
+				<div class="election-results__candidate-name">Charlie Baker</div>
+				<div class="election-results__color-check">
+					<div class="election-widget-final__checkmark--small"></div> 
+				</div>
+				<div class="election-results__candidate-bar">
+					<div class="election-results__candidate-bar-wrap">
+						<div class="election-results__candidate-bar-percent--red">
+							<span class="election-results__checkmark"></span>
+						</div>
+					</div>
+				</div>
+				<div class="election-results__candidate-votes"></div>
+				<div class="election-results__candidate-percent">%</div>
+			</div> <!-- /candidate-row -->
+
+		</div> <!-- /candidates -->
+
+		<div class="election-results__source--mobile">% Precincts Reporting</div>
+		<a href="/news/politics/extra/election-results" class="election-results__link-mobile">VIEW FULL RESULTS</a>
+
+	</div> <!-- /office -->
+
+</div> 

@@ -1,0 +1,37 @@
+<script type="text/javascript">
+
+/* define aid */
+var AMAaid = 'bostonaxz';
+
+/* define location */
+var locZip = '02125';
+
+/* define theater radius */
+var locRadius = '20';
+
+/* define API key */
+var tmsAPI = '55aygkpys5wng3acauxxwtyz';
+
+</script>
+
+<script type="text/javascript" src="http://images.zap2it.com/html/images/movieswidget.js"></script>
+
+<div>
+		<!-- THEATER search, User enters either ZIP Code -->
+		<form method="GET" action="http://affiliate.zap2it.com/movies/mvtheatersearch.do">
+		<label for="location">Enter your Zip code below to see local movie listings:<br> </label>
+		<input type="text" name="location" id="location" value="ZIP Code" onfocus="if (this.value == 'ZIP Code') this.value = ''" onblur="if (this.value == '') this.value = 'ZIP Code'" />
+		<input type="submit" value="continue" />
+		<input type="hidden" name="aid" value="bostonaxz" />
+	</form>	
+	<style type="text/css">
+		#tms_widget_footer a:hover {color: #666 !important; text-decoration: underline !important;}
+		#tms_widget_footer {width: 350px; color: #999; font-family: arial, sans-serif; font-size: 9px; line-height: 1;}
+	</style>
+</div>
+<div id="tms_widget_footer">
+	<a target="_blank" href="http://movies.zap2it.com/movies/mvhome.do" style="color: #999; text-decoration: none;">Movie times</a> powered by <a target="_blank" href="http://www.zap2it.com/" style="color: #999; text-decoration: none;">Zap2it</a>
+
+</div>
+
+<script type="text/javascript" src="http://api.zap2it.com/tvlistings/webservices/footer?fmt=widget"></script>

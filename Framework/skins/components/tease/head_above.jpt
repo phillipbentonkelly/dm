@@ -1,0 +1,121 @@
+<%-- {comments} DM-27: h3 alterations {comments} --%>
+<p:currentObject metadata="meta" content="c" />
+<p:out var="sharebar" xvalue="$meta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/SectionShareBar"/>
+<p:out var="reviewRating" xvalue="$meta//Editorial/ReviewRating"/>
+<p:out var="sysType" xvalue="$meta//sys/type" />
+<bdc:getHeadlines webObject="${currentObject}" var="title" />
+<bdc:getTeaseData webObject="${currentObject}" templateName="${displayData.templateName}" var="teaseData" />
+<bdc:getSummaryForSectionFront webObject="${currentObject}" var="webtease" />
+<bdc:getTeaseType webObject="${currentObject}" var="teaseType" />
+
+<c:choose>
+	<c:when test="${teaseType eq 'photo-container' or sysType eq 'EOM::MediaGallery'}">
+		<bdc:imagesWithCaptionCredit webObject="${currentObject}" var="imageData" format="${teaseData.imageFormat}" />
+	</c:when>
+	<c:when test="${teaseType eq 'video-container'}">
+		<bdc:getVideoTease webObject="${currentObject}" var="videoTeaseMap" />
+	</c:when>
+	<c:when test="${teaseType eq 'gallery-container'}">
+		<bdc:getGalleryTease webObject="${currentObject}" var="galleryUuid" />
+	</c:when>
+</c:choose>
+<p:out var="CampaignCodes" value="${cacheScope.CampaignCodes}"/>
+
+<p:out var="timeStamp" value="" />
+<p:out var="timeStampDuration" value="" />
+<p:out var="displayTimeStamp" value="" />
+<p:out var="hClass" value="${teaseData.hSize}"/>
+
+<c:if test="${not empty cacheScope.dwp}">
+	<p:object webObject="${cacheScope.dwp}" metadata="dwpMeta"/>
+	<p:out var="edition" xvalue="$dwpMeta//sys/props/productInfo/edition"/>
+	<bdc:getRelatedLinks webObject="${currentObject}" var="relatedLinks" edition="${edition}" />
+	<bdc:getHeadlines webObject="${currentObject}" var="title" edition="${edition}"/>
+	<bdc:getSummaryForSectionFront webObject="${currentObject}" var="webtease" />
+</c:if>
+
+<c:if test="${not empty cacheScope.dwc}">
+	<p:object webObject="${cacheScope.dwc}" metadata="dwcMeta"/>
+	<x:if select="$dwcMeta//TimeStamp" >
+		<p:out var="timeStamp" xvalue="$dwcMeta//TimeStamp" />
+	</x:if>
+	<x:if select="$dwcMeta//TimeStampDuration" >
+		<p:out var="timeStampDuration" xvalue="$dwcMeta//TimeStampDuration" />
+	</x:if>
+</c:if>
+<bdc:timestamp webObject="${currentObject}" var="displayTimeStamp" timeStampAccess="${timeStamp}" timeStampDuration="${timeStampDuration}"/>
+
+<div class="widget tease image-full" data-vr-contentbox="">
+	<c:if test="${not empty title.overline or title.overline != ''}">
+		<div class="overline">${title.overline}</div>
+	</c:if>
+	<div class="content">
+		<h3 class="head-above headline ${hClass}">
+			<bdc:link webObject="${currentObject}">${title.headline}</bdc:link>
+		</h3>
+		<div class="image ${teaseData.imageFormat}">
+			<c:choose>
+				<c:when test="${teaseType eq 'photo-container' or sysType eq 'EOM::MediaGallery'}">
+					<bdc:link linkParam="${CampaignCodes}" webObject="${currentObject}" className="image-link">
+						<img border="0" alt="${title.headline}" title="${title.headline}" src="${imageData.src}" />
+					</bdc:link>
+				</c:when>
+				<c:when test="${teaseType eq 'video-container'}">
+					<p:out var="vidWidth" value="${cacheScope.videoWidth}" />
+					<p:out var="vidHeight" value="${cacheScope.videoHeight}" />
+				<c:choose>
+					<c:when test="${videoTeaseMap.isExternal}">
+						<p:out var="replaceWidthAndHeight" value="${videoTeaseMap.externalVideoLink}" />
+						<p:out var="replaceWidth" value="${fn:replace(replaceWidthAndHeight, '609', vidWidth)}" />
+						<p:out var="newVideoSize" value="${fn:replace(replaceWidth, '393', vidHeight)}" />
+						<div class="video-external">
+							<p:out value="${newVideoSize}" xslt="/SysConfig/WebPortal/Boston/Framework/xslt/externalvideo.xslt"/>
+						</div>	
+					</c:when>
+					<c:otherwise>
+						<p:include url="$configurationURI/Framework/skins/components/tease/video_tease.jpt">
+							<p:param name="provider" value="${videoTeaseMap.provider}" />
+							<p:param name="videoId" value="${videoTeaseMap.videoId}" />
+							<p:param name="width" value="${vidWidth}" />
+							<p:param name="height" value="${vidHeight}" />
+						</p:include>
+					</c:otherwise>
+				</c:choose>
+			</c:when>
+				<c:when test="${teaseType eq 'gallery-container'}">
+					<p:out var="galleryUuidParam" value="${galleryUuid}" scope="request" />
+					<p:url var="storyURL" xvalue="$c//xref" type="context"/>
+					<p:include url="$configurationURI/Framework/skins/components/image_carousel/image_carousel.jpt">
+						<p:param name="galleryUuidParam" value="${galleryUuidParam}" />
+						<p:param name="storyURL" value="${storyURL}" />
+	 				</p:include>
+				</c:when>
+			</c:choose>
+		</div>
+		<p>
+			<c:if test="${not empty reviewRating}">
+				<bdc:leadIn reviewRating="${reviewRating}"/>
+			</c:if>
+			${webtease}
+			<c:if test="${displayTimeStamp != null and displayTimeStamp != ''}">
+				<span class="timestamp">${displayTimeStamp}</span>
+			</c:if>
+		</p>
+		
+	</div>
+	
+	
+	<%-- Social Bar --%>
+	<c:if test="${sharebar eq 'True'}">
+		<p:inline url="$configurationURI/Framework/skins/components/tease/social_bar.jpt"/>
+	</c:if>
+	
+	<%-- Related Links --%>
+	<p:inline url="$configurationURI/Framework/skins/components/tease/related_links.jpt">
+		<p:param name="linksPerLine" value="1" />
+		<p:param name="templateName" value="regular_simple" />
+		<p:param name="CampaignCodes" value="${CampaignCodes}"/>
+	</p:inline>
+	
+
+</div>

@@ -1,0 +1,82 @@
+<%--
+{comments}
+BDC-1734 - remove bdc-screen-dev.css conditional
+BDC-1770 - removing bcom-screen.css because those styles have been moved into bdc-screen or deleted
+{comments}
+--%>
+<p:currentObject webType="WT" sectionId="section" />
+
+<c:choose>
+  <%-- CLASSIFIEDS CSS --%>
+  <c:when test="${WT == 'dwp_classifieds'}">
+    <link rel="stylesheet" href="/css/bcom-bootstrap.css"/>
+    <%-- {comment} DM-27: Removing deprecated CSS files {comment} --%>
+  </c:when>
+  <c:otherwise>
+    <c:choose>
+      <%-- EDIT ENVIRONMENT CSS --%>
+    <c:when test="${fn:contains(portalContext.publicBaseUrl, 'edit.boston.com')}">      
+      <link rel="stylesheet" href="/css/bcom-forums.css"/>
+      <link rel="stylesheet" href="/css/bcom-profiles.css"/>    
+    </c:when> 
+    <c:otherwise>
+      <%-- CSS FROM REQUIRED ASSETS --%>
+      <%-- Is this still relevant? - EK --%>
+      <p:out var="sectionPath" xvalue="$meta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/Sections/Section/SectionPath" scope="page" />
+      <p:inline url="$configurationURI/Framework/frameset/required_assets_css.jpt">
+          <p:param name="configPath" value="$configurationURI/required_assets.xml"/>
+        <p:param name="webType" value="${WT}"/>
+        <p:param name="sectionPath" value="${sectionPath}"/>
+      </p:inline>
+    </c:otherwise>
+    </c:choose>
+  </c:otherwise>
+</c:choose>
+
+<%-- BDC CSS [bdc-screen.css]
+<p:getObject path="$configurationURI/Framework/css/dist/bdc-screen.css.md5" var="bdc_min_css_md5"/>
+<p:jspInclude url="$configurationURI/Framework/frameset/css/bdc.jsp?hash=${bdc_min_css_md5.text}" eomdb="true"/>
+--%>
+
+<%-- BDC CSS [bdc-screen--critical.css, bdc-screen--non-critical.css] --%>
+<p:import url="$configurationURI/Framework/css/dist/bdc-screen--non-critical.css.md5" var="bdc_nc_min_css_md5"/>
+<p:include url="$configurationURI/Framework/frameset/css/bdc-screen.jpt">
+  <p:param name="hash" value="${bdc_nc_min_css_md5}"/>
+</p:include>
+
+
+<%-- Legacy BCOM CSS --%>
+<c:if test="${WT == 'dwp_forumpage' || WT == 'dwp_userprofile'}">
+  <p:getObject path="$configurationURI/Framework/css/dist/bcom-screen.css.md5" var="screen_css_md5"/>
+  <p:jspInclude url="$configurationURI/Framework/frameset/css/bcom-screen.jsp?hash=${screen_css_md5.text}" eomdb="true"/>
+</c:if>
+
+
+<%-- LTE IE9 CSS --%>
+<!--[if lte IE 9]> 
+  <link rel="stylesheet" href="/css/ie.css">
+<![endif]-->
+
+<%-- LTE IE8 FIXES FOR INLINE MQs & PRINT CSS --%>
+<!--[if lte IE 8]>
+
+  <p:import url="$configurationURI/Framework/css/dist/bdc-screen--ie.css.md5" var="bdc_ie_min_css_md5"/>
+  <p:include url="$configurationURI/Framework/frameset/css/bdc-screen--ie.jpt">
+    <p:param name="hash" value="${bdc_ie_min_css_md5}"/>
+  </p:include>
+
+  <p:getObject path="$configurationURI/Framework/css/dist/bdc-print.css.md5" var="bdc_print_css_md5"/>
+  <p:jspInclude url="$configurationURI/Framework/frameset/css/bdc-print.jsp?hash=${bdc_print_css_md5.text}" eomdb="true"/>
+
+<![endif]-->
+
+<%-- This is unfortunate --%>
+<%-- But what is it for? - EK --%>
+<c:if test="${WT == 'dwp_classifieds'}">
+  <link rel="stylesheet" href="http://cache.boston.com/universal/newsprojects/widgets/slider/slider.css" type="text/css" />
+  <script type="text/javascript" src="http://cache.boston.com/universal/newsprojects/widgets/slider/slider.js"></script>
+  <link rel="stylesheet" href="/css/bcom-classifieds.css" />
+</c:if>
+ <c:if test="${fn:startsWith(section, '/cars')}">
+  <link rel="stylesheet" href="/css/bcom-cars-widgets.css" />
+ </c:if>

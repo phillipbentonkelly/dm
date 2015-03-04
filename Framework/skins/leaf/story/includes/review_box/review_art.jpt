@@ -1,0 +1,45 @@
+<p:getContext var="uuid" />
+<p:getObject uuid="${uuid}" var="webObject" />
+<p:object webObject="${webObject}" content="story" metadata="meta" />
+
+<p:out var="review_title" xvalue="$story//review-containers/review-container-art/review-title/p" />
+<p:out var="art_loc_name" xvalue="$story//review-containers/review-container-art/review-loc-name/p" />
+<p:out var="art_loc_street_address" xvalue="$story//review-containers/review-container-art/review-loc-street-address/p" />
+<p:out var="art_loc_city" xvalue="$story//review-containers/review-container-art/review-loc-city/p" />
+<p:out var="art_loc_state" xvalue="$story//review-containers/review-container-art/review-loc-state/p" />
+<p:out var="art_loc_zip" xvalue="$story//review-containers/review-container-art/review-loc-zipcode/p" />
+<p:out var="art_opening_date" xvalue="$story//review-containers/review-container-art/review-opening-date/p" />
+<p:out var="art_closing_date" xvalue="$story//review-containers/review-container-art/review-date-closing/p" />
+<p:out var="art_box_office" xvalue="$story//review-containers/review-container-art/review-box-office-phone/p" />
+<p:out var="art_venue_url" xvalue="$story//review-containers/review-container-art/review-venue-url/p" />
+
+<div class="review-item">
+	<h3 class="review-item-title">${fn:trim(review_title)}</h3>
+</div>
+
+<aside class="review-box">
+	<c:if test="${not empty fn:trim(art_loc_name)}">
+		${art_loc_name} |
+	</c:if>
+	
+	<p:out var="addressAmalgam" value="${art_loc_street_address}${art_loc_city}${art_loc_state}${art_loc_zip}" />
+	<c:if test="${not empty fn:trim(addressAmalgam)}"> 
+		${art_loc_street_address}, ${art_loc_city}, ${art_loc_state} ${art_loc_zip} |
+	</c:if>
+
+	<c:if test="${not empty fn:trim(art_box_office)}">
+		${art_box_office} |
+	</c:if> 
+	
+	<c:if test="${not empty fn:trim(art_venue_url)}">
+		<bdc:link value="${art_venue_url}">${art_venue_url}</bdc:link> |
+	</c:if>
+	 
+	<c:if test="${not empty fn:trim(art_opening_date)}">
+		<b>Opening Date:</b> ${art_opening_date} |
+	</c:if>
+	<c:if test="${not empty fn:trim(art_closing_date)}">
+		<b>Closing Date:</b> ${art_closing_date}
+	</c:if> 
+
+</aside>

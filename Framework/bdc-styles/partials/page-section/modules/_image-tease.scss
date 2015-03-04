@@ -1,0 +1,193 @@
+// *
+// *  Module Name 
+// * #techdebt
+$overlay-opacity: rgba(0,0,0,0.6);
+
+$module-name: 'image-tease';
+
+// ------------------------------------------------------------
+// Default Styles
+// ------------------------------------------------------------
+
+.#{$module-name} {
+  @extend %clearfix;
+  position: relative;
+  margin-bottom: spacer(px, mid);
+  margin-bottom: spacer(rem, mid);
+
+  &__section {
+    padding: 0 spacer(px, base) 0 spacer(px, small);
+    padding: 0 spacer(rem, base) 0 spacer(rem, small);
+    position: absolute;
+    text-transform: uppercase;
+    background: color(white);
+    z-index: z-index(first-floor);
+    color: color(red);
+    border: 1px solid color(gray, x-light);
+    font-weight: $fw-bold;
+    letter-spacing: $letter-spacing;
+    @include font-scale(xxx-small);
+    // when they want the section to actually link somewhere we add this modifier
+    &--link {
+      @include link-states(color(red), color(red, light), color(red));
+    }
+  }
+
+  &__timestamp {
+    background: $overlay-opacity;
+    color: color(white);
+    padding: 0 spacer(px, base);
+    padding: 0 spacer(rem, base);
+    position: absolute;
+    font-weight: $fw-bold;
+    z-index: z-index(first-floor);
+    @include font-scale(xxx-small);
+    right: 0;
+  }
+  
+  &__link {
+    display: block;
+    position: relative;
+    line-height: 0;
+  }
+  
+  &__image-container {
+    min-height: 125px; // prevents misplaced overlays before the image loads
+    // background: color(black); // fallback for when image doesn't go full width
+    text-align: center;
+  }
+
+  &__image {
+    float: left;
+  }
+
+  &__text {
+    @include link-states(color(gray, xx-dark), color(gray), color(black));
+    @include font-scale(large);
+    line-height: 1.3;
+    display: block;
+    margin-bottom: spacer(px, mid);
+    margin-bottom: spacer(rem, mid);
+
+    &--secondary {
+      display: none;
+    }
+
+    &--wrapped {
+      position: relative;
+    }  
+     
+    &--overlay {
+      @include link-states(color(white), color(white), color(white));
+      background: color(black);
+      background: $overlay-opacity;
+      padding: spacer(px, base);
+      padding: spacer(rem, base);
+      @include font-scale(large);
+      font-weight: $fw-bold;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+    }
+
+    &--overlay-top {
+      top: 0;
+      bottom: initial;
+    }
+
+    &--overlay-large {
+      @include font-scale(large);
+    }
+
+    &--overlay-x-large { 
+      @include font-scale(x-large);
+    }
+
+    //for takeover elements
+    &--overlay-xx-large {
+      @include font-scale(xx-large);
+    }
+    
+    &--reverse {
+      padding: spacer(px, base);
+      padding: spacer(rem, base);
+      color: color(white);
+      background: color(black);
+      width: 100%;
+      clear: both;
+    }
+    &--large {
+      margin-bottom: 30px;
+      @include font-scale(large);
+      font-weight: $fw-bold;
+      text-align: left;
+      @include link-states(color(gray, xx-dark), color(gray), color(black));
+    }
+
+    // This is for Section Highlights, which is now an img tease on top of a headline list
+    &--bold {
+      padding-bottom: spacer(px);
+      padding-bottom: spacer(rem);
+      margin-bottom: -5px; // for when the img tease is on top of the headline list to make the spacing even
+      @include font-scale(xxx-small);
+      font-weight: $fw-bold;
+      @include link-states(color(gray, xx-dark), color(gray), color(black));
+      border-bottom: 1px solid color(gray, x-light);
+    }
+
+  }
+  &__text-wrapper {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+
+    .#{$module-name}__text--overlay {
+      position: static;
+    }
+  }
+}
+
+// ------------------------------------------------------------
+// Tablet Breakpoint
+// ------------------------------------------------------------
+
+// Tablet Breakpoint
+@include media-query(450) {
+  .#{$module-name} {
+
+    // Some Element Styles
+    &__text {
+      @include font-scale(base);
+      &--secondary {
+        display: block;
+      }
+      &--wrapped {
+        &:first-child {
+          padding-bottom: 0;
+        }
+        &:last-child {
+          padding-top: 0;
+        }
+      }
+
+      &--overlay { 
+        @include font-scale(small);
+
+
+        &-large { 
+          @include font-scale(large);
+        }
+        &-x-large { 
+          @include font-scale(x-large);
+        }
+        &-xx-large { 
+          @include font-scale(xx-large);
+        }
+      }
+    }
+  }
+}
+
+

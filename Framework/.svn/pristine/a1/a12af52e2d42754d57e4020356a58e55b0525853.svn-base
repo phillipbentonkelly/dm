@@ -1,0 +1,33 @@
+<c:if test="${not empty cacheScope.storyObject}">
+
+	<p:getObject var="storyObject" webObject="${cacheScope.storyObject}" />
+	<bdc:rwShareData webObject="${storyObject}" var="share" />
+
+
+	<div class="tease-share">
+	  <span class="tease-share__text">
+	    <span class="bdc-icon bdc-icon--share-x-small"></span> Share
+	  </span>
+	  <ul class="tease-share__list">
+	    <li class="tease-share__list-item">
+	      <a href="#" class="js-gigya-share" data-provider="facebook" data-cid="tease_share_facebook" data-canonical="${share.canonical}" data-headline="${share.headline}" data-thumbnail="${share.thumb}" data-thumb-type="image">
+	        <span class="bdc-icon bdc-icon--facebook-x-small-color"></span>
+	        <span class="tease-share__count js-facebook-count"></span>
+	      </a>
+	    </li>
+	    <li class="tease-share__list-item">
+	      <a href="#" class="js-gigya-share" data-provider="twitter" data-cid="tease_share_twitter" data-canonical="${share.canonical}" data-headline="${share.headline}" data-thumbnail="${share.thumb}" data-thumb-type="image">
+	        <span class="bdc-icon bdc-icon--twitter-x-small-color"></span>
+	        <span class="tease-share__count js-twitter-count"></span>
+	      </a>
+	    </li>
+	    <li class="tease-share__list-item">
+	      <a href="#" class="js-gigya-share" data-provider="reddit" data-cid="tease_share_reddit" data-canonical="${share.canonical}" data-headline="${share.headline}" data-thumbnail="${share.thumb}" data-thumb-type="image">
+	        <span class="bdc-icon bdc-icon--reddit-x-small-color"></span>
+	        <span class="tease-share__count"></span>
+	      </a>
+	    </li>
+	  </ul>
+	</div>
+
+</c:if>

@@ -1,0 +1,12 @@
+<%-- Hey look, it's two includes --%>
+
+<%-- get our (the top_of_page.dwc) metadata --%>
+<p:currentObject metadata="meta" />
+
+<p:include pageZoneName="top" templateName="bdc_tp_top">
+	<p:param name="visualRevenue" value="${cacheScope.visualRevenue}" />
+</p:include>
+
+<p:include pageZoneName="bottom" templateName="bdc_tp_bottom">
+	<p:param name="visualRevenue" value="${cacheScope.visualRevenue}" />
+</p:include>

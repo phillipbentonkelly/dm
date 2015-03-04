@@ -1,0 +1,4 @@
+<p:getCollection path="/SysConfig/WebPortal/Boston/Framework/queries/get_stories" var="c" />
+<p:include url="$configurationURI/Framework/sandbox/ksuffredini/catch.jpt">
+	<p:param value="${c}" name="name" />
+</p:include>

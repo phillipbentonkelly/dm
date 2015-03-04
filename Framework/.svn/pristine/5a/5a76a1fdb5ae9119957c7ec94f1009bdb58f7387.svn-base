@@ -1,0 +1,255 @@
+// breaking news area scoreboard styles
+
+.breaking-scoreboard-mod {
+	background: $black-90;
+	a {
+		color: white;
+	}
+}
+.breaking-scoreboard {
+	display: table;
+	margin-bottom: .8em;
+	width: 100%; 
+
+	ul {
+		display: table-cell;
+		padding: 15px 10px;
+		vertical-align: middle;
+
+		@include mq(max, 675px){ 
+			display: table;
+			padding: 5px 15px;
+		}
+
+		&:first-child {
+			padding-left: 15px;
+		}
+	}
+	li { 
+		display: table-cell;
+		padding: 0px 5px;
+		vertical-align: middle;
+		@include sans(em(14), 400);
+		line-height: 30px;
+		color: #fff;
+	}
+	
+	a {
+		@include sans(em(14), 700);
+		text-transform: uppercase;
+	}
+
+
+	.status-section{
+		text-transform: uppercase;
+		@include mq(max, 675px){ //325px
+			width: 100%;
+			padding-bottom: 0px;
+			margin-bottom: 10px; 
+			border-bottom: 1px solid white;
+		}
+		li {
+			@include mq(max, 675px){ //325px
+				display: inline-block;
+			}
+		}
+	}
+
+	.team-section {
+		@include mq(max, 675px) {
+			width: 35%;
+		}
+	}
+
+	.more-section {
+		@include sans(em(12), 700);
+		li {
+			float: right;
+		}
+	}
+
+	.breaking-sb-score {
+		@include sans(em(14), 700);
+	}
+	.breaking-sb-status {
+		@include sans(em(14), 700);
+	}
+}
+
+// generic classes for all usages of the scoreboard
+// for particular usages - e.g. the stream scoreboard or the scoreboard for the
+// carousel please see below
+	.sb-sport-mlb {
+		// margin-top: 1em;
+		// margin-bottom: 5em;
+		// width: 30px;
+		// height: 30px;
+		background: url($img-path + "team_logos/mlb_scorebelt_sprite.png");
+	}
+
+	.sb-sport-nba {
+		// margin-top: 1em;
+		// margin-bottom: 5em;
+		// width: 30px;
+		// height: 30px;
+		background: url($img-path + "team_logos/nba_scorebelt_sprite.png");
+	}
+
+	.sb-sport-nfl {
+		// margin-top: 1em;
+		// margin-bottom: 5em;
+		// width: 30px;
+		// height: 30px;
+		background: url($img-path + "team_logos/nfl_scorebelt_sprite.png");
+	}
+
+	.sb-sport-nhl {
+		// margin-top: 1em;
+		// margin-bottom: 5em;
+		// width: 30px;
+		// height: 30px;
+		background: url($img-path + "team_logos/nhl_scorebelt_sprite.png");
+	}
+	
+	#mlb-ari { background-position: 0 0; }
+	#mlb-atl { background-position: -31px 0; }
+	#mlb-bal { background-position: -62px 0; }
+	#mlb-bos { background-position: -93px 0; }
+	#mlb-chc { background-position: -124px 0; }
+	#mlb-cin { background-position: -155px 0; }
+	#mlb-cle { background-position: -186px 0; }
+	#mlb-col { background-position: -217px 0; }
+	#mlb-cws { background-position: -248px 0; }
+	#mlb-det { background-position: -279px 0; }
+
+	// Next six background-positions were off due to the placement of the Marlins logo
+	// commented out and kept the original positions incase the problem reverts 
+	// - Kevin Wall 8/11/14
+
+	#mlb-hou { background-position: -341px /*-310px*/ 0; }
+	#mlb-kc  { background-position: -373px /*-341px*/ 0; }
+	#mlb-laa { background-position: -403px /*-372px*/ 0; }
+	#mlb-lad { background-position: -434px /*-403px*/  0; }
+	#mlb-mia { background-position: -310px /*-434px*/ 0; }
+
+	#mlb-mil { background-position: -465px 0; }
+	#mlb-min { background-position: -496px 0; }
+	#mlb-nym { background-position: -527px 0; }
+	#mlb-nyy { background-position: -558px 0; }
+	#mlb-oak { background-position: -589px 0; }
+	#mlb-phi { background-position: -620px 0; }
+	#mlb-pit { background-position: -651px 0; }
+	#mlb-sd { background-position: -682px 0; }
+	#mlb-sea { background-position: -713px 0; }
+	#mlb-sf { background-position: -744px 0; }
+	#mlb-stl  { background-position: -775px 0; }
+	#mlb-tb { background-position: -806px 0; }
+	#mlb-tex { background-position: -837px 0; }
+	#mlb-tor { background-position: -868px 0; }
+	#mlb-was { background-position: -899px 0; }
+
+	#nba-atl { background-position: 0 0; }
+	#nba-bkn { background-position: -31px 0; }
+	#nba-bos { background-position: -62px 0; }
+	#nba-cha { background-position: -93px 0; }
+	#nba-chi { background-position: -124px 0; }
+	#nba-cle { background-position: -155px 0; }
+	#nba-dal { background-position: -186px 0; }
+	#nba-den { background-position: -217px 0; }
+	#nba-det { background-position: -248px 0; }
+	#nba-gs { background-position: -279px 0; }
+	#nba-hou { background-position: -310px 0; }
+	#nba-ind { background-position: -341px 0; }
+	#nba-lac { background-position: -372px 0; }
+	#nba-lal { background-position: -403px 0; }
+	#nba-mem { background-position: -434px 0; }
+	#nba-mia { background-position: -465px 0; }
+	#nba-mil { background-position: -496px 0; }
+	#nba-min { background-position: -527px 0; }
+	#nba-no { background-position: -558px 0; }
+	#nba-ny { background-position: -589px 0; }
+	#nba-okc { background-position: -620px 0; }
+	#nba-orl { background-position: -651px 0; }
+	#nba-phi { background-position: -682px 0; }
+	#nba-pho { background-position: -713px 0; }
+	#nba-por { background-position: -744px 0; }
+	#nba-sa { background-position: -775px 0; }
+	#nba-sac { background-position: -806px 0; }
+	#nba-tor { background-position: -837px 0; }
+	#nba-uta { background-position: -868px 0; }
+	#nba-was { background-position: -899px 0; }
+
+	#nfl-ari { background-position: 0 0; }
+	#nfl-atl { background-position: -31px 0; }
+	#nfl-bal { background-position: -62px 0; }
+	#nfl-buf { background-position: -93px 0; }
+	#nfl-car { background-position: -124px 0; }
+	#nfl-chi { background-position: -155px 0; }
+	#nfl-cin { background-position: -186px 0; }
+	#nfl-cle { background-position: -217px 0; }
+	#nfl-dal { background-position: -248px 0; }
+	#nfl-den { background-position: -279px 0; }
+	#nfl-det { background-position: -310px 0; }
+	#nfl-gb { background-position: -341px 0; }
+	#nfl-hou { background-position: -372px 0; }
+	#nfl-ind { background-position: -403px 0; }
+	#nfl-jax { background-position: -434px 0; }
+	#nfl-kc { background-position: -465px 0; }
+	#nfl-mia { background-position: -496px 0; }
+	#nfl-min { background-position: -527px 0; }
+	#nfl-ne { background-position: -558px 0; }
+	#nfl-no { background-position: -589px 0; }
+	#nfl-nyg { background-position: -620px 0; }
+	#nfl-nyj { background-position: -651px 0; }
+	#nfl-oak { background-position: -682px 0; }
+	#nfl-phi { background-position: -713px 0; }
+	#nfl-pit { background-position: -744px 0; }
+	#nfl-sd { background-position: -775px 0; }
+	#nfl-sea { background-position: -806px 0; }
+	#nfl-sf { background-position: -837px 0; }
+	#nfl-stl { background-position: -868px 0; }
+	#nfl-tb { background-position: -899px 0; }
+	#nfl-ten { background-position: -930px 0; }
+	#nfl-was { background-position: -961px 0; }
+
+	#nhl-anh { background-position: 0 0; }
+	#nhl-bos { background-position: -31px 0; }
+	#nhl-buf { background-position: -62px 0; }
+	#nhl-car { background-position: -93px 0; }
+	#nhl-cgy { background-position: -124px 0; }
+	#nhl-chi { background-position: -155px 0; }
+	#nhl-cls { background-position: -186px 0; }
+	#nhl-col { background-position: -217px 0; }
+	#nhl-dal { background-position: -248px 0; }
+	#nhl-det { background-position: -279px 0; }
+	#nhl-edm { background-position: -310px 0; }
+	#nhl-fla { background-position: -341px 0; }
+	#nhl-la { background-position: -372px 0; }
+	#nhl-min { background-position: -403px 0; }
+	#nhl-mon { background-position: -434px 0; }
+	#nhl-nj { background-position: -465px 0; }
+	#nhl-nsh { background-position: -496px 0; }
+	#nhl-nyi { background-position: -527px 0; }
+	#nhl-nyr { background-position: -558px 0; }
+	#nhl-ott { background-position: -589px 0; }
+	#nhl-phi { background-position: -620px 0; }
+	#nhl-pho { background-position: -651px 0; }
+	#nhl-pit { background-position: -682px 0; }
+	#nhl-sj { background-position: -713px 0; }
+	#nhl-stl { background-position: -744px 0; }
+	#nhl-tb { background-position: -775px 0; }
+	#nhl-tor { background-position: -806px 0; }
+	#nhl-van { background-position: -837px 0; }
+	#nhl-was { background-position: -868px 0; }
+	#nhl-wpg { background-position: -899px 0; }
+
+// //stream scoreboard instances
+// .quick-tz .scoreboard-mod{
+// 	.sb-team-logo{
+// 		background-repeat:no-repeat;
+// 		background-position: 50% 50%;
+// 		//background-size: cover;
+// 		//height:30px;
+// 		//width:30px;
+// 	}
+// }

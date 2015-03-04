@@ -1,0 +1,53 @@
+<bdc:getHeadlines webObject="${currentObject}" var="title" />
+<bdc:getTeaseData webObject="${currentObject}" templateName="${displayData.templateName}" var="teaseData" />
+<bdc:imagesWithCaptionCredit webObject="${currentObject}" var="imageData" format="${teaseData.imageFormat}" />
+<bdc:getSummaryForSectionFront webObject="${currentObject}" var="webtease" />
+<p:out var="CampaignCodes" value="${cacheScope.CampaignCodes}"/>
+
+<p:out var="timeStamp" value="" />
+<p:out var="timeStampDuration" value="" />
+<p:out var="displayTimeStamp" value="" />
+<p:out var="hClass" value=' class="${teaseData.hSize}"'/>
+
+<c:if test="${not empty cacheScope.dwc}">
+	<p:object webObject="${cacheScope.dwc}" metadata="dwcMeta"/>
+	<x:if select="$dwcMeta//TimeStamp" >
+		<p:out var="timeStamp" xvalue="$dwcMeta//TimeStamp" />
+	</x:if>
+	<x:if select="$dwcMeta//TimeStampDuration" >
+		<p:out var="timeStampDuration" xvalue="$dwcMeta//TimeStampDuration" />
+	</x:if>
+</c:if>
+<bdc:timestamp webObject="${currentObject}" var="displayTimeStamp" timeStampAccess="${timeStamp}" timeStampDuration="${timeStampDuration}"/>
+
+<div class="widget tease image-left sponsored ${teaseData.hSize}">
+	<div class="image">
+		<bdc:link linkParam="${CampaignCode}" webObject="${currentObject}" className="image-link">
+			<img alt="${title.headline}" title="${title.headline}" src="${imageData.src}" />
+		</bdc:link>
+	</div>
+	<div class="content">
+		<c:if test="${not empty title.overline or title.overline != ''}">
+			<div class="overline">
+				<span><bdc:link linkParam="${CampaignCodes}" webObject="${currentObject}">${title.overline}</bdc:link></span>
+			</div>
+		</c:if>
+		<h3${hClass}>
+			<bdc:link linkParam="${CampaignCodes}" webObject="${currentObject}">${title.headline}</bdc:link>
+		</h3>
+		<p>
+			${webtease}
+			<c:if test="${displayTimeStamp != null && displayTimeStamp != ''}">
+				<span class="timestamp">${displayTimeStamp}</span>
+			</c:if>
+		</p>
+	</div>
+
+	<%-- Related Links --%>
+	<p:inline
+		url="$configurationURI/Framework/skins/components/tease/related_links.jpt">
+		<p:param name="linksPerLine" value="1" />
+		<p:param name="templateName" value="regular_simple" />
+	</p:inline>
+</div>
+

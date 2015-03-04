@@ -1,0 +1,282 @@
+// Fonts
+@import "project/fonts";
+// ## Bring in all Compass Helpers
+@import "partials/base";
+
+// ## Project Styles
+@import "project/mixins";
+@import "project/animations";
+@import "project/type";
+@import "project/lists";
+@import "project/forms";
+@import "project/modal";
+
+
+/* ============================================= */
+
+/*	Universal						   			 */
+
+/* ============================================= */
+
+a 		{ 	text-decoration: none; color: inherit; }
+strong	{	font-weight: 700;	}
+em   	{	font-style: italic;	}
+i 		{  	font-style: normal; }
+
+body {
+	// Fonts will be smoother and prettier in webkit
+	-webkit-font-smoothing: antialiased;
+
+	// Hide things that try to break outer page bounds
+	overflow: hidden;
+
+	// Don't change text size on device orientation switch
+	-webkit-text-size-adjust: none;
+
+	// Global Type Defaults
+	font-family: $sans-fallback;
+	.fontface & {
+		font-family: $sans;
+	}
+}
+
+.site-container {
+	overflow: hidden;
+}
+
+
+/* ============================================= */
+
+/*	Layout						   			 	 */
+
+/* ============================================= */
+
+@import "project/layout";
+
+
+
+/* ============================================= */
+
+/*	MAIN NAV			 						 */
+
+//	This is the primary navigation bar found
+//	on top of the screen. It contains triggers
+//	for the Table of Contents and User Menus.
+//	On some devices, it follows the user around.
+
+/* ============================================= */
+
+@import "project/nav";
+
+// On larger devices, subnav appears as user scrolls,
+// allowing them to filter the stream from anywhere
+
+
+
+
+
+
+
+/* ============================================= */
+
+/*	TABLE OF CONTENTS			   			 	 */
+
+//	This menu is revealed when clicking on the
+//  Hamburger/Sections button in the main nav.
+// 	It contains all the primary site navigation
+//	for Sections, Shortcuts, and Sister Sites
+
+/* ============================================= */
+
+@import "project/toc";
+
+
+
+
+
+/* ============================================= */
+
+/*	USER MENU			   			 	 		*/
+
+//	This menu is revealed when clicking on the
+//  Avatar or Log In link in the main nav.
+// 	It contains basic user information and
+//	common links for profile, settings, etc.
+
+/* ============================================= */
+
+@import "project/user";
+
+
+
+
+
+/* ============================================= */
+
+/*	Tease Filter Nav			   			 	 */
+
+/* ============================================= */
+
+@import "project/filter-nav";
+
+
+
+/* ============================================= */
+
+/*	Site Footer									 */
+
+/* ============================================= */
+
+@import "project/footer";
+
+
+
+
+/* ============================================= */
+
+/*	OBJECTS						   			 	 */
+
+//	Smaller, uncomplicated style pieces that
+// 	appear site-wide & should work regardless
+//	of context. Each style works independently.
+
+//	Ex: Generic Styled Boxes, Wavey Lines, etc.
+
+/* ============================================= */
+
+@import "project/objects";
+@import "project/buttons";
+
+
+/* ============================================= */
+
+/*	Teases						   			 	 */
+
+/* ============================================= */
+
+@import "project/teases";
+@import "project/lead-teases";
+
+@import "project/breaking-news";
+
+
+/* ============================================= */
+
+/*	MODULES						   			 	 */
+
+//	Larger, multi-part objects that appear
+//	all over and depend on a more complicated
+//	HTML structure and style relationship. Each
+//	and every style may not work independently.
+
+//	Ex: Scoreboard, Weather, Must Reads
+
+/* ============================================= */
+
+@import "project/modules";
+
+
+//
+// Share Screen
+//
+
+@import "project/share";
+
+//
+// Image Popups
+//
+
+@import "project/image-popup";
+
+
+//
+// Sliders
+//
+
+@import "project/slider";
+
+
+//
+// Loading Animation
+//
+
+@import "project/loader";
+
+
+
+/* ============================================= */
+
+/*	Comments						   			 */
+
+/* ============================================= */
+
+// @import "project/comments";
+
+
+
+
+
+
+/* ============================================= */
+
+/*	Advertisements					   			 */
+
+/* ============================================= */
+
+@import "project/ads";
+
+
+
+
+
+
+/* ============================================= */
+
+/*	Article Pages						   		 */
+
+/* ============================================= */
+
+@import "project/article_unres";
+
+
+
+
+//
+// Ads
+//
+
+.hp-big-1 {
+	display: block;
+	margin: 20px auto;
+	width: 300px;
+	@include mq($sidebar-break) {
+		margin: 0;
+	}
+}
+
+
+
+/* ============================================= */
+
+/*	House Ad 							   		 */
+
+/* ============================================= */
+
+@import "project/house-ad";
+
+
+/* ============================================= */
+
+/*	Videos										*/
+
+/* ============================================= */
+
+@import "project/video";
+
+/* ============================================= */
+
+/*	Pagination							 */
+
+/* ============================================= */
+
+@import "project/pagination";

@@ -1,0 +1,44 @@
+<p:currentObject metadata="meta" channel="Boston.com"/>
+<bdc:getBorderClass webObject="${currentObject}" defaultBorder="enabled" var="borderClasses"/>
+<p:out var="headerTitle" xvalue="$meta//TeaseHeader" />
+<p:out var="headerURL" xvalue="$meta//TeaseHeaderURL" />
+<c:if test="${not empty cacheScope.dwp}">
+	<p:object webObject="${cacheScope.dwp}" metadata="dwpMeta"/>
+	<p:out var="VREnabled" xvalue="$dwpMeta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/VisualRevenue"/>
+	<p:out var="VRZoneName" xvalue="$meta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/VisualRevenueZoneName"/>
+	<c:choose>
+		<c:when test="${VREnabled eq 'True' and not empty VRZoneName}">
+			<p:out var="VRZoneName" value='data-vr-zone="${VRZoneName}"'/>
+		</c:when>
+		<c:otherwise>
+			<p:out var="VRZoneName" value=""/>
+		</c:otherwise>
+	</c:choose>
+</c:if>
+
+<div class="row">
+	<div class="widget-wrapper news-well ${borderClasses}" ${VRZoneName}>
+		<%-- header --%>
+		<c:if test="${not empty headerTitle or headerTitle != ''}">
+			<div class="section-header">
+				<h3>
+					<bdc:link value="${headerURL}">${headerTitle}</bdc:link>
+				</h3>
+			</div>
+		</c:if>
+		<p:include pageZoneName="lead" templateName="lead_329">
+			<p:param name="dwp" value="${cacheScope.dwp}"/>
+			<p:param name="CampaignCodes" value="${cacheScope.CampaignCodes}"/>
+			<p:param name="dwc" value="${currentObject}"/> 
+			<p:param name="videoWidth" value="329" />
+			<p:param name="videoHeight" value="230" />
+			<p:param name="ScribleWidth" value="${cacheScope.ScribleWidth}" />
+		</p:include>
+		<p:include pageZoneName="offlead" templateName="offlead_no_image">
+			<p:param name="dwp" value="${cacheScope.dwp}"/>
+			<p:param name="CampaignCodes" value="${cacheScope.CampaignCodes}"/>
+			<p:param name="dwc" value="${currentObject}"/>
+			<p:param name="ScribleWidth" value="${cacheScope.ScribleWidth}" />
+		</p:include>
+	</div>
+</div>

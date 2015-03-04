@@ -1,0 +1,113 @@
+<Streams productName="Boston.com"><Stream curationOverride="true" days="01234567" id="7c5ef754-e4c7-4fc9-bee0-f66d93976f1a" name="Goose Fats" publicationEndDate="4321" publicationStartDate="1234">
+<Filter name="All" pubNubChannel="dev:goose-fats:all">
+<Taxonomies>
+<Taxonomy name="AE/Books" status="Approved"></Taxonomy>
+<Taxonomy name="AE/Celebrities" status="Approved"></Taxonomy>
+</Taxonomies>
+</Filter>
+</Stream><Stream curationOverride="true" days="01234567" id="b48ae9a3-e95f-43cc-890d-bf5fb5650160" name="Cheescake" publicationEndDate="4321" publicationStartDate="1234">
+<filter name="All">
+<taxonomies>
+<taxonomy name="AE/Books" status="Approved"></taxonomy>
+<taxonomy name="AE/Celebrities" status="Approved"></taxonomy>
+</taxonomies>
+<contentTypes>
+<contentType name="Article" status="Approved"></contentType>
+<contentType name="Blog Entries" status="Approved"></contentType>
+</contentTypes>
+<editorialTypes>
+<editorialType name="Column" status="Approved"></editorialType>
+<editorialType name="Letter" status="Approved"></editorialType>
+</editorialTypes>
+<blogs>
+<blog name="Metro Desk" status="Approved"></blog>
+</blogs>
+<keywords>
+<keyword name="Drippy" status="Approved"></keyword>
+</keywords>
+</filter>
+</Stream><Stream curationOverride="true" days="01234567" id="c10808b6-6d65-4004-a393-951dd3c31c71" name="Pie" publicationEndDate="4321" publicationStartDate="1234">
+<filter name="All">
+<taxonomies>
+<taxonomy name="AE/Books" status="Approved"></taxonomy>
+<taxonomy name="AE/Celebrities" status="Approved"></taxonomy>
+</taxonomies>
+<contentTypes>
+<contentType name="Article" status="Approved"></contentType>
+<contentType name="Blog Entries" status="Approved"></contentType>
+</contentTypes>
+<editorialTypes>
+<editorialType name="Column" status="Approved"></editorialType>
+<editorialType name="Letter" status="Approved"></editorialType>
+</editorialTypes>
+<blogs>
+<blog name="Metro Desk" status="Approved"></blog>
+</blogs>
+<keywords>
+<keyword name="Drippy" status="Approved"></keyword>
+</keywords>
+</filter>
+</Stream><Stream curationOverride="true" days="01234567" id="da82c1c8-617b-4663-adf3-55b3b2ba96b0" name="Cupcake" publicationEndDate="4321" publicationStartDate="1234">
+<filter name="All">
+<taxonomies>
+<taxonomy name="AE/Books" status="Approved"></taxonomy>
+<taxonomy name="AE/Celebrities" status="Approved"></taxonomy>
+</taxonomies>
+<contentTypes>
+<contentType name="Article" status="Approved"></contentType>
+<contentType name="Blog Entries" status="Approved"></contentType>
+</contentTypes>
+<editorialTypes>
+<editorialType name="Column" status="Approved"></editorialType>
+<editorialType name="Letter" status="Approved"></editorialType>
+</editorialTypes>
+<blogs>
+<blog name="Metro Desk" status="Approved"></blog>
+</blogs>
+<keywords>
+<keyword name="Drippy" status="Approved"></keyword>
+</keywords>
+</filter>
+</Stream><Stream curationOverride="true" days="01234567" id="7c30cd8d-f163-45d9-a0fd-1bb0eafd3f91" name="Cookies" publicationEndDate="4321" publicationStartDate="1234">
+<filter name="All">
+<taxonomies>
+<taxonomy name="AE/Books" status="Approved"></taxonomy>
+<taxonomy name="AE/Celebrities" status="Approved"></taxonomy>
+</taxonomies>
+<contentTypes>
+<contentType name="Article" status="Approved"></contentType>
+<contentType name="Blog Entries" status="Approved"></contentType>
+</contentTypes>
+<editorialTypes>
+<editorialType name="Column" status="Approved"></editorialType>
+<editorialType name="Letter" status="Approved"></editorialType>
+</editorialTypes>
+<blogs>
+<blog name="Metro Desk" status="Approved"></blog>
+</blogs>
+<keywords>
+<keyword name="Drippy" status="Approved"></keyword>
+</keywords>
+</filter>
+</Stream><Stream curationOverride="true" days="01234567" id="d427b9cd-1a40-479d-a42b-c261d5031cf9" name="Chocolate" publicationEndDate="4321" publicationStartDate="1234">
+<filter name="All">
+<taxonomies>
+<taxonomy name="AE/Books" status="Approved"></taxonomy>
+<taxonomy name="AE/Celebrities" status="Approved"></taxonomy>
+</taxonomies>
+<contentTypes>
+<contentType name="Article" status="Approved"></contentType>
+<contentType name="Blog Entries" status="Approved"></contentType>
+</contentTypes>
+<editorialTypes>
+<editorialType name="Column" status="Approved"></editorialType>
+<editorialType name="Letter" status="Approved"></editorialType>
+</editorialTypes>
+<blogs>
+<blog name="Metro Desk" status="Approved"></blog>
+</blogs>
+<keywords>
+<keyword name="Drippy" status="Approved"></keyword>
+</keywords>
+</filter>
+</Stream></Streams>

@@ -1,0 +1,98 @@
+
+// These are upstatments styles which are not being used. -Ellen
+
+// Subnav Variables & Breakpoints
+//$subnav-height: 32px;//
+
+//.subnav-mod {
+//	position: absolute;
+//	width: 100%;
+//	z-index: 100;
+//	background-color: $med-gray;
+//	height: 0;
+//	overflow: hidden;
+//	top: $nav-short;
+//	@include trans; //
+
+//	// Touch is a proxy for fixed positioning support
+//	.no-touch & {
+//		position: fixed;
+//	}//
+
+//	.subnav-active & {
+//		height: $subnav-height;	
+//	}//
+
+//	// Everything inside of subnav//
+
+//	.subnav {
+//		// .site-width applied in HTML
+//		@include pie-clearfix;	
+//	}//
+
+//	.fn-label,
+//	.fn-link {
+//		display: block;
+//		height: $subnav-height;
+//		float: left;
+//		padding: 8px 6px;//
+
+//		@include sans(em(12),500);
+//		text-transform: uppercase;
+//		letter-spacing: 1px;
+//		color: #eee;
+//	}//
+
+//	.fn-label {
+//		font-weight: 700;
+//		color: rgba(255,255,255,.6);
+//		@include user-select;
+//		@include trans;
+//	}//
+
+//	.fn-txt {
+//		padding: 3px 5px;
+//		border: 1px solid rgba(255,255,255,0);
+//		@include trans(.15s);
+//		color: #eee;
+//		font-weight: 700; 
+//		@include text-shadow(1px 1px 1px rgba(0, 0, 0, 0.2));
+//	}//
+
+//	.filter-active .fn-txt {
+//		border-color: #4f6c8a;
+//		border-color: rgba(255,255,255,.3);
+//	}//
+
+//	.fn-link:hover > .fn-txt {
+//		background-color: $black-90;
+//		color: #fff;
+//		@include trans;
+//	}//
+
+//	.fn-link.filter-active:hover > .fn-txt {
+//		// No hover when item is already active
+//		background-color: transparent;
+//		color: #eee;
+//	}//
+
+//	.fn-item-more > .fn-link:after  {
+//		display: none;
+//	}//
+
+//	.fn-item-more .fn-txt {
+//		position: relative;
+//		padding-right: 15px;
+//		&:after {
+//			@include content;
+//			display: block;
+//			@include absolute(9px 5px n n);
+//			@include triangle(down, 4px, $black-15, .75);
+//			@include trans(.15s);
+//		}
+//		&:hover:after {
+//			@include triangle(down, 4px, #fff, .75);
+//		}
+//	}//
+
+//}

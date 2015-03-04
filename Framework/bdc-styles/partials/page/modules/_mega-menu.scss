@@ -1,0 +1,174 @@
+// *
+// * Mega Menus
+// *
+
+$module-name: 'mega-menu';
+$menu-height: 295px;
+$menu-content-height: 291px; // The 4px border on the menu makes things wonky
+$menu-min-height: 295px;
+$menu-content-min-height: 291px;
+
+// ------------------------------------------------------------
+// Default Styles
+// ------------------------------------------------------------
+
+.#{$module-name} {
+  display: none;
+  &__wrapper {
+    @extend %clearfix;
+  }
+}
+// ------------------------------------------------------------
+// Desktop Breakpoint
+// ------------------------------------------------------------
+
+@include media-query(desktop) {
+  
+  .#{$module-name} {
+    display: none;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    text-align: left;
+    @include font-scale(xx-small);
+
+    // Wrapper
+    &__wrapper {
+      @include constrain;
+      position: relative;
+      min-height: $menu-min-height;
+      max-width: $site-max-width;
+      margin: 0 auto;
+      background-color: color(white);
+      border-radius: 0 0 5px 5px;
+      border-top: 4px solid color(red);
+      box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    // Menu Sections
+    &__section {
+      &--wide {
+        float: left;
+        width: 80%;
+        min-height: $menu-content-min-height;
+      }
+      &--thin {
+        float: left;
+        width: 20%;
+        min-height: $menu-content-min-height;
+        border-left: 1px solid color(gray, x-light); 
+      }
+      &--special {
+        padding: spacer(px, small);
+        padding: spacer(rem, small);
+        position: absolute;
+        bottom: 0;
+        width: $site-max-width;
+        background-color: $red;
+      }
+    }
+
+    // Containers
+    &__container {
+      padding: spacer(px, mid);
+      padding: spacer(rem, mid);
+    }
+
+    // Lead Items
+    &__lead {
+      float: left;
+      width: 40%; // Pairs with &__headline-list
+      min-height: $menu-content-min-height;
+      background-color: color(gray, xx-light);
+    }
+    &__lead-item {
+      float: left;
+      width: 50%;
+      min-height: $menu-content-min-height;
+      border-right: 1px solid color(gray, x-light);
+    }
+    &__lead-item-image {
+      width: 100%;
+      margin-bottom: spacer(px);
+      margin-bottom: spacer(rem);
+    }
+    &__list-link {
+      display: block;
+      @include link-states(color(black), color(gray), color(black));
+    }
+    &__lead-item-headline {
+      padding: 0 spacer(px, mid);
+      padding: 0 spacer(rem, mid);
+      @include link-states(color(gray, dark), color(gray), color(black));
+      @include font-scale(x-small);
+      // line-height: 1.1;
+      font-weight: $fw-medium;
+    }
+
+    // Headline List
+    &__headline-list {
+      float: left;
+      width: 60%; // Pairs with &__lead
+    }
+
+    // General List Stuff
+    &__list-header {
+      margin-bottom: spacer(px, small);
+      margin-bottom: spacer(rem, small);
+      text-transform: uppercase;
+      font-weight: $fw-bold;
+      color: color(red);
+    }
+    &__list-item {
+      padding: spacer(px, small) 0;
+      padding: spacer(rem, small) 0;
+    }
+    &__list--border &__list-item {
+      padding: spacer(px, base) 0;
+      padding: spacer(rem, base) 0;
+      border-bottom: 1px solid color(gray, x-light);
+      &:first-child {
+        padding-top: spacer(px, small);
+      }
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+
+    // Mega Menu Alert
+    &__alert {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      padding: spacer(px, small) spacer(px, mid);
+      padding: spacer(rem, small) spacer(rem, mid);
+      background: color(red);
+      border-radius: 0 0 5px 5px;
+      @include font-scale(mid);
+      color: $white;
+      text-transform: uppercase;
+      &-link {
+        @include link-states(color(white), color(white));
+      }
+      &-header {
+        margin-right: spacer(px);
+        margin-right: spacer(rem);
+        font-weight: $fw-bold;
+      }
+      &-text {
+        margin-right: spacer(px);
+        margin-right: spacer(rem);
+        text-transform: none;
+      }
+      &-text--italic {
+        @include font-scale(xx-small);
+        font-style: italic;
+      }
+    }
+  }
+}
+
+// fixes SpinGo widget overlap of megamenus
+#spingo-container .sg-sticky-placeholder    {
+  z-index: z-index(first-floor) !important;
+}

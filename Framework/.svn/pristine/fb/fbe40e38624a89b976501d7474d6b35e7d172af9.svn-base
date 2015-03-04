@@ -1,0 +1,217 @@
+<p:style src="${portalContext.publicBaseUrl}/css/monster-responsive-mod.css" />
+
+<div class="monster-responsive-job-search-mod">
+  <div id="jobs-monster-search">
+    <script type="text/javascript">
+	/* VARIABLES BEGIN
+		HERE CHANGE RESPECTIVE STRINGS:
+			(OPTIONALLY) THE NEWSPAPER CHANNELALIAS VARIABLE ch
+			(OPTIONALLY) THE DEFAULT LOCATION VARIABLE defaultlocation
+			(OPTIONALLY) THE DEFAULT RADIUS VARIABLE defaultradius
+			THE NEWSPAPER DOMAIN VARIABLE hname
+			THE ROOT DOMAIN VARIABLE rootDomain */
+
+
+var ch = "NEWSBOSWO";
+         var defaultlocation = "Boston";
+         var defaultradius = "";
+         var rootDomain = ".monster.com";
+         var hname = "local-jobs";
+
+		/* VARIABLES END */
+	</script>
+    <!--TOPROW-->
+    <div id="TopRow">
+      <div class="fbwm">Find Better with <a href="http://jobsearch.local-jobs.monster.com/?wt.mn_n=hjnpmonstercom" target="_blank"><img src="/img/monster/monster_logo_new.png" align="top" class="img" alt="Monster" /></a></div>
+      <div class="jmsi">
+        <nav class="nav right">
+          <ul>
+            <li class="current"><a href="http://my.local-jobs.monster.com/login.aspx?wt.mc_n=hjnpsignin&at=rd" target="_blank">Join Us</a></li>
+            <li><a href="http://my.local-jobs.monster.com/login.aspx?wt.mc_n=hjnpsignin&at=rd" target="_blank">Sign in</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <!--END TOPROW-->
+
+    <!--MAIN BODY CONTAINER-->
+    <div id="main-cntr">
+
+      <!--JOB SEEKER-->
+      <div id="jobseeker">
+        <h1>Job Seekers</h1>
+
+        <!--SEARCH-->
+        <div id="SearchArea">
+          <div id="MNSwdgSBpad">
+            <div id="MformKeyword">
+              <label for="MNSwdgSkillsKeywords" class="MfieldLabel">Search by keyword:</label>
+              <input type="text" value="" class="fnt1" id="MNSwdgSkillsKeywords" name="MNSwdgSkillsKeywords" onkeypress="return enterKey(event)" onfocus="this.select();" onblur="" />
+            </div>
+            <div id="MformLocation">
+              <label for="MNSwdgLocation" class="MfieldLabel">Find jobs close to:</label>
+              <input type="text" value="" class="fnt1" id="MNSwdgLocation" name="MNSwdgLocation" onkeypress="return enterKey(event)" onfocus="this.select();" onblur="" />
+            </div>
+            <div id="lp835_btn"> <a tabindex="3" title="Search" class="MorangeButton" href="http://jobsearch.local-jobs.monster.com/jobs/?wt.mc_n=hjnpsearch" id="MNSwdgFormAction" onclick="MNSwdgDoSearch(this.href); return false;">Search</a> </div>
+            <div class="clear"></div>
+          </div>
+          <div id="browse"><strong>Browse Jobs by</strong> <a href="http://jobsearch.local-jobs.monster.com/browse/?sf=20&wt.mc_n=hjnpbrowsejobsco" target="_blank">Company</a>, <a href="http://jobsearch.local-jobs.monster.com/browse/?sf=17&wt.mc_n=hjnpbrowsejobsloc" target="_blank">Location</a> or<a href="http://jobsearch.local-jobs.monster.com/browse/?sf=14&wt.mc_n=hjnpbrowsejobscat" target="_blank"> Categories & Industries</a></div>
+          <div style="clear:both;"></div>
+          <div class="fnt2" id="btm-power">Powered by Monster <sup>®</sup></div>
+        </div>
+        <!--SEARCH-->
+      </div>
+      <!--END JOB SEEKER-->
+
+      <!--USER TOOL KIT AND CAREER RESOURCES-->
+      <div id="userRow">
+        <div class="section">
+          <h3>User Toolkit</h3>
+          <ul>
+            <li class="loging"><a href="http://my.local-jobs.monster.com/login.aspx?wt.mc_n=hjnpsignin&at=rd" target="_blank" class="fnt1">Log in</a></li>
+            <li class="newuser"><a href="http://my.local-jobs.monster.com/Become-Member/Create-Account.aspx?wt.mc_n=hjnpsignin" target="_blank" class="fnt1">New User</a></li>
+            <li class="ps"><a href="http://my.local-jobs.monster.com/resume/manageresumes.aspx?wt.mc_n=hjnppostresume" target="_blank" class="fnt1">Post Resume</a></li>
+          </ul>
+        </div>
+        <div class="section">
+          <h3>Career Resources</h3>
+          <ul>
+            <li class="fnt1" style="list-style: disc inside none; padding-left:0px;"><a href="http://career-advice.local-jobs.monster.com?wt.mc_n=hjnpcaradvcovlet" target="_blank">Career Advice</a></li>
+            <li class="fnt1" style="list-style: disc inside none; padding-left:0px;"><a href="http://my.local-jobs.monster.com/Career-Planning/Pathing.aspx?wt.mc_n=hjnpcareermap&eview=H&path=&tabIndex=0" target="_blank">Career Mapping</a></li>
+            <li class="fnt1" style="list-style: disc inside none; padding-left:0px;"><a href="http://my.local-jobs.monster.com/Job-Profiles/GetProfile.aspx?wt.mc_n=hjnpcareersnap" target="_blank">Career Snapshots</a></li>
+          </ul>
+        </div>
+      </div>
+      <!--USER TOOL KIT AND CAREER RESOURCES-->
+
+      <!--EMPLOYERS-->
+      <div id="Employers">
+        <h2>Employers</h2>
+        <div class="postDIV">
+          <ul>
+            <li class="post"><span class="fnt1">Post a Job:<br>
+              </span><a class="fnt1" target="_blank" href="http://hiring.local-jobs.monster.com/recruitment/Standard-Postings.aspx?mode=prod&wt.mc_n=hjnponlineonly">Online</a> |
+
+              <!-- UPDATE THE "PRINT AND ONLINE" URL "#" -->
+              <a class="fnt1" href="http://www.boston.com/jobs/post/">Print &amp; Online</a>
+              <!-- UPDATE THE "PRINT AND ONLINE" URL "#" -->
+
+            </li>
+            <li class="search"><a class="fnt1" target="_blank" href="http://hiring.local-jobs.monster.com/recruitment/Resume-Search-Database.aspx?wt.mc_n=hjnpsearchresumes">Search Resumes</a></li>
+          </ul>
+          <ul>
+            <li class="login"><a class="fnt1" target="_blank" href="https://hiring.local-jobs.monster.com/login.aspx?wt.mc_n=hjnpsigninemp">Log in</a></li>
+            <li class="contact"><a class="fnt1" target="_blank" href="http://monster-usen.custhelp.com/cgi-bin/monster_usen.cfg/php/enduser/ask.php?p_partner=&p_m_id=&p_chat=1&p_partner_phone=877-264-4562ex:76018">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="ecomm">
+          <!--ECOMM OFFER-->
+          <script type="text/javascript">
+
+document.write('<iframe title="" width="100%" height="59" marginwidth="0" marginheight="0" hspace="0" vspace="0" frameborder="0" scrolling="no" src="http://oas.monster.com/RealMedia/ads/adstream_sx.ads/us.monster.newspapers/console/' + Math.floor((Math.random()*1000000000)+1) +'@x56?news=' + ch + '&_RM_HTML_CHID_=' + ch + '&_RM_HTML_HNAME_=' + hname + '&XE&news=' + ch + '&_RM_HTML_CHID_=' + ch + '&_RM_HTML_HNAME_=' + hname + '&XE"></iframe>');
+
+</script>
+          <!--END ECOMM OFFER--> </div>
+      </div>
+    </div>
+    <!--END EMPLOYERS-->
+
+    <script type="text/javascript">
+		function getInput(obj, default_txt) {
+			if (obj.value == default_txt) {
+				return "";
+			}
+			return obj.value;
+		}
+
+		function clearInput(obj, default_txt) {
+			if (obj.value == default_txt) {
+				obj.value = "";
+			}
+		}
+		function isHjChannel() {
+            return ch != "";
+        }
+
+		function appendQueryString(url, queryString) {
+            if (url.indexOf("?") > 0)
+                return url + "&" + queryString;
+            else
+                return url + "?" + queryString;
+        }
+
+        function appendTracking(obj, tracking) {
+            obj.href = appendQueryString(obj.href, tracking);
+        }
+
+		function enterKey(e) {
+			console.log('key');
+			var keynum;
+
+			if (window.event) {
+				keynum = e.keyCode;
+			}
+			else if (e.which) {
+				keynum = e.which;
+			}
+
+			if (keynum == 13) {
+				MNSwdgDoSearch(document.getElementById('MNSwdgFormAction').href);
+				return false;
+			}
+			else return true;
+		}
+
+		function MNSwdgDoSearch(url) {
+			var skillskeywords;
+
+			if (isHjChannel()) {
+				skillskeywords = "&q=" + getInput(document.getElementById("MNSwdgSkillsKeywords"), "");
+			}
+			else {
+				skillskeywords = "?q=" + getInput(document.getElementById("MNSwdgSkillsKeywords"), "");
+			}
+
+			var location = "";
+			var city = getInput(document.getElementById("MNSwdgLocation"), "");
+			if (city != "") {
+				location = "&where=" + city;
+			}
+
+			document.location.href = url + skillskeywords + location + "&re=130&cy=us&brd=1&rad=" + defaultradius;
+		}
+
+
+		 function replaceDomains(links) {
+            for (var i = 0; i < links.length; i++) {
+                if (isHjChannel()) {
+                    links[i].href = appendQueryString(links[i].href, "ch=" + ch);
+                }
+                else {
+                    var domainReplacement = rootDomain;
+
+                    /* use standard Monster domain for Hiring */
+                    if (links[i].href.indexOf("hiring.local-jobs.monster.com") > 0) {
+                        domainReplacement = ".monster.com";
+                    }
+
+                    links[i].href = links[i].href.replace(".local-jobs.monster.com", domainReplacement);
+                }
+            }
+        }
+
+		/* add default location to search box, and add channel id to links and search button*/
+		document.getElementById("MNSwdgLocation").value = defaultlocation;
+
+		/* add tracking codes */
+		if (isHjChannel()) {
+		    appendTracking(document.getElementById("MNSwdgFormAction"), "wt.mc_n=hjnpsearch");
+		}
+
+		var MNSwdg = document.getElementById("jobs-monster-search");
+		MNSwdg.links = MNSwdg.getElementsByTagName("A");
+        replaceDomains(MNSwdg.links);
+
+	</script>
+  </div>
+</div>

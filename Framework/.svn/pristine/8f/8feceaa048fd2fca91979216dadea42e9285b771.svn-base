@@ -1,0 +1,46 @@
+<p:out var="latestMatchupStatus" value="${cacheScope.latestMatchupStatus}" />
+<p:out var="overallLeadersStatus" value="${cacheScope.overallLeadersStatus}" />
+<p:out var="scoreboardStatus" value="${cacheScope.scoreboardStatus}" />
+<p:out var="divisionStandingsStatus" value="${cacheScope.divisionStandingsStatus}" />
+
+
+<div class="feat-scoreboard nhl-scoreboard">
+		
+		<c:if test="${latestMatchupStatus eq 'enabled'}">
+			<p:out var="id" value="${applicationScope.teamID}" />
+			<c:if test="${empty id}">
+				<p:out var="id" value="1" />
+			</c:if>
+			<script language="JavaScript">
+				var now = new Date();
+				var nowSecs = now.getTime();
+				document.write( '<scr'+'ipt language="javascript" SRC="http://stats.boston.com/multisport/today-byteam.js.asp?sport=nhl&team=${id}&lang=en&random='+(nowSecs * Math.Random)+'"> <\/scr'+'ipt>' );
+			</script>
+		</c:if>	
+		<c:if test="${scoreboardStatus eq 'enabled'}">
+			<script language="JavaScript">
+				var now = new Date();
+				var nowSecs = now.getTime();
+				document.write( '<scr'+'ipt language="javascript" SRC="http://stats.boston.com/multisport/today.js.asp?sport=nhl&lang=en&random='+(nowSecs * Math.Random)+'"> <\/scr'+'ipt>' );
+			</script>
+		</c:if>
+		<c:if test="${overallLeadersStatus eq 'enabled'}">
+			<p:out var="cat" value="${cacheScope.category}" />
+			<c:if test="${empty cat}">
+				<p:out var="cat" value="individual" />
+			</c:if>
+			<p:out var="id" value="${applicationScope.teamID}" />
+			<c:if test="${empty id}">
+				<p:out var="id" value="1" />
+			</c:if>	
+			<script language="javascript" SRC="http://stats.boston.com/multisport/stats.js.asp?sport=nhl&type=leaders&cat=${cat}&team=${id}&lang=en"></script>	
+		</c:if>
+		<c:if test="${divisionStandingsStatus eq 'enabled'}">	
+			<p:out var="division" value="${cacheScope.division}" />
+			<c:if test="${empty division}">
+				<p:out var="division" value="Northeast" />
+			</c:if>
+			<script language="javascript" SRC="http://stats.boston.com/multisport/stats.js.asp?sport=nhl&type=standings&div=${division}&lang=en"></script>
+		</c:if>
+	
+</div>

@@ -1,0 +1,39 @@
+<p:out var="gigyaCanonical"	value="${cacheScope.gigyaCanonical}" />
+<p:out var="gigyaShortUrl"	value="${cacheScope.gigyaShortUrl}" />
+<p:out var="gigyaHeadline"	value="${cacheScope.gigyaHeadline}" />
+<p:out var="gigyaThumb"		value="${cacheScope.gigyaThumb}" />
+<p:out var="gigyaThumbType"	value="${cacheScope.gigyaThumbType}" />
+
+<p:getPageZone name="shareTools" var="shareTools" />
+
+<c:choose>
+	<c:when test="${shareTools.size > 0}">
+		<c:set var="toolsList" value="" />
+		<c:forEach items="${shareTools.items}" var="tool" varStatus="loop">
+			<p:object webObject="${tool}" metadata="toolMeta" />
+			<p:out var="toolData" xvalue="$toolMeta//ShareTool" />
+			<c:set var="toolsList">${toolsList} ${toolData}<c:if test="${not loop.last}">,</c:if></c:set>
+		</c:forEach>
+	</c:when>
+	<c:otherwise>
+		<c:set var="toolsList" value="" />
+	</c:otherwise>
+</c:choose>
+
+<c:if test="${fn:trim(gigyaThumb) eq ''}">
+	<p:out var="gigyaThumb" value="http://c.o0bc.com/rw$configurationURI/Framework/img/bcom_logo_with_name.png" />
+</c:if>
+
+<c:if test="${fn:startsWith(gigyaThumb, '//')}">
+	<p:out var="gigyaThumb" value="http:${gigyaThumb}" />
+</c:if>
+
+<c:if test="${fn:trim(gigyaThumbType) eq ''}">
+	<p:out var="gigyaThumbType" value="image" />
+</c:if>
+
+<a class="tz-share-link js-share-modal" href="#share-modal" data-load-ad="true" data-ad-name="ad_share" 
+	data-canonical="${gigyaCanonical}" data-shorturl="${gigyaShortURL}" data-headline="${gigyaHeadline}" data-thumbnail="${gigyaThumb}" data-thumb-type="${gigyaThumbType}" data-providers="${toolsList}">
+	<i class="tz-share-icon tz-meta-icon"></i>
+	<i class="tz-share tz-meta-txt">Share</i>
+</a>

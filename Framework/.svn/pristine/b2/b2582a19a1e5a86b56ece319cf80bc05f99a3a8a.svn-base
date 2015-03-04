@@ -1,0 +1,869 @@
+div#content {
+    font-family: Arial, Helvetica, sans-serif;
+}
+#container .form-button, #container .form-button:hover {
+    background-color: #2851A2;
+    height: 25px;
+    display: block;
+    color: #fff;
+    width: 37px;
+    border: 0;
+    float: left;
+    padding: 2px 0 3px 0;
+    font-weight: bold;
+    font-size: 11px;
+    cursor: pointer;
+    background-image: none;
+    line-height: normal;
+}
+#container .form-button:link {
+    color: #fff;
+}
+#container .form-button:hover {
+    background-color: #002878;
+}
+#container .form-button.grey {
+    background-color: #666;
+}
+#container .form-button.grey:hover {
+    background-color: #444;
+}
+#container .form-button, #container .form-button:hover {
+    width: 120px;
+}
+#content .form-padding {
+    padding-top: 10px;
+}
+.bcom-globe-logos {
+    filter: alpha(opacity=60);
+    -moz-opacity: 0.6;
+    opacity: 0.6;
+    float: left;
+    margin: 15px 0px 0px 23px;
+    width: 106px;
+    height: 25px;
+}
+* html .bcom-globe-logos {
+    margin: 15px 0px 0px 12px;
+}
+.bcom-globe-logos a {
+    display: block;
+    width: 106px;
+    height: 25px;
+}
+.bcom-globe-logos a:hover {
+    border: none;
+}
+#subs .newsletter-selection .form-fieldset {
+    margin-bottom: 10px;
+    height: 85px;
+}
+#subs .newsletter-selection .form-legend {
+    font-size: 14px;
+    font-family: Georgia, Times, "Times New Roman", serif;
+}
+#subs .newsletter-selection .form-message {
+    font-size: 13px;
+    font-family: Georgia, Times, "Times New Roman", serif;
+}
+#Col1.half-page-split {
+    width: 455px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+}
+#Col1.half-page-split.no-divider {
+    border: none;
+}
+.member-login {
+    margin-top: 15px;
+    font: Arial, Helvetica, sans-serif;
+}
+.member-login .form-message {
+    width: 120px;
+    padding-right: 75px;
+}
+.member-login .form-name-submit .form-fields {
+    width: 120px;
+}
+.member-login p.login-footer {
+    font-size: 11px !important;
+    padding-left: 125px;
+}
+#Col2.half-page-split .fb-login {
+    margin-left: 10px;
+}
+#Col2.half-page-split .fb-login-text {
+    margin-left: 0px;
+}
+.email-confirmed {
+    font-size: 14px;
+    margin-top: 10px;
+    margin-left: 22px;
+}
+.email-confirmed .email-confirmed-link-subscription {
+    margin-top: 40px;
+}
+.email-confirmed .email-confirmed-link-subscription .link-to-subscription {
+    display: block;
+}
+.email-confirmed .email-confirmed-link-subscription .link-to-subscription .form-button, .login-error-verification .form-button {
+    width: auto !important;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+    margin-top: 5px;
+}
+.email-confirmed .email-confirmed-where-to {
+    margin-top: 40px;
+}
+.email-confirmed .email-confirmed-where-to span.where-to-link {
+    display: block;
+}
+.email-confirmed .email-confirmed-where-to .where-to-left {
+    float: left;
+}
+.email-confirmed .email-confirmed-where-to .where-to-right {
+    float: left;
+    margin-left: 150px;
+}
+.email-confirmed .email-confirmed-complete-profile {
+    margin-top: 40px;
+}
+.email-confirmed .email-confirmed-complete-profile span {
+    display: block;
+}
+div.create-password {
+    padding-left: 15px;
+}
+div.create-password div.form-name-submit {
+    padding-top: 25px;
+    margin-bottom: 5px;
+}
+div.create-password p.login-footer {
+    font-size: 11px !important;
+    width: 455px;
+}
+div.create-password-email-sent {
+    padding-left: 15px;
+}
+div.create-password-choose {
+    padding-left: 15px;
+}
+div.create-password-choose form {
+    margin-top: 20px;
+}
+div.create-password-choose .form-name-password2 .form-legend {
+    margin-left: 10px;
+    padding-top: 1px;
+    width: 110px;
+}
+div.create-password-success {
+    padding-left: 15px;
+}
+div.create-password-success p {
+    padding-top: 10px;
+}
+.section {
+    background-image: none !important;
+}
+#Col1 .regi-head-text {
+    margin-left: 20px;
+}
+#header p, #Col1 h2, #Col1 ul, #Col1 ol, #Col2 h2, #Col1 p.set-font {
+    font-family: Georgia, Times, "Times New Roman", serif;
+}
+#header .member-header-right p, #header .regi-header-right p, .form-callout, .form-fieldset, .member-login {
+    font-family: Arial, Helvetica, sans-serif;
+}
+#header h1 {
+    margin: 0;
+    font-size: 26px;
+}
+#header p {
+    margin: 0 0 0.4em;
+    font-size: 14px;
+    color: #272727;
+}
+#Col1, #Col2 {
+    padding-top: 14px !important;
+}
+#Col1-login {
+    padding-top: 14px !important;
+    margin: 0px 0px 0px 10px;
+    width: 329px;
+    overflow: hidden;
+    float: left;
+}
+div#login .fb-login {
+    padding-top: 15px !important;
+}
+#Col2-login {
+    padding-top: 14px !important;
+    margin: 0px 11px 0px 50px;
+    width: 500px;
+    float: left;
+    overflow: hidden;
+    font-family: Georgia, Times, "Times New Roman", serif;
+}
+#Col2-login .form-button {
+    position: absolute;
+}
+#Col1 h1, #Col2-login h1 {
+    color: #000000;
+    font-size: 18px;
+}
+#Col1 h2, #Col2 h2, #Col2-login h2 {
+    color: #000000;
+    font-size: 16px;
+}
+#Col1 h2, #Col2 h2 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 400;
+    color: #272727;
+}
+#Col2 h2 {
+    padding-bottom: 6px;
+}
+h3 {
+    margin-top: 1em;
+    font-size: 15px;
+}
+#Col1 ul, #Col1 p {
+    font-size: 13px;
+    margin: 0 0 0.6em;
+    color: #272727;
+}
+#Col1 li {
+    padding-top: 0.4em;
+}
+#header {
+    height: auto;
+}
+.member-header, .regi-header {
+    position: relative;
+    background: #fff url(https://graphics.boston.com/images/registration/truste2007/regi-sprite.png) no-repeat 0 0;
+    height: 136px;
+    margin-bottom: 13px;
+}
+.member-header {
+    background-position: 0 -136px;
+}
+.member-header-inner, .regi-header-inner {
+    position: absolute;
+    left: 22px;
+    bottom: 15px;
+}
+.member-header-inner {
+    bottom: 10px;
+    font: 13px Arial, Helvetica, sans-serif;
+}
+.member-header-right, .regi-header-right {
+    position: relative;
+    float: right;
+    margin: 96px 0px 0px 0px;
+    padding-right: 20px;
+    font-weight: 700;
+}
+.member-header-right {
+    padding-right: 40px;
+}
+.regi-header-right .form-button {
+    margin-left: 10px;
+}
+#header .member-header-right p, #header .regi-header-right p {
+    font-size: 12px;
+    float: left !important;
+    padding-top: 6px;
+}
+.member-tabs {
+    margin-top: 20px;
+    border-bottom: 1px solid #aaa;
+}
+.member-tabs ul, .member-tabs li {
+    margin: 0;
+    padding: 0;
+}
+.member-tabs li {
+    #display: inline;
+    float: left;
+    margin-left: 6px;
+    margin-bottom: -1px;
+    list-style-type: none;
+    #position: relative;
+    #z-index: 100;
+}
+.member-tabs li a {
+    display: block;
+    width: 148px;
+    height: 22px;
+    padding: 10px;
+    margin-top: 3px;
+    font-weight: 700;
+    border: 1px solid #aaa;
+    color: #777 !important;
+    background: #eee;
+}
+.member-tabs li a:hover, .member-tabs .member-tabs-selected a {
+    margin-top: 0;
+    border-top: 4px solid #0556a7;
+    color: #000 !important;
+    background: #fff;
+}
+.member-tabs .member-tabs-selected a {
+    border-bottom-color: #fff;
+    cursor: default;
+}
+#footer {
+    margin-top: 40px;
+    padding-bottom: 20px;
+}
+.regi-footer-text, .regi-footer-logo {
+    #display: inline;
+    float: left;
+    margin-left: 30px;
+}
+.regi-footer-text {
+    font-size: 11px;
+    margin-top: 10px;
+}
+.regi-footer-text h4 {
+    font-size: 11px;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+}
+#regi {
+    width: 609px;
+}
+.form-fieldset {
+    position: relative;
+    margin: 0 0 16px;
+    min-height: 28px;
+    color: #000;
+}
+.form-legend {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 120px;
+    text-align: right;
+    text-transform: uppercase;
+    cursor: default;
+    padding-top: 8px;
+}
+.form-name-gender .form-legend {
+    padding-top: 3px;
+}
+#regi-industry, #regi-job, #regi-income {
+    width: 300px;
+}
+.form-name-industry .form-legend, .form-name-job .form-legend, .form-name-income .form-legend, .form-name-subscriber .form-legend {
+    padding-top: 5px;
+}
+.form-name-subscriber .form-message {
+    padding-top: 4px;
+}
+.form-name-password2 .form-legend {
+    width: 110px;
+    padding-top: 1px;
+    margin-left: 10px;
+}
+.form-name-contest .form-fields span {
+    display: block;
+    width: 390px;
+}
+.form-name-contest .form-fields span a {
+    font-size: 13px;
+}
+.form-name-forgot-password, .forgot-password-label {
+    padding: 25px 0px 0px 0px;
+}
+.forgot-password-label {
+    padding-top: 33px;
+}
+input.forgot-password {
+    margin: 0px 0px 0px 125px;
+}
+div#memberText {
+    line-height: 2em;
+    margin: 20px 0px 0px 22px;
+}
+div#memberText .list-items {
+    font-size: 14px;
+    margin-left: 20px;
+}
+div#memberText .register-button-container {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-left: 20px;
+}
+div#memberText .register-button {
+    padding-bottom: 15px;
+}
+div.login-success {
+    margin-left: 20px;
+    font-size: 13px;
+}
+div.login-error-verification {
+    margin-left: 10px;
+}
+div.login-success .form-button, div.login-error-verification .form-button {
+    height: 25px;
+    padding: 0px 10px 0px 10px !important;
+    margin-top: 5px;
+}
+div.login-error-verification h2 {
+    color: #d33 !important;
+    font-size: 16px !important;
+    font-weight: bold;
+}
+div.login-error-verification h3 {
+    font-size: 13px !important;
+}
+label {
+    cursor: default;
+}
+#login form {
+    width: 306px;
+}
+#login .form-legend {
+    width: 74px;
+}
+.form-message, .form-fields a, .form-name-agree .form-fields span, .form-fieldset {
+    font-size: 11px;
+}
+.form-fields {
+    float: left;
+    position: relative;
+    margin-left: 126px;
+    width: 238px;
+}
+#login .form-fields {
+    margin-left: 80px;
+    width: 223px;
+}
+#login span.regi-rememberme {
+    display: block;
+    font-color: #999;
+    margin-left: 75px;
+    margin-bottom: 10px;
+}
+.member-login span.regi-rememberme {
+    display: block;
+    font-color: #999;
+    margin-left: 122px;
+    margin-bottom: 10px;
+}
+#Col2 h3.fb-login-header {
+    margin-top: 0px;
+}
+div.fb-denied-pic img, span.fb-login-button img {
+    cursor: pointer;
+}
+.fb-login-header, .fb-password-header, .member-fb-login-header, .member-fb-disconnect-header {
+    background: url(https://graphics.boston.com/images/registration/truste2007/fb-icon.png) no-repeat;
+}
+.fb-login-header-inner, .member-fb-login-header-inner, .member-fb-disconnect-header-inner {
+    position: relative;
+    left: 25px;
+}
+.fb-login-text {
+    margin: 10px 0px 0px 80px;
+}
+.fb-login-button {
+    display: block;
+    padding-top: 10px;
+    padding-bottom: 25px;
+}
+.fb-disconnect {
+    margin-top: 20px;
+}
+.member-fb-login, .member-fb-disconnect {
+    margin-top: 10px;
+}
+.member-fb-login-text {
+    margin: 10px 0px 0px 25px;
+}
+.member-fb-login-button {
+    display: block;
+    margin: 10px 0px 10px 0px;
+}
+.member-fb-disconnect-text, .member-fb-disconnect-link {
+    display: block;
+    margin: 20px 10px 0px 25px;
+}
+.member-fb-disconnect-link {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.member-fb-disconnect-link a, .member-fb-disconnect-link a:active, .member-fb-disconnect-link a:visited {
+    color: #DD3333;
+    font-size: 13px;
+    font-weight: bold;
+    text-decoration: none;
+}
+.fb-password-header, .fb-password-text {
+    margin-left: 150px;
+    width: 300px;
+}
+.fb-password-header-inner {
+    position: relative;
+    left: 25px;
+}
+.fb-password-text .form-button {
+    margin-top: 5px;
+    width: auto !important;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+}
+.form-indent {
+    padding-left: 28px;
+}
+.form-button-bottom {
+    display: block;
+    margin-left: 30px;
+    margin-top: 15px;
+}
+.fb-container-head-text {
+    float: right;
+    position: relative;
+    bottom: 25px;
+    right: 520px;
+    color: #ffffff;
+}
+.fb-container {
+    width: auto;
+    height: 75px;
+    border: 1px solid #3b5998;
+    border-top: 18px solid #3b5998;
+    padding: 7px;
+}
+.fb-disconnect-container {
+    margin: 15px 0px 0px 25px;
+}
+.fb-connected-pic, .fb-disconnect-pic {
+    float: left;
+    background: url(https://graphics.boston.com/images/registration/truste2007/fb-pic-placeholder.png) no-repeat center;
+    width: 50px;
+    height: 50px;
+}
+.fb-disconnect-pic {
+    background: url(https://graphics.boston.com/images/registration/truste2007/fb-pic-placeholder.png) no-repeat center top;
+}
+.fb-connected-info {
+    margin-left: 10px;
+}
+.fb-connected-info-name, .fb-connected-info-email, .fb-disconnect-info-name, .fb-disconnect-info-email {
+    display: block;
+    margin: 5px 0px 0px 50px;
+    font-weight: bold;
+}
+.fb-connected-info-email, .fb-disconnect-info-email {
+    font-weight: normal;
+}
+.fb-connected-notes {
+    position: relative;
+    margin: 6px 0 0 60px;
+}
+.fb-connected-note1, .fb-connected-note2 {
+    display: block;
+    font-size: 13px;
+    font-weight: none;
+    background: url(https://graphics.boston.com/images/registration/truste2007/checkmark.jpg) no-repeat;
+    padding-left: 15px;
+}
+.fb-connected-note2 {
+    margin-top: 4px;
+}
+.fb-denied-pic {
+    float: left;
+    height: 25px;
+    width: 175px;
+    margin: 5px 0px 0px 5px;
+}
+.fb-denied-message {
+    color: #DD3333;
+    width: 390px;
+    font-size: 14px;
+    float: left;
+    position: relative;
+    bottom: 15px;
+}
+#login .form-fields input.type-text, #login .form-fields input.type-password {
+    width: 205px;
+}
+.form-fields, .form-fields input, .form-fields select {
+    font-size: 14px;
+}
+.form-fields label {
+    font-size: 13px;
+    color: #000;
+}
+.form-fields input {
+    color: #000;
+}
+.form-fields input.type-text, .form-fields input.type-password {
+    width: 220px;
+    padding: 4px 8px;
+    border: 1px solid #777;
+    vertical-align: middle;
+}
+.form-fields .field-disabled {
+    color: #aaa !important;
+    border: 1px solid #aaa !important;
+    background: #eee !important;
+}
+.form-fields select {
+    max-width: 238px;
+    #width: 238px;
+    #margin-top: 4px;
+}
+.form-name-zip input.type-text {
+    width: 58px;
+}
+.form-name-birthyear input.type-text {
+    width: 50px;
+}
+.form-fields a.form-why {
+    position: absolute;
+    right: 2px;
+    top: 9px;
+    line-height: 1.2em;
+}
+.form-message {
+    float: right;
+    position: relative;
+    width: 236px;
+    line-height: 1.2em;
+    margin-right: 0;
+    padding: 8px 0;
+    #padding-bottom: 14px;
+}
+#login .form-message {
+    width: 225px;
+}
+.form-message a {
+    #display: inline-block;
+}
+.form-message a:hover {
+    #position: relative;
+    #top: 1px;
+}
+#regi .form-name-submit .form-fields {
+    width: 120px;
+}
+#regi .form-name-submit .form-message {
+    width: 350px;
+}
+.form-message-bullet {
+    float: left;
+    margin-right: 5px;
+    #margin-right: 2px;
+    height: 24px;
+}
+.form-message-success, .form-message-error, .form-message-default {
+    position: absolute;
+}
+.form-message-success .form-message-bullet, .form-message-error .form-message-bullet, .form-message-error-required .form-message-bullet {
+    font-weight: 700;
+}
+.form-message-default .form-message-bullet {
+    font-family: "Times New Roman", serif;
+    font-size: 70%}
+.form-message-success .form-message-bullet {
+    margin-left: -4px;
+}
+.form-message-success .form-message-bullet:after {
+    font-family: "Times New Roman", serif;
+    content: "\00A0\2713"}
+.form-message-success .form-message-bullet span {
+    display: none;
+    #display: inline-block;
+    font-family: Webdings;
+    font-weight: 400;
+    font-size: 13px;
+    margin-left: 2px;
+}
+.form-name-gender .form-fields {
+    padding: 0;
+}
+.form-fieldset-success .form-message-success, .form-fieldset-error .form-message-error, .form-fieldset-error-required .form-message-error-required {
+    display: inline;
+}
+.form-message-success, .form-message-error, .form-message-error-required, .form-fieldset-success .form-message-default, .form-fieldset-error .form-message-default, .form-fieldset-error-required .form-message-default, .form-fieldset-error-required .form-message-error {
+    display: none;
+}
+.form-callout, .form-error {
+    font-size: 11px;
+    padding: 8px;
+    border: 1px dotted #3e5f9d;
+    margin-bottom: 15px;
+}
+#regi .form-callout, #regi .form-error {
+    padding-left: 124px;
+}
+.form-error {
+    font-size: 12px;
+    border: 1px solid;
+    color: white;
+    background: #dd3333;
+}
+.form-fieldset-error, .form-fieldset-error label, .form-fieldset-error input, .form-fieldset-error-required, .form-fieldset-error-required label, .form-fieldset-error-required input {
+    color: #d33 !important;
+    border-color: #d33 !important;
+}
+.form-fieldset-error input, .form-fieldset-error-required input {
+    background: #fff4f4;
+}
+.form-fieldset-success .form-message-success {
+    color: #0a0;
+}
+div.register-newsletter-item, .newsletter-confirmation {
+    margin: 15px 0px 0px 30px;
+}
+span.register-newsletter-title, .newsletter-confirmation-title {
+    font-size: 13px;
+    font-weight: bold;
+    font-family: Georgia, Times, "Times New Roman", serif;
+}
+span.register-newsletter-description, .newsletter-confirmation-description {
+    font-size: 12px;
+    font-weight: normal;
+    font-family: Georgia, Times, "Times New Roman", serif;
+}
+.resend-password-reset {
+    margin-left: 20px;
+    font-size: 14px;
+}
+.resend-password-reset h2 {
+    color: #000 !important;
+    font-weight: bold !important;
+}
+.resend-password-reset .form-button {
+    margin-top: 5px;
+}
+#login {
+    padding: 12px;
+    width: 303px;
+    background: #e7f5fa;
+    border: 1px solid #b3ccfd;
+    overflow: hidden;
+}
+#login h3 {
+    margin: 0;
+}
+#login form {
+    margin-top: 10px;
+    margin-bottom: -18px;
+    _margin-bottom: 0;
+    _padding-bottom: 8px;
+}
+#login hr {
+    height: 0;
+    overflow: hidden;
+    border: none;
+    border-top: 1px solid #b3ccfd;
+    margin-top: 0;
+}
+#login .login-footer {
+    margin-top: -10px;
+    #margin: -15px 0 15px;
+    _margin: -15px 0 -10px;
+    margin-left: 80px;
+}
+#subs {
+    margin-top: 1em;
+}
+#subs .form-fieldset {
+    #display: inline;
+    float: left;
+    width: 280px;
+    margin-left: 20px;
+    height: 6.2em;
+    overflow: hidden;
+}
+#subs .form-fieldset:after {
+    content: ""}
+#subs .form-name-submit {
+    width: 609px;
+    margin-left: 0;
+}
+#subs .form-legend, #subs .form-message {
+    width: 255px;
+    font-size: 12px;
+    text-align: left;
+    text-transform: none;
+}
+#subs .form-legend {
+    position: static;
+    float: right;
+    font-weight: 700;
+    line-height: 1.2em;
+    padding-top: 0.2em;
+}
+#subs .form-fields {
+    margin-left: 0;
+    width: auto;
+    #margin-top: -4px;
+}
+#subs .form-message {
+    clear: both;
+    padding-top: 2px;
+}
+#subs .form-name-submit .form-fields {
+    width: 320px;
+}
+#subs .form-name-submit .form-fields input {
+    #display: inline;
+    margin-left: 40px;
+}
+#subs .form-name-submit .form-message {
+    width: 283px;
+    clear: none;
+    font-size: 11px;
+    padding-top: 5px;
+}
+.regi-login-login-problems {
+    border-top: 1px dotted #b3ccfd;
+    padding-top: 9px;
+}
+.regi-login-login-problems p.footer {
+    margin-bottom: 15px;
+}
+.regi-login-login-problems a {
+    font-size: 14px;
+    font-weight: bold;
+}
+.expand-o-rama-link {
+    display: none;
+}
+.expand-o-rama ol {
+    margin: 3px 0;
+}
+.expand-o-rama li {
+    padding-bottom: 0.4em;
+}
+.regi-icon {
+    line-height: 20px !important;
+    padding-left: 28px !important;
+    background: url(https://graphics.boston.com/images/registration/truste2007/regi-sprite.png) no-repeat 0 0;
+}
+.regi-icon-bcom {
+    background-position: -20px -290px;
+}
+.regi-icon-subs {
+    background-position: -20px -330px;
+}
+.regi-icon-login-problems {
+    background-position: -20px -370px;
+}
+.member-tabs, .form-fieldset {
+    #zoom: 1;
+}
+.form-fieldset:after, .member-tabs:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}

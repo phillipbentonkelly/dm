@@ -1,0 +1,243 @@
+<%@ taglib prefix="bgm" uri="bgmtags" %>
+<%@ taglib prefix="fn" uri="jstlFunctions"%>
+<%@ taglib prefix="c" uri="jstlCore"%>
+<%@ taglib prefix="p" uri="ptag"%>
+<%@ taglib prefix="jp" uri="jptag"%>
+<%@ taglib prefix="x" uri="jstlXml"%>
+<%@ page import="org.jsoup.Jsoup" %>
+<%@ page import="org.jsoup.safety.Whitelist" %>
+<%@page import="java.util.*"%>
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="java.lang.String"%>
+<p:currentObject metadata="meta" channel="Boston.com" uuid="uuid" />
+
+<p:out var="container" value="${cacheScope.container}" />
+<p:out var="bulleted" value="${cacheScope.bulleted}" />
+<p:out var="isMT" value="${cacheScope.isMT}" />
+<p:out var="showCarousel" value="${cacheScope.showCarousel}" />
+<p:out var="stream" value="${cacheScope.query}" />
+<p:out var="filter" value="${cacheScope.streamFilter}" />
+<p:out var="limit" value="${cacheScope.limit}" /> 
+<p:out var="status" value="${cacheScope.status}" />
+<p:out var="startingdate" value="${cacheScope.startingdate}" />
+<p:out var="firstArticle" value="1" />
+<p:out var="duplicate" value="0" />
+<p:out var="loopCounter" value="0" scope="page"/>
+
+
+<c:if test="${fn:trim(stream) eq ''}">
+	<p:out var="bulleted" xvalue="$meta//Bulleted/Status" />
+	<p:out var="isMT" xvalue="$meta//IsMT/Status" />
+	<p:out var="showCarousel" xvalue="$meta//Carousel/Status" />
+	<p:out var="container"  xvalue="$meta//Carousel/Container/Text()" />
+	<p:out var="stream" xvalue="$meta//Stream/Text()" />
+	<p:out var="filter" xvalue="$meta//Filter/Text()" />
+	<p:out var="limit" xvalue="$meta//Limit/Text()" /> 
+	<p:out var="status" xvalue="$meta//Status/Text()" />
+	<p:out var="startingdate" xvalue="$meta//StartingDate/Text()" />
+</c:if>
+
+<c:if test="${fn:trim(container) eq ''}">
+	<p:out var="container" value="" />
+</c:if>
+<c:if test="${isMT ne '0'}">
+	<c:choose>
+		<c:when test="${fn:trim(isMT) eq '' or fn:trim(isMT) eq 'disabled'}">
+			<p:out var="isMT" value="0" />
+		</c:when>
+		<c:otherwise>
+			<p:out var="isMT" value="1" />
+		</c:otherwise>
+	</c:choose>
+</c:if>
+<c:if test="${bulleted ne '0'}">
+	<c:choose>
+		<c:when test="${fn:trim(bulleted) eq '' or fn:trim(bulleted) eq 'disabled'}">
+			<p:out var="bulleted" value="0" />
+		</c:when>
+		<c:otherwise>
+			<p:out var="bulleted" value="1" />
+		</c:otherwise>
+	</c:choose>
+</c:if>
+<c:if test="${showCarousel ne '0'}">
+	<c:choose>
+		<c:when test="${fn:trim(showCarousel) eq '' or fn:trim(showCarousel) eq 'disabled'}">
+			<p:out var="showCarousel" value="0" />
+		</c:when>
+		<c:otherwise>
+			<p:out var="showCarousel" value="1" />
+		</c:otherwise>
+	</c:choose>
+</c:if>
+
+<%-- mock homepage to news for dev testing --%>
+<c:if test="${stream == 'homepage'}"><c:set var="stream">news</c:set></c:if>
+
+<c:if test="${empty stream}"><c:set var="stream">not-specified</c:set></c:if>
+<c:if test="${empty filter}"><c:set var="filter">all</c:set></c:if>
+<c:if test="${empty limit}"><c:set var="limit">25</c:set></c:if>
+<c:if test="${empty status}"><c:set var="status">Approved</c:set></c:if>
+
+<%--  if not specified, use a maximum date value cannot pass seem to pass a value of <qm:TMaxDateTime/>  into the query  --%>
+<c:if test="${empty startingdate}"><c:set var="startingdate" value="99991231235900"/></c:if>
+
+<% 
+	String[] queryParams = new String[5];
+	queryParams[0] = (String)pageContext.getAttribute("stream");
+	queryParams[1] = (String)pageContext.getAttribute("filter");
+	queryParams[2] = (String)pageContext.getAttribute("startingdate");
+	queryParams[3] = (String)pageContext.getAttribute("limit");
+ 	queryParams[4] = (String)pageContext.getAttribute("status");
+    
+	pageContext.setAttribute("queryParams", queryParams);
+%>
+<fmt:parseNumber var="isMT" value="${isMT}" type="number" integerOnly="true" />
+<fmt:parseNumber var="showCarousel" value="${showCarousel}" type="number" integerOnly="true" />
+<fmt:parseNumber var="bulleted" value="${bulleted}" type="number" integerOnly="true" />
+<fmt:parseNumber var="firstArticle" value="${firstArticle}" type="number" integerOnly="true" />
+<fmt:parseNumber var="duplicate" value="${duplicate}" type="number" integerOnly="true" />
+
+<c:choose>
+	<c:when test="${isMT eq 1}">
+		<p:getCollection path="$configurationURI/Framework/queries/bdc_stream_mt.vquery" virtualParams="${queryParams}" var="q" />	
+	</c:when>
+	<c:otherwise>
+		<p:getCollection path="$configurationURI/Framework/queries/bdc_stream_filterkey.vquery" virtualParams="${queryParams}" var="q" />
+	</c:otherwise>
+</c:choose>
+ 
+<c:if test="${showCarousel eq 1}">
+	<p:inline url="$configurationURI/Framework/skins/components/TeaseGenerators/Newsletter-Carousel.jsp">
+		<p:param name="container" value="${container}"/>
+		<p:param name="bulleted" value="${bulleted}"/>
+	</p:inline>
+	<%--<fmt:parseNumber var="limit" value="${limit - 6}" type="number" integerOnly="true" />--%>
+	<p:out var="loopCounter" value="6" scope="page" />
+	
+	<p:out var="firstArticle" value="0" />
+</c:if>
+	
+	<c:forEach items="${q.items}" var="i" begin="0" end="${limit}" varStatus="status">
+	<p:getObject webObject="${i}" var="storyobj" />
+	
+	<p:out var="imgSrc" value="" />
+	<p:object webObject="${storyobj}" content="c" metadata="m" uuid="uuid" />
+	
+	
+	<bdc:getSummaryForSectionFront webObject="${storyobj}" var="webtease" wordCount="0"/>
+	<p:out var="itemDescription" xvalue="$c//doc/story/text/content"/>
+	<p:out var="webTease" xvalue="$c//doc/story/web-tease"/>
+	<p:out var="streamTease" xvalue="$c//doc/story/stream-tease"/>
+	<p:out var="photoCaption" xvalue="$c//doc/story/multimedia-container/photo-container/captiongrp/caption"/>
+	<p:out var="photoURL" xvalue="$c//doc/story/multimedia-container/photo-container/photogrp/photo/@fileref"/>
+	<p:out var="photoURL" value="${fn:substringAfter(photoURL, '?uuid=')}" />
+	
+	<p:getObject var="imageObj" uuid="${photoURL}" onError="ignore" />
+	<c:if test="${not empty imageObj}">
+		<p:url var="imgSrc" webObject="${imageObj}" format="image_150x84" type="resource" />
+	</c:if>
+	
+	<p:out var="pubDate" xvalue="$m//ObjectMetadata/OnlineProducts/OnlineProduct/LastPublicationDate"/>
+	<p:out var="provider" xvalue="$m//ObjectMetadata/Reference/Provider"/>
+	<p:out var="mtUrl" xvalue="$c//doc/story/xref"/>
+	
+	<p:object webObject="${storyobj}" content="c" metadata="meta" webType="WT" uuid="StoryID" channel="Boston.com" />
+    
+	<p:getObject var="obj" webObject="${storyobj}" />
+	<p:url webObject="${obj}" var="link"/>
+	
+	<p:out var="itemTitle" xvalue="$c//headlines/headline/p" />
+	<p:out var="webtype" xvalue="$m//ObjectMetadata/OnlineProducts/OnlineProduct/WebType" />
+	<p:out var="link" value="${portalContext.publicBaseUrl}${link}" />
+	<p:out var="author" xvalue="$m//ObjectMetadata/Reference/WireFeed"/>
+	
+	<p:out var="provider" xvalue="$m//ObjectMetadata/Reference/Provider"/>
+	<c:if test="${provider == 'Moveable Type'}">
+		<p:out var="mtUrl" xvalue="$c//doc/story/xref"/>
+		<c:choose>
+			<c:when test="${fn:contains(mtUrl, 'mobile.html')}">
+				<p:out var="mtXml" value="${fn:replace(mtUrl, 'mobile.html', 'xml')}" />
+			</c:when>
+			<c:otherwise>
+				<p:out var="mtXml" value="${fn:replace(mtUrl, 'html', 'xml')}" />
+			</c:otherwise>
+		</c:choose>
+		<p:out var="pubDate" xvalue="$m//ObjectMetadata/Reference/DatePublished"/>
+	 	
+	 	<bgm:import var="postObj" url="${mtXml}" />
+	 	
+	 	<c:if test="${not empty postObj}">
+			<p:out var="itemDescription" value="${fn:substringAfter(postObj, 'xhtml\">')}" />
+		 	<p:out var="itemDescription" value="${fn:substringBefore(itemDescription, '</content>')}"/>
+		 </c:if>
+		<p:out var="link" value="${mtUrl}" />
+	</c:if>
+	<c:forEach var="item" items="${fn:split(ffs, ',')}">
+		<c:if test="${item eq uuid}">
+			<p:out var="duplicate" value="1" />
+			<p>item: ${item} uuid: ${uuid}</p>
+		</c:if>
+	</c:forEach>
+	<%--<p>status.count ${status.count} limit ${limit} status.index ${status.index}</p>
+	<p>webtype: ${webtype} provider: ${provider}</p>
+	<p>item: ${item} uuid: ${uuid}</p>
+	<p>duplicate: ${duplicate}</p>--%>
+	<c:if test="${duplicate ne 1 }">
+		<c:if test="${webtype != 'streamtease' or (provider == 'Moveable Type' and webtype == 'streamtease')}">
+			<c:if test="${not empty itemTitle}">
+				<c:choose>
+					<c:when test="${firstArticle eq 1}">
+						<%--<c:if test="${not empty imgSrc}">
+							<a class="quick-tz-img-mod art-bd" href="${link}">
+								<img data-where-clicked="image" class="tz-img" src="${imgSrc}" alt="${photoCaption}">
+							</a>
+						</c:if>--%>	
+						<div class="padBottom10">
+							<c:choose>
+								<c:when test="${bulleted eq 0}">
+									<div class="featured" style="font-size:16px; font-weight:bold; line-height:28px; margin:0 0 15px 0;">
+										<a style="color:#1d6ead; text-decoration:none;"href="${link}"
+							       	    class="bold">${itemTitle}</a>
+							       	</div>
+								</c:when>
+								<c:otherwise>
+									<div class="featured" style="font-size:23px; font-weight:bold; line-height:28px; margin:0 0 15px 0;">
+										<a style="color:#1d6ead; text-decoration:none;"href="${link}"
+							       			class="bold">${itemTitle}</a>
+							       	</div>
+								</c:otherwise>
+							</c:choose>
+						</div>
+						<p:out var="firstArticle" value="0" />
+					</c:when>
+					<c:otherwise>
+						<c:choose>
+							<c:when test="${bulleted eq 0}">
+								<ul style="list-style-type:none; font-weight:bold color:#979797; line-height:18px; margin:0; padding:0px;"
+							    class="linklist">
+							  		<li style="margin:0 0 10px 0;">
+							  			<a style="color:#1d6ead; text-decoration:none;"
+							      		   href="${link}"
+							       		   class="bold">${itemTitle}</a>
+									</li>
+								</ul>
+							</c:when>
+							<c:otherwise>
+								<ul style="list-style-type:square; color:#979797; font-size:14px; line-height:18px; margin:0; padding:0 0 0 16px;"
+							    class="linklist">
+							  		<li style="margin:0 0 10px 0;">
+							  			<a style="color:#1d6ead; text-decoration:none;"
+							      		   href="${link}"
+							       		   class="bold">${itemTitle}</a>
+									</li>
+								</ul>
+							</c:otherwise>
+						</c:choose>
+					</c:otherwise>
+				</c:choose>
+			</c:if>
+		</c:if>
+	</c:if>
+	<p:out var="duplicate" value="0" />
+</c:forEach>

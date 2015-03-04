@@ -1,0 +1,90 @@
+<%-- things passed --%>
+<p:out var="hedPosition" value="${cacheScope.hedPosition}" />
+<p:out var="dekPosition" value="${cacheScope.dekPosition}" />
+<p:out var="isHomepage" value="${cacheScope.isHomepage}" />
+
+<%-- get headlines --%>
+<p:currentObject sectionId="section" metadata="meta" webType="wt" />
+<bdc:getHeadlines webObject="${currentObject}" var="headlines" />
+<p:out var="shortHed" value="${headlines.shortheadline}" />
+<p:out var="carouselHed" value="${headlines.carouselHeadline}" />
+
+<%-- set the p1 tag --%>
+<p:out var="p1" value="p1=takeover" />  
+<c:if test="${isHomepage}">
+	<p:out var="p1" value="${p1}_hp" />  
+</c:if>
+
+<%-- set all sorts of classes for positioning the hed and dek --%>
+<p:out var="hedPositionClass" value="" />  
+<c:if test="${hedPosition == 'Top' and hedPosition != dekPosition}">
+	<p:out var="hedPositionClass" value="image-tease__text--overlay-top" />  
+</c:if>
+
+<p:out var="hedSizeClass" value=" image-tease__text--overlay-xx-large" />  
+<c:if test="${dekPosition != 'None'}">
+	<p:out var="hedSizeClass" value=" image-tease__text--overlay-x-large" />  
+</c:if>
+
+<p:out var="dekPositionClass" value="" />  
+<c:if test="${dekPosition == 'Top' and hedPosition != dekPosition}">
+	<p:out var="dekPositionClass" value="image-tease__text--overlay-top" />  
+</c:if>
+
+<p:out var="possiblyWrappedClass" value="" />
+<c:if test="${hedPosition == dekPosition}">
+	<p:out var="possiblyWrappedClass" value=" image-tease__text--wrapped" />
+	<p:out var="wrapperPositionClass" value="" />
+	<c:if test="${hedPosition == 'Top'}">
+		<p:out var="wrapperPositionClass" value="image-tease__text--overlay-top" />  
+	</c:if>
+</c:if>
+
+<%-- get the image, or a default --%>
+<bdc:imagesWithCaptionCredit webObject="${currentObject}" var="image" format="image_650x365" />
+<c:if test="${not empty image}">
+	<p:out var="imageUrl" value="${image.src}" />
+</c:if>
+<c:if test="${empty image}">
+	<bdc:defaultImage var="defImg" webObject="${currentObject}" format="image_650x365" />
+	<c:if test="${not empty defImg}">
+		<p:out var="imageUrl" value="${defImg}" />
+	</c:if>
+</c:if>
+
+<%-- markup begins here --%>
+<div class="page-module">
+	<div class="grid--10-offset-1">
+		<div class="image-tease ${sizeClass}"> 
+			<bdc:link webObject="${currentObject}" className="image-tease__link" linkParam="${p1}">
+				<div class="image-tease__image-container">
+					<img src="${imageUrl}" class="image-tease--16-9" />
+				</div>
+				<%-- wrap up the headline and dek if they are together --%>
+				<c:if test="${hedPosition == dekPosition}">
+					<div class="image-tease__text-wrapper ${wrapperPositionClass}">
+				</c:if>
+	
+					<%-- the headline --%>
+					<div class="image-tease__text--overlay ${hedPositionClass} ${hedSizeClass} ${possiblyWrappedClass}">
+						${shortHed}
+						<c:if test="${empty shortHed}">
+							${carouselHed}
+						</c:if>
+					</div>
+	
+					<%-- the dek maybe --%>
+					<c:if test="${dekPosition != 'None'}">
+						<div class="image-tease__text--overlay image-tease__text--secondary ${dekPositionClass} ${possiblyWrappedClass}">
+							${headlines.subheadline}
+						</div>
+					</c:if>
+	
+				<%-- close wrapper div --%>
+				<c:if test="${hedPosition == dekPosition}">
+					</div>
+				</c:if>
+			</bdc:link>
+		</div>
+	</div>
+</div>

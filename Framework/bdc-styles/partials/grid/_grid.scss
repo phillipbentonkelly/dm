@@ -1,0 +1,249 @@
+@import 'susy';
+@import 'grid-config';
+
+// - - - - - - - - - - - - - - - - - - - - - - -
+// Grid Layouts
+// - - - - - - - - - - - - - - - - - - - - - - -
+
+$module-name: 'grid';
+
+// - - - - - - - - - - - - - - - - - - - - - - -
+// Default Styles
+// - - - - - - - - - - - - - - - - - - - - - - -
+
+
+
+
+.#{$module-name} {
+
+  &--nested-first, &--nested-last {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  // This is the grid used for section well headers and the ad-lead1
+  &--12 {
+    @include span(full);
+  }
+
+  // This is the grid used for section wells
+  &--6-6 {
+    .#{$module-name} {
+      &-6 {
+        @include span(full);
+      }
+      
+      &-6--no-stack {
+        @include span(6 of 12);
+      }
+
+      // delete me when the people project is no more. Eddie, please forgive me.
+      &-6--people-project {
+        @include span(full);
+      }
+    }
+  }
+
+  &--10-offset-1 {
+    @include span(full);
+  }
+
+  // This is the grid used at the top of the homepage
+  &--8-4 {
+    .#{$module-name} {
+
+      &-8 {
+        @include span(full);
+        .#{$module-name} {
+          &-4 {
+            @include span(full);
+          }
+        }
+      }
+
+      &-4 {
+        @include span(full);
+      }
+    }
+  }
+  
+  // This is the grid used on the top of the weather page
+  &--4-8 {
+    .#{$module-name} {
+      &-4 {
+        @include span(full);
+      }
+      &-8 {
+        @include span(full);
+      }
+    }
+  }
+
+  // Grid for image teases on Homepage
+  &--4-4-4 {
+    clear: both;
+    .#{$module-name} {
+      &-4 {
+        @include span(full);
+      }
+    }
+  } 
+}
+
+// - - - - - - - - - - - - - - - - - - - - - - -
+// 450-700 Breakpoint
+// - - - - - - - - - - - - - - - - - - - - - - -
+@include media-query(450) {
+
+  .#{$module-name} {
+
+    &--nested {
+      &-first {
+        padding-left: 0!important;
+      }
+      &-last {
+        padding-right: 0!important;
+      }
+    }
+
+    // This is the grid used at the top of the homepage
+    &--8-4 {
+      .#{$module-name} {
+
+        &-8 {
+          @include span(full);
+          .#{$module-name} {
+            &-4 {
+              @include span(6 of 12);
+            }
+          }
+        }
+
+        &-4 {
+          @include span(full);
+        }
+      }
+    }
+
+    // Grid for image teases on Homepage
+    &--4-4-4 {
+      .#{$module-name} {
+        &-4 {
+          @include span(6 of 12);
+        }
+      }
+    }
+
+    // This is the grid used for the top of the weather page
+    &--4-8 {
+      .#{$module-name} {
+        &-4 {
+          @include span(6 of 12);
+        }
+        &-8 {
+          @include span(6 of 12);
+        }
+      }
+    }
+
+    // DELETE ME when the people project is no more. Eddie, please forgive me.
+    &--6-6 {
+      .#{$module-name} {
+        &-6--people-project {
+          @include span(6 of 12);
+        }
+      }
+    }
+
+  }
+}
+
+// - - - - - - - - - - - - - - - - - - - - - - -
+// 700-768 Breakpoint
+// - - - - - - - - - - - - - - - - - - - - - - -
+@include media-query(700) {
+
+  .#{$module-name} {
+
+    &--10-offset-1 {
+      @include span(isolate 10 at 2);
+    }    
+
+    // This is the grid used for section wells
+    &--6-6 {
+      .#{$module-name} {
+        &-6 {
+          @include span(6 of 12);
+        }
+      }
+    }
+
+    // This is the grid used at the top of the homepage
+    &--8-4 {
+      .#{$module-name} {
+
+        &-8 {
+          @include span(8 of 12);
+          .#{$module-name} {
+            &-4 {
+              @include span(4 of 8);
+            }
+          }
+        }
+
+        &-4 {
+          @include span(4 of 12 last);
+        }
+      }
+    }
+
+  }
+}
+
+// - - - - - - - - - - - - - - - - - - - - - - -
+// Tablet Breakpoint
+// - - - - - - - - - - - - - - - - - - - - - - -
+@include media-query(tablet) {
+
+  .#{$module-name} {
+
+    &--10-offset-1 {
+      @include span(isolate 8 at 3);
+    }    
+    
+    // This is the grid used at the top of the weather page
+    &--4-8 {
+      .#{$module-name} {
+        &-4 {
+          @include span(4 of 12);
+        }
+        &-8 {
+          @include span(8 of 12);
+        }
+      }
+    } 
+
+    // Grid for image teases on Homepage
+    &--4-4-4 {
+      .#{$module-name} {
+        &-4 {
+          @include span(4 of 12);
+        }
+      }
+    }
+  }
+}
+
+// - - - - - - - - - - - - - - - - - - - - - - -
+// Desktop Breakpoint
+// - - - - - - - - - - - - - - - - - - - - - - -
+@include media-query(desktop) {
+  .#{$module-name} {
+
+    &--10-offset-1 {
+      @include span(12 of 12);
+      @include isolate(0);
+    }
+
+  }
+}

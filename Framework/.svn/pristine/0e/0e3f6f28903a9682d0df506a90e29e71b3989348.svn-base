@@ -1,0 +1,296 @@
+<%--
+	{comments}
+		DM-118: Override normal admin meta refresh settings for marketplace.
+	{comments}
+ --%>
+<%@ page import="java.util.*"%>
+<%@ page import="java.text.*"%>
+
+<p:getObject path="/Boston/Production/BDC/SiteAdmin/editorial.xml" var="editorial" />
+<p:object webObject="${editorial}" metadata="eMeta" />
+
+<p:currentObject metadata="meta" content="story" webType="WT" uuid="uuid" sectionId="section" channel="Boston.com" />
+<c:if test="${WT == 'BlogPage'}">
+	<p:blogId var="blogId" />
+	<p:getBlog blogId="${blogId}" var="blog" />
+	<p:object webObject="${blog.webObject}" metadata="m" />
+	<p:out var="container_path" xvalue="$m//Page/ContainerPath" />
+	<p:out var="blogTitle" xvalue="$m//Title" scope="request"/>
+	<p:getObject path="${container_path}" var="dwp" />
+	<p:object webObject="${dwp}" content="story" metadata="meta" channel="Boston.com" />
+</c:if>
+
+<c:choose>
+	<c:when test="${WT eq 'dwp_classifieds'}">
+		<p:out var="metaRefresh"
+			xvalue="$meta//ObjectMetadata/OnlineProducts/OnlineProduct[child::ProductName = 'Boston.com']/HtmlMetaRefresh" />
+	</c:when>
+	<c:otherwise>
+		<p:out var="metaRefresh" xvalue="$eMeta//BostonSiteAdmin/HtmlMetaRefresh" />
+	</c:otherwise>
+</c:choose>
+
+<p:out var="lastPubDate" xvalue="$meta//ObjectMetadata/OnlineProducts/OnlineProduct[child::ProductName = 'Boston.com']/LastPublicationDate" />
+<p:out var="firstPubDate" xvalue="$meta//ObjectMetadata/OnlineProducts/OnlineProduct[child::ProductName = 'Boston.com']/FirstPublicationDate" />
+
+<p:out var="eomType" xvalue="$meta//sys/type"/>
+<p:out var="productName" xvalue="$meta//sys/props/productInfo/name"/>
+
+<p:getObject path="/SysConfig/Classify/Data/BostonSiteAdmin.xml" var="siteAdmin" />
+<p:out var="contentType" xvalue="$siteAdmin/BostonSiteAdmin/ContentType" />
+<p:out var="ogSiteName" xvalue="$siteAdmin/BostonSiteAdmin/ogSiteName" />
+<p:out var="fbAdmins" xvalue="$siteAdmin/BostonSiteAdmin/fbAdmins" />
+<p:out var="fbAppId" xvalue="$siteAdmin/BostonSiteAdmin/fbAppId" />
+<p:out var="metaRobots" xvalue="$siteAdmin/BostonSiteAdmin/metaRobots" />
+<p:out var="ogVideoType" xvalue="$siteAdmin/BostonSiteAdmin/ogVideoType" />
+
+<p:out var="metaTitle" xvalue="$meta//SEOInformation/HtmlMetaTags/MetaTitle" />
+
+<c:choose>
+	<c:when test="${not empty metaTitle}">
+		<p:out var="title" value="${metaTitle}" />	
+	</c:when>
+	<c:otherwise>
+		<p:out var="title" xvalue="$meta//SEOInformation/Headline" />
+		<p:out var="title" value="${title} - Boston.com" />
+	</c:otherwise>
+</c:choose>
+
+<c:if test="${WT == 'dwp_searchpage'}">
+	<p:out var="q" value="${cacheScope.q}" />
+	<p:out var="title" value="Search results for ${q} | Boston.com" />
+</c:if>
+
+<c:if test="${WT == 'error_404'}">
+	<p:out var="title" value="Page Not Found - Boston.com" />
+</c:if>
+
+<p:out var="metaOgTitle" xvalue="$meta//SEOInformation/HtmlMetaTags/MetaOgTitle" />
+<p:out var="metaOgDescription" xvalue="$meta//SEOInformation/HtmlMetaTags/MetaOgDescription" xslt="$configurationURI/Framework/xslt/escapeDoubleQuotes.xslt" />
+<p:out var="metaOgDescription" value="${fn:trim(metaOgDescription)}" />
+<p:out var="metaOgType" xvalue="$meta//SEOInformation/HtmlMetaTags/MetaOgType" />
+<p:out var="seoSummary" xvalue="$meta//SEOInformation/Summary" xslt="$configurationURI/Framework/xslt/escapeDoubleQuotes.xslt" />
+<p:out var="seoSummary" value="${fn:trim(seoSummary)}" />
+
+<%-- use metaOgDescription for the og:description tag if it is not empty, otherwise use the seoSummary --%>
+<p:out var="description" value="${seoSummary}" />
+<c:if test="${empty metaOgDescription}">
+	<p:out var="metaOgDescription" value="${seoSummary}" />
+</c:if>
+
+<c:choose>
+	<c:when test="${eomType == 'EOM::WebPage'}">
+		<p:out var="metaOgUrl" xvalue="$meta//ObjectMetadata/OnlineProducts/OnlineProduct[child::ProductName = 'Boston.com']/CanonicalUrl" />
+	</c:when>
+	<c:otherwise>
+		<c:choose>
+			<c:when test="${not empty displayData.facet}">
+				<p:url var="metaOgUrl" webObject="${currentObject}" public="true" facet="${displayData.facet}"/>
+			</c:when>
+			<c:otherwise>
+				<p:url var="metaOgUrl" webObject="${currentObject}" public="true" />
+			</c:otherwise>
+		</c:choose>
+	</c:otherwise>
+</c:choose>
+
+<!-- START new set_seometa, section is ${section} -->
+<title>${title}</title>
+
+<%-- Page refresh timeout --%>
+<c:if test="${(WT eq 'dwp_modulepage' and section eq '/') or WT eq 'dwp_classifieds'}">
+	<c:if test="${metaRefresh ne 'None' and not empty metaRefresh}">
+		<fmt:parseNumber var="metaRefresh" value="${metaRefresh * 60}"
+			integerOnly="true" />
+		<meta http-equiv="Refresh" content="${metaRefresh};url=?refresh=true">
+	</c:if>
+</c:if>
+
+
+<meta property="og:type" content="${metaOgType}"/>
+<c:if test="${not empty metaOgDescription}">
+	<meta property="og:description" content="${metaOgDescription}"/>
+</c:if>
+<c:if test="${not empty metaOgTitle}">
+    <meta property="og:title" content="${metaOgTitle}"/>
+</c:if>
+<meta property="og:site_name" content="${ogSiteName}" /> 
+<meta property="fb:admins" content="${fbAdmins}" />
+<meta property="fb:app_id" content="${fbAppId}" />
+
+<meta name="robots" content="${metaRobots}" />
+<c:if test="${not empty description}">
+	<meta name="description" content="${description}" />
+</c:if>
+
+<b:getKeywords var="storyKeywords" uuid="${uuid}" />
+<!-- keywords: ${storyKeywords} uuid: ${uuid} -->
+<b:getKeywords var="news_keywords" uuid="${uuid}" />
+<meta name="keywords" content="${storyKeywords}" />
+<meta name="news_keywords" content="${news_keywords}" />
+
+<c:if test="${fn:startsWith(metaOgUrl, 'http://prototype.')}">
+	<p:out var="metaOgUrl" value="${fn:replace(metaOgUrl, 'http://prototype.', 'http://www.')}" />		
+</c:if>	
+
+<c:if test="${WT != 'dwp_forumpage' && WT != 'dwp_userprofile'}">
+	<meta property="og:url" content="${metaOgUrl}"/>
+	<link rel="canonical" href="${metaOgUrl}"/>
+</c:if>
+
+<c:if test="${!fn:startsWith(WT, 'dwp_')}">
+	<%-- lastPubDate and firstPubDate --%>
+	<p:out var="taboolaFirstPub" value="${firstPubDate}" format="eomdate:EEE, dd MMM yyyy HH:mm:ss z" timeZone="America/New_York" />
+	<p:out var="taboolaLastPub" value="${lastPubDate}" format="eomdate:EEE, dd MMM yyyy HH:mm:ss z" timeZone="America/New_York" />
+	
+	<meta name="publish-date" content="${taboolaFirstPub}" />
+	<meta name="modified-date" content="${taboolaLastPub}" />
+</c:if>
+
+<%-- 2. Need to calculate hardcoded for now--%>
+<meta property="twitter:widgets:csp" content="on" /> <%-- For potential Twitter CSP issues in IE9 --%>
+<meta name="twitter:site" content="@BostonDotCom" />
+<meta name="twitter:card" content="summary">
+<%--
+	this should be added later
+	if getAuthors.first.twitter
+	<meta name="twitter:creator" content="${twitterHandle}" />
+ --%>
+
+
+<%-- 3. needs to be calculated --%>
+
+<c:choose>
+	<c:when test="${!fn:endsWith(WT,'gallery')}">
+		<p:out var="ogImage" xvalue="$story//doc/story/multimedia-container/photo-container/photogrp[@class='main-web-images']/photo/@fileref" />	
+	</c:when>
+ 	<c:otherwise>
+		<p:out var="ogImage" xvalue="$story//doc/story/multimedia-container/gallery-container/photogrp/photo/@fileref" /> 	
+ 	</c:otherwise>
+ 
+</c:choose>
+
+
+
+<c:if test="${not empty ogImage and ogImage != ''}">
+	<p:out var="picUUID" value="${fn:substringAfter(ogImage,'?uuid=')}" />
+	<p:getObject var="imgObj" uuid="${picUUID}" onError="ignore" />
+	<c:choose>
+		<c:when test="${eomType eq 'VideoStory'}">
+			<p:url var="imgSrc" value="${imgObj.path}" format="image_150x84" baseDomain="httpCache" />
+		</c:when>
+		<c:otherwise>
+			<p:url var="imgSrc" value="${imgObj.path}" format="image_1920x1190" baseDomain="httpCache" />
+			<p:url var="imgSrcThumb" value="${imgObj.path}" format="image_150x120" baseDomain="httpCache" />
+		</c:otherwise>
+	</c:choose>
+</c:if>
+
+<c:choose>
+	<c:when test="${not empty imgSrc}" > <%-- try to use the main article image --%> 
+		<p:out var="imgSrc" value="${fn:replace(imgSrc, ' ', '%20')}" />
+		<meta property="og:image" content="${imgSrc}" />
+		
+		<c:if test="${not fn:startsWith(WT, 'dwp_')}">
+			<meta name="thumbnail" content="${imgSrcThumb}" />
+			<meta itemprop="thumbnailUrl" name="thumbnail" content="${imgSrcThumb}" />
+		</c:if>
+	</c:when>
+	<c:otherwise>
+		<p:out var="fileRef" xvalue="$story//text/content/photogrp-inline[1]/photo-inline/@fileref" />
+		<!-- fileRef = ${fileRef} -->
+		<p:out var="picID" value="${fn:substringAfter(fileRef, '?uuid=')}"/>
+		<p:getObject var="imgObj" uuid="${picID}" onError="ignore" />
+		<c:if test="${not empty imgObj}">
+			<p:url var="imgSrc" value="${imgObj.path}" format="image_150x120" baseDomain="httpCache" />
+		</c:if>	
+		<c:choose>
+			<c:when test="${not empty imgSrc}"> <%-- barring that, check the first inline image --%>
+				<p:out var="imgSrc" value="${fn:replace(imgSrc, ' ', '%20')}" />
+				<meta property="og:image" content="${imgSrc}" />
+				<c:if test="${not fn:startsWith(WT, 'dwp_')}">
+					<meta name="thumbnail" content="${imgSrc}" />
+					<meta itemprop="thumbnailUrl" name="thumbnail" content="${imgSrc}" />
+				</c:if>
+			</c:when>
+			<c:otherwise> <%-- fallback in case of no main or inline images --%>
+		    	<p:url var="imgSrc" value="$configurationURI/Framework/img/bcom_logo_with_name.png" baseDomain="httpCache" />
+				<meta property="og:image" content="${imgSrc}" />
+				<meta itemprop="thumbnailUrl" name="thumbnail" content="${imgSrc}" />
+			</c:otherwise>
+		</c:choose>	
+		
+	</c:otherwise>
+</c:choose>
+<%-- 4. Not sure where the next two should go and how to calculate rss
+<link rel="alternate" type="application/rss+xml" href="http://syndication.boston.com/news/index.xml" title="News - Boston.com" />
+--%>
+<link rel="alternate" type="application/rss+xml" title="Top stories - Boston.com" href="http://feeds.boston.com/boston/topstories" /> 
+<link rel="alternate" type="application/rss+xml" title="Most popular stories - Boston.com" href="http://feeds.boston.com/boston/mostpopular" />
+<meta property="article:publisher" content="https://www.facebook.com/boston" />
+
+<p:out var="firstPubDateFormat" value="${firstPubDate}" format="eomdate:E, dd MMM yyyy HH:mm:ss" timeZone="America/New_York" />
+<p:out var="lastPubDateFormat" value="${lastPubDate}" format="eomdate:E, dd MMM yyyy HH:mm:ss" timeZone="America/New_York" />
+
+<meta name="publish-date" content="${firstPubDateFormat}"/>
+<meta name="modified-date" content="${lastPubDateFormat}"/>
+
+<x:if select="$meta//ObjectMetadata/Location">
+	<%-- GEO DATA --%>
+	<p:out var="og_latitude" xvalue="$meta//ObjectMetadata/Location/Latitude" />
+	<p:out var="og_longitude" xvalue="$meta//ObjectMetadata/Location/Longitude" />
+	<p:out var="og_street_address" xvalue="$meta//ObjectMetadata/Location/Address" />
+	<p:out var="og_locality" xvalue="$meta//ObjectMetadata/Location/City" />
+	<p:out var="og_region" xvalue="$meta//ObjectMetadata/Location/State" />
+	<p:out var="og_postal_code" xvalue="$meta//ObjectMetadata/Location/Zip" />
+	<p:out var="og_country_name" xvalue="$meta//ObjectMetadata/Location/Country" />
+	
+	<meta property="og:latitude" content="${og_latitude}"/>
+	<meta property="og:longitude" content="${og_longitude}"/>
+	<meta property="og:street-address" content="${og_street_address}"/>
+	<meta property="og:locality" content="${og_locality}"/>
+	<meta property="og:region" content="${og_region}"/>
+	<meta property="og:postal-code" content="${og_postal_code}"/>
+	<meta property="og:country-name" content="${og_country_name}"/>
+</x:if>
+
+<x:if select="$meta//SEOInformation/HtmlMetaTags/MetaOgVideo">
+	<p:out var="og_video" xvalue="$meta//SEOInformation/HtmlMetaTags/MetaOgVideo"/>
+	<p:out var="og_videoSecureurl" xvalue="$meta//SEOInformation/HtmlMetaTags/MetaOgVideoSecureUrl"/>
+	<p:out var="og_videoHeight" xvalue="$meta//SEOInformation/HtmlMetaTags/MetaOgVideoHeight"/>
+	<p:out var="og_videoWidth" xvalue="$meta//SEOInformation/HtmlMetaTags/MetaOgVideoWidth"/>
+	<p:out var="og_videoDuration" xvalue="$meta//SEOInformation/HtmlMetaTags/MetaVideoDuration"/>
+	
+	<%--ksuff: commenting out - waiting for requirements from
+		joel and ed medina. cgo: Edit 9/15/2014 ref:BDC-958 --%>
+	<meta property="og:video" content="${og_video}"/>
+	<meta property="og:video:secure_url" content="${og_videoSecureurl}"/>
+	<meta property="og:video:height" content="${og_videoHeight}"/>
+	<meta property="og:video:width" content="${og_videoWidth}"/>
+	<meta property="og:video:type" content="${ogVideoType}"/>
+		
+	<meta property="video:duration" content="${og_videoDuration}"/>
+	<%-- keywords from brightcove --%>
+	<meta property="video:tag" content=""/>
+	<%-- <meta property="video:release_date" content="2011-01-26T19:15-8:00" /> Not sure on this part -8:00 --%>
+	
+	<x:if select="$meta//SEOInformation/HtmlMetaTags/MetaVideoReleaseDate">
+		<p:out var="og_videoReleaseDate" xvalue="$meta//SEOInformation/HtmlMetaTags/MetaVideoReleaseDate"/>
+		<%
+			SimpleDateFormat format = new SimpleDateFormat("yyyyMMddHHmmss", Locale.US);
+			format.setTimeZone(TimeZone.getTimeZone("Etc/UTC"));
+			
+			// Convert the date string into a date to manipulate the dates
+			String videoRDate = (String)pageContext.getAttribute("og_videoReleaseDate");
+			Date videoReleaseDate = (Date)format.parse(videoRDate);
+			
+			out.println("<!-- videoRDate " + videoRDate + "-->");
+			out.println("<!-- videoReleaseDate " + videoReleaseDate + "-->");
+			pageContext.setAttribute("vRelDate",videoReleaseDate);
+		%>
+		<fmt:formatDate var="videoReleaseDate" value="${vRelDate}" pattern="yyyy-MM-dd'T'HH:mm:ss" />
+		<meta property="video:release_date" content="${videoReleaseDate}"/>
+	</x:if>
+</x:if>
+
+<!-- END new set_seometa -->

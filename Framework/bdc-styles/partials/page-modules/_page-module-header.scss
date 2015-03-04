@@ -1,0 +1,18 @@
+ // *
+// *  Module Name 
+// *
+
+$module-name: 'page-module-header';
+
+// ------------------------------------------------------------
+// Default Styles
+// ------------------------------------------------------------
+
+.#{$module-name} {
+  margin-bottom: spacer(px, mid);
+  margin-bottom: spacer(rem, mid);  
+  border-bottom: 2px solid color(red);
+  @include font-scale(large);
+  text-transform: uppercase;
+  font-weight: $fw-bold;
+}

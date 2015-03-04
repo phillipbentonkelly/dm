@@ -1,0 +1,24 @@
+<%-- things passed --%>
+<p:out var="visualRevenue" value="${cacheScope.visualRevenue}" />
+<p:out var="isHomepage" value="${cacheScope.isHomepage}" />
+
+<%-- things from metadata --%>
+<p:currentObject metadata="m" webType="wt" />
+
+<p:out var="title" xvalue="$m//SectionWellDisplay/Title" />
+<p:out var="breakingTitle" xvalue="$m//SectionWellDisplay/BreakingTitle" />
+<p:out var="moreLink" xvalue="$m//SectionWellDisplay/MoreLink" />
+<p:out var="red_maybe" value="${(breakingTitle)? 'section-well__header--red' : ''}" />
+
+<c:if test="${not empty displayData.templateName}">
+	<p:inline url="$configurationURI/Framework/skins/components/module_container/item_templates/${displayData.templateName}.jpt">
+		<p:param name="title" value="${title}" />
+		<p:param name="breakingTitle" value="${breakingTitle}" />
+		<p:param name="moreLink" value="${moreLink}" />
+		<p:param name="red_maybe" value="${red_maybe}" />
+		<p:param name="visualRevenue" value="${visualRevenue}" />
+		<p:param name="adLayer" value="${cacheScope.adLayerDwpPath}" />
+		<p:param name="dwp" value="${cacheScope.dwp}" />
+		<p:param name="isHomepage" value="${isHomepage}" />
+	</p:inline>
+</c:if>

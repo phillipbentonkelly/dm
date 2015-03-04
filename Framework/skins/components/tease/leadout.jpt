@@ -1,0 +1,12 @@
+<bdc:getHeadlines webObject="${currentObject}" var="title" />
+<p:out var="CampaignCodes" value="${cacheScope.CampaignCodes}"/>
+
+<c:if test="${not empty cacheScope.dwc}">
+	<p:object webObject="${cacheScope.dwc}" metadata="dwcMeta"/>
+	<p:out var="timeStamp" xvalue="$dwcMeta//TimeStamp" />
+	<p:out var="timeStampDuration" xvalue="$dwcMeta//TimeStampDuration" />
+</c:if>
+
+<div class="lead-out">
+	<bdc:link linkParam="${CampaignCodes}" webObject="${currentObject}">${title.headline}</bdc:link>
+</div>

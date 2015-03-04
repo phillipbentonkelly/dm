@@ -1,0 +1,128 @@
+/* Styling for redesign entry paragraphs */
+/* line 2, ../../styles/mt-styles.scss */
+div.entry-txt p {
+  color: #222222;
+  font: normal 400 1.30769em/155% Arial, Helvetica, Verdana, sans-serif;
+  margin-bottom: 18px;
+  visibility: hidden;
+  visibility: visible;
+}
+
+/* line 10, ../../styles/mt-styles.scss */
+.wf-loading div.entry-txt p {
+  visibility: hidden;
+}
+
+/* line 14, ../../styles/mt-styles.scss */
+.wf-active div.entry-txt p, .wf-inactive div.entry-txt p {
+  visibility: visible;
+}
+
+/* line 18, ../../styles/mt-styles.scss */
+.fontface div.entry-txt p {
+  font-family: "effra", Arial, Helvetica, Verdana, sans-serif;
+}
+
+@media (min-width: 480px) {
+  /* line 22, ../../styles/mt-styles.scss */
+  div.entry-txt p {
+    font-size: 1.46154em;
+  }
+}
+@media (min-width: 850px) {
+  /* line 27, ../../styles/mt-styles.scss */
+  div.entry-txt p {
+    font-size: 1.53846em;
+  }
+}
+/* line 32, ../../styles/mt-styles.scss */
+div.entry-txt p > a {
+  color: #0d5799;
+}
+
+/* line 36, ../../styles/mt-styles.scss */
+div.entry-txt p > a:hover {
+  text-decoration: underline;
+}
+
+@media (min-width: 650px) and (max-width: 1074px) {
+  /* line 42, ../../styles/mt-styles.scss */
+  .article-p.first-p {
+    clear: both;
+  }
+}
+@media (min-width: 1075px) {
+  /* line 208, ../../styles/project/_article.scss */
+  /* line 49, ../../styles/mt-styles.scss */
+  .article-no-art .article-p.first-p {
+    clear: both;
+  }
+}
+/* line 53, ../../styles/mt-styles.scss */
+img.fluid-img {
+  width: 100%;
+  height: auto;
+}
+
+/* love letters styles */
+/* line 58, ../../styles/mt-styles.scss */
+.q {
+  background: transparent url(/img/qa_question.gif) no-repeat 50% 50%;
+}
+
+/* line 61, ../../styles/mt-styles.scss */
+.a {
+  background: transparent url(/img/qa_answer.gif) no-repeat 50% 50%;
+  font-size: 46px;
+  line-height: 41px;
+}
+
+/* line 66, ../../styles/mt-styles.scss */
+.q, .a {
+  font: bold 40px/31px Georgia;
+  color: #d2232a;
+  margin-right: 10px;
+  float: left;
+  display: block;
+  text-indent: -9000px;
+  width: 35px;
+  height: 40px;
+}
+
+/* line 76, ../../styles/mt-styles.scss */
+.question, .answer {
+  margin-bottom: 35px;
+  margin-top: 35px;
+  clear: right;
+}
+
+/* line 81, ../../styles/mt-styles.scss */
+.signature {
+  font-weight: bold;
+  font-style: italic;
+  color: #000;
+}
+
+/* end love letters styles */
+/* pencil ad styles */
+/* line 92, ../../styles/mt-styles.scss */
+img#pencil-replace {
+  margin-top: 33px;
+  margin-bottom: 0px;
+}
+
+/* blockquote stylings for MT*/
+@media (min-width: 480px) {
+  /* line 295, ../../styles/project/_article.scss */
+  /* line 101, ../../styles/mt-styles.scss */
+  blockquote {
+    font-size: 19px;
+  }
+}
+@media (min-width: 850px) {
+  /* line 295, ../../styles/project/_article.scss */
+  /* line 107, ../../styles/mt-styles.scss */
+  blockquote {
+    font-size: 20px;
+  }
+}

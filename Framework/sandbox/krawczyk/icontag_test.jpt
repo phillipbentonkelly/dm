@@ -1,0 +1,25 @@
+<p:out var="testStory" value="3292716a-da8c-11e2-b9e4-7e112fef6e0c" />
+<bdc:getIconForTease uuid="${testStory}" var="storyIcons" />
+
+<p:out var="videoStory" value="34c6d8de-1618-11e1-abe0-a0587b0a9303" />
+<bdc:getIconForTease uuid="${videoStory}" var="videoIcons" />
+
+<p:out var="galleryStory" value="38485f42-2227-11e3-96ec-5c65d53746a5" />
+<bdc:getIconForTease uuid="${galleryStory}" var="galleryIcons" />
+
+<pre>
+Test Story
+-- object type = ${storyIcons.objectType}
+-- stack class = ${storyIcons.stackClass}
+-- stream class = ${storyIcons.streamClass}
+
+Video Story
+-- object type = ${videoIcons.objectType}
+-- stack class = ${videoIcons.stackClass}
+-- stream class = ${videoIcons.streamClass}
+
+Gallery Story
+-- object type = ${galleryIcons.objectType}
+-- stack class = ${galleryIcons.stackClass}
+-- stream class = ${galleryIcons.streamClass}
+</pre>

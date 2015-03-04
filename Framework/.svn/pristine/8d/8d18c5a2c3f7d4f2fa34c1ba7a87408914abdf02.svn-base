@@ -1,0 +1,19 @@
+<p class="quicksearch-label">Find something to do right now!</p>
+<!-- Boston.com original searchform -->
+<div class="spingo-events-quicksearch">
+
+	<form class="search-form" data-location="quick-search">
+		<input type="text" class="quicksearch__input search-form__input"
+			placeholder="Music, Sports, Museums, etc." />
+		<button class="search-form__button quicksearch__button" value="Search" data-omniclick="events | search">
+			<span class="bdc-icon bdc-icon--search-medium">Search</span>
+		</button>
+	</form>
+
+</div>
+<div class="events-quicksearch-results">
+</div>
+<%-- Placeholder Preloader --%>
+<div class="spinner-container">
+	<div class="spinner"></div>
+</div>

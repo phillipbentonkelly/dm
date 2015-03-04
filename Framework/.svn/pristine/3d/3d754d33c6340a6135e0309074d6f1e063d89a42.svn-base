@@ -1,0 +1,5 @@
+<!-- Error Message -->
+<div class="article-width page-error-hgroup">
+	<h1 class="page-error-h"><i class="break">Oh Goodness!</i></h1>
+	<h2 class="page-error-deck"><i class="break">We're sorry, but something isn't right here. Don't worry, our best people </i><i class="break">are looking into it. In the meantime, you can <a href="/index.html">browse the homepage</a>.</i></h1>
+</div>

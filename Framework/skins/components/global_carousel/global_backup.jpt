@@ -1,0 +1,24 @@
+<div class="lead-tz-mod swiper-mod">
+	<div class="lead-tzs swiper-wrapper ups-template-mod"
+		data-source="lead" data-template="lead" data-repeat="6"
+		style="width: 5392px; -webkit-transform: translate3d(-3992px, 0px, 0px); transition: 0.3s; -webkit-transition: 0.3s; height: 437px;">
+				
+		<p:include pageZoneName="carousel_tease" templateName="global_carousel_large_tease" />
+		
+	</div>
+	<!-- Lead Tease Prev/Next -->
+	<nav class="lead-tz-nav">
+		<button class="arrow-btn-prev swiper-prev" aria-hidden="true"
+			title="Previous">Prev</button>
+		<button class="arrow-btn-next swiper-next" aria-hidden="true"
+			title="Next">Next</button>
+	</nav>
+	
+	<ul class="lead-list ups-template-mod" data-source="lead"
+		data-template="lead-nav" data-repeat="6" data-order="ignore">
+		
+		<p:include pageZoneName="carousel_tease" templateName="global_carousel_small_tease" />
+	
+	</ul>
+		
+</div>

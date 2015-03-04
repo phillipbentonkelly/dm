@@ -1,0 +1,30 @@
+//
+// Footer
+//
+
+.site-footer {
+	padding: 14px 8px;
+	@include mq($sidebar-break) {
+		@include quick-border(top);
+		margin-top: 0;
+	}
+	@include social-icon-list($button-color: $red,$button-shadow: no-shadow);
+
+	@include mq(max, 400px) {
+		padding: 14px 0px;
+	}
+	
+	.social-icon-list{
+		float:left;
+		@include mq(max, 400px) {
+			float:none;
+		}
+	}
+	.footer-aside {
+	 	float: right;
+	 	padding: 6px 0;
+	 	@include mq(max,400px) {
+	 		float:none;
+	 	}
+	}	
+}

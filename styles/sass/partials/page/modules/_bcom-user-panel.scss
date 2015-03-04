@@ -1,0 +1,81 @@
+// *
+// * User Panel
+// *
+
+$module-name: 'user-panel';
+
+// ------------------------------------------------------------
+// Default Styles
+// ------------------------------------------------------------
+
+.#{$module-name} {
+	position: fixed;
+	top: ($page-header-height-mobile + $page-nav-height);
+	right: -280px;
+	width: 280px;
+	padding: spacer(px, large);
+	padding: spacer(rem, large);
+	background-color: color(gray, x-dark);
+	transition: right 0.25s cubic-bezier(0.49, 0.37, 0.445, 0.715);
+	z-index: z-index(attic);
+	color: color(white);
+
+	&--active {
+		right: 0;
+	}
+
+	&__header {
+		padding-bottom: spacer(px, base);
+		padding-bottom: spacer(rem, base);
+		border-bottom: solid 1px color(gray, dark);
+	}
+
+	&__header-text {
+		position: relative;
+		//top: -20px;
+		margin-left: spacer(px, base);
+		margin-left: spacer(rem, base);
+		color: color(white);
+	}
+
+	&__profile-link {
+		color: color(white);
+	}
+
+	&__avatar {
+		width: 50px;
+	}
+
+	&__link {
+		@include font-scale(xx-small);
+		padding: spacer(px, base) 0;
+		padding: spacer(rem, base) 0;
+		border-bottom: solid 1px color(gray, dark);
+		display: block;
+		position: relative;
+		color: color(white);
+		transition: padding 0.1s cubic-bezier(0.49, 0.37, 0.445, 0.715);
+		&:hover {
+			padding: 10px 10px 10px 7px;
+			background-color: color(gray, dark);
+			color: color(white);
+		}
+	}
+	
+	// User Menu Active Class - Added in bdc.user.js on click
+	&__menu--active {
+		right: 0;
+	}
+
+}
+
+// ------------------------------------------------------------
+// Tablet Breakpoint
+// ------------------------------------------------------------
+
+// On tablet and up the header is taller and loads the larger logo icon
+@include media-query(tablet) {
+  .#{$module-name} {
+    top: ($page-header-height + $page-nav-height);
+  }
+}

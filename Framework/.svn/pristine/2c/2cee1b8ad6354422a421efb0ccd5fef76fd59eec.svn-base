@@ -1,0 +1,3 @@
+<c:set var="now" value="<%=new java.util.Date()%>" />
+<p:out var="formattedStreamDate" format="eomdate|GMT:yyyy-MM-dd'T'HH:mm:ss.SSS'Z'" value="${now}"/>
+formattedStreamDate: ${formattedStreamDate}

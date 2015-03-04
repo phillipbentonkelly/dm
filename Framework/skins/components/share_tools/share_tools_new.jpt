@@ -1,0 +1,77 @@
+<p:out var="position" value="${cacheScope.position}" />
+<p:out var="headline" value="${cacheScope.headline}" />
+<p:out var="uuid" value="${cacheScope.uuid}" />
+<p:out var="s_prop1" value="${cacheScope.s_prop1}" />
+
+
+<%-- get the current object, store it in $ { currentObject } --%>
+<p:currentObject />
+<p:url webObject="${currentObject}" public="true" var="rawUrl"/>
+
+<p:out var="shareHeadline" value="${headline}" escape="url" />
+<c:if test="${WT == 'video'}">
+	<p:out var="shareHeadline" value="Boston.com video: ${headline}" />
+</c:if>
+<p:out var="shareSummary" value="${summary}" escape="url" />
+
+<!--
+<%--
+	METADATA FOR EMTAF
+      <headline>${headline}</headline>
+      <source>${bysource}</source>
+      <teasetext>${summary}</teasetext>
+      <byline>${byname}</byline>
+      <date>${pubdate}</date>
+--%>
+<%--  this looks like two unused methods for getting a shortened url --%>
+<%--
+<p:out var="twitterUrl" value="${rawUrl}?s_campaign=sm_tw" escape="url"/>
+<p:url value="http://api.bitly.com/v3/shorten?login=bostonbost&apiKey=R_1d0a4ec9cb634ed6b9c4ae342353b8a1&longUrl=${twitterUrl}&format=json" var="jsonBitly" public="true" />
+<p:json url="${jsonBitly}" var="jsonShorten"/> 
+<p:out var="shortUrl" value="${jsonShorten.data.url}"/>
+--%>
+<%--
+<bg:getBitlyUrl uuid="${uuid}" var="shortUrl" />
+--%>
+-->
+
+
+<ul class="tools primary-tools top">
+	<li class="share-button">
+	  <a class="social-icon fb" 
+	  	onClick="var s=s_gi('nytbglobe');s.tl(this,'o','BCOM Article Share Tools - Facebook - ${s_prop1} - ${position}');"
+			href="http://www.facebook.com/sharer.php?u=${rawUrl}&t=${shareHeadline}" 
+			target="_blank">
+	  </a>
+  </li>
+  <li class="share-button">
+		<a class="social-icon tw"
+			onClick="var s=s_gi('nytbglobe');s.tl(this,'o','BCOM Article Share Tools - Twitter - ${s_prop1} - ${position}');" 
+     	href="http://twitter.com/intent/tweet?text=${shareHeadline}&url=${rawUrl}&via=bostondotcom" 
+     	target="_blank">
+    </a>
+	</li>
+	<li class="share-button">
+		<a class="social-icon goog" 
+		onClick="var s=s_gi('nytbglobe');s.tl(this,'o','BCOM Article Share Tools - Google+ - ${s_prop1} - ${position}');"
+	    href="https://plus.google.com/share?url=${rawUrl}%3Fs_campaign%3Dsm_gp%20&hl=en-US" 
+	    target="_blank" 
+	    alt="Share on Google+">
+		</a>
+	</li>
+	<li class="share-button">
+		<a class="social-icon linkedin" 
+		onClick="var s=s_gi('nytbglobe');s.tl(this,'o','BCOM Article Share Tools - Linkedin - ${s_prop1} - ${position}');"
+     	href="http://www.linkedin.com/shareArticle?mini=true&url=${rawUrl}&title=${shareHeadline}&summary=${shareSummary}" 
+     	target="_blank">
+    </a>
+	</li>
+  <li class="share-button">
+		<a class="social-icon email" 
+				onClick="var s=s_gi('nytbglobe');s.tl(this,'o','BCOM Article Share Tools - Reddit - ${s_prop1} - ${position}');"
+			href="http://www.reddit.com/submit" 
+			onclick="window.location = 'http://www.reddit.com/submit?url=${rawUrl}' + encodeURIComponent(window.location); return false" 
+			target="_blank">
+		</a>
+	</li>
+</ul>

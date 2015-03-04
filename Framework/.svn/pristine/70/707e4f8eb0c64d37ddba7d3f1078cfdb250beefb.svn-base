@@ -1,0 +1,305 @@
+<p:currentObject metadata="dwpMeta" content="dwpContent" webType="WT" uuid="uuid" channel="Boston.com" sectionPage="dwp" sectionId="sectionId" />
+<bdc:getAdLayer var="adLayerName" webType="${WT}"/>
+<bdc:inheritStoryLayer var="adLayerDwpPath" section="${sectionId}" layer="${adLayerName}" />
+<p:out var="adLayerDwpPath" value="${adLayerDwpPath}" scope="request" />
+
+<div class="page-content">
+	<div class="site-width">
+		<!-- Leaderboard Ad Module -->
+		<section class="leaderboard-mod nav-leaderboard-mod">
+			<p:include
+				url="$configurationURI/Framework/skins/components/ads/dfp_ad_controller.jpt"
+				context="ad_lead1" 
+			/>
+		</section> <!-- /leaderboard-mod -->
+
+		<div class="primary">
+			<div class="inner">
+
+				<ul class="traffic-tabs">
+					<li class="selected">
+						<a href="/news/traffic">Main Map</a>
+					</li>
+					<li>
+						<a href="/news/traffic/find_best_route">Find Best Route</a>
+					</li>
+					<li>
+						<a href="/news/traffic/create_alerts">Create Alerts</a>
+					</li>
+					<li>
+						<a href="/news/traffic/stop_alerts">Stop Alerts</a>
+					</li>
+				</ul>
+<script type="text/javascript">
+<!--
+sigalert_h=700;
+sigalert_w=601;
+sigalert_bc="#000000";
+sigalert_bw=0;
+sigalert_p="/Custom/Map.asp";
+sigalert_qs="sp=p&lat=42.36841&lon=-71.17387&z=1&th=blue&ap=left&urqs=1";
+sigalert_partner="Boston";
+// -->
+</script>
+<noscript><p><a href="http://www.sigalert.com">Traffic Report by Sigalert.com</a></p></noscript>
+<script src="http://www.sigalert.com/Data/RenderPortal.js"></script>			</div>
+		</div>
+		<%--
+		<bdc:inheritZoneGlobal 
+			var="pathToFeatureStackDWP"
+			section="${sectionId}" 
+			zoneName="features_bottom" 
+		/>
+		--%>
+		<%-- ad_toprightslot --%>
+		<div class="secondary">
+			<p:include
+				url="$configurationURI/Framework/skins/components/ads/dfp_ad_controller.jpt"
+				context="ad_toprightslot" 
+			/>
+		</div>
+		<%-- trending --%>
+		<div class="secondary">
+			<p:inline url="$configurationURI/Framework/skins/components/must_reads/must_reads.jpt" />
+		</div>
+		<%-- zone for feature stack --%>
+		<div class="secondary">
+			<p:include pageZoneName="ad_featurestack_top" inherits="${adLayerDwpPath}" />			
+			<p:include pageZoneName="features_bottom">
+				<p:param name="dwp" value="${currentObject}" />
+				<p:param name="adLayerDwpPath" value="${adLayerDwpPath}" />
+			</p:include>
+			<p:include pageZoneName="ad_featurestack_bottom" inherits="${adLayerDwpPath}" />					
+		</div>
+		
+		<div class="primary">
+			<div class="inner">
+				<div class="boxed">
+					<h2 class="region">Metro Boston</h2>
+					<span>Click maps for larger view</span>
+					<div class="col-3">
+						<div class="media-block">
+<script type="text/javascript">
+<!--
+sigalert_h=104;
+sigalert_w=189;
+sigalert_partner="Boston";
+sigalert_r="EastNY";
+sigalert_lat=42.35969;
+sigalert_lon=-71.05473;
+sigalert_z=1;
+sigalert_hl = true;
+sigalert_th="blue";
+sigalert_bc="#000000";
+sigalert_bw=1;
+sigalert_url="http://www.boston.com/news/traffic/boston_airport";
+// -->
+</script>
+<noscript><p><a href="http://www.sigalert.com">Traffic Report by Sigalert.com</a></p></noscript>
+<script src='http://www.sigalert.com/data/SetupPortlet.js'></script>
+							<a href="http://boston.com/news/traffic/boston_airport/">Logan Traffic:</a>
+						</div>
+
+						<div class="media-block">
+
+							<script type="text/javascript">
+								<!-- sigalert_h=104; sigalert_w=189; sigalert_partner="Boston"; sigalert_r="EastNY"; 
+									sigalert_lat=42.38992; sigalert_lon=-71.119; sigalert_z=1; sigalert_th="blue"; 
+									sigalert_bc="#000000"; sigalert_bw=1; sigalert_url="http://www.boston.com/news/traffic/cambridge_rte2"; 
+									// -->
+							</script>
+							<noscript>
+								<p>
+									<a href="http://www.sigalert.com">Traffic Report by Sigalert.com</a>
+								</p>
+							</noscript>
+							<script src='http://www.sigalert.com/data/SetupPortlet.js'></script>
+							<a href="http://boston.com/news/traffic/cambridge_rte2/">Cambridge/Rte2:</a>
+						</div>
+						<div class="media-block">
+							<script type="text/javascript">
+								<!-- sigalert_h=104; sigalert_w=189; sigalert_partner="Boston"; sigalert_r="EastNY"; 
+									sigalert_lat=42.33294; sigalert_lon=-71.1919; sigalert_z=1; sigalert_th="blue"; 
+									sigalert_bc="#000000"; sigalert_bw=1; sigalert_url="http://www.boston.com/news/traffic/newton_brookline"; 
+									// -->
+							</script>
+							<noscript>
+								<p>
+									<a href="http://www.sigalert.com">Traffic Report by Sigalert.com</a>
+								</p>
+							</noscript>
+							<script src='http://www.sigalert.com/data/SetupPortlet.js'></script>
+
+							<a href="http://www.boston.com/news/traffic/newton_brookline"> Newton/Brookline:</a>
+						</div>
+					</div>
+				</div>
+				<div class="boxed">
+					<h2 class="region">West of Boston</h2>
+					<span>Click maps for larger view</span>
+					<div class="col-3">
+						<div class="media-block">
+							<script type="text/javascript">
+								<!-- sigalert_h=104; sigalert_w=189; sigalert_partner="Boston"; sigalert_r="EastNY"; 
+									sigalert_lat=42.29338; sigalert_lon=-71.43961; sigalert_z=1; sigalert_th="blue"; 
+									sigalert_bc="#000000"; sigalert_bw=1; sigalert_url="http://www.boston.com/news/traffic/framingham_natick"; 
+									// -->
+							</script>
+							<noscript>
+								<p>
+									<a href="http://www.sigalert.com">Traffic Report by Sigalert.com</a>
+								</p>
+							</noscript>
+							<script src='http://www.sigalert.com/data/SetupPortlet.js'></script>
+
+							<a href="http://www.boston.com/news/traffic/framingham_natick">
+								Framingham/Natick/Metrowest:
+</a>
+						</div>
+
+						<div class="media-block">
+
+							<script type="text/javascript">
+								<!-- sigalert_h=104; sigalert_w=189; sigalert_partner="Boston"; sigalert_r="EastNY"; 
+									sigalert_lat=42.2864; sigalert_lon=-71.78686; sigalert_z=2; sigalert_th="blue"; 
+									sigalert_bc="#000000"; sigalert_bw=1; sigalert_url="http://www.boston.com/news/traffic/worcester"; 
+									// -->
+							</script>
+							<noscript>
+								<p>
+									<a href="http://www.sigalert.com">Traffic Report by Sigalert.com</a>
+								</p>
+							</noscript>
+							<script src='http://www.sigalert.com/data/SetupPortlet.js'></script>
+							<a href="http://www.boston.com/news/traffic/worcester"> Worcester: </a>
+						</div>
+						<div class="media-block">
+
+							<script type="text/javascript">
+								<!-- sigalert_h=104; sigalert_w=189; sigalert_partner="Boston"; sigalert_r="EastNY"; 
+									sigalert_lat=41.7592; sigalert_lon=-72.65069; sigalert_z=1; sigalert_th="blue"; 
+									sigalert_bc="#000000"; sigalert_bw=1; sigalert_url="http://www.boston.com/news/traffic/hartford"; 
+									// -->
+							</script>
+							<noscript>
+								<p>
+									<a href="http://www.sigalert.com">Traffic Report by Sigalert.com</a>
+								</p>
+							</noscript>
+							<script src='http://www.sigalert.com/data/SetupPortlet.js'></script>
+							<a href="http://www.boston.com/news/traffic/hartford">Hartford:</a>
+						</div>
+					</div>
+				</div>
+				<div class="boxed">
+					<h2 class="region">North of Boston</h2>
+					<span>Click maps for larger view</span>
+					<div class="col-3">
+						<div class="media-block">
+							<script type="text/javascript">
+								<!-- sigalert_h=104; sigalert_w=189; sigalert_partner="Boston"; sigalert_r="EastNY"; 
+									sigalert_lat=41.7592; sigalert_lon=-72.65069; sigalert_z=1; sigalert_th="blue"; 
+									sigalert_bc="#000000"; sigalert_bw=1; sigalert_url="http://www.boston.com/news/traffic/hartford"; 
+									// -->
+							</script>
+							<noscript>
+								<p>
+									<a href="http://www.sigalert.com">Traffic Report by Sigalert.com</a>
+								</p>
+							</noscript>
+							<script src='http://www.sigalert.com/data/SetupPortlet.js'></script>
+							<a href="http://www.boston.com/news/traffic/hartford">Peabody/Salem:</a>
+
+						</div>
+						<div class="media-block">
+
+							<script type="text/javascript">
+								<!-- sigalert_h=104; sigalert_w=189; sigalert_partner="Boston"; sigalert_r="EastNY"; 
+									sigalert_lat=42.69944; sigalert_lon=-71.30086; sigalert_z=3; sigalert_th="blue"; 
+									sigalert_bc="#000000"; sigalert_bw=1; sigalert_url="http://www.boston.com/news/traffic/lowell_lawrence_salem"; 
+									// -->
+							</script>
+							<noscript>
+								<p>
+									<a href="http://www.sigalert.com">Traffic Report by Sigalert.com</a>
+								</p>
+							</noscript>
+							<script src='http://www.sigalert.com/data/SetupPortlet.js'></script>
+
+							<a href="http://www.boston.com/news/traffic/lowell_lawrence_salem">Lowell/Lawrence/Salem NH:</a>
+						</div>
+						<div class="media-block">
+							<script type="text/javascript">
+								<!-- sigalert_h=104; sigalert_w=189; sigalert_partner="Boston"; sigalert_r="EastNY"; 
+									sigalert_lat=42.99706; sigalert_lon=-71.44823; sigalert_z=2; sigalert_th="blue"; 
+									sigalert_bc="#000000"; sigalert_bw=1; sigalert_url="http://www.boston.com/news/traffic/manchester_nh"; 
+									// -->
+							</script>
+							<noscript>
+								<p>
+									<a href="http://www.sigalert.com">Traffic Report by Sigalert.com</a>
+								</p>
+							</noscript>
+							<script src='http://www.sigalert.com/data/SetupPortlet.js'></script>
+							<a href="http://www.boston.com/news/traffic/manchester_nh">Manchester NH:</a>
+						</div>
+					</div>
+				</div>
+				<div class="boxed">
+
+					<h2 class="region">South of Boston</h2>
+					<span>Click maps for larger view</span>
+					<div class="col-3">
+						<div class="media-block">
+							<script type="text/javascript">
+								<!-- sigalert_h=104; sigalert_w=189; sigalert_partner="Boston"; sigalert_r="EastNY"; 
+									sigalert_lat=42.14655; sigalert_lon=-70.94342; sigalert_z=3; sigalert_th="blue"; 
+									sigalert_bc="#000000"; sigalert_bw=1; sigalert_url="http://www.boston.com/news/traffic/south_shore"; 
+									// -->
+							</script>
+							<noscript>
+								<p>
+									<a href="http://www.sigalert.com">Traffic Report by Sigalert.com</a>
+								</p>
+							</noscript>
+							<script src='http://www.sigalert.com/data/SetupPortlet.js'></script>
+							<a href="http://www.boston.com/news/traffic/south_shore">South Shore:</a>
+						</div>
+						<div class="media-block">
+							<script type="text/javascript">
+								<!-- sigalert_h=104; sigalert_w=189; sigalert_partner="Boston"; sigalert_r="EastNY"; 
+									sigalert_lat=41.69695; sigalert_lon=-70.44644; sigalert_z=3; sigalert_th="blue"; 
+									sigalert_bc="#000000"; sigalert_bw=1; sigalert_url="http://www.boston.com/news/traffic/cape_cod_approaches"; 
+									// -->
+							</script>
+							<noscript>
+								<p>
+									<a href="http://www.sigalert.com">Traffic Report by Sigalert.com</a>
+								</p>
+							</noscript>
+							<script src='http://www.sigalert.com/data/SetupPortlet.js'></script>
+							<a href="http://www.boston.com/news/traffic/cape_cod_approaches">Cape Cod:</a>
+						</div>
+						<div class="media-block">
+							<script type="text/javascript">
+								<!-- sigalert_h=104; sigalert_w=189; sigalert_partner="Boston"; sigalert_r="EastNY"; 
+									sigalert_lat=41.78971; sigalert_lon=-71.39493; sigalert_z=2; sigalert_th="blue"; 
+									sigalert_bc="#000000"; sigalert_bw=1; sigalert_url="http://www.boston.com/news/traffic/providence"; 
+									// -->
+							</script>
+							<noscript>
+								<p>
+									<a href="http://www.sigalert.com">Traffic Report by Sigalert.com</a>
+								</p>
+							</noscript>
+							<script src='http://www.sigalert.com/data/SetupPortlet.js'></script>
+							<a href="http://www.boston.com/news/traffic/providence">Providence, RI:</a>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>

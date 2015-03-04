@@ -1,0 +1,405 @@
+//
+// Lead Tease Module
+//
+
+.lead-tz-mod {
+	margin-bottom: 20px;
+}
+
+.lead-tz {
+	position: relative;
+
+	.omniclick, .list-item a { font-weight: 500;
+	}
+}
+
+.lead-tz-art-bd {
+	display: block;
+	position: relative;
+}
+
+.lead-tz-art {
+	display: block;
+	@include resp-img;
+}
+
+.lead-tz-txt-bd {
+	color: #fff;
+	padding: 9px 12px 14px;
+	background-color: #000;
+	overflow: auto;
+}
+
+.lead-tz-overline {
+	@include sans(em(11)/100%, 800, normal, 1px);
+	text-transform: uppercase;
+	color: #fff;
+	background-color: #000;
+	padding: 4px 6px;
+	@include absolute(10px n n 10px);
+	@include mq($list-break) {
+		top: 16px;
+		left: 16px;
+	}
+	@include trans($trans-time);
+	&:hover {
+		background-color: $blue;
+	}
+}
+
+.lead-tz-h {
+	@include sans(em(23)/105%, 600);
+	margin-bottom: 6px;
+	> a {
+		@include link(hover);
+	}
+	@include mq($list-break) {
+		font-size: em(34);
+		margin-bottom: 8px;
+	}
+}
+
+.lead-tz-txt {
+	color: #fff;
+	display:block;
+	@include mq(500px) {
+		display:block;
+	}
+	@include mq($list-break, $sidebar-break) {
+		font-size: em(16);
+	}
+	@include mq(1090px) {
+		font-size: em(16);
+	}
+}
+
+//
+// Lead Tease With & Without Art
+//
+
+.lead-tz-w-art {
+	.lead-tz-txt-bd {
+		@include mq($list-break-small) {
+			padding: 12px 12px 16px;
+		}
+		@include mq($list-break) {
+			padding: 16px 16px 20px;
+		}
+	}
+}
+
+$no-art-bg: $blue-drk;
+
+.lead-tz-no-art {
+	position: relative;
+	// min-height: 300px;
+	.lead-tz-art-bd {
+		// Give this a proportional height so
+		// we have a CSS backup to give this
+		// some height if JS is disbaled
+	 	height: 0;
+	 	padding-top: 59%;
+	 	background-color: $no-art-bg;
+		@include mq($list-break) {
+		 	padding-top: 49%;
+		}
+	}
+	.lead-tz-txt-bd {
+		@include absolute(0 0 0 0);
+		background-color: $no-art-bg;
+		padding-top: 40px;
+		@include mq($list-break) {
+			padding: 46px 60px 21px 18px;
+		}
+	}
+	.lead-tz-h {
+		font-size: em(32);
+		font-weight: 700;
+		margin-bottom: 16px;
+		// TODO: Consider replacing or
+		// augmenting with FitText.js
+		@include mq(400px) {
+			font-size: em(40);
+		}
+		@include mq(550px, $list-break) {
+			font-size: em(49);
+		}
+		@include mq($list-break, $sidebar-break) {
+			font-size: em(56);
+		}
+		@include mq($sidebar-break, $site-max) {
+			font-size: em(49);
+		}
+		@include mq($site-max) {
+			font-size: em(56);
+		}
+	}
+	.lead-tz-txt {
+		font-size: em(18);
+		font-style: italic;
+		@include mq($list-break) {
+			font-size: em(23);
+		}
+	}
+}
+
+// Keep the background colors consistent when
+// heights are extended to keep teases uniform
+.lead-tz-w-art {
+	background-color: #000;
+}
+
+.lead-tz-no-art {
+	background-color: $no-art-bg;
+}
+
+
+
+//
+// Lead List
+//
+
+.lead-list {
+	padding: 12px 0;
+	background-color: #fff;
+	border-bottom: $border;
+	@include mq($list-break) {
+		@include media-grid(2, 16px, lead-nav-item);
+	}
+}
+
+.lead-list-txt-bd {
+	padding-left: 10px;
+	margin-left: 0px;
+}
+
+.lead-list-art-bd {
+	background-color: #000;
+	min-height: 37px;
+	.lead-item-no-art & {
+		padding: 4px 6px;
+		background-color: $no-art-bg;
+	}
+
+	.lead-list-art {
+		max-height: 120px;
+	}
+
+	@include mq($list-break-small) {
+		min-height: 49px;
+	}
+}
+.lead-list-overline {
+	@include sans(em(12), 500, italic);
+	color: $black-50;
+}
+
+.external-lead-nav-item {
+	.lead-list-txt-bd-container {
+		display: table-cell;
+	}
+	.lead-list-art-bd {
+		float: left;
+	}
+	.lead-list-txt-bd {
+		float: left;
+		vertical-align: middle;
+
+		h4 {
+			vertical-align: middle;
+		}
+	}
+
+}
+
+.lead-item-link {
+	display: table-cell;
+	vertical-align: middle;
+	padding: 8px 0;
+	min-height: 55px;
+	//border-bottom: 1px solid #e5e5e5;
+
+	@include pair(60px, 12px, top);
+
+	@include mq($list-break-small) {
+		min-height: 66px;
+		@include pair(150px, 12px, top);
+	}
+
+	// Remove top border for the first item
+	.lead-nav-item:first-child &{
+		border-top: 0;
+	}
+	// Remove top border for the second item in desktop breakpoint
+	@include mq($list-break) {
+		.lead-nav-item:nth-child(2) &{
+			border-top: 0;
+		}
+	}
+
+	> .txt-bd {
+		margin-left: 0;
+	}
+}
+
+
+.lead-list-art {
+	@include resp-img;
+}
+
+.lead-list-h {
+	@include sans(em(15)/120%, 500);
+	color: $txt-black;
+}
+
+
+.lead-nav-item {
+	border-top: 1px solid #e5e5e5;
+	display: table;
+
+	.ie8 & {
+		display: block;
+	}
+}
+
+
+
+.lead-nav-item:hover .lead-list-h { 
+	color: $link; //rgb(13,87,153) 
+} 
+
+// If there's no art, we show the story
+// category by default. This styles it.
+.lead-list-cat {
+	@include sans(em(10), 800, normal, 1px);
+	text-transform: uppercase;
+	color: #fff;
+}
+
+@media (max-width: 399px) {
+  .touch .homepage .lead-nav-item:first-child {
+    display: table;                                                             
+  }
+}
+
+.lead-item-no-art {
+
+	.lead-item-link {
+
+		.art-bd {
+			height: 120px; 
+
+			@include mq(max, 400px) {
+				height: 36px;
+			}
+
+		}
+	}
+	.ie8 & {
+		//display: block;
+	}
+
+}
+
+//
+// Lead Tease Carousel
+//
+
+.lead-tzs {
+	overflow: hidden;
+
+	// Selected State
+	.carousel-selected {
+		.lead-list-h,
+		.lead-list-art {
+			opacity: .65;
+		}
+		.lead-list-h {
+			font-weight: 700;
+			font-style: italic;
+		}
+	}
+}
+
+.lead-tz-nav {
+    display: none;
+    @include mq(768px) {
+        display: block;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        padding-top: 42%; // Use padding to create height with intrinsic aspect ratio
+        z-index: 2;
+        pointer-events: none; // Make sure that carousel nav doesn't block important clicks on content
+    }
+
+	.arrow-btn-prev:after,
+	.arrow-btn-next:after {
+		@include mq($list-break, $sidebar-break) {
+			@include size(26px 50px);
+		}
+	}
+
+	.arrow-btn-prev {
+		top: 29px;
+		&:after {
+			// Adjust space to align with right arrow
+			top: 42%;
+		}
+		@include mq($list-break) {
+			// Leave room to click overline
+			top: 35px;
+		}
+	} // slider-btn.prev
+} // lead-tz-nav
+
+
+// Show prev/next buttons on hover,
+// which is triggered by jquery
+.lead-tz-mod.is-hovering {
+	.arrow-btn-next,
+	.arrow-btn-prev {
+		opacity: .75;
+	}
+}
+
+.lead-tz-icon {
+	right: 10px;
+	top: 10px;
+}
+.lead-video-icon {
+	@include size(80px);
+	-moz-background-size: 80px;
+  -o-background-size: 80px;
+  -webkit-background-size: 80px;
+	background-size: 80px;
+	margin: -40px 0 0 -40px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	background-image: url(/img/play-video.png);
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	opacity: .75;
+	@include trans($trans-time, opacity);
+	@include mq(500px){
+		@include size(120px);
+		-moz-background-size: 120px;
+  	-o-background-size: 120px;
+  	-webkit-background-size: 120px;
+		background-size: 120px;
+		margin: -60px 0 0 -60px;
+	}
+}
+
+.lead-tz-art-bd:hover{
+	.lead-video-icon {
+		opacity: 1;
+	}
+}
+
+// Static Carousel No Art styles
+
+.center-tz-no-art {
+	min-height: 453px;
+}

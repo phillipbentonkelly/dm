@@ -1,0 +1,80 @@
+<%@ taglib prefix="x" uri="jstlXml"%>
+
+<p:out var="show" value="${cacheScope.show}" />
+<p:out var="forumParent" value="${cacheScope.forumParent}" />
+<p:out var="sectionParent" value="${cacheScope.sectionParent}" />
+<p:out var="categoryParent" value="${cacheScope.categoryParent}" />
+<p:out var="currentDiscussion" value="${cacheScope.currentDiscussion}" />
+
+
+<c:set var="ugcUrl" value="http://dev.ugc.boston.com/ugc"/>
+
+<div class="forum-head">
+
+	<div class="user-utility">
+		<ul>
+			<li>Welcome, <a href="">testboston1</a></li>
+			<li><a href="">Sign out</a></li>
+			<li><a href="">Edit profile</a></li>
+		</ul>
+	</div><!-- / .user-utility -->
+	
+	<c:choose>
+	
+		<c:when test="${show eq 'forum_index'}">
+			<h1 class="">Forums</h1>
+		</c:when>
+	
+		<c:when test="${show eq 'section_index'}">
+			<c:set var="forumUrl" value="${ugcUrl}/forum/id/${forumParent}"/>
+			<c:set var="append" value="${forumParent}"/>
+			<c:import var="forumDoc" url="${forumUrl}" /> 
+			<x:parse var="forumXml"  doc="${forumDoc}" />	
+			<h1 class=""><x:out select="$forumXml/forum/name/text()"/> Discussions</h1>
+		</c:when>
+	
+		<c:when test="${show eq 'category_index'}">
+			<c:set var="forumSectionUrl" value="${ugcUrl}/forumsection/id/${sectionParent}"/>
+			<c:set var="append" value="${sectionParent}"/>
+			<c:import var="forumSectionDoc" url="${forumSectionUrl}" /> 
+			<x:parse var="forumSectionXml"  doc="${forumSectionDoc}" />
+			<h1 class=""><x:out select="$forumSectionXml/forumSection/name/text()"/> Discussions</h1>
+		</c:when>
+	
+		<c:when test="${show eq 'discussion_index'}">
+			<c:set var="forumSectionCategoryUrl" value="${ugcUrl}/forumsectioncategory/id/${categoryParent}"/>			
+			<c:set var="append" value="${categoryParent}"/>	
+			<c:import var="forumSectionCategoryDoc" url="${forumSectionCategoryUrl}" /> 
+			<x:parse var="forumSectionCategoryXml"  doc="${forumSectionCategoryDoc}" />
+			<h1 class=""><x:out select="$forumSectionCategoryXml/forumSectionCategory/name/text()"/> <span><x:out select="$forumSectionCategoryXml/forumSectionCategory/desc/text()"/></span></h1>
+		</c:when>
+	
+		<c:when test="${show eq 'discussion'}">
+			<c:set var="discussionUrl" value="${ugcUrl}/topics?id=${currentDiscussion}"/>			
+			<c:set var="append" value="${currentDiscussion}"/>
+			<c:import var="discussionDoc" url="${discussionUrl}" /> 
+			<x:parse var="discussionXml"  doc="${discussionDoc}" />
+			<h1 class=""><x:out select="$discussionXml/topics/topic/title/text()"/></h1>
+		</c:when>
+		
+		<c:when test="${show eq 'start_discussion' || show eq 'add_poll'}">
+			<h1 class="">Forums</h1>
+		</c:when>
+	
+		<c:otherwise>
+			<h1 class="">Forum Index</h1>
+		</c:otherwise>
+	
+	</c:choose>
+
+	<c:choose>
+		<c:when test="${show eq 'section_index' || show eq 'category_index' || show eq 'discussion_index' || show eq 'discussion'}">
+			<%-- BREADCRUMBS  --%>
+			<p:include url="$configurationURI/Framework/skins/section/dwp_forumpage/forumpage_standard/components/breadcrumbs.jpt">
+				<p:param name="show" value="${show}" />
+				<p:param name="append" value="${append}" />
+			</p:include>
+		</c:when>
+	</c:choose>
+	
+</div><!-- / .forum-head -->

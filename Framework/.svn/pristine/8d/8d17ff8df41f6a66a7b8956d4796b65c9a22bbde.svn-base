@@ -1,0 +1,60 @@
+<p:out var="useInheritedZone" value="0" />
+
+<c:if test="${not empty editorialLayerPath}">
+	<p:getPageZone var="tools" name="share_tools" inherits="${editorialLayerPath}" />
+	<p:out var="useInheritedZone" value="${tools.size}" />
+</c:if>
+	
+<!-- useInheritedZone = ${useInheritedZone} -->
+<!-- gigyaThumb = ${gigyaThumb} -->
+<c:choose>
+	<%-- We have an editorial layer and that layer has stuff slotted in the share_tools zone --%>
+	<c:when test="${useInheritedZone != 0}">
+		<p:include pageZoneName="share_tools" inherits="${editorialLayerPath}" templateName="${templateName}">
+			<p:param name="dwp" value="${editorialLayerPath}" />
+			<p:param name="gigyaCanonical" value="${gigyaCanonical}" />
+			<p:param name="gigyaShortUrl" value="${gigyaShortUrl}" />
+			<p:param name="gigyaHeadline" value="${gigyaHeadline}" />
+			<p:param name="gigyaThumb" value="${gigyaThumb}" />
+			<p:param name="gigyaThumbType" value="${gigyaThumbType}" />
+		</p:include>
+	</c:when>
+	
+	<%-- No editorial layer or an empty zone --%>
+	<c:otherwise>
+		<c:if test="${fn:trim(gigyaThumb) eq ''}">
+			<p:out var="gigyaThumb" value="http://c.o0bc.com/rw/SysConfig/WebPortal/Boston/Framework/images/site_graphics/icons/share/bcom_og_news.gif" />
+		</c:if>
+		<c:if test="${fn:startsWith(gigyaThumb, '//')}">
+			<p:out var="gigyaThumb" value="http:${gigyaThumb}" />
+		</c:if>
+		
+		<c:if test="${fn:trim(gigyaThumbType) eq ''}">
+			<p:out var="gigyaThumbType" value="image" />
+		</c:if>
+		
+		<c:choose>
+			<c:when test="${templateName eq 'share_tools_story_header'}">
+				<p:out var="anchorClass" value="popup-trigger" />
+			</c:when>
+			<c:when test="${templateName eq 'share_tools_story_sidecar'}">
+				<p:out var="anchorClass" value="popup-trigger tools-link tools-link-share" />
+			</c:when>
+			<c:when test="${templateName eq 'share_tools_story_footer'}">
+				<p:out var="anchorClass" value="popup-trigger tools-link tools-link-share" />
+			</c:when>
+			<c:otherwise>
+				<p:out var="anchorClass" value="popup-trigger" />
+			</c:otherwise>
+		</c:choose>
+		<a class="${anchorClass}" href="#mfp-share" data-load-ad="true" data-ad-name="ad_share"
+			data-canonical="${gigyaCanonical}"
+			data-shorturl="${gigyaShortUrl}"
+			data-headline="${gigyaHeadline}"
+			data-thumbnail="${gigyaThumb}"
+			data-thumb-type="${gigyaThumbType}">
+			<i class="share-icon"></i>
+			<i class="tools-txt">Share</i>
+		</a>
+	</c:otherwise>
+</c:choose>

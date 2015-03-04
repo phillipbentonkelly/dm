@@ -1,0 +1,11 @@
+<div class="page-header__search js-slide-out" data-target="dropdown-search">
+  <form class="page-header__search-form js-search-strip-colon" action="${portalContext.publicBaseUrl}/search">
+	<input type="hidden" name="p1" value="TotalMastheadInlineSearch"/>
+    <input class="page-header__search-input" type="text" placeholder="Search" name="q"/>
+
+    <button type="submit" class="page-header__search-button" value="Search">
+      <span class="bdc-icon bdc-icon--search-medium" data-state="closed">Search</span>
+      <span class="bdc-icon bdc-icon--close-medium" data-state="open"></span>
+    </button>
+  </form>
+</div>

@@ -1,0 +1,380 @@
+@import "compass";
+
+@mixin house-ad-gradient {
+	position: absolute;
+	$experimental-support-for-svg: true;
+	@include background-image(linear-gradient(top left, #002C43 25%, #004D7C 60%, #017E56));
+	opacity: .75;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	@include trans;
+}
+
+//STORY AD SCSS//
+
+.half-page-ad-mod,
+.big-ad-mod {
+
+	.story-ad-link {
+	display: block;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+		// On hover, reduce the gradient opacity a bit
+		&:hover .story-gradient-mod:after {
+			opacity: .5;
+		}
+	}
+
+	.story-gradient-mod {
+		overflow: hidden;
+		height: 100%;
+		&:after {
+			content: "\0020";
+			@include house-ad-gradient;
+		}
+	}
+
+	.story-ad-h{
+		color:#FFFFFF;
+		font-size: 32px;
+		font-weight: 400;
+	}
+
+	.story-ad-logo {
+	background-repeat: no-repeat;
+	background-size: 130px;
+	position: absolute;
+	width:130px;
+	height: auto;
+	bottom: 15px;
+	}
+
+	.story-ad-img-tedcruz{
+		background-image: url('/assets/photos/ted-cruz-bw.jpg');
+		background-position: center top;
+
+	}
+
+	.story-ad-img-masschallenge{
+		background-image: url('/assets/photos/masschallenge-bw.jpg');
+		background-position: center top;
+
+
+	}
+
+	.story-ad-img-kodaline{
+		background-image: url('/assets/photos/kodaline-bw.jpg');
+		background-position: center top;
+
+	}
+
+	.story-ad-img-fallbeer{
+		background-image: url('/assets/photos/fallbeer-bw.jpg');
+		background-position: center top;
+
+
+	}
+
+	.story-ad-logo-globe {
+		@include svg('globe-crop');
+	}
+
+	// .story-ad-logo-hive {
+	// 	@include svg('hive-crop');
+	// }
+
+	.story-ad-logo-radio {
+		@include svg('radio-crop');
+	}
+
+	.story-ad-logo-wire {
+		@include svg('wire-crop');
+	}
+
+}
+
+.half-page-ad-mod {
+
+	.story-ad-img {
+		width: 100%;
+		max-width: 600px;
+		height: 190px;
+		margin: 50px auto 50px;
+		display: block;
+		position: relative;
+		overflow: hidden;
+	}	
+
+	.story-ad-h-mod{
+		width:380px;
+		display: inline-block;
+		position: absolute; 
+		padding: 15px;
+		height: auto;
+		top: 0;
+	    left: 15px;
+	}
+
+	.story-ad-logo {
+		right: 15px;
+		top: 153px;
+	}
+}
+
+.big-ad-mod {
+
+	.story-ad-img {
+		width: 300px;
+		height: 250px;
+		overflow: hidden;
+		position: relative;
+		margin: 50px auto 50px;
+		background-size: auto;
+		background-repeat: no-repeat;
+		background-position: center;
+	}
+
+	.story-ad-h-mod{
+		width:280px;
+		display: inline-block;
+		position: absolute; 
+		padding: 8px;
+		height: auto;
+		top: 0;
+	    left: 15px;
+	}
+
+	.story-ad-logo {
+	left: 15px;
+	top: 211px;
+	
+	}
+}
+
+// BRAND AD SCSS // 
+
+.leader-board-ad-mod,
+.mobile-ad-mod {
+
+	.brand-ad-link {
+	display: block;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	}
+
+	.brand-ad-h{
+		color:#FFFFFF;
+		font-weight: 400;
+	}
+
+	.brand-ad-logo {
+	background-repeat: no-repeat;
+	position: absolute;
+	opacity: .40;
+	}
+
+	.brand-ad-logo-globe {
+		@include svg('globe-crop');
+	}
+
+	// .brand-ad-logo-hive {
+	// 	@include svg('hive-crop');
+	// }
+
+	.brand-ad-logo-radio {
+		@include svg('radio-crop');
+	}
+
+	.brand-ad-logo-wire {
+		@include svg('wire-crop');
+	}
+
+}
+
+.leader-board-ad-mod {
+
+	.brand-ad-mod {
+		width: 728px;
+		height: 92px;
+		position: relative;
+		margin: 50px auto 50px;
+		&:before {
+			content: "\0020";
+			@include house-ad-gradient;
+			opacity: 1;
+		}
+
+	}
+
+	.brand-ad-h-mod{
+		width:362px;
+		display: inline-block;
+		position: absolute; 
+		padding: 8px;
+		height: auto;
+		top: 0;
+	    right: 15px;
+	}
+
+	.brand-ad-h{
+		font-size: 16px;
+	}
+
+	.brand-ad-logo {
+	left: 15px;
+	bottom: 0px;
+	background-size: 480px;
+	width:480px;
+	height: 60px;
+	}
+}
+
+.mobile-ad-mod {
+
+	.brand-ad-mod {
+		width: 300px;
+		height: 50px;
+		position: relative;
+		margin: 50px auto 50px;
+		&:before {
+			content: "\0020";
+			@include house-ad-gradient;
+			opacity: 1;
+		}
+
+	}
+
+	.brand-ad-h-mod{
+		width:155px;
+		display: inline-block;
+		position: absolute; 
+		padding: 8px;
+		height: auto;
+		top: 0;
+	    left: 145px;
+	}
+
+	.brand-ad-h{
+		font-size: 12px;
+	}
+
+	.brand-ad-logo {
+	left: 15px;
+	top: 25px;
+	background-size: 180px;
+	width:180px;
+	height: 65px;
+	}
+}
+
+// PLAINBRAND AD SCSS // 
+
+.leader-board-plain-ad-mod,
+.mobile-plain-ad-mod {
+
+	.brand-plain-ad-link {
+	display: block;
+	height: 100%;
+	width: 100%;
+	border: solid 1px #104E8B;
+	position: absolute;
+	background-color: #FFFFFF;
+	}
+
+	.brand-plain-ad-h{
+		color:#000000;
+		font-weight: 400;
+	}
+
+	.brand-plain-ad-logo {
+	background-repeat: no-repeat;
+	position: absolute;
+	}
+
+	.brand-plain-ad-logo-globe {
+		@include svg('globe-color');
+	}
+
+	// .brand-plain-ad-logo-hive {
+	// 	background-image: url(/assets/icons/hive-color.png);
+	// }
+
+	.brand-plain-ad-logo-radio {
+		@include svg('radio-color');
+	}
+
+	.brand-plain-ad-logo-wire {
+		@include svg('wire-color');
+	}
+
+}
+
+.leader-board-plain-ad-mod {
+
+	.brand-plain-ad-mod {
+		width: 728px;
+		height: 92px;
+		position: relative;
+		margin: 50px auto 50px;
+
+	}
+
+	.brand-plain-ad-h-mod{
+		width:220px;
+		display: inline-block;
+		position: absolute; 
+		padding: 8px;
+		height: auto;
+		top: 15px;
+	    right: 105px;
+	}
+
+	.brand-plain-ad-h{
+		font-size: 18px;
+	}
+
+	.brand-plain-ad-logo {
+	left: 75px;
+	bottom: 2px;
+	background-size: 230px;
+	width:230px;
+	height: 60px;
+	}
+}
+
+.mobile-plain-ad-mod {
+
+	.brand-plain-ad-mod {
+		width: 300px;
+		height: 50px;
+		position: relative;
+		margin: 50px auto 50px;
+
+	}
+
+	.brand-plain-ad-h-mod{
+		width:155px;
+		display: inline-block;
+		position: absolute; 
+		padding: 8px;
+		height: auto;
+		top: 0;
+	    left: 145px;
+	}
+
+	.brand-plain-ad-h{
+		font-size: 12px;
+	}
+
+	.brand-plain-ad-logo {
+	left: 20px;
+	top: 15px;
+	background-size: 110px;
+	width:110px;
+	height: 65px;
+	}
+}

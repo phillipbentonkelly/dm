@@ -1,0 +1,350 @@
+/* ---------------------------------------------- */
+
+/*	Typography						 			  */ 
+
+/* ---------------------------------------------- */
+
+@mixin sans($size: em(14), $weight: 300, $style: normal, $ls: 0) {
+	$weight-fallback: $weight;
+	
+	// If the weight is 400 or greater, the
+	// fallback type should render as bold ...
+	@if ($weight > 399) and ($weight < 699) {
+		//$weight-fallback: bold;
+	} 
+
+	font: $style $weight-fallback #{$size} $sans-fallback;
+	@if ($ls > 0) or ($ls < 0) {
+		letter-spacing: $ls;
+	}
+
+
+	.fontface & {
+		font-family: $sans;
+		// Override the fallback weight with a more specific
+		// weight declaration if necessary
+		@if $weight-fallback == bold {
+			//font-weight: $weight;
+		} 
+
+
+	}
+}
+
+// !-- Links ------------------------------------ //
+
+// Your standard link style. Create more as needed
+@mixin link($style: normal) {
+	@if $style == normal {
+		color: $link;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+	@if $style == light {
+		color: $link-lt;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+	@if $style == secondary {
+		color: $black-50;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+	@if $style == hover {
+		// Send no color style. 
+		// Just deliver the hover state.
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+	@if $style == underline {
+		// If style is underline, link is underlined 
+		// by default and hovering removes the underline
+		text-decoration: underline;
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}
+
+.link {
+	@include link;
+}
+
+//universal link styles
+
+.link-secondary {
+	@include link(secondary);	
+}
+
+.link-lt {
+	@include link(light);
+}
+
+/* !-- Headlines/Headers ------------------------ */
+
+.h1, .h2, .h3, .h4, .h5 {
+	color: $txt-black;
+	> a {
+		@include link;
+	}
+}
+
+.h1 {
+	@include sans(em(28)/110%, 600);
+	@include mq($break-sm) {
+		font-size: em(38);
+	}
+	@include mq($break-md) {
+		font-size: em(48);
+	}
+	@include mq($break-lg) {
+		font-size: em(54);		
+	}
+}
+
+.h2 {
+	@include sans(em(24)/110%, 500);
+	@include mq($break-md) {
+		font-size: em(28);
+	}
+	@include mq($break-lg) {
+		font-size: em(32);
+	}
+}
+
+.h3 {
+	@include sans(em(18)/110%, 500);
+	@include mq($break-md) {
+		font-size: em(21);
+	}
+}
+
+.h4 {
+	@include sans(em(17)/120%, 400);
+	@include mq($break-md) {
+		font-size: em(18);
+	}
+}
+
+.h5 {
+	@include sans(em(14)/120%, 600);
+}
+
+
+//
+// Section Headers
+//
+
+.section-h2,
+.section-h {
+	color: #000;
+	> a {
+		// Direct descendent links will share master style  
+		@include unstyled-link;
+		&:hover {
+			text-decoration: underline;
+		}
+	}	
+}
+
+.section-h2 {
+	@include sans(em(20), 600);
+	margin-bottom: 25px;	
+}
+
+// Default section header
+
+.section-h,
+.section-h3,
+.section-h3-fancy {
+	@include sans(em(13)/110%, 800);
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	margin-bottom: 14px;
+}
+
+/* !-- Text ----------------------------------- */
+
+.tz-txt {
+	@include sans(em(15)/135%, 400);
+	color: $txt-black;
+	> a {
+		@include link(light);
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
+// Shared Text Styles
+.txt-lg, .txt, .txt-md, .txt-sm {
+	color: $txt;
+
+	// Links will take on default style
+	> a,
+	> p > a {
+		@include link;		
+	}	
+}
+
+.txt-lg {
+	@include sans(em(17)/155%, 400);
+	@include mq($break-sm) {
+		font-size: em(19);
+	}
+	@include mq(850px) {
+		font-size: em(20);
+	}
+	// For instances with multiple paragraphs, add margin 
+	> p {
+		margin-bottom: 16px;
+	}	
+}
+
+.txt, .txt-md {
+	@include sans(em(16)/155%, 400);
+	// For instances with multiple paragraphs, add margin 
+	> p {
+		margin-bottom: 12px;
+	}
+}
+
+.txt-sm {
+	@include sans(em(13)/140%, 400);
+
+	// For instances with multiple paragraphs, add margin 
+	> p {
+		margin-bottom: 10px;
+	}	
+}
+
+// Block Quotes
+.blockquote {
+	padding-left: 15px;
+	border-left: 3px solid $red;
+	color: $black-75;
+}
+
+// Caption & Credit
+.caption {
+	@include caption;
+}
+
+.credit {
+	font-style: italic;
+	font-weight: 700;
+	color: #999;
+}
+
+
+/* !-- Misc. Type -------------------------------- */
+
+// Set misc. text styles mixins
+@mixin overline {
+	@include sans(em(14)/120%, 900);
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	color: $highlight;
+	> a {
+		@include link(hover);		
+	}	
+}
+
+@mixin source {
+	font: 700 10px $serif;
+	color: #bbb;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+@mixin breadcrumb-glyph {
+	content: '\203A'; // Entity for the caret ">" character
+	margin-left: 8px;
+	position: relative;
+	top: -1px;	
+}
+
+@mixin breadcrumb {
+	margin: 0 0 18px;
+	color: #aaa;
+	@include pie-clearfix;	
+	
+	> li {
+		@include inline-block;
+		font: 700 10px $sans;
+		text-transform: uppercase;
+		margin-right: 7px;
+		&:not(:last-child):after {
+			@include breadcrumb-glyph;	
+		}
+		// Rewrite this rule so IE 7-8 understand
+		.ie &:after {
+			@include breadcrumb-glyph;	
+		}
+		.ie &.last:after {
+			content: "";
+		}
+	}
+	
+	> li > a {
+		@include trans;
+		@include inline-block;
+		color: #aaa;
+		&:hover {
+			color: #666;
+		}
+	}
+}
+
+
+// Create base classes from misc. text styles	
+.src,
+.source {
+	@include source;
+}
+
+.overline {
+	@include overline;
+}
+
+a.overline {
+	@include link(hover);
+}
+
+.breadcrumb {
+	@include breadcrumb;
+}
+ 
+
+/* !-- Bugs ----------------------------------- */
+
+.bug {
+	@include inline-block;
+	padding: 1px 3px 2px;
+	font-size: 9.75px;
+	font-weight: 700;
+	color: #fff;
+	text-transform: uppercase;
+	white-space: nowrap;
+	background-color: #bbb;
+	@include border-radius(3px);
+	&.new {
+		background-color: $bug-new;
+	}
+	&.important {
+		background-color: $bug-important;
+	}
+	&.warning {
+		background-color: $bug-warning;
+	}
+	&.success {
+		background-color: $bug-success;
+	}
+	&.notice {
+		background-color: $bug-notice;
+	}
+}

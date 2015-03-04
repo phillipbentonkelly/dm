@@ -11,17 +11,20 @@
 // @font-face Rules
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 @import 'partials/font-face';
+@import 'partials/bcom-font-face'; //cgo
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 // Reset Styles
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 @import 'partials/reset';
+@import 'bcom-partials/reset'; //cgo
+
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 // Base SCSS
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 @import 'base';
-
+@import 'bcom-base';
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 // Element Default Styles
 // * Dependencies: 
@@ -35,6 +38,8 @@
 @import 'helpers/common-assets';
 @import 'helpers/bcom-mixins'; //-added for comments -CGO
 @import 'helpers/bcom-variables'; //added for comments -CGO
+@import 'helpers/bcom-font-sizing'; //added for comments -CGO
+@import 'helpers/variables'; //added for comments -CGO
 
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -73,13 +78,20 @@
 @import 'partials/page/modules/related-articles-right-rail';
 @import 'partials/page/modules/multimedia-chip';
 @import 'partials/page/modules/newsletter-widget';
-@import 'partials/page/modules/comments'; //-added for comments CGO.
-@import 'partials/page/modules/bcom-pagination'; //-added for comments CGO
-@import 'partials/page/modules/bcom-teases'; //-added for comments CGO
-//@import 'partials/page/modules/bcom-icons';//-added for comments CGO
-@import 'partials/page/modules/bcom-type'; //-added for comments CGO
-@import 'partials/page/modules/bcom-forms'; //-added for comments CGO
-@import 'partials/page/modules/bcom-profiles';
+
+//Transplanted dependencies to support the BCOM comments styles on DM -CGO
+@import 'bcom-partials/bcom/animations';
+@import 'bcom-partials/bcom/article';
+@import 'bcom-partials/bcom/bcom-mixins';
+@import 'bcom-partials/bcom/buttons';
+@import 'bcom-partials/bcom/comments';
+@import 'bcom-partials/bcom/filter-nav';
+@import 'bcom-partials/bcom/forms';
+@import 'bcom-partials/bcom/loader';
+@import 'bcom-partials/bcom/objects';
+@import 'bcom-partials/bcom/type';
+@import 'bcom-partials/bcom/variables';
+
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 // Content Styles
 // * Dependencies: bdc-base

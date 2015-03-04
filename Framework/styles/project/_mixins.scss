@@ -1,0 +1,353 @@
+// The Media Query Mixin
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+// FOR: Write less verbose Media Queries with variables 
+// or using straight figures (eg 320px)
+// WHY: Faster to write. More flexible. Lets you write 
+// media query variables on the fly.
+// USE: @include mq(320px, 798px);
+// USE: @include mq($tablet, $desktop);
+
+@mixin mq($breakpoint-1, $breakpoint-2: 0) {
+  @if $breakpoint-1 == "max" {
+    @media (max-width:$breakpoint-2 - 1) { @content; }
+  }
+
+	@elseif unitless($breakpoint-2) {
+		@media (min-width: $breakpoint-1) { @content; }
+	} //single breakpoint
+
+	@else {
+		@media (min-width: $breakpoint-1) and (max-width:$breakpoint-2 - 1) { @content; }
+	} //bracketed breakpoint
+}
+
+// Quick Border
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+// FOR: Consistently applying the double-border that 
+// appears below each quick tease. Mixin allows you to
+// use the default style above and below an element or 
+// apply the full double line below a single element   
+// WHY: So the style can be controlled in one place
+// and we don't have to deal with the complexity
+// USE: @include quick-border;
+
+@mixin quick-border($style: normal) {
+	@if $style == "top" {
+    border-top: 1px solid #e0e0e0;
+    @include box-shadow(0 -2px #fff);
+	}
+	@else if $style == "undo" {
+		border-bottom: 0;
+    @include box-shadow(none);
+	}
+	@else {
+    border-bottom: 1px solid #e0e0e0;
+    @include box-shadow(0 2px #fff);
+	}
+}
+
+
+// Button Hover / Active states
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+// FOR: Applying background color for default / hover / active states for bcom buttons
+// WHY: It's annoying to do this for every button
+// USE: @include button-state(red, #fff);
+
+@mixin button-state($button-color: $red, $button-txt-color: #fff, $button-shadow: shadow) {
+
+  $hover-color: tint($button-color, 10%);
+  $active-color: shade($button-color, 14%);
+  $shadow-color: shade($button-color, 25%);
+
+  color: $button-txt-color;
+  background-color: $button-color;
+  @include trans($trans-time);
+  @include text-shadow(1px 1px 1px rgba(0, 0, 0, 0.3));
+
+  &:hover {
+    background-color: $hover-color;
+  }
+  &:active {
+    background-color: $active-color;
+    transition: none;
+  }
+
+  @if $button-shadow == "shadow" or $button-shadow == "shadow-on"{
+      @include box-shadow( -1px -1px 0 $shadow-color inset);
+  }
+  @if $button-shadow == "no-shadow"{
+      @include text-shadow(none);
+    }
+}
+
+
+
+
+// Prefixer
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+// FOR: Easily applying range of vendor prefixes when rolling
+// your own mixins. This comes straight from Bourbon.io 
+// USE: @include prefixer(border-radius, $radii, webkit ms spec);
+
+$prefix-for-webkit:    true !default;
+$prefix-for-mozilla:   true !default;
+$prefix-for-microsoft: true !default;
+$prefix-for-opera:     true !default;
+$prefix-for-spec:      true !default; // required for keyframe mixin
+
+@mixin prefixer ($property, $value, $prefixes) {
+  @each $prefix in $prefixes {
+    @if $prefix == webkit {
+      @if $prefix-for-webkit {
+        -webkit-#{$property}: $value;
+      }
+    }
+    @else if $prefix == moz {
+      @if $prefix-for-mozilla {
+        -moz-#{$property}: $value;
+      }
+    }
+    @else if $prefix == ms {
+      @if $prefix-for-microsoft {
+        -ms-#{$property}: $value;
+      }
+    }
+    @else if $prefix == o {
+      @if $prefix-for-opera {
+        -o-#{$property}: $value;
+      }
+    }
+    @else if $prefix == spec {
+      @if $prefix-for-spec {
+        #{$property}: $value;
+      }
+    }
+    @else  {
+      @warn "Unrecognized prefix: #{$prefix}";
+    }
+  }
+}
+
+@mixin disable-prefix-for-all() {
+  $prefix-for-webkit:    false;
+  $prefix-for-mozilla:   false;
+  $prefix-for-microsoft: false;
+  $prefix-for-opera:     false;
+  $prefix-for-spec:      false;
+}
+
+
+// Placeholder
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+// FOR: Applying placeholder and making it cross-browser
+// compatible. This comes straight from Bourbon.io 
+// USE: Nested inside of another selector
+// USE: @include pholder { color: red };
+
+$placeholders: '-webkit-input-placeholder',
+               '-moz-placeholder',
+               '-ms-input-placeholder';
+
+@mixin placeholder {
+  @each $placeholder in $placeholders {
+    @if $placeholder == "-webkit-input-placeholder" {
+      &::#{$placeholder} {
+        @content;
+      }
+    }
+    @else if $placeholder == "-moz-placeholder" {
+      // FF 18-
+      &:#{$placeholder} {
+        @content;
+      }
+
+      // FF 19+
+      &::#{$placeholder} {
+        @content;
+      }
+    }
+    @else {
+      &:#{$placeholder} {
+        @content;
+      }
+    }
+  }
+}
+
+// Animation Mixin
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+// FOR: Writing animation properties and having them work everywhere
+// WHY: Ensure compability. It's time-consuming to write cross-browser.
+// USE: @include animation(fadedown 4s ease);
+// REF: http://www.w3.org/TR/css3-animations/#the-animation-name-property-
+
+// NOTE: Each of these mixins support comma separated lists of values, 
+// which allows different transitions for individual properties 
+// to be described in a single style rule. Each value in the list 
+// corresponds to the value at that same position in the other properties.
+
+// Official animation shorthand property.
+@mixin animation ($animations...) {
+  @include prefixer(animation, $animations, webkit moz spec);
+}
+
+// Individual Animation Properties
+@mixin animation-name ($names...) {
+  @include prefixer(animation-name, $names, webkit moz spec);
+}
+
+
+@mixin animation-duration ($times...) {
+  @include prefixer(animation-duration, $times, webkit moz spec);
+}
+
+
+@mixin animation-timing-function ($motions...) {
+// ease | linear | ease-in | ease-out | ease-in-out
+  @include prefixer(animation-timing-function, $motions, webkit moz spec);
+}
+
+
+@mixin animation-iteration-count ($values...) {
+// infinite | <number>
+  @include prefixer(animation-iteration-count, $values, webkit moz spec);
+}
+
+
+@mixin animation-direction ($directions...) {
+// normal | alternate
+  @include prefixer(animation-direction, $directions, webkit moz spec);
+}
+
+
+@mixin animation-play-state ($states...) {
+// running | paused
+  @include prefixer(animation-play-state, $states, webkit moz spec);
+}
+
+
+@mixin animation-delay ($times...) {
+  @include prefixer(animation-delay, $times, webkit moz spec);
+}
+
+
+@mixin animation-fill-mode ($modes...) {
+// none | forwards | backwards | both
+  @include prefixer(animation-fill-mode, $modes, webkit moz spec);
+}
+
+@mixin keyframes($name) {
+  @-webkit-keyframes $name {
+      @content;
+  }
+  @-moz-keyframes $name {
+    @content;
+  }
+  @keyframes $name {
+    @content;
+  }
+}
+
+
+// Reverse Figure Caption Mixin
+//
+// This is being used in articles and galleries. - Ellen 6/26
+//
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ 
+// Made to simply the code for gallery pages
+
+@mixin caption($caption-style: reverse) {
+
+  @if $caption-style == "reverse" {
+    @include sans(em(12)/135%,600);
+    padding: 5px 8px 6px;
+    color: #fff;
+    background-color: #000;
+    > a {
+      @include link(light);
+    }
+  }
+
+  @if $caption-style == "light" {
+    @include sans(em(12)/135%,500);
+    text-align: right;
+    padding: 6px 8px 0px;
+    color: #999;
+    background-color: #fff;
+    > a {
+      @include link;
+    }
+  }
+}
+
+// Dropcap Mixin
+//
+// This is only being referenced in the css for first gallery slides. I don't know if that is really being used anymore. - Ellen 6/26
+//
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ 
+// Made to simply the code for gallery pages
+
+@mixin dropcap  {
+    @include sans(em(49, 16), 300);
+    float: left;
+    margin-right: 6px;
+    padding-top: 18px;
+    line-height: 28%;
+    @include mq($article-sm) {
+      font-size: em(58, 18);
+      line-height: 35%;
+    }
+    @include mq(850px) {
+      line-height: 43%;
+      margin-right: 8px;
+    }
+}
+// Social Icon Mixin
+//
+// this is being used for the horizonal social buttons in the toc and in the footer. - Ellen 6/26
+//
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+// FOR: Including a set of social svgs and circle backgrounds
+// WHY: It's verbose to write everytime in CSS
+// USE: 
+
+@mixin social-icon-list($button-color: $red, $button-txt-color: #fff, $button-shadow: none, $social-list-margin: 0) {
+  .social-icon-list{
+    position: relative;
+    margin: $social-list-margin;
+    height: 42px; 
+    .social-icon{
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      //background-size: contain;
+      width: 32px;
+      height: 32px;
+      @include button-state($button-color, $button-txt-color, $button-shadow);
+      border-radius: 16px;
+      position: absolute;
+      top: 4px;     
+      background-image: url('/img/social-cir-sprite.png');
+      //specific icons
+      &.twitter-icon {
+        background-position: 0px 0px;
+        left: 0px;
+      }
+      &.facebook-icon {
+        background-position: 0px -33px;
+        left: 43px;
+      }
+      &.google-icon {
+        background-position: 0px -66px;
+        left: 86px;
+      }
+      &.rss-icon {
+        background-position: 0px -99px;
+        left: 129px;
+      }
+      &.info-icon {
+        background-position: 0px -132px;
+        left: 129px;
+      }
+    }
+  }
+}

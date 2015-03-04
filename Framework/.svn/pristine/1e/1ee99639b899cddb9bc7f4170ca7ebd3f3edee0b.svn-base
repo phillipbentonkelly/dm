@@ -1,0 +1,540 @@
+@charset "utf-8";
+
+/* ============================================= */
+
+/*  GLOBAL                    */
+
+/* ============================================= */
+
+/** OVERRIDES **/
+
+.page-content{
+   background: rgb(255, 255, 255);
+}
+
+.row{
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+[class *="span"] {
+    margin: 0;
+    padding: 0;
+}
+
+.section-well.border-top{
+  border-top: 1px solid rgb(220, 220, 220) !important;
+}
+
+.right-rail{
+    float: right;
+    margin-right: 0;
+    border-left: 1px solid rgb(220, 220, 220);
+    padding: 10px;
+
+    .ad-box4 {
+      clear:both;
+    }
+}
+
+/** LAYOUT **/
+
+.cars .main .span5{
+  width: 390px;
+}
+
+#upper .span8{
+    width: 580px;
+}
+
+#middle .span6{
+    width: 456px;
+}
+
+#middle .span9{
+   width: 650px;
+}
+
+#middle .main .row:last-child .first .section-well{
+   border-bottom: 0;
+}
+
+.padTop10{
+    float: left;
+    padding-top: 10px;
+    width: 100%;
+}
+
+.padTop20{
+    float: left;
+    padding-top: 20px;
+    width: 100%;
+}
+
+.tcCenter{
+  text-align: center;
+}
+
+/** THIRDS COLUMNS **/
+
+.split-thirds{
+    float: left;
+    width: 100%;
+    margin: 5px 0;
+}
+
+.split-thirds .aSide, .split-thirds .bSide, .split-thirds .cSide {
+    display: block;
+    float:left;
+    width: 33%; 
+}
+
+.split-thirds .aSide .thirds-pad {
+    padding-right:3px
+}
+
+.split-thirds .bSide .thirds-pad {
+    padding:0 2px 0 2px;
+}
+
+.split-thirds .cSide .thirds-pad {
+    padding-left:3px;
+}
+
+#top-ads-wrapper > div, #top-ads-wrapper > section{
+    display:block;
+    float: left;
+}
+
+/** BDC-1686: bcom-bootstrap.css override **/
+
+h2.mega-menu__lead-item-headline {
+    font-family: "effra", Helvetica, Arial, Verdana, sans-serif;
+}
+
+.cars #middle .span9 .span3, .cars #middle .span9 .span6{
+      padding-top:10px;
+}
+
+/* ============================================= */
+
+/*  WELLS                    */
+
+/* ============================================= */
+
+.widget-wrapper {
+    zoom: 1;
+}
+
+.widget-wrapper:after {
+    content: "";
+    display: table;
+    clear: both
+}
+
+h3.section-header{
+    font-size: 15px;
+    display: block;
+    line-height: 22px;
+    color: #272727;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+h3.section-header a{
+    padding-right: 16px;
+    background: transparent url(http://cache.boston.com/universal/site_graphics/caret_h3_trans.gif) no-repeat right 1px;
+}
+
+h3.section-header a:hover{
+    border-bottom: none;
+    background-position: right -35px;
+}
+
+.column-well h3.section-header{
+   padding: 10px 0 0 10px;
+}
+
+.column-well.border-bottom{
+    border-bottom: 0;
+    box-shadow: none;
+}
+
+.column-well.border-bottom .widget{
+    border-bottom: 1px solid rgb(220, 220, 220);
+    box-shadow: 0 2px white;
+}
+
+.section-well {
+    margin: 0;
+    padding: 10px;
+}
+
+.section-well h3.section-header{
+    margin-left: 10px;
+}
+
+.section-well .span7 .image {
+    border-top: none;
+    float: left;
+    display: inline;
+    margin: 0 0.5em 0 0
+}
+
+.section-well .span9 ul.link-list.sans-bullets {
+    margin-left: 0;
+    width: 96%;
+}
+
+.section-well .span9 ul.link-list.sans-bullets li.pipes a {
+    font-weight: normal;
+}
+
+.section-well .last {
+    border: none !important;
+}
+
+.section-well .advertisement{
+   margin: 0;
+   padding: 0;
+}
+
+.section-well ul.columns{
+   padding-left: 0;
+}
+
+.white-box{
+    border: 1px solid rgb(220, 220, 220);
+    background: #fff;
+}
+
+
+/** TEASES **/
+
+h3.headline{
+    margin: 5px 0;
+    line-height: 20px;
+    white-space: normal;
+}
+
+h3.headline a{
+  color: #222 !important;
+}
+
+h3.big-headline{
+    font-size: 16px;
+}
+
+h3.bigger-headline{
+    font-size: 24px;
+    line-height: 23px;
+}
+
+h3.headline a:hover{
+    color: #0d5799 !important;
+    text-decoration: underline;
+}
+
+.widget {
+    clear: both;
+    overflow: hidden;
+    padding: 10px;
+    line-height: 20px;
+    font-size: 12px;
+    
+}
+
+.widget .overline {
+    margin: 0px 0px 5px;
+    padding: 0px
+}
+
+.image img{
+    border: 1px solid rgb(220, 220, 220);
+}
+
+.image-left .image{
+   display: inline;
+   float: left; 
+   margin: 0 .5em 0 0;
+   border-top: none;
+}
+
+.content p{
+   font-size: 14px;
+   white-space: normal;
+}
+
+/** LINK LISTS **/
+
+ul.link-list {
+    margin-top: 10px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+ul.link-list a {
+    border: 0px;
+    font-size: 15px;
+    color: #2494e3;
+}
+
+ul.link-list li {
+    list-style: inside disc;
+    display: list-item;
+    padding-bottom: 5px;
+    line-height: 18px;
+    color: #9b1518;
+}
+
+ul.link-list li span{
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+ul.link-list.sans-bullets li{
+    list-style: none;
+    display: block;
+    padding-bottom: 0;
+}
+
+ul.link-list .lead-out a {
+  clear: both;
+  margin-top: 10px;
+  margin-right: 5px;
+  font-size: 10px;
+}
+
+.lead-in {
+  text-align: right;
+  padding-top: 10px;
+  text-transform: uppercase;
+  font-size: 10px;
+  line-height: 12px;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-weight: bold;
+  color: #666
+}
+
+.lead-out {
+  clear: both;
+  margin: 10px 0px 10px 0px;
+  text-align: right;
+  text-transform: uppercase;
+  font-size: 10px;
+  line-height: 12px;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif
+}
+
+ul.link-list .lead-out:after {
+  font-size: 24px;
+  vertical-align: bottom;
+  padding-left: 3px;
+  color: #2851a2;
+  content: '\2023';
+}
+
+ul.linklistNoBullets li{
+    line-height:14px;
+    padding-bottom: 4px;
+}
+
+ul.linklistNoBullets li a, ul.linklistInline li a{
+    font-size: 14px;
+}
+
+ul.linklistInline li{
+    display: inline-block;
+    margin-right: 2px;
+}
+
+/** BORDERS **/
+
+/** give divs with border classes 'weight' **/
+[class *="border"] {
+    float: left;
+    width: 100%;
+}
+
+.border-top{
+    border-top: 1px solid rgb(220, 220, 220) !important;
+    box-shadow: inset 0 2px rgb(255, 255, 255);
+}
+
+.border-right{
+    border-right: 1px solid rgb(220, 220,220);
+}
+
+.border-bottom{
+    border-bottom: 1px solid rgb(220, 220, 220);
+    box-shadow: 0 2px rgb(255, 255, 255);
+}
+
+.border-left{
+    border-left: 1px solid rgb(220, 220, 220);
+}
+
+/** ADS  **/
+
+.site-width .advertisement{
+    margin: 10px 0;
+    text-align: center;
+}
+
+/** TWITTER **/
+
+.twitter-feed{
+    margin: 10px 0;
+    width: 100%;
+}
+
+.twitter-follow{
+    display:block;
+    float: left;
+}
+
+/** IMAGE FORMATS **/
+
+.image_179x100 img{
+  width:179px; 
+  height:100px;
+}
+
+.image_329w img, .image_360w img{
+  width:329px;
+}
+
+.image_399w img, .image_700c434 img{
+  width:399px;
+}
+
+.image_609w img, .image_700w img{
+  width:609px
+}
+
+.image_100x100 img, .image_300x300 img{
+  width:100px; 
+  height:100px;
+}
+
+/* ============================================= */
+
+/*  THIRD PARTY                    */
+
+/* ============================================= */
+
+/** CARS TOP ADS WRAPPER **/
+
+.classifieds-top-mod {
+    height: 100%;
+}
+
+#top-ads-wrapper{
+    margin: 0 0 5px 10px;
+}
+
+.nav-leaderboard-mod{
+    margin: 0 auto 0;
+    padding: 15px 0 15px 10px;
+    height: 100%;
+}
+
+.nav-leaderboard-mod div:first-child{
+    margin: 0 auto;
+    text-align: center;
+    height: 100%;
+}
+
+/** NEW/USED CAR DEALS **/
+
+#ssm_content{
+    margin-top: 10px;
+}
+
+/** GABRIELS SEARCH WIDGET **/ 
+
+#search-open-houses{
+   margin: 10px 0 0 13px;
+}
+
+.search-detail-links{
+   margin-top: 10px;
+}
+
+.search-detail-links .span2{
+   margin: 0 10px;
+   width: 120px;
+}
+
+.search-detail-links .span2:last-child{
+   margin: 0 10px;
+   width: 155px;
+}
+
+.search-detail-links ul{
+    margin: 5px 0;
+}
+
+.search-detail-links ul.link-list li{
+   line-height: 11px;
+}
+
+.search-detail-links ul.link-list li a{
+   font-size: 14px;
+}
+
+/** REGION MAP **/
+
+#region-map{
+   margin: 5px 0;
+}
+
+/** ADS **/
+
+.section-well .advertisement{
+  margin: 0;
+  padding: 0;
+}
+
+.section-well .ad-midbanner{
+  margin: -10px 0 0 -28px;
+  height: 100%;
+}
+
+.section-well .ad-midrightbox{
+  margin-left: -12px;
+}
+
+.ad-midleftbox{
+  padding-right: 5px;
+}
+
+.ad-minibox1, .ad-minibox2{
+    display: block;
+    float: left;
+    width: 50%;
+}
+
+.ad-box3, .ad-box4{
+    clear:both;
+}
+
+/*Add fix for twitter time line being swifted to the right on IE8 */
+.ie8 .twitter-feed > iframe.twitter-timeline {
+  float: left;
+}
+/*Add fix float image parent ignoring image width on IE8*/
+.ie8 div.image.image_179x100 {
+  width: 179px;
+  height: 100px;
+}
+
+/*Fix for ad-billboard */
+#adBILLBOARD {
+  margin-left: 30px;
+}
+
+/*Fix for UITabs on IE 8 */
+.ie8 #tabbed-carpicker > div {
+  float: left;
+}

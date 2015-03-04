@@ -1,0 +1,24 @@
+<p:getObject path="/Boston/WebLinked/2014-01-10/Travel/Stories/bdc_travel_globe_trotting.xml" var="obj1"/>
+<p:getObject path="/Boston/WebLinked/2014-01-10/Metro/Stories/bdc_hernandez_article.xml" var="obj2"/>
+<p:getObject path="/Boston/WebLinked/2014-01-10/Metro/Stories/bdc_article_walsh.xml" var="obj3"/>
+<p:getObject path="/Boston/WebLinked/2014-01-10/Travel/Stories/bdc_mandarin_oriental.xml" var="obj4"/>
+
+<p:object webObject="${obj1}" metadata="meta"/>
+section:<p:out xvalue="$meta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/Sections/Section/SectionPath"/>
+<bdc:teaseSection webObject="${obj1}" var="sectionData1" />
+sectionData1: ${sectionData1}<br/>
+
+<p:object webObject="${obj2}" metadata="meta"/>
+section:<p:out xvalue="$meta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/Sections/Section/SectionPath"/>
+<bdc:teaseSection webObject="${obj2}" var="sectionData2" />
+sectionData2: ${sectionData2}<br/>
+
+<p:object webObject="${obj3}" metadata="meta"/>
+section:<p:out xvalue="$meta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/Sections/Section/SectionPath"/>
+<bdc:teaseSection webObject="${obj3}" var="sectionData3" />
+sectionData3: ${sectionData3}<br/>
+
+<p:object webObject="${obj4}" metadata="meta"/>
+section:<p:out xvalue="$meta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/Sections/Section/SectionPath"/>
+<bdc:teaseSection webObject="${obj4}" var="sectionData4" />
+sectionData4: ${sectionData4}<br/>

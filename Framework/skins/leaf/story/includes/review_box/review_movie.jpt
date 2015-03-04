@@ -1,0 +1,88 @@
+<p:getContext var="uuid" /> <!-- Story uuid = ${uuid} -->
+<p:getObject uuid="${uuid}" var="webObject" />
+<p:object webObject="${webObject}" content="story" metadata="meta" />
+
+<p:out var="item_title" xvalue="$story//review-containers/review-container-movie/review-title/p" />
+<p:out var="star_rating" xvalue="$story//review-containers/review-container-movie/review-rating/p" />
+
+<p:out var="mpaa_rating"	xvalue="$story//review-containers/review-container-movie/review-mpaa-rating/p" />
+<p:out var="mpaa_reason"	xvalue="$story//review-containers/review-container-movie/review-mpaa-rating-reasons/p" />
+<p:out var="language"		xvalue="$story//review-containers/review-container-movie/review-language/p" />
+<p:out var="running_time"	xvalue="$story//review-containers/review-container-movie/review-running-time/p" />
+<p:out var="director"		xvalue="$story//review-containers/review-container-movie/review-director/p" />
+<p:out var="movie_url"		xvalue="$story//review-containers/review-container-movie/review-movie-url/p" />
+<p:out var="playing_at"		xvalue="$story//review-containers/review-container-movie/review-playing-at/p" />
+<p:out var="opening_date"	xvalue="$story//review-containers/review-container-movie/review-opening-date/p" />
+
+<p:out var="hasMultiWriter" xvalue="$story//review-containers/review-container-movie/review-writers/review-writer[2]/p" />
+
+<c:set var="castList" value="" />
+<x:forEach var="castMember" select="$story//review-containers/review-container-movie/review-casts/review-cast" varStatus="loop">
+	<p:out var="actor" xvalue="$castMember/p" />
+	<c:if test="${not empty fn:trim(actor)}">
+		<c:set var="castList">${castList}<c:if test="${not loop.first}">, </c:if> ${actor}</c:set>
+	</c:if>
+</x:forEach>
+
+<p:out var="writerLabel" value="Writer" />
+<p:out var="writerList" xvalue="$story//review-containers/review-container-movie/review-writers/review-writer[1]/p" />
+<c:if test="${not empty fn:trim(hasMultiWriter)}">
+	<p:out var="writerLabel" value="Writers" />
+	<p:out var="writerList" value="" />
+	<x:forEach var="writerInfo" select="$story//review-containers/review-container-movie/review-writers/review-writer" varStatus="loop">
+		<p:out var="writer" xvalue="$writerInfo/p" />
+		<c:if test="${not empty fn:trim(writer)}">
+			<c:set var="writerList">${writerList}<c:if test="${not loop.first}">, </c:if> ${writer}</c:set>
+		</c:if>
+	</x:forEach>
+</c:if>
+
+<c:if test="${empty fn:trim(star_rating)}">
+	<div class="review-item">
+		<h3 class="review-item-title">${fn:trim(item_title)}</h3>
+	</div>
+</c:if>
+
+<aside class="review-box">
+	
+	<c:if test="${not empty fn:trim(mpaa_rating)}">
+		<b>MPAA Rating:</b> ${mpaa_rating} |	
+	</c:if>
+	
+	<c:if test="${not empty fn:trim(mpaa_reason)}">
+ 		<b>MPAA rating reasons:</b> ${mpaa_reason} | 
+ 	</c:if>
+ 	
+ 	<c:if test="${not empty fn:trim(running_time)}">
+ 		<b>Running Time:</b> ${running_time} | 
+ 	</c:if>
+ 	
+ 	<c:if test="${not empty fn:trim(castList)}">	
+ 		<b>Cast:</b> ${castList} | 
+ 	</c:if>
+ 	
+ 	<c:if test="${not empty fn:trim(director)}">
+ 		<b>Director:</b> ${director} |
+ 	</c:if>
+ 	
+ 	<c:if test="${not empty fn:trim(writerList)}"> 
+ 		<b>${writerLabel}:</b> ${writerList} |
+ 	</c:if>
+ 	
+ 	<c:if test="${not empty fn:trim(opening_date)}">
+ 		<b>Opening:</b> ${opening_date} |
+ 	</c:if>
+ 	
+ 	<c:if test="${not empty fn:trim(playing_at)}"> 
+		<b>Playing at:</b> ${playing_at} |
+	</c:if>
+	
+	<c:if test="${not empty fn:trim(language)}">
+		<b>Language:</b> ${language} |
+	</c:if>
+	
+	<c:if test="${not empty fn:trim(movie_url)}">
+		<b>URL:</b> <bdc:link value="${movie_url}">${movie_url}</bdc:link>
+	</c:if>
+	
+</aside>

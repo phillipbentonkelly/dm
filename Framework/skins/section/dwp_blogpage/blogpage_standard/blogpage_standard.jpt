@@ -1,0 +1,198 @@
+<p:currentObject metadata="dwpMeta" content="dwpContent" webType="WT" uuid="uuid" channel="Boston.com" sectionPage="dwp" sectionId="sectionId" />
+
+<p:getContext var="container_path"/>
+<p:out var="inheritCarousel" xvalue="$dwpMeta//InheritCarousel" />
+<p:out var="dwpSection" xvalue="$dwpMeta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/Sections/Section/SectionPath" scope="application" />
+<p:out var="WT" value="dwp_blogpage" />
+<%-- this is the grossest --%>
+<p:out var="category" value="${fn:substringBefore(container_path, '~')}" />
+<p:out var="ids" value="${fn:substringBefore(fn:substringAfter(container_path, '~'), '`')}" />
+<p:out var="container_path" value="${fn:substringAfter(container_path, '`')}" />
+
+<p:getObject path="${container_path}" var="blogDwp" />
+<p:object webObject="${blogDwp}" metadata="blogMeta" />
+<p:out var="blogName" xvalue="$blogMeta//OnlineProducts/OnlineProduct/BlogAdminMetadata/Name" />
+<bdc:getAdLayer var="adLayerName" webType="${WT}"/>
+<bdc:inheritStoryLayer var="adLayerDwpPath" section="${sectionId}" layer="${adLayerName}" />
+
+<p:out var="adLayerDwpPath" value="${adLayerDwpPath}" scope="request" /> <%-- Needed for the way we're calling the must_reads --%>
+
+<bdc:inheritZoneGlobal var="navigationDwp" section="${sectionId}" zoneName="navigation" />
+<p:out var="adFrequency" xvalue="$dwpMeta//AdFrequency" />
+
+<p:include pageZoneName="navigation" inherits="${navigationDwp}">
+	<p:param name="dwp" value="${currentObject}" />
+	<p:param name="dwpSection" value="${sectionId}" />
+</p:include>
+
+<div class="hp-mod page-content">
+	
+	<!-- Leaderboard Ad Module -->
+	<section class="leaderboard-mod nav-leaderboard-mod">
+		<p:include pageZoneName="ad_lead1" inherits="${adLayerDwpPath}" /> 
+	</section> <!-- /leaderboard-mod -->
+
+	<%-- Pencil Ad Slot / Populated via ad_richemedia --%>
+    <div id="ad_pencil"></div>
+	
+	<div class="site-width">
+	
+		<header class="story-hdr article-hdr">
+			<div class="story-overline-mod">
+				<c:choose>
+					<c:when test="${fn:trim(category) eq ''}"></c:when>
+					<c:otherwise>
+						<bdc:link value="/blogs/${blogName}" className="story-cat overline">${blogName}</bdc:link>
+					</c:otherwise>
+				</c:choose>	
+			</div> <!-- /story-overline-mod -->
+		</header> <!-- /article-hdr -->
+		<p:include pageZoneName="above_carousel">
+			<p:param name="dwp" value="${currentObject}" />
+		</p:include>
+		<div class="secondary">
+
+			<p:include pageZoneName="features_top">
+				<p:param name="dwp" value="${currentObject}" />
+			</p:include>
+
+			<%-- Weather --%>
+			<p:include url="$configurationURI/Framework/frameset/header/weather.jpt" />
+
+			<!-- Big Ad Module -->
+			<section class="hp-big-mod hp-big-1">
+				<%--<p:include pageZoneName="ad_featurestack" inherits="${adLayerDwpPath}" />--%>			
+			</section>
+			
+		</div>
+		<div class="primary">
+			<h3 class="blog-header">${category}</h3>
+			<div class="inner">
+				<%-- Carousel --%>
+				<c:choose>
+				 	<c:when test="${inheritCarousel eq 'True'}">
+						<bdc:inheritZoneGlobal var="pathToCarouselDWP" section="${sectionId}" zoneName="carousel" />
+						<p:include pageZoneName="carousel" inherits="pathToCarouselDWP">
+							<p:param name="sectionForTracking" value="${dwpSection}" />
+							<p:param name="dwp" value="${currentObject}" />
+						</p:include>
+					</c:when>
+					<c:otherwise>
+						<p:getObject var="blogObject" path="${container_path}" />
+						<p:include pageZoneName="carousel" inherits="${container_path}">
+							<p:param name="dwp" value="${blogObject}" />
+						</p:include>
+					</c:otherwise>
+				</c:choose>
+				<p:include pageZoneName="middle">
+					<p:param name="dwp" value="${currentObject}" />
+				</p:include>
+			</div> <!-- /inner -->
+		</div>	<!-- /primary -->
+		<div class="secondary">
+			<%--<img src="http://placehold.it/300x250"/>--%>
+			
+			<p:out var="blogContainer" value="/Boston/Content/Blogs/${blogName}" />
+			<p:getObject path="${blogContainer}" var="containerDwp" />
+			<p:object webObject="${containerDwp}" metadata="containerMeta" />
+			<p:out var="byname" xvalue="$containerMeta//Blogger/text()" />
+			
+			<!-- Story Byline -->
+			<%-- Byline classes change depending on whether there is an image or not --%>
+			<p:out var="bylineClasses" value="byline-pair-mod byline-stacked" />
+			<c:if test="${empty mainImage or fn:trim(mainImage) eq ''}">
+				<p:out var="bylineClasses" value="byline-pair-mod byline-horiz sharespace" />
+			</c:if>
+			
+			<div class="${bylineClasses}">
+				<aside>
+					<%-- Author byline and twitter handle --%>
+					<p:inline url="$configurationURI/Framework/skins/leaf/blogstory/blog_byline.jpt">
+						<p:param name="byname" value="${byname}"/>
+					</p:inline>
+					<%-- End author byline and twitter handle --%>
+	
+				</aside> <!-- l-story-byline -->
+				
+				<p:include pageZoneName="ad_topright" inherits="${adLayerDwpPath}" />
+			</div><!-- // byline-pair-mod byline-stacked -->
+			<!-- "must reads" -->
+			<p:inline url="$configurationURI/Framework/skins/components/must_reads/must_reads.jpt" />
+			<p:inline url="$configurationURI/Framework/skins/components/events/events.jpt" />
+						
+			<!-- kev1 -->
+			<!-- kev2 -->
+		</div>
+		<%--<div class="secondary">
+			<!-- "must reads" -->
+			<p:include url="$configurationURI/Framework/skins/components/must_reads/must_reads.jpt" />
+			<p:include pageZoneName="ad_banner" inherits="${adLayerDwpPath}" />				
+			<!-- kev1 -->
+		</div>--%>
+
+		<p:inline url="$configurationURI/Framework/skins/components/seo_stream_load/seo_stream_load.jpt" />
+
+		<div class="primary">
+			<div class="inner" id="streams-row">
+				<c:set value="${blogObject.metadata}" var="blogMeta" />
+				<p:out var="blogName" xvalue="$blogMeta//Name" />
+				
+				<div id="stream-wrap" class="primary">
+					<div id="" class="stream"> 
+						<div class="stream-items">
+							<c:choose>
+								<c:when test="${!empty category}">
+								    <p:include url="$configurationURI/Framework/skins/leaf/blogstory/blog-post-by-cat.jsp">
+										<p:param name="blogName" value="${blogName}"/>
+										<p:param name="category" value="${category}"/>
+										<p:param name="ids" value="${ids}"/>
+										<p:param name="adFrequency" value="${adFrequency}"/>
+									</p:include>
+								</c:when>
+								<c:otherwise>
+									<p:include url="$configurationURI/Framework/skins/leaf/blogstory/blog-post.jsp">
+										<p:param name="blogName" value="${blogName}"/>
+										<p:param name="adFrequency" value="${adFrequency}"/>
+									</p:include>
+								</c:otherwise>
+							</c:choose>
+						</div> <!-- /stream-items -->
+					</div> <!-- /stream -->
+				</div> <!-- /stream-wrap -->
+			</div>
+		</div>
+		
+		<%--<bdc:inheritZoneGlobal var="pathToStreamConfig" section="${sectionId}" zoneName="stream_config" />
+		<p:include pageZoneName="stream_config" inherits="${pathToStreamConfig}">
+			<p:param name="dwp" value="${currentObject}" />
+		</p:include>--%>
+		
+		<bdc:inheritZoneGlobal var="pathToFeatureStackDWP" section="${sectionId}" zoneName="features_bottom" />
+		<!-- kevins blog path: ${pathToFeatureStackDWP} -->
+		<div class="secondary">
+			<p:include pageZoneName="features_bottom" inherits="${pathToFeatureStackDWP}">
+				<p:param name="dwp" value="${currentObject}" />
+				<p:param name="adLayerDwpPath" value="/Boston/Production/BDC/WebPages/homepage.ad-layer.dwp" />
+			</p:include>
+		</div>
+		
+		<!-- Scroll to Top Button -->
+		<a class="to-top-btn is-off" href="#top">
+			<i class="top-top-arrow"></i>
+			Back to Top
+		</a>
+
+	</div> <!-- /site-width -->
+
+	
+</div> <!-- /hp-mod -->	
+<%-- 
+Blogs don't currently use the stream, so I had to destroy something beautiful, like what happened to Jared Leto in Fight Club, 
+to make blog-post.jsp and blog-post-by-cat.jsp.  It hurt to do it, so I left these commented out calls in memoriam. 
+His name was Robert Paulson. 
+--%>
+<%--<bdc:inheritZoneGlobal var="pathToStreamConfig" section="${blogObject}" zoneName="stream_config" />
+
+<p:include pageZoneName="stream_config" inherits="${container_path}">
+	<p:param name="dwp" value="${currentObject}" />
+</p:include>--%>

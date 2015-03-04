@@ -1,0 +1,75 @@
+// *
+// * Content Byline
+// *
+
+.content-byline {
+  @include constrain;
+  margin-bottom: spacer(px, x-large);
+  margin-bottom: spacer(rem, x-large);
+  @include font-scale(x-small);
+
+
+  &__commentary {
+    display: inline-block;
+    font-weight: $fw-bold;
+  }
+  // Producer Name
+  &__producer {
+    display: inline-block;
+    font-weight: $fw-bold;
+  }
+
+  // Producer Twitter Handle
+  &__twitter {
+    @include font-scale(x-small);
+    font-weight: $fw-regular;
+    @include link-states(color(blue), color(blue, dark), color(blue, x-dark));
+  }
+
+  // Producer Affiliation
+  &__affiliation {
+    @include font-scale(xx-small);
+    display: inline-block;
+    margin-bottom: spacer(px, small);
+    margin-bottom: spacer(rem, small);
+  }
+
+  // Timestamp
+  &__timestamp {
+    display: inline-block;
+    @include font-scale(xx-small, 1);
+  }
+
+  //Date
+  &__date {
+    display: inline-block;
+    @include font-scale(xx-small, 1);
+  }
+}
+
+
+// Content Text Media Queries
+
+@include media-query(tablet) {
+  .content-byline {
+    margin-bottom: spacer(px, x-large);
+    margin-bottom: spacer(rem, x-large);
+    @include font-scale(xx-small);
+
+    // Producer Twitter Handle
+    &__twitter {
+      @include font-scale(xx-small);
+    }
+
+    // Producer Affiliation
+    &__affiliation {
+      @include font-scale(xxx-small);
+    }
+
+    // Timestamp
+    &__timestamp {
+      @include font-scale(xxx-small, 1);
+    }
+
+  }
+}

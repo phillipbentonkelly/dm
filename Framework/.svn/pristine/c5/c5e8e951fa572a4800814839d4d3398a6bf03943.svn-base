@@ -1,0 +1,15 @@
+<%--
+{comments}
+BDC-???? - mystery
+{comments}
+--%>
+
+<%-- hardcoded bio --%>
+<div class="grid-6">
+	<div class="author-bio">
+	  <p class="author-bio__text">
+	    <img src="https://placekitten.com/g/80/80" class="author-bio__headshot" />
+	    	David Epstein <a href="https://twitter.com/growingwisdom" /> has been a professional meteorologist and horticulturalist for three decades. David spent 16 years at WCVB in Boston and currently is a meteorology professor at Framingham State College and teaches a January Program at Colby College.
+	  </p>
+	</div>
+</div>

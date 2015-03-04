@@ -1,0 +1,44 @@
+<p:json url="http://www.boston.com/partners/fb-tw-numbers.json" var="terribleIdeas" />
+
+<p:out var="facebook" value="${terribleIdeas.facebook}" />
+<p:out var="twitter" value="${terribleIdeas.twitter}" />
+
+<%-- Facebook math --%>
+<fmt:parseNumber var="facebook" value="${facebook}" integerOnly="true" />
+<c:choose>
+	<c:when test="${facebook > 1000000}">
+		<fmt:parseNumber var="facebook" value="${facebook / 1000000}" integerOnly="true" />
+		<p:out var="facebook" value="${facebook}m" />
+	</c:when>
+	<c:when test="${facebook > 1000}">
+		<fmt:parseNumber var="facebook" value="${facebook / 1000}" integerOnly="true" />
+		<p:out var="facebook" value="${facebook}k" />
+	</c:when>
+	<c:otherwise></c:otherwise>
+</c:choose>
+
+<%-- Twitter math --%>
+<fmt:parseNumber var="twitter" value="${twitter}" integerOnly="true" />
+<c:choose>
+	<c:when test="${twitter > 1000000}">
+		<fmt:parseNumber var="twitter" value="${twitter / 1000000}" integerOnly="true" />
+		<p:out var="twitter" value="${twitter}m" />
+	</c:when>
+	<c:when test="${twitter > 1000}">
+		<fmt:parseNumber var="twitter" value="${twitter / 1000}" integerOnly="true" />
+		<p:out var="twitter" value="${twitter}k" />
+	</c:when>
+	<c:otherwise></c:otherwise>
+</c:choose>
+
+<!-- Social Media Buttons -->
+<div class="page-header__social">
+  <a href="http://www.facebook.com/boston" target="_blank" class="page-header__social-button" data-omniture="header | social | facebook">
+    <span class="bdc-icon bdc-icon--facebook-x-small"></span>
+    <div class="page-header__social-count">${facebook}</div>
+  </a>
+  <a href="http://www.twitter.com/bostondotcom" target="_blank" class="page-header__social-button js-bdc-social" data-omniture="header | social | twitter">
+    <span class="bdc-icon bdc-icon--twitter-x-small"></span>
+    <div class="page-header__social-count">${twitter}</div>
+  </a>
+</div>

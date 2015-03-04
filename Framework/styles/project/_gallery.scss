@@ -1,0 +1,1300 @@
+@mixin gallery-float {
+	float: right;
+	clear: right;
+	margin: 0 0 15px 25px;
+}
+
+
+/* ============================================= */
+
+/*	General Gallery Stuff						 */
+
+/* ============================================= */
+
+.story-mod .gallery-wrapper {
+	// margin-top: 40px; 
+}
+
+.gallery-h1 {
+		color: #000;
+		@include sans(em(26)/105%, 600);
+		margin: 15px 0;
+		@include mq($article-sm) {
+			font-size: em(36);
+			font-weight: 400;
+			margin-bottom: 30px;
+			margin-top: 0;
+		}
+		@include mq(750px) {
+			font-size: em(40);
+		} //mq
+	}
+
+.gallery-hint-mod {
+	display: none;
+	@include trans;
+	@include animation(fadeout 4s ease);
+	opacity: 0;
+	width: 334px;
+	margin: 34% auto 0; 
+	position: relative;
+}
+.gallery-hint {
+	font-size: 18px;
+	margin: 0 auto;
+	color: #fff;
+	position: absolute;
+	text-align: center;
+	width: 100%;
+	padding: 20px 0;
+	@include rgba-bg(black, .6);
+	border-radius: 31px;
+	}
+
+
+.gallery-wrapper .l-ad-story-banner-1{
+
+    //background: transparent;
+    margin: 0 0 20px -15px;
+    @include mq(321px) {
+        margin:0 auto 30px;    
+    }
+
+    @include mq(max, $sidebar-break) {
+    	margin: 0 auto;
+    	width: 50%;
+    }
+
+    position: relative;
+    top:0;
+    @include mq($article-lg) {
+        margin:0;
+        position: absolute;
+        top:230px;
+        right: 0;
+    }
+}
+.gallery-type { 
+
+	.story-comments {
+		@include mq(900px){
+			margin-top: 0;
+		}
+	}
+	// wrapping everything in gallery-type 
+	// lets you call out specific gallery types
+
+	.story-overline-mod {
+		// Creates space above the overline and line breaks so 
+		// long category names (i.e. A&E) don't overlap story-tools-mod on phone screens
+		@include mq(max, 400px) {
+			margin-top: 15px;
+			width: 50%;
+		}
+	}
+
+	.l-story-byline {
+		// @include mq(max,650px)
+		position: static;
+		.story-tools-mod.story-tools-hdr {
+			top: -19px;
+            @include mq($article-sm) {
+                top: -3px;
+            }
+            // Caused story-tools-mod to overlap with ad-lead1
+            // @include mq(max, 325px) {
+            // 	top: -46px;
+            // }
+		}
+	}
+
+	.gallery-slide {
+		position: relative;
+		@include pie-clearfix;
+		// fix for first slide to account for byline
+		&:first-child {
+			position: static;
+
+			// gallery-body-mod cant usually be relative because of the absolutely positioned ads
+			// on the first slide this doesn't matter because the the byline comes before the slide anyhow.
+			//  
+			// gallery-body-mod position: relative; and gallery-tools-img right: 15px; allow for variable 
+			// gallery-header height;
+			.gallery-body-mod {
+				position: relative;
+			}
+			.gallery-tools-img {
+				@include mq($article-lg) {
+					right: 15px;
+				} 
+			}
+			.gallery-ad-big-mod {
+				//display: none;
+			}
+		}
+	}
+
+	
+	.gallery-tools-img {
+		@include tools(icons);
+
+		@include mq($gallery-ad) {
+			@include tools(btns);				
+		}
+
+	} // gallery-tools-img
+
+
+	.gallery-body-mod {
+		margin-bottom: 30px;
+	}
+
+
+	.gallery-img-nav {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		width: 100%;
+		z-index: 2;
+		pointer-events: none; // Make sure that carousel nav doesn't block important clicks on content
+
+		.arrow-btn-next:after,
+		.arrow-btn-prev:after {
+			top: 46.5%;
+			@include size(36px 66px);
+		}
+
+		.arrow-btn-next {
+			width: 70%;
+			padding: 0;
+		}
+		.arrow-btn-prev {
+			width: 30%;
+			padding: 0;
+		}
+	} // lead-tz-nav
+
+	// Sets universal ad properties for secondary ad position
+	.gallery-ad-mod-secondary,
+	.gallery-ad-big-mod-secondary {
+		width: 300px;
+		margin: 15px auto;
+		//display: none;
+
+		// On small screens, make sure that
+		// advertisement is visually centered
+		@include mq(max, 340px) {
+			margin-left: -15px;
+		}
+	}
+
+
+	// Show prev/next buttons on hover,
+	// which is triggered by jquery
+	.gallery-img-mod {
+		background-color: #000;
+		position: relative;
+		&.is-hovering {
+			.arrow-btn-next,
+			.arrow-btn-prev {
+				@include opacity(0.75);
+			}
+		}
+	}
+
+
+	// .l-ad-story-banner-1 {
+	//	@include mq($article-lg){
+	//		margin-bottom: 0;
+	//	}
+	// }
+
+	.gallery-body-mod {
+		position: static;
+		float: left;
+	}
+
+	.slide-body-mod {
+		position: relative;
+	}
+
+	.story-timestamp {
+		@include mq (max, $article-sm) {
+			bottom: -23px;
+		}
+	}
+
+	// General gallery byline
+	&.first-slide,
+	&.scrolling-gallery {
+		.story-byline-mod {
+			display: block;
+		}
+		// .l-ad-story-banner-1 {
+		//	display: block;
+		// }
+	}
+
+	.story-byline-mod {
+		@include mq(max, $article-lg){
+			margin-bottom: 0;
+		}
+	}
+
+	// .l-ad-story-banner-1 {
+	//	display: block;
+	//	@include mq(728px) {
+	//		//display: none;
+	//	}
+	//	&:before {
+	//	//display: none;
+	//	}
+	// }
+	.story-byline-mod {
+		//display: none;
+		float: left;
+		width: 300px;
+	}
+
+	.byline-pair-mod {
+		//width: 100%;
+		margin-bottom: 30px;
+		@include mq($article-sm) {
+			margin-bottom: 20px;
+		}
+	}
+	// General gallery tools
+
+	.gallery-tools-img {
+		z-index: 3;
+		float: right;
+		padding: 0 0 15px 15px;
+        margin: 15px 15px 0 0;
+		@include trans;
+
+        @include mq($mobile-ad){
+            float: none;
+            position: absolute;
+            top: 60px;
+            right: 15px;
+            margin:0;
+            opacity: 0;		
+            //opacity: 1;
+        }
+		// &.gallery-share-title-fix {
+		//	top: 55px;
+		// }
+	}
+	.is-hovering .gallery-tools-img {
+			opacity: .6;
+			&:hover {
+				opacity: 1;
+			}
+
+	}
+
+	.gallery-tools-img .tools-link-share {
+		display: inline-block;
+
+		@include mq($mobile-ad){
+			background-color: #000;
+			padding: 6px 7px 7px 7px;
+			@include box-shadow(none);
+		}
+	}
+
+	&.text-focused-gallery,
+	&.split-focused-gallery {
+		// .gallery-tools-img { // fix for text-focused + split focused when ad is absolutely positioned 
+		//	@include mq($article-lg) { 
+		//		right: 339px; 
+		//	}
+		// }
+		.gallery-byline  { // makes byline sit on the right
+			@include mq($article-lg) {
+				width: 300px;
+				float: right;
+			}
+		}
+		// &.first-slide,
+		// &.scrolling-gallery {
+		//	.l-ad-story-banner-1:before {
+		//		display: block;
+		//	}
+		// }
+	
+	}
+
+	// Slide Title stuff stuff
+
+	.slide-headline-mod {
+		min-height: 35px;
+		margin-bottom: 10px;
+		@include mq(max, $sidebar-break) {
+			min-height: 10px;
+		}
+	}
+
+	.slide-head {
+		display: inline-block;
+		@include sans(em(24),500);
+		color: #000; 
+		margin-right:5px;
+	}
+
+	.slide-subhead {
+		display: inline-block;
+		@include sans(em(24),400);
+		color: #888;
+	}
+
+	.slide-num {
+		display: none;
+	}
+
+	&.num-ascend,
+	&.num-descend {
+		.slide-num {
+			display: inline-block;
+			float: left;
+			margin-top: 5px;
+			margin-right: 12px;
+			padding: 3px 2px 2px 3px;
+			min-width: 21px;
+			border-right: 1px solid $red-drk;
+			border-bottom: 1px solid $red-drk;
+			@include sans(em(13),600);
+			text-align: center;
+			background-color: $red;
+			color: #fff;
+		}
+	} // num-ascend
+
+	.gallery-text-mod {
+		@extend .txt;
+		//max-width: 600px;
+		strong > a, em > a {
+			@include link;
+		}
+
+		p {
+			display: inline;
+			padding-right: 10px;
+		}
+		.next-slide-link {
+			@include mq(max, $sidebar-break) {
+				display: none;
+			}
+		}
+	 }
+	.gallery-text {
+		margin-bottom: 18px;
+	}
+
+	// General Gallery img 
+
+	.gallery-img {
+		max-height: 60%;
+		display: block;
+		margin: 0 auto;
+	}
+
+} // gallery-type
+
+/* ============================================= */
+
+/*	Scrolling Gallery							 */
+
+/* ============================================= */
+
+
+.scrolling-gallery {
+
+	.story-tools-sidecar {
+		margin-left: -70px;
+
+		// Hide sidecar because galleries don't leave room 
+		// for persistent tools at this size the way articles do 
+		@include mq($article-lg, 1175px) {
+			@include opacity(0);
+		}
+		@include mq(1175px) {
+			@include opacity(1);
+		}
+	}
+
+	//  Hides click gallery nav elements
+	.arrow-top-mod,
+	.slide-footer,
+	.gallery-img-nav {
+		display: none;
+	}
+
+	&.split-focused-gallery{
+		.gallery-slide {
+			@include mq($gallery-ad){
+				margin-bottom: 50px;
+			}
+		}
+	}
+	&.text-focused-gallery {
+		.gallery-slide {
+		padding: 0;
+			@include mq($gallery-ad){
+				padding: 25px 0;
+			}
+			&:first-child {
+				padding: 0 0 20px;
+				@include mq($gallery-ad) {
+					padding: 0 0 25px;
+				}
+			}
+		}
+	}
+}
+
+
+/* ============================================= */
+
+/*	Click gallery								 */
+
+/* ============================================= */
+
+.click-gallery {
+
+.no-touch &.first-slide {
+		// shows gallery hint mod on first slide
+		.gallery-hint-mod {
+			display: block;
+		}
+		
+		.l-story-byline {
+			margin: 0 0 20px;
+		}
+		.byline-pair-mod {
+			//width: 100%;
+            width: 300px;
+			margin-bottom: 30px;
+			@include mq($article-sm) {
+			 	margin-bottom: 20px;
+			}			
+		}
+
+}
+
+.touch &.first-slide {
+		// shows gallery hint mod on first slide
+		.gallery-hint-mod {
+			display: none;
+		}
+}
+	.l-story-byline,
+	.byline-pair-mod {
+		margin: 0;
+	}
+
+	.story-tools-sidecar {
+		display: none;
+	}
+
+	// makes room for prev / next buttons nex to headline
+	.gallery-h1 {
+		margin-right: 100px;
+	}
+
+	.gallery-body-mod {
+		@include mq($gallery-ad) {
+			// Tighten the prev/next controls
+			// when they appear on click galleries
+			margin-bottom: 0;
+		}
+	}
+
+	.arrow-top-mod {
+		position: absolute;
+		right: 0;
+		top: 0;
+	}
+
+	.slide-headline-txt {
+		display: inline-block;
+		width: 80%;
+	}
+
+	.prev-btn,
+	.next-btn {
+		display: inline-block;
+		text-indent: -9999px;
+		@include size(35px);
+		float: left;
+	}
+
+	// This can be deleted once the new gallery arrow styles have been deployed
+
+	// .prev-bottom-btn,
+	// .next-bottom-btn {
+	// 	text-indent: -9999px;
+	// 	@include size(26px);
+	// 	float: left;
+	// 	border-color: #000;
+	// 	opacity: .25;
+	// 	&:hover {
+	// 		opacity: .6;
+	// 	}
+	// }
+	
+	.footer-tools-preview {
+		display: inline-block;
+		vertical-align: middle;
+		&:hover {
+			.preview-footer-icon {
+				@include opacity(.6);
+			}
+		}
+	}
+
+	.preview-footer-icon {
+		margin-right: 10px;
+		float: left;
+		@include trans;
+		@include opacity(.25);
+		@include size(18px);
+		@include svg(preview-black);
+	}
+
+	.gallery-footer-preview {
+		line-height: 20px;
+	}
+
+	.prev-btn {
+		@include svg(arrow-left-white, false);
+		@include button-state($red);
+		margin-right: 5px;
+	}
+
+	.next-btn {
+		@include svg(arrow-right-white, false);
+		@include button-state($red);
+	}
+
+	// This can be deleted once new gallery button styles are deployed
+
+	// .prev-bottom-btn {
+	// 	@include svg(arrow-left-small, false);
+	// }
+
+	// .next-bottom-btn {
+	// 	@include svg(arrow-right-small, false);
+	// }
+
+	// Class for the inactive buttons on the first and last slides
+	.inactive-slide-btn {
+		opacity: 0.4;
+		&:hover {
+			opacity: 0.4;
+		}
+	}
+
+	.arrow-bottom-mod {
+		display: inline-block;
+		vertical-align: middle;
+		margin-right: 30px;
+	}
+
+	.gallery-text-mod {
+		margin-bottom: 20px;
+	}
+
+	.gallery-drop-down {
+		display: inline-block;
+		vertical-align: middle;
+		margin-right: 25px;
+	}
+
+	.gallery-pagination {
+		margin: 10px 8px 0;
+		float: left;
+		font-size: em(14);
+	}
+
+	.drop-down-list { 
+	    overflow: hidden; /* this hides the select's drop button */
+	    padding: 0; 
+	    margin: 0; 
+	    @include svg(gray-down-solid, false);
+	    background: no-repeat bottom right, 
+				url(/assets/images/black-20.png) repeat-y 102px 0; 
+	    height: 26px;
+	    width: 130px;
+	    border: $border; 
+		select { 
+		    width:115%; // this percentage effectively extends the drop down button out of view 
+		    background-color: transparent; // this hides the select's background making any styling visible from the div 
+		    background-image: none; 
+		    -webkit-appearance: none; //this is required for Webkit browsers
+		    border: none; 
+		    box-shadow: none; 
+		    color: #444;
+		    padding: 5px 12px; // padding should be added to the select, not the div
+			@include sans(14, 600);
+			&:focus {
+			outline: none;
+			}
+		}
+		option {
+			@include sans;
+		}
+	} // drop-down-list
+
+
+	.slide-footer {
+		padding-bottom: 20px; 
+	}
+
+} // click-gallery
+
+/* ============================================= */
+
+/*	Text Focused Gallery						 */
+
+/* ============================================= */
+
+.text-focused-gallery {
+
+	// Sets universal ad properties for primary ad position
+	.gallery-ad-mod,
+	.gallery-ad-big-mod {
+		@include gallery-float;
+        //TODO: this is the place for a media query for the ad-big
+		//display: none;
+		@include mq($article-lg) {
+			position: absolute;
+			right: 0;
+		}
+	}
+
+	.gallery-caption {
+		@include caption;
+		@include mq($mobile-ad){
+			@include caption(light);
+		}
+	}
+
+	&.story-width {
+		@include mq(max, $article-lg) {
+			max-width: 800px; 
+		}
+	}
+
+	.gallery-body-mod {
+		@include mq($mobile-ad) {
+			margin-bottom: 0;
+		}
+		@include mq($article-lg) {
+			//max-width: 700px;
+            max-width: 660px;
+		}
+		max-width: 800px;
+		width: 100%;
+	}
+
+	.gallery-text-mod {
+		@include article-txt;
+	}
+
+	&.first-slide.click-gallery .gallery-dropcap {
+		@include dropcap;
+	}
+
+	.gallery-slide:first-child {
+		.gallery-dropcap {
+			@include dropcap;
+		}
+	}
+
+	.gallery-img-mod {
+		margin: 0 -25px 25px;
+		@include mq($mobile-ad){
+			@include gallery-float;
+			max-width: 360px;
+			.arrow-btn-next,
+			.arrow-btn-prev {
+				display:none;
+			}
+		} // mq
+	} 
+
+	 // first slide byline fix
+	&.scrolling-gallery {
+        // REMOVED ~ jm we don't use this class anymore - it was for the sidecar
+		// .story-share-mod{
+		//	@include mq($article-lg) {
+		//		margin-top: -193px;
+		//	}
+		// }
+	}
+	// we need to have some level of offset to bring the gallery UP to meet the headline and byline
+	&.first-slide.click-gallery {
+		.gallery-body-mod{
+			@include mq($article-lg) {
+				//margin-top: -143px;
+			}
+		}
+	}
+
+	.gallery-img {
+		max-width: 100%;
+		@include mq($mobile-ad){
+		}
+	}
+
+	.gallery-ad-mod {
+		//display: none;
+	}
+
+	// taboola
+
+	.taboola-hidden {
+		@include mq($article-lg) {
+			display: none;
+		}
+	}
+
+	// .taboola-list-mod {
+	//	@include mq($article-lg) {
+	//		//margin-top: -110px;
+	//	}
+	// }
+
+	// scrolling-gallery specific fixes
+
+	&.scrolling-gallery {
+		.gallery-slide {
+			@include mq ($gallery-ad) {
+				border-top: $border;
+				&:first-child {
+					border-top: 0px !important;
+					.gallery-tools-img {
+						top: 15px;
+					}
+				}
+			}
+			// .gallery-tools-img {
+			//	top: 65px;
+			// }
+			// .gallery-tools-img.gallery-share-title-fix {
+			//	top: 80px;
+			//	.gallery-slide:first-child & {
+			//		top: 55px;
+			//	}
+			// }
+		}
+	}
+
+	// ad placement logic
+
+	&.scrolling-gallery{
+		.gallery-slide {
+			&:nth-child(6n+2) {
+				.gallery-ad-big-mod {
+					@include mq($gallery-ad) {
+						display: block;
+					}
+				}
+				.gallery-ad-big-mod-secondary {
+					@include mq(max, $gallery-ad) {
+						display: block;
+					}
+				}
+			}
+			&:nth-child(even) {
+				.gallery-ad-mod {
+					@include mq($gallery-ad) {
+						display: block;
+					}
+				}
+				.gallery-ad-mod-secondary {
+					@include mq(max, $gallery-ad) {
+						display: block;
+					}
+				}
+			}
+
+			&:nth-child(6n+2) {
+				.gallery-ad-mod {
+					//display: none;
+				}
+				.gallery-ad-mod-secondary {
+					//display: none;
+				}
+			}
+		}
+	}
+
+	&.click-gallery {
+		.gallery-slide {
+			&:nth-child(even) {
+				.gallery-ad-big-mod {
+					@include mq($gallery-ad) {
+						display: block;
+					}
+				}
+				.gallery-ad-big-mod-secondary {
+					@include mq(max, $gallery-ad) {
+						display: block;
+					}
+				}
+			}
+			&:nth-child(odd) {
+				.gallery-ad-mod {
+					@include mq($gallery-ad) {
+						display: block;
+					}
+				}
+				.gallery-ad-mod-secondary {
+					@include mq(max, $gallery-ad) {
+						display: block;
+					}
+				}
+			}
+			&:first-child {
+				.gallery-ad-mod {
+					//display: none;
+				}
+				.gallery-ad-mod-secondary {
+					//display: none;
+				}
+			}
+		}
+	}
+    .gallery-related-links {
+        width:100%;
+        max-width: 660px;
+    }
+} // text-focused-gallery
+
+
+
+/* ============================================= */
+
+/*	Split Focused Gallery						 */
+
+/* ============================================= */
+
+.split-focused-gallery {
+
+	.gallery-caption {
+		@include caption;
+	}
+
+	.gallery-body-mod {
+		width:100%;
+		//max-width: 700px;
+        max-width: 660px;
+		margin-bottom: 0;
+	}
+
+	 .gallery-text {
+		//max-width: 600px;
+	 }
+
+	 // first slide byline fix
+	&.scrolling-gallery {
+        // REMOVED - this was for the sidecar, since retired ~jm
+		// .story-share-mod{
+		//	@include mq($article-lg) {
+		//		margin-top: -193px;
+		//	}
+		// }
+	}
+	
+	// again, why? 
+    &.first-slide.click-gallery {
+		.gallery-body-mod{
+			@include mq($article-lg) {
+				//margin-top: -143px;
+			}
+		}
+	}
+	 // gallery-img-stuff
+
+	.gallery-img-mod {
+		@include mq(max, $leaderboard){
+			margin: 0 -25px 20px;
+		}
+		margin: 0 0 20px;
+	}
+
+	.gallery-img {
+		max-width: 100%;
+	}
+
+	.gallery-tools-img {
+		@include mq ($mobile-ad, $leaderboard){
+			margin-right: -25px;
+		}
+	}
+
+	.gallery-ad-mod,
+	.gallery-ad-big-mod {
+		//display: none;
+        //TODO: Media query for ad for gallery
+		@include gallery-float;
+		@include mq($article-lg){
+			position: absolute;
+			right: 0;
+			top: 0;
+		}
+		&.gallery-ad-title-fix {
+			@include mq($article-lg){
+				top: 39px;
+			}
+		}
+	}
+
+	// ad placement logic
+
+	.gallery-slide {
+		&:nth-child(even) {
+			.gallery-ad-big-mod {
+				@include mq($gallery-ad) {
+					display: block;
+				}
+			}
+			.gallery-ad-big-mod-secondary {
+				@include mq(max, $gallery-ad) {
+					display: block;
+				}
+			}
+		}
+		&:nth-child(odd) {
+			.gallery-ad-mod {
+				@include mq($gallery-ad) {
+					display: block;
+				}
+			}
+			.gallery-ad-mod-secondary {
+				@include mq(max, $gallery-ad) {
+					display: block;
+				}
+			}
+		}
+		&:first-child {
+			.gallery-ad-mod {
+				//display: none;
+			}
+		}
+
+	}
+    .gallery-related-links {
+        width:100%;
+        max-width: 660px;
+    }
+
+} // split-focus-gallery
+
+
+/* ============================================= */
+
+/*	Image Focused Gallery						 */
+
+/* ============================================= */
+
+
+.image-focused-gallery {
+
+	.gallery-slide {
+		.gallery-ad-mod {
+				@include mq($gallery-ad) {
+					display: block;
+				}
+			}
+			.gallery-ad-mod-secondary {
+				@include mq(max, $gallery-ad) {
+					display: block;
+				}
+			}
+		&:nth-child(3n+3) {
+			.gallery-ad-big-mod {
+				@include mq($gallery-ad) {
+					display: block;
+				}
+			}
+			.gallery-ad-big-mod-secondary {
+				@include mq(max, $gallery-ad) {
+					display: block;
+				}
+			}
+		}
+			
+		&:nth-child(3n+3) {
+			.gallery-ad-mod {
+				@include mq($gallery-ad) {
+					//display: none;
+				}
+			}
+			.gallery-ad-mod-secondary {
+				@include mq(max, $gallery-ad) {
+					//display: none;
+				}
+			}
+		}
+	}
+
+
+	.gallery-ad-mod,
+	.gallery-ad-big-mod {
+		//display: none;
+		@include mq($gallery-ad){
+			float: right;
+			margin: 0 0 15px 15px;
+		}
+	}
+
+	.byline-pair-mod {
+		@include mq($article-lg){
+		margin-bottom: 0;
+		}
+	}
+	.gallery-body-mod {
+		width: 100%;
+        max-width:660px;
+		//margin-bottom: 0;
+	}
+
+	.gallery-caption {
+		@include caption;
+	}
+
+	//  .l-ad-story-banner-1 {
+	//	margin-bottom: 0;
+	//	&:before {
+	//		//display: none;
+	//	}
+	// }
+
+	.gallery-byline .l-story-byline {
+		margin-left: 0px;
+		float: left;
+		margin-bottom: 0;
+	}
+
+	&.story-width {
+		@include mq($leaderboard, 1075px) {
+			max-width: 100%;
+			margin: 0 25px 0 25px;
+		}
+	}
+
+	.taboola-hidden {
+		@include mq($article-lg){
+			display: none;
+		}
+	}
+
+	.gallery-img-mod {
+		position: relative;
+		margin: 0 -25px 20px -25px;
+		@include trans;
+		@include mq($leaderboard){
+			margin: 0 0 20px 0;
+		}
+	}
+
+	.gallery-img {
+		max-width:100%;
+	}
+
+	.story-comments {
+		margin-top: 0;
+	}
+
+	.gallery-tools-img {
+		@include mq ($mobile-ad, $leaderboard){
+			margin-right: -25px;
+		}
+	}
+
+	.taboola-list-mod {
+		@include mq(max, $article-lg) {
+			max-width: 680px;
+			margin: 0 auto;
+			float: none;
+		}
+		// @include mq($article-lg) {
+		//	margin-top: -110px;
+		// }
+	}
+
+	.story-comments {
+		@include mq(max, $article-lg) {
+			max-width: 680px;
+			margin: 0 auto;
+		}
+	}
+
+	.slide-footer {
+		@include mq(max, $article-lg) {
+			max-width: 680px;
+			margin: 0 auto 20px;
+		}
+	}
+
+	.gallery-related-links {
+        width:100%;
+		max-width: 660px;
+	}
+} // image-focus-gallery
+
+
+.article-gallery {
+
+	.l-story-primary {
+		@include mq(700px) {
+			width: 100%;
+		}
+	}
+
+	.article-gallery-img-mod {
+		background-color: #000;
+		margin-bottom: 25px;
+	}
+
+	.gallery-img {
+		max-width: 100%;
+	}
+
+	.gallery-img-nav {
+		margin-bottom: 52px;
+	}
+
+	.gallery-caption {
+		bottom: 27px;
+	}
+}
+
+
+
+/* ============================================= */
+
+/*	Gallery Preview								 */
+
+/* ============================================= */
+
+.gallery-preview {
+	background-color: white;
+	position: relative;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: 11px 5px;
+	@include mq(600px){
+		margin: 50px;
+	}
+	@include mq(1276px){
+	margin: 50px auto;
+		width: 1180px;
+	}
+
+	.gallery-preview-hdr {
+		border-bottom: $border;
+		padding: 15px 30px 15px 15px;
+		display: block;
+		background-color: $bg;
+		z-index: 2;
+		@include mq(600px){
+			padding: 20px 30px;
+		}
+	}
+
+	.gallery-h1 {
+		margin: 0;
+	}
+
+	.gallery-img-link {
+		position: absolute;
+		max-width: none;
+		top: 0;
+	    bottom: 0;
+	    left: 10px;
+	    right: 0;
+	    background-color: #000;
+	}
+
+	.gallery-img {
+		position: absolute;
+		max-width: none;
+	    height: auto;
+	    width: 150%;
+	}
+
+	.gallery-slides {
+		padding: 10px;
+		@include mq(600px) {
+			padding: 30px 30px 20px;
+		}
+		@include pie-clearfix;
+
+		@include mq(max, 400px){
+			@include media-grid(2, 10px, gallery-slide);
+		}
+		@include mq(400px, 750px) {
+			@include media-grid(3, 10px, gallery-slide);
+		}
+		@include mq(750px, 900px) {
+			@include media-grid(4, 10px, gallery-slide);
+		}
+		@include mq(900px) {
+			@include media-grid(5, 10px, gallery-slide);
+		}
+	}
+	.gallery-slide {
+
+		margin-bottom: 10px;
+		overflow: hidden;
+		position: relative;
+		&:before {
+			@include content;
+			display: block;
+			padding-top: 100%;
+		}
+	}
+	.slide-headline-mod {
+		margin-left: 10px;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		padding: 60px 7px 5px;
+		color: #fff;
+		pointer-events: none;
+		@include background-image(linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, .7)));
+		@include mq($article-lg) {
+		 	padding: 60px 10px 10px;
+		}	
+	}
+
+	.leaderboard-mod {
+		width: 728px;
+		margin: 0 auto;
+	}
+	.mfp-close {
+		right: 0px;
+		top: 0px;
+	}
+
+	.gallery-preview-ftr {
+		padding: 25px 0;
+		display: block;
+		background-color: $bg;
+		z-index: 2;
+		border-top: $border;
+	}
+}
+//test stuff
+.ad-banner-mod.story-banner-1{
+    img{
+        display: block!important;
+    }
+}

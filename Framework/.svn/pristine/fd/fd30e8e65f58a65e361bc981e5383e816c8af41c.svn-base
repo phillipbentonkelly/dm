@@ -1,0 +1,224 @@
+<div class="story-width{{^image.full}} article-no-art{{/image.full}}">
+
+	<header class="story-hdr article-hdr">
+		<div class="story-overline-mod">
+			<a href="index.html#{{section.0}}" class="story-cat overline">{{category}}</a>
+		</div> <!-- /story-overline-mod -->
+
+		<h1 class="story-h1">{{{head}}}</h1>
+	</header> <!-- /article-hdr -->
+
+	<article class="article-bd">
+		<!-- Story Share Tools: Sidecar -->
+		<div class="story-tools-mod story-tools-sidecar">
+			<ul class="tools-btns">
+				<li class="tools-item tools-share"><a class="popup-trigger tools-link tools-link-share" href="#mfp-share"><i class="share-icon"></i> <i class="tools-txt">Share</i></a></li>
+				<li class="tools-item tools-comment"><a class="tools-link tools-link-comment js-goto-open-comments" href="#story-comments"><i class="comment-icon"></i><i class="sc-comment-count">5</i><i class="tools-txt">Comment</i></a></li>
+			</ul> <!-- /share-sidecar -->
+		</div> <!-- /story-tools-sidecar-->
+
+		<!-- Story Lead Art -->
+		{{#image.full}}
+		{{^is_story_article}}
+		<div class="l-story-primary no-flow">
+			<figure class="article-lead-art-mod">
+				<img class="article-art article-lead-art" src="{{image.full}}" />
+				{{^is_story_article}}{{#subhead}}
+				<figcaption class="caption story-caption reverse">
+					{{{subhead}}} <i class="credit">Credit: Jonathan Wiggs, Boston Globe</i>
+				</figcaption> <!-- /article-caption -->
+				{{/subhead}}{{/is_story_article}}
+			</figure>
+		</div> <!-- /article-art-mod -->
+		{{/is_story_article}}
+		{{/image.full}}
+
+
+		<!-- Story Byline -->
+		<div class="byline-pair-mod {{#image.full}}byline-stacked{{/image.full}} {{^image.full}}byline-horiz sharespace{{/image.full}}">
+			<aside class="l-story-byline">
+				<section class="story-byline-mod">
+					<a href="#URL:author-page" class="byline-avatar-mod art-bd">
+						<img class="story-byline-avatar art" src="assets/photos/avatar-gary-dzen.jpg" />
+					</a> <!-- /author-avatar-mod -->
+					<div class="txt-bd">
+						<ul class="article-byline-list">
+							<li class="story-byline"><a href="#URL:author-page">Gary Dzen</a></li>
+							<li class="story-byline-handle"><a href="#URL:author-twitter-handle">@globegary</a></li>
+							<li class="story-byline-affiliation">Boston.com Staff</li>
+							<li class="story-timestamp">June 25, 2013 7:54am</li>
+						</ul>
+					</div> <!-- /txt-bd -->
+				</section> <!-- /story-byline-mod -->
+
+				<!-- Story Share Tools: Header -->
+				<section class="story-tools-mod story-tools-hdr">
+					<ul class="tools-horiz story-tools-horiz">
+						<li class="tools-item tools-share"><a class="popup-trigger" href="#mfp-share"><i class="share-icon"></i> <i class="tools-txt">Share</i></a></li>
+						<li class="tools-item tools-comment"><a href="#story-comments" class="js-goto-open-comments"><i class="comment-icon"></i> <i class="tools-txt">Comment</i></a></li>
+					</ul>
+				</section>  <!-- /story-tools-hdr -->
+			</aside> <!-- l-story-byline -->
+
+
+		<!-- Story Banner Ad -->
+		<div class="l-ad-story-banner-1 {{^image.full}}byline-horiz-ad{{/image.full}}">
+			<section class="ad-banner-mod story-banner-1">
+				<img src="assets/ads/banner-1.jpg" class="ad-banner" />
+			</section>
+		</div> <!-- l-story-secondary -->
+
+		</div>
+
+		{{^is_story_article}}
+		<!-- Story Text -->
+		<div class="l-story-txt-share article-txt-top no-flow">
+
+			{{#story.part_one}}
+				{{{story.part_one}}}
+			{{/story.part_one}}
+			{{^story.part_one}}
+			<p class="article-p first-p"><i class="dropcap">A</i> new study grabbing headlines links a high intake of fatty fish with a modestly reduced risk of breast cancer. I’m always hesistant to report on diet and cancer prevention studies because it’s very tough to single out a particular food from a person’s diet and conclude that it altered cancer risk.</p>
+			<p class="article-p">Fortunately, foods usually associated with cancer prevention &mdash; such as colorful fruits and vegetables &mdash; are usually nutritious while those associated with a higher cancer risk—such as hot dogs and deli meats—usually aren’t.</p>
+			<p class="article-p">Such is the case with the latest finding published in the British Medical Journal linking a high intake of oily fish rich in Omega-3 fats with an 18 percent lower risk of breast cancer. These types of fish, such as salmon, also have been associated with heart benefits, so it doesn’t hurt to eat more of them.</p>
+			{{/story.part_one}}
+
+			<!-- Related Links -->
+			<aside class="article-related-links">
+ 				<!-- <ul class="related-list horiz-list">
+					<li class="related-h-mod"><h5 class="related-h">Related</h5></li>
+					<li><a href="#URL:related-story">Related Story Link Goes Here</a></li>
+					<li><a href="#URL:related-story">Related Story Link Goes Here</a></li>
+					<li><a href="#URL:related-story">Related Story Link Goes Here</a></li>
+				</ul> -->
+			</aside> <!-- /article-related -->
+		</div> <!-- /l-story-txt-share -->
+
+		<!-- Big Ad -->
+		<p class="story-ad-txt overline-weak">Continue Reading Below</p>
+		<div class="l-story-secondary">
+			<div class="ad-big-mod article-big-1">
+				<img src="assets/ads/big-1.jpg" class="ad-big" />
+			</div>
+		</div> <!-- /l-story-secondary -->
+
+		<div class="l-story-txt-share">
+			{{#story.part_two}}
+				{{{story.part_two}}}
+			{{/story.part_two}}
+			{{^story.part_two}}
+			<p class="article-p">In the latest finding, Chinese researchers reviewed 26 previous studies involving nearly 900,000 women that either examined their fish intake, overall intake of Omega-3 fats from fish and plant oils, or measured concentrations of Omega-3 fats in body tissues.</p>
+			<p class="article-p">The researchers found that those who reported eating the most Omega-3 fats in fish or who had the highest concentration of these fats in their body were the least likely to have been diagnosed with breast cancer. Each 0.1 gram daily dose of Omega-3 fats was associated with a 5 percent lower breast cancer risk with the benefits leveling off at about 0.3 to 0.4 grams per day.</p>
+			<p class="article-p">What’s perhaps just as telling, though, are the links the researchers didn’t find: Omega-3 fats from plant sources like flax seeds and walnuts weren’t associated with a reduced breast cancer risk; nor did the overall intake of fish &mdash; many of which have scant amounts of Omega-3 fats&mdash; make a difference.</p>
+			<p class="article-p">The National Library of Medicine states on its website that “fish rich in omega-3 fatty acids include mackerel, tuna, salmon, sturgeon, mullet, bluefish, anchovy, sardines, herring, trout, and menhaden.” Smaller fish like salmon, herring, and sardines, though, tend to contain more than larger fish like tuna. It’s also hard to know how much Omega-3 fats are in the fillet you buy at the supermarket since the amount largely depends on the fish’s diet.</p>
+			<p class="article-p">Some research suggests wild Pacific Salmon contain far more Omega-3 fats than farmed varieties of salmon. But a 2008 study that sampled fish in grocery stores around the country found that farmed Atlantic salmon and trout had adequate amounts of Omega-3 fats while farmed tilapia and catfish had little to none.</p>
+			{{/story.part_two}}
+		</div> <!-- /l-story-txt-share -->
+
+		{{#story.part_three}}
+
+			<!-- Big Ad -->
+			<p class="story-ad-txt overline-weak">Continue Reading Below</p>
+			<div class="l-story-secondary">
+				{{#has_comment_tease}}
+				<div class="l-sg-secondary-mod">
+					<h3 class="section-h">What are people thinking?</h3>
+					<article class="comment-tease-mod">
+						<div class="comment-avatar-bd art-bd">
+							<img class="art" src="{{comment_tease.avatar}}{{^comment_tease.avatar}}assets/photos/avatar-blank.jpg{{/comment_tease.avatar}}"/>
+						</div> <!-- /art-bd -->
+						<div class="comment-txt-bd txt-bd">
+							<ul class="comment-title-list">
+								<li class="comment-username comment-title-item">{{comment_tease.name}}{{^comment_tease.name}}User1234{{/comment_tease.name}}</li>
+								<li class="comment-timestamp comment-title-item">August 13, 20013</li>
+							</ul>
+							<div class="comment-txt-mod">
+								<p class="comment-txt">{{comment_tease.comment}}{{^comment_tease.comment}}Neque porro quisquam est, qui dolorem ipsum quia, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.{{/comment_tease.comment}}</p>
+							</div>
+							<a class="btn-link comment-tease-btn js-goto-open-comments" href="#story-comments">View More</a>
+						</div> <!-- /txt-bd -->
+					</article>
+					<div class="tz-comment-txt-bd">
+						<div class="form-row">
+							<form class="form-large expandable-form">
+								<div class="input-mod">
+									<textarea class="textarea tz-comment-input add-comment-input expandable-input" type="search" placeholder="What do you think?"></textarea>
+								<button type="submit" class="submit-btn expandable-comment-btn">Submit</button>
+								</div>	
+							</form>
+						</div>
+					</div>
+				</div>	
+				{{/has_comment_tease}}
+				<div class="ad-big-mod article-big-2">
+					<img src="assets/ads/big-2.jpg" class="ad-big" />
+				</div>
+			</div> <!-- /l-story-secondary -->
+
+			<div class="l-story-txt-share">
+					{{{story.part_three}}}
+			</div> <!-- /l-story-txt-share -->
+		{{/story.part_three}}
+
+		{{! If Story Part Four Exists }}
+		{{#story.part_four}}
+			<!-- Big Ad -->
+			<p class="story-ad-txt overline-weak">Continue Reading Below</p>
+			<div class="l-story-secondary">
+				<div class="ad-big-mod article-big-3">
+					<img src="assets/ads/big-3.gif" class="ad-big" />
+				</div>
+			</div> <!-- /l-story-secondary -->
+
+		<div class="l-story-txt-share">
+			{{{story.part_four}}}
+		</div> <!-- /l-story-txt-share -->
+		{{/story.part_four}}
+
+		{{! If Story Part Five Exists }}
+		{{#story.part_five}}
+			<!-- Big Ad -->
+		<p class="story-ad-txt overline-weak">Continue Reading Below</p>
+		<div class="l-story-secondary">
+			<div class="ad-big-mod article-big-4">
+				<img src="assets/ads/big-4.jpg" class="ad-big" />
+			</div>
+		</div> <!-- /l-story-secondary -->
+
+		<div class="l-story-txt-share">
+			{{{story.part_five}}}
+		</div> <!-- /l-story-txt-share -->
+		{{/story.part_five}}
+
+		{{! If Story Part Six Exists }}
+		{{#story.part_six}}
+			<!-- Big Ad -->
+		<p class="story-ad-txt overline-weak">Continue Reading Below</p>
+			<div class="l-story-secondary">
+				<div class="ad-big-mod article-big-5">
+					<img src="assets/ads/big-5.jpg" class="ad-big" />
+				</div>
+			</div> <!-- /l-story-secondary -->
+
+			<div class="l-story-txt-share">
+				{{{story.part_six}}}
+			</div> <!-- /l-story-txt-share -->
+		{{/story.part_six}}
+
+		{{/is_story_article}}
+
+		<div class="story-social-btns l-story-txt-share">
+			<button class="social-btn social-btn-fbook"><i class="icon"></i>Share</button>
+			<button class="social-btn social-btn-twitter"><i class="icon"></i>Tweet</button>
+		</div> 
+
+		<!-- Story Share Tools: Footer -->
+		<footer class="story-tools-mod story-tools-ftr">
+			<ul class="tools-horiz story-tools-horiz">
+				<li class="tools-item tools-share"><a class="popup-trigger tools-link tools-link-share" href="#mfp-share"><i class="share-icon"></i> <i class="tools-txt">Share</i></a></li>
+				<li class="tools-item tools-comment js-toggle-comments"><a class="tools-link tools-link-comment-ftr" href="#URL:comment-trigger"><i class="comment-icon"></i> <i class="tools-txt">Comment</i></a></li>
+			</ul>
+		</footer>  <!-- /story-tools-ftr -->
+
+	</article> <!-- /article-bd -->
+</div> <!-- /story-width -->

@@ -1,0 +1,50 @@
+<p:currentObject metadata="m" />
+<p:out var="streamName" xvalue="$m//FilterParam" />
+
+
+<%@ page language="java" contentType="application/json; charset=UTF-8" pageEncoding="UTF-8" %>	
+<%@page import="java.util.Date"%>
+<%@page import="java.text.SimpleDateFormat"%>
+<p:out var="stream" value="${streamName}" />
+
+<% 
+	String[] queryParams = new String[1];
+	queryParams[0] = (String)pageContext.getAttribute("stream");
+    
+	pageContext.setAttribute("queryParams", queryParams);
+	
+	SimpleDateFormat format = new SimpleDateFormat("yyyyMMddHmmssSS");
+    String tsDateStr = format.format(new Date());
+
+	pageContext.setAttribute("timestamp", tsDateStr);
+%>
+
+<p:url var="whereAmI" value="$configurationURI/Framework/sandbox/jflaherty/getJson.jpt" public="true"/>
+
+<c:choose>
+	<c:when test="${fn:contains(whereAmI,'devedit')}">
+		<c:import url="http://r.qaweb.boston.com/fragment$configurationURI/Framework/sandbox/jflaherty/getlast500JsonbyStream.jpt">
+			<c:param name="stream">${stream}</c:param>
+		</c:import>
+	</c:when>
+	<c:otherwise>
+	
+	<p:getCollection path="$configurationURI/Framework/queries/bdc_stream.vquery" virtualParams="${queryParams}" var="q" />
+	
+{ "stream": "${stream}",
+   "timestamp": "${timestamp}",
+	"data": [
+	<c:forEach items="${q.items}" var="i" begin="0" end="50" varStatus="status">
+		<p:include styleName="$configurationURI/Framework/skins/components/stream_filter/getJson.jpt" webObject="${i}">
+			<p:param name="modelOnly" value="1"/>
+		</p:include>
+		<c:if test="${not status.last}">,
+		</c:if>
+	</c:forEach>
+	
+	]
+}
+
+	
+	</c:otherwise>
+</c:choose>

@@ -1,0 +1,125 @@
+<p:currentObject metadata="meta" channel="Boston.com" uuid="uuid" />
+<p:getObject 
+	path="/SysConfig/Classify/Data/TaxonomySectionsMap_Boston.xml" 
+	var="mapsTaxonomy" />
+<p:out var="baseDomain" xvalue="$mapsTaxonomy/maps/@baseDomain" />
+<p:out var="username"  xvalue="$meta//ObjectMetadata/Categorization/Blogger/text()" />
+<p:out var="username" value="${fn:trim(username)}" />
+
+<p:getObject path="/SysConfig/Classify/Data/MTBylines.xml" var="staff_map" /> 
+<p:object webObject="${staff_map}" content="c" />
+	
+<x:forEach var="authorPath" select="$c//Bylines/Staff/Byline">
+	<x:set 
+		var="authorusernameString" 
+		select="string($authorPath/UserName/text())" />
+	<c:if test="${username == authorusernameString}">
+		<x:set var="authorByName" select="string($authorPath/ByName/text())" />
+		<x:set var="authorUsername" select="string($authorPath/UserName/text())" />
+		<x:set var="authorRole" select="string($authorPath/Role/text())" />
+		<p:out var="bysource"  value="${authorRole}" />
+		<p:getObject 
+			path="/Boston/Library/Staff-MT/Bios/${authorUsername}.xml" 
+			var="authorObj" />
+		<p:object 
+			webObject="${authorObj}" 
+			metadata="authorMeta" 
+			content="authorContent" />
+		<x:set var="authorTwitter" select="string($authorPath/Twitter/text())" />
+		<c:if test="${fn:contains(authorTwitter, '@')}">
+			<p:out 
+				var="authorTwitter" 
+				value="${fn:substringAfter(authorTwitter, '@')}" />
+		</c:if>
+		<p:out var="bynameLink" value="${fn:trim(authorByName)}"  />
+		<p:out var="bynameSearchParam" value="${fn:replace(bynameLink,' ','+')}" />
+		<p:out 
+			var="bynameSearchURL" 
+			value="http://search.boston.com/local/Search.do?s.tab=ssearch&amp;s.sm.query=${bynameSearchParam}" />
+	</c:if>
+</x:forEach>
+
+<section class="story-byline-mod">
+
+	<%-- 
+		if the image doesn't exist, an exception is thrown. 
+		We don't do anything with it, there isn't much to do 
+	--%>
+	<c:catch var="e">
+		<c:if test="${not empty fn:trim(authorUsername)}">
+		<p:getObject 
+			path="/Boston/Library/Staff-MT/Images/${authorUsername}.jpg" 
+			var="imageExists" 
+			onError="throw" />
+			<c:if test="${not empty imageExists}">
+				<p:url 
+					var="img" 
+					value="/Boston/Library/Staff-MT/Images/${authorUsername}.jpg" 
+					type="resource" 
+					format="image_70x70"/> 
+				<a href="${bynameSearchURL}" class="byline-avatar-mod art-bd">
+					<img class="story-byline-avatar art" src="${img}">
+				</a> <!-- /author-avatar-mod -->
+			</c:if>
+		</c:if>
+	</c:catch>
+	
+	<div class="txt-bd">
+		<ul class="article-byline-list">
+			<c:choose>
+				<c:when test="${not empty bynameLink}">
+					<li class="story-byline">
+						<a href="${bynameSearchURL}">${bynameLink}</a>
+					</li>
+				</c:when>
+				<c:otherwise>
+					<li class="story-byline">${bynameLink}</li>
+				</c:otherwise>
+			</c:choose>
+
+			<c:if test="${not empty authorTwitter}">
+				<li class="story-byline-handle">
+					<a href="http://www.twitter.com/@${authorTwitter}">@${authorTwitter}</a>
+				</li>
+			</c:if>
+			<c:if test="${not empty bysource}">
+				<li class="story-byline-affiliation">${bysource}</li>
+			</c:if>
+			
+			<li class="story-timestamp"></li>
+
+				<p:getObject 
+					path="/Boston/Library/Staff-MT/Bios/${authorUsername}.xml" 
+					var="stafferObj" /> 
+				<p:object webObject="${stafferObj}" content="c" />
+				<p:out var="staffBio" xvalue="$c//story/text/content/p" />
+				
+				<c:set var="descSplit" value="${fn:split(staffBio, ' ')}" />
+				<c:set var="descWordCount" value="" />
+				
+				<c:forEach items="${descSplit}" var="item" varStatus="status" begin="0" end="19">
+			 		<c:choose>
+						<c:when test="${fn:trim(descWordCount) == ''}">
+							<p:out var="descWordCount" value="${item}" />
+						</c:when>
+						<c:otherwise>
+							<c:if test="${status.index == 24}" >
+								<c:if 
+									test="${fn:substring(item, fn:length(item)-1, fn:length(item)) == ',' || fn:substring(item, fn:length(item)-1, fn:length(item)) == ';'}" >
+									<c:set var="item" value="${fn:substring(item, 0, fn:length(item)-1)}" />
+								</c:if>	
+							</c:if>
+							<c:set var="descWordCount" value="${descWordCount} ${item}" />
+						</c:otherwise>
+					</c:choose>
+				</c:forEach>
+				<c:set var="descWordCount" value="${descWordCount}..." />
+				<section class="about-this-blog"><h3>About the Author</h3>
+					<p>${staffBio}</p>
+				</section>
+				
+		</ul>
+		
+	</div> <!-- /txt-bd -->
+	
+</section> <!-- /story-byline-mod -->
