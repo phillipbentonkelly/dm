@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?><forumSections total="4">
+	<forumSection>
+		<id>450</id>
+		<forumId>50</forumId>
+		<displayOrdinal>2</displayOrdinal>
+		<name>Salaries and benefits</name>
+		<desc/>
+		<createDate>2012-06-06T12:42:08.568-04:00</createDate>
+		<externalKey>Cat:JobsForum:10620</externalKey>
+		<categories>1</categories>
+		<discussions>0</discussions>
+		<posts>0</posts>
+		<archived>false</archived>
+	</forumSection>
+	<forumSection>
+		<id>460</id>
+		<forumId>50</forumId>
+		<displayOrdinal>1</displayOrdinal>
+		<name>Jobs</name>
+		<desc>Advice and tips on finding your next job</desc>
+		<createDate>2012-06-06T12:42:08.662-04:00</createDate>
+		<externalKey>Cat:JobsForum:9487</externalKey>
+		<categories>1</categories>
+		<discussions>31</discussions>
+		<posts>35</posts>
+		<latestPostCreateDate>2012-06-15T18:29:59.318-04:00</latestPostCreateDate>
+		<latestPostUserId>5000154</latestPostUserId>
+		<latestPostUserName>foobar2</latestPostUserName>
+		<latestPostDiscussionTitle>EveningProgramming</latestPostDiscussionTitle>
+		<latestPostDiscussionId>5001214</latestPostDiscussionId>
+		<archived>false</archived>
+	</forumSection>
+	<forumSection>
+		<id>480</id>
+		<forumId>50</forumId>
+		<displayOrdinal>1</displayOrdinal>
+		<name>Hiring Hub</name>
+		<desc/>
+		<createDate>2012-06-06T12:42:08.790-04:00</createDate>
+		<externalKey>Cat:JobsForum:9600</externalKey>
+		<categories>1</categories>
+		<discussions>0</discussions>
+		<posts>0</posts>
+		<archived>false</archived>
+	</forumSection>
+	<forumSection>
+		<id>470</id>
+		<forumId>50</forumId>
+		<displayOrdinal>0</displayOrdinal>
+		<name>Advice2</name>
+		<desc>Advice and tips on finding your next job2</desc>
+		<createDate>2012-06-06T12:42:08.702-04:00</createDate>
+		<externalKey>Cat:JobsForum:9510</externalKey>
+		<categories>1</categories>
+		<discussions>0</discussions>
+		<posts>0</posts>
+		<archived>false</archived>
+	</forumSection>
+</forumSections>

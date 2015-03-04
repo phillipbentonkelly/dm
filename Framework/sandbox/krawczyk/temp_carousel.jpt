@@ -1,0 +1,131 @@
+<div class="lead-tz-mod swiper-mod">
+	<div class="lead-tzs swiper-wrapper ups-template-mod"
+		data-source="lead" data-template="lead" data-repeat="6"
+		style="width: 5392px; -webkit-transform: translate3d(-3992px, 0px, 0px); transition: 0.3s; -webkit-transition: 0.3s; height: 437px;">
+	
+		<p:getCollection path="/SysConfig/WebPortal/Boston/Framework/sandbox/ksuffredini/test_story" var="q" />
+		<c:forEach items="${q}" var="i" varStatus="status" begin="0" end="5">
+			<p:object webObject="${i}" content="c" metadata="m" webType="WT" uuid="uuid" channel="Boston.com"/>	
+			<!-- uuids: ${uuid} -->
+			<bdc:getSummaryForSectionFront webObject="${i}" var="webtease"/>
+			<bdc:getRelatedLinks webObject="${i}" var="relatedLinks" />
+			<bdc:getHeadlines webObject="${i}" var="title" />
+			<x:set var="imgLocation" select="string($c//multimedia-container/photo-container/photogrp/photo/@fileref/text())"/>
+			<%--<bdc:imagesWithCaptionCredit webObject="${i}" var="globalImg" format="image_676x282" type="resource" />--%>
+			<p:url var="img" value="${imgLocation}" type="resource" format="image_676x282"/>
+			<c:choose>
+				<c:when test="${status.count eq 1}">
+					<div class="swiper-slide lead-tz lead-tz-w-art" style="width: 674px; height: 437px;">
+						<a class="lead-tz-art-bd" href="article.html#coffee-week">
+							<img class="lead-tz-art" src="${img}">
+						</a> <!-- /lead-tz-art-bd -->
+						<div class="lead-tz-txt-bd reverse">
+							<c:if test="${not empty fn:trim(title.overline)}">
+								<h4 class="lead-tz-overline">
+									<a href="#local">${title.overline}</a>
+								</h4>
+							</c:if>
+							<h1 class="lead-tz-h">
+								<a href="article.html#coffee-week">${title.headline}</a>
+							</h1>
+							
+							<p:out var="numLinks" value="${fn:length(relatedLinks.relatedLinksArray)}"/>
+							<c:if test="${not empty fn:trim(webtease)}">
+								<p class="lead-tz-txt tz-txt">${webtease}
+									<c:if test="${numLinks gt 0}">
+										<span class="horiz-list">
+										<c:forEach items="${relatedLinks.relatedLinksArray}" var="link" varStatus="status">
+											<i class="list-item">
+												<a href="${link[1]}">${link[2]}</a>
+											</i>
+										</c:forEach>
+										</span>
+									</c:if>
+								</p>
+							</c:if>
+						</div> <!-- /lead-tz-txt-bd -->
+					</div>
+				</c:when>
+				<c:otherwise>
+					<div class="swiper-slide lead-tz lead-tz-w-art" style="width: 674px; height: 437px;">
+						<a class="lead-tz-art-bd" href="article.html#flemmi-bulger">
+							<img class="lead-tz-art" src="${img}">
+						</a> <!-- /lead-tz-art-bd -->
+						<div class="lead-tz-txt-bd reverse">
+							<c:if test="${not empty fn:trim(title.overline)}">
+								<h4 class="lead-tz-overline">
+									<a href="#local">${title.overline}</a>
+								</h4>
+							</c:if>
+							<h1 class="lead-tz-h">
+								<a href="article.html#flemmi-bulger">${title.headline}</a>
+							</h1>
+							<p:out var="numLinks" value="${fn:length(relatedLinks.relatedLinksArray)}"/>
+							<c:if test="${not empty fn:trim(webtease)}">
+								<p class="lead-tz-txt tz-txt">${webtease}
+									<c:if test="${numLinks gt 0}">
+										<span class="horiz-list">
+										<c:forEach items="${relatedLinks.relatedLinksArray}" var="link" varStatus="status">
+											<i class="list-item">
+												<a href="${link[1]}">${link[2]}</a>
+											</i>
+										</c:forEach>
+										</span>
+									</c:if>
+								</p>
+							</c:if>
+						</div> <!-- /lead-tz-txt-bd -->
+					</div> <!-- /lead-tz -->
+				</c:otherwise>
+			</c:choose>
+		</c:forEach>
+	</div>
+
+	
+	<!-- Lead Tease Prev/Next -->
+	<nav class="lead-tz-nav">
+		<button class="arrow-btn-prev swiper-prev" aria-hidden="true"
+			title="Previous">Prev</button>
+		<button class="arrow-btn-next swiper-next" aria-hidden="true"
+			title="Next">Next</button>
+	</nav>
+
+	<!-- Lead Tease List -->
+	<ul class="lead-list ups-template-mod" data-source="lead"
+		data-template="lead-nav" data-repeat="6" data-order="ignore">
+		<c:forEach items="${q}" var="x" varStatus="status" begin="0" end="5">
+			<p:object webObject="${x}" content="c" metadata="m" webType="WT" uuid="uuid" channel="Boston.com"/>
+			<bdc:getHeadlines webObject="${x}" var="title" />
+			<x:set var="imgLocation" select="string($c//multimedia-container/photo-container/photogrp/photo/@fileref/text())"/>
+			<%--<bdc:imagesWithCaptionCredit webObject="${x}" var="carouselImg" format="image_90x90" />--%>
+			<p:url var="img" value="${imgLocation}" type="resource" format="image_80x49"/>
+			
+			<li class="lead-nav-item ">
+				<a class="lead-item-link" href="article.html#flemmi-bulger">
+					<div class="lead-list-art-bd art-bd">
+						<img class="lead-list-art" src="${img}">
+	
+					</div>
+					<div class="lead-list-txt-bd txt-bd">
+						<h4 class="lead-list-h">${title.headline}</h4>
+						<p class="lead-list-overline">${title.overline}</p>
+					</div>
+				</a>
+			</li>
+		</c:forEach>
+		
+		<%--
+		<li class="lead-nav-item lead-item-no-art">
+			<a class="lead-item-link" href="article.html#southie-murders">
+				<div class="lead-list-art-bd art-bd">
+
+					<p class="lead-list-cat">Local</p>
+				</div>
+				<div class="lead-list-txt-bd txt-bd">
+					<h4 class="lead-list-h">Southie Still Reeling After Attacks, Murder</h4>
+				</div>
+			</a>
+		</li>
+		--%>
+	</ul>
+</div>

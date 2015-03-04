@@ -1,0 +1,172 @@
+// ============================================= //
+
+// Variables									 // 
+
+// ============================================= //
+
+// Universal ------------------------------------ //
+
+$black-5: #f5f5f5; // unused
+$black-10: #ededed;
+$black-15: #ccc;
+$black-50: #999;
+$black-75: #666; 
+$black-90: #222; 
+$black-95: #111; // unused
+$black-100: #000;
+
+$light-gray: $black-10;
+$med-gray: $black-50;
+$dark-gray: $black-75; 
+$tease-txt: $black-75;
+$txt-black: $black-90;
+$text-black: $txt-black;
+$text: $txt-black; // unused
+$txt: $txt-black;
+$nav-black: $black-100;
+
+// Project ------------------------------------ //
+
+$blue: rgb(13,87,153);
+$blue-lt: rgb(36,148,227); //#2494e3
+$blue-drk: #052f59; //rgb(5,47,89)
+$red: rgb(155,21,24);
+$red-drk: shade($red, 25%);
+$sand: rgb(231,238,226); // unused
+$sand-lt: #f9f9f9; //rgb(249,249,249) 
+$orange: rgb(242,164,68);
+$blue-lt-hover: tint($blue-lt, 10%);
+$blue-lt-active: shade($blue-lt, 14%);
+
+$link: $blue;
+$link-lt: $blue-lt;
+$highlight: $red;
+$bg: $sand-lt;
+$selection-color: $red-drk;
+$selection-color-type: #FFF;
+$sponsor: #ffffdf;
+$yellow-globe:#fdfce7;
+
+$green: hsl(139, 76%, 35%);
+
+$effra: 'effra';
+$sans-fallback: Arial,Helvetica,Verdana,sans-serif;
+
+$sans: $effra,$sans-fallback;
+$serif:Georgia,Times,Times New Roman,serif;
+$mono:"Courier New",Courier,mono;
+
+$border: 1px solid #ccc;
+
+// Default transition time for simple animations
+$trans-time: .25s;
+
+
+// Paths ------------------------------------ */
+
+$asset-path: "/";
+$img-path: $asset-path + "img/";
+$rgba-bg-path: $asset-path + "img/rgba-bg/";
+$svg-path: $asset-path + "img/";
+
+
+// Articles --------------------------------- //
+// From _article.scss and _article_unres.scss
+$article-max: 700px;
+$article-margin: 25px;
+$article-max-mq: $article-max + ($article-margin*2);
+
+// Forms ------------------------------------ //
+// From _forms.scss
+$sidesaddle-width: 130px; //Default width for sidesaddle labels
+
+// Quick Gallery ---------------------------------- //
+// From _gallery-quick.scss
+$qg-pop-padding: 20px 20px 10px;
+
+// Modules ---------------------------------- //
+// From _modules.scss
+$bn-play-btn: 55px;
+
+// Nav -------------------------------------- //
+// From _nav.scss
+// Navigation Background Color
+$nav-ui-bg: #2a2a2a;
+$nav-ui-border: solid 1px #454545;
+
+// toc -------------------------------------- //
+// From _toc.scss
+$toc-width: 360px;
+
+// Bugs ------------------------------------- //
+// Bug color variables from _type.scss
+$bug-new: #46a546;
+$bug-important: #c43c35;
+$bug-warning: #f89406;
+$bug-success: #46a546;
+$bug-notice: #62cffc;
+
+// Responsive ------------------------------- //
+
+// Universal Breakpoints
+$break-xs: 380px; // unused
+$break-sm: 500px;
+$break-md: 720px;
+$break-lg: 960px;
+
+// These variables are in _layout.scss
+$site-middle-max: 700px;		// Site's max width for mid-sized screens
+$site-max: 1044px;      		// Site's max width overall
+$site-margin: 10px;     		// Site's hard pixel margin on small screens
+$site-middle-mq: $site-middle-max + ($site-margin*2);
+								// Point at which we should change the site margin
+								// to auto without causing a choppy break
+
+$sidebar-break: 1024px;			// Point at which a sidebar can appear
+$fixed-nav-break: 600px;		// Point at which fixed nav begins
+
+// Establish article-specific breakpoints in _article.scss and _article_unres.scss
+$article-sm: 480px;
+$article-md: 700px;
+$article-lg: 1075px;
+$mobile-ad: 650px;
+$article-tools: 550px;
+
+// From _comments.scss
+$comment-wrap: 400px;
+
+// From _gallery.scss
+// TODO: Figure out if $gallery-ad and $mobile-ad should be combined 
+$gallery-ad: 650px;
+
+// From _image-popup.scss
+$img-popup-sm: 450px;
+$img-popup-md: 750px;
+$img-popup-lg: 1024px;
+
+// From _modules.scss
+$mr-list-sm: 600px;
+
+// Width of Leaderboard ads
+$leaderboard: 728px;
+
+// From _gallery-quick.scss
+$qg-ad-break: 700px;
+
+// From _lead-teases.scss
+$list-break-small: 400px; // where list starts acting like its on a bigger screen
+$list-break: 600px; // where list breaks to two columns
+
+// Navigation Breakpoints from _nav.scss
+$nav-short: 55px;
+$nav-tall: 65px;
+$nav-break: 750px; // when nav gets tall
+$label-break: 550px; // when nav labels appear
+
+// From _teases.scss
+$quick-break: 500px;
+
+// From _toc.scss
+$toc-break: 1725px;
+$toc-mobile-break: 400px;
+

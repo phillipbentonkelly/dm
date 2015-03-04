@@ -1,0 +1,41 @@
+<%-- find a blog by provider and reference id --%>
+<p:out var="provider" value="${cacheScope.source}" />
+<p:out var="tranrefid" value="${cacheScope.id}" />
+<p:executeQuery var="q" >
+	<p:queryBody> 
+		<!DOCTYPE EOMSearch>
+		<EOMSearch version="1.0" 
+			xmlns="http://EidosMedia.com/EOM/SearchEngine" 
+			xmlns:se="http://EidosMedia.com/EOM/SearchEngine" 
+			xmlns:q="http://EidosMedia.com/EOM/SearchEngine/query" 
+			xmlns:qm="http://EidosMedia.com/EOM/SearchEngine/query/macro" 
+			xmlns:qa="http://EidosMedia.com/EOM/SearchEngine/query/alias" 
+			xmlns:qui="http://EidosMedia.com/EOM/SearchEngine/query/UI">
+		<q:Query type="INDEX">
+			<q:Properties><q:Index name="wires@meth01_eomse2"/>
+			<q:MaxResultItems value="500"/>
+			<q:Sort on="ObjectInfo/Created" type="NDESCENDING"/>
+			</q:Properties>
+			<q:Boolean>
+			<se:Attributes xmlns="">
+				<ObjectMetadata>
+					<OnlineProducts><OnlineProduct><WebType>streamTease</WebType></OnlineProduct></OnlineProducts>
+					<Reference><Provider>${prov}</Provider><TransmissionReference>${ref}</TransmissionReference></Reference>
+				</ObjectMetadata>
+			</se:Attributes>
+			</q:Boolean>
+		</q:Query>
+		</EOMSearch>
+	</p:queryBody> 
+	<%-- parameter names must be legal groovy variables starting with letters not just numeric --%>
+	<p:param name="prov" value="${provider}"/>
+	<p:param name="ref" value="${tranrefid}"/>
+</p:executeQuery>
+<c:forEach items="${q}" var="i" begin="0" end="${limit}" varStatus="status">
+	<p:include styleName="$configurationURI/Framework/sandbox/jflaherty/getJson.jpt" webObject="${i}">
+		<p:param name="modelOnly" value="1"/>
+	</p:include>
+	<c:if test="${not status.last}">,
+	</c:if>
+</c:forEach>
+	

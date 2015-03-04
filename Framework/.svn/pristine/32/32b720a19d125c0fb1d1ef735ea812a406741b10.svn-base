@@ -1,0 +1,70 @@
+// This is the tease at the top of the homepage.
+.top-tz-mod {
+	margin-bottom: 20px;
+	width: 100%;
+	display: block;	
+	padding: 15px;
+	background: #fff;
+}
+.top-tz-block {
+	vertical-align: top;
+	display: inline-block;
+	width: 48%;
+	@include mq(max, 500px) {
+		width: 100%;
+	}
+	p.tz-txt {
+		margin-top: 10px;
+	}
+}
+.right {
+	padding-left: 10px;
+	border-left: 1px solid #DFD4CA;
+	@include mq(max, 500px) {
+		padding: 0px;
+		margin-top: 10px;
+		border-left: 0px;
+	}
+}
+.left {
+	padding-right: 10px;
+	@include mq(max, 500px) {
+		padding: none;
+	}
+}
+.top-tz-txt {
+	border-top: 1px solid #DFD4CA;
+	padding: 10px 0;
+	&:first-child {
+		border-top: none;
+		padding-top: 0px;
+		@include mq(max, 500px) {
+			border-top: 1px solid #DFD4CA;
+			padding-top: 10px;
+		}
+	}
+	&:last-child {
+		padding-bottom: 0px;
+	}
+}
+.top-tz-overline {
+	display: block;
+	padding: 0 0 10px 0;
+}
+.top-tz-line {
+	background: #DFD4CA;
+	-webkit-box-shadow: 0 2px white;
+	-moz-box-shadow: 0 2px white;
+	box-shadow: 0 2px white;
+	height: 1px;
+	width: 100%;
+	margin: 20px 0;
+}
+
+// Eventually I was going to rename the static carousel section of top o page something like center tease, hence this class center-tz. 
+// This class aligns the list items to the top instead of centering them like they are in the real carousel. 
+// We need to do this because of the new smaller img size. This should eventually be moved probably? 
+// -Ellen
+.center-tz .lead-item-link {
+	vertical-align: top;
+}

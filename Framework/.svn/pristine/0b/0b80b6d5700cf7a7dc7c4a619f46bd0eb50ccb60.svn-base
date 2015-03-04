@@ -1,0 +1,227 @@
+.taboola-list-mod {
+	display:none;
+} 
+
+#comments {
+	display:none;
+}
+
+.article-ftr {
+	display:none;
+} 
+
+// Hiding Stream and ads on homepage
+
+//.stream-items {
+//	display: none;
+//}
+//
+//.feat-tz-fader {
+//	display: none;
+//}
+//
+//.ad-featurestack5 {
+//	display: none;
+//}
+//
+//.ad-classifiedhighlight {
+//	display: none;
+//}
+
+// Hiding Ads and Video/Images
+
+.l-story-secondary {
+	display: none;
+}
+
+.leaderboard-mod {
+	display: none;
+}
+
+.nav-leaderboard-mod {
+	display: none;
+}
+
+.videoplayer {
+	display: none;
+}
+
+.l-ad-story-banner-1 {
+	display: none;
+}
+
+.story-byline-avatar {
+	display: none;
+}
+
+// Hiding Navs
+
+.nav-mod {
+	display: none;
+}
+
+.global-nav {
+	display: none;
+}
+
+.nav-profile-mod {
+	display: none;
+}
+
+.nav-search-mod {
+	display: none;
+}
+
+.toc-mod {
+	display: none;
+}
+
+// Hiding extra stuff on article pages
+
+.story-tools-mod {
+	display: none;
+}
+
+.globe-non-enhanced-cta p {
+	display: none;
+}
+
+.globe-non-enhanced-cta a {
+	display: none;
+}
+
+// Hiding extra stuff on gallery pages
+
+.gallery-related-links {
+	display: none;
+}
+
+.slide-footer {
+	display: none;
+}
+
+.arrow-top-mod {
+	display: none;
+}
+
+.story-comments {
+	display: none;	
+}
+
+.gallery-img-nav {
+	display: none;
+}
+
+.story-mod .gallery-wrapper {
+	margin-top: 0px;
+}
+
+// NEW BDC REFACTOR CLASSES
+
+.ad-container {
+	display: none;
+}
+
+.content-module--related-links {
+	display: none;
+}
+
+.content-text__blockquote__text {
+	font-size: 12px;
+}
+
+.content-media,
+.content-media__lead,
+.content-media--inline-right {
+	margin: 0 auto;
+	
+	figure {
+		width: 50% !important;
+		margin: 0 auto;
+	}
+}
+
+.article-lead-art {
+	width: 50% !important;
+}
+
+.content-text,
+.content-text--gallery {
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.content-well {
+	width: 700px !important;
+}
+
+.content-gallery__slide {
+	.content-text__text {
+		font-size: 12px;
+		clear: right;
+
+		a:after {
+			content:" (" attr(href) ") ";
+			font-size: 12px;
+		}
+
+		a.content-text--gallery__next {
+			display: none;
+		}
+	}
+}
+
+.content-byline__timestamp {
+	clear: right;
+}
+
+.globe-non-enhanced-cta {
+	display: none;
+}
+
+.embed-container {
+	display: none;
+}
+
+.content-footer__tagline {
+	display: none;
+}
+
+.content-module--trending {
+	display: none !important;
+}
+
+.content-module__list--trending,
+.content-gallery-controls__preview {
+	display: none !important;
+}
+
+.content-gallery-controls__pager-info,
+.content-gallery-controls__pager-controls {
+	display: none;
+}
+
+.content-social-bar {
+	display: none;
+}
+
+.content-header__ui li {
+	display: none !important;
+}
+
+.content-header__section-name {
+	display: none !important;
+}
+
+.content-well--sidebar {
+	display: none !important;
+}
+
+.social-nav--horizontal {
+	display: none;
+}
+
+.user-panel, .masthead {
+	display: none;
+}

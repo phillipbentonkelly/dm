@@ -1,0 +1,57 @@
+//
+// Double Border
+//
+// Used beneath quick teases (hence the name). Has other applications
+// as well, though it should only be used on top of the sandy background 
+
+.quick-border {
+	@include quick-border;
+}
+
+.content-fader {
+	position: relative;
+}
+
+.content-fader:after {
+	@include content-fader;
+}
+
+//
+// Content Box 
+//
+// Generic class for applying the site-wide box style.
+// This box is best used atop the sandy site background.
+// Ryan 8.21
+// .content-box {
+// 	background-color: white;
+// 	padding: 15px;
+// 	border-bottom: $border;
+// }
+
+.hover-info {
+	display: none;
+	z-index: 1;
+	position: absolute;
+	@include sans(em(12), 400);
+	line-height: 16px;
+	padding: 8px;
+	color: #ffffff;
+	background: rgba(0, 0, 0, 0.90) ;
+	border-radius: 2px;
+		& > a {
+			color: $blue-lt;
+		}
+}
+
+// Hide element on all devices other than desktop
+
+.hide-mobile {
+	@include mq(max, $break-lg) {
+		display: none; 
+	}
+}
+
+// Class for hiding objects
+.hidden {
+	display: none;
+}

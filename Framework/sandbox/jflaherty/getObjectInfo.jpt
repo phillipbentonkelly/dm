@@ -1,0 +1,246 @@
+<%@ page language="java" contentType="application/json; charset=UTF-8" pageEncoding="UTF-8"
+    import="
+	net.sf.json.*,
+	java.util.*,
+	java.text.SimpleDateFormat,
+	org.w3c.dom.*,
+	javax.xml.xpath.XPath,
+	javax.xml.xpath.XPathConstants,
+	javax.xml.xpath.XPathExpression,
+	javax.xml.xpath.XPathExpressionException,
+	javax.xml.xpath.XPathFactory
+	
+" %>
+ <p:template contentType="application/json" />
+<%--
+	Give me 
+		- a uuid or path of a Methode object 
+		- a source an id of an external tease
+		
+		and I will give you a json tease
+	
+	revision notes:
+	12-18 add video object with id and provider
+	12-19 add 404 error
+	12-24 add servlet code to extract actual stream values rather than dummy values
+	
+--%>
+<c:set var="path" value="${cacheScope.path}" />
+<c:set var="uuid" value="${cacheScope.uuid}" />
+<c:set var="provider" value="${cacheScope.source}" />
+<c:set var="tranrefid" value="${cacheScope.id}" />
+<c:set var="channel" value="${cacheScope.product}" />
+<c:if test="${empty channel}">
+	<p:out var="channel" value="Boston.com" />
+</c:if>
+
+<c:catch var="err">
+			 
+	<c:choose>
+		<c:when test="${not empty path}">
+			<p:getObject path="${path}" var="obj" onError="ignore" />
+		</c:when>
+		<c:when test="${not empty uuid}">
+			<p:getObject uuid="${uuid}" var="obj" onError="ignore" />
+			<p:out var="path" value="${obj.path}" scope="page" />
+		</c:when>
+		<c:when test="${not empty tranrefid and not empty provider}">
+		
+			<p:executeQuery var="q" >
+				<p:queryBody> 
+					<!DOCTYPE EOMSearch>
+					<EOMSearch version="1.0" 
+						xmlns="http://EidosMedia.com/EOM/SearchEngine" 
+						xmlns:se="http://EidosMedia.com/EOM/SearchEngine" 
+						xmlns:q="http://EidosMedia.com/EOM/SearchEngine/query" 
+						xmlns:qm="http://EidosMedia.com/EOM/SearchEngine/query/macro" 
+						xmlns:qa="http://EidosMedia.com/EOM/SearchEngine/query/alias" 
+						>
+					<q:Query type="INDEX">
+						<q:Properties><q:Index name="wires@meth01_eomse2"/>
+							<q:MaxResultItems value="1"/>
+						</q:Properties>
+						<q:Boolean>
+						<se:Attributes xmlns="">
+							<ObjectMetadata>
+								<OnlineProducts><OnlineProduct><WebType>streamTease</WebType></OnlineProduct></OnlineProducts>
+								<Reference><Provider>${prov}</Provider><TransmissionReference>${ref}</TransmissionReference></Reference>
+							</ObjectMetadata>
+						</se:Attributes>
+						</q:Boolean>
+					</q:Query>
+					</EOMSearch>
+				</p:queryBody> 
+				<%-- parameter names must be legal groovy variables starting with letters not just numeric --%>
+				<p:param name="prov" value="${provider}"/>
+				<p:param name="ref" value="${tranrefid}"/>
+			</p:executeQuery>	
+				
+			<c:forEach items="${q}" var="item" >
+				<p:getObject webObject="${item}" var="obj" />
+			</c:forEach>		
+			<p:out var="path" value="${obj.path}" scope="page" />
+			
+		</c:when>
+		<c:when test="${not empty currentObject}">
+			<p:getObject webObject="${currentObject}" var="obj" onError="ignore" />
+		</c:when>
+		
+		<c:otherwise><c:set var="err">No object identifier specified</c:set></c:otherwise>
+	</c:choose>
+	
+	<c:if test="${not empty obj}">
+		<c:choose>
+			<c:when test="${not empty channel}">
+				<p:object webObject="${obj}" content="c" metadata="meta" webType="WT" uuid="StoryID" channel="${channel}"/>
+			</c:when>
+			<c:otherwise>
+				<p:object webObject="${obj}" content="c" metadata="meta" webType="WT" uuid="StoryID"/>
+			</c:otherwise>
+		</c:choose>
+	</c:if>
+	
+	<c:if test="${empty uuid}">
+		<p:out var="uuid" xvalue="$meta//uuid" />
+	</c:if>
+</c:catch>
+
+<c:set var="xsl">
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+<xsl:template match="/"><xsl:apply-templates select="* | @*"/></xsl:template>
+
+	<xsl:template match="node() | @*">
+		<xsl:copy>
+			<xsl:apply-templates select="@* | node()"/>
+		</xsl:copy>
+	</xsl:template>
+</xsl:stylesheet>
+</c:set>
+
+<%-- uncomment to echo metadata xml <x:transform xml="${meta}" xslt="${xsl}"/> --%>
+
+<c:choose>
+	<c:when test="${empty obj}">	
+<%
+   // Set error code and reason.
+   //response.sendError(404, "id not found" );
+%>
+	{"error":{'status":404,"message":"id not found"}}
+	</c:when>
+	<c:when test="${not empty err}" >
+		{"error":"${err}"}
+	</c:when>
+	<c:otherwise> 
+
+
+		<p:out var="objectType" xvalue="$meta//type"/>
+		<p:out var="masterUuid" xvalue="$meta//masterUUID"/>
+		<p:out var="name" xvalue="$meta//name"/>
+		<p:out var="loid" xvalue="$meta//loid"/>
+		<p:out var="status" xvalue="$meta//statusName"/>
+		<p:out var="created" format="seconds:yyyyMMddHHmmss" xvalue="$meta//timeCreated"/>
+		<p:out var="modified" format="seconds:yyyyMMddHHmmss" xvalue="$meta//timeModified"/>
+		<%-- timeModified and timeCreated appear to already be in local timezone
+			seconds|UTC will convert but seems to be in the wrong direction?? --%>
+		<c:if test="${empty path}">
+			<p:out var="path" xvalue="$meta//path" />
+		</c:if>	
+	
+		<c:set var="taxo_values"/>
+		<x:forEach select="$meta//Taxonomies/Taxonomy" var="taxo">
+			<x:set var="taxo_value" select="string(.)"/>
+			<c:set var="taxo_values" value="${taxo_values}/${taxo_value}"/>
+		</x:forEach>
+
+	
+		<%
+
+	
+	/* build a JSON object of the element from the collected metadata and content values
+	
+	  	   
+	*/
+
+	SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmss");
+	String channel = pageContext.getAttribute("channel").toString();
+	   
+ 	//String dummyStreams = new String("[{'name':'homepage','filters':['all','business']},{'name':'business','filters':['all','technology']}]");
+ 
+	
+	JSONObject info_jsobj = new JSONObject();
+    info_jsobj.put("uuid",pageContext.getAttribute("uuid"));
+    info_jsobj.put("masterUuid",pageContext.getAttribute("masterUuid"));
+    info_jsobj.put("path",pageContext.getAttribute("path"));
+    info_jsobj.put("name",pageContext.getAttribute("name"));
+    info_jsobj.put("objectType",pageContext.getAttribute("ObjectType")); 
+    info_jsobj.put("loid",pageContext.getAttribute("loid"));
+    info_jsobj.put("status",pageContext.getAttribute("status"));
+    info_jsobj.put("created",pageContext.getAttribute("modified"));
+    info_jsobj.put("modified",pageContext.getAttribute("modified"));
+    
+	String taxos = pageContext.getAttribute("taxo_values").toString();
+	taxos = taxos.startsWith("/") ? taxos.substring(1) : taxos;  //remove leading slash
+
+	String[] taxos_array = taxos.split("/");
+	Set<String> taxos_set = new HashSet<String>(Arrays.asList(taxos_array)); //remove dups
+	JSONArray taxo_jsarr = JSONArray.fromObject(taxos_set);
+    info_jsobj.put("taxonomies",taxo_jsarr);    
+      
+    //grab full metadata from page context
+    Document meta = (Document)pageContext.getAttribute("meta");
+   
+    //make an xpath and grab the comment node and all of its children out of metadata
+	XPathFactory xFactory = XPathFactory.newInstance();
+	XPath xpath = xFactory.newXPath();
+    NodeList node_results = (NodeList)xpath.evaluate("//Streams/Stream",
+    		meta, 
+    		XPathConstants.NODESET);    
+     String dummyStreams="[" ;
+     Node streamNode;
+     Node filterNode;
+ 	 for(int i=0; i<node_results.getLength() ; i++){
+ 	 	streamNode = node_results.item(i);
+ 	 
+ 	 	String stream_name = xpath.evaluate("StreamName",streamNode );
+ 	 	String stream_id = xpath.evaluate("StreamId",streamNode );
+ 	 	dummyStreams += "{'name':'" + stream_name + "', 'id':'" + stream_id + "'";
+     	NodeList filters = (NodeList)xpath.evaluate("Filters/Filter",streamNode,XPathConstants.NODESET);
+     	if ( filters.getLength()>0 ) dummyStreams += ",'filters':[";
+     	for(int j=0; j< filters.getLength(); j++) {
+     		 //String filter_name = filters.item(j).getFirstChild().getNodeValue() ;
+     		 filterNode = filters.item(j);
+		 	String filter_name = xpath.evaluate("FilterName",filterNode );
+	 	 	String filter_id = xpath.evaluate("FilterId",filterNode );
+  			dummyStreams += "{'name':'" + filter_name + "', 'id':'" + filter_id + "'}";
+ 			if (j<filters.getLength()-1) dummyStreams += ",";
+     	}
+      	if ( filters.getLength()>0 ) dummyStreams += "]";
+ 	 	dummyStreams += "}";
+ 	 	if (i<node_results.getLength()-1) dummyStreams += ",";
+ 	 }
+     dummyStreams += "]";
+     
+ 	JSONArray stream_jsarr = JSONArray.fromObject(dummyStreams);
+    info_jsobj.put("streams",stream_jsarr);
+ 	 
+    HashMap cat_map = new HashMap();
+    String xpth = "//OnlineProduct[ProductName='" + channel + "']/Sections/Section/SectionName";
+    String sectionName = xpath.evaluate(xpth,meta);
+    xpth = "//OnlineProduct[ProductName='" + channel + "']/Sections/Section/SectionPath";
+    String sectionPath = xpath.evaluate(xpth,meta);
+    cat_map.put("name", sectionName);
+    //cat_map.put("channel", channel);
+    cat_map.put("url",sectionPath); 
+    info_jsobj.put("section",cat_map);
+ 	 
+	String result = "";
+	result = info_jsobj.toString();
+	
+	pageContext.setAttribute("result", result);
+	
+	
+%>
+ <c:out value="${result}" escapeXml="false"/>
+	</c:otherwise>
+</c:choose>

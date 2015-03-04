@@ -1,0 +1,7 @@
+<%-- we need to pass the loids for the container to 
+     be rendered, and the current story so it can be excluded --%>
+
+<p:currentObject loidEx="loid" />
+<p:object webObject="${cacheScope.sourceObject}" loidEx="exclude" />
+<p:jspInclude url="$configurationURI/Framework/skins/components/section_highlight/section_highlight_container.jsp?dwc=${loid}&exclude=${exclude}" 
+              eomdb="true" />

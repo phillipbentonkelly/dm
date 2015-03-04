@@ -1,0 +1,41 @@
+<div id="content">
+	<div class="row">
+		<div class="main span9">
+			<div>
+				<h2>Page not found</h2>
+				<p>Sorry, the page you have requested does not exist at this
+					address.</p>
+				<ul class="bulleted black">
+					<li>
+						If you are trying to reach a Boston.com page from a bookmark, the
+						address may have changed, or the page may have been eliminated.
+						Please use the sections above to browse for what you're looking
+						for, or visit our
+						<a href="http://www.boston.com">home page</a>
+						.
+					</li>
+					<li>
+						You can find articles by using the search box above, or by going
+						to
+						our
+						<a href="http://www.boston.com/search/?s.tab=ssearch">Search page</a>
+						.
+					</li>
+					<li>
+						If you need immediate assistance, please visit our
+						<a href="http://www.boston.com/help">Help Center</a>
+						or contact us by filling out our
+						<a href="http://www.boston.com/help/feedback.shtml">feedback form</a>
+						.
+					</li>
+				</ul>
+
+				<p>We apologize for the inconvenience.</p>
+				<p>-- Your friends at Boston.com</p>
+			</div>
+		</div>
+		<div class="right-rail span5">
+			<p:include url="$configurationURI/Framework/skins/components/ads/dfp_ad_controller.jpt" context="ad_bigbox1" />
+		</div>
+	</div>
+</div>

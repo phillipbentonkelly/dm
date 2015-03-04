@@ -1,0 +1,149 @@
+<p:getObject path="/SysConfig/Classify/Data/EventsCategory_spingo.xml" var="categoryMap" />
+<p:object webObject="${categoryMap}" content="categories" />
+
+<%-- from svn:
+bcom-redesign-beta/bdc-markup/page/modules/events-search.php --%>
+
+<div class="events-main">
+
+	<div class="events-search">
+
+		<div class="events-search__header">
+			<div class="events-search__header-content">
+				<span class="icon-events icon-events--calendar"></span>
+				<p class="events-search__header-title">Showing events for </p>
+				<p class="datepicker events-search__header-date"/>
+				
+			</div>
+			<p class="events-search__header-subtitle">Search for events</p>
+		</div>
+
+		<!-- Boston.com original searchform -->
+		<form class="search-form">
+			<input type="text" data-location="main-search" class="spingo-search__input search-form__input"
+				placeholder="Music, Sports, Museums, etc." />
+			<button class="search-form__button search-form__main-search" value="Search">
+				<span class="bdc-icon bdc-icon--search-medium">Search</span>
+			</button>
+		</form>
+		<div class="events-search--expanded">
+			<p class="events-search__nearby-desktop-label">or</p>
+			<button class="events-search__nearby-button">
+				<span class="icon-events icon-events--geolocate"></span>
+				Search Nearby
+			</button>
+	
+			<!-- Filter by radius -->
+			<div class="events-search__filter-group">
+				<p
+					class="events-search__filter-group--mobile-label events-search__filter-group-label">
+					<span>or within</span>
+				</p>
+				<div class="dropdown-container">
+					<select class="events-search__filter-dropdown">
+						<option>select a distance</option>
+						<option id="1">1 mile</option>
+						<option id="5">5 miles</option>
+						<option id="20">20 miles</option>
+						<option id="50">50 miles</option>
+					</select>
+				</div>
+				<p class="events-search__defaults">Default radius is 100 miles</p>
+			</div>
+	
+			<!-- Filter by zipcode -->
+			<div class="events-search__filter-group">
+				<p class="events-search__filter-group-label">of</p>
+				<input placeholder="enter zipcode" class="events-search__filter-input"></input>
+				<p class="events-search__defaults">Default zipcode is 02118</p>
+			</div>
+	
+			<!-- modal trigger link -->
+			<a class="popup-modal" href="#test-modal">
+				<div class="events-search__narrow-search">
+					<p class="events-search__narrow-search-title">Narrow my search</p>
+					<ul class="events-search__narrow-search--mobile"></ul>
+					<span class="icon-events icon-events--arrow-small"></span>
+	
+					<!-- Chosen select dropdown options (Desktop only) -->
+					<select type="text" style="width:95%;" data-placeholder="Select a filter"
+						multiple class="events-search__chosen-select">
+						<x:forEach select="$categories//SpinGo/EventsCategory[@id]" var="category">
+							<p:out var="name" xvalue="$category/text()" />
+							<p:out var="id" xvalue="$category/@id" />
+							<option spingo-category-name="${name}" spingo-category-id="${id}" value="${id}">${name}</option>
+						</x:forEach>
+					</select>
+	
+				</div>
+			</a>
+	
+			<div class="events-search__button">
+				<button class="search-form__button events-search__bottom-submit">
+					<span class="bdc-icon bdc-icon--search-medium">Search</span>
+					<span class="events-search__button-text">Search</span>
+				</button>
+			</div>
+		</div>
+	</div>
+	<div class="searched-events"></div>
+	<%-- Placeholder Preloader --%>
+	<div class="spinner-container">
+		<div class="spinner"></div>
+	</div>
+
+	<%-- from svn:
+	bcom-redesign-beta/bdc-markup/page/modules/events-search__filter-popup.php
+	--%>
+	<!-- filter option Magnific Popup (mobile only) -->
+	<div id="test-modal" class="mfp-hide white-popup-block narrow-search">
+		<div class="narrow-search__header">
+			<span class="bdc-icon bdc-icon--arrow-left"></span>
+			<p class="narrow-search__header-title">Narrow my search</p>
+			<button class="narrow-search__header-close popup-modal-dismiss">Close</button>
+		</div>
+
+		<div class="narrow-search__filters">
+			<ul>
+				<x:forEach select="$categories//SpinGo/EventsCategory[@id]" var="category">
+					<p:out var="name" xvalue="$category/text()" />
+					<p:out var="id" xvalue="$category/@id" />
+				
+					<li class="narrow-search__filter-item" spingo-category-id="${id}" spingo-category-name="${name}">
+						${name}
+						<span class="icon-events icon-events--checkmark-inactive"></span>
+					</li>
+				</x:forEach>
+			</ul>
+		</div>
+		<div class="narrow-search__bottom-close">
+			<button class="narrow-search__bottom-close-button popup-modal-dismiss">Close</button>
+		</div>
+	</div>
+
+	<%-- from svn:
+	bcom-redesign-beta/bdc-markup/page/modules/events-list.php --%>
+
+	<div class="events-list">
+		<div class="events-list__header">TODAY</div>
+		
+		<%-- Placeholder Preloader --%>
+		<div class="spinner-container">
+			<div class="spinner"></div>
+		</div>
+		
+		<div class="events-list__wrapper">
+			<div class="js-events-morning"></div>
+			<div class="js-events-afternoon"></div>
+			<div class="js-events-evening"></div>
+		</div>
+		<div class="events-list__more">SHOW MORE EVENTS</div>
+	</div>
+
+	<a href="http://www.spingo.com/submit?AffiliateID=1044">
+		<button class="add-event">
+			<span class="bdc-icon bdc-icon--plus-x-small"></span>
+			Add an Event
+		</button>
+	</a>
+</div>

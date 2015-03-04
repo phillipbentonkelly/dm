@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EOMSearch xmlns="http://EidosMedia.com/EOM/SearchEngine" xmlns:q="http://EidosMedia.com/EOM/SearchEngine/query" xmlns:qa="http://EidosMedia.com/EOM/SearchEngine/query/alias" xmlns:qm="http://EidosMedia.com/EOM/SearchEngine/query/macro" xmlns:qui="http://EidosMedia.com/EOM/SearchEngine/query/UI" xmlns:se="http://EidosMedia.com/EOM/SearchEngine">
+<!--
+{comments}
+BDC-1862 adding back newsletter queries
+{comments}
+-->
+	<q:Query type="INDEX">
+		<q:Properties>
+			<q:Index name="boston_2011-2020@methcms_eomse1"/>
+			<q:MaxResultItems value="10"/>
+			<q:Sort on="ObjectMetadata/OnlineProducts/OnlineProduct/LastPublicationDate" type="NDESCENDING"/>
+		</q:Properties>
+		<q:Boolean>
+			<q:AND>
+				<ObjectInfo>
+				<q:OR>
+					<type>EOM::Story</type>
+					<type>EOM::CompoundStory</type>
+					<type>EOM::MediaGallery</type>
+				</q:OR>
+				</ObjectInfo>
+				<se:Attributes xmlns="">
+					<ObjectMetadata>
+					<q:OR>
+						<OnlineProducts>
+						<q:OR>
+							<TodaysPaperSection>
+							<q:OR>
+								<TodaysPaperSectionName q:OP="MATCH">Globe North</TodaysPaperSectionName>
+								<TodaysPaperSectionName q:OP="MATCH">Globe South</TodaysPaperSectionName>
+								<TodaysPaperSectionName q:OP="MATCH">Globe West</TodaysPaperSectionName>
+								<TodaysPaperSectionName q:OP="MATCH">Business</TodaysPaperSectionName>
+								<TodaysPaperSectionName q:OP="MATCH">Metro</TodaysPaperSectionName>
+							</q:OR>
+							</TodaysPaperSection>
+							<OnlineProduct>
+								<Sections>
+									<Section>
+										<SectionPath>/yourtown</SectionPath>
+									</Section>
+								</Sections>
+							</OnlineProduct>
+						</q:OR>
+						</OnlineProducts>
+						<Categorization>
+							<Taxonomies>
+							<q:OR>
+								<Taxonomy>News/US/Massachusetts</Taxonomy>
+								<Taxonomy>News/Local/Massachusetts</Taxonomy>
+							</q:OR>
+							</Taxonomies>
+						</Categorization>
+					</q:OR>
+					</ObjectMetadata>
+				</se:Attributes>
+				<se:Attributes xmlns="">
+					<ObjectMetadata>
+						<OnlineProducts>
+							<OnlineProduct>
+							<q:AND>
+								<ProductName>Boston.com</ProductName>
+								<q:OR>
+									<WebType>story</WebType>
+									<WebType>summarystory</WebType>
+									<WebType>carouselgallery</WebType>
+									<WebType>evergreencarouselgallery</WebType>
+								</q:OR>
+								<q:NOT>
+									<WebType>wirestory</WebType>
+								</q:NOT>
+								<LastPublicationDate q:op="RANGE">
+									<qm:TDelta days="-3" secs="-0"/>
+								</LastPublicationDate>
+							</q:AND>
+							</OnlineProduct>
+						</OnlineProducts>
+					</ObjectMetadata>
+				</se:Attributes>
+			</q:AND>
+		</q:Boolean>
+		<qui:Query_UI domain="methode" version="1.1" xmlns="http://EidosMedia.com/EOM/SearchEngine/query/UI">
+			<selItem list="type" name="Web Publication" tab="usageticket"/>
+		</qui:Query_UI>
+	</q:Query>
+</EOMSearch>

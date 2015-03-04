@@ -1,0 +1,153 @@
+<p:object webObject="${currentObject}" content="c" metadata="m" webType="WT" uuid="uuid" channel="Boston.com"/>	
+<p:out var="autoPlay" xvalue="$m//AutoPlay" />
+<p:out var="dataConfigSiteSection" xvalue="$m//DataConfigSiteSection" />
+<p:out var="section" xvalue="$m//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/Sections/SectionPath" />
+<bdc:getSummaryForSectionFront webObject="${currentObject}" var="webtease" priority="carousel"/>
+<p:object webObject="${cacheScope.dwp}" metadata="dwpMeta"/>
+<p:out var="edition" xvalue="$dwpMeta//dbMetadata/sys/props/productInfo/edition" scope="request" />
+<bdc:getRelatedLinks webObject="${currentObject}" var="relatedLinks" edition="${edition}" />
+<bdc:getHeadlines webObject="${currentObject}" var="title" edition="${edition}"/>
+<bdc:getSection section="${section}" var="sectionLink" />
+<bdc:getVideoTease webObject="${currentObject}" var="objectMap" />
+<p:out var="autoPlay" xvalue="$m//AutoPlay" />
+<p:out var="autoPlayInCarousel" xvalue="$m//AutoPlayInCarousel" />
+
+<p:out var="dataConfigSiteSection" xvalue="$m//DataConfigSiteSection" />
+
+<div class="lead-tz lead-tz-w-art">
+	<div class="video-wrapper">
+		<c:choose>
+			<c:when test="${objectMap.isExternal}">
+				<p:out var="externalLink" value="${objectMap.externalVideoLink}" />
+				<div class="video-external">
+					<p:out value="${externalLink}" xslt="$configurationURI/Framework/xslt/externalvideo.xslt"/>
+				</div>	
+			</c:when>	
+			<c:otherwise>
+				<c:choose>
+					<c:when test="${objectMap.provider eq 'brightcove'}">
+						 <c:choose>
+				       		<c:when test="${autoPlayInCarousel}">
+				       			<p:out var="autoPlay" value="true" />
+				       		</c:when>
+				       		<c:otherwise>
+				       			<p:out var="autoPlay" value="false" />
+				       		</c:otherwise>
+			       		</c:choose>
+			      		<div class="videoplayer brightcove"
+			      			 data-schema="1"
+			      			 data-player="article"
+			      			 data-params="@videoPlayer=${objectMap.videoId}"
+			      			 data-autoplay="${autoPlay}">
+			      		</div>
+					</c:when>
+					<c:when test="${objectMap.provider eq 'NDN'}">	
+							<c:choose>
+					       		<c:when test="${autoPlayInCarousel}">
+					       			<p:out var="autoPlay" value="1" />
+					       		</c:when>
+					       		<c:otherwise>
+					       			<p:out var="autoPlay" value="0" />
+					       		</c:otherwise>
+					       	</c:choose>
+					       	
+							<div class="videoplayer ndn_embed"
+					            data-schema="2"
+					            data-player="clicktoplay"
+					            data-config-widget-id="${autoPlay}"
+					            data-config-type="VideoPlayer/Single"
+					            data-config-tracking-group="90106"
+					            data-config-video-id="${videoId}"
+					            data-config-site-section="bostonglobe">
+							</div>
+					</c:when>
+					<c:when test="${objectMap.provider eq 'CineSport'}">	
+						<div class="videoplayer cinesport"
+						     data-schema="3"
+							 data-video-id="${objectMap.videoId}"
+							 data-autoplay="${fn:toLowerCase(autoPlayInCarousel)}">
+						</div>
+					</c:when>
+					<c:when test="${objectMap.provider eq 'Perform'}">
+						<p:out var="playerID" xvalue="$m//PerformPlayer/PlayerID" />
+						<p:out var="channelID" xvalue="$m//PerformPlayer/ChannelID" />
+						<div class="perform-wrap">
+							<div class="videoplayer perform"
+								data-schema="4"
+								data-player-id="50c513u5u7l6zaikztju1bp3"
+								data-channel-id="${channelID}"
+								data-video-id="${objectMap.videoId}"
+								id="perf50c513u5u7l6zaikztju1bp3-${objectMap.videoId}">
+							</div>
+						</div>
+					</c:when>					
+					<c:when test="${objectMap.provider eq 'Ustream'}">	
+						<div class="videoplayer ustream"
+					    	 data-schema="5"
+						 	 id="{objectMap.videoId}">
+						</div>
+					</c:when>
+					<c:when test="${objectMap.provider eq 'NESN'}">
+						<c:choose>
+							<c:when test="${videoID eq 'latest' or videoID eq 0}">
+								<div class="videoplayer nesn"
+							    	 data-schema="6"
+							    	 data-video-type="latest"
+							    	 data-video-id="0">
+								</div>
+							</c:when>
+							<c:otherwise>
+								<div class="videoplayer nesn"
+							    	 data-schema="6"
+							    	 data-player-type="bost003"
+								 	 data-video-id="{objectMap.videoId}">		    	 
+								</div>
+							</c:otherwise>
+						</c:choose>
+					</c:when>											
+				</c:choose>
+			</c:otherwise>
+		</c:choose>
+	</div> <%-- this closes the video-wrapper --%>			
+	<%-- Caption --%>
+	<div class="lead-tz-txt-bd reverse">
+	
+		<%-- Scoreboard in the carousel tease --%>
+		<p:out var="isScoreBoard" value="${1==2}" />
+		<c:if test="${isScoreBoard}">
+			<p:inline url="$configurationURI/Framework/skins/components/global_carousel/global_carousel_scoreboard.jpt" />
+		</c:if>
+		<%-- //Scoreboard --%>	
+		<h1 class="lead-tz-h">
+			<bdc:link 
+				webObject="${currentObject}" 
+				onClick="true" 
+				className="omniclick"
+				element="headline"
+				elementType="carousel lead">
+					${title.carouselHeadline}
+			</bdc:link>
+		</h1>
+		
+		<p:out var="numLinks" value="${fn:length(relatedLinks.relatedLinksArray)}"/>
+		<c:if test="${not empty fn:trim(webtease)}">
+			<p class="lead-tz-txt tz-txt">${webtease}
+				<c:if test="${numLinks gt 0}">
+					<span class="horiz-list">
+					<c:forEach items="${relatedLinks.relatedLinksArray}" var="link" varStatus="status">
+						<bdc:url value="${link[1]}" type="${link[0]}" var="url"/>
+						<i class="list-item">
+							<a 
+								class="omniclick"
+								href="${url}" 
+								data-omniclick="carousel lead | link list');">
+									${link[2]}
+							</a>
+						</i>
+					</c:forEach>
+					</span>
+				</c:if>
+			</p>
+		</c:if>
+	</div> <!-- /lead-tz-txt-bd -->
+</div>	<!-- swiper-slide lead-tz lead-tz-w-art -->

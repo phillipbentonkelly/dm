@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EOMSearch xmlns="http://EidosMedia.com/EOM/SearchEngine" xmlns:q="http://EidosMedia.com/EOM/SearchEngine/query" xmlns:qa="http://EidosMedia.com/EOM/SearchEngine/query/alias" xmlns:qm="http://EidosMedia.com/EOM/SearchEngine/query/macro" xmlns:se="http://EidosMedia.com/EOM/SearchEngine">
+<!--
+{comments}
+BDC-1862 adding back newsletter queries
+{comments}
+-->
+	<q:Query type="INDEX">
+		<q:Properties>
+			<q:Index name="boston_2011-2020@methcms_eomse1"/>
+			<q:MaxResultItems value="10"/>
+			<q:Sort on="ObjectMetadata/OnlineProducts/OnlineProduct/LastPublicationDate" type="NDESCENDING"/>
+		</q:Properties>
+		<q:Boolean>
+			<ObjectInfo>
+				<type>EOM::CompoundStory</type>
+			</ObjectInfo>
+			<se:Attributes>
+				<ObjectMetadata>
+					<q:OR>
+						<Editorial>
+							<WorkFolder>Business</WorkFolder>
+						</Editorial>
+						<Categorization>
+							<Taxonomies>
+								<Taxonomy>Business</Taxonomy>
+							</Taxonomies>
+						</Categorization>
+					</q:OR>
+					<OnlineProducts>
+						<OnlineProduct>
+							<ProductName>Boston.com</ProductName>
+							<WebType q:op="MATCH">story</WebType>
+							<Sections>
+								<Section>
+									<q:NOT><SectionPath>/cars</SectionPath></q:NOT>
+								</Section>
+							</Sections>
+						</OnlineProduct>
+					</OnlineProducts>
+					<LastPrintOutput>
+						<PrintPublicationDate q:op="EMPTY"/>
+					</LastPrintOutput>
+				</ObjectMetadata>
+			</se:Attributes>
+		</q:Boolean>
+	</q:Query>
+</EOMSearch>

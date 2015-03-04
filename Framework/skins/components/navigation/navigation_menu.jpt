@@ -1,0 +1,130 @@
+<%@ page import="java.util.Calendar" %>
+<%
+	Calendar cal = Calendar.getInstance();
+	int copyrightYear = cal.get(Calendar.YEAR);
+	pageContext.setAttribute("copyrightYear", copyrightYear);
+%>
+
+<p:currentObject metadata="meta" />
+<p:out var="adLayerDwpPath" value="${cacheScope.adLayerDwpPath}" />
+
+<p:out var="parentType" value="${cacheScope.linkedType}" />
+<p:out var="sectionAppend" value="" />
+<c:if test="${empty cacheScope.linkedType or fn:trim(cacheScope.linkedType)}">
+	<p:out var="navDwp" value="${cacheScope.dwp}" />
+	<p:out var="navSection" value="${cacheScope.dwpSection}" /> <!-- navSection = ${navSection} -->
+	
+	<p:object webObject="${cacheScope.dwp}" metadata="dwpMeta" />
+	<p:out var="parentType" xvalue="$dwpMeta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/WebType" />
+	
+	<p:out var="sectionAppend" value="" />
+	<c:if test="${navSection ne '/'}">
+		<c:set var="topSection" value="${fn:split(navSection, '/')}" />
+		<p:out var="sectionAppend" value="_${topSection[0]}" />
+	</c:if>
+	
+	<p:out var="hpAppend" value="" />
+	<c:if test="${parentType == 'dwp_modulepage' and dwpSection eq '/'}">
+		<p:out var="hpAppend" value="_hp" />
+		<p:out var="sectionAppend" value="${hpAppend}" />
+	</c:if>
+
+</c:if>
+
+<bdc:rwNavInfo var="navigation" webObject="${currentObject}" appendHP="${hpAppend}" appendSection="${sectionAppend}"/>
+
+<div class="slide-out-nav">
+
+  <!-- Sections -->
+  <div class="slide-out-nav__search">
+  	<%-- SEARCH FORM --%>
+  	<p:out var="searchFormP1" value="TotalHamburgerSearches" scope="request" />
+    <p:inline url="$configurationURI/Framework/frameset/search/search_form.jpt" />
+  </div>
+
+
+  <!-- Sections -->
+  <div class="slide-out-nav__header">
+    Sections
+  </div>
+  <div class="slide-out-nav__list-container">
+    <ul class="slide-out-nav__list">
+    
+    	<c:forEach items="${navigation.sections}" var="section" varStatus="loop">
+    		<li class="slide-out-nav__item">
+    			<bdc:link value="${section.url}" className="slide-out-nav__link">${section.text}</bdc:link>
+    		</li>
+    	</c:forEach>
+    	
+    </ul>
+  </div>
+
+  <!-- Shortcuts -->
+  <div class="slide-out-nav__header">
+    Shortcuts
+  </div>
+  <div class="slide-out-nav__list-container">
+    <ul class="slide-out-nav__list">
+    
+    	<c:forEach items="${navigation.shortcuts}" var="shorty" varStatus="loop">
+    		<li class="slide-out-nav__item">
+    			<a href="${shorty.url}" class="slide-out-nav__link">${shorty.text}</a>
+    		</li>
+    	</c:forEach>
+
+    </ul>
+  </div>
+
+  <!-- Sister Sites -->
+  <ul class="slide-out-nav__list slide-out-nav__list--logo">
+  
+  	<li class="slide-out-nav__item">
+      <a href="http://bdcwire.com/radiobdc?p1=Main_Sites${hpAppend}" class="slide-out-nav__link">
+        <span class="bdc-icon bdc-icon--radiobdc">Radio BDC</span>
+        <span class="slide-out-nav__link-text">Streaming today's top alternative music &amp; more</span>
+      </a>
+    </li>
+    <li class="slide-out-nav__item">
+      <a href="http://www.betaboston.com/?p1=Main_Sites${hpAppend}" class="slide-out-nav__link">
+        <span class="bdc-icon bdc-icon--betaboston">Beta Boston</span>
+        <span class="slide-out-nav__link-text">Your one-stop source for local innovation news</span>
+      </a>
+    </li>
+    <li class="slide-out-nav__item">
+      <a href="http://www.bdcwire.com/?p1=Main_Sites${hpAppend}" class="slide-out-nav__link">
+        <span class="bdc-icon bdc-icon--bdcwire">Radio BDC</span>
+        <span class="slide-out-nav__link-text">I'd click that</span>
+      </a>
+    </li>
+    <li class="slide-out-nav__item">
+      <a href="http://www.bostonglobe.com/?p1=Main_Sites${hpAppend}" class="slide-out-nav__link">
+        <span class="bdc-icon bdc-icon--bostonglobe">Radio BDC</span>
+        <span class="slide-out-nav__link-text">Home of award-winning Boston Globe reporting</span>
+      </a>
+    </li>
+    <li class="slide-out-nav__item">
+      <a href="http://www.cruxnow.com/?p1=Main_Sites${hpAppend}" class="slide-out-nav__link">
+        <span class="bdc-icon bdc-icon--crux">Crux</span>
+        <span class="slide-out-nav__link-text">Covering all things Catholic</span>
+      </a>
+    </li>
+
+  </ul>
+
+  <!-- Social Nav -->
+  <%-- HORIZONTAL SOCIAL NAV --%>
+  <p:inline url="$configurationURI/Framework/frameset/common/social_nav_horizontal.jpt" />
+
+  <!-- Footer -->
+  <div class="slide-out-nav__footer">
+    <ul class="slide-out-nav__footer-list">
+    
+    	<c:forEach items="${navigation.legal}" var="legal" varStatus="loop">
+    		<li class="slide-out-nav__footer-item"><a href="${legal.url}" class="">${legal.text}</a></li>
+    	</c:forEach>
+      
+    </ul>
+    <p class="slide-out-nav__footer-text">&copy;${copyrightYear} Boston Globe Media Partners, LLC</p>
+  </div>
+
+</div>

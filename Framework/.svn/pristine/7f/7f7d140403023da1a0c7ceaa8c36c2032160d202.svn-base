@@ -1,0 +1,6 @@
+<p:currentObject metadata="meta" />
+<p:out var="mTypeId" xvalue="$meta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/WishabiID" />
+
+<!-- <article class="feat-tz wishabi" data-wishabi-id="${mTypeId}"></article> -->
+
+<div id="circularhub_module_1370"></div><script src="//api.circularhub.com/1370/5e30bf9636f28066/circularhub_module.js"></script> 

@@ -1,0 +1,354 @@
+<!doctype html>
+<html>
+	<head>
+		<link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
+		<!-- Apple Touch Icons -->
+		<link rel="apple-touch-icon" href="/img/apple-touch-icon.png" />
+		<link rel="apple-touch-icon" sizes="57x57" href="/img/apple-touch-icon-57x57.png" />
+		<link rel="apple-touch-icon" sizes="72x72" href="/img/apple-touch-icon-72x72.png" />
+		<link rel="apple-touch-icon" sizes="114x114" href="/img/apple-touch-icon-114x114.png" />
+		<link rel="apple-touch-icon" sizes="144x144" href="/img/apple-touch-icon-144x144.png" />
+		<link rel="apple-touch-icon" sizes="57x57" href="/img/apple-touch-icon-60x60.png" />
+		<link rel="apple-touch-icon" sizes="72x72" href="/img/apple-touch-icon-120x120.png" />
+		<link rel="apple-touch-icon" sizes="114x114" href="/img/apple-touch-icon-76x76.png" />
+		<link rel="apple-touch-icon" sizes="144x144" href="/img/apple-touch-icon-152x152.png" />
+		<!-- Windows 8 Tile Icons -->
+		<meta name="msapplication-square70x70logo" content="/img/smalltile.png" />
+		<meta name="msapplication-square150x150logo" content="/img/mediumtile.png" />
+		<meta name="msapplication-wide310x150logo" content="/img/widetile.png" />
+		<meta name="msapplication-square310x310logo" content="/img/largetile.png" />
+		<meta charset="utf-8">
+			<meta name="description" content="">
+				<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0,user-scalable=no">
+					<title>Boston.com Prototype, redux</title>
+
+					<link rel="stylesheet" href="css/screen.css">
+						<script type="text/javascript" src="up_js/_src/modernizr/modernizr.js"></script>
+
+						<script type="text/javascript"> // Typekit
+							(function() {
+							var config = {
+							kitId: 'cug4tlt',
+							scriptTimeout: 3000
+							};
+							var h=document.getElementsByTagName("html")[0];h.className+="
+							wf-loading";var
+							t=setTimeout(function(){h.className=h.className.replace(/(\s|^)wf-loading(\s|$)/g,"
+							");h.className+=" wf-inactive"},config.scriptTimeout);var
+							tk=document.createElement("script"),d=false;tk.src='//use.typekit.net/'+config.kitId+'.js';tk.type="text/javascript";tk.async="true";tk.onload=tk.onreadystatechange=function(){var
+							a=this.readyState;if(d||a&&a!="complete"&&a!="loaded")return;d=true;clearTimeout(t);try{Typekit.load(config)}catch(b){}};var
+							s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(tk,s)
+							})();
+		</script>
+						<script> // DFP
+							var googletag = googletag || {};
+							googletag.cmd = googletag.cmd || [];
+							(function() {
+							var gads = document.createElement("script");
+							gads.async = true;
+							gads.type = "text/javascript";
+							var useSSL = "https:" == document.location.protocol;
+							gads.src = (useSSL ? "https:" : "http:") +
+							"//www.googletagservices.com/tag/js/gpt.js";
+							var node = document.getElementsByTagName("script")[0];
+							node.parentNode.insertBefore(gads, node);
+							})();
+		</script>
+						<script> // DFP Setup
+							var bcom = bcom || {};
+							bcom.dfp = bcom.dfp || {};
+							bcom.dfp.networkCode = 61381659;
+							bcom.dfp.adUnit = 'testbostonglobe/test-bcom-redesign';
+							//bcom.dfp.adSlots = ['ad_lead1', 'ad_sponsor', 'ad_featurestack',
+							'ad_streamsponstease', 'ad_featurestacksponsor'];
+							bcom.dfp.adSlots = ['ad_sponsor','ad_featurestack'];
+							bcom.dfp.streamCount = 5;
+							bcom.dfp.keyValuePairs = {};
+		</script>
+						<!-- gigya -->
+						<!-- Gigya Notes frameset needs to be updated with the production FB 
+							app id, which is 135637993114591 when it gets migrated The APIKey for Gigya 
+							will also need to be updated when migrating to QA* or PRD -->
+
+						<script
+							src="http://cdn.gigya.com/js/socialize.js?apiKey=3_lCsXhRmHTe6QmomvEFV3NeuGt0DGOlP3Gd23NIE_imzif-OH_h42MNhfnhCGz-tX"></script>
+
+	</head>
+	<body class="page-story top-btn-off tall-nav-potential" id="top">
+
+
+<?php include('share_modal.html');?>
+
+		<!-- <div class="loading page-loading"><i class="dot one"></i><i class="dot 
+			two"></i><i class="dot three"></i></div> -->
+
+<?php include('user_profile.html');?>
+
+
+		<div class="site-container">
+	<?php include('masthead.html');?>
+			<div class="page-content">
+
+				<!-- Leaderboard Ad Module -->
+				<section class="leaderboard-mod nav-leaderboard-mod">
+					<div class="ad-leaderboard" id="ad_lead1">
+						<script type="text/javascript">
+							googletag.cmd.push(function() {
+							googletag.display("ad_lead1");
+							}); 
+				</script>
+					</div>
+				</section> <!-- /leaderboard-mod -->
+				<div class="story-mod">
+					<div class="story-width article-with-art">
+
+						<header class="story-hdr article-hdr">
+							<div class="story-overline-mod">
+								<a href="index.html#lifestyle" class="story-cat overline">Life</a>
+							</div> <!-- /story-overline-mod -->
+
+							<h1 class="story-h1">Your Brain on Yoga</h1>
+						</header> <!-- /article-hdr -->
+
+						<article class="article-bd">
+
+							<!-- Story Lead Art -->
+							<div class="l-story-primary no-flow">
+								<figure class="article-lead-art-mod">
+
+									<div class="videoplayer ndn_embed" data-schema="2"
+										data-player="clicktoplay" data-config-widget-id="1"
+										data-config-type="VideoPlayer/Single"
+										data-config-tracking-group="10557" data-config-video-id="25498051"
+										data-config-site-section="site_section_id">
+									</div>
+									<!-- <img class="article-art article-lead-art" src="../photos/yoga.jpg"> -->
+									<figcaption class="caption story-caption reverse">
+										A new study suggests that yoga provides a bigger mental boost
+										than running
+										<i class="credit">Credit: Jonathan Wiggs, Boston Globe</i>
+									</figcaption> <!-- /article-caption -->
+								</figure>
+							</div> <!-- /article-art-mod -->
+
+							<!-- Story Byline --> <%-- gets the class sharespace if there is no image with this article --%>
+							<div class="byline-pair-mod byline-stacked ">
+								<aside class="l-story-byline">
+									<section class="story-byline-mod">
+										<a href="#URL:author-page" class="byline-avatar-mod art-bd">
+											<img class="story-byline-avatar art" src="../photos/avatar-gary-dzen.jpg">
+										</a> <!-- /author-avatar-mod -->
+										<div class="txt-bd">
+											<ul class="article-byline-list">
+												<li class="story-byline">
+													<a href="#URL:author-page">Gary Dzen</a>
+												</li>
+												<li class="story-byline-handle">
+													<a href="#URL:author-twitter-handle">@globegary</a>
+												</li>
+												<li class="story-byline-affiliation">Boston.com Staff</li>
+												<li class="story-timestamp">June 25, 2013 7:54am</li>
+											</ul>
+										</div> <!-- /txt-bd -->
+									</section> <!-- /story-byline-mod -->
+
+									<!-- Story Share Tools: Header -->
+									<section class="story-tools-mod story-tools-hdr">
+										<ul class="tools-horiz story-tools-horiz">
+											<li class="tools-item tools-share">
+												<a class="popup-trigger" href="#mfp-share"
+													data-canonical="http://boston.com/some/long/url/for/fun"
+													data-shorturl="http://fa.ke/replace" data-headline="Your Brain on Yoga"
+													data-thumbnail="../photos/yoga.jpg" data-thumb_type="image">
+													<i class="share-icon"></i>
+													<i class="tools-txt">Share</i>
+												</a>
+											</li>
+											<li class="tools-item tools-comment">
+												<a href="#story-comments" class="js-goto-open-comments">
+													<i class="comment-icon"></i>
+													<i class="tools-txt">Comment</i>
+												</a>
+											</li>
+										</ul>
+									</section>  <!-- /story-tools-hdr -->
+								</aside> <!-- l-story-byline -->
+								<%--
+								<!-- Story Banner Ad -->
+								<div class="l-ad-story-banner-1 ">
+									<section class="ad-banner-mod story-banner-1">
+										<img src="../ads/banner-1.jpg" class="ad-banner">
+									</section>
+								</div> <!-- l-story-secondary -->
+								--%>
+							</div><!-- // byline-pair-mod byline-stacked -->
+
+						<%--
+							<div class="story-share-mod">
+								<!-- Story Share Tools: Sidecar -->
+								<div class="story-tools-mod story-tools-sidecar">
+									<ul class="tools-btns">
+										<li class="tools-item tools-share">
+											<a class="popup-trigger tools-link tools-link-share" href="#mfp-share"
+												data-canonical="http://boston.com/some/long/url/for/fun"
+												data-shorturl="http://fa.ke/replace" data-headline="Your Brain on Yoga"
+												data-thumbnail="../photos/yoga.jpg" data-thumb_type="image">
+												<i class="share-icon"></i>
+												<i class="tools-txt">Share</i>
+											</a>
+										</li>
+										<li class="tools-item tools-comment">
+											<a class="tools-link tools-link-comment js-goto-open-comments"
+												href="#story-comments">
+												<i class="comment-icon"></i>
+												<i class="sc-comment-count">5</i>
+												<i class="tools-txt">Comment</i>
+											</a>
+										</li>
+									</ul> <!-- /share-sidecar -->
+								</div> <!-- /story-tools-sidecar -->
+							</div>
+							--%>
+							<!-- Story Text -->
+							<div class="l-story-txt-share article-txt-top no-flow">
+
+								<!-- Story Share Tools: Sidecar -->
+								<div class="story-tools-mod story-tools-sidecar">
+									<ul class="tools-btns">
+										<li class="tools-item tools-share">
+											<a class="popup-trigger tools-link tools-link-share" href="#mfp-share"
+												data-canonical="http://boston.com/some/long/url/for/fun"
+												data-shorturl="http://fa.ke/replace" data-headline="Your Brain on Yoga"
+												data-thumbnail="../photos/yoga.jpg" data-thumb_type="image">
+												<i class="share-icon"></i>
+												<i class="tools-txt">Share</i>
+											</a>
+										</li>
+										<li class="tools-item tools-comment">
+											<a class="tools-link tools-link-comment js-goto-open-comments"
+												href="#story-comments">
+												<i class="comment-icon"></i>
+												<i class="sc-comment-count">5</i>
+												<i class="tools-txt">Comment</i>
+											</a>
+										</li>
+									</ul> <!-- /share-sidecar -->
+								</div> <!-- /story-tools-sidecar -->
+
+								<p class="article-p first-p">
+									<i class="dropcap">E</i>
+									xercise has long been hailed as an elixir for the brain, to
+									boost your mood, improve learning, and ward off memory loss.
+									But yoga may be even better.
+								</p>
+								<p class="article-p">Just in time for the return of Lululemon’s yoga
+									pants—which thankfully are no longer see-through—new research
+									published in the Journal of Physical Activity and Health
+									suggests that yoga practice temporarily boosts memory and
+									focus more than jogging. A small study involving 30 female
+									college students, who weren’t regular practitioners of yoga,
+									found that they performed better on cognitive tests after
+									performing yoga for 20 minutes as compared to when they jogged
+									on a treadmill just before taking the tests.</p>
+							</div> <!-- /l-story-txt-share -->
+
+							<div class="l-story-txt-share no-flow">
+								<p class="article-p">How to explain the difference?</p>
+							</div> <!-- /l-story-txt-share -->
+
+
+							<%-- LINK TO FULL ARTICLE --%>
+							
+							<div class="story-summary-link article-p">
+								<a href="#">
+									See the full story on BostonGlobe.com
+            						</a>
+							</div>
+							
+							
+							
+							
+						
+
+
+							<div class="story-social-btns l-story-txt-share">
+								<button class="social-btn social-btn-fbook">
+									<i class="icon"></i>
+									Share
+								</button>
+								<button class="social-btn social-btn-twitter">
+									<i class="icon"></i>
+									Tweet
+								</button>
+							</div>
+
+							<!-- Story Share Tools: Footer -->
+							<footer class="story-tools-mod story-tools-ftr">
+								<ul class="tools-horiz story-tools-horiz">
+									<li class="tools-item tools-share">
+										<a class="popup-trigger tools-link tools-link-share" href="#mfp-share"
+											data-canonical="http://boston.com/some/long/url/for/fun"
+											data-shorturl="http://fa.ke/replace" data-headline="Your Brain on Yoga"
+											data-thumbnail="../photos/yoga.jpg" data-thumb_type="image">
+											<i class="share-icon"></i>
+											<i class="tools-txt">Share</i>
+										</a>
+									</li>
+									<li class="tools-item tools-comment js-toggle-comments">
+										<a class="tools-link tools-link-comment-ftr" href="#URL:comment-trigger">
+											<i class="comment-icon"></i>
+											<i class="tools-txt">Comment</i>
+										</a>
+									</li>
+								</ul>
+							</footer>  <!-- /story-tools-ftr -->
+
+						</article> <!-- /article-bd -->
+					</div> <!-- /story-width -->
+				</div><!-- //story-mod -->
+			</div> <!-- /page-content -->
+		</div> <!-- /site-container -->
+
+
+		<div id=pubnub pub-key=pub-c-127a2b10-aa80-4a62-ac2e-30a1fce6f220
+			sub-key=sub-c-4a78c224-164c-11e3-9f04-02ee2ddab7fe></div>
+
+		<?php include('stream.php');?>
+
+		<script type="text/javascript" src="/js/libs/jquery-2.0.2.min.js"></script>
+		<script type="text/javascript" src="/js/libs/underscore.js"></script>
+		<script type="text/javascript" src="/js/libs/backbone.js"></script>
+		<script type="text/javascript" src="/js/libs/backbone.localStorage.js"></script>
+		<script type="text/javascript" src="/js/libs/backbone.layoutmanager.js"></script>
+		<script type="text/javascript" src="/js/libs/pubnub.js"></script>
+		<script type="text/javascript" src="/js/libs/pubnub-sync.js"></script>
+		<script type="text/javascript" src="/js/libs/notify.js"></script>
+		<script type="text/javascript" src="/js/libs/backbone-pubnub.js"></script>
+		<script type="text/javascript" src="/js/libs/moment.min.js"></script>
+
+		<script type="text/javascript" src="/js/libs/jquery.ba-bbq.min.js"></script>
+		<script type="text/javascript" src="/js/libs/jquery.ba-throttle-debounce.min.js"></script>
+
+		<script type="text/javascript"
+			src="/js/_src/magnific-popup/dist/jquery.magnific-popup.js"></script>
+		<script type="text/javascript" src="/js/libs/jquery.serializeObject.js"></script>
+		<script type="text/javascript" src="/js/libs/mustache.js"></script>
+		<script type="text/javascript"
+			src="/js/_src/swiper/dist/idangerous.swiper-2.2.min.js"></script>
+
+		<script type="text/javascript" src="/js/bcom.slidenav.js"></script>
+		<script type="text/javascript" src="/js/bcom.infinity.js"></script>
+		<script type="text/javascript" src="/js/bcom.carousel.js"></script>
+		<script type="text/javascript" src="/js/bcom.user.js"></script>
+		<script type="text/javascript" src="/js/bcom.dfp.js"></script>
+		<script type="text/javascript" src="/js/bcom.mustreads.js"></script>
+		<script type="text/javascript" src="/js/bcom.videoplayer.js"></script>
+
+		<!-- <script type="text/javascript" src="/js/app.js"></script> -->
+
+		<script type="text/javascript" src="/js/bcom.share.js"></script>
+		<script type="text/javascript" src="/js/bcom.etaf.js"></script>
+		<script type="text/javascript" src="/js/bcom.inits.js"></script>
+
+	</body>
+</html>	

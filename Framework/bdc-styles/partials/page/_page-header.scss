@@ -1,0 +1,174 @@
+// *
+// * Page Header 
+// *
+
+$module-name: 'page-header';
+
+// ------------------------------------------------------------
+// Default Styles
+// ------------------------------------------------------------
+
+.#{$module-name} {
+  width: 100%;
+  height: $page-header-height-mobile;
+  background: color(black);
+  padding: spacer(px, mid) spacer(px, base);
+	padding: spacer(rem, mid) spacer(rem, base);
+
+  // Logo
+  &__logo {
+    width: 71%; // this is the largest it can be on an iphone4/5
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    text-align: center;
+    .bdc-icon--bdc-logo {
+      margin-top: spacer(px, small);
+      margin-top: spacer(rem, small);
+    }
+  }
+
+  &__section-name {
+    display: inline-block;
+    @include font-scale(x-large);
+    line-height: 1;
+    color: color(white);
+    font-weight: $fw-bold;
+    // the following styles are necessary for truncation   
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .bdc-icon--bdc-circle-logo {
+    vertical-align: middle;
+    margin-bottom: 6px;
+    margin-right: spacer(px, base);
+    margin-right: spacer(rem, base);
+  }
+
+  // Buttons
+  &__button {
+    height: 34px;
+    display: block;
+    padding: 3px;
+    // margin-left: spacer(px);
+    // margin-left: spacer(rem);
+
+    &-text {
+      display: none;
+      color: color(white);
+      // margin-left: spacer(px, small); 
+      // margin-left: spacer(rem, small); 
+      @include font-scale(x-small);
+      font-weight: $fw-bold;
+      vertical-align: middle;
+    }
+
+    &--nav {
+      float: left;
+    }
+    &--nav &-text {
+      margin-left: spacer(px, small);
+      margin-left: spacer(rem, small);
+    }
+
+
+    &--user {
+      float: right;
+      color: #999;
+      font-weight: $fw-bold;
+      margin-left: spacer(px);
+      margin-left: spacer(rem);
+    }
+    &--user &-text {
+      display: inline-block;
+    }
+
+    &:hover {
+      cursor: pointer;
+      box-shadow: 0 0px 1px color(gray, xx-light);
+      border-radius: 3px;
+      transition: box-shadow 0.25s cubic-bezier(0.49, 0.37, 0.445, 0.715), border-radius 0.25s cubic-bezier(0.49, 0.37, 0.445, 0.715);
+    }
+  }
+
+  .bdc-icon--hamburger {  
+    vertical-align: middle;
+  }
+
+  .bdc-icon--user {
+    display: block;
+  }
+  
+  .bdc-icon--close-medium {
+    display: none;
+    vertical-align: middle;
+  }
+
+  // Avatar Image
+  &__avatar {
+    width: 24px;
+    height: 24px;
+  }
+
+  // Search form ***
+  &__search-form {
+    input[disabled] {
+      background-color: #000;
+      border-color: none;
+    }
+  }
+
+}
+
+// ------------------------------------------------------------
+// Custom Breakpoint
+// ------------------------------------------------------------
+
+// On tablet and up the header is taller and loads the larger logo icon
+@include media-query(500) {
+  .#{$module-name} {
+    padding: spacer(px, mid) spacer(px, x-large);
+    padding: spacer(rem, mid) spacer(rem, x-large);
+    // Logo
+    &__logo {
+      width: 38%;
+    }
+    &__section-name {
+      display: inline-block;
+      color: white;
+      font-weight: $fw-bold;
+    }
+    // Buttons
+    &__button {
+      &-text {
+        display: inline-block;
+      }
+    }
+  }
+}
+
+
+
+// ------------------------------------------------------------
+// Tablet Breakpoint
+// ------------------------------------------------------------
+
+// On tablet and up the header is taller and loads the larger logo icon
+@include media-query(tablet) {
+  .#{$module-name} {
+    height: $page-header-height;
+    // Logo
+    &__logo {
+      width: 50%;
+      @include sprite-position($logo-bcom-large);
+      margin-top: 0;
+    }
+    &__button {
+      padding: spacer(px, small);
+    }
+  }
+}

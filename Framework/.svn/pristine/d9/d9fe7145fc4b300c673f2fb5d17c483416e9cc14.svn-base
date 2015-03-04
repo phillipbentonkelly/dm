@@ -1,0 +1,101 @@
+<%@ page import="java.text.SimpleDateFormat" %>
+<%@ page import="java.util.Calendar" %>
+<%@ page import="java.util.Date" %>
+<p:currentObject metadata="meta" />
+
+<%-- The only thing we don't link to is a TextAsset with no XREF --%>
+<p:getPageZone name="breaking_news" var="breakin2_electricBoogaloo" />
+
+<c:if test="${breakin2_electricBoogaloo.size > 0}">
+	<c:forEach items="${breakin2_electricBoogaloo.items}" var="breakingItem">
+	
+		<p:getObject webObject="${breakingItem}" var="webObject" />
+		<p:object webObject="${webObject}" content="story" metadata="meta" />
+		
+		<c:if test="${not empty webObject}">
+			<p:out var="hasBreaking" xvalue="$story//doc/story/headlines/overline/p" />
+			<bdc:getHeadlines webObject="${webObject}" var="headlines" />
+			<p:out var="objectType" xvalue="$meta//type" />
+			
+			<p:out var="firstPubDate"	xvalue="$meta//ObjectMetadata/OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/FirstPublicationDate" format="eomdate:MM/dd/yyyy HH:mm:ss z" timeZone="US/Eastern" />
+			<p:out var="lastPubDate"	xvalue="$meta//ObjectMetadata/OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/LastPublicationDate" format="eomdate:MM/dd/yyyy HH:mm:ss z" timeZone="US/Eastern" />
+			<p:out var="dateString" value="" />			
+			<c:if test="${not empty lastPubDate and fn:trim(lastPubDate) != ''}">
+				<!-- lastPubDate = ${lastPubDate} -->
+				<%
+					String minutes = new String("minute");
+					String hours = new String("hour");
+					
+					String lastPub = (String)pageContext.getAttribute("lastPubDate");
+					Calendar cal = Calendar.getInstance();
+					SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss z");
+					Date d1 = null, d2 = null;
+					
+					d1 = dateFormat.parse(lastPub);
+					d2 = cal.getTime();
+					
+					long diff = d2.getTime() - d1.getTime();
+					
+					long diffDays = diff / (24 * 3600 * 1000) % 60;
+					long diffHours = diff / (3600 * 1000) % 24;
+					long diffMinutes = diff / (1000 * 60) % 60;
+					
+					
+					pageContext.setAttribute("diffMinutes", diffMinutes);
+					pageContext.setAttribute("diffHours", diffHours);
+					pageContext.setAttribute("diffDays", diffDays);
+				%>
+
+				<c:if test="${diffDays > 0}">
+					<p:out var="dateString" value="${diffDays} day" />
+					<c:if test="${diffDays > 1}">
+						<p:out var="dateString" value="${dateString}s " />
+					</c:if>
+				</c:if>
+				<c:if test="${diffHours > 0}">
+					<p:out var="dateString" value="${dateString} ${diffHours} hour" />
+					<c:if test="${diffHours > 1}">
+						<p:out var="dateString" value="${dateString}s " />
+					</c:if>
+				</c:if>
+				<c:if test="${diffMinutes > 0}">
+					<p:out var="dateString" value="${dateString} ${diffMinutes} minute" />
+					<c:if test="${diffMinutes > 1}">
+						<p:out var="dateString" value="${dateString}s" />
+					</c:if>
+				</c:if>	
+			</c:if>
+			<div class="breaking-news">
+				
+				<c:choose>
+					<c:when test="${objectType eq 'TextAsset' or objectType eq 'StreamTease'}">
+						<p:out var="storyXref" xvalue="$story//xref" />
+						<c:choose>
+							<c:when test="${fn:trim(storyXref) != ''}">
+								<bdc:link webObject="${webObject}" linkParam="p1=ClickedOnBreakingNewsBox">
+									<c:if test="${not empty hasBreaking and fn:trim(hasBreaking) != ''}">${hasBreaking}: </c:if>
+									${headlines.headline}
+									<span class="more">more</span>
+									<span class="timestamp">${dateString} ago</span>
+								</bdc:link>
+							</c:when>
+							<c:otherwise>
+								<c:if test="${not empty hasBreaking and fn:trim(hasBreaking) != ''}">${hasBreaking}: </c:if>
+								${headlines.headline}
+								<span class="timestamp">${dateString} ago</span>
+							</c:otherwise>
+						</c:choose>
+					</c:when>
+					<c:otherwise>
+						<bdc:link webObject="${webObject}" linkParam="p1=ClickedOnBreakingNewsBox">
+							<c:if test="${not empty hasBreaking and fn:trim(hasBreaking) != ''}">${hasBreaking}: </c:if>
+							${headlines.headline}
+							<span class="more">more</span>
+							<span class="timestamp">${dateString} ago</span>						
+						</bdc:link>
+					</c:otherwise>
+				</c:choose>
+			</div>			
+		</c:if>
+	</c:forEach>
+</c:if>

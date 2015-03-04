@@ -1,0 +1,41 @@
+<p:currentObject metadata="m" webType="WT"/>
+<p:out var="sport" xvalue="$m//Sport" />
+<p:out var="gc" xvalue="$m//Gamecode" />
+<p:out var="scoreboardText" xvalue="$m//ScoreboardText" />
+<p:out var="scoreboardLink" xvalue="$m//ScoreboardLink" />
+<p:out var="sport" value="${fn:toLowerCase(sport)}" />
+
+<script type="text/mustache" id="breaking-scoreboard-mustache">
+
+	<div class="breaking-scoreboard {{status}}">
+		<ul class="breaking-sb-section status-section">
+			{{#segment_number}}
+				<li>{{segment_number}}</li>
+			{{/segment_number}}
+			<li class="breaking-sb-status">{{status}}</li>
+		</ul>
+		<ul class="breaking-sb-section team-section">
+			<li class="breaking-sb-logo">
+				<i class="sb-away-team-logo sb-team-logo sb-sport-{{sport}}" id="{{sport}}-{{awayTeam}}"></i>
+			</li>
+			<li class="breaking-sb-team">{{awayTeam_name}}</li>
+			<li class="breaking-sb-score">{{awayScore}}</li>
+		</ul>
+		<ul class="breaking-sb-section team-section">
+			<li class="breaking-sb-logo">
+				<i class="sb-home-team-logo sb-team-logo sb-sport-{{sport}}" id="{{sport}}-{{homeTeam}}"></i>
+			</li>
+			<li class="breaking-sb-team">{{homeTeam_name}}</li>
+			<li class="breaking-sb-score">{{homeScore}}</li>
+		</ul>
+		<c:if test="${not empty scoreboardText and not empty scoreboardLink}">
+			<ul class="breaking-sb-section more-section">
+				<li>
+					<a href="${scoreboardLink}">${scoreboardText}</a>
+				</li>
+			</ul>
+		</c:if>
+	</div><!-- breaking-scoreboard -->
+</script>
+
+<div class="breaking-scoreboard-mod" data-league="${sport}" data-game-code="${gc}"></div>

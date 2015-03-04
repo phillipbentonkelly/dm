@@ -1,0 +1,30 @@
+<p:object webObject="${currentObject}" content="c" metadata="m" webType="WT" uuid="uuid" channel="Boston.com"/>	
+<p:out var="section" xvalue="$m//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/Sections/Section/SectionPath" />
+<bdc:getSummaryForSectionFront webObject="${currentObject}" var="webtease" priority="carousel" />
+<bdc:getHeadlines webObject="${currentObject}" var="title" edition="${edition}"/>
+<p:out var="leadingPhotoPath" xvalue="$c//photogrp[@class='alt-web-images']/photo[@name='image_676x282']/@fileref" scope="request" />
+<c:if test="${empty leadingPhotoPath}">
+	<p:out var="leadingPhotoPath" xvalue="$c//photogrp[@class='main-web-images']/photo[@name='image_371w']/@fileref" scope="request"/>
+</c:if>
+<p:url var="img" value="${leadingPhotoPath}" type="resource" format="image_1920x1190"/>
+<%-- if no image, class = big-news-no-img --%>
+<c:choose>
+	<c:when test="${not empty leadingPhotoPath}">
+		<p:out var="imgClass" value="big-news-img-mod" />
+	</c:when>
+	<c:otherwise>
+		<p:out var="imgClass" value="big-news-no-img" />
+	</c:otherwise>
+</c:choose>
+<div class="big-news-mod big-news-with-img">
+	<div class="${imgClass}">
+	    <img src="${img}" class="big-news-img">
+	</div>
+<%-- margin-top optional, different classes,  {CLASS NAME HERE height_1} --%>
+	<div class="big-news-inner-mod">
+	
+	    <div class="big-news-h-group">
+	        <h5 class="big-news-overline"><c:if test="${not empty title.overline}">${title.overline}</c:if></h5>
+	       	<bdc:link className="big-news-h1" webObject="${currentObject}">${title.carouselHeadline}</bdc:link>
+	        <bdc:link className="big-news-subhead" webObject="${currentObject}">${webtease}</bdc:link>
+	    </div>

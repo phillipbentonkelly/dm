@@ -1,0 +1,124 @@
+<p:getContext var="uuid" />
+<p:getObject uuid="${uuid}" var="webObject" />
+<p:object webObject="${webObject}" content="story" metadata="meta" />
+
+<p:out var="review_title" xvalue="$story//review-containers/review-container-theater/review-title/p"/>
+
+<p:out var="theater_director" xvalue="$story//review-containers/review-container-theater/review-director/p"/>
+<p:out var="theater_performing_company" xvalue="$story//review-containers/review-container-theater/review-performing-company/p"/>
+<p:out var="theater_loc_name" xvalue="$story//review-containers/review-container-theater/review-loc-name/p"/>
+<p:out var="theater_loc_street_address" xvalue="$story//review-containers/review-container-theater/review-loc-street-address/p"/>
+<p:out var="theater_loc_city" xvalue="$story//review-containers/review-container-theater/review-loc-city/p"/>
+<p:out var="theater_loc_state" xvalue="$story//review-containers/review-container-theater/review-loc-state/p"/>
+<p:out var="theater_loc_zipcode" xvalue="$story//review-containers/review-container-theater/review-loc-zipcode/p"/>
+<p:out var="theater_date_opening" xvalue="$story//review-containers/review-container-theater/review-date-of-first-performance/p"/>
+<p:out var="theater_date_closing" xvalue="$story//review-containers/review-container-theater/review-date-closing/p"/>
+<p:out var="theater_ticket_price" xvalue="$story//review-containers/review-container-theater/review-ticket-price/p"/>
+<p:out var="theater_box_office_phone" xvalue="$story//review-containers/review-container-theater/review-box-office-phone/p"/>
+<p:out var="theater_company_url" xvalue="$story//review-containers/review-container-theater/review-company-url/p"/>
+<p:out var="theater_venue_url" xvalue="$story//review-containers/review-container-theater/review-venue-url/p"/>
+<p:out var="multiWriter" xvalue="$story//review-containers/review-container-theater/review-writers/review-writer[2]/p"/>
+<p:out var="multiCredit" xvalue="$story//review-containers/review-container-theater/review-other-credits/review-other-credit[2]/p"/>
+<p:out var="multiOrg" xvalue="$story//review-containers/review-container-theater/review-presenting-organizations/review-presenting-organization[2]/p"/>
+
+<%-- presenters --%>
+<p:out var="presenterLabel" value="Presenting organization" />
+<p:out var="presenterList" xvalue="$story//review-containers/review-container-theater/review-presenting-organizations/review-presenting-organization[1]/p" />
+<c:if test="${not empty fn:trim(multiOrg)}">
+	<p:out var="presenterLabel" value="Presenting organizations" />
+	<p:out var="presenterList" value="" />
+	<x:forEach var="presenterInfo" select="$story//review-containers/review-container-theater/review-presenting-organizations/review-presenting-organization" varStatus="loop">
+		<p:out var="presenter" xvalue="$presenterInfo/p" />
+		<c:if test="${not empty fn:trim(presenter)}">
+			<c:set var="presenterList">${presenterList}<c:if test="${not loop.first}">, </c:if> ${presenter}</c:set>
+		</c:if>
+	</x:forEach>
+</c:if>
+
+<%-- writers --%>
+<p:out var="writerLabel" value="Writer" />
+<p:out var="writerList" xvalue="$story//review-containers/review-container-theater/review-writers/review-writer[1]/p" />
+<c:if test="${not empty fn:trim(multiWriter)}">
+	<p:out var="writerLabel" value="Writers" />
+	<p:out var="writerList" value="" />
+	<x:forEach var="writerInfo" select="$story//review-containers/review-container-theater/review-writers/review-writer" varStatus="loop">
+		<p:out var="writer" xvalue="$writerInfo/p" />
+		<c:if test="${not empty fn:trim(writer)}">
+			<c:set var="writerList">${writerList}<c:if test="${not loop.first}">, </c:if> ${writer}</c:set>
+		</c:if>
+	</x:forEach>
+</c:if>
+
+<%-- credits --%>
+<p:out var="creditLabel" value="Other Credit" />
+<p:out var="creditList" xvalue="$story//review-containers/review-container-theater/review-other-credits/review-other-credit[1]/p" />
+<c:if test="${not empty fn:trim(multiCredit)}">
+	<p:out var="creditLabel" value="Other Credits" />
+	<p:out var="creditList" value="" />
+	<x:forEach var="creditInfo" select="$story//review-containers/review-container-theater/review-other-credit" varStatus="loop">
+		<p:out var="credit" xvalue="$creditInfo/p" />
+		<c:if test="${not empty fn:trim(credit)}">
+			<c:set var="creditList">${creditList}<c:if test="${not loop.first}">, </c:if> ${credit}</c:set>
+		</c:if>
+	</x:forEach>
+</c:if>
+
+<div class="review-item">
+	<h3 class="review-item-title">${fn:trim(review_title)}</h3>
+</div>
+
+<aside class="review-box">
+	
+	<c:if test="${not empty fn:trim(theater_loc_name)}">
+		${fn:trim(theater_loc_name)} |
+	</c:if>
+	
+	<p:out var="addressAmalgam" value="${theater_loc_street_address}${theater_loc_city}${theater_loc_state}${theater_loc_zipcode}" />
+	<c:if test="${not empty fn:trim(addressAmalgam)}">
+		${fn:trim(theater_loc_street_address)} | ${theater_loc_city}, ${theater_loc_state} ${theater_loc_zipcode } |
+	</c:if>
+	
+	<c:if test="${not empty fn:trim(theater_box_office_phone)}">
+		${fn:trim(theater_box_office_phone)} |
+	</c:if>
+
+	<c:if test="${not empty fn:trim(theater_venue_url)}">
+		<bdc:link value="${fn:trim(theater_venue_url)}">${fn:trim(theater_venue_url)}</bdc:link> |
+	</c:if>
+
+	<c:if test="${not empty fn:trim(writerList)}">
+		<b>${writerLabel}:</b> ${writerList} |
+	</c:if>
+	
+	<c:if test="${not empty fn:trim(theater_director)}">
+		<b>Director:</b> ${fn:trim(theater_director)} |
+	</c:if>
+	
+	<c:if test="${not empty fn:trim(creditList)}">
+		<b>${creditLabel}:</b> ${creditList} |
+	</c:if>
+	
+	<c:if test="${not empty fn:trim(theater_performing_company)}">
+		<b>Performing company:</b> ${fn:trim(theater_performing_company)} |
+	</c:if>
+	
+	<c:if test="${not empty fn:trim(presenterList)}">
+		<b>${presenterLabel}:</b> ${presenterList} |
+	</c:if>
+	
+	<c:if test="${not empty fn:trim(theater_date_opening)}">
+		<b>Date of first performance:</b> ${fn:trim(theater_date_opening)} |
+	</c:if>
+
+	<c:if test="${not empty fn:trim(theater_date_closing)}">
+		<b>Date closing:</b> ${fn:trim(theater_date_closing)} |
+	</c:if>
+	
+	<c:if test="${not empty fn:trim(theater_ticket_price)}">
+		<b>Ticket price:</b> ${theater_ticket_price} |
+	</c:if>
+	
+	<c:if test="${not empty fn:trim(theater_company_url)}">
+		<b>Company website:</b> <bdc:link value="${fn:trim(theater_company_url)}">${fn:trim(theater_company_url)}</bdc:link>
+	</c:if>
+</aside>

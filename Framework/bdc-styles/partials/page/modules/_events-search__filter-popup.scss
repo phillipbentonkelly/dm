@@ -1,0 +1,127 @@
+// *
+// *  Module Name 
+// *
+
+$module-name: 'narrow-search';
+
+// ------------------------------------------------------------
+// Default Styles
+// ------------------------------------------------------------
+
+.#{$module-name} {
+  // Module Styles
+  position: relative;
+  width: 70%;
+  right: 15%;
+  left: 15%;
+  background: color(white);
+  box-shadow: 0px 2px 5px 0.5px color(gray, light);
+  border: 1px solid color(gray, x-light);
+  
+  // search filter header block
+  &__header {
+    position: relative;
+    width: 100%;
+    color: color(white);
+    background: color(black);
+    padding: spacer(px, base);
+    padding: spacer(rem, base);
+    display: inline-block;
+  }
+
+  // popup header text
+  &__header-title {
+    display: inline-block;
+  }
+
+  // top corner close button
+  &__header-close {
+    position: relative;
+    float: right;
+    color: color(white);
+    background: color(black);
+    border: 1px solid color(white);
+    border-radius: 5px;
+  }
+  
+  // list of search filters
+  &__filters {
+    padding: 0 spacer(px, base);
+    padding: 0 spacer(rem, base);
+  }
+
+  &__filters a {
+    color: color(black);
+  }
+
+  // filter items list items
+  &__filter-item {
+    padding: spacer(px, base);
+    padding: spacer(rem, base);
+    @include font-scale(base);
+    font-weight: 500;
+    border-top: 1px solid color(gray, x-light);
+  }
+
+  // bottom close button container
+  &__bottom-close {
+    position: relative;
+    height: 40px;
+    padding: spacer(px, base);
+    padding: spacer(rem, base);
+    padding-top: 0;
+    padding-top: 0;
+  }
+
+  // bottom close button
+  &__bottom-close-button {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    color: color(white);
+    background: color(red);
+    border: color(red);
+  }
+
+  // left "back" arrow in header
+  .bdc-icon--arrow-left {
+    margin-right: 10px;
+    vertical-align: middle;
+  }
+
+  // selected/non-selected fliter checkmarks
+  .icon-events--checkmark-inactive,
+  .icon-events--checkmark-active {
+    float: right;
+  }
+}
+
+// ------------------------------------------------------------
+// Tablet Breakpoint
+// ------------------------------------------------------------
+
+// Tablet Breakpoint
+@include media-query(tablet) {
+  .#{$module-name} {
+    // Module Styles
+
+    // Some Element Styles
+    &__element {}
+
+  }
+}
+
+// ------------------------------------------------------------
+// Desktop Breakpoint
+// ------------------------------------------------------------
+
+@include media-query(desktop) {
+  .#{$module-name} {
+
+    //Hides the whole popup on Desktop
+    display: none;
+    // Some Element Styles
+    &__element {}
+
+  }
+}

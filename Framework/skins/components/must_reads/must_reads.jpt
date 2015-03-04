@@ -1,0 +1,69 @@
+<%--
+  {comments}
+    BDC-1970 Changes in must reads behavior
+  {comments}
+ --%>
+<p:update timeout="300"/>
+<p:currentObject metadata="meta" webType="WT" sectionId="section" />
+<%-- Do things with the XML --%>
+
+<!-- MUST READS WT = ${WT} -->
+<p:out var="p1MustReads" value="" />
+<c:if test="${cacheScope.isHomepage}">
+	<p:out var="p1MustReads" value="_hp" />
+</c:if>
+
+<p:out var="publicBaseUrl" value="${fn:replace(portalContext.publicBaseUrl,'.boston.com','')}" />
+<p:out var="xmlUrl" value="http://www.boston.com/partners/chartbeat/chartbeat.xml" />
+	<%-- xmlUrl updated to reflect a proper non-Jenkins URL --%>
+<c:import url="${xmlUrl}" var="mostPopularXml" />
+<x:parse xml="${mostPopularXml}" var="mostPopularParsed" />
+<div class="must-reads">
+	<h3 class="section-h">Trending</h3>
+	<ol data-repeat="10" data-template="headlines" data-type="headlines" class="mr-list process-me">
+		<x:forEach var="mostPop" begin="0" end="9" select="$mostPopularParsed/elements/page">
+			<x:set var="storyLink" select="string($mostPop/@path)" />
+			<x:set var="headline" select="string($mostPop/title/text())" />
+			<p:out var="scribbleLiveBS" value="no" />
+			<c:if test="${fn:endsWith(storyLink, '/scribblelive/bg_template.html')}">
+				<p:out var="scribbleLiveBS" value="yes" />
+			</c:if>
+			
+			<c:choose>
+				<c:when test="${fn:contains(headline, ' - ')}">
+					<p:out var="headlineSplit" value="${fn:trim(fn:substringBefore(headline, ' - '))}" />
+				</c:when>
+				<c:when test="${fn:contains(headline, ' | ')}">
+					<p:out var="headlineSplit" value="${fn:trim(fn:substringBefore(headline, ' | '))}" />
+				</c:when>
+				<c:otherwise>
+					<p:out var="headlineSplit" value="${fn:trim(headline)}" />
+				</c:otherwise>
+			</c:choose>
+			<%-- <p:out var="headlineSplit" value="${fn:trim(fn:substringBefore(headline, ' - '))}" /> --%>
+			<c:set var="gigyaRandID"><%= java.lang.Math.round(java.lang.Math.random() * 100000) %></c:set>
+			<c:if test="${fn:startsWith(storyLink, 'boston.com') and scribbleLiveBS eq 'no'}">
+				<c:set var="storyLink" value="${publicBaseUrl}.${storyLink}" />
+			</c:if>
+			
+			<c:if test="${scribbleLiveBS eq 'yes'}">
+				<p:out var="storyLink" value="http://www.${storyLink}" />
+			</c:if>
+			<li class="mr-item">
+				<c:choose>
+					<c:when test="${fn:contains(storyLink, '#') == 'true'}">
+						<p:out var="urlAnchorTag" value="${fn:substringAfter(storyLink, '#')}" />
+						<p:out var="storyLink" value="${fn:substringBefore(storyLink, '#')}" />
+						<p:out var="storyLinkP1" value="${storyLink}?p1=Must_Reads${p1MustReads}\#${urlAnchorTag}" />						
+					</c:when>
+					<c:otherwise>
+						<p:out var="storyLinkP1" value="${storyLink}?p1=Must_Reads${p1MustReads}" />
+					</c:otherwise>
+				</c:choose>		
+				<a href="${storyLinkP1}">${headlineSplit}</a>		
+			</li>
+		</x:forEach>
+	</ol>
+	<%--<button class="mr-btn">Show All</button>--%>
+	<p:include pageZoneName="must_reads" inherits="${adLayerDwpPath}" />
+</div>

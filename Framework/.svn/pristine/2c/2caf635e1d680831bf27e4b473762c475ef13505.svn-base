@@ -1,0 +1,227 @@
+// *
+// *  Election Widget 
+// *
+
+$module-name: 'election-widget';
+
+// ------------------------------------------------------------
+// Default Styles
+// ------------------------------------------------------------
+.election-widget--mobile {
+	margin-top: 42px;
+  margin-left: .5rem;
+}
+
+.#{$module-name} {
+  // Module Styles
+  // background-color: color(gray, x-light);
+  width: 100%;
+  margin-top: 42px;
+  border-bottom: color(gray, light) .1em solid;
+  padding-bottom: 0.5rem;
+  @extend %clearfix;
+  // Some Element Styles
+  &__element {}
+ 
+  // p {
+  // 	font-size: 1.125em;
+  // 	padding: 1.25em 0 .5em 0;
+  // }
+}
+
+@media(min-width: 769px) and (max-width: 1200px) {
+	.election-widget {
+		font-size: 12px;
+	}
+}
+@media(min-width: 1201px) and (max-width: 1400px) {
+	.election-widget {
+		font-size: 14px;
+	}
+
+}
+
+.election-widget { 
+	&--desktop {
+		display: none;
+	}
+
+	&__logo {
+	width: 10%;
+	height: 100px;
+	float: left;
+	}
+
+	&__logo-img {
+		width: 99.5%;
+		margin-top: .1rem;
+		border: $red .1em solid;
+		margin-left: .3rem;
+		padding: .3rem;
+	}
+
+	&__republicans {
+	@extend %clearfix;
+	float: left;
+	width: 32%;
+	color: #95051C;
+	margin-left: 1rem;
+	li {
+	width: 46%;
+	margin: spacer(px, small);
+	margin: spacer(rem, small);
+	margin-top: spacer(px, x-large);
+	margin-top: spacer(rem, x-large);
+	} 
+	div {
+		background-color: $red;
+		border: none;
+		color: #FFF;
+		width: 90%;
+		margin-top: .1rem;
+		margin-left: .5rem;
+		letter-spacing: .1rem;
+		text-align: center;
+		padding: .2rem 0;
+		font-weight: 700;
+	}
+}
+
+	&__democrats {
+		@extend %clearfix;
+		float: left;
+		width: 54%;
+		color: #3351BA;
+		li {
+			width: 31.333%;
+			margin: spacer(px, small);
+			margin: spacer(rem, small);
+			margin-top: spacer(px, x-large);
+			margin-top: spacer(rem, x-large);
+		}
+		div {
+		background-color: color(blue, dark);
+		border: none;
+		color: #FFF;
+		width: 100%;
+		margin-top: .1rem;
+		letter-spacing: .1rem;
+		text-align: center;
+		padding: .2rem 0;
+		font-weight: 700;
+		margin-left: .5rem;
+	}
+}
+
+	&__candidate {
+		@extend %clearfix;
+		float: left;
+		// &__image {
+		// 	float: left;
+		// 	height: 6em;
+		// 	width: 6em;
+		// }
+	}
+
+	&__image {
+		@extend %clearfix;
+		float: left;
+		height: 6em;
+		width: 6em;
+	}
+
+	&__name {
+		font-size: 1.125em;
+  	padding: 1em 0 .5em 0;
+  	font-weight: 700;
+  	margin-left: 1.5em;
+	}
+
+	&__percentage {
+		font-size: 1.5rem;
+	}
+
+	&__vote-count {
+		clear: both;
+		font-weight: normal;
+		width: 80%;
+		color: #8B8B8B;
+		font-style: normal;
+	}
+
+	&__votes {
+		color: #999;
+		font-style: italic;
+		font-weight: normal;
+		clear: both;
+		width: 80%;
+		border-top: 1px solid #CDCDCD;
+		padding-top: .2em;
+		margin-top: 20px;
+	}
+
+	&__vote_count {
+		color: $gray;
+	}
+
+	&__results {
+		color: #999;
+		font-style: italic;
+		font-size: .9em;
+		padding: 0;
+		width: 90%;
+		text-align: right;
+		margin-top: .2em;
+	}
+
+	&__slider {
+		float: right;
+		// margin-top: .2rem;	
+		margin-right: 6rem;
+	}
+
+	&__precincts-reporting {
+		color: color(gray, light);
+		@include font-scale(xx-large);
+		text-align: center;
+	}
+
+	&__precincts-reporting-txt {
+		color: color(gray, light);
+		font-size: 12px;
+		font-style: italic;
+		text-align: center;
+	}
+}
+
+
+// ------------------------------------------------------------
+// Tablet Breakpoint
+// ------------------------------------------------------------
+
+// Tablet Breakpoint
+@include media-query(tablet) {
+  .#{$module-name} {
+    // Module Styles
+
+    // Some Element Styles
+    &__element {}
+
+  }
+}
+
+// ------------------------------------------------------------
+// Desktop Breakpoint
+// ------------------------------------------------------------
+
+@include media-query(desktop) {
+  .#{$module-name} {
+    // Module Styles
+    &--desktop {
+    	display: block;
+    }
+    // Some Element Styles
+    &__element {}
+
+  }
+}

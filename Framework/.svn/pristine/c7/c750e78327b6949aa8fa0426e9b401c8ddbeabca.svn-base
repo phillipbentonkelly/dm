@@ -1,0 +1,21 @@
+<section class="story-byline-mod">
+	<a href="#URL:author-page" class="byline-avatar-mod art-bd">
+		<img class="story-byline-avatar art" src="assets/photos/avatar-gary-dzen.jpg" />
+	</a> <!-- /author-avatar-mod -->
+	<div class="txt-bd">
+		<ul class="article-byline-list">
+			<li class="story-byline"><a href="#URL:author-page">Gary Dzen</a></li>
+			<li class="story-byline-handle"><a href="#URL:author-twitter-handle">@globegary</a></li>
+			<li class="story-byline-affiliation">Boston.com Staff</li>
+			<li class="story-timestamp">June 25, 2013 7:54am</li>
+		</ul>
+	</div> <!-- /txt-bd -->
+</section> <!-- /article-byline-mod -->
+
+<!-- Story Share Tools: Header -->
+<section class="story-tools-mod story-tools-hdr">
+	<ul class="tools-horiz story-tools-horiz">
+		<li class="tools-item tools-share"><a class="popup-trigger" href="#mfp-share"><i class="share-icon"></i> <i class="tools-txt">Share</i></a></li>
+		<li class="tools-item tools-comment"><a href="#story-comments" class="js-goto-open-comments"><i class="comment-icon"></i> <i class="tools-txt">Comment</i></a></li>
+	</ul>
+</section>  <!-- /story-tools-hdr -->

@@ -1,0 +1,191 @@
+<%@ taglib prefix="jp" uri="jptag"%>
+<p:currentObject sectionId="section" webType="WT" metadata="meta" sectionPage="dwp"/>
+<p:out var="section" xvalue="$meta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/Sections/Section/SectionPath" />
+
+<!-- kweb: ${WT} -->
+<p:out var="sectionName" xvalue="$meta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/Sections/Section/SectionName" />
+<p:out var="sectionPath" xvalue="$meta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/CanonicalData/SectionPath" />
+ 
+<p:siteRoot var="SiteRoot" />
+
+<div class="nav-mod nocontent">
+	<nav class="main-nav">
+    
+	<div class="main-nav-inner">
+		<div class="nav-left-ear">
+			<c:choose> <%-- Determination of what type of page we're on for the basis of click-tracking --%>
+				<c:when test="${WT eq 'dwp_modulepage' and section eq '/'}"> <%-- The homepage --%>
+					<a class="toc-trigger js-toc-trigger nav-btn" href="#" data-load-ad="true" data-ad-name="ad_navdisplay">
+						<div class="toc-trigger-icon"></div>
+						<h4 class="toc-trigger-label">Find It</h4>
+					</a><!-- /sec-nav -->
+				</c:when>
+				<c:otherwise> <%-- Not the homepage --%>
+					<a class="toc-trigger js-toc-trigger nav-btn" href="#" data-load-ad="true" data-ad-name="ad_navdisplay">
+						<div class="toc-trigger-icon"></div>
+						<h4 class="toc-trigger-label">Find It</h4>
+					</a><!-- /sec-nav -->
+				</c:otherwise>
+			</c:choose>
+		</div> <!-- /nav-left-ear -->
+
+	<%-- Type-specific logo --%>
+	
+	<c:choose>
+		<c:when test="${WT eq 'dwp_modulepage' and section eq '/'}">
+			<p:getPageZone name="nameplate" var="nameplate" />
+			<p:out var="zone_size" value="${nameplate.size}" />
+			<c:choose>
+				<c:when test="${zone_size >= 1}">
+					<!-- Nameplate item slotted -->
+					<p:include pageZoneName="nameplate" />
+				</c:when>
+				<c:otherwise>
+					<!-- No nameplate item slotted -->
+					<%--a href="${portalContext.publicBaseUrl}" class="bcom-logo"></a--%>					
+					<a href="/" class="bcom-logo"></a><!-- /bcom-logo -->
+				</c:otherwise>
+			</c:choose>
+		</c:when>
+		<c:when test="${WT eq 'dwp_sectionpage' or WT eq 'dwp_genericpage' or WT eq 'dwp_classifieds' or WT eq 'dwp_modulepage'}">
+			<!-- ${section} -->
+			<p:out var="sectionType" xvalue="$meta//Categorization/SectionType" />
+			<p:out var="siteSection" value="${fn:substringAfter(section, '/')}" />
+			<p:out var="headerUrl" value="#" />
+			<p:out var="masthead" xvalue="$meta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/Masthead"/>
+			<c:choose>
+				<c:when test="${not empty masthead and masthead ne ''}">
+					<p:out var="sectionName" value="${masthead}"/>
+				</c:when>
+				<c:when test="${fn:indexOf(siteSection, '/') != -1}">
+					<p:out var="parentSection" value="/${fn:substringBefore(siteSection, '/')}" />
+					<p:out var="childSection" value="${fn:substringAfter(siteSection, '/')}" />
+					<p:siteRoot var="bdcSR" siteId="${parentSection}" />
+					<c:forEach items="${bdcSR.children}" var="bdcChild">
+						<p:out var="paddedName" value="${parentSection}" />
+						<p:out var="shortSubSecName" value="${fn:substringAfter(bdcChild.sectionId, paddedName)}" />
+						<c:if test="${fn:toLowerCase(shortSubSecName) == fn:toLowerCase(childSection)}">
+							<p:url var="headerUrl" siteNode="${bdcChild}" />
+						</c:if>
+					</c:forEach>
+				</c:when>
+				<c:otherwise>
+					<p:out var="parentSection" value="${section}" />
+					<c:forEach items="${SiteRoot.children}" var="srChild">
+						<p:out var="childSection" value="${fn:substringAfter(srChild.sectionId, '/')}" />
+						<c:if test="${fn:toLowerCase(siteSection) == fn:toLowerCase(childSection)}">
+							<p:url var="headerUrl" siteNode="${srChild}" />
+						</c:if>
+					</c:forEach>
+				</c:otherwise>
+			</c:choose>
+			<!-- Section: ${sectionName} ... Url: ${headerUrl} -->
+			<div class="bcom-logo-section-mod">
+				<a class="bcom-logo-b" href="/" alt=""></a>
+				<span class="bcom-logo-section" href="${portalContext.publicBaseUrl}">${sectionName}</span>	<%-- We need this to not be an anchor tag --%>
+			</div>
+		</c:when>
+		<c:when test="${WT eq 'BlogPage'}">
+		<!-- Section: ${sectionName} ... Url: ${headerUrl} ... Section: ${sectionPath}-->
+			<jp:blogId var="blogId" />
+			<jp:getBlog blogId="${blogId}" var="blog" />
+			<c:set value="${blog.metadata}" var="blogMeta" />
+			<p:out var="blogName" xvalue="$blogMeta//Title" />
+			<p:out var="container_path" xvalue="$blogMeta//Page/ContainerPath"/>
+			<p:getObject path="${container_path}" var="blogDwp" />
+			<p:object webObject="${blogDwp}" metadata="containerMeta" />
+			<p:out var="sectionPath" xvalue="$containerMeta//OnlineProducts/OnlineProduct/Sections/Section/SectionPath" />
+			<div class="bcom-logo-section-mod">
+				<a class="bcom-logo-b" href="${portalContext.publicBaseUrl}" alt=""></a>
+				<span class="bcom-logo-section" href="${portalContext.publicBaseUrl}${sectionPath}">${blogName}</span>	<%-- We need this to not be an anchor tag as well --%>
+			</div>
+			
+		</c:when>
+		<c:otherwise>
+			<a href="${portalContext.publicBaseUrl}" class="bcom-logo">
+			</a><!-- /bcom-logo -->
+		</c:otherwise>
+	</c:choose> 
+
+		<div class="nav-right-ear">
+			<a class="nav-search-trigger js-search-trigger nav-btn" href="#" data-load-ad="true" data-ad-name="ad_searchbarsponsor">
+				<i class="nav-search-label">Search</i>
+				<i class="nav-search-icon"></i>
+			</a> <!-- /search-form -->
+
+			<a id="trigger-avatar-profile" class="nav-profile-trigger js-profile-trigger nav-btn" href="#URL:trigger-user-id-nav">
+				<i class="nav-profile-close"></i>
+				<img class="nav-avatar nav-avatar-ear" src="${portalContext.publicBaseUrl}/rw/SysConfig/WebPortal/BDC/Framework/img/user-blank.jpg">
+				<h4 class="nav-username a11y-only">User1234</h4>
+			</a><!-- /nav-profile-trigger -->
+		</div> <!-- /nav-right-ear -->
+	</div> <!-- /main-nav-inner -->
+	
+	</nav><!-- /main-nav -->
+</div> 
+
+<p:out var="isForum" value="${1==2}" />
+<!-- global-nav, ${WT} -->
+<c:if test="${WT eq 'dwp_forumpage' or WT eq 'dwp_userprofile'}">
+	<p:out var="isForum" value="${1==1}" scope="page"/>
+</c:if>
+
+<div class="nav-search-mod nocontent">
+	<div class="l-nav-search site-width">
+		<div class="nav-search-ad-mod">
+		<c:if test="${not isForum}">
+			<p:currentObject metadata="dwpMeta" content="dwpContent" webType="WT" uuid="uuid" channel="Boston.com" sectionPage="dwp" sectionId="sectionId" />
+			<bdc:getAdLayer var="adLayerName" webType="${WT}"/>
+			<bdc:inheritStoryLayer var="adLayerDwpPath" section="${sectionId}" layer="${adLayerName}" />
+			<p:include pageZoneName="ad_searchbar" inherits="${adLayerDwpPath}" />
+		</c:if>
+		</div>
+		<div id="top-search-form">
+			<form class="nav-search-form" action="${portalContext.publicBaseUrl}/search" >
+				<input class="nav-search-form-input" type="text" placeholder="Search stories or sections" name="q" />
+				<input type="hidden" name="p1" value="TotalMastheadSearches" /> 
+				<button type="submit" class="submit-btn nav-search-btn" value="Search"> </button>
+			</form> <!-- /nav-search-form -->
+		</div>
+	</div> <!-- /l-nav-search -->
+</div> <!-- /nav-search-mod -->
+	
+<c:if test="${not isForum}">
+	<nav class="global-nav nocontent">
+		<c:choose>
+			<c:when test="${WT eq 'dwp_modulepage' and section eq '/'}">
+				<p:include pageZoneName="navigation_horizontal">
+					<p:param name="isHomepage" value="${1==1}" />
+				</p:include>
+			</c:when>
+			<c:otherwise>
+				<p:out var="navHorizIsEmpty" value="${1==1}" />
+				<p:ifZone name="navigation_horizontal" empty="false">
+					<p:out var="navHorizIsEmpty" value="${1==2}" />
+					<p:include pageZoneName="navigation_horizontal">
+						<p:param name="dwp" value="${currentObject}" />
+					</p:include>
+				</p:ifZone>
+				
+				<c:if test="${navHorizIsEmpty}">
+					<bdc:inheritZoneGlobal var="navigationBarDwp" section="${section}" zoneName="navigation_horizontal"/>
+					<p:include pageZoneName="navigation_horizontal" inherits="${navigationBarDwp}">
+						<p:param name="isHomepage" value="${1==2}" />
+					</p:include>
+				</c:if>
+				
+			</c:otherwise>
+		</c:choose>
+	</nav>
+</c:if>
+
+<c:if test="${WT eq 'dwp_modulepage' and section eq '/'}">
+	<p:include pageZoneName="window_width" />
+</c:if>
+
+<!-- /global nav -->
+
+
+
+<%-- Pushdown Ad Slot / Populated via ad_richemedia --%>
+<div id="ad_pushdown"></div>

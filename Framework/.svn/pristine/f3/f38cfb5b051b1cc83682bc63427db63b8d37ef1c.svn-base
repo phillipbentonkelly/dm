@@ -1,0 +1,22 @@
+<p:currentObject metadata="meta"/>
+<p:out var="categoryId" xvalue="$meta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/Events/EventsCategory" />
+<p:out var="eventsLimit" xvalue="$meta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/Events/EventsLimit" />
+
+<p:getObject path="/SysConfig/Classify/Data/EventsCategory_spingo.xml" var="categories" />
+<p:out var="category" xvalue="$categories//SpinGo/EventsCategory[@id=$categoryId]" />
+
+<div class="events-featured" spingo-category="${category}" spingo-category-id="${categoryId}" spingo-events-limit="${eventsLimit}" />
+	<p class="events-featured__header">FEATURED EVENTS</p>
+	
+	<%-- Placeholder Preloader --%>
+	<div class="spinner-container">
+		<div class="spinner"></div>
+	</div>
+	
+	<div class="events-featured__list js-events-list-1"></div>
+	<div class="events-featured__list js-events-list-2"></div>
+	<div class="events-featured__list js-events-list-3"></div>
+	<div class="events-featured__list js-events-list-4"></div>
+	<div class="events-featured__list js-events-list-5"></div>
+	<div class="events-featured__footer js-events-featured-footer"></div>
+</div>

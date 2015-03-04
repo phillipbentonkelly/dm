@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?><!--  this list is for QA/PRODUCTION - IT WILL NOT WORK ON DEV ~ jessem --><EmailList>
+	<EmailListElement> 
+		<EmailListID>58</EmailListID> 
+		<EmailListName>RadioBDC Blast</EmailListName> 
+		<EmailListDesc>Be the first to hear everything RadioBDC. Receive weekly updates packed with giveaways, exclusive access to station events, concerts and acoustic performances.</EmailListDesc> 
+		<EmailListSample>http://www.boston.com/ae/radio/radiobdc_blast/</EmailListSample>
+		<ShowRegiNewsletter>1</ShowRegiNewsletter> 
+		<ShowLoggedOutNewsletter>1</ShowLoggedOutNewsletter> 
+		<ShowMemberSubNewsletter>1</ShowMemberSubNewsletter> 
+	</EmailListElement>
+	<EmailListElement>
+		<EmailListID>58</EmailListID>
+		<EmailListName>RadioBDC Blast</EmailListName>
+		<EmailListDesc>Be the first to hear everything RadioBDC. Receive weekly updates packed with giveaways, exclusive access to station events, concerts and acoustic performances.</EmailListDesc>
+		<EmailListSample/>
+		<ShowRegiNewsletter>1</ShowRegiNewsletter>
+		<ShowLoggedOutNewsletter>1</ShowLoggedOutNewsletter>
+		<ShowMemberSubNewsletter>1</ShowMemberSubNewsletter>
+	</EmailListElement> 	
+	<EmailListElement>
+		<EmailListID>35</EmailListID>
+		<EmailListName>Boston Deals</EmailListName>
+		<EmailListDesc>If you want the best deals in Boston, look no further. Find amazing deals for restaurants, things to do, travel, beauty and more! Sign up and receive $5 off your first purchase using promo code'BCOM'</EmailListDesc>
+		<EmailListSample/>
+		<ShowRegiNewsletter>1</ShowRegiNewsletter>
+		<ShowLoggedOutNewsletter>1</ShowLoggedOutNewsletter>
+		<ShowMemberSubNewsletter>1</ShowMemberSubNewsletter>		
+	</EmailListElement>
+	<EmailListElement>
+		<EmailListID>48</EmailListID>
+		<EmailListName>Sports Updates</EmailListName>
+		<EmailListDesc>Keep up with all the latest Boston sports news --from the court to the field to the rink with this daily newsletter.</EmailListDesc>
+		<EmailListSample>http://www.boston.com/sports/sports_update/index.html</EmailListSample>
+		<ShowRegiNewsletter>1</ShowRegiNewsletter>
+		<ShowLoggedOutNewsletter>1</ShowLoggedOutNewsletter>
+		<ShowMemberSubNewsletter>1</ShowMemberSubNewsletter>		
+	</EmailListElement> 	
+	<EmailListElement>
+		<EmailListID>4</EmailListID>
+		<EmailListName>BostonShops</EmailListName>
+		<EmailListDesc>Let the shopping begin. Get exclusive promotions and sales from your favorite retailers. And never miss a great deal again.</EmailListDesc>
+		<EmailListSample>http://www.boston.com/email/bostonshops/2012/42_Wrentham.html</EmailListSample>
+		<ShowRegiNewsletter>1</ShowRegiNewsletter>
+		<ShowLoggedOutNewsletter>1</ShowLoggedOutNewsletter>
+		<ShowMemberSubNewsletter>1</ShowMemberSubNewsletter>		
+	</EmailListElement> 
+	<EmailListElement>
+		<EmailListID>6</EmailListID>
+		<EmailListName>BostonTraveler</EmailListName>
+		<EmailListDesc>Plan the perfect getaway, grab special fares or vacation deals. Get the travel information and discounts you need for any trip.</EmailListDesc>
+		<EmailListSample>http://www.boston.com/email/bostontraveler/2012/92_gbcvb.html</EmailListSample>
+		<ShowRegiNewsletter>1</ShowRegiNewsletter>
+		<ShowLoggedOutNewsletter>1</ShowLoggedOutNewsletter>
+		<ShowMemberSubNewsletter>1</ShowMemberSubNewsletter>				
+	</EmailListElement> 
+	<EmailListElement>
+		<EmailListID>5</EmailListID>
+		<EmailListName>TicketWatch</EmailListName>
+		<EmailListDesc>Get discounts and offers on sporting events, plays, concerts, museums and other events around town.</EmailListDesc>
+		<EmailListSample>http://www.boston.com/email/ticketwatch/2012/71_broadway.html</EmailListSample>
+		<ShowRegiNewsletter>1</ShowRegiNewsletter>
+		<ShowLoggedOutNewsletter>1</ShowLoggedOutNewsletter>
+		<ShowMemberSubNewsletter>1</ShowMemberSubNewsletter>		
+	</EmailListElement>	
+	<EmailListElement>
+		<EmailListID>31</EmailListID>
+		<EmailListName>Be Well Boston</EmailListName>
+		<EmailListDesc>Get fit and stay healthy with this weekly update featuring health and wellness information, plus special deals and offers.</EmailListDesc>
+		<EmailListSample>http://www.boston.com/lifestyle/health/specials/be_well_newsletter/index.html</EmailListSample>
+		<ShowRegiNewsletter>1</ShowRegiNewsletter>
+		<ShowLoggedOutNewsletter>1</ShowLoggedOutNewsletter>
+		<ShowMemberSubNewsletter>1</ShowMemberSubNewsletter>		
+	</EmailListElement>	
+	<EmailListElement>
+		<EmailListID>20</EmailListID>
+		<EmailListName>Moms Weekend Outlook</EmailListName>
+		<EmailListDesc>The go-to-guide for local parents, packed with events, activities, and Things to Do for the weekend.</EmailListDesc>
+		<EmailListSample>http://www.boston.com/community/moms/newsletter/index.html</EmailListSample>	
+		<ShowRegiNewsletter>1</ShowRegiNewsletter>
+		<ShowLoggedOutNewsletter>1</ShowLoggedOutNewsletter>
+		<ShowMemberSubNewsletter>1</ShowMemberSubNewsletter>		
+	</EmailListElement>	
+	<EmailListElement>
+		<EmailListID>19</EmailListID>
+		<EmailListName>Daily Headlines</EmailListName>
+		<EmailListDesc>Today's Boston.com headlines sent to your inbox every morning.</EmailListDesc>
+		<EmailListSample>http://www.boston.com/news/daily_headlines/index.html</EmailListSample>
+		<ShowRegiNewsletter>1</ShowRegiNewsletter>
+		<ShowLoggedOutNewsletter>1</ShowLoggedOutNewsletter>
+		<ShowMemberSubNewsletter>1</ShowMemberSubNewsletter>		
+	</EmailListElement>	
+	<EmailListElement>
+		<EmailListID>18</EmailListID>
+		<EmailListName>Daily Business Update</EmailListName>
+		<EmailListDesc>Every workday afternoon, receive the top business stories from Boston.com.</EmailListDesc>
+		<EmailListSample>http://www.boston.com/business/ticker_headlines/index.html</EmailListSample>
+		<ShowRegiNewsletter>1</ShowRegiNewsletter>
+		<ShowLoggedOutNewsletter>1</ShowLoggedOutNewsletter>
+		<ShowMemberSubNewsletter>1</ShowMemberSubNewsletter>			
+	</EmailListElement>
+	<EmailListElement>
+		<EmailListID>8</EmailListID>
+		<EmailListName>@bat insider</EmailListName>
+		<EmailListDesc>A must-have for every Red Sox fan, delivering post-game stats and the inside scoop right to your inbox.</EmailListDesc>
+		<EmailListSample>http://www.boston.com/sports/baseball/redsox/atbat/index.html</EmailListSample>
+		<ShowRegiNewsletter>1</ShowRegiNewsletter>
+		<ShowLoggedOutNewsletter>1</ShowLoggedOutNewsletter>
+		<ShowMemberSubNewsletter>1</ShowMemberSubNewsletter>		
+	</EmailListElement>	
+	<EmailListElement>
+		<EmailListID>16</EmailListID>
+		<EmailListName>Breaking News Alerts</EmailListName>
+		<EmailListDesc>Always be in the know with timely email alerts on important events and headlines.</EmailListDesc>
+		<EmailListSample/>
+		<ShowRegiNewsletter>0</ShowRegiNewsletter>
+		<ShowLoggedOutNewsletter>1</ShowLoggedOutNewsletter>
+		<ShowMemberSubNewsletter>1</ShowMemberSubNewsletter>		
+	</EmailListElement>
+	<EmailListElement>
+		<EmailListID>17</EmailListID>
+		<EmailListName>Breaking Sports Alerts</EmailListName>
+		<EmailListDesc>Last minute trades. Player injuries. Salary caps and negotiations. When major sporting news happens, be among the first to know.</EmailListDesc>
+		<EmailListSample/>
+		<ShowRegiNewsletter>0</ShowRegiNewsletter>
+		<ShowLoggedOutNewsletter>1</ShowLoggedOutNewsletter>
+		<ShowMemberSubNewsletter>1</ShowMemberSubNewsletter>		
+	</EmailListElement>		
+	<EmailListElement>
+		<EmailListID>7</EmailListID>
+		<EmailListName>SkiMail</EmailListName>
+		<EmailListDesc>Latest and greatest on-mountain events, deals and conditions throughout New England and beyond.</EmailListDesc>
+		<EmailListSample>http://www.boston.com/travel/explorene/specials/ski/skimail/</EmailListSample>	
+		<ShowRegiNewsletter>1</ShowRegiNewsletter>
+		<ShowLoggedOutNewsletter>1</ShowLoggedOutNewsletter>
+		<ShowMemberSubNewsletter>1</ShowMemberSubNewsletter>		
+	</EmailListElement> 
+	<EmailListElement>
+		<EmailListID>10</EmailListID>
+		<EmailListName>Career News</EmailListName>
+		<EmailListDesc>Employment news, job search tips and essential information from Boston.com/Monster - a great resource for any local job seeker.</EmailListDesc>
+		<EmailListSample>http://www.boston.com/jobs/newsletters/careernews/index.html</EmailListSample>
+		<ShowRegiNewsletter>0</ShowRegiNewsletter>
+		<ShowLoggedOutNewsletter>1</ShowLoggedOutNewsletter>
+		<ShowMemberSubNewsletter>1</ShowMemberSubNewsletter>		
+	</EmailListElement>	
+	<EmailListElement>
+		<EmailListID>39</EmailListID>
+		<EmailListName>On the Dot</EmailListName>
+		<EmailListDesc>Product updates from Boston.com.</EmailListDesc>
+		<EmailListSample/>
+		<ShowRegiNewsletter>0</ShowRegiNewsletter>
+		<ShowLoggedOutNewsletter>0</ShowLoggedOutNewsletter>
+		<ShowMemberSubNewsletter>1</ShowMemberSubNewsletter>		
+	</EmailListElement>
+</EmailList>

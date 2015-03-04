@@ -1,0 +1,47 @@
+<p:currentObject metadata="meta" />
+<p:out var="headerTitle" xvalue="$meta//TeaseHeader" />
+<p:out var="headerURL" xvalue="$meta//TeaseHeaderURL" />
+<bdc:getBorderClass webObject="${currentObject}" defaultBorder="disabled" var="borderClasses"/>
+
+<c:if test="${not empty cacheScope.dwp}">
+	<p:object webObject="${cacheScope.dwp}" metadata="dwpMeta"/>
+	<p:out var="VREnabled" xvalue="$dwpMeta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/VisualRevenue"/>
+	<p:out var="VRZoneName" xvalue="$meta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/VisualRevenueZoneName"/>
+	<c:choose>
+		<c:when test="${VREnabled eq 'True' and not empty VRZoneName}">
+			<p:out var="VRZoneName" value='data-vr-zone="${VRZoneName}"'/>
+		</c:when>
+		<c:otherwise>
+			<p:out var="VRZoneName" value=""/>
+		</c:otherwise>
+	</c:choose>
+</c:if>
+
+<div class="row" ${VRZoneName}>
+	<div class="widget-wrapper ${borderClasses}">
+		<c:if test="${not empty headerTitle or headerTitle != ''}">
+				<%-- header --%>
+				<div class="section-header">
+					<h3>
+						<bdc:link value="${headerURL}">${headerTitle}</bdc:link>
+					</h3>
+				</div>
+		</c:if>
+
+		<div class="span3 first">
+			<p:include pageZoneName="left" templateName="offlead_179_no_digest" maxItems="30">
+				<p:param name="dwp" value="${cacheScope.dwp}"/>
+			</p:include>
+		</div>
+		<div class="span3 middle">
+			<p:include pageZoneName="center" templateName="offlead_179_no_digest" maxItems="30">
+				<p:param name="dwp" value="${cacheScope.dwp}"/>
+			</p:include>
+		</div>
+		<div class="span3 last">
+			<p:include pageZoneName="right" templateName="offlead_179_no_digest" maxItems="30">
+				<p:param name="dwp" value="${cacheScope.dwp}"/>
+			</p:include>
+		</div>
+	</div>
+</div>	

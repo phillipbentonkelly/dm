@@ -1,0 +1,46 @@
+// *
+// * Header Search
+// *
+
+$module-name: 'search-form';
+
+// ------------------------------------------------------------
+// Default Styles
+// ------------------------------------------------------------
+
+.#{$module-name} {
+  position: relative;
+  
+  &__input {
+    width: 100%;
+    margin: 0;
+    padding: spacer(px, base) 10px;
+    padding: spacer(rem, base) 10px;
+    background: color(white);
+    border: 1px solid color(gray, dark);
+    @include font-scale(xx-small);
+    font-weight: $fw-regular;
+    color: color(black);
+  }
+
+  &__button {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 spacer(px, base);
+    padding: 0 spacer(rem, base);
+    margin: 0;
+    border: 0;
+    background-color: color(red);
+    vertical-align: middle;
+    &:hover {
+      background-color: color(red, light);
+      cursor: pointer;
+    }
+    &:focus {
+      outline: 0;
+    }
+  }
+
+}

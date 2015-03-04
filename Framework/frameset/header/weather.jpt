@@ -1,0 +1,130 @@
+<%-- 
+{comments}
+BDC-2101 - Changed ""7 day forecast to "Boston Forecast" in line 91
+{comments} 
+--%>
+
+<%@ page import="java.util.HashMap" %>
+<%@ page import="java.util.Map" %>
+<%@ page import="java.util.Calendar" %>
+<%@ page import="java.util.Date" %>
+<%@ page import="java.text.DateFormat" %>
+<%@ page import="java.text.SimpleDateFormat" %>
+<%@ page import="java.util.Locale" %>
+
+<%-- <p:refresh time="IN 600000" /> --%>
+<p:update timeout="600"/>
+
+<c:import var="weatherData" url="http://weather.boston.com/api/current/bos" />
+<x:parse var="weather" xml="${weatherData}" />
+
+<c:import var="futureWeatherData" url="http://weather.boston.com/api/forecast/bos" />
+<x:parse var="futureWeather" xml="${futureWeatherData}" />
+<p:out var="highTemp" xvalue="$futureWeather/forecasts/forecast[2]/highf" />
+<p:out var="lowTemp"  xvalue="$futureWeather/forecasts/forecast[2]/lowf" />
+
+<%
+	Map weatherMap = new HashMap();
+	
+	String[] weatherNames = new String[] { "clouds", "moon", "mooncloud", "rain", "snow", "sun-cloud", "thunder", "wind"};
+	String[] clouds = new String[] { "06s", "07s", "08s", "11s" };
+	String[] moon = new String[] { "33s", "34s", "37s" };
+	String[] mooncloud = new String[] { "35s", "36s", "38s" };
+	String[] rain = new String[] { "12s", "13s", "14s", "18s", "26s", "29s", "39s", "40s" };
+	String[] snow = new String[] { "19s", "20s", "21s", "22s", "23s", "24s", "25s",	"43s", "44s" };
+	String[] suncloud = new String[] { "03s", "04s" };
+	String[] thunder = new String[] { "15s", "16s", "17s", "41s", "42s" };
+	String[] wind = new String[] {"32s"};
+	String[][] arrayLists = new String[][] { clouds, moon, mooncloud, rain, snow, suncloud, thunder, wind };
+	
+	for(int x = 0; x < arrayLists.length; x++) {
+		for(int y = 0; y < arrayLists[x].length; y++) {
+			weatherMap.put(arrayLists[x][y], weatherNames[x]);
+		}
+	}
+%>
+
+<%-- needed ONLY for the p1 tracking (homepage v. sections) --%>
+<p:currentObject webType="WT" sectionId="section" />
+<p:out var="p1TrafficIcon" value="Header_traffic_icon" />
+<p:out var="p1TrafficText" value="Header_traffic_text" />
+<p:out var="p1WeatherIcon" value="Header_weather_icon" />
+<p:out var="p1WeatherText" value="Header_weather_text" />
+<c:if test="${WT eq 'dwp_modulepage' and section eq '/'}">
+	<p:out var="p1TrafficIcon" value="${p1TrafficIcon}_hp" />
+	<p:out var="p1TrafficText" value="${p1TrafficText}_hp" />
+	<p:out var="p1WeatherIcon" value="${p1WeatherIcon}_hp" />
+	<p:out var="p1WeatherText" value="${p1WeatherText}_hp" />
+</c:if>
+
+<x:set var="weatherText" select="string($weather/current/icondescription/text())" />
+<x:set var="currentTemp" select="string($weather/current/tempf/text())" />
+<x:set var="iconBase" select="string($weather/current/smallicon/text())" />
+<p:out var="iconEdit" value="${fn:substringBefore(iconBase, '.')}" />
+<%
+	String iconIndex = (String)pageContext.getAttribute("iconEdit");
+	String hasKey = (weatherMap.containsKey(iconIndex)) ? "yes" : "no";
+	String weatherClass = (weatherMap.containsKey(iconIndex) ?
+	(String)weatherMap.get(iconIndex) : "sun");
+
+	pageContext.setAttribute("hasKey", hasKey);
+	pageContext.setAttribute("weatherClass", weatherClass);
+%>
+
+
+
+
+<div class="l-weather">
+	<div class="weather-mod">
+	<div class="weather-wrapper">
+		<div class="weather-container">
+			<div class="weather-block traffic-block">
+				<div class="weather-content">
+					<a href="http://www.boston.com/news/traffic/?p1=${p1TrafficIcon}"><i class="traffic-icon"></i></a>
+					<div class="traffic-text">
+						<a href="http://www.boston.com/news/traffic/?p1=${p1TrafficText}"><p>Traffic</p></a>
+						<a href="http://www.boston.com/news/traffic/?p1=${p1TrafficText}">Map &amp; Conditions</a>
+					</div> <!-- /weather-hgroup -->
+				</div> <!-- /weather-content -->
+			</div> <!-- /weather-block -->
+			<div class="weather-block today-forecast">
+				<div class="weather-content">
+					<a href="http://www.boston.com/weather/?p1=${p1WeatherIcon}"><i class="weather-icon-hp ${weatherClass}"></i></a>
+					<div class="weather-hgroup">
+						<a href="http://www.boston.com/weather/?p1=${p1WeatherText}">
+							<i class="weather-temp">${currentTemp}&deg;</i><br>Boston Forecast
+						</a>
+					</div> <!-- /weather-hgroup -->
+				</div> <!-- /weather-content -->
+			</div> <!-- /weather-block -->
+			<div class="weather-block tomorrow-forecast">
+				<div class="weather-content">
+					<a href="http://www.boston.com/weather/?p1=${p1WeatherIcon}"><i class="weather-icon-hp future-${weatherClass}"></i></a>
+					<div class="weather-hgroup">
+						<a href="http://www.boston.com/weather/?p1=${p1WeatherText}">
+							<i class="weather-temp temp-hi">${highTemp}&deg;</i>
+							<i class="weather-temp temp-low">${lowTemp}&deg;</i>
+						</a><br>
+						<i class="weather-day">Tomorrow</i>
+					</div> <!-- /weather-hgroup -->
+				</div> <!-- /weather-content -->
+			</div> <!-- /weather-block -->
+		</div> <!-- /weather-container -->
+
+	</div> <!-- /weather-wrapper -->
+     
+</div> <!-- /weather-mod -->
+
+</div> <!-- /l-weather -->
+<div id="globe-callout"> 
+  <a href="http://www.bostonglobe.com/?p1=Bcom_hp_globe_logo"><img src="/img/globe-b.svg" /></a> 
+  <div>
+    Visit 
+    <a href="http://www.bostonglobe.com/?p1=Bcom_hp_globe_text">BostonGlobe.com</a>, home to award-winning Boston Globe reporting. 
+  </div> 
+</div> 
+<div id="tips-callout">
+  <div>
+    <h4 class="lead-list-h">Send Tips to <a href="mailto:tips@boston.com" rel="nofollow">TIPS@BOSTON.COM</a></h4>
+  </div>
+</div>

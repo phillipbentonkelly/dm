@@ -1,0 +1,1596 @@
+/* ============================================= */
+
+/*	Articles						   			 */
+
+// article-bcom.scss is now being used by methode in bcom-screen.scss
+// INSTEAD of this file. This file is maintained for movable type 
+// which still uses screen.css BDC-1433
+
+/* ============================================= */
+
+//
+// Article Layout
+//
+
+
+// WHERE: body.page-story
+// FOR: Sets background color at max-width for leaderboard ads
+.page-story {
+	@include mq($leaderboard) {
+		// background-color: $bg;
+	}
+
+	// WHERE: body.page-story
+	// FOR: Page Loading Effect
+	// .site-container {
+	 	// @include loading(1.5s);
+	// }
+
+	// WHERE: body.page-story 
+	// FOR: Removes the double-border that appears below each quick tease
+	.leaderboard-mod {
+		margin-bottom: 0;
+		@include quick-border(undo);
+	}
+
+	// WHERE: div.page-content
+	// FOR: Adds padding when search input is activated
+	&.search-active .leaderboard-mod {
+		@include mq($leaderboard){
+			padding-top: 69px;
+		}
+	}
+}
+
+// WHERE: div.story-mod
+// FOR: Sets max-width and margins of article for different screen sizes
+.story-width {
+	position: relative;
+	max-width: $article-max;
+	margin-left: $article-margin;
+	margin-right: $article-margin;
+	@include mq($article-max-mq) {
+		width: 94%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	@include mq($article-lg) {
+		max-width: $site-max;
+	}
+}
+
+// WHERE: div.site-container
+.story-mod {
+	// This spacing is related to positioning
+	// of article banner ad (.l-ad-article-banner-1)
+	padding: 25px 0 0px;
+	padding-top: 0px;
+	// Make background for articles white
+	// fOR easier reading; article container
+	// (.page-article) has site bg color
+	background-color: #fff;
+	@include pie-clearfix;
+	@include mq($leaderboard) {
+		border-top: 1px solid #e5e5e5;
+	}
+
+    @include mq($article-lg) {
+	    .article-bd .l-story-secondary {
+	      position:relative;
+	      right:0;
+	    }
+	    .video-article-bd .l-story-secondary {
+	      position:absolute;
+	      right:0;
+	      top:250px;
+	    }
+    }
+
+  // Drop Caps
+  // commented out because we are unsure if we want them in the future
+  // .first-p:first-letter {
+	//   float: left;
+	// 	 font: normal 300 3.0625em Arial, Helvetica, Verdana, sans-serif;
+	//   margin-right: 6px;
+	//   padding-top: 10px;
+	//   line-height: 75%;
+  // }
+}
+
+// Variables
+// For consistency & to calculate text container widths
+$txt-mod: 680px;
+$share-space: 70px;
+$txt-width: $txt-mod - $share-space;
+
+
+// WHERE: article.article-bd
+// FOR: Layout used for full-column elements
+// that do not respect space for share tools
+.l-story-primary {
+	max-width: $article-max;
+	margin-left: -$article-margin;
+	margin-right: -$article-margin;
+	@include mq($article-max) {
+		margin-left: 0;
+		margin-right: 0;
+	}
+	@include mq($article-lg) {
+		max-width: $txt-mod;
+	}
+}
+
+// WHERE: article.article-bd
+// FOR: Layout used for elements that will jump into
+// sidebar when there's space, but otherwise
+// bite directly into text
+.l-story-secondary {
+	margin: 20px -15px;
+	@include mq(330px) {
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	@include mq($article-max-mq) {
+		width: 300px;
+		//margin: 15px -10px 15px 15px;
+	}
+	@include mq($article-lg) {
+    margin:20px 0;
+		clear: right;
+		float: right;
+    .ad-big-mod {
+      margin-left:20px;
+    }
+  }
+}
+
+// WHERE: div.story-width && div#comments.story-width.story-comments.closed 
+// FOR: Layout used for article text that is not
+// flanked by share tools. It's text only.
+// Used with comments and likely other modules
+.l-story-txt {
+	max-width: $txt-mod;
+	width: 100%;
+}
+
+// WHERE: article.article-bd 
+// FOR: Layout used for article text. At larger
+// sizes it carves out space for share tools
+.l-story-txt-share {
+	max-width: $txt-width;
+	@include mq($article-lg) {
+		margin-left: $share-space;
+	}
+}
+
+// WHERE: UNKNOWN
+// FOR: Some elements such as the byline or comment
+// tease, will act like article text, but still
+// jump to the side when there's room.
+// TODO: Find WHERE this is
+// ELLEN
+// .l-story-tweener {
+// 	// At smaller sizes, act like Article Text
+// 	@extend .l-story-txt;
+
+// 	// At larger sizes, act like Article Sideliner
+// 	@include mq($article-lg) {
+// 		width: 300px;
+// 		margin: 20px auto;
+
+// 		@include mq($article-md) {
+// 			margin: 0 0 20px 20px;
+// 			clear: right;
+// 			float: right;
+// 		}
+// 	}
+// }
+
+// WHERE: article.article-bd && div.story-width
+// FOR: Floats article text to the left for large screens
+.no-flow {
+	@include mq($article-lg) {
+		float: left;
+		width: 100%;
+		.article-no-art & {
+			float: none;
+		}
+	}
+}
+
+
+// WHERE: article.article-bd
+// FOR: Enables Share Tool Sidecar to position itself properly
+.article-txt-top {
+	position: relative;
+}
+
+
+
+//
+// Article General
+//
+
+// Establishes font size, weight and color for articles
+// Used 7 times: 3 times in _article.scss and _article_unres.scss;
+// 1 time in _gallery.scss
+@mixin article-txt {
+	// Style
+	color: $txt-black;
+	@include sans(em(17)/155%, 400);
+	@include mq($article-sm) {
+		font-size: em(19);
+	} //mq
+	@include mq(850px) {
+		font-size: em(20);
+	} //mq	
+}
+
+// WHERE: figure.article-lead-art-mod 
+// FOR: Setting the default properties of a responsive image
+.article-art {
+	@include resp-img;
+}
+
+// WHERE: div.article-text-top.no-flow.l-story-txt-share
+// && div.no-flow.l-story-txt-share
+// FOR: Styles for article text and links
+.article-p {
+	@include article-txt;
+	margin-bottom: 18px;
+	> a, strong > a, em > a {
+		@include link;
+	}
+}
+// WHERE: div.article-text-top.no-flow.l-story-txt-share
+// FOR: positing of first p in articles with no art
+.article-p.first-p {
+ // @include mq($mobile-ad, $article-lg) {
+ // 	commented out because it was messing up the vertical lead image styles.
+ //   clear:both;
+ // }
+	@include mq($article-lg) {
+		.article-no-art & {
+			clear: both;
+		}
+	}
+}
+
+// WHERE: div.l-story-primary
+// FOR: Creates space between img and first-p
+.article-lead-art-mod {
+	margin-bottom: 30px;
+	// FOR: Creates space between img caption and credit
+	figcaption i.credit{margin-left:10px;}
+}
+
+// 
+// Gallery Articles
+//
+
+// WHERE: UNKNOWN 
+// .gallery-meta is an unused class; possible that this is the unused class
+// FOR: Includes mixin that simplifies style code for gallery pages
+// TODO: Find out where this is
+.article-gallery-meta {
+	@include caption;	
+}
+
+// WHERE: UNKNOWN
+// gallery-caption is an unused class; possible that this is the unused class
+// FOR: Positioning and styling of gallery captions
+.article-gallery-caption {
+	// see .qg-gallery-caption
+	// TODO: Make more universal
+	display: none;
+	position: absolute;
+	bottom: 30px;
+	width: 100%;
+	padding: 10px;
+	color: #fff;	
+	background-color: rgba(0, 0, 0, 0.5);
+	@extend .caption;	
+}
+
+// WHERE: div.l-story-primary
+.article-lead-art-mod {
+	// FOR: Positioning of nav arrows in galleries
+	// TODO: Figure out what this is
+	.gallery-img-nav {
+		left: 0;
+		right: 0;
+		bottom: 30px;
+	}
+	// WHERE: UNKNOWN
+	// Not in leaf; could not find example
+	.qg-show-caption {
+		color: rgba(255,255,255,.5);
+	}
+}
+
+// WHERE: UNKNOWN
+// Not in leaf; could not find example
+.article-gallery-meta-txt {
+	// see qg-pop-meta
+	display: inline;
+	@include sans(em(13)/140%, 600);
+	color: #eee;
+	> a {
+		@include link(light);
+	}	
+}
+
+// This was Upstatement's code that is not currently being used
+
+// .dropcap {
+// 	@include sans(em(49, 16), 300);
+// 	float: left;
+// 	margin-right: 6px;
+// 	padding-top: 18px;
+// 	line-height: 28%;
+// 	@include mq($article-sm) {
+// 		font-size: em(58, 18);
+// 		line-height: 35%;
+// 	}
+// 	@include mq(850px) {
+// 		line-height: 43%;
+// 		margin-right: 8px;
+// 	}
+// }
+
+// WHERE: div.article-text-top
+// || div.no-flow.l-story-txt-share (second article text div)
+// FOR: Styling for blockquotes 
+// Block Quotes
+blockquote {
+	@extend .blockquote;
+	margin-bottom: 18px;
+	@include sans(em(17)/155%, 400);
+	@include mq($article-sm) {
+		font-size: em(19);
+	} //mq
+	@include mq(850px) {
+		font-size: em(20);
+	} //mq	
+	a {
+		@include link;
+	}
+	p{
+	  margin-top:15px;
+	  &:first-child{
+      margin-top:0px;
+    }
+  }
+}
+
+// WHERE: UNKNOWN
+// Not in leaf; could not find example
+// ELLEN
+// .pq-mod {
+// 	position: relative;
+// 	margin-bottom: 18px;
+// }
+
+// WHERE: UNKNOWN
+// Not in leaf; could not find example
+// ELLEN
+// .pullquote {
+// 	@include sans (24px, 400);
+// 	color:#000;
+// 	margin-bottom: 12px;
+// 	@include mq($article-md) {
+// 		margin-left: 20px;
+// 		margin-right: 20px; 
+// 		z-index: 999;
+// 	}
+// 	&:before {
+// 		z-index: 0;
+// 		position: absolute;
+		
+// 		content:"\2018\2018";
+// 		left: -17px;
+// 		font-family: serif;
+// 		font-weight: 700;
+// 		color: $blue-lt;
+// 		letter-spacing: -3px;
+// 		@include mq($article-md) {
+// 			content:"\2018";
+// 			left: -6px;
+// 			top: -7px;
+// 			letter-spacing: 0;
+// 			margin-left: 0;
+// 			font-size: 60px;
+// 		}
+// 	}
+// 	&:after {
+// 		content:"\2019";
+
+// 	}
+// 	@include mq($article-sm, $article-md) {
+// 		@include sans (26px, 400);
+// 	}
+// 	@include mq($article-md){
+// 		@include sans (34px, 300);
+// 	}
+// }
+
+// WHERE: UNKNOWN
+// Not in leaf; could not find example
+// ELLEN
+// .pq-credit {
+// 	@include sans (14px, 600, normal, 1px);
+// 	text-transform: uppercase;
+// 	color: $black-50;
+// 	text-align: left;
+// 	@include mq($article-md) {
+// 		margin-left: 20px;
+// 	}
+// }
+
+// WHERE: UNKNOWN
+// Not in leaf; could not find example
+.article-txt,
+.generic-txt {
+	@include article-txt;
+
+	p {
+		margin-bottom: 18px;
+	}
+
+	// Block Quotes
+	blockquote {
+		@extend .blockquote;
+		margin-bottom: 18px;
+		a {
+		@include link;
+		}
+	}
+
+	//First Paragraph
+	.first-p {
+		@include mq($mobile-ad, $article-lg) {
+			clear: both;
+		}
+		@include mq($article-lg) {
+			.article-no-art & {
+				clear: both;
+			}
+		}
+	}
+
+	// Link
+	a {
+		@extend .link;
+	}
+
+	// Strong
+	b {
+		font-weight: 700;
+	}
+
+	// Italics / Emphasis
+	em {
+		font-style: italic;
+	}
+
+	// Deleted Text
+	del {
+		color: $black-75;
+	}
+
+	// Inserted Text 
+	ins {
+		background-color: $blue;
+		color: #fff;
+	}
+
+	// Small Text
+	small {
+		@include sans(em(10), 400);
+	}
+
+} //article-txt
+
+
+// Generic Text
+//
+// This is a bit of a placeholder. Articles are created via the CMS
+// and have some very specific needs. Applying styles to every HTML
+// element that appears inside an article is dangerous from a code
+// application and maintenance standpoint. 
+//
+// Therefore, these styles exist for generic text that might be input
+// by anybody and should support basic tagging via an MCE Editor or 
+// something like that. Blogs come to mind. 
+
+// ELLEN
+// .generic-txt {
+// 	li, ul {
+// 		@include article-txt; 
+// 	}
+
+// 	ul {
+// 		list-style-type: disc;
+// 	}
+
+// 	ol {
+// 		list-style-type: decimal;
+// 	}
+
+// 	ul > li,
+// 	ol > li {
+// 		list-style-position: outside;
+// 		margin-left: 20px;
+// 		margin-bottom: 10px;
+// 	}
+// }
+
+
+
+//
+// Article Header
+//
+
+// WHERE: div.story-width.article-with-art
+// FOR: Creates space between header and article 
+.article-hdr {
+	margin-bottom: 15px;
+	.article-no-art & {
+		margin-bottom: 30px;
+	}
+	@include mq($article-sm) {
+		margin-bottom: 30px;
+		.article-no-art & {
+			margin-bottom: 50px;
+		}
+	}
+}
+
+// WHERE: header
+// FOR: Styles and spaces overline mod for different screen sizes
+.story-overline-mod {
+	margin-bottom: 6px;
+	height: 28px;
+
+	@include mq($article-sm) {
+		border-bottom: 1px solid $light-gray;
+		padding-bottom: 10px;
+		margin-bottom: 30px;
+		margin-top:15px;
+	}
+}
+
+// WHERE: section.story-tools-mod.story-tools-hdr
+// Found in summary
+// FOR: UNKNOWN
+// TODO: find example in an article with summmary
+.provider-globe{
+  float:right;
+  position: relative;
+  @include mq($mobile-ad){
+    right: 220px;
+    bottom: 23px;
+  }
+  @include mq($article-tools, $mobile-ad - 2) {
+    right:5px;
+    top:8px;
+  }
+  @include mq($article-sm, $article-tools - 1){
+    right:40px;
+    top:8px;
+  }
+  @include mq("max", $article-sm){
+    top:15px;
+  }
+}
+
+// WHERE: header
+// FOR: Styling the headline for different screen sizes
+.story-h1 {
+	color: #000;
+	@include sans(em(26)/105%, 600);
+	@media (min-width: $article-sm) {
+		font-size: em(38);
+		font-weight: 400;
+	}
+	@include mq(600px) {
+		font-size: em(43);
+	} //mq
+	@include mq($article-lg) {
+		font-size: em(48);
+	} //mq
+}
+
+// WHERE: UNKNOWN
+// Not in leaf; could not find example 
+// ELLEN
+// .article-deck {
+// 	@include sans(em(18)/125%, 300, italic);
+// 	margin-top: 6px;
+// 	@media (min-width: $article-sm) {
+// 		font-size: em(24);
+// 		margin-top: 8px;
+// 	}
+// 	@include mq(600px) {
+// 		font-size: em(28);
+// 	} //mq
+// 	@include mq($article-lg) {
+// 		font-size: em(33);
+// 	} //mq
+// }
+
+
+//
+// Article Byline
+//
+
+// WHERE: article.article-bd
+.l-story-byline {
+	// At smaller sizes, act like Article Text
+	// width: 300px;
+	@extend .l-story-txt;
+
+	// Change positioning to accommodate Article Tools
+	// which go side-by-side at this breakpoint
+	@include mq(300px, $mobile-ad) {
+		position: relative;
+		width: 100%;
+	}
+
+	// Make room for the mobile banner ad
+	@include mq($mobile-ad, $article-lg) {
+		float: left;
+	}
+
+	// At larger sizes, act like Article Sideliner
+	@include mq($article-lg) {
+		margin: 0 0 20px 0;
+		clear: right;
+		//float: right;
+
+		// Except, of course, when there's no lead art,
+		// then fall back in line with regular text
+		.byline-horiz & {
+			margin-left: 0px;
+			//float:left;
+			float:none;
+			margin-bottom: 0;
+		}
+		.byline-horiz.sharespace & {
+			margin-left: $share-space;
+			//float: left;
+		}
+	}
+} // l-story-byline
+
+
+// WHERE: aside.l-story-byline
+// FOR: Estblishes positions and styling of byline for diferent screen sizes and number of authors
+.story-byline-mod {
+	position: relative;
+	margin-bottom: 33px;
+	padding-top: 16px;
+	@include mq(max, 400px) {
+		padding-top: 45px;
+	}
+
+	@include pair(32px, 12px);
+	@include mq($article-sm, $article-lg) {
+		@include pair(50px, 12px);
+		margin-bottom: 18px;
+	}
+	@include mq($article-lg) {
+		@include pair(70px, 12px);
+	}
+	ul.story-multi-byline{
+	  list-style-type: disc;
+	  color:$red;
+	  & > li { margin-top:5px;}
+	  ul li {
+	    display:inline-block;
+	    &.story-timestamp{
+        display:block;
+      }
+    }
+  }
+	.page-hp & {
+	  @include mq("max", 950px){
+	    display:none;
+	  }
+	}
+  ul.story-byline-list,ul.article-byline-list {
+    margin-top: -1px;
+    font-size: em(13);
+    color: $txt-black;
+    line-height: 130%;
+    max-width: 240px;
+    @include mq($article-sm) {
+      margin-top: -3px;
+      font-size: em(14);
+      line-height: 140%;
+    }
+  }
+
+  .story-byline {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 1px;
+    @include mq($article-md) {
+      @include sans(em(16, 14), 600);
+    }
+  }
+
+  .story-byline-handle {
+    display: inline-block;
+    > a {
+      @include link;
+    }
+  }
+
+  .story-byline-affiliation {
+    font-size: em(13);
+    @include mq($article-md) {
+      margin-bottom: 6px;
+    }	
+  }
+
+  .story-timestamp {
+    text-transform: uppercase;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: $black-50;
+    @include unabsolute;
+    /*
+    @include absolute(n n -30px 0);
+
+    @include mq($article-sm) {
+
+    }
+    */
+  }
+
+}
+
+//
+// Article Tools (Share/Comment)
+//
+
+// Location-specific styles
+
+// WHERE: div.story-share-mod
+// FOR: Styling and positiong of sidecar
+// TODO: Find .sticky and .end
+.story-tools-sidecar {
+	position: absolute;
+	@include opacity(0);
+	@include trans(.1s, opacity);
+	margin-top: 9px;
+
+	// Show tools when page gets wide enough
+	@include mq(900px) {
+		@include opacity(1);
+		margin-left: -60px;
+	}
+	@include mq(max, $article-lg) {
+		margin-left: -$share-space;
+	}
+	&.sticky {
+		position: fixed;
+		@include transform(translate3d(0, 0, 0));
+	}
+	&.end {
+		bottom: 0;
+	}
+  .article-with-art .story-share-mod &{
+    @include mq($article-lg){
+      // top:60px;
+      clear:left;
+      float:left;
+      position:relative;
+      margin-right: -35px;
+    }
+  }
+}
+
+// WHERE: aside.l-story-byline
+.story-tools-hdr {
+	// Styles for share tool layout
+	@include absolute(0 0 n n);
+
+	@include mq($mobile-ad) {
+		@include absolute(-3px 0 n n);
+	}
+	@include mq("max", $article-sm){
+    
+    //@include absolute(-40px 0 n n);
+    //position:static;
+    .story-tools-horiz{
+      float:right;
+      margin:15px;
+    }
+    .provider{
+        display: none;
+        @include mq(450px) {
+            display: block;
+        }
+    }
+  }
+}
+
+// WHERE: a.tools-link
+// FOR: Positioning for comment count in sidecar
+.sc-comment-count {
+	position: absolute;
+	width:100%;
+	bottom: 12px;
+	left: 0;
+	@include sans(em(12), 800);
+	@include text-shadow(none);
+	color: $blue;
+	text-align: center;
+}
+
+// WHERE: aside.l-story-byline
+.story-tools-hdr {
+	// FOR: Styles for share tools themselves
+	// Uses tools-horiz markup structure
+	.tools-item {
+		display: inline-block;
+	}
+	// WHERE: section.story-tools-mod
+	// FOR: positioning of share tool
+	.tools-share,
+	.tools-preview {
+		margin-right: 12px;
+		@include mq($article-tools) {
+			margin-right: 30px;
+		}
+	}
+
+	@include mq(max, $article-tools) {
+		@include tools(icons);
+	}
+
+} // story-tools-hdr
+
+// WHERE: article.article-bd
+.story-social-btns {
+	// Hide until ..
+	display: none;
+	// .. share sidecar appears
+	@include mq(900px) {
+		clear:both;
+		display: block;
+		margin-top:10px;
+		margin-bottom: 21px;
+	}
+}
+
+// WHERE: div.story-social-btns
+// FOR: Styling and positioning for individual social buttons at bottom of page
+.social-btn {
+	@include input-default;
+	@include size(48% 32px);
+//	@include border-radius(100px);
+	padding: 8px;
+	background-color: $red;
+	color: #fff;
+	margin-top: 15px;
+
+	@include sans(em(11), 500);
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	@include trans;
+	&:hover {
+		background-color: shade($red, 14%);
+	}
+
+	.icon {
+		display: inline-block;
+		@include size(19px);
+		vertical-align: middle;
+		margin-right: 6px;
+		margin-top: -2px;
+		background-repeat: no-repeat;
+	}
+}
+
+// WHERE: div.story-social-btns
+// FOR: Positioning and styling of social buttons at bottom of page
+.social-btn-fbook {
+	margin-right: 10px;
+}
+
+.social-btn-fbook > .icon {
+	@include size(14px);
+    @include svg('facebook-reverse-white');
+}
+
+.social-btn-twitter > .icon {
+    @include svg('twitter');
+}
+
+// WHERE: article.article-bd
+// FOR: Styling and positioning for share and comment footer that appears 
+// for screen widths < 900px
+.story-tools-ftr {
+	border-top: 1px solid #e5e5e5;
+	border-bottom: 1px solid #e5e5e5;
+	margin-left: -25px;
+	margin-right: -25px;
+	// Show the tools ...
+	display: block;
+	// ... until share sidecar appears
+	@include mq(900px) {
+		display: none;
+	}
+	.comments-open & {
+		border-bottom: 1px solid #e5e5e5;
+	}
+	.touch & {
+		display: block;
+	}
+	// Styles for share tools themselves
+	// Uses tools-horiz markup structure
+	.tools-horiz {
+		@include media-grid(2, 1px, tools-item);
+	// Ryan P added Sept 9 BDC-1328
+		.tools-item {
+			margin-bottom: 30px;
+			padding-left: 1px;
+			width: 48%;
+		}
+	}
+  
+	.tools-link {
+		display: block;
+		text-align: center;
+		padding: 12px 0;
+	}
+
+	.tools-link-share {
+		// Adjust padding so buttons
+		// appear vertically centered
+		padding-top: 8px;
+	}
+
+	.tools-share {
+		border-right: 1px solid #e5e5e5;
+	}
+} // story-tools-ftr
+
+
+//
+// Article Related Links
+//
+// WHERE: aside.article-related-links
+// FOR: Styling of related links ul
+.related-list {
+	@include sans(em(16)/150%, 500);
+	margin-bottom: 18px;
+	> li {
+		display: inline;
+	}
+	@include mq(500px) {
+		font-weight: 700;
+	}
+}
+
+// WHERE: ul.related-list.horiz-list
+// FOR: Removes the bar list separator after "RELATED" in related links
+.related-h-mod {
+	&:after {
+		content: "" !important;
+	}
+}
+
+// WHERE: li.list-h-mod
+// FOR: Styles "RELATED" h5 in related links
+.related-h {
+	display: inline;
+	font-size: em(14,16);
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	color: $black-50;
+}
+
+
+// Horizontal list share icons
+
+
+// WHERE: aside.gallery-related-links
+// FOR: Styling of share button in related links
+.hl-meta-txt {
+	@include sans(em(13), 500);
+	color: $black-50;
+	@include trans;
+	&:hover {
+		color: $black-75;
+	}
+}
+
+.hl-share-meta-icon {
+	@include svg('share-blue-drk');
+}
+
+.hl-meta-icon {
+	@include size(18px);
+	display: inline-block;
+	margin: 0 5px -2px 0;
+}
+
+//
+// Article Footer
+//
+
+// WHERE: div.site-container
+// FOR:	Styling for article footer
+.article-ftr {
+	background-color: #fff;
+	border-top: 1px solid #e5e5e5;
+	.site-width {
+		padding: 20px 0px 15px 15px;
+		background-color: #fff;
+		@include mq($sidebar-break) {
+			padding-top: 30px;
+		}
+	}
+}
+
+
+
+//
+// Article Ads
+//
+
+// WHERE: article.article-bd
+// FOR: Byline is floated right for large screens
+.byline-pair-mod  {
+  @include mq($article-lg){
+    float:right;
+    // WHERE: article.article-bd only for certain articles
+    // FOR: Byline appears above article for certain articles
+    &.sharespace {
+      float:none;
+    }
+  }
+}
+
+/*
+ the following body.___-story selector
+ should be expanded block by block and compared
+ with section-fronts and galleries
+ to make sure they do not rely on this.
+*/
+
+body.blog-story,
+body.page-story{
+	// WHERE: Big ad above feature stack
+	// FOR: Centers big ad for smaller screens and aligns big ad with article text fo
+  .ad-big-mod .story-banner-1 { 
+    text-align: center;
+    @include mq($article-max-mq)  {text-align:left;}
+  }
+  // WHERE: div.story-width
+  // FOR: Responsive positioning first story banner ad
+  .l-ad-story-banner-1 {
+    // Styles match l-story-secondary
+    width: 300px;
+    margin-left: -$site-margin;
+    margin-right: -$site-margin;
+    margin-bottom: 10px;
+    // @include absolute(-75px 0 n 0);
+
+
+    @include mq(330px) {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    @include mq($leaderboard) {
+    //  @include unabsolute;
+    //  margin: 0 0 20px 20px;
+    //  float: right;
+    }
+
+    // Add a wavey line to separate from
+    // byline here at largest breakpoint
+    @include mq($article-lg) {
+      // position: relative;
+      margin: 0 0 20px 20px;
+      float: right;
+      clear: right;
+      &:before {
+        @include content;
+     		@include unabsolute;
+      }
+      // WHERE: UNKNOWN
+      // TODO: Find
+      .byline-horiz & {
+        margin-bottom: 0;
+        &:before {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+// WHERE: UNKNOWN
+// Not in leaf; could not find example
+// ELLEN
+// .article-bottom-mod {
+// 	background-color: $bg;
+// }
+
+
+//
+// Taboola List
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+// TODO: Figure out how these choices cascade to rest
+// of site. Consider what can be generalized and what's
+// specific only to article pages 
+
+// WHERE: div.story-width
+// FOR: Responsive styling and positioning of taboola code
+.story-taboola-list-mod {
+	max-width: 680px; 
+	border-top: 6px solid #999;
+	padding: 30px 0 0;
+	margin: 30px auto;
+
+	@include mq(900px){//was 900px, $article-lg
+		margin: 0 auto;
+		padding: 30px 0;
+		width: 100%;
+	}
+
+	@include mq(550px, 900px){
+		margin: 30px 0 0;
+		padding: 30px 0;
+		width:100%;
+	}
+/*
+	@include mq ($article-lg){
+		float: right;
+		margin-top: -310px;
+		margin-bottom: 0;
+		border-top: 0px;
+	}
+	  */
+
+  float: none;
+  clear: both;
+
+	// Tablet breakpoint for list
+	@include mq (550px, $article-lg){
+		@include taboola-list-split;
+	}//mq
+} // story-taboola-list-mod
+
+// WHERE: UNKNOWN
+// Not in leaf; could not find example
+// ELLEN
+// .comment-ad {
+// 	display: none;
+// 	margin-top: 360px;
+// 	@include mq ($article-lg){
+// 		.comments-open & {
+// 			display: block;
+// 		}
+// 	}
+// }
+
+// WHERE: div.article-txt-top
+// FOR: Styiling of "Continue Reading" that appears when screen is < 700px
+.overline-weak {
+	@include sans(em(10)/25px, 400, normal, .12em);
+	color: $black-50;
+	text-transform: uppercase;
+}
+
+// WHERE: div.article-txt-top
+// FOR: Removes "Continue Reading" above ad when screen is > 700px
+.story-ad-txt {
+	border-bottom: $border;
+	@include mq($article-md){
+		display: none;
+	}
+}
+
+
+
+// WHERE: UNKNOWN
+// Not in leaf; could not find example
+// ELLEN
+// .topright-txt {
+// 	border-bottom: $border;
+// 	margin-bottom: 10px;
+// }
+
+//
+// List Article
+//
+
+// WHERE: UNKNOWN
+// TODO: find list article
+// ELLEN
+// .l-list-article-mod {
+// 	max-width: 680px;
+// 	margin: 40px 0;
+// }
+
+// ELLEN
+// .list-article-art {
+// 	width: 100%;
+// }
+// .list-article-p {
+// 	@include sans(em(17)/25px, 400);
+// 	color: $txt-black;
+// }
+
+// .list-article-p.first-p {
+// 	@include mq($mobile-ad, $article-lg) {
+// 		// clear: both;
+// 	}
+// }
+
+// .list-article-txt-mod {
+// 	width: 100%;
+// }
+
+// .list-article-supplement {
+// 	width:100%;
+// 	margin-top: 10px;
+// 	@include list-defaults(horiz);
+// 	li,
+// 	.list-item {
+// 		display: inline-block;
+// 		margin: 0 5px 0 0;
+// 		&:not(:last-child):after {
+// 			@include list-horiz-glyph;
+// 		}
+// 	}
+// }
+
+// .list-article-title-mod {
+// 	position: relative;
+// 	margin: 10px 0;
+// }
+
+// .list-article-number {
+// 	background-color: $red;
+// 	color: #fff;
+// 	width:20px;
+// 	position: absolute;
+// 	left: 0;
+// 	text-align: center;
+// 	@include sans(em(12)/20px, 800);
+// }
+
+// .list-article-title {
+// 	@include sans(em(20)/20px, 600);
+// 	margin-left: 30px;
+// }
+
+// .list-article-supliment-item {
+// 	@include sans(em(14), 400, italic);
+// 	color: $black-50;
+// 	margin-bottom: 2px;
+// 	& a {
+// 		@extend .link;
+// 	}
+// }
+
+// .list-article-caption {
+// 	margin-bottom: 12px;
+// }
+
+// .list-article-ad {
+// 	@include mq($article-lg) {
+// 		margin-top: 30px;
+// 	}
+// }
+
+// .l-story-secondary-list-ad {
+// 	@extend .l-story-secondary;
+// 	@include mq($article-md, $article-lg) {
+// 		float: none;
+// 		margin: 55px auto;
+// 	}
+// }
+
+.l-sg-secondary-mod {
+	display: none;
+	@include mq($article-lg){
+		display: block;
+		width: 300px;
+		margin-bottom: 10px;	
+	}
+}
+
+.story-tagline {
+	font-style: italic;
+}
+
+
+// 
+// Article Side Elements
+// 
+
+// WHERE: Movable Type, only used twice
+// TODO: find comment teases
+.comment-tease-mod {
+	@include pair(40px, 10px, top);
+	margin-bottom: 10px;
+	border-bottom: $border;
+}
+.comment-tease-btn {
+	margin: 0 0 10px;
+	padding-left:0;
+	display: block;
+}
+
+.tease-img-list-mod {
+	@include pair(100px, 10px,top);
+}
+
+// WHERE: article.article-bd
+// FOR: Responsive positioning for byline in articles with img
+.article-with-art{
+	.byline-stacked {
+	  @include mq($article-lg ){
+      float:right;
+      width:300px;
+    }
+		@include pie-clearfix;
+	}
+}
+
+// WHERE: article.article-bd
+// TODO: Find example article
+.story-share-mod {
+	position: relative;
+	@include pie-clearfix;
+}
+
+// WHERE: div.article-txt-top
+// FOR: Rating positioning and styling
+.review-item {
+  margin:10px;
+  .review-item-title{
+    margin-bottom:5px;
+    font-size: 1.1em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  figure.review-stars{ 
+    width:77px;
+    height:14px;
+    background-image:url($img-path + "stars-grey.png");
+    .review-rating {
+      width:77px;
+      height:14px;
+      background-image:url($img-path + "stars-red.png");
+      &.one-half{width:10%;}
+      &.one{width:20%;}
+      &.one-and-half{width:30%}
+      &.two{width:40%;}
+      &.two-and-half{width:50%;}
+      &.three{width:60%;}
+      &.three-and-half{width:70%;}
+      &.four{width:80%;}
+      &.four-and-half{width:90%;}
+      &.five{width:100%;}
+
+    }
+  }
+}
+
+// WHERE: div.l-story-txt-share
+// FOR: Positioning of review box located at bottom of article
+aside.review-box {
+  margin:14px 0;
+  font-size:15px;
+  line-height:20px;
+  b{margin:0 3px}
+}
+
+// WHERE: story_summary.jpt
+// TODO: Find example in an article
+div.story-summary-link {
+  color:$blue;
+}
+
+// WHERE: div.l-story-txt-share (second article text div)
+// FOR: Positioning and styling of img/figure within article text
+figure.article-figure-wrap-vert {
+  background: #eee;
+  text-align:center;
+  img.article-image{
+    
+    max-width:100%;
+  }
+  figcaption.article-img-wrap-caption{
+    background-color:#000;
+    padding:6px 8px 0;
+    color: #fff;
+  }
+  @include mq("max", $article-md){
+    width:100%;
+    margin: 0 0 15px;
+    figcaption.article-img-wrap-caption{
+      margin: 0 0 15px;
+      text-align:right;
+    }
+  }
+  @include mq($article-max-mq, $article-lg){
+    //margin:15px 0 15px 15px;
+    margin: 15px -100px 15px 15px;
+    float:right;
+    clear:right;
+    max-width:50%;
+    &.left {
+      float:left;
+      margin:15px 15px 15px 0;
+    }
+  }
+  @include mq($article-lg){
+    margin:15px 0 15px 15px;
+    float:right;
+    max-width:50%;
+    &.left {
+      float:left;
+      margin:15px 15px 15px 0;
+    }
+  }
+}
+
+// WHERE: story_image.jpt
+// TODO: Find an example in an article
+.article-lead-art-mod-vert {
+  width: 100%;
+  background-color: #333;
+  text-align: center;
+  margin: 0 0 15px;
+  @include mq(500px){
+      float: right;
+      width: 50%;
+      margin: 0 0 15px 15px;
+  }
+  @include mq("max",499px){
+      max-width: 100%;
+      width: auto;
+      img.article-art{
+        max-height: 350px;
+      }
+  }
+}
+
+
+// Globe non-enhanced summary style
+
+// WHERE: aside.review-box
+// FOR: Positioning and styling of globe link at bottom of article
+.globe-full-story-link,h3.globe-teaser{
+  clear:both;
+  font-size:16px;
+  font-weight: 700;
+  border-bottom:1px solid $black-15;
+  padding-bottom:15px;
+  a{color:$blue;}
+}
+
+.globe-full-story-link{
+  margin:5px 0;
+  border:0;
+}
+
+// WHERE: article.article-bd
+// FOR: Styling and positioning of Globe sign up div at bottom of article
+.globe-non-enhanced-cta {
+  max-width:600px;
+  margin:10px auto 10px;
+  @include mq($article-lg){margin-left:80px;}
+  padding:10px;
+  background-color: $yellow-globe;
+  text-align:center;
+  img{width:250px;}
+  p{
+    font-weight: 700;
+    font-size: 1.2em;
+    color: black;
+    margin: 5px 0;
+  }
+  a button{
+    background-color: $link-lt;
+    margin: 10px 0 5px;
+    border-radius: 3px;
+    border: 0px;
+    width: 150px;
+    height: 37px;
+    text-transform: uppercase;
+    color: white;
+    font-size: 0.9em;
+  }
+}
+
+// WHERE: UNKNOWN
+// Not in leaf; could not find example
+q {
+  display:block;
+  color:$tease-txt;
+  padding-left:10px;
+  border-left: 3px solid $red;
+}
+
+// WHERE: UNKNOWN
+// Not in leaf; could not find example
+// ELLEN
+// .embed-container{
+//   margin:15px 0;
+// }
+
+// Only used once
+.article-p.categories {
+  font-size:1.15em;
+  
+}
+
+//
+// OTHER CLASSES IN ARTICLES
+//
+
+// CLASS: .story-hdr
+// WHERE: _gallery-end.scss line: 10
+// PARENT: div.story-mod
+
+// CLASS: .story-cat .overline
+// WHERE: _modules.scss line: 1263
+// PARENT: div.story-overline-mod
+
+// CLASS: .txt-bd
+// WHERE: _layout.scss line: 473, 483, 490, 498, 518
+// PARENT: div.story-byline-mod
+
+// CLASS: .tools-btns
+// WHERE: _modules.scss line: 441
+// PARENT: div.story-tools-sidcar
+
+// CLASS: .share-icon
+// WHERE: _modules.scss line: 264, 278, 314, 365, 372
+// _nav.scss line: 558
+// _share.scss line: 63
+// PARENT: a.tools-link-share
+
+// CLASS: .tools-txt
+// WHERE: _modules.scss line: 307, 339, 395, 412, 417, 430, 446
+// _gallery-quick.scss line: 244, 268
+// _nav.scss line: 567
+// PARENT: a.tools-link
+
+// CLASS: .tools-link-comment
+// WHERE: _modules.scss line: 357, 416
+// PARENT: li.tools-item
+
+// CLASS: .comment-icon
+// WHERE: _modules.scss line: 265, 286, 322, 366, 377
+// _gallery-quick.scss line: 261
+// PARENT: a.tools-link-comment
+
+// CLASS: .horiz-list
+// WHERE: _lists.scss line: 99
+// PARENT: aside.article-related-links
+
+// CLASS: .ad-toprightslot
+// WHERE: _ads.scss line: 190
+// PARENT: section.ad-big-mod
+
+// CLASS: .secondary
+// WHERE: _ads.scss line: 114, 122, 124
+// _layout.scss line: 76
+// _video.scss line: 30
+// PARENT: article.article-bd
+

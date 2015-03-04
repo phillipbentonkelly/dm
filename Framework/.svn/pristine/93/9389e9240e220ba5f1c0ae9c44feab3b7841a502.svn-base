@@ -1,0 +1,14 @@
+<div class="site-width user-profile ${class}">
+	<div class="primary">
+		<div class="inner">
+			<p:jspInclude url="$configurationURI/Framework/skins/components/ugc/getCurrentUgcUser.jsp" eomdb="true"/>
+			<p:jspInclude url="$configurationURI/Framework/skins/section/dwp_userprofile/userprofile_standard/components/user_pathmap.jsp" eomdb="true"/> 
+			<p:jspInclude url="$configurationURI/Framework/skins/section/dwp_userprofile/userprofile_standard/userprofileVariables.jsp" eomdb="true"/>
+			<p:jspInclude url="$configurationURI/Framework/skins/section/dwp_userprofile/userprofile_standard/userprofile_standard.jsp" eomdb="true" />
+		</div> <!--  / .inner -->
+	</div><!-- / .primary -->
+	<div class="secondary">
+		<p:jspInclude url="$configurationURI/Framework/skins/section/dwp_userprofile/userprofile_standard/profile_middle_rail.jsp" eomdb="true"/>
+		<p:include url="$configurationURI/Framework/skins/components/ugc/profiles/profiles_generic.jpt" />
+	</div><!-- / .secondary -->
+</div><!-- / .user-profile -->

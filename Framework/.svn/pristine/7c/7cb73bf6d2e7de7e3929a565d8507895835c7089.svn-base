@@ -1,0 +1,1 @@
+<%@ taglib prefix="bdc" tagdir="/WEB-INF/tags/eom@configurationURI@/Framework/tags/custom/"%>

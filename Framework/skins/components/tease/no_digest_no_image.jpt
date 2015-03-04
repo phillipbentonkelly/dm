@@ -1,0 +1,28 @@
+<p:currentObject metadata="meta"/>
+<bdc:getHeadlines webObject="${currentObject}" var="title" />
+<bdc:getTeaseData webObject="${currentObject}" templateName="${displayData.templateName}" var="teaseData" />
+<p:out var="CampaignCodes" value="${cacheScope.CampaignCodes}"/>
+<p:out var="hClass" value=' class="${teaseData.hSize}"'/>
+
+<c:if test="${not empty cacheScope.dwp}">
+	<p:object webObject="${cacheScope.dwp}" metadata="dwpMeta"/>
+	<p:out var="edition" xvalue="$dwpMeta//sys/props/productInfo/edition"/>
+	<bdc:getRelatedLinks webObject="${currentObject}" var="relatedLinks" edition="${edition}" />
+	<bdc:getHeadlines webObject="${currentObject}" var="title" edition="${edition}"/>
+	<bdc:getSummaryForSectionFront webObject="${currentObject}" var="webtease" />
+</c:if>
+
+<div class="widget tease" data-vr-contentbox="">
+	<c:if test="${not empty title.overline or title.overline != ''}">
+		<div class="overline">
+			<h3>
+				<bdc:link linkParam="${CampaignCodes}" webObject="${currentObject}">${title.overline}</bdc:link>
+			</h3>
+		</div>
+	</c:if>
+	<div class="content">
+		<h3${hClass}>
+			<bdc:link linkParam="${CampaignCodes}" webObject="${currentObject}">${title.headline}</bdc:link>
+		</h3>
+	</div>
+</div>

@@ -1,0 +1,66 @@
+<p:currentObject metadata="meta" />
+<p:out var="headerTitle" xvalue="$meta//TeaseHeader" />
+<p:out var="headerURL" xvalue="$meta//TeaseHeaderURL" />
+<bdc:getBorderClass webObject="${currentObject}" defaultBorder="enabled" var="borderClasses"/>
+<c:if test="${not empty cacheScope.dwp}">
+	<p:object webObject="${cacheScope.dwp}" metadata="dwpMeta"/>
+	<p:out var="VREnabled" xvalue="$dwpMeta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/VisualRevenue"/>
+	<p:out var="VRZoneName" xvalue="$meta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/VisualRevenueZoneName"/>
+	<c:choose>
+		<c:when test="${VREnabled eq 'True' and not empty VRZoneName}">
+			<p:out var="VRZoneName" value='data-vr-zone="${VRZoneName}"'/>
+		</c:when>
+		<c:otherwise>
+			<p:out var="VRZoneName" value=""/>
+		</c:otherwise>
+	</c:choose>
+</c:if>
+
+<div class="row" ${VRZoneName}>
+	<div class="widget section-well ${borderClasses}">
+	
+	    <c:if test="${cacheScope.depth lt 10}">
+			<p:include partPageName="above_header" maxItems="30">
+				<p:param name="dwp" value="${cacheScope.dwp}"/>
+				<p:param name="depth" value="${cacheScope.depth + 1}"/>
+			</p:include>
+		</c:if>
+
+		<c:if test="${not empty headerTitle or headerTitle != ''}">
+			<!-- header -->
+			<div class="section-header">
+				<h3>
+					<bdc:link value="${headerURL}">${headerTitle}</bdc:link>
+				</h3>
+			</div>
+			
+		</c:if>
+		
+		<div class="content">
+		
+			<div class="row">
+				<div class="span9 tease image-left">
+					<p:include partPageName="main" templateName="offlead_179" maxItems="30">
+						<p:param name="dwc" value="${currentObject}"/> 
+					</p:include>
+				</div>
+			</div>
+			
+			<div class="row">
+				<ul class="columns double">
+					<li>
+						<p:include partPageName="lower" templateName="offlead_179" maxItems="1">
+							<p:param name="dwc" value="${currentObject}"/> 
+						</p:include>
+					</li>
+					<li>
+						<p:include partPageName="lower" templateName="offlead_179" maxItems="2">
+							<p:param name="dwc" value="${currentObject}"/> 
+						</p:include>
+					</li>
+				</ul>
+			</div>
+			
+		</div>
+	</div>        	
+</div>

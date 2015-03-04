@@ -1,0 +1,56 @@
+.btn-light {	
+	@include sans(em(10), 400, normal, 1px);
+	text-transform: uppercase;
+	color: $black-50;
+	border: $border;
+	@include trans($trans-time);
+	&:hover{
+		background-color: $black-10;
+	}
+	&:active{
+		background-color: $black-50;
+	}
+}
+a.btn-light {
+	color: $black-50;
+}
+
+.btn-link {
+	@include sans(em(14), 600);
+	color: #2494e3;
+	@include trans($trans-time);
+	&:hover {
+		text-decoration: underline;
+	}
+	&.btn-large {
+		@include sans (em(16), 600);
+	}
+	&.btn-small {
+		@include sans (em(12), 600);
+	}
+}
+
+.btn-large {
+	padding: 13px 15px 14px;
+	font-size: em(12);
+	display: inline-block;
+}
+
+.btn-small {
+	padding: 4px 10px 5px;
+	display: inline-block;
+}
+
+.submit-btn {
+	@include input-default;
+	@include sans(em(10), 600, normal, .2em);
+	padding: 0 15px;
+	text-transform: uppercase;
+	height: 34px;
+	@include button-state;
+}
+
+input[type=submit] { 
+	border: none;
+	font-weight: 400;
+}

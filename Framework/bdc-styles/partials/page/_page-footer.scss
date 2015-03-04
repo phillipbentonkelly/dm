@@ -1,0 +1,67 @@
+// *
+// * Page Footer
+// *
+
+$module-name: 'page-footer';
+
+// ------------------------------------------------------------
+// Default Styles
+// ------------------------------------------------------------
+
+.#{$module-name} { 
+	width: 100%;
+
+	// Page-Footer Content
+	&__content {
+		@include constrain;
+		max-width: $site-max-width;
+		padding: spacer(px, large) spacer(px, mid);
+		padding: spacer(rem, large) spacer(rem, mid);
+		background: color(white);
+	}
+
+	&__social-nav {
+		// Social Buttons Horizontal Layout
+		&--horizontal {
+			text-align: center;
+		}
+	}
+
+	// Footer Text
+	&__text {
+		@include font-scale(xxx-small);
+		text-align: center;
+		margin-top: spacer(px, base);
+		margin-top: spacer(rem, base);	
+	}
+}
+
+// ------------------------------------------------------------
+// Tablet Breakpoint
+// ------------------------------------------------------------
+
+@include media-query(tablet) {
+	.#{$module-name} { 
+		
+		&__social-nav {
+			// Social Buttons Horizontal Layout
+			&--horizontal {
+				float: left;
+				text-align: left;
+			}
+		}
+
+		// Page-Footer Content
+		&__content {
+			height: 70px;
+		}
+
+		// Footer Text
+		&__text {
+			float: right;
+			text-align: right;
+			margin-top: 0;
+			margin-top: 0;
+		}
+	}
+}

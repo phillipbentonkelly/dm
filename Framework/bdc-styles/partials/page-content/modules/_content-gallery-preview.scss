@@ -1,0 +1,82 @@
+// *
+// *  Content Gallery Preview Modal 
+// *
+
+$module-name: 'content-gallery-preview';
+
+// ------------------------------------------------------------
+// Default Styles
+// ------------------------------------------------------------
+
+.#{$module-name} {
+  position: relative;
+  width: 95%;
+  max-width: 1000px;
+  padding: 30px 20px 40px;
+  margin: 50px auto;
+  background-color: color(white);
+
+  // Headline
+  &__headline {
+    border-bottom: 1px solid color(gray, x-light);
+    padding-bottom: spacer(px, large);
+    padding-bottom: spacer(rem, large);
+    margin-bottom: spacer(px, large);
+    margin-bottom: spacer(rem, large);
+  }
+
+  // Thumb List Container
+  &__thumb-list-container {
+    margin-left: - spacer(px, large);
+  }
+
+  // Thumb List
+  &__thumb-list {
+    width: 100%;
+    @extend %clearfix;
+  }
+
+  // Thumb List Item
+  &__thumb-list-item {
+    float: left;
+    width: 33.333333%;
+    padding-left: spacer(px, large);
+    margin-bottom: spacer(px, large);
+  }
+
+  // Thumb List Image
+  &__image {
+    width: 100%;
+  }
+
+}
+
+// ------------------------------------------------------------
+// Tablet Breakpoint
+// ------------------------------------------------------------
+
+@include media-query(tablet) {
+  .#{$module-name} {
+
+    // Icon List Item
+    &__thumb-list-item {
+      width: 25%;
+    }
+
+  }
+}
+
+// ------------------------------------------------------------
+// Desktop Breakpoint
+// ------------------------------------------------------------
+
+@include media-query(desktop) {
+  .#{$module-name} {
+
+    // Icon List Item
+    &__thumb-list-item {
+      width: 20%;
+    }
+
+  }
+}

@@ -1,0 +1,58 @@
+<%-- things from metadata --%>
+<p:currentObject metadata="m" />
+<p:out var="title" xvalue="$m//SectionWellDisplay/Title" />
+<p:out var="moreLink" xvalue="$m//SectionWellDisplay/MoreLink" />
+<p:out var="breakingTitle" xvalue="$m//SectionWellDisplay/BreakingTitle" />
+<p:out var="red_maybe" value="${(breakingTitle)? 'section-well__header--red' : ''}" />
+
+<%-- things we passed --%>
+<p:out var="visualRevenue" value="${cacheScope.visualRevenue}" />
+<p:out var="adLayer" value="${cacheScope.adLayerDwpPath}" />
+<p:out var="dwp" value="${cacheScope.dwp}" />
+<p:out var="isHomepage" value="${cacheScope.isHomepage}" />
+
+<%-- let's make the p1 tag --%>
+<bdc:regexReplace var="cleanTitle" value="${title}" regex="[^A-Za-z]*" replace="" />
+<p:out var="p1" value="p1=well_${cleanTitle}_breadcrumb" />
+<c:if test="${isHomepage}">
+	<p:out var="p1" value="${p1}_hp" />
+</c:if>
+
+<%-- include vr, or don't --%>
+<p:out var="vrMaybe" value="" />
+<c:if test="${visualRevenue eq 'True'}">
+	<p:out var="vrMaybe" value="data-vr-zone=\"${title} main\"" />
+</c:if>
+
+<%-- the markup --%>
+<div class="section-well" ${vrMaybe}>
+  <c:if test="${not empty cleanTitle}">
+		<a class="hash-anchor" id="${cleanTitle}"></a>
+  </c:if>
+  <div class="grid--12">
+    <div class="section-well__header ${red_maybe}">
+    	<h2 class="section-well__header-title">${title}</h2>
+    	<c:if test="${not empty moreLink}">
+				<a href="${moreLink}?${p1}" class="section-well__header-link">More</a>
+    	</c:if>
+    </div>
+  </div>
+  <div class="grid--6-6">
+    <div class="grid-6">
+			<p:include pageZoneName="left">
+				<p:param name="visualRevenue" value="${visualRevenue}" />
+				<p:param name="wellTitle" value="${title}" />
+				<p:param name="isHomepage" value="${isHomepage}" />
+				<p:param name="dwp" value="${dwp}" />
+			</p:include>
+    </div>
+    <div class="grid-6">
+			<p:include pageZoneName="right">
+				<p:param name="visualRevenue" value="${visualRevenue}" />
+				<p:param name="wellTitle" value="${title}" />
+				<p:param name="isHomepage" value="${isHomepage}" />
+				<p:param name="dwp" value="${dwp}" />
+			</p:include>
+    </div>
+  </div><!-- / content -->
+</div>

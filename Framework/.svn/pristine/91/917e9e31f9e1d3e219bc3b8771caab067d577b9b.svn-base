@@ -1,0 +1,293 @@
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="java.util.HashSet" %>
+<%@ page import="java.lang.StringBuffer" %>
+<%@ page import="java.util.Arrays" %>
+<%@ page import="java.util.*,
+				java.text.*,
+				org.apache.log4j.*,
+				org.w3c.dom.*,
+				javax.xml.xpath.*,
+				ijava.io.*,
+				com.eidosmedia.common.utils.XPathCache.*,
+				com.eidosmedia.eom.metadata.MetadataImpl.*,
+				com.eidosmedia.wa.render.EomDbHelper.*,
+				com.eidosmedia.wa.render.WebObject.*,
+				com.eidosmedia.wa.util.Dom.*,
+				com.eidosmedia.wa.util.EomDb.*,
+				com.eidosmedia.wa.util.Xml.*,
+				com.eidosmedia.misc.*,
+				com.eidosmedia.portal.*,
+				com.eidosmedia.portal.jsp.*,
+				com.eidosmedia.eomcache.*,
+				com.eidosmedia.eomcache.proxies.data.*,
+				com.eidosmedia.portal.render.impl.cached.*,
+				org.apache.commons.lang.*,
+				java.io.File,
+				org.w3c.dom.Document,
+				javax.xml.parsers.DocumentBuilderFactory,
+				javax.xml.parsers.DocumentBuilder,
+				org.xml.sax.SAXException,
+				java.util.logging.*,
+				org.xml.sax.SAXParseException,
+				java.lang.System.*,
+				java.io.ByteArrayInputStream"
+ %>
+
+<%--------------- 
+    Reads list of required CSS and JS from a configuration file, keyed by WebType.
+    
+    Params:
+    @configPath   Path to the lookup table of required JS and CSS.
+    @webType      The webType to use. Defaults to "BLANK" if omitted or of length 0. 
+    @sectionPath  The sectionPath to match against.
+    
+    If a requirements block matches both webType and sectionPath, that is top priority.
+    Failing that, a webType match is sought. Finally "BLANK" is used as a fallback.
+-------------------%>
+
+<%
+	int scope;
+	String webType, defaultWebType;
+	String configPath;
+	ArrayList errors;
+
+	String jsReqSource, jsCDNReqSource;
+	String jsConcatPath, jsCDNConcatPath;
+	String sectionPath;
+
+	String whitespacePattern;
+	StringBuffer stringBuffer;
+	HashSet uniqueSet;
+	String req;
+	int index;
+	boolean isFirst;
+%>
+
+<% 
+    /*
+     * Read the arguments and find the correct scope to assign variables to.
+     */ 
+	defaultWebType    = "BLANK";
+	
+	errors = new ArrayList();
+	scope = pageContext.getAttributesScope("webType");
+	
+	webType    = defaultWebType;
+	configPath = "";
+	sectionPath = "";
+	try {
+		webType     = (String)pageContext.getAttribute("webType",    scope);
+		configPath  = (String)pageContext.getAttribute("configPath", scope);
+		sectionPath = (String)pageContext.getAttribute("sectionPath", scope);
+	} catch (java.lang.IllegalArgumentException e) {
+		errors.add("System Error: " + e.getMessage());
+	}
+	if (webType == null || webType.length() == 0) {
+		webType = defaultWebType;
+	}
+	pageContext.setAttribute("webType", webType);
+	pageContext.setAttribute("sectionPath", sectionPath);
+	pageContext.setAttribute("configPath", configPath);
+	pageContext.setAttribute("errors", errors);
+%>
+
+<c:if test="${fn:length(errors) gt 0}">
+	<!-- {"errors": [
+		<c:forEach items="${errors}" var="error" varStatus="status">
+			<c:if test="${status.count gt 1}">,</c:if>
+			"${fn:replace(error, "\"", "")}"
+		</c:forEach>
+	]} -->
+</c:if>
+
+<p:getObject path="${configPath}" var="configObj"/>
+<p:object webObject="${configObj}" content="config" />
+
+<%--
+  Find the best match to this sectionPath and webType:
+  Matches are searched in this order:
+     sectionPath and webtype > webtype > BLANK
+--%>
+
+<%!
+	public String findMatchBySectionPath(ArrayList<String> pathParts, String webType) throws Exception {
+		String path = "/";
+		path += StringUtils.join(pathParts.toArray(), "/");
+		
+		String matcher = String.format("@webType='%s' and @sectionPath='%s'", webType, path);
+		
+		PortalContext portalContext = PortalContext.instance();
+		EOMCache cache = portalContext.getCache();
+		
+		//similar to <p:getObject>
+		ObjectProxy objectProxy = cache.getObject(new PathAccessId(0, "$configurationURI/required_assets.xml"), false);
+		ObjectProxyData xmlData = (ObjectProxyData) objectProxy.getData();
+		
+		//set your xml as a string object
+		String requiredAssets = xmlData.getContentAsString();
+		DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
+		DocumentBuilder docBuilder = builderFactory.newDocumentBuilder();
+		ByteArrayInputStream xmlInput = new ByteArrayInputStream(requiredAssets.getBytes());
+		Document doc = docBuilder.parse (xmlInput);
+		XPath xPath = XPathFactory.newInstance().newXPath();
+		String valueOfXpath = xPath.evaluate("//requirements[" + matcher + "]", doc);	
+		
+		if (valueOfXpath.length() > 0) {
+			return matcher;
+		} else {
+			return "";
+		}
+	}
+%>
+
+<%
+	String attrMatch = "";
+	// Split path by slashes
+	ArrayList<String> pathParts = new ArrayList(Arrays.asList(sectionPath.split("/")));
+		
+	// Remove the first part for starters
+	// because the first slash in the section path
+	// puts a blank entry at the start of the array
+	if (!pathParts.isEmpty()) {
+	
+		pathParts.remove(0);
+	
+		boolean match = false;
+		int count = pathParts.size();
+		
+		for (int i = 0; i < count; i++) {
+			if (!match) {
+				attrMatch = findMatchBySectionPath(pathParts, webType);
+				if (attrMatch.length() == 0) {
+					pathParts.remove(pathParts.size() - 1);
+				} else {
+					match = true;
+				}
+			}
+		}
+	
+	}
+	pageContext.setAttribute("attrMatch", attrMatch, scope);
+%>
+
+<c:choose>
+	<c:when test="${fn:length(attrMatch) gt 0}">
+		<p:out var="attributeMatcher" value="${attrMatch}" />
+	</c:when>
+	<c:otherwise>
+		<p:out var="attributeMatcher" value="@webType='${webType}' and not(@sectionPath)" />
+		<p:out var="matchCount" xvalue="fn:count($config//requirements[${attributeMatcher}])" />
+		<c:if test="${matchCount eq '0'}">
+			<p:out var="attributeMatcher" value="@webType='BLANK'" />
+		</c:if>
+	</c:otherwise>
+</c:choose>
+
+<p:out var="globalJs" xvalue="$config//requirements[@webType='GLOBAL']/js/text()"/>
+<p:out var="globalCDN" xvalue="$config//requirements[@webType='GLOBAL']/js/external"/>
+
+<p:out var="jsReq" xvalue="$config//requirements[${attributeMatcher}]/js/text()"/>
+<p:out var="jsCDNReq" xvalue="$config//requirements[${attributeMatcher}]/js/external"/>
+
+<p:out var="jsReq" value="${globalJs}${jsReq}"/>
+<p:out var="jsCDNReq" value="${globalCDN}${jsCDNReq}"/>
+
+
+<%!
+	
+	/** Returns the concat'd request URL with the version number as a query parameter **/
+	public String buildRequestPath(String reqSource) throws Exception {
+		return buildRequestPath(reqSource, true);
+	}
+	
+	/** Returns the concat'd request URL. Optionally adds assets version number if parameter set to true. **/
+	public String buildRequestPath(String reqSource, boolean includeAssetsVersionNumber) throws Exception {
+	
+		String whitespacePattern;
+		String[] reqList;
+		StringBuffer stringBuffer;
+		HashSet uniqueSet;
+		String req;
+		int index;
+		boolean isFirst;
+		
+		whitespacePattern = "[\t\n ]+";
+		reqList = reqSource.split(whitespacePattern);
+		stringBuffer = new StringBuffer();
+		uniqueSet = new HashSet();
+		isFirst = true;
+		for (index = 0; index < reqList.length; index++) {
+			req = reqList[index];
+			if (req.trim().length() == 0) { continue; }
+			if (req.substring(0, 1).equals("#")) { continue; }
+			if (uniqueSet.contains(req)) { continue; }
+		
+ 			if (!isFirst) {
+				stringBuffer.append(",");
+			}
+			stringBuffer.append(req);
+			uniqueSet.add(req);
+			isFirst = false;
+		}
+	
+		// add assets version number (for cache busting)
+		// (only if there is actual content in this request URL)
+		if (includeAssetsVersionNumber && reqList.length > 0) {
+			PortalContext portalContext = PortalContext.instance();
+			EOMCache cache = portalContext.getCache();
+			ObjectProxy objectProxy = cache.getObject(new PathAccessId(0, "/SysConfig/WebPortal/Boston/assets-version.txt"), false);
+			ObjectProxyData data = (ObjectProxyData) objectProxy.getData();
+			String assetVersion = data.getContentAsString();
+			stringBuffer.append("?v=" + assetVersion);
+		}
+		
+		return stringBuffer.toString();
+	}
+%>
+
+<%
+    /*
+     * Read the requirements for this WebType from the configuration.
+     */
+    whitespacePattern = "[\t\n ]+";
+    
+	jsReqSource = (String)pageContext.getAttribute("jsReq");
+	jsCDNReqSource = (String)pageContext.getAttribute("jsCDNReq");
+	
+	jsConcatPath = buildRequestPath(jsReqSource);
+	jsCDNConcatPath = buildRequestPath(jsCDNReqSource, false); // don't add assets version number
+	
+
+	pageContext.setAttribute("jsConcatPath", jsConcatPath, scope);
+	pageContext.setAttribute("jsCDNConcatPath", jsCDNConcatPath, scope);
+%>
+
+<c:if test="${fn:length(jsCDNConcatPath) != '0'}">
+	<c:forEach items="${jsCDNConcatPath}" var="CDNURL">
+		<script src="${CDNURL}"></script>
+	</c:forEach>
+</c:if>
+<c:if test="${fn:length(jsConcatPath) != '0'}">
+	<script src="/js/${jsConcatPath}"></script>
+</c:if>
+<c:if test="${fn:length(ie7ConcatPath) != '0'}">
+	<!--[if IE 7]>
+		<link rel="stylesheet" type="text/css" media="all" href="/css/${ie7ConcatPath}"/> 
+	<![endif]-->
+</c:if>
+<c:if test="${fn:length(ie8ConcatPath) != '0'}">
+	<!--[if IE 8]>
+		<link rel="stylesheet" type="text/css" media="all" href="/css/${ie8ConcatPath}"/> 
+	<![endif]-->
+</c:if>
+<c:if test="${fn:length(ie9ConcatPath) != '0'}">
+	<!--[if IE 9]>
+		<link rel="stylesheet" type="text/css" media="all" href="/css/${ie9ConcatPath}"/> 
+	<![endif]-->
+</c:if>
+<c:if test="${fn:length(cssConcatPath) != '0'}">
+	<link rel="stylesheet" type="text/css" media="all" href="/css/${cssConcatPath}"/>
+</c:if>
+<c:if test="${fn:length(printConcatPath) != '0'}">
+	<link rel="stylesheet" type="text/css" media="print" href="/css/${printConcatPath}"/>
+</c:if>

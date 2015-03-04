@@ -1,0 +1,15 @@
+<!-- Trending -->
+<p:inline url="$configurationURI/Framework/templates/trending-item.mustache" />
+<section class="trending-mod">
+      <div class="trending trending-closed">
+            <h3 class="section-h">Trending</h3>
+            <ol class="trending-list">
+                  <div class="loading"><i class="dot one"></i><i class="dot two"></i><i class="dot three"></i></div>
+                  <!--	
+                  		All of these items are added via an ajax request in bcom.trending.js
+                  		Once loaded - the content will overwrite the loading dots seen above 
+                   -->
+            </ol>
+            <button class="trending-btn" href="#">Show All</button>
+      </div> <!-- /must-reads -->
+</section>

@@ -1,0 +1,53 @@
+<p:currentObject metadata="meta" />
+
+<p:out var="streamName" xvalue="$meta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/StreamConfig/StreamName" />
+<p:out var="streamSlug" xvalue="$meta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/StreamConfig/Slug" />
+<p:out var="adInterval" xvalue="$meta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/StreamConfig/AdInterval" />
+<p:out var="streamFilter" xvalue="$meta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/StreamConfig/StreamFilters/Filter/FilterSlug" />
+<p:out var="queryLimit" xvalue="$meta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/StreamConfig/QueryLimit" />
+<p:out var="queryDepth" xvalue="$meta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/StreamConfig/QueryDepth" />
+<c:if test="${empty queryLimit}">
+	<c:set var="queryLimit" value="25" />
+</c:if>	
+<c:if test="${empty queryDepth}">
+	<c:set var="queryDepth" value="5" />
+</c:if>	
+
+<p:out var="env" value="${portalContext.env.ENV_ID}"/>
+
+<!-- STREAM DATA:  ${env}, ${streamName}, ${streamSlug}, ${adInterval} --> 
+<%--
+	$meta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/StreamConfig/StreamFilters/
+		- Filter
+			- FilterName
+			- FilterSlug
+--%>
+
+<script>
+	var stream = {
+		env: "${env}",
+		name : "${streamName}",
+		id : "${streamSlug}",
+		queryLimit : "${queryLimit}",
+		queryDepth : "${queryDepth}",
+		filters : [
+		<x:forEach var="filter" select="$meta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/StreamConfig/StreamFilters/Filter" varStatus="status">
+			<p:out var="filterName" xvalue="$filter/FilterName" />
+			<p:out var="filterSlug" xvalue="$filter/FilterSlug" />
+			{
+				name: "${filterName}",
+				id: "${filterSlug}"
+			}<c:if test="${not status.last}">,</c:if>
+		</x:forEach>
+		]}
+</script>
+
+<%-- Example structure
+<script>
+	var stream = {
+		name : "news",
+		filters : [
+			"All Stories", "Local", "National", "World", "Politics", "New England"
+		]}
+</script>
+--%>

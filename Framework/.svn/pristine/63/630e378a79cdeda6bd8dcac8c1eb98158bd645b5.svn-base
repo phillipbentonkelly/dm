@@ -1,0 +1,9 @@
+<div class="feat-tz-fader">
+	<section id="feat-tz-top" class="feat-tz-mod" data-transition="slide">
+		<div class="feat-tz-scroller nocontent">
+
+			<p:include pageZoneName="features" templateName="feature_stack_item" maxItems="3" />		
+
+		</div> <!--  /feat-tz-scroller -->
+	</section> <!-- /feat-tz-mod -->
+</div> <!-- /feat-tz-fader -->

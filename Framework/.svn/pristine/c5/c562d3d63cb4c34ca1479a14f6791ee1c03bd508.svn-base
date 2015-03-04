@@ -1,0 +1,29 @@
+
+<p:currentObject webType="WT" channel="Boston.com" metadata="meta" sectionId="section" />
+
+<p:out var="hideTrending" xvalue="$meta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/DisplayOptions/HideTrending" />
+
+<div class="content-well content-well--sidebar" role="complementary">
+
+	<c:if test="${fn:trim(hideTrending) ne 'True'}">
+		<!-- Trending Module -->
+		<%--<p:ifZone name="features_top" empty="true" inherits="${editorialLayer}">
+			<p:inline url="$configurationURI/Framework/skins/components/must_reads/must_reads_refactor.jpt" />
+		</p:ifZone>--%>
+		<p:ifZone name="features_top" empty="false" inherits="${editorialLayer}">
+			<p:include pageZoneName="features_top" inherits="${editorialLayer}" templateName="bdc_must_reads_RW">
+				<p:param name="sourceObject" value="${currentObject}" />
+				<p:param name="adLayerDwpPath" value="${adLayer}" />
+			</p:include>
+			<%--<c:if test="${WT eq 'story' || WT eq 'wirestory'}">
+				<p:inline url="$configurationURI/Framework/skins/components/must_reads/must_reads_refactor.jpt" />
+			</c:if>--%>
+		</p:ifZone>
+		<c:if test="${WT eq 'video'}">
+	  		<p:inline url="$configurationURI/Framework/skins/leaf/common/ads/ad_topright.jpt" />
+		</c:if>
+		
+	</c:if>
+	<!-- ad gets shoved in here -->	
+</div><!-- content-well -->
+

@@ -1,0 +1,99 @@
+<p:currentObject content="story" metadata="meta" webType="WT" sectionId="section" channel="Boston.com" />
+
+<bdc:getAdLayer var="layer" webType="${WT}" />
+<bdc:inheritStoryLayer var="adLayerDwpPath" section="${section}" layer="${layer}" />
+<bdc:inheritStoryLayer var="editorialLayerPath" section="${section}" layer="EDITORIAL_STORY_ASSET_LAYER" />
+
+<p:out var="editorialLayerPath" value="${editorialLayerPath}" scope="request" />
+
+<p:url var="gigyaCanonical" webObject="${currentObject}" public="true" />
+<p:out var="gigyaCanonical" value="${gigyaCanonical}" scope="request" />
+<p:out var="gigyaShortUrl" xvalue="$meta//ObjectMetadata/OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/ShortUrl" scope="request" />
+<p:out var="gigyaHeadline" xvalue="$story//doc/story/headlines/headline/p" scope="request" />
+<p:out var="gigyaThumbType" value="image" scope="request" />
+<p:out var="templateName" value="share_tools_story_related" scope="request" />
+
+<bdc:getTeaseType webObject="${currentObject}" var="firstMMC" />
+<c:if test="${firstMMC eq 'photo-container'}">
+	<p:out var="mainImage" xvalue="$story//doc/story/multimedia-container/photo-container/photogrp[@class='main-web-images']/photo/@fileref" />
+	<c:if test="${not empty mainImage and fn:trim(mainImage) != ''}">
+		<p:out var="imgID" value="${fn:substringAfter(mainImage, '?uuid=')}" />
+		<p:getObject var="imageObj" uuid="${imgID}" onError="ignore" />
+		<c:if test="${not empty imageObj}">
+			<p:object webObject="${imageObj}" metadata="imageMeta" />
+			<p:out var="orientation" xvalue="$imageMeta//ObjectMetadata/Reference/Orientation" />
+			<c:choose>
+				<c:when test="${orientation eq 'Landscape'}">
+					<p:out var="imagePlacement" value="horizontal" />
+					<p:out var="storyImgFormat" value="image_700w" />
+				</c:when>
+				<c:otherwise>
+					<p:out var="imagePlacement" value="vertical" />
+					<p:out var="storyImgFormat" value="image_360w" />
+				</c:otherwise>
+			</c:choose>
+			
+			<p:url var="shareImage" webObject="${imageObj}" format="${storyImgFormat}" type="resource" baseDomain="httpCache" />
+			<p:out var="gigyaThumb" value="${shareImage}" scope="request" />
+		</c:if>
+	</c:if>
+</c:if>
+
+<x:set var="linkNumber" select="count($story//related-links/related-link)" /> <!-- linkNumber = ${linkNumber} -->
+	<p:out var="firstRelated" xvalue="$story//related-links/related-link" />
+	<p:out var="firstRelated" value="${fn:trim(firstRelated)}" /><!-- firstRelated = ${firstRelated} -->
+	<c:if test="${linkNumber > 0 and not empty firstRelated}">
+		<!-- Related Links -->
+		<aside class="article-related-links">
+			<ul class="related-list horiz-list">
+				<li class="related-h-mod"><h5 class="related-h">Related</h5></li>
+				<x:forEach var="related" select="$story//related-links/related-link" varStatus="status">
+					<p:out var="linkUrl" xvalue="$related/a/@href" />
+					<p:out var="linkText" xvalue="$related/a/text()" />
+					<p:out var="linkId" value="${fn:substringBefore(fn:substringAfter(linkUrl,'uuid='),'&')}" />
+					
+					<c:if test="${not empty linkText}">
+						<c:choose>
+							<c:when test="${not empty linkId}">
+								<li><bdc:link uuid="${linkId}">${linkText}</bdc:link></li>
+							</c:when>
+							<c:otherwise>
+								<li><a href="${linkUrl}">${linkText}</a></li>
+							</c:otherwise>
+						</c:choose>
+					</c:if>
+				</x:forEach>
+				<li class="hl-share-mod">
+					<p:inline url="$configurationURI/Framework/skins/leaf/story/share_controller.jpt" />
+				</li>
+			</ul>
+		</aside> <!-- /article-related -->
+	</c:if>	
+</div> <!-- /l-story-txt-share -->
+
+<!-- Big Ad -->
+<!-- ${adLayerDwpPath} -->
+<p class="story-ad-txt overline-weak">Advertisement&mdash;Continue Reading Below</p>
+<div class="l-story-secondary">
+	<div class="ad-big-mod article-big-1">
+		<section class="ad-banner-mod story-banner-1">
+			<p:include pageZoneName="ad_topright" inherits="${adLayerDwpPath}" />
+		</section>
+	</div>
+	<%-- Elevated Feature Stack --%>	
+	<div id="elevated-feature-stack">
+		<p:include pageZoneName="features_bottom" templateName="bdc_feature_stack_elevated" inherits="${editorialLayerPath}" />
+	</div>
+	
+</div>
+
+
+
+<div class="l-story-txt-share no-flow">
+
+<%--
+	<p:out xvalue="$story//text/content" xslt="$configurationURI/Framework/xslt/bdc_story_default.xslt">
+		<p:param name="startGraf" value="4" />
+		<p:param name="endGraf" value="3" />
+	</p:out>
+--%>

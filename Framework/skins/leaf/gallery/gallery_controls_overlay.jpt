@@ -1,0 +1,14 @@
+<div class="content-gallery-controls--overlay">
+  <span class="content-gallery-controls--overlay__pager-controls">
+    <a href="#" class="content-gallery-controls--overlay__big-target content-gallery-controls--overlay__big-target--left js-gallery-previous js-big-target" data-prop23="gallery advance - image">
+      <span class="content-gallery-controls--overlay__pager-button pager-button--previous">
+        <span class="content-gallery-controls--overlay__pager-icon bdc-icon bdc-icon--arrow-left-xx-large">Previous</span>
+      </span>
+    </a>
+    <a href="#" class="content-gallery-controls--overlay__big-target content-gallery-controls--overlay__big-target--right js-gallery-next js-big-target" data-prop23="gallery advance - image">
+      <span class="content-gallery-controls--overlay__pager-button pager-button--next">
+        <span class="content-gallery-controls--overlay__pager-icon bdc-icon bdc-icon--arrow-right-xx-large">Next<span>
+      </span>
+    </a>
+  </span>
+</div>

@@ -1,0 +1,37 @@
+<p:getContext var="uuid" />
+<p:getObject uuid="${uuid}" var="webObject" />
+<p:object webObject="${webObject}" content="story" metadata="meta" />
+
+<p:out var="review_title" xvalue="$story//review-containers/review-container-book/review-title/p" />
+
+<p:out var="book_author" xvalue="$story//review-containers/review-container-book/review-author/p" />
+<p:out var="book_publisher" xvalue="$story//review-containers/review-container-book/review-publisher/p" />
+<p:out var="book_publication_year" xvalue="$story//review-containers/review-container-book/review-publication-year/p" />
+<p:out var="book_number_of_pages" xvalue="$story//review-containers/review-container-book/review-number-of-pages/p" />
+<p:out var="book_price" xvalue="$story//review-containers/review-container-book/review-price/p" />
+<p:out var="book_isbn" xvalue="$story//review-containers/review-container-book/review-isbn/p" />
+
+<div class="review-item">
+	<h3 class="review-item-title">${fn:trim(review_title)}</h3>
+</div>
+
+<aside class="review-box">
+	<c:if test="${not empty fn:trim(book_author)}">
+		<b>Author:</b> ${book_author} |
+	</c:if>
+	<c:if test="${not empty fn:trim(book_publisher)}">
+		<b>Publisher:</b> ${book_publisher} |
+	</c:if>
+	<c:if test="${not empty fn:trim(book_publication_year)}">
+		<b>Publication year:</b> ${book_publication_year} | 
+	</c:if>
+	<c:if test="${not empty fn:trim(book_number_of_pages)}">
+		<b>Number of pages:</b> ${book_number_of_pages} | 
+	</c:if>
+	<c:if test="${not empty fn:trim(book_price)}">
+		<b>Book price:</b> ${book_price} | 
+	</c:if>
+	<c:if test="${not empty fn:trim(book_isbn)}">
+		<b>ISBN:</b> ${book_isbn}
+	</c:if>
+</aside>

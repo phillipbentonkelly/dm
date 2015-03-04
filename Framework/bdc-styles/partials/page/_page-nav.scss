@@ -1,0 +1,126 @@
+// * $configurationURI/Framework/bdc-styles/partials/page/_page-nav.scss
+// * Page Nav
+// *
+
+$module-name: 'page-nav';
+
+// ------------------------------------------------------------
+// Default Styles
+// ------------------------------------------------------------
+
+.#{$module-name} {
+  width: 100%;
+  height: $page-nav-height;
+  background: color(white);
+  border-bottom: 1px solid color(gray, light);
+  text-align: center;
+  z-index: z-index(attic);
+
+  &:hover {
+    .#{module-name}
+     .#{$module-name}__link {
+        border-bottom: none;
+      }
+  }
+  // Page Nav List Item
+  &__item {
+    display: inline-block;
+    margin-left: -4px;
+
+    // Hide Tablet/Desktop Nav Items
+    &--secondary,
+    &--tertiary {
+      display: none;
+    }
+    &--current {
+      .#{$module-name}__link {
+        border-bottom: 4px solid color(red);
+        .#{$module-name}:hover & {
+          border-bottom: none;
+        }
+      }
+
+    }
+
+  }
+
+  // Page Nav Links
+  &__link {
+    display: block;
+    height: $page-nav-height;
+    padding: 9px spacer(px) 0; // 9px to vertically center the text
+    padding: 9px spacer(rem) 0;
+    @include link-states(color(black), color(gray, dark), color(black));
+    text-transform: uppercase;
+    @include font-scale(xxx-small);
+    font-weight: $fw-bold;
+    letter-spacing: 1px;
+    &--red {
+      @include link-states(color(red), color(red,light), color(red, light));
+    }
+  }
+
+}
+
+// ------------------------------------------------------------
+// Tablet Breakpoint
+// ------------------------------------------------------------
+
+@include media-query(tablet) {
+  .#{$module-name} {
+    // Show Tablet/Desktop Nav Items
+    &__item--secondary {
+      display: inline-block;
+    }
+    // Nav Links
+    &__link {
+      padding-top: 7px;
+    }
+  }
+}
+
+// ------------------------------------------------------------
+// Desktop Breakpoint
+// ------------------------------------------------------------
+
+@include media-query(desktop) {
+  .#{$module-name} {
+    // Nav Items
+    &__item {
+      // Show Desktop Items
+      &--tertiary {
+        display: inline-block;
+      }
+      &--active {
+        background: color(red);
+        color: color(white);
+        .mega-menu {
+          display: block;
+        }
+        // Nav Links
+        .#{$module-name}__link {
+          color: color(white);
+          transition-duration: 0;
+        }
+      }
+
+    }
+    &__link {
+      transition-duration: 0;
+    }
+  }
+}
+
+
+// -------------------------------------------------------------------
+// Custom Breakpoint Between 960 and 1000 (for fitting more nav items)
+// -------------------------------------------------------------------
+
+@media (max-width:1000px) and (min-width:960px) {
+  .#{$module-name} {
+    // Nav Items
+    &__link {
+      padding: 9px 8px 0; // 7px to avoid needing to remove nav items
+    }
+  }
+}

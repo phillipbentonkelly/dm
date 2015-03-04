@@ -1,0 +1,181 @@
+// *
+// *  Content Gallery
+// *
+
+$module-name: 'content-gallery';
+
+// ------------------------------------------------------------
+// Default Styles
+// ------------------------------------------------------------
+
+.#{$module-name} {
+  margin-bottom: spacer(px, large);
+  margin-bottom: spacer(rem, large);
+
+  // Removes bottom margin for when `.content-text` is being used for slide
+  // caption, margin bottom is re-assigned to `content-gallery__slide` below.
+  .content-text {
+    margin-bottom: 0 !important;
+  }
+
+  // Gallery Area
+  &__slides {
+    position: relative;
+    // Show overlay controls on hover
+    // &:hover .#{$module-name}-controls--overlay {
+    //   display: none; // ***
+    // }
+  }
+
+  // Gallery Slide
+  &__slide {
+    margin-bottom: 90px;
+    margin-bottom: 5.625rem; // xx-large * 3, used to communicate separation between slides (also see `.content-text` above)
+  }
+}
+
+// Gallery Controls
+.#{$module-name}-controls {
+  display: none;
+  @extend %clearfix;
+
+  // Overlay Controls
+  &--overlay {
+    display: none;
+
+    // Pager Buttons
+    &__pager-button {
+      position: absolute;
+      top: 100px;
+      &.pager-button--previous {
+        left: 0;
+      }
+      &.pager-button--next {
+        right: 0;
+      }
+    }
+  }
+}
+
+
+// ------------------------------------------------------------
+// Tablet Breakpoint
+// ------------------------------------------------------------
+
+// Tablet Breakpoint
+@include media-query(tablet) {
+  .#{$module-name} {
+
+    // Gallery Area
+    &__slides {
+      // Show overlay controls on hover
+      &:hover .#{$module-name}-controls--overlay {
+        display: block; //***
+      }
+    }
+
+    &__slide {
+      display: none;
+      margin-bottom: 0;
+    }
+  }
+
+  // Gallery Controls
+  .#{$module-name}-controls {
+    @include constrain;
+    display: block;
+    margin-bottom: spacer(px);
+    margin-bottom: spacer(rem);
+    clear: both;
+
+    .content-well--gallery > & {      // Adds separation between for the the bottom controls and the bottom social share button
+      margin-bottom: spacer(px, xx-large);
+      margin-bottom: spacer(rem, xx-large);
+    }
+
+    &__preview {
+      float: left;
+      padding-top: 8px;
+      padding-top: 0.5rem;  // Centers vertically relative to next/previous arrow height
+    }
+
+    &__preview-link {
+      @include font-scale(xxx-small, 1);
+      font-weight: $fw-medium;
+      @include link-states(color(gray), color(gray, dark), color(gray, x-dark));
+    }
+
+    &__preview-icon {
+      margin-right: spacer(px, small);
+      margin-right: spacer(rem, small);
+      vertical-align: middle;
+    }
+
+    &__pager {
+      float: right;
+    }
+
+    &__pager-info {
+      position: relative;
+      top: 1px;
+      top: 0.0625rem;   // Matches Gallery preview's baseline
+      color: color(gray);
+      @include font-scale(xxx-small, 1);
+      font-weight: $fw-medium;
+    }
+
+    &__pager-button {
+      display: inline-block;
+      width: 35px;
+      height: 35px;
+      background: color(red);
+      margin-left: spacer(px, base);
+      margin-left: spacer(rem, base);
+      vertical-align: middle;
+      &:hover {
+        background: color(red, light);
+      }
+      &:active,
+      &:focus {
+        background: color(red, dark);
+      }
+    }
+    &__pager-icon {
+      margin: 5px 5px;
+    }
+
+    // Overlay controls
+    &--overlay {
+
+      //***display: none;
+
+      &__big-target {
+        position: absolute;
+        top: 0;
+        display: block;
+        width: 45%;
+        &--left {
+          left: 0;
+        }
+        &--right {
+          right: 0;
+        }
+      }
+
+      &__pager-button {
+        position: absolute;
+        top: 130px;
+        padding: spacer(px, xx-large) 0;
+        padding: spacer(rem, xx-large) 0;
+        background: color(black);
+        opacity: 0.6;
+        &.pager-button--previous {
+          left: 0;
+        }
+        &.pager-button--next {
+          right: 0;
+        }
+      }
+    }
+  }
+}

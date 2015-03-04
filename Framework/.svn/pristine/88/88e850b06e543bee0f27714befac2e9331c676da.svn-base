@@ -1,0 +1,219 @@
+{{^is_big_tz}}
+{{^is_tweet}}
+<article class="quick-tz{{#image}} quick-tz-w-art{{/image}}{{^image}} quick-tz-no-art{{/image}}{{#has_sponsorship}} sponsor-quick-tz{{/has_sponsorship}}{{#has_scoreboard}} quick-tz-w-scoreboard{{/has_scoreboard}}{{#has_comments}} quick-tz-w-comments{{/has_comments}}{{#is_poll}} quick-tz-w-poll{{/is_poll}}{{#is_tweet}} quick-tz-twitter{{/is_tweet}}" data-section='{{section}}'>
+
+	{{#image}}
+	<a class="quick-tz-img-mod{{#is_image}} image-preview popup-trigger {{/is_image}}{{#is_quick_gallery}} popup-trigger {{/is_quick_gallery}}{{^is_gallery}} mfp-image{{/is_gallery}} art-bd" {{#is_quick_gallery}}{{#slug}}data-slug="{{slug}}" {{/slug}}{{/is_quick_gallery}} href="{{#is_image}}{{full}}{{/is_image}}{{#gallery_link}}gallery.html#{{slug}}{{/gallery_link}}{{^gallery_link}}{{^is_image}}{{^is_quick_gallery}}article.html#{{slug}}{{/is_quick_gallery}}{{/is_image}}{{/gallery_link}}{{#is_quick_gallery}}#quick-gallery{{/is_quick_gallery}}">
+		<img class="tz-img" src="{{thumb_quick}}"/>
+		{{#is_gallery}}
+		<div class="quick-tz-icon tz-icon tz-gallery-icon"></div>
+		{{/is_gallery}}
+		{{#is_video}}
+		<div class="quick-tz-icon tz-icon tz-video-icon"></div>
+		{{/is_video}}
+		{{#is_image}}
+		<div class="quick-tz-icon tz-icon tz-image-icon"></div>
+		{{/is_image}}
+	</a>
+	{{/image}}
+	{{#has_scoreboard}}
+		<a class="scoreboard-mod art-bd" href="article.html#{{slug}}">
+			<header class="sb-hdr">
+				<i class="sb-txt-01 sb-txt-light">{{scoreboard.meta01}}</i>
+				<i class="sb-txt-02 sb-txt-strong">{{scoreboard.meta02}}</i>
+				<i class="sb-sponsor-txt sb-txt-light">{{scoreboard.sponsor}}</i>
+			</header>
+			<div class="sb-body-mod">
+				<div class="sb-away-team">
+					<div class="sb-away-team-info sb-team-info">
+						<i class="sb-away-team-logo sb-team-logo {{scoreboard.team01_logo}}"></i>
+						<h5 class="sb-away-team-name sb-team-name">{{scoreboard.team01_name}}</h5>
+						<h5 class="sb-away-team-abr sb-team-abr">{{scoreboard.team01_abr}}</h5>
+						<h4 class="sb-away-team-score sb-team-score">{{scoreboard.team01_score}}</h4>
+					</div>
+				</div>
+				<div class="sb-home-team">
+					<div class="sb-home-team-info sb-team-info">
+						<i class="sb-home-team-logo sb-team-logo {{scoreboard.team02_logo}}"></i>
+						<h5 class="sb-home-team-name sb-team-name">{{scoreboard.team02_name}}</h5>
+						<h5 class="sb-home-team-abr sb-team-abr">{{scoreboard.team02_abr}}</h5>
+						<h4 class="sb-home-team-score sb-team-score">{{scoreboard.team02_score}}</h4>
+					</div>
+				</div>
+			</div>
+		</a>
+	{{/has_scoreboard}}
+	<div class="quick-tz-bd txt-bd">
+		<h3 class="quick-tz-h tz-title"><a {{#is_quick_gallery}}class="popup-trigger" {{#slug}}data-slug="{{slug}}" {{/slug}}{{/is_quick_gallery}} href="{{^gallery_link}}{{^is_quick_gallery}}article.html#{{slug}}{{/is_quick_gallery}}{{/gallery_link}}{{#gallery_link}}gallery.html#{{slug}}{{/gallery_link}}{{#is_quick_gallery}}#quick-gallery{{/is_quick_gallery}}">{{head}}{{#is_live}}<i class="live-tz"></i>{{/is_live}}</a></h3>
+		{{#subhead}}
+		<p class="tz-txt quick-tz-txt">{{{subhead}}}{{#has_comments}}<a {{#is_quick_gallery}}class="popup-trigger" {{#slug}}data-slug="{{slug}}" {{/slug}}{{/is_quick_gallery}} href="{{^gallery_link}}{{^is_quick_gallery}}article.html#{{slug}}{{/is_quick_gallery}}{{/gallery_link}}{{#gallery_link}}gallery.html#{{slug}}{{/gallery_link}}{{#is_quick_gallery}}#quick-gallery{{/is_quick_gallery}}"><i class="tz-comment-count-icon"></i><i class="tz-comment-count">{{comments.number}}</i></a>{{/has_comments}}</p>
+		{{/subhead}}
+		{{#poll}}
+			<form class="tz-poll">
+				{{#questions}}
+				<div class="poll-question-mod">
+					<input class="radio-btn" type="radio" value="{{question}}" name="poll-question" id="question-{{idx}}"> <label class="poll-question tz-txt" for="question-{{idx}}">{{question}}</label>
+				</div> <!-- /poll-question-mod -->
+				{{/questions}}
+				<button type="submit" class="submit-btn submit-poll-tz">Submit</button>
+				<a href="#URL:Results" class="tz-poll-results link">See Results</a>
+			</form>
+		{{/poll}}
+
+		{{#has_comments}}
+		<article class="tz-comment-pair">
+				<img class="tz-comment-avatar art-bd" src="../photos/avatar-blank.jpg"/>
+			<div class="txt-bd tz-comment-txt-bd">
+				<div class="form-row">
+					<form class="form-large single-liner{{#comments.expand}} expandable-form{{/comments.expand}}">
+						<div class="input-mod">
+							<textarea id="textarea" class="textarea tz-comment-input add-comment-input {{#comments.expand}} expandable-input{{/comments.expand}}" type="search" placeholder="{{comments.text}}"></textarea>
+						<button type="submit" class="submit-btn {{^comments.expand}} submit-comment {{/comments.expand}}">Submit</button>
+						</div>	
+					</form>
+				</div>
+			</div>
+		</article>
+		{{/has_comments}}
+		{{#has_field}}
+		<article class="tz-field-form-mod">
+			<form class="tz-field-form single-liner">
+				<textarea class="tz-field-input" type="text" placeholder="{{field.text}}"></textarea>
+				<button type="submit" class="submit-btn tz-field-submit">Submit</button>
+			</form>
+		</article>
+		{{/has_field}}
+		{{#has_audio}}
+		<ul class="tz-audio-mod">
+			<li class="tz-audio-item tz-audio-icon"></li>
+			<li class="tz-audio-item tz-audio-txt"><a>{{audio.text}}</a></li>
+		</ul>
+		{{/has_audio}}
+		{{#sponsor}}
+		<article class="tz-sponsor-pair">
+				<img class="tz-sponsor-img " src="{{sponsor.logo}}"/>
+			<div class="tz-sponsor-txt-bd">
+				<p class="tz-sponsor-message">{{sponsor.message}}</p>
+				<a href="#URL:sponsor" class="tz-sponsor-name">{{sponsor.name}}</a>
+			</div>
+		</article>
+		{{/sponsor}}
+		{{#has_button}}
+		<a href="#URL:sponsor-button" class="sponsor-button">{{field.button_text}}</a>
+		{{/has_button}}
+
+		{{! Show meta info for all but sponsored teases }}
+		{{^has_sponsorship}}
+		<ul class="tz-meta quick-tz-meta">
+			{{#category}}
+			<li class="tz-meta-item tz-category">
+				<a class="ups-refresh-page" href="#{{section.0}}">{{category}}</a>
+			</li>
+			{{/category}}
+			<li class="tz-meta-item tz-time">
+				<a class="tz-time-link{{#is_quick_gallery}} popup-trigger{{/is_quick_gallery}}" {{#is_quick_gallery}}{{#slug}}data-slug="{{slug}}"{{/slug}}{{/is_quick_gallery}} href="{{^gallery_link}}{{^is_quick_gallery}}article.html#{{slug}}{{/is_quick_gallery}}{{/gallery_link}}{{#gallery_link}}gallery.html#{{slug}}{{/gallery_link}}{{#is_quick_gallery}}#quick-gallery{{/is_quick_gallery}}">
+					<i class="tz-time-icon tz-meta-icon"></i>
+					<i class="tz-time-txt tz-meta-txt">{{timestamp}}</i>
+				</a>
+			</li> <!-- /.tz-time -->
+			<li class="tz-meta-item tz-share">
+				<a class="tz-share-link popup-trigger" href="#mfp-share">
+					<i class="tz-share-icon tz-meta-icon"></i>
+					<i class="tz-share-txt tz-meta-txt">Share</i>
+				</a>
+			</li> <!-- /.meta-share-list -->
+		</ul> <!-- ./tz-meta -->
+		{{/has_sponsorship}}
+
+	</div> <!-- /.tz-bd -->
+</article> <!-- /.quick-tz -->
+{{/is_tweet}}
+
+{{#is_tweet}}
+<article class="quick-tz quick-tz-tweet{{#tweet.art}} quick-tweet-w-art{{/tweet.art}}{{^tweet.art}} quick-tweet-no-art{{/tweet.art}}">
+	<a class="quick-tweet-follow" href="https://twitter.com/{{tweet.handle}}" target="_blank">follow</a>
+	{{#tweet.art}}
+	<a href="#URL:tweet-photo" class="quick-tweet-art-mod quick-tz-img-mod art-bd">
+		<img class="quick-tweet-art tz-img" src="{{tweet.art}}"/>
+		<div class="quick-tz-icon tz-icon tz-image-icon"></div>
+	</a>
+	{{/tweet.art}}
+	<div class="quick-tweet-txt-bd txt-bd">
+		<ul class="quick-tweet-info">
+			<li class="quick-tweet-name"><a href="https://twitter.com/{{tweet.handle}}" target="_blank">{{tweet.name}}</a></li>
+			<li class="quick-tweet-handle"><a href="https://twitter.com/{{tweet.handle}}" target="_blank">@{{tweet.handle}}</a></li>
+		</ul>
+		<div class="quick-tweet-bd">
+			{{^tweet.art}}
+			<a class="quick-tweet-avatar-bd art-bd" href="https://twitter.com/{{tweet.handle}}" target="_blank">
+				<img class="quick-tweet-avatar art" src="{{tweet.avatar}}"/>
+			</a> <!-- /quick-tweet-avatar-mod -->
+			{{/tweet.art}}
+			<p class="quick-tweet-txt txt-bd">{{{tweet.text}}}</p>
+		</div> <!-- /quick-tweet-bd -->
+		<ul class="tz-meta quick-tz-meta">
+			{{#category}}
+			<li class="tz-meta-item tz-category">
+				<a href="#{{section.0}}">{{category}}</a>
+			</li>
+			{{/category}}
+			<li class="tz-meta-item tz-time">
+				<a class="tz-time-link {{#is_quick_gallery}}popup-trigger{{/is_quick_gallery}}" {{#is_quick_gallery}}{{#slug}}data-slug="{{slug}}"{{/slug}}{{/is_quick_gallery}} href="{{^gallery_link}}{{^is_quick_gallery}}article.html#{{slug}}{{/is_quick_gallery}}{{/gallery_link}}{{#gallery_link}}gallery.html#{{slug}}{{/gallery_link}}{{#is_quick_gallery}}#quick-gallery{{/is_quick_gallery}}">
+					<i class="tz-time-icon tz-meta-icon"></i>
+					<i class="tz-time-txt tz-meta-txt">{{timestamp}}</i>
+				</a>
+			</li> <!-- /.tz-time -->
+			<li class="tz-meta-item tz-share">
+				<a class="tz-share-link popup-trigger" href="#mfp-share">
+					<i class="tz-share-icon tz-meta-icon"></i>
+					<i class="tz-share-txt tz-meta-txt">Share</i>
+				</a>
+			</li> <!-- /.meta-share-list -->
+		</ul> <!-- ./tz-meta -->
+	</div>
+</article> {{! quick-tz-tweet }}
+{{/is_tweet}}
+{{/is_big_tz}}
+
+
+
+{{! ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ }}
+{{!	Big Quick Tease  			  }}
+{{! ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ }}
+
+{{#is_big_tz}}
+<article class="big-tz quick-tz">
+	{{#image}}
+	<a class="big-tz-img-mod" href="{{#is_image}}{{full}}{{/is_image}}{{#gallery_link}}gallery.html#{{slug}}{{/gallery_link}}{{^gallery_link}}{{^is_image}}{{^is_quick_gallery}}article.html#{{slug}}{{/is_quick_gallery}}{{/is_image}}{{/gallery_link}}{{#is_quick_gallery}}#quick-gallery{{/is_quick_gallery}}">
+		<img class="tz-img" src="{{full}}" />
+	</a> <!-- /big-tz-img-mod -->
+	{{/image}}
+
+	<div class="big-tz-bd txt-bd">
+		<h2 class="big-tz-h tz-title"><a {{#is_quick_gallery}}class="popup-trigger" {{#slug}}data-slug="{{slug}}" {{/slug}}{{/is_quick_gallery}} href="{{^gallery_link}}{{^is_quick_gallery}}article.html#{{slug}}{{/is_quick_gallery}}{{/gallery_link}}{{#gallery_link}}gallery.html#{{slug}}{{/gallery_link}}{{#is_quick_gallery}}#quick-gallery{{/is_quick_gallery}}">{{head}}{{#is_live}}<i class="live-tz"></i>{{/is_live}}</a></h2>
+		{{#subhead}}
+		<p class="tz-txt quick-tz-txt">{{{subhead}}}{{#has_comments}}<a {{#is_quick_gallery}}class="popup-trigger" {{#slug}}data-slug="{{slug}}" {{/slug}}{{/is_quick_gallery}} href="{{^gallery_link}}{{^is_quick_gallery}}article.html#{{slug}}{{/is_quick_gallery}}{{/gallery_link}}{{#gallery_link}}gallery.html#{{slug}}{{/gallery_link}}{{#is_quick_gallery}}#quick-gallery{{/is_quick_gallery}}"><i class="tz-comment-count-icon"></i><i class="tz-comment-count">{{comments.number}}</i></a>{{/has_comments}}</p>
+		{{/subhead}}
+	</div> <!-- /big-tz-bd -->
+
+	<ul class="tz-meta quick-tz-meta">
+		{{#category}}
+		<li class="tz-meta-item tz-category">
+			<a href="#{{section.0}}">{{category}}</a>
+		</li>
+		{{/category}}
+		<li class="tz-meta-item tz-time">
+			<a class="tz-time-link{{#is_quick_gallery}} popup-trigger{{/is_quick_gallery}}" {{#is_quick_gallery}}{{#slug}}data-slug="{{slug}}"{{/slug}}{{/is_quick_gallery}} href="{{^gallery_link}}{{^is_quick_gallery}}article.html#{{slug}}{{/is_quick_gallery}}{{/gallery_link}}{{#gallery_link}}gallery.html#{{slug}}{{/gallery_link}}{{#is_quick_gallery}}#quick-gallery{{/is_quick_gallery}}">
+				<i class="tz-time-icon tz-meta-icon"></i>
+				<i class="tz-time-txt tz-meta-txt">{{timestamp}}</i>
+			</a>
+		</li> <!-- /.tz-time -->
+		<li class="tz-meta-item tz-share">
+			<a class="tz-share-link popup-trigger" href="#mfp-share">
+				<i class="tz-share-icon tz-meta-icon"></i>
+				<i class="tz-share-txt tz-meta-txt">Share</i>
+			</a>
+		</li> <!-- /.meta-share-list -->
+	</ul> <!-- ./tz-meta -->
+</article> <!-- .quick-tz-lg -->
+{{/is_big_tz}}

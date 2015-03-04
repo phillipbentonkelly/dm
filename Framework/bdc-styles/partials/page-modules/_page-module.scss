@@ -1,0 +1,95 @@
+// $configurationURI/Framework/bdc-styles/partials/page-modules/_page-modules.scss 
+
+$module-name: 'page-module';
+
+// ------------------------------------------------------------
+// Default Styles
+// ------------------------------------------------------------
+
+.#{$module-name} {
+  @extend %clearfix;
+  width: 100%;
+  position: relative;
+  margin-bottom: spacer(px);
+  margin-bottom: spacer(rem);
+  clear: both;
+
+  &--gray {
+    padding: spacer(px, mid);
+    padding: spacer(rem, mid);
+    background-color: color(gray, xx-light);
+  }
+
+  // Module Header
+  &__header {
+    //temp duplication from content-module
+    @include font-scale(small);
+    margin-bottom: spacer(px, base);
+    margin-bottom: spacer(rem, base);
+    color: color(gray);
+    text-transform: uppercase;
+    letter-spacing: $letter-spacing;
+    
+    // Red Headers
+    &--red {
+      @include font-scale(xx-small);
+      color: color(red);
+      text-transform: uppercase;
+    }
+  }
+
+  // Module List
+  &__list {
+    border-bottom: 1px solid color(gray, x-light);
+    display: table;
+    padding: spacer(px) 0px;
+    padding: spacer(rem) 0px;
+    &:first-child {
+      padding-top: spacer(px);
+      padding-top: spacer(rem);
+    }
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  // Module List Item
+  &__list-item {
+    width: 100%;
+    border-bottom: 1px solid color(gray, x-light);
+    display: table;
+    padding: spacer(px) 0px;
+    padding: spacer(rem) 0px;
+    @extend %clearfix;
+    font-weight: $fw-medium;
+    &:first-child {
+      padding-top: spacer(px);
+      padding-top: spacer(rem);
+    }
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+  
+  // Module Link
+  &__link {
+    height: 60px;
+    vertical-align: middle;
+    @include font-scale(xx-small);
+    @include link-states(color(black), color(gray), color(gray));
+    &--bold {
+      font-weight: bold;
+    }
+  }
+
+  // Module Media
+  
+  &__media {
+
+    &--wide {
+      margin-bottom: spacer(px);
+      margin-bottom: spacer(rem);
+      width: 280px;
+    }
+  }
+}

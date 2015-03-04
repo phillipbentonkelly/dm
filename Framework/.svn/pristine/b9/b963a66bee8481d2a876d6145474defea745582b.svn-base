@@ -1,0 +1,108 @@
+<p:currentObject metadata="dwpMeta" content="dwpContent" webType="WT" uuid="uuid" channel="Boston.com" sectionPage="dwp" sectionId="sectionId" />
+<p:out var="inheritCarousel" xvalue="$dwpMeta//InheritCarousel" />
+<p:out var="dwpSection" xvalue="$dwpMeta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/Sections/Section/SectionPath" scope="application" />
+
+<bdc:getAdLayer var="adLayerName" webType="${WT}"/>
+<bdc:inheritStoryLayer var="adLayerDwpPath" section="${sectionId}" layer="${adLayerName}" />
+<p:out var="adLayerDwpPath" value="${adLayerDwpPath}" scope="request" /> <%-- Needed for the way we're calling the must_reads --%>
+<!-- business ad layer: ${adLayerDwpPath} -->
+<bdc:inheritZoneGlobal var="navigationDwp" section="${sectionId}" zoneName="navigation" />
+<p:include pageZoneName="navigation" inherits="${navigationDwp}">
+	<p:param name="dwp" value="${currentObject}" />
+	<p:param name="dwpSection" value="${sectionId}" />
+</p:include>
+
+<div class="hp-mod page-content">
+
+	<!-- Leaderboard Ad Module -->
+	<section class="leaderboard-mod nav-leaderboard-mod">
+		<p:include pageZoneName="ad_lead1" inherits="${adLayerDwpPath}" /> 
+	</section> <!-- /leaderboard-mod -->
+	
+
+	<%-- Pencil Ad Slot / Populated via ad_richemedia --%>
+    <div id="ad_pencil"></div>
+	
+	<div class="site-width">
+		<bdc:inheritZoneGlobal var="breakingDwp" section="${sectionId}" zoneName="above_carousel" />
+		<p:include pageZoneName="above_carousel" inherits="${breakingDwp}">
+			<p:param name="dwp" value="${currentObject}" />
+		</p:include>
+		<div class="secondary">
+			<%-- This is not a thing we care about
+			<p:include pageZoneName="features_top">
+				<p:param name="dwp" value="${currentObject}" />
+			</p:include>
+			--%>
+
+			<%-- Weather need not apply
+			<p:include url="$configurationURI/Framework/frameset/header/weather.jpt" />
+			--%>
+
+			<%-- This is also a thing we do not care about
+			<section class="hp-big-mod hp-big-1">
+				<p:include pageZoneName="ad_featurestack" inherits="${adLayerDwpPath}" />			
+			</section>
+			--%>
+		</div>
+		<div class="primary">
+		<%-- Carousel is irrelevant			
+			<div class="inner">
+				 <c:choose>
+				 	<c:when test="${inheritCarousel eq 'True'}">
+						<bdc:inheritZoneGlobal var="pathToCarouselDWP" section="${sectionId}" zoneName="carousel" />
+						<p:include pageZoneName="carousel" inherits="${pathToCarouselDWP}">
+							<p:param name="sectionForTracking" value="${sectionId}" />
+							<p:param name="dwp" value="${currentObject}" />
+						</p:include>
+					</c:when>
+					<c:otherwise>
+						<p:include pageZoneName="carousel">
+							<p:param name="dwp" value="${currentObject}" />
+							<p:param name="sectionForTracking" value="${sectionId}" />
+						</p:include>
+					</c:otherwise>
+				</c:choose>
+				
+					<p:include pageZoneName="middle">
+						<p:param name="dwp" value="${currentObject}" />
+					</p:include>
+				
+				
+			</div>
+			--%>
+		</div>
+		<div class="secondary">
+			<%-- We don't need no stinkin' ad
+			<p:include pageZoneName="ad_topright" inherits="${adLayerDwpPath}" />
+			--%>
+		</div>
+		<div class="secondary">
+			<%--
+			<p:inline url="$configurationURI/Framework/skins/components/must_reads/must_reads.jpt" />				
+			--%>
+		</div>
+		<p:inline url="$configurationURI/Framework/skins/components/seo_stream_load/seo_stream_load.jpt" />
+		<div class="primary">
+			<div class="inner" id="streams-row"></div>
+		</div>
+		<bdc:inheritZoneGlobal var="pathToStreamConfig" section="${sectionId}" zoneName="stream_config" />
+		<p:include pageZoneName="stream_config" inherits="${pathToStreamConfig}">
+			<p:param name="dwp" value="${currentObject}" />
+		</p:include>		
+		<bdc:inheritZoneGlobal var="pathToFeatureStackDWP" section="${sectionId}" zoneName="features_bottom" />
+		<div class="secondary">
+			<p:include pageZoneName="ad_featurestack_top" inherits="${adLayerDwpPath}" />
+			<p:include pageZoneName="features_bottom" inherits="${pathToFeatureStackDWP}">
+				<p:param name="dwp" value="${currentObject}" />
+			</p:include>
+			<p:include pageZoneName="ad_featurestack_bottom" inherits="${adLayerDwpPath}" />								
+		</div>
+		<!-- Scroll to Top Button -->
+		<a class="to-top-btn is-off" href="#top">
+			<i class="top-top-arrow"></i>
+			Back to Top
+		</a>
+	</div> <!-- /site-width -->
+
+</div> <!-- /hp-mod -->	

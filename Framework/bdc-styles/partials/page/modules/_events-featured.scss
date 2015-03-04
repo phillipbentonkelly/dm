@@ -1,0 +1,151 @@
+// *
+// *  Module Name 
+// *
+
+$module-name: 'events-featured';
+
+// ------------------------------------------------------------
+// Default Styles
+// ------------------------------------------------------------
+
+.#{$module-name} {
+
+  @include font-scale(xxx-small, 1.15);
+  padding: 0 spacer(px, base);
+  padding: 0 spacer(rem, base);
+  margin-bottom: spacer(px, x-large);
+  margin-bottom: spacer(rem, x-large);
+  display: none;
+
+  // Some Element Styles
+  &__header {
+    @include font-scale(xx-small, 2.5);
+    color: color(black, base);
+    font-weight: $fw-bold;
+    height: 40px;
+    text-align: center;
+    border-bottom: 1px solid color(gray, mid-light);
+  }
+
+  &__list {
+    display: none;
+  }
+
+  &__event {
+    padding: spacer(px, mid) 0;
+    padding: spacer(rem, mid) 0;
+    border-bottom: 1px solid color(gray, mid-light);
+    cursor: pointer;
+
+    &:hover {
+      .icon-events--expand-resting-small {
+        background-position: 0 -263px;
+      }
+    }
+  }
+
+  &__event__image {                     
+    height: 35px;
+    width: 35px;
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  &__event__info {
+    display: inline-block;
+    padding-left: spacer(px, base);
+    padding-left: spacer(rem, base);
+    width: 80%;
+  }
+
+  &__event__name {
+    @include font-scale(x-small);
+    font-weight: $fw-bold;
+    color: color(black, base);
+    margin-bottom: 3px;
+  }
+
+  &__event__date-time {
+    color: color(black, base);
+  }
+
+  &__event__location {
+    color: color(gray, base);
+  }
+
+  &__dollar-icon {
+    @include font-scale(large);
+    font-weight: $fw-bold;
+    color: color(orange, base);
+    display: inline-block;
+    vertical-align: top;
+    float: right;
+  }
+
+  &__footer {
+    text-align: center;
+  }
+
+  &__pagination, 
+  &__prev,
+  &__next {
+    @include font-scale(xx-small);
+    color: color(gray, base);
+    text-align: center;
+    padding: spacer(px, base);
+    padding: spacer(rem, base);
+    display: inline-block;
+
+    &:hover {
+      color: color(gray, dark);
+      cursor: pointer;
+      transition-property: background-color, color;
+      transition-duration: 0.2s;
+      transition-timing-function: cubic-bezier(0.49, 0.37, 0.445, 0.715);
+    }
+  }
+
+  // &__see-more {
+  //   @include font-scale(xx-small);
+  //   color: color(gray, base);
+  // }
+
+  .events-list__event-more-info {
+    @include font-scale(xxx-small, 1.15);
+  }
+
+  .spinner-container {
+    height: 450px;
+  }
+  
+  .spinner {
+    right: 40%;
+    top: 40%;
+  }
+}
+
+// ------------------------------------------------------------
+// Tablet Breakpoint
+// ------------------------------------------------------------
+
+// Tablet Breakpoint
+// @include media-query(tablet) {
+//   .#{$module-name} {
+//     // Module Styles
+
+//     // Some Element Styles
+//     &__element {}
+
+//   }
+// }
+
+// ------------------------------------------------------------
+// Desktop Breakpoint
+// ------------------------------------------------------------
+
+@include media-query(desktop) {
+  .#{$module-name} {
+    // Module Styles
+    display: block;
+  }
+}

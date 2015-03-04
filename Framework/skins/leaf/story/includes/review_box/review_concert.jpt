@@ -1,0 +1,72 @@
+<p:getContext var="uuid" />
+<p:getObject uuid="${uuid}" var="webObject" />
+<p:object webObject="${webObject}" content="story" metadata="meta" />
+
+<p:out var="review_title" xvalue="$story//review-containers/review-container-concert/review-title/p" />
+
+<p:out var="concert_location" xvalue="$story//review-containers/review-container-concert/review-loc-name/p" />
+<p:out var="concert_street_address" xvalue="$story//review-containers/review-container-concert/review-loc-street-address/p" />
+<p:out var="concert_city" xvalue="$story//review-containers/review-container-concert/review-loc-city/p" />
+<p:out var="concert_state" xvalue="$story//review-containers/review-container-concert/review-loc-state/p" />
+<p:out var="concert_zip" xvalue="$story//review-containers/review-container-concert/review-loc-zipcode/p" />
+<p:out var="concert_date" xvalue="$story//review-containers/review-container-concert/review-date-of-concert/p" />
+<p:out var="concert_ticket_price" xvalue="$story//review-containers/review-container-concert/review-ticket-price/p" />
+<p:out var="concert_bo_phone" xvalue="$story//review-containers/review-container-concert/review-box-office-phone/p" />
+<p:out var="concert_venue_url" xvalue="$story//review-containers/review-container-concert/review-venue-url/p" />
+
+<%--
+<div class="review-item">
+	<h3 class="review-item-title">${fn:trim(review_title)}</h3>
+</div>
+--%>
+
+<aside class="review-box">
+
+	<c:set var="leadPerformers" value="" />
+	<x:forEach var="rockstars" select="$story//review-containers/review-container-concert/review-lead-performers/review-lead-performer" varStatus="loop">
+		<p:out var="rockGod" xvalue="$rockstars/p" />
+		<c:if test="${not empty fn:trim(rockGod)}">
+			<c:set var="leadPerformers">${leadPerformers}<c:if test="${not loop.first}">,</c:if> ${fn:trim(rockGod)}</c:set>
+		</c:if>
+	</x:forEach>
+	<c:if test="${not empty leadPerformers}">
+		${leadPerformers} |
+	</c:if>
+	
+	<c:if test="${not empty fn:trim(concert_location)}">
+		${concert_location} |
+	</c:if>
+	
+	<p:out var="addressAmalgam" value="${concert_street_address}${concert_city}${concert_state}${concert_zip}" />
+	<c:if test="${not empty fn:trim(addressAmalgam)}">
+		${concert_street_address} | ${concert_city}, ${concert_state} ${concert_zip} |
+	</c:if>
+	
+	<c:if test="${not empty fn:trim(concert_bo_phone)}">
+		${fn:trim(concert_bo_phone)} |
+	</c:if>
+	
+	<c:if test="${not empty fn:trim(concert_venue_url)}">
+		<bdc:link value="${fn:trim(concert_venue_url)}">${concert_venue_url}</bdc:link> | 
+	</c:if>
+	
+	<c:set var="openingActs" value="" />
+	<x:forEach var="openers" select="$story//review-containers/review-container-concert/review-performers/review-performer" varStatus="loop">
+		<p:out var="opener" xvalue="$openers/p" />
+		<c:if test="${not empty fn:trim(opener)}">
+			<c:set var="openingActs">${openingActs}<c:if test="${not loop.first}">,</c:if> ${fn:trim(opener)}</c:set>
+		</c:if>
+	</x:forEach>
+	<c:if test="${not empty fn:trim(openingActs)}">
+		<b>Also performing:</b> ${openingActs} |
+	</c:if>
+	
+	<c:if test="${not empty fn:trim(concert_date)}">
+		<b>Date of concert:</b> ${concert_date} |
+	</c:if>
+	
+	<c:if test="${not empty fn:trim(concert_ticket_price)}">
+		<b>Ticket price:</b> ${concert_ticket_price}
+	</c:if>
+
+</aside>

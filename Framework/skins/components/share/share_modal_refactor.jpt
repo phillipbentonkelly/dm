@@ -1,0 +1,65 @@
+<p:currentObject channel="Boston.com" webType="WT" sectionId="section" />
+
+<bdc:getTrackingData webObject="${currentObject}" var="tracking" />
+<bdc:rwShareData var="share" webObject="${currentObject}" />
+
+<div class="share-modal mfp-hide nocontent" id="share-modal" aria-hidden="true">
+  <h1 class="share-modal__title">Share</h1>
+  <h2 class="share-modal__headline js-share-modal-headline"></h2>
+  <div class="share-modal__icon-list-container js-modal-share-menu">
+    <ul class="share-modal__icon-list">
+      <li class="share-modal__icon-list__item">
+        <a href="#" class="share-modal__icon-list__link js-gigya-share" data-provider="facebook" data-cid="${tracking.pageAsset}_modal_facebook" data-canonical="${share.canonical}" data-headline="${share.headline}" data-thumbnail="${share.thumb}" data-thumb-type="${share.thumbType}">
+          <span class="share-modal__icon-list__icon bdc-icon bdc-icon--facebook-x-large">Facebook</span>
+        </a>
+      </li>
+      <li class="share-modal__icon-list__item">
+        <a href="#" class="share-modal__icon-list__link js-gigya-share" data-provider="twitter" data-cid="${tracking.pageAsset}_modal_twitter" data-canonical="${share.canonical}" data-headline="${share.headline}" data-thumbnail="${share.thumb}" data-thumb-type="${share.thumbType}">
+          <span class="share-modal__icon-list__icon bdc-icon bdc-icon--twitter-x-large">Twitter</span>
+        </a>
+      </li>
+      <li class="share-modal__icon-list__item">
+        <a href="#" class="share-modal__icon-list__link js-gigya-share" data-provider="pinterest" data-cid="${tracking.pageAsset}_modal_pinterest" data-canonical="${share.canonical}" data-headline="${share.headline}" data-thumbnail="${share.thumb}" data-thumb-type="${share.thumbType}">
+          <span class="share-modal__icon-list__icon bdc-icon bdc-icon--pinterest-x-large">Pinterest</span>
+        </a>
+      </li>
+      <li class="share-modal__icon-list__item">
+        <a href="#" class="share-modal__icon-list__link js-gigya-share" data-provider="googleplus" data-cid="${tracking.pageAsset}_modal_googleplus" data-canonical="${share.canonical}" data-headline="${share.headline}" data-thumbnail="${share.thumb}" data-thumb-type="${share.thumbType}">
+          <span class="share-modal__icon-list__icon bdc-icon bdc-icon--google-x-large">Google Plus</span>
+        </a>
+      </li>
+      <li class="share-modal__icon-list__item">
+        <a href="#" class="share-modal__icon-list__link js-gigya-share" data-provider="linkedin" data-cid="${tracking.pageAsset}_modal_linkedin" data-canonical="${share.canonical}" data-headline="${share.headline}" data-thumbnail="${share.thumb}" data-thumb-type="${share.thumbType}">
+          <span class="share-modal__icon-list__icon bdc-icon bdc-icon--linkedin-x-large">Linked In</span>
+        </a>
+      </li>      
+      <li class="share-modal__icon-list__item">
+        <a href="#" class="share-modal__icon-list__link js-email-share" data-omniture="Email | Share Modal | ${tracking.prop6}" data-provider="email">
+          <span class="share-modal__icon-list__icon bdc-icon bdc-icon--email-x-large">Email</span>
+        </a>
+      </li>
+    </ul>
+  </div><!--/ icon-list -->
+  <form class="share-modal__form js-email-share-form nocontent" method="POST" style="display:none;">
+    <input type="hidden" name="canonical_url" class="js-share-modal-canonical-url" />
+    <div class="share-modal__form-row">
+      <label class="share-modal__form-label">To</label>
+      <input type="text" class="share-modal__form-input" name="recipient_email" />
+      <p class="share-modal__form-text">Separate multiple addresses with a comma</p>
+      <div class="share-modal__form-notification js-recipient-error">Please enter a valid email address</div>
+    </div>
+    <div class="share-modal__form-row">
+      <label class="share-modal__form-label">Message</label>
+      <textarea class="share-modal__form-input share-modal__form-message" name="share_message"></textarea>
+    </div>
+    <div class="share-modal__form-row">
+      <label class="share-modal__form-label">Your email address</label>
+      <input type="email" class="share-modal__form-input" name="sender_email" />
+      <div class="share-modal__form-notification js-sender-error">Please enter a valid email address</div>
+    </div>
+    <div class="share-modal__form-row">
+      <input type="submit" class="share-modal__form-submit" value="Submit" />
+      <a href="#" class="share-modal__action-link js-email-share-cancel">Cancel</a>
+    </div>
+  </form><!-- / modal-form -->
+</div><!-- / share-modal -->

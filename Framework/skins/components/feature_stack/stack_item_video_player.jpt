@@ -1,0 +1,170 @@
+<p:currentObject content="c" metadata="meta" webType="WT" sectionId="section"/>
+<bdc:getVideoData webObject="${currentObject}" var="videoObject" />
+<%
+	String source = (String)pageContext.getAttribute("section");
+	int count = org.apache.commons.lang.StringUtils.countMatches(source, "/");
+	if (count > 1) {
+		int index = source.indexOf('/');
+		int indexEnd = source.length();
+		int indexStart = index + 1;
+		String id = source.substring(indexStart,indexEnd);
+		int indexRoundTwo = id.indexOf('/');
+		int indexEndRoundTwo = indexRoundTwo + 1;
+		String finalParentSection = source.substring(0,indexEndRoundTwo);
+		pageContext.setAttribute("section", finalParentSection);
+		} else {
+			pageContext.setAttribute("section", source);
+		}
+%>
+<bdc:sectionLinkData var="secData" sectionId="${section}" />
+<p:out var="provider" value="${fn:toLowerCase(videoObject.provider)}" />
+<p:out var="videoId" value="${videoObject.videoId}" />
+<p:out var="autoPlay" xvalue="$meta//AutoPlay" />
+<p:out var="dataConfigSiteSection" xvalue="$meta//DataConfigSiteSection" />
+
+<%-- Share tools and stuff --%>
+<p:url var="gigyaCanonical" webObject="${currentObject}" public="true" />
+<p:out var="gigyaCanonical" value="${gigyaCanonical}" scope="request" />
+<p:out var="gigyaShortURL" xvalue="$meta//ObjectMetadata/OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/ShortUrl" scope="request" />
+<p:out var="gigyaHeadline" value="${videoObject.videoHeadline}" scope="request" />
+
+<p:out var="gigyaThumb" xvalue="$c//doc/story/video-container/videogrp/thumbnail/@fileref" />
+<!-- Gigya Thumb = ${gigyaThumb} -->
+<c:if test="${not empty gigyaThumb or fn:trim(gigyaThumb) ne ''}">
+	<p:out var="pictureID" value="${fn:substringAfter(gigyaThumb, '?uuid=')}" />
+	<p:getObject var="imgObject" uuid="${pictureID}" onError="ignore" />
+	<p:url var="imgSrc" webObject="${imgObject}" format="image_255x106" type="resource" />
+	<p:out var="gigyaImage" value="${imgSrc}" scope="request" /> 
+</c:if>
+
+<p:out var="dataThumbType" value="video" />
+<p:out var="gigyaThumbType" value="${dataThumbType}" scope="request" />
+
+<article class="feat-tz video">
+	<c:choose>
+		<c:when test="${provider eq 'brightcove'}">
+			<c:choose>
+	       		<c:when test="${autoPlay eq 'True'}">
+	       			<p:out var="autoPlay" value="true" />
+	       		</c:when>
+		       	<c:otherwise>
+		       		<p:out var="autoPlay" value="false" />
+		     	</c:otherwise>
+	     	</c:choose>
+      		<div class="videoplayer brightcove"
+      			 data-schema="1"
+      			 data-player="article"
+      			 data-params="@videoPlayer=${objectMap.videoId}"
+      			 data-autoplay="${autoPlay}">
+      		</div>
+		</c:when>
+		<c:when test="${provider eq 'ndn'}">
+	        <%-- if player is autoplay then data-config-widget-id="1", otherwise, data-config-widget-id="2" --%>
+	        <%-- if we can add a default value (90106) for data-config-tracking-group that could be overwritten manually that would be awesome --%>
+	        <%-- data-config-site-section should be editable and could include any of the following values:
+	        
+	       	bostonglobe
+	       	bostonglobe_ent_mus_sty
+	       	bostonglobe_ent_non_sty
+	       	bostonglobe_hom_non_non
+	       	bostonglobe_life_flash_fro
+	       	bostonglobe_life_non_fro
+	       	bostonglobe_spl_brk_sty
+	       	bostonglobe_spl_ele_sty
+	       	
+	       	--%>
+	       	<c:choose>
+	       		<c:when test="${autoPlay}">
+	       			<p:out var="${autoPlay}" value="1" />
+	       		</c:when>
+	       		<c:otherwise>
+	       			<p:out var="${autoPlay}" value="0" />
+	       		</c:otherwise>
+	       	</c:choose>
+	       	
+			<div class="videoplayer ndn_embed"
+	            data-schema="2"
+	            data-player="clicktoplay"
+	            data-config-widget-id="${autoPlay}"
+	            data-config-type="VideoPlayer/Single"
+	            data-config-tracking-group="90106"
+	            data-config-video-id="${videoId}"
+	            data-config-site-section="bostonglobe">
+			</div>
+		</c:when>
+		<c:when test="${provider eq 'cinesport'}">
+			<div class="videoplayer cinesport"
+				data-schema="3"
+				data-video-id="${videoId}"
+				data-autoplay="${fn:toLowerCase(autoPlay)}">
+			</div>
+		</c:when>
+		<c:when test="${provider eq 'perform'}">
+			<div class="preform-wrap">
+				<div class="videoplayer preform"
+					data-schema="4"
+					id="${videoId}">
+				</div>
+			</div>
+		</c:when>
+		<c:when test="${provider eq 'Ustream'}">	
+			<div class="videoplayer ustream"
+		    	 data-schema="5"
+			 	 id="{objectMap.videoId}">
+			</div>
+		</c:when>			
+		<c:when test="${provider eq 'nesn'}">	
+			 <%-- video-type can be either 'latest' (see id info below) or 'video' --%>
+			 	 data-video-type="{objectMap.videoType}"
+		   	<%-- if video-type is set to latest then the video-id is 0 --%>
+			<%-- 
+			
+				data-player-type="" on of the values below.
+				bost001
+				bost002
+				bost003
+				bost004
+				nesn001
+				nesn003
+				nesn005
+				nesn006
+				nesn007
+				nesn008
+				nesn009
+				nesn010
+				nesn011
+				nesn012
+				nesn013
+				nesn014
+				nesn015
+				nesn016
+				nesn017
+				nesn018
+				nesn019
+				nesn020
+				nesn021
+
+				
+			
+			--%>
+			<div class="videoplayer nesn"
+		    	 data-schema="6"
+		    	 data-player-type="bost003"
+			 	 data-video-id="{objectMap.videoId}">		    	 
+			</div>
+		</c:when>		
+	</c:choose>
+	<div class="feat-tz-bd txt-bd">
+		<h4 class="feat-tz-h tz-title">
+			<bdc:link webObject="${currentObject}">${videoObject.videoHeadline}</bdc:link>
+		</h4>
+		<ul class="tz-meta feat-tz-meta">
+			<li class="tz-meta-item tz-category">
+				<bdc:link value="${secData.path}">${secData.name}</bdc:link>
+			</li>
+			<li class="tz-meta-item tz-share">
+				<p:inline url="$configurationURI/Framework/skins/components/feature_stack/fs_share_controller.jpt" />
+			</li>
+		</ul> <!-- /.tz-meta -->
+	</div> <!-- /feat-tz-bd -->
+</article>

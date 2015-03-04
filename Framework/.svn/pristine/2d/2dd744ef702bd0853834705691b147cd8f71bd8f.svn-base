@@ -1,0 +1,18 @@
+<%--
+{comments}
+BDC-1809 - first implementation of headline stack
+{comments}
+--%>
+
+<%-- Each headline-stack__list must have 4 list items, and there will always be two lists --%>
+<div class="headline-stack">
+	<div class="headline-stack__header">The Latest</div>
+	<ul class="headline-stack__list">
+		<%-- first four stack items --%>
+		<p:include pageZoneName="content" maxItems="4" templateName="headline_stack_item"></p:include>
+	</ul>
+  <ul class="headline-stack__list">
+		<%-- the next four stack items --%>
+		<p:include pageZoneName="content" maxItems="4" offset="3" templateName="headline_stack_item"></p:include>
+	</ul>
+</div>  

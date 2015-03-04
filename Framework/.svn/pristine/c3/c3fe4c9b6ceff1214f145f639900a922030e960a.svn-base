@@ -1,0 +1,132 @@
+<%--
+Removing from story default. Based on NYTimes, to start, we should be doing conditionality on HTML tag.
+--%>
+<p:currentObject webType="WT" content="story" metadata="meta" channel="Boston.com" sectionId="section" />
+
+<%--
+//////////////////////////////////////////////////////// PAGE SETUP ////////////////////////////////////////////////////////
+--%>
+
+<%-- ////////// Inheritance ////////// --%>
+<p:out var="layer" value="story" />
+<c:if test="${WT == 'BlogStory'}">
+  <p:out var="layer" value="${WT}" />
+</c:if>
+
+<bdc:getAdLayer var="layer" webType="${layer}" />
+
+<bdc:inheritStoryLayer var="adLayer" section="${section}" layer="${layer}" /> <%-- ad layer --%>
+<p:out var="adLayer" value="${adLayer}" scope="request" />
+
+<bdc:inheritStoryLayer var="editorialLayer" section="${section}" layer="EDITORIAL_STORY_ASSET_LAYER" /> <%-- asset layer --%>
+
+<p:out var="editorialLayer" value="${editorialLayer}" scope="request" />
+
+<%-- ////////// Media to lead with ////////// --%>
+<bdc:getTeaseType webObject="${currentObject}" var="mmc" />
+
+<%-- ////////// Commenting ////////// --%>
+<p:out var="commentsEnabled" xvalue="$meta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/CommentingEnabled" />
+<p:out var="commentsEnabled" value="${fn:toLowerCase(commentsEnabled)}" scope="request" />
+
+<%-- ///// Taboola --%>
+<p:out var="hideTaboola" xvalue="$meta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/DisplayOptions/HideTaboola" />
+
+<%--
+  All share tools logic has been moved into a custom tag that pulls share-related data for the current object,
+  which is then called from the social_bar.jpt file.
+--%>
+
+<%-- Cars-specific includes for more adverts, or something --%>
+<c:if test="${WT == 'story' and fn:startsWith(section, '/cars')}">
+  <p:script src="http://services.cdn.speedshiftmedia.com/tags/tag-H2014041015210271d88ae6e2e0f.min.js" />
+</c:if>
+
+
+<bdc:rwArticleLeadImage var="leadImage" webObject="${currentObject}" />
+
+<%--
+//////////////////////////////////////////////////////// ACTUAL RENDERING ////////////////////////////////////////////////////////
+--%>
+
+<p:inline url="$configurationURI/Framework/skins/leaf/common/ads/ad_lead1.jpt" />
+<p:inline url="$configurationURI/Framework/skins/common/ads/ad_pencil.jpt" />
+
+<%-- The page content div should be moved to the frameset eventually, as it will wrap all content in the future --%>
+<div class="bdc-page-content bdc-page-content--${WT}">
+  
+  <!-- Main Content Well -->
+  <div class="content-well content-well--main content-well--article" role="main">
+    
+    <!-- Content Header -->
+    <p:inline url="$configurationURI/Framework/skins/leaf/common/header.jpt" />
+
+    <!-- Content Media - Lead -->
+    <bdc:rwArticleLeadImage var="imgData" webObject="${currentObject}" galleryFormat="${galleryFormat}" />
+    <bdc:getVideoTease var="videoData" webObject="${currentObject}" />
+    
+    <p:out var="sharePosition" value="Top" scope="request" />
+
+    <c:choose>
+   		<c:when test="${(empty leadImage.src and empty videoData.videoUrl) or fn:trim(leadImage.orientation) eq 'vertical'}">
+    		<p:inline url="$configurationURI/Framework/skins/leaf/common/social_bar.jpt">
+    			<p:param name="extraClass" value="hide-desktop" />
+    		</p:inline>
+ 		</c:when>
+ 		<c:otherwise>
+ 			<p:inline url="$configurationURI/Framework/skins/leaf/common/social_bar.jpt" />
+ 		</c:otherwise>
+	</c:choose>
+    
+
+
+    <%-- load sticky social first if image is narrow --%>
+    <c:if test="${imgData.orientation == 'vertical'}">
+		<p:inline url="$configurationURI/Framework/skins/leaf/common/sticky_social.jpt" />  	
+    </c:if>
+    
+    <c:choose>
+      <c:when test="${mmc eq 'photo-container'}">
+        <p:inline url="$configurationURI/Framework/skins/leaf/common/media_wide.jpt" />
+      </c:when>
+      <c:when test="${mmc eq 'video-container'}">
+        <p:inline url="$configurationURI/Framework/skins/leaf/common/media_wide_video.jpt" />
+      </c:when>
+    </c:choose>
+    <%-- load sticky social after image for wide images --%>
+    <c:if test="${imgData.orientation != 'vertical'}">
+		<p:inline url="$configurationURI/Framework/skins/leaf/common/sticky_social.jpt" />  	
+    </c:if>
+    
+    <!-- Content Byline -->
+    <p:inline url="$configurationURI/Framework/skins/leaf/common/byline.jpt" />
+  
+    <!-- Content Text -->
+    <p:inline url="$configurationURI/Framework/skins/leaf/common/text.jpt" />
+  
+      <!-- Related Links Module -->
+    <%-- moved to bdc_story_default_new.xslt - RMK 20141029 
+    <p:inline url="$configurationURI/Framework/skins/leaf/common/related_links.jpt" />
+    --%>
+          
+    <!-- Content Footer -->
+    <p:inline url="$configurationURI/Framework/skins/leaf/common/tagline.jpt" />
+  
+    <!-- Comments -->
+    <c:if test="${fn:toLowerCase(commentsEnabled) eq 'true'}">
+    <p:inline url="$configurationURI/Framework/skins/components/ugc/comments/comments.jpt" />
+    </c:if> 
+
+    <!-- Outbrain -->
+    <c:if test="${fn:trim(hideTaboola) ne 'True'}">
+      <p:inline url="$configurationURI/Framework/skins/components/outbrain/outbrain.jpt" />
+    </c:if>
+  
+  </div><!-- content-well -->
+  
+  <!-- Side Content Well -->
+  <p:inline url="$configurationURI/Framework/skins/leaf/common/sidebar.jpt" />
+
+</div><!-- / bdc-page-content -->
+
+<p:inline url="$configurationURI/Framework/skins/leaf/common/fs_stream_inheritance.jpt" />

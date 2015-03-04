@@ -1,0 +1,188 @@
+<div id="quick-gallery" class="quick-gallery-popup gallery-type click-gallery mfp-hide">
+
+<!-- Quick Gallery: Header -->
+<header class="qg-pop-hdr">
+	<!-- Mobile Banner -->
+	<section class="ad-banner-mod qg-pop-banner-mod">
+		<img src="assets/ads/banner-2.jpg" class="ad-banner">
+	</section>
+	<!-- Leaderboard -->
+	<section class="leaderboard-mod qg-pop-leaderboard-mod">
+		<img src="assets/ads/leaderboard-1.jpg" class="ad-leaderboard" />
+	</section> <!-- /leaderboard-mod -->
+</header>
+
+<!-- Quick Gallery: Body -->
+<div class="qg-pop-bd">
+	<section class="qg-photo-block ui-block-1">
+		<div class="qg-photo-mod ui-block-inner">
+
+			<!-- Quick Gallery Tools -->
+			<section class="qg-pop-tools-mod">
+				<ul class="tools-horiz qg-pop-tools-horiz">
+					<li class="tools-item tools-share"><a class="popup-trigger" href="#mfp-share"><i class="share-icon"></i> <i class="tools-txt">Share</i></a></li>
+					<li class="tools-item tools-comment"><a href="#story-comments" class="js-goto-open-comments"><i class="comment-icon"></i> <i class="tools-txt">Comment</i></a></li>
+				</ul>
+			</section>  <!-- /story-tools-hdr -->
+
+			<!-- Quick Gallery Hgroup -->
+			<div class="qg-pop-hgroup">
+				<h1 class="qg-pop-h">Tom Brady &amp; Gisele Bündchen Photos</h1>
+				<p class="qg-pop-meta">See more photos with <a href="#URL:tag-tom">Tom Brady</a>, <a href="#URL:tag-gisele">Gisele Bündchen</a>, <a href="#URL:tag-ben">Benjamin Brady</a>, <a href="#URL:tag-patriots">Patriots</a>, or from <a href="#URL:tag-date">Aug 13, 2013</a>.</p>
+				<a class="qg-show-caption js-show-caption" href="#URL:show-caption">Show Caption</a>	
+			</div> <!-- /qg-pop-hgroup -->
+
+			<div class="quick-gallery qg-swiper-mod" data-type="galleries" data-ups-template="quick-gallery" data-ups-uses-slug="true"></div>
+
+		</div> <!-- /ui-block-inner -->
+	</section> <!-- /ui-block-1 -->
+
+	<aside class="qg-aside ui-block-2">
+		<!-- Big Ad -->
+		<section class="qg-pop-big-mod ui-block-1">
+			<img class="ad-big" src="assets/ads/big-1.jpg" />
+		</section>
+
+		<!-- Taboola Headlines -->
+		<section class="taboola-list-mod qg-taboola-list-mod ui-block-2">
+			<h3 class="section-h taboola-list-h">Stories Like This</h3>
+			<ul class="taboola-list">
+				<li class="taboola-item taboola-item-primary">
+					<h3 class="taboola-h taboola-reload"><a href="#11-best-cocktails">11 Best Cocktails for Summer</a></h3>
+					<h6 class="taboola-src taboola-reload"><a href="#11-best-cocktails">Boston.com</a></h6>
+				</li>
+				<li class="taboola-item taboola-item-primary">
+					<h3 class="taboola-h"><a href="http://movies.yahoo.com/blogs/movie-talk/jim-carrey-career-kicked-shins-dumb-dumber-fumbles-164942151.html" target="_blank">Tough News for Struggling Jim Carrey</a></h3>
+					<h6 class="taboola-src"><a href="#http://movies.yahoo.com/blogs/movie-talk/jim-carrey-career-kicked-shins-dumb-dumber-fumbles-164942151.html">Yahoo!</a></h6>
+				</li>
+				<li class="taboola-item taboola-item-primary">
+					<h3 class="taboola-h taboola-reload"><a href="#city-fires">City Fires Big Dig Contractor</a></h3>
+					<h6 class="taboola-src taboola-reload"><a href="#city-fires">Boston.com</a></h6>
+				</li>
+				<li class="taboola-item taboola-item-primary">
+					<h3 class="taboola-h"><a href="http://nysebigstage.com/articles/ellie-mae-rings-the-nyse-opening-bell-special-edit" target="_blank">Ellie Mae Rings the NYSE Opening Bell</a></h3>
+					<h6 class="taboola-src"><a href="http://nysebigstage.com/articles/ellie-mae-rings-the-nyse-opening-bell-special-edit">Big Stage by NYSE</a></h6>
+				</li>
+				<li class="taboola-item taboola-item-secondary taboola-hidden">
+					<h3 class="taboola-h taboola-reload"><a href="#scenes-from">Scenes from a Magical Bruins Season</a></h3>
+					<h6 class="taboola-src taboola-reload"><a href="#scenes-from">Boston.com</a></h6>
+				</li>
+			</ul>
+		</section> <!-- taboola-list-mod -->
+
+	</aside> <!-- /ui-block-2 -->
+
+</div> <!-- /qg-pop-bd -->
+
+<!-- Quick Gallery: Footer -->
+<footer class="qg-pop-ftr">
+	<!-- Feature Teases -->
+	<div class="qg-feat-tzs feat-tz-horiz">
+		<div class="feat-tz-fader">
+			<section class="feat-tz-mod"> 
+				<div class="feat-tz-scroller">	
+					<article class="feat-tz taboola-feat-tz">
+						<a class="feat-tz-img-mod  art-bd" href=" article.html#">
+							<img class="feat-tz-img" src="assets/photos/taboola-police-thumb.jpg">
+							</a> <!-- feat-tz -->
+						<div class="feat-tz-bd txt-bd">
+							
+							<h4 class="feat-tz-h tz-title"><a href="article.html#">New 2013 Rule in U.S: Read This If You Pay for Car Insurance</a></h4>
+							
+							<ul class="tz-meta feat-tz-meta">
+								<li class="tz-meta-item tz-category">
+									<a href="#">The Finace Guardian</a>
+								</li>
+								<li class="tz-meta-item tz-share">
+									<a class="tz-share-link popup-trigger" href="#mfp-share">
+										<i class="tz-share-icon tz-meta-icon"></i>
+										<i class="tz-share tz-meta-txt">Share</i>
+									</a>
+								</li>
+								<li class="tz-meta-item">
+									<a href="#URL:taboola-icon" class="tz-taboola-icon"></a>
+								</li><!-- /.meta-share-list -->
+							</ul> <!-- ./tz-meta -->
+						</div> <!-- /feat-tz-bd -->
+					</article> <!-- /feat-tz -->
+					<article class="feat-tz taboola-feat-tz">
+						<a class="feat-tz-img-mod  art-bd" href=" article.html#">
+							<img class="feat-tz-img" src="assets/photos/taboola-wf-thumb.jpg">
+							</a> <!-- feat-tz -->
+						<div class="feat-tz-bd txt-bd">
+							
+							<h4 class="feat-tz-h tz-title"><a href="article.html#">Whole Foods Reviews English Policy After Backlash</a></h4>
+							
+							<ul class="tz-meta feat-tz-meta">
+								<li class="tz-meta-item tz-category">
+									<a href="#">Investors.com</a>
+								</li>
+								<li class="tz-meta-item tz-share">
+									<a class="tz-share-link popup-trigger" href="#mfp-share">
+										<i class="tz-share-icon tz-meta-icon"></i>
+										<i class="tz-share tz-meta-txt">Share</i>
+									</a>
+								</li>
+								<li class="tz-meta-item">
+									<a href="#URL:taboola-icon" class="tz-taboola-icon"></a>
+								</li><!-- /.meta-share-list -->
+							</ul> <!-- ./tz-meta -->
+						</div> <!-- /feat-tz-bd -->
+					</article> <!-- /feat-tz -->
+					<article class="feat-tz taboola-feat-tz">
+						<a class="feat-tz-img-mod  art-bd" href=" article.html#">
+							<img class="feat-tz-img" src="assets/photos/taboola-tesla-thumb.jpg">
+							</a> <!-- feat-tz -->
+						<div class="feat-tz-bd txt-bd">
+							
+							<h4 class="feat-tz-h tz-title"><a href="article.html#">Tesla Introduces Its Electric Car to Public</a></h4>
+							
+							<ul class="tz-meta feat-tz-meta">
+								<li class="tz-meta-item tz-category">
+									<a href="#">Cars</a>
+								</li>
+								<li class="tz-meta-item tz-share">
+									<a class="tz-share-link popup-trigger" href="#mfp-share">
+										<i class="tz-share-icon tz-meta-icon"></i>
+										<i class="tz-share tz-meta-txt">Share</i>
+									</a>
+								</li>
+								<li class="tz-meta-item">
+									<a href="#URL:taboola-icon" class="tz-taboola-icon"></a>
+								</li><!-- /.meta-share-list -->
+							</ul> <!-- ./tz-meta -->
+						</div> <!-- /feat-tz-bd -->
+					</article> <!-- /feat-tz -->
+					<article class="feat-tz taboola-feat-tz">
+						<a class="feat-tz-img-mod  art-bd" href=" article.html#">
+							<img class="feat-tz-img" src="assets/photos/taboola-salad-thumb.jpg">
+							</a> <!-- feat-tz -->
+						<div class="feat-tz-bd txt-bd">
+							
+							<h4 class="feat-tz-h tz-title"><a href="article.html#">Chicken, Avocado, and Spinach Salad</a></h4>
+							
+							<ul class="tz-meta feat-tz-meta">
+								<li class="tz-meta-item tz-category">
+									<a href="#">Honest Company</a>
+								</li>
+								<li class="tz-meta-item tz-share">
+									<a class="tz-share-link popup-trigger" href="#mfp-share">
+										<i class="tz-share-icon tz-meta-icon"></i>
+										<i class="tz-share tz-meta-txt">Share</i>
+									</a>
+								</li>
+								<li class="tz-meta-item">
+									<a href="#URL:taboola-icon" class="tz-taboola-icon"></a>
+								</li><!-- /.meta-share-list -->
+							</ul> <!-- ./tz-meta -->
+						</div> <!-- /feat-tz-bd -->
+					</article> <!-- /feat-tz -->
+				</div> <!-- /feat-tz-scroller -->
+			</section> <!-- /feat-tz-mod -->
+		</div> <!-- /feat-tz-fader -->
+	</div> <!-- /qg-feat-tzs -->
+</footer> <!-- /qg-pop-ftr -->
+
+<button title="Close (Esc)" type="button" class="mfp-close">×</button>
+
+</div> <!-- /qg-mod -->

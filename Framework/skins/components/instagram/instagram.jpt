@@ -1,0 +1,51 @@
+<p:update timeout="300" />
+<p:currentObject metadata="meta" />
+			
+			<%--
+				valid sizes:
+				post.images.thumbnail.url = 150 x 150
+				post.images.low_resolution.url = 306 x 306
+				post.images.standard_resolution.url = 640 x 640
+			--%>
+
+<p:out var="filterTag" xvalue="$meta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/InstagramConfig/HashTag" />
+<bdc:regexReplace var="filterTag" value="${filterTag}" regex="#" replace="" />
+
+<p:out var="userid" xvalue="$meta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/InstagramConfig/UserID" />
+
+<p:out var="max" xvalue="$meta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/MaxResultItems/text()" />
+              
+<bdc:instagram var="feed" userId="${userId}" maxItems="${max}" tag="${filterTag}" />
+
+<div class="instagram-feed">
+  
+	<div class="instagram-feed__header">
+    	<span class="bdc-icon bdc-icon--instagram-x-small-color"></span>
+  		<span class="instagram-feed__header-text">
+  			<a href="http://www.instagram.com/boston" class="instagram-feed__header-link" data-omniture="weather | instagram">@${feed.posts[0].user.username} #${filterTag}</a>
+  		</span>
+ 	</div>
+
+	<c:forEach var="post" items="${feed.posts}" varStatus="loop">
+		<div class="instagram-feed__image-wrapper instagram-feed__image-wrapper--${loop.index == 0 ? 'lead' : loop.index}">
+			<a class="instagram-feed__image-link" href="${post.link}" target="_blank" data-omniture="weather | instagram">
+
+				<img alt="" class="instagram-feed__image"
+                     src="${loop.index == 0 ? post.images.standard_resolution.url : post.images.low_resolution.url}" />
+
+	            	<span class="instagram-feed__credit" href="${post.regram.url}" target="_blank">
+						<c:choose>
+							<c:when test="${not empty post.regram.username}">
+								@${post.regram.username}
+							</c:when>
+							<c:otherwise>@${post.user.username}</c:otherwise>
+						</c:choose>
+
+					</span>
+
+			</a>
+		</div>
+	
+	</c:forEach>
+	
+</div>

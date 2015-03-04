@@ -1,0 +1,209 @@
+<p:object webObject="${currentObject}" content="c" metadata="m" webType="WT" uuid="uuid" channel="Boston.com"/>
+<p:out var="isXref" value="${1==2}" />
+<p:out var="regLink" value="${1==1}" />
+<p:out var="objType" xvalue="$m//sys/type" />
+
+<x:if select="$c//doc/story/xref">
+	<p:out var="isXref" value="${1==1}" />
+	<p:out var="xrefVal" xvalue="$c//doc/story/xref" />
+	<p:out var="xrefVal" value="${fn:trim(xrefVal)}" />
+	<bdc:cleanXref var="cleanXR" url="${xrefVal}" />
+</x:if>
+
+<p:out var="section" xvalue="$m//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/Sections/Section/SectionPath" />
+<p:out var="provider" xvalue="$m//Reference/Provider" />
+<p:out var="bdcWire" value="${(provider eq 'BDCWire')}" />
+
+<p:object webObject="${cacheScope.dwp}" metadata="dwpMeta"/>
+<p:out var="edition" xvalue="$dwpMeta//dbMetadata/sys/props/productInfo/edition" scope="request" /> 
+<bdc:getHeadlines webObject="${currentObject}" var="title" edition="${edition}"/>
+<bdc:getSection section="${section}" var="sectionLink" />
+<c:choose>
+	<c:when test="${objType eq 'EOM::MediaGallery'}">
+		<x:set var="imgLocation" select="string($c//multimedia-container/gallery-container/headlines/photogrp[@class='alt-web-images']/photo[@name='image_300x240']/@fileref/text())"/>
+		<c:if test="${empty imgLocation}">
+			<x:set var="imgLocation" select="string($c//multimedia-container/gallery-container/headlines/photogrp[@class='photo-gallery-tease']/photo[@name='image_399w']/@fileref/text())"/>
+		</c:if>
+		<c:if test="${empty imgLocation}">
+			<x:set var="imgLocation" select="string($c//multimedia-container/gallery-container/photogrp[1]/photo/@fileref/text())"/>
+		</c:if>
+	</c:when>
+	<c:otherwise>
+		<x:set var="imgLocation" select="string($c//multimedia-container/photo-container/photogrp[@class='alt-web-images']/photo[@name='image_300x240']/@fileref/text())"/>
+		<c:if test="${empty imgLocation}">
+			<x:set var="imgLocation" select="string($c//multimedia-container/photo-container/photogrp[@class='main-web-images']/photo/@fileref/text())"/>
+		</c:if>
+	</c:otherwise>
+</c:choose>
+
+<p:url var="img" value="${imgLocation}" type="resource" format="image_150x120" />
+
+<%
+	String source = (String)pageContext.getAttribute("section");
+	int count = org.apache.commons.lang.StringUtils.countMatches(source, "/");
+	if (count > 1) {
+		int index = source.indexOf('/');
+		int indexEnd = source.length();
+		int indexStart = index + 1;
+		String id = source.substring(indexStart,indexEnd);
+		int indexRoundTwo = id.indexOf('/');
+		int indexEndRoundTwo = indexRoundTwo + 1;
+		String finalParentSection = source.substring(0,indexEndRoundTwo);
+		pageContext.setAttribute("section", finalParentSection);
+		} else {
+			pageContext.setAttribute("section", source);
+		}
+%>
+
+<bdc:teaseSection section="${section}" var="sectionData" />
+
+<c:choose>
+<c:when test="${empty imgLocation}">
+	<c:choose>
+	<c:when test="${isXref}">
+		<c:choose>
+			<c:when test="${not empty xrefVal}">
+				<li class="lead-nav-item lead-item-no-art clearfix" data-vr-contentbox="">
+				<bdc:link 
+					value="${cleanXR}" 
+					webObject="${currentObject}"
+					className="lead-item-link lead-list-art-bd-container omniclick"
+					onClick="true" 
+					element="headline"
+					elementType="carousel sub">
+					<div class="lead-list-art-bd art-bd">
+						<p class="lead-list-cat">${sectionData.name}</p>
+					</div>
+					<div class="lead-list-txt-bd-container lead-item-link"> 
+						<div class="lead-list-txt-bd txt-bd">
+							<h4 class="lead-list-h">${title.carouselHeadline}</h4>
+						</div>
+					</div>
+				</bdc:link>
+				</li>
+			</c:when>
+			<c:otherwise>
+				<li class="lead-nav-item external-lead-nav-item lead-item-no-art clearfix" data-vr-contentbox="">
+					<div class="lead-list-txt-bd-container lead-item-link"> 
+						<div class="lead-list-art-bd art-bd">
+							<p class="lead-list-cat">${sectionData.name}</p>
+						</div>
+					</div>
+					<div class="lead-list-txt-bd-container lead-item-link"> 
+						<div class="lead-list-txt-bd txt-bd">
+							<h4 class="lead-list-h">${title.carouselHeadline}</h4>
+						</div>
+					</div>
+				</li>
+			</c:otherwise>
+		</c:choose>
+	</c:when>
+	<c:otherwise>
+		<li class="lead-nav-item lead-item-no-art clearfix" data-vr-contentbox="">
+		<bdc:link 
+			value="${cleanXR}" 
+			webObject="${currentObject}" 
+			className="lead-item-link lead-list-art-bd-container omniclick"
+			onClick="true" 
+			element="image"
+			elementType="carousel sub">
+			<div class="lead-list-art-bd art-bd">
+				<p class="lead-list-cat">${sectionData.name}</p>
+			</div>
+			<div class="lead-list-txt-bd-container lead-item-link"> 
+				<div class="lead-list-txt-bd txt-bd">
+					<h4 class="lead-list-h">${title.carouselHeadline}</h4>
+				</div>
+			</div>
+		</bdc:link>
+		</li>
+	</c:otherwise>
+	</c:choose>
+</c:when>
+<c:otherwise>
+<c:choose>
+	<c:when test="${isXref}">
+	<c:choose>
+		<c:when test="${not empty xrefVal}">
+			<li class="lead-nav-item clearfix" data-vr-contentbox="">
+				<bdc:link 
+					webObject="${currentObject}" 
+					className="lead-item-link lead-list-art-bd-container omniclick"
+					onClick="true" 
+					element="image"
+					elementType="carousel sub">
+					
+					<div class="lead-list-art-bd art-bd">
+						<img class="lead-list-art" src="${img}">
+					</div>
+				</bdc:link>
+				<bdc:link 
+					webObject="${currentObject}" 
+					className="lead-item-link lead-list-txt-bd-container omniclick"
+					onClick="true" 
+					element="headline"
+					elementType="carousel sub">
+					<div class="lead-list-txt-bd-container">
+						<div class="lead-list-txt-bd txt-bd">
+							<h4 class="lead-list-h">${title.carouselHeadline}</h4>
+							<p class="lead-list-overline ${bdcWire? 'BDCWire' : ''}">${sectionData.name}</p>
+						</div>
+					</div>
+				</bdc:link>
+			</li>
+		</c:when>
+		<c:otherwise>
+			<li class="lead-nav-item external-lead-nav-item lead-item-no-art clearfix" data-vr-contentbox="">
+				<div class="lead-list-art-bd art-bd">
+					<!-- bdcwireis: ${bdcWire} -->
+					<c:if test="${bdcWire}">
+						<div class="lead-tz--bdc-wire"></div>
+					</c:if>
+					<img class="lead-list-art" src="${img}">
+				</div>
+				<div class="lead-list-txt-bd-container lead-item-link"> 
+					<div class="lead-list-art-bd art-bd">
+						<p class="lead-list-cat">${sectionData.name}</p>
+					</div>
+				</div>
+				<div class="lead-list-txt-bd-container lead-item-link"> 
+					<div class="lead-list-txt-bd txt-bd">
+						<h4 class="lead-list-h">${title.carouselHeadline}</h4>
+					</div>
+				</div>
+			</li>
+		</c:otherwise>
+	</c:choose>
+	</c:when>	
+	<c:otherwise>
+		<li class="lead-nav-item clearfix" data-vr-contentbox="">	
+			<bdc:link 
+				webObject="${currentObject}" 
+				className="lead-item-link omniclick"
+				onClick="true" 
+				element="image"
+				elementType="carousel sub">
+					<div class="lead-list-art-bd art-bd">
+						<img class="lead-list-art" src="${img}">
+					</div>
+				</bdc:link>
+				<bdc:link 
+				webObject="${currentObject}" 
+				className="lead-item-link omniclick"
+				onClick="true" 
+				element="headline"
+				elementType="carousel sub">
+					<div class="lead-list-txt-bd-container">
+						<div class="lead-list-txt-bd txt-bd">
+							<h4 class="lead-list-h">${title.carouselHeadline}</h4>
+							<p class="lead-list-overline ${bdcWire? 'BDCWire' : ''}">${sectionData.name}</p>
+						</div>
+					</div>
+				</bdc:link>
+			</li>
+		</c:otherwise>
+	</c:choose>	
+</c:otherwise>
+</c:choose>
+
+

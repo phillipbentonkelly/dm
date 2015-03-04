@@ -1,0 +1,28 @@
+// *
+// * Z-index
+// *
+
+// FOR: Managing Boston.com z-index
+// WHY: Named z-index numbers keeps magic numbers down to a minimum,
+//      allows for easy, sitewide component z-index updates
+// USE: z-index:: zindex(first-floor);
+
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// Z-index Function
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+@function z-index($key) {
+  @return map-get($z-index, $key);
+}
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// Z-index Map
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+$z-index: (
+  basement: -100,
+  first-floor: 100,
+  second-floor: 200,
+  attic: 300,
+  space: 2147483647   // Max z-index value: http://www.puidokas.com/max-z-index/
+);

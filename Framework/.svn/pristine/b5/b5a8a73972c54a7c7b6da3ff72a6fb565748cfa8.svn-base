@@ -1,0 +1,11 @@
+// *
+// * Boston.com bdc-print.scss
+// * Used for <IE8 browsers only
+// * For all other browsers styles are brought into bdc-screen.scss utilizing '@media print {}'
+// *
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// Print Styles
+// * Dependencies: none
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+@import 'partials/print';

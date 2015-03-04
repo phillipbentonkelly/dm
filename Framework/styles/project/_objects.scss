@@ -1,0 +1,310 @@
+//
+// Double Border
+//
+// Used beneath quick teases (hence the name). Has other applications
+// as well, though it should only be used on top of the sandy background 
+
+.quick-border {
+	@include quick-border;
+}
+ 
+//
+// Number Box
+//
+// Used for Must Read list, numbers in list articles,
+// and other spots where a large numeral is called for
+// Ryan P 8.21
+.number-box {
+	// Number box
+	@include sans (em(11)/155%, 800);
+	@include size(19px);
+	@include button-state($red);
+	text-align: center;
+}
+
+//
+// Content Fader
+//
+// This was used on trending(previously known as must reads) but is no longer used there or anywhere else as far as I can tell. - Ellen 6/25 
+//
+// Used to truncate long modules. Creates a transparent-to-white
+// gradient that creates the appearance of a fadeout.  
+// Ryan 8.21
+@mixin content-fader($height: 35px, $position-top: n, $position-right: 0, $position-bottom: 0, $position-left: 0) {
+
+	@if $position-top == 'top' {
+		$position-top: 0;
+		$position-bottom: n;
+	}
+
+	@if $position-top == 'bottom' {
+		$position-top: n;
+		$position-bottom: 0;
+	}
+
+	pointer-events: none;
+	@include content;
+	@include absolute($position-top $position-right $position-bottom $position-left);
+    display: block;
+	height: $height;
+    @include background-image(linear-gradient(top, rgba(245, 248, 243, 0), #fff));	
+}
+.content-fader {
+	position: relative;
+}
+
+.content-fader:after {
+	@include content-fader;
+}
+
+//
+// Content Box 
+//
+// Generic class for applying the site-wide box style.
+// This box is best used atop the sandy site background.
+// Ryan 8.21
+// .content-box {
+// 	background-color: white;
+// 	padding: 15px;
+// 	border-bottom: $border;
+// }
+
+//
+// Back To Top Button
+//
+//
+// Appears in lower left at large screen sizes. 
+// Helps user quickly jump back to top of page.   
+
+
+.to-top-btn {
+	display: none;
+	//positioning
+	// text-indent: -9999px;
+	// position: fixed;
+	// right: 20px;
+	// bottom: -50px;
+	// //background image stuff
+	// @include size(50px);
+	// @include svg('arrow-top-white');
+	// background-position: 50% 50%;
+	// background-repeat: no-repeat;
+	// @include rgba-bg(black, .5);
+	// //style
+	// padding: 5px 10px;
+	// background-color: #000;
+	// //behavior
+	// @include trans($trans-time, all);
+	// @include transform(translate3d(0, 0, 0));
+	// &:hover {
+	// 	@include opacity(1);
+	// }
+	// @include mq(875px) {
+	// 	.no-touch .top-btn-on & {
+	// 		bottom: 20px;
+	// 	}
+	// }
+	// &.faded {
+	// 	@include opacity(.6);
+	// 	&:hover {
+	// 		@include opacity(.5);
+	// 	}
+	// 	&:active{
+	// 		@include opacity(.7);
+	// 	}
+	// }
+}
+
+
+//
+// Slider Arrow Buttons
+//
+//
+// Simple white arrow buttons that appear on edges of slider
+// and helps user navigate from one slide to the next
+
+.arrow-btn-prev,
+.arrow-btn-next {
+	@include input-default;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	width: 60px;
+	padding: 6px;
+	text-indent: -9999em;
+	pointer-events: auto; // Make sure that users can click on the prev/next buttons
+
+	// On page load, show then quickly fade
+	// the previous/next buttons
+	@include trans;
+	@include opacity(.5);
+	@include animation(fadedown 4s ease);
+	
+	.no-touch .lead-tz-mod & {
+		@include opacity(0);
+		@include animation(fadeout 4s ease);
+	}
+	
+	&:after {
+		@include content;
+		display: block;
+		position: absolute;
+		top: 49.5%;
+		@include size(22px 42px);
+		@include background-size(100%);
+		background-position: 50% 50%;
+		background-repeat: no-repeat;
+
+		@include mq(1090px) {
+			@include size(26px 50px);
+		}
+	}
+} // .arrow-btn-prev
+
+.arrow-btn-prev {
+	left: 0;
+	&:after {
+		left: 12px;
+		background-image: url(/img/carousel-prev.png);
+	}
+}
+
+.arrow-btn-next {
+	right: 0;
+	&:after {
+		right: 12px;
+		background-image: url(/img/carousel-next.png);
+	}
+}
+
+// Hover Box Mixin
+//
+// This is only used here for the class .has-hover and in _comments.scss for .has-voted.comment-vote-mod as far as I can tell - Ellen 6/25
+//
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+// FOR: Applying a tool tip on hover 
+// WHY: So the style can be controlled in one place
+// USE: @include hover();
+
+.hover-info {
+	display: none;
+	z-index: 1;
+	position: absolute;
+	@include sans(em(12), 400);
+	line-height: 16px;
+	padding: 8px;
+	color: #ffffff;
+	background: rgba(0, 0, 0, 0.90) ;
+	@include border-radius(2px);
+		& > a {
+			color: $blue-lt;
+		}
+}
+
+@mixin hover-box ($hover-direction: top, $class: ".hover-info", $width: 175px) {
+
+	#{$class} {
+		width: $width;
+		@if $class != ".hover-info" {
+			// TODO: @extend .hover-info not working... but why?
+			display: none;
+			z-index: 1;
+			position: absolute;
+			@include sans(em(12), 400);
+			line-height: 16px;
+			padding: 8px;
+			color: #ffffff;
+			background: rgba(0, 0, 0, 0.90) ;
+			@include border-radius(2px);
+			& > a {
+				color: $blue-lt;
+			}
+		} // if != hover-info
+	}
+
+	// When hovering on parent, 
+	// show child hover-box
+	&:hover {
+		#{$class} {
+			display: block;
+			&:after {
+				@include content;
+				position: absolute;
+			    width: 0;
+			    height: 0;
+			    @include trans;
+			}
+		}		
+	} // hover
+
+	@if $hover-direction == "left" {
+		#{$class}{
+		right: 100%;
+		top: -13px;
+		margin-right: 8px; //used to make room for the triangle;
+			&:after {
+				@include triangle(right, 12px, rgba(0, 0, 0, 0.90), .8);
+			    top: 16px;
+			    right: -12px;
+			}
+		}
+	} // left
+
+	@if $hover-direction == "right" {
+		#{$class}{
+		left: 100%;
+		top: -13px;
+		margin-left: 8px; //used to make room for the triangle;
+			&:after {
+				@include triangle(left, 12px, rgba(0, 0, 0, 0.90), .8);
+			    top: 16px;
+			    right: 175px;
+			}
+		}
+	} // right
+
+	@if $hover-direction == "top" {
+		#{$class}{
+		text-align:center;
+		right: -77px;
+		bottom: 100%;
+		margin-bottom: 5px; //used to make room for the triangle;
+			&:after {
+				@include triangle(down, 8px, rgba(0, 0, 0, 0.90), .8);
+			    bottom: -8px;
+			    right: 50%;
+			    margin-right: -4px;
+			}
+		}
+	} // top
+
+	@if $hover-direction == "bottom" {
+		#{$class}{
+		right: -77px;
+		top: 100%;
+		margin-top: 12px; //used to make room for the triangle;
+			&:after {
+				@include triangle(up, 12px, rgba(0, 0, 0, 0.90), .8);
+			    top: -12px;
+			    right: 80px;
+			}
+		}
+	} // bottom
+}
+// Ryan 8.21
+// .has-hover {
+// 	@include hover-box; 
+// }
+
+// Hide element on all devices other than desktop
+
+.hide-mobile {
+	@include mq(max, $break-lg) {
+		display: none; 
+	}
+}
+
+// Class for hiding objects
+.hidden {
+	display: none;
+}

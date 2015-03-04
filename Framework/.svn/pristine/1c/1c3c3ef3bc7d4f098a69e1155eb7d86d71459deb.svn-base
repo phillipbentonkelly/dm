@@ -1,0 +1,152 @@
+<%-- 
+{comments}
+BDC-???? - mystery
+{comments}
+--%>
+
+<p:currentObject metadata="dwpMeta" content="dwpContent" webType="WT" uuid="uuid" channel="Boston.com" sectionPage="dwp" sectionId="sectionId" />
+<bdc:getAdLayer var="adLayerName" webType="${WT}"/>
+<bdc:inheritStoryLayer var="adLayerDwpPath" section="${sectionId}" layer="${adLayerName}" />
+<p:out var="VREnabled" xvalue="$dwpMeta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/VisualRevenue" />
+
+<%-- should be using ad layer #techdebt --%>
+<p:inline url="$configurationURI/Framework/skins/common/ads/ad_lead1.jpt" />
+<%-- should be using ad layer #techdebt --%>
+<p:inline url="$configurationURI/Framework/skins/common/ads/ad_pencil.jpt" />
+
+<%-- informational stuff we pass to included containers --%>
+<p:out var="isHomepage" value="${WT eq 'dwp_modulepage' and sectionId eq '/'}" />
+
+<div class="bdc-page-content bdc-page-content--section">
+
+  <%-- This is the top full-width content --%>
+	<p:ifZone name="full_width" empty="false">
+		<div class="content-well content-well--wide content-well--section">      
+			<p:include pageZoneName="full_width">
+				<p:param name="visualRevenue" value="${VREnabled}" />
+				<p:param name="dwp" value="${currentObject}" />
+				<p:param name="isHomepage" value="${isHomepage}" />
+				<p:param name="adLayerDwpPath" value="${adLayerDwpPath}" />
+			</p:include>
+		</div>
+	</p:ifZone>
+		
+	<%-- main column (breaking + boards)--%>
+	<div class="content-well content-well--main content-well--section">
+		<div class="grid">
+			<%-- breaking (news + scoreboards)--%>
+			<p:ifZone name="breaking" empty="false">
+				<div class="page-module">
+					<div class="grid--12">
+						<p:include pageZoneName="breaking">
+							<p:param name="isHomepage" value="${isHomepage}" />
+							<p:param name="adLayerDwpPath" value="${adLayerDwpPath}" />
+						</p:include>
+					</div>
+				</div>
+			</p:ifZone>
+			<%-- boards --%>
+			<p:ifZone name="content_top" empty="false">
+				<p:include pageZoneName="content_top">
+					<p:param name="visualRevenue" value="${VREnabled}" />
+					<p:param name="dwp" value="${currentObject}" />
+					<p:param name="isHomepage" value="${isHomepage}" />
+					<p:param name="adLayerDwpPath" value="${adLayerDwpPath}" />
+				</p:include>
+			</p:ifZone>
+		</div>
+	</div>
+
+	<%-- The right rail, part 1 (next to the boards) --%>
+	<div class="content-well content-well--sidebar content-well--section">
+		<div class="grid">
+			<%-- first item (sub-brand callout) --%>
+			<p:include pageZoneName="right_rail_top" maxItems="1">
+				<p:param name="isHomepage" value="${isHomepage}" />
+				<p:param name="adLayerDwpPath" value="${adLayerDwpPath}" />
+			</p:include>
+			
+			<%-- should be using ad layer #techdebt --%>
+			<p:inline url="$configurationURI/Framework/skins/common/ads/ad_topright.jpt" />
+
+			<%-- the rest (trending) --%>
+			<p:include pageZoneName="right_rail_top" offset="1">
+				<p:param name="isHomepage" value="${isHomepage}" />
+				<p:param name="adLayerDwpPath" value="${adLayerDwpPath}" />
+			</p:include>
+			
+			<%-- this is a hack because weather isn't using the correct ad layer #techdebt --%>
+			<c:if test="${sectionId != '/weather'}">
+				<p:include pageZoneName="must_reads" inherits="${adLayerDwpPath}">
+					<p:param name="isHomepage" value="${isHomepage}" />
+					<p:param name="adLayerDwpPath" value="${adLayerDwpPath}" />
+				</p:include>
+			</c:if>
+		</div>
+	</div>
+
+	<%-- main column + ad weave (wells) --%>
+	<p:ifZone name="content_bottom" empty="false">
+		<div class="content-well content-well--main content-well--section">
+			<div class="grid">	
+
+				<%-- the first two wells --%>
+				<p:include pageZoneName="content_bottom" maxItems="2">
+					<p:param name="visualRevenue" value="${VREnabled}" />
+					<p:param name="dwp" value="${currentObject}" />
+					<p:param name="isHomepage" value="${isHomepage}" />
+					<p:param name="adLayerDwpPath" value="${adLayerDwpPath}" />
+				</p:include>
+				
+				<%-- the first ad --%>
+				<c:if test="${sectionId != '/weather'}">
+					<p:include pageZoneName="ad_wells" maxItems="1" inherits="${adLayerDwpPath}">
+						<p:param name="isHomepage" value="${isHomepage}" />
+						<p:param name="adLayerDwpPath" value="${adLayerDwpPath}" />
+					</p:include>
+				</c:if>
+				
+				<%-- for the rest, alternate between well and ad --%>
+				<p:getPageZone var="wells" name="content_bottom" />
+				<c:if test="${wells.size > 2}">
+					<c:forEach begin="1" end="${wells.size - 2}" varStatus="loop">
+						<%-- well --%>
+						<p:include pageZoneName="content_bottom" offset="${loop.count + 1}" maxItems="${loop.count + 2}">
+							<p:param name="dwp" value="${currentObject}" />
+							<p:param name="adLayerDwpPath" value="${adLayerDwpPath}" />
+							<p:param name="visualRevenue" value="${VREnabled}" />
+							<p:param name="isHomepage" value="${isHomepage}" />
+						</p:include>
+						<%-- ad --%>
+						<c:if test="${sectionId != '/weather' and loop.count < 6}">
+							<p:include pageZoneName="ad_wells" offset="${loop.count}" maxItems="${loop.count + 1}" inherits="${adLayerDwpPath}">
+								<p:param name="isHomepage" value="${isHomepage}" />
+							</p:include>
+						</c:if>
+					</c:forEach>
+				</c:if>
+				
+			</div>
+		</div>
+	</p:ifZone>
+
+	<%-- The right rail, part 2 (next to the wells) --%>
+	<p:ifZone name="right_rail_bottom" empty="false">
+		<div class="content-well content-well--sidebar content-well--section">
+			<div class="grid">
+				<p:include pageZoneName="ad_featurestack_top" inherits="${adLayerDwpPath}" />
+			
+				<%-- (recent posts), has built-in weave of ad_featurestack_middle --%>
+				<p:include pageZoneName="right_rail_bottom">
+					<p:param name="isHomepage" value="${isHomepage}" />
+					<p:param name="adLayerDwpPath" value="${adLayerDwpPath}" />
+				</p:include>
+			
+				<p:include pageZoneName="ad_featurestack_bottom" inherits="${adLayerDwpPath}" />
+		
+			</div>
+			
+		</div>
+	</p:ifZone>
+
+</div>

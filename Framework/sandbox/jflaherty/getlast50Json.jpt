@@ -1,0 +1,15 @@
+<%@ page language="java" contentType="application/json; charset=UTF-8" pageEncoding="UTF-8" %>	
+	<p:getCollection path="$configurationURI/Framework/sandbox/jflaherty/bdc_last500" var="q" />
+	
+{ "data": [
+	<c:forEach items="${q.items}" var="i" begin="0" end="50" varStatus="status">
+		<p:include styleName="$configurationURI/Framework/sandbox/jflaherty/getJson.jpt" webObject="${i}">
+			<p:param name="modelOnly" value="1"/>
+		</p:include>
+		<c:if test="${not status.last}">,
+		</c:if>
+	</c:forEach>
+	
+	]
+}
+

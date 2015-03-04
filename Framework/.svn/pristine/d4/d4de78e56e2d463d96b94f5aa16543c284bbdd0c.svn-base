@@ -1,0 +1,314 @@
+//
+// Universal Form Styles
+//
+
+// Used 1 time in _forms.scss and probably not needed
+@mixin sidesaddle {
+	// Float the label left	
+	.form-row > label {
+		float: left;
+		width: $sidesaddle-width;
+		text-align: right;
+	} 
+	// Shift over the inside div to align all labels relevant content
+	.input-mod{
+		margin-left: $sidesaddle-width + 20px;
+	}
+} // end sidesaddle
+
+	
+// Universal Form Styles ----------------------------------- //
+// Ryan P 8.19
+// remember to uncomment all the @extends as well ( 3 in this file )
+.form-basic {
+	@include pie-clearfix;
+
+	// Sidesaddle labels
+	&.sidesaddle {
+		@include sidesaddle;
+	}
+	
+	// Make multiple select elements height not fixed
+	select[multiple] {
+		height: inherit;
+		background-color: #fff;
+	}
+	// Dont fix the height of text areas, either
+	textarea {
+		height: auto;
+	}
+
+	// Input defaults
+	.input,
+	[type="text"], [type="search"], [type="email"], [type="url"], [type="tel"], [type="number"], [type="date"],
+	textarea,
+	select,
+	.uneditable-input {
+		@include input-default;
+	}
+
+	.input,
+	textarea,
+	[type="text"], [type="search"], [type="email"], [type="url"], [type="tel"], [type="number"], [type="date"] {
+		border: $border;
+		@include sans(em(14)/155%, 400);
+		@include placeholder-state (#999, #999, #333);
+		color: #333;
+		width: 100%;
+		@include trans;
+	}
+
+	textarea {
+		display: block;
+		background-color: #fff;
+	}
+
+	.input-mod {
+		position: relative;
+	}
+
+} // end form-basic
+
+// Set spacing below form row
+.form-row {
+	@include pie-clearfix;
+	
+	// Label default styles. Must follow .form-row pattern
+	> label {
+		font-weight: 700;
+		color: #404040;
+		margin: 0 0 2px 2px;
+		display: block;
+	}
+}
+
+// Ryan P 8.19
+// .form-small {
+// 	$form-h: 24px;
+// 	// @extend .form-basic;
+
+// 	[type="text"], [type="search"], [type="email"], [type="url"], [type="tel"], [type="number"], [type="date"],
+// 	select,
+// 	textarea,
+// 	.uneditable-input,
+// 	.add-on {
+// 		font-size: 11px;
+// 		padding: 4px;
+// 		height: $form-h;
+// 	}
+
+// 	// Match button and form heights
+// 	.btn, .submit-btn {
+// 		height: $form-h;
+// 	}
+
+// 	.form-row {
+// 		> label {
+// 			font-size: em(11);
+// 			line-height: 18px;
+// 		}
+// 	} // end .form-row
+
+// 	// Spacing for sidesaddle label 
+// 	&.sidesaddle .form-row > label {
+// 		margin-top: 3px;
+// 	}
+// }
+
+.form {
+	$form-h: 28px;
+	@extend .form-basic;
+
+	[type="text"], [type="search"], [type="email"], [type="url"], [type="tel"], [type="number"], [type="date"],
+	select,
+	textarea {
+	// Ryan P 8.19	
+	// .uneditable-input,
+	// .add-on {
+		font-size: em(13);
+		padding: 5px;
+		height: $form-h;
+
+		// HTMl4 / AT
+		&[aria-invalid="true"] {
+			border: 2px solid $red;
+		}
+	}
+
+	// Match button and form heights
+	.btn, .submit-btn {
+		height: $form-h;
+	}
+
+	.form-row {
+		> label {
+			font-size: 13px;
+			line-height: 18px;
+			}
+	} // end .form-row
+
+	// Spacing for sidesaddle label 
+	&.sidesaddle .form-row > label {
+		margin-top: 4px;
+	}
+
+}
+
+.form-large {
+	$form-h: 35px;
+	@extend .form-basic;
+
+	[type="text"], [type="search"], [type="email"], [type="url"], [type="tel"], [type="number"], [type="date"],
+	select,
+	textarea {
+	// Ryan P 8.19	
+	// .uneditable-input,
+	// .add-on {
+		font-size: em(14);
+		padding: 6px;
+		height: $form-h;
+	}
+
+	// Match button and form heights
+	.btn, .submit-btn {
+		height: $form-h;
+	}
+
+	.form-row {
+		> label {
+			font-size: 15px;
+			line-height: 18px;
+			margin-bottom: 8px;
+			// Spacing for sidesaddle label 
+			.sidesaddle & {
+				margin-top: 6px;
+			}
+		}
+	} // end .form-row
+
+	// Spacing for sidesaddle label 
+	&.sidesaddle .form-row > label {
+		margin-top: 7px;
+	}
+}	
+
+// -- Form States ----------------------------------- //
+
+// Disabled
+input[disabled],
+select[disabled],
+textarea[disabled],
+input[readonly],
+select[readonly],
+textarea[readonly] {
+	background-color: #f5f5f5;
+	border-color: #ddd;
+	cursor: not-allowed;
+}
+
+.disabled {
+	color: #999;
+}
+
+//
+// Project Form Styles
+//
+
+.single-liner {
+	.submit-btn {
+		@include absolute(0 0 n n);
+	}
+}
+
+.expandable-form {
+	.text-area {
+		padding-right: 10px;
+	}
+	.submit-btn {
+		display: none;
+	}
+
+	&.expandable-form-active {
+		.submit-btn {
+			display: block;
+			position: relative;
+			margin-top: 10px;
+			height:34px;
+		}
+
+		.textarea {
+			height: 7em;
+		}
+	}
+}
+
+//
+// Love Letter Form
+//
+
+.submission-form {
+	display: none;
+	@include mq($sidebar-break) {
+		display: block;
+	}
+	margin: 20px;
+	width: 100%;
+	.form-row{
+		margin-bottom: 10px;
+	}
+	h3 {
+		font-size: 1.75em;
+		margin: 0 auto 15px;
+	}
+	textarea {
+		font-size: 13px;
+		height: 124px;
+	}
+	.btn {
+		@include sans(em(11), 500);
+		letter-spacing: 1px;
+		text-transform: uppercase;
+		@include trans;
+		&:hover {
+			background-color: shade($red, 14%);
+		}
+		@include size(47% 32px);
+		padding: 8px;
+		background-color: $red;
+		color: #fff;
+		margin-top: 15px;
+		border: none;
+	}
+	.btn:first-child {
+		margin-right: 5%;
+	}
+}
+
+.form-validation {
+	font-weight: bold;
+
+	&.error {
+		color: $red;
+	}
+
+	&.warning {
+		color: $yellow-globe;
+	}
+
+	&.info {
+		color: $blue;
+	}
+
+	&.success {
+		color: $green;
+	}
+
+	& > p,
+	& > ul {
+		margin-bottom: 1em;
+	}
+}
+
+abbr[title="(required)"] {
+	border-bottom: none;
+}

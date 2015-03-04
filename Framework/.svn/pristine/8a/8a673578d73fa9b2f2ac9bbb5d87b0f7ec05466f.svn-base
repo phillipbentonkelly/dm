@@ -1,0 +1,69 @@
+<c:if test="${not empty cacheScope.webObject}">
+	<c:catch var="exception">
+		<p:getObject webObject="${cacheScope.webObject}" var="storyObject" />
+		<p:object webObject="${storyObject}" content="rpc" metadata="rpmeta" webType="WT" channel="Boston.com" uuid="storyId" /> 
+	</c:catch>
+</c:if>
+
+<c:if test="${empty exception}">
+
+	<p:out var="storyObject" value="${storyObject}" scope="request" />
+	<p:out var="storyId" value="${storyId}" scope="request" />
+	<p:out var="objectType" xvalue="$rpmeta//sys/type" />
+		
+	<bdc:getHeadlines webObject="${storyObject}" var="headlines" />
+	<bdc:rwTimeSince var="timeSince" webObject="${storyObject}" />
+		
+	<p:out var="section" xvalue="$rpmeta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/Sections/Section/SectionPath" />
+	<bdc:rwSectionLinkData var="sectionData" sectionId="${section}" />
+
+	<p:out var="image_format" value="image_300x240" /> <%-- not sure if this has been created yet --%>
+	<c:choose>
+		<c:when test="${objectType eq 'EOM::MediaGallery'}">
+			<x:set var="imgLocation" select="string($rpc//multimedia-container/gallery-container/headlines/photogrp[@class='alt-web-images']/photo[@name='image_300x240']/@fileref/text())" />
+			<c:if test="${empty imgLocation}">
+				<x:set var="imgLocation" select="string($rpc//multimedia-container/gallery-container/headlines/photogrp[@class='photo-gallery-tease']/photo[@name='image_399w']/@fileref/text())" />
+			</c:if>
+			<c:if test="${empty imgLocation}">
+				<x:set var="imgLocation" select="string($rpc//multimedia-container/gallery-container/photogrp[1]/photo/@fileref/text())" />
+			</c:if>
+		</c:when>
+		<c:otherwise>
+			<x:set var="imgLocation" select="string($rpc//multimedia-container/photo-container/photogrp[@class='alt-web-images']/photo[@name='image_300x240']/@fileref/text())" />
+			<c:if test="${empty imgLocation}">
+				<x:set var="imgLocation" select="string($rpc//multimedia-container/photo-container/photogrp[@class='main-web-images']/photo/@fileref/text())" />
+			</c:if>
+		</c:otherwise>
+	</c:choose>
+	<p:url var="img" value="${imgLocation}" type="resource" format="image_150x120" baseDomain="httpCache" />
+
+	<p:out var="imageClass" value="section-recent-list__content" />
+	<c:if test="${empty imgLocation or fn:trim(imgLocation) eq ''}">
+		<p:out var="imageClass" value="${imageClass} section-recent-list__content--no-image" />
+	</c:if>
+
+
+	<li class="section-recent-list__item">
+		<c:if test="${not empty imgLocation and fn:trim(imgLocation) ne ''}">
+			<bdc:link webObject="${storyObject}" className="section-recent-list__image-link">
+				<img src="${img}" class="section-recent-list__image">
+			</bdc:link>
+		</c:if>
+		<div class="${imageClass}">
+			<h3 class="section-recent-list__headline">
+				<bdc:link webObject="${storyObject}" className="section-recent-list__headline-link">${headlines.headline}</bdc:link>
+			</h3>
+			<div class="section-recent-list__section">
+				<bdc:link value="${sectionData.path}" linkParam="p1=recent_breadcrumb_hp" className="section-recent-list__section-link">${sectionData.name}</bdc:link>
+			</div>
+			<div class="section-recent-list__content-footer">
+				<!-- Tease Share -->
+        <p:include url="$configurationURI/Framework/skins/components/story_container/tease_footer.jpt">
+        	<p:param name="viewType" value="LIST" />
+        	<p:param name="storyObject" value="${storyObject}" />
+        	<p:param name="displayTime" value="TimeSince" />
+        </p:include>
+			</div><!-- content footer -->
+		</div><!-- content -->
+	</li>
+</c:if>

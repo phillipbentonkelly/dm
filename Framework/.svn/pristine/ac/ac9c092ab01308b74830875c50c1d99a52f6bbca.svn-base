@@ -1,0 +1,364 @@
+
+<%--
+http://jira.boston.com/browse/BDC-1024
+--%>
+<p:currentObject content="story" metadata="meta" webType="WT" sectionPage="dwp" sectionId="section" channel="Boston.com" uuid="uuid" />
+
+<p:out var="commentsEnabled" xvalue="$meta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/CommentingEnabled" />
+<p:out var="commentsEnabled" value="${fn:toLowerCase(commentsEnabled)}" />
+
+<bdc:getAdLayer var="layer" webType="${WT}" />
+<bdc:inheritStoryLayer var="editorialLayerPath" section="${section}" layer="EDITORIAL_SUMMARY_ASSET_LAYER" />
+<p:out var="editorialLayerPath" value="${editorialLayerPath}" scope="request" />
+
+<!-- 
+	KEVIN HELLO
+	Section: ${section}
+	Ad Layer Name: ${layer}
+	Editorial Layer : ${editorialLayerPath}
+ -->
+
+<%-- Gigya --%>
+<p:url var="gigyaCanonical" webObject="${currentObject}" public="true" />
+<p:out var="gigyaCanonical" value="${gigyaCanonical}" scope="request" />
+<p:out var="gigyaShortUrl" xvalue="$meta//ObjectMetadata/OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/ShortUrl" scope="request"/>
+<p:out var="gigyaHeadline" xvalue="$story//doc/story/headlines/headline/p" scope="request" />
+<p:out var="gigyaThumbType" value="image" scope="request" />
+
+<%-- Article stuff --%>
+<p:out var="headline" xvalue="$story//headlines/headline/p" />
+<p:out var="byname" xvalue="$story//text/byline/byname/p" scope="request" />
+<p:out var="bysource" xvalue="$story//text/byline/bysource/p" scope="request" />
+
+<%-- publication dates --%>
+<x:choose>
+	<x:when select="$meta//LastPrintOutput/PrintPublicationDate">
+		<p:out var="assetPrintPub" xvalue="$meta//LastPrintOutput/PrintPublicationDate" scope="request" />
+	</x:when>
+	<x:when select="$meta//ObjectMetadata/OnlineProducts/OnlineProduct[child::ProductName = 'Boston.com']/FirstPublicationDate">
+		<p:out var="assetPrintPub" xvalue="$meta//ObjectMetadata/OnlineProducts/OnlineProduct[child::ProductName = 'Boston.com']/FirstPublicationDate" scope="request" />
+	</x:when>
+	<x:otherwise>
+		<p:out var="assetPrintPub" xvalue="$meta//sys/timeModified" format="seconds|EN:MMMM d, yyyy h:mm a" scope="request" timeZone="America/New_York"/>
+	</x:otherwise>
+</x:choose>
+<p:out var="assetPrintPub" value="${fn:trim(assetPrintPub)}" />
+<c:choose>
+	<c:when test="${empty assetLastPub}">
+		<p:out var="assetLastPub" format="seconds|EN:MMMM d, yyyy" xvalue="$meta//sys/timeModified" scope="request" timeZone="America/New_York"/>
+	</c:when>
+	<c:otherwise>
+		<p:out var="assetLastPub" value="${assetLastPub}" scope="request" format="eomdate:MMMM d, yyyy" timeZone="America/New_York"/>
+	</c:otherwise>
+</c:choose>
+
+<%-- Tagline --%>
+<p:out var="tagline" xvalue="$story//doc/story/text/tagline/p" />
+
+<%-- Media information --%>
+<bdc:getTeaseType webObject="${currentObject}" var="firstMMC" />
+
+
+<bdc:inheritZoneGlobal var="inheritancePath" section="${section}" zoneName="navigation" />
+<!-- kevins in : ${inheritancePath} -->
+<p:include pageZoneName="navigation" inherits="${inheritancePath}">
+	<p:param name="dwp" value="${inheritancePath}" />
+	<p:param name="linkedType" value="${WT}" />
+</p:include>
+
+<c:if test="${firstMMC eq 'photo-container'}">
+	<p:out var="mainImage" xvalue="$story//doc/story/multimedia-container/photo-container/photogrp[@class='main-web-images']/photo/@fileref" />
+	<!-- mainImage = ${mainImage} -->
+	<c:if test="${not empty mainImage and fn:trim(mainImage) != ''}">
+		<p:out var="imgID" value="${fn:substringAfter(mainImage, '?uuid=')}" />
+		<!-- imgID = ${imgID} -->
+		<p:getObject var="imageObj" uuid="${imgID}" onError="ignore" />
+		<c:if test="${not empty imageObj}">
+			<p:object webObject="${imageObj}" metadata="imageMeta" />
+			<p:out var="orientation" xvalue="$imageMeta//ObjectMetadata/Reference/Orientation" />
+			<c:choose>
+				<c:when test="${orientation eq 'Landscape'}">
+					<p:out var="imagePlacement" value="horizontal" />
+					<p:out var="storyImgFormat" value="image_700w" />
+				</c:when>
+				<c:otherwise>
+					<p:out var="imagePlacement" value="vertical" />
+					<p:out var="storyImgFormat" value="image_360w" />
+				</c:otherwise>
+			</c:choose>
+			
+			<p:url var="shareImage" webObject="${imageObj}" format="${storyImgFormat}" type="resource" baseDomain="httpCache" />
+			<p:out var="gigyaThumbnail" value="${shareImage}" scope="request" />
+		</c:if>
+	</c:if>
+</c:if>
+<c:if test="${empty gigyaThumbnail or fn:trim(gigyaThumbnail) eq ''}">
+	<p:out var="gigyaThumbnail" value="http://c.o0bc.com/rw$configurationURI/Framework/img/bcom_logo_with_name.png" />
+</c:if>
+
+<p:out var="globeCanonical" xvalue="$meta//ObjectMetadata/OnlineProdicts/BostonGlobeUrls/CanonicalUrl" />
+<p:out var="globeUrlEncoded" value="${globeCanonical}" escape="url" />
+<p:out var="stubStatus" xvalue="$meta//ObjectMetadata/OnlineProducts/StubStatus" />
+<!-- stubStatus = ${stubStatus} -->
+
+<%--
+
+There are four non-enhanced article specific elements on this page, each noted with a Methode comment
+
+--%>
+
+		<!-- Leaderboard Ad Module -->
+		<section class="leaderboard-mod nav-leaderboard-mod">
+			<div class="ad-leaderboard" id="ad_lead1">
+				<script type="text/javascript">
+					googletag.cmd.push(function() { 
+						googletag.display("ad_lead1"); 
+					}); 
+				</script>
+			</div>
+		</section> <!-- /leaderboard-mod -->
+		<div class="story-mod">
+		
+			<p:include pageZoneName="top_of_page" inherits="${editorialLayerPath}">
+				<p:param name="dwp" value="${dwp}" />
+			</p:include>
+		
+			<div class="story-width article-with-art">
+		
+				<header class="story-hdr article-hdr">
+					<div class="story-overline-mod">
+						<%
+						String source = (String)pageContext.getAttribute("section");
+						int count = org.apache.commons.lang.StringUtils.countMatches(source, "/");
+						if (count > 1) {
+							int index = source.indexOf('/');
+							int indexEnd = source.length();
+							int indexStart = index + 1;
+							String id = source.substring(indexStart,indexEnd);
+							int indexRoundTwo = id.indexOf('/');
+							int indexEndRoundTwo = indexRoundTwo + 1;
+							String finalParentSection = source.substring(0,indexEndRoundTwo);
+							pageContext.setAttribute("section", finalParentSection);
+							} else {
+								pageContext.setAttribute("section", source);
+							}
+						%>
+						<bdc:sectionLinkData var="secData" sectionId="${section}" />
+						<bdc:link value="${secData.path}" className="story-cat overline">${secData.name}</bdc:link>
+					</div> <!-- /story-overline-mod -->
+			
+					<p:include pageZoneName="above_story" inherits="${editorialLayerPath}">
+						<p:param name="dwp" value="${dwp}" />
+					</p:include>
+			
+					<h1 class="story-h1">${headline}</h1>
+				</header> <!-- /article-hdr -->
+			
+				<article class="article-bd">
+			
+					<c:choose>
+						<c:when test="${firstMMC eq 'photo-container'}">
+							<c:if test="${not empty mainImage and imagePlacement eq 'horizontal'}">
+								<%-- We need to take into account scenarios when there is no main image --%>
+								<p:inline url="$configurationURI/Framework/skins/leaf/story/story_image.jpt" />
+							</c:if>
+						</c:when>
+						<c:when test="${firstMMC eq 'video-container'}">
+							<p:inline url="$configurationURI/Framework/skins/leaf/story/story_video.jpt" />
+						</c:when>
+					</c:choose>
+			
+					<p:out var="bylineClasses" value="byline-pair-mod byline-stacked" />
+					<c:if test="${empty mainImage or fn:trim(mainImage) eq ''}">
+						<p:out var="bylineClasses" value="byline-pair-mod byline-horiz sharespace" />
+					</c:if>
+			
+					<!-- Story Byline -->
+					<div class="${bylineClasses}">
+						<aside class="l-story-byline">
+							<p:inline url="$configurationURI/Framework/skins/leaf/story/story_byline.jpt" />
+			
+							<!-- Story Share Tools: Header -->
+						    <section class="story-tools-mod story-tools-hdr">
+						        <ul class="tools-horiz story-tools-horiz">
+						            <li class="tools-item tools-share">
+										<%-- share_tools_story_header --%>
+										<p:out var="gigyaThumb" value="${gigyaThumbnail}" scope="request" />
+										<p:out var="templateName" value="share_tools_story_header" scope="request" />
+										<p:inline url="$configurationURI/Framework/skins/leaf/story/share_controller.jpt" />
+									</li>
+									<c:if test="${commentsEnabled eq 'true'}">
+							            <li class="tools-item tools-comment">
+											<a href="#comments" class="js-goto-open-comments omniclick" data-omniclick="Comment - Top Nav">
+												<i class="comment-icon"></i> 
+												<i class="tools-txt">Comment</i>
+											</a>
+										</li>
+									</c:if>
+						        </ul>
+						        
+						        <%-- from provider globe image --%>
+						        <div class="provider provider-globe">
+			                      <a href="http://digitalaccess.bostonglobe.com/da/32/?eglobe_rc=WW612390&p1=Bcom_Free_Article&pathUrl=${globeUrlEncoded}">
+			                      <img src="/img/from_provider_globe.gif"/>
+			                      </a>
+			                    </div>
+			
+									        
+						    </section>  <!-- /story-tools-hdr -->
+						</aside> <!-- l-story-byline -->				
+						<!-- Story Banner Ad -->
+						<%--
+						<div class="l-ad-story-banner-1 ">
+							<p:include pageZoneName="ad_topright" inherits="${editorialLayerPath}" />
+						</div> <!-- l-story-secondary -->
+						--%>
+					</div><!-- // byline-pair-mod byline-stacked -->
+			<%--
+					<div class="story-share-mod">
+						<!-- Story Share Tools: Sidecar -->
+						<div class="story-tools-mod story-tools-sidecar">
+							<ul class="tools-btns">
+								<li class="tools-item tools-share">
+									<p:out var="gigyaThumb" value="${gigyaThumbnail}" scope="request" />
+									<p:out var="templateName" value="share_tools_story_sidecar" scope="request" />
+									<p:inline url="$configurationURI/Framework/skins/leaf/story/share_controller.jpt" />
+								</li>
+								<c:if test="${commentsEnabled eq 'true'}">
+									<li class="tools-item tools-comment">
+										<a class="tools-link tools-link-comment js-goto-open-comments omniclick" href="#comments" data-omniclick="Comment - Side Nav">
+											<i class="comment-icon"></i>
+											<i class="sc-comment-count"></i>
+											<i class="tools-txt">Comment</i>
+										</a>
+									</li>
+								</c:if>
+							</ul> <!-- /share-sidecar -->
+						</div> <!-- /story-tools-sidecar-->
+					</div>
+						--%>
+					<!-- Story Text -->
+					<div class="l-story-txt-share article-txt-top no-flow">
+						<%-- Horizontal images only --%>
+						<c:if test="${not empty mainImage and imagePlacement eq 'vertical'}">
+							<p:inline url="$configurationURI/Framework/skins/leaf/story/story_image.jpt" />
+						</c:if>
+					
+						<%-- Top of article globe-teaser line --%>
+						<h3 class="globe-teaser">This is a summary. To read the whole story subscribe to <a href="http://bostonglobe.com">BostonGlobe.com</a></h3>
+				
+						<%-- Review header - Will only show the review title/stars if this has a movie or restaurant review, otherwise blank --%>
+						<p:include url="$configurationURI/Framework/skins/leaf/story/includes/review_header.jpt" context="${uuid}" />
+						
+						<!-- Story Share Tools: Sidecar -->
+								<div class="story-tools-mod story-tools-sidecar">
+									<ul class="tools-btns">
+										<li class="tools-item tools-share">
+											<a class="popup-trigger tools-link tools-link-share" href="#mfp-share"
+												data-canonical="http://boston.com/some/long/url/for/fun"
+												data-shorturl="http://fa.ke/replace" data-headline="Your Brain on Yoga"
+												data-thumbnail="../photos/yoga.jpg" data-thumb_type="image">
+												<i class="share-icon"></i>
+												<i class="tools-txt">Share</i>
+											</a>
+										</li>
+										<c:if test="${commentsEnabled eq 'true'}">
+										<li class="tools-item tools-comment">
+											<a class="tools-link tools-link-comment js-goto-open-comments omniclick" href="#comments" data-omniclick="Comment - Side Nav">
+												<i class="comment-icon"></i>
+												<i class="sc-comment-count total-comment-count"></i>
+												<i class="tools-txt">Comment</i>
+											</a>
+										</li>
+										</c:if>
+									</ul> <!-- /share-sidecar -->
+								</div> <!-- /story-tools-sidecar -->
+						
+						<c:choose>
+							<c:when test="${stubStatus == 3}">
+								<%-- Sexy stub (uses content field) --%> <!-- using content/p -->
+								<p:out xvalue="$story//text/content" xslt="$configurationURI/Framework/xslt/bdc_summary_default.xslt">
+									<p:param name="objectPath" value="${currentObject.path}" />
+								</p:out>
+							</c:when>
+							<c:otherwise>
+								<%-- Basic stub --%>
+								<p:out xvalue="$story//doc/story/summary" xslt="$configurationURI/Framework/xslt/bdc_summary_default.xslt">
+									<p:param name="objectPath" value="${currentObject.path}" />
+								</p:out>
+							</c:otherwise>
+						</c:choose>			
+							
+						<%-- Bottom of article globe-teaser line --%>
+						<p class="article-p">
+							<a href="${globeCanonical}" class="globe-full-story-link"> Full story for BostonGlobe.com subscribers.</a>
+						</p>
+
+						<%-- Review footer --%>
+						<p:include url="$configurationURI/Framework/skins/leaf/story/includes/review_controller.jpt" context="${uuid}" />
+				
+					<c:if test="${fn:trim(gigyaThumbnail) eq ''}">
+						<p:out var="gigyaThumbnail" value="http://c.o0bc.com/rw$configurationURI/Framework/img/bcom_logo_with_name.png" />
+					</c:if>
+					<c:if test="${fn:startsWith(gigyaThumbnail, '//')}">
+						<p:out var="gigyaThumbnail" value="http:${gigyaThumbnail}" />
+					</c:if>
+					<div class="story-social-btns l-story-txt-share">
+						<button class="social-btn social-btn-fbook"><i class="icon"></i>Share</button>
+						<button class="social-btn social-btn-twitter"><i class="icon"></i>Tweet</button>
+					</div> 
+
+					<%-- The globe call-to-action --%>
+
+		            <!-- non-enhanced summary call to action -->
+		            
+		            <div class="globe-non-enhanced-cta">
+		              <figure>
+		                <img src="/img/bglobe-stub-center.png">
+		              </figure>
+		              <p>Get the full story with unlimited access to BostonGlobe.com.</p>
+		              <p>Just 99 cents for four weeks.</p>
+		              <a href="http://digitalaccess.bostonglobe.com/da/32/?eglobe_rc=WW612390&p1=Bcom_Free_Article&pathUrl=${globeUrlEncoded}">
+		                <button>
+		                  Get Access Now
+		                </button>
+		              </a>
+		            </div>
+
+					<!-- Story Share Tools: Footer -->
+					<footer class="story-tools-mod story-tools-ftr">
+						<ul class="tools-horiz story-tools-horiz">
+							<li class="tools-item tools-share">
+								<%-- share_tools_story_footer --%>
+								<p:out var="gigyaThumb" value="${gigyaThumbnail}" scope="request" />
+								<p:out var="templateName" value="share_tools_story_footer" scope="request" />
+								<p:inline url="$configurationURI/Framework/skins/leaf/story/share_controller.jpt" />
+							</li>
+							
+							<p:ifZone name="below_story" empty="false" inherits="${editorialLayerPath}">
+								<li>
+									<p:include pageZoneName="below_story" inherits="${editorialLayerPath}">
+										<p:param name="dwp" value="${dwp}"/>
+									</p:include>
+								</li>
+							</p:ifZone>
+					
+							<c:if test="${commentsEnabled eq 'true'}">
+								<li class="tools-item tools-comment js-toggle-comments">
+									<a class="tools-link tools-link-comment-ftr omniclick" href="#comments" data-omniclick="Comment - Mobile Footer">
+										<i class="comment-icon"></i> 
+										<i class="tools-txt">Comment</i>
+									</a>
+								</li>
+							</c:if>
+						</ul>
+					</footer>  <!-- /story-tools-ftr -->
+			
+				</article> <!-- /article-bd -->
+			</div> <!-- /story-width -->
+			<%-- Comments --%>
+			<c:if test="${commentsEnabled eq 'true'}">
+				<p:inline url="$configurationURI/Framework/skins/components/ugc/comments/comments.jpt" />
+			</c:if>
+		</div><!-- //story-mod -->
+	

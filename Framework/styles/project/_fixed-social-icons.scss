@@ -1,0 +1,212 @@
+// Fixed social media buttons
+
+.nav-button-mod-load.nav-button-mod {
+    .nav-sm-button {
+        background-color: $red;
+        // opacity: 0;
+        @include animation-fill-mode(forwards);
+    }
+    .nav-sm-button-1 {
+        @include animation(appear-late 2.9s);
+    }
+    .nav-sm-button-2 {
+        @include animation(appear-late 3s);
+    }
+    .nav-sm-button-3 {
+        @include animation(appear-late 3.1s);
+    }
+    .nav-sm-button-4 {
+        @include animation(appear-late 3.2s);
+    }
+}
+
+.nav-button-mod {
+    z-index: 99;
+    @include user-select;
+    pointer-events: auto;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding: 10px;
+    background-color: rgba(255,255,255,0);
+    -webkit-backface-visibility: hidden;
+    @include mq(1170px) {
+        padding: 20px;
+    }
+    @include mq(1024px, 1130px){
+        left: auto;
+        right: 0;
+    }
+}
+
+// @mixin hover-action($class:&, ) {
+
+// }
+
+.nav-sm-button {
+    @include input-default;
+    position: relative;
+    display: block;
+    margin-bottom: 10px;
+    margin-left: -40px;
+    overflow: hidden;
+    opacity: 0;
+    border-radius: 18px;
+    background-color: #ccc;
+    z-index: 1; 
+    @include trans;
+    @include size(30px);
+    @include mq(768px) {
+        opacity: 1;
+        margin-left: 0;
+    }
+    &:last-child {
+        margin-bottom: 0;
+    }
+    .touch &.active,
+    .no-touch &:hover {
+        background-color: $red;
+        .nav-sm-text {
+            opacity: 1;
+        }
+    }
+    @include mq(1024px, 1130px){
+        float: right;
+        clear: both;
+    }
+}
+
+.nav-sm-button-1 {
+    .touch &.active,
+    .no-touch &:hover {
+        width: 75px;
+    }
+}
+
+.nav-sm-button-2 {
+    .touch &.active,
+    .no-touch &:hover {
+        width: 70px;
+    }
+}
+
+.nav-sm-button-3 {
+    .touch &.active,
+    .no-touch &:hover {
+        width: 98px;
+    }
+}
+
+.nav-sm-button-4 {
+    cursor: pointer;
+    .no-touch &:hover {
+        width: 95px; //added 1px to allow instagram to appear in ff and ie
+    }
+    .touch &.active {
+        width: 145px;
+        padding-left: 32px;
+        @include mq(1024px, 1130px){
+            padding-left: 0;
+            padding-right: 32px;
+        }
+    }
+}
+
+.nav-sm-text {
+    @include trans;
+    display: block;
+    margin-top: -24px;
+    text-transform: uppercase;
+    color: white;
+    @include sans(em(12)/155%, 700, normal, 1px);
+    opacity: 0;
+    padding: 0 30px;
+}
+
+.nav-plus-icon {
+    @include round-rect(30px);
+    display: block;
+    @include trans;
+    @include absolute(0 n 0 0);
+    background-image: url('/img/social-cir-nav-sprite.png');
+    background-position: 0px -62px;
+    .no-touch .nav-sm-button:hover & {
+        display: none;
+    }
+    .touch .nav-sm-button.active & {
+        pointer-events: none;
+        display: inline-block;
+        @include rotate(45deg);
+    }
+    @include mq(1024px, 1130px){
+        @include absolute(0 0 0 auto);
+    }
+}
+
+.nav-sm-icon-hidden {
+    opacity: 0;
+//    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=00)";
+    @include trans;
+    text-indent: -9999pc;
+    display: inline-block;
+    @include round-rect(30px);
+    cursor: pointer; 
+    .no-touch .nav-sm-button:hover & {
+        opacity: 1;
+//        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    }
+    .touch .nav-sm-button.active & {
+        opacity: 1;
+//        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    }
+    &:hover {
+        background-color: $red-drk;
+    }
+    .nav-button-mod-load &:hover{
+        background-color: $red-drk;
+    }
+    .touch & {
+        margin-left: 5px;
+        margin-right: 0px;
+        pointer-events: auto;
+    }
+    @include mq(1024px, 1130px){
+        .touch & {
+            margin-right: 5px;
+            margin-left: 0;
+        } 
+    }
+}
+
+.nav-sm-icon-hidden-item {
+    display: inline-block;
+}
+
+.nav-sm-icon {
+    @include size(30px);
+    display: block;
+    cursor: pointer; 
+    background-image: url('/img/social-cir-nav-sprite.png');
+}
+
+.nav-help-icon {
+    background-position: 0px -186px;
+}
+.nav-facebook-icon {
+    background-position: 0px -31px;
+}
+.nav-twitter-icon {
+    background-position: 0px 0px;
+}
+.nav-instagram-icon {
+    background-image: url('/img/social-cir-nav-sprite.png');
+    background-position: 0px -155px;
+}
+.nav-google-icon {
+    background-image: url('/img/social-cir-nav-sprite.png');
+    background-position: 0px -93px;
+}
+.nav-pin-icon {
+    background-image: url('/img/social-cir-nav-sprite.png');
+    background-position: 0px -124px;
+}

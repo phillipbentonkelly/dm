@@ -1,0 +1,53 @@
+<article class="feat-tz{{#is_taboola}} taboola-feat-tz{{/is_taboola}}{{#has_sponsorship}} sponsor-feat-tz {{/has_sponsorship}}{{^has_image}} feat-tz-no-art{{/has_image}}">
+	{{#has_image}}
+	<a class="feat-tz-img-mod {{#is_image}}image-preview{{/is_image}} art-bd" href="{{#is_image}}{{image.full}}{{/is_image}} {{^is_image}}article.html#{{slug}}{{/is_image}}">
+		<img class="feat-tz-img" src="{{image.thumb_feat}}" />
+		{{#is_gallery}}
+		<div class="feat-tz-icon tz-icon tz-gallery-icon"></div>
+		{{/is_gallery}}
+		{{#is_video}}
+		<div class="feat-tz-icon tz-icon tz-video-icon"></div>
+		{{/is_video}}
+		{{#is_image}}
+		<div class="feat-tz-icon tz-icon tz-image-icon"></div>
+		{{/is_image}}
+		{{#is_weather}}
+		<h3 class="feat-tz-temp">{{weather.temp}}<h3>
+		<h4 class="feat-tz-forcast">{{weather.report}}</h4>
+		{{/is_weather}}
+		</a> <!-- feat-tz -->
+		{{/has_image}}
+	<div class="feat-tz-bd txt-bd">
+		{{^has_image}}<div class="feat-tz-no-art-txt-mod">{{/has_image}}
+		<h4 class="feat-tz-h tz-title"><a href="article.html#{{slug}}">{{{head}}}</a></h4>
+		{{^has_image}}
+		<p class="tz-txt feat-tz-txt">{{{subhead}}}</p>
+		{{/has_image}}
+		{{#sponsor}}
+		<article class="tz-sponsor-pair feat-tz-sponsor-pair">
+				<img class="tz-sponsor-img " src="{{sponsor.logo}}"/>
+			<div class="tz-sponsor-txt-bd feat-tz-sponsor-txt-bd">
+				<p class="tz-sponsor-message">{{sponsor.message}}</p>
+				<a href="#URL:sponsor" class="tz-sponsor-name">{{sponsor.name}}</a>
+			</div>
+		</article>
+		{{/sponsor}}
+		{{^has_image}}</div>{{/has_image}}
+		<ul class="tz-meta feat-tz-meta">
+			<li class="tz-meta-item tz-category">
+				<a href="#{{section.0}}">{{category}}</a>
+			</li>
+			<li class="tz-meta-item tz-share">
+				<a class="tz-share-link popup-trigger" href="#mfp-share">
+					<i class="tz-share-icon tz-meta-icon"></i>
+					<i class="tz-share tz-meta-txt">Share</i>
+				</a>
+			</li>
+			{{#is_taboola}}
+			<li class="tz-meta-item">
+				<a href="#URL:taboola-icon" class="tz-taboola-icon"></a>
+			</li><!-- /.meta-share-list -->
+			{{/is_taboola}}
+		</ul> <!-- /.tz-meta -->
+	</div> <!-- /feat-tz-bd -->
+</article> <!-- /feat-tz -->

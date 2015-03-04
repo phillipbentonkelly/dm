@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE EOMSearch>
+<EOMSearch xmlns="http://EidosMedia.com/EOM/SearchEngine" xmlns:se="http://EidosMedia.com/EOM/SearchEngine" xmlns:q="http://EidosMedia.com/EOM/SearchEngine/query" xmlns:qm="http://EidosMedia.com/EOM/SearchEngine/query/macro" xmlns:qa="http://EidosMedia.com/EOM/SearchEngine/query/alias" xmlns:qui="http://EidosMedia.com/EOM/SearchEngine/query/UI">
+	<q:Query type="INDEX">
+		<q:Properties>
+			<q:MaxResultItems value="10000"/>
+			<q:Index name="boston@meth01_eomse1"/>
+			<q:Sort on="ObjectInfo/Created" type="NDESCENDING"/>
+			<q:Sort on="ObjectInfo/Creator" type="ASCENDING"/>
+    	</q:Properties>
+    	<q:Boolean>
+      		<se:Attributes xmlns="">
+        		<ObjectMetadata>
+					<Categorization> 
+						<SectionType>placester</SectionType>
+					</Categorization>
+    	    		<OnlineProducts>
+						<OnlineProduct>
+							<ProductName>Boston.com</ProductName>
+							<WebType>dwp_placester_category</WebType>
+						</OnlineProduct>
+					</OnlineProducts>
+				</ObjectMetadata>
+			</se:Attributes>
+		</q:Boolean>
+	</q:Query>
+</EOMSearch>

@@ -1,0 +1,288 @@
+// Colors /////////////////////////////////////////////////////////////////////
+
+// Created and maintained by Eric Bailey, <eric.bailey@globe.com>
+// https://github.com/BostonGlobe/swatch-libraries
+
+
+// FOR: Managing Boston.com color
+// WHY: Centralized color variables with controlled stops aid in uniformity,
+//      maintainability, making later component color decisions easier.
+// NOTE: Avoid semantic color names. Colors variables named after the color
+//       they represent are far easier to remember, won't be affected by
+//       future functionality needs, etc.
+// SEE: http://erskinedesign.com/blog/friendlier-colour-names-sass-maps/
+// USE: `background-color: color(blue, x-dark);`
+
+
+
+// Variables ==================================================================
+
+// Declare variables for function, classses. These are the main site colors.
+// [1] Black and white are declared alongside other values so they may be
+//     targeted andh updated like every other color declaration. Assume nothing.
+$black:     #000000;    // [1]
+$white:     #ffffff;    // [1]
+$red:       #9b1518;
+$blue:      #2494e3;
+$yellow:    #ffffdf;
+$orange:    #f2a444;
+$cream:     #ffffdf;
+$gray:      #999999;
+
+// Social ---------------------------------------------------------------------
+// List of popular sharing services taken from: http://www.sharethis.com/publishers/services-directory#sthash.aywjCCIS.YNZbkRnP.dpbs
+$delicious:     #3399ff;
+$digg:          #000000;
+$email:         #999999;
+$facebook:      #3b579d;
+$googleplus:    #dd4b39;
+$linkedin:      #0077b5;
+$pinboard:      #1341de;
+$pinterest:     #cb2028;
+$reddit:        #cee3f8;
+$stumbleupon:   #ec4b24;
+$tumblr:        #34465d;
+$twitter:       #55acee;
+$yahoo:         #500095;
+
+
+
+// Functions ==================================================================
+
+@function color($palette, $tone: 'base') {
+    @return map-get(map-get($palette-main, $palette), $tone);
+}
+
+// color-social -------------------------------------------------------------
+@function color-social($palette, $tone: 'base') {
+    @return map-get(map-get($palette-social, $palette), $tone);
+}
+
+
+// Maps =======================================================================
+
+// Robots are bad at picking colors, so create stop values manually via testing
+// to see what works. Default to using +10% lighten/darken stop increments
+// otherwise.
+
+$palette-main: (
+    black: (
+        base:       $black
+    ),
+    white: (
+        base:       $white
+    ),
+    red: (
+        base:       $red,
+        light:      lighten($red, 10%),
+        dark:       darken($red, 10%),
+        mid-light:  lighten($red, 20%),
+        mid-dark:   darken($red, 20%),
+        x-light:    lighten($red, 30%),
+        xx-light:   lighten($red, 40%),
+        x-dark:     darken($red, 30%),
+        xx-dark:    darken($red, 40%)
+    ),
+    blue: (
+        base:       $blue,
+        light:      lighten($blue, 10%),
+        dark:       darken($blue, 10%),
+        mid-light:  lighten($blue, 20%),
+        mid-dark:   darken($blue, 20%),
+        x-light:    lighten($blue, 30%),
+        xx-light:   lighten($blue, 40%),
+        x-dark:     darken($blue, 30%),
+        xx-dark:    darken($blue, 40%)
+    ),
+    yellow: (
+        base:       $yellow,
+        light:      lighten($yellow, 10%),
+        dark:       darken($yellow, 10%),
+        mid-light:  lighten($yellow, 20%),
+        mid-dark:   darken($yellow, 20%),
+        x-light:    lighten($yellow, 30%),
+        xx-light:   lighten($yellow, 40%),
+        x-dark:     darken($yellow, 30%),
+        xx-dark:    darken($yellow, 40%)
+    ),
+    orange: (
+        base:       $orange,
+        light:      lighten($orange, 10%),
+        dark:       darken($orange, 10%),
+        mid-light:  lighten($orange, 20%),
+        mid-dark:   darken($orange, 20%),
+        x-light:    lighten($orange, 30%),
+        xx-light:   lighten($orange, 40%),
+        x-dark:     darken($orange, 30%),
+        xx-dark:    darken($orange, 40%)
+    ),
+    cream: (
+        base:       $cream,
+        light:      lighten($cream, 10%),
+        dark:       darken($cream, 10%),
+        mid-light:  lighten($cream, 20%),
+        mid-dark:   darken($cream, 20%),
+        x-light:    lighten($cream, 30%),
+        xx-light:   lighten($cream, 40%),
+        x-dark:     darken($cream, 30%),
+        xx-dark:    darken($cream, 40%)
+    ),
+    gray: (
+        base:       $gray,
+        light:      #bbbbbb,
+        dark:       #444444,
+        mid-light:  #d4d4d4,
+        mid-dark:   #383838,
+        x-light:    #eeeeee,
+        xx-light:   #f9f9f9,
+        x-dark:     #2a2a2a,
+        xx-dark:    #222222
+    )
+);
+
+// palette-social -------------------------------------------------------------
+$palette-social: (
+    delicious: (
+        base:       $delicious,
+        light:      lighten($delicious, 10%),
+        dark:       darken($delicious, 20%),
+        mid-light:  lighten($delicious, 20%),
+        mid-dark:   darken($delicious, 20%),
+        x-light:    lighten($delicious, 30%),
+        xx-light:   lighten($delicious, 40%),
+        x-dark:     darken($delicious, 30%),
+        xx-dark:    darken($delicious, 40%)
+    ),
+    digg: (
+        base:       $digg,
+        light:      lighten($digg, 10%),
+        dark:       darken($digg, 20%),
+        mid-light:  lighten($digg, 20%),
+        mid-dark:   darken($digg, 20%),
+        x-light:    lighten($digg, 30%),
+        xx-light:   lighten($digg, 40%),
+        x-dark:     darken($digg, 30%),
+        xx-dark:    darken($digg, 40%)
+    ),
+    email: (
+        base:       $email,
+        light:      lighten($email, 10%),
+        dark:       darken($email, 20%),
+        mid-light:  lighten($email, 20%),
+        mid-dark:   darken($email, 20%),
+        x-light:    lighten($email, 30%),
+        xx-light:   lighten($email, 40%),
+        x-dark:     darken($email, 30%),
+        xx-dark:    darken($email, 40%)
+    ),
+    facebook: (
+        base:       $facebook,
+        light:      lighten($facebook, 10%),
+        dark:       darken($facebook, 20%),
+        mid-light:  lighten($facebook, 20%),
+        mid-dark:   darken($facebook, 20%),
+        x-light:    lighten($facebook, 30%),
+        xx-light:   lighten($facebook, 40%),
+        x-dark:     darken($facebook, 30%),
+        xx-dark:    darken($facebook, 40%)
+    ),
+    googleplus: (
+        base:       $googleplus,
+        light:      lighten($googleplus, 10%),
+        dark:       darken($googleplus, 20%),
+        mid-light:  lighten($googleplus, 20%),
+        mid-dark:   darken($googleplus, 20%),
+        x-light:    lighten($googleplus, 30%),
+        xx-light:   lighten($googleplus, 40%),
+        x-dark:     darken($googleplus, 30%),
+        xx-dark:    darken($googleplus, 40%)
+    ),
+    linkedin: (
+        base:       $linkedin,
+        light:      lighten($linkedin, 10%),
+        dark:       darken($linkedin, 20%),
+        mid-light:  lighten($linkedin, 20%),
+        mid-dark:   darken($linkedin, 20%),
+        x-light:    lighten($linkedin, 30%),
+        xx-light:   lighten($linkedin, 40%),
+        x-dark:     darken($linkedin, 30%),
+        xx-dark:    darken($linkedin, 40%)
+    ),
+    pinboard: (
+        base:       $pinboard,
+        light:      lighten($pinboard, 10%),
+        dark:       darken($pinboard, 20%),
+        mid-light:  lighten($pinboard, 20%),
+        mid-dark:   darken($pinboard, 20%),
+        x-light:    lighten($pinboard, 30%),
+        xx-light:   lighten($pinboard, 40%),
+        x-dark:     darken($pinboard, 30%),
+        xx-dark:    darken($pinboard, 40%)
+    ),
+    pinterest: (
+        base:       $pinterest,
+        light:      lighten($pinterest, 10%),
+        dark:       darken($pinterest, 20%),
+        mid-light:  lighten($pinterest, 20%),
+        mid-dark:   darken($pinterest, 20%),
+        x-light:    lighten($pinterest, 30%),
+        xx-light:   lighten($pinterest, 40%),
+        x-dark:     darken($pinterest, 30%),
+        xx-dark:    darken($pinterest, 40%)
+    ),
+    reddit: (
+        base:       $reddit,
+        light:      lighten($reddit, 10%),
+        dark:       darken($reddit, 20%),
+        mid-light:  lighten($reddit, 20%),
+        mid-dark:   darken($reddit, 20%),
+        x-light:    lighten($reddit, 30%),
+        xx-light:   lighten($reddit, 40%),
+        x-dark:     darken($reddit, 30%),
+        xx-dark:    darken($reddit, 40%)
+    ),
+    stumbleupon: (
+        base:       $stumbleupon,
+        light:      lighten($stumbleupon, 10%),
+        dark:       darken($stumbleupon, 20%),
+        mid-light:  lighten($stumbleupon, 20%),
+        mid-dark:   darken($stumbleupon, 20%),
+        x-light:    lighten($stumbleupon, 30%),
+        xx-light:   lighten($stumbleupon, 40%),
+        x-dark:     darken($stumbleupon, 30%),
+        xx-dark:    darken($stumbleupon, 40%)
+    ),
+    tumblr: (
+        base:       $tumblr,
+        light:      lighten($tumblr, 10%),
+        dark:       darken($tumblr, 20%),
+        mid-light:  lighten($tumblr, 20%),
+        mid-dark:   darken($tumblr, 20%),
+        x-light:    lighten($tumblr, 30%),
+        xx-light:   lighten($tumblr, 40%),
+        x-dark:     darken($tumblr, 30%),
+        xx-dark:    darken($tumblr, 40%)
+    ),
+    twitter: (
+        base:       $twitter,
+        light:      lighten($twitter, 10%),
+        dark:       darken($twitter, 20%),
+        mid-light:  lighten($twitter, 20%),
+        mid-dark:   darken($twitter, 20%),
+        x-light:    lighten($twitter, 30%),
+        xx-light:   lighten($twitter, 40%),
+        x-dark:     darken($twitter, 30%),
+        xx-dark:    darken($twitter, 40%)
+    ),
+    yahoo: (
+        base:       $yahoo,
+        light:      lighten($yahoo, 10%),
+        dark:       darken($yahoo, 20%),
+        mid-light:  lighten($yahoo, 20%),
+        mid-dark:   darken($yahoo, 20%),
+        x-light:    lighten($yahoo, 30%),
+        xx-light:   lighten($yahoo, 40%),
+        x-dark:     darken($yahoo, 30%),
+        xx-dark:    darken($yahoo, 40%)
+    )
+);

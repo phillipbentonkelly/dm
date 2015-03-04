@@ -1,0 +1,54 @@
+<%--
+CDEV-52 - bdc blog rss feeds
+--%>
+<p:out var="title" value="${cacheScope.title}" />
+
+<p:executeQuery var="q" >
+	<p:queryBody> 
+		<!DOCTYPE EOMSearch>
+		<EOMSearch xmlns="http://EidosMedia.com/EOM/SearchEngine" 
+				xmlns:se="http://EidosMedia.com/EOM/SearchEngine" 
+				xmlns:q="http://EidosMedia.com/EOM/SearchEngine/query" 
+				xmlns:qm="http://EidosMedia.com/EOM/SearchEngine/query/macro" 
+				xmlns:qa="http://EidosMedia.com/EOM/SearchEngine/query/alias" 
+				xmlns:qui="http://EidosMedia.com/EOM/SearchEngine/query/UI">
+		  <q:Query type="INDEX">
+		    <q:Properties>
+		      <q:Index name="boston@meth01_eomse1"/>
+		      <q:Index name="wires@meth01_eomse2" />
+		      <q:Sort on="ObjectInfo/Created" type="NDESCENDING"/>
+		      <q:Sort on="ObjectInfo/Creator" type="ASCENDING"/>
+		    </q:Properties>
+		    <q:Boolean>
+		      <ObjectInfo>
+		        <q:OR>
+		          <type>EOM::CompoundStory</type>
+		          <type>EOM::MediaGallery</type>
+		          <type>EOM::Story</type>
+		          <type>StreamTease</type>
+		        </q:OR>
+		      </ObjectInfo>
+			  <se:Attributes xmlns="">
+			      <ObjectMetadata>
+					<Reference>
+						<WireFeed>${title}</WireFeed>
+					</Reference>
+				  </ObjectMetadata>
+			  </se:Attributes>
+		    </q:Boolean>
+		  </q:Query>
+		</EOMSearch>
+	</p:queryBody>
+	
+	<p:param name="title" value="${title}" />
+</p:executeQuery>
+
+<c:forEach items="${q.items}" var="i" varStatus="status">
+	<p:object webObject="${i}" content="c" metadata="m" />
+	<p:out var="guid" xvalue="$m//Reference/TransmissionReference" />
+	<p:out var="date" xvalue="$m//Reference/DatePublished" />
+	<entry feed="${title}" guid="${guid}" pubdate="${date}"/>
+</c:forEach>
+
+
+	

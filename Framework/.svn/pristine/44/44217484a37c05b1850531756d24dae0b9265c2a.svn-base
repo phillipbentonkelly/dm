@@ -1,0 +1,775 @@
+<p:currentObject metadata="m" />
+
+<p:script name="election-results">
+var candidateOverrides = [];
+
+<x:forEach select="$m//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/Election/WinnerOverrides/WinnerId" var="id">
+	<c:if test="${not empty id}">
+		<p:out var="idText" xvalue="$id/text()" />
+		candidateOverrides.push("${idText}")
+	</c:if>
+</x:forEach>
+
+</p:script>
+
+<p:script src="/rw$configurationURI/Framework/bdc-scripts/bdc.election.js" type="context" />
+<p:script src="/rw$configurationURI/Framework/bdc-scripts/bdc.election-results.js"  type="context" />
+<p:style  src="/css/dist/bdc-special.css" type="context" />
+
+<p class="election-results__heading"><span class="election-results__heading--red">20</span><span class="election-results__heading--blue">14</span> General Election Results</p>
+
+<!-- Election Office -->
+<div class="election-results__office">
+
+	<!-- Election Party Title -->
+	<div class="election-results__title">
+		<div class="election-results__title-office">
+			<p>Governor / Lt. Gov.</p>
+		</div>
+		<div class="election-results__title-data">	
+			<p>Votes</p>
+		</div>
+		<div class="election-results__title-data election-results__title-data--percent">
+			<p>Pct.</p>
+		</div>
+	</div>
+	
+	<!-- Election Party Candidates -->
+	<div class="election-results__candidates">
+
+		<!-- Candidate Row -->
+		<div class="election-results__candidate-row election-widget-final__candidate-blue" id="coakley" data-id="39385862">
+			<div class="election-results__candidate-party election-results__candidate-party--blue">D</div>
+			<div class="election-results__candidate-name">Martha Coakley <span class="election-results__running-mate">Steve Kerrigan</span></div>
+			<div class="election-results__color-check">
+				<div class="election-widget-final__checkmark--small"></div> 
+			</div>
+			<div class="election-results__candidate-bar">
+				<div class="election-results__candidate-bar-wrap">
+					<div class="election-results__candidate-bar-percent--blue">
+						<span class="election-results__checkmark"></span>
+					</div>
+				</div>
+			</div>
+			<div class="election-results__candidate-votes"></div>
+			<div class="election-results__candidate-percent"></div>
+		</div> <!-- /candidate-row -->
+		
+		<!-- Candidate Row -->
+		<div class="election-results__candidate-row election-widget-final__candidate-red" id="baker" data-id="39388934">
+			<div class="election-results__candidate-party election-results__candidate-party--red">R</div>
+			<div class="election-results__candidate-name">Charlie Baker <span class="election-results__running-mate">Karyn Polito</span></div>
+			<div class="election-results__color-check">
+				<div class="election-widget-final__checkmark--small"></div> 
+			</div>
+			<div class="election-results__candidate-bar">
+				<div class="election-results__candidate-bar-wrap">
+					<div class="election-results__candidate-bar-percent--red">
+					<span class="election-results__checkmark"></span>
+					</div>
+				</div>
+			</div>
+			<div class="election-results__candidate-votes"></div>
+			<div class="election-results__candidate-percent"></div>
+		</div> <!-- /candidate-row -->
+
+		<!-- Candidate Row -->
+		<div class="election-results__candidate-row election-widget-final__candidate-gray" id="mccormick" data-id="39895814">
+			<div class="election-results__candidate-party election-results__candidate-party--gray">I</div>
+			<div class="election-results__candidate-name">Jeff McCormick <span class="election-results__running-mate">Tracy Post</span></div>
+			<div class="election-results__color-check">
+				<div class="election-widget-final__checkmark--small"></div> 
+			</div>
+			<div class="election-results__candidate-bar">
+				<div class="election-results__candidate-bar-wrap">
+					<div class="election-results__candidate-bar-percent--gray">
+					<span class="election-results__checkmark"></span>
+					</div>
+				</div>
+			</div>
+			<div class="election-results__candidate-votes"></div>
+			<div class="election-results__candidate-percent"></div>
+		</div> <!-- /candidate-row -->
+
+		<!-- Candidate Row -->
+		<div class="election-results__candidate-row election-widget-final__candidate-gray" id="falchuk" data-id="39896838">
+			<div class="election-results__candidate-party election-results__candidate-party--gray">I</div>
+			<div class="election-results__candidate-name">Evan Falchuk <span class="election-results__running-mate">Angus Jennings</span></div>
+			<div class="election-results__color-check">
+				<div class="election-widget-final__checkmark--small"></div> 
+			</div>			
+			<div class="election-results__candidate-bar">
+				<div class="election-results__candidate-bar-wrap">
+					<div class="election-results__candidate-bar-percent--gray">
+					<span class="election-results__checkmark"></span>
+					</div>
+				</div>
+			</div>
+			<div class="election-results__candidate-votes"></div>
+			<div class="election-results__candidate-percent"></div>
+		</div> <!-- /candidate-row -->
+
+		<!-- Candidate Row -->
+		<div class="election-results__candidate-row election-widget-final__candidate-gray" id="lively" data-id="39894790">
+			<div class="election-results__candidate-party election-results__candidate-party--gray">I</div>
+			<div class="election-results__candidate-name">Scott Lively <span class="election-results__running-mate">Shelly Saunders</span></div>
+			<div class="election-results__color-check">
+				<div class="election-widget-final__checkmark--small"></div> 
+			</div>
+			<div class="election-results__candidate-bar">
+				<div class="election-results__candidate-bar-wrap">
+					<div class="election-results__candidate-bar-percent--gray">
+					<span class="election-results__checkmark"></span>
+					</div>
+				</div>
+			</div>
+			<div class="election-results__candidate-votes"></div>
+			<div class="election-results__candidate-percent"></div>
+		</div> <!-- /candidate-row -->
+
+	</div> <!-- /candidates -->
+
+	<!--div class="election-results__source">100% Precincts Reporting</div-->
+
+</div> <!-- /office -->
+
+<!-- Election Office -->
+<div class="election-results__office">
+
+	<!-- Election Party Title -->
+	<div class="election-results__title">
+		<div class="election-results__ballot-title">
+			<p>Ballot Questions</p>
+		</div>
+		<div class="election-results__ballot-title-data">	
+			<p>YES</p>
+		</div>
+		<div class="election-results__ballot-title-data">
+			<p>NO</p>
+		</div>
+	</div>
+	
+	<!-- Election Ballots -->
+	<div class="election-results__ballots">
+
+		<!-- Ballot Row -->
+		<div class="election-results__ballot-row">
+			<a href="http://www.boston.com/news/local/massachusetts/2014/10/07/the-massachusetts-ballot-questions-explained-plain-english/G9yuz9ltOp3EYsTe9ZxGYL/story.html">
+			<div class="election-results__ballot-question"><span class="election-results__ballot-title--tablet">Gas Tax </span>
+				<span class="election-results__running-mate">'Yes' vote repeals 2013 law that increases gas tax with inflation</span>
+			</div>
+			<div class="election-results__ballot-data" data-id="39899910">
+				<span class="election-results__thumbs-up"></span>
+				<span class="election-results__ballot-percent">100%</span>
+				<span class="election-results__ballot-votes">500,000</span>
+			</div>
+			<div class="election-results__ballot-data" data-id="39900934">
+				<span class="election-results__thumbs-down"></span>
+				<span class="election-results__ballot-percent">100%</span>
+				<span class="election-results__ballot-votes">500,000</span>
+			</div>
+		</a>
+		</div> <!-- /ballot-row -->
+		
+		
+		<!-- Ballot Row -->
+		<div class="election-results__ballot-row">
+			<a href="http://www.boston.com/news/local/massachusetts/2014/10/07/the-massachusetts-ballot-questions-explained-plain-english/G9yuz9ltOp3EYsTe9ZxGYL/story.html">
+			<div class="election-results__ballot-question"><span class="election-results__ballot-title--tablet">Bottle Bill </span>
+				<span class="election-results__running-mate">Expands the state’s beverage container recycling law to include all non-alcoholic containers</span></div>
+			
+			<div class="election-results__ballot-data" data-id="39902982">
+				<span class="election-results__thumbs-up"></span>
+				<span class="election-results__ballot-percent">100%</span>
+				<span class="election-results__ballot-votes">500,000</span>
+			</div>
+			<div class="election-results__ballot-data" data-id="39901958">
+				<span class="election-results__thumbs-down"></span>
+				<span class="election-results__ballot-percent">100%</span>
+				<span class="election-results__ballot-votes">4,000</span>
+			</div>
+		</a>
+		</div> <!-- /ballot-row -->
+		
+
+		<!-- Ballot Row -->
+		<div class="election-results__ballot-row" >
+		<a href="http://www.boston.com/news/local/massachusetts/2014/10/07/the-massachusetts-ballot-questions-explained-plain-english/G9yuz9ltOp3EYsTe9ZxGYL/story.html"> 
+			<div class="election-results__ballot-question"><span class="election-results__ballot-title--tablet">Casino Law Repeal </span><span class="election-results__running-mate">Repeals a 2011 law allowing three resort casinos and a slots parlor</span></div>
+			
+			<div class="election-results__ballot-data" data-id="39904006">
+				<span class="election-results__thumbs-up"></span>
+				<span class="election-results__ballot-percent">100%</span>
+				<span class="election-results__ballot-votes">500,000</span>
+			</div>
+			<div class="election-results__ballot-data" data-id="39905030">
+				<span class="election-results__thumbs-down"></span>
+				<span class="election-results__ballot-percent">100%</span>
+				<span class="election-results__ballot-votes">500,000</span>
+			</div>
+		</a>
+		</div> <!-- /ballot-row -->
+		
+
+		<!-- Ballot Row -->
+		<div class="election-results__ballot-row"> 
+			<a href="http://www.boston.com/news/local/massachusetts/2014/10/07/the-massachusetts-ballot-questions-explained-plain-english/G9yuz9ltOp3EYsTe9ZxGYL/story.html">
+			<div class="election-results__ballot-question"><span class="election-results__ballot-title--tablet">Paid Sick Leave </span>
+				<span class="election-results__running-mate">Entitles certain employees to earn and utilize paid sick days</span></div>
+			
+			<div class="election-results__ballot-data" data-id="39907078">
+				<span class="election-results__thumbs-up"></span>
+				<span class="election-results__ballot-percent">100%</span>
+				<span class="election-results__ballot-votes">500,000</span>
+			</div>
+			<div class="election-results__ballot-data" data-id="39906054">
+				<span class="election-results__thumbs-down"></span>
+				<span class="election-results__ballot-percent">100%</span>
+				<span class="election-results__ballot-votes">500,000</span>
+			</div>
+		</a>
+		</div> <!-- /ballot-row -->
+		
+	</div> <!-- /ballots -->
+	<div class="election-results__article"><a href="http://www.boston.com/news/local/massachusetts/2014/10/07/the-massachusetts-ballot-questions-explained-plain-english/G9yuz9ltOp3EYsTe9ZxGYL/story.html">Ballot Questions Explained</a></div>
+	<!--div class="election-results__source">100% Precincts Reporting</div-->
+
+</div> <!-- /office -->
+
+
+<!-- Election Office -->
+<div class="election-results__office">
+
+	<!-- Election Party Title -->
+	<div class="election-results__title">
+		<div class="election-results__title-office">
+			<p>Treasurer</p>
+		</div>	
+		<div class="election-results__title-data">	
+			<p>Votes</p>
+		</div>
+		<div class="election-results__title-data">
+			<p>Pct.</p>
+		</div>
+	</div>
+	
+	<!-- Election Party Candidates -->
+	<div class="election-results__candidates">
+
+		<!-- Candidate Row -->
+		<div class="election-results__candidate-row election-widget-final__candidate-blue" data-id="39847686">
+			<div class="election-results__candidate-party election-results__candidate-party--blue">D</div>
+			<div class="election-results__candidate-name">Deb Goldberg</div>
+			<div class="election-results__color-check">
+				<div class="election-widget-final__checkmark--small"></div> 
+			</div>
+			<div class="election-results__candidate-bar">
+				<div class="election-results__candidate-bar-wrap">
+					<div class="election-results__candidate-bar-percent--blue">
+					<span class="election-results__checkmark"></span>
+					</div>
+				</div>
+			</div>
+			<div class="election-results__candidate-votes"></div>
+			<div class="election-results__candidate-percent"></div>
+		</div> <!-- /candidate-row -->
+		
+		<!-- Candidate Row -->
+		<div class="election-results__candidate-row election-widget-final__candidate-red" data-id="39853830">
+			<div class="election-results__candidate-party election-results__candidate-party--red">R</div>
+			<div class="election-results__candidate-name">Mike Heffernan</div>
+			<div class="election-results__color-check">
+				<div class="election-widget-final__checkmark--small"></div> 
+			</div>
+			<div class="election-results__candidate-bar">
+				<div class="election-results__candidate-bar-wrap">
+					<div class="election-results__candidate-bar-percent--red">
+					<span class="election-results__checkmark"></span>
+					</div>
+				</div>
+			</div>
+			<div class="election-results__candidate-votes"></div>
+			<div class="election-results__candidate-percent"></div>
+		</div> <!-- /candidate-row -->
+
+		<!-- Candidate Row -->
+		<div class="election-results__candidate-row election-widget-final__candidate-green" data-id="39912198">
+			<div class="election-results__candidate-party election-results__candidate-party--green">G</div>
+			<div class="election-results__candidate-name">Ian Jackson</div>
+			<div class="election-results__color-check">
+				<div class="election-widget-final__checkmark--small"></div> 
+			</div>
+			<div class="election-results__candidate-bar">
+				<div class="election-results__candidate-bar-wrap">
+					<div class="election-results__candidate-bar-percent--green">
+					<span class="election-results__checkmark"></span>
+					</div>
+				</div>
+			</div>
+			<div class="election-results__candidate-votes"></div>
+			<div class="election-results__candidate-percent"></div>
+		</div> <!-- /candidate-row -->
+		
+	</div> <!-- /candidates -->
+	
+	<!--div class="election-results__source">100% Precincts Reporting</div-->
+
+</div> <!-- /office -->
+
+
+<!-- Election Office -->
+<div class="election-results__office">
+
+	<!-- Election Party Title -->
+	<div class="election-results__title">
+		<div class="election-results__title-office">
+			<p>Secretary of State</p>
+		</div>
+		<div class="election-results__title-data">	
+			<p>Votes</p>
+		</div>
+		<div class="election-results__title-data">
+			<p>Pct.</p>
+		</div>
+	</div>
+	
+	<!-- Election Party Candidates -->
+	<div class="election-results__candidates">
+
+		<!-- Candidate Row -->
+		<div class="election-results__candidate-row election-widget-final__candidate-blue" data-id="39843590">
+			<div class="election-results__candidate-party election-results__candidate-party--blue">D</div>
+			<div class="election-results__candidate-name">William F. Galvin</div>
+			<div class="election-results__color-check">
+				<div class="election-widget-final__checkmark--small"></div> 
+			</div>
+			<div class="election-results__candidate-bar">
+				<div class="election-results__candidate-bar-wrap">
+					<div class="election-results__candidate-bar-percent--blue">
+					<span class="election-results__checkmark"></span>
+					</div>
+				</div>
+			</div>
+			<div class="election-results__candidate-votes"></div>
+			<div class="election-results__candidate-percent"></div>
+		</div> <!-- /candidate-row -->
+		
+		<!-- Candidate Row -->
+		<div class="election-results__candidate-row election-widget-final__candidate-red" data-id="39872262">
+			<div class="election-results__candidate-party election-results__candidate-party--red">R</div>
+			<div class="election-results__candidate-name">David D'Arcangelo</div>
+			<div class="election-results__color-check">
+				<div class="election-widget-final__checkmark--small"></div> 
+			</div>
+			<div class="election-results__candidate-bar">
+				<div class="election-results__candidate-bar-wrap">
+					<div class="election-results__candidate-bar-percent--red">
+					<span class="election-results__checkmark"></span>
+					</div>
+				</div>
+			</div>
+			<div class="election-results__candidate-votes"></div>
+			<div class="election-results__candidate-percent"></div>
+		</div> <!-- /candidate-row -->
+
+		<!-- Candidate Row -->
+		<div class="election-results__candidate-row election-widget-final__candidate-green" data-id="39911174">
+			<div class="election-results__candidate-party election-results__candidate-party--green">G</div>
+			<div class="election-results__candidate-name">Danny Factor</div>
+			<div class="election-results__color-check">
+				<div class="election-widget-final__checkmark--small"></div> 
+			</div>
+			<div class="election-results__candidate-bar">
+				<div class="election-results__candidate-bar-wrap">
+					<div class="election-results__candidate-bar-percent--green">
+					<span class="election-results__checkmark"></span>
+					</div>
+				</div>
+			</div>
+			<div class="election-results__candidate-votes"></div>
+			<div class="election-results__candidate-percent"></div>
+		</div> <!-- /candidate-row -->
+		
+	</div> <!-- /candidates -->
+
+	<!--div class="election-results__source">100% Precincts Reporting</div-->
+
+</div> <!-- /office -->
+
+
+<!-- Election Office -->
+<div class="election-results__office">
+
+	<!-- Election Party Title -->
+	<div class="election-results__title">
+		<div class="election-results__title-office">
+			<p>State Auditor</p>
+		</div>		
+		<div class="election-results__title-data">	
+			<p>Votes</p>
+		</div>
+		<div class="election-results__title-data">
+			<p>Pct.</p>
+		</div>
+	</div>
+	
+	<!-- Election Party Candidates -->
+	<div class="election-results__candidates">
+
+		<!-- Candidate Row -->
+		<div class="election-results__candidate-row election-widget-final__candidate-blue" data-id="39848710">
+			<div class="election-results__candidate-party election-results__candidate-party--blue">D</div>
+			<div class="election-results__candidate-name">Suzanne Bump</div>
+			<div class="election-results__color-check">
+				<div class="election-widget-final__checkmark--small"></div> 
+			</div>
+			<div class="election-results__candidate-bar">
+				<div class="election-results__candidate-bar-wrap">
+					<div class="election-results__candidate-bar-percent--blue">
+						<span class="election-results__checkmark"></span>
+					</div>
+				</div>
+			</div>
+			<div class="election-results__candidate-votes"></div>
+			<div class="election-results__candidate-percent"></div>
+		</div> <!-- /candidate-row -->
+
+		<!-- Candidate Row -->
+		<div class="election-results__candidate-row election-widget-final__candidate-red" data-id="39850758">
+			<div class="election-results__candidate-party election-results__candidate-party--red">R</div>
+			<div class="election-results__candidate-name">Patricia Saint Aubin</div>
+			<div class="election-results__color-check">
+				<div class="election-widget-final__checkmark--small"></div> 
+			</div>
+			<div class="election-results__candidate-bar">
+				<div class="election-results__candidate-bar-wrap">
+					<div class="election-results__candidate-bar-percent--red">
+						<span class="election-results__checkmark"></span>
+					</div>
+				</div>
+			</div>
+			<div class="election-results__candidate-votes"></div>
+			<div class="election-results__candidate-percent"></div>
+		</div> <!-- /candidate-row -->
+
+		<!-- Candidate Row -->
+		<div class="election-results__candidate-row election-widget-final__candidate-green" data-id="39913222">
+			<div class="election-results__candidate-party election-results__candidate-party--green">G</div>
+			<div class="election-results__candidate-name">MK Merelice</div>
+			<div class="election-results__color-check">
+				<div class="election-widget-final__checkmark--small"></div> 
+			</div>
+			<div class="election-results__candidate-bar">
+				<div class="election-results__candidate-bar-wrap">
+					<div class="election-results__candidate-bar-percent--green">
+						<span class="election-results__checkmark"></span>
+					</div>
+				</div>
+			</div>
+			<div class="election-results__candidate-votes"></div>
+			<div class="election-results__candidate-percent"></div>
+		</div> <!-- /candidate-row -->
+		
+	</div> <!-- /candidates -->
+	
+	<!--div class="election-results__source">100% Precincts Reporting</div-->
+
+</div> <!-- /office -->
+
+
+<!-- Election Office -->
+<div class="election-results__office">
+
+	<!-- Election Party Title -->
+	<div class="election-results__title">
+		<div class="election-results__title-office">
+			<p>6th Congressional District</p>
+		</div>
+		<div class="election-results__title-data">	
+			<p>Votes</p>
+		</div>
+		<div class="election-results__title-data">
+			<p>Pct.</p>
+		</div>
+	</div>
+	
+	<!-- Election Party Candidates -->
+	<div class="election-results__candidates">
+
+		<!-- Candidate Row -->
+		<div class="election-results__candidate-row election-widget-final__candidate-blue" data-id="39404294">
+			<div class="election-results__candidate-party election-results__candidate-party--blue">D</div>
+			<div class="election-results__candidate-name">Seth Moulton</div>
+			<div class="election-results__color-check">
+				<div class="election-widget-final__checkmark--small"></div> 
+			</div>
+			<div class="election-results__candidate-bar">
+				<div class="election-results__candidate-bar-wrap">
+					<div class="election-results__candidate-bar-percent--blue">
+					<span class="election-results__checkmark"></span>
+					</div>
+				</div>
+			</div>
+			<div class="election-results__candidate-votes">0</div>
+			<div class="election-results__candidate-percent"></div>
+		</div> <!-- /candidate-row -->
+
+		<!-- Candidate Row -->
+		<div class="election-results__candidate-row election-widget-final__candidate-red" data-id="39410438">
+			<div class="election-results__candidate-party election-results__candidate-party--red">R</div>
+			<div class="election-results__candidate-name">Richard Tisei</div>
+			<div class="election-results__color-check">
+				<div class="election-widget-final__checkmark--small"></div> 
+			</div>
+			<div class="election-results__candidate-bar">
+				<div class="election-results__candidate-bar-wrap">
+					<div class="election-results__candidate-bar-percent--red">
+					<span class="election-results__checkmark"></span>
+					</div>
+				</div>
+			</div>
+			<div class="election-results__candidate-votes">0</div>
+			<div class="election-results__candidate-percent"></div>
+		</div> <!-- /candidate-row -->
+
+				<!-- Candidate Row -->
+		<div class="election-results__candidate-row election-widget-final__candidate-gray" data-id="39897862">
+			<div class="election-results__candidate-party election-results__candidate-party--gray">I</div>
+			<div class="election-results__candidate-name">Chris Stockwell</div>
+			<div class="election-results__color-check">
+				<div class="election-widget-final__checkmark--small"></div> 
+			</div>
+			<div class="election-results__candidate-bar">
+				<div class="election-results__candidate-bar-wrap">
+					<div class="election-results__candidate-bar-percent--gray">
+					<span class="election-results__checkmark"></span>
+					</div>
+				</div>
+			</div>
+			<div class="election-results__candidate-votes">0</div>
+			<div class="election-results__candidate-percent"></div>
+		</div> <!-- /candidate-row -->
+		
+	</div> <!-- /candidates -->
+
+	<!--div class="election-results__source">100% Precincts Reporting</div-->
+
+</div> <!-- /office -->
+
+
+<!-- Election Office -->
+<div class="election-results__office">
+
+	<!-- Election Party Title -->
+	<div class="election-results__title">
+		<div class="election-results__title-office">
+			<p>State Senate <span class="election-results__title-office--district"> First Hampden &amp; Hampshire</span></p>
+		</div>
+		<div class="election-results__title-data">	
+			<p>Votes</p>
+		</div>
+		<div class="election-results__title-data">
+			<p>Pct.</p>
+		</div>
+	</div>
+	
+	<!-- Election Party Candidates -->
+	<div class="election-results__candidates">
+
+		<!-- Candidate Row -->
+		<div class="election-results__candidate-row election-widget-final__candidate-blue" data-id="39449350">
+			<div class="election-results__candidate-party election-results__candidate-party--blue">D</div>
+			<div class="election-results__candidate-name">Eric Lesser</div>
+			<div class="election-results__color-check">
+				<div class="election-widget-final__checkmark--small"></div> 
+			</div>
+			<div class="election-results__candidate-bar">
+				<div class="election-results__candidate-bar-wrap">
+					<div class="election-results__candidate-bar-percent--blue">
+					<span class="election-results__checkmark"></span>
+					</div>
+				</div>
+			</div>
+			<div class="election-results__candidate-votes"></div>
+			<div class="election-results__candidate-percent"></div>
+		</div> <!-- /candidate-row -->
+
+		<!-- Candidate Row -->
+		<div class="election-results__candidate-row election-widget-final__candidate-red" data-id="39468806">
+			<div class="election-results__candidate-party election-results__candidate-party--red">R</div>
+			<div class="election-results__candidate-name">Debra Boronski</div>
+			<div class="election-results__color-check">
+				<div class="election-widget-final__checkmark--small"></div> 
+			</div>
+			<div class="election-results__candidate-bar">
+				<div class="election-results__candidate-bar-wrap">
+					<div class="election-results__candidate-bar-percent--red">
+					<span class="election-results__checkmark"></span>
+					</div>
+				</div>
+			</div>
+			<div class="election-results__candidate-votes"></div>
+			<div class="election-results__candidate-percent"></div>
+		</div> <!-- /candidate-row -->
+
+		<!-- Candidate Row -->
+		<div class="election-results__candidate-row election-widget-final__candidate-gray" data-id="39917318">
+			<div class="election-results__candidate-party election-results__candidate-party--gray">I</div>
+			<div class="election-results__candidate-name">Mike Franco</div>
+			<div class="election-results__color-check">
+				<div class="election-widget-final__checkmark--small"></div> 
+			</div>
+			<div class="election-results__candidate-bar">
+				<div class="election-results__candidate-bar-wrap">
+					<div class="election-results__candidate-bar-percent--gray">
+					<span class="election-results__checkmark"></span>
+					</div>
+				</div>
+			</div>
+			<div class="election-results__candidate-votes"></div>
+			<div class="election-results__candidate-percent"></div>
+		</div> <!-- /candidate-row -->
+				
+	</div> <!-- /candidates -->
+	
+	<!--div class="election-results__source">100% Precincts Reporting</div-->
+
+</div> <!-- /office -->
+
+
+<!-- Election Office -->
+<div class="election-results__office">
+
+	<!-- Election Party Title -->
+	<div class="election-results__title">
+		<div class="election-results__title-office">
+			<p>State Senate <span class="election-results__title-office--district"> Worcester &amp; Norfolk</span></p>
+		</div>
+		
+		<div class="election-results__title-data">	
+			<p>Votes</p>
+		</div>
+		<div class="election-results__title-data">
+			<p>Pct.</p>
+		</div>
+	</div>
+	
+	<!-- Election Party Candidates -->
+	<div class="election-results__candidates">
+
+		<!-- Candidate Row -->
+		<div class="election-results__candidate-row election-widget-final__candidate-blue" data-id="39498502">
+			<div class="election-results__candidate-party election-results__candidate-party--blue">D</div>
+			<div class="election-results__candidate-name">Richard Moore</div>
+			<div class="election-results__color-check">
+				<div class="election-widget-final__checkmark--small"></div> 
+			</div>
+			<div class="election-results__candidate-bar">
+				<div class="election-results__candidate-bar-wrap">
+					<div class="election-results__candidate-bar-percent--blue">
+					<span class="election-results__checkmark"></span>
+					</div>
+				</div>
+			</div>
+			<div class="election-results__candidate-votes">0</div>
+			<div class="election-results__candidate-percent"></div>
+		</div> <!-- /candidate-row -->
+
+		<!-- Candidate Row -->
+		<div class="election-results__candidate-row election-widget-final__candidate-red" data-id="39509766">
+			<div class="election-results__candidate-party election-results__candidate-party--red">R</div>
+			<div class="election-results__candidate-name">Ryan Fattman</div>
+			<div class="election-results__color-check">
+				<div class="election-widget-final__checkmark--small"></div> 
+			</div>
+				<div class="election-results__candidate-bar">
+					<div class="election-results__candidate-bar-wrap">
+						<div class="election-results__candidate-bar-percent--red">
+						<span class="election-results__checkmark"></span>
+						</div>
+					</div>
+				</div>
+				<div class="election-results__candidate-votes">0</div>
+			<div class="election-results__candidate-percent"></div>
+		</div> <!-- /candidate-row -->
+
+	</div> <!-- /candidates -->
+	
+
+	<!--div class="election-results__source">100% Precincts Reporting</div-->
+
+
+
+
+<!-- US Senate -->
+
+<div class="election-results__title">
+		<div class="election-results__title-office">
+			<p>U.S. Senate from New Hampshire</p>
+		</div>
+		
+		<div class="election-results__title-data">	
+			<p>Votes</p>
+		</div>
+		<div class="election-results__title-data">
+			<p>Pct.</p>
+		</div>
+	</div>
+	
+	<!-- Election Party Candidates -->
+	<div class="election-results__candidates">
+
+		<!-- Candidate Row -->
+		<div class="election-results__candidate-row election-widget-final__candidate-blue" data-id="51337005">
+			<div class="election-results__candidate-party election-results__candidate-party--blue">D</div>
+			<div class="election-results__candidate-name">Jeanne Shaheen</div>
+			<div class="election-results__color-check">
+				<div class="election-widget-final__checkmark--small"></div> 
+			</div>
+			<div class="election-results__candidate-bar">
+				<div class="election-results__candidate-bar-wrap">
+					<div class="election-results__candidate-bar-percent--blue">
+					<span class="election-results__checkmark"></span>
+					</div>
+				</div>
+			</div>
+			<div class="election-results__candidate-votes">0</div>
+			<div class="election-results__candidate-percent"></div>
+		</div> <!-- /candidate-row -->
+
+		<!-- Candidate Row -->
+		<div class="election-results__candidate-row election-widget-final__candidate-red" data-id="51544877">
+			<div class="election-results__candidate-party election-results__candidate-party--red">R</div>
+			<div class="election-results__candidate-name">Scott Brown</div>
+			<div class="election-results__color-check">
+				<div class="election-widget-final__checkmark--small"></div> 
+			</div>
+			<div class="election-results__candidate-bar">
+				<div class="election-results__candidate-bar-wrap">
+					<div class="election-results__candidate-bar-percent--red">
+						<span class="election-results__checkmark"></span>
+					</div>
+				</div>
+			</div>
+			<div class="election-results__candidate-votes">0</div>
+			<div class="election-results__candidate-percent"></div>
+		</div> <!-- /candidate-row -->
+
+	</div> <!-- /candidates -->
+	
+
+	<!--div class="election-results__source">100% Precincts Reporting</div-->
+</div>
+<p class="election-results__data-source">DATA: <span class="election-results__associated-press">Associated Press</span></p>
+
+
+
+
+
+
+
+
+
+
+
+

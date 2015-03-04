@@ -1,0 +1,80 @@
+<%-- things passed --%>
+<p:out var="visualRevenue" value="${cacheScope.visualRevenue}" />
+<p:out var="wellTitle" value="${cacheScope.wellTitle}" />
+<p:out var="dwp" value="${cacheScope.dwp}" />
+<p:out var="p1" value="${cacheScope.p1}" />
+<p:out var="dataP1" value="${cacheScope.dataP1}" />
+<p:out var="dataOmniture" value="${cacheScope.dataOmniture}" />
+<p:out var="isHomepage" value="${cacheScope.isHomepage}" />
+
+<p:currentObject sectionId="section" webType="wt" />
+<bdc:getHeadlines webObject="${currentObject}" var="headlines" />
+
+<%--
+let's make the p1 tag, if one hasn't already been passed in
+#techdebt - this is a mess. we need to refactor omniture stuff big-time. 
+--%>
+
+<c:if test="${empty p1 and empty dataP1}">
+	<p:out var="p1" value="well_${wellTitle}_subheadline" />
+	<bdc:regexReplace var="p1" value="${p1}" regex="[^A-Za-z_]" replace="" />
+	<p:out var="p1" value="p1=${p1}" />
+	
+	<c:if test="${isHomepage}">
+		<p:out var="p1" value="${p1}_hp" />
+	</c:if>
+</c:if>
+
+<bdc:regexReplace var="p1" value="${p1}" regex="^\\?*" replace="" />
+
+<c:if test="${not empty p1}">
+	<p:out var="p1" value="?${p1}" />
+</c:if>
+
+<!--  RMKp1 ${p1} -->
+<%-- include vr, or don't --%>
+<p:out var="vrMaybe" value="" />
+<c:if test="${visualRevenue eq 'True'}">
+	<p:out var="vrMaybe" value="data-vr-contentbox=\"\"" />
+</c:if>
+
+<li class="headline-list__item" ${vrMaybe}>
+
+	<%-- choose a title for the headline; section, overline, or ...none --%>
+	<%-- these should be options from a list #techdebt --%>
+	<p:out var="headlineTitle" value="" />
+	<c:if test="${cacheScope.displaySection == 'True'}">
+		<bdc:teaseSection section="${section}" var="sectionData" />
+		<p:out var="headlineTitle" value="${sectionData.name}" />
+	</c:if>
+	<c:if test="${cacheScope.displayOverline == 'True'}">
+		<p:out var="headlineTitle" value="${headlines.overline}" />
+		<c:if test="${empty headlineTitle}">
+			<bdc:teaseSection section="${section}" var="sectionData" />
+			<p:out var="headlineTitle" value="${sectionData.name}" />
+		</c:if>
+	</c:if>
+	<div class="headline-list__section">${headlineTitle}</div>
+	<bdc:url webObject="${currentObject}" var="storyUrl" />
+	<%-- #techdebt - this is being set by JS, we don't need the P1 tag here. we should also find a way to do this serverside. --%>
+	<%-- <a href="${storyUrl}${p1}" class="headline-list__link" ${dataOmniture}> --%>
+		<a href="${storyUrl}${p1}" class="headline-list__link" ${dataOmniture}>${headlines.carouselHeadline}
+		<c:if test="${cacheScope.social != 'True' && not empty cacheScope.displayTime && cacheScope.displayTime != 'None'}">
+			<bdc:ifHasTimestamp>
+				<span class="headline-list__timestamp">
+					<c:if test="${cacheScope.displayTime == 'Timestamp'}"> <bdc:time format="shortDateTime" /></c:if>
+					<c:if test="${cacheScope.displayTime == 'TimestampNoDate'}"> <bdc:time format="time" /></c:if>
+					<c:if test="${cacheScope.displayTime == 'TimeSince'}"> <bdc:time format="since" /></c:if>
+				</span>
+			</bdc:ifHasTimestamp>
+		</c:if>
+	</a>
+	
+	<c:if test="${cacheScope.social == 'True'}">
+		<p:include url="$configurationURI/Framework/skins/components/story_container/tease_footer.jpt">
+			<p:param name="viewType" value="LIST" />
+			<p:param name="storyObject" value="${currentObject}" />
+			<p:param name="displayTime" value="${cacheScope.displayTime}" />
+		</p:include>
+	</c:if>
+</li>

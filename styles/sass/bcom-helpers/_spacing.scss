@@ -1,0 +1,51 @@
+// *
+// * Vertical Spacing
+// *
+
+// FOR: Managing Boston.com module spacing
+// WHY: Named spacing measurements keeps magic numbers down to a minimum,
+//      allows for easy, sitewide component spacing updates
+// NOTES: - Use rems for easily scaling component spacing. Make sure there's a px
+//          fallback for browsers that don't support it
+// USE:    'margin-right: spacer(px, base);
+//          margin-right: spacer(rem, base);`
+
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// Spacer Function
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+@function spacer($unit, $spacer-size: 'base') {
+  @return map-get(map-get($space-map, $spacer-size), $unit) + $unit;
+}
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// Spacer Map
+// * For rem values, assume base font size is 16px
+// * Values calculated here: https://offroadcode.com/prototypes/rem-calculator/
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+$space-map: (
+  small: (
+    px: 5,
+    rem: 0.3125
+  ),
+  base: (
+    px: 10,
+    rem: 0.625
+  ),
+  mid: (
+    px: 15,
+    rem: 0.9375
+  ),
+  large: (
+    px: 20,
+    rem: 1.25
+  ),
+  x-large: (
+    px: 25,
+    rem: 1.563
+  ),
+  xx-large: (
+    px: 30,
+    rem: 1.875
+  )
+);

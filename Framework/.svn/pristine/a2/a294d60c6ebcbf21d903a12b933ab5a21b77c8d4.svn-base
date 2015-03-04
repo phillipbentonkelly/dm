@@ -1,0 +1,37 @@
+<%@ taglib prefix="jp" uri="jptag" %>
+<p:currentObject webType="WT" sectionId="section" metadata="meta" sectionPage="dwp" />
+<p:out var="section"		xvalue="$meta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/Sections/Section/SectionPath" 	scope="request" />
+<p:out var="sectionName"	xvalue="$meta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/Sections/Section/SectionName"	scope="request" />
+<p:out var="sectionPath"	xvalue="$meta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/CanonicalData/SectionPath" 	scope="request" />
+<p:out var="WT"	value="${WT}" scope="request" /> 
+<p:siteRoot var="SiteRoot" />
+
+<header class="page-header">
+
+  <!-- Slide Out Nav Button -->
+  <a href="#" class="page-header__button page-header__button--nav js-slide-out" data-target="slide-out-nav">
+    <span class="bdc-icon bdc-icon--close-medium" data-omniture="Main Nav Hamburger - Collapse" data-state="open"></span>
+    <span class="bdc-icon bdc-icon--hamburger" data-omniture="Main Nav Hamburger - Expand" data-state="closed"></span>
+    <span class="page-header__button-text" data-state="">Menu</span>
+  </a>
+
+<%-- Logo logic has been moved out of this file to make it cleaner and more modular. (MMK) --%>
+  <!-- Logo -->
+  <p:inline url="$configurationURI/Framework/frameset/masthead/logo.jpt" />
+  
+  <%-- Social icons in the header. These make me want to die. - MMK --%>
+  <p:inline url="$configurationURI/Framework/frameset/masthead/page_header_social.jpt" />
+
+  <!-- User Panel Button -->
+  <a href="#" class="page-header__button page-header__button--user js-slide-out" data-target="user-panel">
+    <%-- Commented out for BDC-1409
+    <img class="page-header__avatar js-avatar" data-state="closed" src="//u.o0bc.com/avatars/stock/_no-user-image.gif"/
+    --%>
+	<span class="page-header__button-text js-replace-with-avatar" data-state="closed">Login</span>
+    <span class="bdc-icon bdc-icon--close-medium" data-state="open"></span>
+  </a>
+
+  <!-- Search Form -->
+  <p:inline url="$configurationURI/Framework/frameset/search/page_header_search.jpt" />
+
+</header>

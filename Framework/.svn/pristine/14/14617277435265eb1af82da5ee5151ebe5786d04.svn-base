@@ -1,0 +1,11 @@
+<div class="l-classifieds">
+	<div class="classifieds-mod">
+		<ul>
+			<li class="section-h">Marketplace</li>
+			<li><a href="http://boston.com/cars/?p1=hp_marketplace-cars" class="link">Cars</a></li>
+			<li><a href="http://boston.com/jobs/?p1=hp_marketplace-jobs" class="link">Jobs</a></li>
+			<li><a href="http://www.boston.com/realestate/new/?p1=hp_marketplace-realestate" class="link">Real Estate</a></li>
+			<li class="txt">Search Real Estate Listings</li>
+		</ul>
+	</div>
+</div>

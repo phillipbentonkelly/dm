@@ -1,0 +1,74 @@
+<%@ page import="java.lang.String"%>
+<%--
+	This file sucks and we need to kill before someone else puts it on a poster.
+	-MMK
+
+	I have absolutely no idea what this does.
+	-MMK
+	I do! - Angie
+	
+	The mustache templates contained here should just be referenced to the single mustache templates in $configurationURI/Framework/templates
+	~ jesse
+	
+	incidentally, this isn't all of the mustache templates. the gallery one is in leaf/gallery/mustache_gallery.jpt (or something)
+	- adam d
+	PS we all are using different signatures, how quaint
+--%> 
+ 
+<p:url var="memberCenterUrl" value="/eom$configurationURI/Framework/regi/membercenter-update-info.jsp" public="secure" type="context"/>
+<p:out var="profileUrl2" value="/community/user/{{{id}}}" />
+
+<script type="text/html" id="wishabi_flyer">
+	{{#flyers}}
+	<a class="feat-tz-img-mod  art-bd" href="{{imageLink}}">
+		<img class="feat-tz-img" src="{{imageSource}}">
+	</a> <!-- feat-tz-img-mod -->
+	<div class="feat-tz-bd txt-bd">
+		<h4 class="feat-tz-h tz-title">
+			<a href="{{flyerTextLink}}">{{flyerText}}</a>
+			<img src="{{flyerViewTrack}}"/>
+		</h4>
+		<ul class="tz-meta feat-tz-meta">
+			<li class="tz-meta-item tz-time">
+				<i class="tz-time-icon tz-meta-icon"></i>
+				<i class="tz-time-text tz-meta-text"><a  href="{{flyerSubTextLink}}">{{flyerSubText}}</a></i>
+                {{#flyerKeyMessageShortText}}
+                <i class="tz-meta-message"><a href="{{flyerKeyMessageShortTextLink}}">{{flyerKeyMessageShortText}}</a></i>
+                {{/flyerKeyMessageShortText}}
+			</li>
+			<li class="tz-meta-item tz-category">
+				<a href="http://circulars.boston.com">Circulars</a>
+			</li>
+		</ul> <!-- /.tz-meta -->
+	</div> <!-- /feat-tz-bd -->
+	{{/flyers}}
+	<img src="{{moduleViewTrack}}" style="display:none;"/>
+</script>
+
+<script type="text/mustache" id="stream-scoreboard-mustache">
+	<header class="sb-hdr">
+		{{#minutes}}
+			<i class="sb-txt-01 sb-txt-light">{{minutes}}:{{seconds}}</i>
+		{{/minutes}}
+		<i class="sb-txt-02 sb-txt-strong">{{segment_number}}</i>
+		{{#status}}
+		<i class="sb-sponsor-txt sb-txt-light">{{status}}</i>
+		{{/status}}
+	</header>
+	<div class="sb-body-mod">
+		<div class="sb-away-team">
+			<div class="sb-away-team-info sb-team-info">
+				<i class="sb-away-team-logo sb-team-logo sb-sport-{{sport}}" id="{{sport}}-{{awayTeam}}"></i>
+				<h5 class="sb-away-team-name sb-team-name">{{awayTeam_name}}</h5>
+				<h4 class="sb-away-team-score sb-team-score">{{awayScore}}</h4>
+			</div>
+		</div>
+		<div class="sb-home-team">
+			<div class="sb-home-team-info sb-team-info">
+				<i class="sb-home-team-logo sb-team-logo sb-sport-{{sport}}" id="{{sport}}-{{homeTeam}}"></i>
+				<h5 class="sb-home-team-name sb-team-name">{{homeTeam_name}}</h5>
+				<h4 class="sb-home-team-score sb-team-score">{{homeScore}}</h4>
+			</div>
+		</div>
+	</div>
+</script>

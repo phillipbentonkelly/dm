@@ -1,0 +1,18 @@
+<div class="gallery-slides qg-gallery-slides">
+
+	{{#slides}}
+		<div class="gallery-slide">
+			<figure class="gallery-img-mod qg-img-mod">
+				<img class="gallery-img qg-img" src="{{image}}"/>
+				<figcaption class="gallery-caption qg-gallery-caption reverse">
+					<p>{{{text}}} <i class="credit">{{credit}}</i></p>
+				</figcaption> <!-- /img-caption -->
+			</figure><!-- gallery-img-mod -->
+		</div>
+	{{/slides}}
+
+	<nav class="gallery-img-nav">
+		<button class="arrow-btn-prev swiper-prev" aria-hidden="true" title="Previous">Prev</button>
+		<button class="arrow-btn-next swiper-next" aria-hidden="true" title="Next">Next</button>
+	</nav>
+</div> <!-- /gallery-slides -->

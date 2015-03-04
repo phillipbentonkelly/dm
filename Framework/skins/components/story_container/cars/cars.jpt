@@ -1,0 +1,14 @@
+<%--
+	{comments}
+		DM-26: Creating jpt to house nav deals with cars guru search widget.
+	{comments}
+ --%>
+<div class="cars-right-rail">
+	<div class="row">
+		<p:inline url="$configurationURI/Framework/skins/components/classifieds/nav_deals.jpt"></p:inline>
+	</div>
+	<div class="row">
+		<p:inline url="$configurationURI/Framework/skins/components/classifieds/carsgurusearch.jpt"></p:inline>
+	</div>
+	
+</div>

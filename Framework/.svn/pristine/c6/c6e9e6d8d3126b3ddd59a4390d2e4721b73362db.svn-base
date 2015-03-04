@@ -1,0 +1,16 @@
+<p:currentObject metadata="meta" />
+<p:out var="conf" value="$meta//StoryContainerDisplay" />
+<%-- p:param supports xvalue but it acts weird. so i used this. --%>
+<p:out var="listType" xvalue="${conf}/ListType/text()" /> 
+<p:out var="imageSize" xvalue="${conf}/ImageSize/text()" /> 
+<p:out var="displaySection" xvalue="${conf}/SectionDisplay/text()" />
+<p:out var="displayTime" xvalue="${conf}/TimeDisplay/text()" />
+<p:out var="headlineType" xvalue="${conf}/HeadlineType/text()" />
+<p:out var="social" xvalue="${conf}/ShareTools/text()" />
+  
+<p:out var="title" xvalue="$meta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/Title" />
+<c:if test="${empty title}">
+  <p:out var="title" value="Top Stories" />
+</c:if>
+
+<p:include pageZoneName="content" templateName="sc_author_bio" maxItems="1" />

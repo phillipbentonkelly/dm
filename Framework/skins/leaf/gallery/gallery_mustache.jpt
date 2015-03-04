@@ -1,0 +1,119 @@
+<!-- mustache templates -->
+
+		<script type="text/html" id="gallery_template">
+		{{#.}}
+		
+			{{^adName}}
+			<div class="gallery-slide" id="gallery-slide-{{id}}">
+				<div class="gallery-body-mod">
+
+					{{#slide_head}}
+					<div class="slide-headline-mod">
+						<div class="slide-headline-txt">
+							<i class="slide-num"></i>
+							<h3 class="slide-head">{{slide_head}}</h3>
+							<i class="slide-subhead">{{slide_subhead}}</i>
+						</div> <!-- slide-headline-txt -->
+						<div class="arrow-top-mod">
+                			<a class="prev-btn" href="#"><i class="prev-top-arrow"></i>Previous</a>
+                			<i class="gallery-pagination"><span class="current-page">{{index}}</span> of <span class="total-pages">${photoCount}</span></i>
+                			<a class="next-btn" href="#"><i class="next-top-arrow"></i>Next</a>
+           				</div>
+					</div>
+					{{/slide_head}}
+
+						<figure class="gallery-img-mod">
+							<img class="gallery-img" src="{{image}}"/>
+							<figcaption class="gallery-caption">
+								<i class="credit">{{credit}}</i>
+							</figcaption> <!-- /img-caption -->
+
+							<nav class="gallery-img-nav">
+								<button class="arrow-btn-prev swiper-prev" aria-hidden="true" title="Previous">Prev</button>
+								<button class="arrow-btn-next swiper-next" aria-hidden="true" title="Next">Next</button>
+							</nav>
+
+						</figure><!-- gallery-img-mod -->	
+
+						<div class="gallery-tools-img{{#slide_head}} gallery-share-title-fix{{/slide_head}}">
+							<div class="tools-item tools-share">
+								<c:choose>
+		                    		<c:when test="${not empty editorialLayerPath}">
+		                    			<!-- 1111 -->
+		                    			<!-- ${editorialLayerPath} -->
+		                    			<%--
+		                    				We have to check whether there is anything in this zone, otherwise it just won't render the share tools.
+		                    				Now it will at least render the default share tools. Since share tools are slotted on prod 99% of the time
+		                    				this isn't really something I expect us to run into very often, but still... we should account for it. - MMK
+		                    			--%>
+										<p:ifZone name="share_tools" inherits="${editorialLayerPath}" empty="false">
+											<p:include pageZoneName="share_tools" inherits="${editorialLayerPath}" templateName="share_tools_story_sidecar">
+												<p:param name="dwp" value="${editorialLayerPath}" />
+												<p:param name="gigyaCanonical" value="${gigyaCanonical}" />
+												<p:param name="gigyaShortUrl" value="${gigyaShortUrl}" />
+												<p:param name="gigyaHeadline" value="${gigyaHeadline}" />
+												<p:param name="gigyaThumb" value="${gigyaThumbnail}" />
+												<p:param name="gigyaThumbType" value="${gigyaThumbType}" />
+											</p:include>
+										</p:ifZone>
+										<p:ifZone name="share_tools" inherits="${editorialLayerPath}" empty="true">
+											<p:include url="$configurationURI/Framework/skins/components/share_tools/share_tools.jpt">
+											<p:param name="gigyaCanonical" value="${gigyaCanonical}" />
+											<p:param name="gigyaShortUrl" value="${gigyaShortUrl}" />
+											<p:param name="gigyaHeadline" value="${gigyaHeadline}" />
+											<p:param name="gigyaThumb" value="${gigyaThumbnail}" />
+											<p:param name="gigyaThumbType" value="${gigyaThumbType}" />
+											<p:param name="className" value="popup-trigger tools-link tools-link-share" />
+										</p:include>
+										</p:ifZone>
+									</c:when>
+									<c:otherwise>
+										<!--  2222 -->
+										<p:include url="$configurationURI/Framework/skins/components/share_tools/share_tools.jpt">
+											<p:param name="gigyaCanonical" value="${gigyaCanonical}" />
+											<p:param name="gigyaShortUrl" value="${gigyaShortUrl}" />
+											<p:param name="gigyaHeadline" value="${gigyaHeadline}" />
+											<p:param name="gigyaThumb" value="${gigyaThumbnail}" />
+											<p:param name="gigyaThumbType" value="${gigyaThumbType}" />
+											<p:param name="className" value="popup-trigger tools-link tools-link-share" />
+										</p:include>
+									</c:otherwise>
+								</c:choose>
+							</div>
+						</div>
+						
+						<div class="gallery-text-mod">
+							{{{text}}}
+							<%--
+							{{^is_last}}
+								<a class="swiper-next next-slide-link" href="#">Next Slide: {{slide_head}}</a>
+							{{/is_last}}
+							--%>
+							<a class="swiper-next next-slide-link" href="#"><span id="next-slide-headline"></span></a>
+						</div><!-- gallery-text-mod -->
+				</div><!-- gallery-body-mod -->
+			</div><!-- gallery-slide -->
+			{{/adName}}
+			
+			{{#adName}}
+			<p class="story-ad-txt overline-weak">Advertisement&mdash;Continue Reading Below</p>
+			<div class="gallery-ad-big-mod-secondary">
+				<div id="{{adName}}"></div>
+			</div>
+			{{/adName}}
+		{{/.}}
+		</script>
+		<script type="text/html" id="gallery_preview">
+		{{#.}}
+		<div class="gallery-slide">
+			<a class="gallery-img-link" href="#" data-image-id="{{id}}">
+				<img class="gallery-img" src="{{image}}"/>
+			</a>
+			<div class="slide-headline-mod">
+				<h3 class="slide-head">{{slide_head}}</h3>
+				<i class="slide-subhead">{{slide_subhead}}</i>
+			</div>
+		</div><!-- gallery-slide -->
+		{{/.}}
+		</script>
+		<!-- end mustache templates -->

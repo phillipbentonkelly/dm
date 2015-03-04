@@ -1,0 +1,44 @@
+<%--
+		{comments} 
+		DM-117: Adding redesign classes to the top leaderboard container.
+		{comments}	
+--%>
+<div class="hp-mod page-content">
+	<div class="ad-container ad-container--ad_lead1">
+	  <div class="ad-container__ad-slot">
+			<p:include pageZoneName="ad_lead1" inherits="${adLayerDwpPath}" /> 
+		</div>
+	</div>
+	<div class="site-width">
+		<div class="primary">
+			<section class="content-well car-gurus">
+				<h3>Cars powered by <img width="100" src="/img/car-gurus-logo.png"></img></h3>
+				<a href="http://www.cargurus.com/Cars/new/"><button>New</button></a>
+				<a href="http://www.cargurus.com/Cars/forsale"><button>Used</button></a>
+			</section>
+			<section class="content-well cars-lower">
+				<h3>This Week's Deals</h3>
+				<nav>
+					<ul>
+						<li id="NCS_button_carshomepage">
+							<a href="http://www.boston.com/cars/new_car_deals/">
+								<span style="color: #fff">New Car Specials</span>
+							</a>
+						</li>
+						<li id="UCS_button_carshomepage">
+							<a href="http://www.boston.com/cars/used_car_deals/">
+								<span style="color:#fff">Used Car Specials</span>
+							</a>
+						</li>
+					</ul>
+				</nav>
+				
+			</section>
+		</div>
+		<div class="primary">
+			<div class="inner" id="streams-row">
+				<p:include pageZoneName="stream_config"></p:include>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,22 @@
+// *
+// *  Global Styles
+// *  - Global helper styles that can be used anywhere
+// *
+
+.hidden {
+  display: none;
+
+}
+
+.hash-anchor {
+	position:relative;
+  display: block; 
+  bottom: ($page-header-height-mobile + $page-nav-height);
+  visibility: hidden;
+}
+
+@include media-query(tablet) {
+  .hash-anchor {
+    bottom: ($page-header-height + $page-nav-height);
+  }
+}

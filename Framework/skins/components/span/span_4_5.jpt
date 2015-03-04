@@ -1,0 +1,61 @@
+<p:currentObject metadata="meta" />
+<p:object webObject="${cacheScope.dwp}" metadata="dwpMeta" webType="WT"/>
+<p:out var="section" xvalue="$dwpMeta//ObjectMetadata/OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/Sections/Section/SectionPath"/>
+
+<bdc:getAdLayer var="layer" webType="${WT}" />
+<bdc:inheritStoryLayer var="adLayerDwpPath" section="${section}" layer="${layer}"/>
+
+<p:out var="headerTitle" xvalue="$meta//TeaseHeader" />
+<p:out var="headerURL" xvalue="$meta//TeaseHeaderURL" />
+<p:out var="headerLineAd" xvalue="$meta//HeaderLineAd" />
+
+<c:if test="${empty headerLineAd or headerLineAd eq ''}">
+	<p:out var="headerLineAd" value="headline2" />
+</c:if>
+
+<c:if test="${not empty cacheScope.dwp}">
+	<p:object webObject="${cacheScope.dwp}" metadata="dwpMeta"/>
+	<p:out var="VREnabled" xvalue="$dwpMeta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/VisualRevenue"/>
+	<p:out var="VRZoneName" xvalue="$meta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/VisualRevenueZoneName"/>
+	<c:choose>
+		<c:when test="${VREnabled eq 'True' and not empty VRZoneName}">
+			<p:out var="VRZoneName" value='data-vr-zone="${VRZoneName}"'/>
+		</c:when>
+		<c:otherwise>
+			<p:out var="VRZoneName" value=""/>
+		</c:otherwise>
+	</c:choose>
+</c:if>
+<bdc:getBorderClass webObject="${currentObject}" defaultBorder="disabled" var="borderClasses"/>
+<div class="row" ${VRZoneName}>
+	<div class="${borderClasses}">
+		<%-- header --%>
+		<c:if test="${not empty headerTitle or headerTitle != ''}">
+			<div class="section-header">
+				<h3>
+					<bc:link value="${headerURL}">${headerTitle}</bc:link>
+				</h3>
+			</div>
+		</c:if>
+		<div class="span4">
+			<c:if test="${headerLineAd == 'headline1'}">
+				<p:include pageZoneName="FEATURE" inherits="${adLayerDwpPath}" />
+			</c:if>
+			<p:include pageZoneName="left">
+				<p:param name="dwp" value="${cacheScope.dwp}"/>
+				<p:param name="ScribleWidth" value="230" />
+			</p:include>
+			<c:if test="${headerLineAd == 'headline2'}">
+				<p:include pageZoneName="HEADLINE" inherits="${adLayerDwpPath}" />
+			</c:if>
+		</div>
+		<div class="span5 last">
+			<p:include pageZoneName="right">
+				<p:param name="dwp" value="${cacheScope.dwp}"/>
+				<p:param name="videoWidth" value="329" />
+				<p:param name="videoHeight" value="230" />
+				<p:param name="ScribleWidth" value="310" />
+			</p:include>
+		</div>	
+	</div>
+</div>	

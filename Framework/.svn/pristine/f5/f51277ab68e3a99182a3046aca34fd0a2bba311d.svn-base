@@ -1,0 +1,46 @@
+<p:currentObject metadata="meta"/>
+
+<div class="tease-social-bar">
+
+	<%-- Comments --%>
+	<ul class="tease-comments">
+		<li>
+			<bdc:url var="url" webObject="${currentObject}" linkParam="comments=all#aComments"/>
+			<a href="${url}" class="comment-count" data-uuid="${currentObject.uuid}"></a>
+		</li>
+		<li>
+			<bdc:url var="url" webObject="${currentObject}" linkParam="comments=all#add-comment"/>
+			<a href="${url}" data-uuid="${currentObject.uuid}">Add yours</a>
+		</li>
+	</ul>
+
+	<%-- Sharing --%>	
+	<bdc:url var="url" webObject="${currentObject}" absolute="true"/>
+	<p:out var="shareHead" xvalue="$meta//SEOInformation/Headline"/>
+	
+	<ul class="tease-share">
+		<li class="list-heading">Share now: </li>
+		<li>
+			<a href="https://twitter.com/share?url=${url}%3fcamp=hp-twit"
+			onclick="openWindow('https://twitter.com/share?url=${url}%3fcamp=hp-twit&amp;via=BostonDotCom&amp;text=${shareHead}','BDCTweet','width=535,height=460,resizable=no,scrollbars=no,toolbar=no,location=no,menubar=no,status=no'); return false;" 
+			class="small-share-icon twitter-logo">
+				<img src="/img/share-icon-tw-17x17.png" />
+			</a>
+		</li>
+		<li>
+			<a href="https://plus.google.com/share?url=${url}%3Fcamp=hp-gp"
+          	onclick="openWindow('https://plus.google.com/share?url=${url}%3Fcamp=hp-gp','BDCGooglePlus','width=550,height=525,resizable=no,scrollbars=no,toolbar=no,location=no,menubar=no,status=no'); return false;"
+			class="small-share-icon google-plus-logo">
+				<img src="/img/share-icon-gplus-17x17.png" />
+			</a>
+		</li>
+		<li>
+			<a href="https://www.facebook.com/sharer.php?u=${url}%3Fcamp=hp-fb"
+          	onclick="openWindow('https://www.facebook.com/sharer.php?u=${url}%3Fcamp=hp-fb','BDCFacebook','width=535,height=385,resizable=no,scrollbars=no,toolbar=no,location=no,menubar=no,status=no'); return false;"
+			class="small-share-icon facebook-logo">
+				<img src="/img/share-icon-fb-17x17.png" />
+			</a>
+		</li>
+	</ul>
+
+</div><!-- / .tease-social-bar -->

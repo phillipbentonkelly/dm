@@ -1,0 +1,10 @@
+<p:currentObject webType="WT" channel="Boston.com" />
+
+<!-- ad layer path = ${adLayer} -->
+
+<div class="ad-container ad-container--ad_lead1">
+  <div class="ad-container__ad-slot">
+  	<div class="ad ad-lead" id="ad_lead1"></div>
+  	<%-- <p:include pageZoneName="ad_lead1" inherits="${adLayer}" /> --%>
+  </div>
+</div><!-- / ad-container -->

@@ -1,0 +1,135 @@
+// *
+// *  Events Icons 
+// *
+
+// ------------------------------------------------------------
+// Standard
+// ------------------------------------------------------------
+
+.icon-events {
+  background-image: url('/hash/#{$sprite-events-hash}/bdc-img/sprites/sprite-events.png');
+  text-indent: -9999px;
+  display: inline-block;
+  // Calendar Icons
+  &--calendar {
+    @include sprite-position($ico-events-calendar);
+    @include sprite-width($ico-events-calendar);
+    @include sprite-height($ico-events-calendar);
+  }
+
+  // Small arrow
+  &--arrow-small {
+		@include sprite-position($ico-arrow-narrow-small);
+    @include sprite-width($ico-arrow-narrow-small);
+    @include sprite-height($ico-arrow-narrow-small);
+  }
+	
+	// Selected filter checkmark active
+  &--checkmark-active {
+		@include sprite-position($ico-checkmark-active);
+    @include sprite-width($ico-checkmark-active);
+    @include sprite-height($ico-checkmark-active);
+  }
+
+	// Non selected Filter
+  &--checkmark-inactive {
+		@include sprite-position($ico-checkmark-inactive);
+    @include sprite-width($ico-checkmark-inactive);
+    @include sprite-height($ico-checkmark-inactive);
+  }
+	
+	// Default Event Artwork
+	&--no-art {
+		@include sprite-position($ico-event-no-art);
+    @include sprite-width($ico-event-no-art);
+    @include sprite-height($ico-event-no-art);
+  }
+
+	// Search Nearby Button Geolocate Img
+  &--geolocate {
+		@include sprite-position($ico-geolocate-x-small);
+    @include sprite-width($ico-geolocate-x-small);
+    @include sprite-height($ico-geolocate-x-small);
+  }
+
+  &--expand-active-small {
+    @include sprite-position($ico-expand-active-small);
+    @include sprite-width($ico-expand-active-small);
+    @include sprite-height($ico-expand-active-small);
+  }
+
+  &--expand-hover-small {
+    @include sprite-position($ico-expand-hover-small);
+    @include sprite-width($ico-expand-hover-small);
+    @include sprite-height($ico-expand-hover-small);
+  }
+
+  &--expand-resting-small {
+    @include sprite-position($ico-expand-resting-small);
+    @include sprite-width($ico-expand-resting-small);
+    @include sprite-height($ico-expand-resting-small);
+  }
+
+  &--close-x-small {
+    @include sprite-position($ico-close-x-small);
+    @include sprite-width($ico-close-x-small);
+    @include sprite-height($ico-close-x-small);
+  }
+}
+
+
+// ------------------------------------------------------------
+// Retina
+// ------------------------------------------------------------
+
+@include media-query--retina {
+  .icon-events {
+    background-image: url('/hash/#{$sprite-events-at-2x-hash}/bdc-img/sprites/sprite-events@2x.png');
+
+    // Calendar Icons
+    &--calendar {
+      @include sprite--retina($ico-events-calendar-2x);
+    }
+
+		// Small Arrow
+    &--arrow-small {
+      @include sprite--retina($ico-arrow-narrow-2x);
+    }
+
+		// Selected Filter Checkmark
+    &--checkmark-active {
+      @include sprite--retina($ico-checkmark-active-2x);
+    }
+
+		// Non Selected Filter Checkmark
+    &--checkmark-inactive {
+      @include sprite--retina($ico-checkmark-inactive-2x);
+    }
+
+		// Default Event Artwork
+    &--no-art {
+      @include sprite--retina($ico-event-no-art-2x);
+    }
+
+		// Nearby Search Geolocate
+    &--geolocate {
+      @include sprite--retina($ico-geolocate-x-small-2x);
+    }
+
+    &--expand-active-small {
+      @include sprite--retina($ico-expand-active-small-2x);
+    }
+
+    &--expand-hover-small {
+      @include sprite--retina($ico-expand-hover-small-2x);
+    }
+
+    &--expand-resting-small {
+      @include sprite--retina($ico-expand-resting-small-2x);
+    }
+
+    &--close-x-small {
+      @include sprite--retina($ico-close-x-small-2x);
+    }
+  }
+}

@@ -1,0 +1,587 @@
+// *
+// *  Module Name 
+// *
+
+$module-name: 'election-results';
+
+// ------------------------------------------------------------
+// Default Styles
+// ------------------------------------------------------------
+
+.election-widget--mobile {
+  display: block;
+  border-bottom: 1px solid color(gray);
+
+  .election-results__office {
+    width: 94%;
+    margin: 0 auto;
+  } 
+
+  .election-results__title {
+    padding: spacer(px, small) spacer(px, large) spacer(px, small) 0;
+    padding: spacer(rem, small) spacer(px, large) spacer(px, small) 0; 
+  }
+} 
+
+// WINNER STATES
+
+.winner-white {
+  background-image: url('/bdc-img/special/ico-white-small-checkmark.png');
+  background-repeat: none;
+}
+
+.winner-gray {
+  background-image: url('/bdc-img/special/ico-grey-small-checkmark.png');
+  background-repeat: no-repeat;
+}
+
+.winner-red {
+  background-image: url('/bdc-img/special/red-checkmark--small.png');
+  background-repeat: no-repeat;
+}
+
+.winner-blue {
+  background-image: url('/bdc-img/special/blue-checkmark--small.png');
+  background-repeat: no-repeat;
+}
+
+
+
+.winner-ballot {
+  opacity: 1.0 !important;
+}
+
+.#{$module-name} {
+  // Module Styles
+  &__heading--mobile {
+    padding: spacer(px, x-large);
+    padding: spacer(rem, x-large);
+    text-align: center;
+    background-color: color(white);
+    border-bottom: 1px solid color(gray, light);
+    @include font-scale(large);
+    font-weight: $fw-medium;
+    color: color(gray, dark);
+
+    &--red {
+      color: color(red);
+    }
+    &--blue {
+      color: color(blue, dark);
+    }    
+  }
+
+  &__source--mobile {
+    width: 49%;
+    display: inline-block;
+    margin-top: spacer(px, mid);
+    margin-top: spacer(rem, mid);
+    text-align: left;
+    font-style: italic;
+    color: color(gray, light);
+    @include font-scale(xx-small);      
+  }
+
+  &__link-mobile {
+    width: 49%;
+    display: inline-block;
+    margin-top: spacer(px, mid);
+    margin-top: spacer(rem, mid);
+    text-align: right;
+    text-transform: uppercase;
+    @include font-scale(xx-small);
+    @include link-states(color(gray,dark), color(gray), color(gray));
+  }
+
+  &__heading {
+    @include font-scale(large);
+    font-weight: $fw-medium;
+    color: color(gray, dark);
+    &--red {
+      color: color(red);
+    }
+    &--blue {
+      color: color(blue, dark);
+    }
+  }
+  
+  // Different Office Races
+
+  &__office {
+    width: 100%;
+    padding-top: spacer(px, base);
+    padding-top: spacer(rem, base);
+    padding: spacer(px, mid);
+    padding: spacer(rem, mid);
+    color: color(gray, dark);
+  }
+  
+  // Candidate Title Row
+
+  &__title {
+    display: table;
+    width: 100%;
+    margin-top: spacer(px, mid);
+    margin-top: spacer(rem, mid);
+    padding: spacer(px, small) spacer(px, mid) spacer(px, small) 0;
+    padding: spacer(rem, small) spacer(px, mid) spacer(px, small) 0; 
+    font-weight: $fw-medium;
+    @include font-scale(x-small);
+  }
+
+  &__title-office {
+    display: table-cell;
+    width: 65%;
+    text-transform: uppercase;
+
+    &--district {
+      display: block;
+      font-weight: $fw-regular;
+      text-transform: capitalize;
+    }
+  }
+
+  &__title-data {
+    display: table-cell;
+    width: 25%;
+    &--percent {
+      width: 10%!important;
+    }
+  }
+
+  // Container for All Candidate Rows
+
+  &__candidates {
+    display: block;
+    width: 100%;
+    margin-top: spacer(px, base);
+    margin-top: spacer(rem, base);
+    padding: spacer(px, small) spacer(px, mid) spacer(px, mid);
+    padding: spacer(rem, small) spacer(rem, mid) spacer(rem, mid);
+    background-color: color(white);
+  }
+  
+  // Candidate Info
+
+  &__candidate-row {
+    @include font-scale(x-small);
+    display: table;
+    width: 100%;
+    padding: spacer(px) 0 spacer(px, small) 0;
+    padding: spacer(rem) 0 spacer(rem, small) 0; 
+    margin-top: spacer(px, small);
+    margin-top: spacer(rem, small);     
+  }
+
+  &__candidate-name {
+    display: table-cell;
+    width: 40%;
+  }
+
+  &__candidate-party {
+    display: table-cell;
+    width: 8%;
+    font-weight: $fw-bold;
+    text-transform: uppercase;
+
+    &--red {
+      color: color(red, light);
+    }
+    &--blue {
+      color: color(blue, dark);
+    }
+    &--gray {
+      color: color(gray);
+    }
+    &--green {
+      color: #417505;
+    }
+  }
+
+  &__running-mate {
+    @include font-scale(xxx-small);
+    color: color(gray);
+    display: block;
+    width: 100%;
+  }
+  
+  &__checkmark {
+    height: 20px;
+    width: 20px;
+    display: inline-block;
+  }
+
+  &__color-check {
+    width: 17%;
+    display: table-cell;
+    vertical-align: middle;
+    padding: 0;
+    text-align: left;
+  }
+
+  &__candidate-bar {
+    display: none;
+    width: 39%;
+    vertical-align: middle;
+
+    &-wrap {
+      display: block;
+      height: 20px;
+      width: 85%;
+      background-color: color(gray, mid-light);
+    }
+
+    &-percent {  
+      &--red {
+        height: 100%;
+        width: 0%;
+        background-color: color(red);
+      }
+      &--blue {
+        height: 100%;
+        width: 0%;
+        background-color: color(blue, dark);
+      }
+      &--green {
+        height: 100%;
+        width: 0%;
+        background-color: #417505;
+      }
+      &--gray {
+        height: 100%;
+        width: 0%;
+        background-color: color(gray, dark);
+      }
+    }
+  }
+ 
+  &__candidate-votes {
+    display: table-cell;
+    width: 25%;
+  }
+
+  &__candidate-percent {
+    display: table-cell;
+    width: 10%;
+    font-weight: $fw-bold;
+  }
+
+  // Precints Reporting 
+
+  &__source {
+    display: inline-block;
+    margin-top: spacer(px, small);
+    margin-top: spacer(px, small);
+    float: right;
+    font-style: italic;
+    color: color(gray, light);
+    @include font-scale(xxx-small);
+  }
+
+  &__data-source {
+    color: color(gray, dark);
+     @include font-scale(xx-small);
+     font-weight: $fw-bold;
+  }
+
+  &__associated-press {
+
+  }
+
+  &__article {
+    display: inline-block;
+    margin-top: spacer(px, small);
+    margin-top: spacer(px, small);
+    text-align: left;
+    color: color(gray, light);
+    @include font-scale(xxx-small);
+    text-decoration: underline;
+  }
+  
+  // BALLOT SECTION STYLES
+
+  // Image Styles
+
+  &__thumbs-up, &__thumbs-down {
+    width: 35px;
+    height: 31px;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: spacer(px, small);
+    margin-bottom: spacer(rem, small);
+  }
+
+  &__thumbs-down {
+    background-image: url('/bdc-img/special/ico-thumbsdown.png');
+  }
+
+  &__thumbs-up {
+    background-image: url('/bdc-img/special/ico-thumbsup.png');
+  }
+
+  &__checkbox {
+    display: table-cell;
+    width: 8%;
+    font-weight: $fw-bold;
+    text-transform: uppercase;
+  }
+
+  // Container for All Ballot Rows
+
+  &__ballots {
+    display: block;
+    width: 100%;
+    margin-top: spacer(px, base);
+    margin-top: spacer(rem, base);
+  }
+
+  // Ballot Row Styles
+
+  &__ballot-row {
+    @include font-scale(x-small);
+    display: table;
+    width: 100%;
+    padding: spacer(px, mid) spacer(px);
+    padding: spacer(rem, mid) spacer(rem); 
+    margin: spacer(px) 0 spacer(px, mid);
+    margin: spacer(rem) 0 spacer(rem, mid); 
+    background-color: #fff; 
+    &:last-child {
+      margin: spacer(rem) 0 0 0; 
+    }
+  }
+    
+  // Ballots Title Row
+
+  &__ballot-title {
+    width: 60%;
+    display: table-cell;
+  }
+
+  &__ballot-title-data {
+    width: 20%;
+    display: table-cell;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  // Ballot Row Interior Styles
+
+  &__ballot-question {
+    vertical-align: top;
+    width: 40%;
+    padding-right: 10%;
+    display: table-cell;
+  }
+
+  &__ballot-data {
+    width: 20%;
+    display: table-cell;
+    text-align: center;
+    opacity: 0.5;
+  }
+
+  &__ballot-percent {
+    display: block;
+    font-weight: $fw-bold;
+    @include font-scale(x-small);
+  }
+
+  &__ballot-votes {
+    display: block;
+    font-style: italic;
+    @include font-scale(x-small);
+  }
+}
+
+// ------------------------------------------------------------
+// >600 Styles
+// ------------------------------------------------------------
+
+// >600 Breakpoint
+@include media-query(550) {
+
+  .#{$module-name} {
+
+    // Candidate Title Row 
+
+    &__title-office {
+      @include font-scale(xx-small);
+      width: 75%;
+    }
+
+    &__title-office--district {
+      display: inline;
+      &:before {
+        content:"\2013";
+      }
+    }
+
+    &__title-data {
+      width: 15%;
+    }
+
+    // Candidate Info Row
+
+    &__candidate-name {
+      width: 25%;
+    }
+
+    &__candidate-party {
+      width: 4%;
+    }
+
+    &__color-check {
+      display: none;
+    }
+
+    &__candidate-bar {
+      display: table-cell;
+      width: 46%;
+    }
+
+    &__candidate-votes {
+      width: 15%;
+    }
+
+    &__candidate-percent {
+      width: 10%;
+    }
+    
+    // Ballot Image Styles
+
+    &__checkbox {
+      width: 4%;
+    }
+
+    // Ballots Title Row
+
+    &__ballot-title {
+      width: 42%;
+      display: table-cell;
+      padding-right: 18%;
+    }
+
+    &__ballot-title-data {
+      width: 20%;
+    }
+
+    // Ballot Styles
+
+    &__ballot-question {
+      width: 40%;
+      padding-right: 20%;
+      display: table-cell;
+    }
+
+    &__ballot-data {
+      width: 20%;
+    }
+
+
+    &__ballot-title--tablet {
+      text-decoration: underline;
+      width: 100%;
+      clear: both;
+    }
+  }
+}
+
+// ------------------------------------------------------------
+// Tablet Breakpoint
+// ------------------------------------------------------------
+
+
+@include media-query(tablet) {
+
+  .#{$module-name} {
+
+    &__ballot-row {
+
+      &:hover {
+        box-shadow: none;
+      }
+    }
+
+
+    &__ballot-title--tablet {
+      text-decoration: underline;
+      width: 100%;
+      clear: both;
+    }
+
+
+
+  }
+}
+
+
+
+// ------------------------------------------------------------
+// Desktop Breakpoint
+// ------------------------------------------------------------
+
+@include media-query(desktop) {
+ .#{$module-name} {
+    .election-widget--mobile {
+      display: none;
+    }
+
+    &__ballot-row {
+      &:hover {
+        box-shadow: 2px 2px 5px 2px color(gray);
+      }
+    }
+
+    &__ballot-title--tablet {
+      text-decoration: none;
+      width: 100%;
+      clear: both;
+    }
+
+
+  }
+}
+
+// ------------------------------------------------------------
+// Retina Images
+// ------------------------------------------------------------
+
+@include media-query--retina {
+  .winner-white {
+    background-image: url('/bdc-img/special/ico-white-small-checkmark-2x.png');
+    background-size: 20px 20px;
+  }
+
+  .winner-gray {
+    background-image: url('/bdc-img/special/ico-grey-small-checkmark-2x.png');
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+  }
+
+  .winner-red {
+    background-image: url('/bdc-img/special/ico-red-checkmark-2x.png');
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+  }
+
+  .winner-blue {
+    background-image: url('/bdc-img/special/ico-blue-checkmark-2x.png');
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+  }
+  
+  .#{$module-name} {
+   
+    &__thumbs-down {
+      background-image: url('/bdc-img/special/ico-thumbsdown-2x.png');
+      background-size: 35px 31px;
+    }
+
+    &__thumbs-up {
+      background-image: url('/bdc-img/special/ico-thumbsup-2x.png');
+      background-size: 35px 31px;
+    }
+  
+  }
+}

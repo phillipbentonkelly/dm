@@ -462,7 +462,8 @@
 
   // Fallback pattern
   .no-svg & {
-    background-image: url($png);
+    //background-image: url($png); This is the original line for this snippet. background-image has a hard url as a placeholder -cgo
+    background-image: url(http://devedit.boston.com/real-estate/images/vote-down.png);
    //TODO: need to fix this, for some reason in IE8 this is causing double images to load on top of one another because for some reason the filter is loading the image and then scalling that.
      //    @if $cover == true {
     //  // Makes sure that image scales if necessary, works for IE9
@@ -472,7 +473,8 @@
     // }
   }
   .svg & {
-    background-image: url($svg);
+    background-image: url(http://devedit.boston.com/real-estate/images/vote-down.svg);
+    //background-image: url($svg); This is the original line for this snippet. background-image has a hard url as a placeholder -cgo
   }
 } // svg
 

@@ -1,0 +1,55 @@
+//Needs to have changes to work with @mixin video
+//see /styles/partials/_mixins.scss:471
+
+.videoplayer{
+	position: relative;
+
+}
+.primary .videoplayer, .story-mod .videoplayer{
+	&.brightcove,
+	&.cinesport,
+	&.ustream,
+	&.nesn{
+		@include video();
+	}
+
+	//overrides for specific players
+	&.cinesport{
+		padding-top:0;
+	}
+	&.ndn_embed{
+		width: 100%;
+		//height: 518px;
+		height: 216px;
+		@include mq(480px) { height: 259px; }
+		@include mq(767px) { height: 414px; }
+		//@include mq(960px) { height: 518px; }
+	}
+
+}
+.secondary{
+	.feat-tz.video{
+		width:320px;
+		padding: 10px 0;
+
+		.videoplayer,.perform-wrap{
+			width:300px;
+			margin: 0 auto;
+			&.brightcove,
+			&.cinesport,
+			&.ustream,
+			&.nesn{
+				@include video();
+			}
+			&.ndn_embed{
+			 	//float: left;
+			 	margin-bottom: 15px;
+			 	width: 300px;
+			 	height: 220px;
+			 	@include mq($sidebar-break){
+			 		//nothing yet
+			 	}
+			}
+		}
+	}
+}

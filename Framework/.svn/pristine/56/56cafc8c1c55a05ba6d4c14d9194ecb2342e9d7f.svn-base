@@ -1,0 +1,210 @@
+/* ---------------------------------------------- */
+
+/*	Lists							 			  */ 
+
+/* ---------------------------------------------- */
+
+// Styles common to all lists
+// Used 6 times; 1 time in _articles.scss and _article_unres.scss;
+// 4 times in _lists.scss
+@mixin list-defaults($style: vertical) {
+	@if ($style == vertical) or ($style == vert) {
+		padding: 0 0 0 22px;
+		color: $red;
+	}
+	@if ($style == horizontal) or ($style == horiz) {
+		padding: 0;
+		color: #bbb;
+	}
+
+	> li {
+		margin-bottom: 6px;
+	}
+	> li > p,
+	> .list-item > p {
+		color: #222;
+	}
+	> li > a,
+	> .list-item > a {
+		@include link;
+	}
+	.reverse & > li > a,
+	.reverse & > .list-item > a {
+		@include link(light);
+	}
+
+	// Add class of "horiz" to any standard list to make it horizontal 
+	&.horiz {
+		> li,
+		> .list-item {
+			display: inline-block;
+			margin: 0 7px 0 0;
+		}
+	}
+}
+
+// Standard List, no bullets or whatnot
+.list {
+	@include list-defaults;
+}
+
+// Bulleted List
+// Ryan P 8.21
+.list-bull, .bull-list 
+.list-bull {
+	list-style: disc outside;
+	@include list-defaults;
+	> .list-bull {
+		margin: 9px 0;
+		// list-style-type: circle;
+		color: #bbb;			
+	}
+}
+
+.list-bull-h {
+	@include sans(em(14), 600);
+	margin-bottom: 1px;
+	> a {
+		@include link;
+	}
+}
+
+// Ryan P 8.21
+.list-bull-src {
+	@include sans(em(13), 400);
+	color: $black-50;
+	padding-bottom: 10px;
+	display: inline-block;
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+// Alphabetical List
+// Ryan P 8.21
+// .list-alpha, .alpha-list {
+// 	list-style: lower-alpha outside;
+// 	@include list-defaults;
+// 	color: #999;
+// }
+
+// Numbered List
+// Ryan P 8.21
+.num-list, .list-num {
+	list-style: decimal outside;
+	@include list-defaults;
+	color: #999;
+}
+
+// Glyph for horizontal lists
+// Used 4 times; 1 time in _article.scss and _article_unres.scss;
+// 2 times in _lists.scss
+// Used for "Related Links" lists
+@mixin list-horiz-glyph {
+	content: '|'; // Entity for the caret ">" character
+	margin-left: 6px;
+}
+
+// Horizontal Lists
+.list-horiz, .horiz-list {
+	@include list-defaults(horiz);
+	> li,
+	> .list-item {
+		display: inline-block;
+		margin: 0 6px 0 0;
+		&:not(:last-child):after {
+			@include list-horiz-glyph;	
+		}
+		// Rewrite this rule so IE 7-8 understand
+		.ie &:after {
+			@include list-horiz-glyph;	
+		}
+		.ie &.last:after {
+			content: "";
+		}
+	}
+} // end .list-horiz
+
+
+//
+// Big Number Lists
+//
+
+//All stuff to custom style numbers in an OL
+//see http://www.red-team-design.com/css3-ordered-list-styles for reference
+
+// Used most prominently on the Must Read List Widget
+// Ryan P 8.21
+.list-num-big {
+	counter-reset: li 0;
+}
+
+.mr-list > li,
+.list-num-big > li,
+.list-num-big > .list-item {
+	@include sans(em(14)/120%, 500);
+	position: relative;
+	list-style: none;		// Remove default numbering
+	*list-style: decimal;  // Use default numbering for IE6/7
+
+	> a {
+		position: relative;
+		display: block;
+		padding: 12px 12px 12px 30px;
+		border-bottom: 1px solid #e5e5e5;
+		@include link;
+	}
+
+	// Number Box
+	&:before{
+		content: counter(li);
+		counter-increment: li 1;
+		@include absolute(12px n n n);
+		@extend .number-box;
+	}
+}
+
+
+//
+// Big Unordered Lists
+//
+
+//All stuff to custom style numbers in an OL
+//see http://www.red-team-design.com/css3-ordered-list-styles for reference
+
+// Used most prominently on the Must Event listings Widget
+
+
+// Ryan P 8.21
+
+// .list-ul-big {
+// 	list-style: disc outside;
+// 	@include list-defaults;
+// 	> .list-ul-big {
+// 		margin: 9px 0;
+// 		// list-style-type: circle;
+// 		color: #bbb;			
+// 	}
+// }
+
+// .list-ul-big li {
+// 	@include sans(em(14)/120%, 500);
+// 	margin-bottom: 1px;
+// 	> a {
+// 		position: relative;
+// 		display: block;
+// 		padding: 12px 12px 12px 0px;
+// 		border-bottom: 1px solid #e5e5e5;
+// 		@include link;
+// 	}
+// }
+
+// .list-bull-src {
+// 	@include sans(em(13), 400);
+// 	color: $black-50;
+// 	padding-bottom: 10px;
+// 	display: inline-block;
+// 	&:hover {
+// 		text-decoration: underline;
+// 	}
+// }

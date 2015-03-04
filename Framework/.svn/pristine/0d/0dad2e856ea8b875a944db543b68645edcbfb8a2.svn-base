@@ -1,0 +1,54 @@
+<p:currentObject metadata="meta" />
+<p:out var="videoID" xvalue="$meta//ObjectMetadata/OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/VideoID" />
+<p:out var="externalProvider" xvalue="$meta//ObjectMetadata/OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/ExternalProvider" />
+
+<p:getPageZone name="external_video_story" var="ustream" />
+
+<div class="lead-tz lead-tz-w-art">
+<%-- <div class="swiper-slide lead-tz lead-tz-no-art"> --%>
+	<c:choose>
+		<c:when test="${externalProvider eq 'Ustream'}">
+			<div class="videoplayer ustream"
+			   	 data-schema="5"
+			 	 id="${videoID}">
+			</div>
+			
+			<c:if test="${ustream.size == 1}">
+				<c:forEach items="${ustream.items}" var="ustreamItem">
+					<p:getObject webObject="${ustreamItem}" var="ustream" />
+					<p:object webObject="${ustream}" metadata="uMeta" content="content" />
+					<bdc:getHeadlines webObject="${ustream}" var="headlines" />
+				
+				<%--
+					<div class="lead-tz-txt-bd reverse">
+						<h4 class="lead-tz-overline">
+							
+						</h4>
+						<h1 class="lead-tz-h">
+							${headlines.headline}
+						</h1>
+					</div> <!-- /lead-tz-txt-bd -->
+				--%>
+				</c:forEach>
+			</c:if>
+		</c:when>
+		<c:when test="${externalProvider eq 'NESN'}">
+			<c:choose>
+				<c:when test="${videoID eq 'latest' or videoID eq 0}">
+					<div class="videoplayer nesn"
+				    	 data-schema="6"
+				    	 data-video-type="latest"
+				    	 data-video-id="0">
+					</div>
+				</c:when>
+				<c:otherwise>
+					<div class="videoplayer nesn"
+				    	 data-schema="6"
+				    	 data-video-type="video"
+				    	 data-video-id="${videoID}">
+					</div>
+				</c:otherwise>
+			</c:choose>
+		</c:when>
+	</c:choose>
+</div>	<!-- swiper-slide lead-tz lead-tz-w-art -->

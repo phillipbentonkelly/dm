@@ -1,0 +1,113 @@
+/* line 3, ../../styles/_weather.scss */
+
+.bg-forecast {
+  font-family: Arial,Helvetica,Verdana,sans-serif;;
+}
+
+.bg-forecast .fc-lead h1 {
+  padding: 12px 5px 0;
+  font-size: 21px;
+  font-family: Helvetica,Arial,sans-serif;
+  font-weight: bold;
+}
+/* line 10, ../../styles/_weather.scss */
+.bg-forecast h2.alert-sub {
+  background-color: #e6e6e8;
+  font-size: 0.9em;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  margin: 0;
+  padding: 7px 5px;
+  color: #666;
+  border-bottom: 1px solid #ccccce;
+}
+/* line 20, ../../styles/_weather.scss */
+.bg-forecast div.exp-more {
+  padding: 7px 5px;
+  font-weight: bold;
+  font-size: 0.9em;
+  background-color: #fffff5;
+  text-transform: uppercase;
+  margin-right: 5px;
+  display: block;
+  border-top: 1px solid #ccccce;
+  border-bottom: 1px solid #ccccce;
+}
+/* line 30, ../../styles/_weather.scss */
+.bg-forecast div.exp-more a {
+  color: #eb1c24;
+}
+/* line 35, ../../styles/_weather.scss */
+.bg-forecast ul.fc-day {
+  clear: both;
+  border-bottom: 1px solid #ccc;
+  margin: 0;
+  padding: 0 0 0 0px;
+  overflow: auto;
+
+  &:after {
+    clear: both;
+  }
+
+}
+/* line 36, ../../styles/_weather.scss */
+.bg-forecast ul.fc-day:first-child {
+  border-top: 1px solid #ccc;
+}
+/* line 46, ../../styles/_weather.scss */
+.bg-forecast ul.fc-day li.fc-day {
+  border-bottom: 1px solid #ccc;
+  margin: 0;
+  text-indent: 0;
+  list-style-type: none;
+}
+/* line 47, ../../styles/_weather.scss */
+.bg-forecast ul.fc-day li.fc-day:first-child {
+  border-top: 1px solid #ccc;
+}
+/* line 52, ../../styles/_weather.scss */
+.bg-forecast ul.fc-day li.fc-day figure {
+  margin: 2px 10px 2px 5px;
+  width: 180px;
+  text-align: center;
+}
+/* line 56, ../../styles/_weather.scss */
+.bg-forecast ul.fc-day li.fc-day figure img {
+  width: 75px;
+}
+/* line 60, ../../styles/_weather.scss */
+.bg-forecast ul.fc-day li.fc-day h3.fc-day-name {
+  font-size: 16px;
+  color: #000;
+  font-weight: bold;
+  margin: 5px 2px;
+}
+/* line 65, ../../styles/_weather.scss */
+.bg-forecast ul.fc-day li.fc-day h3.fc-day-name i {
+  font-size: 14px;
+}
+/* line 67, ../../styles/_weather.scss */
+.bg-forecast ul.fc-day li.fc-day ul.fc-temp {
+  padding: 0 0 10px 10px;
+  font-size: 1.6em;
+}
+/* line 70, ../../styles/_weather.scss */
+.bg-forecast ul.fc-day li.fc-day ul.fc-temp li.fc-temp {
+  font-size: 21px;
+  display: inline-block;
+  color: #666;
+  padding-right: 5px;
+}
+/* line 71, ../../styles/_weather.scss */
+.bg-forecast ul.fc-day li.fc-day ul.fc-temp li.fc-temp abbr {
+  border-bottom: none;
+}
+/* line 76, ../../styles/_weather.scss */
+.bg-forecast ul.fc-day li.fc-day ul.fc-temp li.fc-temp:first-child {
+  border-right: 1px solid #666;
+}
+/* line 82, ../../styles/_weather.scss */
+.bg-forecast ul.fc-day .fc-status {
+  float: right;
+  margin: 0 0 0 0;
+}

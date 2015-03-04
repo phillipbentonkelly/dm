@@ -1,0 +1,31 @@
+<p:currentObject metadata="trendingMeta" />
+<p:out var="trendingHeader" xvalue="$trendingMeta//ObjectMetadata/TeaseHeader" />
+
+<p:out var="VR" value="${cacheScope.visualRevenue}" /> <!-- VR = ${VR} -->
+<p:out var="VisRevAttribute" value='data-vr-zone="Seriously Well"' /> <%-- This is seriously a dumb name. Seriously. --%>
+<c:if test="${VR == False}">
+	<p:out var="VisRevAttribute" value="" />
+</c:if>
+
+<!-- Trending -->
+<section class="trending-mod">
+      <div class="trending-slotted trending-closed" ${VisRevAttribute}>
+            <h3 class="section-h">${trendingHeader}</h3>
+            <ul class="trending-slotted-list list-bull">
+				
+				<p:getPageZone name="trending" var="trending" />
+				<c:forEach items="${trending}" var="trendingItem">
+					<p:object webObject="${trendingItem}" metadata="tiMeta" content="tiContent" />
+					
+					<bdc:getHeadlines webObject="${trendingItem}" var="headlines" />
+					
+					<li class="list-bull-item" data-vr-contentbox="">
+						<bdc:link webObject="${trendingItem}" linkParam="p1=Trending">${headlines.headline}</bdc:link>
+						<%-- <a href="${tiLink}">${headline}</a> --%>
+					</li>
+				</c:forEach>
+            </ul>
+            <!-- ${cacheScope.adLayerDwpPath} -->
+            <p:include pageZoneName="must_reads" inherits="${cacheScope.adLayerDwpPath}" />
+      </div> <!-- /must-reads -->
+</section>

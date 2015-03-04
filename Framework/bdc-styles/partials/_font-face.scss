@@ -1,0 +1,93 @@
+// *
+// * Font Face Rules
+// *
+
+// Effra Light
+// @font-face {
+//   font-family: "effra";
+//   src: url("/fonts/Effra_Std_W_Lt.eot") format("eot");
+//   src: url("/fonts/Effra_Std_W_Lt.eot?iefix") format("eot"),
+//     url("/fonts/Effra_Std_W_Lt.woff") format("woff"),
+//     url("/fonts/Effra_Std_W_Lt.ttf") format("truetype");
+//   font-weight: 300;
+// }
+// Effra Light Italic
+// @font-face {
+//   font-family: "effra";
+//   src: url("/fonts/Effra_Std_W_LtIt.eot") format("eot");
+//   src: url("/fonts/Effra_Std_W_LtIt.eot?iefix") format("eot"),
+//     url("/fonts/Effra_Std_W_LtIt.woff") format("woff"),
+//     url("/fonts/Effra_Std_W_LtIt.ttf") format("truetype");
+//   font-weight: 300;
+//   font-style: italic;
+// }
+// Effra Regular
+@font-face {
+  font-family: "effra";
+  src: url("/fonts/Effra_Std_W_Rg.eot?#iefix") format("embedded-opentype"),
+    url("/fonts/Effra_Std_W_Rg.woff") format("woff"),
+    url("/fonts/Effra_Std_W_Rg.ttf") format("truetype");
+  font-weight: 400;
+}
+// Effra Regular Italic
+@font-face {
+  font-family: "effra";
+  src: url("/fonts/Effra_Std_W_It.eot?#iefix") format("embedded-opentype"),
+    url("/fonts/Effra_Std_W_It.woff") format("woff"),
+    url("/fonts/Effra_Std_W_It.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+}
+// Effra Medium
+@font-face {
+  font-family: "effra";
+  src: url("/fonts/Effra_Std_W_Md.eot?#iefix") format("embedded-opentype"),
+    url("/fonts/Effra_Std_W_Md.woff") format("woff"),
+    url("/fonts/Effra_Std_W_Md.ttf") format("truetype");
+  font-weight: 500;
+}
+// Effra Medium Italic
+@font-face {
+  font-family: "effra";
+  src: url("/fonts/Effra_Std_W_MdIt.eot?#iefix") format("embedded-opentype"),
+    url("/fonts/Effra_Std_W_MdIt.woff") format("woff"),
+    url("/fonts/Effra_Std_W_MdIt.ttf") format("truetype");
+  font-weight: 500;
+  font-style: italic;
+}
+// Effra Bold
+@font-face {
+  font-family: "effra";
+  src: url("/fonts/Effra_Std_W_Bd.eot?#iefix") format("embedded-opentype"),
+    url("/fonts/Effra_Std_W_Bd.woff") format("woff"),
+    url("/fonts/Effra_Std_W_Bd.ttf") format("truetype");
+  font-weight: 700;
+}
+// Effra Bold Italic
+@font-face {
+  font-family: "effra";
+  src: url("/fonts/Effra_Std_W_BdIt.eot?#iefix") format("embedded-opentype"),
+    url("/fonts/Effra_Std_W_BdIt.woff") format("woff"),
+    url("/fonts/Effra_Std_W_BdIt.ttf") format("truetype");
+  font-weight: 700;
+  font-style: italic;
+}
+// Effra Heavy
+// @font-face {
+//   font-family: "effra";
+//   src: url("/fonts/Effra_Std_W_He.eot") format("eot");
+//   src: url("/fonts/Effra_Std_W_He.eot?iefix") format("eot"),
+//     url("/fonts/Effra_Std_W_He.woff") format("woff"),
+//     url("/fonts/Effra_Std_W_He.ttf") format("truetype");
+//   font-weight: 900;
+// }
+// Effra Heavy Italic
+// @font-face {
+//   font-family: "effra";
+//   src: url("/fonts/Effra_Std_W_HeIt.eot") format("eot");
+//   src: url("/fonts/Effra_Std_W_HeIt.eot?iefix") format("eot"),
+//     url("/fonts/Effra_Std_W_HeIt.woff") format("woff"),
+//     url("/fonts/Effra_Std_W_HeIt.ttf") format("truetype");
+//   font-weight: 900;
+//   font-style: italic;
+// }

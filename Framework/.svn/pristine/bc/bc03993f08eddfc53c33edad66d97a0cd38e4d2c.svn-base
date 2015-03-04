@@ -1,0 +1,26 @@
+<%-- This file gets inlined from: /SysConfig/WebPortal/Boston/Framework/skins/leaf/story/blogstory.jpt 
+and: /SysConfig/WebPortal/Boston/Framework/skins/leaf/story/story_default.jpt --%>
+
+<p:currentObject uuid="uuid"/>
+
+<p:out var="currentEnv" value="${portalContext.env.ENV_ID}" />
+<c:choose>
+	<c:when test="${currentEnv eq 'dev'}">
+		<p:out var="Environment" value="DEV" />
+	</c:when>
+	<c:when test="${currentEnv eq 'qa'}">
+		<p:out var="Environment" value="QA" />
+	</c:when>
+	<c:when test="${currentEnv eq 'prd'}">
+		<p:out var="Environment" value="PRD" />
+	</c:when>
+	<c:otherwise>
+		<p:out var="Environment" value="" />
+	</c:otherwise>
+</c:choose>
+
+<%-- These values will be set in stone, as this is the BCOM NewsRight template --%>
+<p:out var="CreatorId" value="boston"/>
+<p:out var="ReleaseWebsite" value="boston.com"/>
+<p:out var="ProductName" value="boston.com"/>
+<p:out var="PermissionCategory" value="basic"/>

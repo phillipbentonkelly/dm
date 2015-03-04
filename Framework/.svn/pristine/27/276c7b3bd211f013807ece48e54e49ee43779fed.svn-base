@@ -1,0 +1,16 @@
+<p:currentObject content="content" metadata="meta" channel="Boston.com" sectionId="section" />
+<bdc:getHeadlines webObject="${currentObject}" var="headlines" />
+
+<p:out var="hasVR" value="${fn:toLowerCase(cacheScope.visualRevenue)}" />
+<p:out var="prefixVR" value="${cacheScope.visualRevenuePrefix}" />
+
+<c:set var="visualRevenueData" value="" />
+<c:if test="${hasVR eq 'true'}">
+	<c:set var="visualRevenueData">data-vr-zone="${prefixVR} links"</c:set>
+</c:if>
+
+<li class="section-well__list-item" data-vr-contentbox="">
+	<bdc:link webObject="${currentObject}" className="section-well__list-link" linkParam="p1=well_${fn:trim(prefixVR)}_subheadline_hp">
+		${headlines.carouselHeadline}
+	</bdc:link>
+</li>

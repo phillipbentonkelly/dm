@@ -1,0 +1,4 @@
+// SCSS for sponsored ads
+.temp {
+  display: none;
+}

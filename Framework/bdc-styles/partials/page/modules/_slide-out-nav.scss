@@ -1,0 +1,159 @@
+// *
+// * Slide Out Nav
+// *
+
+$module-name: 'slide-out-nav';
+
+// ------------------------------------------------------------
+// Default Styles
+// ------------------------------------------------------------
+
+.#{$module-name} {
+  position: fixed;
+  top: ($page-header-height-mobile + $page-nav-height);
+  width: 320px;
+  left: -370px;
+  height: 100%;
+  overflow: auto;
+  padding: spacer(px, large);
+  padding: spacer(rem, large);
+  background-color: color(gray, x-dark);
+  z-index: z-index(second-floor);
+
+  &--active {
+    left: 0;
+  }
+
+  // Search
+  &__search {
+    margin-bottom: spacer(px); 
+    margin-bottom: spacer(rem);
+  }
+
+  // Header
+  &__header {
+    padding: spacer(px, base) 0;
+    padding: spacer(rem, base) 0;
+    border-bottom: solid 1px color(gray);
+    @include font-scale(xxx-small);
+    font-weight: $fw-bold;
+    color: color(gray, light);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;  
+    clear: both;
+  }
+
+  // List Container
+  &__list-container {
+    margin-left: -(spacer(px, large));
+    margin-left: -(spacer(rem, large));
+  }
+
+  // List
+  &__list {
+    margin-bottom: spacer(px, x-large); 
+    margin-bottom: spacer(rem, x-large);
+    @extend %clearfix;
+  }
+
+  // List Items
+  &__item {
+    float: left;
+    width: 50%;
+    padding-left: spacer(px, large); //
+    padding-left: spacer(rem, large); //
+
+    // Logo List Items
+    .#{$module-name}__list--logo & {
+      padding-left: 0;
+      width: 100%;
+      @extend %clearfix;
+    }
+  }
+
+  // List Links
+  &__link {
+    display: block;
+    padding: spacer(px, base) 0;
+    padding: spacer(rem, base) 0;
+    border-bottom: solid 1px color(gray, dark);
+    @include font-scale(xx-small);
+    color: color(white);
+    transition: padding 0.1s cubic-bezier(0.49, 0.37, 0.445, 0.715);
+    &:hover {
+      padding: 10px 10px 10px 7px;
+      background-color: color(gray, dark);
+      color: color(white);
+    }
+
+    // Logo List Links
+    .#{$module-name}__list--logo & {
+      padding: spacer(px, mid) 0;
+      padding: spacer(rem, mid) 0;
+      &:hover {
+        padding-left: 10px;
+      }
+    }
+  }
+
+  // Link Text
+  &__link-text {
+    float: right;
+    width: 157px; // Wonky, but prevents text from moving on hover
+    padding-left: spacer(px);
+    padding-left: spacer(rem);
+    margin-top: -3px;
+    @include font-scale(xxx-small);
+    line-height: 1;
+  }
+
+  // Social Nav
+  .social-nav--horizontal {
+    margin-bottom: spacer(px, large);
+    margin-bottom: spacer(rem, large);
+    text-align: center;
+  }
+
+  // // Nav Footer
+  &__footer {
+    margin-bottom: $page-header-height; // Prevents odd scrolling/overflow behavior
+    padding-bottom: spacer(px, large);
+    padding-bottom: spacer(rem, large);
+    border-bottom: solid 1px color(gray, dark);
+    color: color(white);
+    @include font-scale(xxx-small);
+    text-align: center;
+  }
+
+  // Nav Footer List
+  &__footer-list {
+    @extend %clearfix;
+    margin-bottom: spacer(px);
+    margin-bottom: spacer(rem);
+  }
+
+  // Nav Footer List Item
+  &__footer-item {
+    display: inline-block;
+    &:first-child {
+      margin-right: 6px;
+      &:after {
+        content: '|';
+        margin-left: 6px;
+        color: color(gray);
+      }
+    }
+  }
+}
+
+// ------------------------------------------------------------
+// Tablet Breakpoint
+// ------------------------------------------------------------
+
+// On tablet and up the header is taller and loads the larger logo icon
+@include media-query(tablet) {
+  .#{$module-name} {
+    top: ($page-header-height + $page-nav-height);
+    width: 370px;
+  }
+}

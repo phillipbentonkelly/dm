@@ -1,0 +1,62 @@
+<!-- in tease_footer.jpt -->
+<c:if test="${not empty cacheScope.storyObject}">
+
+	<p:getObject var="storyObject" webObject="${cacheScope.storyObject}" />
+	<p:out var="viewType" value="${cacheScope.viewType}" />
+
+	<p:out var="teaseFooterClass" value="tease-footer" />
+	<c:if test="${viewType eq 'WELL'}">
+		<p:out var="teaseFooterClass" value="${teaseFooterClass} js-get-social-counts" />
+	</c:if>
+	<c:if test="${viewType eq 'LIST'}">
+		<p:out var="teaseFooterClass" value="${teaseFooterClass} js-get-social-counts-on-hover" />
+	</c:if>
+
+	<bdc:rwShareData webObject="${storyObject}" var="shareInfo" />
+
+	<div class="${teaseFooterClass}" data-canonical="${shareInfo.canonical}"
+		data-providers="facebook,twitter" data-loaded="false">
+
+		<p:include
+			url="$configurationURI/Framework/skins/components/story_container/tease_share.jpt">
+			<p:param name="storyObject" value="${storyObject}" />
+		</p:include>
+
+		<c:choose>
+			<c:when test="${viewType eq 'WELL'}">
+				<span class="tease-footer__text tease-footer__text--count js-total-count"></span>
+			</c:when>
+			<c:when test="${viewType eq 'LIST'}">
+				<c:if
+					test="${not empty cacheScope.displayTime && cacheScope.displayTime != 'None'}">
+					<c:if test="${cacheScope.displayTime == 'TimeSince'}">
+						<bdc:ifHasTimestamp webObject="${storyObject}">
+							<span class="tease-footer__text">
+								<bdc:time webObject="${storyObject}" format="since" />
+							</span>
+						</bdc:ifHasTimestamp>
+					</c:if>
+					<c:if test="${cacheScope.displayTime == 'Timestamp'}">
+						<bdc:ifHasTimestamp webObject="${storyObject}">
+							<span class="tease-footer__text">
+								<bdc:time webObject="${storyObject}" format="shortDate" />
+							</span>
+							<span class="tease-footer__text">
+								<bdc:time webObject="${storyObject}" format="time" />
+							</span>
+						</bdc:ifHasTimestamp>
+					</c:if>
+					<%--  RMK - need to obsolete this... --%>
+					<c:if test="${displayTime == 'TimeSince'}">
+						<bdc:ifHasTimestamp webObject="${storyObject}">
+							<span class="tease-footer__text">
+								<bdc:time webObject="${storyObject}" format="since" />
+							</span>
+						</bdc:ifHasTimestamp>
+					</c:if>
+				</c:if>
+			</c:when>
+		</c:choose>
+	</div>
+</c:if>
+<!-- leaving tease_footer.jpt -->

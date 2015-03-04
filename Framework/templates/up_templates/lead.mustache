@@ -1,0 +1,10 @@
+<div class="swiper-slide lead-tz{{#image}} lead-tz-w-art{{/image}}{{^image}} lead-tz-no-art{{/image}}">
+	<a class="lead-tz-art-bd" href="{{^gallery_link}}article.html{{/gallery_link}}{{#gallery_link}}gallery.html{{/gallery_link}}#{{slug}}">
+		{{#image}}<img class="lead-tz-art" src="{{image.thumb_feat}}"/>{{/image}}
+	</a> <!-- /lead-tz-art-bd -->
+	<div class="lead-tz-txt-bd reverse">
+		<h4 class="lead-tz-overline"><a href="#{{section.0}}">{{category}}</a></h4>
+		<h1 class="lead-tz-h"><a href="article.html#{{slug}}">{{{head}}}</a></h1>
+		<p class="lead-tz-txt tz-txt">{{{subhead}}}</p>
+	</div> <!-- /lead-tz-txt-bd -->
+</div> <!-- /lead-tz -->

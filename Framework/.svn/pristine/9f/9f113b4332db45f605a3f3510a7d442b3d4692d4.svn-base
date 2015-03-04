@@ -1,0 +1,46 @@
+<%--
+{comments}
+BDC-1735 - One more uncommitted change.
+{comments}
+--%>
+<p:currentObject metadata="m" />
+
+<p:out var="teaseOverline" xvalue="$m//TeaseHeader" />
+<p:out var="teaseOverlineURL" xvalue="$m//TeaseHeaderURL" />
+<p:out var="tzModVRAttr" value=""/>
+<p:out var="tzBlockVRAttr" value=""/>
+
+<%-- enable visual revenue if set in metadata --%>
+<c:if test="${cacheScope.visualRevenue eq 'True'}">
+	<p:out var="tzModVRAttr" value="data-vr-zone='Top of Page Well'"/>
+	<p:out var="tzBlockVRAttr" value="data-vr-contentbox=''"/>
+</c:if>
+	
+	<div class="top-tz-mod" data-vr-zone='Top of Page Well'>
+		<div class="top-tz-block left" data-vr-contentbox=''>
+	
+		<c:if test="${not empty teaseOverline and fn:trim(teaseOverline) ne ''}">
+			<c:choose>
+				<c:when test="${not empty teaseOverlineURL and fn:trim(teaseOverlineURL) ne ''}"> 
+					<a href="${teaseOverlineURL}" class="top-tz-overline overline">${teaseOverline}</a>
+				</c:when>
+				<c:otherwise>
+					<%-- as with every tease-type thing, we must account for all scenarios, this one being the case where there is an overline that is not linked --%>
+					<p class="top-tz-overline overline">${teaseOverline}</p>
+				</c:otherwise>
+			</c:choose>
+		</c:if>
+	
+		<p:include pageZoneName="main" templateName="top_of_page_lead" />
+	
+	</div> <!-- /top-tz-left -->
+	
+	<div class="top-tz-block right">
+		<ul id="top-tz-list">
+			<p:include pageZoneName="page_top_links" templateName="top_of_page_links">
+				<p:param name="visualRevenue" value="${cacheScope.visualRevenue}" />
+			</p:include>
+		</ul> <!-- /top-tz-list -->
+	</div> <!-- /top-tz-right -->
+</div> <!-- /top-tz-mod -->
+<div class="top-tz-line"></div>

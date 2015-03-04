@@ -1,0 +1,22 @@
+<%@ page import="java.util.Arrays" %>
+<%
+	String[] values = new String[] { "06s", "07s", "08s", "11s" };
+	String hasValue = (Arrays.asList(values).contains("07s")) ? "Yep" : "Nope";
+	pageContext.setAttribute("HasValue", hasValue);
+%>
+
+Does the array contain this value? ${HasValue}
+
+<%
+	//String icon = pageContext.getAttribute("iconEdit");
+	
+	// Mapping variables
+	String[] cloud = new String[] { "06s", "07s", "08s", "11s" };
+	String[] moon = new String[] { "33s", "34s", "37s" };
+	String[] mooncloud = new String[] { "35s", "36s", "38s" };
+	String[] rain = new String[] { "12s", "13s", "14s", "18s", "26s", "29s", "39s", "40s" };
+	String[] snow = new String[] { "19s", "20s", "21s", "22s", "23s", "24s", "25s", "43s", "44s" };
+	String[] suncloud = new String[] { "03s", "04s" };
+	String[] thunder = new String[] { "15s", "16s", "17s", "41s", "42s" };
+	String wind = "32s";
+%>

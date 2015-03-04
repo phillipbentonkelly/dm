@@ -1,0 +1,122 @@
+// *
+// *  Module Name 
+// *
+
+$module-name: 'weather-current';
+
+// ------------------------------------------------------------
+// Default Styles
+// ------------------------------------------------------------
+
+.#{$module-name} {
+  clear: both;
+
+  .icon-weather, .icon-weather-retina {
+    margin-top: spacer(px, small);
+    margin-top: spacer(rem, small);
+  }
+
+  &__header {
+    padding-top: spacer(px, small);
+    padding-top: spacer(rem, small);
+    padding-bottom: spacer(px, small);
+    padding-bottom: spacer(rem, small);
+    @include font-scale(large);
+    font-weight: $fw-bold;
+    border-bottom: 1px solid color(gray, light);
+  }
+
+  &__temp {
+    display: inline-block;
+    margin-bottom: spacer(px, xx-large); // changed from 'large' when hi/lo was removed
+    margin-bottom: spacer(rem, xx-large); // changed from 'large' when hi/lo was removed
+    padding-top: spacer(px); // added when hi/lo was removed
+    padding-top: spacer(rem); // added when hi/lo was removed
+    max-width: 50%;
+  }
+
+  &__actual-temp {
+    position: relative;
+    line-height: 1;
+    font-size: 70px;
+    font-weight: $fw-bold;
+    text-transform: uppercase;
+    sub {
+      position: absolute;
+      bottom: 1px;
+      right: 4px;
+      @include font-scale(x-large);
+    }
+  }
+
+  &__real-feel-temp {
+    display: inline-block;
+    @include font-scale(x-small);
+    sup {
+      font-size: 13.5px;
+      vertical-align:super;
+
+    }
+  }
+
+  &__condition {
+    display: inline-block;
+    float: right;
+    margin-top: spacer(px, base);
+    margin-top: spacer(rem, base);
+    text-align: center;
+    max-width: 50%;
+  }
+
+  &__condition-text {
+    @include font-scale(x-small);
+    font-weight: $fw-bold;
+  }
+
+  &__description {
+    margin: spacer(px, large) 0;
+    margin: spacer(rem, large) 0;
+  }
+
+  &__list {
+    clear: both;
+    margin-bottom: spacer(px, base);
+    margin-bottom: spacer(rem, base);
+  }
+
+  &__term {
+    float: left;
+    clear: left;
+    padding: spacer(px, small) 0;
+    padding: spacer(rem, small) 0;
+    @include font-scale(x-small);
+    font-weight: $fw-medium;
+  }
+
+  &__definition {    
+    padding: spacer(px, small) 0;
+    padding: spacer(rem, small) 0;
+    border-bottom: 1px solid color(gray, x-light);
+    @include font-scale(x-small);
+    text-align: right;
+    &:last-child {
+      border-bottom: 0px;
+    }
+  }
+}
+
+// ------------------------------------------------------------
+// Tablet Breakpoint
+// ------------------------------------------------------------
+
+@include media-query(tablet) {
+  .#{$module-name} {
+
+    &__list {
+      margin-bottom: spacer(px, large);
+      margin-bottom: spacer(rem, large);
+      @include font-scale(xx-small);
+    }
+
+  }
+}

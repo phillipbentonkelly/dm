@@ -1,0 +1,40 @@
+h4.lgHeader {
+	font-weight:bold; 
+	text-transform: uppercase; 
+	color:#272727; 
+	font-family: arial;
+	margin-top: 15px;
+}
+
+h4.lgHeader {
+	font-size:22px; 
+	line-height:26px;
+}
+
+.linklistInline {
+	margin: 0px 0px 15px 0px;
+	padding:0;
+}
+
+.linklistInline li {
+	list-style-type:none; 
+	display:inline;
+}
+
+.linklistInline * {
+	display:inline;
+}
+
+.linklistInline li a {
+	font-size: 12px;
+	color: rgb(13,87,153);
+}
+
+.listPipe {
+	font-size:10px; 
+	position:relative; 
+	top:-2px; 
+	list-style-type:none; 
+	display:inline;
+	padding:0 2px 0 2px;
+}

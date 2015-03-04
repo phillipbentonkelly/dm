@@ -1,0 +1,243 @@
+<p:currentObject metadata="meta" content="story" webType="WT" uuid="uuid" channel="Boston.com" sectionPage="dwp" sectionId="section" />
+<bdc:getAdLayer var="adLayerName" webType="${WT}"/>
+<bdc:inheritStoryLayer var="adLayerDwpPath" section="${section}" layer="${adLayerName}" />
+<p:out var="adLayerDwpPath" value="${adLayerDwpPath}" scope="request" /> <%-- Needed for the way we are calling the must_reads --%>
+<p:out var="omnitureSectionForTracking" value="${section}" scope="page" />
+<p:out var="cacheServer" value="http://p.o0bc.com" scope="request" />
+<c:choose>
+	<c:when test="${omnitureSectionForTracking eq '/' or fn:trim(omnitureSectionForTracking) eq ''}">
+		<p:out var="omnitureSectionNoSlash" value="homepage" scope="request" />
+	</c:when>
+	<c:otherwise>
+		<p:out var="omnitureSectionNoSlash" value="${fn:substringAfter(omnitureSectionForTracking, '/')}" scope="request" />
+		<c:if test="${fn:contains(omnitureSectionNoSlash, '/')}">
+			<p:out var="omnitureSectionNoSlash" value="${fn:substringBefore(omnitureSectionNoSlash, '/')}" scope="request" />
+		</c:if>
+	</c:otherwise>
+</c:choose>
+
+<%-- body class based on the omniture section --%>
+<p:out var="sfBodyClass" value="${omnitureSectionNoSlash}" scope="request" />
+
+<p:template outputMode="raw" />
+<!doctype html>
+<!--  SECTION ${section} UUID ${uuid} -->
+<!-- frameset ad layer: ${adLayerDwpPath} -->
+<!--[if !IE]>
+	<html class="no-js">
+<![endif]-->
+<!--[if lte IE 8]> 
+	<html class="no-js ie8" lang="en" id="ng-app" ng-app="optionalModuleName">
+<![endif]-->
+<!--[if lte IE 9]> 
+	<html class="no-js ie9" lang="en">
+<![endif]-->
+	<head>
+		<script type='text/javascript'>
+			function RProfiler(){} (function(){var restUrl ="g.3gl.net/jp/v2/M"; var cfgUrl ="g.3gl.net/jp/100/v2/C"; var gsTime=(new Date()).getTime();var RP=window.RProfiler;if(!RP||RP.d){return;}RP.a={};RP.addInfo=function(iType,key,value){if(iType===undefined||iType===null){return;}if(value===undefined||value===null){RP.a[iType]=key;}else{if(key===undefined||key===null){return;}if(!RP.a[iType]){RP.a[iType]={};}RP.a[iType][key]=value;}};if(!document.getElementById||!(window.attachEvent||window.addEventListener)){return;}RP.d={s:gsTime,lT:-1,jsC:undefined,jsE:undefined,Lf:-1};var $E=RP.$E=(function(){var sc={};function add(type,el,fn){if(!sc[type]){sc[type]=[];}sc[type].push([el,type,fn]);}var atEv=(window.attachEvent)?true:false;return{add:function(type,el,fn){add(type,el,fn);if(atEv){el.attachEvent('on'+type,fn);}else{el.addEventListener(type,fn,false);}},clearAll:function(){for(var type in sc){var e,evs=sc[type];if((evs) && (evs.length>0)){for(var i=0;i<evs.length;i++){e=evs[i];if(atEv){e[0].detachEvent(e[1],e[2]);}else{e[0].removeEventListener(e[1],e[2],false);}}}}sc={};}};})();function regPL(){RP.d.lT=(new Date()).getTime();RP.d.Lf=1;}$E.add('load',window,regPL);function addErrorToList(m,u,l){RP.d.jsC++;var k=[m,u,l].join(':'),bFound=false;var e=RP.d.jsE;for(var i=0;i<e.length;i++){if(e[i][0]===k){e[i][4]++;bFound=true;break;}}if(!bFound){e.push([k,m,u,l,1]);}}if(!!window.opera){function regJsError(e){var ev=(e.target)?e.target:e.srcElement;if(ev.nodeType==3){ev=ev.parentNode;}addErrorToList('N/A',ev.src||ev.URL,'N/A');return false;}RP.d.jsC=0;RP.d.jsE=[];$E.add('error',document,regJsError);}else if("onerror" in window){RP.d.jsC=0;RP.d.jsE=[];var orgOnErr=window.onerror;window.onerror=function(m,u,l){addErrorToList(m,u,l);var r=false;if(!!orgOnErr){r=orgOnErr(m,u,l);}return r;};}if(!!window.__cpCdnPath){restUrl=__cpCdnPath.trim();}var r=document.createElement("iframe");var s=r.style;s.position="absolute";s.top="-10000px";s.left="-1000px";var at=document.getElementsByTagName('script')[0];at.parentNode.insertBefore(r,at);var i=r.contentWindow.document.open('text/html','replace');var pr=window.location.protocol+'//';i.write("<body onload='function f(u){ var d=document, s = d.createElement(\"script\"); s.type=\"text/javascript\"; s.src=u; d.body.appendChild(s); } f(\""+pr+cfgUrl+"\"); f(\""+pr+restUrl+"\");'><\/body>");i.close();})(); 
+		</script>
+		<!-- IE Compatibility Fix - BDC-294 - KWall -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link rel="shortcut icon" href="<p:url value='${cacheServer}/img/favicon.ico' type='context'/>" type="image/x-icon" />
+		<!-- Apple Touch Icons -->
+		<link rel="apple-touch-icon" href="${cacheServer}/img/apple-touch-icon.png" />
+		<link rel="apple-touch-icon" sizes="57x57" href="${cacheServer}/img/apple-touch-icon-57x57.png" />
+		<link rel="apple-touch-icon" sizes="72x72" href="${cacheServer}/img/apple-touch-icon-72x72.png" />
+		<link rel="apple-touch-icon" sizes="114x114" href="${cacheServer}/img/apple-touch-icon-114x114.png" />
+		<link rel="apple-touch-icon" sizes="144x144" href="${cacheServer}/img/apple-touch-icon-144x144.png" />
+		<link rel="apple-touch-icon" sizes="57x57" href="${cacheServer}/img/apple-touch-icon-60x60.png" />
+		<link rel="apple-touch-icon" sizes="72x72" href="${cacheServer}/img/apple-touch-icon-120x120.png" />
+		<link rel="apple-touch-icon" sizes="114x114" href="${cacheServer}/img/apple-touch-icon-76x76.png" />
+		<link rel="apple-touch-icon" sizes="144x144" href="${cacheServer}/img/apple-touch-icon-152x152.png" />
+		<!-- Windows 8 Tile Icons -->
+		<meta name="msapplication-square70x70logo" content="${cacheServer}/img/smalltile.png" />
+		<meta name="msapplication-square150x150logo" content="${cacheServer}/img/mediumtile.png" />
+		<meta name="msapplication-wide310x150logo" content="${cacheServer}/img/widetile.png" />
+		<meta name="msapplication-square310x310logo" content="${cacheServer}/img/largetile.png" />
+		<p:delayedHead type="kbbar" />
+		<p:delayedHead type="debug" />
+	
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0,user-scalable=no">
+		
+		<p:inline url="$configurationURI/Framework/frameset/set_seometa.jpt" />
+	
+		<%--
+			All calls to CSS have been moved to the following file to prevent the frameset from getting mad cluttered.
+		--%>
+		<p:inline url="$configurationURI/Framework/frameset/setup/css.jpt" />
+		
+			
+		<%-- bat & jQuery dependency loaded before other scripts to time page--%>
+		<p:getObject path="$configurationURI/Framework/js/dist/jquery-1.11.0.min.js.md5" var="jquery_js_md5"/>
+		<script type="text/javascript" src="/js/hash/${jquery_js_md5.text}/dist/jquery-1.11.0.min.js"></script>
+
+		<p:getObject path="$configurationURI/Framework/js/dist/bat.js.md5" var="bat_js_md5"/>
+		<script type="text/javascript" src="/js/hash/${bat_js_md5.text}/dist/bat.js"></script>	
+				
+				
+		<%-- Section var for omniture --%>
+		<script type="text/javascript">
+			var omnitureSectionForTracking = "${omnitureSectionNoSlash}";
+		</script>
+				
+		<%-- Read the required CSS and JS for this webtype. --%>
+		<%-- kevin new frameset --%>
+		<%--
+		<p:out var="sectionPath" xvalue="$meta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/Sections/Section/SectionPath" />
+		<p:inline url="$configurationURI/Framework/frameset/required_assets.jpt">
+		    <p:param name="configPath" value="$configurationURI/required_assets.xml"/>
+			<p:param name="webType" value="${WT}"/>
+			<p:param name="sectionPath" value="${sectionPath}"/>
+		</p:inline>
+		--%>
+						
+		<script type="text/javascript">
+			var methode = {};
+			methode.webType = "${WT}";
+			methode.baseUrl = "${portalContext.publicBaseUrl}";
+			methode.uuid = "${uuid}";
+			methode.streamSubmitPath = "/mis/import/bgstorypost";
+			methode.infoPath = "/fragment/SysConfig/WebPortal/BDC/Framework/sandbox/jflaherty/getObjectInfo.jpt"
+		</script>
+		
+		<%-- DFP AD call --%>
+		<p:out var="adFrequency" xvalue="$meta//AdFrequency" scope="request" />
+		<p:inline url="$configurationURI/Framework/frameset/header/set_dfp.jpt"/>
+		
+		<c:choose>
+			<c:when test="${WT == 'dwp_classifieds'}">
+				<p:delayedHead type="kbbar" />
+				<p:delayedHead type="debug" />
+			</c:when>
+			<c:otherwise>
+				<p:delayedHead type="csslink" />
+				<p:delayedHead type="script" />
+			</c:otherwise>
+		</c:choose>
+		
+		<%-- Load Optimizely JS Conditionally --%>
+		<p:getObject path="/Boston/Production/BDC/SiteAdmin/editorial.xml" var="editorial" />
+		<p:object webObject="${editorial}" metadata="eMeta" />
+		<p:out var="optimizelyToggleOn" xvalue="$eMeta//BostonSiteAdmin/optimizelyToggleOn" />
+		<c:if test="${optimizelyToggleOn == 'true'}">
+			<p:inline url="$configurationURI/Framework/frameset/header/optimizely.jpt" />
+		</c:if>
+
+		<%-- TODO figure out how to do this with JPT --%>
+		<p:getObject path="$configurationURI/Framework/js/dist/head.min.js.md5" var="head_min_js_md5"/>
+		<p:jspInclude url="$configurationURI/Framework/frameset/js/head.jsp?hash=${head_min_js_md5.text}" eomdb="true"/>
+		
+		<%-- Inline call to Gigya removed for BDC-1524
+		<script src="http://cdn.gigya.com/js/socialize.js?apiKey=3_Wg9crmyjY3ezpaXBCfJH4s5tG0Ygid81wSzG8Z8bM-or7-rCwxK29QWEOLLjACs5"></script>
+		--%>
+		
+		<%-- sectionPath eq '/cars'  --%><!-- webtype ${WT} section is ${section} -->
+		<c:if test="${fn:startsWith(section,'/cars') and fn:endsWith(fn:toLowerCase(WT),'gallery')}">
+			<script type="text/javascript" src="http://services.cdn.speedshiftmedia.com/tags/tag-H2014041015210271d88ae6e2e0f.min.js"></script>
+		</c:if>
+		
+		<c:if test="${WT == 'dwp_classifieds'}">
+			<script language="JavaScript" type="text/javascript" src="http://cache.boston.com/partners/brightcove/BrightcoveExperiences.js"></script>
+		</c:if>	 
+	</head>
+	
+	<p:out var="objectType" xvalue="$meta//type" />
+	
+	<c:choose>
+		<c:when test="${objectType eq 'EOM::Story' or objectType eq 'EOM::CompoundStory' or objectType eq 'WireStory'}">
+			<%-- Articles and stuff --%>
+			<p:out var="bodyClass" value=" page--content " />
+		</c:when>
+		<c:otherwise>
+			<%-- The homepage --%>
+			<c:choose>
+				<c:when test="${WT eq 'dwp_sectionpage' or WT eq 'dwp_modulepage' or WT eq 'dwp_classifieds'}">
+					<p:out var="bodyClass" value=" page--section " />
+				</c:when>
+				<c:when test="${WT eq 'dwp_searchpage'}">
+					<p:out var="bodyClass" value=" page-search " />
+				</c:when>
+				<c:otherwise>
+					<p:out var="bodyClass" value="" />
+				</c:otherwise>
+			</c:choose>
+		</c:otherwise>
+	</c:choose>
+
+	<p:out var="sectionClass" value="" />
+	<c:if test="${WT eq 'dwp_sectionpage' or WT eq 'dwp_classifieds'}">
+		<p:out var="sectionClass" value=" page-section " />
+	</c:if>
+
+	<body class="${bodyClass} ${sectionClass} ${sfBodyClass}" id="top">
+	
+	<%-- i'm not sure why this condition ever existed --%>
+	<%-- <c:if test="${WT ne 'dwp_classifieds'}"> --%>
+		<p:inline url="$configurationURI/Framework/frameset/header/out_of_page_ads.jpt" />
+	<%-- </c:if> --%>
+	
+	<p:inline url="$configurationURI/Framework/frameset/header/mustache.jpt" />
+	
+	<c:if test="${WT eq 'error_404'}"><div class="page-404"></c:if>
+	
+	<div class="site-container">
+
+		<p:inline url="$configurationURI/Framework/frameset/masthead/masthead.jpt" />
+
+		<p:skeletonBody />
+
+		<p:out var="WT" value="${WT}" scope="request" />
+		<div class="nocontent bdc-override">
+			<p:inline url="$configurationURI/Framework/frameset/footer/footer.jpt" />
+		</div>
+
+		<%-- Slide-out navigation moved to after the footer per the structure of the PHP --%>
+		<bdc:inheritZoneGlobal var="navigationDwp" section="${section}" zoneName="navigation" />
+		 <p:include pageZoneName="navigation" inherits="${navigationDwp}">
+			<p:param name="dwp" value="${currentObject}" />
+			<p:param name="dwpSection" value="${section}" />
+			<p:param name="adLayerDwpPath" value="${adLayerDwpPath}" />	
+		</p:include>
+		
+		<%-- The user panel --%>
+		<p:inline url="$configurationURI/Framework/frameset/header/user_panel.jpt" />
+
+	</div> <!-- /site-container -->
+	<c:if test="${WT eq 'error_404'}"></div></c:if>
+
+	<div id=pubnub pub-key=pub-c-127a2b10-aa80-4a62-ac2e-30a1fce6f220 sub-key=sub-c-4a78c224-164c-11e3-9f04-02ee2ddab7fe uuid=protoype-uuid></div>
+
+	<%-- Omniture, Chartbeat, etc. --%>
+	<p:inline url="$configurationURI/Framework/frameset/tracking/tracking.jpt" />
+      
+	<%-- bringing in the empty share modal --%>
+	<p:inline url="$configurationURI/Framework/skins/components/share/share_modal.jpt" />
+	
+    <%-- BDC Share modal --%>
+    <%-- For now only include on story pages since that is the only place it is relevant - Eddie --%>
+    <%-- <c:if test="${fn:endsWith(WT, 'story') or fn:endsWith(WT, 'gallery')}"> --%>
+      <p:inline url="$configurationURI/Framework/skins/components/share/share_modal_refactor.jpt" />
+    <%-- </c:if> --%>
+
+	<%-- TODO figure out how to do this with JPT #techdebt --%>
+	<p:getObject path="$configurationURI/Framework/js/dist/body.min.js.md5" var="body_min_js_md5"/>
+	<p:jspInclude url="$configurationURI/Framework/frameset/js/body.jsp?hash=${body_min_js_md5.text}" eomdb="true"/>
+	
+    <%-- BDC JS --%>
+    <%-- For now only include on story pages since that is the only place it is relevant - Eddie --%>
+    <%-- <c:if test="${fn:endsWith(WT, 'story') or fn:endsWith(WT, 'gallery')}"> --%>
+      <p:getObject path="$configurationURI/Framework/js/dist/bdc.min.js.md5" var="bdc_min_js_md5"/>
+      <p:jspInclude url="$configurationURI/Framework/frameset/js/bdc.jsp?hash=${bdc_min_js_md5.text}" eomdb="true"/>
+    <%-- </c:if> --%>
+                                   
+
+	<%-- Search page JS. Must come before CSS. --%>
+	<%-- playing fast and loose with this js here --%>
+	<c:if test="${WT eq 'dwp_searchpage'}">
+		<p:inline url="$configurationURI/Framework/frameset/header/set_search.jpt" />
+	</c:if>
+  
+	</body>
+</html>	

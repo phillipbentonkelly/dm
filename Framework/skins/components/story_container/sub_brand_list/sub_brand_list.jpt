@@ -1,0 +1,81 @@
+<%-- passed variables --%>
+<p:out var="visualRevenue" value="${cacheScope.visualRevenue}" />
+<p:out var="wellTitle" value="${cacheScope.wellTitle}" />
+<p:out var="dwp" value="${cacheScope.dwp}" />
+<p:out var="p1" value="${cacheScope.p1}" />
+<p:out var="dataP1" value="${cacheScope.dataP1}" />
+<p:out var="dataOmniture" value="${cacheScope.dataOmniture}" />	
+<p:out var="additionalContainerClass" value="${cacheScope.additionalContainerClass}" />
+
+<%-- things from metadata --%>
+<p:currentObject metadata="meta" />
+<p:out var="conf" value="$meta//StoryContainerDisplay" />
+<%-- p:param supports xvalue but it acts weird. so i used this. --%>
+<p:out var="listType" xvalue="${conf}/ListType/text()" /> 
+<p:out var="imageSize" xvalue="${conf}/ImageSize/text()" /> 
+<p:out var="displaySection" xvalue="${conf}/SectionDisplay/text()" />
+<p:out var="displayOverline" xvalue="${conf}/OverlineDisplay/text()" />
+<p:out var="horizontalLines" xvalue="${conf}/HorizontalLines/text()" />
+<p:out var="displayTime" xvalue="${conf}/TimeDisplay/text()" />
+<p:out var="headlineType" xvalue="${conf}/HeadlineType/text()" />
+<p:out var="social" xvalue="${conf}/ShareTools/text()" />
+<p:out var="breakingTitle" xvalue="${conf}/BreakingTitle/text()" />
+<p:out var="title" xvalue="$meta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/Title" />
+<p:out var="offset" xvalue="$meta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/OffsetStartPoint" />
+<p:out var="maxItems" xvalue="$meta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/MaxStoriesToDisplay" />
+
+<%-- set a class for if the title is breaking --%>
+<p:out var="possiblyBreakingClass" value="${(breakingTitle)? 'headline-list__header--red' : ''}" />
+
+<%-- add a p1 data attribute if necessary --%>
+<c:if test="${not empty dataP1}">
+	<p:out var="dataP1" value="data-p1=\"${dataP1}\"" />
+</c:if>
+
+<c:if test="${empty offset}">
+	<p:out var="offset" value="0" />
+</c:if>
+
+<c:if test="${empty maxItems}">
+	<p:out var="offset" value="0" />
+</c:if>
+
+<c:choose>
+	<c:when test="${listType == 'Condensed'}">
+		<p:out var="containerClass" value="headline-list--condensed" />
+		<p:out var="listClass" value="headline-list__list js-split-list " />
+		<p:out var="dataBreak" value='data-break="[[768,960],[450,700]]"' />	
+	</c:when>
+	<c:otherwise>
+		<p:out var="containerClass" value="headline-list__container" />
+		<p:out var="listClass" value="headline-list" />
+	</c:otherwise>
+</c:choose>
+
+<div class="sub-brands">
+	<div class="sub-brands__header">
+		<span class="bdc-icon bdc-icon--plug"></span>
+		<span>Powered By Boston.com</span>
+	</div>
+	<ul class="sub-brands__list">
+		<p:include pageZoneName="content" templateName="sc_sub_brand_list_item" maxItems="${maxItems}">
+			<p:param name="listType" value="${listType}" />
+			<p:param name="imageSize" value="${imageSize}" />
+			<p:param name="displayOverline" value="${displayOverline}" /> 
+			<p:param name="displaySection" value="${displaySection}" />
+			<p:param name="horizontalLines" value="${horizontalLines}" />  
+			<p:param name="displayTime" value="${displayTime}" /> 
+			<p:param name="headlineType" value="${headlineType}" />
+			<p:param name="social" value="${social}" />
+			<p:param name="title" value="${title}" />
+			<p:param name="queryOffset" value="${offset}" />
+			<p:param name="maxItems" value="${maxItems}" />		
+			<p:param name="visualRevenue" value="${visualRevenue}" />
+			<p:param name="wellTitle" value="${wellTitle}" />
+			<p:param name="dwp" value="${dwp}" />
+			<p:param name="p1" value="${p1}" />
+			<p:param name="dataP1" value="${dataP1}" />
+			<p:param name="dataOmniture" value="${dataOmniture}" />
+		</p:include>
+	</ul>
+</div>

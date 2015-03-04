@@ -1,0 +1,9 @@
+<bdc:getSummaryForSectionFront var="summary" />
+<bdc:imagesWithCaptionCredit webObject="${currentObject}" var="image" format="image_90x90" />
+
+<div class="author-bio">
+    <p class="author-bio__text">
+        <img src="${image.src}" class="author-bio__headshot" />
+        ${summary}
+    </p>
+</div>

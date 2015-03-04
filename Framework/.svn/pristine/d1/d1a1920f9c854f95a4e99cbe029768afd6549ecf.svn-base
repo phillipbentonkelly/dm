@@ -1,0 +1,22 @@
+// *
+// * Boston.com bdc-screen.scss
+// * Brings in all partials to generate a single CSS file
+// * This file should only contain @import rules
+// * Dependencies should be listed
+// *
+
+// * NOTE: This file is currently the release file for the re-write
+
+@import 'partials/base';
+
+@import 'partials/page/modules/events';
+@import 'partials/page/modules/events-list';
+@import 'partials/page/modules/events-search';
+@import 'partials/page/modules/events-search__filter-popup';
+@import 'partials/page/modules/events-featured';
+
+@import 'lib/zebra-datepicker';
+@import 'lib/chosen';
+
+@import 'partials/icons';
+@import 'partials/icons-events';

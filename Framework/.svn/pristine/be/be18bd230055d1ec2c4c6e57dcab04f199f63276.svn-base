@@ -1,0 +1,39 @@
+<p:currentObject content="c" metadata="m" sectionId="section" />
+
+<p:out var="nameplateUrl" xvalue="$m//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/NameplateUrl" />
+<%-- <c:if test="${fn:trim(nameplateUrl) eq ''}">
+	<p:out var="nameplateUrl" value="http://www.boston.com" />
+</c:if> --%>
+
+<p:getPageZone name="image" var="imageZone" />
+<p:out var="zone_size" value="${imageZone.size}" />
+
+<p:out var="hasImage" value="no" />
+<p:out var="imageUrl" value="${portalContext.publicBaseUrl}/svgs/bcom-logo.svg" />
+<p:out var="hasOnClick" value="no" />
+<p:out var="onClickValue" value="var s=s_gi('nytbglobe');s.tl(this,'o','Flair_Masthead_Click');" />
+
+<c:choose>
+	<c:when test="${zone_size == 1}">
+		<c:forEach items="${imageZone.items}" var="item" begin="0" end="0">
+			<p:object webObject="${item}" content="c" metadata="m" />
+			<p:out var="objType" xvalue="$m//type" />
+			<p:out var="imgPath" xvalue="$m//path" />
+			<c:if test="${fn:endsWith(imgPath, '.svg') or fn:endsWith(imgPath, '.jpg') or fn:endsWith(imgPath, '.gif') or fn:endsWith(imgPath, '.png')}">
+				<%-- NAMEPLATE item == ${item}, ${objType}, ${imgPath} --%>
+				<!-- Nameplate image found -->
+				<p:url var="imageUrl" value="${imgPath}" /> <%-- ${img_url} --%>
+			</c:if>
+		</c:forEach>
+		
+		<p:out var="hasOnClick" value="yes" />
+	</c:when>
+	<c:otherwise>
+		<!-- Nameplate image undefined -->
+	</c:otherwise>
+</c:choose>
+
+
+<a href="${nameplateUrl}" class="bcom-logo" <c:if test="${hasOnClick eq 'yes'}">onclick="${onClickValue}"</c:if>>
+	<img class="bcom-logo-img" src="${imageUrl}" alt="boston.com"/>
+</a><!-- /bcom-logo -->

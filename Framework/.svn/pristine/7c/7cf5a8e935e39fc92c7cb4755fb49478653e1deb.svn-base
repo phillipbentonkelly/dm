@@ -1,0 +1,129 @@
+  $module-name: 'headline-list';
+
+// ------------------------------------------------------------
+// Default Styles
+// ------------------------------------------------------------
+
+.#{$module-name} {
+  @extend %clearfix;
+  margin-bottom: spacer(px, mid);
+  margin-bottom: spacer(rem, mid);
+  
+  &__header {
+    margin-bottom: spacer(px);
+    margin-bottom: spacer(rem);
+    @include font-scale(xx-small);
+    color: color(red);
+    font-weight: $fw-bold;
+    text-transform: uppercase;
+    
+    &--red {
+      padding: spacer(px, small);
+      padding: spacer(rem, small);
+      margin-bottom: spacer(px);
+      margin-bottom: spacer(rem);
+      color: color(white);
+      background: color(red);
+      @include font-scale(small);
+      font-weight: $fw-bold;
+      line-height: 1;
+      text-transform: uppercase;
+      letter-spacing: $letter-spacing;
+    }
+  }
+
+  &__item {
+    margin-bottom: spacer(px);
+    margin-bottom: spacer(rem);
+    padding-bottom: spacer(px);
+    padding-bottom: spacer(rem);
+    border-bottom: 1px solid color(gray, x-light);
+    
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  &__link {
+    display: block; // prevents loss of hover in between lines
+    @include font-scale(x-small);
+    @include link-states(color(gray, xx-dark), color(gray), color(black));
+  }
+
+  // Numbered Styles 
+
+  &--numbered {
+    padding-left: 20px; //offsetting the ol numbers
+    padding-right: 0;
+    list-style-type: decimal;
+    font-weight: $fw-bold;
+
+  }
+
+  &--numbered &__link {
+    @include font-scale(small);
+    font-weight: $fw-regular;
+  }
+
+  &__item--secondary {
+    display: none;
+  }
+
+  // Condensed Styles
+  
+  &--condensed {
+    @extend %clearfix;
+  }
+
+  &__timestamp {
+    display: inline;
+    padding-left: 3px;
+    color: color(red);
+  }
+
+  &__section {
+    @include font-scale(xxx-small);
+    color: color(red);
+    text-transform: uppercase;
+    font-weight: $fw-bold;
+    letter-spacing: $letter-spacing;
+  }
+
+  &--condensed &__link {
+    @include font-scale(small);
+  }
+}
+
+// ------------------------------------------------------------
+// Custom Breakpoint
+// ------------------------------------------------------------
+
+// Tablet Breakpoint
+@include media-query(450) {
+  .#{$module-name} {
+
+    &__item--secondary {
+      display: list-item;
+    }
+
+  }
+}
+
+// ------------------------------------------------------------
+// Tablet Breakpoint
+// ------------------------------------------------------------
+
+// Tablet Breakpoint
+@include media-query(tablet) {
+  .#{$module-name} {
+
+    &--condensed &__link {
+      @include font-scale(xxx-small);
+    }
+    
+    &--numbered &__link {
+      @include font-scale(xxx-small);
+    }
+
+  }
+}

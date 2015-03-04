@@ -1,0 +1,23 @@
+<div class="tcCenter">
+	<object id="myExperience" class="BrightcoveExperience">
+	  <param name="bgcolor" value="#FFFFFF" />
+	  <param name="width" value="415" />
+	  <param name="height" value="365" />
+	  <param name="flashID" value="myExperience" />
+	  <param name="playerID" value="180368546001" />
+	  <param name="playerKey" value="AQ~~%2CAAAAAA6piHY~%2CDqRT40XOAr8chir7MMXvDaPEXSity0R-" />
+	  <param name="isVid" value="true" />
+	  <param name="isUI" value="true" />
+	  <param name="@videoList" value="1213891213">
+	  <param id="adServerURL_8358" name="adServerURL" value="http%3A%2F%2Frmedia.boston.com%2FRealMedia%2Fads%2Fadstream_sx.ads%2Fwww.test.com%2Ftest%2Fcarsredesign2012%2F%40VIDEO%3F" />
+	  <param name="escapeAdRequest" value="false" />
+	  <param name="dynamicStreaming" value="true" />
+	  <param name="wmode" value="transparent" />
+	  <param name="includeAPE" value="true" />
+	  <param name="templateLoadHandler" value="myTemplateLoaded" />
+	  <param name="autoStart" value="" />
+	  <param name="debuggerID" value="" />
+	  <param name="startTime" value="1341842717656" />
+	  <param name="seamlesstabbing" value="false" />
+	</object>
+</div>

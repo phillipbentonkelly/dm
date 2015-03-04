@@ -1,0 +1,110 @@
+/* Styling for redesign entry paragraphs */
+  div.entry-txt p {
+    color: #222222;
+    font: normal 400 1.30769em/155% Arial, Helvetica, Verdana, sans-serif;
+    margin-bottom: 18px;
+    visibility: hidden;
+    visibility: visible;
+  }
+
+  .wf-loading div.entry-txt p {
+    visibility: hidden;
+  }
+
+  .wf-active div.entry-txt p, .wf-inactive div.entry-txt p {
+    visibility: visible;
+  }
+
+  .fontface div.entry-txt p {
+    font-family: "effra", Arial, Helvetica, Verdana, sans-serif;
+  }
+  @media (min-width: 480px) {
+    div.entry-txt p {
+      font-size: 1.46154em;
+    }
+  }
+  @media (min-width: 850px) {
+    div.entry-txt p {
+      font-size: 1.53846em;
+    }
+  }
+
+  div.entry-txt p > a {
+    color: #0d5799;
+  }
+
+  div.entry-txt p > a:hover {
+    text-decoration: underline;
+  }
+
+  // change these bottom two
+  @media (min-width: 650px) and (max-width: 1074px) {
+    .article-p.first-p {
+      clear: both;
+    }
+  }
+
+  @media (min-width: 1075px) {
+    /* line 208, ../../styles/project/_article.scss */
+    .article-no-art .article-p.first-p {
+      clear: both;
+    }
+  } 
+img.fluid-img {
+  width: 100%;
+  height: auto;
+} 
+/* love letters styles */
+.q {
+  background: transparent url(/img/qa_question.gif) no-repeat 50% 50%;
+}
+.a {
+  background: transparent url(/img/qa_answer.gif) no-repeat 50% 50%;
+  font-size: 46px;
+  line-height: 41px;
+}
+.q, .a{
+  font: bold 40px/31px Georgia;
+  color: #d2232a;
+  margin-right: 10px;
+  float: left;
+  display: block;
+  text-indent: -9000px;
+  width: 35px;
+  height: 40px;
+}
+.question, .answer {
+	margin-bottom: 35px;
+	margin-top: 35px;
+  clear: right;
+}
+.signature {
+	font-weight: bold;
+	font-style: italic;
+	color: #000;
+}
+
+
+/* end love letters styles */
+
+/* pencil ad styles */
+
+img#pencil-replace {
+  margin-top: 33px;
+  margin-bottom: 0px;
+}
+
+/* blockquote stylings for MT*/
+
+@media (min-width: 480px) {
+  /* line 295, ../../styles/project/_article.scss */
+  blockquote {
+    font-size: 19px;
+  }
+}
+@media (min-width: 850px) {
+  /* line 295, ../../styles/project/_article.scss */
+  blockquote {
+     font-size: 20px; 
+  }
+}

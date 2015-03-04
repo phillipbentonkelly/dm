@@ -1,0 +1,25 @@
+<a class="scoreboard-mod" href="">
+	<header class="sb-hdr">
+		<i class="sb-txt-01 sb-txt-light">2:32</i>
+		<i class="sb-txt-02 sb-txt-strong">2ND</i>
+		<i class="sb-sponsor-txt sb-txt-light">NESN</i>
+	</header>
+	<div class="sb-body-mod">
+		<div class="sb-away-team">
+			<div class="sb-away-team-info sb-team-info">
+				<i class="sb-away-team-logo sb-team-logo redwings-logo"></i>
+				<h5 class="sb-away-team-name sb-team-name">Red Wings</h5>
+				<h5 class="sb-away-team-abr sb-team-abr">Det</h5>
+				<h4 class="sb-away-team-score sb-team-score">1</h4>
+			</div>
+		</div>
+		<div class="sb-home-team">
+			<div class="sb-home-team-info sb-team-info">
+				<i class="sb-home-team-logo sb-team-logo bruins-logo"></i>
+				<h5 class="sb-home-team-name sb-team-name">Bruins</h5>
+				<h5 class="sb-home-team-abr sb-team-abr">Bos</h5>
+				<h4 class="sb-home-team-score sb-team-score">3</h4>
+			</div>
+		</div>
+	</div>
+</a>

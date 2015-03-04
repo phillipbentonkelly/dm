@@ -1,0 +1,17 @@
+<%--
+{comments}
+BDC-1809 - first implementation of headline stack
+{comments}
+--%>
+
+<p:currentObject content="content" metadata="meta" channel="Boston.com" sectionId="section" />
+<bdc:getHeadlines webObject="${currentObject}" var="headlines" />
+
+<li class="headline-stack__list-item">
+	<div class="headline-stack__section">${headlines.overline}</div>
+	<bdc:link webObject="${currentObject}" className="headline-stack__link" linkParam="p1=...">
+		${headlines.carouselHeadline}
+	</bdc:link>
+</li>
+
+

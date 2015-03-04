@@ -1,0 +1,10 @@
+<div class="user-panel">
+  <ul class="user-panel__list">
+    <li class="user-panel__item">
+      <a href="/login" class="user-panel__link">Sign in</a>
+    </li>
+    <li class="user-panel__item">
+      <a href="/register" class="user-panel__link">Register</a>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,182 @@
+// *
+// * Page Share Modal
+// *
+
+$module-name: 'share-modal';
+
+// ------------------------------------------------------------
+// Default Styles
+// ------------------------------------------------------------
+
+.#{$module-name} {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  padding: 30px 20px 40px;
+  margin: 50px auto;
+  background-color: color(white);
+  text-align: center;
+
+  // Title
+  &__title {
+    @include font-scale(xxx-small);
+    color: color(red);
+    text-transform: uppercase;
+    margin-bottom: spacer(px, small);
+    margin-bottom: spacer(rem, small);
+  }
+
+  // Headline
+  &__headline {
+    @include font-scale(large);
+    color: color(gray, dark);
+    margin-bottom: spacer(px, large);
+    margin-bottom: spacer(rem, large);
+  }
+
+  // Icon List Container
+  &__icon-list-container {
+    margin-left: - spacer(px, large);
+  }
+
+  // Icon List
+  &__icon-list {
+    width: 300px;
+    margin: 0 auto;
+    @extend %clearfix;
+
+    // Icon List Item
+    &__item {
+      float: left;
+      width: 33.333333%;
+      padding-left: spacer(px, large);
+      margin-bottom: spacer(px, large);
+    }
+
+    // Icon List Link
+    &__link {
+      display: block;
+      background: color(red);
+      padding: 12px;
+      &:hover {
+        background: color(red, dark);
+      }
+    }
+
+    // Icon List Icon 
+    &__icon {
+      width: 56px;
+      height: 56px;
+      display: block;
+    }
+  }
+
+  // ------------------------------------------------------------
+  // Email to a Friend Form Styles
+  // ------------------------------------------------------------
+
+  // Form
+  &__form {
+    padding: spacer(px, small);
+    padding: spacer(rem, small);
+    @include font-scale(xxx-small);
+  }
+
+  // Form Row
+  &__form-row {
+    text-align: left;
+    width: 65%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: spacer(px, mid);
+    margin-bottom: spacer(rem, mid);  
+  }
+  
+  // Form Label
+  &__form-label {
+    display: block;
+    font-weight: $fw-bold;
+    margin: 0 0 2px 2px;
+  }
+
+  // Form Instructional Text
+  &__form-text {
+    @include font-scale(xxx-small);
+    color: color(gray);
+    font-family: Helvetica, sans-serif;
+    margin-top: spacer(px, small);
+    margin-top: spacer(rem, small); 
+  }
+
+  // Form Input
+  &__form-input {
+    @include font-scale(xxx-small);
+    margin-left: 2px;
+    height: 28px;
+    width: 100%;
+    border: 1px solid color(gray, light);
+    &:focus, &:active {
+      outline: none;
+    }
+    &:invalid {
+      border-radius: 0;
+      -moz-box-shadow: none;
+      -webkit-box-shadow: none;
+      box-shadow: none;
+    }
+  }
+
+  // Form Red Notification
+  &__form-notification {
+    display: none;
+    color: color(red);
+    font-weight: $fw-bold;
+  }
+  
+  // Form Message Input
+  &__form-message {
+    height: 7em;
+  }
+
+  // Form Submit Button
+  &__form-submit {  
+    border: 0;
+    padding: 0 15px;
+    margin-right: spacer(px, base);
+    margin-right: spacer(rem, base);
+    text-transform: uppercase;
+    height: 34px;
+    color: white;
+    background-color: color(red);
+    font-weight: $fw-bold;
+    letter-spacing: 1px;
+    transition: all 0.25s cubic-bezier(0.49, 0.37, 0.445, 0.715);
+    &:hover {
+      background-color: color(red, light);
+      cursor: pointer;
+    }
+  }
+  
+  // Form Cancel Link
+  &__action-link {
+    font-weight: $fw-medium;
+  }
+
+  // Succes/Error Status Message
+  &__status-message {
+    @include font-scale(large);
+  }
+}
+
+// ------------------------------------------------------------
+// Tablet Styes
+// ------------------------------------------------------------
+@include media-query(tablet) {
+  .#{$module-name} {
+    // Form Instructional Text
+    &__form-text {
+      margin-top: 0;
+      margin-top: 0; 
+    }
+  }
+}

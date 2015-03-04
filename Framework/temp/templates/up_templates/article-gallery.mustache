@@ -1,0 +1,25 @@
+<div class="gallery-slides qg-gallery-slides">
+	{{#slides}}
+
+		<div class="gallery-slide">
+			<figure class="gallery-img-mod qg-img-mod">
+				<img class="gallery-img qg-img" src="{{image}}"/>
+				<figcaption class="gallery-caption article-gallery-caption reverse">
+					<p>{{{text}}} <i class="credit">{{credit}}</i></p>
+				</figcaption> <!-- /img-caption -->
+
+				<div class="article-gallery-meta reverse">
+					<p class="article-gallery-meta-txt">See more photos with <a href="#URL:tag-tom">Tom Brady</a>, or from <a href="#URL:tag-date">Aug 13, 2013</a>.</p>
+					<a class="qg-show-caption js-show-caption" href="#URL:show-caption">Show Caption</a>
+				</div> <!-- /article-gallery-meta -->
+
+				<nav class="gallery-img-nav">
+					<button class="arrow-btn-prev swiper-prev" aria-hidden="true" title="Previous">Prev</button>
+					<button class="arrow-btn-next swiper-next" aria-hidden="true" title="Next">Next</button>
+				</nav>
+
+			</figure><!-- gallery-img-mod -->
+		</div>
+
+	{{/slides}}
+</div> <!-- /gallery-slides -->

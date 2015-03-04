@@ -1,0 +1,28 @@
+// *
+// * Dropdown Search
+// *
+
+$module-name: 'dropdown-search';
+
+// ------------------------------------------------------------
+// Default Styles
+// ------------------------------------------------------------
+
+.#{$module-name} {
+  display: none;
+  width: 100%;
+  background-color: color(gray, xx-dark);
+  padding-top: spacer(px, mid);
+  padding-top: spacer(rem, mid); 
+  padding-bottom: spacer(px, mid);
+  padding-bottom: spacer(rem, mid); 
+  &__content {
+    width: 94%;
+    margin: 0 auto;
+  }
+
+  &--active {
+    display: block;
+  }
+
+}

@@ -1,0 +1,490 @@
+//Styling for the BCOM Redesign weather page
+//By Chris Sherlin
+//Structure: Stylings that apply to all weather pages are first, then stylings specific to each page are listed. All are namespaced under .weather
+
+.cf {
+	clear: both;
+}
+
+.weather {
+	a:hover {
+		color: #0d5799;
+		text-decoration: underline;
+	}
+	//Common weather stylings
+	background: none!important;
+	.nav-search-label, .toc-trigger-label {
+		color: #fff!important;
+	}
+
+	#weatherHeader {
+		border-bottom: 1px solid #ededed!important;
+		background: none!important;
+
+		h1 {
+			font-size: 14px!important;
+				//font: normal 900 1.07692em/120% Arial,Helvetica,Verdana,sans-serif;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			color: #9b1518;
+		}
+	}
+
+	.linkListInline {
+		display: inline;
+	}
+
+	#tempToggle {
+		a, b {
+			color: #9b1518!important;
+			background-color: transparent!important;
+			border: none!important;
+
+		}
+
+		a {
+			color: #000!important;
+			opacity: .5; 
+
+			&:hover {
+				opacity: 1;
+				border: none!important;
+			} 
+		}
+	}
+
+	#bdc_bcArticlePage {
+		padding: 15px 0px!important;
+	}
+
+	#weatherTop {
+		width: 100%;
+		background: none!important; 
+		//border-top: 1px solid #fff;
+		border-bottom: none!important;
+		font-family: "effra",Arial,Helvetica,Verdana,sans-serif!important;
+	}
+
+	.subSectionHeader{
+		color: #000;
+		font-size: 18px!important;
+		//normal 600 2em/105% Arial,Helvetica,Verdana,sans-serif;
+		margin: 15px 0;
+		text-align: left;
+		text-transform: capitalize;
+	}
+
+	.sectionHeader {
+		font-size: 16px!important;
+		text-transform: uppercase;
+		text-align: left;
+		color: #222!important;
+	}
+	#currentCond {
+		font-family: "effra",Arial,Helvetica,Verdana,sans-serif!important;
+		width: 100%;
+		float: left;
+		padding-bottom: 20px;
+		.lastUpdate {
+			float: left;
+		}
+
+		#currentCondL {
+			display: block;
+			width: 33%;
+			margin-bottom: 20px; 
+
+			.lastUpdate {
+				float: right;
+			}
+
+			.tempDescrip {
+				font-size: 17px!important;
+			}
+		} 
+	
+		#currentCondDesc {
+
+			* {
+				float: left;
+			}
+
+			#currentDegF {
+				padding: 0px;
+
+				.dayHistory {
+					display: inline-block; 
+					font-size: 26px!important;
+					font-weight: normal;
+					padding-top: 0!important;
+					color: black!important;
+					opacity: .5!important; 
+				}
+				.degrees {
+					display: inline-block; 
+					font-size: 26px!important;
+					font-weight: bold!important; 
+					color: #000!important;
+				}
+			}
+		}
+		#realFeel {
+			font-size: 13px!important;
+		}
+
+		#wLinks {
+			width: 100%;
+		}
+	}// end currentCond
+	.currentCondCol2 {
+		width: 66%!important;
+
+		#currentCondMid {
+			font-size: 13px!important;
+			width: 50%!important;
+			float: left!important;
+			border-right: 1px solid #e1e1e1!important;
+			margin-top: 0!important;
+
+			.wExplain {
+				float: left;
+			}
+
+			.dotted1px {
+				width: 75%!important;
+				border-top: 1px solid #e5e5e5!important;
+				border-bottom: 1px solid #fff!important;
+			}
+
+			.wDeets {
+				float: left; 
+				margin-left: 5px;
+			}
+
+			.wNumbers {
+				text-align: left!important;
+				float: left;
+				width: 25%!important;
+			}
+		}
+
+
+	} //end currentCondCol2
+	#currentCondR {
+	//	border-left: 1px solid white!important;
+		border-left: none!important;
+		width: 50%!important;
+	}
+	#weatherRow2 {
+		font-family: "effra",Arial,Helvetica,Verdana,sans-serif!important;
+		#bdc_bcArticlePage {
+			margin-top: 20px!important; //used for row separation
+		}
+		#weatherDetailed {
+			width: 25%!important;
+			height: auto; 
+			margin-top: 20px!important; //used for row separation
+
+			h4 {
+				font-size: 21px!important;
+				text-align: left;
+				color: #222!important;
+			}
+
+			ul {
+				padding-left: 0px!important;
+
+				li {
+					text-align: left;
+				}
+			}
+		}//end weatherDetailed
+
+		.foreDesc {
+			text-align: left; 
+
+			p {
+				font-family: "effra",Arial,Helvetica,Verdana,sans-serif!important;
+				font-size: 15px!important;
+			}
+		}
+	}//end weatherRow2
+		
+	#sevenDayHeader {
+		text-align: left;
+		border-bottom: 1px solid #e5e5e5!important;
+	}
+
+	.day {
+		width: 14%!important;
+		border: none!important;
+	}
+
+	#sevenDayRow {
+		//border-bottom: 1px solid #e5e5e5;
+		border-bottom: none!important;
+		border-top: 1px solid white!important; 
+
+		.day {
+			width: 14%!important;
+			border: none!important;
+		}
+
+		.dayHi {
+			color: #000!important;
+		}
+
+		.dayLo {
+			color: #000!important;
+			opacity: .5;
+		}
+	}
+
+	#weatherRow4 {
+		border-top: 1px solid #e5e5e5!important;
+	}
+
+	.weatherMapTabs, #weatherMapTabs{
+		clear: both;
+		background-color: none!important; 
+
+		li, li a {
+			border: none!important;
+			background-color: none!important; 
+		}
+
+	}
+	#weatherTop #searchForm input#weatherSearchField {
+		
+		width: 60%!important;
+	}
+
+	.bigAd {
+		//need to apply this to the first child div when the real add is slotted
+		margin-top: 20px!important; //used for row separation
+	}
+
+	.linklist {
+
+		line-height: 18px;
+		margin-bottom: 10px; 
+	}
+
+	.linklistInline li {
+		display: inline;
+	}
+
+	#wAlmanac {
+			border-right: 1px solid #e5e5e5!important; 
+		.dotted1px {
+			border-top: 1px solid #e5e5e5!important;
+		}
+	}
+
+	#weatherRow4Mid {
+
+		.wChart {
+			border-top: 1px solid #e5e5e5!important;
+		}
+	}
+	.listPipe {
+		color: transparent;
+	}
+	
+	.wExplain {
+		margin-left: 5px;
+	}
+	.dayHistory h4, .wChart {
+		padding: 5px 0px;
+	}
+	.wDeets {
+		margin-left: 5px;
+	}
+
+/////////////////////////////////////////
+// HOMEPAGE SPECIFIC WEATHER STYLINGS //
+///////////////////////////////////////
+
+	&.weather-hp {
+
+		#currentCond a, #weatherRow2 a, #weatherRow3 a, #weatherRow4 a {
+			color: rgb(13,87,153)!important;
+
+			&:visited, &:link {
+				color: rgb(13,87,153)!important;
+			}
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+
+	} //end Homepage-specific stylings
+
+/////////////////////////////////////////
+// EXTENDED SPECIFIC WEATHER STYLINGS //
+///////////////////////////////////////
+
+	&.extended {
+		background: none!important;
+		
+		#weatherHeader {
+			height: auto;
+			border: none!important;
+
+		}
+		#Col1 {
+			width: 60%!important;
+			text-align: left;
+
+			p {
+				margin: 5px 0;
+			}
+		}
+
+		#Col2 {
+			width: 30%!important; 
+		}
+
+
+		#wFinder {
+
+			h3 {
+				width: 100%;
+				margin-bottom: 5px;
+			}
+		}
+
+		#Col2L {
+			text-align: left!important;
+			width: 100%!important;
+			border-right: none!important;
+		}
+
+	} // end Extended specific stylings
+///////////////////////////////////////
+// LOCAL SPECIFIC WEATHER STYLINGS  //
+/////////////////////////////////////
+	&.forecast {
+		background: none!important;
+	
+		#weatherTop {
+			background: none!important;
+			#currentCondMid {
+				width: auto!important;
+			}
+
+			#wFinder {
+				margin-top: 8px;
+			}
+		}
+
+		#currentCondColL {
+			
+			width: 66%!important;
+			float: left!important;
+			margin-top: 0!important;
+
+			h1 {
+				text-align: left;
+				font-size: 14px!important;
+				text-transform: uppercase;
+				letter-spacing: 1px;
+				color: #9b1518;
+			}
+		
+			.wExplain {
+				float: left;
+			}
+
+			.wChart {
+				//width: 75%!important;
+				border-top: 1px solid #e5e5e5!important;
+				//border-bottom: 1px solid #fff!important;
+				border-bottom: none!important;
+			}
+
+			.wDeets {
+				float: left; 
+				margin-left: 5px;
+			}
+
+			.wNumbers {
+				text-align: left!important;
+				float: left;
+				width: 25%!important;
+			}
+		
+		}
+
+		#currentCondR {
+			width: 33%!important;
+		}
+
+		#sevenDayHeader {
+			text-align: left;
+			border-bottom: 1px solid #e5e5e5!important;
+		}
+
+		.day {
+			width: 14%!important;
+			border-right: none!important;
+			border-left: none!important;
+		}
+
+		.dayHi {
+			color: #000!important;
+		}
+
+		.dayLo {
+			color: #000!important;
+			opacity: .5;
+		}
+
+		//specific styling for map on city page
+		#weatherMapTabs {
+
+			margin-bottom: 10px;
+
+			li {
+				display: inline-block;
+				width: 18%;
+			}
+		}
+
+		#weatherMore {
+			border-top: none!important;
+
+			.subSectionHeader {
+				font-size: 14px!important;
+				font-weight: 900; 
+			}
+
+			.overline {
+				//font-size: 12px!important;
+			}
+		}
+		#currentCondL {
+			width: 40%!important;
+		}
+
+	.wNumbersL, .wNumbersR {display:block; float:left; font-weight:bold; height:auto; padding-right:10px; text-align:right; width:45px; } 
+	.wNumbersR {text-align:center;}
+	.wDeets { width:auto;}
+	
+	#weatherRow4Mid {float: left; margin:15px 0 0 10px; width:399px;  }
+	#weatherMoon.sunCast { padding: 0; margin: 0 0 10px 0  ; width:399px; font-size:13px; } 
+	.mPhasesTop {display: block; height: 14px; width: 399px; background-image: url(http://cache.boston.com/universal/site_graphics/weather/lunar_top.gif) ; } 
+	.mPhasesMid {background: #000066; color: #fff; }
+	.mPhasesMid ul {list-style: none; margin: 0; padding: 0; } 
+	.mPhasesMid ul li {display: block; float: left; padding:0 10px; text-align:center; width:59px; }
+	.mPhasesBot {display: block; clear: both;  height: 14px; width: 399px; background-image: url(http://cache.boston.com/universal/site_graphics/weather/lunar_bottom.gif) ; } 
+	.sunCast { padding-bottom:20px; padding-top:5px;} 
+	.wChart {border-top:1px dotted #3E5F9D; width: auto; padding:2px 0; margin:2px 0; } 
+	.wDeets {color: #464646 ; } 
+
+
+
+	} // end Local specific stylings
+
+	
+}

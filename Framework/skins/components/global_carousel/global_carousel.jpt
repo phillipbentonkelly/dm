@@ -1,0 +1,118 @@
+<p:getPageZone name="main" var="AllItems" webObject="${currentObject}" />
+<c:forEach items="${AllItems.items}" var="i" varStatus="zoneCount">
+	<p:out var="maxNumberOfItems" value="${zoneCount.count}" scope="page" />
+</c:forEach>
+
+<%-- Visual Revenue... we no longer need the zone name from the DWC because they're baked in --%>
+<c:if test="${not empty cacheScope.dwp}">
+	<p:object webObject="${cacheScope.dwp}" metadata="dwpVRMeta" /> 
+	<p:out var="VREnabled"	xvalue="$dwpVRMeta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/VisualRevenue" />
+	<c:choose>
+		<c:when test="${VREnabled eq 'True'}">
+			<p:out var="VisRevTop" value='data-vr-zone="Carousel Top"' />
+			<p:out var="VisRevBottom" value='data-vr-zone="Carousel Bottom"' />
+		</c:when>
+		<c:otherwise>
+			<p:out var="VisRevBottom" value="" />
+			<p:out var="VisRevBottom" value="" />
+		</c:otherwise>
+	</c:choose>
+</c:if>
+
+<%--
+	Lines 5-20 Determine if the first story in the carousel
+	Have a video tease or not. If so, it will include the video
+	tease template which is just the player.
+--%>	
+
+<p:getPageZone name="main" var="zones" webObject="${currentObject}" />
+<p:out var="storyCounter" value="0" />
+<c:forEach items="${zones.items}" var="x" varStatus="counter">
+	<c:if test="${counter.count eq 1}">
+		<p:getObject webObject="${x}" var="firstObject" />
+		<p:object webObject="${firstObject}" metadata="fom" />
+		
+		<bdc:getTeaseType webObject="${x}" var="teaseType" />
+		<p:out var="fomType" xvalue="$fom//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/WebType" /><!-- objectType is ${fomType} -->
+		<p:out var="standAloneVideo" value="${1==2}" />
+		<%-- if the first item in the carousel is an external video (uStream or NESN)
+			 or if the first item in the carousel is a stand alone VideoStory --%>
+		<c:if test="${fomType eq 'dwc_external_video_carousel'}">
+			<c:set var="teaseType" value="video-container" />
+			<p:out var="standAloneVideo" value="${1==2}" />
+		</c:if>
+		<c:if test="${fomType eq 'video'}">
+			<c:set var="teaseType" value="video-container" />
+			<p:out var="standAloneVideo" value="${1==1}" />
+		</c:if>
+
+		<c:if test="${teaseType eq 'video-container'}">
+			<p:out var="teaseAssetType" value="video" scope="page" />
+				<div class="lead-tz-mod">
+					<div class="lead-tzs" ${VisRevTop}>
+						<c:choose>
+							<c:when test="${standAloneVideo}">
+								<p:include pageZoneName="main" templateName="global_carousel_videostory" maxItems="1">
+									<p:param name="dwp" value="${cacheScope.dwp}" />
+								</p:include>
+							</c:when>
+							<c:otherwise>
+								<p:include pageZoneName="main" templateName="global_carousel_large_tease_video" maxItems="1">
+									<p:param name="fomType" value="${fomType}" />
+									<p:param name="dwp" value="${cacheScope.dwp}" />
+								</p:include>
+							</c:otherwise>	
+						</c:choose>
+					</div> <!--  // lead-tzs -->
+				<%--  lead-tz-mod closed below --%>	
+		</c:if>
+	</c:if>
+	<p:out var="storyCounter" value="${storyCounter + 1}" scope="page" />
+</c:forEach>
+
+<%--
+	If the first story in the carousel does not have
+	a video tease, include our default image swiper
+--%>
+
+<c:if test="${empty teaseAssetType}">
+	<div class="lead-tz-mod swiper-mod">
+	<div class="lead-tzs swiper-wrapper swiper-no-swiping" ${VisRevTop}>
+		<c:forEach items="${zones.items}" var="x" varStatus="counter">
+			<p:include pageZoneName="main" templateName="global_carousel_large_tease_image" offset="${counter.count - 1}" maxItems="${counter.count}">
+				<p:param name="dwp" value="${cacheScope.dwp}" />
+			</p:include>
+		</c:forEach>
+	
+	</div>
+
+<%-- Jesse, help! --%>
+<c:if test="${storyCounter gt 1}">
+		<!-- Lead Tease Prev/Next -->
+		<nav class="lead-tz-nav">
+			<button class="arrow-btn-prev swiper-prev omnibutton" aria-hidden="true"
+				title="Previous" data-omniclick="carousel lead | arrow left">Prev</button>
+			<button class="arrow-btn-next swiper-next omnibutton" aria-hidden="true"
+				title="Next" data-omniclick="carousel lead | arrow right">Next</button>
+		</nav>
+	</c:if>
+</c:if>
+	
+	
+	<c:if test="${storyCounter gt 1}">
+		
+		<ul class="lead-list" ${VisRevBottom}>
+			
+			<c:forEach items="${zones.items}" var="i" varStatus="counter">
+				<%--<p>${counter.count}</p>--%>
+				<%--<p>offset: ${counter.count - 1}</p>--%>
+				<p:include pageZoneName="main" templateName="global_carousel_small_tease" offset="${counter.count - 1}" maxItems="${counter.count}">
+					<p:param name="dwp" value="${cacheScope.dwp}" />
+				</p:include>
+			</c:forEach>
+			
+		</ul>
+	
+	</c:if>
+		
+</div> <%-- the matching element is actually included in either globe carousel large tease image or tease video --%>

@@ -1,0 +1,222 @@
+// Ryan P 8.19 All of these classes are nowhere to be found in methode.
+.filter-nav,
+.filter-nav-mod,
+.fn-item > a {
+	height: 38px;
+}
+
+.filter-nav-mod {
+	position: relative;
+	width: 100%;
+	margin-bottom: 10px;
+	background-color: $nav-black;
+
+	// Allow users to show hidden nav items by scrolling
+	@include mq(max, 500px) {
+		overflow-x: scroll;
+		overflow-y: hidden;
+		-webkit-overflow-scrolling: touch;
+
+		&:after, &:before {
+			z-index: 999;
+			@include content;
+			@include absolute(0 0 0 n);
+			display: block;
+			@include user-select;
+			@include trans;
+			pointer-events: none;
+		}
+		// Arrow indicator
+		&:after {
+			width: 30px;
+			background: $nav-black url(/img/carousel-next.png) no-repeat 50% 48%;
+			@include background-size(8px);
+			@include opacity(.75);
+		}
+		// Fade Background
+		&:before {
+			width: 80px;
+
+		}
+
+		// Hide the arrow after user starts scrolling,
+		// which means they've discovered the action
+		&:hover:after,
+		&:hover:before,
+		&.is-scrolling:after,
+		&.is-scrolling:before {
+		  @include animation(fadeout .1s ease);
+		  @include animation-fill-mode(forwards);
+		}
+
+	} //mq
+} // filter-nav-mod
+
+.filter-nav {
+	min-width: 380px;
+	width: 100%;
+	position: relative;
+	z-index: 1;
+	//overflow: hidden;
+	white-space: nowrap; //Ensures that each inline-block li stays on same line 
+	@include pie-clearfix;
+	@include transform(translate3d(0, 0, 0));
+	&:hover {
+		// Activating this on hover ensures that browsers
+		// who wish to show the scroll bar, like, all the time
+		// instead only show it when the user signals intent
+		overflow: visible;
+	}
+}
+
+.fn-item {
+	display: inline-block;
+	a {
+		color: #fff!important;
+		opacity: 0.8!important;
+		&:hover {
+
+			opacity: 1.0!important;
+		}
+	}
+}
+
+.fn-link,
+.fn-label {
+	display: block;
+	//float: left;
+	padding: 9px 15px;
+	@include sans(em(13)/155%, 500);
+	color: rgba(255,255,255,.8);
+	background-color: rgba(0,0,0,0);
+	@media (min-width: 600px) {
+		font-size: em(15);
+	}
+	&.filter-active,
+	&.filter-active:hover {
+		background-color: $red;
+		color: #fff;
+	}
+} // fn-link
+
+
+//
+// More Dropdown Menu 
+//
+
+.fn-item-more {
+	//display: none;
+	height: auto;
+	overflow: hidden;
+	&:hover {
+		overflow: visible;
+	}
+	@include mq(max, 600px) {
+		display: inline-block;
+		position: relative;
+		&:hover {
+			overflow: hidden;
+		}
+		> a {
+			display: none; 
+		}
+	}
+}
+
+// .fn-dropdown {
+// 	//display: none;
+// 	width: 140px;
+// 	position: absolute;
+// 	z-index: 1;
+// 	top: 0;
+// 	right: 110px;
+// 	background-color: $med-gray;
+// 	@include trans;
+// 	opacity: 0;
+
+// 	.fn-item-more:hover & {
+// 		opacity: 1;
+// 		top: 100%;
+// 		display: block;
+// 	}
+// 	@include mq(max, 600px) {
+// 		background-color: #000; 
+// 		position: static;
+// 		opacity: 1;
+// 	}
+// }
+
+// .fn-dropdown-item > .fn-link {
+// 	float: none;
+
+// 	@include mq(600px) {
+// 		right: auto;
+// 		width: 150px;
+// 	}
+
+// }
+// .fn-dropdown-item {
+
+// 	@include mq(max, 600px) {
+// 		background-color: #000;
+// 		opacity: 1;
+// 		position: static;
+// 		//display: inline; 
+// 		display: inline-block;
+// 	}
+// 		.fn-dropdown-link {
+// 			@include mq(max, 600px) {
+// 				padding: 9px 13px;
+// 			}	
+// 		}
+
+// 	> .fn-link {
+// 		float: none;
+
+// 		@include mq(600px) {
+// 			right: auto;
+// 			width: 150px;
+// 		}
+
+
+// 	}
+// }
+
+
+
+// .fn-item-more > .fn-link {
+// 	position: relative;
+// 	padding-right: 30px;
+// 	&:after {
+// 		@include content;
+// 		display: block;
+// 		@include absolute(17px 16px n n);
+// 		@include triangle(down, 4px, $black-15, .75);
+// 		@include trans(.15s);
+// 		@include mq(600px) {
+// 			top: 19px
+// 		}
+// 	}
+// 	&:hover:after {
+// 		@include triangle(down, 4px, #fff, .75);
+// 	}
+// }
+
+// 	// .mCSB_scrollTools {
+// 	// 	z-index: 1;
+// 	// }
+
+// .no-after {
+// 	&:after {
+// 		display:none;
+// 	}
+// }
+
+
+
+
+
+
+
+
+

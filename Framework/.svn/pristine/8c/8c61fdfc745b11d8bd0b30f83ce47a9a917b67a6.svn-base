@@ -1,0 +1,90 @@
+<p:getContext var="uuid" /> <!-- Story uuid = ${uuid} -->
+<p:getObject uuid="${uuid}" var="webObject" />
+<p:object webObject="${webObject}" content="story" metadata="meta" />
+
+<x:choose>
+	<%-- Movies --%>
+	<x:when select="$story//review-containers/review-container-movie">
+		<p:out var="star_rating" xvalue="$story//review-containers/review-container-movie/review-rating/p" />
+		<p:out var="has_review" value="yes" />
+		<c:choose>
+			<c:when test="${not empty fn:trim(star_rating)}">
+				<p:out var="has_stars" value="yes" />
+			</c:when>
+			<c:otherwise>
+				<p:out var="has_stars" value="no" />
+			</c:otherwise>
+		</c:choose>
+		<p:out var="item_title" xvalue="$story//review-containers/review-container-movie/review-title/p" />
+	</x:when>
+	
+	<%-- Restaurants --%>
+	<x:when select="$story//review-containers/review-container-restaurant">
+		<p:out var="star_rating" xvalue="$story//review-containers/review-container-restaurant/review-rating/p" />
+		<p:out var="has_review" value="yes" />
+		<c:choose>
+			<c:when test="${not empty fn:trim(star_rating)}">
+				<p:out var="has_stars" value="yes" />
+			</c:when>
+			<c:otherwise>
+				<p:out var="has_stars" value="no" />
+			</c:otherwise>
+		</c:choose>
+		<p:out var="item_title" xvalue="$story//review-containers/review-container-restaurant/review-loc-name/p" />
+	</x:when>
+	
+	<%-- Everything else --%>
+	<x:otherwise>
+		<p:out var="has_stars" value="no" />
+		<p:out var="has_review" value="no" />
+	</x:otherwise>
+</x:choose>
+
+<c:if test="${has_review eq 'yes' and has_stars eq 'yes'}">
+	<p:out var="star_rating" value="${fn:trim(star_rating)}" />
+	<p:out var="rating_class" value="" />
+	<c:choose>
+		<c:when test="${star_rating == .5}">
+			<p:out var="rating_class" value="one-half" />
+		</c:when>
+		<c:when test="${star_rating == 1}">
+			<p:out var="rating_class" value="one" />
+		</c:when>
+		<c:when test="${star_rating == 1.5}">
+			<p:out var="rating_class" value="one-and-half" />
+		</c:when>
+		<c:when test="${star_rating == 2}">
+			<p:out var="rating_class" value="two" />
+		</c:when>
+		<c:when test="${star_rating == 2.5}">
+			<p:out var="rating_class" value="two-and-half" />
+		</c:when>
+		<c:when test="${star_rating == 3}">
+			<p:out var="rating_class" value="three" />
+		</c:when>
+		<c:when test="${star_rating == 3.5}">
+			<p:out var="rating_class" value="three-and-half" />
+		</c:when>
+		<c:when test="${star_rating == 4}">
+			<p:out var="rating_class" value="four" />
+		</c:when>
+		<c:when test="${star_rating == 4.5}">
+			<p:out var="rating_class" value="four-and-half" />
+		</c:when>
+		<c:when test="${star_rating == 5}">
+			<p:out var="rating_class" value="five" />
+		</c:when>
+	</c:choose>
+	
+	<%-- Review item title and stars --%>
+	<div class="review-item">
+	  <h3 class="review-item-title">${fn:trim(item_title)}</h3>
+	  <figure class="review-stars">
+		  <%-- 
+		  classes for review-rating are : 
+		  .one-half , .one , .one-and-half ...up to .five 
+		  --%>
+		  <div class="review-rating ${rating_class}"></div>
+	  </figure>
+	</div>
+</c:if>

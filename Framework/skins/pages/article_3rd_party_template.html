@@ -1,0 +1,510 @@
+
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Boston.com Prototype, redux</title>
+
+	
+	    <!--
+	    For non-responsive css, (static layout, smaller file)
+	    uncomment non-resp-tmpl-article.css
+	    and comment out the tmpl-article.css.
+	    -->
+
+     	<link rel="stylesheet" href="http://boston.com/css/non-resp-tmpl-article.css"> 
+		<!--<link rel="stylesheet" href="http://boston.com/css/tmpl-article.css">-->
+
+
+		<script type="text/javascript" src="http://boston.com/js/_src/modernizr/modernizr.js"></script>
+
+		<script type="text/javascript"> // Typekit
+     /*
+     (function() {
+			var config = {
+			  kitId: 'cug4tlt',
+			  scriptTimeout: 3000
+			};
+			var h=document.getElementsByTagName("html")[0];h.className+=" wf-loading";var t=setTimeout(function(){h.className=h.className.replace(/(\s|^)wf-loading(\s|$)/g," ");h.className+=" wf-inactive"},config.scriptTimeout);var tk=document.createElement("script"),d=false;tk.src='//use.typekit.net/'+config.kitId+'.js';tk.type="text/javascript";tk.async="true";tk.onload=tk.onreadystatechange=function(){var a=this.readyState;if(d||a&&a!="complete"&&a!="loaded")return;d=true;clearTimeout(t);try{Typekit.load(config)}catch(b){}};var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(tk,s)
+		  })();
+      */
+		</script>
+		<script> // DFP
+			var googletag = googletag || {};
+			googletag.cmd = googletag.cmd || [];
+			(function() {
+				var gads = document.createElement("script");
+				gads.async = true;
+				gads.type = "text/javascript";
+				var useSSL = "https:" == document.location.protocol;
+				gads.src = (useSSL ? "https:" : "http:") + "//www.googletagservices.com/tag/js/gpt.js";
+				var node = document.getElementsByTagName("script")[0];
+				node.parentNode.insertBefore(gads, node);
+			})();
+		</script>
+		<script> // DFP Setup
+			var bcom = bcom || {};
+			bcom.dfp = bcom.dfp || {};
+			bcom.dfp.networkCode = 61381659;
+			bcom.dfp.adUnit = 'testbostonglobe/test-bcom-redesign';
+			//bcom.dfp.adSlots = ['ad_lead1', 'ad_sponsor', 'ad_carousel', 'ad_featurestack', 'ad_streamsponstease', 'ad_featurestacksponsor'];
+			bcom.dfp.adSlots = ['ad_sponsor', 'ad_carousel', 'ad_featurestack'];
+			bcom.dfp.streamCount = 5;
+			bcom.dfp.keyValuePairs = {};
+		</script>
+		<!-- gigya -->
+<!--
+Gigya Notes
+
+frameset needs to be updated with the production FB app id, which is 135637993114591 when it gets migrated
+
+The APIKey for Gigya will also need to be updated when migrating to QA* or PRD
+
+-->
+
+		<script src="http://cdn.gigya.com/js/socialize.js?apiKey=3_lCsXhRmHTe6QmomvEFV3NeuGt0DGOlP3Gd23NIE_imzif-OH_h42MNhfnhCGz-tX"></script>
+
+	</head>
+	<body class="page-story top-btn-off tall-nav-potential" id="top">
+
+
+<!-- share module -->		
+<div class="share-mod mfp-hide" id="mfp-share">
+	<h1 class="share-overline">Share</h1>
+	<h2 class="share-h title"></h2>
+
+	<div class="share-icon-mod">
+		<ul class="share-icon-list">
+			<li class="share-icon facebook">
+				<a href="#" class="share-icon-link" data-provider="facebook">
+					<img src="http://boston.com/img/social_icons/facebook-256.png" alt="facebook">
+				</a>
+			</li>
+			<li class="share-icon twitter">
+				<a href="#" class="share-icon-link" data-provider="twitter">
+					<img src="http://boston.com/img/social_icons/twitter-256.png" alt="twitter">
+				</a>
+			</li>
+			<li class="share-icon pinterest">
+				<a href="#" class="share-icon-link" data-provider="pinterest">
+					<img src="http://boston.com/img/social_icons/pinterest-256.png" alt="pinterest">
+				</a>
+			</li>
+			<li class="share-icon googleplus">
+				<a href="#" class="share-icon-link" data-provider="googleplus">
+					<img src="http://boston.com/img/social_icons/googleplus-256.png" alt="google plus">
+				</a>
+			</li>
+			<li class="share-icon linkedin">
+				<a href="#" class="share-icon-link" data-provider="linkedin">
+					<img src="http://boston.com/img/social_icons/linkedin-256.png" alt="Linked In">
+				</a>
+			</li>
+			<li class="share-icon stumbleupon">
+			    <a href="#" class="share-icon-link" data-provider="stumbleupon">
+					<img src="http://boston.com/img/social_icons/stumbleupon-256.png" alt="StumbleUpon">
+			    </a>
+			</li>
+			<li class="share-icon reddit">
+			    <a href="#" class="share-icon-link" data-provider="reddit">
+					<img src="http://boston.com/img/social_icons/reddit-256.png" alt="Reddit">
+			    </a>
+			</li>	
+			<li class="share-icon tumblr">
+			    <a href="#" class="share-icon-link" data-provider="tumblr">
+					<img src="http://boston.com/img/social_icons/tumblr-256.png" alt="Tumblr">
+			    </a>
+			</li>						
+			<li class="share-icon email">
+				<a href="#" class="share-icon-link"  data-provider="email">
+					<img src="http://boston.com/img/social_icons/email-256.png" alt="email">
+				</a>
+			</li>
+		</ul>
+		<div class="share-message">
+	      <form action="" method="post" class="share-form form">
+			<div class="form-row">
+				<label for="recipient_email">To</label>
+				<input name="recipient_email" class="" type="text" placeholder="Separate multiple addresses with a comma"/>		
+				<label for="recipient_email" class="error">Please enter valid email addresses</label>                      				
+			</div>
+			<div class="form-row">
+				<label for="share_message">Message<!--(<span class="char-count">80</span> characters remainging) --></label>
+				<textarea name="share_message" class="share-message-textarea textarea"></textarea>					
+			</div>
+
+			<div class="form-row">
+				<label for="your_email">Your email address</label>
+				<input name="your_email" class="" type="text" placeholder=""/>
+				<label for="your_email" class="error">Please enter a valid email address</label>
+			</div>
+			<div class="form-row">
+				<input type="submit" value="Send" class="submit-btn">
+				<a href="" class="btn-link btn-small">cancel</a>				
+			</div>
+	      </form>
+		</div>		
+		<div class="copy">
+			<div class="copy-txt">
+				<h1 class="copy-txt-link"></h1>
+			</div>
+		</div>
+	</div>
+	<section class="share-ad-banner-mod">
+		<img src="http://boston.com/ads/banner-1.jpg" class="ad-banner"/>
+	</section>
+</div><!-- .share-mod -->
+<!--		<div class="loading page-loading"><i class="dot one"></i><i class="dot two"></i><i class="dot three"></i></div>
+ -->
+
+<script type="text/mustache" id="nav-avatar-mustache">
+	<i class="nav-profile-close"></i>
+	<img class="nav-avatar nav-avatar-ear" src="{{{imageUrl}}}" />
+	<h4	class="nav-username a11y-only">username</h4>
+</script>
+
+<script type="text/mustache" id="nav-profile-mustache" data-template="nav-profile">
+	<div class="nav-profile-mod reverse">
+		<header class="nav-profile-hdr">
+			<a class="nav-profile-avatar-mod art-bd" href="{{{profileUrl}}}">
+				<img class="nav-avatar nav-avatar-dd" src="{{{imageUrl}}}" alt="">
+			</a> <!-- /art-bd -->
+			<div class="nav-profile-txt-mod txt-bd">
+				<h3 class="nav-profile-greeting"><a href="{{{profileUrl}}}">Hi {{name}}!</a></h3>		
+				<h4 class="nav-username"><a href="{{{profileUrl}}}">username</a></h4>
+			</div> <!-- /txt-bd -->
+		</header>
+		<ul class="nav-profile-list">
+			<li class="toc-item nav-profile-item"><a href="{{{profileUrl}}}">Profile</a></li>
+			<li class="toc-item nav-profile-item"><a href="#">Settings</a></li>
+			<li class="toc-item nav-profile-item"><a class="enable-notifications" href="#">Enable Desktop Notifications</a></li>
+			<li class="toc-item nav-profile-item"><a href="#">Log Out</a></li>
+			<li class="toc-item nav-profile-item"><a onclick="window.localStorage.clear(); window.location.reload();" href="#" class="temporary">Clear Stream</a></li>
+		</ul>
+	</div> <!-- /nav-profile-mod -->
+</script>
+
+<div class="site-container"> 
+	<!-- Main Nav -->
+<div class="nav-mod">
+	<nav class="main-nav">
+		<div class="main-nav-inner">
+			<div class="nav-left-ear">
+				<a class="toc-trigger js-toc-trigger nav-btn" href="#">
+					<div class="toc-trigger-icon"></div>
+					<h4 class="toc-trigger-label">Sections</h4>
+				</a><!-- /sec-nav -->
+			</div> <!-- /nav-left-ear -->
+
+			<a href="http://boston.com/index.html" class="bcom-logo"></a><!-- /bcom-logo -->
+
+			<div class="nav-right-ear">
+				<a class="nav-search-trigger js-search-trigger nav-btn" href="#">
+					<i class="nav-search-label">Search</i>
+					<i class="nav-search-icon"></i>
+				</a> <!-- /search-form -->
+
+				<a id="trigger-avatar-profile" class="nav-profile-trigger js-profile-trigger nav-btn" href="#URL:trigger-user-id-nav">
+					<i class="nav-profile-close"></i>
+					   	<img class="nav-avatar nav-avatar-ear" src="http://boston.com/photos/Avatar-blank.jpg"></i>
+					<h4	class="nav-username a11y-only">User1234</h4>
+				</a><!-- /nav-profile-trigger -->
+			</div> <!-- /nav-right-ear -->
+		</div> <!-- /main-nav-inner -->
+	</nav><!-- /main-nav -->
+</div> 
+<div class="nav-search-mod">
+    <div class="l-nav-search site-width">
+        <div class="nav-search-ad-mod">
+            <img class="nav-search-ad" src="http://boston.com/ads/sponsor-2.jpg"/>
+        </div>
+        <form class="nav-search-form">
+            <input class="nav-search-form-input" type="text" placeholder="Search stories or sections"/>
+            <button type="submit" class="submit-btn nav-search-btn" value="Search"> </button>
+        </form> <!-- /nav-search-form -->
+    </div> <!-- /l-nav-search -->
+</div> <!-- /nav-search-mod -->	
+<nav class="toc-mod reverse">
+	<form class="toc-form" action="http://r-devedit.boston.com/search" ><!-- on means open nav -->
+		<input class="toc-search-input nav-label" type="text" placeholder="Search stories or sections"> </input>
+		<input type="submit" class="toc-search-btn toc-search-icon" value="Search"> </input>
+	</form> <!-- /toc-form -->
+	
+	<div class="toc-sec-mod">
+		<h3 class="toc-section-head">Sections</h3>
+		<ul class="toc-list toc-section-list">
+			<li class="toc-item toc-hp">
+					<a href="http://r.devedit.boston.com?p1=Main_Nav_hp">Home</a>
+				</li>
+			<li class="toc-item toc-news">
+					<a href="?p1=Main_Nav_hp">News</a>
+				</li>
+			<li class="toc-item toc-sports">
+					<a href="?p1=Main_Nav_hp">Sports</a>
+				</li>
+			<li class="toc-item toc-ae">
+					<a href="?p1=Main_Nav_hp">Entertainment</a>
+				</li>
+			<li class="toc-item toc-lifestyle">
+					<a href="?p1=Main_Nav_hp">Lifestyle</a>
+				</li>
+			<li class="toc-item toc-health">
+					<a href="?p1=Main_Nav_hp">Health</a>
+				</li>
+			<li class="toc-item toc-your-town">
+					<a href="?p1=Main_Nav_hp">Your Town</a>
+				</li>
+			<li class="toc-item toc-travel">
+					<a href="?p1=Main_Nav_hp">Travel</a>
+				</li>
+			<li class="toc-item toc-marketplace">
+					<a href="?p1=Main_Nav_hp">Marketplace</a>
+				</li>
+			<li class="toc-item toc-business">
+					<a href="?p1=Main_Nav_hp">Money</a>
+				</li>
+			<li class="toc-item toc-food">
+					<a href="?p1=Main_Nav_hp">Food & Dining</a>
+				</li>
+			<li class="toc-item toc-cars">
+					<a href="?p1=Main_Nav_hp">Cars</a>
+				</li>
+			<li class="toc-item toc-jobs">
+					<a href="?p1=Main_Nav_hp">Jobs</a>
+				</li>
+			<li class="toc-item toc-real-estate">
+					<a href="?p1=Main_Nav_hp">Real Estate</a>
+				</li>
+			</ul>
+	</div>
+	
+	<div class="toc-sec-mod">
+		<h3 class="toc-section-head">Shortcuts</h3>
+		<ul class="toc-list toc-shortcut-list">
+			</ul>
+	</div>
+	
+	<div class="toc-sites-mod">
+		<h3 class="toc-section-head">Sister Sites</h3>
+		<ul class ="toc-sister-list">
+			<li class="sister-item toc-radiobdc">
+					<a href="http://bdcwire.com/radiobdc/?p1=ThisIsAlsoATest">
+						<div class="radiodbc-logo sister-logo">RadioBDC</div>
+						<p class="sister-txt radio-txt">Streaming today's top alternative music & more</p>
+					</a>
+				</li>
+			<li class="sister-item toc-hive">
+					<a href="http://www.boston.com/business/innovation?p1=Main_Nav_hp">
+						<div class="betab-logo sister-logo">BetaBoston</div>
+						<p class="sister-txt radio-txt">Your one-stop source for local innovation news</p>
+					</a>
+				</li>
+			<li class="sister-item toc-bdcwire">
+					<a href="?p1=Main_Nav_hp">
+						<div class="bdcwire-logo sister-logo">BDCWire</div>
+						<p class="sister-txt radio-txt">Short tagline that begins to explain what this is</p>
+					</a>
+				</li>
+			<li class="sister-item toc-globe">
+					<a href="http://www.bostonglobe.com?p1=Main_Nav_hp">
+						<div class="globe-logo sister-logo">The Boston Globe</div>
+						<p class="sister-txt radio-txt">News, sports & more from the state's leading resource</p>
+					</a>
+				</li>
+			</ul> <!-- /toc-sister-list -->
+        <!--  legal footer -->
+        <footer class="nav-footer">
+			<ul class="social-icon-list">
+				<li><a href="https://twitter.com/intent/user?screen_name=BostonDotCom&p1=Main_Nav_hp" class="twitter-icon social-icon"></a></li>
+				<li><a href="https://www.facebook.com/boston?p1=Main_Nav_hp" class="facebook-icon social-icon"></a></li>
+				<li><a href="https://plus.google.com/+BostonDotCom/?p1=Main_Nav_hp" class="google-icon social-icon"></a></li>
+				<li><a href="http://www.boston.com/tools/rss/?p1=Main_Nav_hp" class="rss-icon social-icon"></a></li>				
+            </ul>
+			<ul class="footer-legal-links list-horiz footer-text">
+				<li class="list-item"><a href="http://www.boston.com/help/privacy_policy/?p1=Main_Nav_hp">Privacy Policy</a></li>
+				<li class="list-item"><a href="http://www.boston.com/help/bostoncom_info/?p1=Main_Nav_hp">Contact</a></li>
+				<!-- Legal derived from XML -->
+			</ul>
+            <p class="nav-copyright footer-text">&copy;2013 Boston.com</p>
+        </footer> <!-- /nav-ftr -->
+
+        <!-- Article Banner Ad -->
+        <!-- ad_position: ad_navdisplay, enabled: True -->
+<div class="ad-navdisplay ad" id="ad_navdisplay"></div>
+	 	</nav> <!-- /toc-mod -->
+	<div class="page-content">
+
+		<!-- Leaderboard Ad Module -->
+		<section class="leaderboard-mod nav-leaderboard-mod">
+
+    <!-- place any code for a top-of-page banner-ad here -->  
+
+    </section> 
+
+		<div class="story-mod">
+			<div class="story-width article-with-art"> 
+				<header class="story-hdr article-hdr">
+					<div class="story-overline-mod">
+
+            <!-- This is where any "section-name" would be represented. Remove if its not needed.-->
+
+						<a href="index.html#lifestyle" class="story-cat overline">Category Name</a>
+
+					</div>
+			
+
+					<h1 class="story-h1">Article Title Goes Here</h1>
+
+				</header> <!-- /article-hdr -->
+			
+				<article class="article-bd">
+			
+					<div class="l-story-primary no-flow">
+						<figure class="article-lead-art-mod">
+
+              <!-- place an article image here with the following format -->
+							<img class="article-art article-lead-art" src="../photos/yoga.jpg" />
+
+							<figcaption class="caption story-caption reverse">
+
+              This is where image caption goes. <i class="credit">Credit: Jonathan Wiggs, Boston Globe</i>
+
+              </figcaption>
+
+						</figure>
+
+
+
+          </div>
+			
+					<!-- Story Byline -->
+					<div class="byline-pair-mod byline-stacked ">
+						<aside class="l-story-byline">
+							<section class="story-byline-mod">
+
+                <!-- Article Author Image -->
+
+								<a href="#URL:author-page" class="byline-avatar-mod art-bd">
+									<!-- put author thumbnail image here -->
+									<!-- <img class="story-byline-avatar art" src="../photos/avatar-gary-dzen.jpg"> -->
+								</a>
+
+                <!-- Article Author Details -->
+
+								<div class="txt-bd">
+									<ul class="article-byline-list">
+										<li class="story-byline"><a href="#URL:author-page">Gary Dzen</a></li>
+										<li class="story-byline-handle"><a href="#URL:author-twitter-handle">@globegary</a></li>
+										<li class="story-byline-affiliation">Boston.com Staff</li>
+										<li class="story-timestamp">June 25, 2013 7:54am</li>
+									</ul>
+								</div>
+
+							</section>
+			
+							<!-- Story Share Tools: Header -->
+						    <section class="story-tools-mod story-tools-hdr">
+						        <ul class="tools-horiz story-tools-horiz">
+                      <li class="tools-item tools-share">
+                        <a class="popup-trigger" href="#mfp-share" data-canonical="http://boston.com/some/long/url/for/fun" data-shorturl="http://fa.ke/replace" data-headline="Your Brain on Yoga" data-thumbnail="../photos/yoga.jpg" data-thumb_type="image">
+                          <i class="share-icon"></i>
+                          <i class="tools-txt">Share</i>
+                        </a>
+                      </li>
+                      
+                  </ul>
+
+                    <div class="provider-globe">
+                      <a>
+                      <!-- if content is from another provider, place their logo below... -->
+                      <img src="img/some-tiny-content-provider-logo.gif"/>
+                      </a>
+                    </div>
+
+						    </section> 
+
+						</aside> <!-- l-story-byline -->				
+
+						<!-- Story Banner Ad -->
+						<div class="l-ad-story-banner-1 ">
+							<section class="ad-banner-mod story-banner-1">
+
+              <!-- place banner ad for right column here -->
+
+								<img src="../ads/banner-1.jpg" class="ad-banner"/>
+
+							</section>
+						</div>
+					</div>
+			
+					<div class="story-share-mod">
+      <!-- Share button, adjacent to the left of article text -->
+						<div class="story-tools-mod story-tools-sidecar">
+							<ul class="tools-btns">
+								<li class="tools-item tools-share">
+									<a class="popup-trigger tools-link tools-link-share" href="#mfp-share" data-canonical="http://boston.com/some/long/url/for/fun" data-shorturl="http://fa.ke/replace" data-headline="Your Brain on Yoga" data-thumbnail="../photos/yoga.jpg" data-thumb_type="image">
+										<i class="share-icon"></i>
+										<i class="tools-txt">Share</i>
+									</a>
+								</li>
+                <li class="tools-item tools-comment">
+									<a class="tools-link tools-link-comment js-goto-open-comments" href="#story-comments">
+										<i class="comment-icon"></i>
+										<i class="sc-comment-count">5</i>
+										<i class="tools-txt">Comment</i>
+									</a>
+								</li>
+							</ul> 
+						</div> 
+
+						<!-- Article Text goes witin the p.article-p tags below -->
+						<div class="l-story-txt-share article-txt-top no-flow">
+            	
+            <p class="article-p first-p"><i class="dropcap">T</i>his is how you put content in here. Its pretty easy. Just use the appropriate class on the paragraph element. The first paragraph gets class 'first-p' and the first letter gets wrapped in an 'i' element with class 'dropcap'.</p>
+			
+            <p class="article-p">And a second paragraph is just as simple!</p>
+
+            </div>
+            <div class="story-social-btns l-story-txt-share">
+              <button class="social-btn social-btn-fbook"><i class="icon"></i>Share</button>
+              <button class="social-btn social-btn-twitter"><i class="icon"></i>Tweet</button>
+            </div>
+
+					<footer class="story-tools-mod story-tools-ftr">
+						<ul class="tools-horiz story-tools-horiz">
+							<li class="tools-item tools-share">
+								<a class="popup-trigger tools-link tools-link-share" href="#mfp-share" data-canonical="http://boston.com/some/long/url/for/fun" data-shorturl="http://fa.ke/replace" data-headline="Your Brain on Yoga" data-thumbnail="../photos/yoga.jpg" data-thumb_type="image">
+									<i class="share-icon"></i>
+									<i class="tools-txt">Share</i>
+								</a>
+							</li>
+						</ul>
+					</footer>  <!-- /story-tools-ftr -->
+
+				</article> <!-- /article-bd -->
+			</div> <!-- /story-width -->
+		</div><!-- //story-mod -->
+	</div> <!-- /page-content -->
+</div> <!-- /site-container -->
+
+
+<div id=pubnub pub-key=pub-c-127a2b10-aa80-4a62-ac2e-30a1fce6f220 sub-key=sub-c-4a78c224-164c-11e3-9f04-02ee2ddab7fe></div>
+
+
+		<script type="text/javascript" src="http://boston.com/js/libs/jquery-2.0.2.min.js"></script>
+		<script type="text/javascript" src="http://boston.com/js/libs/underscore.js"></script>
+		<script type="text/javascript" src="http://boston.com/js/bcom.slidenav.js"></script>
+		<script type="text/javascript" src="http://boston.com/js/libs/jquery.serializeObject.js"></script>
+		<script type="text/javascript" src="http://boston.com/js/libs/mustache.js"></script>
+		<script type="text/javascript" src="http://boston.com/js/_src/swiper/dist/idangerous.swiper-2.2.min.js"></script>
+		<script type="text/javascript" src="/js/bcom.nav.js"></script>
+		<script type="text/javascript" src="http://boston.com/js/_src/magnific-popup/dist/jquery.magnific-popup.js"></script>
+		<script type="text/javascript" src="http://boston.com/js/bcom.carousel.js"></script>
+		<script type="text/javascript" src="/js/bcom.videoplayer.js"></script>	
+		<script type="text/javascript" src="/js/app.js"></script>
+		<script type="text/javascript" src="http://boston.com/js/bcom.share.js"></script>
+	  <script type="text/javascript" src="http://boston.com/js/bcom.inits.js"></script>
+  </body>
+</html>	

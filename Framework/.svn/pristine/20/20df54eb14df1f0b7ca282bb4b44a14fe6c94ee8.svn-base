@@ -1,0 +1,34 @@
+<article class="big-tz quick-tz">
+	{{#image}}
+	<a class="big-tz-img-mod" href="{{#is_image}}{{full}}{{/is_image}}{{#gallery_link}}gallery.html#{{slug}}{{/gallery_link}}{{^gallery_link}}{{^is_image}}{{^is_quick_gallery}}article.html#{{slug}}{{/is_quick_gallery}}{{/is_image}}{{/gallery_link}}{{#is_quick_gallery}}#quick-gallery{{/is_quick_gallery}}">
+		<img class="tz-img" src="{{full}}" />
+	</a> <!-- /big-tz-img-mod -->
+	{{/image}}
+
+	<div class="big-tz-bd txt-bd">
+		<h2 class="big-tz-h tz-title"><a {{#is_quick_gallery}}class="popup-trigger" {{#slug}}data-slug="{{slug}}" {{/slug}}{{/is_quick_gallery}} href="{{^gallery_link}}{{^is_quick_gallery}}article.html#{{slug}}{{/is_quick_gallery}}{{/gallery_link}}{{#gallery_link}}gallery.html#{{slug}}{{/gallery_link}}{{#is_quick_gallery}}#quick-gallery{{/is_quick_gallery}}">{{head}}{{#is_live}}<i class="live-tz"></i>{{/is_live}}</a></h2>
+		{{#subhead}}
+		<p class="tz-txt quick-tz-txt">{{{subhead}}}{{#has_comments}}<a {{#is_quick_gallery}}class="popup-trigger" {{#slug}}data-slug="{{slug}}" {{/slug}}{{/is_quick_gallery}} href="{{^gallery_link}}{{^is_quick_gallery}}article.html#{{slug}}{{/is_quick_gallery}}{{/gallery_link}}{{#gallery_link}}gallery.html#{{slug}}{{/gallery_link}}{{#is_quick_gallery}}#quick-gallery{{/is_quick_gallery}}"><i class="tz-comment-count-icon"></i><i class="tz-comment-count">{{comments.number}}</i></a>{{/has_comments}}</p>
+		{{/subhead}}
+	</div> <!-- /big-tz-bd -->
+
+	<ul class="tz-meta quick-tz-meta">
+		{{#section}}
+		<li class="tz-meta-item tz-category">
+			<a href="{{section.url}}">{{section.name}}</a>
+		</li>
+		{{/section}}
+		<li class="tz-meta-item tz-time">
+			<a class="tz-time-link{{#is_quick_gallery}} popup-trigger{{/is_quick_gallery}}" {{#is_quick_gallery}}{{#slug}}data-slug="{{slug}}"{{/slug}}{{/is_quick_gallery}} href="{{url}}">
+				<i class="tz-time-icon tz-meta-icon"></i>
+				<i class="tz-time-txt tz-meta-txt">{{timestamp}}</i>
+			</a>
+		</li> <!-- /.tz-time -->
+		<li class="tz-meta-item tz-share">
+			<a class="tz-share-link popup-trigger" href="#mfp-share" data-load-ad="true" data-ad-name="ad_share" data-canonical="{{#url}}{{url}}{{/url}}" data-shorturl="{{shortUrl}}" data-headline="{{head}}" data-thumbnail="{{#thumb_quick}}{{thumb_quick}}{{/thumb_quick}}" data-thumb_type="{{#is_gallery}}image{{/is_gallery}}{{#is_video}}video{{/is_video}}{{#is_image}}image{{/is_image}}">
+				<i class="tz-share-icon tz-meta-icon"></i>
+				<i class="tz-share-txt tz-meta-txt">Share</i>
+			</a>
+		</li> <!-- /.meta-share-list -->
+	</ul> <!-- ./tz-meta -->
+</article> <!-- .quick-tz-lg -->

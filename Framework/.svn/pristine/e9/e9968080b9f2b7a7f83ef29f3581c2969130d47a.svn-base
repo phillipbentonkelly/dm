@@ -1,0 +1,61 @@
+<p:getPageZone name="external_video_story" var="ustream" />
+
+<c:if test="${ustream.size == 1}">
+	<c:forEach items="${ustream.items}" var="ustreamItem">
+	
+		<p:getObject webObject="${ustreamItem}" var="ustreamObject" />
+		<p:object webObject="${ustreamObject}" content="c" metadata="m" />
+	
+		<p:out var="sectionForTracking" value="${applicationScope.dwpSection}" />
+		<p:out var="positionCounterSmall" value="${cacheScope.positionCounterSmall}" />
+		<bdc:getOmnitureValues var="trackingSection" section="${sectionForTracking}" />
+		<p:out var="section" xvalue="$m//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/Sections/Section/SectionPath" />
+		
+		<bdc:getHeadlines webObject="${ustreamObject}" var="title" />
+		<bdc:getSection section="${section}" var="sectionLink" />
+		<x:set var="imgLocation" select="string($c//multimedia-container/photo-container/photogrp/photo/@fileref/text())"/>
+		<%--<bdc:imagesWithCaptionCredit webObject="${x}" var="carouselImg" format="image_90x90" />--%>
+		<p:url var="img" value="${imgLocation}" type="resource" format="image_80x49"/>
+	
+		<c:choose>
+			<c:when test="${empty imgLocation}">
+				<li class="lead-nav-item lead-item-no-art">
+					<bdc:link webObject="${ustreamObject}" className="lead-item-link">
+						<div class="lead-list-art-bd art-bd">
+							<p class="lead-list-cat">${sectionLink}</p>
+						</div>
+						<span class=" lead-list-txt-bd-container lead-item-link">
+							<div class="lead-list-txt-bd txt-bd">
+								<h4 class="lead-list-h">${title.carouselHeadline}</h4>
+							</div>
+						</span>
+					</bdc:link>
+				</li>
+			</c:when>
+			<c:otherwise>
+				<li class="lead-nav-item">
+					<bdc:link 
+						webObject="${ustreamObject}" 
+						className="lead-item-link"
+						section="${sectionForTracking}"
+						onClick="true" 
+						objectPosition="${positionCounterSmall}" 
+						element="tease"
+						elementType="carousel sub">
+						
+						<div class="lead-list-art-bd art-bd">
+							<img class="lead-list-art" src="${img}">
+						</div>
+						<span class=" lead-list-txt-bd-container lead-item-link">
+							<div class="lead-list-txt-bd txt-bd">
+								<h4 class="lead-list-h">${title.carouselHeadline}</h4>
+								<p class="lead-list-overline">${sectionLink}</p>
+							</div>
+						</span>
+					</bdc:link>
+				</li>
+			</c:otherwise>
+		</c:choose>
+	
+	</c:forEach>
+</c:if>

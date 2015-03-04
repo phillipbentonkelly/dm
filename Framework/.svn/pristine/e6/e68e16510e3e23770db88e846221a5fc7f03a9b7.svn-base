@@ -1,0 +1,126 @@
+<%@ taglib prefix="bgm" uri="bgmtags" %>
+<%@ taglib prefix="fn" uri="jstlFunctions"%>
+<%@ page import="org.jsoup.Jsoup" %>
+<%@ page import="org.jsoup.safety.Whitelist" %>
+<%@page import="java.util.*"%>
+<%@page import="java.text.SimpleDateFormat"%>
+<%@ page import="java.text.DateFormat" %> 
+<%@page import="java.lang.String"%>
+
+<p:out var="stream" value="${cacheScope.query}" />
+<p:out var="filter" value="${cacheScope.streamFilter}" />
+<p:out var="limit" value="${param.limit}" /> 
+<p:out var="status" value="${param.status}" />
+<p:out var="startingdate" value="${param.startingdate}" />
+
+<%-- mock homepage to news for dev testing --%>
+<c:if test="${stream == 'homepage'}"><c:set var="stream">news</c:set></c:if>
+
+<c:if test="${empty stream}"><c:set var="stream">not-specified</c:set></c:if>
+<c:if test="${empty filter}"><c:set var="filter">all</c:set></c:if>
+<c:if test="${empty limit}"><c:set var="limit">25</c:set></c:if>
+<c:if test="${empty status}"><c:set var="status">Approved</c:set></c:if>
+
+<%--  if not specified, use a maximum date value cannot pass seem to pass a value of <qm:TMaxDateTime/>  into the query  --%>
+<c:if test="${empty startingdate}"><c:set var="startingdate" value="99991231235900"/></c:if>
+
+<% 
+	String[] queryParams = new String[5];
+	queryParams[0] = (String)pageContext.getAttribute("stream");
+	queryParams[1] = (String)pageContext.getAttribute("filter");
+	queryParams[2] = (String)pageContext.getAttribute("startingdate");
+	queryParams[3] = (String)pageContext.getAttribute("limit");
+ 	queryParams[4] = (String)pageContext.getAttribute("status");
+    
+	pageContext.setAttribute("queryParams", queryParams);
+%>
+  
+<p:getCollection path="$configurationURI/Framework/queries/bdc_stream_filterkey.vquery" virtualParams="${queryParams}" var="q" />
+
+<c:forEach items="${q.items}" var="i" begin="0" end="${limit}" varStatus="status">
+	<p:getObject webObject="${i}" var="storyobj" />
+	<p:out var="imgSrc" value="" />
+	<p:object webObject="${storyobj}" content="c" metadata="m" />
+	
+	<bdc:getSummaryForSectionFront webObject="${storyobj}" var="webtease" wordCount="0"/>
+	<p:out var="itemDescription" xvalue="$c//doc/story/text/content"/>
+	<p:out var="webTease" xvalue="$c//doc/story/web-tease"/>
+	<p:out var="streamTease" xvalue="$c//doc/story/stream-tease"/>
+	<p:out var="photoURL" xvalue="$c//doc/story/multimedia-container/photo-container/photogrp/photo/@fileref"/>
+	<p:out var="photoURL" value="${fn:substringAfter(photoURL, '?uuid=')}" />
+	<p:getObject var="imageObj" uuid="${photoURL}" onError="ignore" />
+	<c:if test="${not empty imageObj}">
+		<p:url var="imgSrc" webObject="${imageObj}" format="image_255x106" type="resource" />
+	</c:if>
+	
+	<p:out var="pubDate" xvalue="$m//ObjectMetadata/OnlineProducts/OnlineProduct/LastPublicationDate"/>
+	<p:out var="provider" xvalue="$m//ObjectMetadata/Reference/Provider"/>
+	<p:out var="mtUrl" xvalue="$c//doc/story/xref"/>
+	
+    <p:object webObject="${storyobj}" content="c" metadata="meta" webType="WT" uuid="StoryID" channel="Boston.com" />
+	<p:getObject var="obj" webObject="${storyobj}" />
+	<p:url webObject="${obj}" var="link"/>
+	
+	<p:out var="itemTitle" xvalue="$c//headlines/headline/p" />
+	<p:out var="webtype" xvalue="$m//ObjectMetadata/OnlineProducts/OnlineProduct/WebType" />
+	<p:out var="link" value="${portalContext.publicBaseUrl}${link}" />
+	<p:out var="author" xvalue="$m//ObjectMetadata/Reference/WireFeed"/>
+	
+	<c:if test="${provider == 'Moveable Type'}">
+		
+		<c:choose>
+			<c:when test="${fn:contains(mtUrl, 'mobile.html')}">
+				<p:out var="mtXml" value="${fn:replace(mtUrl, 'mobile.html', 'xml')}" />
+			</c:when>
+			<c:otherwise>
+				<p:out var="mtXml" value="${fn:replace(mtUrl, 'html', 'xml')}" />
+			</c:otherwise>
+		</c:choose>
+		
+		<p:out var="pubDate" xvalue="$m//ObjectMetadata/Reference/DateReceived"/>
+	 	
+	 	<bgm:import var="postObj" url="${mtXml}" />
+	 	
+	 	<c:if test="${not empty postObj}">
+			<p:out var="itemDescription" value="${fn:substringAfter(postObj, 'xhtml\">')}" />
+		 	<p:out var="itemDescription" value="${fn:substringBefore(itemDescription, '</content>')}"/>
+		 </c:if>
+		<p:out var="link" value="${mtUrl}" />
+	</c:if>
+	
+	<%
+		String pubDate = (String)pageContext.getAttribute("pubDate");
+		
+		SimpleDateFormat fromString = new SimpleDateFormat("yyyyMMddhhmmss");
+															
+		Date date = (Date)fromString.parse(pubDate);
+		SimpleDateFormat toString = new SimpleDateFormat("EE, dd MMM yyyy hh:mm:ss ZZZ");
+		String formattedDate = toString.format(date); 
+		
+		pageContext.setAttribute("pubDate", formattedDate);
+	%>
+		
+		<p:out var="derp" value="<p>As the big club continues to struggle, <img></img>it's time to start making a case for<div></div> Pawtucket reliever Tommy Layne to be the next guy on the taxi north to Boston should a left-handed reliever be desired. </p>"/>
+		<p:out var="itemDescription"  value="${fn:escapeXml(itemDescription)}"/>
+		<%--<p>Before: ${itemDescription}</p>--%>
+	<%
+		String itemDescription = (String)pageContext.getAttribute("itemDescription");
+		String itemTitle = (String)pageContext.getAttribute("itemTitle");
+		String derp = (String)pageContext.getAttribute("derp");
+		
+		derp = Jsoup.clean(derp, Whitelist.none());
+		itemDescription = Jsoup.clean(itemDescription, Whitelist.basic());
+		itemTitle = Jsoup.clean(itemTitle, Whitelist.basic());
+		
+		pageContext.setAttribute("itemDescription", itemDescription);
+		pageContext.setAttribute("itemTitle", itemTitle);
+		
+	%>	
+		<p:out var="derp"  value="${fn:escapeXml(derp)}"/>
+		<p>${derp}</p>
+		<p>After: ${itemDescription}</p>
+		<p:out var="itemDescription"  value="${fn:escapeXml(itemDescription)}"/>
+		<p>Double After: ${itemDescription}</p>
+</c:forEach>
+</channel>
+</rss>

@@ -1,0 +1,189 @@
+// *
+// * Ad Containers
+// *
+
+$ad-container: 'ad-container';
+
+// ------------------------------------------------------------
+// Shared Styles
+// ------------------------------------------------------------
+
+.#{$ad-container} {
+  margin-bottom: spacer(px, base);
+  margin-bottom: spacer(rem, base);
+  text-align: center;
+
+  // Ad Notification Message
+  &__notification {
+    @include font-scale(xxx-small, 1);
+    margin-bottom: spacer(px, x-large);
+    margin-bottom: spacer(rem, x-large);
+    padding-bottom: spacer(px, base);
+    padding-bottom: spacer(rem, base);
+    border-bottom: 1px solid color(gray, x-light);
+    letter-spacing: 0.12em;
+    color: color(gray);
+    text-transform: uppercase;
+    .content-well--sidebar & {
+      display: none;
+    }
+  }
+
+  // Ad Lead 1
+  &--ad_lead1 {
+    width: 100%;
+    max-width: $site-max-width;
+    padding: 10px 0 10px;
+    // background-color: color(white);
+    margin-bottom: 0; // this is necessary so there is not gap for wallpaper ads to show through
+    @extend %opaque-background;
+
+    .#{$ad-container}__ad-slot {
+      > div {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .ad-lead {
+        width: 320px;
+        height: 50px;
+        margin: 0 auto;
+      }
+    }
+  }
+
+  // Ad MustRead
+  &--ad_mustread {
+    width: 320px;
+    margin: 0 auto 25px;
+  }
+
+  // Ads in the content
+  // [1] Top margin delcared to ensure comfortable spacing regardless of ad placement
+  &--content-ad {
+    margin-top: spacer(px, xx-large);    // [1]
+    margin-top: spacer(rem, xx-large);   // [1]
+    margin-bottom: spacer(px, xx-large);
+    margin-bottom: spacer(rem, xx-large);
+    clear: both;
+  }
+  
+  // Section Ads
+  &--section-ad {
+    // [1] Top margin delcared to ensure comfortable spacing regardless of ad placement
+    margin-top: 40px;         // [1]
+    margin-top: 2.5rem;       // [1]
+    margin-bottom: 30px;      // [1]
+    margin-bottom: 1.875rem;  // [1]
+    clear: both;
+    .section-well--sponsored,
+    .sponsor-quick-tz {
+      text-align: left;
+    }
+  }
+
+  // Ad Toprightslot
+  &--ad_toprightslot {
+    min-width: 300px;
+
+    .homepage & {
+      margin-bottom: spacer(px, xx-large);
+      margin-bottom: spacer(rem, xx-large);
+    }
+
+    .content-text & {
+      margin-left: -15px;
+    }
+  }
+
+  // Outbrain
+  &--outbrain {
+    @include constrain; 
+    clear: both;
+    text-align: left;
+  }
+
+}
+
+// ------------------------------------------------------------
+// >350px Styles
+// ------------------------------------------------------------
+
+@include media-query(350) {
+  .#{$ad-container} {
+
+    // Ad Toprightslot
+    &--ad_toprightslot {
+      .content-text & {
+        margin-left: 0;
+      }
+    }
+
+  }
+}
+
+// ------------------------------------------------------------
+// Tablet Styles
+// ------------------------------------------------------------
+@include media-query(tablet) {
+  .#{$ad-container} {
+    @include constrain;
+
+    // Ad Notification Message
+    &__notification {
+      text-align: left;
+    }
+
+    // Ad Lead 1
+    &--ad_lead1 {
+      padding: 0 0 10px;
+      .#{$ad-container}__ad-slot {
+        padding-top: spacer(px, base);
+        padding-top: spacer(rem, base);
+        padding-bottom: spacer(px, base);
+        padding-bottom: spacer(rem, base);
+        border-bottom: 1px solid color(gray, x-light);
+        .ad-lead {
+          width: 728px;
+          height: 90px;
+        }
+      }
+    }
+
+  }
+}
+
+// ------------------------------------------------------------
+// >900px Styles (this is the breakpoint that comments disappear)
+// ------------------------------------------------------------
+
+// ------------------------------------------------------------
+// Desktop Styles
+// ------------------------------------------------------------
+
+@include media-query(desktop) {
+  .#{$ad-container} {
+
+    // Ad Toprightslot
+    &--ad_toprightslot {
+      width: 300px;
+    }
+
+    // Ad Lead 1
+    &--ad_lead1 {
+      padding: 0 spacer(px, mid);
+      padding: 0 spacer(rem, mid);
+      .#{$ad-container}__ad-slot {
+        padding-top: spacer(px, base);
+        padding-top: spacer(rem, base);
+        padding-bottom: spacer(px, base);
+        padding-bottom: spacer(rem, base);
+        border-bottom: 1px solid color(gray, x-light);
+        .ad-lead {
+          width: 728px;
+          height: 90px;
+        }
+      }
+    }
+
+  }
+}

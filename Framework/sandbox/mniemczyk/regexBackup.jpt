@@ -1,0 +1,40 @@
+<% 
+
+//String formatYourLinksYouJerk = "(&eacute;)";
+		//itemDescription = itemDescription.replaceAll(formatYourLinksYouJerk, "e");
+		
+		//String riseFromYourEgrave = "(&egrave;)";
+		//itemDescription = itemDescription.replaceAll(riseFromYourEgrave, "e");
+		
+		
+		//String reg = "&(?!&#?[a-zA-Z0-9]{2,7};)";
+		//itemDescription = itemDescription.replaceAll(reg, "&amp;");
+		//itemTitle = itemTitle.replaceAll(reg, "&amp;");
+			
+		//String closeYourTagsFFS = "(<img(\"[^\"]*\"|'[^']*'|[^'\">/])*)(/>)";
+		//itemDescription = itemDescription.replaceAll(closeYourTagsFFS, "");
+		//itemDescription = itemDescription.replaceAll(closeYourTagsFFS, "$1/>");
+			
+		//String formatYourLinksYouJerk = "(\"//)";
+		//itemDescription = itemDescription.replaceAll(formatYourLinksYouJerk, "\"http://");
+			
+		//String async = "(async)";
+		//itemDescription = itemDescription.replaceAll(async, "");
+			
+		//String allowfullscreen = "(allowfullscreen)";
+		//itemDescription = itemDescription.replaceAll(allowfullscreen, "");
+		
+		//String blockquoteAssassin = "(<blockquote(\"[^\"]*\"|'[^']*'|[^'\"])*)(/blockquote>)";
+		//itemDescription = itemDescription.replaceAll(blockquoteAssassin, "");
+		
+		//String ndashKilla = "(&ndash;)";
+		//itemDescription = itemDescription.replaceAll(ndashKilla, "--");
+			
+		//String thanksForTheNotesTag = "(<span class=\"@notes\"(\"[^\"]*\"|'[^']*'|[^'\"])*)(/span>)";
+		//itemDescription = itemDescription.replaceAll(thanksForTheNotesTag, "");
+		
+		//itemDescription = itemDescription.replaceAll("\n", "</p><p>");
+		//itemDescription = itemDescription.replaceAll("<br />", "</p><p>");
+			
+
+%>

@@ -1,0 +1,8 @@
+HI
+
+<p:getCollection path="$configurationURI/Framework/sandbox/ksuffredini/bs/bsfeed" var="q" />
+<c:forEach var="x" items="${q.items}" varStatus="status">
+	<p:getObject webObject="${x}" var="i" />
+	<p:object webObject="${i}" content="c" metadata="m" webType="wt" channel="BostonGlobe.com" uuid="uuid" />
+	<p>${status.count}]. ${wt} | <p:out xvalue="$c//headlines/headline/p" /> | ${uuid}</p>
+</c:forEach>

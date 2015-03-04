@@ -1,0 +1,25 @@
+<!-- in share_controller -->
+<p:out var="hasLayerContent" value="0" />
+<c:if test="${not empty editorialLayer}">
+	<p:getPageZone var="tools" name="share_tools" inherits="${editorialLayer}" />
+	<p:out var="hasLayerContent" value="${tools.size}" />
+</c:if>
+
+<c:choose>
+	<c:when test="${not empty editorialLayer and hasLayerContent != 0}">
+		<p:include pageZoneName="share_tools" inherits="${editorialLayer}" templateName="share_tools_feature_stack">
+			<p:param name="dwp" value="${editorialLayer}" />
+			<p:param name="gigyaCanonical" value="${gigyaCanonical}" />
+			<p:param name="gigyaShortUrl" value="${gigyaShortUrl}" />
+			<p:param name="gigyaHeadline" value="${gigyaHeadline}" />
+			<p:param name="gigyaThumb" value="${gigyaImage}" />
+			<p:param name="gigyaThumbType" value="${dataThumbType}" />
+		</p:include>
+	</c:when>
+	<c:otherwise>
+		<a class="tz-share-link js-share-modal" href="#share-modal" data-canonical="${gigyaCanonical}" data-shorturl="${gigyaShortURL}" data-headline="${gigyaHeadline}" data-thumbnail="${gigyaImage}" data-thumb-type="${dataThumbType}">
+			<i class="tz-share-icon tz-meta-icon"></i>
+			<i class="tz-share tz-meta-txt">Share</i>
+		</a>
+	</c:otherwise>
+</c:choose>

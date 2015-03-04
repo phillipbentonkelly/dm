@@ -1,0 +1,10 @@
+<%-- 
+{comments}
+BDC-1892 - changing outofpage ads back to the way they were
+{comments}
+--%>
+
+<div id="ad_richmedia" class="out-of-page-ad"></div>
+<div id="ad_outofpage1" class="out-of-page-ad"></div>
+<%-- out of page 2 belongs somewhere else --%>
+<div id="ad_outofpage3" class="out-of-page-ad"></div>

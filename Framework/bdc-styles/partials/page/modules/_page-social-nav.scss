@@ -1,0 +1,154 @@
+// *
+// * Social Nav
+// *
+
+$module-name: 'social-nav';
+
+// ------------------------------------------------------------
+// Default Styles
+// ------------------------------------------------------------
+
+.#{$module-name} {
+
+	// Social Buttons Vertical Layout
+	&--vertical {
+		display: none;
+	}
+
+	// Social Button
+	&__item {
+		display: inline-block;
+		background: color(red);
+		border-radius: 16px;
+		width: 30px;
+		height: 30px;
+		padding: 7px;
+		margin-right: spacer(px, base);
+		margin-right: spacer(rem, base); 
+		&:hover {
+			background: color(red, light);
+			transition: background 0.25s cubic-bezier(0.49, 0.37, 0.445, 0.715);
+		}
+	}
+}
+
+
+// ------------------------------------------------------------
+// > 1020 Breakpoint
+// ------------------------------------------------------------
+
+@include media-query(1020) {
+	.#{$module-name} {
+	
+		// Social Buttons Vertical Layout
+		&--vertical {
+			display: none; // at this breakpoint the vertical social nav overlaps page content
+		}
+	}
+}
+
+// ------------------------------------------------------------
+// > 1110 Breakpoint
+// ------------------------------------------------------------
+
+@include media-query(1130) {
+	.#{$module-name} {
+	
+		// Social Buttons Vertical Layout
+		&--vertical {
+			-webkit-backface-visibility: hidden; // This fixes some buggy jumpiness
+			display: block;
+			position: fixed;
+			left: 0;
+			bottom: 0;
+			z-index: z-index(first-floor);
+			padding: 20px;
+			
+			// Social Buttons
+			.social-nav__item { 
+				transition: width 0.2s cubic-bezier(0.49, 0.37, 0.445, 0.715), background-color 0.25s cubic-bezier(0.49, 0.37, 0.445, 0.715);
+				display: block;
+				margin-top: spacer(px, base);
+				margin-top: spacer(rem, base); 
+				background-color: color(gray, mid-light);
+				&:hover {
+					background-color: color(red);
+					.social-nav__text, .social-nav__icon--hidden, .social-nav__link--hidden {
+						opacity: 1.0;
+						transition: opacity 0.25s cubic-bezier(1, 0, .68, 0);
+					}
+					.social-nav__icon--plus {
+						display: none;
+					}
+				}
+
+				// First Button
+				&--1 {
+					&:hover {
+        		width: 76px;
+    			}
+				}
+
+				// Second Button
+				&--2 {
+					&:hover {
+        		width: 72px;
+    			}
+				}
+
+				// Third Button
+				&--3 {
+					&:hover {
+        		width: 98px;
+    			}
+				}
+
+				// Fourth Button
+				&--4 {
+					position: relative;
+					&:hover {
+       			width: 97px;
+       			padding: 0;
+       		}
+ 				}
+			}
+			
+			// Creates the Hidden Icon Hover State in the Fouth Button
+			.social-nav__link--hidden {
+				display: inline-block;
+				opacity: 0;
+				height: 30px;
+				width: 30px;
+				border-radius: 16px;
+				&:hover {
+					background-color: color(red, dark);
+				}
+			}
+
+			// Fourth Button Plus Icon
+			.social-nav__icon--plus { 
+				position: absolute;
+			}
+
+			// Fourth Button Hidden Icons
+			.social-nav__icon--hidden {
+				opacity: 0;
+				margin: 7px 0 0 7px;
+			}
+			
+			// Hidden Text for Social Buttons 1-3
+			.social-nav__text {
+		    @include font-scale(xxx-small);
+		    text-transform: uppercase;
+		    color: color(white);
+		    display: block;
+		    margin-top: -18px;
+		    margin-left: 25px;
+		    opacity: 0;
+		    font-weight: $fw-medium;
+		    letter-spacing: $letter-spacing;
+			}	
+
+		}
+	}
+}

@@ -1,0 +1,3 @@
+<div class="{{type}}-mod feat-tz-ad">
+	<img class="ad-{{type}}" src="{{image}}"/>
+</div> <!-- {{type}}-mod -->

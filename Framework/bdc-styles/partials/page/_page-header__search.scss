@@ -1,0 +1,135 @@
+// *
+// * Header Search
+// *
+
+$module-name: 'page-header__search';
+
+// ------------------------------------------------------------
+// Default Styles
+// ------------------------------------------------------------
+
+.#{$module-name} {
+  display: none;
+  float: right;
+  //margin-right: 20px;
+
+  &:hover {
+    box-shadow: 0 0px 1px color(gray, xx-light);
+    border-radius: 3px;
+    transition: box-shadow 0.25s cubic-bezier(0.49, 0.37, 0.445, 0.715);
+    cursor: pointer;
+  }
+
+  &--active:hover {
+    box-shadow: none;
+  }
+
+  // Search Form Input 
+  &-input {
+    display: none;
+    border: 0;
+    height: 30px;
+    width: 53px;
+    @include font-scale(x-small);
+    background-color: color(black);
+    transition: width 0.25s cubic-bezier(0.49, 0.37, 0.445, 0.715);
+    &:hover {
+      cursor: pointer;
+    }
+    &:focus {
+      width: 200px;
+      background-color: color(white);
+      color: color(black);
+    }
+    &:focus, &:active {
+      outline: 0;
+    }
+    .#{$module-name}--active &:hover {
+      cursor: text;
+    }
+    // Placeholder Text
+    &::-webkit-input-placeholder {
+      color: color(white);
+    }
+    &:-moz-placeholder { /* Firefox 18- */
+      color: color(white);
+    }
+    &::-moz-placeholder {  /* Firefox 19+ */
+      color: color(white);
+    }
+    &:-ms-input-placeholder {  
+      color: color(white); 
+    }
+    // Placeholder Text
+    .#{$module-name}--active &::-webkit-input-placeholder {
+      color: color(gray);
+    }
+    .#{$module-name}--active &:-moz-placeholder { /* Firefox 18- */
+      color: color(gray);
+    }
+    .#{$module-name}--active &::-moz-placeholder {  /* Firefox 19+ */
+      color: color(gray);
+    }
+    .#{$module-name}--active &:-ms-input-placeholder {  
+      color: color(gray); 
+    }
+  }
+
+  // Search Submit Button
+  &-button {
+    display: inline-block;
+    padding: 0;
+    margin: spacer(px, small);
+    margin: spacer(rem, small);
+    border: 0;
+    background-color: color(black);
+    vertical-align: middle;
+    box-shadow: none;
+    &:hover {
+      cursor: pointer;
+    }
+    &:focus, &:active {
+      outline: 0;
+    }
+    .#{$module-name}--active & {
+      padding-left: spacer(px, small);
+      padding-left: spacer(rem, small);
+    }
+  }
+}
+
+// ------------------------------------------------------------
+// >550px Styles
+// ------------------------------------------------------------
+@include media-query(550) {
+  .#{$module-name} {
+    display: block;
+  }
+}
+
+// ------------------------------------------------------------
+// Tablet Styles
+// ------------------------------------------------------------
+@include media-query(tablet) {
+  .#{$module-name} {
+    // Search Form Input 
+    &-input {
+      width: 60px;
+    }
+  }
+}
+
+// ------------------------------------------------------------
+// > 1200px Styles
+// ------------------------------------------------------------
+@include media-query(1200) {
+  .#{$module-name} {
+    // Search Form Input 
+    &-input {
+      display: inline-block;
+    }
+    &-button {
+      margin-left: 0;
+    }
+  }
+}

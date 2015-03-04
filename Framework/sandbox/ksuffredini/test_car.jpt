@@ -1,0 +1,29 @@
+<p:getCollection path="/SysConfig/WebPortal/Boston/Framework/sandbox/ksuffredini/test_story" var="q" />
+
+<c:forEach items="${q}" var="i" varStatus="status" begin="0" end="5">
+	<p:object webObject="${i}" content="c" metadata="m" webType="WT" uuid="uuid" channel="Boston.com"/>
+	<p>${status.count}). <strong><p:out xvalue="$c//headlines/headline/p" /></strong></p>
+	<p>${WT}, <strong>${uuid}</strong></p>
+	<x:set var="imgCaption" select="string($c//multimedia-container/photo-container/photogrp/captiongrp/caption/p/text())"/>
+	<x:set var="imgAltCaption" select="string($c//multimedia-container/photo-container/photogrp/captiongrp/alt-tag/p/text())"/>
+	<x:set var="imgCredit" select="string($c//multimedia-container/photo-container/photogrp/captiongrp/credit/p/text())"/>
+	<x:set var="imgLocation" select="string($c//multimedia-container/photo-container/photogrp/photo/@fileref/text())"/>
+	<c:choose>
+		<c:when test="${status.count eq 1}">
+			<p:out var="formatType" value="image_676x282" />
+		</c:when>
+		<c:otherwise>
+			<p:out var="formatType" value="image_80x49" />
+		</c:otherwise>
+	</c:choose>
+	<p>${imgLocation}</p>
+	<p>${imgCaption}</p>
+	<p>${imgCredit}</p>
+	<p:url var="img" value="${imgLocation}" type="resource" format="${formatType}"/>
+    <img src="${img}" class="slider-photo" alt="${imgAltCaption}" />
+   	<br/>
+   	<br/>
+    <hr/>
+    <hr/>
+    <br/>
+</c:forEach>

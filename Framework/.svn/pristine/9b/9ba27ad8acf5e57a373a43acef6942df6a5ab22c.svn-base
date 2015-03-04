@@ -1,0 +1,5 @@
+<p:out var="jspParams" 
+       value="${cacheScope.isHomepage == 'true' ? '?isHomepage=true' : ''}" />
+
+<p:jspInclude url="$configurationURI/Framework/skins/components/chartbeat/chartbeat_popular.jsp${jspParams}" eomdb="true" />
+

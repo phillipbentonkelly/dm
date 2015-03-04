@@ -1,0 +1,522 @@
+<%@ page language="java" contentType="application/json; charset=UTF-8" pageEncoding="UTF-8"
+    import="
+	net.sf.json.*,
+	net.sf.json.xml.*,
+	java.util.*,
+	org.w3c.dom.*,
+	javax.xml.xpath.XPath,
+	javax.xml.xpath.XPathConstants,
+	javax.xml.xpath.XPathExpression,
+	javax.xml.xpath.XPathExpressionException,
+	javax.xml.xpath.XPathFactory,
+	
+	java.io.StringWriter,
+	javax.xml.transform.OutputKeys,
+	 javax.xml.transform.Transformer,
+ javax.xml.transform.TransformerException,
+ javax.xml.transform.TransformerFactory,
+ javax.xml.transform.dom.DOMSource,
+ javax.xml.transform.stream.StreamResult,
+ java.text.SimpleDateFormat
+ 
+
+" %>
+ 
+<%--
+	Give me a uuid or path of a Methode object and I will give you a json tease
+	
+	revision notes:
+	12-18 add video object with id and provider
+	01-03 switch provider to WebFeed, add scoreboard, add optional stream parameter, emit is_pinned and stream laststreamdate
+	
+--%>
+
+<%
+
+class TimeFormatter {
+			
+	public String format(String date) throws Exception {
+		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
+		final Date pubDate = dateFormat.parse(date);
+		String since;
+		Date now = new Date();
+		long diff = (now.getTime() - pubDate.getTime()) / 1000;
+	
+		if (diff <= 45)  {
+			since = "seconds";
+		} else if (diff <= 90) {
+			since = "a minute";
+		} else if (diff <= 2700 ){
+			since = Math.round((double) diff / 60) + " minutes";
+		} else if (diff <= 5400) {   
+			// 45 - 90 minutes
+			since = "an hour";
+		} else if (diff <= 79200) {
+			// 90 mins - 22 hours
+			since = Math.round((double) diff / 3600) + " hours";
+		} else if (diff <= 129600) {
+			// 22 - 36 hours
+			since = "a day";                          
+		} else if (diff <= 2160000) {
+			// 36 hours - 25 days
+			since = Math.round((double) diff / 86400) + " days";
+		} else if (diff <= 3888000) {
+			// 25 - 45 days
+			since = "a month"; 
+		} else if (diff <= 29808000) {
+			 // 45 - 345 days
+			since = Math.round((double) diff / 2592000) + " months";
+		} else if (diff <= 47260800) {
+			// 345 - 547 days
+			since = "a year"; 
+		} else {
+			since = Math.round((double) diff / 31536000) + " years";
+		}
+	
+		since += " ago";
+		return since;
+	}
+}
+
+%>
+
+
+<c:set var="path" value="${cacheScope.path}" />
+<c:set var="uuid" value="${cacheScope.uuid}" />
+<c:set var="channel" value="${cacheScope.product}" />
+<c:if test="${empty channel}">
+	<p:out var="channel" value="Boston.com" />
+</c:if>
+<c:set var="modelOnly" value="${cacheScope.modelOnly}" />
+<c:if test="${empty modelOnly}">
+	<p:out var="modelOnly" value="0" />
+</c:if>
+<c:set var="stream" value="${cacheScope.stream}" />
+
+
+<c:catch var="err">
+			 
+	<c:choose>
+		<c:when test="${not empty path}">
+			<p:getObject path="${path}" var="obj" onError="ignore" />
+		</c:when>
+		<c:when test="${not empty uuid}">
+			<p:getObject uuid="${uuid}" var="obj" onError="ignore" />
+			<p:out var="path" value="${obj.path}" scope="page" />
+		</c:when>
+		<c:when test="${not empty currentObject}">
+			<p:getObject webObject="${currentObject}" var="obj" onError="ignore" />
+		</c:when>
+		
+		<c:otherwise><c:set var="err">No object identifier specified</c:set></c:otherwise>
+	</c:choose>
+	
+	<c:if test="${not empty obj}">
+		<c:choose>
+			<c:when test="${not empty channel}">
+				<p:object webObject="${obj}" content="c" metadata="meta" webType="WT" uuid="StoryID" channel="${channel}"/>
+			</c:when>
+			<c:otherwise>
+				<p:object webObject="${obj}" content="c" metadata="meta" webType="WT" uuid="StoryID"/>
+			</c:otherwise>
+		</c:choose>
+	</c:if>
+	
+	<c:if test="${empty uuid}">
+		<p:out var="uuid" xvalue="$meta//uuid" />
+	</c:if>
+</c:catch>
+
+
+<c:choose>
+	<c:when test="${empty obj}">
+	</c:when>
+	<c:when test="${not empty err}" >
+		{"error":"need an error message "}
+	</c:when>
+	<c:otherwise> 
+	
+	<%-- initialize jpt variables that cannot be null when passed to servlet code %-->
+	<c:set var="imgThumb"/>
+	<c:set var="sectionName"/>
+	<c:set var="sectionPath"/>
+
+	<%-- pick up metadata --%>
+	<p:url var="cUrl" webObject="${obj}" public="true" /> 
+	<p:out var="shortUrl" xvalue="$meta//OnlineProduct[ProductName=$channel]/ShortUrl" escape="JavaScript"/>
+	<%-- <p:out var="category" xvalue="$meta//Categorization/Taxonomies/Taxonomy[1]" escape="JavaScript"/> --%>
+	<p:out var="sectionName" xvalue="$meta//OnlineProduct[ProductName=$channel]/Sections/Section/SectionName" />
+	<p:out var="sectionPath" xvalue="$meta//OnlineProduct[ProductName=$channel]/Sections/Section/SectionPath" escape="JavaScript"/>
+	<p:out var="loid" xvalue="$meta//loid"/>
+	
+	<%
+		String source = (String)pageContext.getAttribute("sectionPath");
+		int count = org.apache.commons.lang.StringUtils.countMatches(source, "/");
+		if (count > 1) {
+			int index = source.indexOf('/');
+			int indexEnd = source.length();
+			int indexStart = index + 1;
+			String id = source.substring(indexStart,indexEnd);
+			int indexRoundTwo = id.indexOf('/');
+			int indexEndRoundTwo = indexRoundTwo + 1;
+			String finalParentSection = source.substring(0,indexEndRoundTwo);
+			pageContext.setAttribute("sectionPath", finalParentSection);
+			} else {
+				pageContext.setAttribute("sectionPath", source);
+			}
+	%>
+	
+	<bdc:teaseSection section="${sectionPath}" var="sectionData" />
+	<p:out var="sectionName" value="${sectionData.name}" />
+	<p:out var="sectionPath" value="${sectionData.path}" />
+	
+	<p:out var="objectType" xvalue="$meta//type"/>
+	<p:out var="searchType" xvalue="$meta//OnlineProducts/StreamSearchType" escape="JavaScript"/>
+	<p:out var="streamTease_type" xvalue="$meta//Reference/ProviderType" escape="JavaScript"/>
+	<p:out var="scoreboard_league" xvalue="$meta//Scoreboard/League" escape="JavaScript"/>
+	<p:out var="scoreboard_gamecode" xvalue="$meta//Scoreboard/GameCode" escape="JavaScript"/>
+	<c:choose>
+		<c:when test="${not empty stream}" >
+			<p:out var="pinned" xvalue="$meta//OnlineProduct[ProductName=$channel]/Streams/Stream[StreamId=$stream]/Pinned" escape="JavaScript"/>
+			<p:out var="formattedStreamDate" format="eomdate|GMT:yyyy-MM-dd'T'HH:mm:ss.SSS'Z'" xvalue="$meta//OnlineProducts/OnlineProduct[child::ProductName=$channel]/Streams/Stream[StreamId=$stream]/LastStreamDate" />
+			<p:out var="lastStreamDate" xvalue="$meta//OnlineProducts/OnlineProduct[child::ProductName=$channel]/Streams/Stream[StreamId=$stream]/LastStreamDate" />
+			
+		</c:when>
+		<c:otherwise>
+			<p:out var="pinned" xvalue="$meta//OnlineProduct[ProductName=$channel]/Streams/Stream/Pinned" escape="JavaScript"/>
+			<p:out var="formattedStreamDate" format="eomdate|GMT:yyyy-MM-dd'T'HH:mm:ss.SSS'Z'" xvalue="$meta//OnlineProducts/OnlineProduct[child::ProductName=$channel]/Streams/Stream/LastStreamDate" />
+			<p:out var="lastStreamDate" xvalue="$meta//OnlineProducts/OnlineProduct[child::ProductName=$channel]/Streams/Stream/LastStreamDate" />
+			
+		</c:otherwise>
+	</c:choose>
+	<%-- 2014-04-03 go back to using LastPublicationDate only for streamdate, overridding stream specific value--%>
+	<p:out var="formattedStreamDate" format="eomdate|GMT:yyyy-MM-dd'T'HH:mm:ss.SSS'Z'" xvalue="$meta//OnlineProducts/OnlineProduct[child::ProductName=$channel]/LastPublicationDate" />
+	<p:out var="lastStreamDate" xvalue="$meta//OnlineProducts/OnlineProduct[child::ProductName=$channel]/LastPublicationDate" />
+	
+	<c:if test="${empty formattedStreamDate or formattedStreamDate eq ''}">
+		<c:set var="now" value="<%=new java.util.Date()%>" />
+		<p:out var="formattedStreamDate" format="eomdate|GMT:yyyy-MM-dd'T'HH:mm:ss.SSS'Z'" value="${now}"/>
+	</c:if>
+	<%--
+	<p:out var="javaDate" value="${formattedStreamDate}" format="eomdate:MM/dd/yyyy HH:mm:ss z" timeZone="US/Eastern" />
+	--%>
+	<%
+		String javaDate = (String) pageContext.getAttribute("formattedStreamDate");
+		TimeFormatter tf = new TimeFormatter();
+		String since = tf.format(javaDate);
+		pageContext.setAttribute("formattedStreamDate", since);
+	%>
+	
+	<c:set var="taxo_values"/>
+	<x:forEach select="$meta//Taxonomies/Taxonomy" var="taxo">
+		<x:set var="taxo_value" select="string(.)"/>
+		<c:set var="taxo_values" value="${taxo_values}/${taxo_value}"/>
+	</x:forEach>
+
+	<%-- tweak url metadata based on webtype --%>
+	<c:if test="${WT == 'summarystory'}">
+		<%-- BostonGlobe.com stub if present --%>
+		<p:out var="bgUrl" xvalue="$meta//OnlineProducts/BostonGlobeUrls/CanonicalUrl" /> 
+		<c:if test="${not empty bgUrl}"><c:set var="cUrl" value="${bgUrl}"/></c:if>
+		<p:out var="bgsUrl" xvalue="$meta//OnlineProducts/BostonGlobeUrls/ShortUrl" /> 
+		<c:if test="${not empty bgsUrl}"><c:set var="shortUrl" value="${bgsUrl}"/></c:if>
+	</c:if>
+
+	<%-- tweak url based on objectType --%>
+	<c:if test="${objectType == 'StreamTease'}">
+		<%-- xref if present --%>
+		<p:out var="st_url" xvalue="$c//doc/story/xref" />
+		<p:out var="st_url" value="${fn:trim(st_url)}" />
+		<%-- Change movable type url from nam.html to nam.mobile.html until full desktop launch --%>
+		<%--
+		<p:out var="is_MovableType" xvalue="$meta//Reference/Provider" />
+		<c:if test="${is_MovableType == 'Moveable Type' and (not empty st_url) and (not fn:endsWith(st_url,'.mobile.html')) }">
+			<%
+				String mt_url = pageContext.getAttribute("st_url").toString();
+				String new_mt_url = mt_url.replaceAll("(^.*)(\\.html)", "$1.mobile.html") ;
+				pageContext.setAttribute("st_url",  new_mt_url);
+			%>
+		</c:if>
+		--%>
+		
+		<c:if test="${not empty st_url}"><c:set var="cUrl" value="${st_url}"/></c:if>
+		<%-- if external source info, override section --%>
+		<p:out var="cat_name" xvalue="$meta//Reference/WireFeed" />
+		<c:if test="${not empty cat_name}">
+			<p:out var="sectionName" value="${cat_name}"/>
+		</c:if>
+		<p:out var="cat_url" xvalue="$meta//Reference/ProviderUrl" />
+		<c:if test="${not empty cat_url}">
+			<p:out var="sectionPath" value="${cat_url}"/>
+		</c:if>
+	</c:if>
+		
+	<%-- pick up content --%>
+	<c:choose>
+		<c:when test="${objectType == 'VideoStory'}">
+			<bdc:videoObjectMap webObject="${obj}" var="vid"/>
+			<p:out var="headline"  value="${vid.videoHeadline}" />
+			<p:out var="teaseTextjs"  value="${vid.videoCaption}" />
+			<p:out var="videoId"  value="${vid.videoId}"/>
+			<p:out var="videoProvider"  value="${vid.provider}" />
+			<p:out var="tmpurl"  value="${fn:trim(vid.videoThumb)}"/>
+			<p:url value="${fn:trim(vid.videoThumb)}" var="tmpurl" format="image_150x84" type="resource" baseDomain=""/>			
+			<%--
+			testvid<p:out value="${vid}"/>
+			<p:out value="${headline}"/>
+			<p:out value="${teaseTextjs}"/>
+			--%>
+			
+		</c:when>	
+		<c:otherwise>
+			<bdc:getSummaryForSectionFront webObject="${obj}" var="teaseText" priority="stream"/>
+			<bdc:getHeadlines webObject="${obj}" var="heds"/>
+			
+			<p:out var="headline"  value="${heds.streamHeadline}" />
+			<p:out var="teaseTextjs"  value="${teaseText}" />
+			
+			<bdc:imagesWithCaptionCredit webObject="${obj}" var="imageTData" baseDomain="httpCache" format="image_150x84"/>
+			<p:out var="tmpurl"  value="${fn:trim(imageTData.src)}"/>		
+		</c:otherwise>
+	</c:choose>
+
+	
+	<bdc:getTrackingData webObject="${obj}" var="trackingData"/>
+	<p:out var="prop6" value="${trackingData.prop6}"/>
+	
+	
+	<%-- squash invalid image urls --%>
+	<c:if test="${fn:startsWith(tmpurl,'eom:')}"><c:set var="tmpurl"/></c:if>
+	
+	<%-- until imagesWithCaptionCredit tag can return base url just prepend http
+	<p:url var="imgThumb" value="${tmpurl}" baseDomain="httpCache" escape="JavaScript"/> 
+	--%>
+	<p:out var="imgThumb" value="${tmpurl}"/>
+		
+	<%-- until imagesWithCaptionCredit tag can return base url just prepend http --%>
+	<c:if test="${not fn:startsWith(imgThumb, 'http:') and not empty imgThumb}">
+		<p:out var="imgThumb" value="${portalContext.publicBaseUrl}${imgThumb}"/>
+	</c:if>
+	
+	<%--
+	<p:out value="${imgThumb}"/>
+	<p:out value="${tmpurl}"/>
+	<c:if test="${empty imgThumb}">empty</c:if>	
+	--%>
+	
+	<%-- only grab thumbnail to start with
+	<bdc:imagesWithCaptionCredit webObject="${obj}" var="imageFData"  format=""/>
+	<p:out var="imgFull"  value="${fn:trim(imageFData.src)}"/>
+	--%>
+	
+	
+	<%
+
+	
+	/* build a JSON object of the element from the collected metadata and content values
+	
+	   the most important object is the model 
+	   
+	*/
+		
+	//dummy sections combines some demo boilerplate with actual section path
+	//String dummySections = new String();
+	//dummySections = "['submitted','published','news','"+ pageContext.getAttribute("sectionPath").toString()+ "']";
+	//JSONArray section_jsarr = JSONArray.fromObject(dummySections);
+	
+	String taxos = pageContext.getAttribute("taxo_values").toString();
+	taxos = taxos.startsWith("/") ? taxos.substring(1) : taxos;  //remove leading slash
+
+	String[] taxos_array = taxos.split("/");
+	Set<String> taxos_set = new HashSet<String>(Arrays.asList(taxos_array)); //remove dups
+	JSONArray taxo_jsarr = JSONArray.fromObject(taxos_set);
+	
+	//create a json object for image attributes
+    JSONObject image_jsobj  = new JSONObject();
+    String imgThumb ="";
+    if (pageContext.getAttribute("imgThumb") != null ) {
+	 	imgThumb = pageContext.getAttribute("imgThumb").toString();
+	    if ( !imgThumb.isEmpty() ) {
+		    image_jsobj.put("thumb_quick",imgThumb); 
+		    //TBD image_jsobj.put("thumb_feat",imgThumb);
+		    //TBD image_jsobj.put("full",imgFull);
+		}
+	}
+	   
+	//create a json object for video attributes         
+    JSONObject video_jsobj  = new JSONObject();
+    String videoId = "";
+    if ( pageContext.getAttribute("objectType").toString().equals("VideoStory") && 
+    	pageContext.getAttribute("videoId") != null ) {
+	 	videoId = pageContext.getAttribute("videoId").toString();
+	    if ( !videoId.isEmpty() ) {
+		    video_jsobj.put("id",videoId); 
+		    if (pageContext.getAttribute("videoProvider") != null) {
+		    	video_jsobj.put("provider",pageContext.getAttribute("videoProvider").toString()); 
+		    }
+		}
+	}
+	
+    JSONObject model_jsobj = new JSONObject();
+    model_jsobj.put("head",pageContext.getAttribute("headline"));
+    model_jsobj.put("url",pageContext.getAttribute("cUrl"));
+    model_jsobj.put("shortUrl",pageContext.getAttribute("shortUrl"));
+    model_jsobj.put("subhead",pageContext.getAttribute("teaseTextjs"));
+    //model_jsobj.put("category",pageContext.getAttribute("sectionName")); //TBD "Sports");
+    
+    HashMap cat_map = new HashMap();
+    cat_map.put("name", pageContext.getAttribute("sectionName"));
+    cat_map.put("url",pageContext.getAttribute("sectionPath")); 
+    model_jsobj.put("section",cat_map);
+    
+    model_jsobj.put("timestamp",pageContext.getAttribute("formattedStreamDate")); //"Just Now"); //TBD time of publish to stream
+    model_jsobj.put("lastStreamDate", pageContext.getAttribute("lastStreamDate"));
+    model_jsobj.put("is_live",false); //TBD
+    
+    HashMap tracking_map = new HashMap();
+    tracking_map.put("prop6", pageContext.getAttribute("prop6"));
+    model_jsobj.put("tracking", tracking_map);
+    
+	boolean has_scoreboard=false;
+	if ( pageContext.getAttribute("scoreboard_league") != null && 
+	     pageContext.getAttribute("scoreboard_gamecode") != null ) {
+    	 	String sLeague  = pageContext.getAttribute("scoreboard_league").toString();
+    	 	String sGamecode  = pageContext.getAttribute("scoreboard_gamecode").toString();
+    	    if ( !( sLeague.isEmpty() || sGamecode.isEmpty()) ) {
+	    		has_scoreboard = true;
+	    		JSONObject scoreboard_object  = new JSONObject();
+	    		scoreboard_object.put("league",pageContext.getAttribute("scoreboard_league").toString());
+	    		scoreboard_object.put("gameCode",pageContext.getAttribute("scoreboard_gamecode").toString());
+	    		model_jsobj.put("scoreboard",scoreboard_object); 
+	    	}
+    }
+    boolean is_pinned= false;
+	if ( pageContext.getAttribute("pinned") != null ) {
+	 String sPinned = pageContext.getAttribute("pinned").toString();
+	 if ( !sPinned.isEmpty() &&
+    	   sPinned.toLowerCase().equals("true") ) {
+    		is_pinned = true;
+    	}
+    }    
+    
+    model_jsobj.put("has_scoreboard",has_scoreboard);
+    model_jsobj.put("is_pinned",is_pinned);
+    //model_jsobj.put("section",section_jsarr);
+    //model_jsobj.put("taxonomies",taxo_jsarr);
+    model_jsobj.put("id",pageContext.getAttribute("cUrl"));
+    model_jsobj.put("search_type",pageContext.getAttribute("searchType")); 
+    model_jsobj.put("has_image",(!imgThumb.isEmpty()));
+    model_jsobj.put("is_video",pageContext.getAttribute("objectType").toString().equals("VideoStory"));
+    model_jsobj.put("is_gallery",pageContext.getAttribute("objectType").toString().equals("EOM::MediaGallery"));
+    model_jsobj.put("has_meta",true);
+
+	//attach any sub objects
+	if (!imgThumb.isEmpty()) {
+	   model_jsobj.put("image",image_jsobj); 
+	} 	
+ 	if (!videoId.isEmpty()) {
+	   model_jsobj.put("video",video_jsobj); 
+	} 	
+	
+    //grab full metadata from page context
+    Document meta = (Document)pageContext.getAttribute("meta");
+   
+    //make an xpath and grab the comment node and all of its children out of metadata
+	XPathFactory xFactory = XPathFactory.newInstance();
+	XPath xpath = xFactory.newXPath();
+ 	Transformer t = TransformerFactory.newInstance().newTransformer();
+   	t.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes");
+	
+   //handle comments
+    if (pageContext.getAttribute("streamTease_type").toString().toLowerCase().equals("comment")) {
+	    
+	    //get whatever is in metadata/Other/Data	    
+		//XPathExpression expr = xpath.compile("//ObjectMetadata/Other/Data/comment");
+        //Node node_results = (Node)expr.evaluate(meta, XPathConstants.NODE);
+        Node node_results = (Node)xpath.evaluate("//ObjectMetadata/Other/Data/comment",
+        		meta, 
+        		XPathConstants.NODE);
+
+	    //transform result node into a string
+		StringWriter csw = new StringWriter();
+	 	try {   
+		   	t.transform(new DOMSource(node_results), new StreamResult(csw));
+	 	} catch (TransformerException te) {
+	 	   System.out.println("nodeToString Transformer Exception");
+	 	} 
+ 
+ 		//convert the string into sometype of json object
+	    XMLSerializer xmlSerializer = new XMLSerializer(); 
+	    JSON comment_json = xmlSerializer.read( csw.toString() ); 
+	  
+	  	//add comment json to model
+	    model_jsobj.put("is_comment",true);
+	  	model_jsobj.put("comment",comment_json);	
+    	
+    }
+
+     model_jsobj.put("loid",pageContext.getAttribute("loid"));
+    
+    /* // commented out streams node since we're not using it AFAIK ~ ian.cohen@globe.com
+   //handle any streams   
+	String sxpth = "//ObjectMetadata//OnlineProduct[ProductName='" 
+		+ pageContext.getAttribute("channel").toString() 
+		+ "']/Streams";
+
+	//if we have a stream, limit results to just this one
+	if ( pageContext.getAttribute("stream") != null ) {
+		sxpth = "//ObjectMetadata//OnlineProduct[ProductName='" 
+				+ pageContext.getAttribute("channel").toString() 
+				+ "']/Streams[Stream/StreamId='"
+				+ pageContext.getAttribute("stream").toString() 
+				+ "']";	
+	}
+	
+     Node snode_results = (Node)xpath.evaluate(sxpth,
+       		meta, 
+       		XPathConstants.NODE);
+       		
+    if (snode_results != null && snode_results.hasChildNodes() ) {
+	
+	    //transform result node into a string
+		StringWriter ssw = new StringWriter();
+	 	try {   
+		   	t.transform(new DOMSource(snode_results), new StreamResult(ssw));
+	 	} catch (TransformerException te) {
+	 	   System.out.println("snodeToString Transformer Exception");
+	 	} 
+ 
+ 		//convert the string into sometype of json object
+	    XMLSerializer xmlSerializer = new XMLSerializer(); 
+	    JSON stream_json = xmlSerializer.read( ssw.toString() ); 
+	  
+	  	//add  json to model
+	  	model_jsobj.put("streams",stream_json);	
+	
+	}
+ 	*/	
+    JSONObject option_jsObj = new JSONObject();
+    //option_jsObj.put("at", 0); //TBD
+    option_jsObj.put("merge", "true");
+    
+    JSONObject jsobj = new JSONObject();
+    jsobj.put("method", "create");
+    jsobj.put("model",model_jsobj); 
+    jsobj.put("options",option_jsObj);
+    jsobj.put("uuid", pageContext.getAttribute("StoryID") );	
+    
+ 
+	String result = "";
+	String modelOnly = pageContext.getAttribute("modelOnly").toString();
+	if (modelOnly.equals("1"))  {
+		result = model_jsobj.toString();
+	} else {		
+		result = jsobj.toString();
+	}
+	
+	pageContext.setAttribute("result", result);
+	
+%>
+ <c:out value="${result}" escapeXml="false"/>
+	</c:otherwise>
+</c:choose>

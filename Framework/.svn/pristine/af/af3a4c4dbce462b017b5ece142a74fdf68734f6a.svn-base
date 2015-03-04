@@ -1,0 +1,188 @@
+<p:object webObject="${currentObject}" content="c" metadata="m" webType="WT" uuid="uuid" channel="Boston.com"/>	
+<p:out var="section" xvalue="$m//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/Sections/Section/SectionPath" />
+<!-- uuids: ${uuid} -->
+<bdc:getSummaryForSectionFront webObject="${currentObject}" var="webtease" priority="carousel" />
+<p:object webObject="${cacheScope.dwp}" metadata="dwpMeta"/>
+<p:out var="edition" xvalue="$dwpMeta//dbMetadata/sys/props/productInfo/edition" scope="request" /> 
+<bdc:getRelatedLinks webObject="${currentObject}" var="relatedLinks" edition="${edition}" />
+<bdc:getHeadlines webObject="${currentObject}" var="title" edition="${edition}"/>
+<bdc:getSection section="${section}" var="sectionLink" />
+<%--
+	Need to determine whether or not there is an alt image slotted.
+--%>
+
+<p:out var="isAltImg" value="${1==1}" scope="request" />
+<p:out var="leadingPhotoPath" xvalue="$c//photogrp[@class='alt-web-images']/photo[@name='image_676x282']/@fileref" scope="request" />
+
+<c:if test="${empty leadingPhotoPath}">
+	<p:out var="leadingPhotoPath" xvalue="$c//photogrp[@class='main-web-images']/photo[@name='image_371w']/@fileref" scope="request"/>
+	<p:out var="isAltImg" value="${1==2}" scope="request" />
+</c:if>
+<p:url var="img" value="${leadingPhotoPath}" type="resource" format="image_676x282"/>
+
+<p:out var="provider" xvalue="$m//Reference/Provider" />
+<p:out var="bdcWire" value="${(provider eq 'BDCWire')}" />
+
+<bdc:getTeaseType var="carouselTeaseType" webObject="${currentObject}" />
+<c:if test="${empty leadingPhotoPath and carouselTeaseType eq 'gallery-container'}">
+	<p:out var="galleryTease" xvalue="$c//multimedia-container/gallery-container//photogrp[@class='photo-gallery-tease']/photo/@fileref" />
+	<p:url var="img" value="${galleryTease}" type="resource" format="image_676x282" />
+	<p:out var="leadingPhotoPath" value="${galleryTease}" />
+	
+	<c:if test="${empty galleryTease or galleryTease eq ''}">
+		<p:out var="galleryFirstImage" xvalue="$c//multimedia-container/gallery-container/photogrp[1]/photo/@fileref" />
+		<!-- galleryFirstImage = ${galleryFirstImage} -->
+		<c:if test="${not empty galleryFirstImage and galleryFirstImage ne ''}">
+			<p:out var="leadingPhotoPath" value="${galleryFirstImage}" />
+			<p:url var="img" value="${galleryFirstImage}" type="resource" format="image_676x282" />
+		</c:if>
+	</c:if>
+</c:if>
+
+<%
+	String source = (String)pageContext.getAttribute("section");
+	int count = org.apache.commons.lang.StringUtils.countMatches(source, "/");
+	if (count > 1) {
+		int index = source.indexOf('/');
+		int indexEnd = source.length();
+		int indexStart = index + 1;
+		String id = source.substring(indexStart,indexEnd);
+		int indexRoundTwo = id.indexOf('/');
+		int indexEndRoundTwo = indexRoundTwo + 1;
+		String finalParentSection = source.substring(0,indexEndRoundTwo);
+		pageContext.setAttribute("section", finalParentSection);
+		} else {
+			pageContext.setAttribute("section", source);
+		}
+%>
+<bdc:teaseSection section="${section}" var="sectionData" />
+
+<c:choose>
+	<c:when test="${empty leadingPhotoPath or leadingPhotoPath eq ''}">
+		<div class="swiper-slide lead-tz lead-tz-no-art" data-vr-contentbox="">
+			<bdc:link 
+				className="lead-tz-art-bd omniclick"
+				webObject="${currentObject}" 
+				onClick="true" 
+				element="headline"
+				elementType="image">
+			</bdc:link> <!-- /lead-tz-art-bd -->
+			<div class="lead-tz-txt-bd reverse">
+				<c:if test="${not empty fn:trim(sectionLink)}">
+					<h4 class="lead-tz-overline">
+						<bdc:link 
+							webObject="${currentObject}"
+							className="omniclick"
+							onClick="true" 
+							element="section label"
+							elementType="carousel lead">
+							${sectionData.name}
+						</bdc:link>
+					</h4>
+				</c:if>
+				<h1 class="lead-tz-h">
+					<c:choose>
+						<c:when test="${WT eq 'textAsset'}">
+							<p:out var="xref" xvalue="$c//xref" />
+							<bdc:cleanXref var="xref" url="${xref}" />
+							<bdc:link 
+								value="${xref}" 
+								className="omniclick"
+								onClick="true" 
+								element="headline"
+								elementType="carousel lead">
+								${title.carouselHeadline}
+							</bdc:link>		
+						</c:when>
+						<c:otherwise>
+							<bdc:link 
+								webObject="${currentObject}" 
+								onClick="true" 
+								className="omniclick"
+								element="headline"
+								elementType="carousel lead">
+								${title.carouselHeadline}
+							</bdc:link>		
+						</c:otherwise>
+					</c:choose>
+				</h1>
+				<p class="lead-tz-txt tz-txt">${webtease}</p>
+			</div> <!-- /lead-tz-txt-bd -->
+		</div> <!-- /lead-tz -->
+	</c:when>
+	<c:otherwise>
+		<div class="swiper-slide lead-tz lead-tz-w-art" data-vr-contentbox="">
+			<bdc:link 
+				className="lead-tz-art-bd omniclick"
+				webObject="${currentObject}" 
+				onClick="true" 
+				element="image"
+				elementType="carousel lead">
+				<!-- bdcwireis: ${bdcWire} -->
+				<c:if test="${bdcWire}">
+					<div class="lead-tz--bdc-wire"></div>
+				</c:if>
+				<img class="lead-tz-art" src="${img}" />
+			
+				<x:if select="$c//doc/story/multimedia-container/video-container[@href != '']">
+					<%-- IF the story contains a video, but its not the first position, add our fancy video icon overlay --%>
+					<div class="lead-video-icon"></div>
+					<%-- ENDIF --%>
+				</x:if>
+				
+			</bdc:link> <!-- /lead-tz-art-bd -->
+			<div class="lead-tz-txt-bd reverse">
+				<%-- Scoreboard in the carousel tease --%>
+				<p:out var="isScoreBoard" value="${1==2}" />
+				<c:if test="${isScoreBoard}">
+					<p:inline url="$configurationURI/Framework/skins/components/global_carousel/global_carousel_scoreboard.jpt" />
+				</c:if>
+				<%-- //Scoreboard --%>			
+				<c:if test="${not empty fn:trim(title.overline)}">
+					<h4 class="lead-tz-overline">
+						<bdc:link 
+							webObject="${currentObject}"
+							onClick="true" 
+							className="omniclick"
+							element="section label"
+							elementType="carousel lead">
+								${sectionData.name}
+						</bdc:link>
+					</h4>
+				</c:if>
+				<h1 class="lead-tz-h">
+					<bdc:link 
+							webObject="${currentObject}"
+							className="omniclick"	
+							onClick="true" 
+							element="headline"
+							elementType="carousel lead">${title.carouselHeadline}</bdc:link>
+				</h1>
+				
+		
+				<p:out var="numLinks" value="${fn:length(relatedLinks.relatedLinksArray)}"/>
+							
+				<c:if test="${not empty fn:trim(webtease)}">
+					<%-- not empty webtease --%>
+					<p class="lead-tz-txt tz-txt">${webtease}
+						<c:if test="${numLinks gt 0}">
+							<span class="horiz-list">
+							<c:forEach items="${relatedLinks.relatedLinksArray}" var="link" varStatus="status">
+								<bdc:url value="${link[1]}" type="${link[0]}" var="url"/>
+								<i class="list-item">
+									<a 
+										class="omniclick"
+										href="${url}" 
+										data-omniclick="carousel lead | link list');">
+											${link[2]}
+									</a>
+								</i>
+							</c:forEach>
+							</span>
+						</c:if>
+					</p>
+				</c:if>
+			</div> <!-- /lead-tz-txt-bd -->
+		</div>	<!-- swiper-slide lead-tz lead-tz-w-art -->
+	</c:otherwise>
+</c:choose>

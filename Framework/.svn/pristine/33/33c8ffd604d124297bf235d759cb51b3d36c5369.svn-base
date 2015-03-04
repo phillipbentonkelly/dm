@@ -1,0 +1,6 @@
+<div class="dropdown-search">
+  <div class="dropdown-search__content">
+  	<p:out var="searchFormP1" value="TotalMastheadSearches" scope="request" />
+    <p:inline url="$configurationURI/Framework/frameset/search/search_form.jpt" />
+  </div>
+</div>

@@ -1,0 +1,82 @@
+<p:object webObject="${currentObject}" content="c" metadata="m" webType="WT" uuid="uuid" channel="Boston.com"/>	
+<p:object webObject="${currentObject}" content="c" metadata="m" webType="WT" uuid="uuid" channel="Boston.com"/>	
+<p:out var="section" xvalue="$m//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/Sections/Section/SectionPath" />
+<bdc:getSummaryForSectionFront webObject="${currentObject}" var="webtease" priority="carousel" />
+<bdc:getHeadlines webObject="${currentObject}" var="title" edition="${edition}"/>
+<p:out var="leadingPhotoPath" xvalue="$c//photogrp[@class='alt-web-images']/photo[@name='image_676x282']/@fileref" scope="request" />
+<c:if test="${empty leadingPhotoPath}">
+	<p:out var="leadingPhotoPath" xvalue="$c//photogrp[@class='main-web-images']/photo[@name='image_371w']/@fileref" scope="request"/>
+</c:if>
+<p:url var="img" value="${leadingPhotoPath}" type="resource" format="image_130x80"/>
+
+<c:choose>
+	<c:when test="${not empty img}">
+		<bdc:link className="bn-media-block" webObject="${currentObject}">
+			<div class="bn-support-tz bn-support-tz-img">
+		        <div class="art-bd">
+		            <img class="bn-support-img art" src="${img}">
+		        </div>
+		        <h4 class="bn-support-tz-title txt-bd">${title.carouselHeadline}</h4>
+		    </div>
+		</bdc:link>
+	</c:when>
+	<c:otherwise>
+		<bdc:link className="bn-media-block" webObject="${currentObject}">
+			<div class="bn-support-tz">
+			    <h4 class="bn-support-tz-title">${title.carouselHeadline}</h4>
+			</div>	
+		</bdc:link>
+	</c:otherwise>
+</c:choose>   
+
+<%--
+    <a href="#" class="bn-media-block">
+        <div class="bn-support-tz bn-support-tz-img">
+            <div class="art-bd">
+                <img class="bn-support-img art" src="http://placehold.it/260x160">
+            </div>
+                <h4 class="bn-support-tz-title txt-bd">Gallery from Decisive Game 6</h4>
+        </div>
+    </a>
+    <a href="#" class="bn-media-block">
+        <div class="bn-support-tz bn-support-tz-img">
+            <div class="art-bd">
+                <img class="bn-support-img art" src="http://placehold.it/260x160">
+            </div>
+                <h4 class="bn-support-tz-title txt-bd">Chad Finn: Red Sox are Strong Enough to be Our Team</h4>
+        </div>
+    </a>
+  
+    <a href="#" class="bn-media-block">
+        <div class="bn-support-tz bn-support-tz-img">
+            <div class="art-bd">
+                <img class="bn-support-img art" src="http://placehold.it/260x160">
+            </div>
+                <h4 class="bn-support-tz-title txt-bd">Duck Boats, Parade Scheduled Saturday</h4>
+        </div>
+    </a>
+    <!--<a href="#" class="bn-media-block">
+       <div class="bn-support-tz bn-support-tz-img">
+           <div class="art-bd">
+               <img class="bn-support-img art" src="http://placehold.it/260x160">
+           </div>
+               <h4 class="bn-support-tz-title txt-bd">Can You Name That Red Sox Player?</h4>
+       </div>
+   </a>-->
+   <!-- 'link list' style tease in Tease Well -->
+   <div class="bn-media-block">
+       <div class="bn-support-tz bn-support-tz-bull">
+           <ul class="list-bull bn-list">
+               <li class="list-bull-item bn-item">
+                   <a href="#" class="list-bull-h bn-list-h">Something something something darkside</a>
+               </li>
+               <li class="list-bull-item bn-item">
+                   <a href="#" class="list-bull-h bn-list-h">Something something something complete</a>
+               </li>
+           </ul>
+       </div>
+   </div> <!-- bn-media-block -->
+   <!-- / 'link-list' style tease -->
+
+
+--%>

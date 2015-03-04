@@ -1,0 +1,46 @@
+<%-- things passed --%>
+<p:out var="visualRevenue" value="${cacheScope.visualRevenue}" />
+<p:out var="wellTitle" value="${cacheScope.wellTitle}" />
+<p:out var="dwp" value="${cacheScope.dwp}" />
+<p:out var="p1" value="${cacheScope.p1}" />
+<p:out var="dataP1" value="${cacheScope.dataP1}" />
+<p:out var="dataOmniture" value="${cacheScope.dataOmniture}" />
+
+<p:currentObject sectionId="section" webType="wt" metadata="meta"/>
+<bdc:getHeadlines webObject="${currentObject}" var="headlines" />
+
+<%--  get the blog name and make a shortversion of it --%>
+<p:out var="blogName" xvalue="$meta//Reference/WireFeed/text()" />
+<p:out var="blogName" value="${fn:toLowerCase(blogName)}" />
+<bdc:regexReplace var="blogNameShort" value="${blogName}" regex="[^A-Za-z]*" replace="" />
+
+<%-- do omniture if we have a blogName --%>
+<c:if test="${not empty blogName}">
+	<p:out var="iconClass" value="bdc-icon bdc-icon--${blogNameShort}-small"/>
+	<%-- p1 tags - this needs to be modified if we want to display this somewhere other than homepage --%>
+	<p:out var="imageP1" value="p1=co_${blogNameShort}_icon_hp" />
+	<p:out var="linkP1" value="p1=co_${blogNameShort}_link_hp" />
+
+	<%-- data-omniture values --%>
+	<p:out var="imageOmni" value="data-omniture=\"callout | ${blogName} | icon\"" />
+	<p:out var="linkOmni" value="data-omniture=\"callout | ${blogName} | link\"" />
+	
+</c:if>
+
+<li class="sub-brands__list-item">
+	
+	<c:if test="${not empty iconClass}">
+		<div class="sub-brands__image">
+			<bdc:link className="sub-brands__image-link" webObject="${currentObject}"	
+			          linkParam="${imageP1}" otherAttributes="${imageOmni}">
+				<span class="${iconClass}"></span>
+			</bdc:link>
+		</div>
+	</c:if>
+	<div class="sub-brands__description">
+		<bdc:link className="sub-brands__link" webObject="${currentObject}"
+		          linkParam="${linkP1}" otherAttributes="${linkOmni}">
+			${headlines.carouselHeadline}
+		</bdc:link>
+	</div>
+</li>

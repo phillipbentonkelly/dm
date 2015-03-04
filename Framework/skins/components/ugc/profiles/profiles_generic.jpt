@@ -1,0 +1,101 @@
+<%@ page import="java.lang.String.*, java.lang.Math.*, java.util.Date , java.text.SimpleDateFormat"%>
+<%@ page import="org.joda.time.format.DateTimeFormatter" %>
+<%@ page import="org.joda.time.format.DateTimeFormat" %>
+<%@ page import="org.joda.time.format.ISODateTimeFormat" %>
+<%@ page import="org.joda.time.format.PeriodFormatter" %>
+<%@ page import="org.joda.time.format.PeriodFormatterBuilder" %>
+<%@ page import="org.joda.time.Period" %>
+<%@ page import="org.joda.time.DateTime" %>
+<%@ page import="java.util.Locale" %>
+
+<p:currentObject webType="WT" sectionId="section" />
+
+<c:set var="ugcUrl" value="${portalContext.publicBaseUrl}/ugc"/>
+<c:set var="commentLimit" value="5"/>
+
+<bdc:getLayer var="adLayerName" webType="${WT}" layerType="ad" />
+<bdc:inheritStoryLayer var="adLayerDwpPath" section="${section}" layer="${adLayerName}" />
+		
+<c:set var="recentlyCommentedDiscussionsUrl"  value="${ugcUrl}/cached/recentlyCommentedDiscussions.xml"/>
+<c:set var="recentlyUpdatedProfilesUrl"  value="${ugcUrl}/cached/recentlyUpdatedProfiles.xml"/>
+<c:set var="mostCommentedUrl" value="${ugcUrl}/cached/recentlyCommentedTopics.xml"/>
+
+<p:include url="$configurationURI/Framework/skins/components/ads/dfp_ad_controller.jpt" context="ad_toprightslot,forum-advertisement" />	
+<p:include url="$configurationURI/Framework/skins/components/ads/dfp_ad_controller.jpt" context="ad_featurestack1,forum-advertisement" />
+
+<div class="widget recently-commented">
+	<h3 class="section-h">Recently Commented Discussions</h3>
+	<ul>
+		<c:import var="recentlyCommentedDiscussionsDoc" url="${recentlyCommentedDiscussionsUrl}" />
+		<x:parse var="recentlyCommentedDiscussionsXml" doc="${recentlyCommentedDiscussionsDoc}" />
+		<x:forEach var="recentlyCommentedDiscussion" varStatus="status" begin="0"
+			select="$recentlyCommentedDiscussionsXml/discussions/discussion">
+			<x:set var="discussionTitle" select="string($recentlyCommentedDiscussion/title/text())"/>
+			<x:set var="discussionUrl" select="string($recentlyCommentedDiscussion/url/text())"/>
+			<x:set var="forumSectionCategoryId" select="string($recentlyCommentedDiscussion/categoryKey/text())"/>
+			<c:set var="forumSectionCategoryUrl" value="${ugcUrl}/forumsectioncategory/id/${forumSectionCategoryId}"/>
+			<c:import var="forumSectionCategoryDoc" url="${forumSectionCategoryUrl}" /> 
+			<x:parse var="forumSectionCategoryXml"  doc="${forumSectionCategoryDoc}" />	
+			<x:set var="forumSectionId" select="string($forumSectionCategoryXml/forumSectionCategory/sectionKey/text())"/>
+			<c:set var="forumSectionUrl" value="${ugcUrl}/forumsection/id/${forumSectionId}"/>
+			<c:import var="forumSectionDoc" url="${forumSectionUrl}" /> 
+			<x:parse var="forumSectionXml"  doc="${forumSectionDoc}" />
+			<x:set var="forumSectionName" select="string($forumSectionXml/forumSection/name/text())"/>
+			<x:set var="forumSectionCategoryName" select="string($forumSectionCategoryXml/forumSectionCategory/name/text())"/>								
+			<x:set var="forumSectionCategoryUrl" select="string($forumSectionCategoryXml/forumSectionCategory/url/text())"/>								
+			<li>
+				<a href="${discussionUrl}">${discussionTitle}</a>
+				<div class="forum-credit">In: <a href="${forumSectionCategoryUrl}">${forumSectionName}:${forumSectionCategoryName}</a></div>
+			</li>
+		</x:forEach>
+	</ul>						
+</div>
+
+<div class="widget recently-updated">
+	<h3 class="section-h fancy">Recently Updated Profiles</h3>
+	<ul>
+		<c:import var="recentlyUpdatedProfilesDoc" url="${recentlyUpdatedProfilesUrl}" />
+		<x:parse var="recentlyUpdatedProfilesXml" doc="${recentlyUpdatedProfilesDoc}" />
+		<x:forEach var="recentlyUpdatedProfile" varStatus="status" begin="0"
+				select="$recentlyUpdatedProfilesXml/users/user">
+			<x:set var="recentUserId" select="string($recentlyUpdatedProfile/id/text())"/>
+			<x:set var="recentUserName" select="string($recentlyUpdatedProfile/name/text())"/>
+			<x:set var="recentUserImageIcon" select="string($recentlyUpdatedProfile/imageUrl/text())"/>
+			<x:set var="recentUserModifiedTime" select="string($recentlyUpdatedProfile/touchDate/text())"/>	
+			<li>
+				<a href="${recentUserImageIcon}" class="image-link"><img src="${recentUserImageIcon}" /></a>
+				<a href="/community/user/${recentUserId}">${recentUserName}</a>
+				
+				<% 	
+	   				String recentUserModifiedTimeString = (String) pageContext.getAttribute("recentUserModifiedTime");
+					String createDate, createdTime;
+	
+					if (recentUserModifiedTimeString != "") {
+	
+						DateTimeFormatter dateTimeFormatter = ISODateTimeFormat.dateTimeParser();
+						DateTime recentUserModifiedDateTime = dateTimeFormatter.parseDateTime(recentUserModifiedTimeString);
+						String recentUserModifiedDateTimeString = DateTimeFormat.forPattern("MM/dd/yyyy hh:mm:ss zzz").withLocale(Locale.US).print(recentUserModifiedDateTime);
+						pageContext.setAttribute("recentUserTime", recentUserModifiedDateTimeString);
+					}
+				%>
+				<div class="timestamp">${recentUserTime}</div>
+			</li>
+		</x:forEach>
+	</ul>	
+</div>
+
+<div class="widget most-commented">
+	<h3 class="section-h fancy">Most Commented Articles</h3>
+	<ul>
+		<c:import var="mostCommentedDoc" url="${mostCommentedUrl}" />
+		<x:parse var="mostCommentedXml" doc="${mostCommentedDoc}" />
+		<x:forEach var="mostCommented" varStatus="status" begin="0"
+			select="$mostCommentedXml/topics/topic">
+			<x:set var="articleTitle" select="string($mostCommented/title/text())"/>
+			<x:set var="articleUrl" select="string($mostCommented/url/text())"/>
+			<li>
+				<a href="${articleUrl}">${articleTitle}</a>
+			</li>
+		</x:forEach>
+	</ul>	
+</div>

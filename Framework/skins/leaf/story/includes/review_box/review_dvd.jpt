@@ -1,0 +1,25 @@
+<p:getContext var="uuid" />
+<p:getObject uuid="${uuid}" var="webObject" />
+<p:object webObject="${webObject}" content="story" metadata="meta" />
+
+<p:out var="review_title" xvalue="$story//review-containers/review-container-dvd/review-title/p" />
+
+<p:out var="dvd_extras" xvalue="$story//review-containers/review-container-dvd/review-extras/p" />
+<p:out var="dvd_studio" xvalue="$story//review-containers/review-container-dvd/review-studio/p" />
+<p:out var="dvd_price" xvalue="$story//review-containers/review-container-dvd/review-price/p" />
+
+<div class="review-item">
+	<h3 class="review-item-title">${fn:trim(review_title)}</h3>
+</div>
+
+<aside class="review-box">
+	<c:if test="${not empty fn:trim(dvd_extras)}">	
+		<b>Extras:</b> ${dvd_extras} |
+	</c:if>
+	<c:if test="${not empty fn:trim(dvd_studio)}">
+		<b>Studio:</b> ${dvd_studio} |
+	</c:if>
+	<c:if test="${not empty fn:trim(dvd_price)}">
+		<b>Price:</b> ${dvd_price}
+	</c:if>
+</aside>

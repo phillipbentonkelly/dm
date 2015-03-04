@@ -1,0 +1,53 @@
+<p:currentObject metadata="meta" />
+<p:out var="headerTitle" xvalue="$meta//TeaseHeader" />
+<p:out var="headerURL" xvalue="$meta//TeaseHeaderURL" />
+<bdc:getBorderClass webObject="${currentObject}" defaultBorder="disabled" var="borderClasses"/>
+
+<c:if test="${not empty borderClasses}">
+	<p:out var="borderClassStr" value=' class="${borderClasses}"'/>
+</c:if>
+
+<c:if test="${not empty cacheScope.dwp}">
+	<p:object webObject="${cacheScope.dwp}" metadata="dwpMeta"/>
+	<p:out var="VREnabled" xvalue="$dwpMeta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/VisualRevenue"/>
+	<p:out var="VRZoneName" xvalue="$meta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/VisualRevenueZoneName"/>
+	<c:choose>
+		<c:when test="${VREnabled eq 'True' and not empty VRZoneName}">
+			<p:out var="VRZoneName" value='data-vr-zone="${VRZoneName}"'/>
+		</c:when>
+		<c:otherwise>
+			<p:out var="VRZoneName" value=""/>
+		</c:otherwise>
+	</c:choose>
+</c:if>
+
+<div class="row" ${VRZoneName}>
+	<div${borderClassStr}>
+		<div class="span3">
+			<p:include pageZoneName="left">
+				<p:param name="dwp" value="${cacheScope.dwp}"/>
+			</p:include>
+	
+			<%-- include CENTRAL ad position here --%>
+			<%-- THIS IS AN AD LAYER ZONE --%>
+			<p:include pageZoneName="FEATURE" inherits="${adLayerDwpPath}" />
+			
+			<p:include pageZoneName="left_below_ad">
+				<p:param name="dwp" value="${cacheScope.dwp}"/>
+			</p:include>
+			
+			<%-- include positions from the RIGHT zone --%>
+			<%-- THIS IS AN AD LAYER ZONE --%>
+			<p:include pageZoneName="3_6_LOWER" inherits="${adLayerDwpPath}" />
+			
+		</div>
+		<div class="span6 last">
+			<p:include pageZoneName="right">
+				<p:param name="dwp" value="${cacheScope.dwp}"/>
+				<p:param name="videoWidth" value="399" />
+				<p:param name="videoHeight" value="279" />
+				<p:param name="ScribleWidth" value="372" />
+			</p:include>
+		</div>
+	</div>
+</div>	

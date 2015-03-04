@@ -1,0 +1,52 @@
+// *
+// * Content Footer
+// *
+
+.content-footer {
+  @include constrain;
+  margin-top: spacer(px, xx-large);
+  margin-top: spacer(rem, xx-large);
+  margin-bottom: spacer(px, xx-large);
+  margin-bottom: spacer(rem, xx-large);
+  @include font-scale(small);
+  font-style: italic;
+
+  // Footer Tagline
+  &__tagline {
+    position: relative;
+    color: color(gray);
+
+    // Footer Tagline Links
+    a {
+      @include link-states(color(gray), color(gray, dark), color(gray, x-dark));
+    }
+
+    // Footer Tagline Rule
+    &:before {
+      content: '';
+      position: absolute;
+      top: -16px;
+      height: 1px;
+      width: 25%;
+      border-top: 1px solid color(gray, x-light);
+    }
+  }
+}
+
+// Content Footer Media Queries
+
+@include media-query(tablet) {
+  .content-footer {
+
+
+    // Footer Tagline
+    &__tagline {
+
+      // Footer Tagline Rule
+      &:before {
+        width: 15%;
+      }
+
+    }
+  }
+}

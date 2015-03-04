@@ -1,0 +1,425 @@
+@import "partials/_variables";
+.monster-responsive-job-search-mod{
+	.fnt1 { font-size: 11px; font-weight: normal; color: #333; cursor: default; }
+	.fnt1 a, a.fnt1 { color: #0056ad; text-decoration: none; cursor: pointer; }
+	.fnt1 a:visited, a.fnt1:visited { color: #ae7cdd; text-decoration: none; cursor: pointer; }
+	.fnt1 a:hover, a.fnt1:hover { color: #0056ad; text-decoration: underline; cursor: pointer; }
+	.fnt2 { font-size: 11px; font-weight: normal; color: #fff; cursor: default; }
+	.fnt2 a, a.fnt2 { color: #fff; text-decoration: underline; cursor: pointer; }
+	.fnt2 a:visited, a.fnt2:visited { color: #fff; text-decoration: underline; cursor: pointer; }
+	.fnt2 a:hover, a.fnt2:hover { color: #fff; text-decoration: none; cursor: pointer; }
+	.fnt3 { font-size: 11px; font-weight: normal; color: #9574b3; cursor: default; }
+	.fnt3 a, a.fnt3 { color: #fff; text-decoration: underline; cursor: pointer; }
+	.fnt3 a:visited, a.fnt3:visited { color: #fff; text-decoration: underline; cursor: pointer; }
+	.fnt3 a:hover, a.fnt3:hover { color: #fff; text-decoration: none; cursor: pointer; }
+	.fnt4 { font-size: 13px; font-weight: normal; color: #333; cursor: default; }
+	.fnt4 a, a.fnt4 { color: #0d51ab; text-decoration: none; cursor: pointer; }
+	.fnt4 a:visited, a.fnt4:visited { color: #ae7cdd; text-decoration: none; cursor: pointer; }
+	.fnt4 a:hover, a.fnt4:hover { color: #0d51ab; text-decoration: underline; cursor: pointer; }
+	.fnt5 { font-size: 13px; font-weight: bold; color: #333; cursor: default; }
+	.fnt5 a, a.fnt5 { color: #0d51ab; text-decoration: none; cursor: pointer; }
+	.fnt5 a:visited, a.fnt5:visited { color: #ae7cdd; text-decoration: none; cursor: pointer; }
+	.fnt5 a:hover, a.fnt5:hover { color: #0d51ab; text-decoration: underline; cursor: pointer; }
+	.fnt7 { font-size: 13px; font-weight: bold; color: #fff; cursor: default; }
+	.fnt7 a, a.fnt7 { color: #fff; text-decoration: underline; cursor: pointer; }
+	.fnt7 a:visited, a.fnt7:visited { color: #fff; text-decoration: underline; cursor: pointer; }
+	.fnt7 a:hover, a.fnt7:hover { color: #fff; text-decoration: none; cursor: pointer; }
+	.fnt8 { font-family: inherit; /* fix FF buttons */ font-size: 13px; font-weight: bold; color: #673695; text-transform: uppercase; cursor: pointer; }
+	.fnt10 { font-family: inherit; /* fix FF buttons */ font-size: 16px; font-weight: bold; color: #673695; text-transform: uppercase; cursor: pointer; }
+	.fnt11 { font-size: 16px; font-weight: normal; color: #333; cursor: default; }
+	.fnt11 a, a.fnt11 { color: #0d51ab; text-decoration: none; cursor: pointer; }
+	.fnt11 a:visited, a.fnt11:visited { color: #ae7cdd; text-decoration: none; cursor: pointer; }
+	.fnt11 a:hover, a.fnt11:hover { color: #0d51ab; text-decoration: underline; cursor: pointer; }
+	.fnt11_js { font-size: 16px; font-weight: normal; color: #333; cursor: default; }
+	.fnt11_js a, a.fnt11_js { color: #0d51ab; text-decoration: underline; cursor: pointer; }
+	.fnt11_js a:visited, a.fnt11_js:visited { color: #ae7cdd; text-decoration: underline; cursor: pointer; }
+	.fnt11_js a:hover, a.fnt11_js:hover { color: #0d51ab; text-decoration: none; cursor: pointer; }
+	.fnt12 { font-size: 16px; font-weight: bold; color: #333; cursor: default; }
+	.fnt12 a, a.fnt12 { color: #0d51ab; text-decoration: none; cursor: pointer; }
+	.fnt12 a:visited, a.fnt12:visited { color: #ae7cdd; text-decoration: none; cursor: pointer; }
+	.fnt12 a:hover, a.fnt12:hover { color: #0d51ab; text-decoration: underline; cursor: pointer; }
+	.fnt13 { font-size: 13px; font-weight: normal; color: #999; cursor: default; }
+	.fnt13 a, a.fnt13 { color: #0d51ab; text-decoration: none; cursor: pointer; }
+	.fnt13 a:visited, a.fnt13:visited { color: #ae7cdd; text-decoration: none; cursor: pointer; }
+	.fnt13 a:hover, a.fnt13:hover { color: #0d51ab; text-decoration: underline; cursor: pointer; }
+	.fnt14 { font-size: 11px; font-weight: normal; color: #0e774a; cursor: default; }
+	.fnt14 a, a.fnt14 { color: #0e774a; text-decoration: none; cursor: pointer; }
+	.fnt14 a:visited, a.fnt14:visited { color: #ae7cdd; text-decoration: none; cursor: pointer; }
+	.fnt14 a:hover, a.fnt14:hover { color: #0e774a; text-decoration: underline; cursor: pointer; }
+	.fnt15 { font-size: 13px; font-weight: normal; color: #ca0002; cursor: default; }
+	.fnt16 { font-size: 13px; font-weight: normal; color: #0e774a; cursor: default; }
+	.fnt16 a, a.fnt16 { color: #0e774a; text-decoration: none; cursor: pointer; }
+	.fnt16 a:visited, a.fnt16:visited { color: #0e774a; text-decoration: none; cursor: pointer; }
+	.fnt16 a:hover, a.fnt16:hover { color: #0e774a; text-decoration: underline; cursor: pointer; }
+	.fnt17 { font-size: 16px; font-weight: bold; color: #ccc; cursor: default; }
+	.fnt17 a, a.fnt17 { color: #0d51ab; text-decoration: none; cursor: pointer; }
+	.fnt17 a:visited, a.fnt17:visited { color: #ae7cdd; text-decoration: none; cursor: pointer; }
+	.fnt17 a:hover, a.fnt17:hover { color: #0d51ab; text-decoration: underline; cursor: pointer; }
+	.fnt18 { font-size: 16px; font-weight: bold; color: #fff; cursor: default; }
+	.fnt18 a, a.fnt18 { color: #fff; text-decoration: underline; cursor: pointer; }
+	.fnt18 a:visited, a.fnt18:visited { color: #fff; text-decoration: underline; cursor: pointer; }
+	.fnt18 a:hover, a.fnt18:hover { color: #fff; text-decoration: none; cursor: pointer; }
+	.fnt19 { font-size: 16px; font-weight: normal; color: #333; cursor: default; }
+	.fnt19 a, a.fnt19 { color: #0d51ab; text-decoration: underline; cursor: pointer; }
+	.fnt19 a:visited, a.fnt19:visited { color: #ae7cdd; text-decoration: underline; cursor: pointer; }
+	.fnt19 a:hover, a.fnt19:hover { color: #0d51ab; text-decoration: underline; cursor: pointer; }
+	.fnt20 { font-size: 11px; font-weight: normal; color: #999999; cursor: default; }
+	.fnt20 a, a.fnt20 { color: #0d51ab; text-decoration: none; cursor: pointer; }
+	.fnt20 a:visited, a.fnt20:visited { color: #ae7cdd; text-decoration: none; cursor: pointer; }
+	.fnt20 a:hover, a.fnt20:hover { color: #0d51ab; text-decoration: underline; cursor: pointer; }
+	.fnt21 { font-size: 11px; font-weight: normal; color: #CA0002; cursor: default; }
+	.fnt21 a, a.fnt21 { color: #CA0002; text-decoration: none; cursor: pointer; }
+	.fnt21 a:visited, a.fnt21:visited { color: #CA0002; text-decoration: none; cursor: pointer; }
+	.fnt21 a:hover, a.fnt21:hover { color: #CA0002; text-decoration: none; cursor: pointer; }
+	.fnt22 { font-size: 28px; font-weight: normal; color: #333333; cursor: default; }
+	.fnt22 a, a.fnt22 { color: #0d51ab; text-decoration: none; cursor: pointer; }
+	.fnt22 a:visited, a.fnt22:visited { color: #ae7cdd; text-decoration: none; cursor: pointer; }
+	.fnt22 a:hover, a.fnt22:hover { color: #0d51ab; text-decoration: underline; cursor: pointer; }
+	.fnt23 { font-size: 28px; font-weight: bold; color: #333; cursor: default; }
+	.fnt23 a, a.fnt23 { color: #0d51ab; text-decoration: none; cursor: pointer; }
+	.fnt23 a:visited, a.fnt23:visited { color: #ae7cdd; text-decoration: none; cursor: pointer; }
+	.fnt23 a:hover, a.fnt23:hover { color: #0d51ab; text-decoration: underline; cursor: pointer; }
+	.fnt24 { font-size: 26px; font-weight: normal; color: #333; cursor: default; }
+	.fnt24 a, a.fnt24 { color: #0d51ab; text-decoration: none; cursor: pointer; }
+	.fnt24 a:visited, a.fnt24:visited { color: #ae7cdd; text-decoration: none; cursor: pointer; }
+	.fnt24 a:hover, a.fnt24:hover { color: #0d51ab; text-decoration: underline; cursor: pointer; }
+
+	/*------------------------------------------------------------------*/
+
+
+	input{ color:#666; font-size:11px;}
+	img,a { border:0px; outline:none;}
+
+	/* nav */
+	.nav { margin: 0px 0; }
+	.nav ul { margin: 0; padding: 0; }
+	.nav li { margin: 0 5px 10px 0; padding: 0; list-style: none; display: inline-block; *display:inline; /* ie7 */
+	}
+	.nav a { padding: 3px 12px; text-decoration: none; color: #0056AD; line-height: 100%; font-size:11px; }
+	.nav a:hover { color: #0056AD; text-decoration: underline;  }
+	.nav .current a { color: #0056AD; font-size:11px;   }
+	/* right nav */
+	.nav.right ul { text-align: right; }
+
+	@media screen and (max-width: 1023px) {
+	.nav {}
+	.nav ul { padding: 3px 0; margin-right:7px; position: absolute; top: 5px; left: 0; background: #73479c url(#{$img-path}monster/icon-menu.png) no-repeat 9px 7px; border-radius: 5px; box-shadow: 0 1px 2px rgba(0, 0, 0, .3); }
+	.nav li { display: none; /* hide all <li> items */ margin: 0; }
+	.nav .current { display: block; /* show only current <li> item */ }
+	.nav a { display: block; padding: 5px 7px 5px 28px; text-align: left; color:#c0acd2; font-size:11px; font-weight:bold; text-transform:uppercase; }
+	.nav .current a { background: none; color: #c0acd2; text-decoration:none; }
+	/* on nav hover */
+		.nav ul:hover { background-image: none; text-decoration:none; }
+	.nav a:hover { color: #fff; }
+	.nav ul:hover li { display: block; }
+	.nav ul:hover .current { background: url(#{$img-path}monster/icon-menu.png) no-repeat 9px 4px; text-decoration:none; }
+	/* right nav */
+	.nav.right ul { left: auto; right: 0; }
+	}
+
+	@media (min-width:600px) and (max-width: 690px) {
+	.search {
+	    width: 25% !important;
+	}
+	}
+
+	@media (min-width:480px) and (max-width: 520px) {
+	.login {padding-bottom:18px !important; }
+	}
+
+
+
+	/* MIN-WIDTH 50PX TO MAX WIDTH 319PX */
+	@media(min-width:50px) and (max-width:319px) {
+	#TopRow { width:100%; overflow:hidden; }
+	#TopRow .fbwm { width:80%; float:left; font: bold 16px/19px Arial, Helvetica, sans-serif; color: #734E9D; padding:9px 7px 5px 7px; }
+	.fbwm img { max-width:100px; }
+	#TopRow .jmsi { width:20%; float:right; padding: 7px 7px 0 0; }
+	#main-cntr { border:5px solid #DDDDDD; overflow:hidden; font-size:11px; }
+	#jobseeker { float:left; background: url("#{$img-path}monster/pur-bg.png") repeat-x scroll left top #4e2f72; min-height:250px; width:100%; }
+	#jobseeker h1 { margin:7px 0 3px 0; padding:0; line-height:normal; color:#fff; font-size:16px; text-align:center; text-shadow:1px 1px 1px #000; text-transform: uppercase; }
+	#SearchArea { width:90%; margin:0px auto; overflow:hidden; }
+	#SearchArea label { padding-bottom:1px; font-size:11px; font-weight:bold; color:#fff; float:left; display:block; width:100%; }
+	#SearchArea input { width:100%; padding:5px; margin-bottom:7px; float:left; display:block; border:1px solid #4e2f73; background:#fff; height:24px !important; }
+	#lp835_btn { margin:4px auto 14px auto; width:200px; text-align: center; }
+	#lp835_btn a { font-family: Arial, Helvetica, sans-serif; height: 27px; margin-top: 16px; text-decoration: none; padding:8px 25px; background: url(#{$img-path}monster/secrh-btn.png) repeat-x left top #ededed; font-size:13px; border:1px solid #bbbbbb; color: #893cd1; font-weight:bold; text-shadow:1px 1px 1px #fff; text-transform:uppercase; }
+	#lp835_btn a:hover { font-family: Arial, Helvetica, sans-serif; height: 27px; margin-top: 16px; text-decoration: none; padding:8px 25px; background: url(#{$img-path}monster/secrh-btn.png) repeat-x left top #ededed; font-size:13px; border:1px solid #bbbbbb; color: #673695; font-weight:bold; text-shadow:1px 1px 1px #fff; text-transform:uppercase; }
+	#browse { float:left; color:#fff; text-align:center; padding-top: 5px; }
+	#browse a { color:#fff; text-decoration:underline; }
+	#browse a:hover { color:#fff; text-decoration:none; }
+	#MformKeyword { width:100% !important; }
+	#MformLocation input{ margin-bottom:18px !important;}
+
+
+	#userRow { width:100%; margin:14px auto 0px auto; overflow:hidden; min-height:100px; background:#EEEEEE; display:none;}
+	#userRow .section{float:left; padding:3%; width:44%;}
+	.section ul{ margin:0; padding:0;}
+	.section ul li{ margin:0; padding:3px 0 3px 20px; list-style:none;}
+	.section ul li a{color:#0056AD; font-weight:bold; text-decoration:none;}
+	.section ul li a:hover{color:#0056AD; font-weight:bold; text-decoration:underline;}
+	#userRow .section h3{ font-size:11px; font-weight:bold; color:#333; padding-bottom:0 14px; margin:0px;}
+	.loging {background:url(#{$img-path}monster/login_gray.jpg) no-repeat left 2px; list-style:none;}
+	.newuser { background:url(#{$img-path}monster/newuser.jpg) no-repeat left 2px;}
+	.ps {background:url(#{$img-path}monster/postgray.jpg) no-repeat left 2px;}
+
+
+	#Employers{width:100%; margin:0px auto; overflow:hidden; min-height:100px; background:#fff;}
+	#Employers h2{ padding:10px 0 10px 0; margin:0; line-height:normal; color:#fff; font-size:16px; text-align:center; text-shadow:1px 1px 1px #000; text-transform: uppercase; background:#0058AE; width:100%;}
+	#Employers .postDIV{ padding:3%; float:left; border-bottom:1px solid #ddd; display:block; width:94%;}
+	#Employers .ecomm{  float:left; text-align:center; width:100%; padding-bottom:7px; display:none; }
+	.postDIV ul{ margin:0; padding:0; width:45%; float:left; padding-right:5%;}
+	.postDIV ul li{ margin:0; padding:3px 0 3px 20px; list-style:none;}
+	.postDIV ul li a{color:#0056AD; text-decoration:none;}
+	.postDIV ul li a:hover{color:#0056AD; text-decoration:underline;}
+
+	.login {background:url(#{$img-path}monster/login.jpg) no-repeat left top; list-style:none; padding-bottom:21px !important; }
+	.search { background:url(#{$img-path}monster/search.jpg) no-repeat left top; }
+	.contact { background:url(#{$img-path}monster/contact.jpg) no-repeat left top; }
+	.post { background:url(#{$img-path}monster/post-a-job.jpg) no-repeat left 3px; }
+
+	#btm-power{padding:7px 0px; color:#fff; text-align:right; font-size:10px;}
+	}
+	/* END MIN-WIDTH 50PX TO MAX WIDTH 319PX */
+
+
+	/* MIN-WIDTH 320PX TO MAX WIDTH 479PX */
+	@media(min-width:320px) and (max-width:479px) {
+	#TopRow { width:100%; overflow:hidden; }
+	#TopRow .fbwm { width:80%; float:left; font: bold 16px/19px Arial, Helvetica, sans-serif; color: #734E9D; padding:9px 7px 5px 7px; }
+	.fbwm img { max-width:100px; margin-top:1px; }
+	#TopRow .jmsi { width:20%; float:right; padding: 7px 7px 0 0; }
+	#main-cntr { border:5px solid #DDDDDD; overflow:hidden; font-size:11px; }
+	#jobseeker { float:left; background: url("#{$img-path}monster/pur-bg.png") repeat-x scroll left top #4e2f72; min-height:250px; width:100%; }
+	#jobseeker h1 { margin:7px 0 3px 0; padding:0; line-height:normal; color:#fff; font-size:24px; text-align:center; text-shadow:1px 1px 1px #000; text-transform: uppercase; }
+	#SearchArea { width:90%; margin:0px auto; overflow:hidden; }
+	#SearchArea label { padding-bottom:1px; font-size:11px; font-weight:bold; color:#fff; float:left; display:block; width:100%; }
+	#SearchArea input { width:100%; padding:5px; margin-bottom:5px; float:left; display:block; border:1px solid #4e2f73; background:#fff; height:30px ; }
+	#lp835_btn { margin:7px auto 10px auto; width:200px; text-align: center; }
+
+	#lp835_btn a { font-family: Arial, Helvetica, sans-serif; height: 27px; margin-top: 16px; text-decoration: none; padding:7px 25px; background: url(#{$img-path}monster/secrh-btn.png) repeat-x left top #ededed; font-size:13px; border:1px solid #bbbbbb; color: #893cd1; font-weight:bold; text-shadow:1px 1px 1px #fff; text-transform:uppercase; }
+	#lp835_btn a:hover { font-family: Arial, Helvetica, sans-serif; height: 27px; margin-top: 16px; text-decoration: none; padding:7px 25px; background: url(#{$img-path}monster/secrh-btn.png) repeat-x left top #ededed; font-size:13px; border:1px solid #bbbbbb; color: #673695; font-weight:bold; text-shadow:1px 1px 1px #fff; text-transform:uppercase; }
+
+
+
+	#browse { float:left; color:#fff; text-align:center; padding-top: 5px; }
+	#browse a { color:#fff; text-decoration:underline; }
+	#browse a:hover { color:#fff; text-decoration:none; }
+	#MformKeyword { width:100% !important; }
+
+
+
+	#userRow { width:100%; margin:14px auto 0px auto; overflow:hidden; min-height:100px; background:#EEEEEE; display:none;}
+	#userRow .section{float:left; padding:3%; width:44%;}
+	.section ul{ margin:0; padding:0;}
+	.section ul li{ margin:0; padding:3px 0 3px 20px; list-style:none;}
+	.section ul li a{color:#0056AD; font-weight:bold; text-decoration:none;}
+	.section ul li a:hover{color:#0056AD; font-weight:bold; text-decoration:underline;}
+	#userRow .section h3{ font-size:11px; font-weight:bold; color:#333; padding-bottom:0 14px; margin:0px;}
+	.loging {background:url(#{$img-path}monster/login_gray.jpg) no-repeat left 2px; list-style:none;}
+	.newuser { background:url(#{$img-path}monster/newuser.jpg) no-repeat left 2px;}
+	.ps {background:url(#{$img-path}monster/postgray.jpg) no-repeat left 2px;}
+
+
+	#Employers{width:100%; margin:0px auto; overflow:hidden; min-height:100px; background:#fff;}
+	#Employers h2{ padding:5px 0 5px 0; margin:0; line-height:normal; color:#fff; font-size:24px; text-align:center; text-shadow:1px 1px 1px #000; text-transform: uppercase; background:#0058AE; width:100%;}
+	#Employers .postDIV{ padding:2%; float:left; border-bottom:1px solid #ddd; display:block; width:96%;}
+	#Employers .ecomm{  float:left; text-align:center; width:100%; padding-bottom:7px; display:none; }
+	.postDIV ul{ margin:0; padding:0; width:45%; float:left; padding-right:5%;}
+	.postDIV ul li{ margin:0; padding:3px 0 3px 20px; list-style:none;}
+	.postDIV ul li a{color:#0056AD; text-decoration:none;}
+	.postDIV ul li a:hover{color:#0056AD; text-decoration:underline;}
+	.login {background:url(#{$img-path}monster/login.jpg) no-repeat left top; list-style:none; padding-bottom:21px !important;}
+	.search { background:url(#{$img-path}monster/search.jpg) no-repeat left top; }
+	.contact { background:url(#{$img-path}monster/contact.jpg) no-repeat left top; margin-top:7px !important; }
+	.post { background:url(#{$img-path}monster/post-a-job.jpg) no-repeat left 3px; }
+	#MformLocation input{ margin-bottom:18px !important;}
+	#btm-power{padding:7px 0px; color:#fff; text-align:right; font-size:10px;}
+
+	}
+	/* END MIN-WIDTH 320PX TO MAX WIDTH 767PX */
+
+	/* MIN-WIDTH 480PX TO MAX WIDTH 767PX */
+	@media(min-width:480px) and (max-width:767px) {
+	#TopRow { width:100%; overflow:hidden; }
+	#TopRow .fbwm { width:50%; float:left; font: bold 16px/19px Arial, Helvetica, sans-serif; color: #734E9D; padding:9px 7px 5px 7px; }
+	.fbwm img { max-width:110px;  }
+	#TopRow .jmsi { width:48%; float:right; padding: 7px 7px 0 0;  overflow: hidden;}
+	#main-cntr { border:5px solid #DDDDDD; overflow:hidden; font-size:11px; }
+	#jobseeker { float:left; background: url("#{$img-path}monster/pur-bg.png") repeat-x scroll left top #4e2f72; width:100%; }
+	#jobseeker h1 { margin:7px 0 3px 0; padding:0; line-height:normal; color:#fff; font-size:24px; text-align:center; text-shadow:1px 1px 1px #000; text-transform: uppercase; }
+	#SearchArea { width:94%; margin:0px auto; overflow:hidden; }
+	#SearchArea label { padding-bottom:1px; font-size:11px; font-weight:bold; color:#fff; float:left; display:block; width:100%; }
+	#SearchArea input { width:100%; padding:5px; margin-bottom:5px; float:left; display:block; border:1px solid #4e2f73; background:#fff; height:30px;   }
+	#lp835_btn a { font-family: Arial, Helvetica, sans-serif; height: 27px; margin-top: 18px; text-decoration: none; padding:5px 24px; background: url(#{$img-path}monster/secrh-btn.png) repeat-x left top #ededed; font-size:13px; border:1px solid #bbbbbb; color: #893cd1; font-weight:bold; text-shadow:1px 1px 1px #fff; text-transform:uppercase; }
+	#lp835_btn a:hover { font-family: Arial, Helvetica, sans-serif; height: 27px; text-decoration: none; padding:5px 24px; background: url(#{$img-path}monster/secrh-btn.png) repeat-x left top #ededed; font-size:13px; border:1px solid #bbbbbb; color: #673695; font-weight:bold; text-shadow:1px 1px 1px #fff; text-transform:uppercase; }
+	#browse { float:left; color:#fff; text-align:center; padding-top: 5px; }
+	#browse a { color:#fff; text-decoration:underline; }
+	#browse a:hover { color:#fff; text-decoration:none; }
+
+
+	#MformKeyword { width:35% !important; float:left; margin-right:7px !important;   }
+	#MformLocation{ width:33% !important; float:left; margin-right:7px !important;}
+	#lp835_btn { margin:21px auto 10px 0px; text-align: center; float:left; }
+
+	#userRow { width:100%; margin:14px auto 0px auto; overflow:hidden; min-height:100px; background:#EEEEEE; display:none;}
+	#userRow .section{float:left; padding:3%; width:44%;}
+	.section ul{ margin:0; padding:0;}
+	.section ul li{ margin:0; padding:3px 0 3px 20px; list-style:none;}
+	.section ul li a{color:#0056AD; font-weight:bold; text-decoration:none;}
+	.section ul li a:hover{color:#0056AD; font-weight:bold; text-decoration:underline;}
+	#userRow .section h3{ font-size:11px; font-weight:bold; color:#333; padding-bottom:0 14px; margin:0px;}
+	.loging {background:url(#{$img-path}monster/login_gray.jpg) no-repeat left 2px; list-style:none;}
+	.newuser { background:url(#{$img-path}monster/newuser.jpg) no-repeat left 2px;}
+	.ps {background:url(#{$img-path}monster/postgray.jpg) no-repeat left 2px;}
+
+
+	#Employers{width:100%; margin:0px auto; overflow:hidden; background:#fff;}
+	#Employers h2{ padding:5px 0 5px 0; margin:0; line-height:normal; color:#fff; font-size:24px; text-align:center; text-shadow:1px 1px 1px #000; text-transform: uppercase; background:#0058AE; width:100%;}
+	#Employers .postDIV{ padding:1%; float:left; border-bottom:1px solid #ddd; display:block; width:98%;}
+	#Employers .ecomm{  float:left; text-align:center; width:100%; padding-bottom:7px; display:none; }
+
+	.postDIV ul{ margin:0; padding:0; float:left; display:inline-block; width:40%;}
+	.postDIV ul:first-child { width:60%;}
+
+
+	.postDIV ul li{ margin:0; padding:3px 0 3px 20px; list-style:none; float:left; width:45%; text-align:left;}
+	.postDIV ul li a{color:#0056AD; text-decoration:none;}
+	.postDIV ul li a:hover{color:#0056AD; text-decoration:underline;}
+
+	.login {background:url(#{$img-path}monster/login.jpg) no-repeat left top; list-style:none; padding-bottom:21px; }
+	.search { background:url(#{$img-path}monster/search.jpg) no-repeat left top; width:50% !important; }
+	.contact { background:url(#{$img-path}monster/contact.jpg) no-repeat left top; }
+	.post { background:url(#{$img-path}monster/post-a-job.jpg) no-repeat left 3px; width:50% !important; }
+	#btm-power{padding:7px 0px; color:#fff; text-align:right; font-size:10px; }
+	.post br{ display:none;}
+	}
+	/* END MIN-WIDTH 480PX TO MAX WIDTH 767PX */
+
+
+
+	/* MIN-WIDTH 768PX TO MAX WIDTH 1023PX */
+	 @media(min-width:768px) and (max-width:1023px) {
+	#TopRow { width:100%; overflow:hidden; }
+	#TopRow .fbwm { width:50%; float:left; font: bold 16px/19px Arial, Helvetica, sans-serif; color: #734E9D; padding:9px 7px 5px 7px; }
+	.fbwm img { max-width:126px; margin-top:-1px; }
+	#TopRow .jmsi { width:48%; float:right; padding: 7px 7px 0 0;  overflow: hidden;}
+	#main-cntr { border:5px solid #DDDDDD; overflow:hidden; font-size:11px; }
+	#jobseeker { float:left; background: url("#{$img-path}monster/pur-bg.png") repeat-x scroll left top #4e2f72; width:100%; }
+	#jobseeker h1 { margin:7px 0 3px 0; padding:0; line-height:normal; color:#fff; font-size:24px; text-align:center; text-shadow:1px 1px 1px #000; text-transform: uppercase; }
+	#SearchArea { width:94%; margin:0px auto; overflow:hidden; }
+	#SearchArea label { padding-bottom:1px; font-size:11px; font-weight:bold; color:#fff; float:left; display:block; width:100%; }
+	#SearchArea input { width:100%; padding:5px; margin-bottom:5px; float:left; display:block; border:1px solid #4e2f73; background:#fff; height:31px;   }
+
+
+	#lp835_btn a { font-family: Arial, Helvetica, sans-serif; height: 27px; margin-top: 16px; text-decoration: none; padding:7px 21px; background: url(#{$img-path}monster/secrh-btn.png) repeat-x left top #ededed; font-size:13px; border:1px solid #bbbbbb; color: #893cd1; font-weight:bold; text-shadow:1px 1px 1px #fff; text-transform:uppercase; }
+	#lp835_btn a:hover { font-family: Arial, Helvetica, sans-serif; height: 27px; margin-top: 16px; text-decoration: none; padding:7px 21px; background: url(#{$img-path}monster/secrh-btn.png) repeat-x left top #ededed; font-size:13px; border:1px solid #bbbbbb; color: #673695; font-weight:bold; text-shadow:1px 1px 1px #fff; text-transform:uppercase; }
+	#browse { float:left; color:#fff; text-align:center; padding-top: 5px; }
+	#browse a { color:#fff; text-decoration:underline; }
+	#browse a:hover { color:#fff; text-decoration:none; }
+
+
+	#MformKeyword { width:45% !important; float:left; margin-right:16px !important;   }
+	#MformLocation{ width:35% !important; float:left; margin-right:16px !important;}
+	#lp835_btn { margin:22px auto 10px 0px; text-align: center; float:left; }
+
+	#userRow { width:100%; margin:14px auto 0px auto; overflow:hidden; min-height:100px; background:#EEEEEE; display:none;}
+	#userRow .section{float:left; padding:3%; width:44%;}
+	.section ul{ margin:0; padding:0;}
+	.section ul li{ margin:0; padding:3px 0 3px 20px; list-style:none;}
+	.section ul li a{color:#0056AD; font-weight:bold; text-decoration:none;}
+	.section ul li a:hover{color:#0056AD; font-weight:bold; text-decoration:underline;}
+	#userRow .section h3{ font-size:11px; font-weight:bold; color:#333; padding-bottom:0 14px; margin:0px;}
+	.loging {background:url(#{$img-path}monster/login_gray.jpg) no-repeat left 2px; list-style:none;}
+	.newuser { background:url(#{$img-path}monster/newuser.jpg) no-repeat left 2px;}
+	.ps {background:url(#{$img-path}monster/postgray.jpg) no-repeat left 2px;}
+
+
+	#Employers{width:100%; margin:0px auto; overflow:hidden; background:#fff;}
+	#Employers h2{ padding:5px 0 5px 0; margin:0; line-height:normal; color:#fff; font-size:24px; text-align:center; text-shadow:1px 1px 1px #000; text-transform: uppercase; background:#0058AE; width:100%;}
+	#Employers .postDIV{ padding:1%; float:left; border-bottom:1px solid #ddd; display:block; width:98%;}
+	#Employers .ecomm{  float:left; text-align:center; width:100%; padding-bottom:7px; display:none; }
+
+	.postDIV ul{ margin:0; padding:0; float:left; display:inline-block; width:40%;}
+	.postDIV ul:first-child { width:60%;}
+
+
+	.postDIV ul li{ margin:0; padding:3px 0 3px 20px; list-style:none; float:left; width:40%; text-align:left;}
+	.postDIV ul li a{color:#0056AD; text-decoration:none;}
+	.postDIV ul li a:hover{color:#0056AD; text-decoration:underline;}
+
+	.login {background:url(#{$img-path}monster/login.jpg) no-repeat left top; list-style:none; padding-bottom:21px; }
+	.search { background:url(#{$img-path}monster/search.jpg) no-repeat left top; }
+	.contact { background:url(#{$img-path}monster/contact.jpg) no-repeat left top; }
+	.post { background:url(#{$img-path}monster/post-a-job.jpg) no-repeat left 3px; width:50% !important; }
+	#btm-power{padding:9px 0px; color:#fff; text-align:right; font-size:10px; margin-top: -26px;}
+	.post br{ display:none;}
+	}
+	/* END MIN-WIDTH 768PX TO MAX WIDTH 1023PX */
+
+
+
+
+
+	/* MIN-WIDTH 1024PX TO MAX WIDTH 1920PX */
+	@media(min-width:1024px) and (max-width:1920px) {
+	#TopRow { max-width: 1044px; overflow:hidden; }
+	#TopRow .fbwm { width:75%; float:left; font: bold 16px/19px Arial, Helvetica, sans-serif; color: #734E9D; padding:9px 7px 5px 7px; }
+	.fbwm img { max-width:126px; margin-top:-1px; }
+	#TopRow .jmsi { width:20%; float:right; padding: 7px 7px 0 0; }
+	#main-cntr { border:5px solid #DDDDDD; overflow:hidden; font-size:11px; }
+	#jobseeker { float:left; background: url("#{$img-path}monster/pur-bg.png") repeat-x scroll left top #4e2f72; width:40%; min-height: 155px; }
+	#jobseeker h1 { border-bottom: 1px solid #FFFFFF; color: #FFFFFF; font-size: 16px; line-height: normal; margin: 5px 0 3px; padding: 3px 11px;
+	text-align: left; text-shadow: 1px 1px 1px #000000; text-transform: uppercase; padding-bottom:5px\9;}
+
+	#SearchArea { width:94%; margin:10px auto; overflow:hidden; }
+	#SearchArea label { padding-bottom:1px; font-size:11px; font-weight:bold; color:#fff; float:left; display:block; width:100%; }
+	#SearchArea input { width:100%; padding:5px; margin-bottom:5px; float:left; display:block; border:1px solid #4e2f73; background:#fff; height:28px;   }
+	#SearchArea .MorangeButton { width:33px !important; border-right:none !important; cursor: pointer; background:url(#{$img-path}monster/search-icon.png) no-repeat left top #eee !important; text-decoration:none; font-family:Arial, Helvetica, sans-serif; border:0px; height:27px; float:left; margin-top:15px; text-indent:-3000px; overflow:hidden; }
+	#browse { float:left; text-align:center !important; padding-top:8px; color:#fff; font-size:11px; font-family:Arial, Helvetica, sans-serif; width:250px; }
+	#browse { float:left; color:#fff; text-align:center; padding:5px 0 14px 0; width: 100%; }
+	#browse a { color:#fff; text-decoration:underline; }
+	#browse a:hover { color:#fff; text-decoration:none; }
+	#MformKeyword { width:45% !important; float:left; margin-right:7px !important;   }
+	#MformLocation{ width:35% !important; float:left; margin-right:7px !important;}
+	#userRow { width:30%; margin:0 auto; overflow:hidden; background:#EEEEEE; float:left; min-height: 155px; border-top:31px solid #704b9a; }
+	#userRow .section{float:left; padding:1% 3%; width:47%;}
+	#userRow .section h3{ font-size:12px; font-weight:bold; color:#333; padding:10px 0px; margin:0px;}
+	.section ul{ margin:0; padding:0;}
+	.section ul li{ margin:0; padding:3px 0 10px 20px; list-style:none;}
+	.section ul li a{color:#0056AD; font-weight:bold; text-decoration:none;}
+	.section ul li a:hover{color:#0056AD; font-weight:bold; text-decoration:underline;}
+	.loging {background:url(#{$img-path}monster/login_gray.jpg) no-repeat left 2px; list-style:none;}
+	.newuser { background:url(#{$img-path}monster/newuser.jpg) no-repeat left 2px;}
+	.ps {background:url(#{$img-path}monster/postgray.jpg) no-repeat left 2px;}
+	#Employers{width:30%; margin:0px auto; overflow:hidden; background:#fff; float:left;}
+	#Employers h2{ padding:7px 0 4px 10px; padding-bottom:6px\9; margin:0; line-height:normal; color:#fff; font-size:16px; text-align:left; text-shadow:1px 1px 1px #000; text-transform: uppercase; background:#0058AE; width:100%;}
+
+	#Employers .postDIV{ padding:2%; float:left; border-bottom:1px solid #ddd; display:block;}
+	#Employers .ecomm{  float:left; text-align:center; width:100%;  }
+	.postDIV ul{ margin:0; padding:0; float:left; display:inline-block; width:40%;}
+	.postDIV ul:first-child { width:60%;}
+	.postDIV ul li{ margin:0; padding:3px 0 3px 20px; list-style:none; float:left; width:40%; text-align:left;}
+	.postDIV ul li a{color:#0056AD; text-decoration:none;}
+	.postDIV ul li a:hover{color:#0056AD; text-decoration:underline;}
+	.login {background:url(#{$img-path}monster/login.jpg) no-repeat left top; list-style:none; padding-bottom:0px !important; }
+	.search { background:url(#{$img-path}monster/search.jpg) no-repeat left top;  width: 30% !important; }
+	.contact { background:url(#{$img-path}monster/contact.jpg) no-repeat left top; }
+	.post { background:url(#{$img-path}monster/post-a-job.jpg) no-repeat left 3px; width:50% !important; }
+	#btm-power{padding:7px 0px; color:#fff; text-align:right; font-size:10px; margin-top: -26px;}
+	.post br{ display:none;}
+	.nav ul:hover .current{ color:#333 !important; text-decoration:underline;}
+
+	}
+	/* END MIN-WIDTH 1024PX TO MAX WIDTH 1920PX */
+
+	#jobs-monster-search {margin-bottom:20px;}
+	.skipLinksContainer { display:none; }
+	#Employers h2 { line-height:20px; line-height:normal\9; }
+	#jobseeker h1 { line-height:20px; line-height:normal\9; }
+
+	@media screen and (-webkit-min-device-pixel-ratio:0) {
+		::i-block-chrome, #btm-power {
+			padding-top:24px;
+		}
+	}
+}//end of monster-responsive-mod

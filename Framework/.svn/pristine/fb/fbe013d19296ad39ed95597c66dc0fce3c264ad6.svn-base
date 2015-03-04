@@ -1,0 +1,71 @@
+<p:out var="height" value="${cacheScope.height}"/>
+<p:out var="width" value="${cacheScope.width}" />
+
+<c:if test="${empty height or empty width}">
+	<p:out var="height" value="341" />
+	<p:out var="width" value="609" />
+</c:if>
+<c:choose>
+	<c:when test="${cacheScope.provider eq 'brightcove'}">
+		<div class="videoWrapper">
+		    <div id="brightcove_video_with_ads" 
+		    	 class="videoplayer" 
+		    	 data-schema="1" 
+		    	 data-player="article"
+		         data-params="@videoPlayer=${cacheScope.videoId}">
+		    </div>
+		  </div>
+	</c:when>
+	<c:when test="${cacheScope.provider eq 'NDN'}">
+		<p:script src="http://launch.newsinc.com/js/embed.js" />
+		<div
+		    class="ndn_embed"
+		    data-config-widget-id="1"
+		    style="width:${width}px;height:${height}px;"
+		    data-config-type="VideoPlayer/Single"
+		    data-config-tracking-group="10557"
+		    data-config-video-id="${cacheScope.videoId}"
+		    data-config-site-section="site_section_id">
+		</div>
+	</c:when>
+	<c:when test="${cacheScope.provider eq 'CineSport'}">
+		<div class="tcCenter">
+			<%--
+			<!-- Start CineSport Code -->
+			<iframe id="csprt" 
+					name="csprt" 
+					frameborder="0" 
+					align="top,left" 
+					marginheight="0" 
+					marginwidth="0" 
+					scrolling="no" 
+					width="${width}" 
+					height="${height}"  
+					src="${cacheScope.videoId}">
+			</iframe>
+			<script type="text/javascript" 
+					language="JavaScript" 
+					async defer="defer">(function() { var csprtjs=document.createElement('script'); csprtjs.type='text/javascript'; csprtjs.async = true; csprtjs.src='http://cinesport.boston.com/static/container.js';var s=document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(csprtjs, s);})();
+			</script>
+			<!-- End CineSport Code -->
+			--%>
+			<iframe id="inline-csprt" 
+			name="inline-csprt" 
+			frameborder="0" 
+			align="top,left" 
+			marginheight="0" 
+			marginwidth="0" 
+			scrolling="no" 
+			width="${width}" 
+			height="${height}" 
+			src="http://cinesport.boston.com/inline/${cacheScope.videoId}/#nologo;"></iframe>
+			<script type="text/javascript">
+			  (function() {
+			    var csprtjs = document.createElement('script'); csprtjs.type = 'text/javascript'; csprtjs.async = true;
+			    csprtjs.src = 'http://edgecdn.cinesport.com/container.js';
+			    var first_s = document.getElementsByTagName('script')[0]; first_s.parentNode.insertBefore(csprtjs, first_s);
+			  })();
+			</script>
+		</div>
+	</c:when>
+</c:choose>

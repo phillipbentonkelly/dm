@@ -1,0 +1,10 @@
+<%-- This is here temporarily. Eventually it will move from leafs to the masthead - Eddie --%>
+<p:currentObject webType="WT" channel="Boston.com" />
+
+<!-- ad layer path = ${adLayer} -->
+
+<div class="ad-container ad-container--ad_lead1">
+  <div class="ad-container__ad-slot">
+  	<p:include pageZoneName="ad_lead1" inherits="${adLayer}" />
+  </div>
+</div><!-- / ad-container -->

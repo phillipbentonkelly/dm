@@ -1,0 +1,154 @@
+// *
+// * Content Media
+// *
+
+$content-media: 'content-media';
+
+// ------------------------------------------------------------
+// Default Styles
+// ------------------------------------------------------------
+
+.#{$content-media}  {
+  margin-bottom: spacer(px, xx-large);
+  margin-bottom: spacer(rem, xx-large);
+  background-color: color(black);
+  // Set text-align to center image
+  text-align: center;
+
+  // Media - Social
+  &--embed {
+    background: color(white);
+    > iframe {
+      width: 100% !important; // sorry. overriding twitter JS
+    }
+    figure > iframe {
+      margin: 0 auto !important; // sorry. overriding twitter JS
+    }
+  }
+
+  // Media - Image
+  &__image {
+    // Removes gap between image and caption
+    display: block;
+    margin: 0 auto;
+  }
+
+  // Media Caption
+  &__caption {
+    padding: 7px 8px 6px 8px;
+    @include font-scale(xx-small);
+    color: color(white);
+    font-weight: $fw-bold;
+    text-align: left;
+  }
+
+  // Media Credit
+  &__credit {
+    color: color(gray);
+    font-style: italic;
+    font-weight: $fw-medium;
+  }
+
+  // NDN video player
+  .ndn_embed {
+    height: 216px;
+  }
+  //social embeds
+  iframe {
+    background-color: color(white);
+  }
+}
+
+// ------------------------------------------------------------
+// Custom Media Query Styles
+// ------------------------------------------------------------
+
+@include media-query(480) {
+  .#{$content-media}  {
+    // NDN video player
+    .ndn_embed {
+      height: 259px;
+    }
+  }
+}
+
+// ------------------------------------------------------------
+// Tablet Styles
+// ------------------------------------------------------------
+
+@include media-query(tablet) {
+  .#{$content-media}  {
+    margin-bottom: spacer(px, x-large);
+    margin-bottom: spacer(rem, x-large);
+
+    &--wide {
+      @include constrain;
+    }
+
+    // Inline Left Media
+    &--inline-left {
+      float: left;
+      width: 50%;
+      margin-right: spacer(px, large);
+      margin-right: spacer(rem, large);
+      margin-bottom: spacer(px);
+      margin-bottom: spacer(rem);
+      margin-left: 3%; // constrain mixin is sets width to 94% at tablet
+      .content-text & {
+        margin-left: 0;
+      }
+    }
+
+    // Inline Reight Media
+    &--inline-right {
+      float: right;
+      width: 50%;
+      margin-left: spacer(px, large);
+      margin-left: spacer(rem, large);
+      margin-bottom: spacer(px);
+      margin-bottom: spacer(rem);
+      margin-right: 3%; // constrain mixin is sets width to 94% at tablet
+      .content-text & {
+        margin-right: 0;
+      }
+    }
+
+    // Media Caption
+    &__caption {
+      @include font-scale(xxx-small);
+    }
+
+    // NDN video player
+    .ndn_embed {
+      height: 414px;
+    }
+
+    // Social
+    &--embed {
+      > figure {
+        padding-top: spacer(px) !important;
+        padding-top: spacer(rem) !important;
+      }
+    }
+
+  }
+}
+
+// ------------------------------------------------------------
+// Desktop Styles
+// ------------------------------------------------------------
+
+@include media-query(desktop) {
+  .#{$content-media}  {
+    // Inline Left Media
+    &--inline-left {
+      margin-left: 0; // constrain mixin is sets width to 96% at tablet
+    }
+
+    // Inline Reight Media
+    &--inline-right {
+      margin-right: 0; // constrain mixin is sets width to 96% at tablet
+    }
+
+  }
+}

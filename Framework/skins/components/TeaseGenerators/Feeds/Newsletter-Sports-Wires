@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EOMSearch xmlns="http://EidosMedia.com/EOM/SearchEngine" xmlns:q="http://EidosMedia.com/EOM/SearchEngine/query" xmlns:qa="http://EidosMedia.com/EOM/SearchEngine/query/alias" xmlns:qm="http://EidosMedia.com/EOM/SearchEngine/query/macro" xmlns:qui="http://EidosMedia.com/EOM/SearchEngine/query/UI" xmlns:se="http://EidosMedia.com/EOM/SearchEngine">
+<!--
+{comments}
+BDC-1862 adding back newsletter queries
+{comments}
+-->
+	<q:Query type="INDEX">
+		<q:Properties>
+			<q:Index name="boston_2011-2020@methcms_eomse1"/>
+			<q:MaxResultItems value="6"/>
+			<q:Sort on="ObjectMetadata/OnlineProducts/OnlineProduct/LastPublicationDate" type="NDESCENDING"/>
+		</q:Properties>
+		<q:Boolean>
+			<q:AND>
+				<ObjectInfo>
+					<q:OR>
+						<type>EOM::Story</type>
+						<type>EOM::CompoundStory</type>
+						<type>WireStory</type>
+					</q:OR>
+					<Created q:op="RANGE">
+						<qm:TDelta days="-1" secs="-0"/>
+					</Created>
+				</ObjectInfo>
+				<se:Attributes xmlns="">
+					<ObjectMetadata>
+						<Categorization>
+							<Taxonomies>
+								<Taxonomy>Sports</Taxonomy>
+							</Taxonomies>
+						</Categorization>
+						<OnlineProducts>
+							<OnlineProduct>
+								<ProductName>Boston.com</ProductName>
+							</OnlineProduct>
+						</OnlineProducts>
+						<Reference>
+							<Provider>AP</Provider>
+						</Reference>
+					</ObjectMetadata>
+				</se:Attributes>
+			</q:AND>
+		</q:Boolean>
+		<qui:Query_UI domain="methode" version="1.1" xmlns="http://EidosMedia.com/EOM/SearchEngine/query/UI">
+			<selItem list="type" name="Web Publication" tab="usageticket"/>
+		</qui:Query_UI>
+	</q:Query>
+</EOMSearch>

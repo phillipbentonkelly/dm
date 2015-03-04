@@ -1,0 +1,77 @@
+// *
+// *  Icons 
+// *
+
+// ------------------------------------------------------------
+// Standard
+// ------------------------------------------------------------
+
+
+.special-img {
+  background-image: url('/bdc-img/bdc-sprite--special.png');
+  text-indent: -9999px;
+  display: inline-block;
+  
+  &.candidate-headshot {
+    height: 80px;
+    width: 80px;
+
+    // Chales Baker
+    &--baker {
+    	@include sprite-position($election-baker);
+    }
+
+    // Donald Berwick
+    &--berwick {
+    	@include sprite-position($election-berwick);
+    }
+  	
+  	// Martha Coakley
+    &--coakley {
+    	@include sprite-position($election-coakley);
+    }
+
+  	// Mark Fisher
+    &--fisher {
+    	@include sprite-position($election-fisher);
+    }
+
+    // Steve Grossman
+    &--grossman {
+    	@include sprite-position($election-grossman);
+    }
+  }
+
+  &.logo {
+    text-indent: -9999px;
+    display: inline-block;
+    @include sprite($election-logo);
+  }
+
+  &.slider {
+    text-indent: -9999px;
+    display: inline-block;
+    @include sprite-position($election-slider);
+    @include sprite-height($election-slider);
+    @include sprite-width($election-slider);
+  }
+  &.slider-closed {
+    text-indent: -9999px;
+    display: inline-block;
+    @include sprite-position($election-slider-closed);
+    @include sprite-height($election-slider-closed);
+    @include sprite-width($election-slider-closed);
+  }
+}
+
+.winner-blue {
+  @include sprite($election-check-bluebox);
+  text-indent: -9999px;
+  display: inline-block;
+}
+
+.winner-red {
+  @include sprite($election-check-redbox);
+  text-indent: -9999px;
+  display: inline-block;
+}

@@ -1,0 +1,88 @@
+<%--
+{comments}
+BDC-1541 added ad_ingallery div
+{comments}
+--%>
+
+<p:currentObject webType="WT" content="gallery" metadata="meta" channel="Boston.com" />
+
+<!-- Gallery Slides -->
+<div class="content-gallery__slides">
+  <ul class="content-gallery__slide-list">
+    
+    <p:out var="slideClass" value="content-gallery__slide" />
+    
+    <p:out var="mediaClass" value="" />
+    <c:if test="${galleryType eq 'text'}">
+    	<p:out var="mediaClass" value="content-media--inline-right" />
+    </c:if>
+    
+    <%-- <bdc:rwGetGallery webObject="${currentObject}" var="galleryData" format="${galleryFormat}" /> --%>
+    <bdc:rwCompoundGallery webObject="${currentObject}" var="galleryData" format="${galleryFormat}" />
+    <c:forEach items="${galleryData}" var="galleryItem" varStatus="loop">
+    	<c:choose>
+    		<c:when test="${loop.first}">
+    			<p:out var="liClass" value="content-gallery__slide content-gallery__slide-first" />
+    		</c:when>
+    		<c:otherwise>
+    			<p:out var="liClass" value="content-gallery__slide" />
+    		</c:otherwise>
+    	</c:choose>
+    	
+    	<li class="${liClass}" data-loaded="false" data-slide-num="${loop.count}">
+    		<%--
+    			must do: figure out how to add --embed to the end of content-media when we're not in a photo gallery
+    		--%>
+    		<p:out var="contentMedia" value="content-media" />
+    		<c:if test="${galleryItem.type eq 'External'}">
+    			<p:out var="contentMedia" value="content-media--embed" />
+    		</c:if>
+    		
+    		<div class="${contentMedia} content-media__lead ${mediaClass}">
+	    		<figure>
+	    			<c:choose>
+	    				<c:when test="${galleryItem.type eq 'Photo'}">
+	    					<img src="#" data-img-src="${galleryItem.imageSrc}" class="content-media__image js-image-load" alt="${galleryItem.altText}"/>
+	    				</c:when>
+	    				<c:when test="${galleryItem.type eq 'Video'}">
+	    					<p:getObject uuid="${galleryItem.id}" var="webObject" />
+	    					<bdc:rwVideoMarkup webObject="${webObject}" />
+	    				</c:when>
+	    				<c:when test="${galleryItem.type eq 'External'}">
+	    					${galleryItem.fragment}
+	    				</c:when>
+	    			</c:choose>
+	    			<c:if test="${fn:trim(galleryItem.credit) ne ''}">
+  						<figcaption class="content-media__caption"> 
+  							<div class="content-media__credit">${galleryItem.credit}</div>
+  						</figcaption>
+ 					</c:if>
+	    		</figure>
+	    	</div>
+	    	
+	    	<c:choose>
+	    		<c:when test="${loop.first}">
+		    		<!-- Content Byline -->
+				    <p:inline url="$configurationURI/Framework/skins/leaf/common/byline.jpt" />
+				    <!-- Content Text - Lead -->
+				    <p:inline url="$configurationURI/Framework/skins/leaf/common/text.jpt" />
+	    		</c:when>
+	    		<c:otherwise>
+	    			<div class="content-text content-text--gallery">
+		  				<p class="content-text__text content-text--gallery__text--title">
+		  					${galleryItem.headline}
+		  				</p>
+						${galleryItem.caption}
+					</div>
+	    		</c:otherwise>
+	    	</c:choose>
+	    	
+    	</li>
+    </c:forEach>
+   
+  </ul>
+  <c:if test="${galleryType ne 'text'}">
+  	<p:inline url="$configurationURI/Framework/skins/leaf/gallery/gallery_controls_overlay.jpt" />
+  </c:if>
+</div>
+<div id="ad_ingallery" class="out-of-page-ad"></div>

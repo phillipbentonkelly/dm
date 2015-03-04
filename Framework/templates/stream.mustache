@@ -1,0 +1,16 @@
+{{#showFilter}}
+<nav class="filter-nav-mod">
+    <ul class="filter-nav fn-list ups-filter-mod" data-source="sections" data-template="filter-nav" data-repeat="6">
+        {{#filters}}
+        <li class="fn-item">
+            <a class="fn-link js-quick-filter js-quick-filter-{{id}} {{classes}}"  data-filters="{{id}}" href="#filter-{{id}}">{{name}}</a>
+        </li>
+        {{/filters}}
+    </ul><!-- /filter-nav-mod -->
+</nav>
+{{/showFilter}}
+<div class="stream-notification" data-new-count="0">
+  <a class="load-new-stream-items" href="#main-stream"><span class="new-item-count">{{newItemCount}}</span> new</a>
+</div>
+<div class="stream-items"></div>
+<a class="btn-strong load-stories-btn" href="#">Load More Stories</a>

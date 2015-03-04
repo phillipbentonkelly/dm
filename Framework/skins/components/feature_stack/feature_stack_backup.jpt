@@ -1,0 +1,100 @@
+<%@ page import="java.lang.Math" %>
+<p:out var="adLayer" value="${cacheScope.adLayer}" />
+<p:out var="trackingSection" value="${cacheScope.sectionForTracking}" scope="application" />
+
+<p:out var="numberOfAdsInFeatureStackMiddle" value="${cacheScope.numberOfAdsInFeatureStackMiddle}" />
+<p:currentObject metadata="fsMeta" />
+
+<%-- Visual Revenue: money you can see with your eyes in your face-head! --%>
+<c:if test="${not empty cacheScope.dwp}">
+	<p:getObject path="${cahceScope.dwp}" var="dwpObj" />
+	<p:object webObject="${dwpObj}" metadata="dwpVRMeta" /> 
+	<p:out var="VREnabled"	xvalue="$dwpVRMeta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/VisualRevenue" />
+	<c:choose>
+		<c:when test="${VREnabled eq 'True'}">
+			<p:out var="VisRev" value='data-vr-zone="Feature Stack"' />
+		</c:when>
+		<c:otherwise>
+			<p:out var="VisRev" value="" />
+		</c:otherwise>
+	</c:choose>
+</c:if>
+		
+
+<%-- Determine the number of iterations we need to process the zone --%>
+<p:out var="stackAdBreak" xvalue="$fsMeta//ObjectMetadata/OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/AdInterval" />
+
+<c:if test="${empty stackAdBreak or stackAdBreak eq ''}">
+	<p:out var="stackAdBreak" value="5" />
+</c:if>
+<p:getPageZone name="features" var="stack_items" />
+<p:out var="zone_size" value="${stack_items.size}" />
+
+<%
+	String adBreak = (String)pageContext.getAttribute("stackAdBreak");
+	String zoneSize = (String)pageContext.getAttribute("zone_size");
+	
+	double iterations = (Double.parseDouble(zoneSize) / Double.parseDouble(adBreak));
+	double rounded = Math.round(iterations);
+	if(iterations > rounded) rounded += 1;
+	pageContext.setAttribute("iterations", rounded);
+%>
+
+<fmt:parseNumber var="iterations" value="${iterations - 1}" integerOnly="true" />
+<p:out var="featureStackAdMiddleCounter" value="0" />
+<div class="feat-tz-fader">
+	<section id="feat-tz-top" class="feat-tz-mod"
+		data-transition="slide">
+		<div class="feat-tz-scroller nocontent" ${VisRev}>
+			
+		<c:choose> <%-- Fix for situations when a feature stack has 0 items in it to prevent weird "divide by 0 errors". --%>
+			<c:when test="${zone_size == 0}">
+				<article class="feat-tz ad-featurestack ad ad-mod" id="ad_featurestack2"></article>
+			</c:when>
+			<c:otherwise>
+				<c:forEach begin="0" end="${iterations}" var="count" varStatus="counter">
+					<p:out var="adcount" value="${counter.count + 1}" />
+					<p:include pageZoneName="features" templateName="feature_stack_item" maxItems="${(count + 1) * stackAdBreak}" offset="${count * stackAdBreak}">
+						<p:param name="dwp" value="${cacheScope.dwp}" />
+						<p:param name="trackingSection" value="${trackingSection}" />
+						<p:param name="iteration" value="${count + 1}" />
+					</p:include>
+					
+					<%-- ad_featurestacksponsor (evens), ad_featurestack (odds) --%>
+					<%--
+					<c:choose>
+						<c:when test="${count % 2 == 0}">
+							<article class="feat-tz-ad ad-featurestack" id="ad_featurestack"></article>
+						</c:when>
+						<c:otherwise>
+							<article class="feat-tz-ad ad-featurestacksponsor" id="ad_featurestacksponsor"></article>
+						</c:otherwise>
+					</c:choose>
+					--%>
+					
+					<c:choose>
+						<c:when test="${adcount == 2 and featureStackAdMiddleCounter le numberOfAdsInFeatureStackMiddle}">
+							<article class="feat-tz-ad ad-featurestack" id="ad_featurestack1"></article>
+							<p:out var="featureStackAdMiddleCounter" value="${featureStackAdMiddleCounter + 1}" />
+						</c:when>
+						<c:when test="${adcount == 3 and featureStackAdMiddleCounter le numberOfAdsInFeatureStackMiddle}">
+							<article class="feat-tz-ad ad-featurestack" id="ad_featurestack2"></article>
+							<p:out var="featureStackAdMiddleCounter" value="${featureStackAdMiddleCounter + 1}" />
+						</c:when>
+						<c:when test="${adcount == 4 and featureStackAdMiddleCounter le numberOfAdsInFeatureStackMiddle}">
+							<article class="feat-tz-ad ad-featurestack" id="ad_featurestack3"></article>
+							<p:out var="featureStackAdMiddleCounter" value="${featureStackAdMiddleCounter + 1}" />
+						</c:when>
+						<c:when test="${adcount == 5 and featureStackAdMiddleCounter le numberOfAdsInFeatureStackMiddle}">
+							<article class="feat-tz-ad ad-featurestack" id="ad_featurestack4"></article>
+							<p:out var="featureStackAdMiddleCounter" value="${featureStackAdMiddleCounter + 1}" />
+						</c:when>
+					</c:choose>
+					
+				</c:forEach>
+			</c:otherwise>
+		</c:choose>
+	
+		</div> <!--  /feat-tz-scroller -->
+	</section> <!-- /feat-tz-mod -->
+</div> <!-- /feat-tz-fader -->

@@ -1,0 +1,100 @@
+<!-- share module -->		
+<p:url type="context" var="facebook256" value="/img/social_icons/facebook-256.png"/>
+<p:url type="context" var="twitter256" value="/img/social_icons/twitter-256.png"/>
+<p:url type="context" var="pinterest256" value="/img/social_icons/pinterest-256.png"/>
+<p:url type="context" var="googleplus256" value="/img/social_icons/googleplus-256.png"/>
+<p:url type="context" var="linkedin256" value="/img/social_icons/linkedin-256.png"/>
+<p:url type="context" var="stumpleupon256" value="/img/social_icons/stumbleupon-256.png"/>
+<p:url type="context" var="reddit256" value="/img/social_icons/reddit-256.png"/>
+<p:url type="context" var="tumblr256" value="/img/social_icons/tumblr-256.png"/>
+<p:url type="context" var="email256" value="/img/social_icons/email-256.png"/>
+
+<div class="share-mod mfp-hide" id="mfp-share">
+	<h1 class="share-overline">Share</h1>
+	<h2 class="share-h title"></h2>
+
+	<div class="share-icon-mod">
+		<ul class="share-icon-list">
+			<li class="share-icon facebook">
+				<a href="#" class="share-icon-link" data-provider="facebook">
+					<img src="${facebook256}" alt="facebook">
+				</a>
+			</li>
+			<li class="share-icon twitter">
+				<a href="#" class="share-icon-link" data-provider="twitter">
+					<img src="${twitter256}" alt="twitter">
+				</a>
+			</li>
+			<li class="share-icon pinterest">
+				<a href="#" class="share-icon-link" data-provider="pinterest">
+					<img src="${pinterest256}" alt="pinterest">
+				</a>
+			</li>
+			<li class="share-icon googleplus">
+				<a href="#" class="share-icon-link" data-provider="googleplus">
+					<img src="${googleplus256}" alt="google plus">
+				</a>
+			</li>
+			<li class="share-icon linkedin">
+				<a href="#" class="share-icon-link" data-provider="linkedin">
+					<img src="${linkedin256}" alt="Linked In">
+				</a>
+			</li>
+			<li class="share-icon stumbleupon">
+			    <a href="#" class="share-icon-link" data-provider="stumbleupon">
+					<img src="${stumbleupon256}" alt="StumbleUpon">
+			    </a>
+			</li>
+			<li class="share-icon reddit">
+			    <a href="#" class="share-icon-link" data-provider="reddit">
+					<img src="${reddit256}" alt="Reddit">
+			    </a>
+			</li>	
+			<li class="share-icon tumblr">
+			    <a href="#" class="share-icon-link" data-provider="tumblr">
+					<img src="${tumblr256}" alt="Tumblr">
+			    </a>
+			</li>						
+			<li class="share-icon email">
+				<a href="#" class="share-icon-link"  data-provider="email">
+					<img src="${email256}" alt="email">
+				</a>
+			</li>
+		</ul>
+		<div class="share-message">
+	      <form action="" method="post" class="share-form form">
+			<div class="form-row">
+				<label for="recipient_email">To</label>
+				<input name="recipient_email" class="" type="text" placeholder="Separate multiple addresses with a comma"/>		
+				<label for="recipient_email" class="error">Please enter valid email addresses</label>                      				
+			</div>
+			<div class="form-row">
+				<label for="share_message">Message<!--(<span class="char-count">80</span> characters remainging) --></label>
+				<textarea name="share_message" class="share-message-textarea textarea"></textarea>					
+			</div>
+
+			<div class="form-row">
+				<label for="your_email">Your email address</label>
+				<input name="your_email" class="" type="text" placeholder=""/>
+				<label for="your_email" class="error">Please enter a valid email address</label>
+			</div>
+			<div class="form-row">
+				<input type="submit" value="Send" class="submit-btn">
+				<a href="#" class="btn-link btn-small cancel-link">cancel</a>				
+			</div>
+	      </form>
+		</div>
+		<%--
+		// TODO: get this part working with the shorturl ~jesse		
+		<div class="copy">
+			<div class="copy-txt">
+				<h1 class="copy-txt-link"></h1>
+			</div>
+		</div>
+		--%>
+	</div>
+	<%-- Share Modal Ad --%>
+	<%-- <section class="share-ad-banner-mod">
+		<div id="ad_share"></div>
+	</section> --%>
+</div><!-- .share-mod -->

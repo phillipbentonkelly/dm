@@ -1,0 +1,40 @@
+<%--
+{comments}
+BDC-1633 - related links widget
+{comments}
+--%>
+
+<%--
+	Based on:
+	/bcom-redesign-beta/bdc-markup/page-content/modules/related-links.php
+--%>
+
+<p:currentObject webType="WT" content="story" metadata="meta" channel="Boston.com" />
+
+<bdc:getTrackingData webObject="${currentObject}" var="tracking" />
+
+<bdc:rwRelatedLinks var="rl" webObject="${currentObject}" />
+  
+<c:if test="${rl.universalCount > 0}">
+  	<%-- this is ugly, but there appears to be no p:param in xslt... --%>
+	<div class="related-links${displayData.width == '1' ? ' related-links--wide' : ''}">
+	  <h3 class="related-links__header">Related Link<c:if test="${rl.universalCount > 1}">s</c:if></h3>
+	  <ul class="related-links__list">
+	  
+	  	<c:forEach items="${rl.universalLinks}" var="rl" varStatus="loop">
+	  		<c:if test="${not empty rl.text}">
+	  			<li class="related-links__list-item">
+	  			<c:choose>
+	  				<c:when test="${not empty rl.id}">
+	  					<bdc:link uuid="${rl.id}" linkParam="p1=related_${tracking.pageAsset}">${rl.text}</bdc:link>
+	  				</c:when>
+	  				<c:otherwise>
+	  					<bdc:link value="${rl.url}" linkParam="p1=related_${tracking.pageAsset}">${rl.text}</bdc:link>
+	  				</c:otherwise>
+	  			</c:choose>
+	  		</c:if>
+	  	</c:forEach>
+
+	  </ul>
+	</div><!-- / content-related -->
+</c:if>

@@ -1,0 +1,17 @@
+<h1>News all stream</h1>
+<p:include pageZoneName="filter_1" />
+<p></p>
+<hr/>
+<hr/>
+<hr/>
+<hr/>
+<p></p>
+<h1>backbone news stream</h1>
+<p:include pageZoneName="filter_2" />
+<p></p>
+<hr/>
+<hr/>
+<hr/>
+<hr/>
+<p></p>
+<p:include pageZoneName="filter_3" />

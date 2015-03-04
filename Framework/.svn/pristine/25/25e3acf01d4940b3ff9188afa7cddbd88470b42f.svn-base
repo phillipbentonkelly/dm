@@ -1,0 +1,2 @@
+<p:out var="name" value="${cacheScope.name}" />
+name: ${name}

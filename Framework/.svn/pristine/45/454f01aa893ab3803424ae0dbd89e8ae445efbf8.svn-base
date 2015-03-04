@@ -1,0 +1,11 @@
+<li class="lead-nav-item">
+	<a class="lead-item-link" href="{{^gallery_link}}article.html{{/gallery_link}}{{#gallery_link}}gallery.html{{/gallery_link}}#{{slug}}">
+		<div class="lead-list-art-bd art-bd">
+			<img class="lead-list-art" src="{{image.thumb_quick}}" />
+		</div> <!-- /art-bd -->
+		<div class="lead-list-txt-bd txt-bd">
+			<h4 class="lead-list-h">{{head}}</h4>
+			<p class="lead-list-overline">{{category}}</p>
+		</div> <!-- /txt-bd -->
+	</a>
+</li>

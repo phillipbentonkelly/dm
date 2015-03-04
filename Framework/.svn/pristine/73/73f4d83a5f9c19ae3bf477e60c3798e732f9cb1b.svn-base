@@ -1,0 +1,60 @@
+<article class="quick-tz quick-tz-tweet{{#tweet.art}} quick-tweet-w-art{{/tweet.art}}{{^tweet.art}} quick-social-no-art{{/tweet.art}}">
+	{{#is_tweet}}
+	<a class="quick-social-button quick-tweet-follow" href="https://twitter.com/{{tweet.handle}}" target="_blank">Follow</a>
+	{{/is_tweet}}
+
+	{{#is_comment}}
+	<a class="quick-social-button quick-comment-number" href="{{comment.comment-link}}"><i class="tz-comment-count-icon"></i>{{number}} comments</a>
+	{{/is_comment}}
+
+		{{#tweet.art}}
+		<a href="#URL:tweet-photo" class="quick-tweet-art-mod quick-tz-img-mod art-bd">
+			<img class="quick-tweet-art tz-img" src="{{tweet.art}}"/>
+			<div class="quick-tz-icon tz-icon tz-image-icon"></div>
+		</a>
+		{{/tweet.art}}
+
+	<div class="quick-tweet-txt-bd txt-bd">
+		<ul class="quick-social-info">
+			{{#is_tweet}}
+			<li class="quick-social-name"> <a href="https://www.twitter.com/{{tweet.handle}}" target="_blank">{{tweet.name}}</a></li>
+			<li class="quick-social-handle"><a href="https://twitter.com/tweet.handle}}" target="_blank">@{{tweet.handle}}</a></li>
+			{{/is_tweet}}
+
+			{{#is_comment}}
+			<li class="quick-social-h"> <a href="/article.html#{{slug}}">{{title}}</a></li>
+			{{/is_comment}}
+
+		</ul>
+	<div class="quick-social-bd">
+		{{^tweet.art}}
+		<a class="quick-social-avatar-bd art-bd" href="{{#is_tweet}}https://twitter.com/{{tweet.handle}}{{/is_tweet}}{{#is_comment}}{{comment.user.profile}}{{/is_comment}}" target="_blank">
+			<img class="quick-social-avatar art" src="{{#is_tweet}}{{tweet.avatar}}{{/is_tweet}}{{#is_comment}}{{comment.user.avatar}}{{/is_comment}}"/>
+		</a> <!-- /quick-tweet-avatar-mod -->
+		{{/tweet.art}}
+
+
+		<p class="quick-social-txt txt-bd">{{#is_comment}}<a class="quick-comment-handle" href="{{comment.user.profile}}">{{comment.user.name}}:</a> {{/is_comment}}{{{tweet.text}}} {{#is_comment}}<a href="article.html#{{slug}}">More comments &raquo;</a>{{/is_comment}}</p>
+
+	</div> <!-- /quick-social-bd -->
+		<ul class="tz-meta quick-tz-meta">
+			{{#category}}
+			<li class="tz-meta-item tz-category">
+				<a href="#{{section.0}}">{{category}}</a>
+			</li>
+			{{/category}}
+			<li class="tz-meta-item tz-time">
+				<a class="tz-time-link {{#is_quick_gallery}}popup-trigger{{/is_quick_gallery}}" {{#is_quick_gallery}}{{#slug}}data-slug="{{slug}}"{{/slug}}{{/is_quick_gallery}} href="{{^gallery_link}}{{^is_quick_gallery}}article.html#{{slug}}{{/is_quick_gallery}}{{/gallery_link}}{{#gallery_link}}gallery.html#{{slug}}{{/gallery_link}}{{#is_quick_gallery}}#quick-gallery{{/is_quick_gallery}}">
+					<i class="tz-time-icon tz-meta-icon"></i>
+					<i class="tz-time-txt tz-meta-txt">{{formattedTimestamp}}</i>
+				</a>
+			</li> <!-- /.tz-time -->
+			<li class="tz-meta-item tz-share">
+				<a class="tz-share-link popup-trigger" href="#mfp-share" data-canonical="{{#url}}{{url}}{{/url}}" data-shorturl="http://fa.ke/replace" data-headline="{{head}}" data-thumbnail="{{#thumb_quick}}{{thumb_quick}}{{/thumb_quick}}" data-thumb_type="{{#is_gallery}}image{{/is_gallery}}{{#is_video}}video{{/is_video}}{{#is_image}}image{{/is_image}}">
+					<i class="tz-share-icon tz-meta-icon"></i>
+					<i class="tz-share-txt tz-meta-txt">Share</i>
+				</a>
+			</li> <!-- /.meta-share-list -->
+		</ul> <!-- ./tz-meta -->
+	</div>
+</article> {{! quick-tz-tweet }}

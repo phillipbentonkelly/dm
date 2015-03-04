@@ -1,0 +1,32 @@
+<p:currentObject webType="WT" content="gallery" metadata="meta" channel="Boston.com" />
+
+<bdc:rwSocialGalleryCounts webObject="${currentObject}" var="galleryCounts" />
+
+<c:if test="${galleryCounts.photoOnly eq 'True'}">
+	<bdc:rwGetGallery webObject="${currentObject}" var="galleryData" format="image_300x300" />
+	<p:out var="galleryHeadline" xvalue="$gallery//headlines/headline/p" />
+	
+	<div id="gallery-preview" class="content-gallery-preview mfp-hide">
+	  <div class="content-gallery-preview__headline">
+	    <h3>${galleryHeadline}</h3>
+	  </div>
+	  <div class="content-gallery-preview__thumb-list-container">
+	    <ul class="content-gallery-preview__thumb-list">
+	    
+	    <c:choose>
+	    	<c:when test="${fn:trim(galleryData[0].errorMessage) eq ''}">
+	    		<c:forEach items="${galleryData}" var="galleryItem" varStatus="loop">
+	    			<li class="content-gallery-preview__thumb-list-item">
+	    				<a href="#" class="content-gallery-preview__link js-gallery-go-to-slide" data-go-to-slide="${loop.count}">
+	    					<img src="#" data-img-src="${galleryItem.imageSrc}" class="content-gallery-preview__image js-image-load" />
+	    				</a>
+	    		</c:forEach>
+	    	</c:when>
+	    	<c:otherwise>
+	    		<!-- Gallery error: ${galleryData[0].errorMessage} -->
+	    	</c:otherwise>
+		</c:choose>
+	    </ul>
+	  </div>
+	</div>
+</c:if>

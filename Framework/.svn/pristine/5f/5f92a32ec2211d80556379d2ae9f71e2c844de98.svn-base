@@ -1,0 +1,29 @@
+<p:currentObject metadata="meta" />
+<bdc:getBorderClass webObject="${currentObject}" defaultBorder="disabled" var="borderClasses"/>
+<c:if test="${not empty cacheScope.dwp}">
+	<p:object webObject="${cacheScope.dwp}" metadata="dwpMeta"/>
+	<p:out var="VREnabled" xvalue="$dwpMeta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/VisualRevenue"/>
+	<p:out var="VRZoneName" xvalue="$meta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/VisualRevenueZoneName"/>
+	<c:choose>
+		<c:when test="${VREnabled eq 'True' and not empty VRZoneName}">
+			<p:out var="VRZoneName" value='data-vr-zone="${VRZoneName}"'/>
+		</c:when>
+		<c:otherwise>
+			<p:out var="VRZoneName" value=""/>
+		</c:otherwise>
+	</c:choose>
+</c:if>
+<div class="row" ${VRZoneName}>
+	<div class="main span8">
+		<p:include pageZoneName="left">
+			<p:param name="dwp" value="${cacheScope.dwp}"/>
+		</p:include>
+	</div>
+	<div class="right-rail span6">
+		<p:include pageZoneName="right">
+			<p:param name="dwp" value="${cacheScope.dwp}"/>
+			<p:param name="videoWidth" value="399" />
+			<p:param name="videoHeight" value="279" />
+		</p:include>
+	</div>
+</div>

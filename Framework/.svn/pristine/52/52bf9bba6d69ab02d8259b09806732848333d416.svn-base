@@ -1,0 +1,11 @@
+<p:currentObject webType="WT" sectionId="section" channel="Boston.com" />
+
+<bdc:getAdLayer var="layer" webType="${WT}" />
+<bdc:inheritStoryLayer var="adLayerPath" section="${section}" layer="${layer}" />
+
+<div class="ad-container ad-container--content-ad ad-container--ad_toprightslot" data-ad-shifted="false" data-position-two="content-well--sidebar" data-position-two-index="1">
+  <div class="ad-container__notification">Advertisement - Continue Reading Below</div>
+  <!-- <div id="ad_toprightslot"> -->
+    <p:include pageZoneName="ad_topright" inherits="${adLayerPath}" />
+  <!-- </div> -->
+</div><!-- / ad-container -->

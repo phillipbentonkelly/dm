@@ -1,0 +1,159 @@
+// *
+// * Content Text
+// *
+
+.content-text {
+  @include constrain;
+  @include font-scale(mid);
+  margin-bottom: 60px;    // x-large * 2
+  margin-bottom: 3.75rem; // x-large * 2
+  @extend %clearfix;
+
+  // Ad an underline to content anchors
+  a:hover {
+    text-decoration: underline;
+  }
+
+  // The Text
+  &__text {
+    margin-bottom: spacer(px, large);
+    margin-bottom: spacer(rem, large);
+    color: color(black);
+
+    // Links
+    a {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &--gallery__text--title {
+    font-weight: $fw-bold;
+    @include font-scale(mid);
+  }
+
+  &__pullquote {
+    position: relative;
+    padding: spacer(px, x-large) 0;
+    padding: spacer(rem, x-large) 0;
+    margin-bottom: spacer(px, x-large);
+    margin-bottom: spacer(rem, x-large);
+    margin-top: 40px;
+    @include font-scale(x-large);
+    line-height: 1.5;
+    font-weight: $fw-medium;
+    font-style: italic;
+    border-top: 1px solid color(gray, light);
+    border-bottom: 1px solid color(gray, light);
+    &:before {
+      content:"\201C";
+      position: absolute;
+      left: 50%;
+      top: -28px;
+      width: 50px;
+      height: 40px;
+      margin-left: -25px; // centers the quotation mark exactly
+      text-align: center;
+      background: color(white);
+      font-family: Garamond, Georgia, Times, serif;
+      font-size: 72px;
+      line-height: 1;
+      font-style: normal;
+      color: color(red);
+    }
+  }
+
+  // Blockquotes
+  &__blockquote {
+    margin-top: spacer(px, large);
+    margin-top: spacer(rem, large);
+    margin-bottom: spacer(px, large);
+    margin-bottom: spacer(rem, large);
+    padding-left: spacer(px, large);
+    padding-left: spacer(rem, large);
+    border-left : 2px solid color(red, light);
+    color: color(gray, dark);
+  }
+
+  // Blockquote Text
+  &__blockquote__text {
+    margin-bottom: spacer(px, x-large);
+    margin-bottom: spacer(rem, x-large);
+  }
+
+  // Gallery Text
+  .content-text--gallery {
+
+    // Next Slide link
+    &__next {
+      display: none;  // Removes link for mobile, as gallery has no pagination
+    }
+
+  }
+}
+
+// Override screen.css
+blockquote p {
+  margin-top: 0 !important;
+}
+
+
+
+// ------------------------------------------------------------
+// Tablet Breakpoint
+// ------------------------------------------------------------
+
+// Content Text Media Queries
+
+@include media-query(tablet) {
+  .content-text {
+    @include font-scale(base);
+    margin-bottom: spacer(px, xx-large);
+    margin-bottom: spacer(rem, xx-large);
+
+    // The Text
+    &__text {
+      margin-bottom: spacer(px, large);
+      margin-bottom: spacer(rem, large);
+      color: color(black);
+    }
+
+    &__pullquote {
+      padding: spacer(px, xx-large) spacer(px, mid);
+      padding: spacer(rem, xx-large) spacer(rem, mid);
+      &:before {
+        left: 50%;
+        top: -33px;
+        width: 100px;
+        margin-left: -50px; // centers the quotation mark exactly
+        font-size: 90px;
+      }
+    }
+
+    // Blockquote
+    &__blockquote {
+      margin-left: spacer(px, mid);
+      margin-left: spacer(rem, mid);
+    }
+
+    // Blockquote Text
+    &__blockquote__text{
+      margin-bottom: spacer(px, mid);
+      margin-bottom: spacer(rem, mid);
+    }
+
+    // Gallery Text
+    .content-text--gallery {
+      // Next Slide link
+      &__next {
+        display: inline;
+        @include link-states(color(red), color(red, light), color(red, x-dark));
+        font-size: 75%;
+        font-weight: $fw-bold;
+        text-decoration: none !important;
+        text-transform: uppercase;
+      }
+    }
+  }
+}

@@ -1,0 +1,28 @@
+<p:currentObject webType="WT" content="gallery" metadata="meta" channel="Boston.com" />
+
+<bdc:rwSocialGalleryCounts webObject="${currentObject}" var="galleryCounts" />
+
+
+<div class="content-gallery-controls">
+<c:if test="${galleryCounts.photoOnly eq 'True'}">
+	  <div class="content-gallery-controls__preview">
+	      <a href="#gallery-preview" class="js-gallery-preview" data-omniture="Preview | Gallery Controls ${controlPosition} | ${prop6}">
+	        <span class="content-gallery-controls__preview-icon bdc-icon bdc-icon--preview-red"></span>
+	        <span class="content-gallery-controls__preview-link">Gallery Preview</span>
+	      </a>
+	  </div>
+</c:if>
+  <div class="content-gallery-controls__pager">
+    <span class="content-gallery-controls__pager-info">
+      <span class="js-slide-current">--</span> of <span class="js-slide-total">--</span>
+    </span>
+    <span class="content-gallery-controls__pager-controls">
+      <a href="#" class="content-gallery-controls__pager-button pager-button--previous js-gallery-previous" data-prop23="gallery advance - ${fn:toLowerCase(controlPosition)}">
+        <span class="content-gallery-controls__pager-icon bdc-icon bdc-icon--arrow-left">Previous</span>
+      </a>
+      <a href="#" class="content-gallery-controls__pager-button pager-button--next js-gallery-next" data-prop23="gallery advance - ${fn:toLowerCase(controlPosition)}">
+        <span class="content-gallery-controls__pager-icon bdc-icon bdc-icon--arrow-right">Next<span>
+      </a>
+    </span>
+  </div>
+</div>

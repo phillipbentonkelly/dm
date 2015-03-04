@@ -1,0 +1,111 @@
+<%@ taglib prefix="fn" uri="jstlFunctions"%>
+<p:update timeout="300"/>
+<p:currentObject metadata="meta" />
+
+<%-- Do things with the XML --%>
+<p:out var="publicBaseUrl" value="${fn:replace(portalContext.publicBaseUrl,'.boston.com','')}" />
+<p:out var="xmlUrl" value="http://calendar.boston.com/search?cat=&has_editors_pick=40&new=n&rss=1&srad=50&st=event&svt=text&swhat=&swhen=next+three+days&swhere=" />
+	<%-- xmlUrl updated to reflect a proper non-Jenkins URL --%>
+<c:import url="${xmlUrl}" var="eventsXml" />
+<x:parse xml="${eventsXml}" var="eventsParsed" />
+
+<div class="event-listings event-closed">
+	<h3 class="section-h">Top Event Picks</h3>
+	<ul data-repeat="10" data-template="headlines" data-type="headlines" class="event-list process-me">
+		<x:forEach var="events" begin="0" end="9" select="$eventsParsed//rss/channel/item">
+			<x:set var="storyLink" select="string($events/link/text())" />
+			<x:set var="headline" select="string($events/title/text())" />
+			<c:if test="${fn:contains(headline, 'Event: ')}">
+				<p:out var="headline" value="${fn:substringAfter(headline, 'Event: ')}" />
+			</c:if>
+			<p:out var="scribbleLiveBS" value="no" />
+			<c:if test="${fn:endsWith(storyLink, '/scribblelive/bg_template.html')}">
+				<p:out var="scribbleLiveBS" value="yes" />
+			</c:if>
+			
+			<c:if test="${fn:contains(headline, ',')}">
+					<c:if test="${fn:contains(headline, ', Sun')}">
+						<%--<p:out var="headline" value="${fn:replace(headline,', Sun', ' - Sun')}" />--%>
+						<p:out var="headline" value="${fn:substringBefore(headline, ', Sun')}" />
+					</c:if>
+					<c:if test="${fn:contains(headline, ', Mon')}">
+						<%--<p:out var="headline" value="${fn:replace(headline,', Mon', ' - Mon')}" />--%>
+						<p:out var="headline" value="${fn:substringBefore(headline, ', Mon')}" />
+					</c:if>
+					<c:if test="${fn:contains(headline, ', Tue')}">
+						<%--<p:out var="headline" value="${fn:replace(headline,', Tue', ' - Tue')}" />--%>
+						<p:out var="headline" value="${fn:substringBefore(headline, ', Tue')}" />
+					</c:if>
+					<c:if test="${fn:contains(headline, ', Wed')}">
+						<%--<p:out var="headline" value="${fn:replace(headline,', Wed', ' - Wed')}" />--%>
+						<p:out var="headline" value="${fn:substringBefore(headline, ', Wed')}" />
+					</c:if>
+					<c:if test="${fn:contains(headline, ', Thu')}">
+						<%--<p:out var="headline" value="${fn:replace(headline,', Thu', ' - Thu')}" />--%>
+						<p:out var="headline" value="${fn:substringBefore(headline, ', Thu')}" />
+					</c:if>
+					<c:if test="${fn:contains(headline, ', Fri')}">
+						<%--<p:out var="headline" value="${fn:replace(headline,', Fri', ' - Fri')}" />--%>
+						<p:out var="headline" value="${fn:substringBefore(headline, ', Fri')}" />
+					</c:if>
+					<c:if test="${fn:contains(headline, ', Sat')}">
+						<%--<p:out var="headline" value="${fn:replace(headline,', Sat', ' - Sat')}" />--%>
+						<p:out var="headline" value="${fn:substringBefore(headline, ', Sat')}" />
+					</c:if>
+			
+			
+			</c:if>
+			
+			<%--<c:choose>
+				<c:when test="${fn:contains(headline, ' - ')}">
+					<p:out var="headlineSplit" value="${fn:trim(fn:substringBefore(headline, ' - '))}" />
+				</c:when>
+				<c:when test="${fn:contains(headline, ' | ')}">
+					<p:out var="headlineSplit" value="${fn:trim(fn:substringBefore(headline, ' | '))}" />
+				</c:when>
+				<c:otherwise>
+					<p:out var="headlineSplit" value="${fn:trim(headline)}" />
+				</c:otherwise>
+			</c:choose>--%>
+			
+			<p:out var="headlineSplit" value="${fn:trim(headline)}" />
+			
+			<%-- <p:out var="headlineSplit" value="${fn:trim(fn:substringBefore(headline, ' - '))}" /> --%>
+			<c:set var="gigyaRandID"><%= java.lang.Math.round(java.lang.Math.random() * 100000) %></c:set>
+			<!-- MP:headline: ${headline} -->
+			<%--<c:if test="${fn:startsWith(storyLink, 'boston.com') and isMTBlog eq 'no' and scribbleLiveBS eq 'no'}">
+				<c:set var="storyLink" value="${publicBaseUrl}.${storyLink}" />
+			</c:if>
+			
+			<c:if test="${isMTBlog eq 'yes'}">
+				<p:out var="storyLink" value="http://www.${fn:substringBefore(storyLink, '.html')}.mobile.html" />
+			</c:if>
+			
+			<c:if test="${scribbleLiveBS eq 'yes'}">
+				<p:out var="storyLink" value="http://www.${storyLink}" />
+			</c:if>--%>
+			
+				<li class="event-item">
+					<a href="${storyLink}?p1=Events_editorspicks">${headlineSplit}</a>		
+				</li>
+		</x:forEach>
+		<div class="event-item event-search">Search for events, movies, or restaurants</div>
+	
+	<span class="form-fields"> 
+		<form action="http://calendar.boston.com/search" method="get" class="event-form"> 
+    		<input name="swhat" placeholder="Enter a Search" type="text" class="event-form-input" /> 
+			<input type="hidden" id="swhen" name="swhen" value="today"> 
+    		<input type="hidden" id="sradius" name="srad" value="5"> 
+    		<input type="hidden" name="search" value="true"> 
+      		<input type="submit" class="event-search-button" value="SEARCH"> 
+    	</form>
+    	<a href="http://calendar.boston.com/welcome/create" class="add-event-link" >Add your Event</a>
+    	<div class="clearfix"></div>
+	</span>
+	</ul>
+	
+	<button href="#" class="event-btn">Show All</button>
+	<!-- "must_reads" -->
+	<!-- adLayerDwpPath = ${adLayerDwpPath} -->
+	<p:include pageZoneName="must_reads" inherits="${adLayerDwpPath}" />
+</div>

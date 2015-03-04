@@ -1,0 +1,14 @@
+<%--
+	Based on:
+	/bcom-redesign-beta/bdc-markup/page-content/modules/content-footer.php
+--%>
+
+<p:currentObject webType="WT" content="story" metadata="meta" channel="Boston.com" />
+
+<footer class="content-footer">
+
+  <div class="content-footer__tagline">
+    <p:out xvalue="$story//text/tagline" xslt="$configurationURI/Framework/xslt/bdc_story_default_new.xslt" />
+  </div><!-- / content-footer__tagline -->
+
+</footer><!-- / content-footer -->

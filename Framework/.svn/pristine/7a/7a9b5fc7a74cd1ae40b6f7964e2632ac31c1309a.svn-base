@@ -1,0 +1,83 @@
+<%@ page language="java" contentType="application/json; charset=UTF-8" pageEncoding="UTF-8" %>	
+<%@page import="java.util.*"%>
+<%@page import="java.text.SimpleDateFormat"%>
+<%--<p:template contentType="application/json" /> --%>
+
+<p:out var="stream" value="${cacheScope.streamSlug}" />
+<p:out var="filter" value="${cacheScope.streamFilter}" />
+<p:out var="limit" value="${cacheScope.limit}" /> 
+<p:out var="status" value="${cacheScope.status}" />
+<p:out var="startingdate" value="${cacheScope.startingdate}" />
+
+<%-- mock homepage to news for dev testing --%>
+<c:if test="${stream == 'homepage'}"><c:set var="stream">news</c:set></c:if>
+
+<c:if test="${empty stream}"><c:set var="stream">not-specified</c:set></c:if>
+<c:if test="${empty filter}"><c:set var="filter">all</c:set></c:if>
+<c:if test="${empty limit}"><c:set var="limit">25</c:set></c:if>
+<c:if test="${empty status}"><c:set var="status">Approved</c:set></c:if>
+
+<%
+
+	SimpleDateFormat format = new SimpleDateFormat("yyyyMMddHmmssSS");
+	format.setTimeZone(TimeZone.getTimeZone("GMT"));
+	
+    String tsDateStr = format.format(new Date());
+
+	pageContext.setAttribute("timestamp", tsDateStr);
+
+%>
+<%--  if not specified, use a maximum date value cannot pass seem to pass a value of <qm:TMaxDateTime/>  into the query  --%>
+<c:if test="${empty startingdate}"><c:set var="startingdate" value="99991231235900"/></c:if>
+
+
+<% 
+	String[] queryParams = new String[5];
+	queryParams[0] = (String)pageContext.getAttribute("stream");
+	queryParams[1] = (String)pageContext.getAttribute("filter");
+	queryParams[2] = (String)pageContext.getAttribute("startingdate");
+	queryParams[3] = (String)pageContext.getAttribute("limit");
+ 	queryParams[4] = (String)pageContext.getAttribute("status");
+    
+	pageContext.setAttribute("queryParams", queryParams);
+	
+
+%>
+
+<%--
+<p:getCollection path="$configurationURI/Framework/queries/bdc_stream.vquery" virtualParams="${queryParams}" var="q" />
+--%>
+	<p:import var="qtext" url="$configurationURI/Framework/queries/bdc_stream_filterkey_next.query"/> 
+	<p:executeQuery var="q" >
+		<p:queryBody name="qtext"/> 
+		<%-- parameter names must be legal groovy variables starting with letters not just numeric --%>
+		<p:param name="stream" value="${stream}"/>
+		<p:param name="filter" value="${filter}"/>
+		<p:param name="limit" value="${limit}"/>
+		<p:param name="startingdate" value="${startingdate}"/>
+		<p:param name="status" value="${status}"/>
+	</p:executeQuery>	
+<!-- 
+<c:forEach items="${q.items}" var="i" begin="0" end="${limit}" varStatus="status">
+	<p:getObject webObject="${i}" var="storyobj" />
+	<p:object webObject="${storyobj}" content="c" metadata="m" />
+	<bdc:getSummaryForSectionFront webObject="${storyobj}" var="webtease" priority="stream" />
+	<p:out var="nsheadline" xvalue="$c//headlines/headline/p" />
+	<url>
+	  <loc><bdc:link webObject="${storyobj}"/></loc>
+	  <news:news>
+	    <news:publication>
+	       <news:name>Boston.com</news:name>
+	       <news:language>en</news:language>
+	    </news:publication>
+	    <news:publication_date>2012-01-10</news:publication_date>
+	    <news:title>${nsheadline}</news:title>
+	    <news:keywords>${webtease}</news:keywords>
+	    <news:geo_locations>Boston, Massachusetts, USA</news:geo_locations>
+	  </news:news>
+	</url> 
+</c:forEach>
+-->
+	
+
+

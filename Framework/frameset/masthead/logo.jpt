@@ -1,0 +1,82 @@
+<%--
+	Logo rendering logic moved from the primary masthead file, because everything that goes on here to determine what should show up based
+	on section, page type, etc. is a mess, but it's a mess we have to live with.
+--%>
+<p:currentObject sectionId="section" webType="WT" metadata="meta" sectionPage="dwp" />
+<p:siteRoot var="SiteRoot" />
+
+<div class="page-header__logo">
+	  <c:choose>
+	  	<c:when test="${WT eq 'dwp_modulepage' and section eq '/'}">
+	  		<span class="page-header__logo__icon bdc-icon bdc-icon--bdc-logo"></span>
+	  	</c:when>
+	  	<c:when test="${WT eq 'dwp_sectionpage' or WT eq 'dwp_genericpage' or WT eq 'dwp_classifieds' or WT eq 'dwp_modulepage'}">
+	  		
+	  		<p:out var="sectionType"	xvalue="$meta//Categorization/SectionType" />
+	  		<p:out var="siteSection"	value="${fn:substringAfter(section, '/')}" />
+	  		<p:out var="headerUrl"		value="#" />
+	  		<p:out var="masthead"		xvalue="$meta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/Masthead" />
+	  		<!-- masthead = ${masthead} -->
+	  		
+	  		<c:choose>
+	  			<c:when test="${not empty masthead and masthead ne ''}">
+	  				<p:out var="sectionName" value="${masthead}" scope="request" />
+	  			</c:when>
+	  			<c:when test="${fn:indexOf(siteSection, '/') != -1}">
+	  				<p:out var="parentSection"	value="/${fn:substringBefore(siteSection, '/')}" />
+	  				<p:out var="childSection"	value="${fn:substringAfter(siteSection, '/')}" />
+	  				<p:siteRoot var="BDCSR" siteId="${parentSection}" />
+	  				<c:forEach items="${BDCSR.children}" var="bdcChild">
+	  					<p:out var="paddedName" value="${parentSection}" />
+	  					<p:out var="shortName"	value="${fn:substringAfter(bdcChild.sectionId, paddedName)}" />
+	  					<c:if test="${fn:toLowerCase(shortName) == fn:toLowerCase(childSection)}">
+	  						<p:url var="headerUrl" siteNode="${bdcChild}" />
+	  					</c:if>
+	  				</c:forEach>
+	  			</c:when>
+	  			<c:otherwise>
+	  				<p:out var="parentSection" value="${section}" />
+	  				<c:forEach items="${SiteRoot.children}" var="srChild">
+	  					<p:out var="childSection" value="${fn:substringAfter(srChild.sectionId, '/')}" />
+	  					<c:if test="${fn:toLowerCase(siteSection) == fn:toLowerCase(childSection)}">
+	  						<p:url var="headerUrl" siteNode="${srChild}" />
+	  					</c:if>
+	  				</c:forEach>
+	  			</c:otherwise>
+	  		</c:choose>
+	  		
+	  		<%-- Section header --%>
+	  		<a href="${portalContext.publicBaseUrl}">
+	  			<span class="page-header__section-name">
+	  				<span class="bdc-icon bdc-icon--bdc-circle-logo"></span>${sectionName}
+	  			</span>
+	  		</a>
+	  		
+	  	</c:when>
+	  	<c:when test="${WT eq 'BlogPage'}">
+	  		<jp:blogId var="blogId" />
+	  		<jp:getBlog blogId="${blogId}" var="blog" />
+	  		<c:set var="blogMeta" value="${blog.metadata}" />
+	  		<p:out var="blogName" xvalue="$blogMeta//Title" />
+	  		<p:out var="containerPath" xvalue="$blogMeta//Page/ContainerPath" />
+	  		
+	  		<p:getObject path="${containerPath}" var="blogDwp" />
+	  		<p:object webObject="${blogDwp}" metadata="containerMeta" />
+	  		<p:out var="sectionPath" xvalue="$containerMeta//OnlineProducts/OnlineProduct/Sections/Section/SectionPath" />
+	  		
+	  		<%-- Blog header --%>
+	  		<a href="${portalContext.publicBaseUrl}${sectionPath}">
+	  			<span class="bdc-icon bdc-icon--bdc-circle-logo"></span>
+	  			<span class="page-header__section-name">${blogName}</span>
+	  		</a>
+	  	</c:when>
+	  	<c:otherwise>
+	  	
+	  		<%-- Default header for articles, galleries, etc. --%>
+	  		<a href="${portalContext.publicBaseUrl}">
+	  			<span class="page-header__logo__icon bdc-icon bdc-icon--bdc-logo"></span>
+	  		</a>
+	  	
+	  	</c:otherwise>
+	  </c:choose>
+  </div>

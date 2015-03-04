@@ -1,0 +1,134 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Boston.com</title>
+     	<link rel="stylesheet" href="http://p.o0bc.com/css/non-resp-tmpl-article.css"> 
+		<script type="text/javascript" src="http://www.boston.com/js/hash/52d16e147b5346147d0f3269cd4d0f80i/dist/jquery-1.11.0.min.js"></script>
+		<script type="text/javascript" src="http://www.boston.com/js/hash/f3eb7353146f35849e94153f522845e0i/dist/bat.js"></script>
+		<script src="//www.googletagservices.com/tag/js/gpt.js"></script>
+		</script>
+		<script> // DFP Setup
+			var bcom = bcom || {};
+			bcom.dfp = bcom.dfp || {};
+			bcom.dfp.networkCode = 61381659;
+			bcom.dfp.adUnit = 'boston.com/life/house-and-home';
+			bcom.dfp.adSlots = ['ad_lead1','ad_toprightslot'];
+			bcom.dfp.keyValuePairs = {
+				s1: 'boston.com/life/pets',
+				s2: 'life',
+				s3: 'pets',
+				s4: '',
+				s5: '',
+				pgtype : 'sectfront',
+				pageurl : '', 
+				meta: '',
+				streamcount:'1'
+			};
+		</script>
+		<script type="text/javascript" src="//www.boston.com/js/bcom.util.js"></script>
+		<script type="text/javascript" src="//www.boston.com/js/bcom.dfp.ad-catalog.js"></script>
+		<script type="text/javascript" src="//www.boston.com/js/bcom.dfp.ad-init.js"></script>
+	</head>
+	<body class="page-story top-btn-off tall-nav-potential" id="top">
+			<div class="site-container"> 
+			<!-- Main Nav -->
+			<div class="nav-mod">
+				<nav class="main-nav">
+					<div class="main-nav-inner">
+						<div class="nav-left-ear">
+							
+						</div> <!-- /nav-left-ear -->
+						<a href="//www.boston.com/index.html" class="bcom-logo"><img src="http://www.boston.com/img/bcom-logo.png" width="200" height="28"></a><!-- /bcom-logo -->
+						<div class="nav-right-ear">
+							
+						</div> <!-- /nav-right-ear -->
+					</div> <!-- /main-nav-inner -->
+				</nav><!-- /main-nav -->
+			</div> 
+	
+			<nav class="global-nav nocontent">
+				<ul>
+					<li>
+							<a href="//www.boston.com/news?p1=Levelone_Nav_news">News</a></li>
+					<li>
+							<a href="//www.boston.com/sports?p1=Levelone_Nav_sports">Sports</a></li>
+					<li>
+							<a href="//www.boston.com/entertainment?p1=Levelone_Nav_entertainment">Entertainment</a></li>
+					<li>
+							<a href="//www.boston.com/business?p1=Levelone_Nav_business">Business</a></li>
+					<li>
+							<a href="//www.boston.com/life?p1=Levelone_Nav_lifestyle">Lifestyle</a></li>
+					<li>
+							<a href="//www.boston.com/health?p1=Levelone_Nav_health">Health</a></li>
+					<li>
+							<a href="//www.boston.com/travel?p1=Levelone_Nav_travel">Travel</a></li>
+					<li>
+							<a href="//www.boston.com/cars?p1=Levelone_Nav_cars">Cars</a></li>
+					<li>
+							<a href="//www.boston.com/jobs?p1=Levelone_Nav_jobs">Jobs</a></li>
+					<li>
+							<a href="//www.boston.com/realestate?p1=Levelone_Nav_realestate">Real Estate</a></li>
+					<li>
+							<a href="//circulars.boston.com/">Circulars</a></li>
+				</ul>
+			</nav>
+			
+			<div class="page-content">
+
+				<!-- Leaderboard Ad Module -->
+				<section class="leaderboard-mod nav-leaderboard-mod">
+		    		<!-- place any code for a top-of-page banner-ad here --> 
+		    		<div class="ad-lead ad" id="ad_lead1"></div>
+				</section>
+
+				<div class="site-width">
+			
+					Vendor content here
+				
+					Some code however, needs to be injected into the vendor code.  That code is as follows:
+					<div class="ad-toprightslot" id="ad_toprightslot"></div>
+					It will be up to the vendor to correctly position the ad as the scaffolding that provides the primary and secondary containers inside the site width have been removed to allow for vendor customization.
+				</div>
+	
+			</div> <!-- /page-content -->
+		<footer class="site-footer site-width">
+			<ul class="social-icon-list">
+				<li><a href="https://twitter.com/intent/user?screen_name=BostonDotCom " class="twitter-icon social-icon" target="_blank"></a></li>
+				<li><a href="https://www.facebook.com/boston " class="facebook-icon social-icon" target="_blank"></a></li>
+				<li><a href="https://plus.google.com/+BostonDotCom/" class="google-icon social-icon" target="_blank"></a></li>
+			</ul>
+			<aside class="footer-aside">
+				<p class="footer-copyright"><a href="http://www.boston.com/help/privacy-policy/#adchoice">Ad Choices</a> | ©2014 Boston.com</p>
+			</aside>
+		</footer>
+	</div> <!-- /site-container -->
+
+<!-- Omniture -->
+<script src="http://www.boston.com/js/hash/05f204a9a8369e5cff32a9330f595354ian/dist/tracking.min.js"></script>
+<!-- s_pageName = Boston.com+home+page, s_headline =  -->
+<script language="JavaScript" type="text/javascript">
+	<!-- 
+        s.pageName='Boston.com home page',s.channel='Home page',s.prop1='Boston.com home page'; 
+		s.server='',s.pageType='',s.prop2='',s.prop3='',s.prop4='',s.prop5='1',s.prop6='Boston.com home page',s.prop7='',s.prop8='',s.prop9='',s.prop10='',s.prop14='',s.prop17='Methode',s.prop20='',s.prop34='',s.prop41='Boston.com'; 
+		if(document.location.search.indexOf('comments=all')!=-1) { s.prop6 += ' | Comments view'; }
+		//if (archivedState && (archivedState=1)) {s.prop6 += ' | Archive Stub';}
+		/* E-commerce Variables */
+		s.campaign='',s.state='',s.zip='',s.events='',s.products='',s.purchaseID='',s.eVar1='',s.eVar2='',s.eVar3='',s.eVar4='',s.eVar5='',s.eVar6='',s.eVar7='',s.eVar8='',s.eVar9='',s.eVar10='',s.eVar41='Boston.com';
+	// -->
+</script>
+
+<!--  -->
+<script language="JavaScript" type="text/javascript">
+	var s_code=s.t();if(s_code)document.write(s_code)
+</script>
+<script language="JavaScript" type="text/javascript"><!-- if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-') // --></script>
+<noscript>
+	<a href="http://www.omniture.com" title="Web Analytics"><img src="http://nytbglobe.112.2O7.net/b/ss/nytbglobe/1/H.19.4--NS/0?pageName=Boston.com%20home%20page&amp;ch=Home%20page&amp;c1=Boston.com%20home%20page&amp;c6=Boston.com%20homepage&amp;c41=Boston.com&amp;v41=Boston.com" height="1" width="1" alt="" /></a>
+</noscript><!--/DO NOT REMOVE/ -->
+<!-- Chartbeat -->
+		<div id=pubnub pub-key=pub-c-127a2b10-aa80-4a62-ac2e-30a1fce6f220 sub-key=sub-c-4a78c224-164c-11e3-9f04-02ee2ddab7fe></div>
+	</body>
+</html>	

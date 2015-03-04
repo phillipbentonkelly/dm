@@ -1,0 +1,99 @@
+<p:currentObject content="c" metadata="m" webType="WT" sectionId="section" channel="Boston.com" />
+<bdc:videoJavaBeanMap webObject="${currentObject}" var="objectMap" />
+<p:out var="autoPlay" xvalue="$m//AutoPlay" />
+<p:out var="dataConfigSiteSection" xvalue="$m//DataConfigSiteSection" />
+
+<div class="l-story-primary no-flow">
+<figure class="article-lead-art-mod">
+<div class="video-wrapper">
+
+<c:choose>
+	<c:when test="${objectMap.isExternal}">
+		<p:out var="externalLink" value="${objectMap.externalVideoLink}" />
+		<div class="video-external">
+			<p:out value="${externalLink}" xslt="$configurationURI/Framework/xslt/externalvideo.xslt"/>
+		</div>	
+	</c:when>	
+	<c:otherwise>
+		<c:choose>
+			<c:when test="${objectMap.provider eq 'Brightcove'}">
+				<c:choose>
+		       		<c:when test="${autoPlay eq 'True'}">
+		       			<p:out var="autoPlay" value="true" />
+		       		</c:when>
+			       	<c:otherwise>
+			       		<p:out var="autoPlay" value="false" />
+			     	</c:otherwise>
+		     	</c:choose>
+	      		<div class="videoplayer brightcove"
+	      			 data-schema="1"
+	      			 data-player="article"
+	      			 data-params="@videoPlayer=${objectMap.videoId}"
+	      			 data-autoplay="${autoPlay}">
+	      		</div>
+			</c:when>
+			<c:when test="${objectMap.provider eq 'NDN'}">	
+				<c:choose>
+		       		<c:when test="${autoPlay}">
+		       			<p:out var="autoPlay" value="1" />
+			       		</c:when>
+		       		<c:otherwise>
+		       			<p:out var="autoPlay" value="0" />
+		       		</c:otherwise>
+		       	</c:choose>
+				<div class="videoplayer ndn_embed"
+					data-schema="2"
+					data-player="clicktoplay"
+				    data-config-widget-id="${autoPlay}"
+				    data-config-type="VideoPlayer/Single"
+				    data-config-tracking-group="90106"
+				    data-config-video-id="${objectMap.videoId}"
+				    data-config-site-section="bostonglobe">
+				</div>
+			</c:when>
+			<c:when test="${objectMap.provider eq 'CineSport'}">	
+				<div class="videoplayer cinesport"
+					 data-schema="3"
+				     data-video-id="${objectMap.videoId}"
+					 data-autoplay="${autoPlay}">
+				</div>
+			</c:when>
+			<c:when test="${objectMap.provider eq 'Perform'}">
+				<p:out var="playerID" xvalue="$m//PerformPlayer/PlayerID" />
+				<p:out var="channelID" xvalue="$m//PerformPlayer/ChannelID" />
+				<div class="perform-wrap">
+					<div class="videoplayer perform"
+						data-schema="4"
+						data-player-id="${playerID}"
+						data-channel-id="${channelID}"
+						data-video-id="${objectMap.videoId}"
+						id="perf${playerID}-${objectMap.videoId}">
+					</div>
+				</div>
+			</c:when>					
+			<c:when test="${objectMap.provider eq 'Ustream'}">	
+				<div class="videoplayer ustream"
+			    	 data-schema="5"
+				 	 id="{objectMap.videoId}">
+				</div>
+			</c:when>
+			<c:when test="${objectMap.provider eq 'nesn'}">	
+				<div class="videoplayer nesn"
+			    	 data-schema="6">
+				 	 <%-- video-type can be either 'latest' (see id info below) or 'video' --%>
+				 	 data-video-type="{objectMap.videoType}"
+			    	 <%-- if video-type is set to latest then the video-id is 0 --%>
+				 	 data-video-id="{objectMap.videoId}">
+				</div>
+			</c:when>											
+		</c:choose>
+	</c:otherwise>
+</c:choose>
+</div>
+<%--
+<figcaption class="caption story-caption reverse">
+	${objectMap.videoCaption}
+</figcaption> <!-- /article-caption -->
+--%>
+</figure>
+</div> <!-- /article-art-mod -->

@@ -1,0 +1,81 @@
+
+<%--
+
+The relevant javascript is included inline in this file for a few
+reasons:
+
+to avoid cross-site-scripting errors in dev and qa, a
+<script src="nowplaying.jsonp"></script>
+must be used.
+AJAX will not work for dev or QA. It will work in production, but would not
+be testable beforehand.
+jsonp makes a call to a javascript function nowPlaying() which must already
+exist on the page. This needs
+to be called after the html is already ready on the page, which is why the
+script is included at the bottom.
+
+--%>
+
+<article class="feat-tz">
+	<div class="radiobdc">
+		<ul>
+			GET OUR APP
+			<li>
+				<a
+					href="https://itunes.apple.com/us/app/boston.com-radiobdc/id550506632?ls=1&amp;mt=8">iOS</a>
+			</li>
+			<li>
+				<a
+					href="https://play.google.com/store/apps/details?id=com.streamtheworld.globenewspaper&amp;feature=search_result#?t=W10">Android</a>
+			</li>
+		</ul>
+		<div class="player">
+			<a class="player-icon open-window" href="http://www.boston.com/ae/radio/player/"
+				data-url="http://www.boston.com/ae/radio/player/" data-name="radioBDC"
+				data-props="width=870,height=580,resizable=no,scrollbars=no,toolbar=no,location=no,menubar=no,status=no"
+				onclick="s_gi('nytbglobe');
+						s.linkTrackVars='eVar29,events';
+						s.linkTrackEvents='event24';
+						s.eVar29='Bcom Homepage Widget';
+						s.events='event24';
+						s.tl(this,'o','RadioBDC Player Launch - Homepage Widget');">
+			</a>
+			<div class="player-info">
+				<a class="open-window" href="http://www.boston.com/ae/radio/player/"
+					data-url="http://www.boston.com/ae/radio/player/" data-name="radioBDC"
+					data-props="width=870,height=580,resizable=no,scrollbars=no,toolbar=no,location=no,menubar=no,status=no"
+					onclick="s_gi('nytbglobe');
+						s.linkTrackVars='eVar29,events';
+						s.linkTrackEvents='event24';
+						s.eVar29='Bcom Homepage Widget';
+						s.events='event24';
+						s.tl(this,'o','RadioBDC Player Launch - Homepage Widget');">
+					LISTEN LIVE
+				</a>
+				<br />
+				<span class="artist-name">ARTIST</span>
+				<br />
+				<span class="track-title">TRACK</span>
+			</div>
+		</div>
+		<div class="footer">
+			<a href=""></a>
+			<div>
+				BOSTON'S ALTERNATIVE
+				<br />
+				MUSIC SOURCE
+			</div>
+		</div>
+	</div>
+
+	<script>
+		function nowPlaying(data){
+		document.querySelector(".artist-name").innerHTML =
+		data.nowplaying.artist;
+		document.querySelector(".track-title").innerHTML =
+		data.nowplaying.track;
+		}
+</script>
+	<script src="http://www.boston.com/ae/radio/nowplaying.jsonp"></script>
+
+</article>

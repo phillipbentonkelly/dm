@@ -1,0 +1,62 @@
+<%--
+{comments}
+BDC-???? - mystery
+{comments}
+--%>
+
+<%-- WHAT A HANDSOME JPT --%>
+<p:update timeout="600" />
+
+<%-- i wonder if this can be a relative path --%>
+<p:json var="weather" url="http://www.boston.com/partners/weather/fromWeatherGrabber.json" />
+
+<div class="weather-current">
+	<div class="weather-current__header">Boston's Current Weather</div>
+	<div class="weather-current__temp">
+		<div class="weather-current__actual-temp">
+			${weather.current.tempnow}&deg;<sub>f</sub>
+		</div>
+		<div class="weather-current__real-feel-temp">
+			RealFeel<sup>®</sup>
+			${weather.current.temprealfeel}&deg;
+		</div>			
+	</div>
+	<div class="weather-current__condition">
+		<div class="weather-current__condition-text">
+			${weather.current.condition}
+		</div>
+		<span class="icon-weather icon-weather--${weather.current.icon}"></span>
+	</div>
+	<dl class="weather-current__list">
+		<dt class="weather-current__term">Precipitation</dt>
+		<dd class="weather-current__definition">${weather.current.precipitation}%</dd>
+		<dt class="weather-current__term">Humidity</dt>
+		<dd class="weather-current__definition">${weather.current.humidity}%</dd>
+		<dt class="weather-current__term">Visibility</dt>
+		<dd class="weather-current__definition">${weather.current.visibility} mi</dd>
+		<dt class="weather-current__term">Wind</dt>
+		<dd class="weather-current__definition">${weather.current.windmph} mph ${weather.current.winddirection}</dd>
+	</dl>
+</div>
+
+<a class="hash-anchor" id="WeatherHourly"></a>
+
+<div class="weather-hourly">
+  <a href="#" class="weather-hourly__button js-hourly-forecast" data-slide-direction="prev">
+  	<span class="bdc-icon bdc-icon--arrow-left-gray-x-small"></span>
+  </a>
+	<div class="weather-hourly__list-container js-slide-container">
+		<ul class="weather-hourly__list js-slide-list">
+			<c:forEach var="hour" items="${weather.hours}">
+				<li class="weather-hourly__list-item js-slide">
+					<div class="weather-hourly__time">${hour.hour}${' '}${fn:toUpperCase(hour.ampm)}</div>
+					<span class="icon-weather icon-weather--${hour.icon}-medium"></span>
+					<div class="weather-hourly__temp">${fn:substringBefore(hour.temp, '.')}&deg;</div>
+				</li>
+	  	</c:forEach>
+		</ul>
+	</div>
+	<a href="#" class="weather-hourly__button js-hourly-forecast" data-slide-direction="next">
+		<span class="bdc-icon bdc-icon--arrow-right-gray-x-small"></span>
+	</a>
+</div>

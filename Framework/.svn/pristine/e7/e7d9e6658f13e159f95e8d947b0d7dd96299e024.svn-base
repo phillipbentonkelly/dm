@@ -1,0 +1,401 @@
+// *
+// *  Module Name 
+// *
+
+$module-name: 'events-search';
+
+// ------------------------------------------------------------
+// Default Styles
+// ------------------------------------------------------------
+
+.#{$module-name} {
+  // Module Styles
+  margin-bottom: spacer(px, mid);
+  margin-bottom: spacer(rem, mid);
+  padding: spacer(px, mid);
+  padding: spacer(rem, mid);
+  background: color(gray, xx-light);
+  color: color(gray);
+
+  // widget header content
+  &__header {
+    display: inline-block;
+  }
+
+  .bdc-icon--events-calendar {
+    margin-right: spacer(px, base);
+    margin-right: spacer(rem, base);
+    margin-top: spacer(px, small);
+    margin-top: spacer(rem, small);
+    display: inline-block;
+  }
+
+  &__header-content {
+    display: inline-block;
+    margin-bottom: spacer(px, base);
+    margin-bottom: spacer(rem, base);
+  }
+
+  &__header-title,
+  &__header-date {
+    display: inline-block;
+    @include font-scale(mid);
+    font-weight: $fw-bold;
+  }
+
+  // main events header
+  &__header-title {
+    color: color(black);
+    margin-left: spacer(px, small);
+    margin-left: spacer(px, small);
+  }
+
+  // date for current showing events
+  &__header-date {
+    cursor: pointer;
+    cursor: hand;
+    color: color(blue, dark);
+  }
+
+  &__header-date:hover {
+    color: color(blue, mid-dark);
+  }
+
+  &__header-subtitle {
+    margin-bottom: spacer(px, small); 
+    margin-bottom: spacer(rem, small);
+    @include font-scale(xxx-small);
+    color: color(black);
+    font-weight: $fw-bold;
+  }
+
+  &--expanded {
+    display: none;
+  }
+  
+  // Globe search box
+  .search-form {
+    margin-bottom: spacer(px, x-large); 
+    margin-bottom: spacer(rem, x-large);
+  }
+
+  // nearby button label
+  &__nearby-desktop-label {
+    display: none;
+  }
+
+  // nearby search button
+  &__nearby-button {
+    position: relative;
+    width: 100%;
+    margin-bottom: spacer(px, x-large); 
+    margin-bottom: spacer(rem, x-large);
+    padding: spacer(px, base);
+    padding: spacer(rem, base);
+    background: color(gray, light);
+    border-bottom: 1px solid color(gray);
+    border-right: 1px solid color(gray);
+    color: color(white);
+  }
+
+  .icon-events--geolocate {
+    margin-right: spacer(px, base);
+    vertical-align: middle;
+  }
+  
+  &__filter-group{
+    position: relative;
+    width: 100%;
+    margin-bottom: spacer(px, large);
+    margin-bottom: spacer(rem, large);
+  }
+
+  // miles input label
+  &__filter-group-label {
+    float: left;
+    padding-top: spacer(px, small);
+    padding-top: spacer(rem, small);
+    width: 20%;
+    padding-right: spacer(px, mid);
+    padding-right: spacer(rem, mid);  
+    text-align: right;
+  }
+
+  // miles select dropdown
+  &__filter-dropdown,
+  &__filter-input {
+    position: relative;
+    height: 100%;
+    width: 75%;
+    display: inline;
+  }
+
+  .dropdown-container {
+    position: relative;
+    height: 30px;
+    margin-bottom: spacer(px, small);
+    margin-bottom: spacer(rem, small);
+  }
+
+  &__filter-dropdown {
+    position: absolute;
+    bottom: 0;
+  }
+
+  &__filter-input {
+    height: 50%;
+    margin-bottom: spacer(px, small);
+    margin-bottom: spacer(rem, small);
+  }
+  
+  &__filter {
+    display: inline-block;
+    padding-top: 0;
+    border-top: none;
+  }
+
+  &__defaults {
+    margin-left: 25%;
+    font-style: italic;
+    @include font-scale(xxx-small);
+  }
+
+  // narrow search block
+  &__narrow-search {
+    position: relative;
+    width: 100%;
+    clear: both;
+    padding-top: spacer(px, mid);
+    padding-top: spacer(rem, mid);
+    padding-bottom: spacer(px, mid);
+    padding-bottom: spacer(rem, mid);
+    margin-bottom: spacer(px, x-large);
+    margin-bottom: spacer(rem, x-large);
+    border-top: 1px solid color(gray, x-light);
+    border-bottom: 1px solid color(gray, x-light);
+  }
+
+  &__narrow-search-title {
+    margin-bottom: spacer(px, base);
+    margin-bottom: spacer(rem, base);
+    @include font-scale(xxx-small);
+    color: color(black);
+    font-weight: $fw-bold;
+  }
+
+  &__narrow-search--mobile {
+    display: inline-block;
+  }
+
+  &__narrow-search--mobile li{
+    display: inline-block;
+    margin-left: spacer(px, small);
+    @include font-scale(mid);
+    font-weight: $fw-medium;
+    color: color(black);
+  }
+
+  &__chosen-select {
+    position: relative;
+    display: none;
+  }
+
+  // selected filters
+  &__narrow-search--mobile span {
+    color: color(blue, dark);
+    display: inline-block;
+  }
+
+  // right black filter arrow
+  .icon-events--arrow-small {
+    vertical-align: middle;
+    position: absolute;
+    right: 0;
+    bottom: 10px;
+  }
+
+  // bottom search button
+  &__bottom {
+    position: relative;
+    width: 100%;
+    height: 30px;
+    margin-top: spacer(px, mid);
+    margin-top: spacer(rem, mid);
+  }
+
+  // bottom search button
+  &__bottom-submit {
+    position: relative;
+    width: 100%;
+    padding: spacer(px, small);
+    background: color(red);
+    border: 1px solid color(gray);
+    color: color(white);
+  }
+
+  // bottom search button text
+  &__button-text {
+    position: relative;
+    top: 5px;
+  }
+  
+  // magnifying glass icon
+  &__bottom-submit {
+    .bdc-icon--search-medium {
+      margin-right: spacer(px, base);
+    }
+  }
+
+  .chosen-container {
+    display: none;
+  }
+
+  .chosen-container {
+    position: relative;
+    width: 100% !important;
+  }
+}
+
+.spingo-events-quicksearch {
+  padding: spacer(px, mid);
+  padding: spacer(rem, mid);
+  background: color(gray, xx-light);
+}
+
+.quicksearch-label {
+  margin-bottom: spacer(px, base);
+  margin-bottom: spacer(rem, base);
+  @include font-scale(x-small);
+  color: color(red);
+  font-weight: $fw-bold;
+}
+
+.events-quicksearch-results,
+.searched-events {
+  @include font-scale(x-small, 1.15);
+}
+
+// ------------------------------------------------------------
+// Tablet Breakpoint
+// ------------------------------------------------------------
+
+// Tablet Breakpoint
+@include media-query(tablet) {
+  .#{$module-name} {
+
+    // city filter buttongroup
+    &__filter-group {
+      float: left;
+      width: 50%;
+      margin-bottom: 15px;
+    }
+
+    // filter labels
+    &__filter-group-label{
+      display: inline-block;
+      margin: 0;
+      height: 100%;
+      width: 25%;
+      text-align: center;
+      padding-right: 0;
+    }
+
+    // surrounding filter block
+    &__filter {
+      width: 100%;
+      padding-top: spacer(px, large);
+      padding-top: spacer(rem, large);
+      padding-bottom: spacer(px, x-large);
+      padding-bottom: spacer(rem, x-large);
+      height: 30px;
+    }
+  
+    // subtitle
+    &__header-search-subtitle {
+      margin-top: spacer(px, mid);
+      margin-top: spacer(rem, mid);
+    }
+
+    &__header-content {
+      display: inline;
+      float: none;
+    }
+
+    &__header-title{
+      display: inline;
+    }
+
+    &__header-date{
+      display: inline;
+    }
+  }
+}
+
+// ------------------------------------------------------------
+// Desktop Breakpoint
+// ------------------------------------------------------------
+
+@include media-query(desktop) {
+  .#{$module-name} {
+
+    &__nearby-button {
+      display: none;
+    }
+
+    &__narrow-search--mobile {
+      display: none;
+    }
+
+    .chosen-container {
+      width: 80%;
+      display: inline-block;
+      margin-bottom: spacer(px, mid);
+    }
+
+    .icon-events--arrow-small {
+      display: none;
+    }
+
+    &__narrow-search-options {
+      display: inline-block !important;
+      margin-bottom: spacer(px, base);
+    }
+
+    &__narrow-search {
+      display: inline-block;
+      padding: 0;
+      margin-bottom: spacer(px, small);
+      margin-bottom: spacer(rem, small);
+      border: none;
+    }
+
+    // surrounding filter block
+    &__filter {
+      width: 100%;
+      clear: both;
+      margin-top: spacer(px, x-large);
+      margin-top: spacer(rem, x-large);
+      border-top: 1px solid color(gray, light);
+    }
+
+    &__filter-group {
+      padding-top: spacer(px, large);
+      padding-top: spacer(rem, large);
+      border-top: 1px solid color(gray, light);
+    }
+  
+    // city filter button group
+    &__filter--label {
+      width: 15%;
+    }
+
+    // city filter label
+    &__filter-group--mobile-label span {
+      display: none;
+    }
+
+    &__filter-group--mobile-label:after{
+      content: 'within';
+    }
+  }
+}

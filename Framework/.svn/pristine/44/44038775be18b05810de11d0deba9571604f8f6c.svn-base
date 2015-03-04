@@ -1,0 +1,253 @@
+<%--
+{comments}
+BDC-1770 removing more share tools
+{comments}
+--%>
+
+<%@ taglib prefix="jp" uri="jptag"%>
+<p:currentObject content="story" metadata="meta" webType="WT" sectionPage="dwp" sectionId="section" channel="Boston.com" uuid="uuid" />
+
+<bdc:getAdLayer var="layer" webType="${WT}" />
+<bdc:inheritStoryLayer var="editorialLayerPath" section="${section}" layer="EDITORIAL_STORY_ASSET_LAYER" />
+<!-- layer: ${editorialLayerPath} -->
+<%-- Gigya --%>
+<p:url var="gigyaCanonical" webObject="${currentObject}" public="true" />
+<p:out var="gigyaShortUrl" xvalue="$meta//ObjectMetadata/OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/ShortUrl" />
+<p:out var="gigyaHeadline" xvalue="$story//doc/story/headlines/headline/p" />
+<p:out var="gigyaThumbnail" value="" />
+<p:out var="gigyaThumbType" value="image" />
+
+<%-- Article stuff --%>
+<p:out var="headline" xvalue="$story//headlines/headline/p" />
+<p:out var="byname" xvalue="$story//text/byline/byname/p" scope="request" />
+<p:out var="bysource" xvalue="$story//text/byline/bysource/p" scope="request" />
+
+<%-- Pub date 'n things --%>
+<x:choose>
+	<x:when select="$meta//LastPrintOutput/PrintPublicationDate">
+		<p:out var="assetPrintPub" xvalue="$meta//LastPrintOutput/PrintPublicationDate" scope="request" />
+	</x:when>
+	<x:when select="$meta//ObjectMetadata/OnlineProducts/OnlineProduct[child::ProductName = 'Boston.com']/FirstPublicationDate">
+		<p:out var="assetPrintPub" xvalue="$meta//ObjectMetadata/OnlineProducts/OnlineProduct[child::ProductName = 'Boston.com']/FirstPublicationDate" scope="request" />
+	</x:when>
+	<x:otherwise>
+		<p:out var="assetPrintPub" xvalue="$meta//sys/timeModified" format="seconds|EN:MMMM d, yyyy h:mm a" scope="request"/>
+	</x:otherwise>
+</x:choose>
+<p:out var="assetPrintPub" value="${fn:trim(assetPrintPub)}" />
+<c:choose>
+	<c:when test="${empty assetLastPub}">
+		<p:out var="assetLastPub" format="seconds|EN:MMMM d, yyyy" xvalue="$meta//sys/timeModified" scope="request" />
+	</c:when>
+	<c:otherwise>
+		<p:out var="assetLastPub" value="${assetLastPub}" scope="request" format="eomdate:MMMM d, yyyy" />
+	</c:otherwise>
+</c:choose>
+
+<%-- Tagline --%>
+<p:out var="tagline" xvalue="$story//doc/story/text/tagline/p" />
+
+<%-- Media information --%>
+<bdc:getTeaseType webObject="${currentObject}" var="firstMMC" />
+<!-- firstMMC = ${firstMMC} -->
+
+<%-- 
+Navigation 
+Layer = ${layer}
+ad Layer Path = ${adLayerPath}
+editorial Layer Path = ${editorialLayerPath} 
+--%>
+<c:choose>
+	<c:when test="${not empty editorialLayerPath and fn:trim(editorialLayerPath) ne ''}">
+		<p:include pageZoneName="navigation" inherits="${editorialLayerPath}" >
+			<p:param name="dwp" value="${editorialLayerPath}" />
+			<p:param name="linkedType" value="${WT}" />
+		</p:include>
+	</c:when>
+	<c:otherwise>
+		<bdc:inheritZoneGlobal var="inheritancePath" section="${section}" zoneName="navigation" />
+		<p:include pageZoneName="navigation" inherits="${inheritancePath}">
+			<p:param name="dwp" value="${inheritancePath}" />
+			<p:param name="linkedType" value="${WT}" />
+		</p:include>
+	</c:otherwise>
+</c:choose>
+
+<%--
+	A whole bunch of garbage to determine whether we have a horizontal or vertical image, because of where in the doc they'd be included.
+	This logic is duplicated in story_image.jpt for the time being, until we have time to refactor it like normal humans.
+--%>
+<c:if test="${firstMMC eq 'photo-container'}">
+	<p:out var="mainImage" xvalue="$story//doc/story/multimedia-container/photo-container/photogrp[@class='main-web-images']/photo/@fileref" />
+	<!-- mainImage = ${mainImage} -->
+	<c:if test="${not empty mainImage and fn:trim(mainImage) != ''}">
+		<p:out var="imgID" value="${fn:substringAfter(mainImage, '?uuid=')}" />
+		<!-- imgID = ${imgID} -->
+		<p:getObject var="imageObj" uuid="${imgID}" onError="ignore" />
+		<c:if test="${not empty imageObj}">
+			<p:object webObject="${imageObj}" metadata="imageMeta" />
+			<p:out var="orientation" xvalue="$imageMeta//ObjectMetadata/Reference/Orientation" />
+			<c:choose>
+				<c:when test="${orientation eq 'Landscape'}">
+					<p:out var="imagePlacement" value="horizontal" />
+				</c:when>
+				<c:otherwise>
+					<p:out var="imagePlacement" value="vertical" />
+				</c:otherwise>
+			</c:choose>
+			<!-- orientation = ${orientation} -->
+			<!-- imagePlacement = ${imagePlacement} -->
+		</c:if>
+	</c:if>
+</c:if>
+
+<div class="story-mod">
+	<%--
+	<!-- Leaderboard Ad Module, ${editorialLayerPath} -->
+	<section class="leaderboard-mod nav-leaderboard-mod">
+		<p:include pageZoneName="ad_lead1" inherits="${editorialLayerPath}" />
+	</section> <!-- /leaderboard-mod -->
+	--%>
+	
+	<p:include pageZoneName="top_of_page" inherits="${editorialLayerPath}">
+		<p:param name="dwp" value="${dwp}" />
+	</p:include>
+
+	<div class="story-width article-with-art">
+<!-- help. -->
+		<header class="story-hdr article-hdr">
+	
+			<p:include pageZoneName="above_story" inherits="${editorialLayerPath}">
+				<p:param name="dwp" value="${dwp}" />
+			</p:include>
+	
+			<h1 class="story-h1">${headline}</h1>
+		</header> <!-- /article-hdr -->
+	
+		<article class="article-bd">
+			<c:choose>
+				<c:when test="${firstMMC eq 'photo-container'}">
+					<c:if test="${not empty mainImage and imagePlacement eq 'horizontal'}">
+						<%-- We need to take into account scenarios when there is no main image --%>
+						<p:inline url="$configurationURI/Framework/skins/leaf/story/story_image.jpt" />
+					</c:if>
+				</c:when>
+				<c:when test="${firstMMC eq 'video-container'}">
+					<p:inline url="$configurationURI/Framework/skins/leaf/story/story_video.jpt" />
+				</c:when>
+			</c:choose>
+	
+			<!-- Story Byline -->
+			<%-- Byline classes change depending on whether there is an image or not --%>
+			<p:out var="bylineClasses" value="byline-pair-mod byline-stacked" />
+			<c:if test="${empty mainImage or fn:trim(mainImage) eq ''}">
+				<p:out var="bylineClasses" value="byline-pair-mod byline-horiz sharespace" />
+			</c:if>
+			
+			<div class="${bylineClasses}">
+				<aside class="l-story-byline">
+					<%-- Author byline and twitter handle --%>
+					<p:inline url="$configurationURI/Framework/skins/leaf/story/story_byline.jpt" />
+					<%-- End author byline and twitter handle --%>
+				</aside> <!-- l-story-byline -->
+								
+				<!-- Story Banner Ad -->
+				<div class="l-ad-story-banner-1 ">
+					<section class="ad-banner-mod story-banner-1">
+						<p:include pageZoneName="ad_topright" inherits="${editorialLayerPath}" />
+						
+						<%--<div class="ad-banner ad" id="ad_banner"></div>--%>
+						<%--<p:include pageZoneName="ad_banner" inherits="${adLayerPath}" />--%>		
+					</section>
+				</div> <!-- l-story-secondary -->
+				
+			</div><!-- // byline-pair-mod byline-stacked -->
+	
+			<!-- Story Text -->
+			
+			
+			
+			<div class="l-story-txt-share article-txt-top no-flow">
+				
+				<%-- Horizontal images only --%>
+				<c:if test="${not empty mainImage and imagePlacement eq 'vertical'}">
+					<p:inline url="$configurationURI/Framework/skins/leaf/story/story_image.jpt" />
+				</c:if>
+				
+				<%-- Review header - Will only show the review title/stars if this has a movie or restaurant review, otherwise blank --%>
+				<p:include url="$configurationURI/Framework/skins/leaf/story/includes/review_header.jpt" context="${uuid}" />
+			
+				<%-- Story with any related links --%>
+				<p:out xvalue="$story//text/content" xslt="$configurationURI/Framework/xslt/bdc_story_default.xslt" >
+					<p:param name="objectPath" value="${currentObject.path}" />
+				</p:out>
+				
+				<%-- Review footer --%>
+				<p:include url="$configurationURI/Framework/skins/leaf/story/includes/review_controller.jpt" context="${uuid}" />	
+				
+			</div> <!-- /l-story-txt-share -->
+		</article> <!-- /article-bd -->
+	</div> <!-- /story-width -->
+	<%--
+	<!--  Taboola  -->
+	<p:include url="$configurationURI/Framework/skins/leaf/story/includes/taboola.jpt" />
+	<!--  Comments  -->
+	<p:inline url="$configurationURI/Framework/skins/components/ugc/comments/comments.jpt" />
+	--%>
+</div><!-- //story-mod -->
+
+<c:choose>
+	<c:when test="${not empty editorialLayerPath and fn:trim(editorialLayerPath) ne ''}">
+		<p:include pageZoneName="stream_config" inherits="${editorialLayerPath}" >
+			<p:param name="dwp" value="${editorialLayerPath}" />
+			<p:param name="linkedType" value="${WT}" />
+		</p:include>
+	</c:when>
+	<c:otherwise>
+		<bdc:inheritZoneGlobal var="inheritancePath" section="${section}" zoneName="stream_config" />
+		<p:include pageZoneName="stream_config" inherits="${inheritancePath}">
+			<p:param name="dwp" value="${inheritancePath}" />
+			<p:param name="linkedType" value="${WT}" />
+		</p:include>
+	</c:otherwise>
+</c:choose>
+
+<footer class="article-ftr">
+	<div class="site-width">
+
+		<!-- Quick Teases -->
+		<div class="l-primary">
+			<div id="streams-row" class="inner">
+			</div> <!-- /inner -->
+		</div> <!-- /l-primary -->
+
+		<!-- Feature Teases -->
+		<div class="feat-tz-holder">
+		<%--
+			<c:choose>
+				<c:when test="${not empty editorialLayerPath and fn:trim(editorialLayerPath) ne ''}">
+					<p:include pageZoneName="features_bottom" inherits="${editorialLayerPath}" >
+						<p:param name="dwp" value="${editorialLayerPath}" />
+						<p:param name="linkedType" value="${WT}" />
+					</p:include>
+				</c:when>
+				<c:otherwise>
+					<bdc:inheritZoneGlobal var="inheritancePath" section="${section}" zoneName="features_bottom" />
+					<p:include pageZoneName="features_bottom" inherits="${inheritancePath}">
+						<p:param name="dwp" value="${inheritancePath}" />
+						<p:param name="linkedType" value="${WT}" />
+					</p:include>
+				</c:otherwise>
+			</c:choose>
+		--%>
+		</div>
+	</div> <!-- /site-width -->
+
+	<!-- Scroll to Top Button -->
+	<a class="to-top-btn is-off" href="#top">
+		<i class="top-top-arrow"></i>
+		Back to Top
+	</a>
+
+</footer> <!-- /article-ftr -->
+

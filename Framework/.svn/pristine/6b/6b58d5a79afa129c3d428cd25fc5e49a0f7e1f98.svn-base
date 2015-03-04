@@ -1,0 +1,96 @@
+// $configurationURI/Framework/bdc-styles/partials/page-content/modules/_content-module.scss
+
+$module-name: 'related-links';
+
+// ------------------------------------------------------------
+// Default Styles
+// ------------------------------------------------------------
+
+.#{$module-name} {
+
+  @include constrain;
+  margin-bottom: spacer(px, large);
+  margin-bottom: spacer(rem, large);
+
+  &__header {
+    @include font-scale(xx-small);
+    margin-bottom: spacer(px, base);
+    margin-bottom: spacer(rem, base);
+    color: color(gray);
+    text-transform: uppercase;
+  }
+
+  &__header--red {
+    @include font-scale(xxx-small);
+    color: color(red);
+    text-transform: uppercase;
+  }
+
+  &__list {
+    @include font-scale(base, 1.2);
+    list-style: disc;
+    margin-left: spacer(px, large);
+    margin-left: spacer(rem, large);
+    color: color(red);
+    font-weight: $fw-bold;
+
+    a {
+      @include link-states(color(blue), color(blue, dark), color(blue, x-dark));
+    }
+  }
+
+  &__list-item {
+    margin-bottom: spacer(px);
+    margin-bottom: spacer(rem);
+  }
+}
+
+.bdc-page-content--story {
+  .#{$module-name} {
+    width: 100%;
+    padding: spacer(px, mid);
+    padding: spacer(rem, mid);
+    background: color(gray, xx-light);
+  }
+}
+
+// ------------------------------------------------------------
+// > 640 Breakpoint 
+// ------------------------------------------------------------
+
+// Custom breakpoint for related links inside article text
+@include media-query(640) {
+  .bdc-page-content--story, .bdc-page-content--wirestory {
+    .#{$module-name} {
+      width: 40%;
+      float: left;
+      padding: spacer(px, mid);
+      padding: spacer(rem, mid);
+      margin-right: spacer(px, large);
+      margin-right: spacer(rem, large);
+      margin-bottom: spacer(px);
+      margin-bottom: spacer(rem);
+      background: color(gray, xx-light);
+      
+      // when an article only has 1 or 2 paragraphs it spans full width
+      &--wide {
+        width: 100%;
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+// ------------------------------------------------------------
+// Tablet Breakpoint
+// ------------------------------------------------------------
+
+@include media-query(tablet) {
+  .#{$module-name} {
+    @include font-scale(xx-small);
+
+    &__list-item {
+      @include font-scale(x-small);
+    }
+  }
+}

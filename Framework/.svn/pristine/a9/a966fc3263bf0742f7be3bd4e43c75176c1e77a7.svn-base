@@ -1,0 +1,27 @@
+<p:out var="overallLeadersStatus" value="${cacheScope.overallLeadersStatus}" />
+<p:out var="scoreboardStatus" value="${cacheScope.scoreboardStatus}" />
+
+<div class="content feat-scoreboard">
+	<h3>Scoreboard</h3>
+	<c:choose>
+		<c:when test="${scoreboardStatus eq 'enabled'}">
+				<script language="JavaScript">
+				var now = new Date();
+				var nowSecs = now.getTime();
+				document.write( '<scr'+'ipt language="javascript" SRC="http://stats.boston.com/multisport/today.js.asp?sport=ifb&lg=mls&lang=en&random='+(nowSecs * Math.Random)+'"> <\/scr'+'ipt>' );
+			</script>
+		</c:when>	
+		<c:when test="${overallLeadersStatus eq 'enabled'}">
+			<p:out var="cat" value="${cacheScope.category}" />
+			<c:if test="${empty cat}">
+				<p:out var="cat" value="teamstats" />
+			</c:if>
+			<p:out var="id" value="${applicationScope.teamID}" />
+			<c:if test="${empty id}">
+				<p:out var="id" value="9" />
+			</c:if>
+			
+			<script language="javascript" SRC="http://stats.boston.com/multisport/stats.js.asp?sport=ifb&lg=mls&type=${cat}&team=${id}&lang=en"></script>
+		</c:when>
+	</c:choose>		
+</div>

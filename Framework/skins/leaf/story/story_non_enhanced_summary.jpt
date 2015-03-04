@@ -1,0 +1,183 @@
+
+<%--
+
+There are four non-enhanced article specific elements on this page, each noted with a Methode comment
+
+--%>
+
+
+	<div class="page-content">
+
+		<!-- Leaderboard Ad Module -->
+		<section class="leaderboard-mod nav-leaderboard-mod">
+			<div class="ad-leaderboard" id="ad_lead1">
+				<script type="text/javascript">
+					googletag.cmd.push(function() { 
+						googletag.display("ad_lead1"); 
+					}); 
+				</script>
+			</div>
+		</section> <!-- /leaderboard-mod -->
+		<div class="story-mod">
+			<div class="story-width article-with-art">
+		
+				<header class="story-hdr article-hdr">
+					<div class="story-overline-mod">
+						<a href="index.html#lifestyle" class="story-cat overline">Life</a>
+					</div> <!-- /story-overline-mod -->
+			
+					<h1 class="story-h1">Your Brain on Yoga</h1>
+				</header> <!-- /article-hdr -->
+			
+				<article class="article-bd">
+			
+					<!-- Story Lead Art -->
+					<div class="l-story-primary no-flow">
+						<figure class="article-lead-art-mod">
+							
+							<div class="videoplayer ndn_embed"
+								 data-schema="2" 
+								 data-player="clicktoplay" 
+								 data-config-widget-id="1" 
+								 data-config-type="VideoPlayer/Single" 
+								 data-config-tracking-group="10557" 
+								 data-config-video-id="25498051" 
+								 data-config-site-section="site_section_id">
+							</div> 
+							<!-- <img class="article-art article-lead-art" src="../photos/yoga.jpg"> -->
+							<figcaption class="caption story-caption reverse">
+								A new study suggests that yoga provides a bigger mental boost than running <i class="credit">Credit: Jonathan Wiggs, Boston Globe</i>
+							</figcaption> <!-- /article-caption -->
+						</figure>
+					</div> <!-- /article-art-mod -->
+			
+					<!-- Story Byline -->
+					<div class="byline-pair-mod byline-stacked ">
+						<aside class="l-story-byline">
+							<section class="story-byline-mod">
+								<a href="#URL:author-page" class="byline-avatar-mod art-bd">
+									<img class="story-byline-avatar art" src="../photos/avatar-gary-dzen.jpg">
+								</a> <!-- /author-avatar-mod -->
+								<div class="txt-bd">
+									<ul class="article-byline-list">
+										<li class="story-byline"><a href="#URL:author-page">Gary Dzen</a></li>
+										<li class="story-byline-handle"><a href="#URL:author-twitter-handle">@globegary</a></li>
+										<li class="story-byline-affiliation">Boston.com Staff</li>
+										<li class="story-timestamp">June 25, 2013 7:54am</li>
+									</ul>
+								</div> <!-- /txt-bd -->
+							</section> <!-- /story-byline-mod -->
+			
+							<!-- Story Share Tools: Header -->
+						    <section class="story-tools-mod story-tools-hdr">
+						        <ul class="tools-horiz story-tools-horiz">
+						            <li class="tools-item tools-share">
+										<a class="popup-trigger" href="#mfp-share" data-canonical="http://boston.com/some/long/url/for/fun" data-shorturl="http://fa.ke/replace" data-headline="Your Brain on Yoga" data-thumbnail="../photos/yoga.jpg" data-thumb_type="image">
+											<i class="share-icon"></i>
+											<i class="tools-txt">Share</i>
+										</a>
+									</li>
+						            <li class="tools-item tools-comment">
+										<a href="#story-comments" class="js-goto-open-comments">
+											<i class="comment-icon"></i> 
+											<i class="tools-txt">Comment</i>
+										</a>
+									</li>
+						        </ul>
+						        
+						        <%-- from provider globe image --%>
+						        <div class="provider-globe">
+			                      <a>
+			                      <img src="img/from_provider_globe.gif"/>
+			                      </a>
+			                    </div>
+			
+									        
+						    </section>  <!-- /story-tools-hdr -->
+						</aside> <!-- l-story-byline -->				
+						<!-- Story Banner Ad -->
+						<div class="l-ad-story-banner-1 ">
+							<section class="ad-banner-mod story-banner-1">
+								<img src="../ads/banner-1.jpg" class="ad-banner">
+							</section>
+						</div> <!-- l-story-secondary -->
+					</div><!-- // byline-pair-mod byline-stacked -->
+			
+	<%--
+					<div class="story-share-mod">
+						<!-- Story Share Tools: Sidecar -->
+						<div class="story-tools-mod story-tools-sidecar">
+							<ul class="tools-btns">
+								<li class="tools-item tools-share">
+									<a class="popup-trigger tools-link tools-link-share" href="#mfp-share" data-canonical="http://boston.com/some/long/url/for/fun" data-shorturl="http://fa.ke/replace" data-headline="Your Brain on Yoga" data-thumbnail="../photos/yoga.jpg" data-thumb_type="image">
+										<i class="share-icon"></i>
+										<i class="tools-txt">Share</i>
+									</a>
+								</li>
+								<li class="tools-item tools-comment">
+									<a class="tools-link tools-link-comment js-goto-open-comments" href="#story-comments">
+										<i class="comment-icon"></i>
+										<i class="sc-comment-count">5</i>
+										<i class="tools-txt">Comment</i>
+									</a>
+								</li>
+							</ul> <!-- /share-sidecar -->
+						</div> <!-- /story-tools-sidecar-->
+					</div>	
+	--%>
+						
+						<!-- Story Text -->
+						<div class="l-story-txt-share article-txt-top no-flow">
+					<%-- Top of article globe-teaser line --%>
+								<h3 class="globe-teaser">This is a summary. To read the whole story subscribe to <a href="http://bostonglobe.com">BostonGlobe.com</a></h3>
+					
+								<p class="article-p first-p"><i class="dropcap">E</i>xercise has long been hailed as an elixir for the brain, to boost your mood, improve learning, and ward off memory loss. But yoga may be even better.</p><p class="article-p">Just in time for the return of Lululemon’s yoga pants—which thankfully are no longer see-through—new research published in the Journal of Physical Activity and Health suggests that yoga practice temporarily boosts memory and focus more than jogging. A small study involving 30 female college students, who weren’t regular practitioners of yoga, found that they performed better on cognitive tests after performing yoga for 20 minutes as compared to when they jogged on a treadmill just before taking the tests.</p>
+			<%-- Bottom of article globe-teaser line --%>
+					           <p class="article-p"><a class="globe-full-story-link"> Full story for BostonGlobe.com subscribers.</a></p>
+			
+					
+			
+					<div class="story-social-btns l-story-txt-share">
+						<button class="social-btn social-btn-fbook"><i class="icon"></i>Share</button>
+						<button class="social-btn social-btn-twitter"><i class="icon"></i>Tweet</button>
+					</div> 
+
+					<%-- The globe call-to-action --%>
+
+		            <!-- non-enhanced summary call to action -->
+		            
+		            <div class="globe-non-enhanced-cta">
+		              <figure>
+		                <img src="img/bglobe-stub-center.gif">
+		              </figure>
+		              <p>Get the full story with unlimited access to BostonGlobe.com.</p>
+		              <p>Just 99 cents for four weeks.</p>
+		              <a>
+		                <button>
+		                  Get Access Now
+		                </button>
+		              </a>
+		            </div>
+
+					<!-- Story Share Tools: Footer -->
+					<footer class="story-tools-mod story-tools-ftr">
+						<ul class="tools-horiz story-tools-horiz">
+							<li class="tools-item tools-share">
+								<a class="popup-trigger tools-link tools-link-share" href="#mfp-share" data-canonical="http://boston.com/some/long/url/for/fun" data-shorturl="http://fa.ke/replace" data-headline="Your Brain on Yoga" data-thumbnail="../photos/yoga.jpg" data-thumb_type="image">
+									<i class="share-icon"></i>
+									<i class="tools-txt">Share</i>
+								</a>
+							</li>
+							<li class="tools-item tools-comment js-toggle-comments">
+								<a class="tools-link tools-link-comment-ftr" href="#URL:comment-trigger">
+									<i class="comment-icon"></i> 
+									<i class="tools-txt">Comment</i>
+								</a>
+							</li>
+						</ul>
+					</footer>  <!-- /story-tools-ftr -->
+			
+				</article> <!-- /article-bd -->
+			</div> <!-- /story-width -->
+		</div><!-- //story-mod -->
+	</div> <!-- /page-content -->

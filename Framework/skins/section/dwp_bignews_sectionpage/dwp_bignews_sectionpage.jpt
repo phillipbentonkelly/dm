@@ -1,0 +1,95 @@
+<p:currentObject metadata="dwpMeta" content="dwpContent" webType="WT" uuid="uuid" channel="Boston.com" sectionPage="dwp" sectionId="sectionId" />
+<bdc:getAdLayer var="adLayerName" webType="${WT}"/>
+<bdc:inheritStoryLayer var="adLayerDwpPath" section="${sectionId}" layer="${adLayerName}" />
+<p:out var="adLayerDwpPath" value="${adLayerDwpPath}" scope="request" />
+					
+<p:out var="edition" xvalue="$dwpMeta//dbMetadata/sys/props/productInfo/edition" scope="request" /> 
+
+<!-- As a component, KEVIN IS HERE1 -->
+<p:include pageZoneName="navigation">
+	<p:param name="dwp" value="${currentObject}" />
+	<p:param name="dwpSection" value="${sectionId}" />
+</p:include>
+<%-- <p:include url="$configurationURI/Framework/skins/components/navigation/navigation_menu.jpt" /> --%>
+
+<%-- super big news --%>
+
+
+<div class="hp-mod page-content">
+    
+	<!-- Leaderboard Ad Module -->
+	<section class="leaderboard-mod nav-leaderboard-mod">
+		<div class="ad-lead ad" id="ad_lead1"></div>
+	</section> <!-- /leaderboard-mod -->
+	
+	<%-- Pencil Ad Slot / Populated via ad_richemedia --%>
+    <div id="ad_pencil"></div>
+	
+	<div class="site-width">
+		<p:include pageZoneName="above_carousel">
+			<p:param name="dwp" value="${currentObject}" />
+		</p:include>
+		<div class="secondary">
+
+			<p:include pageZoneName="features_top">
+				<p:param name="dwp" value="${currentObject}" />
+			</p:include>
+			
+			<%-- Weather --%>
+			<p:inline url="$configurationURI/Framework/frameset/header/weather.jpt" />
+			
+			<%-- Golden links of a thousand dreams --%>
+			<%-- Removed as per BCOMREDESIGN-1002
+			<p:inline url="$configurationURI/Framework/skins/components/classifieds/classifieds.jpt" />
+			--%>
+			<!-- Big Ad Module -->
+			<section class="hp-big-mod hp-big-1">
+				<%--<p:include pageZoneName="ad_topright" inherits="${adLayerDwpPath}" />--%>			
+			</section>
+	
+		</div>
+		<div class="primary">
+			<div class="inner">
+								
+				<p:include pageZoneName="carousel">
+					<p:param name="dwp" value="${currentObject}" />
+					<p:param name="sectionForTracking" value="${dwpSection}" />
+				</p:include>
+				
+				<p:include pageZoneName="middle">
+					<p:param name="dwp" value="${currentObject}" />
+				</p:include>
+			</div>
+		</div>
+		<div class="secondary">
+			<!-- ad_topright ad -->
+			<p:include pageZoneName="ad_topright" inherits="${adLayerDwpPath}" />
+		</div>
+		<div class="secondary">
+			<!-- "must reads" -->
+			<p:inline url="$configurationURI/Framework/skins/components/must_reads/must_reads.jpt" />
+			<!-- kev1 -->
+		</div>		
+		
+		<%--<p:inline url="$configurationURI/Framework/skins/components/seo_stream_load/seo_stream_load.jpt" />--%>
+		
+		<div class="primary">
+			<div id="streams-row" class="inner"></div>
+		</div>
+		
+		<p:include pageZoneName="stream_config" />
+		
+		<div class="secondary">
+			<p:include pageZoneName="features_bottom">
+				<p:param name="dwp" value="${currentObject}" />
+			</p:include>							
+		</div>
+		<!-- Scroll to Top Button -->
+		<a class="to-top-btn is-off" href="#top">
+			<i class="top-top-arrow"></i>
+			Back to Top
+		</a>
+	</div> <!-- /site-width -->
+	
+</div> <!-- /hp-mod -->	
+

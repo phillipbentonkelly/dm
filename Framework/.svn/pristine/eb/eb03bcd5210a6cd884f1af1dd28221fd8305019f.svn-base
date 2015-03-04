@@ -1,0 +1,47 @@
+<p:currentObject metadata="meta" />
+<p:out var="headerTitle" xvalue="$meta//TeaseHeader" />
+<p:out var="headerURL" xvalue="$meta//TeaseHeaderURL" />
+<bc:getBorderClass webObject="${currentObject}" defaultBorder="enabled" var="borderClasses"/>
+<c:if test="${not empty cacheScope.dwp}">
+	<p:object webObject="${cacheScope.dwp}" metadata="dwpMeta"/>
+	<p:out var="VREnabled" xvalue="$dwpMeta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/VisualRevenue"/>
+	<p:out var="VRZoneName" xvalue="$meta//OnlineProducts/OnlineProduct[child::ProductName='Boston.com']/VisualRevenueZoneName"/>
+	<c:choose>
+		<c:when test="${VREnabled eq 'True' and not empty VRZoneName}">
+			<p:out var="VRZoneName" value='data-vr-zone="${VRZoneName}"'/>
+		</c:when>
+		<c:otherwise>
+			<p:out var="VRZoneName" value=""/>
+		</c:otherwise>
+	</c:choose>
+</c:if>
+
+<div class="row">
+	<div class="widget-wrapper ${borderClasses}" ${VRZoneName}>
+		<p:include partPageName="header" maxItems="30">
+			<p:param name="dwp" value="${cacheScope.dwp}"/>
+		</p:include>	
+		<c:if test="${not empty headerTitle or headerTitle!=''}">
+			<!-- header -->
+			<div class="section-header">
+				<h3>
+					<bc:link value="${headerURL}">${headerTitle}</bc:link>
+				</h3>
+			</div>
+		</c:if>
+	
+		<p:include partPageName="main" templateName="offlead_no_image" maxItems="30">
+			<p:param name="dwp" value="${cacheScope.dwp}"/>
+			<p:param name="CampaignCodes" value="${cacheScope.CampaignCodes}"/>
+			<p:param name="dwc" value="${currentObject}"/>
+		</p:include>
+	
+		<%-- Related Links --%>
+		<p:inline url="$configurationURI/Framework/skins/components/tease/link_list.jpt">
+			<p:param name="dwp" value="${cacheScope.dwp}"/>
+			<p:param name="linksPerLine" value="1" />
+			<p:param name="templateName" value="regular_simple"/>
+		</p:inline>
+	</div>	
+</div>
+

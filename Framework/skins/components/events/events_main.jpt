@@ -1,0 +1,3 @@
+<div id="spingo-wrapper">
+	<div id="spingo-container" ui-view="" style="min-height: 700px;" class="ng-scope"></div>
+</div>

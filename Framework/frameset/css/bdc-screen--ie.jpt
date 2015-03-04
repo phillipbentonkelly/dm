@@ -1,0 +1,7 @@
+<%--
+  {comments}
+    BDC-1771 Breaking out css to critical/non-critical
+  {comments}
+ --%>
+
+<link href="/css/hash/${cacheScope.hash}/dist/bdc-screen--ie.css" rel="stylesheet">

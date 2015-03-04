@@ -1,0 +1,5 @@
+<%@ taglib prefix="bgm" uri="bgmtags"%>
+<bgm:import 
+	var="feed" 
+	url="http://www.boston.com/sports/basketball/celtics/extras/celtics_blog/ap-iso.xml" />
+${feed}

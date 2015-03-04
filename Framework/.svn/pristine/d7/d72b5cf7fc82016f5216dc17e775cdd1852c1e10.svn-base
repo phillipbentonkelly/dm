@@ -1,0 +1,17 @@
+Put Notes about Regi Here:
+
+Settings for Regi in /SysConfig/WebPortal/Boston/environments.properties
+sitedomain=http://regi-dev:8080 - Domain of Service - Access like this: <c:set value="${portalContext.env.sitedomain}" var="siteDomain" />
+fbhandler=fbhandlertest			- 
+fbsuccess=fbsuccesstest
+fbfail=fbfailtest
+
+
+When using redirects, put code before any include statement:
+
+<%--BB: Redirect Must Come Before Any Includes --%> 
+<c:if test="${userSession == null}">
+	 <c:redirect url="login.jsp" />
+</c:if>
+
+<jsp:include page="eom/SysConfig/WebPortal/Boston/Framework/regi/common/header.jsp"/>

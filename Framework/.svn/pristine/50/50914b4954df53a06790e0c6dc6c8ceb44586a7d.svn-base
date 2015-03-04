@@ -1,0 +1,72 @@
+<%@ page language="java" contentType="application/json; charset=UTF-8" pageEncoding="UTF-8" %>	
+<%@page import="java.util.*"%>
+<%@page import="java.text.SimpleDateFormat"%>
+<%-- <p:template contentType="application/json" /> --%>
+
+<p:out var="stream" value="${cacheScope.stream}" />
+<p:out var="filter" value="${cacheScope.filter}" />
+<p:out var="limit" value="${cacheScope.limit}" />
+<p:out var="status" value="${cacheScope.status}" />
+<p:out var="startingdate" value="${cacheScope.startingdate}" />
+
+<%-- mock homepage to news for dev testing --%>
+<c:if test="${stream == 'homepage'}"><c:set var="stream">news</c:set></c:if>
+
+<c:if test="${empty filter}"><c:set var="filter">all</c:set></c:if>
+<c:if test="${empty limit}"><c:set var="limit">50</c:set></c:if>
+<c:if test="${empty status}"><c:set var="status">Approved</c:set></c:if>
+
+<%
+
+	SimpleDateFormat format = new SimpleDateFormat("yyyyMMddHmmssSS");
+	format.setTimeZone(TimeZone.getTimeZone("GMT"));
+	
+    String tsDateStr = format.format(new Date());
+
+	pageContext.setAttribute("timestamp", tsDateStr);
+
+%>
+<%--  if not specified, use timestamp but lop of ms  --%>
+<c:if test="${empty startingdate}"><c:set var="startingdate">${fn:substring(timestamp,0,14)}</c:set></c:if>
+
+
+<% 
+	String[] queryParams = new String[5];
+	queryParams[0] = (String)pageContext.getAttribute("stream");
+	queryParams[1] = (String)pageContext.getAttribute("filter");
+	queryParams[2] = (String)pageContext.getAttribute("startingdate");
+	queryParams[3] = (String)pageContext.getAttribute("limit");
+ 	queryParams[4] = (String)pageContext.getAttribute("status");
+    
+	pageContext.setAttribute("queryParams", queryParams);
+%>
+
+
+<p:url var="whereAmI" value="$configurationURI/Framework/sandbox/jflaherty/getJson.jpt" public="true"/>
+	<p:getCollection path="$configurationURI/Framework/queries/bdc_stream.vquery" virtualParams="${queryParams}" var="q" />
+	
+{ "stream": "${stream}",
+	"filter": "${filter}",
+   "timestamp": "${timestamp}",
+   "limit": "${limit}",
+   "startingdate": "${startingdate}",
+	"data": [
+	<c:forEach items="${q.items}" var="i" begin="0" end="${limit}" varStatus="status">
+		seo counter: ${status.count}
+		<%--
+			<p:include styleName="$configurationURI/Framework/sandbox/jflaherty/getJson.jpt" webObject="${i}">
+			<p:param name="modelOnly" value="1"/>
+			<p:param name="stream" value="${stream}"/>
+			</p:include>
+			<c:if test="${not status.last}">,
+			</c:if>
+		--%>
+	</c:forEach>
+	
+	]
+}
+
+	
+	<%-- </c:otherwise> 
+</c:choose>--%>
+

@@ -1,0 +1,137 @@
+// Ryan P 8.19
+// .mfp-container {
+// 	// @include animation(fadein .3s );
+// }
+// Ryan P 8.19
+.img-popup {
+	// position: relative;
+	// background-color: #fff;
+	// @include mq(500px) {
+	// 	margin: 3%;
+	// }
+	// @include mq(1585px) {
+	// 	margin-left: auto;
+	// 	margin-right: auto;
+	// }
+	.mfp-close {
+		// TODO this is only tuned to the current images -- larger fix needed!
+		@include mq(max, 649px) {
+			background-color: rgba(0,0,0,.5);
+			@include size(30px);
+			color: #ccc;
+			line-height: 32px;
+		}
+	}
+}
+// Ryan P 8.19
+// .single-img {
+// 	@include mq($img-popup-lg) {
+// 		@include grid-static(340px, 0px);
+// 		&:before {
+// 			// Create a 1px line that helps
+// 			// runs the height of the container
+// 			// and separates the two columns
+// 			@include psuedo(0 340px 0 n);
+// 			width: 1px;
+// 			background-color: #e5e5e5;
+// 		}
+// 	}	
+// }
+// .img-popup-art-mod {
+// 	border-bottom: 1px solid #e5e5e5;
+// 	@include mq($img-popup-lg) {
+// 		border-bottom: 0;
+// 		border-right: 1px solid #e5e5e5;
+// 	}
+// }
+
+// .img-popup-art {
+// 	display: block;
+// 	max-width: 100%;
+// 	margin: auto;
+// }
+
+// .img-popup-info-mod {
+// 	padding: 12px;
+// 	background-color: #fafafa;
+// 	@include pie-clearfix;
+// 	@include mq($img-popup-md) {
+// 		padding: 20px;
+// 	}
+// 	@include mq($img-popup-md, $img-popup-lg) {
+// 		@include grid-static(300px, 40px);
+// 		position: relative;
+// 		&:before {
+// 			// Create a 1px line that helps
+// 			// runs the height of the container
+// 			// and separates the two columns
+// 			@include psuedo(20px 340px 20px n);
+// 			width: 1px;
+// 			background-color: #e5e5e5;
+// 		}
+// 	}
+// }
+
+.img-popup-txt-mod {
+	// padding-bottom: 15px;
+	// border-bottom: 1px solid #e5e5e5;
+	// margin-bottom: 15px;
+	// @include mq($img-popup-md, $img-popup-lg) {
+	// 	border-bottom: 0;
+	// 	padding-bottom: 0;
+	// 	// Make sure there's room for credit,
+	// 	// which rests on the bottom left of box
+	// 	margin-bottom: 25px; 
+	// }
+	.tz-comment-input {
+		padding: 6px 9px;
+	}
+}
+
+// .l-img-popup-txt {
+// 	max-width: 600px;	
+// }
+
+// .img-popup-txt {
+// 	@include mq($img-popup-lg) {
+// 		// Make room for the close button
+// 		margin-right: 15px;
+// 	}
+// }
+
+// .img-popup-credit {
+// 	color: #ccc;
+// 	@include mq($img-popup-sm) {
+// 		left: 20px;
+// 	}
+// 	@include mq($img-popup-md) {
+// 		position: absolute;
+// 		left: 12px;
+// 		bottom: 20px;
+// 	}
+// 	@include mq($img-popup-lg) {
+// 		left: 10px;
+// 		bottom: 7px;
+// 	}
+// }
+
+// .img-popup-tools-mod {
+// 	margin-bottom: 30px;
+// }
+
+// Ryan P ( got rid of img popup tools and closing bracket for it)
+// .img-popup-tools {
+	// @include tools(horiz);
+	.tools-item {
+		display: inline-block;
+	}
+	// .tools-share {
+	// 	margin-right: 15px;
+	// }
+// }
+
+.img-popup-ad .ad-big{
+	@include mq(max, 400px) {
+		margin-left: -8px;
+	}
+}

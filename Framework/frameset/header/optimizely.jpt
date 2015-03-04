@@ -1,0 +1,6 @@
+<%--
+{comments}
+BDC-1902 change optimizely src to env prop
+{comments}
+--%>
+<script src="${portalContext.env.optimizelyPath}"></script>

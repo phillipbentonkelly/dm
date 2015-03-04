@@ -1,0 +1,101 @@
+
+
+#dealsWrapper {
+	text-align: left;
+	position: relative;
+}
+
+
+#dealsWrapper a,
+#dealsWrapper a,
+#dealsWrapper a:focus,
+#dealsWrapper a:hover {
+	border-bottom: none;
+	text-decoration: none;
+}
+
+
+/* Tabs ===================*/
+
+#dealsWrapper {
+	position: relative;
+	width:100%;
+	}
+
+#dealsWrapper #dealsTabs ul {
+	margin:0;
+	padding: 3px 0;
+	border-bottom: 1px solid #999;
+	font: bold 12px Arial, Helvetica, sans-serif;
+	height: 44px;
+	width: 100%;
+	list-style: none;
+	}
+
+#dealsWrapper #dealsTabs li {
+	list-style: none;
+	margin: 0;
+	display: block;
+	float: left;
+	}
+
+#dealsWrapper #dealsTabs ul li a {
+ 	padding: 8px 8px 0 8px;
+ 	margin-left: 5px;
+ 	border: 1px solid #999;
+ 	border-bottom: none;
+ 	background: #efefef;
+ 	text-decoration: none;
+ 	display: block;
+ 	width: 115px;
+	height:38px;
+	float: left;
+	color: #464646;
+	}
+
+
+#dealsWrapper #dealsTabs ul li a:link { 
+	color: #999;
+	}
+
+#dealsWrapper #dealsTabs ul li a:hover {
+ 	color: #000;
+ 	cursor: pointer;
+	}
+
+#dealsWrapper #dealsTabs ul li a.active {
+ 	background-color: #fff;
+ 	border-bottom: 1px solid #fff;
+ 	border-top: 4px solid #2851A2;
+ 	color: #000;
+ 	position: relative;
+ 	top: -3px;
+	}
+	
+.splitThirds {padding-top:10px; width:auto;}
+.splitThirds div[class*='Side'] {width:33%; float:left;}
+.splitThirds div div {padding-bottom:12px;}
+
+.site-width #content {width: 100%;}
+#upper .span11 {width: auto; max-width:749px;}
+.container {width:100%; max-width:1044px;}
+
+@media (max-width : 1000px) {
+  #upper .span3 {display:none;}
+}
+@media (max-width : 1000px) {
+  #upper .span11 {width:100%;}
+}
+
+@media (max-width : 768px) {
+  #upper .splitThirds > div {width:49%;}
+  #upper .splitThirds div.bSide {float:right;}
+  #upper .splitThirds div.cSide {clear:both; float:none; width:100%;}
+  #upper .splitThirds div.cSide > div {float:left; width:49%;}
+
+}
+
+@media (max-width : 500px) {
+  #upper .splitThirds div[class*='Side'] {float:none; width:100%;}
+  #upper .splitThirds div.cSide > div {float:none; width:100%;}
+}

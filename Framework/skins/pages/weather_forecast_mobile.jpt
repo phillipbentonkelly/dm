@@ -1,0 +1,86 @@
+<p:url value="http://www.boston.com/weather/json/BOS?novar" var="json" public="true" />
+<p:json url="${json}" var="jsonOutput"/> 
+<div class="content">
+	<div id="bg-forecast" class="mod bg-forecast">
+		<header class="mod fc-lead">
+			<h1 class="alert-title">Weather</h1>
+			<h2 class="alert-sub">Seven-day forecast</h2>
+			<%--<div class="exp-more"><a  href="http://boston.com/weather/?p1=BG_HP_WeatherBox">More <b><i>weather</i> on Boston.com</b> →</a> <a href="#" class="exp-close">Remove this weather alert</a></div>--%>
+		</header><!-- /end .mod.fc-lead -->
+		<ul class="fc-day">
+			<li class="mod fc-day clearfix">
+				<p:out value="${fn:split(jsonOutput.forecast[0].monthday, ' ')[0]}" var="month" />
+				<p:out value="${fn:split(jsonOutput.forecast[0].monthday, ' ')[1]}" var="day" />		
+				<div class="fc-info">
+					<figure class="fc-status"><img src="http://cache.boston.com/universal/site_graphics/weather/weather_small/${jsonOutput.forecast[0].smallicon}" alt="<p:out value="${jsonOutput.forecast[0].description}"/>"> <figcaption><p:out value="${jsonOutput.forecast[0].description}"/></figcaption></figure>
+					<h3 class="fc-day-name">Today: <i class="fc-date"><abbr title="<c:out value="${month}" />"><c:out value="${month}" /></abbr> <c:out value="${day}" /></i></h3>
+					<ul class="fc-temp">
+						<li class="fc-temp temp-hi"><p:out value="${jsonOutput.forecast[0].high}"/><abbr title="Degrees">°</abbr></li>
+						<li class="fc-temp temp-lo"><p:out value="${jsonOutput.forecast[0].low}"/><abbr title="Degrees">°</abbr></li>
+					</ul>
+				</div>
+			</li><!-- /end .mod.fc-lead -->
+			<li class="mod fc-day clearfix">
+				<p:out value="${fn:split(jsonOutput.forecast[1].monthday, ' ')[0]}" var="month" />
+				<p:out value="${fn:split(jsonOutput.forecast[1].monthday, ' ')[1]}" var="day" />	
+				<figure class="fc-status"><img src="http://cache.boston.com/universal/site_graphics/weather/weather_small/${jsonOutput.forecast[1].smallicon}" alt="<p:out value="${jsonOutput.forecast[1].description}"/>"></i> <figcaption><p:out value="${jsonOutput.forecast[1].description}"/></figcaption></figure>	
+				<h3 class="fc-day-name"><p:out value="${jsonOutput.forecast[1].name}"/>: <i class="fc-date"><abbr title="<c:out value="${month}" />"><c:out value="${month}" /></abbr> <c:out value="${day}" /></i></h3>
+				<ul class="fc-temp">
+					<li class="fc-temp temp-hi"><p:out value="${jsonOutput.forecast[1].high}"/><abbr title="Degrees">°</abbr></li>
+					<li class="fc-temp temp-lo"><p:out value="${jsonOutput.forecast[1].low}"/><abbr title="Degrees">°</abbr></li>
+				</ul>
+			</li><!-- /end .mod.fc-lead -->	
+			<li class="mod fc-day clearfix">
+				<p:out value="${fn:split(jsonOutput.forecast[2].monthday, ' ')[0]}" var="month" />
+				<p:out value="${fn:split(jsonOutput.forecast[2].monthday, ' ')[1]}" var="day" />	
+				<figure class="fc-status"><img src="http://cache.boston.com/universal/site_graphics/weather/weather_small/${jsonOutput.forecast[2].smallicon}" alt="<p:out value="${jsonOutput.forecast[2].description}"/>"></i> <figcaption><p:out value="${jsonOutput.forecast[2].description}"/></figcaption></figure>	
+				<h3 class="fc-day-name"><p:out value="${jsonOutput.forecast[2].name}"/>: <i class="fc-date"><abbr title="<c:out value="${month}" />"><c:out value="${month}" /></abbr> <c:out value="${day}" /></i></h3>
+				<ul class="fc-temp">
+					<li class="fc-temp temp-hi"><p:out value="${jsonOutput.forecast[2].high}"/><abbr title="Degrees">°</abbr></li>
+					<li class="fc-temp temp-lo"><p:out value="${jsonOutput.forecast[2].low}"/><abbr title="Degrees">°</abbr></li>
+				</ul>
+			</li><!-- /end .mod.fc-lead -->	
+			<li class="mod fc-day clearfix">
+				<p:out value="${fn:split(jsonOutput.forecast[3].monthday, ' ')[0]}" var="month" />
+				<p:out value="${fn:split(jsonOutput.forecast[3].monthday, ' ')[1]}" var="day" />	
+				<figure class="fc-status"><img src="http://cache.boston.com/universal/site_graphics/weather/weather_small/${jsonOutput.forecast[3].smallicon}" alt="<p:out value="${jsonOutput.forecast[3].description}"/>"></i> <figcaption><p:out value="${jsonOutput.forecast[3].description}"/></figcaption></figure>	
+				<h3 class="fc-day-name"><p:out value="${jsonOutput.forecast[3].name}"/>: <i class="fc-date"><abbr title="<c:out value="${month}" />"><c:out value="${month}" /></abbr> <c:out value="${day}" /></i></h3>
+				<ul class="fc-temp">
+					<li class="fc-temp temp-hi"><p:out value="${jsonOutput.forecast[3].high}"/><abbr title="Degrees">°</abbr></li>
+					<li class="fc-temp temp-lo"><p:out value="${jsonOutput.forecast[3].low}"/><abbr title="Degrees">°</abbr></li>
+				</ul>
+			</li><!-- /end .mod.fc-lead -->
+			<li class="mod fc-day clearfix">
+				<p:out value="${fn:split(jsonOutput.forecast[4].monthday, ' ')[0]}" var="month" />
+				<p:out value="${fn:split(jsonOutput.forecast[4].monthday, ' ')[1]}" var="day" />	
+				<figure class="fc-status"><img src="http://cache.boston.com/universal/site_graphics/weather/weather_small/${jsonOutput.forecast[4].smallicon}" alt="<p:out value="${jsonOutput.forecast[4].description}"/>"></i> <figcaption><p:out value="${jsonOutput.forecast[4].description}"/></figcaption></figure>	
+				<h3 class="fc-day-name"><p:out value="${jsonOutput.forecast[4].name}"/>: <i class="fc-date"><abbr title="<c:out value="${month}" />"><c:out value="${month}" /></abbr> <c:out value="${day}" /></i></h3>
+				<ul class="fc-temp">
+					<li class="fc-temp temp-hi"><p:out value="${jsonOutput.forecast[4].high}"/><abbr title="Degrees">°</abbr></li>
+					<li class="fc-temp temp-lo"><p:out value="${jsonOutput.forecast[4].low}"/><abbr title="Degrees">°</abbr></li>
+				</ul>
+			</li><!-- /end .mod.fc-lead -->
+			<li class="mod fc-day clearfix">
+				<p:out value="${fn:split(jsonOutput.forecast[5].monthday, ' ')[0]}" var="month" />
+				<p:out value="${fn:split(jsonOutput.forecast[5].monthday, ' ')[1]}" var="day" />	
+				<figure class="fc-status"><img src="http://cache.boston.com/universal/site_graphics/weather/weather_small/${jsonOutput.forecast[5].smallicon}" alt="<p:out value="${jsonOutput.forecast[5].description}"/>"></i> <figcaption><p:out value="${jsonOutput.forecast[5].description}"/></figcaption></figure>	
+				<h3 class="fc-day-name"><p:out value="${jsonOutput.forecast[5].name}"/>: <i class="fc-date"><abbr title="<c:out value="${month}" />"><c:out value="${month}" /></abbr> <c:out value="${day}" /></i></h3>
+				<ul class="fc-temp">
+					<li class="fc-temp temp-hi"><p:out value="${jsonOutput.forecast[5].high}"/><abbr title="Degrees">°</abbr></li>
+					<li class="fc-temp temp-lo"><p:out value="${jsonOutput.forecast[5].low}"/><abbr title="Degrees">°</abbr></li>
+				</ul>
+			</li><!-- /end .mod.fc-lead -->
+				
+			<li class="mod fc-day fc-last clearfix">
+				<p:out value="${fn:split(jsonOutput.forecast[6].monthday, ' ')[0]}" var="month" />
+				<p:out value="${fn:split(jsonOutput.forecast[6].monthday, ' ')[1]}" var="day" />	
+				<figure class="fc-status"><img src="http://cache.boston.com/universal/site_graphics/weather/weather_small/${jsonOutput.forecast[6].smallicon}" alt="<p:out value="${jsonOutput.forecast[6].description}"/>"></i> <figcaption><p:out value="${jsonOutput.forecast[6].description}"/></figcaption></figure>	
+				<h3 class="fc-day-name"><p:out value="${jsonOutput.forecast[6].name}"/>: <i class="fc-date"><abbr title="<c:out value="${month}" />"><c:out value="${month}" /></abbr> <c:out value="${day}" /></i></h3>
+				<ul class="fc-temp">
+					<li class="fc-temp temp-hi"><p:out value="${jsonOutput.forecast[6].high}"/><abbr title="Degrees">°</abbr></li>
+					<li class="fc-temp temp-lo"><p:out value="${jsonOutput.forecast[6].low}"/><abbr title="Degrees">°</abbr></li>
+				</ul>
+			</li><!-- /end .mod.fc-lead.fc-last -->
+		</ul>
+	</div>
+</div>

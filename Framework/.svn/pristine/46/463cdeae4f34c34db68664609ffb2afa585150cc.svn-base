@@ -1,0 +1,287 @@
+// *
+// * Content Share Bar
+// *
+
+$module-name: 'content-social-bar';
+
+// ------------------------------------------------------------
+// Default Styles
+// ------------------------------------------------------------
+
+.#{$module-name} {
+
+  @include constrain;
+  margin-bottom: spacer(px, x-large);
+  margin-bottom: spacer(rem, x-large);
+  @extend %clearfix;
+  clear: both;
+
+  &--vertical {
+    width: 43px;
+    display: none;
+    float: left;
+  }
+
+  // List Item
+  &__item {
+    float: left;
+    padding-right: spacer(px, mid);
+    padding-right: spacer(rem, mid);
+  }
+
+  &__button {
+    display: block;
+    height: 30px;
+    width: 30px;
+    padding-top: 8px;
+    border-radius: 50%;
+    @include link-states(color(white), color(white), color(white));
+  }
+
+  // Button Icons
+  &__button-icon {
+    margin: 0 auto;
+    display: block;
+    vertical-align: middle;
+  }
+
+  // Button Copy
+  &__button-copy {
+    display: none;
+  }
+
+  // Button Count
+  &__button-count {
+    display: none;
+  }
+
+  // Specific Button Styles
+  .facebook-button {
+    background: color-social(facebook);
+
+    &:hover {
+      background: color-social(facebook, light);
+    }
+    &:active,
+    &:active {
+      background: color-social(facebook, dark);
+    }
+  }
+  .twitter-button {
+    background: color-social(twitter);
+    &:hover {
+      background: color-social(twitter, light);
+    }
+    &:active,
+    &:active {
+      background: color-social(twitter, dark);
+    }
+  }
+  .pinterest-button {
+    background: color-social(pinterest);
+    &:hover {
+      background: color-social(pinterest, light);
+    }
+    &:active,
+    &:active {
+      background: color-social(pinterest, dark);
+    }
+  }
+  .email-button {
+    background: color-social(email);
+    &:hover {
+      background: color-social(email, light);
+    }
+    &:active,
+    &:active {
+      background: color-social(email, dark);
+    }
+  }
+  .comment-button {
+    background: color(red);
+    &:hover {
+      background: color(red, light);
+    }
+    &:active,
+    &:active {
+      background: color(red, dark);
+    }
+  }
+  .more-button {
+    background: color(white);
+    border: 1px solid color(gray, light);
+    color: color(gray);
+  }
+
+  &--mobile-scroll {
+    // z-index: 500;
+    z-index: z-index(second-floor);
+    width: 100%;
+    .content-social-bar__item {
+      position: relative;
+      padding-right: 0;
+      width: 50%;
+    }
+
+    .content-social-bar__button {
+      height: 35px;
+    }
+
+    .content-social-bar__button-count {
+      position: absolute;
+      left: 55%;
+      top: 30%;
+    }
+
+    .facebook-button {
+      border-radius: 0;
+      width: 100%;
+    }
+
+    .twitter-button {
+      border-radius: 0;
+      width: 100%;
+    }
+
+    .pinterest-button {
+      display: none;
+    }
+
+    .comment-button {
+      display: none;
+    }
+
+    .email-button {
+      display: none;
+    }
+  }
+// Vertical Version
+  &--vertical {
+
+    @include media-query(desktop) {
+      display: inline-block;
+      //padding-right: 20px;
+    }
+
+    height: auto;
+    float: left;
+    display: none;
+
+    .#{$module-name} {
+      &__item {
+        text-align: center;
+        margin-bottom: spacer(px, base);
+        margin-bottom: spacer(rem, base);
+      }
+      &__button {
+        width: 45px;
+        height: auto;
+        // height: 45px;
+      }
+      &__button-copy {
+        display: none;
+      }
+      &__button-icon {
+        margin: 8px; //custom value
+        padding: 0;
+      }
+      &__button-count {
+        display: none;
+        background-color: inherit;
+        border-radius: 5px ;
+        padding: 0 spacer(px, small) spacer(px, small) spacer(px, small);
+        padding: 0 spacer(rem, small) spacer(px, small) spacer(px, small);
+      }
+
+    }
+
+  }
+
+}
+
+// Hide Gigya Email Sidebar
+.gig-share-sidebar { display: none; }
+
+
+
+// ------------------------------------------------------------
+// Media Queried Styles
+// ------------------------------------------------------------
+
+@include media-query(tablet) {
+  .#{$module-name} {
+    margin-bottom: spacer(px, xx-large);
+    margin-bottom: spacer(rem, xx-large);
+  
+    &__button {
+      height: 29px; // a little strage, but works out better with the margin and img height
+      width: auto;
+      display: inline-block;
+      padding-top: 0;
+      border-radius: 5px;
+    }
+
+    &__button-icon {
+      margin: 6px 3px 7px 8px;
+      display: inline-block;
+    }
+
+    &__button-copy {
+      display: inline-block;
+      padding-right: spacer(px);
+      padding-right: spacer(rem);
+      @include font-scale(xxx-small);
+      font-weight: $fw-bold;
+    }
+
+    &__button-copy-xx-small {
+      // @include font-scale(xxx-small);
+      padding: 0;
+      font-size: 8px;
+      display: block;
+    }
+
+    &__button-count {
+      display: none;
+      padding: spacer(px, small) spacer(px);
+      padding: spacer(rem, small) spacer(rem);
+      text-align: center;
+      @include font-scale(xxx-small);
+      font-weight: $fw-bold;
+      background: rgba(255, 255, 255, .3);
+    }
+  }
+}
+
+// #techdebt
+@include media-query(desktop) {
+  .hide-desktop {
+    display: none;
+  }
+}
+
+// ------------------------------------------------------------
+// Social Bar Helpers
+// ------------------------------------------------------------
+
+// JS will add this class to elements that have a left social nav.
+.has-#{$module-name}--vertical {
+  @include media-query(desktop) {
+    padding-left: 63px;
+  }
+}
+
+.content-sidebar {
+  display: inline-block;
+  float: left;
+}
+
+.bdc-sticky {
+  position: fixed;
+  top: 0;
+}
+
+.bdc-stuck {
+  position: absolute;
+}
+

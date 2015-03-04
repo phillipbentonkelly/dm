@@ -1,0 +1,37 @@
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// Main Breakpoints
+// * Other breakpoints maybe be used to adjust wonky elements
+// * These are just defaults for tablet and desktop
+// * Mobile is considered anything under tablet
+// * May be useful when conversing with product?
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+$tablet-breakpoint: 768px;
+$desktop-breakpoint: 960px;
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// Element Dimensions
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+$site-max-width: 1044px;
+$left-col-width: 680px;
+$right-col-width: 320px;
+
+$page-header-height: 65px;
+$page-header-height-mobile: 55px;
+$page-nav-height: 35px;
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// Font Weights
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+$fw-regular: 400;
+$fw-medium: 500;
+$fw-bold: 700; 
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// Letter Spacing
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+$letter-spacing: 0.06em;
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// Images
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+$img-path: '/img/';

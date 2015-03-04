@@ -1,0 +1,68 @@
+<%--
+
+	the "people project"
+	
+	this jpt offers two random image/links from a directory.
+	the images are in a div.
+
+--%>
+<%@ page import="java.util.*" %>
+
+<p:getObject 
+	path="/Boston/Production/BDC/WebPages/__COMPONENTS__/people_project/people.xml" 
+	var="fileReference" />
+<p:object webObject="${fileReference}" content="doc" />
+<p:out var="numberOfPeople" xvalue="$doc/people/person[last()]/index/text()" />
+
+<%-- get two unique, random numbers --%>
+<%
+	// make an list of indices, representing people project people
+	List<Integer> list = new ArrayList<Integer>();
+	for (int i = 0; i < Integer.parseInt((String) pageContext.getAttribute("numberOfPeople")); i++)
+	{
+		list.add(i);
+	}
+
+	// shuffle the list, fisher-yates
+	Random rand = new Random();
+	for (int i = list.size() - 1; i > 0; i--)
+	{
+		int j = rand.nextInt(i + 1);
+		int swapBuf = list.get(j);
+		list.set(j, list.get(i));
+		list.set(i, swapBuf);
+	}
+
+	// get the first two indices from the shuffled list
+	pageContext.setAttribute("n1", list.get(0));
+	pageContext.setAttribute("n2", list.get(1));
+%>
+
+<x:forEach select="$doc/people/person" var="person" varStatus="loop" >
+	<p:out var="imgPath" xvalue="$person/path/text()" />
+	<p:out var="linkUrl" xvalue="$person/url/text()" />
+	<c:if test="${loop.count - 1 == n1}">
+		<p:url value="${imgPath}" var="imgUrl1" />
+		<p:out value="${linkUrl}" var="linkUrl1" />
+	</c:if>
+	<c:if test="${loop.count - 1 == n2}">
+		<p:url value="${imgPath}" var="imgUrl2" />
+		<p:out value="${linkUrl}" var="linkUrl2" />
+	</c:if>
+</x:forEach>
+
+<%-- the markup --%>
+<div class="grid" >
+	<div class="grid--6-6">
+		<div class="grid-6--people-project" style="margin-bottom:15px; margin-bottom: .9375rem;">
+			<a href="${linkUrl1}">
+				<img src="${imgUrl1}">
+			</a>
+		</div>
+		<div class="grid-6--people-project" style="margin-bottom:15px; margin-bottom: .9375rem;">
+			<a href="${linkUrl2}">
+				<img src="${imgUrl2}">
+			</a>
+		</div>
+	</div>
+</div>
