@@ -255,7 +255,7 @@
 				}
 
 				//Manually map each option to its url query params
-				base.$dropdown.find('option[value="All"]').attr("data-url-param","&sort_by=cur_data.price&sort_type=asc&metadata[price]=200000&metadata[price]_match=gt");
+				base.$dropdown.find('option[value="All"]').attr("data-url-param","&sort_by=cur_data.price&sort_type=asc");
 				base.$dropdown.find('option[value="New"]').attr("data-url-param","&sort_by=created_at&sort_type=desc");
 				base.$dropdown.find('option[value="Open House"]').attr("data-url-param","&");
 				base.$dropdown.find('option[value="Luxury"]').attr("data-url-param","&min_price=1000000");
