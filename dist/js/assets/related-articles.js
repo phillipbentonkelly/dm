@@ -44,7 +44,9 @@ var _ra;
 			$viewMore: $('.related-articles').find('.viewMore')
 		};
 
-		this.currIndex = 1; this.currPg = 0; this.totalPgs = 0;
+		this.currIndex = 0; 
+		this.currPg = 1; 
+		this.totalPgs = 0;
 		
 		this.tags =	{	'Arlington': { color: '#ce6323', link: '/locations/arlington/2.0.1944328483', tagtype: 'Location'},
 						'Boston': { color: '#ce6323', link: '/locations/boston/2.0.1944328611', tagtype: 'Location'},
@@ -128,6 +130,7 @@ var _ra;
 						_ra.articles = data.items;
 						_ra.buildWidget(_ra.articles, 0);
 						_ra.totalPgs = Math.ceil(_ra.articles.length / _ra.articlesToDisplay);
+						_ra.currPg = 1;
 					},
 					error: function(data){
 						// necessary console.log
@@ -152,6 +155,7 @@ var _ra;
 						_ra.articles = data.responseJSON.articles;
 						_ra.buildWidget(0);
 						_ra.totalPgs = Math.ceil(_ra.articles.length / _ra.articlesToDisplay);
+						_ra.currPg = 1;
 					}
 				});
 			}
@@ -199,6 +203,8 @@ var _ra;
 					keywords = item.keywords;
 					mediaMarkup = _ra.getMediaMarkup(item.images);
 				}
+
+				desc = desc.slice(0, 100) + ' ...';
 
 				if(keywords){
 					kwTagMarkup = _ra.getKeywordTagMarkup(keywords);
@@ -327,20 +333,24 @@ var _ra;
 		railEventHandlers: function(){
 
 			_ra.module.$pgFwd.on('click', function(e){
+				e.preventDefault();
+				// if on last page
 				if(_ra.currPg < _ra.totalPgs){
 					_ra.currIndex += _ra.articlesToDisplay;
 					_ra.currPg++;
 					_ra.buildWidget(_ra.currIndex);
 				}else{
-					return;
+					return false;
 				}
 			});
 
-			_ra.module.$pgBack.on('click', function(){
+			_ra.module.$pgBack.on('click', function(e){
+				console.log('clicked!');
+				e.preventDefault();
 				// if on first page
-				if(_ra.currPage != 1) {
+				if(_ra.currPg != 1) {
 					_ra.currIndex -= _ra.articlesToDisplay;
-					_ra.currPage --;
+					_ra.currPg --;
 					_ra.buildWidget(_ra.currIndex);
 				} else {
 					return;
@@ -373,9 +383,10 @@ var _ra;
 	};
 
 	$.fn.RelatedArticles = function(args){
-		return this.each(function(){
-			new dm.RelatedArticles(this, args);
-		});
+		if(!(this instanceof dm.RelatedArticles)){
+			return new dm.RelatedArticles(this, args);
+		}
+
 	};
 
 })(jQuery);
@@ -383,6 +394,7 @@ var _ra;
 $(document).ready(function(){
 	var isSerp = document.URL.indexOf('serp') != -1 ? true : false;
 	var placement = (isSerp && dm.env.device === 'desktop') ? 'rail' : 'main';
+
 	$('.related-articles, .related-articles-mobile__items').RelatedArticles({
 		place: placement
 	});
