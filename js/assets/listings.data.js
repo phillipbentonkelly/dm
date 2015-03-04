@@ -216,7 +216,9 @@
 
 					_template.removeClass('template')
 						.html(_content);
-					
+
+					_template.children().wrap('<a href="http://bostoncom.placester.net/property/' + _listing.id + '"></a>');
+
 					base.$element.find('.listing-container').append(_template);
 
 					$('[data-src]').each(function () {
