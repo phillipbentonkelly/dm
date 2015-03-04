@@ -60,7 +60,7 @@
 		$.get(url, function(data) {
 			module.allArticles = data['articles'];
 			module.buildWidget(module.allArticles);
-			consiole.log(module.allArticles);
+			console.log(module.allArticles);
 		});
 	};
 
