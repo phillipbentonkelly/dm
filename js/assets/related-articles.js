@@ -1,3 +1,7 @@
+/**********************
+	RELATED ARTICLES WIDGET
+	Author(s): Ethan Gould, Ben Valentine
+***********************/
 
 if (typeof dm === 'undefined') { dm = {}; }
 
@@ -9,19 +13,24 @@ dm.env = {
 
 dm.RelatedArticles = {};
 
-dm.Article = {}; 
+dm.Article = {};
+
+var _ra; 
 
 (function($, window, document, undefined){
 
-	dm.RelatedArticles = function(el, s){
+	_ra, dm.RelatedArticles = function(el, s){
+
+		// create ref to 'this' when scope changes
+		_ra = this;
 
 		this.$el = $(el);
 
 		this.rail = (s.place === 'rail') ? true : false;
 
-		this.articles = {};
+		this.articles = [];
 		this.articlesToDisplay = this.rail ? 2 : 6;
-		this.search = false;
+		this.search = $.getQuery();
 		
 
 		this.module = {
@@ -95,10 +104,6 @@ dm.Article = {};
 	dm.RelatedArticles.prototype = {
 
 		init: function(){
-			var self = this;
-			var query = $.getParamVal('q');
-			// tell us if there's a search
-			this.search = (query === null || query === '') ? false : true;
 
 			var callUrl = '';
 			var params = {};
@@ -112,7 +117,7 @@ dm.Article = {};
 				params = {
 					cx: '001595115685171809073:-cf7lydwdko',
 					key: 'AIzaSyB_Uh9C05nKCDSVdXK_x3QOqxKycPR3v-E',
-					q: query,
+					q: this.search,
 					alt: 'json'
 				};
 
@@ -120,82 +125,87 @@ dm.Article = {};
 					url: callUrl,
 					data: params,
 					success: function(data){
-						self.articles = data.items;
-						self.buildWidget(self.articles, 0);
-						self.totalPgs = Math.ceil(self.articles.length / self.articlesToDisplay);
+						_ra.articles = data.items;
+						_ra.buildWidget(_ra.articles, 0);
+						_ra.totalPgs = Math.ceil(_ra.articles.length / _ra.articlesToDisplay);
 					},
 					error: function(data){
-						console.log(data.error.message);
+						// necessary console.log
+						console.log(data.responseJSON.error.message);
 					}
 				});
 
 			}else{
+				
+				callUrl = 'http://www.boston.com/newsprojects/getRelated.php';
 
-				callUrl = 'http://devedit.boston.com/eom/SysConfig/WebPortal/BDC/Framework/feeds/placester/getArticles.jsp'
-				params = { mode: 'full' };
+				params = {
+					env: 'prod0',
+					name: 'related-articles',
+					keywords: 'beacon%20hill'
+				};
 
 				$.ajax({
 					url: callUrl,
 					data: params,
-					success: function(data){
-						self.articles = data.responseJSON.articles;
-						self.buildWidget(self.articles, 0);
-						self.totalPgs = Math.ceil(self.articles.length / self.articlesToDisplay);							
-					},
-					error: function(data){
-						console.log(data.error.message);
+					complete: function(data){
+						_ra.articles = data.responseJSON.articles;
+						_ra.buildWidget(0);
+						_ra.totalPgs = Math.ceil(_ra.articles.length / _ra.articlesToDisplay);
 					}
 				});
-
 			}
 
-			this.eventHandlers();
-
+			if(_ra.rail){
+				this.railEventHandlers();
+			}else{
+				this.mainEventHandlers();
+			}
+			
 		},
 
 
-		buildWidget: function(articles, start){
+		buildWidget: function(start){
 
-			var self = this;
-
+			var articles = _ra.articles;
 			// teardown old articles to build next page
-			if(self.rail){
-				self.module.$railContainer.find('.related-articles-mobile__item').remove();
+			if(_ra.rail){
+				_ra.module.$railContainer.find('.related-articles-mobile__item').remove();
 			}
-			var articlesToRender = articles.slice( start, (start + self.articlesToDisplay) );
+			var articlesToRender = articles.slice( start, (start + _ra.articlesToDisplay) );
 
 			$.each(articlesToRender, function(i, item){
 
-				var title, desc, date, keywords, media;
+				var title, desc, date, keywords;
 				var link = item.link;
 				var mediaMarkup, kwTagMarkup, markup = [];
 
 				var noTitleMsg = 'Sorry, no title available for this article';
 				var noDescMsg = 'Sorry, no description available for this article';
 
-				if(self.search){
+				if(_ra.search){
 					var metatags = item.pagemap.metatags[0];
-					var imgs = self.getImgArray(metatags['thumbnail']);
+					var imgs = _ra.mkImgArray(metatags['thumbnail']);
 					var pubDate = moment(metatags['publish-date']).format('YYYYMMDDHHmmss');
 					title = item.title || noTitleMsg;
 					desc = item.snippet || noDescMsg;
-					date = self.formatDate( pubDate );
+					date = _ra.formatDate( pubDate );
 					keywords = metatags['news_keywords'];					
-					mediaMarkup = self.getMediaMarkup(imgs);
+					mediaMarkup = _ra.getMediaMarkup(imgs);
 				}else{
 					title = item.title || (item.SEOInformation ? item.SEOInformation.headline : noTitleMsg);
 					desc = item.description || (item.SEOInformation ? item.SEOInformation.summary : noDescMsg);
-					date = item.creationDate ? self.formatDate(item.creationDate) : 'no date available';
+					date = item.creationDate ? _ra.formatDate(item.creationDate) : 'no date available';
 					keywords = item.keywords;
-					mediaMarkup = self.getMediaMarkup(item.images);
+					mediaMarkup = _ra.getMediaMarkup(item.images);
 				}
 
 				if(keywords){
-					kwTagMarkup = self.getKeywordTagMarkup(keywords);
+					kwTagMarkup = _ra.getKeywordTagMarkup(keywords);
 					kwTagMarkup = kwTagMarkup.join(' ');
 				}
 
-				if(self.rail){
+				if(_ra.rail){
 
 					markup = [	'<div class="related-articles-mobile__item">',
 								'<div class="additional-info">',
@@ -215,7 +225,7 @@ dm.Article = {};
 						'</div>'
 					].join('');
 
-					self.module.$railContainer.append(markup);
+					_ra.module.$railContainer.append(markup);
 
 				}else{
 
@@ -236,13 +246,12 @@ dm.Article = {};
 						'</div>'
 					].join('');
 
-
-					if(i < 4){
-						self.module.$hook.append(markup);
+					if((_ra.currIndex + i) < 4){
+						_ra.module.$hook.append(markup);
 					}else{
-						self.module.$container.append(markup);
+						_ra.module.$container.append(markup);
 					}
-					self.module.$container.append(self.module.$viewMore);
+					_ra.module.$container.append(_ra.module.$viewMore);
 				}	
 
 			});
@@ -260,15 +269,14 @@ dm.Article = {};
 		},
 
 		getKeywordTagMarkup: function(keywords){
-			var self = this;
 			if(typeof keywords === 'string')
 				keywords = keywords.split(',');
 
 			var kwTagMarkup = [];
 			
 			for(var k=0; k<=4; k++){
-				if (typeof self.tags[keywords[k]] !== "undefined") {
-					var currTag = self.tags[keywords[k]];
+				if (typeof _ra.tags[keywords[k]] !== "undefined") {
+					var currTag = _ra.tags[keywords[k]];
 					var tag = '<a href="' + currTag.link + '" style="background:' + currTag.color + '" class="category-tag">' + keywords[k] + '</a>';
 					kwTagMarkup.push(tag);
 					k++;
@@ -277,7 +285,7 @@ dm.Article = {};
 			return kwTagMarkup;	
 		},
 
-		getImgArray: function(img){
+		mkImgArray: function(img){
 			var imgs = [];
 			var thumbnail = img;
 			imgs.push(thumbnail);
@@ -316,53 +324,51 @@ dm.Article = {};
 			return mediaMarkup;
 		},
 
-		eventHandlers: function(){
+		railEventHandlers: function(){
 
-			var self = this;
-
-			self.module.$pgFwd.on('click', function(e){
-				
-				if(self.currPg < self.totalPgs){
-					self.currIndex += self.articlesToDisplay;
-					self.currPg++;
-					self.buildWidget(self.articles, self.currIndex);
+			_ra.module.$pgFwd.on('click', function(e){
+				if(_ra.currPg < _ra.totalPgs){
+					_ra.currIndex += _ra.articlesToDisplay;
+					_ra.currPg++;
+					_ra.buildWidget(_ra.currIndex);
 				}else{
 					return;
 				}
 			});
 
-			self.module.$pgBack.on('click', function(){
+			_ra.module.$pgBack.on('click', function(){
 				// if on first page
-				if(self.currPage != 1) {
-					self.currIndex -= self.articlesToDisplay;
-					self.currPage --;
-					self.buildWidget(self.articles, self.currIndex);
+				if(_ra.currPage != 1) {
+					_ra.currIndex -= _ra.articlesToDisplay;
+					_ra.currPage --;
+					_ra.buildWidget(_ra.currIndex);
 				} else {
 					return;
 				}
 			});
 
-			if(!self.rail){
-				self.module.$viewMore.on('click', function() {
-					self.showMoreArticles();
-				});
-			}
+		},
 
-			
+		mainEventHandlers: function(){
+			_ra.module.$viewMore.on('click', function(e) {
+				e.preventDefault();
+				$(this).slideDown('fast', function(){
+					_ra.showMoreArticles();
+				});
+				
+			});
 
 		},
 
 		showMoreArticles: function() {
-			var self = this;
-			if($('.related-articles__item').length < self.articles.length) {
-				self.currIndex += self.articlesToDisplay;
-				self.buildWidget(self.articles, self.currIndex);
+			var items = $('.related-articles__item');
+			if(items.length < _ra.articles.length) {
+				_ra.currIndex += _ra.articlesToDisplay;
+				_ra.buildWidget(_ra.currIndex);
 			} else {
 				return;
 			}
 		},
-
-		
 
 	};
 
