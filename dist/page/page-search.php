@@ -146,10 +146,6 @@
                         </div>
                     </section>
 
-                    
-
-                    
-
                 </div>
 
                 <div class="col">

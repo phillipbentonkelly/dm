@@ -13,12 +13,12 @@ bcom.dfp.adCatalog = [
     name: 'ad_bigbox2',
     size: [[300,250]],
     position: ['btf', 'bigbox2']
-  }/*,
+  },
   {
     name: 'ad_bigbox3',
     size: [[300,250]],
     position: ['btf', 'bigbox3']
-  }*/,
+  },
   {
     name: 'ad_bigbox4',
     size: [[300,250]],
@@ -87,9 +87,9 @@ bcom.dfp.adCatalog = [
   },
   {
       name: 'ad_spotlight1',
-      size: [[460,184],[300,250]],
+      size: [[460,184],[300,50]],
       sizeByBreakpoint: {
-          mobile: [[300,250]],
+          mobile: [[300,50]],
           tablet: [[460,184]],
           desktop: [[460,184]]
       },
@@ -97,9 +97,9 @@ bcom.dfp.adCatalog = [
   },
   {
       name: 'ad_spotlight2',
-      size: [[460,184],[300,250]],
+      size: [[460,184],[300,50]],
       sizeByBreakpoint: {
-          mobile: [[300,250]],
+          mobile: [[300,50]],
           tablet: [[460,184]],
           desktop: [[460,184]]
       },
@@ -107,12 +107,22 @@ bcom.dfp.adCatalog = [
   },
   {
       name: 'ad_spotlight3',
-      size: [[460,184]],
+      size: [[460,184],[300,50]],
+      sizeByBreakpoint: {
+          mobile: [[300,50]],
+          tablet: [[460,184]],
+          desktop: [[460,184]]
+      },
       position: ['btf', 'spotlight3']
   },
   {
       name: 'ad_spotlight4',
-      size: [[460,184]],
+      size: [[460,184],[300,50]],
+      sizeByBreakpoint: {
+          mobile: [[300,50]],
+          tablet: [[460,184]],
+          desktop: [[460,184]]
+      },
       position: ['btf', 'spotlight4']
   },
   {

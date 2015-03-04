@@ -5,6 +5,8 @@
         <div class='re-widget-left'></div>
         <div class='re-widget-right'></div>
     </div>
+    <div class="related-articles-mobile__items">
+    </div>
 
     <!-- <div class="related-articles-mobile__item">
 

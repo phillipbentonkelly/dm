@@ -7,15 +7,19 @@ if (typeof dm === 'undefined') { dm = {}; }
 /* environmental variables */
 dm.env = {
 	device : (screen.width <= 480) ? 'mobile' : 'desktop',
-	local : document.URL.indexOf('localhost') != -1 ? true : false
+	local : document.URL.indexOf(':8888') != -1 ? true : false
 };
 
 dm.searchPanel = {};
 
+var _sp;
+
 (function($, window, document, undefined){
 
 
-	dm.searchPanel = function(el){
+	_sp, dm.searchPanel = function(el){
+
+		_sp = this;
 
 		this.el = el;
 		
@@ -50,11 +54,11 @@ dm.searchPanel = {};
 			$lvl2t: $('.page-search__button--level-two-toggle'),
 			$lvl3t: $('.page-search__button--level-three-toggle'),
 			$close: $('.page-search__button--close'),
-			//$save: $('.page-search__button--save'), 
 			$submit: $('.page-search__buttons--submit')
 		};
 
 		this.megamenuSearch = {
+			$input: $('.mega-menu__search-input'),
 			$submit: $('.mega-menu__search-submit')
 		};
 
@@ -76,10 +80,15 @@ dm.searchPanel = {};
 
 		init: function(){
 
+			var phStr = "Search for real estate listings or articles. ex: 3 bedroom for sale in Brookline under 1,000,000";
+
+			var qStr = $.getQuery();
+
 			// to make things neat create objects to store params...
 			var mainParams = {
-				placeholder: "Search for real estate listings or articles. ex: 3 bedroom for sale in Brookline under 1,000,000"
+				placeholder: phStr
 			};
+
 
 			var tagParams = {
             	delimeter: ',',
@@ -101,10 +110,14 @@ dm.searchPanel = {};
 				shouldInputFocus: function(){ return false; }
 			};
 
-            this.filters.$main.selectize(mainParams);
-            this.filters.$tags.selectize(tagParams);
-			this.filters.$fmt.select2(fmtParams);
-			this.filters.$other.select2(otherParams);
+            var $mainSelect = this.filters.$main.selectize(mainParams);
+            var $kwSelect = this.filters.$tags.selectize(tagParams);
+			var $fmtSelect = this.filters.$fmt.select2(fmtParams);
+			var $otherSelects = this.filters.$other.select2(otherParams);
+
+			// make the url query string the default selection
+			if(qStr)
+				$mainSelect[0].selectize.setValue(qStr);
 
 			if(dm.env.device === 'mobile')
 				this.setMobilePanelState();
@@ -117,27 +130,24 @@ dm.searchPanel = {};
 		},
 
 		setPanelState: function(){
-
-			var self = this;
-				
-			switch(self.expanded){
+			switch(_sp.expanded){
 				case '3':
 					//hide nothing...
 					// level 3 toggle arrow up
-					self.btns.$lvl3t.addClass(this.pOpen);
+					_sp.btns.$lvl3t.addClass(this.pOpen);
 					// point level 2 toggle arrow up
-					self.btns.$lvl2t.getObservable().toggle();
-					self.allOpen = true;	
+					_sp.btns.$lvl2t.getObservable().toggle();
+					_sp.allOpen = true;	
 				break;
 				case '2':
 					// hide level 3
-					self.lvls.$three.hide();
-					self.btns.$lvl2t.getObservable().toggle();	
+					_sp.lvls.$three.hide();
+					_sp.btns.$lvl2t.getObservable().toggle();	
 				break;
 				default:
 					// show only level one, don't fiddle w/ btns
-					self.lvls.$three.hide();
-					self.lvls.$two.hide();
+					_sp.lvls.$three.hide();
+					_sp.lvls.$two.hide();
 				break;
 			}
 
@@ -148,25 +158,22 @@ dm.searchPanel = {};
 
 		setMobilePanelState: function(){
 
-			var self = this;
-
-			switch(self.expanded){
+			switch(_sp.expanded){
 				case '2':
 					// keep buttons in an open state
-					self.btns.$lvl2t.getObservable().toggle();
-					self.btns.$lvl1t.getObservable().toggle();
-					self.allOpen = true;
+					_sp.btns.$lvl2t.getObservable().toggle();
+					_sp.btns.$lvl1t.getObservable().toggle();
+					_sp.allOpen = true;
 				break;
 				case '1':
-					self.btns.$lvl1t.toggleClass('close-search'); 
-					self.lvls.$lower.hide();
+					_sp.btns.$lvl1t.toggleClass('close-search'); 
+					_sp.lvls.$lower.hide();
 				break;
 				default:
 					// hide both
-					self.lvls.$lower.hide();
+					_sp.lvls.$lower.hide();
 					// hide the form instead of the first level
-					self._form.$el.hide();
-					// self.lvls.$one.hide();
+					_sp._form.$el.hide();
 				break;
 			}
 
@@ -176,45 +183,43 @@ dm.searchPanel = {};
 
 		eventHandlers: function(){
 
-			var self = this;
-
 			switch(dm.env.device){
 
 				case 'desktop':
 
-					self.btns.$lvl2t.on('click', function(e){
+					_sp.btns.$lvl2t.on('click', function(e){
 						e.preventDefault();
 						var state = $(this).getObservable();
 
-						if(self.allOpen){
-							self.lvls.$three.slideToggle('fast', function(){
-								self.lvls.$two.slideToggle('fast', function(){
+						if(_sp.allOpen){
+							_sp.lvls.$three.slideToggle('fast', function(){
+								_sp.lvls.$two.slideToggle('fast', function(){
 									state.toggle();
-									self.btns.$lvl3t.removeClass(self.pOpen);
-									self.allOpen = false;
+									_sp.btns.$lvl3t.removeClass(_sp.pOpen);
+									_sp.allOpen = false;
 								});
 							});
 							
 						}else{
-							self.lvls.$two.slideToggle('fast');
-							self.allOpen = false;
+							_sp.lvls.$two.slideToggle('fast');
+							_sp.allOpen = false;
 							state.toggle();
 						}				
 					});
 
-					self.btns.$lvl3t.on('click', function(e){
+					_sp.btns.$lvl3t.on('click', function(e){
 						e.preventDefault();
-						self.lvls.$three.slideToggle('fast', function(){
-							self.btns.$lvl3t.toggleClass(self.pOpen);
-							self.allOpen = (self.allOpen == true) ? false : true;
+						_sp.lvls.$three.slideToggle('fast', function(){
+							_sp.btns.$lvl3t.toggleClass(_sp.pOpen);
+							_sp.allOpen = (_sp.allOpen == true) ? false : true;
 						});
 					});
 
-					self.btns.$close.on('click', function(e){
+					_sp.btns.$close.on('click', function(e){
 						e.preventDefault();
-						self.lvls.$three.slideToggle('fast', function(){
-							self.btns.$lvl3t.removeClass(self.pOpen);
-							self.allOpen = false;
+						_sp.lvls.$three.slideToggle('fast', function(){
+							_sp.btns.$lvl3t.removeClass(_sp.pOpen);
+							_sp.allOpen = false;
 						});
 					});
 
@@ -224,56 +229,58 @@ dm.searchPanel = {};
 				case 'mobile':
 
 					// keep track of level#2 state when user closes all
-					var $lvl2State = self.btns.$lvl2t.getObservable();
+					var $lvl2State = _sp.btns.$lvl2t.getObservable();
 
 					
-					self.btns.$mobileOpen.on('click', function(e){
+					_sp.btns.$mobileOpen.on('click', function(e){
 						e.preventDefault();
-						self._form.$el.toggle();
-						if(self.allOpen){
-							self.lvls.$lower.slideToggle('fast', function(){
+						_sp._form.$el.toggle();
+						if(_sp.allOpen){
+							_sp.lvls.$lower.slideToggle('fast', function(){
 								$lvl2State.toggle();
 							});
 						}
-						self.expanded = self.getExpanded();
+						_sp.expanded = _sp.getExpanded();
 						$(this).toggleClass('close-search');
-						self.allOpen = false;
+						_sp.allOpen = false;
 					});
 
-					self.btns.$lvl2t.on('click', function(e){
+					_sp.btns.$lvl2t.on('click', function(e){
 						e.preventDefault();
 						var state = $(this).getObservable();
-						var lwrLvls = $.merge(self.lvls.$two, self.lvls.$three);
-						self.lvls.$lower.slideToggle('fast');
-						self.expanded = self.getExpanded();
+						var lwrLvls = $.merge(_sp.lvls.$two, _sp.lvls.$three);
+						_sp.lvls.$lower.slideToggle('fast');
+						_sp.expanded = _sp.getExpanded();
 						state.toggle();
-						self.allOpen = (self.allOpen == true) ? false : true;
+						_sp.allOpen = (_sp.allOpen == true) ? false : true;
 					});
 
 				break;
 					
 			} // end switch
 
-			self._form.$el.on('submit', function(e){
+			_sp._form.$el.on('submit', function(e){
 				e.preventDefault();
-				self.expanded = self.checkExpanded();
-				self.isSaved = self.checkIfSaved();
+				_sp.expanded = _sp.checkExpanded();
 				// validation, ajax, rest, etc.
+				var q = _sp.filters.$main.val();
 
 				var sep = dm.env.local ? '&' : '?';
-				var lvls = "expanded=" + self.expanded;
+				var lvls = "expanded=" + _sp.expanded;
 
-				location.href = self.searchPgUrl + sep + lvls;
+				location.href = _sp.searchPgUrl + sep + lvls + '&q=' + encodeURIComponent(q);
 			});
 
-			self.megamenuSearch.$submit.on('click', function(e){
+			_sp.megamenuSearch.$submit.on('click', function(e){
 				e.preventDefault();
-				self.expanded = self.checkExpanded();
+				_sp.expanded = _sp.checkExpanded();
+
+				var q = _sp.megamenuSearch.$input.val();
 
 				var sep = dm.env.local ? '&' : '?';
 				var lvls = "expanded=1";
 
-				location.href = serp + lvls + saved;
+				location.href = _sp.searchPgUrl + sep + lvls + '&q=' + encodeURIComponent(q);
 			});
 
 
@@ -287,30 +294,18 @@ dm.searchPanel = {};
 			return fmt;
 		},
 
-
+		// returns # of panels open by user
 		getExpanded: function(){
 			var def = dm.env.device == 'mobile' ? 0 : 1;
 			var paramExpanded = $.getParamVal('expanded');
 			return paramExpanded || def;
 		},
 
-
-		isSaved: function(){
-			var paramSaved = $.getParamVal('saved');
-			return paramSaved || false;
-		},
-
-
 		checkExpanded: function(){
-			var rows = $('.page-search__row').length;
-			var rowsHidden =  $('.page-search__row:hidden').length;
-			return (rows - rowsHidden);
-		},
-
-		checkIfSaved: function(){
-			var state = $('.page-search__button--save').getObservable().filter(':visible');
-			var saved = state.attr('class') === 'saved' ? true : false
-			return saved;
+			var $rows = $('.page-search__row');
+			var totalRows = $rows.length;
+			var totalRowsHidden = $rows.is(':hidden').length;
+			return (totalRows - totalRowsHidden);
 		}
 
 	};
@@ -337,6 +332,16 @@ dm.searchPanel = {};
 				}
 			}
 			return paramVal;
+		},
+		getQuery : function(){
+			var query = false;
+			var qStr = $.getParamVal('q');
+
+			if(qStr){
+				query = decodeURIComponent(qStr);
+			} 
+
+			return query;
 		}
 	});
 

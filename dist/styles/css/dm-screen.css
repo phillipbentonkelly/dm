@@ -1312,6 +1312,11 @@ textarea {
   text-align: center;
 }
 
+/* line 59, ../sass/partials/page/_page-masthead.scss */
+#ad_pencil img {
+  z-index: 101;
+}
+
 /* line 11, ../sass/partials/page/_page-header.scss */
 .page-header {
   width: 100%;
@@ -1893,8 +1898,8 @@ body.serp .page-layout {
   margin-top: 10px !important;
 }
 
-/* line 131, ../sass/partials/page/_page-layout.scss */
-body.serp .page-layout__right-col .dfp-ads {
+/* line 132, ../sass/partials/page/_page-layout.scss */
+.module-name .page-layout__right-col .dfp-ads {
   padding-bottom: 20px;
 }
 
@@ -1923,7 +1928,7 @@ body.serp .page-layout__right-col .dfp-ads {
 
 /* line 11, ../sass/partials/page/_page-search.scss */
 .page-search {
-  position: absolute;
+  position: static;
   top: initial;
   left: 0;
   z-index: 50;
@@ -2402,7 +2407,7 @@ body.serp .page-layout__right-col .dfp-ads {
 @media (min-width: 960px) {
   /* line 523, ../sass/partials/page/_page-search.scss */
   .home .page-search {
-    position: absolute;
+    position: static;
     top: 160px;
     z-index: 10;
     background: rgba(255, 255, 255, 0.85);

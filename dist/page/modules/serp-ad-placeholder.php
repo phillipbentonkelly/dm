@@ -41,7 +41,7 @@
         }
 
         #ad_spotlight1 {
-            min-height: 150px;
+            min-height: 184px;
             margin-right: 2%;
         }
     }

@@ -49,9 +49,13 @@ $module-name: 'masthead';
 }
 
 // ------------------------------------------------------------
-// Mobile centering of Lead1
+// Masthead ad styles
 // ------------------------------------------------------------
 
 #ad_lead1 {
 	  text-align:center;
+}
+
+#ad_pencil img {
+	   z-index:101;
 }

@@ -33,6 +33,7 @@
         <link rel="stylesheet" href="styles/css/plugins/select2/select2.css" />
 
 	<!-- SCRIPTS -->
+	<script src="https://www.google.com/jsapi"></script>
     <script src="js/resources/jquery.min.js"></script>
     <script src="js/resources/moment.min.js"></script>
     <script src="js/resources/plugins/selectize/selectize.js"></script>
@@ -51,7 +52,8 @@
 	<?php } ?>
 	
 	<?php if ($pageType == 'category' || $pageType == 'category-details' || $pageType == 'neighborhood' || $pageType == 'articles'){ ?>
-		<script src="js/assets/related-articles-main-widget.js"></script>
+		<!--<script src="js/assets/related-articles-main-widget.js"></script>-->
+		<script src="js/assets/related-articles.js"></script>
 	<?php } ?>
 
     
@@ -76,8 +78,9 @@
 
 	<?php if ($pageType == 'serp') { ?>
 		<script src="js/resources/basic/js/jquery.simplemodal.js"></script>
-        <script src="js/assets/related-articles-rail-widget.js"></script>
-        <script src="js/assets/related-articles-main-widget.js"></script>
+        <!--<script src="js/assets/related-articles-rail-widget.js"></script>
+        <script src="js/assets/related-articles-main-widget.js"></script>-->
+        <script src="js/assets/related-articles.js"></script>
 
 	<?php } ?>
 
@@ -113,7 +116,7 @@
     <?php } ?>
 
     <?php if ($pageType == 'category' || $pageType == 'category-details' || $pageType == 'neighborhood') { ?>
-    bcom.dfp.adSlots = ['ad_lead1','ad_carousel1','ad_carousel2','ad_carousel3','ad_t6','ad_bigbox1','ad_bigbox3','ad_bigbox4','ad_outofpage1','ad_outofpage2','ad_outofpage3'];
+    bcom.dfp.adSlots = ['ad_lead1','ad_carousel1','ad_carousel2','ad_carousel3','ad_t6','ad_bigbox1','ad_bigbox2','ad_bigbox3','ad_bigbox4','ad_outofpage1','ad_outofpage2','ad_outofpage3'];
     <?php } ?>
 
     <?php if ($pageType == 'serp') { ?>
@@ -273,21 +276,23 @@
 			
 			<!-- CATEGORY -->
 			<?php if ($pageType == 'category') { ?>
-				<!-- Related Articles -->
-				<?php include 'page-content/modules/related-articles.php'; ?>
+			      <?php include 'ads/ad_t6.php'; ?>
+			      <!-- Related Articles -->
+			      <?php include 'page-content/modules/related-articles.php'; ?>
 			<?php } ?>
 			
 			<!-- CATEGORY DETAILS -->
 			<?php if ($pageType == 'category-details') { ?>
-				<!-- Related Articles -->
-				<?php include 'page-content/modules/related-articles.php'; ?>
+			      <?php include 'ads/ad_t6.php'; ?>
+			      <!-- Related Articles -->
+			      <?php include 'page-content/modules/related-articles.php'; ?>
 			<?php } ?>
 			
 			<!-- NEIGHBORHOOD -->
 			<?php if ($pageType == 'neighborhood') { ?>
 				<!-- Property Listings Map -->
 				<?php include 'page/modules/property-listing-map.php'; ?>
-
+				<?php include 'ads/ad_t6.php'; ?>
 				<!-- Related Articles -->
 				<?php include 'page-content/modules/related-articles.php'; ?>
 			<?php } ?>
@@ -364,6 +369,9 @@
 				<!-- Property Listings Widget -->
 				<?php include 'page/modules/property-listings.php'; ?>
 
+                                <!-- DFP Ad - BigBox2 -->
+                                <?php include 'ads/ad_bigbox2.php'; ?>
+
 				<!-- Contact This Agent Widget -->
 				<?php include 'page-content/modules/contact-agent-premium--small.php'; ?>
 
@@ -373,7 +381,6 @@
 			<?php } ?>
 
 			<?php if ($pageType == 'property-listings') { ?>
-	
 
 				<!-- Contact The Agent Widget -->
 				<?php include 'page-content/modules/contact-agent-basic--large.php'; ?>
@@ -383,6 +390,9 @@
 
 				<!-- Property Listings Widget -->
 				<?php include 'page/modules/property-listings.php'; ?>
+
+                                <!-- DFP Ad - BigBox2 -->
+                                <?php include 'ads/ad_bigbox2.php'; ?>
 
 				<!-- Contact This Agent Widget -->
 				<?php include 'page-content/modules/contact-agent-basic--small.php'; ?>
@@ -395,8 +405,8 @@
 			<!-- CATEGORY -->
 			<?php if ($pageType == 'category') { ?>
 				<?php include 'ads/ad_bigbox1.php'; ?>
-                <?php include 'ads/ad_bigbox2.php'; ?>				
-				
+		                <?php include 'ads/ad_bigbox2.php'; ?>
+
 				<!-- Newsletter Widget -->
 				<?php include 'page-content/modules/newsletter-widget.php'; ?>
 
@@ -418,9 +428,6 @@
 
 				<!-- DFP Sidebar Placeholder Ad Content -->
 				<?php include 'ads/adplaceholer__right-column.php'; ?>
-
-				<!-- Property Listings Widget -->
-				<?php include 'page/modules/property-listings.php'; ?>
 				
 				<!-- Explore Brookline -->
 				<?php include 'page-content/explore-brookline.php'; ?>
@@ -437,9 +444,6 @@
 
 				<!-- Newsletter Widget -->
 				<?php include 'page-content/modules/newsletter-widget.php'; ?>
-
-				<!-- DFP Sidebar Placeholder Ad Content -->
-				<?php include 'ads/adplaceholer__right-column.php'; ?>
 
 				<!-- Property Listings Widget -->
 				<?php include 'page/modules/property-listings.php'; ?>
