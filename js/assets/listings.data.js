@@ -140,7 +140,7 @@
 
 		this.init = function () {
 			base.options.apiKey = 'LpjiWDtK7ViWvh1PiO53IKe34j8yZjcuKnIk46ZHYnAa';
-			base.dropdown = base.$element.find('.drop-down').get(0);
+			base.dropdown = base.$element.find('select#listingDropDown').get(0);
 			base.$dropdown = $(base.dropdown);
 			//Clear content
 			base.$element.find('.listing-container')
@@ -157,12 +157,8 @@
 				return 'http://api.cfk.placester.net/api/v2.1/listings.json?api_key=' + base.options.apiKey;
 			}, 
 			_keys: function () {
-				var _ret = this.$element.data('realestatePropertyListingFilter') + '[]=' + this.$element.data('realestatePropertyListingFilterValue');
-				var _feedParams = base.getFeedParams(base.options.URLFromFeed);
-				var _mappedFeedParams = base.mapFeedParams(_feedParams);
-				_ret += "&" + _mappedFeedParams;
 
-				return _ret;
+				return this.$element.data("urlParam");
 			},
 			get: function ($element) {
 				this.$element = $element;
@@ -174,6 +170,7 @@
 				});
 			},		
 			update: function (data) {
+				
 				var thisRef = this;
 				base.$element.find('.listing-container')
 					.children()
@@ -189,19 +186,33 @@
 
 					var _content = _template.html();
 					var _listing = data.listings[listing];
+					
 					var _image = $(_listing.images).filter(function () { return this.order==1; })[0];
 					
+
 					try{
 						_content = _content.replace('{{purchase_type}}',_listing.purchase_types[0]);
-						_content = _content.replace('{{cur_data.price}}', '$' + _listing.cur_data.price);
+						_content = _content.replace('{{cur_data.price}}', '$' + parseInt(_listing.cur_data.price).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
 						_content = _content.replace('{{updated_at}}', _listing.updated_at );
-						_content = _content.replace('{{image}}',_image.url);
+						_content = _content.replace('{{image}}',(typeof _image !==  'undefined' ? _image.url : ''));
 						_content = _content.replace('{{location.address}}',_listing.location.address);
 						_content = _content.replace('{{location.locality}}',_listing.location.locality);
 						_content = _content.replace('{{location.region}}',_listing.location.region);
 						_content = _content.replace('{{cur_data.beds}}',_listing.cur_data.beds);
 						_content = _content.replace('{{cur_data.baths}}',_listing.cur_data.baths);
 					}catch(err){ console.log(err); }
+
+						//Make sure no template markup is left behind.
+						_content = _content.replace('{{purchase_type}}','');
+						_content = _content.replace('{{cur_data.price}}','');
+						_content = _content.replace('{{updated_at}}', '');
+						_content = _content.replace('{{image}}','');
+						_content = _content.replace('{{location.address}}','');
+						_content = _content.replace('{{location.locality}}','');
+						_content = _content.replace('{{location.region}}','');
+						_content = _content.replace('{{cur_data.beds}}','');
+						_content = _content.replace('{{cur_data.baths}}','');
+
 
 					_template.removeClass('template')
 						.html(_content);
@@ -241,48 +252,19 @@
 						base.options.filters[filter].elements = data[filter];
 				}
 
+				//Manually map each option to its url query params
+				base.$dropdown.find('option[value="All"]').attr("data-url-param","&sort_by=cur_data.price&sort_type=asc&metadata[price]=200000&metadata[price]_match=gt");
+				base.$dropdown.find('option[value="New"]').attr("data-url-param","&sort_by=created_at&sort_type=desc");
+				base.$dropdown.find('option[value="Open House"]').attr("data-url-param","&");
+				base.$dropdown.find('option[value="Luxury"]').attr("data-url-param","&min_price=1000000");
+				
 				//Update dropdown
 				//Remove all current options but not the option ALL
-				base.$dropdown.find('.drop-down__options')
-					.children()
-					.filter(function () { return $(this).html()!='All'; })
-					.remove();
-				var _all = base.$dropdown.find('.drop-down__options').children().filter(function () { return $(this).html()=='All'; });
-
-				for (var filter in base.options.filters) {
-					for (var filterElement in base.options.filters[filter].elements) {
-						
-						var _filter = base.options.filters[filter];
-						var _filterValue = _filter.elements[filterElement];
-
-						var _name = '';
-						//Check if the filter name should be added
-						if (base.options.filters[filter].appendName) 
-							_name = base.options.filters[filter].name + ':';
-
-						//Check if any specific element retrieved has a name override
-						if ((typeof _filter.displayName !== 'undefined') && (typeof _filter.displayName[_filterValue] !== 'undefined')) {
-							_name += _filter.displayName[_filterValue];
-						} else {
-							_name += _filterValue;
-						}
-						var _option = _all.clone(true);
-
-						_option.data('realestatePropertyListingFilter',filter);
-						_option.data('realestatePropertyListingFilterValue',_filterValue);
-						_option.html(_name);
-
-						_option.click(function () {
-							base.listings.get($(this));
-						});
-						base.$dropdown.find('.drop-down__options').append(_option);
-
-					}
-				}
+				base.$dropdown.change(function () {
+					base.listings.get($($(this).children().get(this.selectedIndex)));
+				});
 				//Get all
-				_all.data('realestatePropertyListingFilter','all');
-				_all.data('realestatePropertyListingFilterValue','all');
-				base.listings.get(_all);
+				base.listings.get(base.$dropdown.find('option[value="All"]'));
 				
 			}
 		};
