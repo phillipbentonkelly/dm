@@ -1,86 +1,86 @@
 @font-face {
   font-family: "Avenir";
-  src: url("../../fonts/avenir.ttf") format("truetype"), url("../../fonts/avenir.otf") format("opentype");
+  src: url("../fonts/avenir.ttf") format("truetype"), url("../fonts/avenir.otf") format("opentype");
   font-weight: 200;
 }
 @font-face {
   font-family: "OpenSans";
-  src: url("../../fonts/OpenSans-Regular.ttf") format("truetype");
+  src: url("../fonts/OpenSans-Regular.ttf") format("truetype");
   font-weight: 400;
 }
 @font-face {
   font-family: "OpenSans Regular";
-  src: url("../../fonts/OpenSans-Regular.ttf") format("truetype");
+  src: url("../fonts/OpenSans-Regular.ttf") format("truetype");
   font-weight: 400;
 }
 @font-face {
   font-family: "OpenSans Italic";
-  src: url("../../fonts/OpenSans-Italic.ttf") format("truetype");
+  src: url("../fonts/OpenSans-Italic.ttf") format("truetype");
   font-weight: 400;
 }
 @font-face {
   font-family: "OpenSans Bold";
-  src: url("../../fonts/OpenSans-Bold.ttf") format("truetype");
+  src: url("../fonts/OpenSans-Bold.ttf") format("truetype");
   font-weight: 700;
 }
 @font-face {
   font-family: "OpenSans Extra Bold";
-  src: url("../../fonts/OpenSans-ExtraBold.ttf") format("truetype");
+  src: url("../fonts/OpenSans-ExtraBold.ttf") format("truetype");
   font-weight: 700;
 }
 @font-face {
   font-family: "OpenSans Extra Bold Italic";
-  src: url("../../fonts/OpenSans-ExtraBoldItalic.ttf") format("truetype");
+  src: url("../fonts/OpenSans-ExtraBoldItalic.ttf") format("truetype");
   font-weight: 400;
 }
 @font-face {
   font-family: "OpenSans Semibold";
-  src: url("../../fonts/OpenSans-Semibold.ttf") format("truetype");
+  src: url("../fonts/OpenSans-Semibold.ttf") format("truetype");
   font-weight: 500;
 }
 @font-face {
   font-family: "OpenSans Semibold Italic";
-  src: url("../../fonts/OpenSans-SemiboldItalic.ttf") format("truetype");
+  src: url("../fonts/OpenSans-SemiboldItalic.ttf") format("truetype");
   font-weight: 500;
 }
 @font-face {
   font-family: "OpenSans Light";
-  src: url("../../fonts/OpenSans-Light.ttf") format("truetype");
+  src: url("../fonts/OpenSans-Light.ttf") format("truetype");
   font-weight: 400;
 }
 @font-face {
   font-family: "OpenSans Light Italic";
-  src: url("../../fonts/OpenSans-LightItalic.ttf") format("truetype");
+  src: url("../fonts/OpenSans-LightItalic.ttf") format("truetype");
   font-weight: 400;
 }
 @font-face {
   font-family: "Oswald Regular";
-  src: url("../../fonts/Oswald-Regular.otf") format("opentype");
+  src: url("../fonts/Oswald-Regular.otf") format("opentype");
   font-weight: 400;
 }
 @font-face {
   font-family: "Oswald Bold";
-  src: url("../../fonts/Oswald-Bold.otf") format("opentype");
+  src: url("../fonts/Oswald-Bold.otf") format("opentype");
   font-weight: 700;
 }
 @font-face {
   font-family: "Oswald Light";
-  src: url("../../fonts/Oswald-Light.otf") format("opentype");
+  src: url("../fonts/Oswald-Light.otf") format("opentype");
   font-weight: 400;
 }
 @font-face {
   font-family: "Oswald Stencil";
-  src: url("../../fonts/Oswald-Stencil.otf") format("opentype");
+  src: url("../fonts/Oswald-Stencil.otf") format("opentype");
   font-weight: 400;
 }
 @font-face {
   font-family: "Helvetica Neue";
-  src: url("../../fonts/HelveticaNeue.eot?#iefix") format("embedded-opentype"), url("../../fonts/HelveticaNeue.woff") format("woff"), url("../../fonts/HelveticaNeue.ttf") format("truetype");
+  src: url("../fonts/HelveticaNeue.eot?#iefix") format("embedded-opentype"), url("../fonts/HelveticaNeue.woff") format("woff"), url("../fonts/HelveticaNeue.ttf") format("truetype");
   font-weight: 400;
 }
 @font-face {
   font-family: "Helvetica Neue Bold";
-  src: url("../../fonts/HelveticaNeue-Bold.eot?#iefix") format("embedded-opentype"), url("../../fonts/HelveticaNeue-Bold.woff") format("woff"), url("../../fonts/HelveticaNeue-Bold.ttf") format("truetype");
+  src: url("../fonts/HelveticaNeue-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/HelveticaNeue-Bold.woff") format("woff"), url("../fonts/HelveticaNeue-Bold.ttf") format("truetype");
   font-weight: 700;
 }
 @font-face {
@@ -6282,6 +6282,78 @@ body.category-details .related-articles__section-header {
     left: 23px;
   }
 }
+/* Pagination styles */
+/* line 3, ../sass/bcom-partials/bcom/_pagination.scss */
+.pagination {
+  font: normal 500 0.92308em Arial, Helvetica, Verdana, sans-serif;
+  position: relative;
+  width: 100%;
+  text-align: right;
+  margin-bottom: 1em;
+  overflow: hidden;
+}
+/* line 1309, ../sass/helpers/_bcom-mixins.scss */
+.fontface .pagination {
+  font-family: "effra", Arial, Helvetica, Verdana, sans-serif;
+}
+/* line 11, ../sass/bcom-partials/bcom/_pagination.scss */
+.story-comments-mod .pagination {
+  width: auto;
+  margin: 25px 0;
+}
+/* line 14, ../sass/bcom-partials/bcom/_pagination.scss */
+.story-comments-mod .pagination ul {
+  text-align: center;
+}
+@media (min-width: 400px) {
+  /* line 11, ../sass/bcom-partials/bcom/_pagination.scss */
+  .story-comments-mod .pagination {
+    margin: 0px 0px 25px;
+  }
+  /* line 19, ../sass/bcom-partials/bcom/_pagination.scss */
+  .story-comments-mod .pagination ul {
+    text-align: left;
+  }
+}
+/* line 24, ../sass/bcom-partials/bcom/_pagination.scss */
+.pagination ul {
+  display: table;
+  width: auto;
+  float: right;
+}
+/* line 29, ../sass/bcom-partials/bcom/_pagination.scss */
+.pagination li {
+  float: left;
+  margin: 0 1px;
+}
+/* line 33, ../sass/bcom-partials/bcom/_pagination.scss */
+.pagination a, .pagination li.active {
+  display: block;
+  padding: 3px 6px;
+  border: 1px solid #ccc;
+  color: #999;
+  text-decoration: none;
+  -webkit-transition: all, 0.25s, cubic-bezier(0.49, 0.37, 0.445, 0.715) false;
+  -moz-transition: all, 0.25s, cubic-bezier(0.49, 0.37, 0.445, 0.715) false;
+  -o-transition: all, 0.25s, cubic-bezier(0.49, 0.37, 0.445, 0.715) false;
+  transition: all, 0.25s, cubic-bezier(0.49, 0.37, 0.445, 0.715) false;
+}
+/* line 40, ../sass/bcom-partials/bcom/_pagination.scss */
+.pagination a:hover, .pagination li.active:hover {
+  background: #ededed;
+}
+/* line 44, ../sass/bcom-partials/bcom/_pagination.scss */
+.pagination li.active:hover {
+  background-color: #2494e3;
+}
+/* line 47, ../sass/bcom-partials/bcom/_pagination.scss */
+.pagination .active a, .pagination li.active {
+  border-color: #0d5799;
+  color: #fff;
+  cursor: default;
+  background-color: #2494e3;
+}
+
 /* !============================================= */
 /* ! Media Grid                       */
 /* !============================================= */
