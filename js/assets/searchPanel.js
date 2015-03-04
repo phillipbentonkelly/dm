@@ -76,10 +76,15 @@ dm.searchPanel = {};
 
 		init: function(){
 
+			var phStr = "Search for real estate listings or articles. ex: 3 bedroom for sale in Brookline under 1,000,000";
+
+			var qStr = $.getQuery();
+
 			// to make things neat create objects to store params...
 			var mainParams = {
-				placeholder: "Search for real estate listings or articles. ex: 3 bedroom for sale in Brookline under 1,000,000"
+				placeholder: phStr
 			};
+
 
 			var tagParams = {
             	delimeter: ',',
@@ -101,10 +106,14 @@ dm.searchPanel = {};
 				shouldInputFocus: function(){ return false; }
 			};
 
-            this.filters.$main.selectize(mainParams);
-            this.filters.$tags.selectize(tagParams);
-			this.filters.$fmt.select2(fmtParams);
-			this.filters.$other.select2(otherParams);
+            var $mainSelect = this.filters.$main.selectize(mainParams);
+            var $kwSelect = this.filters.$tags.selectize(tagParams);
+			var $fmtSelect = this.filters.$fmt.select2(fmtParams);
+			var $otherSelects = this.filters.$other.select2(otherParams);
+
+			// make the url query string the default selection
+			if(qStr)
+				$mainSelect[0].selectize.setValue(qStr);
 
 			if(dm.env.device === 'mobile')
 				this.setMobilePanelState();
@@ -166,7 +175,6 @@ dm.searchPanel = {};
 					self.lvls.$lower.hide();
 					// hide the form instead of the first level
 					self._form.$el.hide();
-					// self.lvls.$one.hide();
 				break;
 			}
 
@@ -289,30 +297,11 @@ dm.searchPanel = {};
 			return fmt;
 		},
 
-
+		// returns # of panels open by user
 		getExpanded: function(){
 			var def = dm.env.device == 'mobile' ? 0 : 1;
 			var paramExpanded = $.getParamVal('expanded');
 			return paramExpanded || def;
-		},
-
-
-		isSaved: function(){
-			var paramSaved = $.getParamVal('saved');
-			return paramSaved || false;
-		},
-
-
-		checkExpanded: function(){
-			var rows = $('.page-search__row').length;
-			var rowsHidden =  $('.page-search__row:hidden').length;
-			return (rows - rowsHidden);
-		},
-
-		checkIfSaved: function(){
-			var state = $('.page-search__button--save').getObservable().filter(':visible');
-			var saved = state.attr('class') === 'saved' ? true : false
-			return saved;
 		}
 
 	};
@@ -339,6 +328,16 @@ dm.searchPanel = {};
 				}
 			}
 			return paramVal;
+		},
+		getQuery : function(){
+			var query = false;
+			var qStr = $.getParamVal('q');
+
+			if(qStr !== null || qStr !== ''){
+				query = decodeURIComponent(qStr);
+			}
+
+			return query;
 		}
 	});
 

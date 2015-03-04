@@ -21,7 +21,7 @@ dm.Article = {};
 
 		this.articles = {};
 		this.articlesToDisplay = this.rail ? 2 : 6;
-		this.search = false;
+		this.search = $.getQuery();
 		
 
 		this.module = {
@@ -96,9 +96,6 @@ dm.Article = {};
 
 		init: function(){
 			var self = this;
-			var query = $.getParamVal('q');
-			// tell us if there's a search
-			this.search = (query === null || query === '') ? false : true;
 
 			var callUrl = '';
 			var params = {};
@@ -112,7 +109,7 @@ dm.Article = {};
 				params = {
 					cx: '001595115685171809073:-cf7lydwdko',
 					key: 'AIzaSyB_Uh9C05nKCDSVdXK_x3QOqxKycPR3v-E',
-					q: query,
+					q: this.search,
 					alt: 'json'
 				};
 
