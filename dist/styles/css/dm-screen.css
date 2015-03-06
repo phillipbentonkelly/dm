@@ -481,6 +481,10 @@ button {
   clip: rect(1px, 1px, 1px, 1px);
 }
 
+/*$asset-path: "/";
+$img-path: $asset-path + "img/";
+$rgba-bg-path: $asset-path + "img/rgba-bg/";
+$svg-path: $asset-path + "img/";*/
 /* line 31, ../sass/helpers/_mixins-and-extends.scss */
 .comment-button-mod:after, .form-basic:after, .form:after, .form-large:after, .form-row:after {
   content: "";
@@ -685,7 +689,7 @@ body {
   min-width: 9px;
   height: 21px;
   margin-right: 10px;
-  background-image: url(/img/icons/sprites/social-icons.png);
+  background-image: url(../../images/icons/sprites/social-icons.png);
   background-repeat: no-repeat;
 }
 /* line 349, ../sass/helpers/_mixins-and-extends.scss */
@@ -712,7 +716,7 @@ body {
 .social-icons__comments {
   width: 27px;
   height: 27px !important;
-  background-image: url(/img/icons/comment.png) !important;
+  background-image: url(../../images/icons/comment.png) !important;
   background-position: 0 0;
   background-repeat: no-repeat;
 }
@@ -1271,6 +1275,10 @@ textarea {
   display: inline-block;
 }
 
+/*$asset-path: "/";
+$img-path: $asset-path + "img/";
+$rgba-bg-path: $asset-path + "img/rgba-bg/";
+$svg-path: $asset-path + "img/";*/
 /* line 11, ../sass/partials/page/_page-masthead.scss */
 .masthead {
   width: 100%;
@@ -1350,7 +1358,7 @@ textarea {
   	display: block;
   }
   &__mega-menu-responsive-icon:hover {
-  	background: url(/img/responsive/mega-menu__responsive-icon__close.png) center center no-repeat;
+  	background: url(../../images/responsive/mega-menu__responsive-icon__close.png) center center no-repeat;
   }*/
 }
 /* line 19, ../sass/partials/page/_page-nav.scss */
@@ -1376,7 +1384,7 @@ textarea {
   width: 40px;
   height: 40px;
   border-right: 2px solid white;
-  background: url(/img/responsive/mega-menu__responsive-icon__open.png) center center no-repeat;
+  background: url(../../images/responsive/mega-menu__responsive-icon__open.png) center center no-repeat;
 }
 /* line 41, ../sass/partials/page/_page-nav.scss */
 .page-nav__search-responsive-icon {
@@ -1394,7 +1402,7 @@ textarea {
 }
 /* line 53, ../sass/partials/page/_page-nav.scss */
 .page-nav__search-responsive-icon a.open-search {
-  background: url(/img/responsive/search__responsive-icon__open.png) center center no-repeat;
+  background: url(../../images/responsive/search__responsive-icon__open.png) center center no-repeat;
 }
 /* line 56, ../sass/partials/page/_page-nav.scss */
 .page-nav__search-responsive-icon a.open-search span {
@@ -1761,7 +1769,7 @@ textarea {
     margin: 0;
     /*padding: 0 26px 0 0;*/
     padding: 0 5% 0 0;
-    background: url(/img/icons/icons_myAccount.png) center right no-repeat;
+    background: url(../../images/icons/icons_myAccount.png) center right no-repeat;
   }
   /* line 441, ../sass/partials/page/_page-nav.scss */
   .page-nav__mega-menu-responsive-icon, .page-nav__search-responsive-icon {
@@ -1804,14 +1812,14 @@ body.home .page-layout {
 @media (min-width: 768px) {
   /* line 39, ../sass/partials/page/_page-layout.scss */
   body.neighborhood, body.category-details {
-    background-image: url(/img/neighborhoods/19040004_source.jpg);
+    background-image: url(../../images/neighborhoods/19040004_source.jpg);
     background-position: center 162px;
     background-repeat: repeat-x;
   }
 
   /* line 45, ../sass/partials/page/_page-layout.scss */
   body.category-details {
-    background-image: url(/img/neighborhoods/Category-Details__1152x699.jpg);
+    background-image: url(../../images/neighborhoods/Category-Details__1152x699.jpg);
   }
 
   /* line 49, ../sass/partials/page/_page-layout.scss */
@@ -1840,14 +1848,14 @@ body.home .page-layout {
 @media (min-width: 960px) {
   /* line 74, ../sass/partials/page/_page-layout.scss */
   body.neighborhood, body.category-details {
-    background-image: url(/img/neighborhoods/19040004_source.jpg);
+    background-image: url(../../images/neighborhoods/19040004_source.jpg);
     background-position: center 162px;
     background-repeat: repeat-x;
   }
 
   /* line 80, ../sass/partials/page/_page-layout.scss */
   body.category-details {
-    background-image: url(/img/neighborhoods/Category-Details__1152x699.jpg);
+    background-image: url(../../images/neighborhoods/Category-Details__1152x699.jpg);
   }
 
   /* line 84, ../sass/partials/page/_page-layout.scss */
@@ -2131,7 +2139,7 @@ body.serp .page-layout {
   width: 25px;
   height: 35px;
   border-radius: 4px;
-  background: url(/img/icons/icon_search-magnifiying-glass.png) center center no-repeat #000;
+  background: url(../../images/icons/icon_search-magnifiying-glass.png) center center no-repeat #000;
 }
 /* line 232, ../sass/partials/page/_page-search.scss */
 .page-search__button.select2-panel-open span.select2-arrow b {
@@ -2219,7 +2227,7 @@ body.serp .page-layout {
   display: block;
   width: 100%;
   height: 100%;
-  background: url(/img/icons/select2.png) no-repeat 0 1px;
+  background: url(../../images/icons/select2.png) no-repeat 0 1px;
 }
 /* line 325, ../sass/partials/page/_page-search.scss */
 .page-search__button--close {
@@ -4436,7 +4444,7 @@ body.category-details .related-articles__section-header {
   margin-top: 2px;
   padding: 0;
   display: inline-block;
-  background: url(/img/icons/icon_search-magnifiying-glass.png) center center no-repeat #000;
+  background: url(../../images/icons/icon_search-magnifiying-glass.png) center center no-repeat #000;
   border: 0;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
@@ -4977,7 +4985,7 @@ body.category-details .related-articles__section-header {
   font-weight: bold;
   color: #32342f;
   text-decoration: none;
-  background: url(/img/icons/twitter-follow__background.png) top left repeat-x;
+  background: url(../../images/icons/twitter-follow__background.png) top left repeat-x;
   border: 1px solid #ccc;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
@@ -5007,7 +5015,7 @@ body.category-details .related-articles__section-header {
   text-indent: -9000px;
   overflow: hidden;
   margin-top: 2px;
-  background: url(/img/icons/articles-content__author-mailto.png) top left repeat-x;
+  background: url(../../images/icons/articles-content__author-mailto.png) top left repeat-x;
 }
 /* line 112, ../sass/partials/page/modules/_articles-content.scss */
 .articles-content__article__links {
@@ -6088,7 +6096,7 @@ body.category-details .related-articles__section-header {
 .multimedia-chip__media-wrapper__short-description__share, .multimedia-chip__media-wrapper__short-description__info {
   float: right;
   text-indent: -9000px;
-  background: url(/img/icons/sprites/multimedia-chip__icons-sprite.png) 0 0 no-repeat;
+  background: url(../../images/icons/sprites/multimedia-chip__icons-sprite.png) 0 0 no-repeat;
 }
 /* line 63, ../sass/partials/page/modules/_multimedia-chip.scss */
 .multimedia-chip__media-wrapper__short-description__share {
@@ -6184,7 +6192,7 @@ body.category-details .related-articles__section-header {
     width: 100%;
     padding: 45px 0;
     box-sizing: border-box;
-    background-image: url(/img/listings/newsletter-widget-img.png);
+    background-image: url(../../images/listings/newsletter-widget-img.png);
     background-position: -15px -65px;
   }
   /* line 40, ../sass/partials/page/modules/_newsletter-widget.scss */
@@ -6244,7 +6252,7 @@ body.category-details .related-articles__section-header {
     width: 16px;
     background-repeat: no-repeat;
     background-size: contain;
-    background-image: url(/img/listings/pintrest-logo.png);
+    background-image: url(../../images/listings/pintrest-logo.png);
   }
   /* line 98, ../sass/partials/page/modules/_newsletter-widget.scss */
   .newsletter-widget__connect-header {
