@@ -9188,21 +9188,3 @@ a, img {
     display: block;
   }
 }
-/* line 3, ../sass/partials/page-content/_dfp-ads.scss */
-.ad-dim__300by250 {
-  width: 300px;
-  height: 250px;
-  background: lightgrey;
-}
-
-/* line 9, ../sass/partials/page-content/_dfp-ads.scss */
-.ad-dim__leaderboard {
-  max-width: 728px;
-  max-height: 90px;
-  margin: auto;
-}
-
-/* line 15, ../sass/partials/page-content/_dfp-ads.scss */
-.ad-placeholder {
-  margin: auto;
-}

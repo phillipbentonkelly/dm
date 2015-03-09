@@ -120,7 +120,7 @@
     <?php } ?>
 
     <?php if ($pageType == 'serp') { ?>
-    bcom.dfp.adSlots = ['ad_lead1','ad_spotlight1','ad_spotlight2','ad_spotlight3','ad_spotlight4','ad_bigbox1','ad_bigbox2','ad_bigbox3','ad_bigbox4','ad_bigbox5','ad_bigbox6','ad_outofpage1','ad_outofpage2','ad_outofpage3','ad_lead2'];
+    bcom.dfp.adSlots = ['ad_lead1','ad_spotlight1','ad_spotlight2','ad_spotlight3','ad_spotlight4', 'ad_bigbox1','ad_bigbox2','ad_bigbox3','ad_bigbox4','ad_bigbox5','ad_bigbox6','ad_outofpage1','ad_outofpage2','ad_outofpage3','ad_lead2'];
     <?php } ?>
 
     <?php if ($pageType == 'property-listings' || $pageType == 'property-listings-premium') { ?>
@@ -155,8 +155,8 @@
 </script>
 <script src="http://www.boston.com/js/bcom.util.js"></script>
 <script src="js/assets/dm.dfp.ad-catalog.js"></script>
-<script src="http://www.boston.com/js/bcom.dfp.ad-init.js"></script>
-
+<!-- <script src="http://www.boston.com/js/bcom.dfp.ad-init.js"></script> -->
+<script src="js/assets/dm.dfp.ad-init.js"></script>
 	
     <script>
         $(document).ready(function(){
