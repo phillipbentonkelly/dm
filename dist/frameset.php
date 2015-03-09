@@ -131,7 +131,6 @@
     bcom.dfp.adSlots = ['ad_lead1', 'ad_bigbox1', 'ad_outofpage1','ad_outofpage2','ad_outofpage3' ]
     <?php } ?>
 
-
     bcom.dfp.streamCount = '5';
     bcom.dfp.galleryCount = '';
     bcom.dfp.refreshRate = '';
@@ -151,6 +150,8 @@
         meta: '',
 	redesigntest: 'on'
     };
+
+    
     
 </script>
 <script src="http://www.boston.com/js/bcom.util.js"></script>
@@ -160,6 +161,12 @@
 	
     <script>
         $(document).ready(function(){
+
+        	if($.inArray('ad_lead1', bcom.dfp.adSlots) == -1){
+        		$('.masthead').hide();
+        		$('.page-search').css({'top':'60px'});
+        	}
+        	
         	if('#listingDropDown'){
                 $("#listingDropDown").select2({ dropdownCssClass: 'mplistings-dropdown' });
             }
