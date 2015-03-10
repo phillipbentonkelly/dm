@@ -129,6 +129,6 @@ body.serp {
 }	
 
 
-.#{module-name} .page-layout__right-col .dfp-ads {
+.#{$module-name} .page-layout__right-col .dfp-ads, .#{$module-name} .page-layout__right-col .ad-placeholder {
           padding-bottom:20px
 }
