@@ -3219,7 +3219,6 @@ body.category-details .related-articles__section-header {
   float: left;
   width: 70%;
   height: 100%;
-  font-size: 0.7em;
 }
 /* line 208, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .carousel-fullwidth_slide-detail-content p:nth-child(1) {
