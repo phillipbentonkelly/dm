@@ -66,7 +66,6 @@
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 @import 'partials/page/modules/listingsmap';
 @import 'partials/page/modules/relatedarticles';
-@import 'partials/page/modules/full-screen-carousel';
 @import 'partials/page/modules/contact-form-premium';
 @import 'partials/page/modules/listing-summary';
 @import 'partials/page/modules/explore-widget-right-rail';
@@ -78,6 +77,8 @@
 @import 'partials/page/modules/related-articles-right-rail';
 @import 'partials/page/modules/multimedia-chip';
 @import 'partials/page/modules/newsletter-widget';
+@import 'partials/page/modules/full-screen-carousel';
+
 
 //Transplanted dependencies to support the BCOM comments styles on DM -CGO
 @import 'bcom-partials/bcom/pagination';

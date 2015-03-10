@@ -55,9 +55,6 @@
 		<script src="js/assets/related-articles.js"></script>
 	<?php } ?>
 
-    
-
-
 	<?php if ($pageType == 'home' || $pageType == 'category' || $pageType == 'category-details' || $pageType == 'neighborhood') { ?>
 		<script src="js/assets/newsletter-widget.js"></script>
 	    <!-- Carousel Scripts -->
@@ -152,7 +149,6 @@
 </script>
 <script src="http://www.boston.com/js/bcom.util.js"></script>
 <script src="js/assets/dm.dfp.ad-catalog.js"></script>
-<!-- <script src="http://www.boston.com/js/bcom.dfp.ad-init.js"></script> -->
 <script src="js/assets/dm.dfp.ad-init.js"></script>
 	
     <script>

@@ -320,6 +320,10 @@ $module-name: 'full-screen-carousel';
 		.category-tag {
 			display: block;
 		}
+
+		figure{
+			visibility: hidden;
+		}
 	}
 }
 // ------------------------------------------------------------
