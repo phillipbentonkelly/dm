@@ -52,7 +52,6 @@
 	<?php } ?>
 	
 	<?php if ($pageType == 'category' || $pageType == 'category-details' || $pageType == 'neighborhood' || $pageType == 'articles'){ ?>
-		<!--<script src="js/assets/related-articles-main-widget.js"></script>-->
 		<script src="js/assets/related-articles.js"></script>
 	<?php } ?>
 
@@ -78,8 +77,6 @@
 
 	<?php if ($pageType == 'serp') { ?>
 		<script src="js/resources/basic/js/jquery.simplemodal.js"></script>
-        <!--<script src="js/assets/related-articles-rail-widget.js"></script>
-        <script src="js/assets/related-articles-main-widget.js"></script>-->
         <script src="js/assets/related-articles.js"></script>
 
 	<?php } ?>
@@ -89,8 +86,7 @@
         <script src="js/assets/mpListings.js"></script>
         <script src="js/assets/listings.data.js"></script>
         <script src="js/resources/basic/js/jquery.simplemodal.js"></script>
-        <script src="js/assets/related-articles-main-widget.js"></script>
-        <script src="js/assets/related-articles-rail-widget.js"></script>
+        <script src="js/assets/related-articles.js"></script>
 	<?php } ?>
 	
 	<?php if ($pageType == 'articles') { ?>

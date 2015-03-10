@@ -9,6 +9,7 @@ $module-name: 'page-search';
 // ------------------------------------------------------------
 
 .#{$module-name} {
+	display: block;
 	position: static;
 	top: initial;
 	left: 0;
@@ -601,7 +602,7 @@ $module-name: 'page-search';
 
 
 	.#{$module-name} {
-		display: block;
+		display: none;
 		height: auto;
 		min-height: 60px;
 
@@ -767,7 +768,7 @@ $module-name: 'page-search';
 // ------------------------------------------------------------
 @include media-query(tablet) {
 	.#{$module-name} {
-		display: block;
+		display: none;
 	}
 }
 

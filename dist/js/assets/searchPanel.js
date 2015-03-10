@@ -123,8 +123,9 @@ var _sp;
 				this.setMobilePanelState();
 			else
 				this.setPanelState();
-			
 
+			$(_sp.el).show();
+			
             this.eventHandlers();
 
 		},
