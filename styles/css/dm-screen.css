@@ -1,86 +1,86 @@
 @font-face {
   font-family: "Avenir";
-  src: url("../fonts/avenir.ttf") format("truetype"), url("../fonts/avenir.otf") format("opentype");
+  src: url("../../fonts/avenir.ttf") format("truetype"), url("../../fonts/avenir.otf") format("opentype");
   font-weight: 200;
 }
 @font-face {
   font-family: "OpenSans";
-  src: url("../fonts/OpenSans-Regular.ttf") format("truetype");
+  src: url("../../fonts/OpenSans-Regular.ttf") format("truetype");
   font-weight: 400;
 }
 @font-face {
   font-family: "OpenSans Regular";
-  src: url("../fonts/OpenSans-Regular.ttf") format("truetype");
+  src: url("../../fonts/OpenSans-Regular.ttf") format("truetype");
   font-weight: 400;
 }
 @font-face {
   font-family: "OpenSans Italic";
-  src: url("../fonts/OpenSans-Italic.ttf") format("truetype");
+  src: url("../../fonts/OpenSans-Italic.ttf") format("truetype");
   font-weight: 400;
 }
 @font-face {
   font-family: "OpenSans Bold";
-  src: url("../fonts/OpenSans-Bold.ttf") format("truetype");
+  src: url("../../fonts/OpenSans-Bold.ttf") format("truetype");
   font-weight: 700;
 }
 @font-face {
   font-family: "OpenSans Extra Bold";
-  src: url("../fonts/OpenSans-ExtraBold.ttf") format("truetype");
+  src: url("../../fonts/OpenSans-ExtraBold.ttf") format("truetype");
   font-weight: 700;
 }
 @font-face {
   font-family: "OpenSans Extra Bold Italic";
-  src: url("../fonts/OpenSans-ExtraBoldItalic.ttf") format("truetype");
+  src: url("../../fonts/OpenSans-ExtraBoldItalic.ttf") format("truetype");
   font-weight: 400;
 }
 @font-face {
   font-family: "OpenSans Semibold";
-  src: url("../fonts/OpenSans-Semibold.ttf") format("truetype");
+  src: url("../../fonts/OpenSans-Semibold.ttf") format("truetype");
   font-weight: 500;
 }
 @font-face {
   font-family: "OpenSans Semibold Italic";
-  src: url("../fonts/OpenSans-SemiboldItalic.ttf") format("truetype");
+  src: url("../../fonts/OpenSans-SemiboldItalic.ttf") format("truetype");
   font-weight: 500;
 }
 @font-face {
   font-family: "OpenSans Light";
-  src: url("../fonts/OpenSans-Light.ttf") format("truetype");
+  src: url("../../fonts/OpenSans-Light.ttf") format("truetype");
   font-weight: 400;
 }
 @font-face {
   font-family: "OpenSans Light Italic";
-  src: url("../fonts/OpenSans-LightItalic.ttf") format("truetype");
+  src: url("../../fonts/OpenSans-LightItalic.ttf") format("truetype");
   font-weight: 400;
 }
 @font-face {
   font-family: "Oswald Regular";
-  src: url("../fonts/Oswald-Regular.otf") format("opentype");
+  src: url("../../fonts/Oswald-Regular.otf") format("opentype");
   font-weight: 400;
 }
 @font-face {
   font-family: "Oswald Bold";
-  src: url("../fonts/Oswald-Bold.otf") format("opentype");
+  src: url("../../fonts/Oswald-Bold.otf") format("opentype");
   font-weight: 700;
 }
 @font-face {
   font-family: "Oswald Light";
-  src: url("../fonts/Oswald-Light.otf") format("opentype");
+  src: url("../../fonts/Oswald-Light.otf") format("opentype");
   font-weight: 400;
 }
 @font-face {
   font-family: "Oswald Stencil";
-  src: url("../fonts/Oswald-Stencil.otf") format("opentype");
+  src: url("../../fonts/Oswald-Stencil.otf") format("opentype");
   font-weight: 400;
 }
 @font-face {
   font-family: "Helvetica Neue";
-  src: url("../fonts/HelveticaNeue.eot?#iefix") format("embedded-opentype"), url("../fonts/HelveticaNeue.woff") format("woff"), url("../fonts/HelveticaNeue.ttf") format("truetype");
+  src: url("../../fonts/HelveticaNeue.eot?#iefix") format("embedded-opentype"), url("../../fonts/HelveticaNeue.woff") format("woff"), url("../../fonts/HelveticaNeue.ttf") format("truetype");
   font-weight: 400;
 }
 @font-face {
   font-family: "Helvetica Neue Bold";
-  src: url("../fonts/HelveticaNeue-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/HelveticaNeue-Bold.woff") format("woff"), url("../fonts/HelveticaNeue-Bold.ttf") format("truetype");
+  src: url("../../fonts/HelveticaNeue-Bold.eot?#iefix") format("embedded-opentype"), url("../../fonts/HelveticaNeue-Bold.woff") format("woff"), url("../../fonts/HelveticaNeue-Bold.ttf") format("truetype");
   font-weight: 700;
 }
 @font-face {
@@ -3220,7 +3220,6 @@ body.category-details .related-articles__section-header {
   float: left;
   width: 70%;
   height: 100%;
-  font-size: 0.7em;
 }
 /* line 208, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel .carousel-fullwidth_slide-detail-content p:nth-child(1) {
@@ -8871,7 +8870,7 @@ a, img {
 }
 /* line 68, ../sass/partials/page-content/modules/_real-estate-news.scss */
 .real-estate-news__tile .detailsWrapper .detailsOverlay h1 {
-  font-size: 100%;
+  font-size: 130%;
   font-weight: 500;
   text-align: left;
   padding: 0 0 0.5em 0;
@@ -8894,25 +8893,26 @@ a, img {
 .real-estate-news__tile .detailsWrapper .detailsOverlay p {
   display: none;
   font-family: OpenSans Regular;
+  font-weight: bold;
   font-size: 90%;
   padding: 0 0 0.5em 0;
   margin: 0 0 0 0;
 }
-/* line 100, ../sass/partials/page-content/modules/_real-estate-news.scss */
+/* line 101, ../sass/partials/page-content/modules/_real-estate-news.scss */
 .real-estate-news__category-tag-container {
   position: absolute;
   top: 10px;
   max-width: 130px;
 }
-/* line 106, ../sass/partials/page-content/modules/_real-estate-news.scss */
+/* line 107, ../sass/partials/page-content/modules/_real-estate-news.scss */
 .real-estate-news h1 {
   text-align: center;
   font-family: 'Oswald Regular', sans-serif;
   font-weight: 500;
-  font-size: 1.5em;
+  font-size: 2.0em;
   margin: 0 0 5% 0;
 }
-/* line 114, ../sass/partials/page-content/modules/_real-estate-news.scss */
+/* line 115, ../sass/partials/page-content/modules/_real-estate-news.scss */
 .real-estate-news a.viewMore {
   clear: both;
   display: block;
@@ -8926,59 +8926,59 @@ a, img {
   text-decoration: none;
   background: #e5e5e5;
 }
-/* line 127, ../sass/partials/page-content/modules/_real-estate-news.scss */
+/* line 128, ../sass/partials/page-content/modules/_real-estate-news.scss */
 .real-estate-news a.viewMore img {
   margin-left: 4px;
 }
-/* line 132, ../sass/partials/page-content/modules/_real-estate-news.scss */
+/* line 133, ../sass/partials/page-content/modules/_real-estate-news.scss */
 .real-estate-news a.disabledViewMore {
   opacity: 0.4;
   cursor: default;
 }
 
 @media (min-width: 768px) {
-  /* line 142, ../sass/partials/page-content/modules/_real-estate-news.scss */
+  /* line 143, ../sass/partials/page-content/modules/_real-estate-news.scss */
   .real-estate-news__wrapper {
     width: 100%;
   }
-  /* line 146, ../sass/partials/page-content/modules/_real-estate-news.scss */
+  /* line 147, ../sass/partials/page-content/modules/_real-estate-news.scss */
   .real-estate-news__tile {
     width: 49%;
     display: inline-block;
     float: left;
     margin: initial;
   }
-  /* line 153, ../sass/partials/page-content/modules/_real-estate-news.scss */
+  /* line 154, ../sass/partials/page-content/modules/_real-estate-news.scss */
   .real-estate-news__tile:nth-child(even) {
     margin-left: 2%;
     margin-bottom: 10px;
   }
-  /* line 158, ../sass/partials/page-content/modules/_real-estate-news.scss */
+  /* line 159, ../sass/partials/page-content/modules/_real-estate-news.scss */
   .real-estate-news a.viewMore {
     width: 100%;
   }
-  /* line 162, ../sass/partials/page-content/modules/_real-estate-news.scss */
+  /* line 163, ../sass/partials/page-content/modules/_real-estate-news.scss */
   .real-estate-news .adSlot {
     margin-left: 22%;
   }
 }
 @media (min-width: 960px) {
-  /* line 170, ../sass/partials/page-content/modules/_real-estate-news.scss */
+  /* line 171, ../sass/partials/page-content/modules/_real-estate-news.scss */
   .real-estate-news .adSlot {
     margin: 0 0 5px 0;
     float: none;
     display: inline-block;
   }
-  /* line 176, ../sass/partials/page-content/modules/_real-estate-news.scss */
+  /* line 177, ../sass/partials/page-content/modules/_real-estate-news.scss */
   .real-estate-news a.viewMore {
     width: 96%;
   }
-  /* line 180, ../sass/partials/page-content/modules/_real-estate-news.scss */
+  /* line 181, ../sass/partials/page-content/modules/_real-estate-news.scss */
   .real-estate-news__tile {
     display: inline-block;
     margin: initial;
   }
-  /* line 186, ../sass/partials/page-content/modules/_real-estate-news.scss */
+  /* line 187, ../sass/partials/page-content/modules/_real-estate-news.scss */
   .real-estate-news__tile:hover .detailsOverlay p {
     display: block;
   }

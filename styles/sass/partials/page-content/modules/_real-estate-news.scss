@@ -66,7 +66,7 @@ a, img{
 				clear: both;
 
 		        h1 {
-					font-size: 100%;
+					font-size: 130%; //CHange from 100% to 130% per DM-287
 					font-weight: 500;
 					text-align: left;
 					padding: 0 0 0.5em 0;
@@ -89,6 +89,7 @@ a, img{
 		        p {
 					display: none;
 					font-family: OpenSans Regular;
+					font-weight: bold; //Added per DM-287
 					font-size: 90%;
 					padding: 0 0 0.5em 0;
 					margin: 0 0 0 0;
@@ -107,7 +108,7 @@ a, img{
 		text-align: center;
 		font-family: 'Oswald Regular', sans-serif;
 		font-weight: 500;
-		font-size: 1.5em;
+		font-size: 2.0em; //Changed from 1.5em to 2.0em per DM-287
 		margin: 0 0 5% 0;
 	}
 
