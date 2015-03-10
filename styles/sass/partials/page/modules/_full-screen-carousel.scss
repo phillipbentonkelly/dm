@@ -203,7 +203,7 @@ $module-name: 'full-screen-carousel';
 		float: left;
 		width: 70%;
 		height: 100%;
-		font-size: 0.7em;
+		//font-size: 0.7em; Removed for sizing issue per DM-287
 	}
 	.carousel-fullwidth_slide-detail-content p:nth-child(1){
 	    font-size: 1.7em;
