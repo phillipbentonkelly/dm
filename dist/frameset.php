@@ -311,10 +311,12 @@
 				<!-- Discus -->
 				<?php include 'page-content/modules/comments.php'; ?>
 			<?php } ?>
-			
 
+			
+			
 			<!-- SEARCH PAGE -->
 			<?php if ($pageType == 'serp') { ?>
+
 				<!-- Search Result -->
 				<?php include 'page-content/modules/property-search-result.php'; ?>
 
@@ -324,15 +326,18 @@
 				<!-- Contact Agent Popup -->
 				<?php include 'page-content/modules/contact-agent-premium--large.php'; ?>
 
-				<!-- Search Filter Modal for mobile -->
-				<?php include 'page-content/modules/search-filter-modal.php'; ?>
-
 			<?php } ?>
 
 			<!-- ACCOUNT SETTINGS PAGE -->
 			<?php if ($pageType == 'my-account') { ?>
 
 				<?php include 'page-content/my-account.php'; ?>
+
+			<?php } ?>
+
+			<?php if ($pageType == 'serp'|| $pageType == 'my-account') { ?>
+				<!-- Search Filter Modal for mobile -->
+				<?php include 'page-content/modules/search-filter-modal.php'; ?>
 
 			<?php } ?>
 

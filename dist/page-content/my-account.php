@@ -1,12 +1,12 @@
-<!-- FAVORITES -->
+<!--FAVORITES -->
 <div class="saved-listings">
 
     <div class="saved-listings__summary">
         <p class="search-summary-header">Your Favorite Listings</p>
     </div>
 
-    <div class="saved-listings__filter-bar">
-        <p class="saved-listings__summary-count">Showing <span class="low-end">1</span> to <span class="high-end">10</span> of <span class="total-results">147</span></p>
+    <div class="search-results__filter-bar">
+        <p class="search-listings__summary-count">Showing <span class="low-end">1</span> to <span class="high-end">10</span> of <span class="total-results">147</span></p>
 
         <select class="sort-drop">
             <option value="default">Sort by Default</option>
@@ -25,14 +25,14 @@
             <p>Sort by</p>
         </div>
 
-        <a class="saved-listings__toggle-view" href="javascript:;">
+        <!-- <a class="search-results__toggle-view" href="javascript:;">
             <div class="serp-map-btn"></div>
             <p>Map</p>
-        </a>
+        </a> -->
     </div>
-    <div class="serp-map--mobile">
+    <!-- <div class="serp-map--mobile">
         <img class="serp-map--mobile-image" style="max-height:350px;width:100%;overflow:hidden;box-sizing:border-box;display:none;" src="http://www.codeproject.com/KB/web-image/Google_map/sampleMap.JPG"/>
-    </div>
+    </div> -->
 
     <!-- SEARCH RESULT ITEM -->
     <div id="result1" class="saved-listings__item">
@@ -187,4 +187,4 @@
     </div>
     <!-- /SERP MOBILE BUTTON DOCK -->
 </div>
-<!-- /FAVORITES -->
+<!-- /FAVORITES
