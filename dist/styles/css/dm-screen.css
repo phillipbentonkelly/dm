@@ -4705,6 +4705,27 @@ body.category-details .related-articles__section-header {
   margin-bottom: 20px;
 }
 
+/* line 157, ../sass/partials/page/modules/_articles-content.scss */
+figure.content-media figcaption {
+  margin-top: 2px;
+  background: #000;
+  padding: 15px 10px 2px 10px;
+  font-family: OpenSans Semibold;
+  line-height: 18px;
+  font-size: 13px;
+  color: #fff;
+  clear: both;
+  overflow: hidden;
+  min-height: 30px;
+}
+/* line 168, ../sass/partials/page/modules/_articles-content.scss */
+figure.content-media figcaption .content-media__credit {
+  font-family: OpenSans Italic;
+  font-size: 12px;
+  padding: 0 0 0 0;
+  margin: 15px 0 10px 0;
+}
+
 /* line 3, ../sass/partials/page/modules/_gallery-widget.scss */
 .gallery-widget {
   width: 100%;
