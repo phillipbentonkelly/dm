@@ -5,10 +5,15 @@
             <li class="page-nav__mega-menu-responsive-icon"></li>
             <li class="page-nav__logo">
                 <a href="index.html">
-                    <h1>Real Estate</h1>
-                    <h4>A Boston.com Site</h4>
+                    <div class="logo-type">
+                        <h1>Real Estate</h1>
+                        <h4>A Boston.com Site</h4>
+                    </div>
+                    <div class="logo-img">
+                        <img src="http://realestate.boston.com/wp-content/themes/bostoncom/assets/dist/img/RE_logo_reverse_trans_040215.png" alt="Boston.com Real Estate Logo" />
+                    </div>
                 </a>
-            </li>
+</li>       </li>
             <li class="page-nav__main-nav-links">
                 <ul>
                     <li class="page-nav__nav-item page-nav__responsive-home-link">
