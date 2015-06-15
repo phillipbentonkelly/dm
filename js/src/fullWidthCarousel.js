@@ -2,6 +2,16 @@ function helloWorld() {
   return "Hello world!";
 }
 
+var fullCarousel = (function (jQ, _) {
+  var el = {
+    jQ_body: jQ('body'),
+    jQ_win: jQ(window),
+    jQ_imageWrap: jQ('.fullwidth-carousel__media-img-wrap'),
+    jQ_mediaWin: jQ('.fullwidth-carousel__media-window'),
+    jQ_slideWrap: jQ('.fullwidth-carousel__media-slide-wrap')
+  };
+})($, _);
+
 var basketModule = (function () {
   var basket = [];
 
