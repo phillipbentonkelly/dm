@@ -28,6 +28,9 @@ module.exports = function(grunt) {
 			}, copy_fonts: {
 				files: ['fonts/**'],
 				tasks: ['copy:fonts']
+			}, jasmine: {
+				files: ['js/src/*.js', 'js/spec/*Spec.js'],
+				tasks: ['jasmine:js_assets']
 			}/*,
 			options: {
 				livereload: true
@@ -131,6 +134,15 @@ module.exports = function(grunt) {
 				filter: 'isFile'
 			}
 		},
+		jasmine: {
+			js_assets: {
+				src: 'js/src/*.js',
+				options: {
+					specs: 'js/spec/*Spec.js',
+					helpers: 'js/spec/*Helper.js'
+				}
+			}
+		},
 		notify_hooks: {
 		    options: {
 				enabled: true,
@@ -175,11 +187,14 @@ module.exports = function(grunt) {
 	// Load the plugin that provides the "copy" task.
 	grunt.loadNpmTasks('grunt-contrib-copy');
 
+	// Load the plugin that provides the "jasmine" task.
+	grunt.loadNpmTasks('grunt-contrib-jasmine');
+
 	// Load the plugin that provides the "notify" task.
 	grunt.loadNpmTasks('grunt-notify');
 
 	// Default task(s).
-	grunt.registerTask('default', ['sass', 'csslint', 'cssmin', 'jshint'/*, 'concat', 'uglify', 'notify:server'*/, 'copy', 'notify_hooks', 'watch']);
+	grunt.registerTask('default', ['sass', 'csslint', 'cssmin', 'jshint'/*, 'concat', 'uglify', 'notify:server'*/, 'copy', 'notify_hooks', 'jasmine', 'watch']);
 
 	// This is required if you use any options.
 	grunt.task.run('notify_hooks');

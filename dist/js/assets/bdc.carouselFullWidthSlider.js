@@ -137,7 +137,6 @@ if (typeof bdc === 'undefined') { bdc = {}; }
 		
 		if(bodyWidth > 767){
 			module.$carousel.css('left', -(module.$carouselWrapperImg.width() - (bodyWidth - actualWidth - 6)/2)); // Update the width of the node
-			module.$slide.css({'visibility' : 'visible'});
 		}else{
 			module.$carousel.css('left', 0);
 		}

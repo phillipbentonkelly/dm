@@ -394,8 +394,9 @@ var _ra;
 $(document).ready(function(){
 	var isSerp = document.URL.indexOf('serp') != -1 ? true : false;
 	var placement = (isSerp && dm.env.device === 'desktop') ? 'rail' : 'main';
+	var divClass = isSerp ? '.related-articles-mobile__items' : '.related-articles';
 
-	$('.related-articles, .related-articles-mobile__items').RelatedArticles({
+	$(divClass).RelatedArticles({
 		place: placement
 	});
 });

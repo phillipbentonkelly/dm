@@ -1,0 +1,176 @@
+// *
+// *  Full Width Carousel
+// *
+
+$module-name: 'fullwidth-carousel';
+
+.#{$module-name} {
+  background: whitesmoke;
+  width: 100%;
+  position: relative;
+  
+  // &__media {
+  //      display: inline-block;
+  //      position: relative;
+  // }
+
+  // &__media-nav {
+  //      display: none;
+  // }
+
+  &__media-nav {
+    display: none;
+    position: absolute;
+    width: 10%;
+    height: 100%;
+    background: rgba(200,200,200,0.7);
+    z-index: 200;
+  }
+
+  &__media-nav-anchor:hover {
+    cursor: pointer;
+  }
+
+  &__media-nav--right {
+    right: 0;
+    top: 0;
+  }
+
+  &__media-nav--right-arrow,
+  &__media-nav--left-arrow {
+    position: absolute;
+    top: 45%;
+  }
+
+  &__media-nav--right-arrow {
+    margin-left: 30%;
+  }
+
+  &__media-nav--left-arrow {
+    margin-left: 20%;
+  }
+
+  &__media-slide-wrap {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+
+    position: relative;
+    clear: both;
+    min-height: 10px;
+  }
+
+  &__media-img {
+    width: 100%;
+    max-width: 960px;
+    max-height: 580px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+
+  &__media-img-wrap {
+    float: left;
+    margin: 0 4px 0 0;
+  }
+
+  &__scrollbar-cover {
+    height: 15px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: white;
+    z-index: 200;
+  }
+}
+
+@include media-query(tablet) {
+  .#{$module-name} {
+    // &__media-slide-wrap {
+    //      min-height: 565px;
+    // }
+
+    &__media-nav--right-arrow {
+      margin-left: 35%;
+    }
+
+    &__media-nav--left-arrow {
+      margin-left: 30%;
+    }
+  }
+}
+
+@include media-query(desktop) {
+  .#{$module-name} {
+    &__media-nav {
+      display: none;
+      position: absolute;
+      width: 20%;
+      height: 100%;
+      background: rgba(200,200,200,0.7);
+      z-index: 200;
+    }
+
+    &__media-nav-anchor:hover {
+      cursor: pointer;
+    }
+
+    &__media-nav--right {
+      right: 0;
+      top: 0;
+    }
+
+    &__media-nav--right-arrow,
+    &__media-nav--left-arrow {
+      position: absolute;
+      top: 45%;
+    }
+
+    &__media-nav--right-arrow {
+      margin-left: 30%;
+    }
+
+    &__media-nav--left-arrow {
+      margin-left: 20%;
+    }
+
+    &__media-slide-wrap {
+      white-space: nowrap;
+      width: 100%;
+      min-height: 10px;
+    }
+
+    &__media-img-wrap {
+      max-width: 960px;
+      width: 33%;
+    }
+
+    &__media-window {
+      clear: both;
+      position: absolute;
+      left: -800px;
+      min-height: 10px;
+      overflow: hidden;
+    }
+
+    &__media-nav:hover {
+      animation: fadeout 0.5s;
+      animation-fill-mode: forwards;
+    }
+
+    &__media-nav--right-arrow {
+      margin-left: 40%;
+    }
+
+    &__media-nav--left-arrow {
+      margin-left: 35%;
+    }
+  }
+}
+
+
+@keyframes fadeout {
+  100% {
+  background: rgba(200,200,200,0);
+  }
+}
