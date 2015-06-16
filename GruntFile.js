@@ -139,7 +139,12 @@ module.exports = function(grunt) {
 				src: 'js/src/*.js',
 				options: {
 					specs: 'js/spec/*Spec.js',
-					helpers: 'js/spec/*Helper.js'
+					helpers: 'js/spec/*Helper.js',
+					vendor: [
+						'bower_components/underscore/underscore-min.js',
+						'bower_components/jquery/dist/jquery.min.js',
+						'node_components/jasmine-jquery/lib/jasmine-jquery.js'
+					]
 				}
 			}
 		},

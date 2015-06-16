@@ -6,16 +6,22 @@ function fullCarousel() {
   return "Hello world!";
 };*/
 
-var _fullCarousel = (function () {
+var _fullCarousel = (function (jQ, _) {
   
+  var el = {
+    jQ_body: jQ('body'),
+    jQ_win: jQ(window),
+    jQ_imageWrap: jQ('.fullwidth-carousel__media-img-wrap'),
+    jQ_mediaWin: jQ('.fullwidth-carousel__media-window'),
+    jQ_slideWrap: jQ('.fullwidth-carousel__media-slide-wrap')
+  };
   
-
   return {
     publicFunc: function (val){
       return val;
     }
   }
-})();
+})($, _);
 
 
 /*var fullCarousel = (function (val) {
