@@ -1,0 +1,14 @@
+{
+  "name": "jasmine-underscore",
+  "homepage": "https://github.com/adscott/jasmine-underscore",
+  "_release": "cef020e998",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "cef020e99827566c35f082535796f33ad7ccb566"
+  },
+  "_source": "git://github.com/adscott/jasmine-underscore.git",
+  "_target": "*",
+  "_originalSource": "jasmine-underscore",
+  "_direct": true
+}
