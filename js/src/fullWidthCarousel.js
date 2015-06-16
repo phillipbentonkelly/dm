@@ -6,7 +6,7 @@ function fullCarousel() {
   return "Hello world!";
 };*/
 
-var _fullCarousel = (function ($) {
+var _fullCarousel = (function () {
   
   
 
@@ -15,7 +15,7 @@ var _fullCarousel = (function ($) {
       return val;
     }
   }
-})($);
+})();
 
 
 /*var fullCarousel = (function (val) {
