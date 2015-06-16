@@ -1,0 +1,28 @@
+{
+  "name": "DM - Real Estate Component",
+  "version": "0.0.0",
+  "homepage": "https://github.com/phillipbentonkelly/dm",
+  "authors": [
+    "Phillip B. Kelly <phillip.kelly@globe.com>"
+  ],
+  "keywords": [
+    "house",
+    "homes",
+    "buying",
+    "estate",
+    "real",
+    "estate",
+    "morgage"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "underscore": "git://github.com/jashkenas/underscore.git#~1.8.3"
+  }
+}
