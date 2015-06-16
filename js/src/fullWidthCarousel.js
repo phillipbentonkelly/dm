@@ -1,8 +1,26 @@
-function helloWorld() {
+/*function helloWorld() {
   return "Hello world!";
 }
 
-var fullCarousel = (function (jQ, _) {
+function fullCarousel() {
+  return "Hello world!";
+};*/
+
+var _fullCarousel = (function ($) {
+  
+  
+
+  return {
+    publicFunc: function (val){
+      return val;
+    }
+  }
+})($);
+
+
+/*var fullCarousel = (function (val) {
+  return val;
+
   var el = {
     jQ_body: jQ('body'),
     jQ_win: jQ(window),
@@ -10,9 +28,21 @@ var fullCarousel = (function (jQ, _) {
     jQ_mediaWin: jQ('.fullwidth-carousel__media-window'),
     jQ_slideWrap: jQ('.fullwidth-carousel__media-slide-wrap')
   };
-})($, _);
 
-var basketModule = (function () {
+  return val;{
+    function publicFunc (val){
+      var value = val;
+      return value;
+    }
+
+    publicFunc("publicFunc return");
+  }
+})();*/
+
+
+
+
+/*var basketModule = (function () {
   var basket = [];
 
   function doSomethingPrivate() {
@@ -49,7 +79,7 @@ var basketModule = (function () {
       return p;
     }
   };
-})();
+})();*/
 
 
 
