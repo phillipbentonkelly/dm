@@ -25,6 +25,9 @@ module.exports = function(grunt) {
 			}, copy_js: {
 				files: ['js/assets/**'],
 				tasks: ['copy:js']
+			}, copy_js_spec: {
+				files: ['js/src/**'],
+				tasks: ['copy:spec_js']
 			}, copy_fonts: {
 				files: ['fonts/**'],
 				tasks: ['copy:fonts']
@@ -40,7 +43,7 @@ module.exports = function(grunt) {
 			dist: {
 				options: {
 					style: 'expanded',
-					sourcemap: 'none',
+					/*sourcemap: 'none',*/
 					trace: false,
 					lineNumbers: true,
 					noCache: true, 
@@ -119,6 +122,12 @@ module.exports = function(grunt) {
 				expand: true,
 				src: 'js/**',
 				dest: 'dist/',
+				filter: 'isFile'
+			},
+			spec_js: {
+				expand: true,
+				src: 'js/src/**',
+				dest: 'dist/js',
 				filter: 'isFile'
 			},
 			fonts: {

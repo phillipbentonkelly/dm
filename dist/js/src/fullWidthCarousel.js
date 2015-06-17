@@ -1,11 +1,32 @@
-require('../resources/jquery.min.js');
-
-function helloWorld() {
+/*function helloWorld() {
   return "Hello world!";
 }
 
-var jQuery = (typeof($) !== 'undefined')? $ : {};
-var fullCarousel = (function (jQ) {
+function fullCarousel() {
+  return "Hello world!";
+};*/
+
+var _fullCarousel = (function (jQ, _) {
+  
+  var ui = {
+    jQ_body: jQ('body'),
+    jQ_win: jQ(window),
+    jQ_imageWrap: jQ('.fullwidth-carousel__media-img-wrap'),
+    jQ_mediaWin: jQ('.fullwidth-carousel__media-window'),
+    jQ_slideWrap: jQ('.fullwidth-carousel__media-slide-wrap')
+  };
+  
+  return {
+    publicFunc: function (val){
+      return val;
+    }
+  }
+})($, _);
+
+
+/*var fullCarousel = (function (val) {
+  return val;
+
   var el = {
     jQ_body: jQ('body'),
     jQ_win: jQ(window),
@@ -13,9 +34,21 @@ var fullCarousel = (function (jQ) {
     jQ_mediaWin: jQ('.fullwidth-carousel__media-window'),
     jQ_slideWrap: jQ('.fullwidth-carousel__media-slide-wrap')
   };
-})(jQuery);
 
-var basketModule = (function () {
+  return val;{
+    function publicFunc (val){
+      var value = val;
+      return value;
+    }
+
+    publicFunc("publicFunc return");
+  }
+})();*/
+
+
+
+
+/*var basketModule = (function () {
   var basket = [];
 
   function doSomethingPrivate() {
@@ -52,7 +85,7 @@ var basketModule = (function () {
       return p;
     }
   };
-})();
+})();*/
 
 
 

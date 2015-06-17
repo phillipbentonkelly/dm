@@ -1,81 +1,42 @@
-<div class="fullwidth-carousel">
-  <!-- <div class="fullwidth-carousel__media"> -->
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Home</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <div class="fullwidth-carousel__media-nav-anchor">
-    <div class="fullwidth-carousel__media-nav--left fullwidth-carousel__media-nav">
-    <span class="fullwidth-carousel__media-nav--left-arrow dm-icon dm-icon--arrow-left-gray-x-small"></span>
-    </div>
-  </div>
+    <link href="styles/css/carousel.css" rel="stylesheet" />
+</head>
+<body class="home">
+  <div class="fullwidth-carousel">
 
-  <div class="fullwidth-carousel__media-slide-wrap">
-    <div class="fullwidth-carousel__media-window">
-      <div class="fullwidth-carousel__media-img-wrap">
-        <img class="fullwidth-carousel__media-img" src="http://placehold.it/960x580">
-      </div>
-      <div class="fullwidth-carousel__media-img-wrap">
-        <img class="fullwidth-carousel__media-img" src="http://placehold.it/960x580">
-      </div>
-      <div class="fullwidth-carousel__media-img-wrap">
-        <img class="fullwidth-carousel__media-img" src="http://placehold.it/960x580">
+    <div class="fullwidth-carousel__media-nav-anchor">
+      <div class="fullwidth-carousel__media-nav--left fullwidth-carousel__media-nav">
+      <span class="fullwidth-carousel__media-nav--left-arrow dm-icon dm-icon--arrow-left-gray-x-small"></span>
       </div>
     </div>
-  </div>
 
-  <div class="fullwidth-carousel__media-nav-anchor">
-    <div class="fullwidth-carousel__media-nav--right fullwidth-carousel__media-nav">
-      <span class="fullwidth-carousel__media-nav--right-arrow dm-icon dm-icon--arrow-right-gray-x-small"></span>
+    <div class="fullwidth-carousel__media-slide-wrap">
+      <div class="fullwidth-carousel__media-window">
+        <div class="fullwidth-carousel__media-img-wrap">
+          <img class="fullwidth-carousel__media-img" src="http://placehold.it/960x580">
+        </div>
+        <div class="fullwidth-carousel__media-img-wrap">
+          <img class="fullwidth-carousel__media-img" src="http://placehold.it/960x580">
+        </div>
+        <div class="fullwidth-carousel__media-img-wrap">
+          <img class="fullwidth-carousel__media-img" src="http://placehold.it/960x580">
+        </div>
+      </div>
+    </div>
+
+    <div class="fullwidth-carousel__media-nav-anchor">
+      <div class="fullwidth-carousel__media-nav--right fullwidth-carousel__media-nav">
+        <span class="fullwidth-carousel__media-nav--right-arrow dm-icon dm-icon--arrow-right-gray-x-small"></span>
+      </div>
     </div>
   </div>
-  <!-- <div class="fullwidth-carousel__scrollbar-cover"></div> -->
-  <!-- </div> -->
-</div>
-
-
-<!--
-<script type="text/javascript">
-  var $bodyWidth = $('body').width();
-  var $windowWidth = $(window).width();
-  var $imageWrap = $('.fullwidth-carousel__media-img-wrap');
-  var $mediaWin = $('.fullwidth-carousel__media-window');
-  var $slideWrap = $('.fullwidth-carousel__media-slide-wrap');
-
-  function resizeSlider() {
-    var $imageWidth = $imageWrap.outerWidth(true);
-    var $imageCount = $imageWrap.children().length;
-    $bodyWidth = $('body').width();
-    $imageWrap = $('.fullwidth-carousel__media-img-wrap');
-
-    // sets width of images for fullwidth
-    if ( $windowWidth > 960 ) {
-      $imageWrap.width(960);
-      $slideWrap.css('min-height', $imageWrap.height() );
-    } else {
-      $slideWrap.css('min-height', $imageWrap.height() );
-      $imageWrap.outerWidth( Math.ceil($bodyWidth * 0.8) );
-      console.log('body width y', $bodyWidth);
-    }
-
-    // resizes media window (for animation)
-    var newWidth = $imageWrap.outerWidth(true) * $imageWrap.length;
-    console.log(newWidth);
-    $mediaWin.width(newWidth);
-
-    // calculate margin offset
-    $mediaWin.css('left', -($imageWrap.outerWidth(true) - (($bodyWidth - $imageWrap.outerWidth(true)) / 2)));
-
-    /*
-    var $navArrowWidth = ( $bodyWidth - ( (2 * $imageWrap.outerWidth(true) ) - $imageWrap.width() ) / 2 );
-
-    var $offset = -1 * ( $bodyWidth * 0.50 );
-
-    console.log('Offset',$offset, '');
-    $mediaWin.animate({
-    marginLeft: $offset
-    }, 1000);
-    */
-  }
-
-  $(document).ready(resizeSlider);
-  $(window).resize(resizeSlider);
-</script>
--->
+</body>
+</html>

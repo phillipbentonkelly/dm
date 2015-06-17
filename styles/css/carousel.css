@@ -302,7 +302,7 @@ $svg-path: $asset-path + "img/";*/
   font: normal 800 0.84615em/155% Arial, Helvetica, Verdana, sans-serif;
   width: 19px;
   height: 19px;
-  color: #fff;
+  color: white;
   background-color: #9b1518;
   -webkit-transition: all, 0.25s, cubic-bezier(0.49, 0.37, 0.445, 0.715) false;
   -moz-transition: all, 0.25s, cubic-bezier(0.49, 0.37, 0.445, 0.715) false;
@@ -331,7 +331,7 @@ $svg-path: $asset-path + "img/";*/
   font: normal 600 0.76923em Arial, Helvetica, Verdana, sans-serif;
   letter-spacing: 1px;
   text-transform: uppercase;
-  color: #fff;
+  color: white;
   background-color: #9b1518;
   -webkit-transition: all, 0.25s, cubic-bezier(0.49, 0.37, 0.445, 0.715) false;
   -moz-transition: all, 0.25s, cubic-bezier(0.49, 0.37, 0.445, 0.715) false;
@@ -506,6 +506,7 @@ $svg-path: $asset-path + "img/";*/
   }
 }
 @keyframes fadeout {
+  /* line 173, ../sass/modules/_full-width-carousel.scss */
   100% {
     background: rgba(200, 200, 200, 0);
   }
