@@ -1,15 +1,23 @@
 var _fullCarousel = (function (jQ, _) {
   
   var ui = {
-    jQ_body: jQ('body'),
-    jQ_win: jQ(window),
-    jQ_imageWrap: jQ('.fullwidth-carousel__media-img-wrap'),
-    jQ_mediaWin: jQ('.fullwidth-carousel__media-window'),
-    jQ_slideWrap: jQ('.fullwidth-carousel__media-slide-wrap')
+    jQ_body: $('body'),
+    jQ_win: $(window),
+    jQ_imageWrap: $('.fullwidth-carousel__media-img-wrap'),
+    jQ_mediaWin: $('.fullwidth-carousel__media-window'),
+    jQ_slideWrap: $('.fullwidth-carousel__media-slide-wrap')
   };
   
   return {
     initOps: function( options ){
+      ui = {
+        jQ_body: $('body'),
+        jQ_win: $(window),
+        jQ_imageWrap: $('.fullwidth-carousel__media-img-wrap'),
+        jQ_mediaWin: $('.fullwidth-carousel__media-window'),
+        jQ_slideWrap: $('.fullwidth-carousel__media-slide-wrap')
+      };
+
       var locOps = {
         '_data': {},
         'fixture': {},
@@ -55,6 +63,26 @@ var _fullCarousel = (function (jQ, _) {
       console.log( "Func: calcBodyWidth: ", retObjRef.width(), labl );
 
       return retObjRef.width();
+    },
+    setImgWidth: function( maxWidth ){
+      try{
+        var mW = (typeof(maxWidth) === 'number')? maxWidth : 960;
+
+        // sets width of images for fullwidth
+        if( ui.jQ_win.width() > 960 ) {
+          ui.jQ_imageWrap.width(960);
+          ui.jQ_slideWrap.css('min-height', ui.jQ_imageWrap.height() );
+        } else {
+          ui.jQ_slideWrap.css('min-height', ui.jQ_imageWrap.height() );
+          ui.jQ_imageWrap.outerWidth( Math.ceil(ui.jQ_body.width() * 0.8) );
+          
+          console.log('body width y', ui.jQ_body.width());
+        }
+      }catch(err){
+        console.log(err);
+      }
+
+      return true;
     },
     loadMarkUp: function(){
       $('body').append(this.createMarkUp());

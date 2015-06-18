@@ -803,7 +803,7 @@ body {
   font: normal 800 0.84615em/155% Arial, Helvetica, Verdana, sans-serif;
   width: 19px;
   height: 19px;
-  color: white;
+  color: #fff;
   background-color: #9b1518;
   -webkit-transition: all, 0.25s, cubic-bezier(0.49, 0.37, 0.445, 0.715) false;
   -moz-transition: all, 0.25s, cubic-bezier(0.49, 0.37, 0.445, 0.715) false;
@@ -832,7 +832,7 @@ body {
   font: normal 600 0.76923em Arial, Helvetica, Verdana, sans-serif;
   letter-spacing: 1px;
   text-transform: uppercase;
-  color: white;
+  color: #fff;
   background-color: #9b1518;
   -webkit-transition: all, 0.25s, cubic-bezier(0.49, 0.37, 0.445, 0.715) false;
   -moz-transition: all, 0.25s, cubic-bezier(0.49, 0.37, 0.445, 0.715) false;
@@ -871,7 +871,7 @@ body {
 
 /* line 39, ../sass/bcom-helpers/_mixins-and-extends.scss */
 body {
-  background-color: white;
+  background-color: #ffffff;
 }
 
 /* line 5, ../sass/partials/_element-defaults.scss */
@@ -881,7 +881,7 @@ html {
 
 /* line 9, ../sass/partials/_element-defaults.scss */
 body {
-  background-color: white;
+  background-color: #ffffff;
   font-family: 'Roboto Condensed', sans-serif;
   color: #222222;
   -webkit-font-smoothing: antialiased;
@@ -1217,7 +1217,7 @@ textarea {
   font: normal 800 0.84615em/155% Arial, Helvetica, Verdana, sans-serif;
   width: 19px;
   height: 19px;
-  color: white;
+  color: #fff;
   background-color: #9b1518;
   -webkit-transition: all, 0.25s, cubic-bezier(0.49, 0.37, 0.445, 0.715) false;
   -moz-transition: all, 0.25s, cubic-bezier(0.49, 0.37, 0.445, 0.715) false;
@@ -1246,7 +1246,7 @@ textarea {
   font: normal 600 0.76923em Arial, Helvetica, Verdana, sans-serif;
   letter-spacing: 1px;
   text-transform: uppercase;
-  color: white;
+  color: #fff;
   background-color: #9b1518;
   -webkit-transition: all, 0.25s, cubic-bezier(0.49, 0.37, 0.445, 0.715) false;
   -moz-transition: all, 0.25s, cubic-bezier(0.49, 0.37, 0.445, 0.715) false;
@@ -2144,7 +2144,7 @@ body.serp .page-layout {
   width: 25px;
   height: 35px;
   border-radius: 4px;
-  background: url(../../images/icons/icon_search-magnifiying-glass.png) center center no-repeat black;
+  background: url(../../images/icons/icon_search-magnifiying-glass.png) center center no-repeat #000;
 }
 /* line 233, ../sass/partials/page/_page-search.scss */
 .page-search__button.select2-panel-open span.select2-arrow b {
@@ -4105,7 +4105,7 @@ body.category-details .related-articles__section-header {
   margin-top: 2px;
   padding: 0;
   display: inline-block;
-  background: url(../../images/icons/icon_search-magnifiying-glass.png) center center no-repeat black;
+  background: url(../../images/icons/icon_search-magnifiying-glass.png) center center no-repeat #000;
   border: 0;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
@@ -6682,7 +6682,7 @@ body.category-details .related-articles__section-header {
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
   border-radius: 2px;
-  background: url("../images/icons/magGlass_bg_blk.gif") center center no-repeat black;
+  background: url("../images/icons/magGlass_bg_blk.gif") center center no-repeat #000;
 }
 /* line 67, ../sass/partials/page/modules/_full-screen-carousel.scss */
 .full-screen-carousel #carousel-wrap, .full-screen-carousel .slide {
@@ -6883,7 +6883,7 @@ body.category-details .related-articles__section-header {
   /* IE10+ */
   background: linear-gradient(to left, white 0%, rgba(255, 255, 255, 0) 100%);
   /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=1 );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=1 );
   /* IE6-8 */
   position: absolute;
   right: 0;
@@ -7021,8 +7021,8 @@ body.category-details .related-articles__section-header {
 .pagination a, .pagination li.active {
   display: block;
   padding: 3px 6px;
-  border: 1px solid #cccccc;
-  color: #999999;
+  border: 1px solid #ccc;
+  color: #999;
   text-decoration: none;
   -webkit-transition: all, 0.25s, cubic-bezier(0.49, 0.37, 0.445, 0.715) false;
   -moz-transition: all, 0.25s, cubic-bezier(0.49, 0.37, 0.445, 0.715) false;
@@ -7070,7 +7070,7 @@ body.category-details .related-articles__section-header {
   font: normal 800 0.84615em/155% Arial, Helvetica, Verdana, sans-serif;
   width: 19px;
   height: 19px;
-  color: white;
+  color: #fff;
   background-color: #9b1518;
   -webkit-transition: all, 0.25s, cubic-bezier(0.49, 0.37, 0.445, 0.715) false;
   -moz-transition: all, 0.25s, cubic-bezier(0.49, 0.37, 0.445, 0.715) false;
@@ -7099,7 +7099,7 @@ body.category-details .related-articles__section-header {
   font: normal 600 0.76923em Arial, Helvetica, Verdana, sans-serif;
   letter-spacing: 1px;
   text-transform: uppercase;
-  color: white;
+  color: #fff;
   background-color: #9b1518;
   -webkit-transition: all, 0.25s, cubic-bezier(0.49, 0.37, 0.445, 0.715) false;
   -moz-transition: all, 0.25s, cubic-bezier(0.49, 0.37, 0.445, 0.715) false;
@@ -7133,8 +7133,8 @@ body.category-details .related-articles__section-header {
   font: normal 400 0.76923em Arial, Helvetica, Verdana, sans-serif;
   letter-spacing: 1px;
   text-transform: uppercase;
-  color: #999999;
-  border: 1px solid #cccccc;
+  color: #999;
+  border: 1px solid #ccc;
   -webkit-transition: all, 0.25s, cubic-bezier(0.49, 0.37, 0.445, 0.715) false;
   -moz-transition: all, 0.25s, cubic-bezier(0.49, 0.37, 0.445, 0.715) false;
   -o-transition: all, 0.25s, cubic-bezier(0.49, 0.37, 0.445, 0.715) false;
@@ -7150,12 +7150,12 @@ body.category-details .related-articles__section-header {
 }
 /* line 10, ../sass/bcom-partials/bcom/_buttons.scss */
 .btn-light:active {
-  background-color: #999999;
+  background-color: #999;
 }
 
 /* line 14, ../sass/bcom-partials/bcom/_buttons.scss */
 a.btn-light {
-  color: #999999;
+  color: #999;
 }
 
 /* line 18, ../sass/bcom-partials/bcom/_buttons.scss */
@@ -7217,7 +7217,7 @@ a.btn-light {
   padding: 0 15px;
   text-transform: uppercase;
   height: 34px;
-  color: white;
+  color: #fff;
   background-color: #9b1518;
   -webkit-transition: all, 0.25s, cubic-bezier(0.49, 0.37, 0.445, 0.715) false;
   -moz-transition: all, 0.25s, cubic-bezier(0.49, 0.37, 0.445, 0.715) false;
@@ -7541,7 +7541,7 @@ input[type=submit] {
   padding: 7px 10px 6px 10px;
   height: 34px;
   width: 100%;
-  border: 1px solid #cccccc;
+  border: 1px solid #ccc;
   -webkit-transition: all, 0.25s, cubic-bezier(0.49, 0.37, 0.445, 0.715) false;
   -moz-transition: all, 0.25s, cubic-bezier(0.49, 0.37, 0.445, 0.715) false;
   -o-transition: all, 0.25s, cubic-bezier(0.49, 0.37, 0.445, 0.715) false;
@@ -7557,27 +7557,27 @@ input[type=submit] {
 }
 /* line 420, ../sass/bcom-partials/bcom/_bcom-mixins.scss */
 .add-comment-input::-webkit-input-placeholder {
-  color: #cccccc;
+  color: #ccc;
 }
 /* line 423, ../sass/bcom-partials/bcom/_bcom-mixins.scss */
 .add-comment-input:-moz-placeholder {
-  color: #cccccc;
+  color: #ccc;
 }
 /* line 426, ../sass/bcom-partials/bcom/_bcom-mixins.scss */
 .add-comment-input:hover::-webkit-input-placeholder {
-  color: #cccccc;
+  color: #ccc;
 }
 /* line 429, ../sass/bcom-partials/bcom/_bcom-mixins.scss */
 .add-comment-input:hover:-moz-placeholder {
-  color: #cccccc;
+  color: #ccc;
 }
 /* line 432, ../sass/bcom-partials/bcom/_bcom-mixins.scss */
 .add-comment-input:focus::-webkit-input-placeholder {
-  color: #999999;
+  color: #999;
 }
 /* line 435, ../sass/bcom-partials/bcom/_bcom-mixins.scss */
 .add-comment-input:focus:-moz-placeholder {
-  color: #999999;
+  color: #999;
 }
 /* line 191, ../sass/bcom-partials/bcom/_comments.scss */
 .add-comment-input::-webkit-search-cancel-button {
@@ -7694,7 +7694,7 @@ input[type=submit] {
 .comment-mod {
   position: relative;
   padding: 20px 0;
-  border-top: 1px solid #cccccc;
+  border-top: 1px solid #ccc;
 }
 /* line 1182, ../sass/bcom-partials/bcom/_bcom-mixins.scss */
 .comment-mod:after {
@@ -7768,7 +7768,7 @@ input[type=submit] {
 }
 /* line 298, ../sass/bcom-partials/bcom/_comments.scss */
 .comment-mod:last-child {
-  border-bottom: 1px solid #cccccc;
+  border-bottom: 1px solid #ccc;
 }
 
 /* line 302, ../sass/bcom-partials/bcom/_comments.scss */
@@ -7850,7 +7850,7 @@ input[type=submit] {
   font-size: 11px;
   font-weight: 500;
   letter-spacing: 1px;
-  color: #999999;
+  color: #999;
   padding-left: 3px;
 }
 
@@ -7861,8 +7861,8 @@ input[type=submit] {
   box-shadow: none;
   border-radius: 0;
   -webkit-appearance: none;
-  color: #999999;
-  border: 1px solid #cccccc;
+  color: #999;
+  border: 1px solid #ccc;
   display: inline-block;
   float: left;
   padding: 4px 8px;
@@ -7920,7 +7920,7 @@ input[type=submit] {
 /* line 1454, ../sass/bcom-partials/bcom/_bcom-mixins.scss */
 .has-voted
 .comment-vote-mod:hover .hover-info:after {
-  content: "\0020";
+  content: "\\0020";
   position: absolute;
   width: 0;
   height: 0;
@@ -8181,7 +8181,7 @@ input[type=submit] {
 /* line 535, ../sass/bcom-partials/bcom/_comments.scss */
 .comment-holder .admin-controls a {
   margin-left: 10px;
-  color: #999999;
+  color: #999;
 }
 /* line 538, ../sass/bcom-partials/bcom/_comments.scss */
 .comment-holder .admin-controls a:hover {
@@ -8225,7 +8225,7 @@ input[type=submit] {
 /* line 577, ../sass/bcom-partials/bcom/_comments.scss */
 .comment-reply-list > li:first-child {
   margin-top: 20px;
-  border-top: 1px solid #cccccc;
+  border-top: 1px solid #ccc;
 }
 /* line 581, ../sass/bcom-partials/bcom/_comments.scss */
 .comment-reply-list > li:last-child {
@@ -8460,7 +8460,7 @@ input[type=submit] {
 /* line 787, ../sass/bcom-partials/bcom/_comments.scss */
 .ugc-modal .heading {
   font-size: 16px;
-  border-bottom: 1px solid #cccccc;
+  border-bottom: 1px solid #ccc;
   margin-bottom: 10px;
   padding-bottom: 5px;
 }
@@ -8486,7 +8486,7 @@ input[type=submit] {
 .ugc-modal textarea {
   width: 100%;
   padding: 3px 5px;
-  border: 1px solid #cccccc;
+  border: 1px solid #ccc;
 }
 /* line 813, ../sass/bcom-partials/bcom/_comments.scss */
 .ugc-modal textarea {
@@ -8570,7 +8570,7 @@ input[type=submit] {
 .form-basic [type="text"],
 .form [type="text"],
 .form-large [type="text"], .form-basic [type="search"], .form [type="search"], .form-large [type="search"], .form-basic [type="email"], .form [type="email"], .form-large [type="email"], .form-basic [type="url"], .form [type="url"], .form-large [type="url"], .form-basic [type="tel"], .form [type="tel"], .form-large [type="tel"], .form-basic [type="number"], .form [type="number"], .form-large [type="number"], .form-basic [type="date"], .form [type="date"], .form-large [type="date"] {
-  border: 1px solid #cccccc;
+  border: 1px solid #ccc;
   font: normal 400 1.07692em/155% Arial, Helvetica, Verdana, sans-serif;
   color: #333;
   width: 100%;
@@ -8597,7 +8597,7 @@ input[type=submit] {
 .form-basic [type="text"]::-webkit-input-placeholder,
 .form [type="text"]::-webkit-input-placeholder,
 .form-large [type="text"]::-webkit-input-placeholder, .form-basic [type="search"]::-webkit-input-placeholder, .form [type="search"]::-webkit-input-placeholder, .form-large [type="search"]::-webkit-input-placeholder, .form-basic [type="email"]::-webkit-input-placeholder, .form [type="email"]::-webkit-input-placeholder, .form-large [type="email"]::-webkit-input-placeholder, .form-basic [type="url"]::-webkit-input-placeholder, .form [type="url"]::-webkit-input-placeholder, .form-large [type="url"]::-webkit-input-placeholder, .form-basic [type="tel"]::-webkit-input-placeholder, .form [type="tel"]::-webkit-input-placeholder, .form-large [type="tel"]::-webkit-input-placeholder, .form-basic [type="number"]::-webkit-input-placeholder, .form [type="number"]::-webkit-input-placeholder, .form-large [type="number"]::-webkit-input-placeholder, .form-basic [type="date"]::-webkit-input-placeholder, .form [type="date"]::-webkit-input-placeholder, .form-large [type="date"]::-webkit-input-placeholder {
-  color: #999999;
+  color: #999;
 }
 /* line 423, ../sass/bcom-partials/bcom/_bcom-mixins.scss */
 .form-basic .input:-moz-placeholder, .form .input:-moz-placeholder, .form-large .input:-moz-placeholder,
@@ -8607,7 +8607,7 @@ input[type=submit] {
 .form-basic [type="text"]:-moz-placeholder,
 .form [type="text"]:-moz-placeholder,
 .form-large [type="text"]:-moz-placeholder, .form-basic [type="search"]:-moz-placeholder, .form [type="search"]:-moz-placeholder, .form-large [type="search"]:-moz-placeholder, .form-basic [type="email"]:-moz-placeholder, .form [type="email"]:-moz-placeholder, .form-large [type="email"]:-moz-placeholder, .form-basic [type="url"]:-moz-placeholder, .form [type="url"]:-moz-placeholder, .form-large [type="url"]:-moz-placeholder, .form-basic [type="tel"]:-moz-placeholder, .form [type="tel"]:-moz-placeholder, .form-large [type="tel"]:-moz-placeholder, .form-basic [type="number"]:-moz-placeholder, .form [type="number"]:-moz-placeholder, .form-large [type="number"]:-moz-placeholder, .form-basic [type="date"]:-moz-placeholder, .form [type="date"]:-moz-placeholder, .form-large [type="date"]:-moz-placeholder {
-  color: #999999;
+  color: #999;
 }
 /* line 426, ../sass/bcom-partials/bcom/_bcom-mixins.scss */
 .form-basic .input:hover::-webkit-input-placeholder, .form .input:hover::-webkit-input-placeholder, .form-large .input:hover::-webkit-input-placeholder,
@@ -8617,7 +8617,7 @@ input[type=submit] {
 .form-basic [type="text"]:hover::-webkit-input-placeholder,
 .form [type="text"]:hover::-webkit-input-placeholder,
 .form-large [type="text"]:hover::-webkit-input-placeholder, .form-basic [type="search"]:hover::-webkit-input-placeholder, .form [type="search"]:hover::-webkit-input-placeholder, .form-large [type="search"]:hover::-webkit-input-placeholder, .form-basic [type="email"]:hover::-webkit-input-placeholder, .form [type="email"]:hover::-webkit-input-placeholder, .form-large [type="email"]:hover::-webkit-input-placeholder, .form-basic [type="url"]:hover::-webkit-input-placeholder, .form [type="url"]:hover::-webkit-input-placeholder, .form-large [type="url"]:hover::-webkit-input-placeholder, .form-basic [type="tel"]:hover::-webkit-input-placeholder, .form [type="tel"]:hover::-webkit-input-placeholder, .form-large [type="tel"]:hover::-webkit-input-placeholder, .form-basic [type="number"]:hover::-webkit-input-placeholder, .form [type="number"]:hover::-webkit-input-placeholder, .form-large [type="number"]:hover::-webkit-input-placeholder, .form-basic [type="date"]:hover::-webkit-input-placeholder, .form [type="date"]:hover::-webkit-input-placeholder, .form-large [type="date"]:hover::-webkit-input-placeholder {
-  color: #999999;
+  color: #999;
 }
 /* line 429, ../sass/bcom-partials/bcom/_bcom-mixins.scss */
 .form-basic .input:hover:-moz-placeholder, .form .input:hover:-moz-placeholder, .form-large .input:hover:-moz-placeholder,
@@ -8627,7 +8627,7 @@ input[type=submit] {
 .form-basic [type="text"]:hover:-moz-placeholder,
 .form [type="text"]:hover:-moz-placeholder,
 .form-large [type="text"]:hover:-moz-placeholder, .form-basic [type="search"]:hover:-moz-placeholder, .form [type="search"]:hover:-moz-placeholder, .form-large [type="search"]:hover:-moz-placeholder, .form-basic [type="email"]:hover:-moz-placeholder, .form [type="email"]:hover:-moz-placeholder, .form-large [type="email"]:hover:-moz-placeholder, .form-basic [type="url"]:hover:-moz-placeholder, .form [type="url"]:hover:-moz-placeholder, .form-large [type="url"]:hover:-moz-placeholder, .form-basic [type="tel"]:hover:-moz-placeholder, .form [type="tel"]:hover:-moz-placeholder, .form-large [type="tel"]:hover:-moz-placeholder, .form-basic [type="number"]:hover:-moz-placeholder, .form [type="number"]:hover:-moz-placeholder, .form-large [type="number"]:hover:-moz-placeholder, .form-basic [type="date"]:hover:-moz-placeholder, .form [type="date"]:hover:-moz-placeholder, .form-large [type="date"]:hover:-moz-placeholder {
-  color: #999999;
+  color: #999;
 }
 /* line 432, ../sass/bcom-partials/bcom/_bcom-mixins.scss */
 .form-basic .input:focus::-webkit-input-placeholder, .form .input:focus::-webkit-input-placeholder, .form-large .input:focus::-webkit-input-placeholder,
@@ -8637,7 +8637,7 @@ input[type=submit] {
 .form-basic [type="text"]:focus::-webkit-input-placeholder,
 .form [type="text"]:focus::-webkit-input-placeholder,
 .form-large [type="text"]:focus::-webkit-input-placeholder, .form-basic [type="search"]:focus::-webkit-input-placeholder, .form [type="search"]:focus::-webkit-input-placeholder, .form-large [type="search"]:focus::-webkit-input-placeholder, .form-basic [type="email"]:focus::-webkit-input-placeholder, .form [type="email"]:focus::-webkit-input-placeholder, .form-large [type="email"]:focus::-webkit-input-placeholder, .form-basic [type="url"]:focus::-webkit-input-placeholder, .form [type="url"]:focus::-webkit-input-placeholder, .form-large [type="url"]:focus::-webkit-input-placeholder, .form-basic [type="tel"]:focus::-webkit-input-placeholder, .form [type="tel"]:focus::-webkit-input-placeholder, .form-large [type="tel"]:focus::-webkit-input-placeholder, .form-basic [type="number"]:focus::-webkit-input-placeholder, .form [type="number"]:focus::-webkit-input-placeholder, .form-large [type="number"]:focus::-webkit-input-placeholder, .form-basic [type="date"]:focus::-webkit-input-placeholder, .form [type="date"]:focus::-webkit-input-placeholder, .form-large [type="date"]:focus::-webkit-input-placeholder {
-  color: #333333;
+  color: #333;
 }
 /* line 435, ../sass/bcom-partials/bcom/_bcom-mixins.scss */
 .form-basic .input:focus:-moz-placeholder, .form .input:focus:-moz-placeholder, .form-large .input:focus:-moz-placeholder,
@@ -8647,7 +8647,7 @@ input[type=submit] {
 .form-basic [type="text"]:focus:-moz-placeholder,
 .form [type="text"]:focus:-moz-placeholder,
 .form-large [type="text"]:focus:-moz-placeholder, .form-basic [type="search"]:focus:-moz-placeholder, .form [type="search"]:focus:-moz-placeholder, .form-large [type="search"]:focus:-moz-placeholder, .form-basic [type="email"]:focus:-moz-placeholder, .form [type="email"]:focus:-moz-placeholder, .form-large [type="email"]:focus:-moz-placeholder, .form-basic [type="url"]:focus:-moz-placeholder, .form [type="url"]:focus:-moz-placeholder, .form-large [type="url"]:focus:-moz-placeholder, .form-basic [type="tel"]:focus:-moz-placeholder, .form [type="tel"]:focus:-moz-placeholder, .form-large [type="tel"]:focus:-moz-placeholder, .form-basic [type="number"]:focus:-moz-placeholder, .form [type="number"]:focus:-moz-placeholder, .form-large [type="number"]:focus:-moz-placeholder, .form-basic [type="date"]:focus:-moz-placeholder, .form [type="date"]:focus:-moz-placeholder, .form-large [type="date"]:focus:-moz-placeholder {
-  color: #333333;
+  color: #333;
 }
 /* line 62, ../sass/bcom-partials/bcom/_forms.scss */
 .form-basic textarea, .form textarea, .form-large textarea {
@@ -8866,14 +8866,14 @@ abbr[title="(required)"] {
 /* line 15, ../sass/bcom-partials/bcom/_objects.scss */
 .content-fader:after {
   pointer-events: none;
-  content: "\0020";
+  content: "\\0020";
   position: absolute;
   right: 0;
   bottom: 0;
   left: 0;
   display: block;
   height: 35px;
-  background-image: linear-gradient(top, rgba(245, 248, 243, 0), white);
+  background-image: linear-gradient(top, rgba(245, 248, 243, 0), #fff);
 }
 
 /* line 31, ../sass/bcom-partials/bcom/_objects.scss */
@@ -8914,7 +8914,7 @@ abbr[title="(required)"] {
 /* ---------------------------------------------- */
 /* line 9, ../sass/bcom-partials/bcom/_type.scss */
 .link-secondary {
-  color: #999999;
+  color: #999;
 }
 /* line 1337, ../sass/bcom-partials/bcom/_bcom-mixins.scss */
 .link-secondary:hover {
@@ -8933,7 +8933,7 @@ abbr[title="(required)"] {
 /* !-- Headlines/Headers ------------------------ */
 /* line 19, ../sass/bcom-partials/bcom/_type.scss */
 .h1, .h2, .h3, .h4, .h5 {
-  color: #222222;
+  color: #222;
 }
 /* line 21, ../sass/bcom-partials/bcom/_type.scss */
 .h1 > a, .h2 > a, .h3 > a, .h4 > a, .h5 > a {
@@ -9085,7 +9085,7 @@ abbr[title="(required)"] {
 /* line 108, ../sass/bcom-partials/bcom/_type.scss */
 .tz-txt {
   font: normal 400 1.15385em/135% Arial, Helvetica, Verdana, sans-serif;
-  color: #222222;
+  color: #222;
 }
 /* line 1307, ../sass/bcom-partials/bcom/_bcom-mixins.scss */
 .fontface .tz-txt {
@@ -9106,7 +9106,7 @@ abbr[title="(required)"] {
 
 /* line 120, ../sass/bcom-partials/bcom/_type.scss */
 .txt-lg, .txt, .txt-md, .txt-sm {
-  color: #222222;
+  color: #222;
 }
 /* line 124, ../sass/bcom-partials/bcom/_type.scss */
 .txt-lg > a,
@@ -9872,3 +9872,5 @@ a, img {
     display: block;
   }
 }
+
+/*# sourceMappingURL=dm-screen.css.map */
