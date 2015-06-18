@@ -8,35 +8,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link href="styles/css/carousel.css" rel="stylesheet" />
+    
+    <script src="../bower_components/underscore/underscore-min.js"></script>
+    <script src="js/resources/jquery.min.js"></script>
+    <script src="js/src/fullWidthCarousel.js"></script>
+    <script>
+      function resizeSlider(){
+        console.log("Resize Carousel UI.");
+      };
+      
+      $(document).ready(function() {
+        _fullCarousel.loadMarkUp();
+        resizeSlider();
+      });
+      $(window).resize(resizeSlider);
+    </script>
 </head>
-<body class="home">
-  <div class="fullwidth-carousel">
-
-    <div class="fullwidth-carousel__media-nav-anchor">
-      <div class="fullwidth-carousel__media-nav--left fullwidth-carousel__media-nav">
-      <span class="fullwidth-carousel__media-nav--left-arrow dm-icon dm-icon--arrow-left-gray-x-small"></span>
-      </div>
-    </div>
-
-    <div class="fullwidth-carousel__media-slide-wrap">
-      <div class="fullwidth-carousel__media-window">
-        <div class="fullwidth-carousel__media-img-wrap">
-          <img class="fullwidth-carousel__media-img" src="http://placehold.it/960x580">
-        </div>
-        <div class="fullwidth-carousel__media-img-wrap">
-          <img class="fullwidth-carousel__media-img" src="http://placehold.it/960x580">
-        </div>
-        <div class="fullwidth-carousel__media-img-wrap">
-          <img class="fullwidth-carousel__media-img" src="http://placehold.it/960x580">
-        </div>
-      </div>
-    </div>
-
-    <div class="fullwidth-carousel__media-nav-anchor">
-      <div class="fullwidth-carousel__media-nav--right fullwidth-carousel__media-nav">
-        <span class="fullwidth-carousel__media-nav--right-arrow dm-icon dm-icon--arrow-right-gray-x-small"></span>
-      </div>
-    </div>
-  </div>
-</body>
+<body class="home"></body>
 </html>

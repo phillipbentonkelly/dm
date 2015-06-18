@@ -361,12 +361,18 @@ $svg-path: $asset-path + "img/";*/
 }
 
 /* line 7, ../sass/modules/_full-width-carousel.scss */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 12, ../sass/modules/_full-width-carousel.scss */
 .fullwidth-carousel {
   background: whitesmoke;
   width: 100%;
   position: relative;
 }
-/* line 21, ../sass/modules/_full-width-carousel.scss */
+/* line 26, ../sass/modules/_full-width-carousel.scss */
 .fullwidth-carousel__media-nav {
   display: none;
   position: absolute;
@@ -375,29 +381,29 @@ $svg-path: $asset-path + "img/";*/
   background: rgba(200, 200, 200, 0.7);
   z-index: 200;
 }
-/* line 30, ../sass/modules/_full-width-carousel.scss */
+/* line 35, ../sass/modules/_full-width-carousel.scss */
 .fullwidth-carousel__media-nav-anchor:hover {
   cursor: pointer;
 }
-/* line 34, ../sass/modules/_full-width-carousel.scss */
+/* line 39, ../sass/modules/_full-width-carousel.scss */
 .fullwidth-carousel__media-nav--right {
   right: 0;
   top: 0;
 }
-/* line 39, ../sass/modules/_full-width-carousel.scss */
+/* line 44, ../sass/modules/_full-width-carousel.scss */
 .fullwidth-carousel__media-nav--right-arrow, .fullwidth-carousel__media-nav--left-arrow {
   position: absolute;
   top: 45%;
 }
-/* line 45, ../sass/modules/_full-width-carousel.scss */
+/* line 50, ../sass/modules/_full-width-carousel.scss */
 .fullwidth-carousel__media-nav--right-arrow {
   margin-left: 30%;
 }
-/* line 49, ../sass/modules/_full-width-carousel.scss */
+/* line 54, ../sass/modules/_full-width-carousel.scss */
 .fullwidth-carousel__media-nav--left-arrow {
   margin-left: 20%;
 }
-/* line 53, ../sass/modules/_full-width-carousel.scss */
+/* line 58, ../sass/modules/_full-width-carousel.scss */
 .fullwidth-carousel__media-slide-wrap {
   overflow-x: scroll;
   overflow-y: hidden;
@@ -406,7 +412,7 @@ $svg-path: $asset-path + "img/";*/
   clear: both;
   min-height: 10px;
 }
-/* line 63, ../sass/modules/_full-width-carousel.scss */
+/* line 68, ../sass/modules/_full-width-carousel.scss */
 .fullwidth-carousel__media-img {
   width: 100%;
   max-width: 960px;
@@ -415,12 +421,12 @@ $svg-path: $asset-path + "img/";*/
   padding: 0;
   border: 0;
 }
-/* line 72, ../sass/modules/_full-width-carousel.scss */
+/* line 77, ../sass/modules/_full-width-carousel.scss */
 .fullwidth-carousel__media-img-wrap {
   float: left;
   margin: 0 4px 0 0;
 }
-/* line 77, ../sass/modules/_full-width-carousel.scss */
+/* line 82, ../sass/modules/_full-width-carousel.scss */
 .fullwidth-carousel__scrollbar-cover {
   height: 15px;
   position: absolute;
@@ -431,17 +437,17 @@ $svg-path: $asset-path + "img/";*/
 }
 
 @media (min-width: 768px) {
-  /* line 93, ../sass/modules/_full-width-carousel.scss */
+  /* line 98, ../sass/modules/_full-width-carousel.scss */
   .fullwidth-carousel__media-nav--right-arrow {
     margin-left: 35%;
   }
-  /* line 97, ../sass/modules/_full-width-carousel.scss */
+  /* line 102, ../sass/modules/_full-width-carousel.scss */
   .fullwidth-carousel__media-nav--left-arrow {
     margin-left: 30%;
   }
 }
 @media (min-width: 960px) {
-  /* line 105, ../sass/modules/_full-width-carousel.scss */
+  /* line 110, ../sass/modules/_full-width-carousel.scss */
   .fullwidth-carousel__media-nav {
     display: none;
     position: absolute;
@@ -450,40 +456,40 @@ $svg-path: $asset-path + "img/";*/
     background: rgba(200, 200, 200, 0.7);
     z-index: 200;
   }
-  /* line 114, ../sass/modules/_full-width-carousel.scss */
+  /* line 119, ../sass/modules/_full-width-carousel.scss */
   .fullwidth-carousel__media-nav-anchor:hover {
     cursor: pointer;
   }
-  /* line 118, ../sass/modules/_full-width-carousel.scss */
+  /* line 123, ../sass/modules/_full-width-carousel.scss */
   .fullwidth-carousel__media-nav--right {
     right: 0;
     top: 0;
   }
-  /* line 123, ../sass/modules/_full-width-carousel.scss */
+  /* line 128, ../sass/modules/_full-width-carousel.scss */
   .fullwidth-carousel__media-nav--right-arrow, .fullwidth-carousel__media-nav--left-arrow {
     position: absolute;
     top: 45%;
   }
-  /* line 129, ../sass/modules/_full-width-carousel.scss */
+  /* line 134, ../sass/modules/_full-width-carousel.scss */
   .fullwidth-carousel__media-nav--right-arrow {
     margin-left: 30%;
   }
-  /* line 133, ../sass/modules/_full-width-carousel.scss */
+  /* line 138, ../sass/modules/_full-width-carousel.scss */
   .fullwidth-carousel__media-nav--left-arrow {
     margin-left: 20%;
   }
-  /* line 137, ../sass/modules/_full-width-carousel.scss */
+  /* line 142, ../sass/modules/_full-width-carousel.scss */
   .fullwidth-carousel__media-slide-wrap {
     white-space: nowrap;
     width: 100%;
     min-height: 10px;
   }
-  /* line 143, ../sass/modules/_full-width-carousel.scss */
+  /* line 148, ../sass/modules/_full-width-carousel.scss */
   .fullwidth-carousel__media-img-wrap {
     max-width: 960px;
     width: 33%;
   }
-  /* line 148, ../sass/modules/_full-width-carousel.scss */
+  /* line 153, ../sass/modules/_full-width-carousel.scss */
   .fullwidth-carousel__media-window {
     clear: both;
     position: absolute;
@@ -491,22 +497,22 @@ $svg-path: $asset-path + "img/";*/
     min-height: 10px;
     overflow: hidden;
   }
-  /* line 156, ../sass/modules/_full-width-carousel.scss */
+  /* line 161, ../sass/modules/_full-width-carousel.scss */
   .fullwidth-carousel__media-nav:hover {
     animation: fadeout 0.5s;
     animation-fill-mode: forwards;
   }
-  /* line 161, ../sass/modules/_full-width-carousel.scss */
+  /* line 166, ../sass/modules/_full-width-carousel.scss */
   .fullwidth-carousel__media-nav--right-arrow {
     margin-left: 40%;
   }
-  /* line 165, ../sass/modules/_full-width-carousel.scss */
+  /* line 170, ../sass/modules/_full-width-carousel.scss */
   .fullwidth-carousel__media-nav--left-arrow {
     margin-left: 35%;
   }
 }
 @keyframes fadeout {
-  /* line 173, ../sass/modules/_full-width-carousel.scss */
+  /* line 178, ../sass/modules/_full-width-carousel.scss */
   100% {
     background: rgba(200, 200, 200, 0);
   }
