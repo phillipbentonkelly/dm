@@ -76,30 +76,12 @@ var _fullCarousel = (function (jQ, _) {
       }
     },
     setImgWidth: function( maxWidth ){
-      // try{
-        // var mW = (typeof(maxWidth) === 'number')? maxWidth : 960;
-
         var imgWidth = this.checkScreenWidth() ? 960 : Math.ceil( $('body').width() * 0.8 );
         ui.jQ_imageWrap.width(imgWidth);
         ui.jQ_slideWrap.css('min-height', ui.jQ_imageWrap.height() );
+        console.log('img wrap width', imgWidth, $('.fullwidth-carousel__media-img-wrap').width() );
 
         console.log( ui.jQ_imageWrap.width() );
-
-
-      //   // sets width of images for fullwidth
-      //   if( ui.jQ_win.width() > 960 ) {
-      //     ui.jQ_imageWrap.width(960);
-      //     ui.jQ_slideWrap.css('min-height', ui.jQ_imageWrap.height() );
-      //   } else {
-      //     ui.jQ_slideWrap.css('min-height', ui.jQ_imageWrap.height() );
-      //     ui.jQ_imageWrap.outerWidth( Math.ceil(ui.jQ_body.width() * 0.8) );
-          
-      //     console.log('body width y', ui.jQ_body.width());
-      //   }
-      // }catch(err){
-      //   console.log(err);
-      // }
-
       return true;
     },
     loadMarkUp: function(){
