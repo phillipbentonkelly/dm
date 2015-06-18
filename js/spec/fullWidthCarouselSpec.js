@@ -12,7 +12,7 @@ describe("Load Fixture", function () {
   afterEach(function(){
     $('.fullwidth-carousel').remove();
     initOps = _fullCarousel.initOps();
-    _fullCarousel.resetElemStyles( initOps.ui.bodyObj );
+    // _fullCarousel.resetElemStyles( initOps.ui.bodyObj );
     
   });
 
@@ -27,9 +27,22 @@ describe("Load Fixture", function () {
   });
   
   it("Calculate the width of the body elem.", function(){
-    initOps.ui.bodyObj.width(480);
-    expect(_fullCarousel.calcBodyWidth( initOps.ui.bodyObj, 'Jasmine: Before' )).toBeGreaterThan(0);
+    // initOps.ui.bodyObj.width(480);
+    expect(_fullCarousel.calcBodyWidth( initOps.ui.winObj, 'Jasmine: Before' )).toBeGreaterThan(0);
   });
+
+  it("detects the screen size", function(){
+    $('body').width(800);
+    expect( _fullCarousel.checkScreenWidth() ).toBe(false);
+  });
+
+  it("should set an appropriate image wrapper width", function() {
+    _fullCarousel.resetElemStyles( $('body') );
+    _fullCarousel.setImgWidth();
+    console.log( $('.fullwidth-carousel__media-img-wrap').width(), Math.ceil( $('body').width() * 0.8 ) );
+    expect( $('.fullwidth-carousel__media-img-wrap').width() ).toEqual( ($('body').width() * 0.8) );
+  });
+
 });
 
 

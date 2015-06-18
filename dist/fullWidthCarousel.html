@@ -9,20 +9,91 @@
 
     <link href="styles/css/carousel.css" rel="stylesheet" />
     
-    <script src="../bower_components/underscore/underscore-min.js"></script>
+    <script src="../bower_components/underscore/underscore-min.js"></script> 
+    
+    
     <script src="js/resources/jquery.min.js"></script>
     <script src="js/src/fullWidthCarousel.js"></script>
-    <script>
-      function resizeSlider(){
-        console.log("Resize Carousel UI.");
-      };
-      
-      $(document).ready(function() {
-        _fullCarousel.loadMarkUp();
-        resizeSlider();
-      });
-      $(window).resize(resizeSlider);
-    </script>
 </head>
-<body class="home"></body>
+<body class="home">
+    
+    <div class="fullwidth-carousel">
+        <!-- <div class="fullwidth-carousel__media"> -->
+
+            <div class="fullwidth-carousel__media-nav-anchor">
+                <div class="fullwidth-carousel__media-nav--left fullwidth-carousel__media-nav">
+                    <span class="fullwidth-carousel__media-nav--left-arrow dm-icon dm-icon--arrow-left-gray-x-small"></span>
+                </div>
+            </div>
+
+                <div class="fullwidth-carousel__media-slide-wrap">
+                    <div class="fullwidth-carousel__media-window">
+                        <div class="fullwidth-carousel__media-img-wrap"><img class="fullwidth-carousel__media-img" src="images/related-articles/related-articles__thumbs__1.jpg"></div>
+                        <div class="fullwidth-carousel__media-img-wrap"><img class="fullwidth-carousel__media-img" src="images/related-articles/related-articles__thumbs__1.jpg"></div>
+                        <div class="fullwidth-carousel__media-img-wrap"><img class="fullwidth-carousel__media-img" src="images/related-articles/related-articles__thumbs__1.jpg"></div>
+                        <div class="fullwidth-carousel__media-img-wrap"><img class="fullwidth-carousel__media-img" src="images/related-articles/related-articles__thumbs__1.jpg"></div>
+                        <div class="fullwidth-carousel__media-img-wrap"><img class="fullwidth-carousel__media-img" src="images/related-articles/related-articles__thumbs__1.jpg"></div>
+                    </div>
+                </div>
+
+            <div class="fullwidth-carousel__media-nav-anchor">
+                <div class="fullwidth-carousel__media-nav--right fullwidth-carousel__media-nav">
+                    <span class="fullwidth-carousel__media-nav--right-arrow dm-icon dm-icon--arrow-right-gray-x-small"></span>
+                </div>
+            </div>
+        <!-- <div class="fullwidth-carousel__scrollbar-cover"></div> -->
+        <!-- </div> -->
+    </div>
+
+
+<script type="text/javascript">
+    var $bodyWidth = {};
+    var $windowWidth = {};
+    var $imageWrap = {};
+    var $mediaWin = {};
+    var $slideWrap = {};
+
+    function resizeSlider() {
+        $windowWidth = $(window).width();
+        $imageWrap = $('.fullwidth-carousel__media-img-wrap');
+        $bodyWidth = $('body').width();
+        var $imageWidth = $imageWrap.outerWidth(true);
+        var $imageCount = $imageWrap.children().length;
+        // sets width of images for fullwidth
+        if ( $windowWidth > 960 ) {
+            $imageWrap.width(960);
+            $slideWrap.css('min-height', $imageWrap.height() );
+        } else {
+            $slideWrap.css('min-height', $imageWrap.height() );
+            $imageWrap.outerWidth( Math.ceil($bodyWidth * 0.8) );
+        }
+
+
+        // resizes media window (for animation)
+        var newWidth = $imageWrap.outerWidth(true) * $imageWrap.length;
+        $mediaWin.width(newWidth);
+
+
+        // calculate margin offset
+        $mediaWin.css('left', -($imageWrap.outerWidth(true) - (($bodyWidth - $imageWrap.outerWidth(true)) / 2)));
+
+        $('.fullwidth-carousel__media-nav').width( (($bodyWidth - $imageWrap.outerWidth(true)) / 2) );
+    }
+
+    $(document).ready(function() {
+        $bodyWidth = $('body').width();
+        $windowWidth = $(window).width();
+        $imageWrap = $('.fullwidth-carousel__media-img-wrap');
+        $mediaWin = $('.fullwidth-carousel__media-window');
+        $slideWrap = $('.fullwidth-carousel__media-slide-wrap');
+
+        // alert('ready')
+        // alert( $imageWrap.height() );
+
+        resizeSlider();
+    });
+    $(window).resize(resizeSlider);
+</script>
+
+</body>
 </html>

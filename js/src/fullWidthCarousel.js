@@ -22,6 +22,7 @@ var _fullCarousel = (function (jQ, _) {
         '_data': {},
         'fixture': {},
         'ui': {
+          'winObj': $(window),
           'bodyObj': $('body'),
           'imgWrapperArr': [],
           'imgArr': []
@@ -32,6 +33,7 @@ var _fullCarousel = (function (jQ, _) {
       return ops;
     },
     resetElemStyles: function( elemObj ){
+      // split on semi colon (between styles) then colon for attr
       try{
         if( typeof(elemObj) === 'object' && elemObj.width() !== 'undefined' ){
           // console.log( 'style: ', elemObj.attr('style'), 'elem width: ', elemObj.width(), 'obj: ', elemObj );
@@ -64,23 +66,39 @@ var _fullCarousel = (function (jQ, _) {
 
       return retObjRef.width();
     },
-    setImgWidth: function( maxWidth ){
-      try{
-        var mW = (typeof(maxWidth) === 'number')? maxWidth : 960;
+    checkScreenWidth: function() {
+      var body = $('body');
 
-        // sets width of images for fullwidth
-        if( ui.jQ_win.width() > 960 ) {
-          ui.jQ_imageWrap.width(960);
-          ui.jQ_slideWrap.css('min-height', ui.jQ_imageWrap.height() );
-        } else {
-          ui.jQ_slideWrap.css('min-height', ui.jQ_imageWrap.height() );
-          ui.jQ_imageWrap.outerWidth( Math.ceil(ui.jQ_body.width() * 0.8) );
-          
-          console.log('body width y', ui.jQ_body.width());
-        }
-      }catch(err){
-        console.log(err);
+      if ( body.width() > 960 ) {
+        return true;
+      } else {
+        return false;
       }
+    },
+    setImgWidth: function( maxWidth ){
+      // try{
+        // var mW = (typeof(maxWidth) === 'number')? maxWidth : 960;
+
+        var imgWidth = this.checkScreenWidth() ? 960 : Math.ceil( $('body').width() * 0.8 );
+        ui.jQ_imageWrap.width(imgWidth);
+        ui.jQ_slideWrap.css('min-height', ui.jQ_imageWrap.height() );
+
+        console.log( ui.jQ_imageWrap.width() );
+
+
+      //   // sets width of images for fullwidth
+      //   if( ui.jQ_win.width() > 960 ) {
+      //     ui.jQ_imageWrap.width(960);
+      //     ui.jQ_slideWrap.css('min-height', ui.jQ_imageWrap.height() );
+      //   } else {
+      //     ui.jQ_slideWrap.css('min-height', ui.jQ_imageWrap.height() );
+      //     ui.jQ_imageWrap.outerWidth( Math.ceil(ui.jQ_body.width() * 0.8) );
+          
+      //     console.log('body width y', ui.jQ_body.width());
+      //   }
+      // }catch(err){
+      //   console.log(err);
+      // }
 
       return true;
     },
@@ -91,7 +109,9 @@ var _fullCarousel = (function (jQ, _) {
       //$('body').append( setFixtures( createMarkUp() ) );
     },
     createMarkUp: function (){
-      return '<div class="fullwidth-carousel"><div class="fullwidth-carousel__media-nav-anchor"><div class="fullwidth-carousel__media-nav--left fullwidth-carousel__media-nav"><span class="fullwidth-carousel__media-nav--left-arrow dm-icon dm-icon--arrow-left-gray-x-small"></span></div></div><div class="fullwidth-carousel__media-slide-wrap"><div class="fullwidth-carousel__media-window"><div class="fullwidth-carousel__media-img-wrap"><img class="fullwidth-carousel__media-img" src="http://placehold.it/960x580"></div><div class="fullwidth-carousel__media-img-wrap"><img class="fullwidth-carousel__media-img" src="http://placehold.it/960x580"></div><div class="fullwidth-carousel__media-img-wrap"><img class="fullwidth-carousel__media-img" src="http://placehold.it/960x580"></div></div></div><div class="fullwidth-carousel__media-nav-anchor"><div class="fullwidth-carousel__media-nav--right fullwidth-carousel__media-nav"><span class="fullwidth-carousel__media-nav--right-arrow dm-icon dm-icon--arrow-right-gray-x-small"></span></div></div></div>';
+      // return '<div class="fullwidth-carousel"><div class="fullwidth-carousel__media-nav-anchor"><div class="fullwidth-carousel__media-nav--left fullwidth-carousel__media-nav"><span class="fullwidth-carousel__media-nav--left-arrow dm-icon dm-icon--arrow-left-gray-x-small"></span></div></div><div class="fullwidth-carousel__media-slide-wrap"><div class="fullwidth-carousel__media-window"><div class="fullwidth-carousel__media-img-wrap"><img class="fullwidth-carousel__media-img" src="http://placehold.it/960x580"></div><div class="fullwidth-carousel__media-img-wrap"><img class="fullwidth-carousel__media-img" src="http://placehold.it/960x580"></div><div class="fullwidth-carousel__media-img-wrap"><img class="fullwidth-carousel__media-img" src="http://placehold.it/960x580"></div></div></div><div class="fullwidth-carousel__media-nav-anchor"><div class="fullwidth-carousel__media-nav--right fullwidth-carousel__media-nav"><span class="fullwidth-carousel__media-nav--right-arrow dm-icon dm-icon--arrow-right-gray-x-small"></span></div></div></div>';
+
+      return '<div class="fullwidth-carousel"><div class="fullwidth-carousel__media-nav-anchor"><div class="fullwidth-carousel__media-nav--left fullwidth-carousel__media-nav"><span class="fullwidth-carousel__media-nav--left-arrow dm-icon dm-icon--arrow-left-gray-x-small"></span></div></div><div class="fullwidth-carousel__media-slide-wrap"><div class="fullwidth-carousel__media-window"><div class="fullwidth-carousel__media-img-wrap"><img class="fullwidth-carousel__media-img" src="http://placehold.it/960x580"></div><div class="fullwidth-carousel__media-img-wrap"><img class="fullwidth-carousel__media-img" src="http://placehold.it/960x580"></div><div class="fullwidth-carousel__media-img-wrap"><img class="fullwidth-carousel__media-img" src="http://placehold.it/960x580"></div><div class="fullwidth-carousel__media-img-wrap"><img class="fullwidth-carousel__media-img" src="http://placehold.it/960x580"></div><div class="fullwidth-carousel__media-img-wrap"><img class="fullwidth-carousel__media-img" src="http://placehold.it/960x580"></div></div></div><div class="fullwidth-carousel__media-nav-anchor"><div class="fullwidth-carousel__media-nav--right fullwidth-carousel__media-nav"><span class="fullwidth-carousel__media-nav--right-arrow dm-icon dm-icon--arrow-right-gray-x-small"></span></div></div></div>';
     }
   }
 })($, _);
