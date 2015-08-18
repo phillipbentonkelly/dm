@@ -1,0 +1,28 @@
+{
+	"name": "For Sale",
+	"type": "forSale",
+	"options": {
+		"iconClass": "st-icon-roofing-contractor",
+		"markerClass": "map__marker--teal",
+		"popup": true,
+		"bounds": true,
+		"enabled": true
+	},
+	"features": [
+		{
+			"properties": {
+				"name": "8 Argyle Street",
+				"title": "Home",
+				"beds": "0",
+				"baths": "0",
+				"price": "599, 999",
+				"thumbnail": "",
+				"description": "Beds: 0, Baths: 0, Price: $599,999"
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [ 42.2886410,-71.0658990 ]
+			}
+		}
+	]
+}
