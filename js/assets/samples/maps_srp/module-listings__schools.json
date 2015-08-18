@@ -1,0 +1,26 @@
+{
+	"name": "For Sale",
+	"type": "forSale",
+	"options": {
+		"iconClass": "st-icon-roofing-contractor",
+		"markerClass": "map__marker--teal",
+		"popup": true,
+		"bounds": true,
+		"enabled": true
+	},
+	"features": [
+		{
+			"properties": {
+				"name": "William Morris School",
+				"title": "William P. Morris School",
+				"thumbnail": "",
+				"description": "K1 - 6th grade"
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [ 42.2893480,-71.0592840 ]
+			}
+		}
+	]
+}
+
