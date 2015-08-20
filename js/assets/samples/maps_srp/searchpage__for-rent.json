@@ -1,0 +1,43 @@
+{
+	"name": "For Rent",
+	"type": "forRent",
+	"options": {
+			"iconClass": "st-icon-roofing-contractor",
+			"markerClass": "map__marker--blue",
+			"popup": true,
+			"bounds": true,
+			"enabled": true
+	},
+	"features": [
+		{
+			"properties": {
+				"name": "79 Florida Street",
+				"title": "Home",
+				"beds": "2",
+				"baths": "1",
+				"price": "185,000",
+				"thumbnail": "",
+				"description": "Beds: 2, Baths: 1, Price: $185,000"
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [ 42.2893480,-71.0592840 ]
+			}
+		},
+		{
+			"properties": {
+				"name": "11 Lonsdale Street",
+				"title": "Home",
+				"beds": "5",
+				"baths": "2",
+				"price": "499,000",
+				"thumbnail": "",
+				"description": "Beds: 5, Baths: 2, Price: $499,000"
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [ 42.2899190,-71.0624800 ]
+			}
+		}
+	]
+}
