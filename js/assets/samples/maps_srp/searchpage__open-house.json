@@ -1,0 +1,43 @@
+{
+	"name": "Open Houses",
+	"type": "openHouse",
+	"options": {
+			"iconClass": "st-icon-roofing-contractor",
+			"markerClass": "map__marker--green",
+			"popup": true,
+			"bounds": true,
+			"enabled": true
+	},
+	"features": [
+		{
+			"properties": {
+				"name": "545 Adams Street",
+				"title": "Home",
+				"beds": "2",
+				"baths": "1",
+				"price": "149,900",
+				"thumbnail": "",
+				"description": "Beds: 2, Baths: 1, Price: $149,900"
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [ 42.2909980,-71.0568940 ]
+			}
+		},
+		{
+			"properties": {
+				"name": "6 Glenrose RD",
+				"title": "Home",
+				"beds": "4",
+				"baths": "3",
+				"price": "499,000",
+				"thumbnail": "",
+				"description": "Beds: 4, Baths: 3, Price: $499,000"
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [ 42.2918560,-71.0577020 ]
+			}
+		}
+	]
+}
